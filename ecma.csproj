@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{123662A1-8D99-4990-843B-4BFE27872336}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ecma</RootNamespace>
+    <AssemblyName>ecma</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>true</Externalconsole>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Mono.WebBrowser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="A.cs" />
+    <Compile Include="B.cs" />
+    <Compile Include="C.cs" />
+    <Compile Include="D.cs" />
+    <Compile Include="M.cs" />
+    <Compile Include="S.cs" />
+    <Compile Include="R.cs" />
+    <Compile Include="E.cs" />
+    <Compile Include="F.cs" />
+    <Compile Include="G.cs" />
+    <Compile Include="H.cs" />
+    <Compile Include="I.cs" />
+    <Compile Include="J.cs" />
+    <Compile Include="K.cs" />
+    <Compile Include="L.cs" />
+    <Compile Include="N.cs" />
+    <Compile Include="O.cs" />
+    <Compile Include="P.cs" />
+    <Compile Include="Q.cs" />
+    <Compile Include="T.cs" />
+    <Compile Include="U.cs" />
+    <Compile Include="V.cs" />
+    <Compile Include="X.cs" />
+    <Compile Include="Y.cs" />
+    <Compile Include="Z.cs" />
+    <Compile Include="W.cs" />
+    <Compile Include="#\%24.cs" />
+    <Compile Include="#\_.cs" />
+    <Compile Include="#\`.cs" />
+    <Compile Include="#\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="#\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\ecma335\compile.sh">
+      <Link>ref\ecma335\compile.sh</Link>
+    </None>
+    <None Include="..\..\..\ecma335\dis.txt">
+      <Link>ref\ecma335\dis.txt</Link>
+    </None>
+    <None Include="..\..\..\ecma335\dis2.txt">
+      <Link>ref\ecma335\dis2.txt</Link>
+    </None>
+    <None Include="..\..\..\ecma335\ecma335 grammar.txt">
+      <Link>ref\ecma335\ecma335 grammar.txt</Link>
+    </None>
+    <None Include="..\..\..\ecma335\ecma335 keywords.txt">
+      <Link>ref\ecma335\ecma335 keywords.txt</Link>
+    </None>
+    <None Include="..\..\..\ecma335\lex.footer">
+      <Link>ref\ecma335\lex.footer</Link>
+    </None>
+    <None Include="..\..\..\ecma335\lex.head">
+      <Link>ref\ecma335\lex.head</Link>
+    </None>
+    <None Include="..\..\..\ecma335\main.c">
+      <Link>ref\ecma335\main.c</Link>
+    </None>
+    <None Include="..\..\..\ecma335\make.sh">
+      <Link>ref\ecma335\make.sh</Link>
+    </None>
+    <None Include="..\..\..\ecma335\opcode.def">
+      <Link>ref\ecma335\opcode.def</Link>
+    </None>
+    <None Include="..\..\..\ecma335\opcode.part.xslt.xml">
+      <Link>ref\ecma335\opcode.part.xslt.xml</Link>
+    </None>
+    <None Include="..\..\..\ecma335\opcode.xslt.xml">
+      <Link>ref\ecma335\opcode.xslt.xml</Link>
+    </None>
+    <None Include="..\..\..\ecma335\template.xslt.xml">
+      <Link>ref\ecma335\template.xslt.xml</Link>
+    </None>
+    <None Include="..\..\..\ecma335\grammar.xml">
+      <Link>ref\ecma335\grammar.xml</Link>
+    </None>
+    <None Include="..\..\..\ecma335\grammar.tab.c">
+      <Link>ref\ecma335\grammar.tab.c</Link>
+    </None>
+  </ItemGroup>
+</Project>
