@@ -9,6 +9,7 @@ using System.Net ;
 
 partial class A335
 		{
+static bool debug ; //_passive
 #if SJNSJNS
 		static internal      Item      token ;
 		static internal      Item      future    = new Item() ;
