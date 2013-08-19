@@ -65,9 +65,39 @@ static void Blogic()
 static List<_.Token> b_line = new List<_.Token>() ;
 
 
+/*
+
+jo <restricted,dome>{
+	Decimal   center ;
+	reserved  word ;     //_FIXT:$default,_researched,_said,_etc[,_used] [...remote...]
+	//object    remote ;_USED,_null_or_array_splice|split,[_unknown::]
+}
+
+jo remote_lock : System.Attribute  //_rep()_is_not_DO_replication,_[quantum]_mechanics
+	{
+	// nop ;_ms
+	}	
 
 
+jo remote_lock <restricted,domain>{
+	//_C,_trivial_unmarshal[,_fastcall[2]]
+	}
+	
+jo var{
+	//_do_nothing,_variously_;_unbeeps;_noise_as_signal_as_gc
+}
 
+[.class] jo b_atomatrix ;_tut[][]->[,]
+
+jo dunce{//$default
+	$end.assert(center==$) ;_symbol_s[,_said]
+	}//=>$account[,$[<-]idol][$->idle](javascript:overflows->space_(t|nt),_no_style,_[xhtml|*]wrap[,_dae])
+
+jo synopsis{} ;[_delegate_rt_[*|default_]]
+	jo`{server:default:dome} ;
+*///	jo`{urn:number:atomatrice:atomatrix:_}  //_$D#$
+
+//delegate b_schema [=...] ;
 	
 #if SJKSNS
 		
