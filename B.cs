@@ -64,6 +64,14 @@ static void Blogic()
 	}
 static List<_.Token> b_line = new List<_.Token>() ;
 
+static string b_xhtml_css ; /*$...trigraphs...$*/    //_FIX:tainted,_second
+static string [,] b_xhtml ; /*$...digraphs....$*/    //_FIX:tainted,_css[,_streaming{},_lock_matrix[_SSE4]]
+
+//_FIX:can't_type_it(_here),_breaks_kernel,_FIXT:down_on_obvious_[...]_scanner,_said$dart[,_dirty_async_begin]
+//_FIXT:BSD,_or_SELINIX_WITH_GAC[,_plan9...][,_[ref:ms]_linq][,Intel_b[l]_][,ARM]
+//_FIXT:coLinux,_spliced_MICROSOFT_and_LINUX[_static][,_skew][,_hardened][[_ribbon]]
+
+//_.
 
 /*
 
