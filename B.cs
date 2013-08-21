@@ -815,4 +815,5 @@ static void print( ref Item i )
 	
 	}
 #endif
+_.soundex.up(__ipvsix)_idle[,]/\_.
 }
