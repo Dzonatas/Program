@@ -73,6 +73,14 @@ static string [,] b_xhtml ; /*$...digraphs....$*/    //_FIX:tainted,_css[,_strea
 
 //_.
 
+static System.Guid area[4,8] ; //_quantum_idle_twenty_six
+static System.Guid area[132,80] ; //_quantum_idle_twenty_seven
+
+//_.mono.down
+//_.character.mode.ascii.up ;;
+//_.character.mode.unicode.up(__) ;
+//_.c.down
+
 /*
 
 jo <restricted,dome>{
@@ -106,6 +114,23 @@ jo synopsis{} ;[_delegate_rt_[*|default_]]
 *///	jo`{urn:number:atomatrice:atomatrix:_}  //_$D#$
 
 //delegate b_schema [=...] ;
+
+//_.c.library.remote.down
+//_.c.up
+/*//_.apu.gpu.override.up   //_replicates_i,_google_play,_!bad[,__.social]
+//_.arm.gpu.override.up
+//_.console.bypass.         /*$singularity$useless*/
+
+//_.academic.grade.down
+//_.academic.security.bypass.  /*$standard$disabled[::]*/
+//_.academic.security.static.single.file.up  /*$standard$disabled[::]*/
+//_.academic.grade.gpa.up
+//_.academic.grade.down
+//_.
+
+//_FIX:idles,leases,_request(ref_)[respond,]
+//_.X[3,11].up(__)
+//_.NET.up(__)
 	
 #if SJKSNS
 		
