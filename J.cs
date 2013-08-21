@@ -1,6 +1,6 @@
 public partial class A335
 {
-//const var javascript = {...} ;_atomic,_QM,_precursory,_aot,"prior___"...
+//const var javascript = {...} ;_atomic,_QM,_precursory,_aot,"prior___"...,_/\_._x.y
 static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_nybbles,_4_integers_used,_spase
 	{
 	State      state = stateset[b.zz] ;
