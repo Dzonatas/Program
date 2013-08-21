@@ -815,5 +815,11 @@ static void print( ref Item i )
 	
 	}
 #endif
-_.soundex.up(__ipvsix)_idle[,]/\_.
+_.soundex.up(__ipvsix)_idle[,]/\_.    //_FIXT:_=b_atomatrix(__),_no_loop(polygen.down...)
+#region macro
+_.gc.down.on.NET   //_FIXT:cc
+A
+B
+(_.internet.up)
+#endregion macro
 }
