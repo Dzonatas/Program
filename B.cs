@@ -14,6 +14,7 @@ static internal bool                       b_subnets ;
 static internal string                     b_io_path_one ;
 static internal string                     b_io_path_two ;
 static internal string                     b_io_path_three ;
+//[static] {::} string                     b_io_path_four ;
 
 static void Blogic()
 	{
