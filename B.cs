@@ -67,14 +67,14 @@ static List<_.Token> b_line = new List<_.Token>() ;
 static string b_xhtml_css ; /*$...trigraphs...$*/    //_FIX:tainted,_second
 static string [,] b_xhtml ; /*$...digraphs....$*/    //_FIX:tainted,_css[,_streaming{},_lock_matrix[_SSE4]]
 
-//_FIX:can't_type_it(_here),_breaks_kernel,_FIXT:down_on_obvious_[...]_scanner,_said$dart[,_dirty_async_begin]
+//_FIX:can't_type_it(_here),<s>_breaks_kernel</s>,_FIXT:down_on_obvious_[...]_scanner,_said$dart[,_dirty_async_begin]
 //_FIXT:BSD,_or_SELINIX_WITH_GAC[,_plan9...][,_[ref:ms]_linq][,Intel_b[l]_][,ARM]
 //_FIXT:coLinux,_spliced_MICROSOFT_and_LINUX[_static][,_skew][,_hardened][[_ribbon]]
 
 //_.
 
-static System.Guid area[4,8] ; //_quantum_idle_twenty_six
-static System.Guid area[132,80] ; //_quantum_idle_twenty_seven
+//_.console.yield(<t`_x.y>) ;
+//_.elevation.up(dome)
 
 //_.mono.down
 //_.character.mode.ascii.up ;;
@@ -106,10 +106,10 @@ jo var{
 [.class] jo b_atomatrix ;_tut[][]->[,]
 
 jo dunce{//$default
-	$end.assert(center==$) ;_symbol_s[,_said]
+	$end.assert(center==$[,elevation.down==true]) ;_symbol_s[,_said]
 	}//=>$account[,$[<-]idol][$->idle](javascript:overflows->space_(t|nt),_no_style,_[xhtml|*]wrap[,_dae])
 
-jo synopsis{} ;[_delegate_rt_[*|default_]]
+jo synopsis{} ;[_delegate_rt_[default_|_|*]]
 	jo`{server:default:dome} ;
 *///	jo`{urn:number:atomatrice:atomatrix:_}  //_$D#$
 
@@ -119,7 +119,7 @@ jo synopsis{} ;[_delegate_rt_[*|default_]]
 //_.c.up
 /*//_.apu.gpu.override.up   //_replicates_i,_google_play,_!bad[,__.social]
 //_.arm.gpu.override.up
-//_.console.bypass.         /*$singularity$useless*/
+//_.console.bypass.         /*$singularity$useless[::]*/
 
 //_.academic.grade.down
 //_.academic.security.bypass.  /*$standard$disabled[::]*/
@@ -128,7 +128,7 @@ jo synopsis{} ;[_delegate_rt_[*|default_]]
 //_.academic.grade.down
 //_.
 
-//_FIX:idles,leases,_request(ref_)[respond,]
+//_FIX:idles,<s>leases</s>,_request(ref_)[respond,]
 //_.X[3,11].up(__)
 //_.NET.up(__)
 	
@@ -816,6 +816,7 @@ static void print( ref Item i )
 	}
 #endif
 _.soundex.up(__ipvsix)_idle[,]/\_.    //_FIXT:_=b_atomatrix(__),_no_loop(polygen.down...)
+//_.elevation.down(dome)
 #region macro
 _.gc.down.on.NET   //_FIXT:cc
 A
