@@ -4,6 +4,697 @@ public partial class _
 {
 }
 
+#if SPIUGEBLHJEN_b
+static internal Dictionary<string,b_set>   b_list = new Dictionary<string,b_set>() ;
+static internal List<b_set>                b_list_of_pointers = new List<b_set>() ;
+static internal List<b_set>                b_list_of_endpoints = new List<b_set>() ;
+static internal bool                       b_subnets ;
+static internal string                     b_io_path_one ;
+static internal string                     b_io_path_two ;
+static internal string                     b_io_path_three ;
+#endif
+
+#if SJLKNSKJNEIN_d
+#if SJNSJNS
+		static internal      Item      token ;
+		static internal      Item      future    = new Item() ;
+		
+		static Item peek()
+			{
+			return stack.Peek() ;
+			}
+		static void poke( State state )
+			{
+			Item i = respond() ;
+			if( i.symbol.StringIsNull != null && ! i.existential )
+				throw new NotImplementedException( "Restated." ) ;
+			i   = state ;
+			i.stacked = false ;
+			i.existential  = false ;
+			request( ref i ) ;
+			print_stack() ;
+			}
+		static void poke( Symbol symbol )
+			{
+			Item i = respond() ;
+			if( i.existential )
+				throw new NotImplementedException( "Reloaded." ) ;
+			i.existential  = true ;
+			i.symbol  = symbol ;
+			i.stacked = false ;
+			request( ref i ) ;
+			}
+		static Symbol get_symbol()
+			{
+			if( yytoken.StringIsNull == null )
+				xml_get_() ;
+			return yytoken ;
+			}
+		static Symbol next_symbol()
+			{
+			xml_get_() ;
+			return yytoken ;
+			}
+		static Transition get_symbolic_transition( Symbol symbol, State state )
+			{
+			foreach( Transition t in state.transitionset )
+				if( t == symbol )
+					{
+					if( t.type == "shift" && (object)symbol is xml_t )
+						return t ;
+					else
+					if( t.type == "goto" && (object)symbol is xml_nt )
+						return t ;
+					}
+			throw new NotImplementedException( "There is no try, only do." ) ;
+			}
+		static void print_state_header( Item i, string s )
+			{
+			//poke( i.state ) ;
+			Console.Write("--------------{0}   ", s ) ;
+			Console.Write("# {0}  {1}  ", stateset[i], s ) ;
+			Console.WriteLine("--------------- L={0} R={1} T={2}",
+				stateset[i].lookaheadset.Count,
+				stateset[i].reductionset.Length,
+				stateset[i].transitionset.Length,
+				i.stacked ? "1" : "0"
+				) ;
+			}
+		static void start()
+			{
+			Console.SetCursorPosition(0,0) ;
+			}
+		static internal Quant q   = new Quant() ;
+		static internal Quant bit = new Quant() ;
+		static void leave()
+			{
+			Console.SetCursorPosition(0,20) ;
+			Console.Write("system") ;
+			for( Item i = new Item() ;; bit.One = true )
+				{
+				// bit.switch { one:{} two:{} three:{} default: } [...blitter_stream...] ;
+				if( bit.One )
+					if( i.guid != null )
+						if( i.guid == peek().guid )
+							throw new NotFiniteNumberException( "Excluded enumeration, new Exception()." ) ;
+						else
+							if( peek().guid == null )
+								{
+								i.guid = Guid.NewGuid() ;
+								bit.Two = true ;
+								}
+							else
+								throw new EntryPointNotFoundException() ;
+				enter( peek(), ref i ) ;
+				if( i.do_ == null )
+					continue ;
+				if( bit.One )
+					continue ;
+				if( i.do_ != null )
+					{
+					token = i ;
+					i.do_() ;
+					continue ;
+					}
+				if( bit.Two )
+					return ;
+				goto unreachable ;
+				}
+			unreachable: throw new ProtocolViolationException() ;
+			///* sleep(0) ; // INST[ant]_FO[u]R BRTARGET BRTARGET BRTARGET NAPINT64 */////$ $//////
+			}
+		/*
+		static int x ;
+		static int y ;
+		static int zz ;
+		static int yy ;
+		*/
+		static Item _enter( int x, int y, int zz, int yy )
+			{
+			Reduction   _ = stateset[x].reductionset[y] ;
+			Transition  t = stateset[zz].transitionset[yy] ;
+			//Symbol symbol = ruleset[_.rule] ;
+			State   state = stateset[t.state] ;
+			return new Item( new Symbol(0,0), state ) ;
+			}
+		static void q_continue()
+			{
+			bit.One   = true ;
+			}
+		static void q_right()
+			{
+			q.One     = true ;
+			bit.Three = true ;
+			}
+		static void q_()
+			{
+			q.Two     = true ;
+			}
+		static void q_return()
+			{
+			bit.Two   = true ;
+			}
+		static void q_left()
+			{
+			q.Three   = true ;
+			bit.Three = true ;
+			}
+		static void step()
+			{
+			token = get_symbol() ;
+			Console.SetCursorPosition(0,0) ;
+			Console.Write( "{0}-> ", token ) ;
+			Console.ReadKey() ;
+			q_return() ;
+			}
+
+		static void enter( Item stack, ref Item i )
+			{
+			Console.SetCursorPosition(0,1) ;
+			Console.SetCursorPosition(0,3) ;
+			if( i.do_ != stack.do_ || stack.do_ == null )
+				{
+				i = stack ;
+				i.do_ = traverse_itemset ;
+				request( ref i ) ;
+				return ;
+				}
+			Console.WriteLine();
+			}
+		/*
+		static void enter_again( Item stack, ref Item i )
+			{
+			foreach( Itemset item in stateset[stack].itemset )
+				{
+				Rule r = ruleset[item.rule] ;
+				//i.symbol = ruleset[item.rule].lhs ;
+				//Console.Write( "{0} #{1} |", r.lhs, item.point ) ;
+				if( item.point >= r.rhs.Count )
+					i.symbol = get_symbol() ;
+				else
+					{
+					Symbol s = symbol_from_name[r.rhs[item.point]] ;
+					i.symbol = s.terminal ? get_symbol() : s ;
+					}
+				foreach( Transition t in stateset[stack].transitionset )
+					{
+					//Console.WriteLine( " {0} |", t.symbol ) ;
+					if( i.symbol == t.symbol )
+						{
+						Console.Write( "{0} {1}-{2} ; ", t.type, t.symbol, t.state ) ;
+						i = stateset[t.state] ;
+						if( t.type == "goto" )
+							goto reduce ;
+						request( ref i ) ;
+						enter( peek(), ref i ) ;
+						Console.WriteLine( "SHIFT------------------------ i={0} t={0}", stateset[i].debit, t.state ) ;
+						continue ;
+						}
+					}
+				continue ;
+				reduce:
+				if( i.symbol.terminal )
+					foreach( Reduction _ in stateset[i].reductionset )
+						if( _.enabled )
+							if( i.symbol == _.symbol  )
+								{
+								reduce_stack_by_rule( ruleset[_.rule], ref i ) ;
+								return ;
+								}
+							else
+							if( _.symbol == "$default" )
+								{
+								reduce_stack_by_rule( ruleset[_.rule], ref i ) ;
+								return ;
+								}
+				request( ref i ) ;
+				enter( peek(), ref i ) ;
+				}
+			}
+		*/	
+		static Decimal itemset_ ;
+		static void traverse_itemset()
+			{
+			Item stack = peek() ;
+			foreach( Itemset item in stateset[stack].itemset )
+				{
+				Rule r = ruleset[item.rule] ;
+				Console.SetCursorPosition(0,5) ;
+				Console.Write("{0}-{1}", r, stateset[stack].debit );
+				q_() ;
+				leave() ;
+				}
+			}
+
+		static void reduce_stack_by_rule( Rule r, ref Item i )
+			{
+			Console.SetCursorPosition(0,10) ;
+			Console.WriteLine( "REDUCTION {0} rhs={1} stack={2}" , r, r.rhs.Count, stack.Count ) ;
+			print_rule( r ) ;
+			for( int x = r.rhs.Count ; --x > 0 ; respond() ) ;
+			i = respond() ;
+			i.stacked = false ;
+			i.symbol = symbol_from_name[ r.ToString() ] ;
+			return ;
+			}
+			
+		static Reduction get_default_reduction( State state )
+			{
+			foreach( Reduction r in state.reductionset )
+				if( r.symbol == 0 )
+					return r ;
+			throw new NotImplementedException( "Determinate." ) ;
+			}
+		
+		static SearchResult analyize( Item i )
+			{
+			SearchResult sr ;
+			if( i.symbol.StringIsNull )
+				{
+				Console.WriteLine("YYTOKEN={0}", yytoken ) ;
+				sr = search_itemset( yytoken, stateset[i] ) ;
+				}
+			else
+				{
+				Console.WriteLine("STACKED={0}", i.symbol ) ;
+				sr = search_itemset( i.symbol, stateset[i] ) ;
+				}
+			Console.Write("POINTS = {0}   ", sr.pointset.Count ) ;
+			Console.Write("SHOWS  = {0}   ", sr.showset.Count ) ;
+			Console.WriteLine("AHEADS = {0}", sr.aheadset.Count ) ;
+			return sr ;
+			}
+			
+			/*
+			{
+			if( t.type != null )
+				Console.WriteLine("T {0} -> {1}", t.type, t.state  ) ;
+			foreach( Reduction R in state.reductionset )
+				Console.WriteLine( "R {0} -> {1}", R.symbol, ruleset[R.rule].lhs ) ;
+			if( state.lookaheadset.Contains( token.name ) )
+				Console.WriteLine("LOOKAHEAD {0}", token.name ) ;
+			if( z.symbol != null )
+				Console.WriteLine("REDUCTION {0}", z.symbol ) ;
+			}
+			*/
+			
+		public struct SearchResult
+			{
+			public List<Itemset> showset ;
+			public List<Itemset> pointset ;
+			public List<Itemset> aheadset ;
+			public List<string>  points ;
+			public SearchResult( List<Itemset> showset, List<Itemset> pointset, List<Itemset> aheadset, List<string> points )
+				{
+				this.showset = showset ;
+				this.pointset = pointset ;
+				this.aheadset = aheadset ;
+				this.points = points ;
+				}
+			}
+		static SearchResult search_itemset( Symbol s, State state )
+			{
+			bool show = false ;
+			int items = 0 ;
+			List <Itemset>   showset  = new List<Itemset>();
+			List <Itemset>   pointset = new List<Itemset>();
+			List <Itemset>   aheadset = new List<Itemset>();
+			List <string>    points   = new List<string>() ;
+			foreach( Itemset i in state.itemset )
+				{
+				int y = 0 ;
+				show = false ;
+				foreach( xml_s rhs in ruleset[i.rule].rhs )
+					{
+					if( s == rhs.s  )
+						{
+						show = true ;
+						showset.Add( i ) ;
+						break ;
+						}
+					}
+				if( i.point >= ruleset[i.rule].rhs.Count )
+					{
+					aheadset.Add( i ) ;
+					items++ ;
+					goto result ;
+					}
+				if( ! show )
+					continue ;
+				result:
+				Console.Write( "I {0} {1} | ", i.point, ruleset[i.rule].ToString() ) ;
+				foreach( xml_s rhs in ruleset[i.rule].rhs )
+					{
+					//if( show )
+					//	Console.WriteLine( "? {0}", rhs ) ;
+					if( i.point == y )
+						Console.Write( "<< " ) ;
+					Console.Write( rhs ) ;
+					if( i.point == y && s == rhs.s )
+						{
+						items++ ;
+						pointset.Add( i ) ;
+						points.Add( rhs.s ) ;
+						}
+					if( i.point == y )
+						Console.Write( " >>" ) ;
+					Console.Write( " " ) ;
+					y++ ;
+					}
+				Console.WriteLine( " ;" ) ;
+				}
+			return new SearchResult( showset, pointset, aheadset, points ) ;
+			}
+			
+	
+		static void print_stack()
+			{
+			Console.Write("Stack={0} is ", stack.Count );
+			Item [] a = stack.ToArray() ;
+			Array.Reverse( a ) ;
+			foreach( Item i in a )
+				{
+				Console.Write( "{0}-{1}", i.symbol, stateset[i].debit ) ;
+				Console.Write( " " ) ;
+				}
+			Console.WriteLine( "[ {0} ]", yytoken ) ;
+			}
+		static void print_rule( Rule r )
+			{
+			Console.Write( "RULE {0}({1}) | ", r.ToString(), r.number ) ;
+			foreach( xml_s rhs in r.rhs )
+				{
+				Console.Write( rhs.s ) ;
+				Console.Write( " " ) ;
+				}
+			Console.WriteLine( ";") ;
+			}
+	static Reduction get_symbolic_reduction( Symbol symbol, State state )
+			{
+			foreach( Reduction r in state.reductionset )
+				if( symbol == r.symbol )
+					return r ;
+			return new Reduction() ;
+			}
+#endif
+#endif
+
+#if SYBGWIPUEHOIJK_b
+		
+#if djdjnd
+
+static void print_grammar()
+	{
+	for( int x = 0 ; x < 603 ; x++ )
+		{
+		Console.Write( xo_t[x] ) ;
+		Console.Write( " " ) ;
+		for( int y = 0 ; y < xo_t[x].rhs.Length ; y++ )
+			{
+			Console.Write( xo_t[x][y].s ) ;
+			Console.Write( " " ) ;
+			}
+		Console.WriteLine("") ;
+		}
+			_.prompt(_.string_t) ;
+	}
+
+
+static void b_1()
+	{
+	Item i = new Item( new Symbol(), stateset[0] ) ;
+	object o = b_list ;			//_FIX:_object_keyword_is_like_the_keyword_"reuse",_intentionally,_"partial"_box/unbox
+		{
+		b_list.Clear() ;
+		build_list_of_points( i ) ;
+		foreach( b_set b in b_list.Values )
+			b_list_of_pointers.Add( b ) ;
+		}
+		{
+		b_list.Clear() ;
+		build_list_of_endpoints( i ) ;
+		foreach( b_set b in b_list.Values )
+			b_list_of_endpoints.Add( b ) ;
+		}
+	b_list = (Dictionary<string,b_set>)o ; //_FIX:_it's_"internal",_so_make_so_FIX: b_list = o ;
+
+	build_paths() ;
+
+		{
+		B b = new B() ;
+		}
+	
+	end() ;
+	}
+#endif
+
+#if SJNSJ
+class B
+	{
+	List<b_set>                a_list_of_pointers = new List<b_set>() ;
+	List<b_set>                a_list_of_endpoints = new List<b_set>() ;
+	Item 	                   i ;
+
+	b_set b ;
+	public B()
+		{
+		i = new Item( new Symbol(), stateset[2] ) ;
+			{
+			b = b_list_of_endpoints[0] ;
+			print( ref i ) ;
+			Console.SetCursorPosition(0,0) ;
+			Console.Write( b ) ;
+			_.prompt(_.string_t) ;
+			}
+		System.Console.Clear() ;
+		object o = b_list ;			//_FIX:_object_keyword_is_like_the_keyword_"reuse",_intentionally,_"partial"_box/unbox
+			{
+			b_list.Clear() ;
+			build_list_of_points( i ) ;
+			foreach( b_set a in b_list.Values )
+				a_list_of_pointers.Add( a ) ;
+			}
+			{
+			b_list.Clear() ;
+			build_list_of_endpoints( i ) ;
+			foreach( b_set a in b_list.Values )
+				a_list_of_endpoints.Add( a ) ;
+			}
+		b_list = (Dictionary<string,b_set>)o ; //_FIX:_it's_"internal",_so_make_so_FIX: b_list = o ;
+		}
+	}
+
+static void B_end()
+	{
+	string path = System.Environment.GetFolderPath(Environment.SpecialFolder.InternetCache) ;
+	if( path != "" )
+		throw new NotImplementedException( "Transient negotiations, phroke." ) ;
+	if( b_list_of_pointers.Count != 2 )
+		throw new NotImplementedException() ;
+	if( b_list_of_endpoints.Count != 1 )
+		throw new NotImplementedException() ;
+	b_subnets = false ;                           //_FIX:_P=NP:=_FIXT: obvious b_subnets ;
+	}
+#endif
+
+public struct b_set
+	{
+	public int x ;
+	public int y ;
+	public Decimal zz ;
+	public Decimal yy ;
+	public override string ToString()
+			{
+			return x.ToString() + "." + y.ToString() + "." + zz.ToString() + "." + yy.ToString() ;
+			}
+	public b_set( int x, int y, int zz, int yy )
+		{
+		this.x = x ;
+		this.y = y ;
+		this.zz = zz ;
+		this.yy = yy ;
+		}
+	}
+#if JSNJSN
+
+static void build_list_of_points( Item i )
+	{
+	b_set b = new b_set();
+	b.zz = i ;
+	if( b_list.ContainsKey( b.ToString() ) )
+		return ;
+	if( stateset[i].reductionset.Length > 0 )
+		{
+		b.x = - 1 ;
+		foreach( Reduction r in stateset[i].reductionset )
+			{
+			b.x++ ;
+			Console.WriteLine( "{0} {1}", b, i ) ;
+			b_list[b.ToString()] = b ;
+			}
+		}
+	foreach( Itemset item in stateset[i].itemset )
+		{
+		Console.Write( "{0} , ", item ) ;
+		if( item.point == ruleset[item.rule].rhs.Count )
+			continue ;
+		if( stateset[i].transitionset.Length > 0 )
+			{
+			b.y = -1 ;
+			foreach( Transition t in stateset[i].transitionset )
+				{
+				Console.Write( "/{0}/ , ", t.symbol ) ;
+				
+//				while( ruleset[item.rule].rhs[item.point].s != t.symbol )
+				while( t == xo_t[item.rule][item.point]  )
+					{
+					b.y++ ;
+					break ;
+					}
+				}
+			if( b.y != -1 )
+				{
+				Transition t_ = stateset[i].transitionset[b.y] ; //_FIX: t` = stateset[i.state].transitionset[b.y] ;
+				build_list_of_points( b_enter( b.x, b.y, ref stateset[i], ref stateset[t_.state] ) ) ;
+				}
+			}
+		}
+	}
+
+static void build_list_of_endpoints( Item i )
+	{
+	b_set b = new b_set();
+	b.zz = stateset[i] ;
+	if( b_list.ContainsKey( b.ToString() ) )
+		return ;
+	if( stateset[i].reductionset.Length > 0 )
+		{
+		b.x = - 1 ;
+		foreach( Reduction r in stateset[i].reductionset )
+			b.x++ ;
+		}
+	foreach( Itemset item in stateset[i].itemset )
+		{
+		Console.Write( "{0} , ", item ) ;
+		if( item.point < ruleset[item.rule].rhs.Count )
+			continue ;
+		if( stateset[i].transitionset.Length > 0 )
+			{
+			if( ruleset[item.rule].rhs.Count > 0 )
+				{
+				b.y = -1 ;
+				foreach( Transition t in stateset[i].transitionset )
+					{
+				Console.Write( "/{0}/ , ", t.symbol ) ;
+					while( t != xo_t[item.rule].rhs[item.point] )
+						{
+						b.y++ ;
+						break ;
+						}
+					}
+				}
+			b.zz = stateset[i] ;
+			b.yy = stateset[i].transitionset[b.y] ;
+			Console.WriteLine( "{0} {1}", b, item ) ;
+			b_list[b.ToString()] = b ;
+			}
+		}
+	}
+	
+static void build_paths()
+	{
+	string path = "/tmp" ;
+	List<string> s = new List<string>() ;
+	foreach( b_set b in b_list_of_pointers )
+		s.Add( b.ToString() ) ;
+	b_io_path_one   = path + "/" + system.guid + "." + s[0] ;
+	b_io_path_two   = path + "/" + system.guid + "." + s[1] ;
+	s.Clear() ;
+	foreach( b_set b in b_list_of_endpoints )
+		s.Add( b.ToString() ) ;
+	b_io_path_three = path + "/" + system.guid + "." + s[0] ;
+	}
+		
+static void b_end()
+	{
+	foreach( string b in b_list.Keys )
+		Console.WriteLine( b ) ;
+	}
+
+static Item b_enter( b_set b )	
+	{
+	return b_enter( b.x , b.y , ref stateset[(int)b.zz] , ref stateset[(int)b.yy] ) ;
+	}
+static Item b_enter( int R , int T , ref State site_s , ref State site_ss )  //_HACK:_obvious,_FIX:.micro.r,.macro.t,_("ref"':')="using"
+	{
+	Reduction   r = site_s.reductionset[R] ;  //_precedence_FIX:try_[][]_,catch_()[]
+	Transition  t = site_ss.transitionset[T] ; //_FIX:_internal:"buss",_external:"transient"
+	//Symbol symbol = ruleset[r.rule] ;
+	State   state = stateset[t.state] ;
+	return Item
+	//return new Item( new Symbol(0,0), state ) ;
+	}
+static Item b_enter( int enum_r, int site_t, Decimal site0_s, Decimal site1_s )
+	{
+	return b_enter( enum_r , site_t , site0_s , site1_s ) ;
+	}
+	
+static void print( ref Item i )
+	{
+	int x = 0, y = 0, l = x ; // zz = 0, yy = 0;
+	Console.Clear() ;
+
+	x = ++l ;
+	Console.SetCursorPosition(y,x) ;
+	Console.Write( (Decimal)i ) ;	
+
+	x = ++l ;
+	foreach( Itemset item in stateset[i].itemset )
+		{
+		Console.SetCursorPosition(y,x) ;
+		Console.Write( xo_t[item.rule].lhs + "." ) ;
+		Console.Write( item.point ) ;
+		Console.Write( "[" ) ;
+		Console.Write( ruleset[item.rule].rhs.Count ) ;
+		Console.Write( "]" ) ;
+		//if( item.point == ruleset[item.rule].rhs.Count )
+	//		Console.Write( '#' ) ;
+		if( ++x > 10 ) { break ; /*x = l ; y += 15 ;*/ }
+		}
+		
+	x = (l += 11 ) ;
+	Console.SetCursorPosition(y=0,x=12) ;
+	/*
+	Console.Write( ruleset[0] + " | " ) ;
+
+	foreach( xml_s rhs in ruleset[0].rhs )
+		{
+		Console.Write( rhs.s + " " ) ;
+		//Console.SetCursorPosition(y,x) ;
+		}
+	*/
+
+	x = (l += 1 ) ;
+	Console.SetCursorPosition(y=0,x) ;
+	
+	foreach( Transition t in stateset[i].transitionset )
+		{
+		if( y > 80 ) break ;
+		Console.SetCursorPosition(y,x) ;
+		Console.Write( t.symbol  ) ;
+		if( ++x > 20 ) { x = l ; y += 15 ; }
+		}
+		
+	x = (l += 3 ) ;
+	Console.SetCursorPosition(y=0,x) ;
+	
+	foreach( Reduction r in stateset[i].reductionset )
+			Console.Write( "{0}<{1}> ", r.symbol, xo_t[r.rule].lhs ) ;
+	
+	}
+#endif
+#endif
+
 #if SJNSJNS
 				static void xml_i()
 					{
