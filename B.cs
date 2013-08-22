@@ -816,12 +816,17 @@ static void print( ref Item i )
 	
 	}
 #endif
-_.soundex.up(__ipvsix)_idle[,]/\_.    //_FIXT:_=b_atomatrix(__),_no_loop(polygen.down...)
+//_.{::}     //_FIXT:_.soundex.up(__ipvsix)_idle[,]/\_.,_: new "Geospatial"() ;
 //_.elevation.down(dome)
+/*
 #region macro
 _.gc.down.on.NET   //_FIXT:cc
 A
 B
 (_.internet.up)
 #endregion macro
+#region micro
+{::} := /\_.,t`,__,_[{::}]_[,[_]_x.y]                 //_FIX:.soundex,_lexical_eval.down
+#endregion micro
+*/
 }
