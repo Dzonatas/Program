@@ -57,6 +57,13 @@ static string read()
 	System.Console.WriteLine(p.ExitCode) ;
 	return sb.ToString() ;
 	}
+
+/*
+public struct ___
+	{
+	Token Association ;
+	}
+*/
 	
 static bool ended ;
 public static Token input()
@@ -68,7 +75,7 @@ public static Token input()
 		string [] s = xml.Name.Split("_-".ToCharArray()) ;
 		xml.Read() ;
 		string text = xml.Value ;
-		return new Token( (char)int.Parse( s[1] ), text ) ;
+		return new Token( (char)int.Parse( s[1] ), text ) ; //_FIX:___(s[2,text])
 		}
 	Token t = new Token( '$', "$end" ) ;
 	if( !ended ) prompt( t ) ;
