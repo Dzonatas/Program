@@ -532,8 +532,8 @@ static void B_end()
 /*
 #region macro
 _.gc.down.on.NET   //_FIXT:cc
-A
-B
+A | "fist" 'bump'
+B | 'fist' "bump"
 (_.internet.up)
 #endregion macro
 #region micro

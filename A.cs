@@ -92,6 +92,7 @@ class A //: X[A]ML
 	void assembly() {}
 	void oprand() {}
 	void used() {}
+        bo   a ;
 	}
 /*</backport>*/
 /*</used endpoint="$accept#(3) enter="urn:stateless:used:and:reduced" yyhint="yypact-solved">*/
