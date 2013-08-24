@@ -15,4 +15,10 @@ static void end()
 	B_end() ;
 	}
 
+/*
+((TOKEN-=TOKEN))
+#region micro
+<EMBED> := [($C)((C$))]         //_FIXT:urn:server:unknown[,System.ClientScript(_blob)]
+#endregion micro
+*/
 }
