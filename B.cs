@@ -530,6 +530,7 @@ static void B_end()
 //_.{::}     //_FIXT:_.soundex.up(__ipvsix)_idle[,]/\_.,_: new "Geospatial"() ;
 //_.elevation.down(dome)
 /*
+(_.intranet._,urn:atomatrix:atomatrix:__)         //A[^|]B
 #region macro
 A | [_bio] 'bump'
 B | 'f'- "bump"
