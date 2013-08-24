@@ -115,7 +115,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 					{
 					state.zlog.Add( b.yy ) ;
 					state.zlog.Add( t ) ;
-					xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ; //_FIX:jo{t`_x.y}{{_entity[':']}}[,_s]
+					xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ; //_FIX:jo{t`_x.y}{{_entity[':']}}[,_s[,_bit[-bit]]]
 					goto _jump ;
 					}
 			}
