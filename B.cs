@@ -531,10 +531,9 @@ static void B_end()
 //_.elevation.down(dome)
 /*
 #region macro
-_.gc.down.on.NET   //_FIXT:cc
-A | "fist" 'bump'
-B | 'fist' "bump"
-(_.internet.up)
+A | [_bio] 'bump'
+B | 'f'- "bump"
+(_.internet.up,_a)
 #endregion macro
 #region micro
 {::} := /\_.,t`,__,_[{::}]_[,[_]_x.y]                 //_FIX:.soundex,_lexical_eval.down
