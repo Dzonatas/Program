@@ -117,6 +117,8 @@ jo synopsis{} ;[_delegate_rt_[default_|_|*]]
 	jo`{server:default:dome} ;
 *///	jo`{urn:number:atomatrice:atomatrix:_}  //_$D#$
 
+//[.unix] jo b_atomatrix_i ; //_unmanaged,<s>[,_$class(_modifiers)]</s>,_beyond_terminal_default(_if_else_["if"(_tainted)|_BSD])[,_GNU]
+
 #region SCHEMA_b
 //delegate b_schema [=...] ;
 
