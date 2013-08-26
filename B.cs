@@ -107,7 +107,7 @@ jo var{
 }
 
 [.class] jo b_atomatrix ;_tut[][]->[,]
-//[bo.jo]  'bo:[a]' b_atomatrix_i ;_URN_i(_blurb'{:':}'),_<embed>{_interactive_i}</embed t=i[d]>
+//[bo.jo]  'bo:[a]' b_atomatrix_i ;_URN_i(_blurb'{:':}'),_<embed>{_interactive_i}</embed t=i[d]>,_FIX:.class(_injection)(_FIXT:([[[.]post],[[.]get]])[_A335|_BSD])
 
 jo dunce{//$default
 	$end.assert(center==$[,elevation.down==true]) ;_symbol_s[,_said]
