@@ -2,7 +2,11 @@ using System;
 
 public partial class A335
 {
+#if OAUTH
+[OAuth] Token infrastructure_i ;
+#endif
 //string input = "<?xml version=\"1.0\" ?>\n<xml><a f=\"1\">b</a><c>d</c></xml>" ;
+//string input = "<?xml version=\"1.0\" ?>\n<xml reflection><a f=\"1\">b</a><c>d</c></xml>" ;
 
 public struct Itemset
 	{
