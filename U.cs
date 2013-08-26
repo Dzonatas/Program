@@ -4,3 +4,10 @@ public partial class A335
 static UNIX_HTML_EBCDIC_ flag_IMAGE_x ;
 #endif UNIX
 }
+
+#ifdef LERP
+namespace _LERP
+{
+//y
+}
+#endif LERP
