@@ -17,5 +17,9 @@ class log_enter
 		dt = DateTime.Now ;
 		}
 	}
-
+/*
+#region micro
+<s></> | <s>&stride.through;</t=strike.>
+#endregion micro
+*/
 }
