@@ -83,4 +83,9 @@ public static Token input()
 	System.Console.SetCursorPosition(y,x) ;
 	return t ;
 	}
+/*
+#region micro
+<bisect> | bisect: PLINE
+#endregion micro
+*/
 }
