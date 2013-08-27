@@ -35,5 +35,10 @@ public struct Token
 			return string.Format( "({0},{1})", c, _ );
 			}
 	}
-
+#region macro
+#if RELEASE
+<KNOWN> | "manifest"
+#endif
+//<NOUN>  | known(_//y)
+#region macro
 }
