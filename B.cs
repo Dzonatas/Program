@@ -135,7 +135,7 @@ jo synopsis{} ;[_delegate_rt_[default_|_|*]]
 //_.academic.grade.down
 //_.
 
-//_FIX[T]:<s>idles</s>,<s>leases</s>,_request(ref_)[respond,(WIP)]
+//_FIX:idles,<s>leases</s>,_request(ref_)[respond,]
 //_.X[3,11].up(__)
 //_.NET.up(__)
 	

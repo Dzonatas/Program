@@ -1,5 +1,21 @@
 public partial class _
 {
+#if BISECT
+public static void Main( string[] args )
+	{
+	new A335.Clogic() ;
+#if RELEASE
+	try {
+		new A335.L() ;
+		}
+	catch
+		{
+		throw new exception() ;
+		}
+#endif
+	}
+
+#endif
 static public Token string_t     = new Token( '$' , "string" ) ;
 static public Token underline_t  = new Token( '_' , "underline" ) ;
 static public Token accent_t     = new Token( '`' , "accent" ) ;
