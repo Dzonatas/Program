@@ -7,7 +7,7 @@ using System.Collections.Generic ;
 public partial class A335
 {
 
-static Rule [] ruleset = new Rule[606] ;
+static Rule [] ruleset = new Rule[606] ; //_FIX:__'_rune(\"_code\");'
 
 public struct Rule
 	{
