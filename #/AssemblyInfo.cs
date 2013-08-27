@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 [assembly: AssemblyTitle("\"Hello World\"(2.(2)0)")]
 [assembly: AssemblyDescription("(Sound)")]
-[assembly: AssemblyConfiguration("C=$carbon(<embed>Hello World</embed>)(,{})")]
+[assembly: AssemblyConfiguration("(Decimal)(string(restricted)(domain).C=$carbon(<embed>Hello World</embed>)(,{})")]
 [assembly: AssemblyCompany("(Gold)")]
 [assembly: AssemblyProduct("(Silver-light)")]
 [assembly: AssemblyCopyright("({})")]
