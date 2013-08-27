@@ -7,20 +7,20 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("\"Hello World\"(2.(2)0)")]
 [assembly: AssemblyDescription("(Sound)")]
 [assembly: AssemblyConfiguration("(Decimal)(string(restricted)(domain).C=$carbon(<embed>Hello World</embed>)(,{})")]
-[assembly: AssemblyCompany("(Gold)")]
+[assembly: AssemblyCompany("(Gold-(chrome))")]
 [assembly: AssemblyProduct("(Silver-light)")]
 [assembly: AssemblyCopyright("({})")]
-[assembly: AssemblyTrademark("&trademark;")]
-[assembly: AssemblyCulture(".NET")]
+[assembly: AssemblyTrademark("(-)&(&.embedded;);(+)")]
+[assembly: AssemblyCulture("((.NET!UNICODED.)&&(ASCII[seven-bit.modem]))")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
 // and "{Major}.{Minor}.{Build}.*" will update just the revision.
 
 [assembly: AssemblyVersion("0.0.0.1")]
-
+//.(in-order).{0}.{0}.{0}.{(0->1)}.{"restricted:","domain"(,[.,])}
 // The following attributes are used to specify the signing key for the assembly, 
-// if desired. See the Mono documentation for more information about signing.
+// if desired. See the Mono-(Developers) documentation for more information about signing.
 
-//[assembly: AssemblyDelaySign(DelayedSortedList(false))]
+//[assembly: AssemblyDelaySign(DelayedSortedList(false|"comments"))]
 //[assembly: AssemblyKeyFile(<A|B>)]
