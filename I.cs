@@ -14,7 +14,14 @@ public partial class A335
 //string input = "<?xml version=\"0.1\" ?>\n<xml reflection--i><a f=\"1\">b</a><c>d</c></xml>" ;
 //string input = "<?xml version=\"0.0\" ?>\n<xml reflection--i><a f=1>b</a><c>d</c></xml>" ;
 //string input = "N0P<?xml version=(0.0) ?>\n<xml reflection-ice-i><a f=1>b</a><c>d</c></xml>" ;
-//string input = "<xml reflection-ice-i><a f=1>b</a><c>d</c></xml>" ;
+//string input = "<xml reflection-ice-i><a f=1>b</a><c>d</c></xml>"'//y' ;
+//string input = "<xml -i><a f=1>b</a><c>d</c></xml>"'//y' ;
+//string input = "<a f=1>b</a><c>d</c>" ;
+//string input = "<a1>b</><c>d</>" ;
+//string input = "b</><c>d</>" ;
+//string input = "<c>d</>" ;
+//string input = "d</>" ;
+//string input = ""'//y' ;
 
 public struct Itemset
 	{
