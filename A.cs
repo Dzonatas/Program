@@ -49,7 +49,7 @@ atomic struct a_string
 /*</oprand op="quantum" random="(null)" yybackup="punctual-$_`">*/
 
 // <summary>
-/// Some compliers computed partial strings by default, so restrict atomic structs to charater mode.
+/// Some compliers computed partial strings by default, so restrict atomic structs to character mode.
 /// Byte-code is insignificant in ASCII mode; otherwise, UNICODE mode makes byte-code significant,
 /// as it turns each character access into calls. Micro-code simulates that once ("O(1)") for each
 /// optimal-O1 compilation. That seemed like an obvious break in C# for assembly, like how we
@@ -100,7 +100,7 @@ class A //: X[A]ML
 
 // <summary>
 /// The "lock" keyword replaced the often misued "atomic" prefix, as the default
-/// wait state left the room. There can only be one ("IGC")! 
+/// wait state left the room. There can only be one (<s>"IGC"</s>)! 
 ///
 /// Symbols and strings were equivalent in textual compliation phases, "cc", so
 /// said Quantum Mechanics people made the default "room," in every first phase, said "quant."
