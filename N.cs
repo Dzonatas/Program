@@ -7,9 +7,9 @@ static  public Number [] n_specified = new Number[1126] ; //_FIX:_const_atomic_s
 public class Number
 	{
 	public Decimal n ;
-	//bool           whole ;
-	//bool           specific ;
-	//bool           ordered ;
+	//bool           whole ;    //[1,2,3,.,.,.,)
+	//bool           specific ; //<s><o.o></i:(__.no)>
+	//bool           ordered ; //_RFC(URN:
 	static public implicit operator int( Number n )
 		{
 		//if( n.whole )
