@@ -86,6 +86,7 @@ public static Token input()
 /*
 #region micro
 <bisect> | bisect: PLINE
+<o/o>    | O.no.#
 #endregion micro
 */
 }
