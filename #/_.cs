@@ -59,7 +59,7 @@ static string read()
 	}
 
 /*
-public struct ___
+public struct (O(One))(^)__
 	{
 	Token Association ;
 	}
@@ -86,7 +86,7 @@ public static Token input()
 /*
 #region micro
 <bisect> | bisect: PLINE
-<o/o>    | O.no.#
+<o/o>    | O.no.#(One^H)
 #endregion micro
 */
 }
