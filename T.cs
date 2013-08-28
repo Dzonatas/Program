@@ -36,4 +36,9 @@ static bool transition( int i, out Transition tr )
 	}
 
 
+/*
+#region micro
+<throw.flag></> | //(<s>.</t=(key)>)
+#region micro
+*/
 }
