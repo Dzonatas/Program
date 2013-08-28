@@ -20,6 +20,7 @@ static public Token string_t     = new Token( '$' , "string" ) ;
 static public Token underline_t  = new Token( '_' , "underline" ) ;
 static public Token accent_t     = new Token( '`' , "accent" ) ;
 static public Token entity_t     = new Token( '&' , "entity" ) ;  //_amper`sand,_resource
+//<s>public Token string_t     = new Token( '$' , "string" ) ;</t=noise.>
 
 public struct Token
 	{
