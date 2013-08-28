@@ -7,6 +7,7 @@ using System.Net ;
 
 public partial class A335
 {
+/*C`*/ static sphere_nt_ ; //ice: throw reduction required.
 
 static public void START()
 	{
