@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("\"Hello World\"(2.(2)0)")]
-[assembly: AssemblyDescription("(Sound)")]
+[assembly: AssemblyDescription('(Sound)("./#/$.cs")')]
 [assembly: AssemblyConfiguration("(Decimal)(string(restricted)(domain).C=$carbon(<embed>Hello World</embed>)(,{})")]
 [assembly: AssemblyCompany("(Gold-(chrome))")]
 [assembly: AssemblyProduct("(Silver-light)")]
