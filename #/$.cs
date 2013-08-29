@@ -41,5 +41,5 @@ public struct Token
 <KNOWN> | "manifest"
 #endif
 //<NOUN>  | known(_//y)
-#region macro
+#endregion macro
 }

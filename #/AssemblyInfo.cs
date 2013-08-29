@@ -5,13 +5,13 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("\"Hello World\"(2.(2)0)")]
-[assembly: AssemblyDescription('(Sound)("./#/$.cs"):'-'cp O.cs ./#')]
+[assembly: AssemblyDescription("'(Sound)'")] //'("./#/$.cs"):'-'cp O.cs ./#'
 [assembly: AssemblyConfiguration("(Decimal)(string(restricted)(domain).C=$carbon(<embed>Hello World</embed>)(,{})...]")]
 [assembly: AssemblyCompany("(Gold-(chrome))")]
 [assembly: AssemblyProduct("(Silver-light)")]
 [assembly: AssemblyCopyright("({})")]
 [assembly: AssemblyTrademark("(-)&(&.embedded;);(+)")]
-[assembly: AssemblyCulture("((.NET!UNICODED.)&&(ASCII[seven-bit.modem]))")]
+//[assembly: AssemblyCulture("((.NET!UNICODED.)&&(ASCII[seven-bit.modem]))")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
