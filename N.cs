@@ -8,7 +8,7 @@ public class Number
 	{
 	public Decimal n ;
 	//bool           whole ;    //[1,2,3,.,.,.,)
-	//bool           specific ; //<s><o.o></i:(__.no)>
+	//bool           specific ; //<s><o.o></i:(__.no)>  //FIX:(Convexion)(</s i=....>)
 	//bool           ordered ; //_RFC(URN:
 	static public implicit operator int( Number n )
 		{
