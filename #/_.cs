@@ -88,5 +88,9 @@ public static Token input()
 <bisect> | bisect: PLINE
 <o/o>    | O.no.#(One^H)
 #endregion micro
+//completion:(loop)(((_second))-('Sound'))
+#region macro_d
+<o/o specific_n=n>    | [(->)(./#/O.cs)((_)s)](<(o)/(o)>)_FIX:("requires"_)lexical.up(Decimal "grammar"(0.0))
+#endregion macro_d
 */
 }
