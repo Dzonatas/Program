@@ -14,7 +14,7 @@ public static void Main( string[] args )
 	Blogic() ;
 #if RELEASE
 	try {
-		leave() ;
+		leave() ; //[debug:n0p;,("AI")]
 		}
 	catch
 		{
