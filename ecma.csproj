@@ -71,7 +71,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="#\" />
+    <Folder include="#\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\ecma335\compile.sh">
