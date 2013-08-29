@@ -8,6 +8,7 @@ using System.Net ;
 public partial class A335
 {
 static object sphere_nt_ ;
+//[static] sphere_t ; //_FIXT:_nt[(|^)_t] (-> reverse(d).errOR) (<system/d=...>_err[]</d>) /*err:#((auto-)contract(<NOUN>,'-ion') ""*/
 
 static public void START()
 	{
