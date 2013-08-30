@@ -139,7 +139,8 @@ jo synopsis{} ;[_delegate_rt_[default_|_|*]]
 //_.X[3,11].'ribbon'.up
 //.urn:[image]:'X[3,11]':xml.up(:[,.ribbon])
 //_.NET.up(__)
-	
+
+#region b_image_i	
 #if SJKSNS
 		
 	if( this_state.lookaheadset.Count > 0 )
@@ -524,6 +525,7 @@ static void goto_( ref b_state b ) //_FIX:x,c
 			}
 		}
 #endif
+#endregion b_image_i
 
 #endregion SCHEMA_b	
 
