@@ -12,6 +12,7 @@
 SHELL.ENVIRONMENT:{
 . .alpha .beta <s>.gamma</>=[safe:{((.get))}]
 echo "HELLO WORLD"
-IF($CONSOLE)
-	RETURN PROMPT-CPP:BLITTER:_ .
+//---:
+()
+.
 }
