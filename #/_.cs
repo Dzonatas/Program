@@ -62,6 +62,7 @@ static string read()
 public struct (O(QR))(^)__
 	{
 	Token Association ;
+        (Token "0.00000xbf"("con"-"(vexed)")) ;: '//y' -> . //_disables_comments_... ...(WORD) :'weak'.lnk.
 	Token Contribution ;
 	}
 */
