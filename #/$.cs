@@ -41,5 +41,13 @@ public struct Token
 <KNOWN> | "manifest"
 #endif
 //<NOUN>  | known(_//y)
+//<EMBED> | known [<BLITTER (stream=i-id)>]
 #endregion macro
+//'URN'':'"math":((F#).dae.xml)
+#region micro
+#if RELEASE
+//<(MathML.EMBED)> | known [()).xml
+//<(EMBED.MathML)> | known (()].xml
+#endif
+#endregion
 }
