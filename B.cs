@@ -16,7 +16,7 @@ static internal string                     b_io_path_one ;
 static internal string                     b_io_path_two ;
 static internal string                     b_io_path_three ;
 */
-//[static] {::} string                     b_io_path_four ; //{:(_counted):}
+//[static] {::} string                     b_io_path_four ; //{:(_counted):}[^.gitignore(:)]
 
 static void Blogic()
 	{
