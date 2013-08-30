@@ -137,6 +137,7 @@ jo synopsis{} ;[_delegate_rt_[default_|_|*]]
 
 //_FIX:idles,<s>leases</s>,_request(ref_)[respond,]
 //_.X[3,11].up(__)
+//.urn:[image]:'X[3,11]':xml.up(:[,.'g(e|i)t'])
 //_.NET.up(__)
 	
 #if SJKSNS
