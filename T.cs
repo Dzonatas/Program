@@ -1,6 +1,6 @@
 public partial class A335
 {
-static System.Nullable<_.Token>  token ;
+static System.Nullable<_.Token>  tttoken ;
 static State              this_state ;
 
 public struct Transition
