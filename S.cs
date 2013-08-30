@@ -10,6 +10,8 @@ public partial class A335
 static object sphere_nt_ ;
 //[static] sphere_t ; //_FIXT:_nt[(|^)_t] (-> reverse(d).errOR) (<system/d=...>_err[]</d>) /*err:#((auto-)contract(<NOUN>,'-ion') ""*/
 
+object s_cl__t ; //__FIXT:(E1..:)abend:(__)swp
+
 static public void START()
 	{
 	if( system.guid == null )
