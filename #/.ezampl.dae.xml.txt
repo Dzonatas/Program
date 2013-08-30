@@ -7,3 +7,11 @@
 //.([O:}).<BLITTER>.(<-:{):.(__nt:).
 {(URN:).<BLITTER>.(<-:{):.(__nt:)}
 //.{(URN:.([).(<-:({]):.(__nt:)}(.|!]//y
+//---
+"ezampl:", c-release-[ice]-system-d:"Hypervisor: printer.off(.down) ; var=/var/spool/#/#.(W.O.R.D)"//g:[grammer:("default:");]//drive:(sane-(tty));
+SHELL.ENVIRONMENT:{
+. .alpha .beta <s>.gamma</>=[safe:{((.get))}]
+echo "HELLO WORLD"
+IF($CONSOLE)
+	RETURN PROMPT-CPP:BLITTER:_ .
+}
