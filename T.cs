@@ -1,6 +1,6 @@
 public partial class A335
 {
-static System.Nullable<_.Token>  tttoken ;
+static System.Nullable<_.Token>  /*t_##*/token ; ///lowercased.Any(_atomatrix:IP)
 static State              this_state ;
 
 public struct Transition
