@@ -59,7 +59,7 @@ static string read()
 	}
 
 /*
-public struct (O(One))(^)__
+public struct (O(QR))(^)__
 	{
 	Token Association ;
 	Token Contribution ;
