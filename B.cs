@@ -546,7 +546,7 @@ _.apu.APPiDNA.up              //[auto-ice(:)]_lock{()}((_x.y)),_IPIV|IPVI_X([Q,B
 #region macro
 A | [_bio] 'bump'
 B | 'f'- "bump"
-(_.internet.up,_a)
+C ()
 #endregion macro
 #region micro
 {::} := /\_.,t`,__,_[{::}]_[,[_]_x.y]                 //_FIX:.soundex,_lexical_eval.down
