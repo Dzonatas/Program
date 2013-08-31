@@ -537,6 +537,9 @@ static void B_end()
 
 //_.{::}     //_FIXT:_.soundex.up(__ipvsix)_idle[,]/\_.,_: new "Geospatial"() ;
 //_.elevation.down(dome)
+
+_.apu.APPiDNA.up              //[auto-ice(:)]_lock{()}((_x.y)),_IPIV|IPVI_X([Q,BIT])  //_up_NOTE: O1 radius.step.out(.wm:default) ;
+
 /*
 (_.intranet._,urn:atomatrix:atomatrix:__)         //A[^|]B
 #region macro
