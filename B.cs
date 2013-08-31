@@ -128,12 +128,14 @@ jo synopsis{} ;[_delegate_rt_[default_|_|*]]
 //_.arm.gpu.override.up
 //_.console.bypass.         /*$singularity$useless[::]*/
 
-//_.academic.grade.down
-//_.academic.security.bypass.  /*$standard$disabled[::]*/
-//_.academic.security.static.single.file.up  /*$standard$disabled[::]*/
-//_.academic.grade.gpa.up
-//_.academic.grade.down
-//_.
+/*********************************************************************\
+*`_.academic.grade.down
+* _.academic.security.bypass.  /*$standard$disabled[::]*/
+* _.academic.security.static.single.file.up  /*$standard$disabled[::]*/
+* _.academic.grade.gpa.up
+* _.academic.grade.down
+* _.
+\*********************************************************************/
 
 //_FIX:idles,<s>leases</s>,_request(ref_)[respond,]
 //_.X[3,11].'ribbon'.up
