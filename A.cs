@@ -3,7 +3,8 @@ partial class A335
 
 A335()
 	{
-	/*<code>*/// Console.WriteLine( a_balance ) ; /*</code debug="terminal" transient="virtual" used="System.Console#">*/
+	/*<code default=".-ixnor()">*/// Console.WriteLine( a_balance ) ; /* -console:"'''0'" */
+        /*</code debug="terminal" transient="virtual" used="System.Console#">*/
 	}
 
 static A335()
