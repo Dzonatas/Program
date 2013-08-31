@@ -6,6 +6,7 @@ using System ;
 
 partial class A335
 {
+static string b_two_c_ ;;//#(<#>)'['([public|private]:"key":...)']'
 
 /*
 static internal Dictionary<string,b_set>   b_list = new Dictionary<string,b_set>() ;
