@@ -6,6 +6,7 @@ static string [,] qubit_ildex_nt ; //_research: Allow entry of server idle event
 static string qouted_bit ;   //""
 static string qouted_    ;   //''
 static string qouted_unbit ; //;("un-");''
+static string _qR_ ;//#':''R'#//#_xbf ; /* default:*:image_t="urn:file:QR-Coded-Image.bin" */
 
 public struct Quant
 	{
