@@ -3,6 +3,9 @@ using System;
 public partial class A335
 {
 static string [,] qubit_ildex_nt ; //_research: Allow entry of server idle events for -dex bits, so it avoids stack over-head.
+static string qouted_bit ;   //""
+static string qouted_    ;   //''
+static string qouted_unbit ; //;("un-");''
 
 public struct Quant
 	{
