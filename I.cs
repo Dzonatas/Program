@@ -2,6 +2,7 @@ using System;
 
 public partial class A335
 {
+static string icon_dae_s ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b
 #if OAUTH
 [OAuth] Token infrastructure_i ;
 #endif
