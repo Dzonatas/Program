@@ -12,7 +12,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		System.Console.Beep() ;
 	
 	//xo_ = xo_t[b.x][b.y] ;
-	if( b.yy > _default )           //_debug:_token_"falls_through",_literally,list{}_OR_enlist(RT)
+	if( b.yy > _default )           //_debug:_token_"falls_through",_literally,list{}_OR_enlist(RT),_debug:[default:,"0.0"];
 		goto nt ;
 	if( b.yy == _default && ! token.HasValue )
 		{
