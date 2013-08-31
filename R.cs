@@ -6,6 +6,7 @@ using System.Collections.Generic ;
 
 public partial class A335
 {
+static rune__ ; /*C`_ -rc:"BRANCH" +volume:0.0*/
 
 static Rule [] ruleset = new Rule[606] ; //_FIX:__'_rune(\"_code\");'
 
