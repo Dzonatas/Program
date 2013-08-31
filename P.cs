@@ -6,7 +6,7 @@ public partial class A335
 // [.unix] proxy ; //_stays_centered_on_manifest: (github.com:)Dzonatas/X3L0DAE
 /*
 #region macro
-<URI> | "public" "URI"
+<URI> | "public" "URI" (path:[HTTP,CSS]:URL)
 #endregion macro
 #region micro
 <URI> | "private" "URI" path:[A!B!C!(O)[:("plain/text")]]:['remote']:():
