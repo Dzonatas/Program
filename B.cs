@@ -7,6 +7,7 @@ using System ;
 partial class A335
 {
 static string b_two_c_ ;//;//#(<#>)'['([public|private]:"key":...)']'
+static string binary_compiles_and_linked_p ;//;_FIX:'&'
 
 /*
 static internal Dictionary<string,b_set>   b_list = new Dictionary<string,b_set>() ;
@@ -539,7 +540,7 @@ static void B_end()
 //_.{::}     //_FIXT:_.soundex.up(__ipvsix)_idle[,]/\_.,_: new "Geospatial"() ;
 //_.elevation.down(dome)
 
-_.apu.APPiDNA.up              //[auto-ice(:)]_lock{()}((_x.y)),_IPIV|IPVI_X([Q,BIT])  //_up_NOTE: O1 radius.step.out(.wm:default) ;(_NT)
+//_.apu.APPiDNA.up              //[auto-ice(:)]_lock{()}((_x.y)),_IPIV|IPVI_X([Q,BIT])  //_up_NOTE: O1 radius.step.out(.wm:default) ;(_NT)
 
 /*
 (_.intranet._,urn:atomatrix:atomatrix:__)         //A[^|]B
