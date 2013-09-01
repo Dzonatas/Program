@@ -8,6 +8,7 @@ static string qouted_    ;   //''
 static string qouted_unbit ; //;("un-");''
 static string _qR_ ;//#':''R'#//#_xbf ; /* default:*:image_t="urn:file:QR-Coded-Image.bin" */
 static string _qr_CC     ;   //_qrcc
+static int    _qr_v      ;   //_inverted_quant,_qr_CC[,_voxel]
 
 public struct Quant
 	{
