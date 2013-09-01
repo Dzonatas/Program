@@ -56,3 +56,7 @@ INSTR_TYPE : InlineType ;
 INSTR_VAR : InlineVar | ShortInlineVar ;
 </PUBLIC ECMA-SET>
 </PARSER END>
+//.INSTALL:
+<XAML SVG>
+	<INTERFACE TAB>
+</XAML>
