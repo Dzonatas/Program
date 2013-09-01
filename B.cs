@@ -550,6 +550,7 @@ B | 'f'- "bump"
 C ()
 #endregion macro
 #region micro
+<img:BIT.QR> | .NET.BIT (.NET.MASK.BIT)
 {::} := /\_.,t`,__,_[{::}]_[,[_]_x.y]                 //_FIX:.soundex,_lexical_eval.down
 #endregion micro
 */
