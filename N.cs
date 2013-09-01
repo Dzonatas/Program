@@ -3,6 +3,7 @@ using System;
 public partial class A335
 {
 static  public Number [] n_specified = new Number[1126] ; //_FIX:_const_atomic_struct...,(non-dynamic-n),(-n-gen)
+public static int nexus_n ; //_scalar_lexical
 	
 public class Number
 	{
