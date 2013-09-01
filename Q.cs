@@ -7,7 +7,7 @@ static string qouted_bit ;   //""
 static string qouted_    ;   //''
 static string qouted_unbit ; //;("un-");''
 static string _qR_ ;//#':''R'#//#_xbf ; /* default:*:image_t="urn:file:QR-Coded-Image.bin" */
-static string _qr_binary_square ;  //_research: extra string storage for scanned/inputted QR-Code, with known orientation
+static string _qr_CC     ;   //_qrcc
 
 public struct Quant
 	{
