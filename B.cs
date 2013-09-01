@@ -7,7 +7,7 @@ using System ;
 partial class A335
 {
 static string b_two_c_ ;//;//#(<#>)'['([public|private]:"key":...)']'
-static string binary_compiles_and_linked_p ;//;_FIX:'&'
+string binary_compiles_and_linked_p ;//;_FIX:'&'
 static int    b_v      ;//view:locution[,view:orbit]
 
 /*

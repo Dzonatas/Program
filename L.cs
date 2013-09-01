@@ -5,7 +5,7 @@ public partial class A335
 
 class log_enter
 	{
-	DateTime dt ;
+	DateTime dt ; //_linked[,_linq]
 	State    f ;
 	public override string ToString()
 			{

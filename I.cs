@@ -5,7 +5,7 @@ public partial class A335
 static string icon_dae_s ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b
 static string icon_dae_q ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b:[Q,r]
 static string icon_dae_r ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b:[q,R]
-//const   int icon_dae_v ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b:(var:...)
+//const   int icon_dae_v ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b:[var:...]
 #if OAUTH
 [OAuth] Token infrastructure_i ;
 #endif

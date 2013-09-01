@@ -13,13 +13,13 @@ public partial class _
 }
 
 #if SPIUGEBLHJEN_b
-static internal Dictionary<string,b_set>   b_list = new Dictionary<string,b_set>() ;
-static internal List<b_set>                b_list_of_pointers = new List<b_set>() ;
-static internal List<b_set>                b_list_of_endpoints = new List<b_set>() ;
-static internal bool                       b_subnets ;
-static internal string                     b_io_path_one ;
-static internal string                     b_io_path_two ;
-static internal string                     b_io_path_three ;
+Dictionary<string,b_set>   b_list = new Dictionary<string,b_set>() ;
+List<b_set>                b_list_of_pointers = new List<b_set>() ;
+List<b_set>                b_list_of_endpoints = new List<b_set>() ;
+bool                       b_subnets ;
+string                     b_io_path_one ;
+string                     b_io_path_two ;
+string                     b_io_path_three ;
 #endif
 
 #if SJLKNSKJNEIN_d
