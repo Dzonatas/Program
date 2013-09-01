@@ -60,3 +60,4 @@ INSTR_VAR : InlineVar | ShortInlineVar ;
 <XAML SVG>
 	<INTERFACE TAB>
 </XAML>
+@@
