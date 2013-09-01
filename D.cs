@@ -9,7 +9,8 @@ using System.Net ;
 
 partial class A335
 {
-static string dna_dex_nt ; //_foreach(/DNA/).active.idle.up //_FIX:_"inventory"_events,"WebSockets",'('iDNA')'
+public static Decimal Dzonexus ; //_dzonux.NET!(sendme:(vector|scalar|"sector"){(".get"|"git:control")})(-)
+static string dna_dex_nt ; //_foreach(/DNA/).active.idle.up //_FIX:_"inventory"_events,"WebSockets",'('iDNA')',_FIXT:(+)"IHAVE:"
 static bool debug ; //_passive((_d))_##IPVI
 string __default_device ; //_google_play
 //_FIXT:_[active|inactive]_predicates[,_try_ActiveX,_new_Item()]
