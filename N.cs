@@ -6,6 +6,10 @@ static  public Number [] n_specified = new Number[1126] ; //_FIX:_const_atomic_s
 public static int nexus_n ; //_scalar_lexical
 static int automatic_n ; //_scalar_lexical:<NEXUS> | <'automatic'> specific_n
 static int chromatic_n ; //_scalar_lexical:<NEXUS> | <'chromatic'> specific_n
+
+#if DEBUG
+object NOUN ;
+#endif 
 	
 public class Number
 	{
