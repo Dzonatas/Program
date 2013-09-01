@@ -1,4 +1,4 @@
-//#define START Blogic#
+//#define START Blogic#<NOUN L="START">#
 
 using System;
 using System.Xml ;
