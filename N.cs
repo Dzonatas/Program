@@ -4,6 +4,8 @@ public partial class A335
 {
 static  public Number [] n_specified = new Number[1126] ; //_FIX:_const_atomic_struct...,(non-dynamic-n),(-n-gen)
 public static int nexus_n ; //_scalar_lexical
+static int automatic_n ; //_scalar_lexical:<NEXUS> | <'automatic'> specific_n
+static int chromatic_n ; //_scalar_lexical:<NEXUS> | <'chromatic'> specific_n
 	
 public class Number
 	{
