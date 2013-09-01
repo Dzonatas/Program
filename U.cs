@@ -2,7 +2,7 @@ public partial class A335
 {
 #if UNIX
 static UNIX_HTML_EBCDIC_ flag_IMAGE_x ;
-static UDP ; //| 'prototype' [static]
+static UD P ; //| 'prototype' [static]
 #endif
 /*
 #region micro
