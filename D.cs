@@ -15,4 +15,5 @@ static string __default_device ; //_google_play
 //_FIXT:_[active|inactive]_predicates[,_try_ActiveX,_new_Item()]
 //_FIXT:(bit.switch),INSTR_FOR...N0P[,_canonical][,_blitter]
 //_FIX:_stackless-C[,_hyper-|_math__][,_embedded]
+//static int d_linear_d    ; //_simulate:intranet[,_override_lineage_and_raise_hexed_flag]
 }
