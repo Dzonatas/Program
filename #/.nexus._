@@ -1,8 +1,8 @@
 //[assembly: AssemblyDescription("Sound:alias:\"aura\"")]//_\/var/look-ahead.d//(book:)
 [assembly: AssemblyVersion("0.0.0.1")]
 //{0}.{0}.{0}.{(0->1)}.{"restricted:","domain"(,[.,])}
-//.{["URN:",.]}
-//({["URN:",(-)]}).
+//.{["URN:NEXUS",.]}
+//({["URN::",(-)]}).
 ([O:}) <BLITTER> (<-:{): (__nt:)
 //.([O:}).<BLITTER>.(<-:{):.(__nt:).
 {(URN:).<BLITTER>.(<-:{):.(__nt:)}
