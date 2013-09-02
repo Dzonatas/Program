@@ -2,6 +2,7 @@ public partial class A335
 {
 static string h_dna_ ;//_bit.switch{ alpha: ; beta: ; gamma: }_;//
 static int    h_v    ;//_hexed,_unknown_size,_cubed[,_debug:voxel]
+static int    hay_world_dome ; //_various{}
 
 /*
 atomic struct bo.jo : <T,t> [, [remote]]    //_if(T==$undefined) T=$anonymous,t=$global
