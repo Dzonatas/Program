@@ -2,7 +2,7 @@
 
 public partial class A335
 {
-string eg = "I.E." ; //_FIXT:"handle"[,_ice_no]
+string eg = "I.E." ; //_FIXT:"handle"[,_ice_no][,_voxel]
 
 /*
 jo <ent,ity>{'&'<DOTTEDNAME>';'}      //"$entity...
