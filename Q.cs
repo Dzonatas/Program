@@ -2,7 +2,7 @@ using System;
 
 public partial class A335
 {
-static string [,] qubit_ildex_nt ; //_research: Allow entry of server idle events for -dex bits, so it avoids stack over-head.
+/*#*/static/*#*/ string [,] qubit_ildex_nt ; //_nexus: Allow entry of server idle events for -dex bits, so it avoids stack over-head. (BCL)
 static string qouted_bit ;   //""
 static string qouted_    ;   //''
 static string qouted_unbit ; //;("un-");''
