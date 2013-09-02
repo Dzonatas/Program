@@ -10,7 +10,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	xyzzyy     xyzzy ;
 	debug = b.zz == 168 ? true : debug ;
 	if( debug || b.zz == 109 )
-		System.Console.Beep() ;
+		System.Console.Beep() ; //System.Voxel.Dump([System.Console.Beep(),_debug]);
 	
 	//xo_ = xo_t[b.x][b.y] ;
 	if( b.yy > _default )           //_debug:_token_"falls_through",_literally,list{}_OR_enlist(RT),_debug:[default:,"0.0"];
