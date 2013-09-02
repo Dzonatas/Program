@@ -58,5 +58,7 @@ INSTR_VAR : InlineVar | ShortInlineVar ;
 </PARSER END>
 //.INSTALL:
 <XAML SVG=NEXUS:BIT:COIN>
+  <SLIDE LEVEL>
 	<INTERFACE TAB>
+  </SLIDE>
 </XAML>
