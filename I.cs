@@ -9,6 +9,7 @@ static string icon_dae_r ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b:[q,R]
 #if OAUTH
 [OAuth] Token infrastructure_i ;
 #endif
+const  int    icon_voxel = 0.0000 ;//_unordered_content[_token]
 //string input = "<?xml version=\"1.0\" ?>\n<xml><a f=\"1\">b</a><c>d</c></xml>" ;
 //string input = "<?xml version=\"1.0\" ?>\n<xml reflection><a f=\"1\">b</a><c>d</c></xml>" ;
 //string input = "<?xml version=\"1.1\" ?>\n<xml reflection-scope-i><a f=\"1\">b</a><c>d</c></xml>" ;
