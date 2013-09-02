@@ -9,7 +9,7 @@ using System.Net ;
 
 partial class A335
 {
-public static Decimal Dzonexus ; //_dzonux.NET!(sendme:(vector|scalar|"sector"){(".get"|"git:control")})(-)
+public static Decimal Dzonexus ; //_dzonux.NET!(sendme:(vector|scalar|"sector"){(".get"|git:"voxel")})(-)
 static string dna_dex_nt ; //_foreach(/DNA/).active.idle.up //_FIX:_"inventory"_events,"WebSockets",'('iDNA')',_FIXT:(+)"IHAVE:"
 static bool debug ; //_passive((_d))_##IPVI
 string __default_device ; //_google_play,_XSLT_DO_NOT_TRACK(_replicated)
