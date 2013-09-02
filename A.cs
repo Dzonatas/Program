@@ -3,7 +3,7 @@ partial class A335
 
 A335()
 	{
-	/*<code default=".-ixnor()">*/// Console.WriteLine( a_balance ) ; /* -console:"'''0'" */
+	/*<code default=".voxel.nexus">*/// Console.WriteLine( a_balance ) ;
         /*</code debug="terminal" transient="virtual" used="System.Console#">*/
 	}
 
