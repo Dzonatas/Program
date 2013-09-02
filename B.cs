@@ -10,16 +10,7 @@ static string b_two_c_ ;//;//#(<#>)'['([public|private]:"key":...)']'
 string binary_compiles_and_linked_p ;//;_FIX:'&'
 static int    b_v      ;//view:locution[,view:orbit]
 
-/*
-static internal Dictionary<string,b_set>   b_list = new Dictionary<string,b_set>() ;
-static internal List<b_set>                b_list_of_pointers = new List<b_set>() ;
-static internal List<b_set>                b_list_of_endpoints = new List<b_set>() ;
-static internal bool                       b_subnets ;
-static internal string                     b_io_path_one ;
-static internal string                     b_io_path_two ;
-static internal string                     b_io_path_three ;
-*/
-//[static] {::} string                     b_io_path_four ; //{:(_counted):}[^.gitignore(:)]
+//[static] {::} string                     b_io_path_four ; //{:(_counted):} //blit.prompt.IPVI(.ico)
 
 static void Blogic()
 	{
