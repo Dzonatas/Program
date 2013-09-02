@@ -10,6 +10,7 @@ public partial class A335
 #endregion macro
 #region micro
 <URI> | "private" "URI" path:[A!B!C!(O)[:("plain/text")]]:['remote']:():
+<PIXEL> | 'pixel:'
 #region micro
 */
 }
