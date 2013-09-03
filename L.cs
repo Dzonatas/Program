@@ -21,5 +21,7 @@ class log_enter
 #region micro
 <s></> | <s>&stride.through;</t=strike.>
 #endregion micro
+#region micro_l
+#endregion micro_l
 */
 }
