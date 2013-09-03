@@ -120,7 +120,7 @@ static Item respond()
 
 static void request( ref State s )
 	{
-	DateTime z = DateTime.Now ;
+	DateTime z = DateTime.Now ; //(_ice_linq)
 	if( this_state.debit != null && this_state.debit != s.debit )
 		{
 		stateset[this_state.debit].zlog.Add( z ) ;
