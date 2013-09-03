@@ -16,7 +16,7 @@ public class Number
 	public Decimal n ;
 	//bool           whole ;    //[1,2,3,.,.,.,)
 	//bool           specific ; //<s><o.o></i:(__.no)>  //FIX:(Convexion)(</s i=....>)
-	//bool           ordered ; //_RFC(URN:
+	//bool           ordered ; //_RFC(URN:(_quoted)]
 	static public implicit operator int( Number n )
 		{
 		//if( n.whole )
