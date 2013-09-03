@@ -89,22 +89,22 @@ public static Token input()
 	System.Console.SetCursorPosition(y,x) ;
 	return t ;
 	}
-/*
+
 #region micro
-<bisect> | bisect: PLINE
-<o/o>    | O.no.#(One^H)
+//<bisect> | bisect: PLINE
+//<o/o>    | O.no.#(One^H)
 #endregion micro
 //completion:(loop)(((_second))-('Sound'))
 #region macro_d
-<o/o specific_n=n>    | [(->)(./#/O.cs)((_)s)](<(o)/(o)>)_FIX:("requires"_)lexical.up(Decimal "grammar"(0.0))
+//<o/o specific_n=n>    | [(->)(./#/O.cs)((_)s)](<(o)/(o)>)_FIX:("requires"_)lexical.up(Decimal "grammar"(0.0))
 #endregion macro_d
-#ifdef USED_PATENTS
 #region micro_d
-<o/o specific_n=n.[1-9](+)>    //_patented
-#ifdef UUCP_GOV_QUADGRAPH
-<o/o specific_n=d.[123456789](+)>    //OPEN.gov.mil
+#if USED_PATENTS
+//<o/o specific_n=n.[1-9](+)>    //_patented
+#if UUCP_GOV_QUADGRAPH
+//<o/o specific_n=d.[123456789](+)>    //__Open.gov.mil
+#endif
 #endif
 #endregion micro_d
-#endif
-*/
+
 }
