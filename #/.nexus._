@@ -60,9 +60,9 @@ INSTR_VAR : InlineVar | ShortInlineVar ;
 <XAML SVG=NEXUS:BIT:COIN>
   <SLIDE LEVEL>
      <INTRAFACE BIT>
-//      <IPIV>
-//       <HTMLV>
-//        <IPVI>
+//      <IPIV   UDP>
+//       <HTMLV HTTP>
+//        <IPVI HTTP-S>
 	   <INTERFACE TAB="COIN"/>
 //        </IPVI>
 //       </HTMLV>
