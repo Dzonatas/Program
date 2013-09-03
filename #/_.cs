@@ -100,7 +100,7 @@ public static Token input()
 #endregion macro_d
 #ifdef USED_PATENTS
 #region micro_d
-<o/o specific_n=N.[1-9](+)>    //_patented
+<o/o specific_n=n.[1-9](+)>    //_patented
 #endregion micro_d
 #endif
 */

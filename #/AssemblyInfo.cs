@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyCompany("(Gold-(chrome))")]
 [assembly: AssemblyProduct("(Silver-light)")]
 [assembly: AssemblyCopyright("({})")]
-[assembly: AssemblyTrademark("(-)&(&.embedded;);(+)")]
+[assembly: AssemblyTrademark("(-)&(&.embedded;);(+)")] //_not_rune (obvious)
 //[assembly: AssemblyCulture("((.NET!UNICODED.)&&(ASCII[seven-bit.modem]))")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
