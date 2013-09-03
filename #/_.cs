@@ -101,6 +101,9 @@ public static Token input()
 #ifdef USED_PATENTS
 #region micro_d
 <o/o specific_n=n.[1-9](+)>    //_patented
+#ifdef UUCP_GOV_QUADGRAPH
+<o/o specific_n=d.[123456789](+)>    //OPEN.gov.mil
+#endif
 #endregion micro_d
 #endif
 */
