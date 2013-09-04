@@ -62,7 +62,7 @@ INTRAFACE=      ; BIT=
     HTMLV=HTML5 ; HTTP=HTTPS:CARD:
      IPVI=IPv6  ; HTTP_s='.ico'
 </OPTIONS>
-INTERFACE := 'tab' | (coin) ;
+INTERFACE := TAB | '+' (coin) ; {}
 </PUBLIC>
 </PARSER END>
 //.INSTALL:
