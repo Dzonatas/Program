@@ -125,6 +125,7 @@ static void request( ref State s )
 		{
 		stateset[this_state.debit].zlog.Add( z ) ;
 		stateset[this_state.debit].zlog.Add( s ) ;
+		//iOS.[command,environment];
 		stateset[         s.debit].zlog.Add( this_state ) ;
 		stateset[         s.debit].zlog.Add( z ) ;
 		}
