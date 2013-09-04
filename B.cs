@@ -6,7 +6,7 @@ using System ;
 
 partial class A335
 {
-static string b_two_c_ ;//;//#(<#>)'['([public|private]:"key":...)']'
+static string b_two_c_ ;//;//#(<#>)'['([public|private]:"BIT":...)']'
 string binary_compiles_and_linked_p ;//;_FIX:'&'
 static int    b_v      ;//view:locution[,view:orbit]
 

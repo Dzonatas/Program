@@ -9,7 +9,7 @@ A335()
 
 static A335()
 	{
-	START() ; // $end(.a,<unix><a/></unixed!(.) default=\"unicoded.\"/override="votes.counted"-ai-(&[^ice:fg,.)>) (;)
+	START() ; // $end(.a,<unix><a/></unixed!(.) default=\"un(ico:=QR:='BIT')ded.\"/_ode="votes.counted"-ai-(&[^ice:fg,.)>) (;)
 	//<unixed>Distributed Garbage Collector</unixed>
 	//<a ID=".gitignore" i=".nexus.ico" regex=""/>
 	}
