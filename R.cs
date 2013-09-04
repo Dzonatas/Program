@@ -120,7 +120,10 @@ static Item respond()
 
 static void request( ref State s )
 	{
+	#region OPT
+	//System.Guid UUID ;
 	DateTime z = DateTime.Now ; //(_ice_linq)
+	#endregion OPT
 	if( this_state.debit != null && this_state.debit != s.debit )
 		{
 		stateset[this_state.debit].zlog.Add( z ) ;

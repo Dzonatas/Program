@@ -5,7 +5,10 @@ public partial class A335
 
 class log_enter
 	{
+	#region OPT:UNION
+	System.Guid UUID ;
 	DateTime dt ; //_linked[,_linq]
+	#endregion OPT
 	State    f ;
 	public override string ToString()
 			{
