@@ -38,15 +38,15 @@ echo "HELLO WORLD"
 //.unicoded.location.header:not-included:.
 //.xslt.xhtml.optimization:VM:set:
 <?xml version="1.1">
-<PARSER gen=.var.grammar>
-<PUBLIC ECMA-SET>
+<PARSER>
+<PUBLIC CAPABILITIES id="NEXUS:.VAR:GRAMMAR">
 INSTR_BRTARGET : InlineBrTarget | ShortInlineBrTarget ;
-
+//(y)
 INSTR_FIELD : InlineField ;
 INSTR_I : InlineI | ShortInlineI ;
 INSTR_I8 : InlineI8 ;
 INSTR_METHOD : InlineMethod ;
-INSTR_NONE : InlineNone ;
+INSTR_NONE : InlineNone ;//y
 INSTR_R : InlineR | ShortInlineR ;
 INSTR_SIG : InlineSig ;
 INSTR_STRING : InlineString ;
@@ -54,7 +54,16 @@ INSTR_SWITCH : InlineSwitch ;
 INSTR_TOK : InlineTok ;
 INSTR_TYPE : InlineType ;
 INSTR_VAR : InlineVar | ShortInlineVar ;
-</PUBLIC ECMA-SET>
+<OPTIONS>
+     XAML=XML   ; BIT=.  ; COIN=.
+    SLIDE=      ; LEVEL=
+INTRAFACE=      ; BIT=
+     IPIV=IPv4  ; UDP=
+    HTMLV=HTML5 ; HTTP=HTTPS:CARD:
+     IPVI=IPv6  ; HTTP_s='.ico'
+</OPTIONS>
+INTERFACE := 'tab' | (coin) ;
+</PUBLIC>
 </PARSER END>
 //.INSTALL:
 <XAML SVG=NEXUS:BIT:COIN>
