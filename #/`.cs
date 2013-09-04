@@ -6,7 +6,7 @@ Date:   Sat Aug 24 10:41:21 2013 -0700
     _JHB
     Signed-off-by: Dzonatas <dzonatas@gmail.com>
 */
-//|#(!)using System;//y[,,,(One)](_).(_)(.o...)(___)(.a)(_s)
+//|#(!)using [Embedded] System;//y[,,,(One)](_).(_)(.o...)(___)(.a)(_s)
 
 public partial class _
 {
