@@ -134,9 +134,9 @@ static void xml_load_grammar()
 		if( XmlNodeType.Element == xml.NodeType )
 			{
 			string name = xml.Name ;
-			if( name == "reduction" )
-				x.reduction() ;
-			else
+			//if( name == "reduction" )
+			//	x.reduction() ;
+			//else
 			if( xml.Name == "solved-conflicts" )
 				name = "solved_conflicts" ;
 			else
