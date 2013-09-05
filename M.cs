@@ -1,8 +1,8 @@
 //#define START Blogic#<NOUN L="START">#
 
-using System;
-using System.Xml ;
-using System.IO ;
+//using System;
+//using System.Xml ;
+//using System.IO ;
 
 
 public partial class A335
@@ -26,3 +26,14 @@ public static void Main( string[] args )
 
 }
 
+namespace Materials
+	{
+	#region MATERIAL
+	struct M
+		{
+		System.Guid guid ;
+		public int INTERFACE ;
+		public int intraface ;
+		}
+	#endregion
+	}
