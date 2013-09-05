@@ -73,6 +73,10 @@ INTERFACE := TAB | '+' (coin) ; {}
 //       <HTMLV HTTP>
 //        <IPVI HTTP-S>
 	   <INTERFACE TAB="COIN"/>
+	    <SCRIPT type="coded:{}">
+	     <CODE id=UUID.UUID>DOTTEDNAME</CODE>
+	    </SCRIPT>
+	   <INTERFACE>
 //        </IPVI>
 //       </HTMLV>
 //      </IPIV>
