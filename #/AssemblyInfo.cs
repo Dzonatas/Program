@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 [assembly: AssemblyTitle("\"Hello World\"(2.(2)0)")]
 [assembly: AssemblyDescription("'(Sound)'")] //'("./#/$.cs"):'-'cp O.cs ./#'
-[assembly: AssemblyConfiguration("(Decimal)(string(restricted)(domain).C=$carbon(<embed>Hello World</embed>)(,{})...]")]
+[assembly: AssemblyConfiguration("(Decimal)[Release:(restricted)(domain).C=$carbon(<embed>Hello World</embed>):decim-({mal:...})]")]
 [assembly: AssemblyCompany("(Gold-(chrome))")]
 [assembly: AssemblyProduct("(Silver-light)")]
 [assembly: AssemblyCopyright("({})")]
