@@ -61,13 +61,13 @@ static string read()
 /*
 public struct (O(QR))(^)__
 	{
-	Token Association ;
-	//x
-	//y
+	Token Association ; //[array:]
+	//x [IHAVE,sendme]
+	//y [ihave,SENDME]
         (Token "0.00000xbf"("con"-"(vexed)")) ;: '//y' -> . //_disables_comments_... ...(WORD) :'weak'.lnk.
-	//zz
-	//y(y)
-	Token Contribution ;
+	//zz   [MATERIALS,pixels]
+	//y(y) [materials,PIXELS]
+	Token Contribution ; //[tab:]
 	}(.vm_p)((OPRAND))__FIXT:(Earth:)[UNICODED].known(...ASL)((default:"second-hand"(I.O)))
 */
 	
