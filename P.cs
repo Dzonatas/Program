@@ -14,3 +14,14 @@ public partial class A335
 #region micro
 */
 }
+
+namespace PIXEL
+	{
+	struct pixel
+		{
+		#region pixels
+		System.Guid guid ;
+		const int [,] VOXEL = new int[0,0];
+		#endregion
+		}
+	}
