@@ -103,6 +103,7 @@ public static Token input()
 //<o/o specific_n=n.[1-9](+)>    //_patented
 #if UUCP_GOV_QUADGRAPH
 //<o/o specific_n=d.[123456789](+)>    //__Open.gov.mil
+//<o/o specific_n=d.[123456789](+)>    //MAP.GOV.MIL.d.(\123456789).[+objects,-terrain]
 #endif
 #endif
 #endregion micro_d
