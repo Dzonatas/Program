@@ -1,4 +1,5 @@
-/* License: GNU Public License version 2, or any later version of the GNU Public License.
+/* #if COPY
+** License: GNU Public License version 2, or any later version of the GNU Public License.
 **          http://www.gnu.org/licenses/gpl-2.0.html
 ** Copyright (C) 2009 Ballard, Jonathan H. <dzonatas@dzonux.net> 
 */

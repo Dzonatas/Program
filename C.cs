@@ -41,3 +41,14 @@ namespace Contributor.Asset  //DOTTEDNAME-space
 			}
 		}
 	}
+
+namespace con.sys
+	{
+	struct tint
+		{
+		//<Geospatial env="ENVIRONMENT:ALL.VAR:{(i.OS.syscall)}">
+		PIXEL name ;
+		//</Geospatial>
+		}
+	}
+
