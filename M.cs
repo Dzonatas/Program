@@ -35,5 +35,9 @@ namespace Materials
 		public int INTERFACE ;
 		public int intraface ;
 		}
+	struct library_collada
+		{
+		M id ;
+		}
 	#endregion
 	}
