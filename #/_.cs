@@ -39,7 +39,7 @@ public static void assimulation()
 static string read()
 	{
 	System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
-	System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo( "/bin/sh","/home/dzonatas/ecma335/compile.sh" ) ;
+	System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo( "/bin/sh","/var/ecma335/compile.sh '/var/.bin.ico.spool'" ) ;
 	psi.UseShellExecute = false ;
 	//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 	psi.RedirectStandardOutput = true ;
