@@ -23,3 +23,11 @@ namespace Contributors
 		         </embed>";
 		}
 	}
+
+namespace Contributor.Asset  //DOTTEDNAME-space
+	{
+	struct contribution
+		{
+		string uri = "xs:URL:SQSTRING,SQSTRING,SQSTRING,SQSTRING" ; //_literalized_xs
+		}
+	}
