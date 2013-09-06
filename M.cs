@@ -41,3 +41,13 @@ namespace Materials
 		}
 	#endregion
 	}
+
+namespace Magic.Number
+	{
+	#region DUMB_TERM
+	struct _
+		{
+		string TERM ;//_region
+		}
+	#endregion
+	}
