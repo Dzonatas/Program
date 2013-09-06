@@ -48,6 +48,7 @@ namespace con.sys
 		{
 		//<Geospatial env="ENVIRONMENT:ALL.VAR:{(i.OS.syscall)}">
 		PIXEL name ;
+		//Mip id   ;
 		//</Geospatial>
 		}
 	}
