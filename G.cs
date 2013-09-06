@@ -7,4 +7,5 @@ public partial class A335
 //'['.footer']'_g_xml(_env:[P]) ;//_NP[<s>"C++"</>,entry[....]]
 */
 //<svg:switch registry="g-"/>
+//<Geospatial id="object:voxel"/>
 }
