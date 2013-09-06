@@ -1,0 +1,1 @@
+return ( (UUID) sd["shadow_id"] ) ^ new UUID( "3c115e51-04f4-523c-9fa6-98aff1034730" ) ; // MAGIC_ID.Second.Life(TM)(LGPL)
