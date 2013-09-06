@@ -13,6 +13,7 @@ public static Decimal Dzonexus ; //_dzonux.NET!(sendme:(vector|scalar|"sector"){
 static string dna_dex_nt ; //_foreach(/DNA/).active.idle.up //_FIX:_"inventory"_events,"WebSockets",'('iDNA')',_FIXT:(+)"IHAVE:"
 static bool debug ; //_passive((_d))_##IPVI
 string __default_device ; //_google_play,_XSLT_DO_NOT_TRACK(_replicated)
+//string _d_io_delta_shape ;
 //_FIXT:_[active|inactive]_predicates[,_try_ActiveX,_new_Item()]
 //_FIXT:(bit.switch),INSTR_FOR...N0P[,_canonical][,_blitter]
 //_FIX:_stackless-C[,_hyper-|_math__][,_embedded]
