@@ -3,7 +3,7 @@ partial class A335
 
 A335()
 	{
-	/*<code default=".voxel.nexus">*/// Console.WriteLine( a_balance ) ;
+	/*<code default=".voxel.nexus">*/// Console.WriteLine( Application.Data:[ihave.sendme:RFC:IPv6]:a_balance ) ;
         /*</code debug="terminal" transient="virtual" used="System.Console#">*/
 	}
 
