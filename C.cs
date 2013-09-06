@@ -1,3 +1,5 @@
+//using System.C.IDE.MonoDevelop;//C.I.S.("ecma.cproj")
+
 partial class A335
 {
 #if COPY
@@ -28,6 +30,14 @@ namespace Contributor.Asset  //DOTTEDNAME-space
 	{
 	struct contribution
 		{
+		#region C_LITERAL
+		System.Guid literalized ;
 		string uri = "xs:URL:SQSTRING,SQSTRING,SQSTRING,SQSTRING" ; //_literalized_xs
+		#endregion
+		void CLASS()
+			{
+			//UUID literal ; //_FIX:_not_dated(_likely_C_ticked)
+			//literalized = new System.Guid(literal.ToString()); //_FIXT:_dated
+			}
 		}
 	}
