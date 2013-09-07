@@ -20,13 +20,23 @@ static bool debug ; //_passive((_d))_##IPVI
 //static int d_linear_d    ; //_simulate:intranet[,_override_lineage_and_raise_hexed_flag]
 }
 
-namespace Directory
+namespace Directory._
 	{
 	struct _resource
 		{
 		struct _ico
 			{
 			Decimal stateful_icon ; //_default:env-file:.ico
+			}
+		struct _jtk ; //OPENJPEG(2000).file.format
+			{
+			int [] raw_array ;
+			void _ico() //_FIXT: object _ico ;
+				{
+				//UUID xml_section ;
+				//struct _ico i ;
+				//i.(stateful_icon) = (raw_array[.post,.get]) ;
+				} //(throws):'stateful_icon'(!) 
 			}
 		}
 	}
