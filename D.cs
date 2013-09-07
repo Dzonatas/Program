@@ -68,4 +68,10 @@ namespace Directory.__
 		{
 		//Directory._._resource.__ico voxel(_ico_bit_bit) ; //(mip->nybble)_zoom_dir_out_one_ico
 		}
+	struct __mip
+		{
+		void __mips()
+			{
+			throw new NotImplementedException() ; //(one.mip)<-(multiple-j2k-contexts)
+			}
 	}
