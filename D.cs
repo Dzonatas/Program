@@ -50,6 +50,13 @@ namespace Directory._
 				}
 				#endregion
 			}
-
+		struct __ico
+			{
+			_ico [,] posted__icon ;
+			void posted()
+				{
+				//MemoryStream icon_offset ; //..._FIX:specific_offset_in_single_mmap_ico
+				}
+			}
 		}
 	}
