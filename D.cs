@@ -61,3 +61,11 @@ namespace Directory._
 			}
 		}
 	}
+
+namespace Directory.__
+	{
+	struct __resource_ico
+		{
+		//Directory._._resource.__ico voxel(_ico_bit_bit) ; //(mip->nybble)_zoom_dir_out_one_ico
+		}
+	}
