@@ -10,4 +10,5 @@ const int flag_rune__ = 0.0 ; //# (-> ./#/___.(./#/_]](.ico:EMBED`QR:BIT)
 
 // jo <environment,spin{::}>{$loop=true;}  /*$jQ$CPP*/
 // jo quant <environment,spin>{.loop.up}   /*$E$#*/_OK,_FIX:_pure_virtual_phantoms.assertion("collusion")
+// jo quant <environment,paravirtual>{.loop.down}   /*$E$#*/_NAK:(in-session:...)
 }
