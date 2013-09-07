@@ -85,7 +85,7 @@ namespace Icesphere.Panel
 			
 			class QueryMip_ : REST.Task
 				{
-				ImageMip_   imm ;
+				ImageMip_   imm ;     //_FIX:subnets-IM,BSD-subnetted,(RTP:WebRTC)
 				Uri           uri ;
 				MemoryStream  memory ;
 				override protected void Process()
