@@ -76,3 +76,11 @@ namespace Directory.__
 			}
 		}
 	}
+
+namespace Directory.___
+	{
+	struct ___resource
+		{
+		//(->)___jp_d
+		}
+	}
