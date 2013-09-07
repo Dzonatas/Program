@@ -1,7 +1,7 @@
 /* #if COPY
 ** License: GNU Public License version 2, or any later version of the GNU Public License.
 **          http://www.gnu.org/licenses/gpl-2.0.html
-** Copyright (C) 2009 Ballard, Jonathan H. <dzonatas@dzonux.net> 
+** Copyright (C) 2009,2013 Ballard, Jonathan H. <dzonatas@dzonux.net> 
 */
 
 using System.Collections.Generic ;
@@ -17,15 +17,15 @@ using Pango ;
 
 namespace Icesphere.Panel
 	{
-	public class Map : UI.View
+	public class _ : UI.View
 		{
 		#pragma warning disable 649
-		[Glade.Widget] internal Gtk.Button         ButtonWorldMapShowLocation ;
-		[Glade.Widget] internal Gtk.ComboBoxEntry  ComboWorldMapSearch ;
-		[Glade.Widget] internal Gtk.Alignment      AlignmentWorldMapObjects ;
-		[Glade.Widget] internal Gtk.SpinButton     SpinButtonWorldMapX ;
-		[Glade.Widget] internal Gtk.SpinButton     SpinButtonWorldMapY ;
-		[Glade.Widget] internal Gtk.SpinButton     SpinButtonWorldMapZ ;
+		[Glade.Widget] internal Gtk.Button         ButtonWorld_ShowLocation ;
+		[Glade.Widget] internal Gtk.ComboBoxEntry  ComboWorld_Search ;
+		[Glade.Widget] internal Gtk.Alignment      AlignmentWorld_Objects ;
+		[Glade.Widget] internal Gtk.SpinButton     SpinButtonWorld_X ;
+		[Glade.Widget] internal Gtk.SpinButton     SpinButtonWorld_Y ;
+		[Glade.Widget] internal Gtk.SpinButton     SpinButtonWorld_Z ;
 		#pragma warning restore 649
 
 		Gtk.DrawingArea      area     = new Gtk.DrawingArea() ;
@@ -39,16 +39,16 @@ namespace Icesphere.Panel
 		const int       MAP_TILE_SIZE       = 256 ;
 		const double    REGION_WIDTH_METERS = 256 ;
 		
-		internal static Action<ImageMipMap> UpdatedMipMap ;
+		internal static Action<ImageMip_> UpdatedMip_ ;
 		
-		static Dictionary<string, ImageMipMap>   tiles = new Dictionary<string, ImageMipMap>() ;
-		//List<ImageMipMap>                 active = new List<ImageMipMap>() ;
+		static Dictionary<string, ImageMip_>   tiles = new Dictionary<string, ImageMip_>() ;
+		//List<ImageMip_>                 active = new List<ImageMip_>() ;
 
 		internal static Func<int,int>           subdivisions  = (level)     => 1 << ( level-1 ) ;
 		internal static Func<int,int>           tilesInPixels = (pixels)    => (MAP_TILE_SIZE + pixels - 1) / MAP_TILE_SIZE ;
-		internal static Func<double,int,int>    mapToMip      = (map,level) => { int x = (int) Math.Truncate( map / REGION_WIDTH_METERS ) ; return x - x % subdivisions( level ) ; } ;
+		internal static Func<double,int,int>    _ToMip      = (map,level) => { int x = (int) Math.Truncate( map / REGION_WIDTH_METERS ) ; return x - x % subdivisions( level ) ; } ;
 		
-		internal struct PointMipMap
+		internal struct PointMip_
 			{
 			public int X ;
 			public int Y ;
@@ -58,7 +58,7 @@ namespace Icesphere.Panel
 				{
 				if( o == null )
 					return false ;
-				PointMipMap pmm = (PointMipMap) o ;
+				PointMip_ pmm = (PointMip_) o ;
 				return ( X == pmm.X ) && ( Y == pmm.Y ) && ( Level == pmm.Level ) ;
 				}
 
@@ -68,9 +68,9 @@ namespace Icesphere.Panel
 				}
 			}
 
-		internal class ImageMipMap
+		internal class ImageMip_
 			{
-			PointMipMap  pmm ;
+			PointMip_  pmm ;
 			Gdk.Pixbuf   pb = null ;
 			
 			public Gdk.Pixbuf Pixbuf
@@ -78,14 +78,14 @@ namespace Icesphere.Panel
 				get { lock( this ) return pb ; }
 				}
 
-			public PointMipMap Point
+			public PointMip_ Point
 				{
 				get { lock( this ) return pmm ; }
 				}
 			
-			class QueryMipMap : REST.Task
+			class QueryMip_ : REST.Task
 				{
-				ImageMipMap   imm ;
+				ImageMip_   imm ;
 				Uri           uri ;
 				MemoryStream  memory ;
 				override protected void Process()
@@ -109,10 +109,10 @@ namespace Icesphere.Panel
 						}
 					imm.updateImage( pb ) ;
 					}
-				internal QueryMipMap( ImageMipMap imm, PointMipMap pmm )
+				internal QueryMip_( ImageMip_ imm, PointMip_ pmm )
 					{
 					this.imm = imm ;
-					uri = new Uri( "http://map.secondlife.com.s3.amazonaws.com/map-" + pmm.Level.ToString() + "-" + pmm.X.ToString() + "-" + pmm.Y.ToString() + "-objects.jpg" ) ;
+					uri = new Uri( "http://_.secondlife.com.s3.amazonaws.com/map-" + pmm.Level.ToString() + "-" + pmm.X.ToString() + "-" + pmm.Y.ToString() + "-objects.jpg" ) ;
 					//Debug.WriteLine( uri ) ;
 					}
 				}
@@ -121,24 +121,24 @@ namespace Icesphere.Panel
 				{
 				lock( this )
 					this.pb = pb ;
-				UpdatedMipMap( this ) ;
+				UpdatedMip_( this ) ;
 				}
 				
-			internal ImageMipMap( PointMipMap pmm )
+			internal ImageMip_( PointMip_ pmm )
 				{
 				this.pmm = pmm ;
-				REST.Queue( new QueryMipMap( this, pmm ) ) ;
+				REST.Queue( new QueryMip_( this, pmm ) ) ;
 				}
 			}
 		
-		void updatedMipMap( ImageMipMap imm )
+		void updatedMip_( ImageMip_ imm )
 			{
-			mipmap.Update( imm ) ;
+			mip_.Update( imm ) ;
 			//image.Pixbuf = imm.Pixbuf ;
 			/*
 			Point2D<int> p = new Point2D<int>() ;
 			Gdk.Pixbuf pb ;
-			mipmap.Update( imm ) ;
+			mip_.Update( imm ) ;
 			lock( lobj )
 				{
 				pb  = pixbuf ;
@@ -154,7 +154,7 @@ namespace Icesphere.Panel
 			Gtk.Application.Invoke( (o,e) => area.QueueDraw() ) ;
 			}
 			
-		static ImageMipMap mapTile( PointMipMap pmm )
+		static ImageMip_ _Tile( PointMip_ pmm )
 			{
 			string serial = pmm.Level.ToString() + "-" + pmm.X.ToString() + "-" + pmm.Y.ToString() ;
 			if( tiles.ContainsKey( serial ) )
@@ -163,23 +163,23 @@ namespace Icesphere.Panel
 				return tiles[ serial ] ;
 				}
 			//Debug.WriteLine( "retrieve {0} {1} {2} {3}", pmm.X, pmm.Y, pmm.Level, serial ) ;
-			return tiles[ serial ] = new ImageMipMap( pmm ) ;
+			return tiles[ serial ] = new ImageMip_( pmm ) ;
 			}
 		
 		object lobj = new object() ;
 
-		class MipMap
+		class Mip_
 			{
-			List<ImageMipMap>         tiles = new List<ImageMipMap>() ;
+			List<ImageMip_>         tiles = new List<ImageMip_>() ;
 			Rectangle2D<int>          mip ;
-			Rectangle2D<double>       map ;
+			Rectangle2D<double>       _ ;
 			int                       level ;
 			Gdk.Pixbuf                pixbuf ;
 
-			public Point2D<double>    MapSE       { get { return map.Origin ; } }
-			public Point2D<double>    MapNW       { get { return new Point2D<double>( map.Size.Width + map.Origin.X, map.Size.Height + map.Origin.Y ) ; } }
-			public Point2D<double>    MapNE       { get { return new Point2D<double>( map.Origin.X, map.Size.Height + map.Origin.Y ) ; } }
-			public Point2D<double>    MapSW       { get { return new Point2D<double>( map.Size.Width + map.Origin.X, map.Origin.Y ) ; } }
+			public Point2D<double>    _SE       { get { return _.Origin ; } }
+			public Point2D<double>    _NW       { get { return new Point2D<double>( _.Size.Width + map.Origin.X, map.Size.Height + map.Origin.Y ) ; } }
+			public Point2D<double>    _NE       { get { return new Point2D<double>( _.Origin.X, map.Size.Height + map.Origin.Y ) ; } }
+			public Point2D<double>    _SW       { get { return new Point2D<double>( _.Size.Width + map.Origin.X, map.Origin.Y ) ; } }
 
 			public Point2D<int>       MipSE       { get { return mip.Origin ; } }
 			public Point2D<int>       MipNW       { get { return new Point2D<int>( mip.Size.Width + mip.Origin.X, mip.Size.Height + mip.Origin.Y ) ; } }
@@ -192,26 +192,26 @@ namespace Icesphere.Panel
 				{
 				Point2D<int>   nw   = MipNW ;
 				Point2D<int>   se   = MipSE ;
-				PointMipMap    p    = new PointMipMap() ;
+				PointMip_    p    = new PointMip_() ;
 				p.Level             = 1 ;
 				tiles.Clear() ;
 				for( p.X = se.X ; p.X < nw.X ; ++p.X )
 					{
 					for( p.Y = se.Y ; p.Y < nw.Y ; ++p.Y )
 						{
-						tiles.Add( mapTile( p ) ) ;
+						tiles.Add( _Tile( p ) ) ;
 						}
 					}
 				}
 			
 			public void Update()
 				{
-				//Debug.WriteLine("MipMap.Update") ;
+				//Debug.WriteLine("Mip_.Update") ;
 				lock( this )
 					update() ;
 				}
 
-			public void Update( ImageMipMap imm )
+			public void Update( ImageMip_ imm )
 				{
 				Point2D<int> p = new Point2D<int>() ;
 				p.X = imm.Point.X - MipNE.X ;
@@ -228,11 +228,11 @@ namespace Icesphere.Panel
 				{
 				set
 					{
-					map.Origin      = value.Vector( (v) => Math.Truncate( v / 256 ) ) ;
-					mip.Origin      = new Point2D<int>(  (int) map.X, (int) map.Y  ) ;
+					_.Origin      = value.Vector( (v) => Math.Truncate( v / 256 ) ) ;
+					mip.Origin      = new Point2D<int>(  (int) _.X, (int) map.Y  ) ;
 					mip.Origin      = mip.Origin.Vector(  (v) => v - v % subdivisions( level ) ) ;
-					map.X           = mip.X * 256 ;
-					map.Y           = mip.Y * 256 ;
+					_.X           = mip.X * 256 ;
+					_.Y           = mip.Y * 256 ;
 					}
 				}
 			
@@ -244,23 +244,23 @@ namespace Icesphere.Panel
 					}
 				}
 
-			public MipMap( Point2D<double> se, Size2D<int> size_tiles, int level )
+			public Mip_( Point2D<double> se, Size2D<int> size_tiles, int level )
 				{
 				this.level      = level ;
 				Origin          = se ;
 				mip.Size        = size_tiles ;
-				map.Width       = mip.Width  * 256 ;
-				map.Height      = mip.Height * 256 ;
+				_.Width       = mip.Width  * 256 ;
+				_.Height      = mip.Height * 256 ;
 				pixbuf     = new Gdk.Pixbuf( Gdk.Colorspace.Rgb, false, 8, mip.Size.Width * MAP_TILE_SIZE, mip.Size.Height * MAP_TILE_SIZE ) ;
 				//update() ;
 				}
 			}
 			
-		MipMap mipmap ;
+		Mip_ mip_ ;
 		
-/*		void mapArray()
+/*		void _Array()
 			{
-			PointMipMap pmm = PointMipMap.FromGlobalPosition( center, level ) ;
+			PointMip_ pmm = PointMip_.FromGlobalPosition( center, level ) ;
 			lock( lobj )
 				{
 				//active.Clear() ;
@@ -271,15 +271,15 @@ namespace Icesphere.Panel
 				cornerNE.Y = ( Math.Truncate( center.Y / REGION_WIDTH_METERS ) + (double)(sizeTiles.Height / 2) ) * REGION_WIDTH_METERS + REGION_WIDTH_METERS ;
 				for( int x = 0 ; x < sizeTiles.Width ; ++x )
 					{
-					PointMipMap xpmm = pmm ;
+					PointMip_ xpmm = pmm ;
 					xpmm.X += x ;
 					for( int y = 0; y < sizeTiles.Height ; ++y )
 						{
-						PointMipMap xypmm = xpmm ;
+						PointMip_ xypmm = xpmm ;
 						xypmm.Y -= y ;
 						//Debug.WriteLine( "MA {0}, {1} :: {2}, {3}", x, y, xypmm.X, xypmm.Y ) ;
-						//array[ (x * sizeTiles.Width) + y ] = mapTile( xypmm ) ;
-						active.Add( mapTile( xypmm ) ) ;
+						//array[ (x * sizeTiles.Width) + y ] = _Tile( xypmm ) ;
+						active.Add( _Tile( xypmm ) ) ;
 						}
 					}
 				}
@@ -287,9 +287,9 @@ namespace Icesphere.Panel
 */			
 		void allocated( object o, SizeAllocatedArgs a )
 			{
-			updateMap() ;
+			update_() ;
 
-			//mipmap = new MipMap( origin, size, 1 ) ;    
+			//mip_ = new Mip_( origin, size, 1 ) ;    
 			/*
 			Point2D<double> cornerNE ;
 			Size2D<int> sizePixbuf ;
@@ -306,10 +306,10 @@ namespace Icesphere.Panel
 				sizePixbuf.Height  = sizeTiles.Height * MAP_TILE_SIZE ;
 				Point2D<double> se         = new Point2D<double>() ;
 				se.X               = 
-				mipmap = new MipMap( center, sizetiles, 1 ) ;
+				mip_ = new Mip_( center, sizetiles, 1 ) ;
 				}
 			*/
-			// mapArray() ;
+			// _Array() ;
 			}
 
 		void realized( object o, EventArgs e )
@@ -319,17 +319,17 @@ namespace Icesphere.Panel
 			layout.FontDescription = FontDescription.FromString ("Tahoma 16");
 			layout.SetMarkup ("testing text hello Pango.Layout");
   
-			//Snowglobe.Toolbar.OnClickedMap() ;
+			//Snowglobe.Toolbar.OnClicked_() ;
 			//showLocation( null, null ) ;
 			}
 
 		void activatedSearchEntry()
 			{
-			//Snowglobe.WorldMap wm = new Snowglobe.WorldMap() ;
-			//wm.TrackURL( ComboWorldMapSearch.Entry.Text, 100, 100 ,100 ) ;
+			//Snowglobe.World_ wm = new Snowglobe.World_() ;
+			//wm.TrackURL( ComboWorld_Search.Entry.Text, 100, 100 ,100 ) ;
 			}
 			
-		void updateMap()
+		void update_()
 			{
 			//Debug.WriteLine( "!!!========= center {0}", center ) ;
 			if( center == invalid )
@@ -340,35 +340,35 @@ namespace Icesphere.Panel
 			Point2D<double> origin  = center.Vector( middle, (c,m) => c - m ) ;
 			//Debug.WriteLine( "P={0} || S={1} || M={2} || O={3}", pixels, size, middle, origin ) ;
 
-			if( mipmap == null || mipmap.Size != size )
-				mipmap = new MipMap( origin, size, 1 ) ;
+			if( mip_ == null || mipmap.Size != size )
+				mip_ = new Mip_( origin, size, 1 ) ;
 			else
-				mipmap.Origin = origin ;
+				mip_.Origin = origin ;
 				
-			mipmap.Update() ;
+			mip_.Update() ;
 			//Debug.WriteLine( "========= center {0}", center ) ;
-			//if( mipmap != null )
-			//mipmap.Update() ;
-			//mapArray() ;
+			//if( mip_ != null )
+			//mip_.Update() ;
+			//_Array() ;
 			}
 
 		void showLocation()
 			{
 			Snowglobe.REST.Queue( new Snowglobe.Agent.QueryPosition() ) ;
 			Point3D<double> p = new Point3D<double>() ;
-			p.X = SpinButtonWorldMapX.Value ;
-			p.Y = SpinButtonWorldMapY.Value ;
-			p.Z = SpinButtonWorldMapZ.Value ;
+			p.X = SpinButtonWorld_X.Value ;
+			p.Y = SpinButtonWorld_Y.Value ;
+			p.Z = SpinButtonWorld_Z.Value ;
 			// center = p TODO: convert to global
-			updateMap() ;
+			update_() ;
 			}
 			
 		void updatePosition()
 			{
 			Point3D<double> p  = Agent.Position ;
-			SpinButtonWorldMapX.Value = p.X ;
-			SpinButtonWorldMapY.Value = p.Y ;
-			SpinButtonWorldMapZ.Value = p.Z ;
+			SpinButtonWorld_X.Value = p.X ;
+			SpinButtonWorld_Y.Value = p.Y ;
+			SpinButtonWorld_Z.Value = p.Z ;
 			}
 			
 		void agentPositionUpdated()
@@ -378,7 +378,7 @@ namespace Icesphere.Panel
 			center = new Point2D<double>( p.X, p.Y ) ;
 			//Debug.WriteLine( "========= center {0}", center ) ;
 			updatePosition() ;
-			updateMap() ;
+			update_() ;
 			}
 			
 		void exposed( object o, ExposeEventArgs args )
@@ -388,7 +388,7 @@ namespace Icesphere.Panel
 			Gdk.GC gc                 = area.Style.BaseGC(StateType.Normal) ;
 			//Debug.WriteLine( "exposed" ) ;
 			
-			if( mipmap == null )
+			if( mip_ == null )
 				return ;			
 			//area.GdkWindow.DrawLayout (area.Style.TextGC (StateType.Normal), 100, 150, layout);	
 
@@ -396,9 +396,9 @@ namespace Icesphere.Panel
 			p.X  = (int)( area.Allocation.Width  / 2 ) ;
 			p.Y  = (int)( area.Allocation.Height / 2 ) ;
 			
-			MipMap mm = mipmap ;
-			p.X += (int)( mm.MapNE.X - center.X ) ;
-			p.Y -= (int)( mm.MapNE.Y - center.Y ) ;
+			Mip_ mm = mip_ ;
+			p.X += (int)( mm._NE.X - center.X ) ;
+			p.Y -= (int)( mm._NE.Y - center.Y ) ;
 			area.GdkWindow.DrawPixbuf (gc, mm.Pixbuf,  0, 0,  p.X, p.Y,  -1, -1,  Gdk.RgbDither.None, 0, 0 ) ;
 			}
 
@@ -412,7 +412,7 @@ namespace Icesphere.Panel
 					{
 					Point2D<int> xyp = xp ;
 					xyp.Y += y * MAP_TILE_SIZE ;
-					ImageMipMap imm = map[ (x * st.Width) + y ] ;
+					ImageMip_ imm = _[ (x * st.Width) + y ] ;
 					if( imm == null || imm.Pixbuf == null )
 						continue ;
 					//area.GdkWindow.DrawPixbuf (gc, imm.Pixbuf,  0, 0,  xyp.X, xyp.Y,  MAP_TILE_SIZE, MAP_TILE_SIZE,  Gdk.RgbDither.Normal, 0, 0 ) ;
@@ -447,7 +447,7 @@ namespace Icesphere.Panel
 			Agent.PositionChanged += agentPositionUpdated ;
 			agentPositionUpdated() ;
 			updatePosition() ;
-			updateMap() ;
+			update_() ;
 			}
 
 		override protected void Hidden()
@@ -456,7 +456,7 @@ namespace Icesphere.Panel
 			tiles.Clear() ; 
 			}
 
-		public Map() : base( "map" )
+		public _() : base( "_" )
 			{
 			area.SetSizeRequest( 600, 600 ) ;
 			area.ModifyBg( Gtk.StateType.Normal, UI.Color.Black ) ;
@@ -464,11 +464,11 @@ namespace Icesphere.Panel
 			area.ExposeEvent           += exposed ;
 			area.Show() ;
 			
-			UpdatedMipMap += updatedMipMap ;
-			AlignmentWorldMapObjects.Add( area ) ;
-			AlignmentWorldMapObjects.SizeAllocated  += allocated ;
-			ButtonWorldMapShowLocation.Clicked      += (o,e) => showLocation() ;
-			ComboWorldMapSearch.Entry.Activated     += (o,e) => activatedSearchEntry() ;
+			UpdatedMip_ += updatedMip_ ;
+			AlignmentWorld_Objects.Add( area ) ;
+			AlignmentWorld_Objects.SizeAllocated  += allocated ;
+			ButtonWorld_ShowLocation.Clicked      += (o,e) => showLocation() ;
+			ComboWorld_Search.Entry.Activated     += (o,e) => activatedSearchEntry() ;
 			}
 		}
 	}
