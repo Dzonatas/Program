@@ -34,9 +34,9 @@ namespace Directory._
 			void _ico() //_FIXT: object _ico ;
 				#region __
 				{
-				//UUID xml_section ;
+				//UUID xml_section = _image:{::}.j2k:xml.f(__) ;
 				//struct _ico i ;
-				//i.(stateful_icon,__) = (raw_array[.post,.get]) ;
+				//i.(xml_section,__) = (raw_array[.post,.get]) ;
 				} //(throws):[]'stateful_icon'(!) 
 				#endregion
 			}
