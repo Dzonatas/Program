@@ -28,7 +28,7 @@ namespace Directory._
 			{
 			Decimal stateful_icon ; //_default:env-file:.ico
 			}
-		struct _jtk ; //OPENJPEG(2000).file.format
+		struct _jtk  //OPENJPEG(2000).file.format
 			{
 			int [] raw_array ;
 			void _ico() //_FIXT: object _ico ;
@@ -42,7 +42,8 @@ namespace Directory._
 			}
 		struct _jtk_ico
 			{
-			_jtk [,] Decimal fixed_point ;
+			_jtk [,] _ ;
+			Decimal fixed_point ;
 			void _jtk()
 				#region ico
 				{
