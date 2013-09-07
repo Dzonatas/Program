@@ -11,4 +11,10 @@ const int voxel_volume = 0.000 ; //_unknown_orientation
 //<VOXEL VOLUME="[0.0,0.0]"/>//_link_debug:beep(_dt)
 #endregion VV
 #endregion V
+struct location
+	{
+	//object actor ;//_UML_with_embedded_scripts,_account[,_log][,_lag]
+	object noun ;
+	object verb ;
+	}
 }
