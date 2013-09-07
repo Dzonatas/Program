@@ -72,6 +72,7 @@ namespace Directory.__
 		{
 		void __mips()
 			{
-			throw new NotImplementedException() ; //(one.mip)<-(multiple-j2k-contexts)
+			throw new NotImplementedException("(_ms) -> _") ; //(one.mip)<-(multiple-j2k-contexts) ;
 			}
+		}
 	}
