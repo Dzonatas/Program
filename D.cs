@@ -40,5 +40,16 @@ namespace Directory._
 				} //(throws):[]'stateful_icon'(!) 
 				#endregion
 			}
+		struct _jtk_ico
+			{
+			_jtk [,] Decimal fixed_point ;
+			void _jtk()
+				#region ico
+				{
+				//fixed_point := [_,#] ;
+				}
+				#endregion
+			}
+
 		}
 	}
