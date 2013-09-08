@@ -545,6 +545,8 @@ C ()
 #region micro
 <img:BIT.QR> | .NET.BIT (.NET.MASK.BIT)
 {::} := /\_.,t`,__,_[{::}]_[,[_]_x.y]                 //_FIX:.soundex,_lexical_eval.down
+<BLURB> | archive:
+<BLOB>  | archive::
 #endregion micro
 */
 }
