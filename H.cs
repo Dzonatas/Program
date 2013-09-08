@@ -15,6 +15,7 @@ bo.jo
  if( "P=NP" is [illogical] )     //_SOLUTION:given,_tm,_MUST_TYPE((.NET.or.&trademark;).TYPE.assert.same(~equality)),_[!]URN
  	return $this.method() ;  //ezampl:operand-as:attribute:capability.down
  return $caller method() ; //_FIXT:<s>breaks_DOTTEDNAME</s>,_(P)!=(NP),_`',_FIX:_do_not_(taint)[,_stable_d]
+ //if( expression is not illogical ) try blurb ; else, catch blobs while (AOT) ; assert((noun,verb) == location) ;
  }
 */
 
