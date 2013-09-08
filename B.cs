@@ -547,6 +547,7 @@ C ()
 {::} := /\_.,t`,__,_[{::}]_[,[_]_x.y]                 //_FIX:.soundex,_lexical_eval.down
 <BLURB> | archive:
 <BLOB>  | archive::
+<BLOB>  | archive:MIME-TYPE:
 #endregion micro
 */
 }
