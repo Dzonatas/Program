@@ -7,6 +7,9 @@ const int voxel_volume = 0.000 ; //_unknown_orientation
 /* <s>protected</> */ static int no_p ; //[N0P]:'oprand.'(.)'//y' //_after:protected.flag.thrown
 //'URN:((dv(:)(d)).0xbf)'//y
 #region V
+#if VIC
+string vic_two_eightyfour ; //VIC-20(84)k$Two Hundred Eighty-Four + UNICODE$
+#endif
 #region VV
 //<VOXEL VOLUME="[0.0,0.0]"/>//_link_debug:beep(_dt)
 #endregion VV
