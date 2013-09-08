@@ -137,8 +137,8 @@ atomic struct jo : <T,t> [, [remote]]    //_if(T==$undefined) T=$anonymous,t=$gl
 jo
  {
  if( $caller == $this )....   //_P!=NP,_remote_is_caller_or_local_([in]_inverse)
- 	return $this.method() ;
- return $caller.method() ; //_FIX:breaks_DOTTEDNAME,_FIXT:used_space_not_'.',_ecma_"default"?_WS_OR_$$
+ 	return $this.method() ; //<blob/>
+ return $caller.method() ; //_FIX:breaks_DOTTEDNAME,_FIXT:used_space_not_'.',_ecma_"default"?_WS_OR_$$ //<blurb/>
  }
 */
 
