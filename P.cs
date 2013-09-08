@@ -25,3 +25,11 @@ namespace PIXEL
 		#endregion
 		}
 	}
+
+namespace Production
+	{
+	struct produced_release
+		{
+		State [] array ;
+		}
+	}
