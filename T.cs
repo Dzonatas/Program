@@ -41,6 +41,7 @@ static bool transition( int i, out Transition tr )
 <throw.flag></> | //(<s>.</t=(key)>)
 <TRANSIENT></t> | ____`-ary
 &&Earth;.byte;  | URN:"TERABYTE"
+&&Earth;.byte;  | URN:"TRILLONTH-BYTE"
 #region micro
 */
 }
