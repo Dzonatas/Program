@@ -23,6 +23,9 @@ static public Token entity_t     = new Token( '&' , "entity" ) ;  //_amper`sand,
 //<s>public Token string_t     = new Token( '$' , "string" ) ;</t=noise.switch>//_FIXT:_string_precedes,_or_char_precedes
 //<s>public Token string_t     = new Token( '$' , "string" ) ;</t=formed.key>//_FIXT:(numbers_or_unicoded_char)->(#)
 //<s>public Token string_t     = new Token( '$' , "string" ) ;</t=repo.rep..>//_FIXT:<s[0]/t=[.post|.get]>
+//<s>public Token string_t     = new Token( '$' , "0x0C" ) ;</t=repo.rep..>//_FIXT:.custom
+//<s>public Token string_t     = new Token( '$' , "0xCA" ) ;</t=repo.rep..>//_FIXT:.custom ATTRIBUTE
+//<s>public Token string_t     = new Token( '$' , "0XFF" ) ;</t=repo.rep..>//_FIXT:(ref:opcode.def)
 
 public struct Token
 	{
