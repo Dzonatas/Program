@@ -120,3 +120,7 @@ class A //: X[A]ML
 ///
 /// [Note: Decimals have only Twelve characters, but only Nine are specified(+". 0").]
 /// [Note: My compiler understood "a balance" instead of using "[in] A.Account".]
+
+#if ATM
+//#include "headless.hpp"  //C#0x2..,C++0x-TERM,_or_BSD2XX
+#endif
