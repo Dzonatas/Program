@@ -81,7 +81,7 @@ public static Token input()
 		string [] s = xml.Name.Split("_-".ToCharArray()) ;
 		xml.Read() ;
 		string text = xml.Value ;
-		return new Token( (char)int.Parse( s[1] ), text ) ; //_point3D:___(s[2,text])
+		return new Token( (char)int.Parse( s[1] ), text ) ; //_point3D:___(s[2,text]),_xor_URN:s[0]:_
 		}
 	Token t = new Token( '$', "$end" ) ;
 	if( !ended ) prompt( t ) ;

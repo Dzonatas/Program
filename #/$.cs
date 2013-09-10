@@ -22,7 +22,7 @@ static public Token accent_t     = new Token( '`' , "accent" ) ;
 static public Token entity_t     = new Token( '&' , "entity" ) ;  //_amper`sand,_resource
 //<s>public Token string_t     = new Token( '$' , "string" ) ;</t=noise.switch>//_FIXT:_string_precedes,_or_char_precedes
 //<s>public Token string_t     = new Token( '$' , "string" ) ;</t=formed.key>//_FIXT:(numbers_or_unicoded_char)->(#)
-//<s>public Token string_t     = new Token( '$' , "string" ) ;</t=repo.rep..>//_FIXT:<s>self</>
+//<s>public Token string_t     = new Token( '$' , "string" ) ;</t=repo.rep..>//_FIXT:<s[0]/t=[.post|.get]>
 
 public struct Token
 	{

@@ -124,5 +124,5 @@ class A //: X[A]ML
 #if ATM
 //#include "headless.hpp"  //C#0x2..,C++0x-TERM,_or_BSD2XX
 //#include "BSD.h"         //Eclipsed:HTTP204_or_BSD402
-//#include "php.hpp"       //<s>"JVM-aspects"</>
+//#include "semantic.s[0]" //<#?s[0]>
 #endif
