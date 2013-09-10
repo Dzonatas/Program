@@ -13,4 +13,8 @@ public partial class A335
 #elif A
 //<svg:switch/>//https://plus.google.com/100758507506787481234/posts/SswB18fhRC6
 #endif
+#if GTKGLAREA
+//_FIX:include_in_compiler_optimization
+//TAB:GLAREA
+#endif
 }
