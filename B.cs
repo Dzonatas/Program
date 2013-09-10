@@ -60,6 +60,7 @@ static void Blogic()
 static List<_.Token> b_line = new List<_.Token>() ;
 
 static int b_muon_css     ;                          //_FIXT:_second,_hexed,<s>tainted</>,'/\_.css'
+static char b_custom_map  ;                          //sd['map'] = '.custom "map":.ctor(binary) = (...)'
 #region MUONS_b
 static string b_xhtml_css ; /*$...trigraphs...$*/    //_FIX:tainted,_second
 static string [,] b_xhtml ; /*$...digraphs....$*/    //_FIX:tainted,_css[,_streaming{},_lock_matrix[_SSE4]]
