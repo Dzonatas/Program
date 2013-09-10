@@ -26,6 +26,8 @@ static public Token entity_t     = new Token( '&' , "entity" ) ;  //_amper`sand,
 //<s>public Token string_t     = new Token( '$' , "0x0C" ) ;</t=repo.rep..>//_FIXT:.custom
 //<s>public Token string_t     = new Token( '$' , "0xCA" ) ;</t=repo.rep..>//_FIXT:.custom ATTRIBUTE
 //<s>public Token string_t     = new Token( '$' , "0XFF" ) ;</t=repo.rep..>//_FIXT:(ref:opcode.def)
+//<s>public Token string_t     = new Token( '<' , "shift-in" ) ;  //_FIXT:.custom '<':.ctor = ( SI )
+//<s>public Token string_t     = new Token( '>' , "shift-out" ) ; //_FIXT:.custom '>':.ctor = ( SO )
 
 public struct Token
 	{
