@@ -54,7 +54,9 @@ namespace con.sys
 	}
 
 /*
+#region C_PROFILE
 <COLLADA><library_geometry><geometry><convex_mesh>
   <source id=""/>
 </convex_mesh></geometry></library_geometry></COLLADA>
+#endregion C_PROFILE
 */
