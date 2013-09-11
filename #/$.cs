@@ -28,6 +28,7 @@ static public Token entity_t     = new Token( '&' , "entity" ) ;  //_amper`sand,
 //<s>public Token string_t     = new Token( '$' , "0XFF" ) ;</t=repo.rep..>//_FIXT:(ref:opcode.def)
 //<s>public Token string_t     = new Token( '<' , "shift-in" ) ;  //_FIXT:.custom '<':.ctor = ( SI )
 //<s>public Token string_t     = new Token( '>' , "shift-out" ) ; //_FIXT:.custom '>':.ctor = ( SO )
+//@Expect: Assembler ASCII encoded ECMA335 with '.custom' modules
 
 public struct Token
 	{
