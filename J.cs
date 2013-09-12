@@ -1,6 +1,6 @@
 public partial class A335
 {
-const int ʄ_script = 2.0 ; //(F#)->(DZ)->(urn:nlp:latin):translator
+//prefix:script:{ const int ʄ = 2.0 ; }
 const int j_ECMA_script_v = 00.000 ;//API := [ <CONSTANT> | specific_n ]:(/Re/ST(ART:OPTIONS]/#)(/_)
 const int j_script_jXSsLT = 00.000 ;//API := [ <CONSTANT> | specific_n ]:(/Re/ST(ART:OPTIONS]/#):xsString := [API:]
 const int j_script_jXSsLT_ = 0.00  ;//ABI := (/Re/ST(ART:OPTIONS]/#):xsString := [API:]
