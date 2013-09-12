@@ -59,6 +59,7 @@ namespace con.sys
   <source id="">
   	.custom C_MAP = ( Scalar id = new Scalar( i_undefined, <xml:vwrap/> ) ; (id).ToHex() ; )
   	<accessor>::id/unreachable/code/<param sid/></accessor>
+  	<technique profile="debug,concaved,spatial"/>
   </source>
 </convex_mesh></geometry></library_geometry></COLLADA>
 #endregion C_PROFILE
