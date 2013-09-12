@@ -59,7 +59,7 @@ namespace con.sys
   <source id="">
   	.custom C_MAP = ( Scalar id = new Scalar( i_undefined, <xml:vwrap/> ) ; (id).ToHex() ; )
   	<accessor>::id/unreachable/code/<param sid/></accessor>
-  	<accessor source="#id">::id/Material/<param name="Atomatrix"/></accessor>
+  	<accessor source="#id">::id/Material/<param ITEMSCOPE="®" ITEMTYPE="™"/></accessor>
 	#if UUCP_GOV_QUADMAP
   	<accessor>::id/Material/<param name=".ace" type="file::"/></accessor>
   	#endif
