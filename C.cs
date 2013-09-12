@@ -59,7 +59,7 @@ namespace con.sys
   <source id="">
   	.custom C_MAP = ( Scalar id = new Scalar( i_undefined, <xml:vwrap/> ) ; (id).ToHex() ; )
   	<accessor>::id/unreachable/code/<param sid/></accessor>
-  	<accessor source="#id">::id/Material/<param sid/></accessor>
+  	<accessor source="#id">::id/Material/<param name="Atomatrix"/></accessor>
   	<technique profile="debug,concaved,spatial"><script>{}</script></technique>
   </source>
 </convex_mesh></geometry></library_geometry></COLLADA>
