@@ -84,5 +84,11 @@ static string n_number( int n )
 		default: throw new NotImplementedException() ;
 		}
 	}
-
+	
+/*
+#region macro
+<TENTHS> | .0
+<MILLIONTH> | { TENTHS / 01,000,000.0 }
+#endregion
+*/
 }
