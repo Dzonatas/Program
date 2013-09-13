@@ -1,6 +1,8 @@
+//using J.Ext ;
+
 public partial class A335
 {
-//prefix:script:{ const int ʄ = 2.0 ; }
+//const int ʄ = 2.0 ; var ʄ_ = ʄ._ ;
 const int j_ECMA_script_v = 00.000 ;//API := [ <CONSTANT> | specific_n ]:(/Re/ST(ART:OPTIONS]/#)(/_)
 const int j_script_jXSsLT = 00.000 ;//API := [ <CONSTANT> | specific_n ]:(/Re/ST(ART:OPTIONS]/#):xsString := [API:]
 const int j_script_jXSsLT_ = 0.00  ;//ABI := (/Re/ST(ART:OPTIONS]/#):xsString := [API:]
@@ -144,3 +146,16 @@ jo
 */
 
 }
+
+/*
+namespace J.ext
+	{
+	public class J_script
+		{
+		public static var _(this Decimal d)
+			{
+			return new var(d) ;
+			}
+		}
+	}
+*/
