@@ -147,15 +147,14 @@ jo
 
 }
 
-/*
+
 namespace J.ext
 	{
-	public class J_script
+	public class var_ : var
 		{
-		public static var _(this Decimal d)
+		public static var_ _(this Decimal d)
 			{
-			return new var(d) ;
+			return new var_ (d) ;
 			}
 		}
 	}
-*/
