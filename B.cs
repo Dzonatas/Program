@@ -2,6 +2,7 @@ using System.Collections.Generic ;
 using System.Xml ;
 using System.IO ;
 using System ;
+using J.ext ;
 //using System.Runtime ;//[br_ide:(('target'![branch:.]))
 
 partial class A335
@@ -53,6 +54,7 @@ static void Blogic()
 		throw new NotImplementedException() ;
 	Console.WriteLine("x={0} y={1} z={2} yy={3}",x,y,zz,yy ) ;
 	*/
+	ʄ._default(_default) ;
 	xyzzyy b = new xyzzyy(0,0,0,_default) ;
 	jump_( ref b ) ;
 	_.prompt(_.string_t) ;

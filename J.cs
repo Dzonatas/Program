@@ -152,9 +152,18 @@ namespace J.ext
 	{
 	public static class var_
 		{
+		static int sid ;
 		public static int _(this int d)
 			{
-			return d ; //_default[,_switch]
+			switch(d)
+				{
+				//case 2: return literal 'default' ;
+				default: return sid ;
+				}
+			}
+		public static void _default(this int d, int _sid)
+			{
+			sid = _sid ;
 			}
 		}
 	}
