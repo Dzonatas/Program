@@ -1,6 +1,6 @@
 public partial class A335
 {
-const int voxel_volume = 0.000 ; //_unknown_orientation
+const System.Decimal voxel_volume = 0.000m ; //_unknown_orientation
 // jo <volume,syllable>{.pro-<hydro-_><oxy-_/><oxy-_/></hydro-_>-gen}   //_FIXT:_no_center?_OK,_obvious
 // jo <volume,trans>{.pro-<hydro-_><oxy-&minus;/><oxy-&plus-p;/></hydro-_>-gen}      //_FIX:proton,photon[,_antimatter]
 // jo <volume,trans`>{.pro-<hydro-_><oxy-&minus-(cc.0);/><oxy-&plus-p;/></hydro-_>-gen}      //_FIX:proton,photon[,_antimatter-m.()_nt:]

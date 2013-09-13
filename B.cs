@@ -10,7 +10,7 @@ static string b_two_c_ ;//;//#(<#>)'['([public|private]:"BIT":...)']'
 string binary_compiles_and_linked_p ;//;_FIX:'&'
 static int    b_v      ;//view:locution[,view:orbit]
 
-[static____] /*{::}*/ string                     b_io_path_four ; //{:(_counted):} //blit.prompt.IPVI(.ico)
+//[static____] /*{::}*/ string                     b_io_path_four ; //{:(_counted):} //blit.prompt.IPVI(.ico)
 
 static void Blogic()
 	{

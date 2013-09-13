@@ -21,7 +21,7 @@ namespace PIXEL
 		{
 		#region pixels
 		System.Guid guid ;
-		const int [,] VOXEL = new int[0,0];
+		const int [,] VOXEL = null ; //new int[0,0];
 		#endregion
 		}
 	}
@@ -30,6 +30,6 @@ namespace Production
 	{
 	struct produced_release
 		{
-		State [] array ;
+		A335.State [] array ;
 		}
 	}

@@ -10,8 +10,8 @@ static string icon_dae_r ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b:[q,R]
 #if OAUTH
 [OAuth] Token infrastructure_i ;
 #endif
-const  int    icon_voxel = 0.0000 ;//_unordered_content[_token]
-const  char [] i_undefined = {0xCA,0xFF} ;
+const  Decimal    icon_voxel  = 0.0000m ;//_unordered_content[_token]
+const  char []    i_undefined = null ; //{0xCA,0xFF} ;
 //{"icon:voxel:",<title/>}//
 //string input = "<?xml version=\"1.0\" ?>\n<xml><a f=\"1\">b</a><c>d</c></xml>" ;
 //string input = "<?xml version=\"1.0\" ?>\n<xml reflection><a f=\"1\">b</a><c>d</c></xml>" ;
