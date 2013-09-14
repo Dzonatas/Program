@@ -54,7 +54,7 @@ static void Blogic()
 		throw new NotImplementedException() ;
 	Console.WriteLine("x={0} y={1} z={2} yy={3}",x,y,zz,yy ) ;
 	*/
-	xyzzyy b = new xyzzyy(0,0,0,ʄ._default(_default)) ;
+	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
 	jump_( ref b ) ;
 	_.prompt(_.string_t) ;
 	}
