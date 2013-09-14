@@ -152,18 +152,24 @@ namespace J.ext
 	{
 	public static class var_
 		{
-		static int sid ;
+		static int digits ;
+		static System.Decimal sid ;
 		public static int _(this int d)
 			{
 			switch(d)
 				{
-				//case 2: return literal 'default' ;
-				default: return sid ;
+				case 2: return digits ;
+				default: return ((sid - (System.Decimal)digits) > 0.0m) ? 0 : d ;
 				}
+			//throw new Exception("[Affinty]=[Infinite]+[Finite]") ;
 			}
-		public static void _default(this int d, int _sid)
+		public static int _default(this int d, int _sid)
 			{
-			sid = _sid ;
+			return digits = (int) System.Decimal.Truncate(sid = _sid) ;
+			}
+		public static int _default(this int d, System.Decimal _sid)
+			{
+			return digits = (int) System.Decimal.Truncate(sid = _sid) ;
 			}
 		}
 	}
