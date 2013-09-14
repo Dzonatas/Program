@@ -2,7 +2,7 @@ using J.ext ;
 
 public partial class A335
 {
-const int ʄ = 2 ; //.0 ; //var ʄ_ = ʄ._ ;
+const int ʄ = (int)_var.DEFAULT ; //.0 ; //var ʄ_ = ʄ._ ;
 //const int j_ECMA_script_v = 00.000 ;//API := [ <CONSTANT> | specific_n ]:(/Re/ST(ART:OPTIONS]/#)(/_)
 //const int j_script_jXSsLT = 00.000 ;//API := [ <CONSTANT> | specific_n ]:(/Re/ST(ART:OPTIONS]/#):xsString := [API:]
 //const int j_script_jXSsLT_ = 0.00  ;//ABI := (/Re/ST(ART:OPTIONS]/#):xsString := [API:]
@@ -150,6 +150,10 @@ jo
 
 namespace J.ext
 	{
+	public enum _var
+		{
+		DEFAULT
+		}
 	public static class var_
 		{
 		static int digits ;
@@ -158,8 +162,8 @@ namespace J.ext
 			{
 			switch(d)
 				{
-				case 2: return digits ;
-				default: return ((sid - (System.Decimal)digits) > 0.0m) ? 0 : d ;
+				case (int)_var.DEFAULT: return digits ;
+				default: return ((sid - (System.Decimal)digits) > 0.0m) ? (int)_var.DEFAULT : d ;
 				}
 			//throw new Exception("[Affinty]=[Infinite]+[Finite]") ;
 			}
