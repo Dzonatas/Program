@@ -1,0 +1,1428 @@
+Index: indra/llcommon/llfasttimer.h
+===================================================================
+--- indra/llcommon/llfasttimer.h	(revision 62604)
++++ indra/llcommon/llfasttimer.h	(working copy)
+@@ -13,8 +13,66 @@
+ 
+ #define FAST_TIMER_ON 1
+ 
+-U64 get_cpu_clock_count();
++//----------------------------------------------------
++//----------------------------------------------------
++// get_cpu_clock_count() - platform dependant
++//----------------------------------------------------
++//----------------------------------------------------
+ 
++#if LL_MSVC
++inline U64 get_cpu_clock_count()
++{
++	U64 retv;
++	__asm 
++	{
++		rdtsc
++		mov dword ptr [retv+4], edx
++		mov dword ptr [retv], eax
++	}
++    return retv;
++};
++
++#elif LL_GNUC && ( defined(__amd64__) || defined(__x86_64__) )
++inline U64 get_cpu_clock_count()
++{
++	U64 lo, hi;
++	asm ("rdtsc" : "=a" (x), "=d" (y));
++	return (hi << 32) | lo;
++}
++
++#elif LL_GNUC && defined(__i386__)
++inline U64 get_cpu_clock_count()
++{
++	U64 retv;
++	asm ("rdtsc" : "=A" (retv));
++	return retv;
++}
++
++
++#elif LL_GNUC && defined(__powerpc__)
++inline U64 get_cpu_clock_count()
++{
++	U32 lo, hi, tmp;
++	asm ("0: mftbu %0; mftb %1; mftbu %2; cmplw %0,%2; bne 0b" : "=r"(hi), "=r"(lo), "=r"(tmp) );
++	return ((U64)hi << 32) | lo;
++}
++
++
++#else
++inline U64 get_cpu_clock_count()
++{
++	return get_clock_count();
++}
++
++
++#endif
++
++//----------------------------------------------------
++//----------------------------------------------------
++// LLFastTimer
++//----------------------------------------------------
++//----------------------------------------------------
++
+ class LLFastTimer
+ {
+ public:
+Index: indra/llcommon/llsys.cpp
+===================================================================
+--- indra/llcommon/llsys.cpp	(revision 62604)
++++ indra/llcommon/llsys.cpp	(working copy)
+@@ -13,7 +13,7 @@
+ #include <iostream>
+ #include <zlib/zlib.h>
+ 
+-#include "processor.h"
++#include "llprocessor.h"
+ 
+ #if LL_WINDOWS
+ #	define WIN32_LEAN_AND_MEAN
+@@ -24,11 +24,11 @@
+ #	include <sys/utsname.h>
+ #elif LL_LINUX
+ #	include <sys/utsname.h>
++#	include <boost/lexical_cast.hpp>
+ const char MEMINFO_FILE[] = "/proc/meminfo";
+ const char CPUINFO_FILE[] = "/proc/cpuinfo";
+ #endif
+ 
+-
+ static const S32 CPUINFO_BUFFER_SIZE = 16383;
+ LLCPUInfo gSysCPU;
+ 
+@@ -286,16 +286,64 @@
+ 	const ProcessorInfo* info = proc.GetCPUInfo();
+ 	mHasSSE = (info->_Ext.SSE_StreamingSIMD_Extensions != 0);
+ 	mHasSSE2 = (info->_Ext.SSE2_StreamingSIMD2_Extensions != 0);
+-	mCPUMhz = (S32)(proc.GetCPUFrequency(50)/1000000.0);
++	mClockFrequency = proc.GetCPUFrequency(50);
++	mCPUMhz = (S32)(mClockFrequency/1000000.0);
+ 	mFamily.assign( info->strFamily );
++#ifdef LL_LINUX
++	// *NOTE: This works on linux. What will it do on other systems?
++	FILE* cpuinfo = LLFile::fopen(CPUINFO_FILE, "r");		/* Flawfinder: ignore */
++	if(cpuinfo)
++	{
++		char line[MAX_STRING];		/* Flawfinder: ignore */
++		memset(line, 0, MAX_STRING);
++		while(fgets(line, MAX_STRING, cpuinfo))
++		{
++			// /proc/cpuinfo on Linux looks like:
++			// name\t*: value\n
++			char* tabspot = strchr( line, '\t' );
++			if (tabspot == NULL)
++				continue;
++			char* colspot = strchr( tabspot, ':' );
++			if (colspot == NULL)
++				continue;
++			char* nlspot = strchr( line, '\n' );
++			if (nlspot == NULL)
++				nlspot = line + strlen( line );	// Fallback to terminating NULL
++
++			std::string linename( line, tabspot );
++			std::string lineval( colspot + 2, nlspot );
++			mCPUInfoLines[ linename ] = lineval;
++		}
++		fclose(cpuinfo);
++	}
++#endif
++
++#if LL_LINUX && defined(__powerpc__)
++	mCPUMhz = boost::lexical_cast<S32>(getInfoLine( "clock" ));
++	mClockFrequency = boost::lexical_cast<F64>(getInfoLine( "timebase" ));
++
++#elif LL_LINUX && ( defined(__amd64__) || defined(__x86_64__) || defined(__i386__) )
++	std::string flags = getInfoLine( "flags" )
++	if( ! flags.find( "sse2" ) )
++		mHasSSE2 = false;
++	if( ! flags.find( "sse" ) )
++		mHasSSE = false;
++			
++	F64 mhz = boost::lexical_cast<F64>(getInfoLine( "cpu MHz" ))
++	if( 200.0 < mhz && mhz < 20000.0 )
++	{
++		mCPUMhz = (S32)mhz;
++		mClockFrequency = mhz * 1000000.0;
++	}
++#endif
+ }
+ 
+ 
+ std::string LLCPUInfo::getCPUString() const
+ {
+-#if LL_WINDOWS || LL_DARWIN
+ 	std::ostringstream out;
+ 
++#if LL_WINDOWS || LL_DARWIN
+ 	CProcessor proc;
+ 	(void) proc.GetCPUInfo();
+ 	out << proc.strCPUName << " ";
+@@ -308,12 +356,34 @@
+ 		out << "(" << (S32)(freq) << " MHz)";
+ 	}
+ 
+-	return out.str();
++#else // LL_LINUX
++#if ( defined(__i386__) || defined(__amd64__) || defined(__x86_64__) )
++	out << getInfoLine( "model name" );
++#elif defined(__powerpc__)
++	out << getInfoLine( "platform" ) << " (" << getInfoLine( "clock" ) << ")";
+ #else
+-	return "Can't get terse CPU information";
++	out << "Can't get terse CPU information";
+ #endif
++#endif
++	return out.str();
+ }
+ 
++#if LL_LINUX
++const std::string& LLCPUInfo::getInfoLine( const std::string index ) const
++{
++	std::map< std::string, std::string >::const_iterator data = mCPUInfoLines.find( index );
++	if (data != mCPUInfoLines.end())
++	{
++		return (*data).second;
++	}
++	else
++	{
++		static const std::string empty;
++		return empty;
++	}
++}
++#endif
++
+ void LLCPUInfo::stream(std::ostream& s) const
+ {
+ #if LL_WINDOWS || LL_DARWIN
+@@ -329,22 +399,16 @@
+ 		s << "Unable to collect processor info";
+ 	}
+ #else
+-	// *NOTE: This works on linux. What will it do on other systems?
+-	FILE* cpuinfo = LLFile::fopen(CPUINFO_FILE, "r");		/* Flawfinder: ignore */
+-	if(cpuinfo)
++	// Return the machine information we gathered in the constructor
++	if(!mCPUInfoLines.empty())
+ 	{
+-		char line[MAX_STRING];		/* Flawfinder: ignore */
+-		memset(line, 0, MAX_STRING);
+-		while(fgets(line, MAX_STRING, cpuinfo))
+-		{
+-			line[strlen(line)-1] = ' ';		 /*Flawfinder: ignore*/
+-			s << line;
+-		}
+-		fclose(cpuinfo);
++		for( std::map< std::string, std::string >::const_iterator i = mCPUInfoLines.begin();
++				i != mCPUInfoLines.end(); ++i )
++			s << (*i).first << "\t: " << (*i).second << ' ';
+ 	}
+ 	else
+ 	{
+-		s << "Unable to collect memory information";
++		s << "Unable to collect processor information";
+ 	}
+ #endif
+ }
+Index: indra/llcommon/llsys.h
+===================================================================
+--- indra/llcommon/llsys.h	(revision 62604)
++++ indra/llcommon/llsys.h	(working copy)
+@@ -20,6 +20,7 @@
+ 
+ #include <iosfwd>
+ #include <string>
++#include <map>
+ 
+ class LLOSInfo
+ {
+@@ -52,18 +53,28 @@
+ 
+ 	std::string getCPUString() const;
+ 
+-	BOOL  hasSSE() const	{ return mHasSSE; }
+-	BOOL  hasSSE2()	const	{ return mHasSSE2; }
+-	S32	  getMhz() const	{ return mCPUMhz; }
++	BOOL  hasSSE() const		{ return mHasSSE; }
++	BOOL  hasSSE2()	const		{ return mHasSSE2; }
++	S32	  getMhz() const		{ return mCPUMhz; }
++	F64	  getClockFrequency() const	{ return mClockFrequency; }
+ 
+ 	// Family is "AMD Duron" or "Intel Pentium Pro"
+ 	const std::string& getFamily() const { return mFamily; }
+ 
++#ifdef LL_LINUX
++	const std::string& getInfoLine( const std::string index ) const;
++#endif
++
+ private:
+ 	BOOL mHasSSE;
+ 	BOOL mHasSSE2;
+ 	S32 mCPUMhz;
++	F64 mClockFrequency;
+ 	std::string mFamily;
++
++#ifdef LL_LINUX
++	std::map< std::string, std::string > mCPUInfoLines;
++#endif
+ };
+ 
+ class LLMemoryInfo
+Index: indra/llcommon/llprocessor.h
+===================================================================
+--- indra/llcommon/llprocessor.h	(revision 62604)
++++ indra/llcommon/llprocessor.h	(working copy)
+@@ -16,11 +16,21 @@
+ 
+ // Options:
+ ///////////
+-#if LL_WINDOWS
+-#define PROCESSOR_FREQUENCY_MEASURE_AVAILABLE
++
++#if LL_MSVC
++#	define LL_X86 1
++
++#elif LL_GNUC && ( defined(__amd64__) || defined(__x86_64__) )
++#	define LL_X86_64 1
++#	define LL_X86 1
++
++#elif LL_GNUC && ( defined(__i386__) )
++#	define LL_X86 1
++
++#elif LL_GNUC && defined(__powerpc__)
++#	define LL_PPC 1
+ #endif
+ 
+-
+ typedef struct ProcessorExtensions
+ {
+ 	bool FPU_FloatingPointUnit;
+Index: indra/llcommon/llprocessor.cpp
+===================================================================
+--- indra/llcommon/llprocessor.cpp	(revision 62686)
++++ indra/llcommon/llprocessor.cpp	(working copy)
+@@ -26,35 +26,34 @@
+ 
+ #include "linden_common.h"
+ 
+-#include "processor.h"
++#include "llprocessor.h"
+ 
+ #include <stdio.h>
+ #include <string.h>
+ #include <memory.h>
+ 
++#if !LL_DARWIN
++
+ #if LL_WINDOWS
+ #	define WIN32_LEAN_AND_MEAN
+ #	include <winsock2.h>
+ #	include <windows.h>
++#	define FORCEINLINE __forceinline
++#else
++#	define FORCEINLINE
+ #endif
+ 
+-#if !LL_DARWIN
+-
+-#ifdef PROCESSOR_FREQUENCY_MEASURE_AVAILABLE
+-// We need the QueryPerformanceCounter and Sleep functions
+-#if !LL_GNUC
+-#define FORCEINLINE __forceinline
++#if LL_LINUX
++#	include <sys/time.h>
+ #endif
+-#else
+-#define FORCEINLINE 
+-#endif
+ 
+ 
+ // Some macros we often need
+ ////////////////////////////
+ #define CheckBit(var, bit)   ((var & (1 << bit)) ? true : false)
+ 
+-#ifdef PROCESSOR_FREQUENCY_MEASURE_AVAILABLE
++
++#if LL_WINDOWS
+ // Delays for the specified amount of milliseconds
+ static	void	_Delay(unsigned int ms)
+ {
+@@ -80,11 +79,24 @@
+ #endif
+ 
+ 
+-#if LL_GNUC
++#if LL_MSVC
++static inline void __cpuid( unsigned long * _eax, unsigned long * _ebx,   unsigned long* _ecx, unsigned long* _edx )
++{
++	__asm
++	{
++		mov eax, [_eax];
++		cpuid;
++		mov [_eax], eax;
++		mov [_ebx], ebx;
++		mov [_ecx], ecx;
++		mov [_edx], edx;
++	}
++}
+ 
++#elif LL_GNUC && LL_X86
+ static inline void __cpuid( unsigned long * eax, unsigned long * ebx,   unsigned long* ecx, unsigned long* edx )
+ {
+- 	__asm__(
++ 	asm (
+  		"cpuid"
+  		: "=a" (*eax) ,
+  		  "=b" (*ebx) ,
+@@ -94,6 +106,16 @@
+ 		  "2" (*ecx) ) ;
+ }
+ 
++#else
++static inline void __cpuid( unsigned long * eax, unsigned long * ebx,   unsigned long* ecx, unsigned long* edx )
++{
++	*eax = *ebc = *ecx = *edc = 0;
++	return;
++}
++ 
++#endif
++
++
+ static inline void cpuid( unsigned op, unsigned long* eax, unsigned long* ebx, unsigned long* ecx, unsigned long* edx )
+ {
+ 	*eax = op;
+@@ -101,6 +123,11 @@
+ 	__cpuid( eax, ebx, ecx, edx ) ;
+ }
+ 
++static inline void cpuid(void)
++{
++	unsigned long eax, ebx, ecx, edx;
++	__cpuid( &eax, &ebx, &ecx, &edx ) ;
++}
+ 
+ static inline unsigned cpuid_eax( unsigned long op )
+ {
+@@ -133,12 +160,8 @@
+ 	cpuid( op, &eax, &ebx, &ecx, &edx ) ;
+ 	return edx;
+ }
+- 
+-#endif
+ 
+ 
+-
+-
+ // CProcessor::CProcessor
+ // ======================
+ // Class constructor:
+@@ -156,9 +179,7 @@
+ ////////////////////////////////////////////////////////////////////////////
+ F64 CProcessor::GetCPUFrequency(unsigned int uiMeasureMSecs)
+ {
+-#ifndef PROCESSOR_FREQUENCY_MEASURE_AVAILABLE
+-	return 0;
+-#else
++#if LL_X86
+ 	// If there are invalid measure time parameters, zero msecs for example,
+ 	// we've to exit the function
+ 	if (uiMeasureMSecs < 1)
+@@ -175,23 +196,15 @@
+ 		return 0;
+ 
+ 	// First we get the CPUID standard level 0x00000001
+-	unsigned long reg;
+-#if LL_GNUC
+-	reg = cpuid_eax( 1 ) ;
+-#else
+-	__asm
+-	{
+-		mov eax, 1
+-        cpuid
+-		mov reg, edx
+-	}
+-#endif
++	unsigned long reg = cpuid_eax( 1 ) ;
+ 
+ 	// Then we check, if the RDTSC (Real Date Time Stamp Counter) is available.
+ 	// This function is necessary for our measure process.
+ 	if (!(reg & (1 << 4)))
+ 		return 0;
+ 
++#endif
++#if LL_WINDOWS
+ 	// After that we declare some vars and check the frequency of the high
+ 	// resolution timer for the measure process.
+ 	// If there's no high-res timer, we exit.
+@@ -215,26 +228,13 @@
+ 
+ 	// Now we call a CPUID to ensure, that all other prior called functions are
+ 	// completed now (serialization)
+-#if LL_GNUC
+-	__asm__("cpuid"	::: "%eax" , "%ebx" , "%ecx" , "%edx" ) ;
+-#else
+-	__asm cpuid
+-#endif
++	cpuid();
+ 
+ 	// We ask the high-res timer for the start time
+ 	QueryPerformanceCounter((LARGE_INTEGER *) &starttime);
+ 
+ 	// Then we get the current cpu clock and store it
+-#if LL_GNUC
+-	__asm__("rdtsc"	: "=A" (start) ) ;
+-#else
+-	__asm 
+-	{
+-		rdtsc
+-		mov dword ptr [start+4], edx
+-		mov dword ptr [start], eax
+-	}
+-#endif
++	start = get_cpu_clock_count();
+ 
+ 	// Now we wait for some msecs
+ 	_Delay(uiMeasureMSecs);
+@@ -244,16 +244,7 @@
+ 	QueryPerformanceCounter((LARGE_INTEGER *) &endtime);
+ 
+ 	// And also for the end cpu clock
+-#if LL_GNUC
+-	__asm__("rdtsc"	: "=A" (end) ) ;
+-#else
+-	__asm 
+-	{
+-		rdtsc
+-		mov dword ptr [end+4], edx
+-		mov dword ptr [end], eax
+-	}
+-#endif
++	end = get_cpu_clock_count();
+ 
+ 	// Now we can restore the default process and thread priorities
+ 	SetProcessAffinityMask(hProcess, dwProcessMask);
+@@ -271,6 +262,28 @@
+ 	// At last we just return the frequency that is also stored in the call
+ 	// member var uqwFrequency
+ 	return uqwFrequency;
++
++#elif LL_LINUX
++
++	struct timeval tv_start, tv_end;
++	U64 start, end;
++	F64 secs_start, secs_end;
++	
++	gettimeofday(&tv_start, NULL);
++	start = get_cpu_clock_count();
++
++	usleep(uiMeasureMSecs);
++
++	gettimeofday(&tv_end, NULL);
++	end = get_cpu_clock_count();
++
++	secs_start      = (F64)tv_start.tv_usec / 1000000.0f + (F64)tv_start.tv_sec;
++	secs_end        = (F64)tv_end.tv_usec / 1000000.0f + (F64)tv_end.tv_sec;
++
++    return uqwFrequency = (F64)(end - start) / (secs_end - secs_start);
++
++#else
++	return 0;
+ #endif
+ }
+ 
+@@ -280,7 +293,7 @@
+ //////////////////////////////////////////////////////////
+ bool CProcessor::AnalyzeIntelProcessor()
+ {
+-#if LL_WINDOWS
++#if LL_X86
+ 	unsigned long eaxreg, ebxreg, edxreg;
+ 
+ 	// First we check if the CPUID command is available
+@@ -288,20 +301,9 @@
+ 		return false;
+ 
+ 	// Now we get the CPUID standard level 0x00000001
+-#if LL_GNUC
+ 	eaxreg = cpuid_eax( 1 ) ;
+ 	ebxreg = cpuid_ebx( 1 ) ;
+ 	edxreg = cpuid_edx( 1 ) ;
+-#else
+-	__asm
+-	{
+-		mov eax, 1
+-		cpuid
+-		mov eaxreg, eax
+-		mov ebxreg, ebx
+-		mov edxreg, edx
+-	}
+-#endif
+     
+ 	// Then get the cpu model, family, type, stepping and brand id by masking
+ 	// the eax and ebx register
+@@ -626,22 +628,10 @@
+ 	{
+ 		// If it supports the serial number CPUID level 0x00000003 we read the data
+ 		unsigned long sig1, sig2, sig3;
+-#if LL_GNUC
+ 		sig1 = cpuid_eax( 1 ) ;
+ 		sig2 = cpuid_ecx( 3 ) ;
+ 		sig3 = cpuid_edx( 3 ) ;
+-#else
+-		__asm
+-		{
+-			mov eax, 1
+-			cpuid
+-			mov sig1, eax
+-			mov eax, 3
+-			cpuid
+-			mov sig2, ecx
+-			mov sig3, edx
+-		}
+-#endif
++
+ 		// Then we convert the data to a readable string
+ 		snprintf(	/* Flawfinder: ignore */
+ 			CPUInfo.strProcessorSerial,
+@@ -683,7 +673,7 @@
+ ////////////////////////////////////////////////////////
+ bool CProcessor::AnalyzeAMDProcessor()
+ {
+-#if LL_WINDOWS
++#if LL_X86
+ 	unsigned long eaxreg, ebxreg, ecxreg, edxreg;
+ 
+ 	// First of all we check if the CPUID command is available
+@@ -691,20 +681,9 @@
+ 		return 0;
+ 
+ 	// Now we get the CPUID standard level 0x00000001
+-#if LL_GNUC
+ 	eaxreg = cpuid_eax( 1 ) ;
+ 	ebxreg = cpuid_ebx( 1 ) ;
+ 	edxreg = cpuid_edx( 1 ) ;
+-#else
+-	__asm
+-	{
+-		mov eax, 1
+-		cpuid
+-		mov eaxreg, eax
+-		mov ebxreg, ebx
+-		mov edxreg, edx
+-	}
+-#endif
+     
+ 	// Then we mask the model, family, stepping and type (AMD does not support brand id)
+ 	CPUInfo.uiStepping = eaxreg & 0xF;
+@@ -716,44 +695,16 @@
+ 	if (CPUInfo.MaxSupportedExtendedLevel >= 0x80000004)
+ 	{
+ 		// If it supports the extended CPUID level 0x80000004 we read the data
+-#if LL_GNUC
+ 		union
+-			{
++		{
+ 			char s[sizeof(CPUInfo.strBrandID)];
+ 			unsigned long r[12];
+-			} tmp ;
++		} tmp ;
+ 		memset(&tmp, 0, sizeof(tmp));
+ 		cpuid( 0x80000002 , &tmp.r[ 0] , &tmp.r[ 1] , &tmp.r[ 2] , &tmp.r[ 3] ) ;
+ 		cpuid( 0x80000003 , &tmp.r[ 4] , &tmp.r[ 5] , &tmp.r[ 6] , &tmp.r[ 7] ) ;
+ 		cpuid( 0x80000004 , &tmp.r[ 8] , &tmp.r[ 9] , &tmp.r[10] , &tmp.r[11] ) ;
+ 		strncpy(CPUInfo.strBrandID, tmp.s,sizeof(CPUInfo.strBrandID-1));
+-#else
+-		char tmp[52];		/* Flawfinder: ignore */
+-		memset(tmp, 0, sizeof(tmp));
+-        __asm
+-		{
+-			mov eax, 0x80000002
+-			cpuid
+-			mov dword ptr [tmp], eax
+-			mov dword ptr [tmp+4], ebx
+-			mov dword ptr [tmp+8], ecx
+-			mov dword ptr [tmp+12], edx
+-			mov eax, 0x80000003
+-			cpuid
+-			mov dword ptr [tmp+16], eax
+-			mov dword ptr [tmp+20], ebx
+-			mov dword ptr [tmp+24], ecx
+-			mov dword ptr [tmp+28], edx
+-			mov eax, 0x80000004
+-			cpuid
+-			mov dword ptr [tmp+32], eax
+-			mov dword ptr [tmp+36], ebx
+-			mov dword ptr [tmp+40], ecx
+-			mov dword ptr [tmp+44], edx
+-		}
+-		// And copy it to the brand id string
+-		strncpy(CPUInfo.strBrandID, tmp,sizeof(CPUInfo.strBrandID-1));	/* Flawfinder: ignore */		
+-#endif
+ 		CPUInfo.strBrandID[sizeof(CPUInfo.strBrandID-1)]='\0';
+ 	}
+ 	else
+@@ -941,16 +892,7 @@
+ 	{
+ 		// If we can access the extended CPUID level 0x80000001 we get the
+ 		// edx register
+-#if LL_GNUC
+ 		edxreg = cpuid_edx( 0x80000001 ) ;
+-#else
+-		__asm
+-		{
+-			mov eax, 0x80000001
+-			cpuid
+-			mov edxreg, edx
+-		}
+-#endif
+ 
+ 		// Now we can mask some AMD specific cpu extensions
+ 		CPUInfo._Ext.EMMX_MultimediaExtensions					= CheckBit(edxreg, 22);
+@@ -964,19 +906,7 @@
+ 	if (CPUInfo.MaxSupportedExtendedLevel >= 0x80000006)
+ 	{
+ 		// If it's present, we read it out
+-#if LL_GNUC
+ 		cpuid( 0x80000005 , &eaxreg , &ebxreg , &ecxreg , &edxreg ) ;
+-#else
+-        __asm
+-		{
+-            mov eax, 0x80000005
+-			cpuid
+-			mov eaxreg, eax
+-			mov ebxreg, ebx
+-			mov ecxreg, ecx
+-			mov edxreg, edx
+-		}
+-#endif
+ 
+ 		// Then we mask the L1 Data TLB information
+ 		if ((ebxreg >> 16) && (eaxreg >> 16))
+@@ -1050,18 +980,7 @@
+ 		// size for the TLB. Somebody should check it....
+ 
+ 		// Now we read the ext. CPUID level 0x80000006
+-#if LL_GNUC
+ 		cpuid( 0x80000006 , &eaxreg , &ebxreg , &ecxreg , &edxreg ) ;
+-#else
+-        __asm
+-		{
+-			mov eax, 0x80000006
+-			cpuid
+-			mov eaxreg, eax
+-			mov ebxreg, ebx
+-			mov ecxreg, ecx
+-		}
+-#endif
+ 
+ 		// We only mask the unified L2 cache masks (never heard of an
+ 		// L2 cache that is divided in data and code parts)
+@@ -1118,7 +1037,7 @@
+ ///////////////////////////////////////////////////////////////////////////
+ bool CProcessor::AnalyzeUnknownProcessor()
+ {
+-#if LL_WINDOWS
++#if LL_X86
+ 	unsigned long eaxreg, ebxreg;
+ 
+ 	// We check if the CPUID command is available
+@@ -1127,18 +1046,9 @@
+ 
+ 	// First of all we read the standard CPUID level 0x00000001
+ 	// This level should be available on every x86-processor clone
+-#if LL_GNUC
+ 	eaxreg = cpuid_eax( 1 ) ;
+ 	ebxreg = cpuid_ebx( 1 ) ;
+-#else
+-	__asm
+-	{
+-        mov eax, 1
+-		cpuid
+-		mov eaxreg, eax
+-		mov ebxreg, ebx
+-	}
+-#endif
++
+ 	// Then we mask the processor model, family, type and stepping
+ 	CPUInfo.uiStepping = eaxreg & 0xF;
+ 	CPUInfo.uiModel    = (eaxreg >> 4) & 0xF;
+@@ -1184,12 +1094,11 @@
+ ////////////////////////////////////////////////////////////////////////
+ bool CProcessor::CheckCPUIDPresence()
+ {
+-#if LL_WINDOWS
+-	unsigned long BitChanged;
+-	
+ 	// We've to check if we can toggle the flag register bit 21
+ 	// If we can't the processor does not support the CPUID command
+-#if LL_GNUC
++#if LL_GNUC && LL_X86
++	unsigned long BitChanged = 0;
++
+ 	__asm__(
+ 	"	pushf							\n"
+ 	"	pop		%%eax					\n"
+@@ -1202,7 +1111,10 @@
+ 	"	xor		%%ebx , %%eax			\n"
+ 	:	"=a" (BitChanged)
+ 	::	"%ebx" ) ;
+-#else
++	return ((BitChanged) ? true : false);
++
++#elif LL_MSVC
++	unsigned long BitChanged = 0;
+ 	__asm
+ 	{
+ 		pushfd
+@@ -1216,11 +1128,11 @@
+ 		xor eax,ebx 
+ 		mov BitChanged, eax
+ 	}
+-#endif
+-
+ 	return ((BitChanged) ? true : false);
++
+ #else
+-	return FALSE;
++	return false;
++	
+ #endif
+ }
+ 
+@@ -1548,7 +1460,7 @@
+ //////////////////////////////////////////////////////////////////////
+ void CProcessor::GetStandardProcessorConfiguration()
+ {
+-#if LL_WINDOWS
++#if LL_X86
+ 	unsigned long eaxreg, ebxreg, ecxreg, edxreg;
+ 
+ 	// We check if the CPUID function is available
+@@ -1563,19 +1475,8 @@
+ 		unsigned long count, num = 255;
+ 		for (count = 0; count < num; count++)
+ 		{
+-#if LL_GNUC
+ 			cpuid( 2 , &eaxreg , &ebxreg , &ecxreg , &edxreg ) ;
+-#else
+-			__asm
+-			{
+-				mov eax, 2
+-				cpuid
+-				mov eaxreg, eax
+-				mov ebxreg, ebx
+-				mov ecxreg, ecx
+-				mov edxreg, edx
+-			}
+-#endif
++
+ 			// We have to repeat this reading for 'num' times
+ 			num = eaxreg & 0xFF;
+ 
+@@ -1619,7 +1520,7 @@
+ ///////////////////////////////////////////////////////////////////
+ void CProcessor::GetStandardProcessorExtensions()
+ {
+-#if LL_WINDOWS
++#if LL_X86
+ 	unsigned long ebxreg, edxreg;
+ 
+ 	// We check if the CPUID command is available
+@@ -1627,18 +1528,8 @@
+ 		return;
+ 	// We just get the standard CPUID level 0x00000001 which should be
+ 	// available on every x86 processor
+-#if LL_GNUC
+ 	ebxreg = cpuid_ebx( 1 ) ;
+ 	edxreg = cpuid_edx( 1 ) ;
+-#else	
+-	__asm
+-	{
+-		mov eax, 1
+-		cpuid
+-		mov ebxreg, ebx
+-		mov edxreg, edx
+-	}
+-#endif
+     
+ 	// Then we mask some bits
+ 	CPUInfo._Ext.FPU_FloatingPointUnit							= CheckBit(edxreg, 0);
+@@ -1683,7 +1574,7 @@
+ ///////////////////////////////////////////////////////////////
+ const ProcessorInfo *CProcessor::GetCPUInfo()
+ {
+-#if LL_WINDOWS
++#if LL_X86
+ 	unsigned long eaxreg, ebxreg, ecxreg, edxreg;
+  
+ 	// First of all we check if the CPUID command is available
+@@ -1692,19 +1583,8 @@
+ 
+ 	// We read the standard CPUID level 0x00000000 which should
+ 	// be available on every x86 processor
+-#if LL_GNUC
+ 	cpuid( 0 , &eaxreg , &ebxreg , &ecxreg , &edxreg ) ;
+-#else	
+-	__asm
+-	{
+-		mov eax, 0
+-		cpuid
+-		mov eaxreg, eax
+-		mov ebxreg, ebx
+-		mov edxreg, edx
+-		mov ecxreg, ecx
+-	}
+-#endif
++
+ 	// Then we connect the single register values to the vendor string
+ 	*((unsigned long *) CPUInfo.strVendor) = ebxreg;
+ 	*((unsigned long *) (CPUInfo.strVendor+4)) = edxreg;
+@@ -1716,16 +1596,8 @@
+ 	CPUInfo.MaxSupportedLevel = eaxreg & 0xFFFF;
+ 
+ 	// Then we read the ext. CPUID level 0x80000000
+-#if LL_GNUC
+ 	eaxreg = cpuid_eax( 0x80000000 ) ;
+-#else
+-	__asm
+-	{
+-        mov eax, 0x80000000
+-		cpuid
+-		mov eaxreg, eax
+-	}
+-#endif
++
+ 	// ...to check the max. supportted extended CPUID level
+ 	CPUInfo.MaxSupportedExtendedLevel = eaxreg;
+ 
+Index: indra/llcommon/llfasttimer.cpp
+===================================================================
+--- indra/llcommon/llfasttimer.cpp	(revision 62604)
++++ indra/llcommon/llfasttimer.cpp	(working copy)
+@@ -43,75 +43,21 @@
+ 
+ F64 LLFastTimer::sCPUClockFrequency = 0.0;
+ 
+-//////////////////////////////////////////////////////////////////////////////
+ 
+-//
+-// CPU clock/other clock frequency and count functions
+-//
+-
+-#if LL_WINDOWS
+-
+-U64 get_cpu_clock_count()
+-{   U32  hi,lo;
+-
+-    __asm   
+-    {
+-        _emit   0x0f
+-        _emit   0x31
+-        mov     lo,eax
+-        mov     hi,edx
+-    }
+-
+-	U64 ret = hi;
+-	ret *= 4294967296L;
+-	ret |= lo;
+-    return ret;
+-};
+-
+-#endif // LL_WINDOWS
+-
+-
+-#if LL_LINUX
+-U64 get_cpu_clock_count()
+-{
+-	U64 x;
+-	__asm__ volatile (".byte 0x0f, 0x31" : "=A" (x));
+-	return x;
+-}
+-#endif
+-
+-#if LL_DARWIN
+-//
+-// Mac implementation of CPU clock
+-//
+-// Just use gettimeofday implementation for now
+-
+-U64 get_cpu_clock_count()
+-{
+-	return get_clock_count();
+-}
+-#endif
+-
+ //////////////////////////////////////////////////////////////////////////////
+ 
+-//static
+-#if LL_LINUX || LL_DARWIN
+-// Both Linux and Mac use gettimeofday for accurate time
++
+ U64 LLFastTimer::countsPerSecond()
+ {
+-	return 1000000; // microseconds, so 1 Mhz.
+-}
+-#else
+-U64 LLFastTimer::countsPerSecond()
+-{
+ 	if (!sCPUClockFrequency)
+ 	{
+ 		CProcessor proc;
+-		sCPUClockFrequency = proc.GetCPUFrequency(50);
++		sCPUClockFrequency = gSysCPU.getClockFrequency();
++		if(!sCPUClockFrequency)
++			sCPUClockFrequency = 1000000.0;
+ 	}
+ 	return U64(sCPUClockFrequency);
+ }
+-#endif
+ 
+ void LLFastTimer::reset()
+ {
+Index: indra/newview/llfloaterimagepreview.cpp
+===================================================================
+--- indra/newview/llfloaterimagepreview.cpp	(revision 62604)
++++ indra/newview/llfloaterimagepreview.cpp	(working copy)
+@@ -13,6 +13,7 @@
+ #include "llimagebmp.h"
+ #include "llimagetga.h"
+ #include "llimagejpeg.h"
++#include "llimageobj.h"
+ 
+ #include "llagent.h"
+ #include "llbutton.h"
+@@ -305,6 +306,10 @@
+ 	{
+ 		codec = IMG_CODEC_JPEG;
+ 	}
++	else if( 0 == strnicmp(ext, ".obj", 4) )
++	{
++		codec = IMG_CODEC_OBJ;
++	}
+ 
+ 	LLPointer<LLImageRaw> raw_image = new LLImageRaw;
+ 
+@@ -362,6 +367,21 @@
+ 			}
+ 		}
+ 		break;
++	case IMG_CODEC_OBJ:
++		{
++			LLPointer<LLImageOBJ> obj_image = new LLImageOBJ;
++
++			if (!obj_image->load(src_filename))
++			{
++				return false;
++			}
++			
++			if (!obj_image->decode(raw_image))
++			{
++				return false;
++			}
++		}
++		break;
+ 	default:
+ 		return false;
+ 	}
+Index: indra/newview/llviewermenu.cpp
+===================================================================
+--- indra/newview/llviewermenu.cpp	(revision 62604)
++++ indra/newview/llviewermenu.cpp	(working copy)
+@@ -224,7 +224,7 @@
+ 
+ #if LL_WINDOWS
+ static const char* SOUND_EXTENSIONS = ".wav";
+-static const char* IMAGE_EXTENSIONS = ".tga .bmp .jpg .jpeg";
++static const char* IMAGE_EXTENSIONS = ".tga .bmp .jpg .jpeg .obj";
+ static const char* ANIM_EXTENSIONS =  ".bvh";
+ #ifdef _CORY_TESTING
+ static const char* GEOMETRY_EXTENSIONS = ".slg";
+Index: indra/newview/llfilepicker.cpp
+===================================================================
+--- indra/newview/llfilepicker.cpp	(revision 62604)
++++ indra/newview/llfilepicker.cpp	(working copy)
+@@ -29,7 +29,7 @@
+ 
+ #if LL_WINDOWS
+ #define SOUND_FILTER L"Sounds (*.wav)\0*.wav\0"
+-#define IMAGE_FILTER L"Images (*.tga; *.bmp; *.jpg; *.jpeg)\0*.tga;*.bmp;*.jpg;*.jpeg\0"
++#define IMAGE_FILTER L"Images (*.tga; *.bmp; *.jpg; *.jpeg; *.obj)\0*.tga;*.bmp;*.jpg;*.jpeg;*.obj\0"
+ #define ANIM_FILTER L"Animations (*.bvh)\0*.bvh\0"
+ #ifdef _CORY_TESTING
+ #define GEOMETRY_FILTER L"SL Geometry (*.slg)\0*.slg\0"
+@@ -1149,7 +1149,7 @@
+ 		case FFLOAD_ANIM:
+ 			caption += "Animations (*.bvh)"; break;
+ 		case FFLOAD_IMAGE:
+-			caption += "Images (*.tga; *.bmp; *.jpg; *.jpeg)"; break;
++			caption += "Images (*.tga; *.bmp; *.jpg; *.jpeg; *.obj)"; break;
+ 		default:;
+ 			break;
+ 		}
+Index: indra/llimage/llimageobj.cpp
+===================================================================
+--- indra/llimage/llimageobj.cpp	(revision 0)
++++ indra/llimage/llimageobj.cpp	(revision 0)
+@@ -0,0 +1,259 @@
++/** 
++ * @file llimagebmp.cpp
++ *
++ * Copyright (c) 2007-$CurrentYear$, Linden Research, Inc.
++ * $License$
++ */
++
++#include "linden_common.h"
++
++#include "llimagebmp.h"
++#include "llimageobj.h"
++#include "llerror.h"
++#include "lldarray.h"
++#include "v3math.h"
++
++#include <iostream>
++#include <sstream>
++#include <string>
++#include <vector>
++
++struct LLImageOBJFacePoint
++{
++	U32 vertex, texture, normal;
++};
++
++struct LLImageOBJFace
++{
++	std::vector<LLImageOBJFacePoint> index;
++};
++
++
++BOOL LLImageOBJ::updateData()
++{
++	return TRUE;
++}
++
++
++static void decodeVertex2RGB( U8* dst, LLVector3 p, LLVector3& min, LLVector3& max)
++{
++	p -= min;
++	dst[VX] = (U8)llround( p.mV[VX] / max.mV[VX] * 255.0f );
++	dst[VY] = (U8)llround( p.mV[VY] / max.mV[VY] * 255.0f );
++	dst[VZ] = (U8)llround( p.mV[VZ] / max.mV[VZ] * 255.0f );
++}
++
++
++BOOL LLImageOBJ::decode(LLImageRaw* raw_image, F32 decode_time)
++{
++	resetLastError();
++
++	// Check to make sure that this instance has been initialized with data
++	U8* mdata = getData();
++	if (!mdata || (0 == getDataSize()))
++	{
++		setLastError("Uninitialized instance of LLImageOBJ");
++		return FALSE;
++	}
++
++	std::string copy_of_data((char*)mdata, getDataSize());
++	std::basic_istringstream<char> istr(copy_of_data);
++	
++	std::vector<LLVector3>			vertices;
++	std::vector<LLVector3>			normals;
++	std::vector<LLVector3>			textures;	// similar to uv map
++	std::vector<LLImageOBJFace>		faces;		// triangular or polygonic indexes to vertices, normals, & textures
++
++	while( istr.good() )
++	{
++		switch( istr.get() )
++		{
++		case '\n': continue;
++		case 'v':
++		{
++			char n = istr.get();
++			LLVector3 v;
++			if( n == ' ' )
++			{
++				istr >> v.mV[VX] >> v.mV[VY] >> v.mV[VZ];
++				if(istr.fail())
++				{
++					setLastError("Invalid vertex data in OBJ file");
++					return FALSE;
++				}
++				vertices.push_back(v);
++			}
++			else
++			if( n == 'n' )
++			{
++				istr >> v.mV[VX] >> v.mV[VY] >> v.mV[VZ];
++				if(istr.fail())
++				{
++					setLastError("Invalid vertex normal data in OBJ file");
++					return FALSE;
++				}
++				normals.push_back(v);
++			}
++			else
++			if( n == 't' )
++			{
++				istr >> v.mV[VX] >> v.mV[VY];
++				if(istr.fail())
++				{
++					setLastError("Invalid vertex texture data in OBJ file");
++					return FALSE;
++				}
++				v.mV[VZ] = 1.0;
++				textures.push_back(v);
++			}
++			break;
++		}
++		case 'f':		// face indices
++		{
++			LLImageOBJFace f;
++			while( istr.good() )
++			{
++				char c = istr.get();
++				if( c == '\r' )
++					c = istr.get();
++				if( c == '\n' )
++					break;
++				LLImageOBJFacePoint p;
++				istr >> p.vertex;
++				if( istr.fail() )
++				{
++					setLastError("Invalid face vertex index data in OBJ file");
++					return FALSE;
++				}
++				p.texture = 0;
++				p.normal = 0;
++				if( istr.get() != '/' )
++				{
++					istr.unget();
++					f.index.push_back(p);
++					continue;
++				}
++				c = istr.get();
++				if( '0' <= c && c <= '9' )
++				{
++					istr.unget();
++					istr >> p.texture;
++					if( istr.fail() )
++					{
++						setLastError("Invalid face texture index data in OBJ file");
++						return FALSE;
++					}
++					c = istr.get();
++				}
++				if( c != '/' )
++				{
++					istr.unget();
++					f.index.push_back(p);
++					continue;
++				}
++				istr >> p.normal;
++				if( istr.fail() )
++				{
++					setLastError("Invalid face normal index data in OBJ file");
++					return FALSE;
++				}
++				f.index.push_back(p);
++			}
++			faces.push_back(f);
++		}
++		case '#':		// # - comment
++		case 'o':		// o - object name
++		case 'g':		// g - group
++		case 'm':		// mtllib - material lib
++		case 'l':		// ll - line
++		case 'u':		// usemtl - use material
++		default:
++			{
++				while( istr.good() && istr.get() != '\n' );
++			}
++		}
++	}
++	if( istr.bad() )
++	{
++		setLastError("Unable to read OBJ data");
++		return FALSE;
++	}
++
++	if( 3 > vertices.size() )
++	{
++		setLastError("OBJ file lacks vertex data");
++		return FALSE;
++	}
++
++	// *NOTE: we assume normals exists in the data, but we could generate them
++	// based on the standard for OBJ files being a model that has all convex faces by default
++	//if( 0 == normals.size() )
++	//{
++	//	setLastError("OBJ file lacks vertex normal data");
++	//	return FALSE;
++	//}
++	//if( vertices.size() != normals.size() )
++	//{
++	//	setLastError("Unsupported vertex normal topology");
++	//	return FALSE;
++	//}
++
++	// *NOTE: We could do arbitrary vertices, but for now we use a
++	// default method for straight-forward 64x64 covex-face spheric topology conversion
++	// to retain intended sharpness
++	// this may be different for more cylindric topology, or those that lack a polar vertex
++	if( 3970 != vertices.size() )	// 3970 = (64 rows - 1 (overlap)) * (64 cols - 1 (overlap)) + 1 pole ?
++	{
++		setLastError("Conversion requires a 64x64 point spheric mesh");
++		return FALSE;
++	}
++
++	raw_image->resize(64, 64, 3);
++	
++	// *NOTE: We could, instead, trace the faces and determine if a spheric topology is possible.
++	// Then, mutate non-convex areas to proportional locations on a new sphere,
++	// which would create a new uv-index map and avoid subsequent ray-casts for those areas.
++	// For now, we don't use face data.
++
++	// assume we don't have to perform a model rotation
++
++	// assume we don't have to perform a model diagonal flip
++
++	// determine scale
++	LLVector3 min, max;
++	min = max = vertices[0];
++	for(U32 i = 1; i < vertices.size(); ++i)
++		update_min_max(min,max,vertices[i]);
++	max -= min;
++
++	// use default uv assumption: vertex and texture indices match.
++	// we could implement an auto-rotate/flip/adjust model to texture alignment.
++	U8* dst = raw_image->getData();
++	for(U32 u = 0; u < 63; ++u)
++	{
++		for(U32 v = 0; v < 63; ++v)
++		{
++			decodeVertex2RGB( dst, vertices[u*63+v], min, max);
++			dst += 3;
++		}
++		decodeVertex2RGB( dst, vertices[u*63+0], min, max);
++		dst += 3;
++	}
++	for(U32 u = 0, v = 0; v < 63; ++v)
++	{
++		decodeVertex2RGB( dst, vertices[u*63+v], min, max);
++		dst += 3;
++	}
++	decodeVertex2RGB( dst, vertices[0*63+63+1], min, max); // ?
++
++	return TRUE;
++}
++
++
++BOOL LLImageOBJ::encode(const LLImageRaw* raw_image, F32 encode_time)
++{
++	resetLastError();
++
++	setLastError("llimageobj attempted to encode raw image!");
++	return FALSE;
++}
+Index: indra/llimage/llimageobj.h
+===================================================================
+--- indra/llimage/llimageobj.h	(revision 0)
++++ indra/llimage/llimageobj.h	(revision 0)
+@@ -0,0 +1,26 @@
++/** 
++ * @file llimageobj.h
++ * @brief Image implementation for OBJ.
++ *
++ * Copyright (c) 2001-$CurrentYear$, Linden Research, Inc.
++ * $License$
++ */
++
++#ifndef LL_LLIMAGEOBJ_H
++#define LL_LLIMAGEOBJ_H
++
++#include "llimage.h"
++
++// This class blindy converts OBJ files to a sculpt map image for preview & upload
++
++class LLImageOBJ : public LLImageFormatted
++{
++public:
++	LLImageOBJ() : LLImageFormatted(IMG_CODEC_OBJ) {};
++
++	/*virtual*/ BOOL updateData();
++	/*virtual*/ BOOL decode(LLImageRaw* raw_image, F32 time=0.0);
++	/*virtual*/ BOOL encode(const LLImageRaw* raw_image, F32 time=0.0);
++};
++
++#endif
+Index: indra/llimage/llimage.cpp
+===================================================================
+--- indra/llimage/llimage.cpp	(revision 62604)
++++ indra/llimage/llimage.cpp	(working copy)
+@@ -27,6 +27,7 @@
+ #include "llimagejpeg.h"
+ #endif
+ #include "llimagedxt.h"
++#include "llimageobj.h"
+ 
+ //---------------------------------------------------------------------------
+ // LLImageBase
+@@ -1085,7 +1086,8 @@
+ 	{ "jpg", IMG_CODEC_JPEG },
+ 	{ "jpeg", IMG_CODEC_JPEG },
+ 	{ "mip", IMG_CODEC_DXT },
+-	{ "dxt", IMG_CODEC_DXT }
++	{ "dxt", IMG_CODEC_DXT },
++	{ "obj", IMG_CODEC_OBJ }
+ };
+ #define NUM_FILE_EXTENSIONS sizeof(file_extensions)/sizeof(file_extensions[0])
+ 
+@@ -1185,6 +1187,9 @@
+ 	  case IMG_CODEC_DXT:
+ 		image = new LLImageDXT();
+ 		break;
++	  case IMG_CODEC_OBJ:
++		image = new LLImageOBJ();
++		break;
+ 	  default:
+ 		return false;
+ 	}
+@@ -1273,6 +1278,9 @@
+ 	  case IMG_CODEC_DXT:
+ 		image = new LLImageDXT();
+ 		break;
++	  case IMG_CODEC_OBJ:
++		image = new LLImageOBJ();
++		break;
+ 	  default:
+ 		image = NULL;
+ 		break;
+Index: indra/llimage/llimage.h
+===================================================================
+--- indra/llimage/llimage.h	(revision 62604)
++++ indra/llimage/llimage.h	(working copy)
+@@ -47,7 +47,8 @@
+ 	IMG_CODEC_TGA  = 4,
+ 	IMG_CODEC_JPEG = 5,
+ 	IMG_CODEC_DXT  = 6,
+-	IMG_CODEC_EOF  = 7
++	IMG_CODEC_OBJ  = 7,
++	IMG_CODEC_EOF  = 8
+ };
+ 
+ //============================================================================
+Index: indra/llimage/files.lst
+===================================================================
+--- indra/llimage/files.lst	(revision 62604)
++++ indra/llimage/files.lst	(working copy)
+@@ -3,5 +3,6 @@
+ llimage/llimagedxt.cpp
+ llimage/llimagej2c.cpp
+ llimage/llimagejpeg.cpp
++llimage/llimageobj.cpp
+ llimage/llimagetga.cpp
+ llimage/llimageworker.cpp
