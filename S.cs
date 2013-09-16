@@ -157,3 +157,13 @@ static Dictionary<string,Symbol>    symbol_from_name = new Dictionary<string, Sy
 }
 
 	
+namespace Spatial.Mesh
+	{
+	public class atomics
+		{
+		public atomics()
+			{
+			throw new NotSupportedException("Try arithmetic types with icons as nodes.") ;
+			}
+		}
+	}
