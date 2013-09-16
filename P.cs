@@ -1,5 +1,6 @@
 public partial class A335
 {
+//System.Decimal π = 3.333… ;
 #if A
 [OAuth] Token _proxy_known ; //_oauth:A:__:_:lexical
 #endif
