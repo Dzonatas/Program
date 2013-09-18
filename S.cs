@@ -170,21 +170,29 @@ namespace Spatial.Mesh
 	
 namespace Spherical.Mesh
 	{
-	public class generator
+	static class generator
 		{
-		public string cartesian
+		static readonly Decimal [] n = new Decimal[64] ;
+		static string cartesian
 			{
 			get { return "a² = x² + y² + z²" ; } //a=r
 			}
-		public string parameters
+		static string parameters
 			{
 			get { return "[x,y,z](u,v) = [ cos(u)sin(v)a , sin(u)sin(v)a , cos(v)a ]" ; }
 			//tessellation:{ u=2πn/N ; v=πm/M ; m=[1±polarity,M±polarity) ; n=[1,N) }
 			}
-		public _.Token artifact
+		static _.Token artifact
 			{
 			get { return new _.Token( 'ʄ' , cartesian ) ; }
 			set { artifact = value ; }
+			}
+		static generator()
+			{
+			for( int i = 0 ; i < n.Length ; i++ )
+				n[i] = i ;
+			//{array:[Guid,4k]}>{node:#,#,#,...}//RFC:(well-known):X509(:plain-text:datestamped-by-entity)
+			//foreach(...}
 			}
 		}
 	}
