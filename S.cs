@@ -195,6 +195,16 @@ namespace Spherical.Mesh
 			//foreach(Decimal...n}
 			//foreach(face...array)
 			}
+		public static class environment
+			{
+			static public readonly bool spin ;
+			static public readonly Decimal X, Y, Z, U, V ;
+			static environment()
+				{
+				spin = false ;
+				X = Y = Z = U = V = 0.0m ;
+				}
+			}
 		}
 	}
 	
