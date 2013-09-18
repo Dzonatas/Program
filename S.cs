@@ -181,6 +181,10 @@ namespace Spherical.Mesh
 			get { return "[x,y,z](u,v) = [ cos(u)sin(v)a , sin(u)sin(v)a , cos(v)a ]" ; }
 			//tessellation:{ u=2πn/N ; v=πm/M ; m=[1±polarity,M±polarity) ; n=[1,N) }
 			}
+		public _.Token artifact
+			{
+			get { return new _.Token( 'ʄ' , cartesian ) ; }
+			}
 		}
 	}
 	
