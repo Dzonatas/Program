@@ -192,7 +192,8 @@ namespace Spherical.Mesh
 			for( int i = 0 ; i < n.Length ; i++ )
 				n[i] = i ;
 			//{array:[Guid,4k]}>{node:#,#,#,...}//RFC:(well-known):X509(:plain-text:datestamped-by-entity)
-			//foreach(...}
+			//foreach(Decimal...n}
+			//foreach(face...array)
 			}
 		}
 	}
