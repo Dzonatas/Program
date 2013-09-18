@@ -184,6 +184,7 @@ namespace Spherical.Mesh
 		public _.Token artifact
 			{
 			get { return new _.Token( 'ʄ' , cartesian ) ; }
+			set { artifact = value ; }
 			}
 		}
 	}
