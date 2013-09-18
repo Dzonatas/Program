@@ -179,7 +179,7 @@ namespace Spherical.Mesh
 		public string parameters
 			{
 			get { return "[x,y,z](u,v) = [ cos(u)sin(v)a , sin(u)sin(v)a , cos(v)a ]" ; }
-			//tessellation:{ u=2πn/N ; v=πm/M ; m=[1±polarity,M±polarity) ; n=[0,(N-1)) }
+			//tessellation:{ u=2πn/N ; v=πm/M ; m=[1±polarity,M±polarity) ; n=[1,N) }
 			}
 		}
 	}
