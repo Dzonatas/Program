@@ -167,3 +167,19 @@ namespace Spatial.Mesh
 			}
 		}
 	}
+	
+namespace Spherical.Mesh
+	{
+	public class generator
+		{
+		public string cartesian.text
+			{
+			get { return "a² = x² + y² + z²" ; } //a=r
+			}
+		public string parametric.text
+			{
+			get { return "[x,y,z](u,v) = [ cos(u)sin(v)a , sin(u)sin(v)a , cos(v)a ]" ; }
+			}
+		}
+	}
+	
