@@ -172,13 +172,14 @@ namespace Spherical.Mesh
 	{
 	public class generator
 		{
-		public string cartesian.text
+		public string cartesian
 			{
 			get { return "a² = x² + y² + z²" ; } //a=r
 			}
-		public string parametric.text
+		public string parameters
 			{
 			get { return "[x,y,z](u,v) = [ cos(u)sin(v)a , sin(u)sin(v)a , cos(v)a ]" ; }
+			//tessellation:{ u=2πn/N ; v=πm/M ; m=[1±polarity,M±polarity) ; n=[0,(N-1)) }
 			}
 		}
 	}
