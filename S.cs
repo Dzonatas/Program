@@ -220,7 +220,7 @@ namespace Spherical.Mesh
 				StreamWriter sw = new StreamWriter(mesh) ;
 				foreach( Decimal n in N )
 					foreach( Decimal m in N )
-						sw.Write( 0 ) ; //ʄ(m,n)
+						sw.Write( 0 ) ; //ʄ(m,n) //Noted: github.com/Dzonatas/solution re:post,get,ReST
 				sw.Write( dated = System.DateTime.Now ) ;
 				#endif
 				}

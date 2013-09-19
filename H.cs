@@ -20,3 +20,16 @@ bo.jo
 */
 
 }
+
+namespace Hacker.Materials
+	{
+	static class H 
+		{
+		static readonly global::Materials.l m ;
+		static H()
+			{
+			m = new global::Materials.M() ;
+			//m.apply(Sperical.Mesh.generator.parameters) ; 
+			}
+		}
+	}
