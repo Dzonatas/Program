@@ -21,11 +21,11 @@ bo.jo
 
 }
 
-namespace Hacker.Materials
+namespace Hacked.Materials
 	{
 	static class H 
 		{
-		static readonly global::Materials.l m ;
+		static readonly global::Materials.M m ;
 		static H()
 			{
 			m = new global::Materials.M() ;
