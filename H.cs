@@ -31,6 +31,7 @@ namespace Hacked.Materials
 			m = new global::Materials.M() ;
 			//m.prompt.up ;
 			//m.attach(CONSOLE) ;
+			//m.side.menu ;
 			//m.apply(Sperical.Mesh.generator.parameters) ;
 			//m.prompt.down
 			}
