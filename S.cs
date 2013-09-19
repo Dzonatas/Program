@@ -173,6 +173,7 @@ namespace Spherical.Mesh
 	static class generator
 		{
 		static readonly Decimal [] n = new Decimal[64] ;
+		static readonly object     shaped ;
 		static string cartesian
 			{
 			get { return "a² = x² + y² + z²" ; } //a=r
@@ -194,17 +195,26 @@ namespace Spherical.Mesh
 			//{array:[Guid,4k]}>{node:#,#,#,...}//RFC:(well-known):X509(:plain-text:datestamped-by-entity)
 			//foreach(Decimal...n}
 			//foreach(face...array)
+			//if(faces.are.square)
+				shaped = '∛' ;
+			//if(faces.are.polygonal)
+				shaped = '⏚' ;
+			System.GC.KeepAlive( shaped.GetHashCode() ) ;
 			}
+		#if X509
 		public static class environment
 			{
-			static public readonly bool spin ;
-			static public readonly Decimal X, Y, Z, U, V ;
+			static public readonly bool     spin ;
+			static public readonly Decimal  X, Y, Z, U, V ;
+			static public readonly DateTime dated ;
 			static environment()
 				{
 				spin = false ;
 				X = Y = Z = U = V = 0.0m ;
+				dated = System.DateTime.Now ;
 				}
 			}
+		#endif
 		}
 	}
 	
