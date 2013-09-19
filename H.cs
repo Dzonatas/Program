@@ -29,7 +29,10 @@ namespace Hacked.Materials
 		static H()
 			{
 			m = new global::Materials.M() ;
-			//m.apply(Sperical.Mesh.generator.parameters) ; 
+			//m.prompt.up ;
+			//m.attach(CONSOLE) ;
+			//m.apply(Sperical.Mesh.generator.parameters) ;
+			//m.prompt.down
 			}
 		}
 	}
