@@ -217,13 +217,10 @@ namespace Spherical.Mesh
 				System.GC.KeepAlive( shaped.GetHashCode() ) ;
 				//mesh=.resx
 				#else
-				//pragma: (readonly) dated == null ;
 				StreamWriter sw = new StreamWriter(mesh) ;
 				foreach( Decimal n in N )
 					foreach( Decimal m in N )
-						{
-						sw.Write( 0 ) ;
-						}
+						sw.Write( 0 ) ; //ʄ(m,n)
 				sw.Write( dated = System.DateTime.Now ) ;
 				#endif
 				}
