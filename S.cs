@@ -199,9 +199,8 @@ namespace Spherical.Mesh
 				shaped = '∛' ;
 			//if(faces.are.polygonal)
 				shaped = '⏚' ;
-			System.GC.KeepAlive( shaped.GetHashCode() ) ;
+			System.GC.KeepAlive( environment.dated ) ;
 			}
-		#if X509
 		public static class environment
 			{
 			static public readonly bool     spin ;
@@ -211,10 +210,14 @@ namespace Spherical.Mesh
 				{
 				spin = false ;
 				X = Y = Z = U = V = 0.0m ;
+				#if X509
 				dated = System.DateTime.Now ;
+				System.GC.KeepAlive( shaped.GetHashCode() ) ;
+				#else
+				//pragma: (readonly) dated == null ;
+				#endif
 				}
 			}
-		#endif
 		}
 	}
 	
