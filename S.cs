@@ -172,8 +172,9 @@ namespace Spherical.Mesh
 	{
 	static class generator
 		{
-		static readonly Decimal [] n = new Decimal[64] ;
-		static readonly object     shaped ;
+		static readonly Decimal []      N = new Decimal[64] ;
+		static readonly object          shaped ;
+		static System.IO.MemoryStream   mesh ;
 		static string cartesian
 			{
 			get { return "a² = x² + y² + z²" ; } //a=r
@@ -190,8 +191,9 @@ namespace Spherical.Mesh
 			}
 		static generator()
 			{
-			for( int i = 0 ; i < n.Length ; i++ )
-				n[i] = i ;
+			mesh = new MemoryStream() ;
+			for( int i = 0 ; i < N.Length ; i++ )
+				N[i] = i ;
 			//{array:[Guid,4k]}>{node:#,#,#,...}//RFC:(well-known):X509(:plain-text:datestamped-by-entity)
 			//foreach(Decimal...n}
 			//foreach(face...array)
@@ -213,8 +215,16 @@ namespace Spherical.Mesh
 				#if X509
 				dated = System.DateTime.Now ;
 				System.GC.KeepAlive( shaped.GetHashCode() ) ;
+				//mesh=.resx
 				#else
 				//pragma: (readonly) dated == null ;
+				StreamWriter sw = new StreamWriter(mesh) ;
+				foreach( Decimal n in N )
+					foreach( Decimal m in N )
+						{
+						sw.Write( 0 ) ;
+						}
+				sw.Write( dated = System.DateTime.Now ) ;
 				#endif
 				}
 			}
