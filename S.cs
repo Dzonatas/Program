@@ -221,7 +221,7 @@ namespace Spherical.Mesh
 				foreach( Decimal n in N )
 					foreach( Decimal m in N )
 						{
-						A335.Main(new string[] { "ʄ", "node", "-mn="+m.ToString()+","+n.ToString() } ) ;
+						A335.Main(new string[] { @"ʄnode-mn="+m.ToString()+","+n.ToString() } ) ;
 						sw.Write( 0 ) ; //result //ʄ(m,n) //Noted: github.com/Dzonatas/solution re:post,get,ReST
 						}
 				sw.Write( dated = System.DateTime.Now ) ;
