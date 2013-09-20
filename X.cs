@@ -5295,7 +5295,7 @@ struct xyzzyy
       <nonterminal symbol-number="252" name="START" usefulness="useful"/>
       <nonterminal symbol-number="253" name="decls" usefulness="useful"/>
       <nonterminal symbol-number="254" name="decl" usefulness="useful"/>
-      <nonterminal symbol-number="255" name="compQstring" usefulness="useful"/include.flags>
+      <nonterminal symbol-number="255" name="compQstring" usefulness="useful"/>
       <nonterminal symbol-number="256" name="languageDecl" usefulness="useful"/>
       <nonterminal symbol-number="257" name="customAttrDecl" usefulness="useful"/>
       <nonterminal symbol-number="258" name="moduleHead" usefulness="useful"/>
