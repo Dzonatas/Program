@@ -29,11 +29,15 @@ namespace Hacked.Materials
 		static H()
 			{
 			m = new global::Materials.M() ;
+			#if DRM
+			//m.attach(global::Materials.library_collada.id) ;
+			#else
 			//m.prompt.up ;
 			//m.attach(CONSOLE) ;
 			//m.side.menu ;
 			//m.apply(Sperical.Mesh.generator.parameters) ;
 			//m.prompt.down
+			#endif
 			}
 		}
 	}
