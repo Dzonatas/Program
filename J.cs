@@ -152,7 +152,8 @@ namespace J.ext
 	{
 	public enum _var
 		{
-		DEFAULT
+		DEFAULT,
+		COMPUTED_SQSTRING                    //https://plus.google.com/113166633786671863217/posts/1az1UfVuWmW
 		}
 	public static class var_
 		{
@@ -174,6 +175,10 @@ namespace J.ext
 		public static int _default(this int d, System.Decimal _sid)
 			{
 			return digits = (int) System.Decimal.Truncate(sid = _sid) ;
+			}
+		public static int node(this int d, int M, int N) //inode ~:= ʄnode
+			{
+			return 0 ; //i<1.000…<HDR
 			}
 		}
 	}
