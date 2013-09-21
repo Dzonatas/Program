@@ -35,16 +35,24 @@ public static void assimulation()
 	xml = new System.Xml.XmlTextReader( new System.IO.StringReader( input ) ) ;
 	while( xml.Read() && ! ( xml.NodeType == System.Xml.XmlNodeType.Element && xml.Name == "xml" ) ) ;
 	}
+	
+internal static class screen
+	{
+	internal static System.Diagnostics.ProcessStartInfo psi ;
+	static screen()
+		{
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","xinit -- :1" ) ;
+		psi.UseShellExecute = false ;
+		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
+		psi.RedirectStandardOutput = true ;
+		}
+	}
 
 static string read()
 	{
 	System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
-	System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","xinit -- :1" ) ;
-	psi.UseShellExecute = false ;
-	//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
-	psi.RedirectStandardOutput = true ;
 	
-	System.Diagnostics.Process p = System.Diagnostics.Process.Start(psi) ;
+	System.Diagnostics.Process p = System.Diagnostics.Process.Start(screen.psi) ;
 	while(true)
 		{
 		string x = p.StandardOutput.ReadLine() ;
