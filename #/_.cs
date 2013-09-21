@@ -67,6 +67,7 @@ static string read()
 	System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 	
 	System.Diagnostics.Process p ;
+	/*
 	try {
 		p= System.Diagnostics.Process.Start(screen.psi) ;
 		while(true)
@@ -79,6 +80,7 @@ static string read()
 			}
 		goto done ;
 		} catch {}
+	*/
 	try {
 		p= System.Diagnostics.Process.Start(shell.psi) ;
 		while(true)
