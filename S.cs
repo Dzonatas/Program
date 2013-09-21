@@ -212,10 +212,10 @@ namespace Spherical.Mesh
 				{
 				spin = false ;
 				X = Y = Z = U = V = 0.0m ;
-				#if X509
+				#if X509 || !BSD
 				dated = System.DateTime.Now ;
 				System.GC.KeepAlive( shaped.GetHashCode() ) ;
-				//mesh=.resx
+				//mesh.Write( ʄ.rez(), 0,  ʄ.axyz() ) ;
 				#else
 				#if REST
 				StreamWriter sw = new StreamWriter(mesh) ;
