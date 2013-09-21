@@ -41,7 +41,7 @@ internal static class screen
 	internal static System.Diagnostics.ProcessStartInfo psi ;
 	static screen()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","xinit -- :1" ) ; //_FIX:XWrapper.config
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","Xnest :2" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
@@ -67,7 +67,6 @@ static string read()
 	System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 	
 	System.Diagnostics.Process p ;
-	/*
 	try {
 		p= System.Diagnostics.Process.Start(screen.psi) ;
 		while(true)
@@ -80,7 +79,6 @@ static string read()
 			}
 		goto done ;
 		} catch {}
-	*/
 	try {
 		p= System.Diagnostics.Process.Start(shell.psi) ;
 		while(true)
