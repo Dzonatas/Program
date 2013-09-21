@@ -44,7 +44,21 @@ internal static class screen
 		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","xinit -- :1" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
-		psi.RedirectStandardOutput = true ;
+		//psi.RedirectStandardOutput = true ;
+		//psi.CreateNoWindow = true ;
+		}
+	}
+
+internal static class shell
+	{
+	internal static System.Diagnostics.ProcessStartInfo psi ;
+	static shell()
+		{
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","bash " ) ;
+		psi.UseShellExecute = false ;
+		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
+		//psi.RedirectStandardOutput = true ;
+		//psi.CreateNoWindow = true ;
 		}
 	}
 
@@ -52,17 +66,33 @@ static string read()
 	{
 	System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 	
-	System.Diagnostics.Process p = System.Diagnostics.Process.Start(screen.psi) ;
-	while(true)
-		{
-		string x = p.StandardOutput.ReadLine() ;
-		if( x == null )
-			break ;
-		sb.Append( x ) ;
-		sb.Append( '\n' ) ;
-		}
+	System.Diagnostics.Process p ;
+	try {
+		p= System.Diagnostics.Process.Start(screen.psi) ;
+		while(true)
+			{
+			string x = p.StandardOutput.ReadLine() ;
+			if( x == null )
+				break ;
+			sb.Append( x ) ;
+			sb.Append( '\n' ) ;
+			}
+		goto done ;
+		} catch {}
+	try {
+		p= System.Diagnostics.Process.Start(shell.psi) ;
+		while(true)
+			{
+			string x = p.StandardOutput.ReadLine() ;
+			if( x == null )
+				break ;
+			sb.Append( x ) ;
+			sb.Append( '\n' ) ;
+			}
+		goto done ;
+		} catch {}
+	done:
 	p.WaitForExit() ;
-	System.Console.WriteLine(p.ExitCode) ;
 	return sb.ToString() ;
 	}
 
