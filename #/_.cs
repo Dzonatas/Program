@@ -41,7 +41,7 @@ internal static class screen
 	internal static System.Diagnostics.ProcessStartInfo psi ;
 	static screen()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","xinit -- :1" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","xinit -- :1" ) ; //_FIX:XWrapper.config
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
@@ -57,7 +57,7 @@ internal static class shell
 		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","bash " ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
-		//psi.RedirectStandardOutput = true ;
+		psi.RedirectStandardOutput = true ;
 		//psi.CreateNoWindow = true ;
 		}
 	}
