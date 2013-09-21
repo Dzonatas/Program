@@ -39,7 +39,7 @@ public static void assimulation()
 static string read()
 	{
 	System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
-	System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo( "/bin/env","var/ecma335/compile.batch" ) ;
+	System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","xinit -- :1" ) ;
 	psi.UseShellExecute = false ;
 	//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 	psi.RedirectStandardOutput = true ;

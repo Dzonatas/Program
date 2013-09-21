@@ -183,7 +183,7 @@ class X //_: YY
 	void transition()   { xml_get_transition() ; }
 	void errors()       {}
 	void reductions()   {}
-	public void reduction()    { xml_get_reduction() ; }
+	void reduction()    { xml_get_reduction() ; }
 	void lookaheads()   {}
 	void solved_conflicts() {}
 	bool rules_b = false ;
