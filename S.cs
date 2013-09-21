@@ -228,10 +228,7 @@ namespace Spherical.Mesh
 				StreamWriter sw = new StreamWriter(mesh) ;
 				foreach( Decimal n in N )
 					foreach( Decimal m in N )
-						{
-						A335.Main(new string[] { @"ʄnode-mn="+m.ToString()+","+n.ToString() } ) ;
-						sw.Write( 0 ) ; //result //ʄ(m,n) //Noted: github.com/Dzonatas/solution re:post,get,ReST
-						}
+						sw.Write( 0 ) ; //result:O(N(N)) //ʄ(m,n) //Noted: github.com/Dzonatas/solution re:post,get,ReST
 				sw.Write( dated = System.DateTime.Now ) ;
 				#endif
 				#endif
