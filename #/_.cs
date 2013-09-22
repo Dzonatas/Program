@@ -39,13 +39,18 @@ public static void assimulation()
 internal static class screen
 	{
 	internal static System.Diagnostics.ProcessStartInfo psi ;
+	static System.Diagnostics.Process process ;
 	static screen()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","Xnest :2" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","Xnest :2 -name 0.0" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
 		//psi.CreateNoWindow = true ;
+		}
+	internal static void start()
+		{
+		process = System.Diagnostics.Process.Start(psi) ;
 		}
 	}
 
@@ -54,10 +59,11 @@ internal static class shell
 	internal static System.Diagnostics.ProcessStartInfo psi ;
 	static shell()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","bash " ) ;
+		screen.start() ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 xterm -geometry 0:0" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
-		psi.RedirectStandardOutput = true ;
+		//psi.RedirectStandardOutput = true ;
 		//psi.CreateNoWindow = true ;
 		}
 	}
@@ -65,20 +71,7 @@ internal static class shell
 static string read()
 	{
 	System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
-	
 	System.Diagnostics.Process p ;
-	try {
-		p= System.Diagnostics.Process.Start(screen.psi) ;
-		while(true)
-			{
-			string x = p.StandardOutput.ReadLine() ;
-			if( x == null )
-				break ;
-			sb.Append( x ) ;
-			sb.Append( '\n' ) ;
-			}
-		goto done ;
-		} catch {}
 	try {
 		p= System.Diagnostics.Process.Start(shell.psi) ;
 		while(true)
