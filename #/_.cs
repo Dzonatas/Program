@@ -60,7 +60,7 @@ internal static class shell
 	static shell()
 		{
 		screen.start() ;
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 xterm -geometry 0:0" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 win.exe" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
