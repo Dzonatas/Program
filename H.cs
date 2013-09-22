@@ -39,3 +39,17 @@ namespace Hacked.Materials
 			}
 		}
 	}
+	
+namespace Hypervisor.Materials
+	{
+	static class Handle
+		{
+		static readonly global::Materials.M handle ;
+		static Handle()
+			{
+			handle = new global::Materials.M() ;
+			//m.attach(DOOR) ;
+			//m.attach(WINDOW) ;
+			}
+		}
+	}
