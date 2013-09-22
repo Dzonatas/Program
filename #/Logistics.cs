@@ -15,9 +15,10 @@ using Glade ;
 using Snowglobe ;
 using Pango ;
 
-namespace Icesphere.Panel
+//namespace Icesphere.Panel
+namespace Logistics.Panel
 	{
-	public class _ : UI.View
+	public class Face : UI.View
 		{
 		#pragma warning disable 649
 		[Glade.Widget] internal Gtk.Button         ButtonWorld_ShowLocation ;
