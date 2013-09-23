@@ -63,6 +63,7 @@ internal static class screen
 		sb[0].Append( ":2" ) ;
 		Glut.glutInit( ref argc, sb ) ;
 		Glut.glutInitDisplayMode( Glut.GLUT_SINGLE | Glut.GLUT_RGBA ) ;
+		//_atom:dottedname:scroll.bars
 		}
 	}
 
@@ -72,7 +73,7 @@ internal static class shell
 	static shell()
 		{
 		screen.start() ;
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 $RSH google-chrome --incognito --app=https://www.secondlife.com" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 google-chrome --incognito -app=http://asciiqr.com/index.php?i=&t=Hello+world%21" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
