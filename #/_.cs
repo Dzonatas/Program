@@ -68,10 +68,11 @@ internal static class shell
 		int argc = 1 ;
 		System.Text.StringBuilder [] sb = new System.Text.StringBuilder[1] ;
 		sb[0] = new System.Text.StringBuilder() ;
-		sb[0].Append( "DISPLAY=:2" ) ;
+		sb[0].Append( "-display" ) ;
+		sb[0].Append( ":2" ) ;
 		Glut.glutInit( ref argc, sb ) ;
-		Glut.glutInitDisplayMode( Glut.GLUT_SINGLE | Glut.GLUT_RGB ) ; //GLUT_RGBA:CHROME
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 blizzard.exe --opengl" ) ;
+		Glut.glutInitDisplayMode( Glut.GLUT_SINGLE | Glut.GLUT_RGBA ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 google-chrome --app=compile" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
