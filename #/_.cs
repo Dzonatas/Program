@@ -73,7 +73,9 @@ internal static class shell
 	static shell()
 		{
 		screen.start() ;
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 google-chrome --incognito -app=http://media.steampowered.com/client/installer/steam.deb" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env",
+			"DISPLAY=:2 google-chrome --incognito"
+			+ " -app=https://embed.github.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
