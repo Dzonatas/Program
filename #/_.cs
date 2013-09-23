@@ -42,7 +42,9 @@ internal static class screen
 	static System.Diagnostics.Process process ;
 	static screen()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","Xnest :2 -name 0.0" ) ;
+		object[] o = System.Reflection.Assembly.GetEntryAssembly().GetCustomAttributes(typeof(System.Reflection.AssemblyTitleAttribute),true) ;
+		
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","Xnest :2 -name '" + (o[0] as System.Reflection.AssemblyTitleAttribute).Title +"'" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
@@ -60,7 +62,7 @@ internal static class shell
 	static shell()
 		{
 		screen.start() ;
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 win.exe" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 blizzard.exe --opengl" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
