@@ -75,7 +75,8 @@ internal static class shell
 		screen.start() ;
 		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env",
 			"DISPLAY=:2 google-chrome --incognito"
-			+ " -app=https://embed.github.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl" ) ;
+			+ " -app=http://gpspartsmart.com/b3cee001-0a4d-499b-a6db-696cf23c5495/" ) ;
+			//+ " -app=https://embed.github.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
