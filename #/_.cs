@@ -72,7 +72,7 @@ internal static class shell
 	static shell()
 		{
 		screen.start() ;
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 google-chrome --incognito --app=https://maps.google.com" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 $RSH google-chrome --incognito --app=https://www.secondlife.com" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
 		//psi.RedirectStandardOutput = true ;
