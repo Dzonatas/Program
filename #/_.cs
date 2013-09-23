@@ -1,3 +1,6 @@
+using Tao.OpenGl ;
+using Tao.FreeGlut ;
+
 public partial class _
 {
 static System.Xml.XmlTextReader   xml ;
@@ -62,6 +65,12 @@ internal static class shell
 	static shell()
 		{
 		screen.start() ;
+		int argc = 1 ;
+		System.Text.StringBuilder [] sb = new System.Text.StringBuilder[1] ;
+		sb[0] = new System.Text.StringBuilder() ;
+		sb[0].Append( "DISPLAY=:2" ) ;
+		Glut.glutInit( ref argc, sb ) ;
+		Glut.glutInitDisplayMode( Glut.GLUT_SINGLE | Glut.GLUT_RGB ) ; //GLUT_RGBA:CHROME
 		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env","DISPLAY=:2 blizzard.exe --opengl" ) ;
 		psi.UseShellExecute = false ;
 		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
