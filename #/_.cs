@@ -73,15 +73,15 @@ internal static class shell
 	static shell()
 		{
 		screen.start() ;
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env",
-			"schroot -c debug-sid /usr/bin/env google-chrome -display :2 --incognito ./jsLinux.js?app="
-			+ "b3cee001-0a4d-499b-a6db-696cf23c5495/X/Y/Z/#" ) ;
-			//+ " -app=http://gpspartsmart.com/b3cee001-0a4d-499b-a6db-696cf23c5495/" ) ;
-			//+ " -app=https://embed.github.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl" ) ;
-		psi.UseShellExecute = false ;
-		//psi.StandardOutputEncoding = System.Text.Encoding.ASCII ;
-		//psi.RedirectStandardOutput = true ;
-		//psi.CreateNoWindow = true ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "DISPLAY=:2 "+
+			#if DEBUGS
+			// "schroot -c debug-glx-sid /usr/bin/env DISPLAY=host:2 " +
+			#endif
+			"bash" ) ;
+		psi.UseShellExecute          = false ;
+		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
+		psi.RedirectStandardOutput   = true ;
+		psi.CreateNoWindow           = false ;
 		}
 	}
 
