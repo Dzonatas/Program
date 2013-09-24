@@ -39,6 +39,18 @@ namespace Materials
 		{
 		M id ;
 		}
+	struct MESA
+		{
+		static readonly object _ ;
+		string defunct_drm ;
+		M resx ;
+		static MESA()
+			{
+			MESA _ = new MESA() ;
+			_.defunct_drm = "" ;
+			_.resx = new Materials.M() ;
+			}
+		}
 	#endregion
 	}
 
