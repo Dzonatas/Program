@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 [assembly: AssemblyTitle("\"Hello World\"(2.(2)0)")]
 [assembly: AssemblyDescription("'(Sound)'")] //'("./#/$.cs"):'-'cp O.cs ./#'
-[assembly: AssemblyConfiguration("(Decimal)[Release:000.C=$carbon(<embed>Hello World</embed>):decim-({mal:...})]")]
+[assembly: AssemblyConfiguration(@"'#!/usr/bin/env schroot -i -c debug-sid'")]
 [assembly: AssemblyCompany("(Gold-(chrome))")]
 [assembly: AssemblyProduct("(Silver-light)")]
 [assembly: AssemblyCopyright("({})")]
