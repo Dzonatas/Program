@@ -84,6 +84,7 @@
     <Compile Include="#\`.cs" />
     <Compile Include="#\AssemblyInfo.cs" />
     <Compile Include="#\_URN.cs" />
+    <Compile Include="#\.extentions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
