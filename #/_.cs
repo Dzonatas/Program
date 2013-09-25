@@ -159,11 +159,3 @@ public static Token input()
 
 }
 
-namespace Tao.Platform.X11
-	{
-	class test 
-		{
-		Tao.Platform.X11.Functions f = new Functions() ;
-		f.XOpenDisplay(1) ;
-		}
-	}
