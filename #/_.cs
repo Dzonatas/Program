@@ -1,5 +1,6 @@
 using Tao.OpenGl ;
 using Tao.FreeGlut ;
+using Tao.Platform.X11 ;
 
 public partial class _
 {
@@ -157,3 +158,12 @@ public static Token input()
 #endregion micro_d
 
 }
+
+namespace Tao.Platform.X11
+	{
+	class test 
+		{
+		Tao.Platform.X11.Functions f = new Functions() ;
+		f.XOpenDisplay(1) ;
+		}
+	}

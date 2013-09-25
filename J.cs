@@ -149,8 +149,9 @@ namespace J.ext
 	{
 	public enum _var
 		{
-		DEFAULT,
-		COMPUTED_SQSTRING                    //https://plus.google.com/113166633786671863217/posts/1az1UfVuWmW
+		DEFAULT,                             //"Native Variant"
+		COMPUTED_SQSTRING,                   //https://plus.google.com/113166633786671863217/posts/1az1UfVuWmW
+		XELF                                 //rooted-X11-o,XOpenDisplay(IntPtr),...
 		}
 	public static class var_
 		{
