@@ -31,6 +31,20 @@ namespace System.Extensions
 			{
 			return 0 ; //i<1.000…<HDR
 			}
+		public static int OpenDisplay(this int d)
+			{
+			Static.Types.test.atomics() ;
+			return 0 ;
+			}
+		}
+
+	namespace Static.Types
+		{
+		internal static class test
+			{
+			internal static void atomics()
+				{
+				}
+			}
 		}
 	}
-

@@ -1,9 +1,11 @@
 using Tao.OpenGl ;
 using Tao.FreeGlut ;
 using Tao.Platform.X11 ;
+using System.Extensions ;
 
 public partial class _
 {
+const int ʄX = (int)_var.XELF ;
 static System.Xml.XmlTextReader   xml ;
 
 public class exception : System.Exception
@@ -57,6 +59,7 @@ internal static class screen
 	internal static void start()
 		{
 		process = System.Diagnostics.Process.Start(psi) ;
+		ʄX.OpenDisplay() ;
 		int argc = 1 ;
 		System.Text.StringBuilder [] sb = new System.Text.StringBuilder[1] ;
 		sb[0] = new System.Text.StringBuilder() ;
