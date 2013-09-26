@@ -1,6 +1,7 @@
 namespace System.Extensions
 	{
 	using System.Runtime.InteropServices ;
+	using System.Drawing ;
 	public enum _var
 		{
 		DEFAULT,                             //"Native Variant"
