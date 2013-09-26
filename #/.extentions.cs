@@ -50,10 +50,10 @@ namespace System.Extensions
 
 		[DllImport("libX11", EntryPoint = "XFree")]
 			extern static void free(IntPtr data) ;
-			public static void Free(this IntPtr display, IntPtr data)
-			{
-			free(data) ;
-			}
+			//public static void Free(this IntPtr display, IntPtr data)
+			//{
+			//free(data) ;
+			//}
 
 		[DllImport("libX11", EntryPoint = "XInternAtom")]
 			extern static IntPtr intern_atom(IntPtr display, string name, bool only_if_exists) ;
@@ -63,10 +63,13 @@ namespace System.Extensions
 			}
 
 		[DllImport("libX11", EntryPoint = "XGetAtomName")]
-			extern static string get_atom_name(IntPtr display, IntPtr atom) ;
-			public static string GetAtomName(this IntPtr display, IntPtr atom)
+			extern static IntPtr get_atom_name(IntPtr display, IntPtr atom) ;
+			public static Guid GetAtom(this IntPtr display, IntPtr atom)
 			{
-			return get_atom_name(display,atom) ;
+			IntPtr data = get_atom_name(display,atom) ;
+			Guid guid = new Guid( Marshal.PtrToStringAuto(data) ) ;
+			free(data) ;
+			return guid ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XRootWindow")]
@@ -85,19 +88,9 @@ namespace System.Extensions
 
 		[DllImport("libX11", EntryPoint = "XQueryTree")]
 			extern static void query_tree(System.IntPtr display, IntPtr window, out IntPtr root, out IntPtr sid, out IntPtr items, out int nitems) ;
-			public static void QueryTree(this IntPtr display, IntPtr window, out IntPtr root, out IntPtr sid, out IntPtr items, out int nitems )
+			public static void QueryTree(this IntPtr display, IntPtr window, out IntPtr root, out IntPtr sid, out IntPtr items, out int nitems)
 			{
-			query_tree(display,window,out root,out sid,out items,out nitems) ;
-			}
-		}
-
-	namespace X11
-		{
-		public static class test
-			{
-			public static void atomics()
-				{
-				}
+			query_tree(display, window, out root, out sid, out items, out nitems) ;
 			}
 		}
 	}

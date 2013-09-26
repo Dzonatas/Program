@@ -58,12 +58,16 @@ internal static class screen
 	static System.IntPtr  sid ;
 	static System.IntPtr  items ;
 	static int            nitems ;
+	static System.IntPtr  atomatrix ;
 	internal static void start()
 		{
 		process = System.Diagnostics.Process.Start(psi) ;
 		ʄ.OpenDisplay( out ʄ ) ;
-		ʄ.QueryTree( ʄ.RootWindow(), out root, out sid, out items, out nitems ) ;
-		System.Console.WriteLine("NITEMS={0}",nitems) ;
+		atomatrix = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
+		//ʄ.QueryTree( ʄ.RootWindow(), out root, out sid, out items, out nitems ) ;
+		//System.Console.WriteLine("NITEMS={0}",nitems) ;
+		System.Guid atom = ʄ.GetAtom( atomatrix ) ;
+		System.Console.WriteLine("ATOM={0}",atom) ;
 		//_atom:dottedname:scroll.bars
 		}
 	}
