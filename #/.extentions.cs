@@ -1,5 +1,6 @@
 namespace System.Extensions
 	{
+	using System.Runtime.InteropServices ;
 	public enum _var
 		{
 		DEFAULT,                             //"Native Variant"
@@ -31,18 +32,69 @@ namespace System.Extensions
 			{
 			return 0 ; //i<1.000…<HDR
 			}
-		public static int OpenDisplay(this int d)
+
+		[DllImport("libX11", EntryPoint = "XOpenDisplay")]
+			extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
+			public static void OpenDisplay(this IntPtr _, out IntPtr display)
 			{
-			Static.Types.test.atomics() ;
-			return 0 ;
+			display = display_open(":2") ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XCloseDisplay")]
+			extern static void display_close(IntPtr display) ;
+			public static void CloseDisplay(this IntPtr display)
+			{
+			display_close(display) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XFree")]
+			extern static void free(IntPtr data) ;
+			public static void Free(this IntPtr display, IntPtr data)
+			{
+			free(data) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XInternAtom")]
+			extern static IntPtr intern_atom(IntPtr display, string name, bool only_if_exists) ;
+			public static IntPtr InternAtom(this IntPtr display, string name, bool only_if_exists)
+			{
+			return intern_atom(display,name,only_if_exists) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XGetAtomName")]
+			extern static string get_atom_name(IntPtr display, IntPtr atom) ;
+			public static string GetAtomName(this IntPtr display, IntPtr atom)
+			{
+			return get_atom_name(display,atom) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XRootWindow")]
+			extern static IntPtr root_window(IntPtr display) ;
+			public static IntPtr RootWindow(this IntPtr display)
+			{
+			return root_window(display) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XDefaultRootWindow")]
+			extern static IntPtr default_root_window(IntPtr display) ;
+			public static IntPtr DefaultRootWindow(this IntPtr display)
+			{
+			return default_root_window(display) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XQueryTree")]
+			extern static void query_tree(System.IntPtr display, IntPtr window, out IntPtr root, out IntPtr sid, out IntPtr items, out int nitems) ;
+			public static void QueryTree(this IntPtr display, IntPtr window, out IntPtr root, out IntPtr sid, out IntPtr items, out int nitems )
+			{
+			query_tree(display,window,out root,out sid,out items,out nitems) ;
 			}
 		}
 
-	namespace Static.Types
+	namespace X11
 		{
-		internal static class test
+		public static class test
 			{
-			internal static void atomics()
+			public static void atomics()
 				{
 				}
 			}
