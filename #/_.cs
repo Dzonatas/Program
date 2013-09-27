@@ -63,9 +63,6 @@ internal static class screen
 	internal static void start()
 		{
 		process = System.Diagnostics.Process.Start(psi) ;
-		ʄ.OpenDisplay( out ʄ ) ;
-		root   = ʄ.DefaultRootWindow() ;
-		//window = ʄ.RootWindow() ;
 		System.IntPtr [] vector = new System.IntPtr[7] ;
 		string [] strings = {
 			System.Guid.NewGuid().ToString(),
@@ -76,7 +73,9 @@ internal static class screen
 			System.Guid.NewGuid().ToString(),
 			null
 			} ;
+		ʄ.OpenDisplay( out ʄ ) ;
 		ʄ.InternAtoms( strings, strings.Length-1, false, vector ) ;
+		root   = ʄ.DefaultRootWindow() ;
 		System.IntPtr [] default_list = ʄ.ListProperties( root ) ;
 		int             argc        = 0 ;
 		string []       argv        = {} ;
@@ -85,7 +84,7 @@ internal static class screen
 		System.IntPtr   pixmap ;
 		System.IntPtr   hints ;
 		ʄ.SetStandardProperties( root, window_name, icon_name, pixmap, argv, argc, hints ) ;
-		window = ʄ.RootWindow() ;
+		window = ʄ.RootWindow(0) ;
 		System.IntPtr [] list = ʄ.ListProperties( window ) ;
 		//System.Console.WriteLine( "DA={0}", ʄ.GetDefaultAtom(list[0]) ) ;
 		//vector[6]  = ʄ.ListProperties( ʄ.RootWindow(), nitems )[0] ;

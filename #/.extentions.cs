@@ -90,10 +90,10 @@ namespace System.Extensions
 			}
 
 		[DllImport("libX11", EntryPoint = "XRootWindow")]
-			extern static IntPtr root_window(IntPtr display) ;
-			public static IntPtr RootWindow(this IntPtr display)
+			extern static IntPtr root_window(IntPtr display, int screen) ;
+			public static IntPtr RootWindow(this IntPtr display, int screen)
 			{
-			return root_window(display) ;
+			return root_window(display,screen) ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XDefaultRootWindow")]
@@ -128,6 +128,20 @@ namespace System.Extensions
 			public static void SetStandardProperties(this IntPtr display, IntPtr window, string window_name, string icon_name, IntPtr pixmap, string [] argv, int argc, IntPtr hints)
 			{
 			set_standard_properties(display,window,window_name,icon_name,pixmap,argv,argc,hints) ;
+			}
+			
+		[DllImport("libX11", EntryPoint = "XCreatePixmap")]
+			extern static IntPtr pixmap_create(System.IntPtr display, IntPtr drawable, uint width, uint height, uint depth) ;
+			public static IntPtr CreatePixmap(this IntPtr display, IntPtr drawable, uint width, uint height, uint depth)
+			{
+			return pixmap_create(display,drawable,width,height,depth) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XFreePixmap")]
+			extern static void pixmap_free(System.IntPtr display, IntPtr pixmap)  ;
+			public static void FreePixmap(this IntPtr display, IntPtr pixmap)
+			{
+			pixmap_free(display,pixmap) ;
 			}
 		}
 	}
