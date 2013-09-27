@@ -79,6 +79,16 @@ namespace System.Extensions
 			return guid ;
 			}
 
+		//[DllImport("libX11", EntryPoint = "XGetAtomName")]
+			//extern static IntPtr get_atom_name(IntPtr display, IntPtr atom) ;
+			public static string GetDefaultAtom(this IntPtr display, IntPtr atom)
+			{
+			IntPtr data = get_atom_name(display,atom) ;
+			string s = Marshal.PtrToStringAuto(data) ;
+			free(data) ;
+			return s ;
+			}
+
 		[DllImport("libX11", EntryPoint = "XRootWindow")]
 			extern static IntPtr root_window(IntPtr display) ;
 			public static IntPtr RootWindow(this IntPtr display)
@@ -99,12 +109,18 @@ namespace System.Extensions
 			{
 			query_tree(display, window, out root, out sid, out items, out nitems) ;
 			}
-
+			
 		[DllImport("libX11", EntryPoint = "XListProperties")]
 			extern static IntPtr list_properties(System.IntPtr display, IntPtr window, out int nitems) ;
-			public static IntPtr ListProperties(this IntPtr display, IntPtr window, out int nitems)
+			public static IntPtr [] ListProperties(this IntPtr display, IntPtr window)
 			{
-			return list_properties(display, window, out nitems) ;
+			int nitems ;
+			IntPtr ip = list_properties(display, window, out nitems) ;
+			System.IntPtr [] list = new System.IntPtr[nitems] ;
+			for( int i = 0 ; i < nitems ; i++ )
+				list[i] = (IntPtr)Marshal.PtrToStructure((IntPtr)(ip + IntPtr.Size * i), typeof(IntPtr)) ;
+			free(ip) ;
+			return list ;
 			}
 		}
 	}
