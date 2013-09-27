@@ -67,8 +67,11 @@ internal static class screen
 		//ʄ.QueryTree( ʄ.RootWindow(), out root, out sid, out items, out nitems ) ;
 		//System.Console.WriteLine("NITEMS={0}",nitems) ;
 		System.Guid atom = ʄ.GetAtom( atomatrix ) ;
-		System.Console.WriteLine("ATOM={0}",atom) ;
+		//System.Console.WriteLine("ATOM={0}",atom) ;
+		//int n ;
+		System.IntPtr l = ʄ.ListProperties( ʄ.RootWindow(), out n ) ;
 		//_atom:dottedname:scroll.bars
+		//System.Console.WriteLine("NITEMS={0}",n) ;
 		}
 	}
 

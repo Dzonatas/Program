@@ -92,5 +92,12 @@ namespace System.Extensions
 			{
 			query_tree(display, window, out root, out sid, out items, out nitems) ;
 			}
+
+		[DllImport("libX11", EntryPoint = "XListProperties")]
+			extern static IntPtr list_properties(System.IntPtr display, IntPtr window, out int nitems) ;
+			public static IntPtr ListProperties(this IntPtr display, IntPtr window, out int nitems)
+			{
+			return list_properties(display, window, out nitems) ;
+			}
 		}
 	}
