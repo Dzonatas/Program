@@ -59,19 +59,26 @@ internal static class screen
 	static System.IntPtr  items ;
 	static int            nitems ;
 	static System.IntPtr  atomatrix ;
+	static System.IntPtr  core ;
 	internal static void start()
 		{
 		process = System.Diagnostics.Process.Start(psi) ;
 		ʄ.OpenDisplay( out ʄ ) ;
-		atomatrix = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
+		atomatrix  = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
+		core       = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
 		//ʄ.QueryTree( ʄ.RootWindow(), out root, out sid, out items, out nitems ) ;
+		window     = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
+		root       = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
+		sid        = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
+		items      = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
 		//System.Console.WriteLine("NITEMS={0}",nitems) ;
-		System.Guid atom = ʄ.GetAtom( atomatrix ) ;
+		//System.Guid atom = ʄ.GetAtom( atomatrix ) ;
 		//System.Console.WriteLine("ATOM={0}",atom) ;
 		//int n ;
-		System.IntPtr l = ʄ.ListProperties( ʄ.RootWindow(), out n ) ;
+		System.IntPtr lp = ʄ.ListProperties( ʄ.RootWindow(), out nitems ) ;
 		//_atom:dottedname:scroll.bars
-		//System.Console.WriteLine("NITEMS={0}",n) ;
+		System.Console.WriteLine("NITEMS={0}",nitems) ;
+		//depth=n(atoms)+nitems
 		}
 	}
 
