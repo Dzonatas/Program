@@ -64,9 +64,8 @@ internal static class screen
 		{
 		process = System.Diagnostics.Process.Start(psi) ;
 		ʄ.OpenDisplay( out ʄ ) ;
+		root   = ʄ.DefaultRootWindow() ;
 		//window = ʄ.RootWindow() ;
-		//root = ʄ.DefaultRootWindow() ;
-		//ʄ.ListProperties( window ) ;
 		System.IntPtr [] vector = new System.IntPtr[7] ;
 		string [] strings = {
 			System.Guid.NewGuid().ToString(),
@@ -77,11 +76,18 @@ internal static class screen
 			System.Guid.NewGuid().ToString(),
 			null
 			} ;
-		//ʄ.InternAtoms( strings, strings.Length-1, false, vector ) ;
-		//_no_window
-		//ʄ.QueryTree( window, out root, out sid, out items, out nitems ) ;
-		System.IntPtr [] list = ʄ.ListProperties( ʄ.DefaultRootWindow() ) ;
-		System.Console.WriteLine( "DA={0}", ʄ.GetDefaultAtom(list[0]) ) ;
+		ʄ.InternAtoms( strings, strings.Length-1, false, vector ) ;
+		System.IntPtr [] default_list = ʄ.ListProperties( root ) ;
+		int             argc        = 0 ;
+		string []       argv        = {} ;
+		string          icon_name   = "" ;
+		string          window_name = "" ;
+		System.IntPtr   pixmap ;
+		System.IntPtr   hints ;
+		ʄ.SetStandardProperties( root, window_name, icon_name, pixmap, argv, argc, hints ) ;
+		window = ʄ.RootWindow() ;
+		System.IntPtr [] list = ʄ.ListProperties( window ) ;
+		//System.Console.WriteLine( "DA={0}", ʄ.GetDefaultAtom(list[0]) ) ;
 		//vector[6]  = ʄ.ListProperties( ʄ.RootWindow(), nitems )[0] ;
 		/*
 		vector[0]  = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;

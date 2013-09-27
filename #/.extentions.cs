@@ -122,5 +122,12 @@ namespace System.Extensions
 			free(ip) ;
 			return list ;
 			}
+			
+		[DllImport("libX11", EntryPoint = "XSetStandardProperties")]
+			extern static void set_standard_properties(System.IntPtr display, IntPtr window, string window_name, string icon_name, IntPtr pixmap, string [] argv, int argc, IntPtr hints)  ;
+			public static void SetStandardProperties(this IntPtr display, IntPtr window, string window_name, string icon_name, IntPtr pixmap, string [] argv, int argc, IntPtr hints)
+			{
+			set_standard_properties(display,window,window_name,icon_name,pixmap,argv,argc,hints) ;
+			}
 		}
 	}
