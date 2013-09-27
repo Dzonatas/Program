@@ -62,6 +62,13 @@ namespace System.Extensions
 			return intern_atom(display,name,only_if_exists) ;
 			}
 
+		[DllImport("libX11", EntryPoint = "XInternAtoms")]
+			extern static IntPtr intern_atoms(IntPtr display, string [] names, int nnames, bool only_if_exists, IntPtr [] atoms) ;
+			public static void InternAtoms(this IntPtr display, string [] names, int nnames, bool only_if_exists, IntPtr [] atoms)
+			{
+			intern_atoms(display,names,nnames,only_if_exists,atoms) ;
+			}
+
 		[DllImport("libX11", EntryPoint = "XGetAtomName")]
 			extern static IntPtr get_atom_name(IntPtr display, IntPtr atom) ;
 			public static Guid GetAtom(this IntPtr display, IntPtr atom)

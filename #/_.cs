@@ -78,8 +78,10 @@ internal static class screen
 		//int n ;
 		vector[6]  = ʄ.ListProperties( ʄ.RootWindow(), out nitems ) ;
 		//_atom:dottedname:scroll.bars
-		System.Console.WriteLine("NITEMS={0}",nitems) ;
+		//System.Console.WriteLine("NITEMS={0}",nitems) ;
 		//depth=n(atoms)+nitems
+		string [] names = { "atomatrix", "core", "window", "root", "sid", "items", "" } ;
+		ʄ.InternAtoms( names, names.Length, false, vector ) ;
 		}
 	}
 
