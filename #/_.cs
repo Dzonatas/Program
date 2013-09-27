@@ -65,6 +65,18 @@ internal static class screen
 		process = System.Diagnostics.Process.Start(psi) ;
 		ʄ.OpenDisplay( out ʄ ) ;
 		System.IntPtr [] vector = new System.IntPtr[7] ;
+		string [] strings = {
+			System.Guid.NewGuid().ToString(),
+			System.Guid.NewGuid().ToString(),
+			System.Guid.NewGuid().ToString(),
+			System.Guid.NewGuid().ToString(),
+			System.Guid.NewGuid().ToString(),
+			System.Guid.NewGuid().ToString(),
+			null
+			} ;
+		ʄ.InternAtoms( strings, strings.Length-1, false, vector ) ;
+		vector[6]  = ʄ.ListProperties( ʄ.RootWindow(), out nitems ) ;
+		/*
 		vector[0]  = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
 		vector[1]  = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
 		//ʄ.QueryTree( ʄ.RootWindow(), out root, out sid, out items, out nitems ) ;
@@ -72,11 +84,12 @@ internal static class screen
 		vector[3]  = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
 		vector[4]  = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
 		vector[5]  = ʄ.InternAtom( System.Guid.NewGuid().ToString(), false ) ;
+		*/
 		//System.Console.WriteLine("NITEMS={0}",nitems) ;
 		//System.Guid atom = ʄ.GetAtom( atomatrix ) ;
 		//System.Console.WriteLine("ATOM={0}",atom) ;
 		//int n ;
-		vector[6]  = ʄ.ListProperties( ʄ.RootWindow(), out nitems ) ;
+		//vector[6]  = ʄ.ListProperties( ʄ.RootWindow(), out nitems ) ;
 		//_atom:dottedname:scroll.bars
 		//System.Console.WriteLine("NITEMS={0}",nitems) ;
 		//depth=n(atoms)+nitems
