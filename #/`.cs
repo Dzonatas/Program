@@ -2047,7 +2047,7 @@ static void goto_( ref b_state b ) //_FIX:x,c
 #endregion b_image_i
 
 	#if ABI
-	static class CL
+	class CL
 		{
 		static CL()
 			{
@@ -2063,18 +2063,22 @@ static void goto_( ref b_state b ) //_FIX:x,c
 			int err ;
 			System.IntPtr t = CL.CreateContextFromType1(out err ) ;
 			}
+		
 		[DllImport("OpenCL", EntryPoint = "clCreateContextFromType")]
 			extern static IntPtr clCreateContextFromType1(uint p, IntPtr device_type, int pfn, int data, out int err) ;
 			public static IntPtr CreateContextFromType1(out int err)
 			{
 			return clCreateContextFromType1(0,(IntPtr)0x1084,0,0, out err) ;
 			}
+
+		[.unixcall endian clCreateContextFromType (in Nullable<IntPtr[]>, in Nullable<IntPtr>, in Nullable<IntPtr>, in Nullable<IntPtr>, out Nullable<IntPtr>)]
 		[DllImport("OpenCL", EntryPoint = "clCreateContextFromType")]
 			extern static IntPtr clCreateContextFromType(IntPtr[] properties, IntPtr device_type, IntPtr pfn, IntPtr data, out int err) ;
 			public static IntPtr CreateContextFromType(IntPtr[] properties, IntPtr device_type, IntPtr pfn, IntPtr data, out int err)
 			{
 			return clCreateContextFromType(properties,device_type,pfn,data, out err) ;
 			}
+		
 		[DllImport("OpenCL", EntryPoint = "clGetPlatformIDs")]
 			extern static IntPtr clGetPlatformIDs1(uint nentries,  int ids, out uint nids) ;
 			public static IntPtr GetPlatformIDs1( out uint nids)
