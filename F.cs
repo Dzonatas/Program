@@ -12,3 +12,18 @@ const System.Decimal flag_rune__ = 0.0m ; //# (-> ./#/___.(./#/_]](.ico:EMBED`QR
 // jo quant <environment,spin>{.loop.up}   /*$E$#*/_OK,_FIX:_pure_virtual_phantoms.assertion("collusion")
 // jo quant <environment,paravirtual>{.loop.down}   /*$E$#*/_NAK:(in-session:...)
 }
+
+namespace Future
+	{
+	using System ;
+	public class ʄutex<T> /* : Atomatrix<T> */
+		{
+		public     IntPtr Precursor  ;
+		public     IntPtr Intraface  ;
+		public     IntPtr Intrafaces ;
+		protected  IntPtr Orbits     ;
+		protected  IntPtr Interface  ;
+		protected  IntPtr Interfaces ;
+		T                 item       ;
+		}
+	}
