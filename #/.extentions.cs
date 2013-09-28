@@ -34,6 +34,7 @@ namespace System.Extensions
 			return 0 ; //i<1.000…<HDR
 			}
 
+		//[Oprand({'B', 'l'})]
 		[DllImport("libX11", EntryPoint = "XOpenDisplay")]
 			extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
 			public static void OpenDisplay(this IntPtr _, out IntPtr display)
