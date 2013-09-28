@@ -87,6 +87,7 @@ internal static class screen
 		window = ʄ.RootWindow(0) ;
 		System.IntPtr [] list = ʄ.ListProperties( window ) ;
 		System.IntPtr pm = ʄ.CreatePixmap( window, 8, 8, 8 ) ;
+		//System.IntPtr HDR = ʄ.CreatePixmap( windows, 256, 2.0 ) ;
 		//System.Console.WriteLine( "DA={0}", ʄ.GetDefaultAtom(list[0]) ) ;
 		//vector[6]  = ʄ.ListProperties( ʄ.RootWindow(), nitems )[0] ;
 		/*
