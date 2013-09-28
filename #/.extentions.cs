@@ -144,4 +144,53 @@ namespace System.Extensions
 			pixmap_free(display,pixmap) ;
 			}
 		}
+	#if EVAL_CL
+	static class CL
+		{
+		static CL()
+			{
+			System.IntPtr [] ids = null ;
+			uint nids ;
+			System.IntPtr k = CL.GetPlatformIDs1(out nids) ;
+			ids = new System.IntPtr[nids] ;
+			System.IntPtr ks = CL.GetPlatformIDs(nids, out ids, out nids) ;
+			System.IntPtr[] properties  = null ; //{ (System.IntPtr)0x1084, ids[0], (System.IntPtr)0 } ;
+			System.IntPtr device_type  = (System.IntPtr)(1 << 0 );
+			System.IntPtr pfn ;
+			System.IntPtr data ;
+			int err ;
+			System.IntPtr t = CL.CreateContextFromType1(out err ) ;
+			}
+		[DllImport("OpenCL", EntryPoint = "clCreateContextFromType")]
+			extern static IntPtr clCreateContextFromType1(uint p, IntPtr device_type, int pfn, int data, out int err) ;
+			public static IntPtr CreateContextFromType1(out int err)
+			{
+			return clCreateContextFromType1(0,(IntPtr)0x1084,0,0, out err) ;
+			}
+		[DllImport("OpenCL", EntryPoint = "clCreateContextFromType")]
+			extern static IntPtr clCreateContextFromType(IntPtr[] properties, IntPtr device_type, IntPtr pfn, IntPtr data, out int err) ;
+			public static IntPtr CreateContextFromType(IntPtr[] properties, IntPtr device_type, IntPtr pfn, IntPtr data, out int err)
+			{
+			return clCreateContextFromType(properties,device_type,pfn,data, out err) ;
+			}
+		[DllImport("OpenCL", EntryPoint = "clGetPlatformIDs")]
+			extern static IntPtr clGetPlatformIDs1(uint nentries,  int ids, out uint nids) ;
+			public static IntPtr GetPlatformIDs1( out uint nids)
+			{
+			return clGetPlatformIDs1(0, 0, out nids) ;
+			}
+		[DllImport("OpenCL", EntryPoint = "clGetPlatformIDs")]
+			extern static IntPtr clGetPlatformIDs(uint nentries, out IntPtr[] ids, out uint nids) ;
+			public static IntPtr GetPlatformIDs(uint nentries, out IntPtr[] ids, out uint nids)
+			{
+			return clGetPlatformIDs(nentries, out ids, out nids) ;
+			}
+		[DllImport("OpenCL", EntryPoint = "clGetPlatformInfo")]
+			extern static IntPtr clGetPlatformInfo(IntPtr platform, IntPtr param, IntPtr size, IntPtr value, out IntPtr size_ret) ;
+			public static IntPtr GetPlatformInfo(IntPtr platform, IntPtr param, IntPtr size, IntPtr value, out IntPtr size_ret)
+			{
+			return clGetPlatformInfo(platform, param, size, value, out size_ret ) ;
+			}
+		}
+	#endif
 	}
