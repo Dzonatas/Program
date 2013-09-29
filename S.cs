@@ -254,4 +254,14 @@ namespace Scuplted.Object
 		{
 		static object [] XYZ = {} ; //_discrete_wavelets
 		}
+	//[Suffix("-ing")]
+	public class Build
+		{
+		//materials
+		static bool busy ;
+		public bool ing
+			{
+			get { return busy ; }
+			}
+		}
 	}
