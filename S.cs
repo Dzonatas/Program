@@ -243,8 +243,8 @@ namespace Scuplted.Object
 		{
 		internal struct node
 			{
-			Decimal color ;
-			object  item  ;
+			internal Decimal color ;
+			internal object  item  ;
 			}
 		static node    [] colors = new node[0] ;
 		static Decimal [] color  = new decimal[0] ;
@@ -264,10 +264,15 @@ namespace Scuplted.Object
 	public class Build
 		{
 		//materials
+		Int16       i13_3 ;    //_integral_fixed
 		static bool busy ;
 		public bool ing
 			{
-			get { return busy ; }
+			get { return busy ; }   //_readonly_maybe_fixt
+			}
+		public Decimal Integer
+			{
+			get { Int32 i = i13_3 ; i <<= 3 ; return (Decimal)(i)*.001m ; }
 			}
 		}
 	}
