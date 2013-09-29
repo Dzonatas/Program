@@ -11,6 +11,18 @@ const System.Decimal flag_rune__ = 0.0m ; //# (-> ./#/___.(./#/_]](.ico:EMBED`QR
 // jo <environment,spin{::}>{$loop=true;}  /*$jQ$CPP*/
 // jo quant <environment,spin>{.loop.up}   /*$E$#*/_OK,_FIX:_pure_virtual_phantoms.assertion("collusion")
 // jo quant <environment,paravirtual>{.loop.down}   /*$E$#*/_NAK:(in-session:...)
+
+public class far : Future.ʄutex<string>
+	{
+	static System.IntPtr farpoint = System.IntPtr.Zero ;
+	public far()
+		{
+		Orbits       = farpoint ;             //_grounded_paradigm
+		//Whereas: Interface  = native_shoe ;          //_module
+		//Whereas: Interfaces = native_shoes ;         //_next_module,...
+		//Therefore: Precursor = (slides,shadows,shades,...,so[u]l(s))
+		}
+	}
 }
 
 namespace Future
