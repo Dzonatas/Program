@@ -2049,6 +2049,7 @@ static void goto_( ref b_state b ) //_FIX:x,c
 	#if ABI
 	class CL
 		{
+		[PowerShellTutorial("http://developer.amd.com/wordpress/media/2012/10/MakingOpenCLSimplewithHaskell.pdf")]
 		static CL()
 			{
 			System.IntPtr [] ids = null ;
