@@ -236,4 +236,12 @@ namespace Spherical.Mesh
 			}
 		}
 	}
-	
+
+namespace Scuplted.Object
+	{
+	class Space
+		{
+		Decimal [] color ;
+		object  [] items ;  //idols,reflections,wait-states-on-RT,ray-casted(concaves)
+		}
+	}
