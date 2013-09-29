@@ -144,5 +144,10 @@ namespace System.Extensions
 			{
 			pixmap_free(display,pixmap) ;
 			}
+		
+		public static IntPtr Start(this Nullable<IntPtr> a)
+			{
+			return a.Value ;
+			}
 		}
 	}
