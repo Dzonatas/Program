@@ -272,7 +272,7 @@ namespace Scuplted.Object
 			}
 		public Decimal Integer
 			{
-			get { Int32 i = i13_3 ; i <<= 3 ; return (Decimal)(i)*.001m ; }
+			get { Int32 i = i13_3 ; i <<= 3 ; return (Decimal)(i)*.001m ; }  //_GNUs,implicit_(new)_content_unless_CPP'd
 			}
 		}
 	}
