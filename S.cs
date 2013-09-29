@@ -239,9 +239,19 @@ namespace Spherical.Mesh
 
 namespace Scuplted.Object
 	{
-	class Space
+	static public class Space
 		{
-		Decimal [] color ;
-		object  [] items ;  //idols,reflections,wait-states-on-RT,ray-casted(concaves)
+		internal struct node
+			{
+			Decimal color ;
+			object  item  ;
+			}
+		static node    [] colors = new node[0] ;
+		static Decimal [] color  = new decimal[0] ;
+		static object  [] items ;  //idols,reflections,wait-states-on-RT,ray-casted(concaves)
+		}
+	static class Objects
+		{
+		static object [] XYZ = {} ; //_discrete_wavelets
 		}
 	}
