@@ -252,7 +252,13 @@ namespace Scuplted.Object
 		}
 	static class Objects
 		{
-		static object [] XYZ = {} ; //_discrete_wavelets
+		static object [] XYZ = {} ;    //_discrete_wavelets
+		#if ARM
+		static object [] XYZZYY = {} ; //_shaped_constraints,_aparatus("future items",traits,PCI-BUSS)
+		#endif
+		#if VFS
+		static object [] dBus = {} ;   //_D-Bus,_kerning,_raw(_aligned)
+		#endif
 		}
 	//[Suffix("-ing")]
 	public class Build
