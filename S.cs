@@ -273,7 +273,24 @@ namespace Scuplted.Object
 		public Decimal Integer
 			{
 			#if PI_IS_IRRATIONAL
+			#if ATM || EightyTwentyRule
+			get {
+				busy = true ;
+				Int32 i = i13_3 ; i <<= 3 ;
+				string yytoken = (Decimal)(i) ;
+				try {
+					yytoken = yytoken.Split(".")[1] ; //0.377|(mask|octals)
+					busy = false ;
+					return yytoken ;
+					}
+				catch
+					{
+					throw ;
+					}
+				}  //_spelled,_!GNUs
+			#else
 			get { Int32 i = i13_3 ; i <<= 3 ; return (Decimal)(i) >> 3m ; }  //_GNUs,implicit_(new)_content_unless_CPP'd
+			#endif
 			#else
 			get { Int32 i = i13_3 ; i <<= 3 ; return (Decimal)(i)*.001m ; }  //_GNUs,implicit_(new)_content_unless_CPP'd
 			#endif
