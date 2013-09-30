@@ -2,6 +2,7 @@ namespace System.Extensions
 	{
 	using System.Runtime.InteropServices ;
 	using System.Drawing ;
+	using Drawable = System.IntPtr ;         //_window,_pixmap
 	public enum _var
 		{
 		DEFAULT,                             //"Native Variant"
@@ -33,6 +34,7 @@ namespace System.Extensions
 			{
 			return 0 ; //i<1.000…<HDR
 			}
+			
 
 		//[Oprand({'B', 'l'})]
 		[DllImport("libX11", EntryPoint = "XOpenDisplay")]
@@ -132,10 +134,10 @@ namespace System.Extensions
 			}
 			
 		[DllImport("libX11", EntryPoint = "XCreatePixmap")]
-			extern static IntPtr pixmap_create(System.IntPtr display, IntPtr drawable, uint width, uint height, uint depth) ;
-			public static IntPtr CreatePixmap(this IntPtr display, IntPtr drawable, uint width, uint height, uint depth)
+			extern static IntPtr pixmap_create(System.IntPtr display, Drawable d, uint width, uint height, uint depth) ;
+			public static IntPtr CreatePixmap(this IntPtr display, Drawable d, uint width, uint height, uint depth)
 			{
-			return pixmap_create(display,drawable,width,height,depth) ;
+			return pixmap_create(display,d,width,height,depth) ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XFreePixmap")]
@@ -146,8 +148,8 @@ namespace System.Extensions
 			}
 		
 		[DllImport("libX11", EntryPoint = "XCreateGC")]
-			extern static IntPtr gc_create(System.IntPtr display, IntPtr drawable, IntPtr value_mask, ref IntPtr values)  ;
-			public static IntPtr CreateGC(this IntPtr display, IntPtr pixmap, IntPtr value_mask, ref IntPtr values)
+			extern static IntPtr gc_create(System.IntPtr display, Drawable d, IntPtr value_mask, ref IntPtr values)  ;
+			public static IntPtr CreateGC(this IntPtr display, Drawable d, IntPtr value_mask, ref IntPtr values)
 			{
 			return gc_create(display,pixmap,value_mask,ref values) ;
 			}
