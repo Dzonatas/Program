@@ -228,9 +228,17 @@ namespace System.Extensions
 			{
 			#if BAD
 			GC.SuppressFinalize(xid.GetHashCode()) ;
+			#if !Synchronous
+			initialize_threads() ;
+			#endif
 			#endif
 			return kill_client(display,xid) ;  //_base_sid,_embedded_colormap_free
 			}
+
+		#if !Synchronous
+		[DllImport("libX11", EntryPoint = "XInitThreads")]
+			extern static IntPtr initialize_threads() ;
+		#endif
 
 		}
 	}
