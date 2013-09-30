@@ -145,6 +145,55 @@ namespace System.Extensions
 			pixmap_free(display,pixmap) ;
 			}
 		
+		[DllImport("libX11", EntryPoint = "XCreateGC")]
+			extern static IntPtr gc_create(System.IntPtr display, IntPtr drawable, IntPtr value_mask, ref IntPtr values)  ;
+			public static IntPtr CreateGC(this IntPtr display, IntPtr pixmap, IntPtr value_mask, ref IntPtr values)
+			{
+			return gc_create(display,pixmap,value_mask,ref values) ;
+			}
+		
+		[DllImport("libX11", EntryPoint = "XFreeGC")]
+			extern static void gc_free(System.IntPtr display, IntPtr gc)  ;
+			public static void FreeGC(this IntPtr display, IntPtr gc)
+			{
+			gc_free(display,gc) ;
+			}
+		
+		[DllImport("libX11", EntryPoint = "XDefaultVisual")]
+			extern static IntPtr visual_default(System.IntPtr display, int scrnum)  ;
+			public static IntPtr DefaultVisual(this IntPtr display, int scrnum)
+			{
+			return visual_default(display,scrnum) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XDefaultScreen")]
+			extern static int screen_default(System.IntPtr display)  ;
+			public static int DefaultScreen(this IntPtr display)
+			{
+			return screen_default(display) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XDefaultColormap")]
+			extern static IntPtr colormap_default(System.IntPtr display, int scrnum )  ;
+			public static IntPtr DefaultColormap(this IntPtr display, int scrnum )
+			{
+			return colormap_default(display,scrnum) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XLookupColor")]
+			extern static int color_lookup(System.IntPtr display, IntPtr colormap, ref IntPtr softcolor, ref IntPtr hardcolor)  ;
+			public static int LookupColor(this IntPtr display, IntPtr colormap, ref IntPtr softcolor, ref IntPtr hardcolor)
+			{
+			return color_lookup(display,colormap, ref softcolor, ref hardcolor) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XAllocColor")]
+			extern static int color_alloc(System.IntPtr display, IntPtr colormap, ref IntPtr color )  ;
+			public static int AllocColor(this IntPtr display, IntPtr colormap, ref IntPtr color )
+			{
+			return color_alloc(display,colormap, ref color) ;
+			}
+
 		public static IntPtr Start(this Nullable<IntPtr> a)
 			{
 			return a.Value ;
