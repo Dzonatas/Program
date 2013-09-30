@@ -226,6 +226,9 @@ namespace System.Extensions
 			extern static IntPtr kill_client(System.IntPtr display, IntPtr xid) ;
 			public static IntPtr KillClient(this IntPtr display, IntPtr xid)
 			{
+			#if BAD
+			GC.SuppressFinalize(xid.GetHashCode()) ;
+			#endif
 			return kill_client(display,xid) ;  //_base_sid,_embedded_colormap_free
 			}
 
