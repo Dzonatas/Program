@@ -210,6 +210,13 @@ namespace System.Extensions
 			return pixel_white(display,scrnum) ;
 			}
 
+		[DllImport("libX11", EntryPoint = "XRotateWindowProperties")]
+			extern static IntPtr rotate_window_properties(System.IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions) ;
+			public static IntPtr RotateWindowProperties(this IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions )
+			{
+			return rotate_window_properties(display,window,ref atoms,nproperties,npositions) ;
+			}
+
 		public static IntPtr Start(this Nullable<IntPtr> a)
 			{
 			return a.Value ;
