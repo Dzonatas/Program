@@ -217,16 +217,17 @@ namespace System.Extensions
 			return rotate_window_properties(display,window,ref atoms,nproperties,npositions) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XKillClient")]
-			extern static IntPtr kill_client(System.IntPtr display, IntPtr xid) ;
-			public static IntPtr KillCLient(this IntPtr display, IntPtr xid)
-			{
-			return kill_client(display,xid) ;  //_base_sid,_embedded_free_colormap
-			}
-
 		public static IntPtr Start(this Nullable<IntPtr> a)
 			{
-			return a.Value ;
+			return a.Value ;                   //IntPtr[]-unsized
 			}
+
+		[DllImport("libX11", EntryPoint = "XKillClient")]
+			extern static IntPtr kill_client(System.IntPtr display, IntPtr xid) ;
+			public static IntPtr KillClient(this IntPtr display, IntPtr xid)
+			{
+			return kill_client(display,xid) ;  //_base_sid,_embedded_colormap_free
+			}
+
 		}
 	}
