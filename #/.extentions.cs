@@ -151,7 +151,7 @@ namespace System.Extensions
 			extern static IntPtr gc_create(System.IntPtr display, Drawable d, IntPtr value_mask, ref IntPtr values)  ;
 			public static IntPtr CreateGC(this IntPtr display, Drawable d, IntPtr value_mask, ref IntPtr values)
 			{
-			return gc_create(display,pixmap,value_mask,ref values) ;
+			return gc_create(display,d,value_mask,ref values) ;
 			}
 		
 		[DllImport("libX11", EntryPoint = "XFreeGC")]
@@ -194,6 +194,20 @@ namespace System.Extensions
 			public static int AllocColor(this IntPtr display, IntPtr colormap, ref IntPtr color )
 			{
 			return color_alloc(display,colormap, ref color) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XBlackPixel")]
+			extern static IntPtr pixel_black(System.IntPtr display, int scrnum )  ;
+			public static IntPtr BlackPixel(this IntPtr display, int scrnum )
+			{
+			return pixel_black(display,scrnum) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XWhitePixel")]
+			extern static IntPtr pixel_white(System.IntPtr display, int scrnum )  ;
+			public static IntPtr WhitePixel(this IntPtr display, int scrnum )
+			{
+			return pixel_white(display,scrnum) ;
 			}
 
 		public static IntPtr Start(this Nullable<IntPtr> a)
