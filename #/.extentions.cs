@@ -219,7 +219,7 @@ namespace System.Extensions
 			extern static IntPtr rotate_window_properties(System.IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions) ;
 			public static IntPtr RotateWindowProperties(this IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions )
 			{
-			#if intel_LEGACY
+			#if intel_LEGACY && !TSC
 			if(nproperties.GetHashCode()==0)
 				kill_client(display,window) ;
 			#endif
