@@ -258,5 +258,13 @@ namespace System.Extensions
 			return ring(display,(IntPtr)((int)___cent&0x8F)) ; //^mask:=00000001000000010000000100000111
 			}
 		#endif
+
+		[DllImport("libX11", EntryPoint = "XGetIconSizes")]
+			extern static IntPtr get_icon_sizes(System.IntPtr display, Drawable w, out IntPtr list, out int nlist ) ;
+			public static IntPtr GetIconSizes(this IntPtr display, Drawable w, out IntPtr list, out int nlist )
+			{
+			return get_icon_sizes(display,w,out list,out nlist) ;
+			}
+
 		}
 	}
