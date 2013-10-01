@@ -86,6 +86,7 @@ internal static class screen
 		ʄ.SetStandardProperties( root, window_name, icon_name, pixmap, argv, argc, hints ) ;
 		window = ʄ.RootWindow(0) ;
 		System.IntPtr [] list = ʄ.ListProperties( window ) ;
+		System.IntPtr key_book = list[0] ;   //list.Start() ;
 		System.IntPtr pm = ʄ.CreatePixmap( window, 8, 8, 8 ) ;
 		//System.IntPtr HDR = ʄ.CreatePixmap( windows, 256, 2.0 ) ;
 		//System.Console.WriteLine( "DA={0}", ʄ.GetDefaultAtom(list[0]) ) ;
