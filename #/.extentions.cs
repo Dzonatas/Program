@@ -244,13 +244,5 @@ namespace System.Extensions
 			extern static IntPtr initialize_threads() ;
 		#endif
 
-
-		class Channel   // : X-Window
-			{
-			//VisualType:StaticGray|StaticColor|GrayScale
-			//WINGRAVITY:Static
-			//BITGRAVITY:Static
-			//Depth:Array
-			}
 		}
 	}

@@ -4,6 +4,16 @@ partial class A335
 {
 #if COPY
 #endif
+
+class Channel   // : X-Window
+	{
+	//VisualType:StaticGray|StaticColor|GrayScale
+	//WINGRAVITY:Static
+	//BITGRAVITY:Static
+	//Depth:Array
+	//oprands
+	}
+
 #region macro
 /*
 <COMPQSTRING> | <compQstring item-scope item-i/>
