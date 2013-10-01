@@ -2,7 +2,8 @@ namespace System.Extensions
 	{
 	using System.Runtime.InteropServices ;
 	using System.Drawing ;
-	using Drawable = System.IntPtr ;         //_window,_pixmap
+	using Drawable  = System.IntPtr ;         //_window,_pixmap
+	using Rectangle = System.IntPtr ;         //X-defined-default:[x,y]:=upper-left
 	public enum _var
 		{
 		DEFAULT,                             //"Native Variant"
@@ -219,11 +220,12 @@ namespace System.Extensions
 			public static IntPtr RotateWindowProperties(this IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions )
 			{
 			return rotate_window_properties(display,window,ref atoms,nproperties,npositions) ;
+			//_real: rotate_properties(blitter,delta,atoms) ;
 			}
 
-		public static IntPtr Start(this Nullable<IntPtr> a)
+		public static IntPtr Start(this Nullable<Rectangle> a)
 			{
-			return a.Value ;                   //IntPtr[]-unsized
+			return a.Value ;                   //IntPtr[]-unsized[,_blitter_array]
 			}
 
 		[DllImport("libX11", EntryPoint = "XKillClient")]
