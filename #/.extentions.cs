@@ -72,6 +72,7 @@ namespace System.Extensions
 			intern_atoms(display,names,nnames,only_if_exists,atoms) ;
 			}
 
+		#if VERBOSE || DEBUG
 		[DllImport("libX11", EntryPoint = "XGetAtomName")]
 			extern static IntPtr get_atom_name(IntPtr display, IntPtr atom) ;
 			public static Guid GetAtom(this IntPtr display, IntPtr atom)
@@ -81,7 +82,9 @@ namespace System.Extensions
 			free(data) ;
 			return guid ;
 			}
+		#endif
 
+		#if DEBUG
 		//[DllImport("libX11", EntryPoint = "XGetAtomName")]
 			//extern static IntPtr get_atom_name(IntPtr display, IntPtr atom) ;
 			public static string GetDefaultAtom(this IntPtr display, IntPtr atom)
@@ -91,6 +94,7 @@ namespace System.Extensions
 			free(data) ;
 			return s ;
 			}
+		#endif
 
 		[DllImport("libX11", EntryPoint = "XRootWindow")]
 			extern static IntPtr root_window(IntPtr display, int screen) ;
