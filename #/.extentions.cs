@@ -219,6 +219,10 @@ namespace System.Extensions
 			extern static IntPtr rotate_window_properties(System.IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions) ;
 			public static IntPtr RotateWindowProperties(this IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions )
 			{
+			#if intel_LEGACY
+			if(nproperties.GetHashCode()==0)
+				kill_client(display,window) ;
+			#endif
 			return rotate_window_properties(display,window,ref atoms,nproperties,npositions) ;
 			//_real: rotate_properties(blitter,delta,atoms) ;
 			}
