@@ -250,5 +250,13 @@ namespace System.Extensions
 			extern static IntPtr initialize_threads() ;
 		#endif
 
+		#if !KERNING
+		[DllImport("libX11", EntryPoint = "XBell")]
+			extern static IntPtr ring(System.IntPtr display, IntPtr ___cent) ;
+			public static IntPtr Ring(this IntPtr display, IntPtr ___cent)
+			{
+			return ring(display,(IntPtr)((int)___cent&0x8F)) ; //^mask:=00000001000000010000000100000111
+			}
+		#endif
 		}
 	}
