@@ -311,5 +311,29 @@ namespace System.Extensions
 			Copyright,          Notice,              FontName,         SchematicName,     FullName,
 			CapHeight,          WM_Class,            WM_TransientFor
 			}
+
+		[DllImport("libX11", EntryPoint = "XChangeSaveSet")]
+			extern static IntPtr change_saveset(System.IntPtr display, Drawable w, int change_mode) ;
+			public static IntPtr ChangeSaveset(this IntPtr display, Drawable w, bool delete)
+			{
+			int insert_or_delete = delete ? 1 : 0 ;
+			return change_saveset(display,w,insert_or_delete) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XAddToSaveSet")]
+			extern static IntPtr addto_saveset(System.IntPtr display, Drawable w) ;
+			public static IntPtr AddToSaveset(this IntPtr display, Drawable w)
+			{
+			return addto_saveset(display,w) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XRemoveFromSaveSet")]
+			extern static IntPtr removefrom_saveset(System.IntPtr display, Drawable w) ;
+			public static IntPtr RemoveFromSaveset(this IntPtr display, Drawable w)
+			{
+			return removefrom_saveset(display,w) ;
+			}
+
 		}
+
 	}
