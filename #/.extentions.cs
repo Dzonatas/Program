@@ -4,6 +4,8 @@ namespace System.Extensions
 	using System.Drawing ;
 	using Drawable  = System.IntPtr ;         //_window,_pixmap
 	using Rectangle = System.IntPtr ;         //X-defined-default:[x,y]:=upper-left
+	using KeySym    = System.IntPtr ;         //_symbolic_form_with_cultural_extensions,_UNIX(TM)
+	using iKeySym   = System.IntPtr ;         //_hardware_hack,_MAC,_IPv6,Token<COLOREDMAP>,_LOGO
 	public enum _var
 		{
 		DEFAULT,                             //"Native Variant"
@@ -266,5 +268,8 @@ namespace System.Extensions
 			return get_icon_sizes(display,w,out list,out nlist) ;
 			}
 
+		static KeySym  SCROLL_LOCK = (KeySym)  0xFF14 ;
+		static iKeySym SCROLL      = (iKeySym) 0xFF ;
+		static iKeySym LOCK        = (iKeySym) 0x14 ;
 		}
 	}
