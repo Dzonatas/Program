@@ -16,6 +16,8 @@ public class Channel   // : X-Window
 	System.IntPtr  screen  ;
 	System.IntPtr  sid     ;
 	System.IntPtr  line    ;
+	//rez:
+	object []      items   ;
 	}
 
 #region macro
