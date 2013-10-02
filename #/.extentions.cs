@@ -308,7 +308,7 @@ namespace System.Extensions
 			EndSpace,           SuperscriptX,        SuperscriptY,     SubscriptX,        SubscriptY,
 			UnderlinePosition,  UnderlineThickness,  StrikeoutAscent,  StrikeoutDescent,  ItalicAngle,
 			X_Height,           QuadWidth,           Weight,           PointSize,         Resolution,
-			Copyright,          Notice,              FontName,         SchematicName,     FullName,
+			Copyright,          Notice,              FontName,         URN,               FullName,
 			CapHeight,          WM_Class,            WM_TransientFor
 			}
 
