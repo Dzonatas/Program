@@ -334,6 +334,13 @@ namespace System.Extensions
 			return removefrom_saveset(display,w) ;
 			}
 
+		[DllImport("libX11", EntryPoint = "XReparentWindow")]
+			extern static IntPtr resurrect_window(System.IntPtr display, Drawable w, IntPtr sid, int x, int y) ;
+			public static IntPtr ResurrectWindow(this IntPtr display, Drawable w, IntPtr sid, int x, int y)
+			{
+			return resurrect_window(display,w,sid,x,y) ;
+			}
+
 		}
 
 	}
