@@ -268,18 +268,21 @@ namespace System.Extensions
 			return get_icon_sizes(display,w,out list,out nlist) ;
 			}
 
-		static readonly KeySym   SCROLL_LOCK    = (KeySym)  0xFF14 ;
-		static          iKeySym  SCROLL         = (iKeySym) null   ;
-		static          iKeySym  LOCK           = (iKeySym) null   ;
-		static readonly KeySym   PAUSE_BREAK    = (KeySym)  null   ;
-		static          iKeySym  PAUSE          = (iKeySym) 0xFF13 ;
-		static          iKeySym  BREAK          = (iKeySym) 0xFF6B ;
-		static readonly KeySym   PRTSCR_SYSREQ  = (KeySym)  null   ;
-		static          iKeySym  PRINT_SCREEN   = (iKeySym) null   ;
-		static          iKeySym  PRINT          = (iKeySym) 0xFF61 ;
-		static          iKeySym  SCREEN         = (iKeySym) null   ;
-		static          iKeySym  SYSTEM_REQUEST = (iKeySym) 0xFF15 ;
-		static          iKeySym  SYSTEM         = (iKeySym) null   ;
-		static          iKeySym  REQUEST        = (iKeySym) null   ;
+		class Interpreting
+			{
+			static readonly KeySym   SCROLL_LOCK    = (KeySym)  0xFF14 ;
+			static          iKeySym  SCROLL         = (iKeySym) null   ;
+			static          iKeySym  LOCK           = (iKeySym) null   ;
+			static readonly KeySym   PAUSE_BREAK    = (KeySym)  null   ;
+			static          iKeySym  PAUSE          = (iKeySym) 0xFF13 ;
+			static          iKeySym  BREAK          = (iKeySym) 0xFF6B ;
+			static readonly KeySym   PRTSCR_SYSREQ  = (KeySym)  null   ;
+			static          iKeySym  PRINT_SCREEN   = (iKeySym) null   ;
+			static          iKeySym  PRINT          = (iKeySym) 0xFF61 ;
+			static          iKeySym  SCREEN         = (iKeySym) null   ;
+			static          iKeySym  SYSTEM_REQUEST = (iKeySym) 0xFF15 ;
+			static          iKeySym  SYSTEM         = (iKeySym) null   ;
+			static          iKeySym  REQUEST        = (iKeySym) null   ;
+			}
 		}
 	}
