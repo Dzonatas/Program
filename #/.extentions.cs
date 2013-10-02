@@ -287,7 +287,9 @@ namespace System.Extensions
 			
 		public static void Draw(this IntPtr display, Drawable w)
 			{
-			//https://developers.google.com/maps/documentation/javascript/overlays
+			A335.Channel vblit = new A335.Channel() ;
+			//ops=vblist_ht(https://developers.google.com/maps/documentation/javascript/overlays)
+			//_compile_ops_to_script_xml_with_context_endpoint
 			}
 		}
 	}
