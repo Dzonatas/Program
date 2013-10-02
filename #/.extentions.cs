@@ -268,8 +268,8 @@ namespace System.Extensions
 			return get_icon_sizes(display,w,out list,out nlist) ;
 			}
 
-		static KeySym  SCROLL_LOCK = (KeySym)  0xFF14 ;
-		static iKeySym SCROLL      = (iKeySym) 0xFF ;
-		static iKeySym LOCK        = (iKeySym) 0x14 ;
+		static readonly KeySym  SCROLL_LOCK = (KeySym)  0xFF14 ;
+		static          iKeySym SCROLL      = (iKeySym) null ;
+		static          iKeySym LOCK        = (iKeySym) null ;
 		}
 	}
