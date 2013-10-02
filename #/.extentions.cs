@@ -284,5 +284,10 @@ namespace System.Extensions
 			static          iKeySym  SYSTEM         = (iKeySym) null   ;
 			static          iKeySym  REQUEST        = (iKeySym) null   ;
 			}
+			
+		public static void Draw(this IntPtr display, Drawable w)
+			{
+			//https://developers.google.com/maps/documentation/javascript/overlays
+			}
 		}
 	}
