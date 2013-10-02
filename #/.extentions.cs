@@ -271,5 +271,8 @@ namespace System.Extensions
 		static readonly KeySym  SCROLL_LOCK = (KeySym)  0xFF14 ;
 		static          iKeySym SCROLL      = (iKeySym) null ;
 		static          iKeySym LOCK        = (iKeySym) null ;
+		static readonly KeySym  PAUSE_BREAK = (KeySym)  null ;
+		static          iKeySym PAUSE       = (iKeySym) 0xFF13 ;
+		static          iKeySym BREAK       = (iKeySym) 0xFF6B ;
 		}
 	}
