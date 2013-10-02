@@ -4,8 +4,6 @@ namespace System.Extensions
 	using System.Drawing ;
 	using Drawable  = System.IntPtr ;         //_window,_pixmap
 	using Rectangle = System.IntPtr ;         //X-defined-default:[x,y]:=upper-left
-	using KeySym    = System.IntPtr ;         //_symbolic_form_with_cultural_extensions,_UNIX(TM)
-	using iKeySym   = System.IntPtr ;         //_hardware_hack,_MAC,_IPv6,Token<COLOREDMAP>,_LOGO
 	public enum _var
 		{
 		DEFAULT,                             //"Native Variant"
@@ -267,23 +265,6 @@ namespace System.Extensions
 			{
 			return get_icon_sizes(display,w,out list,out nlist) ;
 			}
-
-		class Interpreting
-			{
-			static readonly KeySym   SCROLL_LOCK    = (KeySym)  0xFF14 ;
-			static          iKeySym  SCROLL         = (iKeySym) null   ;
-			static          iKeySym  LOCK           = (iKeySym) null   ;
-			static readonly KeySym   PAUSE_BREAK    = (KeySym)  null   ;
-			static          iKeySym  PAUSE          = (iKeySym) 0xFF13 ;
-			static          iKeySym  BREAK          = (iKeySym) 0xFF6B ;
-			static readonly KeySym   PRTSCR_SYSREQ  = (KeySym)  null   ;
-			static          iKeySym  PRINT_SCREEN   = (iKeySym) null   ;
-			static          iKeySym  PRINT          = (iKeySym) 0xFF61 ;
-			static          iKeySym  SCREEN         = (iKeySym) null   ;
-			static          iKeySym  SYSTEM_REQUEST = (iKeySym) 0xFF15 ;
-			static          iKeySym  SYSTEM         = (iKeySym) null   ;
-			static          iKeySym  REQUEST        = (iKeySym) null   ;
-			}
 			
 		public static void Draw(this IntPtr display, Drawable w)
 			{
@@ -291,25 +272,6 @@ namespace System.Extensions
 			//ops=vblist_ht(https://developers.google.com/maps/documentation/javascript/overlays)
 			//_compile_ops_to_script_xml_with_context_endpoint
 			//_store_folded_exec_on_DOTTEDNAME(s)
-			}
-			
-		enum Interpreted
-			{
-			Default,
-			Primary,            Secondary,           Arc,              Atom,              Bitmap,
-			Cardinal,           Colormap,            Cursor,           CutBuffer0,        CutBuffer1,
-			CutBuffer2,         CutBuffer3,          CutBuffer4,       CutBuffer5,        CutBuffer6,
-			CutBuffer7,         Drawable,            Font,             Integer,           Pixmap,
-			Point,              Rectangle,           ResourceManager,  RGB_Color_map,     RGB_Best_map,
-			RGB_Blue_map,       RGB_Default_map,     RGB_Gray_map,     RGB_Green_map,     RGB_Red_map,
-			String,             VisualID,            Window,           WM_Command,        WM_Hints,
-			WM_ClientMachine,   WM_IconName,         WM_IconSize,      WM_Name,           WM_NormalHints,
-			WM_SizeHints,       WM_ZoomHints,        MinSpace,         NormSpace,         MaxSpace,
-			EndSpace,           SuperscriptX,        SuperscriptY,     SubscriptX,        SubscriptY,
-			UnderlinePosition,  UnderlineThickness,  StrikeoutAscent,  StrikeoutDescent,  ItalicAngle,
-			X_Height,           QuadWidth,           Weight,           PointSize,         Resolution,
-			Copyright,          Notice,              FontName,         URN,               FullName,
-			CapHeight,          WM_Class,            WM_TransientFor
 			}
 
 		[DllImport("libX11", EntryPoint = "XChangeSaveSet")]
@@ -341,6 +303,50 @@ namespace System.Extensions
 			return rectify(display,w,sid,x,y) ;
 			}
 
+		}
+
+	}
+
+namespace X.Predefined
+	{
+
+	using KeySym    = System.IntPtr ;         //_symbolic_form_with_cultural_extensions,_UNIX(TM)
+	using iKeySym   = System.IntPtr ;         //_hardware_hack,_MAC,_IPv6,Token<COLOREDMAP>,_LOGO
+
+	public enum Atom
+		{
+		Default,
+		Primary,            Secondary,           Arc,              Atom,              Bitmap,
+		Cardinal,           Colormap,            Cursor,           CutBuffer0,        CutBuffer1,
+		CutBuffer2,         CutBuffer3,          CutBuffer4,       CutBuffer5,        CutBuffer6,
+		CutBuffer7,         Drawable,            Font,             Integer,           Pixmap,
+		Point,              Rectangle,           ResourceManager,  RGB_Color_map,     RGB_Best_map,
+		RGB_Blue_map,       RGB_Default_map,     RGB_Gray_map,     RGB_Green_map,     RGB_Red_map,
+		String,             VisualID,            Window,           WM_Command,        WM_Hints,
+		WM_ClientMachine,   WM_IconName,         WM_IconSize,      WM_Name,           WM_NormalHints,
+		WM_SizeHints,       WM_ZoomHints,        MinSpace,         NormSpace,         MaxSpace,
+		EndSpace,           SuperscriptX,        SuperscriptY,     SubscriptX,        SubscriptY,
+		UnderlinePosition,  UnderlineThickness,  StrikeoutAscent,  StrikeoutDescent,  ItalicAngle,
+		X_Height,           QuadWidth,           Weight,           PointSize,         Resolution,
+		Copyright,          Notice,              FontName,         URN,               FullName,
+		CapHeight,          WM_Class,            WM_TransientFor
+		}
+
+	class Symbol
+		{
+		static readonly KeySym   SCROLL_LOCK    = (KeySym)  0xFF14 ;
+		static          iKeySym  SCROLL         = (iKeySym) null   ;
+		static          iKeySym  LOCK           = (iKeySym) null   ;
+		static readonly KeySym   PAUSE_BREAK    = (KeySym)  null   ;
+		static          iKeySym  PAUSE          = (iKeySym) 0xFF13 ;
+		static          iKeySym  BREAK          = (iKeySym) 0xFF6B ;
+		static readonly KeySym   PRTSCR_SYSREQ  = (KeySym)  null   ;
+		static          iKeySym  PRINT_SCREEN   = (iKeySym) null   ;
+		static          iKeySym  PRINT          = (iKeySym) 0xFF61 ;
+		static          iKeySym  SCREEN         = (iKeySym) null   ;
+		static          iKeySym  SYSTEM_REQUEST = (iKeySym) 0xFF15 ;
+		static          iKeySym  SYSTEM         = (iKeySym) null   ;
+		static          iKeySym  REQUEST        = (iKeySym) null   ;
 		}
 
 	}
