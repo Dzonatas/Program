@@ -5,13 +5,17 @@ partial class A335
 #if COPY
 #endif
 
-class Channel   // : X-Window
+public class Channel   // : X-Window
 	{
 	//VisualType:StaticGray|StaticColor|GrayScale
 	//WINGRAVITY:Static
 	//BITGRAVITY:Static
 	//Depth:Array
-	//oprands
+	//oprands:
+	System.IntPtr  display ;
+	System.IntPtr  screen  ;
+	System.IntPtr  sid     ;
+	System.IntPtr  line    ;
 	}
 
 #region macro
