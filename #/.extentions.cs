@@ -296,20 +296,20 @@ namespace System.Extensions
 		enum Interpreted
 			{
 			Default,
-			Primary,           Secondary,           Arc,              Atom,              Bitmap,
-			Cardinal,          Colormap,            Cursor,           CutBuffer0,        CutBuffer1,
-			CutBuffer2,        CutBuffer3,          CutBuffer4,       CutBuffer5,        CutBuffer6,
-			CutBuffer7,        Drawable,            Font,             Integer,           Pixmap,
-			Point,             Rectangle,           ResourceManager,  RGB_Color_map,     RGB_Best_map,
-			RGB_Blue_map,      RGB_Default_map,     RGB_Gray_map,     RGB_Green_map,     RGB_Red_map,
-			String,            VisualID,            Window,           WM_Command,        WM_Hints,
-			WM_ClientMachine,  WM_IconName,         WM_IconSize,      WM_Name,           WM_NormalHints,
-			WM_SizeHints,      WM_ZoomHints,        MinSpace,         NormSpace,         MaxSpace,
-			EndSpace,          SuperscriptX,        SuperscriptY,     SubscriptX,        SubscriptY,
-			UnderlinePostion,  UnderlineThickness,  StrikeoutAscent,  StrikeoutDescent,  ItalicAngle,
-			X_Height,          QuadWidth,           Weight,           PointSize,         Resolution,
-			Copyright,         Notice,              FontName,         FamilyName,        FullName,
-			CapHeight,         WM_Class,            WM_TransientFor
+			Primary,            Secondary,           Arc,              Atom,              Bitmap,
+			Cardinal,           Colormap,            Cursor,           CutBuffer0,        CutBuffer1,
+			CutBuffer2,         CutBuffer3,          CutBuffer4,       CutBuffer5,        CutBuffer6,
+			CutBuffer7,         Drawable,            Font,             Integer,           Pixmap,
+			Point,              Rectangle,           ResourceManager,  RGB_Color_map,     RGB_Best_map,
+			RGB_Blue_map,       RGB_Default_map,     RGB_Gray_map,     RGB_Green_map,     RGB_Red_map,
+			String,             VisualID,            Window,           WM_Command,        WM_Hints,
+			WM_ClientMachine,   WM_IconName,         WM_IconSize,      WM_Name,           WM_NormalHints,
+			WM_SizeHints,       WM_ZoomHints,        MinSpace,         NormSpace,         MaxSpace,
+			EndSpace,           SuperscriptX,        SuperscriptY,     SubscriptX,        SubscriptY,
+			UnderlinePosition,  UnderlineThickness,  StrikeoutAscent,  StrikeoutDescent,  ItalicAngle,
+			X_Height,           QuadWidth,           Weight,           PointSize,         Resolution,
+			Copyright,          Notice,              FontName,         SchematicName,     FullName,
+			CapHeight,          WM_Class,            WM_TransientFor
 			}
 		}
 	}
