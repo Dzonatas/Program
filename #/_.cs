@@ -53,18 +53,17 @@ internal static class screen
 		//psi.RedirectStandardOutput = true ;
 		//psi.CreateNoWindow = true ;
 		}
-	static System.IntPtr  window ;
-	static System.IntPtr  root ;
-	static System.IntPtr  sid ;
-	static System.IntPtr  items ;
-	static int            nitems ;
-	static System.IntPtr  atomatrix ;
-	static System.IntPtr  core ;
-	internal static void start()
-		{
-		process = System.Diagnostics.Process.Start(psi) ;
-		System.IntPtr [] vector = new System.IntPtr[7] ;
-		string [] strings = {
+	static System.IntPtr      window ;
+	static System.IntPtr      root ;
+	static System.IntPtr      sid ;
+	static System.IntPtr      items ;
+	static int                nitems ;
+	static System.IntPtr      atomatrix ;
+	static System.IntPtr      core ;
+	static System.IntPtr []   vector ;
+	static System.IntPtr []   default_list ;
+	static readonly string [] strings =
+			{
 			System.Guid.NewGuid().ToString(),
 			System.Guid.NewGuid().ToString(),
 			System.Guid.NewGuid().ToString(),
@@ -73,25 +72,27 @@ internal static class screen
 			System.Guid.NewGuid().ToString(),
 			null
 			} ;
+	static int             argc        = 0 ;
+	static string []       argv        = {} ;
+	static string          icon_name   = "" ;
+	static string          window_name = "" ;
+	static System.IntPtr   pixmap ;
+	static System.IntPtr   hints ;
+	internal static void start()
+		{
+		int  x, y ;
+		uint width, height, border, depth ;
+		process = System.Diagnostics.Process.Start(psi) ;
+		vector  = new System.IntPtr[7] ;
 		ʄ.OpenDisplay( out ʄ ) ;
 		ʄ.InternAtoms( strings, strings.Length-1, false, vector ) ;
-		root   = ʄ.DefaultRootWindow() ;
-		System.IntPtr [] default_list = ʄ.ListProperties( root ) ;
-		int             argc        = 0 ;
-		string []       argv        = {} ;
-		string          icon_name   = "" ;
-		string          window_name = "" ;
-		System.IntPtr   pixmap ;
-		System.IntPtr   hints ;
-		ʄ.SetStandardProperties( root, window_name, icon_name, pixmap, argv, argc, hints ) ;
-		window = ʄ.RootWindow(0) ;
+		ʄ.GetGeometry( window = ʄ.RootWindow(0),
+			out root, out x, out y, out width, out height, out border, out depth) ;
+		default_list = ʄ.ListProperties( root ) ;
+		pixmap  = ʄ.CreatePixmap( window, width, height, depth ) ;
+		ʄ.SetStandardProperties( window, window_name, icon_name, pixmap, argv, argc, hints ) ;
 		System.IntPtr [] list = ʄ.ListProperties( window ) ;
 		System.IntPtr key_book = list[0] ;   //list.Start() ;
-		System.IntPtr r ;
-		int x, y ;
-		uint width, height, border, depth ;
-		ʄ.GetGeometry( window, out r, out x, out y, out width, out height, out border, out depth) ;
-		System.IntPtr pm = ʄ.CreatePixmap( window, width, height, depth ) ;
 		return ;				
 		//System.IntPtr HDR = ʄ.CreatePixmap( windows, 256, 2.0 ) ;
 		//System.Console.WriteLine( "DA={0}", ʄ.GetDefaultAtom(list[0]) ) ;
