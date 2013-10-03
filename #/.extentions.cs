@@ -303,6 +303,13 @@ namespace System.Extensions
 			return rectify(display,w,sid,x,y) ;
 			}
 
+		[DllImport("libX11", EntryPoint = "XGetGeometry")]
+			extern static IntPtr get_geometry(System.IntPtr display, Drawable d, out IntPtr root, out int x, out int y, out uint width, out uint height, out uint border, out uint depth) ;
+			public static IntPtr GetGeometry(this IntPtr display, Drawable d, out IntPtr root, out int x, out int y, out uint width, out uint height, out uint border, out uint depth)
+			{
+			return get_geometry(display,d, out root, out x, out y, out width, out height, out border, out depth) ;
+			}
+
 		}
 
 	}
