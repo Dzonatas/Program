@@ -117,6 +117,10 @@ internal static class screen
 		//string [] names = { "atomatrix", "core", "window", "root", "sid", "items", "" } ;
 		//ʄ.InternAtoms( names, names.Length, false, vector ) ;
 		}
+	public static void Glitched(int d)
+		{
+		ʄ.Ring((System.IntPtr)2) ; //_blit_offset_d_length_masked
+		}
 	}
 
 internal static class shell

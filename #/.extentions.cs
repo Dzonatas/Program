@@ -4,6 +4,7 @@ namespace System.Extensions
 	using System.Drawing ;
 	using Drawable  = System.IntPtr ;         //_window,_pixmap
 	using Rectangle = System.IntPtr ;         //X-defined-default:[x,y]:=upper-left
+	using Screen    = _.screen ;
 	public enum _var
 		{
 		DEFAULT,                             //"Native Variant"
@@ -34,6 +35,10 @@ namespace System.Extensions
 		public static int node(this int d, int M, int N) //inode ~:= ʄnode
 			{
 			return 0 ; //i<1.000…<HDR
+			}
+		public static void Beep(this int d)
+			{
+			Screen.Glitched(d) ;
 			}
 			
 

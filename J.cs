@@ -31,7 +31,8 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 				}
 			}
 		else
-			System.Console.Beep() ;
+			ʄ.Beep() ;
+			//System.Console.Beep() ;
 		if( state.default_item.HasValue )
 			{
 			/*
