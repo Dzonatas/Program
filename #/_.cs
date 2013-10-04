@@ -119,7 +119,7 @@ internal static class screen
 		}
 	public static void Glitched(int d)
 		{
-		ʄ.Ring((System.IntPtr)2) ; //_blit_offset_d_length_masked
+		ʄ.Ring((System.IntPtr)d) ; //_blit_offset_d_length_masked
 		}
 	}
 

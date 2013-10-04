@@ -31,8 +31,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 				}
 			}
 		else
-			ʄ.Beep() ;
-			//System.Console.Beep() ;
+			2.Beep() ;
 		if( state.default_item.HasValue )
 			{
 			/*
@@ -64,7 +63,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		}
 	reduce :
 	if( state.lookaheadset.Contains( b.yy ) )
-		System.Console.Beep() ;
+		2.Beep() ;
 	foreach( Reduction rr in state.reductionset )
 		if( rr == b.yy )
 			if( b.yy == _default && state.lookaheadset.Count == 0 )
@@ -74,7 +73,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 				}
 			else
 			if( b.yy == _default )
-					System.Console.Beep() ;
+					2.Beep() ;
 	transit:
 	foreach( Transition t in state.transitionset )
 		if( t == b.yy )
@@ -105,7 +104,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		goto _jump ;
 		}
 	if( b.yy == xyzzy.yy )
-		System.Console.Beep() ;
+		2.Beep() ;
 	if( ! token.HasValue ) 
 		token = input() ;
 	b.yy = xyzzy.yy ; 
