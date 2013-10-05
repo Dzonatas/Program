@@ -40,13 +40,16 @@ namespace System.Extensions
 			{
 			Screen.Glitched(d) ;
 			}
-			
+
 
 		//[Oprand({'B', 'l'})]
 		[DllImport("libX11", EntryPoint = "XOpenDisplay")]
 			extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
 			public static void OpenDisplay(this IntPtr _, out IntPtr display)
 			{
+			#if DEBUG || WINDOWS
+			//IceSetHostBasedAuthProc(listener,always_true) ;
+			#endif
 			display = display_open(":2") ;
 			}
 
