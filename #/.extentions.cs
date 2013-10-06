@@ -183,8 +183,8 @@ namespace System.Extensions
 		
 			public static IntPtr DefaultResolution(this IntPtr display)
 			{
-			#if CHROMEBOOK
-			return full_volume() ;  //full_screen+
+			#if CHROMEBOOK //BUG: https://code.google.com/p/chromium/issues/detail?id=180913
+			/* return */ full_volume() ;  //full_screen+
 			#else
 			return visual_default(display,0)/*.rez*/ ;  //given,_FIXT:anti-aliasing
 			#endif
