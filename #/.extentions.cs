@@ -180,6 +180,15 @@ namespace System.Extensions
 			{
 			return visual_default(display,scrnum) ;
 			}
+		
+			public static IntPtr DefaultResolution(this IntPtr display)
+			{
+			#if CHROMEBOOK
+			return full_volume() ;  //full_screen+
+			#else
+			return visual_default(display,0)/*.rez*/ ;  //given,_FIXT:anti-aliasing
+			#endif
+			}
 
 		[DllImport("libX11", EntryPoint = "XDefaultScreen")]
 			extern static int screen_default(System.IntPtr display)  ;
