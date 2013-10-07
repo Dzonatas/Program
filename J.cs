@@ -6,7 +6,7 @@ const int ʄ = (int)_var.DEFAULT ; //.0 ; //var ʄ_ = ʄ._ ;
 //const int j_ECMA_script_v = 00.000 ;//API := [ <CONSTANT> | specific_n ]:(/Re/ST(ART:OPTIONS]/#)(/_)
 //const int j_script_jXSsLT = 00.000 ;//API := [ <CONSTANT> | specific_n ]:(/Re/ST(ART:OPTIONS]/#):xsString := [API:]
 //const int j_script_jXSsLT_ = 0.00  ;//ABI := (/Re/ST(ART:OPTIONS]/#):xsString := [API:]
-//const int j_script_jXSsLT__ =0.0   ;//RTP := (./ST/#):[(ABI)]
+//const int j_script_jXSsLT__ =0.0   ;//RTP := (./ST/#):[(ABI)] //data:https://github.com/XSockets/WebRTC
 //(t`)._x.y
 static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_nybbles,_4_integers_used,_spase
 	{
