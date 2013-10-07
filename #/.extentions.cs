@@ -139,12 +139,14 @@ namespace System.Extensions
 			return list ;
 			}
 			
+		#if !SAFE
 		[DllImport("libX11", EntryPoint = "XSetStandardProperties")]
 			extern static void set_standard_properties(System.IntPtr display, IntPtr window, string window_name, string icon_name, IntPtr pixmap, string [] argv, int argc, IntPtr hints)  ;
 			public static void SetStandardProperties(this IntPtr display, IntPtr window, string window_name, string icon_name, IntPtr pixmap, string [] argv, int argc, IntPtr hints)
 			{
 			set_standard_properties(display,window,window_name,icon_name,pixmap,argv,argc,hints) ;
 			}
+		#endif
 			
 		[DllImport("libX11", EntryPoint = "XCreatePixmap")]
 			extern static IntPtr pixmap_create(System.IntPtr display, Drawable d, uint width, uint height, uint depth) ;
