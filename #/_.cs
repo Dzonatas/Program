@@ -96,10 +96,11 @@ internal static class screen
 		#if APU || !XGPU
 		for( int i = 0 ; i < pixmap.Length ; i++ )
 			pixmap[i]  = ʄ.CreatePixmap( window, width, height, depth ) ;
+		ʄ.SetStandardProperties( window, window_name, icon_name, pixmap[0], argv, argc, hints ) ;
 		#else
 		pixmap  = ʄ.CreatePixmap( window, width, height, depth ) ;
+		ʄ.SetStandardProperties( window, window_name, icon_name, pixmap, argv, argc, hints ) ;
 		#endif
-		ʄ.SetStandardProperties( window, window_name, icon_name, pixmap[0], argv, argc, hints ) ;
 		System.IntPtr [] list = ʄ.ListProperties( window ) ;
 		System.IntPtr key_book = list[0] ;   //list.Start() ;
 		return ;				
