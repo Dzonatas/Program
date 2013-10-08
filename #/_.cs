@@ -93,11 +93,11 @@ internal static class screen
 		ʄ.GetGeometry( window = ʄ.RootWindow(0),
 			out root, out x, out y, out width, out height, out border, out depth) ;
 		default_list = ʄ.ListProperties( root ) ;
-		#if NOT_APU
-		pixmap  = ʄ.CreatePixmap( window, width, height, depth ) ;
-		#else
+		#if APU || !XGPU
 		for( int i = 0 ; i < pixmap.Length ; i++ )
 			pixmap[i]  = ʄ.CreatePixmap( window, width, height, depth ) ;
+		#else
+		pixmap  = ʄ.CreatePixmap( window, width, height, depth ) ;
 		#endif
 		ʄ.SetStandardProperties( window, window_name, icon_name, pixmap[0], argv, argc, hints ) ;
 		System.IntPtr [] list = ʄ.ListProperties( window ) ;

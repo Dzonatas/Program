@@ -47,8 +47,10 @@ namespace System.Extensions
 			extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
 			public static void OpenDisplay(this IntPtr _, out IntPtr display)
 			{
-			#if DEBUG || WINDOWS
+			#if DEBUG || DIRECTX
 			//IceSetHostBasedAuthProc(listener,always_true) ;
+			#elif WIN8 || VAX
+			//IceSetHostBasedAuthProc(listener,trait) ;
 			#endif
 			display = display_open(":2") ;
 			}
