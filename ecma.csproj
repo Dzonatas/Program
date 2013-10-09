@@ -35,6 +35,14 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+      <Package>glade-sharp-2.0</Package>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="A.cs" />
@@ -69,6 +77,18 @@
     <Compile Include="#\AssemblyInfo.cs" />
     <Compile Include="#\_URN.cs" />
     <Compile Include="#\.extentions.cs" />
+    <Compile Include="#\Application.cs" />
+    <Compile Include="#\Atomatrix.cs" />
+    <Compile Include="#\Example.cs" />
+    <Compile Include="#\Orbs.cs" />
+    <Compile Include="#\Parameter.cs" />
+    <Compile Include="#\Processor.cs" />
+    <Compile Include="#\Program.cs" />
+    <Compile Include="#\Resource.cs" />
+    <Compile Include="#\Singletons.cs" />
+    <Compile Include="#\StatusIcon.cs" />
+    <Compile Include="#\Task.cs" />
+    <Compile Include="#\TaskIterator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
