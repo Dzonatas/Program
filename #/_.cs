@@ -138,7 +138,6 @@ internal static class shell
 	internal static System.Diagnostics.ProcessStartInfo psi ;
 	static shell()
 		{
-		screen.start() ;
 		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "DISPLAY=:2 "+
 			#if DEBUGS
 			// "schroot -c debug-glx-sid /usr/bin/env DISPLAY=host:2 " +
