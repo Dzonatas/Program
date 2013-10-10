@@ -43,6 +43,18 @@ namespace Application
 			}
 		}
 		
+	public class OrbAtom : Orb
+		{
+		IntPtr a ;
+		public OrbAtom()
+			{
+			}
+		public OrbAtom(IntPtr a)
+			{
+			this.a = a ;
+			}
+		}
+		
 	[Program.Singleton]
 	public class Space : Orb
 		{
