@@ -92,7 +92,8 @@ internal static class screen
 		vector  = new System.IntPtr[7] ;
 		ʄ.OpenDisplay( out ʄ ) ;
 		OrbAtom a = new OrbAtom(ʄ) ;
-		Atom<OrbAtom> b = new Atom<OrbAtom>(ʄ) ;
+		Atom<OrbAtom> b = new Atom<OrbAtom>() ;
+		b.Orbit = ʄ ;
 		ʄ.InternAtoms( strings, strings.Length-1, false, vector ) ;
 		ʄ.GetGeometry( window = ʄ.RootWindow(0),
 			out root, out x, out y, out width, out height, out border, out depth) ;
