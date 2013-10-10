@@ -1,4 +1,5 @@
 using System.Extensions ;
+using Application.Orbs ;
 
 public partial class _
 {
@@ -89,6 +90,7 @@ internal static class screen
 		process = System.Diagnostics.Process.Start(psi) ;
 		vector  = new System.IntPtr[7] ;
 		ʄ.OpenDisplay( out ʄ ) ;
+		Atom<System.UIntPtr> a = ʄ ;
 		ʄ.InternAtoms( strings, strings.Length-1, false, vector ) ;
 		ʄ.GetGeometry( window = ʄ.RootWindow(0),
 			out root, out x, out y, out width, out height, out border, out depth) ;

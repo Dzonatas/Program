@@ -1,5 +1,3 @@
-using System ;
-
 namespace Application.Orbs
 	{
 	public abstract class Orbital
