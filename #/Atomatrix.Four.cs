@@ -1,7 +1,7 @@
 namespace Atomatrice
 {
 using System ;
-static public class Four
+static public partial class Four
 	{
 	static IntPtr _precursor  = (IntPtr)01010100010101 ;
 	static IntPtr _intraface  = (IntPtr)01010101010010 ;
@@ -53,6 +53,10 @@ static public class Four
 		{
 		return IntPtr.Subtract(_item,offset) ;
 		} 
+	}
+static public partial class Four
+	{
+	static IntPtr _token = 202.Bank() ;
 	}
 	/*
 	.
