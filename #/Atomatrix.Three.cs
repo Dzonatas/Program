@@ -47,11 +47,19 @@ static public class Three
 		}
 	static public IntPtr INSTR_(this IntPtr a, int offset)
 		{
+		#if CONSISTENT
 		return IntPtr.Subtract(_item,-offset) ;
+		#else
+		return a.Token(offset) ;
+		#endif
 		} 
 	static public IntPtr Oprand(this IntPtr a, int offset)
 		{
+		#if CONSISTENT
 		return IntPtr.Subtract(_item,offset) ;
+		#else
+		return a.Token(-offset) ;
+		#endif
 		} 
 	}
 	/*
