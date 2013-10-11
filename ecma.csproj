@@ -91,6 +91,7 @@
     <Compile Include="#\TaskIterator.cs" />
     <Compile Include="#\Atomatrix.One.cs" />
     <Compile Include="#\Atomatrix.Two.cs" />
+    <Compile Include="#\Atomatrix.Three.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
