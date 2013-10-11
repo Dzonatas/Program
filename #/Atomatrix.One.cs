@@ -45,6 +45,10 @@ static public class One
 		get { return _item ; }
 		set { _item = value ; }
 		}
+	static public IntPtr Token(this IntPtr a, int offset)
+		{
+		return IntPtr.Subtract(_item,-offset) ;
+		} 
 	}
 	/*
 	.
