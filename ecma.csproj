@@ -92,6 +92,7 @@
     <Compile Include="#\Atomatrix.One.cs" />
     <Compile Include="#\Atomatrix.Two.cs" />
     <Compile Include="#\Atomatrix.Three.cs" />
+    <Compile Include="#\Atomatrix.Four.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
