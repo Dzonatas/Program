@@ -84,3 +84,54 @@ public class Atomatrix
 		}
 	}
 }
+
+
+namespace Fail
+{
+using System ;
+static public class Atomatrix
+	{
+	static IntPtr _precursor  ;
+	static IntPtr _intraface  ;
+	static IntPtr _intrafaces ;
+	static IntPtr _orbit      ;
+	static IntPtr _interface  ;
+	static IntPtr _interfaces ;
+	static IntPtr _item       ;
+	static public IntPtr Precursor
+		{
+		get { return _precursor ; }
+		set { _precursor = value ; }
+		}
+	static public IntPtr Intraface
+		{
+		get { return _intraface ; }
+		set { _intraface = value ; }
+		}
+	static public IntPtr Intrafaces
+		{
+		get { return _intrafaces ; }
+		set { _intrafaces = value ; }
+		}
+	static public IntPtr Orbit
+		{
+		get { return _orbit ; }
+		set { _orbit = value ; }
+		}
+	static public IntPtr Interface
+		{
+		get { return _interface ; }
+		set { _interface = value ; }
+		}
+	static public IntPtr Interfaces
+		{
+		get { return _interfaces ; }
+		set { _interfaces = value ; }
+		}
+	static public IntPtr Item
+		{
+		get { return _item ; }
+		set { _item = value ; }
+		}
+	}
+}
