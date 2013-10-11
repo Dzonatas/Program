@@ -58,6 +58,7 @@ static public partial class Four
 	{
 	static IntPtr _token  = 202.Bank() ;
 	//static IntPtr _symbol = 202.Card() ;
+	static IntPtr _box    = 254.Card() ;
 	}
 	/*
 	.
