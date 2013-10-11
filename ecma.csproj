@@ -89,6 +89,7 @@
     <Compile Include="#\StatusIcon.cs" />
     <Compile Include="#\Task.cs" />
     <Compile Include="#\TaskIterator.cs" />
+    <Compile Include="#\Atomatrix.One.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

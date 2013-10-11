@@ -65,26 +65,6 @@ namespace Future
 		}
 	}
 
-namespace Atomatrice
-{
-using System ;
-public class Atomatrix
-	{
-	public     IntPtr Precursor  ;
-	public     IntPtr Intraface  ;
-	public     IntPtr Intrafaces ;
-	protected  IntPtr Orbit      ;
-	protected  IntPtr Interface  ;
-	protected  IntPtr Interfaces ;
-	IntPtr            item       ;
-	public     IntPtr Item
-		{
-		get { return item ; }
-		set { item = value ; }
-		}
-	}
-}
-
 namespace Forge
 {
 using System ;
