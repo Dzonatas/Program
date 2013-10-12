@@ -65,3 +65,15 @@ namespace Application.Orbs
 			}
 		}
 	}
+
+namespace Application.Asteroid //Application.Stone[5,6] : Orbs
+	{
+	namespace Atomatrice.Five // : (using) Atomatrice
+		{
+		//restricted interface {...}
+		}
+	namespace Atomatrice.Six // : (using) Atomatrice
+		{
+		//$interface {...}
+		}
+	}
