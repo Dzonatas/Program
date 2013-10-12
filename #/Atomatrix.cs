@@ -95,6 +95,8 @@ namespace Application.Twelve //Application.HTTP[.post,.get] : Orbs#Resources
 			namespace Zero
 				{
 				//s//$(CPP)((VERSION(((GNU#)))))///bin/#.0.0.0.exe//
+				using Logo ;
+				Plot face on canvas as icon.
 				}
 			}
 		}
