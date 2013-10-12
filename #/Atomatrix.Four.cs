@@ -116,4 +116,14 @@ static public class Atomatrix
 		set { _item = value ; }
 		}
 	}
+#if FIX
+interface xsp
+	{
+	/*
+	.
+	.
+	.
+	*/
+	}
+#endif
 }
