@@ -98,7 +98,13 @@ namespace Application.Twelve //Application.HTTP[.post,.get] : Orbs#Resources
 				using Logo ;
 				Plot face on canvas as icon ;
 				stamp rectangle as hypercard.
-				Browse file menu as hell world!
+				Browse inventory as source ;
+				attach to communicator.
+				Sort by face recognition ;
+				categorize by name ;
+				pivot index by keyed form ;
+				override sort by typeof(street) ;
+				#-#-#.taxi.
 				}
 			}
 		}
