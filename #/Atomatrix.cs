@@ -77,3 +77,25 @@ namespace Application.Asteroid //Application.Stone[5,6] : Orbs
 		//$interface {...}
 		}
 	}
+
+namespace Application.YYBACKUP //Application.HTTP[.post,.get] : Orbs#Resources
+	{
+	namespace Atomatrice.Seven.Eight.Nine // : (using) Atomatrice
+		{
+		//C++0xC++0xC++...
+		}
+	}
+
+namespace Application.Twelve //Application.HTTP[.post,.get] : Orbs#Resources
+	{
+	namespace Zero
+		{
+		namespace Zero
+			{
+			namespace Zero
+				{
+				//s//$(CPP)((VERSION(((GNU#)))))///bin/#.0.0.0.exe//
+				}
+			}
+		}
+	}
