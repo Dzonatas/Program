@@ -96,7 +96,9 @@ namespace Application.Twelve //Application.HTTP[.post,.get] : Orbs#Resources
 				{
 				//s//$(CPP)((VERSION(((GNU#)))))///bin/#.0.0.0.exe//
 				using Logo ;
-				Plot face on canvas as icon.
+				Plot face on canvas as icon ;
+				stamp rectangle as hypercard.
+				Browse file menu as hell world!
 				}
 			}
 		}
