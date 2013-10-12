@@ -1,7 +1,3 @@
-using System.Collections.Generic ;
-using System.Xml ;
-using System.IO ;
-using System ;
 using System.Extensions ;
 //using System.Runtime ;//[br_ide:(('target'![branch:.]))
 
@@ -58,7 +54,6 @@ static void Blogic()
 	jump_( ref b ) ;
 	_.prompt(_.string_t) ;
 	}
-static List<_.Token> b_line = new List<_.Token>() ;
 
 static int b_muon_css     ;                          //_FIXT:_second,_hexed,<s>tainted</>,'/\_.css'
 static char b_custom_map  ;                          //sd['map'] = '.custom "map":.ctor(binary) = (...)'

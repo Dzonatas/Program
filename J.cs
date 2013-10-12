@@ -56,7 +56,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	if( state.transitionset.Length > 0 )
 		{
 		if( ! token.HasValue ) 
-			token = input() ;
+			token = input( ref Hacked.Materials.H.Line ) ;
 		if( b.yy == xml_translate[token.Value.c] )
 			System.Console.SetCursorPosition(0,0) ;
 		b.yy = xml_translate[token.Value.c] ;
@@ -106,7 +106,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	if( b.yy == xyzzy.yy )
 		2.Beep() ;
 	if( ! token.HasValue ) 
-		token = input() ;
+		token = input( ref Hacked.Materials.H.Line ) ;
 	b.yy = xyzzy.yy ; 
 	if( b.yy > _default )
 		goto nt ;

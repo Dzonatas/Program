@@ -121,7 +121,7 @@ public struct Item
 		}
 	}
 
-static _.Token input()
+static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	{
 	int y = 0 ;
 	foreach( _.Token t in b_line )
