@@ -1,5 +1,3 @@
-using System;
-
 namespace ecma
 		{
 		public class _URN

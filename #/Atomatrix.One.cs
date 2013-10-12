@@ -57,3 +57,18 @@ static public class One
 	*/
 	
 }
+
+namespace Forge
+{
+using System ;
+public interface IAtomatrix
+	{
+	IntPtr Precursor	{	get ;	set ;	}
+	IntPtr Intraface	{	get ;	set ;	}
+	IntPtr Intrafaces	{	get ;	set ;	}
+	IntPtr Orbit		{	get ;	set ;	}
+	IntPtr Interface	{	get ;	set ;	}
+	IntPtr Interfaces	{	get ;	set ;	}
+	IntPtr Item			{	get ;	set ;	}
+	}
+}
