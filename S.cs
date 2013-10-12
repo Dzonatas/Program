@@ -1,9 +1,6 @@
-using System;
-using System.Xml ;
-using System.Text ;
-using System.IO ;
 using System.Collections.Generic ;
 using System.Net ;
+using System ;
 
 public partial class A335
 {
@@ -191,7 +188,7 @@ namespace Spherical.Mesh
 			}
 		static generator()
 			{
-			mesh = new MemoryStream() ;
+			mesh = new System.IO.MemoryStream() ;
 			for( int i = 0 ; i < N.Length ; i++ )
 				N[i] = i ;
 			//{array:[Guid,4k]}>{node:#,#,#,...}//RFC:(well-known):X509(:plain-text:datestamped-by-entity)

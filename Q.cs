@@ -1,5 +1,3 @@
-using System;
-
 public partial class A335
 {
 /*#*/static/*#*/ string [,] qubit_ildex_nt ; //_nexus: Allow entry of server idle events for -dex bits, so it avoids stack over-head. (BCL)
@@ -12,14 +10,14 @@ static int    _qr_v      ;   //_inverted_quant,_qr_CC[,_voxel]
 
 public struct Quant
 	{
-	const Decimal  one    = Decimal.One ;
-	const Decimal  two    = one + one ;
-	const Decimal  three  = one + two ;
-	public Decimal nybble ;
+	const System.Decimal  one    = System.Decimal.One ;
+	const System.Decimal  two    = one + one ;
+	const System.Decimal  three  = one + two ;
+	public System.Decimal nybble ;
 	public bool One
 		{
 		get { return nybble == one ; }
-		set { nybble = value ? one : Decimal.Zero ; }
+		set { nybble = value ? one : System.Decimal.Zero ; }
 		}
 	public bool OneOrTwo
 		{
@@ -34,7 +32,7 @@ public struct Quant
 	public bool Two
 		{
 		get { return nybble == two ; }
-		set { nybble = value ? two : Decimal.Zero ; }
+		set { nybble = value ? two : System.Decimal.Zero ; }
 		}
 	public bool TwoOrThree
 		{
@@ -44,17 +42,17 @@ public struct Quant
 	public bool Three
 		{
 		get { return nybble == three ; }
-		set { nybble = value ? three : Decimal.Zero ; }
+		set { nybble = value ? three : System.Decimal.Zero ; }
 		}
 	public override string ToString()
 		{
 		return nybble.ToString() ;
 		}
-	public Decimal Increment()
+	public System.Decimal Increment()
 		{
 		return nybble += one ;
 		}
-	public Decimal Decrement()
+	public System.Decimal Decrement()
 		{
 		return nybble -= one ;
 		}

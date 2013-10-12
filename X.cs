@@ -1,4 +1,3 @@
-using System ;
 using System.Xml ;
 using System.IO ;
 using System.Collections.Generic ;
@@ -44,13 +43,13 @@ public class Xo
 		{
 		if( x.o is xml_token ) return (int)(xml_token)x.o ;
 		if( x.o is xml_symbol ) return (int)(xml_symbol)x.o ;
-		throw new Exception( "<int>" ) ;
+		throw new System.Exception( "<int>" ) ;
 		}
 	static public explicit operator char( Xo x )
 		{
 		if( x.o is xml_token ) return (char)(xml_token)x.o ;
 		if( x.o is xml_symbol ) return (char)(xml_symbol)x.o ;
-		throw new Exception( "<char>" ) ;
+		throw new System.Exception( "<char>" ) ;
 		}
 	internal void set_if( xml_s name, object o )
 		{
@@ -392,7 +391,7 @@ static void xml_get_item()
 	i.rule = Number.Parse( xml.Value ) ;
 	xml.MoveToNextAttribute() ;
 	i.point = Number.Parse( xml.Value ) ;
-	Array.Resize(ref x_state.itemset, x_state.itemset.Length + 1 ) ;
+	System.Array.Resize(ref x_state.itemset, x_state.itemset.Length + 1 ) ;
 	x_state.itemset[ x_state.itemset.Length - 1 ] = i ;
 	}
 
@@ -414,7 +413,7 @@ static void xml_get_transition()
 			t.item = i ;
 			break ;
 			}
-	Array.Resize(ref x_state.transitionset,  x_state.transitionset.Length + 1 ) ;
+	System.Array.Resize(ref x_state.transitionset,  x_state.transitionset.Length + 1 ) ;
 	x_state.transitionset[  x_state.transitionset.Length - 1 ] = t ;
 	}
 
@@ -445,7 +444,7 @@ static void xml_get_reduction()
 				break ;
 				}
 		}
-	Array.Resize(ref  x_state.reductionset,  x_state.reductionset.Length + 1 ) ;
+	System.Array.Resize(ref  x_state.reductionset,  x_state.reductionset.Length + 1 ) ;
 	x_state.reductionset[  x_state.reductionset.Length - 1 ] = r ;
 	}
 	
@@ -478,7 +477,7 @@ static bool xml_get_()
 			xml_text = xml.Value ;
 			//yyrule = resolve() ;
 			//stack.Push( symbol_from_token[yytoken] ) ;
-			Console.WriteLine("<{0}/>{2}", yyrule,yytoken,xml_text) ;
+			System.Console.WriteLine("<{0}/>{2}", yyrule,yytoken,xml_text) ;
 			//Console.WriteLine("{0} {1} {2}", yytoken, text, yyrule.lhs) ;
 			return true ;
 			}

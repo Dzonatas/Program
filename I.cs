@@ -1,5 +1,3 @@
-using System;
-
 public partial class A335
 {
 static string iconic_Earth ; //[static:Earth:"EARTH"]
@@ -10,7 +8,7 @@ static string icon_dae_r ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b:[q,R]
 #if OAUTH
 [OAuth] Token infrastructure_i ;
 #endif
-const  Decimal    icon_voxel  = 0.0000m ;//_unordered_content[_token]
+const  System.Decimal    icon_voxel  = 0.0000m ;//_unordered_content[_token]
 const  char []    i_undefined = null ; //{0xCA,0xFF} ;
 //{"icon:voxel:",<title/>}//
 //string input = "<?xml version=\"1.0\" ?>\n<xml><a f=\"1\">b</a><c>d</c></xml>" ;
@@ -63,25 +61,25 @@ public struct Itemset
 public struct Item
 	{
 	public Symbol  symbol ;
-	public Decimal account ;
+	public System.Decimal account ;
 	public bool    imaginary ;
 	public bool    stacked ;
 	public bool    existential ;
 	public Quant   q ;
 	public Quant   bit ;
-	public Action  do_ ;
-	public Nullable<Guid> guid ;
+	public System.Action  do_ ;
+	public System.Nullable<System.Guid> guid ;
 	public static implicit operator Item( State state )
 		{
-		throw new NotImplementedException( "Stackless." ) ;
+		throw new System.NotImplementedException( "Stackless." ) ;
 		}
 	public static implicit operator Item( Symbol symbol )
 		{
-		throw new NotImplementedException( "Stateless." ) ;
+		throw new System.NotImplementedException( "Stateless." ) ;
 		}
 	public static implicit operator Item( bool parity )
 		{
-		throw new NotImplementedException( "Finite truths, linearly." ) ;
+		throw new System.NotImplementedException( "Finite truths, linearly." ) ;
 		}
 	public static implicit operator bool( Item i )
 		{
@@ -95,7 +93,7 @@ public struct Item
 		{
 		return (int)i.account ;
 		}
-	public static implicit operator Decimal( Item i )
+	public static implicit operator System.Decimal( Item i )
 		{
 		return i.account ;
 		}
@@ -144,8 +142,8 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 		y += text.Length ;
 		if( y >= 80 )
 			break ;
-		Console.SetCursorPosition( z, 20 ) ;
-		Console.Write( text ) ;
+		System.Console.SetCursorPosition( z, 20 ) ;
+		System.Console.Write( text ) ;
 		}
 	_.Token token = b_line[0] ;
 	if( debug ) 

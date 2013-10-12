@@ -1,7 +1,3 @@
-using System;
-using System.IO ;
-using System.Xml ;
-using System.Diagnostics ;
 using System.Collections.Generic ;
 
 public partial class A335
@@ -90,7 +86,7 @@ static bool requested_system ;
 static void request( ref Item i )
 	{
 	if( i.stacked )
-		throw new NotImplementedException( "Did, done." ) ;
+		throw new System.NotImplementedException( "Did, done." ) ;
 
 	if( system.Equals(i) && ! requested_system )
 		{
@@ -103,7 +99,7 @@ static void request( ref Item i )
 	stack.Push( i ) ;
 	if( object.ReferenceEquals(i.symbol,yytoken) )
 		yytoken = new Symbol() ;
-	Console.WriteLine( "$$ <- {0}   ", i ) ;
+	System.Console.WriteLine( "$$ <- {0}   ", i ) ;
 	//print_stack() ;
 	}
 
@@ -113,7 +109,7 @@ static Item respond()
 	i = stack.Pop() ;
 	if( i.symbol.StringIsNull && yytoken.StringIsNull )
 		xml_get_() ;
-	Console.WriteLine( "$$ -> {0}   ", i ) ;
+	System.Console.WriteLine( "$$ -> {0}   ", i ) ;
 	//print_stack() ;
 	i.bit.One = false ;
 	return i ;
@@ -123,7 +119,7 @@ static void request( ref State s )
 	{
 	#region OPT
 	//System.Guid UUID ;
-	DateTime z = DateTime.Now ; //(_ice_linq)
+	System.DateTime z = System.DateTime.Now ; //(_ice_linq)
 	#endregion OPT
 	if( this_state.debit != null && this_state.debit != s.debit )
 		{
@@ -137,7 +133,7 @@ static void request( ref State s )
 	}
 
 	
-public class ReducedAcception : Exception
+public class ReducedAcception : System.Exception
 	{
 	public int     rule ;
 	public int     backup ;

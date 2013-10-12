@@ -1,15 +1,6 @@
-using System ;
-using System.Diagnostics ;
-using System.Text ;
-using System.Xml ;
-using System.IO ;
-using System.Collections.Generic ;
-//using System.Collections ; | < # >
-using System.Net ;
-
 partial class A335
 {
-public static Decimal Dzonexus ; //_dzonux.NET!(sendme:(vector|scalar|"sector"){(".get"|git:"voxel")})(-)
+public static System.Decimal Dzonexus ; //_dzonux.NET!(sendme:(vector|scalar|"sector"){(".get"|git:"voxel")})(-)
 static string dna_dex_nt ; //_foreach(/DNA/).active.idle.up //_FIX:_"inventory"_events,"WebSockets",'('iDNA')',_FIXT:(+)"IHAVE:"
 static bool debug ; //_passive((_d))_##IPVI
 //string __default_device ; //_google_play,_XSLT_DO_NOT_TRACK(_replicated)
@@ -26,7 +17,7 @@ namespace Directory._
 		{
 		struct _ico
 			{
-			Decimal stateful_icon ; //_default:env-file:.ico
+			System.Decimal stateful_icon ; //_default:env-file:.ico
 			}
 		struct _jtk  //OPENJPEG(2000).file.format
 			{
@@ -43,7 +34,7 @@ namespace Directory._
 		struct _jtk_ico
 			{
 			_jtk [,] _ ;
-			Decimal fixed_point ;
+			System.Decimal fixed_point ;
 			void _jtk()
 				#region ico
 				{
@@ -73,7 +64,7 @@ namespace Directory.__
 		{
 		void __mips()
 			{
-			throw new NotImplementedException("(_ms) -> _") ; //(one.mip)<-(multiple-j2k-contexts) ;
+			throw new System.NotImplementedException("(_ms) -> _") ; //(one.mip)<-(multiple-j2k-contexts) ;
 			}
 		}
 	}

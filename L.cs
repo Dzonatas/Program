@@ -1,4 +1,4 @@
-using System;//<NOUN L/>
+//using System;//<NOUN L/>
 
 public partial class A335
 {
@@ -7,7 +7,7 @@ class log_enter
 	{
 	#region OPT:UNION
 	System.Guid UUID ;
-	DateTime dt ; //_linked[,_linq]
+	System.DateTime dt ; //_linked[,_linq]
 	#endregion OPT
 	State    f ;
 	public override string ToString()
@@ -17,7 +17,7 @@ class log_enter
 	public log_enter()
 		{
 		f = this_state ;
-		dt = DateTime.Now ;
+		dt = System.DateTime.Now ;
 		}
 	}
 /*

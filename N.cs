@@ -1,5 +1,3 @@
-using System;
-
 public partial class A335
 {
 static  public Number [] n_specified = new Number[1126] ; //_FIX:_const_atomic_struct...,(non-dynamic-n),(-n-gen)
@@ -13,7 +11,7 @@ object NOUN ;
 	
 public class Number
 	{
-	public Decimal n ;
+	public System.Decimal n ;
 	//bool           whole ;    //[1,2,3,.,.,.,)
 	//bool           specific ; //<s><o.o></i:(__.no)>  //FIX:(Convexion)(</s i=....>)
 	//bool           ordered ; //_RFC(URN:(_quoted)]
@@ -50,7 +48,7 @@ public class Number
 				return "$default" ;
 			if( n < 10 )
 				return r_number( (int)n ) ;
-			Decimal d ;
+			System.Decimal d ;
 			string s = "" ;
 			if( n >= 1000 )
 				s += n_number( (int)((n%1000)/100) ) + "T" ;
@@ -81,7 +79,7 @@ static string n_number( int n )
 		case 7 : return "Seven" ;
 		case 8 : return "Eight" ;
 		case 9 : return "Nine" ;
-		default: throw new NotImplementedException() ;
+		default: throw new System.NotImplementedException() ;
 		}
 	}
 	
