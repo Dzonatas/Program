@@ -120,4 +120,10 @@ namespace Hypervisor.Materials
 		bool _UV        ;
 		bool _light     ;
 		}
+	struct _mirror
+		{
+		bool _in        ;
+		bool _dark      ;
+		bool _real      ;
+		}
 	}
