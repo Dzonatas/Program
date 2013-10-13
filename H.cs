@@ -54,4 +54,24 @@ namespace Hypervisor.Materials
 			//m.attach(WINDOW) ;
 			}
 		}
+	struct _strict
+		{
+		bool _static   ;
+		bool _tutorial ;
+		bool testing   ;
+		}
+	struct _restricted_by
+		{
+		bool _teacher   ;
+		bool _doctor    ;
+		bool testing    ;
+		bool _sleeper   ;
+		}
+	struct _by
+		{
+		bool _oid       ;
+		bool _droid     ;
+		bool oops       ;
+		bool _social    ;
+		}
 	}
