@@ -27,10 +27,13 @@ namespace Application
 			{
 			parameter.Add( "synopsis", "false" ) ;
 			#if DEBUG
-				parameter.Add( "debug",    "true" ) ;
-				parameter.Add( "point",    "0.0" ) ;
-				parameter.Add( "endpoint", "0.0" ) ;
+				parameter.Add( "debug",    "true"  ) ;
+				parameter.Add( "point",    "0.0"   ) ;
+				parameter.Add( "endpoint", "0.0"   ) ;
 				parameter.Add( "geometry", "false" ) ;
+				parameter.Add( "snake",    "true"  ) ;
+				parameter.Add( "serpent",  "false" ) ;
+				parameter.Add( "fini",     "true"  ) ;
 			#endif
 			}
 
