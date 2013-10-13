@@ -135,3 +135,92 @@ namespace con.sys
 </convex_mesh></geometry></library_geometry></COLLADA>
 #endregion C_PROFILE
 */
+
+namespace kern.el.o
+	{
+	struct __one
+		{
+		bool _one   ;
+		bool _two ;
+		bool three   ;
+		}
+	struct __two
+		{
+		bool _one   ;
+		bool _two    ;
+		bool three    ;
+		bool _four   ;
+		}
+	struct _three
+		{
+		bool _one       ;
+		bool _two     ;
+		bool three       ;
+		bool _four    ;
+		}
+	struct __four
+		{
+		bool _one     ;
+		bool _two      ;
+		bool _three     ;
+		bool _four     ;
+		bool _five    ;
+		bool _six      ;
+		bool _seven     ;
+		bool _eight     ;
+		bool _nine   ;
+		bool _ten       ;
+		bool _eleven    ;
+		bool _twelve     ;
+		bool _thirteen    ;
+		bool _CBT       ;
+		}
+	struct __five
+		{
+		bool _one      ;
+		bool _two    ;
+		bool _three ;
+		bool _four      ;
+		bool _five      ;
+		bool _six ;
+		bool _seven     ;
+		bool _eight     ;
+		bool _nine  ;
+		}
+	struct _six
+		{
+		bool _one      ;
+		bool _two    ;
+		bool _three  ;
+		}
+	struct __seven
+		{
+		bool _one      ;
+		bool _two      ;
+		bool _three     ;
+		bool four     ;
+		bool _five    ;
+		bool _six       ;
+		bool _seven        ;
+		bool _eight     ;
+		}
+	struct _eight
+		{
+		bool _one        ;
+		bool _two      ;
+		bool _three      ;
+		bool _four      ;
+		bool _five    ;
+		}
+	struct _nine
+		{
+		bool _one     ;
+		bool _two ;
+		bool _three    ;
+		}
+	struct _
+		{
+		bool __     ;
+		bool ___      ;
+		}
+	}
