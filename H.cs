@@ -74,4 +74,50 @@ namespace Hypervisor.Materials
 		bool oops       ;
 		bool _social    ;
 		}
+	struct _tree
+		{
+		bool _alpha     ;
+		bool _beta      ;
+		bool _delta     ;
+		bool _gamma     ;
+		bool _endian    ;
+		bool _city      ;
+		bool _glyph     ;
+		bool _cairo     ;
+		bool _compass   ;
+		bool _zoo       ;
+		bool _planar    ;
+		bool _limbs     ;
+		bool _shadow    ;
+		bool _CRT       ;
+		}
+	struct _book
+		{
+		bool _tree      ;
+		bool _planet    ;
+		bool _petrified ;
+		bool _idle      ;
+		bool _open      ;
+		bool _long_long_as_unordered_latitude_and_longitude ;
+		bool _cover     ;
+		bool _codex     ;
+		bool _released  ;
+		}
+	struct _street
+		{
+		bool _oids      ;
+		bool _drones    ;
+		bool _endpoint  ;
+		}
+	struct _street_py
+		{
+		bool _poem      ;
+		bool _seed      ;
+		bool _point     ;
+		bool tested     ;
+		bool _center    ;
+		bool _XYZ       ;
+		bool _UV        ;
+		bool _light     ;
+		}
 	}
