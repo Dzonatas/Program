@@ -139,4 +139,20 @@ namespace Hypervisor.Materials
 		bool _state     ;
 		bool _fini      ;
 		}
+	#if BIBLE
+	struct _tut
+		{
+		bool _region    ;
+		bool _numerate  ;
+		bool _collect   ;
+		bool _verses    ;
+		}
+	struct _aztec
+		{
+		bool _known     ;
+		bool _primes    ;
+		bool _perfect   ;
+		bool _distract  ;
+		}
+	#endif
 	}
