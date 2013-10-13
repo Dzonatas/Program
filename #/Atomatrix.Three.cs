@@ -218,9 +218,8 @@ namespace kern.el.o
 		bool _two ;
 		bool _three    ;
 		}
-	struct _
-		{
+	struct   _      {
 		bool __     ;
-		bool ___      ;
+		bool ___    ;
 		}
 	}
