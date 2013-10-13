@@ -35,6 +35,14 @@ namespace Application
 				parameter.Add( "serpent",  "false" ) ;
 				parameter.Add( "fini",     "true"  ) ;
 			#endif
+			#if DEBIAN
+				parameter.Add( "snake",    "false"  ) ;
+				parameter.Add( "shark",    "true"   ) ;
+			#endif
+			#if METH || KNOPPIX
+				parameter.Add( "shark",     "true"   ) ;
+				parameter.Add( "man-o-war", "true"   ) ;
+			#endif
 			}
 
 		static void parse( string[] args )
