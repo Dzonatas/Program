@@ -128,4 +128,10 @@ namespace Hypervisor.Materials
 		bool _void      ;
 		bool _plasma    ;
 		}
+	struct _metal
+		{
+		bool _earth     ;
+		bool _element_map ;
+		bool _traced    ;
+		}
 	}
