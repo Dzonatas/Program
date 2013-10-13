@@ -27,6 +27,9 @@ namespace Application
 			#else
 				AppDomain.CurrentDomain.UnhandledException += unhandled ;
 			#endif
+#if !CPP_FLOW
+			instantiate() ;
+#endif
 			}
 
 #if CPP_FLOW

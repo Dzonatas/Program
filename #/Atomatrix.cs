@@ -95,6 +95,7 @@ namespace Application.Twelve //Application.HTTP[.post,.get] : Orbs#Resources
 			namespace Zero
 				{
 				//s//$(CPP)((VERSION(((GNU#)))))///bin/#.0.0.0.exe//
+				#if LOGO
 				using Logo ;
 
 					Plot face on canvas as icon ;
@@ -110,6 +111,7 @@ namespace Application.Twelve //Application.HTTP[.post,.get] : Orbs#Resources
 				drone up.
 
 				Used [QR] exit by android logo.
+				#endif
 				}
 			}
 		}

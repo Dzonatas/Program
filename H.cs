@@ -125,5 +125,7 @@ namespace Hypervisor.Materials
 		bool _in        ;
 		bool _dark      ;
 		bool _real      ;
+		bool _void      ;
+		bool _plasma    ;
 		}
 	}
