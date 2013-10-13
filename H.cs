@@ -134,4 +134,9 @@ namespace Hypervisor.Materials
 		bool _element_map ;
 		bool _traced    ;
 		}
+	struct _common
+		{
+		bool _state     ;
+		bool _fini      ;
+		}
 	}
