@@ -226,14 +226,22 @@ namespace System.Extensions
 			extern static IntPtr pixel_client(System.IntPtr display, int scrnum )  ;
 			public static IntPtr ServerPixel(this IntPtr display, int scrnum )
 			{
-			return pixel_black(display,scrnum) ;
+			#if !SERVER
+			return pixel_client(display,0) ;
+			#else
+			return pixel_server(display,scrnum) ;
+			#endif
 			}
 
 		[DllImport("libX11", EntryPoint = "XWhitePixel")]
 			extern static IntPtr pixel_server(System.IntPtr display, int scrnum )  ;
 			public static IntPtr ClientPixel(this IntPtr display, int scrnum )
 			{
-			return pixel_white(display,scrnum) ;
+			#if !CLIENT
+			return pixel_server(display,0) ;
+			#else
+			return pixel_client(display,scrnum) ;
+			#endif
 			}
 
 		[DllImport("libX11", EntryPoint = "XRotateWindowProperties")]
