@@ -127,3 +127,23 @@ interface xsp
 	}
 #endif
 }
+
+namespace Dreamsand
+	{
+	struct _amnesia
+		{
+		struct _game ;
+		struct _linux ;
+		struct _steam ;
+		struct _os ;
+		}
+	struct linux_os_drm
+		{
+		bool _os_gl ;
+		bool _gl ;
+		bool _flgrx ;
+		bool _lsb ;
+		}
+	struct inventory ;
+	struct shopping_mall ;
+	}

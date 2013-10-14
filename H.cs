@@ -37,6 +37,7 @@ namespace Hacked.Materials
 			//m.attach(CONSOLE) ;
 			//m.attach(RIBBON) ;
 			//m.apply(Sperical.Mesh.generator.parameters) ;
+			//m.attach(DREAMLAND) ;
 			#endif
 			}
 		}
@@ -52,6 +53,7 @@ namespace Hypervisor.Materials
 			handle = new global::Materials.M() ;
 			//m.attach(DOOR) ;
 			//m.attach(WINDOW) ;
+			//m.attach(DREAMSAND) ;
 			}
 		}
 	struct _strict
