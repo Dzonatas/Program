@@ -223,15 +223,15 @@ namespace System.Extensions
 			}
 
 		[DllImport("libX11", EntryPoint = "XBlackPixel")]
-			extern static IntPtr pixel_black(System.IntPtr display, int scrnum )  ;
-			public static IntPtr BlackPixel(this IntPtr display, int scrnum )
+			extern static IntPtr pixel_client(System.IntPtr display, int scrnum )  ;
+			public static IntPtr ServerPixel(this IntPtr display, int scrnum )
 			{
 			return pixel_black(display,scrnum) ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XWhitePixel")]
-			extern static IntPtr pixel_white(System.IntPtr display, int scrnum )  ;
-			public static IntPtr WhitePixel(this IntPtr display, int scrnum )
+			extern static IntPtr pixel_server(System.IntPtr display, int scrnum )  ;
+			public static IntPtr ClientPixel(this IntPtr display, int scrnum )
 			{
 			return pixel_white(display,scrnum) ;
 			}
