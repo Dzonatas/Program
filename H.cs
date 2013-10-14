@@ -33,6 +33,7 @@ namespace Hacked.Materials
 			m = new global::Materials.M() ;
 			#if DRM
 			//m.attach(global::Materials.library_collada.id) ;
+			//m.attach(RED_RIBBON) ;
 			#else
 			//m.attach(CONSOLE) ;
 			//m.attach(RIBBON) ;
