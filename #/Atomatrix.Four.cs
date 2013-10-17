@@ -132,18 +132,18 @@ namespace Dreamsand
 	{
 	struct _amnesia
 		{
-		struct _game ;
-		struct _linux ;
-		struct _steam ;
-		struct _os ;
+		struct _game  {} ;
+		struct _linux {} ;
+		struct _steam {} ;
+		struct _os    {} ;
 		}
 	struct linux_os_drm
 		{
-		bool _os_gl ;
-		bool _gl ;
-		bool _flgrx ;
-		bool _lsb ;
+		struct _os_gl {} ;
+		struct _gl    {} ;
+		struct _flgrx {} ;
+		struct _lsb   {} ;
 		}
-	struct inventory ;
-	struct shopping_mall ;
+	struct inventory     {} ;
+	struct shopping_mall {} ;
 	}

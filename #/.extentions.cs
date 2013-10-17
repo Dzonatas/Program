@@ -201,6 +201,17 @@ namespace System.Extensions
 			return screen_default(display) ;
 			}
 
+		[DllImport("libX11", EntryPoint = "XDefaultGC")]
+			extern static IntPtr gc_default(System.IntPtr display, int scrnum )  ;
+			public static IntPtr DefaultGC(this IntPtr display, int scrnum )
+			{
+			#if !SERVER && !CLIENT
+			return gc_default(display,0) ;
+			#else
+			return gc_default(display,scrnum) ;
+			#endif
+			}
+
 		[DllImport("libX11", EntryPoint = "XDefaultColormap")]
 			extern static IntPtr colormap_default(System.IntPtr display, int scrnum )  ;
 			public static IntPtr DefaultColormap(this IntPtr display, int scrnum )
@@ -248,7 +259,7 @@ namespace System.Extensions
 			extern static IntPtr draw_py(System.IntPtr display, Drawable d, IntPtr gc, int x, int y, uint width, uint height )  ;
 			public static IntPtr Stitch(this IntPtr display, int x, int y )
 			{
-			return draw_py(display,d,gc,x,y,x+3,y+3) ;
+			return draw_py(display,default_root_window(display),gc_default(display,0),x,y,(uint)x+3,(uint)y+3) ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XRotateWindowProperties")]
