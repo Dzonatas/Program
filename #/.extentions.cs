@@ -244,6 +244,13 @@ namespace System.Extensions
 			#endif
 			}
 
+		[DllImport("libX11", EntryPoint = "XDrawRectangle")]
+			extern static IntPtr draw_py(System.IntPtr display, Drawable d, IntPtr gc, int x, int y, uint width, uint height )  ;
+			public static IntPtr Stitch(this IntPtr display, int x, int y )
+			{
+			return draw_py(display,d,gc,x,y,x+3,y+3) ;
+			}
+
 		[DllImport("libX11", EntryPoint = "XRotateWindowProperties")]
 			extern static IntPtr rotate_window_properties(System.IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions) ;
 			public static IntPtr RotateWindowProperties(this IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions )
