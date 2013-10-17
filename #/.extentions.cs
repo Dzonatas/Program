@@ -259,7 +259,11 @@ namespace System.Extensions
 			extern static IntPtr draw_py(System.IntPtr display, Drawable d, IntPtr gc, int x, int y, uint width, uint height )  ;
 			public static IntPtr Stitch(this IntPtr display, int x, int y )
 			{
+			#if STYX
+			return draw_py(display,default_root_window(display),gc_default(display,0),x,y,0,0) ;
+			#else
 			return draw_py(display,default_root_window(display),gc_default(display,0),x,y,(uint)x+3,(uint)y+3) ;
+			#endif
 			}
 
 		[DllImport("libX11", EntryPoint = "XRotateWindowProperties")]
