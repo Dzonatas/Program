@@ -133,6 +133,10 @@ internal static class screen
 		{
 		ʄ.Ring((System.IntPtr)d) ; //_blit_offset_d_length_masked
 		}
+	public static void DrawCode()
+		{
+		ʄ.Stitch(0,0) ;
+		}
 	}
 
 internal static class shell
@@ -144,7 +148,7 @@ internal static class shell
 			#if DEBUGS
 			// "schroot -c debug-glx-sid /usr/bin/env DISPLAY=host:2 " +
 			#endif
-			"bash" ) ;
+			Application.Parameter.Value("shell") ) ;
 		psi.UseShellExecute          = false ;
 		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
 		psi.RedirectStandardOutput   = true ;

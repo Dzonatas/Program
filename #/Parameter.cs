@@ -26,6 +26,7 @@ namespace Application
 		static Parameter()
 			{
 			parameter.Add( "synopsis", "false" ) ;
+			parameter.Add( "shell",    "bash"  ) ;
 			#if DEBUG
 				parameter.Add( "debug",    "true"  ) ;
 				parameter.Add( "point",    "0.0"   ) ;
