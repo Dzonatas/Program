@@ -40,6 +40,8 @@ namespace Application
 			#if DEBIAN
 				parameter.Add( "snake",    "false"  ) ;
 				parameter.Add( "shark",    "true"   ) ;
+				parameter.Add( "cgroup",   "elysium") ;
+				parameter.Add( "systemd",  "jessie" ) ;
 			#endif
 			#if METH || KNOPPIX
 				parameter.Add( "shark",     "true"   ) ;

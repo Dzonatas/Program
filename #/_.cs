@@ -145,8 +145,10 @@ internal static class shell
 	static shell()
 		{
 		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "DISPLAY=:2 "+
-			#if DEBUGS
-			// "schroot -c debug-glx-sid /usr/bin/env DISPLAY=host:2 " +
+			#if DEBIAN
+			// "schroot -u " + Application.Parameter.Value("cgroup") +
+			// " -c " + Application.Parameter.Value("systemd")
+			// " /usr/bin/env DISPLAY=host:2 " +
 			#endif
 			Application.Parameter.Value("shell") ) ;
 		psi.UseShellExecute          = false ;
