@@ -45,6 +45,9 @@ namespace Application
 				parameter.Add( "shark",     "true"   ) ;
 				parameter.Add( "man-o-war", "true"   ) ;
 			#endif
+			#if EXTENTIALISM
+				parameter.Add( "OOXML",     "false"  ) ;
+			#endif
 			}
 
 		static void parse( string[] args )
