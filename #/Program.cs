@@ -19,6 +19,7 @@ namespace Application
 
 		[AttributeUsage(AttributeTargets.Class)]
 		public class SingletonAttribute : Attribute	{}
+		public class ExtentAttribute    : Attribute	{}
 		
 		static Program()
 			{
