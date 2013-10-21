@@ -160,6 +160,33 @@ internal static class shell
 		}
 	}
 
+#if DEBUG
+//[Program.Extent]
+public static class Windows
+	{
+	internal static System.Diagnostics.ProcessStartInfo psi ;
+	static Windows()
+		{
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "DISPLAY=:2 "+
+			"schroot -c windowsid" ) ;
+		psi.UseShellExecute          = false ;
+		psi.StandardOutputEncoding   = System.Text.Encoding.UTF8 ;
+		psi.RedirectStandardOutput   = true ;
+		psi.CreateNoWindow           = false ;
+		}
+	}
+#else //WINDOWS
+
+//[Program.Extended]
+public static class Windows
+	{
+	static Windows()
+		{
+		}
+	}
+
+#endif
+
 static string read()
 	{
 	System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
