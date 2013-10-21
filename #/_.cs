@@ -165,10 +165,23 @@ internal static class shell
 public static class Windows
 	{
 	internal static System.Diagnostics.ProcessStartInfo psi ;
+	public static bool RT ;
+	#if LINUX_APU_MMCONFIG_BUG && !MAINFRAME
+	public byte [] fastmem = new fastmem[int.MaxValue] ;  //FIX:_ktap_first_2GB
+	#endif
 	static Windows()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "DISPLAY=:2 "+
-			"schroot -c windowsid" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env",
+			"DISPLAY="
+			#if !FDDI
+			 + (RT ? "card" : "entity" )
+			#endif
+			+":2 "+ 
+			"schroot -c windowsid"
+			#if PXE_ENTITY || SCHROOT_DIRECTORY
+			+" "+ Application.Parameter.Value("shell")
+			#endif
+			) ;
 		psi.UseShellExecute          = false ;
 		psi.StandardOutputEncoding   = System.Text.Encoding.UTF8 ;
 		psi.RedirectStandardOutput   = true ;
