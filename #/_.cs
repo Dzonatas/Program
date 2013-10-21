@@ -167,7 +167,9 @@ public static class Windows
 	internal static System.Diagnostics.ProcessStartInfo psi ;
 	public static bool RT ;
 	#if LINUX_APU_MMCONFIG_BUG && !MAINFRAME
-	public byte [] fastmem = new fastmem[int.MaxValue] ;  //FIX:_ktap_first_2GB
+	public static byte [] fastmem = new fastmem[int.MaxValue] ;  //FIX:_ktap_first_2GB
+	#elif !LINUX_APU_MMCONFIG_BUG
+	public static System.IntPtr Assembly = (System.IntPtr)int.MaxValue ;
 	#endif
 	static Windows()
 		{
