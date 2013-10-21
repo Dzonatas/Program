@@ -15,6 +15,7 @@ namespace System.Extensions
 		{
 		static int digits ;
 		static System.Decimal sid ;
+		static string X45 = "libX11" ;
 		public static int _(this int d)
 			{
 			switch(d)
@@ -43,7 +44,7 @@ namespace System.Extensions
 
 
 		//[Oprand({'B', 'l'})]
-		[DllImport("libX11", EntryPoint = "XOpenDisplay")]
+		[DllImport(X45, EntryPoint = "XOpenDisplay")]
 			extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
 			public static void OpenDisplay(this IntPtr _, out IntPtr display)
 			{
@@ -55,28 +56,28 @@ namespace System.Extensions
 			display = display_open(":2") ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XCloseDisplay")]
+		[DllImport(X45, EntryPoint = "XCloseDisplay")]
 			extern static void display_close(IntPtr display) ;
 			public static void CloseDisplay(this IntPtr display)
 			{
 			display_close(display) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XFree")]
+		[DllImport(X45, EntryPoint = "XFree")]
 			extern static void free(IntPtr data) ;
 			//public static void Free(this IntPtr display, IntPtr data)
 			//{
 			//free(data) ;
 			//}
 
-		[DllImport("libX11", EntryPoint = "XInternAtom")]
+		[DllImport(X45, EntryPoint = "XInternAtom")]
 			extern static IntPtr intern_atom(IntPtr display, string name, bool only_if_exists) ;
 			public static IntPtr InternAtom(this IntPtr display, string name, bool only_if_exists)
 			{
 			return intern_atom(display,name,only_if_exists) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XInternAtoms")]
+		[DllImport(X45, EntryPoint = "XInternAtoms")]
 			extern static IntPtr intern_atoms(IntPtr display, string [] names, int nnames, bool only_if_exists, IntPtr [] atoms) ;
 			public static void InternAtoms(this IntPtr display, string [] names, int nnames, bool only_if_exists, IntPtr [] atoms)
 			{
@@ -84,7 +85,7 @@ namespace System.Extensions
 			}
 
 		#if VERBOSE || DEBUG
-		[DllImport("libX11", EntryPoint = "XGetAtomName")]
+		[DllImport(X45, EntryPoint = "XGetAtomName")]
 			extern static IntPtr get_atom_name(IntPtr display, IntPtr atom) ;
 			public static Guid GetAtom(this IntPtr display, IntPtr atom)
 			{
@@ -96,7 +97,7 @@ namespace System.Extensions
 		#endif
 
 		#if DEBUG
-		//[DllImport("libX11", EntryPoint = "XGetAtomName")]
+		//[DllImport(X45, EntryPoint = "XGetAtomName")]
 			//extern static IntPtr get_atom_name(IntPtr display, IntPtr atom) ;
 			public static string GetDefaultAtom(this IntPtr display, IntPtr atom)
 			{
@@ -107,28 +108,28 @@ namespace System.Extensions
 			}
 		#endif
 
-		[DllImport("libX11", EntryPoint = "XRootWindow")]
+		[DllImport(X45, EntryPoint = "XRootWindow")]
 			extern static IntPtr root_window(IntPtr display, int screen) ;
 			public static IntPtr RootWindow(this IntPtr display, int screen)
 			{
 			return root_window(display,screen) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XDefaultRootWindow")]
+		[DllImport(X45, EntryPoint = "XDefaultRootWindow")]
 			extern static IntPtr default_root_window(IntPtr display) ;
 			public static IntPtr DefaultRootWindow(this IntPtr display)
 			{
 			return default_root_window(display) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XQueryTree")]
+		[DllImport(X45, EntryPoint = "XQueryTree")]
 			extern static void query_tree(System.IntPtr display, IntPtr window, out IntPtr root, out IntPtr sid, out IntPtr items, out int nitems) ;
 			public static void QueryTree(this IntPtr display, IntPtr window, out IntPtr root, out IntPtr sid, out IntPtr items, out int nitems)
 			{
 			query_tree(display, window, out root, out sid, out items, out nitems) ;
 			}
 			
-		[DllImport("libX11", EntryPoint = "XListProperties")]
+		[DllImport(X45, EntryPoint = "XListProperties")]
 			extern static IntPtr list_properties(System.IntPtr display, IntPtr window, out int nitems) ;
 			public static IntPtr [] ListProperties(this IntPtr display, IntPtr window)
 			{
@@ -142,7 +143,7 @@ namespace System.Extensions
 			}
 			
 		#if !SAFE
-		[DllImport("libX11", EntryPoint = "XSetStandardProperties")]
+		[DllImport(X45, EntryPoint = "XSetStandardProperties")]
 			extern static void set_standard_properties(System.IntPtr display, IntPtr window, string window_name, string icon_name, IntPtr pixmap, string [] argv, int argc, IntPtr hints)  ;
 			public static void SetStandardProperties(this IntPtr display, IntPtr window, string window_name, string icon_name, IntPtr pixmap, string [] argv, int argc, IntPtr hints)
 			{
@@ -150,35 +151,35 @@ namespace System.Extensions
 			}
 		#endif
 			
-		[DllImport("libX11", EntryPoint = "XCreatePixmap")]
+		[DllImport(X45, EntryPoint = "XCreatePixmap")]
 			extern static IntPtr pixmap_create(System.IntPtr display, Drawable d, uint width, uint height, uint depth) ;
 			public static IntPtr CreatePixmap(this IntPtr display, Drawable d, uint width, uint height, uint depth)
 			{
 			return pixmap_create(display,d,width,height,depth) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XFreePixmap")]
+		[DllImport(X45, EntryPoint = "XFreePixmap")]
 			extern static void pixmap_free(System.IntPtr display, IntPtr pixmap)  ;
 			public static void FreePixmap(this IntPtr display, IntPtr pixmap)
 			{
 			pixmap_free(display,pixmap) ;
 			}
 		
-		[DllImport("libX11", EntryPoint = "XCreateGC")]
+		[DllImport(X45, EntryPoint = "XCreateGC")]
 			extern static IntPtr gc_create(System.IntPtr display, Drawable d, IntPtr value_mask, ref IntPtr values)  ;
 			public static IntPtr CreateGC(this IntPtr display, Drawable d, IntPtr value_mask, ref IntPtr values)
 			{
 			return gc_create(display,d,value_mask,ref values) ;
 			}
 		
-		[DllImport("libX11", EntryPoint = "XFreeGC")]
+		[DllImport(X45, EntryPoint = "XFreeGC")]
 			extern static void gc_free(System.IntPtr display, IntPtr gc)  ;
 			public static void FreeGC(this IntPtr display, IntPtr gc)
 			{
 			gc_free(display,gc) ;
 			}
 		
-		[DllImport("libX11", EntryPoint = "XDefaultVisual")]
+		[DllImport(X45, EntryPoint = "XDefaultVisual")]
 			extern static IntPtr visual_default(System.IntPtr display, int scrnum)  ;
 			public static IntPtr DefaultVisual(this IntPtr display, int scrnum)
 			{
@@ -194,14 +195,14 @@ namespace System.Extensions
 			#endif
 			}
 
-		[DllImport("libX11", EntryPoint = "XDefaultScreen")]
+		[DllImport(X45, EntryPoint = "XDefaultScreen")]
 			extern static int screen_default(System.IntPtr display)  ;
 			public static int DefaultScreen(this IntPtr display)
 			{
 			return screen_default(display) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XDefaultGC")]
+		[DllImport(X45, EntryPoint = "XDefaultGC")]
 			extern static IntPtr gc_default(System.IntPtr display, int scrnum )  ;
 			public static IntPtr DefaultGC(this IntPtr display, int scrnum )
 			{
@@ -212,28 +213,28 @@ namespace System.Extensions
 			#endif
 			}
 
-		[DllImport("libX11", EntryPoint = "XDefaultColormap")]
+		[DllImport(X45, EntryPoint = "XDefaultColormap")]
 			extern static IntPtr colormap_default(System.IntPtr display, int scrnum )  ;
 			public static IntPtr DefaultColormap(this IntPtr display, int scrnum )
 			{
 			return colormap_default(display,scrnum) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XLookupColor")]
+		[DllImport(X45, EntryPoint = "XLookupColor")]
 			extern static int color_lookup(System.IntPtr display, IntPtr colormap, ref IntPtr softcolor, ref IntPtr hardcolor)  ;
 			public static int LookupColor(this IntPtr display, IntPtr colormap, ref IntPtr softcolor, ref IntPtr hardcolor)
 			{
 			return color_lookup(display,colormap, ref softcolor, ref hardcolor) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XAllocColor")]
+		[DllImport(X45, EntryPoint = "XAllocColor")]
 			extern static int color_alloc(System.IntPtr display, IntPtr colormap, ref IntPtr color )  ;
 			public static int AllocColor(this IntPtr display, IntPtr colormap, ref IntPtr color )
 			{
 			return color_alloc(display,colormap, ref color) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XBlackPixel")]
+		[DllImport(X45, EntryPoint = "XBlackPixel")]
 			extern static IntPtr pixel_client(System.IntPtr display, int scrnum )  ;
 			public static IntPtr ServerPixel(this IntPtr display, int scrnum )
 			{
@@ -244,7 +245,7 @@ namespace System.Extensions
 			#endif
 			}
 
-		[DllImport("libX11", EntryPoint = "XWhitePixel")]
+		[DllImport(X45, EntryPoint = "XWhitePixel")]
 			extern static IntPtr pixel_server(System.IntPtr display, int scrnum )  ;
 			public static IntPtr ClientPixel(this IntPtr display, int scrnum )
 			{
@@ -255,7 +256,7 @@ namespace System.Extensions
 			#endif
 			}
 
-		[DllImport("libX11", EntryPoint = "XDrawRectangle")]
+		[DllImport(X45, EntryPoint = "XDrawRectangle")]
 			extern static IntPtr draw_py(System.IntPtr display, Drawable d, IntPtr gc, int x, int y, uint width, uint height )  ;
 			public static IntPtr Stitch(this IntPtr display, int x, int y )
 			{
@@ -266,7 +267,7 @@ namespace System.Extensions
 			#endif
 			}
 
-		[DllImport("libX11", EntryPoint = "XRotateWindowProperties")]
+		[DllImport(X45, EntryPoint = "XRotateWindowProperties")]
 			extern static IntPtr rotate_window_properties(System.IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions) ;
 			public static IntPtr RotateWindowProperties(this IntPtr display, IntPtr window, ref IntPtr atoms, int nproperties, int npositions )
 			{
@@ -283,7 +284,7 @@ namespace System.Extensions
 			return a.Value ;                   //IntPtr[]-unsized[,_blitter_array]
 			}
 
-		[DllImport("libX11", EntryPoint = "XKillClient")]
+		[DllImport(X45, EntryPoint = "XKillClient")]
 			extern static IntPtr kill_client(System.IntPtr display, IntPtr xid) ;
 			public static IntPtr KillClient(this IntPtr display, IntPtr xid)
 			{
@@ -297,12 +298,12 @@ namespace System.Extensions
 			}
 
 		#if !Synchronous
-		[DllImport("libX11", EntryPoint = "XInitThreads")]
+		[DllImport(X45, EntryPoint = "XInitThreads")]
 			extern static IntPtr initialize_threads() ;
 		#endif
 
 		#if !KERNING
-		[DllImport("libX11", EntryPoint = "XBell")]
+		[DllImport(X45, EntryPoint = "XBell")]
 			extern static IntPtr ring(System.IntPtr display, IntPtr ___cent) ;
 			public static IntPtr Ring(this IntPtr display, IntPtr ___cent)
 			{
@@ -310,7 +311,7 @@ namespace System.Extensions
 			}
 		#endif
 
-		[DllImport("libX11", EntryPoint = "XGetIconSizes")]
+		[DllImport(X45, EntryPoint = "XGetIconSizes")]
 			extern static IntPtr get_icon_sizes(System.IntPtr display, Drawable w, out IntPtr list, out int nlist ) ;
 			public static IntPtr GetIconSizes(this IntPtr display, Drawable w, out IntPtr list, out int nlist )
 			{
@@ -325,7 +326,7 @@ namespace System.Extensions
 			//_store_folded_exec_on_DOTTEDNAME(s)
 			}
 
-		[DllImport("libX11", EntryPoint = "XChangeSaveSet")]
+		[DllImport(X45, EntryPoint = "XChangeSaveSet")]
 			extern static IntPtr change_saveset(System.IntPtr display, Drawable w, int change_mode) ;
 			public static IntPtr ChangeSaveset(this IntPtr display, Drawable w, bool delete)
 			{
@@ -333,28 +334,28 @@ namespace System.Extensions
 			return change_saveset(display,w,insert_or_delete) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XAddToSaveSet")]
+		[DllImport(X45, EntryPoint = "XAddToSaveSet")]
 			extern static IntPtr addto_saveset(System.IntPtr display, Drawable w) ;
 			public static IntPtr AddToSaveset(this IntPtr display, Drawable w)
 			{
 			return addto_saveset(display,w) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XRemoveFromSaveSet")]
+		[DllImport(X45, EntryPoint = "XRemoveFromSaveSet")]
 			extern static IntPtr removefrom_saveset(System.IntPtr display, Drawable w) ;
 			public static IntPtr RemoveFromSaveset(this IntPtr display, Drawable w)
 			{
 			return removefrom_saveset(display,w) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XReparentWindow")]
+		[DllImport(X45, EntryPoint = "XReparentWindow")]
 			extern static IntPtr rectify(System.IntPtr display, Drawable w, IntPtr sid, int x, int y) ;
 			public static IntPtr Rectify(this IntPtr display, Drawable w, IntPtr sid, int x, int y)
 			{
 			return rectify(display,w,sid,x,y) ;
 			}
 
-		[DllImport("libX11", EntryPoint = "XGetGeometry")]
+		[DllImport(X45, EntryPoint = "XGetGeometry")]
 			extern static IntPtr get_geometry(System.IntPtr display, Drawable d, out IntPtr root, out int x, out int y, out uint width, out uint height, out uint border, out uint depth) ;
 			public static IntPtr GetGeometry(this IntPtr display, Drawable d, out IntPtr root, out int x, out int y, out uint width, out uint height, out uint border, out uint depth)
 			{
