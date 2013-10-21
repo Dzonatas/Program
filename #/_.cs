@@ -131,7 +131,9 @@ internal static class screen
 		}
 	public static void Glitched(int d)
 		{
+		#if ASYNC || MONITOR
 		ʄ.Ring((System.IntPtr)d) ; //_blit_offset_d_length_masked
+		#endif
 		}
 	public static void DrawCode()
 		{
@@ -147,7 +149,7 @@ internal static class shell
 		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "DISPLAY=:2 "+
 			#if DEBIAN
 			// "schroot -u " + Application.Parameter.Value("cgroup") +
-			// " -c " + Application.Parameter.Value("systemd")
+			// " -c " + Application.Parameter.Value("systemd") +
 			// " /usr/bin/env DISPLAY=host:2 " +
 			#endif
 			Application.Parameter.Value("shell") ) ;
