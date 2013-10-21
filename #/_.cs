@@ -165,7 +165,11 @@ internal static class shell
 public static class Windows
 	{
 	internal static System.Diagnostics.ProcessStartInfo psi ;
+	#if !X45 && !RJ45
+	public static bool RT = true ;
+	#else 
 	public static bool RT ;
+	#endif
 	#if LINUX_APU_MMCONFIG_BUG && !MAINFRAME
 	public static byte [] fastmem = new fastmem[int.MaxValue] ;  //FIX:_ktap_first_2GB
 	#elif !LINUX_APU_MMCONFIG_BUG
