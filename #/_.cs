@@ -167,7 +167,7 @@ public static class Windows
 	internal static System.Diagnostics.ProcessStartInfo psi ;
 	#if !X45 && !RJ45
 	public static bool RT = true ;
-	#else 
+	#else
 	public static bool RT ;
 	#endif
 	#if LINUX_APU_MMCONFIG_BUG && !MAINFRAME
@@ -177,6 +177,9 @@ public static class Windows
 	#endif
 	static Windows()
 		{
+		#if !WIRELESS
+		RT = Application.Parameter.Value("wired") == "false" ;
+		#endif
 		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env",
 			"DISPLAY="
 			#if !FDDI

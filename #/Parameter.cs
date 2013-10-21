@@ -42,6 +42,7 @@ namespace Application
 				parameter.Add( "shark",    "true"   ) ;
 				parameter.Add( "cgroup",   "elysium") ;
 				parameter.Add( "systemd",  "jessie" ) ;
+				parameter.Add( "wired",    "true"   ) ;
 			#endif
 			#if METH || KNOPPIX
 				parameter.Add( "shark",     "true"   ) ;
