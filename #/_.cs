@@ -209,6 +209,9 @@ public static class Windows
 			(
 			"/usr/bin/env",
 			"DISPLAY=:2 rdesktop -f -O -r sound:off"
+			#if FDDI || PXE_ENTITY
+			+ " -r lspci"
+			#endif
 			) ;
 		psi.UseShellExecute          = false ;
 		psi.StandardOutputEncoding   = System.Text.Encoding.UTF32 ;
