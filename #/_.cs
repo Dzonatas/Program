@@ -173,7 +173,7 @@ public static class Windows
 	#if LINUX_APU_MMCONFIG_BUG && !MAINFRAME
 	public static byte [] fastmem = new fastmem[int.MaxValue] ;  //FIX:_ktap_first_2GB
 	#elif !LINUX_APU_MMCONFIG_BUG && !VMX
-	public static System.IntPtr Assembly = (System.IntPtr)int.MaxValue ;
+	public static System.IntPtr Assembly = (System.IntPtr)System.Int32.MaxValue ;
 	#endif
 	static Windows()
 		{
