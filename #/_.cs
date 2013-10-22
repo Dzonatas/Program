@@ -202,6 +202,9 @@ public static class Windows
 //[Program.Extended]
 public static class Windows
 	{
+	#if ALPHA  //&& LINUX_APU_MMCONFIG_BUG
+	public static System.IntPtr Assembly = (System.IntPtr)512 ; //first_page_voided
+	#endif
 	static Windows()
 		{
 		#if SILVERLIGHT
