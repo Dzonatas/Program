@@ -204,6 +204,17 @@ public static class Windows
 	{
 	static Windows()
 		{
+		#if SILVERLIGHT
+		psi = new System.Diagnostics.ProcessStartInfo
+			(
+			"/usr/bin/env",
+			"DISPLAY=:2 rdesktop -f -O -r sound:off"
+			) ;
+		psi.UseShellExecute          = false ;
+		psi.StandardOutputEncoding   = System.Text.Encoding.UTF32 ;
+		psi.RedirectStandardOutput   = true ;
+		psi.CreateNoWindow           = false ;
+		#endif
 		}
 	}
 
