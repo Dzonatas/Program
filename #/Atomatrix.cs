@@ -98,19 +98,19 @@ namespace Application.Twelve //Application.HTTP[.post,.get] : Orbs#Resources
 				#if LOGO
 				using Logo ; // Entity = new Logo('&') ;
 
-					Plot &face; on canvas as &icon; ;
-				stamp rectangle as hypercard.
+					Plot &entity.face; on canvas as &entity.icon;
+				datestamp rectangle as hypercard.
 
 					Browse &inventory; as source ;
 				attach to communicator.
 
 					Sort by &face.recognition;
-				categorize by name ;
-				pivot index by keyed form ;
+				categorize by &entity.name;
+				pivot &entity.index; by keyed form ;
 				override sort by &street.assertions;
 				drone up.
 
-				Used &QR.codex; exit by &android.logo.net.
+				Used &QR.codex; exit by &entity.logo.net.
 				#endif
 				}
 			}
