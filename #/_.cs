@@ -219,7 +219,11 @@ public static class Windows
 		psi.UseShellExecute          = false ;
 		psi.StandardOutputEncoding   = System.Text.Encoding.UTF32 ;
 		psi.RedirectStandardOutput   = true ;
+		#if CONTROL || (ATM && MESA)
+		psi.CreateNoWindow           = true ;
+		#else
 		psi.CreateNoWindow           = false ;
+		#endif
 		#endif
 		}
 	}
