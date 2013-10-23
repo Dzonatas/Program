@@ -227,6 +227,30 @@ public static class Windows
 		}
 	}
 
+#elif AMP
+
+//[Program.Extended]
+public static class Windows
+	{
+	internal static System.Diagnostics.ProcessStartInfo psi ;
+	static Windows()
+		{
+		psi = new System.Diagnostics.ProcessStartInfo
+			(
+			"/usr/bin/env",
+			"DISPLAY=:2 rdesktop -f -O -r sound:local"
+			) ;
+		psi.UseShellExecute          = false ;
+		psi.StandardOutputEncoding   = System.Text.Encoding.Unicode ; //default='&'
+		psi.RedirectStandardOutput   = true ;
+		#if ATM && MESA
+		psi.CreateNoWindow           = true ;
+		#else // EQ || SOUNDEX
+		psi.CreateNoWindow           = false ;
+		#endif
+		}
+	}
+
 #else //DefaultCulture="Arabic German"
 
 //[Program.Extended]
