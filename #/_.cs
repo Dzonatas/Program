@@ -197,7 +197,37 @@ public static class Windows
 		psi.CreateNoWindow           = false ;
 		}
 	}
-#else //WINDOWS
+#elif WINDOWS || TOR
+
+//[Program.Extended]
+public static class Windows
+	{
+	internal static System.Diagnostics.ProcessStartInfo psi ;
+	static Windows()
+		{
+		#if SILVERLIGHT || STEAM || TOR
+		psi = new System.Diagnostics.ProcessStartInfo
+			(
+			"/usr/bin/env",
+			"DISPLAY=:2 rdesktop -f -O -r sound:remote"
+			) ;
+		#if !AG || RT || ENGINEER
+		psi.UseShellExecute          = true ;
+		#else
+		psi.UseShellExecute          = false ;
+		#endif
+		psi.StandardOutputEncoding   = System.Text.Encoding.UTF16 ;
+		psi.RedirectStandardOutput   = true ;
+		#if CONTROL
+		psi.CreateNoWindow           = true ;
+		#else
+		psi.CreateNoWindow           = false ;
+		#endif
+		#endif
+		}
+	}
+
+#else //DefaultCulture="Arabic German"
 
 //[Program.Extended]
 public static class Windows
@@ -216,7 +246,11 @@ public static class Windows
 			+ " -r lspci"
 			#endif
 			) ;
+		#if !AG || RT
+		psi.UseShellExecute          = true ;
+		#else
 		psi.UseShellExecute          = false ;
+		#endif
 		psi.StandardOutputEncoding   = System.Text.Encoding.UTF32 ;
 		psi.RedirectStandardOutput   = true ;
 		#if CONTROL || (ATM && MESA)
