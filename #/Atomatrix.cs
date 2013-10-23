@@ -96,21 +96,21 @@ namespace Application.Twelve //Application.HTTP[.post,.get] : Orbs#Resources
 				{
 				//s//$(CPP)((VERSION(((GNU#)))))///bin/#.0.0.0.exe//
 				#if LOGO
-				using Logo ;
+				using Logo ; // Entity = new Logo('&') ;
 
-					Plot face on canvas as icon ;
+					Plot &face; on canvas as &icon; ;
 				stamp rectangle as hypercard.
 
-					Browse inventory as source ;
+					Browse &inventory; as source ;
 				attach to communicator.
 
-					Sort by face recognition ;
+					Sort by &face.recognition;
 				categorize by name ;
 				pivot index by keyed form ;
-				override sort by typeof(street) ;
+				override sort by &street.assertions;
 				drone up.
 
-				Used [QR] exit by android logo.
+				Used &QR.codex; exit by &android.logo.net.
 				#endif
 				}
 			}
