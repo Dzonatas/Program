@@ -10,9 +10,10 @@ class log_enter
 	System.DateTime dt ; //_linked[,_linq]
 	#endregion OPT
 	State    f ;
+	bool     RT = _.Windows.RT ;
 	public override string ToString()
 			{
-			return string.Format("[log_enter]{0}",dt);
+			return string.Format("[log_enter]{0,1}",rt,dt);
 			}
 	public log_enter()
 		{
