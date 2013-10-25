@@ -13,7 +13,7 @@ class log_enter
 	bool     RT = _.Windows.RT ;
 	public override string ToString()
 			{
-			return string.Format("[log_enter]{0,1}",rt,dt);
+			return string.Format("[log_enter]{0}{1}",rt,dt);
 			}
 	public log_enter()
 		{
