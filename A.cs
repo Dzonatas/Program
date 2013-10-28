@@ -128,3 +128,23 @@ class A //: X[A]ML
 //#include "BSD.h"         //Eclipsed:HTTP204_or_BSD402
 //#include "semantic.s[0]" //<#?s[0]>
 #endif
+
+namespace Anchor
+	{
+	/*-*/public/*- class -*/struct/*-*/Lock
+		{
+		/*-*/public/*-*/ A335.State f ;
+		/*---*/
+		/*-*/public/*-*/ Lock( A335.State ʄ )
+			{
+			f = ʄ ;
+			}
+		/*---*/
+		/*---*/
+		/*-*/public/*-*/ Lock( Anchor.Lock ʄ )
+			{
+			f = A335.this_state ;
+			}
+		/*---*/
+		}
+	}

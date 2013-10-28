@@ -9,15 +9,20 @@ class log_enter
 	System.Guid UUID ;
 	System.DateTime dt ; //_linked[,_linq]
 	#endregion OPT
-	State    f ;
+	Anchor.Lock ʄ ;
 	bool     RT = _.Windows.RT ;
 	public override string ToString()
 			{
-			return string.Format("[log_enter]{0}{1}",rt,dt);
+			return string.Format("[log_enter]{0}{1}",RT,dt);
 			}
 	public log_enter()
 		{
-		f = this_state ;
+		#if CONSISTENT
+		ʄ = new Anchor.Lock(ʄ) ;
+		#else
+		//f = this_state ;
+		ʄ = new Anchor.Lock(ʄ) ;
+		#endif
 		dt = System.DateTime.Now ;
 		}
 	}
