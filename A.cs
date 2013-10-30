@@ -148,3 +148,8 @@ namespace Anchor
 		/*---*/
 		}
 	}
+
+namespace A.org.com.edu.mil.net
+	{
+	//Abyssmal...
+	}
