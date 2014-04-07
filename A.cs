@@ -141,10 +141,12 @@ namespace Anchor
 			}
 		/*---*/
 		/*---*/
+		//#if ANCHOR_LOCK
 		/*-*/public/*-*/ Lock( Anchor.Lock ʄ )
 			{
-			f = A335.this_state ;
+			f = ʄ.f ; //_superfluous
 			}
+		//#endif
 		/*---*/
 		}
 	}

@@ -18,10 +18,10 @@ class log_enter
 	public log_enter()
 		{
 		#if CONSISTENT
-		ʄ = new Anchor.Lock(ʄ) ;
+		ʄ = new Anchor.Lock(this_state) ;
 		#else
-		//f = this_state ;
 		ʄ = new Anchor.Lock(ʄ) ;
+		ʄ.f = this_state ;
 		#endif
 		dt = System.DateTime.Now ;
 		}
