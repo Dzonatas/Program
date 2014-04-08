@@ -24,7 +24,7 @@ namespace System.Extensions
 				case (int)_var.DEFAULT: return digits ;
 				default: return ((sid - (System.Decimal)digits) > 0.0m) ? (int)_var.DEFAULT : d ;
 				}
-			//throw new Exception("[Affinty]=[Infinite]+[Finite]") ;
+			//throw new Exception("[Affinity]=[Infinite]+[Finite]") ;
 			}
 		public static int _default(this int d, int _sid)
 			{
