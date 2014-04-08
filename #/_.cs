@@ -40,7 +40,8 @@ public static void assimulation()
 	xml = new System.Xml.XmlTextReader( new System.IO.StringReader( input ) ) ;
 	while( xml.Read() && ! ( xml.NodeType == System.Xml.XmlNodeType.Element && xml.Name == "xml" ) ) ;
 	}
-	
+
+#if SCREEN	
 internal static class screen
 	{
 	internal static System.Diagnostics.ProcessStartInfo psi ;
@@ -140,6 +141,7 @@ internal static class screen
 		ʄ.Stitch(0,0) ;
 		}
 	}
+#endif
 
 internal static class shell
 	{

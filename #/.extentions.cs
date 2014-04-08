@@ -4,7 +4,9 @@ namespace System.Extensions
 	using System.Drawing ;
 	using Drawable  = System.IntPtr ;         //_window,_pixmap
 	using Rectangle = System.IntPtr ;         //X-defined-default:[x,y]:=upper-left
+	#if SCREEN
 	using Screen    = _.screen ;
+	#endif
 	public enum _var
 		{
 		DEFAULT,                             //"Native Variant"
@@ -38,7 +40,9 @@ namespace System.Extensions
 			}
 		public static void Beep(this int d)
 			{
+			#if SCREEN
 			Screen.Glitched(d) ;
+			#endif
 			}
 
 
