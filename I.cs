@@ -127,7 +127,7 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 		string text = "<"+t._+">" ;
 		y += text.Length ;
 		}
-	while( y < 80 )
+	while( y < System.Console.WindowWidth )
 		{
 		_.Token t = _.input() ;
 		b_line.Add( t ) ;
@@ -140,7 +140,7 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 		int z = y ;
 		string text = "<"+t._+">" ;
 		y += text.Length ;
-		if( y >= 80 )
+		if( y >= System.Console.WindowWidth )
 			break ;
 		System.Console.SetCursorPosition( z, 20 ) ;
 		System.Console.Write( text ) ;
