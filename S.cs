@@ -30,15 +30,17 @@ static State []                 stateset = new State[1125] ;
 
 public struct State                //_FIX:$State,_State,_State:=$State,$State!=_State
 	{
-	public Number        debit ;
-	public Itemset []    itemset ;
-	public Transition [] transitionset ;
-	public List<int>     lookaheadset ;
-	public Reduction []  reductionset ;
-	public Nullable<int> default_item ;
-	public Nullable<int> default_reduction ;
-	public List<object>  zlog ;
-	public List<string> zla
+	public Number               debit ;
+	public Itemset []           itemset ;
+	public Transition []        transitionset ;
+	public Dictionary<int,int>  shiftset ;
+	public Dictionary<int,int>  gotoset ;
+	public List<int>            lookaheadset ;
+	public Reduction []         reductionset ;
+	public Nullable<int>        default_item ;
+	public Nullable<int>        default_reduction ;
+	public List<object>         zlog ;
+	public List<string>         zla
 		{
 		get { return list() ; }
 		}

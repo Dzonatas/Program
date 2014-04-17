@@ -336,7 +336,7 @@ public static Token input()
 		string text = xml.Value ;
 		return new Token( (char)int.Parse( s[1] ), text ) ; //_point3D:___(s[2,text]),_xor_URN:s[0]:_
 		}
-	Token t = new Token( '$', "$end" ) ;
+	Token t = new Token( '\0', "$end" ) ;
 	if( !ended ) prompt( t ) ;
 	ended = true ;
 	System.Console.SetCursorPosition(y,x) ;

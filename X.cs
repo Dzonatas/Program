@@ -376,6 +376,8 @@ static void xml_get_state()
 	xml.MoveToFirstAttribute() ;
 	x_state.debit = Number.Parse( xml.Value ) ;
 	x_state.transitionset = new Transition[0] ;
+	x_state.shiftset = new Dictionary<int,int>() ;
+	x_state.gotoset = new Dictionary<int,int>() ;
 	x_state.itemset = new Itemset[0] ;
 	x_state.reductionset = new Reduction[0] ;
 	x_state.lookaheadset = new List<int>() ;
@@ -415,6 +417,14 @@ static void xml_get_transition()
 			}
 	System.Array.Resize(ref x_state.transitionset,  x_state.transitionset.Length + 1 ) ;
 	x_state.transitionset[  x_state.transitionset.Length - 1 ] = t ;
+	if( t.type == "shift" )
+		{
+		x_state.shiftset.Add( t.symbol, x_state.transitionset.Length - 1 ) ;
+		}
+	else
+		{
+		x_state.gotoset.Add( t.symbol, x_state.transitionset.Length - 1 ) ;
+		}
 	}
 
 static void xml_get_reduction()

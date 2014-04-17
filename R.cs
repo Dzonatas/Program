@@ -129,6 +129,8 @@ static void request( ref State s )
 		stateset[         s.debit].zlog.Add( this_state ) ;
 		stateset[         s.debit].zlog.Add( z ) ;
 		}
+	if( stateset[         s.debit].zlog.Count > 500 )
+		throw new System.ArgumentOutOfRangeException("zlog") ;
 	this_state = s ;
 	}
 

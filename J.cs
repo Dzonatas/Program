@@ -15,116 +15,70 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	request( ref state ) ;
 	xyzzyy     xyzzy ;
 	
-	//xo_ = xo_t[b.x][b.y] ;
-	if( b.yy > _default )
-		goto nt ;
-	if( b.yy == _default && ! token.HasValue )
+	if( ! token.HasValue ) 
 		{
-		if( state.transitionset.Length == 0 )
-			goto reduce ;
-		if( state.lookaheadset.Count == 0 )
-			{
-			if( state.default_item.HasValue )
-				{
-				b.yy = xo_t[state.itemset[state.default_item.Value].rule] ;
-				goto transit ;
-				}
-			}
-		else
+		token = input( ref Hacked.Materials.H.Line ) ;
+		if( token.Value._ == "hello" )
 			2.Beep() ;
-		if( state.default_item.HasValue )
-			{
-			/*
-			i = state.itemset[state.default_item.Value] ;
-			_xo = i ;
-			if( ! _xo.Left )
-				foreach( Transition tt in state.transitionset )
-					if( tt == xo_t[i.rule][i.point] )
-						{
-						xyzzy = new xyzzyy( i.rule, i.point, tt.state, (int)_default ) ;
-						goto _jump ;
-						}
-			*/
-			}
-		if( state.transitionset[0].type == "goto" )
-			goto reduce ;
 		}
-	
-	//if( token.HasValue )
-	//	Console.Beep() ;
-		
-	if( state.transitionset.Length > 0 )
+	if( state.lookaheadset.Contains( xml_translate[token.Value.c] ) )
 		{
-		if( ! token.HasValue ) 
-			token = input( ref Hacked.Materials.H.Line ) ;
-		if( b.yy == xml_translate[token.Value.c] )
-			System.Console.SetCursorPosition(0,0) ;
 		b.yy = xml_translate[token.Value.c] ;
+		goto reduce ;
+		}
+	if( state.shiftset.ContainsKey( xml_translate[token.Value.c] ) )
+		{
+		b.yy  = xml_translate[token.Value.c] ;
+		token = null ;
+		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
+		state.zlog.Add( t ) ;
+		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, _default ) ;
+		goto _jump ;
 		}
 	reduce :
-	if( state.lookaheadset.Contains( b.yy ) )
-		2.Beep() ;
 	foreach( Reduction rr in state.reductionset )
 		if( rr == b.yy )
-			if( b.yy == _default && state.lookaheadset.Count == 0 )
-				{
-				state.zlog.Add( rr ) ;
-				goto default_ ;
-				}
-			else
-			if( b.yy == _default )
-					2.Beep() ;
-	transit:
-	foreach( Transition t in state.transitionset )
-		if( t == b.yy )
 			{
-			state.zlog.Add( t ) ;
-			if( t.type == "shift" )
-				{
-				token = null ;
-				xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, b.yy ) ;
-				goto _jump ;
-				}
-			xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
-			goto _jump ;
+			state.zlog.Add( rr ) ;
+			b.yy = xo_t[rr.rule] ;
+			if( ! rr.enabled )
+				2.Beep() ;
+			goto transit ;
 			}
-	default_ : //_Item(<t`>).imaginary=true
+	if( state.default_reduction.HasValue )
+		b.yy = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
+	transit:
+	if( state.gotoset.ContainsKey( b.yy ) )
+		{
+		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
+		state.zlog.Add( t ) ;
+		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
+		goto _jump ;
+		}
+	default_ : 
 	throw new ReducedAcception( state.reductionset[state.default_reduction.Value].rule ) ;
 
 	_jump :
 	try {
 		jump_( ref xyzzy ) ;
+		b.yy = xyzzy.yy ; 
 		}
 	catch ( ReducedAcception bb )
 		{
 		state.zlog.Add( bb ) ;
 		if( --bb.backup > 0 )
 			throw bb ;
-		xyzzy.yy = xo_t[bb.rule] ;
+		b.yy = xo_t[bb.rule] ;
+		}
+	if( state.gotoset.ContainsKey( b.yy ) )
+		{
+		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
+		state.zlog.Add( t ) ;
+		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		goto _jump ;
 		}
-	if( b.yy == xyzzy.yy )
-		2.Beep() ;
-	if( ! token.HasValue ) 
-		token = input( ref Hacked.Materials.H.Line ) ;
-	b.yy = xyzzy.yy ; 
-	if( b.yy > _default )
-		goto nt ;
-	goto setstate ;
-	nt:	{
-		if( state.transitionset.Length > 0 )
-			{
-			foreach( Transition t in state.transitionset )
-				if( t == b.yy )
-					{
-					state.zlog.Add( b.yy ) ;
-					state.zlog.Add( t ) ;
-					xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, ʄ._() ) ; //((int)_default)._ ) ; //_FIX:jo{t`_x.y}[^_`']{{_entity[':']}}[,_s[,_bit[-bit]]][^_`'] //"bottoms-out" on contextual deduction between locked states and convexion //_PIT:default:'IMacro' := alias ? exception, (schrooted-)'ice'-acception ;
-					goto _jump ;
-					}
-			}
-		state.zlog.Add( b.yy ) ;
-		}
+	if( token.Value.c != 0 )
+		throw new System.NotImplementedException( "token != $end" ) ;
 	return ;
 	}
 
