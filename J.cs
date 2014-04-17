@@ -18,8 +18,6 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	if( ! token.HasValue ) 
 		{
 		token = input( ref Hacked.Materials.H.Line ) ;
-		if( token.Value._ == "hello" )
-			2.Beep() ;
 		}
 	if( state.lookaheadset.Contains( xml_translate[token.Value.c] ) )
 		{
@@ -55,7 +53,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		goto _jump ;
 		}
-	default_ : 
+	default_ : //_select( ʄ )_{(-_reduce:)_backup:_reduce_reduce:_yacc:_...default_}
 	throw new ReducedAcception( state.reductionset[state.default_reduction.Value].rule ) ;
 
 	_jump :
