@@ -162,7 +162,7 @@ internal static class shell
 		}
 	}
 
-#if DEBUG
+#if DEBUG && WINDOWS
 //[Program.Extent]
 public static class Windows
 	{

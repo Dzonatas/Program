@@ -25,11 +25,18 @@ class log_enter
 	System.DateTime dt ; //_linked[,_linq]
 	#endregion OPT
 	Anchor.Lock ʄ ;
+	#if WINDOWS
 	bool     RT = _.Windows.RT ;
 	public override string ToString()
 			{
 			return string.Format("[log_enter]{0}{1}",RT,dt);
 			}
+	#else
+	public override string ToString()
+			{
+			return string.Format("[log_enter] {0}",dt);
+			}
+	#endif
 	public log_enter()
 		{
 		#if CONSISTENT
