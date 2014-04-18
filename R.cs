@@ -97,18 +97,17 @@ static void request( ref Item i )
 	i.stacked = true ;
 	i.bit.One = false ;
 	stack.Push( i ) ;
-	if( object.ReferenceEquals(i.symbol,yytoken) )
-		yytoken = new Symbol() ;
+	//if( object.ReferenceEquals(i.symbol,yytoken) )
+	//	yytoken = new Symbol() ;
 	System.Console.WriteLine( "$$ <- {0}   ", i ) ;
 	//print_stack() ;
 	}
 
 static Item respond()
 	{
-	Item i = new Item() ;
-	i = stack.Pop() ;
-	if( i.symbol.StringIsNull && yytoken.StringIsNull )
-		xml_get_() ;
+	Item i = (Item)stack.Pop() ;
+	//if( i.symbol.StringIsNull && yytoken.StringIsNull )
+	//	xml_get_() ;
 	System.Console.WriteLine( "$$ -> {0}   ", i ) ;
 	//print_stack() ;
 	i.bit.One = false ;

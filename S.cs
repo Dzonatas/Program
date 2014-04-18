@@ -23,9 +23,9 @@ static public void START()
 		}
 	}
 	
-static public /* used */  Item    system = new Item() ; // auto-registry, File system_file_x...
+static        /* used */  Item    system = new Item() ; // auto-registry, File system_file_x...
 static internal      IPAddress system_ip = IPAddress.Any ;
-static Stack<Item>                 stack = new Stack<Item>() ;
+static Stack<object>               stack = new Stack<object>() ;
 static State []                 stateset = new State[1125] ;
 
 public struct State                //_FIX:$State,_State,_State:=$State,$State!=_State

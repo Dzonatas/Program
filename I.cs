@@ -58,17 +58,17 @@ public struct Itemset
 	*/
 	}
 
-public struct Item
+struct Item
 	{
-	public Symbol  symbol ;
-	public System.Decimal account ;
-	public bool    imaginary ;
-	public bool    stacked ;
-	public bool    existential ;
-	public Quant   q ;
-	public Quant   bit ;
-	public System.Action  do_ ;
-	public System.Nullable<System.Guid> guid ;
+	public _.Token                       token ;
+	public xyzzyy                        state ;
+	public bool                          imaginary ;
+	public bool                          stacked ;
+	public bool                          existential ;
+	public Quant                         q ;
+	public Quant                         bit ;
+	public System.Action                 _oprand ;
+	public System.Nullable<System.Guid>  guid ;
 	public static implicit operator Item( State state )
 		{
 		throw new System.NotImplementedException( "Stackless." ) ;
@@ -85,36 +85,36 @@ public struct Item
 		{
 		return i.existential ;
 		}
-	public static implicit operator Symbol( Item i )
+	public static implicit operator _.Token( Item i )
 		{
-		return i.symbol ;
+		return i.token ;
 		}
-	public static implicit operator int( Item i )
+	public static implicit operator xyzzyy( Item i )
 		{
-		return (int)i.account ;
+		return i.state ;
 		}
 	public static implicit operator System.Decimal( Item i )
 		{
-		return i.account ;
+		return System.Decimal.Parse( i.state.zz +"."+ i.state.yy ) ;
 		}
 	public static implicit operator State( Item i )
 		{
-		return stateset[i] ;
+		return stateset[i.state.zz] ;
 		}
 	public override string ToString()
 		{
-		return ( symbol.StringIsNull ? "" : symbol.ToString() ) +'-'+ account.ToString() ;
+		return token.ToString() +':'+ state.ToString() ;
 		}
-	public Item( Symbol symbol, State state )
+	public Item( _.Token token, xyzzyy state )
 		{
-		this.symbol      = symbol ;
-		this.account     = state ;
+		this.token       = token ;
+		this.state       = state ;
 		this.stacked     = false ;
 		this.existential = false ;
 		this.imaginary   = true ;
 		this.q           = new Quant() ;
 		this.bit         = new Quant() ;
-		this.do_         = null ;
+		this._oprand     = null ;
 		// {0:0:0} ;
 		}
 	}
