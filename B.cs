@@ -55,10 +55,21 @@ static void Blogic()
 	#endif
 	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
 	jump_( ref b ) ;
+	while( stack.Count > 0 )
+		{
+		object o = stack.Pop() ;
+		if( o is object[] )
+			foreach( object i in (object[])o )
+				log( "[stack.o#] "+i.ToString() ) ;
+		else
+			log( "[stack] "+o.ToString() ) ;
+		}
 	if( output != null )
 		{
 		output.Close() ;
+		#if !DEBUG
 		throw new System.NotImplementedException( "[/tmp/output.c] Logged" ) ;
+		#endif
 		}
 	//_.prompt(_.string_t) ;
 	}

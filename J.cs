@@ -27,7 +27,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	if( state.shiftset.ContainsKey( xml_translate[token.Value.c] ) )
 		{
 		b.yy  = xml_translate[token.Value.c] ;
-		//stack.Push( new Item( token.Value, b ) ) ;
+		stack.Push( new Item( token.Value, b ) ) ;
 		token = null ;
 		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
 		state.zlog.Add( t ) ;
@@ -62,19 +62,22 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		foreach( Xo i in xo_t[r].rhs )
 			{
 			System.Array.Resize( ref o, o.Length + 1 ) ;
-			//o[ o.Length - 1 ] = stack.Pop() ;
+			o[ o.Length - 1 ] = stack.Pop() ;
 			f += "_"+i.s ;
 			}
 		System.Array.Resize( ref o, o.Length + 1 ) ;
 		o[ o.Length - 1 ] = xo_t[r] ;
 		System.Array.Reverse( o ) ;
 		f = System.Text.RegularExpressions.Regex.Replace( f, "[^A-Za-z_0-9]", "_") ;
+		log( "[reduce] " + f ) ;
+		log_o( o ) ;
 		o = (object[])typeof(A335).InvokeMember( f, 
 		System.Reflection.BindingFlags.InvokeMethod |
 		System.Reflection.BindingFlags.NonPublic |
 		System.Reflection.BindingFlags.Static,
 		null, null, new object[1] { o } ) ;
-		//stack.Push( o ) ;
+		foreach( object i in o )
+			stack.Push( i ) ;
 		}
 	catch( System.MissingMemberException e )
 		{
@@ -107,41 +110,49 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		throw new System.NotImplementedException( "token != $end" ) ;
 	return ;
 	}
+
+static private void log_o( object[] o )
+	{
+	string s = "["+o.ToString()+"]" ;
+	foreach( object i in o )
+		s += " " + i.ToString() ;
+	log( s ) ;		
+	}
 	
 static private object[] id_ID( object[] o )
 	{
-	return o ;
+	return new object[] { o[0], o } ;
 	}
 
 static private object[] name1_id( object[] o )
 	{
-	return o ;
+	return new object[] { o[0], o } ;
 	}
 
 static private object[] assemblyRefHead___assembly___extern__name1( object[] o )
 	{
-	return o ;
+	return new object[] { o[0], o } ;
 	}
 
 static private object[] int32_INT64( object[] o )
 	{
-	return o ;
+	return new object[] { o[0], o } ;
 	}
 
 static private object[] asmOrRefDecl___ver__int32_____int32_____int32_____int32( object[] o )
 	{
-	return o ;
+	return new object[] { o[0], o } ;
 	}
 	
 
 static private object[] assemblyRefDecl_asmOrRefDecl( object[] o )
 	{
-	return o ;
+	return new object[] { o[0], o } ;
 	}
 
 static private object[] assemblyRefDecls_assemblyRefDecls_assemblyRefDecl( object[] o )
 	{
-	return o ;
+	return new object[] { o[0], o } ;
 	}
 	
 static private object[] decl_assemblyRefHead_____assemblyRefDecls____( object[] o ) { return o ; }
