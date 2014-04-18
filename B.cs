@@ -48,7 +48,7 @@ static void Blogic()
 		}
 	if( y != (zz + yy) )
 		throw new NotImplementedException() ;
-	Console.WriteLine("x={0} y={1} z={2} yy={3}",x,y,zz,yy ) ;
+	//Console.WriteLine("x={0} y={1} z={2} yy={3}",x,y,zz,yy ) ;
 	*/
 	#if SCREEN
 	_.screen.DrawCode() ;

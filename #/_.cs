@@ -11,10 +11,13 @@ public class exception : System.Exception
 	{
 	public exception()
 		{
+		#if CONSOLE
 		prompt( string_t ) ;
+		#endif
 		}
 	}
 	
+#if CONSOLE
 public static char prompt( Token t )
 	{
 	int x = System.Console.WindowHeight-1 ; //t.c == '$' ? System.Console.WindowHeight-1 : 0 ;
@@ -33,6 +36,7 @@ public static char prompt( Token t )
 	System.Console.SetCursorPosition(0,23) ;
 	return cki.KeyChar ;
 	}
+#endif
 
 public static void assimulation()
 	{
@@ -339,7 +343,9 @@ public static Token input()
 		return new Token( (char)int.Parse( s[1] ), text ) ; //_point3D:___(s[2,text]),_xor_URN:s[0]:_
 		}
 	Token t = new Token( '\0', "$end" ) ;
+	#if DEBUG_INPUT && CONSOLE
 	if( !ended ) prompt( t ) ;
+	#endif
 	ended = true ;
 	#if DEBUG_INPUT
 	System.Console.SetCursorPosition(y,x) ;
