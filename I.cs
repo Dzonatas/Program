@@ -103,7 +103,7 @@ struct Item
 		}
 	public override string ToString()
 		{
-		return token.ToString() +':'+ state.ToString() ;
+		return token.ToString() ;
 		}
 	public Item( _.Token token, xyzzyy state )
 		{
