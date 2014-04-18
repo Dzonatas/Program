@@ -487,7 +487,7 @@ static bool xml_get_()
 			xml_text = xml.Value ;
 			//yyrule = resolve() ;
 			//stack.Push( symbol_from_token[yytoken] ) ;
-			System.Console.WriteLine("<{0}/>{2}", yyrule,yytoken,xml_text) ;
+			//System.Console.WriteLine("<{0}/>{2}", yyrule,yytoken,xml_text) ;
 			//Console.WriteLine("{0} {1} {2}", yytoken, text, yyrule.lhs) ;
 			return true ;
 			}
