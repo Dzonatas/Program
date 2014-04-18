@@ -121,6 +121,7 @@ struct Item
 
 static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	{
+	#if DEBUG_INPUT
 	int y = 0 ;
 	foreach( _.Token t in b_line )
 		{
@@ -150,6 +151,9 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 		_.prompt(token) ;
 	b_line.RemoveAt(0) ;
 	return token ;
+	#else
+	return _.input() ;
+	#endif
 	}
 	
 

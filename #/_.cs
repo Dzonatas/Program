@@ -327,8 +327,10 @@ public struct (O(QR))(^)__
 static bool ended ;
 public static Token input()
 	{
+	#if DEBUG_INPUT
 	int x = System.Console.CursorTop ;
 	int y = System.Console.CursorLeft ;
+	#endif
 	if( xml.Read() && xml.NodeType == System.Xml.XmlNodeType.Element )
 		{
 		string [] s = xml.Name.Split("_-".ToCharArray()) ;
@@ -339,7 +341,9 @@ public static Token input()
 	Token t = new Token( '\0', "$end" ) ;
 	if( !ended ) prompt( t ) ;
 	ended = true ;
+	#if DEBUG_INPUT
 	System.Console.SetCursorPosition(y,x) ;
+	#endif
 	return t ;
 	}
 
