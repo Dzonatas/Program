@@ -3,6 +3,14 @@
 public partial class A335
 {
 
+static public void log( string s )
+	{
+	if( output == null )
+		output = System.IO.File.CreateText( "/tmp/output.c" ) ;
+	output.WriteLine( s ) ;
+	output.Flush() ;
+	}
+
 class log_enter
 	{
 	#region OPT:UNION

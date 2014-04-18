@@ -78,9 +78,8 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		}
 	catch( System.MissingMemberException e )
 		{
-		output.WriteLine( e.Message ) ;
-		output.Flush() ;
-		stack.Push( o ) ;
+		log( e.Message ) ;
+		//stack.Push( o ) ;
 //		throw new System.NotImplementedException( System.String.Format("[A335] {0}", e.Message) ) ;
 		}
 	throw new ReducedAcception( r ) ;
