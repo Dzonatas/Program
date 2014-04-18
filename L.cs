@@ -2,11 +2,18 @@
 
 public partial class A335
 {
+const string log_file = "/tmp/output.c" ;
+
+static public void log_ready()
+	{
+	if( output == null )
+		output = System.IO.File.CreateText( log_file ) ;
+	}
 
 static public void log( string s )
 	{
 	if( output == null )
-		output = System.IO.File.CreateText( "/tmp/output.c" ) ;
+		output = System.IO.File.CreateText( log_file ) ;
 	output.WriteLine( s ) ;
 	output.Flush() ;
 	}

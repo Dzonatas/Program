@@ -158,7 +158,7 @@ internal static class shell
 		psi.UseShellExecute          = false ;
 		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
 		psi.RedirectStandardOutput   = true ;
-		psi.CreateNoWindow           = false ;
+		psi.CreateNoWindow           = true ;
 		}
 	}
 

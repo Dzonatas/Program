@@ -2,7 +2,7 @@
 
 public partial class A335
 {
-static System.IO.StreamWriter output ;
+static public System.IO.StreamWriter output ;
 }
 
 

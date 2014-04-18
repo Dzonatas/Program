@@ -24,8 +24,11 @@ namespace Application
 		
 		static Program()
 			{
-			#if DEBUG
+			#if DEBUG && CONSOLE
 				Debug.Listeners.Add(  new TextWriterTraceListener( Console.Out )  ) ;
+			#elif DEBUG
+				A335.log_ready() ;
+				Debug.Listeners.Add(  new TextWriterTraceListener( A335.output )  ) ;
 			#else
 				AppDomain.CurrentDomain.UnhandledException += unhandled ;
 			#endif
@@ -56,9 +59,14 @@ namespace Application
 		static void unhandled( object o, UnhandledExceptionEventArgs args )
 			{
 			Exception e = (Exception)args.ExceptionObject ;
+			#if CONSOLE
 			Console.Write( "UNHANDLED EXCEPTION: " ) ;
 			Console.WriteLine( e ) ;
 			//Console.Flush() ;
+			#else
+			A335.log( "UNHANDLED EXCEPTION: " ) ;
+			A335.log( e.ToString() ) ;
+			#endif
 
 			Environment.Exit( 1 ) ;
 			}

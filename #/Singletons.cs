@@ -28,15 +28,15 @@ namespace Application
 		{
 		private Initializer()
 			{
-			Program.Initialize  += ()     => Console.WriteLine( "Initialize()" ) ;
+			Program.Initialize  += ()     => A335.log( "Initialize()" ) ;
 			}
 		static Initializer()
 			{
-			Console.WriteLine( "B" ) ;
+			A335.log( "Initializer" ) ;
 			}
 		~Initializer()
 			{
-			Console.WriteLine( "B-" ) ;
+			A335.log( "~Initializer" ) ;
 			}
 		}
 

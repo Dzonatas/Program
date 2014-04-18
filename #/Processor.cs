@@ -15,7 +15,7 @@ namespace Application
 		static public bool Loop
 			{
 			get { return loop ; }
-			set { loop = value ; activity.Set() ; Console.WriteLine("Loop={0}", loop ) ; }
+			set { loop = value ; activity.Set() ; }
 			}
 		
 		static void process()
