@@ -11,6 +11,7 @@ static int    b_v      ;//view:locution[,view:orbit]
 
 static void Blogic()
 	{
+	output = System.IO.File.CreateText( "/tmp/output.c" ) ;
 	_.assimulation() ;
 	//Console.WriteLine( "symbolset={0} tokenset={1}", xml_symbolset.Count, xml_tokenset.Count ) ;
 	/*
@@ -55,6 +56,7 @@ static void Blogic()
 	#endif
 	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
 	jump_( ref b ) ;
+	output.Close() ;
 	_.prompt(_.string_t) ;
 	}
 
