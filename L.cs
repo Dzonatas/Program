@@ -2,20 +2,37 @@
 
 public partial class A335
 {
-const string log_file = "/tmp/output.c" ;
+static string log_file ;
 
 static public void log_ready()
 	{
-	if( output == null )
-		output = System.IO.File.CreateText( log_file ) ;
+	log_file = "/tmp/5a7160ed-13d5-4923-a1f9-3e32a47d558a.log.text" ;
+	/*
+		(
+		(System.Runtime.InteropServices.GuidAttribute)
+		//System.AppDomain.CurrentDomain.DomainManager.EntryAssembly.GetCustomAttributes(
+		(typeof(A335).Assembly.GetCustomAttributes(
+			typeof(System.Runtime.InteropServices.GuidAttribute), true
+			)[0])
+		).Value	+ ".txt" ;
+	*/
+	output = System.IO.File.CreateText( log_file ) ;
 	}
 
 static public void log( string s )
 	{
 	if( output == null )
-		output = System.IO.File.CreateText( log_file ) ;
+		log_ready() ;
 	output.WriteLine( s ) ;
 	output.Flush() ;
+	}
+	
+static private void log_o( object[] o )
+	{
+	string s = "["+o.ToString()+"]" ;
+	foreach( object i in o )
+		s += " " + i.ToString() ;
+	log( s ) ;		
 	}
 
 class log_enter

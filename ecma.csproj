@@ -146,5 +146,8 @@
     <None Include="..\..\..\ecma335\grammar.tab.c">
       <Link>ref\ecma335\grammar.tab.c</Link>
     </None>
+    <None Include="..\..\..\..\..\tmp\5a7160ed-13d5-4923-a1f9-3e32a47d558a.log.text">
+      <Link>ref\5a7160ed-13d5-4923-a1f9-3e32a47d558a.log.text</Link>
+    </None>
   </ItemGroup>
 </Project>
