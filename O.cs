@@ -347,7 +347,11 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 	var   _7 = stack.Pop() ;
 	var   _6 = stack.Pop() ;
 	var   _5 = stack.Pop() ;
-	var   _4 = stack.Pop() ;
+	var   _4 = stack.Peek() ;
+	if( _4 is object[] && ((Xo_t)(((object[])_4)[0])).lhs.s == "paramAttr" )
+		_4 = stack.Pop() ;
+	else
+		_4 = null ;
 	var   _3 = stack.Pop() ;
 	var   _2 = stack.Pop() ;
 	var   _1 = stack.Pop() ;
