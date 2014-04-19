@@ -232,8 +232,19 @@ static private object[] extendsClause__extends__className()
 
 static private object[] classHead___class__classAttr_id_extendsClause_implClause()
 	{
-	var   _5 = stack.Pop() ;
-	var   _4 = stack.Pop() ;
+	var   _  = stack.Pop() ;
+	object   _5 ;
+	object   _4 ;
+	if( ((Xo_t)(((object[])_)[0])).lhs.s == "implClause" )
+		{
+		_5 = _ ;
+		_4 = stack.Pop() ;
+		}
+	else
+		{
+		_5 = null ;
+		_4 = _ ;
+		}
 	var   _3 = stack.Pop() ;
 	var   _2 = stack.Pop() ;
 	var   _1 = stack.Pop() ;
