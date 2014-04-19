@@ -517,12 +517,12 @@ static private object[] sigArgs0_sigArgs1()
 
 static private object[] decl_classHead_____classDecls____()
 	{
-	//var   _4 = stack.Pop() ;
+	var   _4 = stack.Pop() ;
 	var   _3 = stack.Pop() ;
-	var   _2 = stack.Pop() ;
+	//var   _2 = stack.Pop() ;
 	var   _1 = stack.Pop() ;
 	Xo_t  _0 = xo_t[this_state.reductionset[this_state.default_reduction.Value].rule] ;
-	stack.Push( new object[] { _0, _1, _2 } ) ;
+	stack.Push( new object[] { _0, _1, _3 } ) ;
 	return null ;
 	}
 
