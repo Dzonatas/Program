@@ -54,44 +54,23 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		goto _jump ;
 		}
-	default_ : //_select( ʄ )_{(-_reduce:)_backup:_reduce_reduce:_yacc:_...default_}
+	default_ :
 	int r = state.reductionset[state.default_reduction.Value].rule ;
-	//object[] o = new object[0] ;
 	try {
 		string f = xo_t[r].lhs.s ;
 		foreach( Xo i in xo_t[r].rhs )
-			{
-			//System.Array.Resize( ref o, o.Length + 1 ) ;
-			//o[ o.Length - 1 ] = stack.Pop() ;
 			f += "_"+i.s ;
-			}
-		/*
-		System.Array.Resize( ref o, o.Length + 1 ) ;
-		o[ o.Length - 1 ] = xo_t[r] ;
-		System.Array.Reverse( o ) ;
-		*/
 		f = System.Text.RegularExpressions.Regex.Replace( f, "[^A-Za-z_0-9]", "_") ;
 		log( "[reduce] " + f ) ;
-//		log_o( o ) ;
-		/* o = (object[]) */ typeof(A335).InvokeMember( f, 
-		System.Reflection.BindingFlags.InvokeMethod |
-		System.Reflection.BindingFlags.NonPublic |
-		System.Reflection.BindingFlags.Static,
-		null, null, null ) ;
-		/*
-		if( o is object[] )
-			foreach( object i in o )
-				stack.Push( i ) ;
-		else
-		if( o is object )
-			stack.Push( o ) ;
-		*/
+		typeof(A335).InvokeMember( f, 
+			System.Reflection.BindingFlags.InvokeMethod |
+			System.Reflection.BindingFlags.NonPublic |
+			System.Reflection.BindingFlags.Static,
+			null, null, null ) ;
 		}
 	catch( System.MissingMemberException e )
 		{
 		log( "["+e.GetType().ToString()+"] " + e.ToString() ) ;
-		//stack.Push( o ) ;
-//		throw new System.NotImplementedException( System.String.Format("[A335] {0}", e.Message) ) ;
 		}
 	throw new ReducedAcception( r ) ;
 
