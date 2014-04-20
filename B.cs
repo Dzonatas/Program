@@ -60,7 +60,7 @@ static void Blogic()
 		object o = stack.Pop() ;
 		if( o is object[] )
 			foreach( object i in (object[])o )
-				log( "[stack.o#] "+i.ToString() ) ;
+				log( "[stack.o#] "+ ( i == null ? "null" : i).ToString() ) ;
 		else
 			log( "[stack] "+o.ToString() ) ;
 		}

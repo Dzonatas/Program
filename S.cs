@@ -28,6 +28,22 @@ static internal      IPAddress system_ip = IPAddress.Any ;
 static Stack<object>               stack = new Stack<object>() ;
 static State []                 stateset = new State[1125] ;
 
+static private object stack_pop()
+	{
+	object o = stack.Pop() ;
+	string s ;
+	if( o is object[] ) 
+		{
+		s = "{ " ;
+		foreach( object i in (object[])o )
+			s += ( i == null ? "null" : i ).ToString() + " , ";
+		}
+	else
+		s = o.ToString() ;
+	log( "[pop] " + s ) ;
+	return o ;
+	}
+
 public struct State                //_FIX:$State,_State,_State:=$State,$State!=_State
 	{
 	public Number               debit ;
