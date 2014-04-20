@@ -548,6 +548,10 @@ static private object[] START_decls()
 
 static private object[] _accept_START__end()
 	{
+	var _end = stack.Pop() ;
+	if( _end is Item && ((Item)_end).token.c == 0 )
+		return null ;
+	log( "[OOP!] _accept_START__end != end" ) ;
 	return null ;
 	}
 
