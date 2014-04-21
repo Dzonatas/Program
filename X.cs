@@ -35,6 +35,10 @@ public class Xo
 		this.o     = null ;
 		this.left  = false ;
 		}
+	public Rule Rule
+		{
+		get { return ruleset[x] ; }
+		}
 	internal bool Left
 		{
 		get { return left ; }
@@ -96,13 +100,7 @@ class Xo_t
 		}
 	public string ReductionMethod
 		{
-		get {
-			string s = lhs.s ;
-			foreach( Xo xo in rhs )
-				s += "_" + xo.s ;
-			s = System.Text.RegularExpressions.Regex.Replace( s, "[^A-Za-z_0-9]", "_") ;
-			return s ;
-			}
+		get { return lhs.Rule.Mangle ; }
 		}
 	public int Length
 		{

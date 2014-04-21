@@ -23,6 +23,16 @@ public struct Rule
 		{
 		return xo_t[r.number] ; // symbol_from_name[ r.lhs.s ];
 		}
+	public string Mangle
+		{
+		get {
+			string s = lhs.s ;
+			foreach( xml_s _ in rhs )
+				s += "_" + _.s ;
+			s = System.Text.RegularExpressions.Regex.Replace( s, "[^A-Za-z_0-9]", "_") ;
+			return s ;
+			}
+		}
 	public override string ToString()
 		{
 		if( useful )
