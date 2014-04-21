@@ -57,12 +57,8 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	default_ :
 	int r = state.reductionset[state.default_reduction.Value].rule ;
 	try {
-		string f = xo_t[r].lhs.s ;
-		foreach( Xo i in xo_t[r].rhs )
-			f += "_"+i.s ;
-		f = System.Text.RegularExpressions.Regex.Replace( f, "[^A-Za-z_0-9]", "_") ;
-		log( "[reduce] " + f ) ;
-		typeof(A335).InvokeMember( f, 
+		log( "[reduce] " + xo_t[r].ReductionMethod ) ;
+		typeof(A335).InvokeMember( xo_t[r].ReductionMethod, 
 			System.Reflection.BindingFlags.InvokeMethod |
 			System.Reflection.BindingFlags.NonPublic |
 			System.Reflection.BindingFlags.Static,

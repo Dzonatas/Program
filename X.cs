@@ -94,6 +94,16 @@ class Xo_t
 		{
 		return x.lhs ;
 		}
+	public string ReductionMethod
+		{
+		get {
+			string s = lhs.s ;
+			foreach( Xo xo in rhs )
+				s += "_" + xo.s ;
+			s = System.Text.RegularExpressions.Regex.Replace( s, "[^A-Za-z_0-9]", "_") ;
+			return s ;
+			}
+		}
 	public int Length
 		{
 		get { return this.rhs.Length ; }
