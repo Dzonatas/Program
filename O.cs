@@ -38,7 +38,7 @@ static private object[] id_ID()
 	{
 	var   _1 = stack_pop() ;
 	stack.Push( new object[] { this_xo_t, _1 } ) ;
-	return null ; //_VM_traces_null_object[],_need_finvoke()_like_pinvoke()_to_opt_out,_optimize_InvokeMethod
+	return null ;
 	}
 
 static private object[] name1_id()
