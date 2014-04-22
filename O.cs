@@ -371,9 +371,13 @@ static private object[] instr_INSTR_NONE()
 	return null ;
 	}
 
+static string this_instr ;
+
 static private object[] methodDecl_instr()
 	{
 	var   _1 = stack_pop() ;
+	this_instr = ( (Item)((object[])_1)[1] ).token._ ;
+	log( "[instr] "+ this_instr ) ;
 	stack.Push( new object[] { this_xo_t, _1 } ) ;
 	return null ;
 	}
