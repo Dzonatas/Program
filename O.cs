@@ -269,7 +269,11 @@ static private object[] callKind__default_()
 
 static private object[] callConv_callKind()
 	{
-	var   _1 = stack_pop() ;
+	var   _1 = stack.Peek() ;
+	if( _1 is object[] && ((Xo_t)((object[])_1)[0]).lhs.s == this_xo_t.rhs[0].s )
+		_1 = stack_pop() ;
+	else
+		_1 = null ;
 	stack.Push( new object[] { this_xo_t, _1 } ) ;
 	return null ;
 	}
@@ -277,7 +281,11 @@ static private object[] callConv_callKind()
 static private object[] callConv__instance__callConv()
 	{
 	var   _2 = stack_pop() ;
-	var   _1 = stack_pop() ;
+	var   _1 = stack.Peek() ;
+	if( _1 is Item && '"'+((Item)_1).token._+'"' == this_xo_t.rhs[0].s )
+		_1 = stack_pop() ;
+	else
+		_1 = null ;
 	stack.Push( new object[] { this_xo_t, _1, _2 } ) ;
 	return null ;
 	}
@@ -395,8 +403,8 @@ static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodNam
 	var   _4 = stack_pop() ;
 	var   _3 = stack_pop() ;
 	var   _2 = stack_pop() ;
-	//var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _2, _3, _4, _6 } ) ;
+	var   _1 = stack_pop() ;
+	stack.Push( new object[] { this_xo_t, _1, _2, _3, _4, _6 } ) ;
 	return null ;
 	}
 
