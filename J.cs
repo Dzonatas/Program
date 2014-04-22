@@ -55,10 +55,10 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		goto _jump ;
 		}
 	default_ :
-	int r = state.reductionset[state.default_reduction.Value].rule ;
+	this_xo_t = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
 	try {
-		log( "[reduce] " + xo_t[r].ReductionMethod ) ;
-		typeof(A335).InvokeMember( xo_t[r].ReductionMethod, 
+		log( "[reduce] " + this_xo_t.ReductionMethod ) ;
+		typeof(A335).InvokeMember( this_xo_t.ReductionMethod, 
 			System.Reflection.BindingFlags.InvokeMethod |
 			System.Reflection.BindingFlags.NonPublic |
 			System.Reflection.BindingFlags.Static,
@@ -68,7 +68,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		{
 		log( "["+e.GetType().ToString()+"] " + e.ToString() ) ;
 		}
-	throw new ReducedAcception( r ) ;
+	throw new ReducedAcception( state.reductionset[state.default_reduction.Value].rule ) ;
 
 	_jump :
 	try {
