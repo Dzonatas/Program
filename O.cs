@@ -216,7 +216,7 @@ static private object[] extendsClause__extends__className()
 static private object[] classHead___class__classAttr_id_extendsClause_implClause()
 	{
 	var   _5 = stack.Peek() ;
-	if( ((Xo_t)(((object[])_5)[0])).lhs.s == "implClause" )
+	if( ((Xo_t)(((object[])_5)[0])).lhs.s == this_xo_t.rhs[4].s )
 		_5 = stack_pop() ;
 	else
 		_5 = null ;
@@ -327,7 +327,7 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 	var   _6 = stack_pop() ;
 	var   _5 = stack_pop() ;
 	var   _4 = stack.Peek() ;
-	if( _4 is object[] && ((Xo_t)(((object[])_4)[0])).lhs.s == "paramAttr" )
+	if( _4 is object[] && ((Xo_t)(((object[])_4)[0])).lhs.s == this_xo_t.rhs[3].s )
 		_4 = stack_pop() ;
 	else
 		_4 = null ;
