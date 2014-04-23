@@ -337,7 +337,7 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 	if( ((object[])_6)[1] is string )
 		this_method_name = (string) ((object[])_6)[1] ;
 	else
-		this_method_name = ( (Item)((object[])_6)[1] ).token._ ;
+		this_method_name = "$" + ( (Item)((object[])_6)[1] ).token._ ;
 	stack.Push( new object[] { this_xo_t, _1, _2, _3, _4, _5, _6, _A } ) ;
 	return null ;
 	}
@@ -420,7 +420,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	var   _3 = stack_pop() ;
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
-	log( "[function]\n" + this_method_type + " " + this_class_id+"$"+this_method_name + "()" ) ;
+	log( "[function]\n" + this_method_type + " " + this_class_id+this_method_name + "()" ) ;
 	log( "        {" + this_instr_list + "\n        }" ) ;
 	this_instr_list = "" ;
 	stack.Push( new object[] { this_xo_t, _1, _2 } ) ;
