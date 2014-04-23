@@ -371,15 +371,12 @@ static private object[] instr_INSTR_NONE()
 	return null ;
 	}
 
-static string this_instr ;
-static string this_instr_list ;
-
 static private object[] methodDecl_instr()
 	{
 	var   _1 = stack_pop() ;
 	this_instr = ( (Item)((object[])_1)[1] ).token._ ;
 	this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
-	this_instr_list += "\n        " + this_instr ;
+	this_instr_list += this_instr + '\n' ;
 	log( "[instr] "+ this_instr ) ;
 	stack.Push( new object[] { this_xo_t, _1 } ) ;
 	return null ;
@@ -421,7 +418,10 @@ static private object[] classDecl_methodHead_methodDecls____()
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
 	log( "[function]\n" + this_method_type + " " + this_class_id+this_method_name + "()" ) ;
-	log( "        {" + this_instr_list + "\n        }" ) ;
+	string s = "" ;
+	foreach( string ss in this_instr_list.Split('\n') )
+		s += "\n        " + ss ;
+	log( "        {" + s + "}" ) ;
 	this_instr_list = "" ;
 	stack.Push( new object[] { this_xo_t, _1, _2 } ) ;
 	return null ;
