@@ -63,6 +63,7 @@ static void Blogic()
 				log( "[stack.o#] "+ ( i == null ? "null" : i).ToString() ) ;
 		else
 			log( "[stack] "+o.ToString() ) ;
+		log( "[program]\n" + this_program ) ;
 		}
 	if( output != null )
 		{

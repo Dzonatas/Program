@@ -8,6 +8,7 @@ static string             this_method_type ;
 static string             this_class_id ;
 static string             this_instr ;
 static string             this_instr_list ;
+static string             this_program ;
 
 public struct Transition
 	{

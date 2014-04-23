@@ -417,11 +417,13 @@ static private object[] classDecl_methodHead_methodDecls____()
 	var   _3 = stack_pop() ;
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
-	log( "[function]\n" + this_method_type + " " + this_class_id+this_method_name + "()" ) ;
+	string p = this_method_type + " " + this_class_id+this_method_name + "()" ;
 	string s = "" ;
 	foreach( string ss in this_instr_list.Split('\n') )
 		s += "\n        " + ss ;
-	log( "        {" + s + "}" ) ;
+	p += "\n        {" + s + "}" ;
+	log( p ) ;
+	this_program += p + "\n\n" ;
 	this_instr_list = "" ;
 	stack.Push( new object[] { this_xo_t, _1, _2 } ) ;
 	return null ;
