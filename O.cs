@@ -420,7 +420,16 @@ static private object[] classDecl_methodHead_methodDecls____()
 	string p = this_method_type + " " + this_class_id+this_method_name + "()" ;
 	string s = "" ;
 	foreach( string ss in this_instr_list.Split('\n') )
-		s += "\n        " + ss ;
+		{
+		if( ss == "" )
+			{
+			s += "\n        " ;
+			continue ;
+			}
+		string i = System.Guid.NewGuid().ToString() ;
+		i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
+		s += "\n        " + ss+"$"+i+"() ;" ;
+		}
 	p += "\n        {" + s + "}" ;
 	log( p ) ;
 	this_program += p + "\n\n" ;
