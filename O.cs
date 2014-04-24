@@ -381,6 +381,19 @@ static private object[] methodDecl_instr()
 	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
 	this_instr_list += this_instr + "$" + i + '\n' ;
 	this_program += "void " + this_instr + "$" + i + "()\n        {" ;
+	switch( this_instr )
+		{
+		case "LDARG_0":
+			this_program += "\n        stack[++stack_pointer] = 0 ;" ;
+			break ;
+		case "LDSTR":
+			this_program += "\n        stack[++stack_pointer] = 0 ;" ;
+			break ;
+		case "CALL":
+			break ;
+		case "RET":
+			break ;
+		}
 	this_program += "\n        }\n\n" ;
 	log( "[instr] "+ this_instr ) ;
 	stack.Push( new object[] { this_xo_t, _1 } ) ;
@@ -433,7 +446,11 @@ static private object[] classDecl_methodHead_methodDecls____()
 			}
 		s += "\n        " + ss+"() ;" ;
 		}
-	p += "\n        {" + s + "}" ;
+	p += "\n        {"
+	   + "\n        int sp = stack_pointer ;"
+	   + s 
+	   + "\n        stack_pointer = sp ;"
+	   + "\n        }" ;
 	log( p ) ;
 	this_program += p + "\n\n" ;
 	this_instr_list = "" ;

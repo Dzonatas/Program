@@ -53,6 +53,9 @@ static void Blogic()
 	#if SCREEN
 	_.screen.DrawCode() ;
 	#endif
+	this_program =
+		"void* stack[64] ;\n" +
+		"int   stack_pointer = 0 ;\n\n" ;
 	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
 	jump_( ref b ) ;
 	while( stack.Count > 0 )
