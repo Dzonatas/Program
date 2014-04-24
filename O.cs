@@ -338,6 +338,8 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 		this_method_name = (string) ((object[])_6)[1] ;
 	else
 		this_method_name = "$" + ( (Item)((object[])_6)[1] ).token._ ;
+	if( this_method_name == "$Main" )
+		this_start_class = this_class_id ;
 	stack.Push( new object[] { this_xo_t, _1, _2, _3, _4, _5, _6, _A } ) ;
 	return null ;
 	}
@@ -421,7 +423,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	var   _3 = stack_pop() ;
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
-	string p = this_method_type + " " + this_class_id+this_method_name + "()" ;
+	string p = "void " + this_class_id+this_method_name + "()" ;
 	string s = "" ;
 	foreach( string ss in this_instr_list.Split('\n') )
 		{
@@ -531,6 +533,11 @@ static private object[] decl_classHead_____classDecls____()
 
 static private object[] START_decls()
 	{
+	this_program += "int main( int argc , char** args , char** env )\n" +
+                    "        {\n" +
+                    "        " + this_start_class + "_ctor() ;\n" +
+                    "        " + this_start_class + "$Main() ;\n" +
+                    "        }\n\n" ;
 	return null ;
 	}
 

@@ -6,6 +6,7 @@ static Xo_t               this_xo_t ;
 static string             this_method_name ;
 static string             this_method_type ;
 static string             this_class_id ;
+static string             this_start_class ;
 static string             this_instr ;
 static string             this_instr_list ;
 static string             this_program ;
