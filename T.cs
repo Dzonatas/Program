@@ -10,6 +10,8 @@ static string             this_start_class ;
 static string             this_instr ;
 static string             this_instr_list ;
 static string             this_program ;
+static string             this_methodName ;
+static string             this_className ;
 
 public struct Transition
 	{

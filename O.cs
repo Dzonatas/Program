@@ -1,4 +1,5 @@
 //|#(!)using System;
+using System.Text.RegularExpressions ;
 
 public partial class A335
 {
@@ -200,6 +201,9 @@ static private object[] className_____name1_____slashedName()
 	var   _3 = stack_pop() ;
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
+	this_className  = Regex.Replace( ((Item)((object[])_2)[1]).token._, "[^A-Za-z_0-9]", "_") ;
+	this_className += "$$" ;
+	this_className += Regex.Replace( ((Item)((object[])_4)[1]).token._, "[^A-Za-z_0-9]", "_") ;
 	stack.Push( new object[] { this_xo_t, _1, ((object[])_2)[1], _3, ((object[])_4)[1] } ) ;
 	return null ;
 	}
@@ -391,6 +395,9 @@ static private object[] methodDecl_instr()
 			this_program += "\n        stack[++stack_pointer] = 0 ;" ;
 			break ;
 		case "CALL":
+			string name = "" ;
+			name += this_className + this_methodName ;
+			this_program += "\n        " + name + "() ;" ;
 			break ;
 		case "RET":
 			break ;
@@ -427,6 +434,10 @@ static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodNam
 	var   _3 = stack_pop() ;
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
+	if( ((object[])_6)[1] is string )
+		this_methodName = (string) ((object[])_6)[1] ;
+	else
+		this_methodName = "$" + ( (Item)((object[])_6)[1] ).token._ ;
 	stack.Push( new object[] { this_xo_t, _1, _2, _3, _4, _6 } ) ;
 	return null ;
 	}
