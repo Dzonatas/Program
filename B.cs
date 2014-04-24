@@ -65,9 +65,12 @@ static void Blogic()
 			log( "[stack] "+o.ToString() ) ;
 		log( "[program]\n" + this_program ) ;
 		}
-	if( output != null )
+	program_ready() ;
+	program( this_program ) ;
+	program_output.Close() ;
+	if( log_output != null )
 		{
-		output.Close() ;
+		log_output.Close() ;
 		#if !DEBUG
 		throw new System.NotImplementedException( "[/tmp/output.c] Logged" ) ;
 		#endif

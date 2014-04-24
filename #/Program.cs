@@ -28,7 +28,7 @@ namespace Application
 				Debug.Listeners.Add(  new TextWriterTraceListener( Console.Out )  ) ;
 			#elif DEBUG
 				A335.log_ready() ;
-				Debug.Listeners.Add(  new TextWriterTraceListener( A335.output )  ) ;
+				Debug.Listeners.Add(  new TextWriterTraceListener( A335.log_output )  ) ;
 			#else
 				AppDomain.CurrentDomain.UnhandledException += unhandled ;
 			#endif

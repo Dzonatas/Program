@@ -1,6 +1,33 @@
 public partial class A335
 {
 //System.Decimal π = 3.333… ;
+static string                         program_file ;
+static public System.IO.StreamWriter  program_output ;
+
+static public void program_ready()
+	{
+	program_file = "/tmp/5a7160ed-13d5-4923-a1f9-3e32a47d558a.program.c" ;
+	/*
+		(
+		(System.Runtime.InteropServices.GuidAttribute)
+		//System.AppDomain.CurrentDomain.DomainManager.EntryAssembly.GetCustomAttributes(
+		(typeof(A335).Assembly.GetCustomAttributes(
+			typeof(System.Runtime.InteropServices.GuidAttribute), true
+			)[0])
+		).Value	+ ".c" ;
+	*/
+	program_output = System.IO.File.CreateText( program_file ) ;
+	}
+
+static public void program( string s )
+	{
+	if( program_output == null )
+		program_ready() ;
+	program_output.WriteLine( s ) ;
+	program_output.Flush() ;
+	}
+	
+
 #if A
 [OAuth] Token _proxy_known ; //_oauth:A:__:_:lexical
 #endif

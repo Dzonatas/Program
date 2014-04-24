@@ -2,7 +2,8 @@
 
 public partial class A335
 {
-static string log_file ;
+static string                         log_file ;
+static public System.IO.StreamWriter  log_output ;
 
 static public void log_ready()
 	{
@@ -16,15 +17,15 @@ static public void log_ready()
 			)[0])
 		).Value	+ ".txt" ;
 	*/
-	output = System.IO.File.CreateText( log_file ) ;
+	log_output = System.IO.File.CreateText( log_file ) ;
 	}
 
 static public void log( string s )
 	{
-	if( output == null )
+	if( log_output == null )
 		log_ready() ;
-	output.WriteLine( s ) ;
-	output.Flush() ;
+	log_output.WriteLine( s ) ;
+	log_output.Flush() ;
 	}
 	
 static private void log_o( object[] o )
