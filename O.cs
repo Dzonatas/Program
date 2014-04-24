@@ -376,7 +376,11 @@ static private object[] methodDecl_instr()
 	var   _1 = stack_pop() ;
 	this_instr = ( (Item)((object[])_1)[1] ).token._ ;
 	this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
-	this_instr_list += this_instr + '\n' ;
+	string i = System.Guid.NewGuid().ToString() ;
+	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
+	this_instr_list += this_instr + "$" + i + '\n' ;
+	this_program += "void " + this_instr + "$" + i + "()\n        {" ;
+	this_program += "\n        }\n\n" ;
 	log( "[instr] "+ this_instr ) ;
 	stack.Push( new object[] { this_xo_t, _1 } ) ;
 	return null ;
@@ -426,9 +430,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 			s += "\n        " ;
 			continue ;
 			}
-		string i = System.Guid.NewGuid().ToString() ;
-		i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
-		s += "\n        " + ss+"$"+i+"() ;" ;
+		s += "\n        " + ss+"() ;" ;
 		}
 	p += "\n        {" + s + "}" ;
 	log( p ) ;
