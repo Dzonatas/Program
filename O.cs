@@ -379,7 +379,8 @@ static private object[] methodDecl_instr()
 	this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 	string i = System.Guid.NewGuid().ToString() ;
 	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
-	this_instr_list += this_instr + "$" + i + '\n' ;
+	this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
+					 + this_instr + "$" + i ;
 	this_program += "void " + this_instr + "$" + i + "()\n        {" ;
 	switch( this_instr )
 		{
