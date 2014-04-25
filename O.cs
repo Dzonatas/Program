@@ -389,13 +389,13 @@ static private object[] methodDecl_instr()
 	switch( this_instr )
 		{
 		case "LDARG_0":
-			this_program += "\n        stack[++stack_pointer] = 0 ;" ;
+			this_program += "\n        *stack_pointer = 0 ;" ;
 			break ;
 		case "LDSTR":
 			this_program += "\n        static const struct _string s = { "
 				+ this_string.Length.ToString()
 				+ " , \"" + this_string + "\" } ;" ;
-			this_program += "\n        stack[++stack_pointer] = &s ;" ;
+			this_program += "\n        *stack_pointer = &s ;" ;
 			break ;
 		case "CALL":
 			string name = "" ;
@@ -462,7 +462,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 		s += "\n        " + ss+"() ;" ;
 		}
 	p += "\n        {"
-	   + "\n        int sp = stack_pointer ;"
+	   + "\n        const void** sp = stack_pointer ;"
 	   + s 
 	   + "\n        stack_pointer = sp ;"
 	   + "\n        }" ;
