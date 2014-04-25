@@ -54,21 +54,20 @@ static void Blogic()
 	_.screen.DrawCode() ;
 	#endif
 	this_program =
+		"#include <alloca.h>\n" +
 		"#include <unistd.h>\n\n" +
-		"const void* stack[64] ;\n" +
-		"const void** stack_pointer = stack ;\n\n" +
 		"struct _string\n" +
 		"        {\n" +
 		"        unsigned int length ;\n" +
 		"        char *       string ;\n" +
 		"        } ;\n\n" ;
 	this_program +=
-		"void corlib$$System_Object_ctor() {}\n\n" +
-		"void corlib$$System_Console$WriteLine()\n" +
+		"void corlib$$System_Object_ctor(const void** args) {}\n\n" +
+		"void corlib$$System_Console$WriteLine(const void** args)\n" +
 		"        {\n" +
-		"        const struct _string* s = *stack_pointer ;\n" +
+		"        const struct _string* s = *args ;\n" +
 		"        write( 0 , s->string , s->length ) ;\n" +
-		"        write( 0 , \"\\n\" , 1) ;\n" +
+		"        write( 0 , \"\\n\" , 1 ) ;\n" +
 		"        }\n\n" ;
 	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
 	jump_( ref b ) ;

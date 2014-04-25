@@ -385,22 +385,22 @@ static private object[] methodDecl_instr()
 	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
 	this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
 					 + this_instr + "$" + i ;
-	this_program += "static inline void " + this_instr + "$" + i + "()\n        {" ;
+	this_program += "static inline void " + this_instr + "$" + i + "(const void** stack)\n        {" ;
 	switch( this_instr )
 		{
 		case "LDARG_0":
-			this_program += "\n        *stack_pointer = 0 ;" ;
+			this_program += "\n        stack[0] = 0 ;" ;
 			break ;
 		case "LDSTR":
 			this_program += "\n        static const struct _string s = { "
 				+ this_string.Length.ToString()
 				+ " , \"" + this_string + "\" } ;" ;
-			this_program += "\n        *stack_pointer = &s ;" ;
+			this_program += "\n        stack[0] = &s ;" ;
 			break ;
 		case "CALL":
 			string name = "" ;
 			name += this_className + this_methodName ;
-			this_program += "\n        " + name + "() ;" ;
+			this_program += "\n        " + name + "(stack) ;" ;
 			break ;
 		case "RET":
 			break ;
@@ -450,7 +450,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	var   _3 = stack_pop() ;
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
-	string p = "void " + this_class_id+this_method_name + "()" ;
+	string p = "void " + this_class_id+this_method_name + "(const void** args)" ;
 	string s = "" ;
 	foreach( string ss in this_instr_list.Split('\n') )
 		{
@@ -459,12 +459,11 @@ static private object[] classDecl_methodHead_methodDecls____()
 			s += "\n        " ;
 			continue ;
 			}
-		s += "\n        " + ss+"() ;" ;
+		s += "\n        " + ss+"(stack) ;" ;
 		}
 	p += "\n        {"
-	   + "\n        const void** sp = stack_pointer ;"
+	   + "\n        const void** stack = alloca(1) ;"
 	   + s 
-	   + "\n        stack_pointer = sp ;"
 	   + "\n        }" ;
 	log( p ) ;
 	this_program += p + "\n\n" ;
@@ -567,8 +566,8 @@ static private object[] START_decls()
 	{
 	this_program += "int main( int argc , char** args , char** env )\n" +
                     "        {\n" +
-                    "        " + this_start_class + "_ctor() ;\n" +
-                    "        " + this_start_class + "$Main() ;\n" +
+                    "        " + this_start_class + "_ctor(0) ;\n" +
+                    "        " + this_start_class + "$Main(0) ;\n" +
                     "        }\n\n" ;
 	return null ;
 	}
