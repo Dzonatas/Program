@@ -450,7 +450,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	var   _3 = stack_pop() ;
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
-	string p = "void " + this_class_id+this_method_name + "(const void** args)" ;
+	string p = "static inline void " + this_class_id+this_method_name + "(const void** args)" ;
 	string s = "" ;
 	foreach( string ss in this_instr_list.Split('\n') )
 		{

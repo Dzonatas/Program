@@ -62,8 +62,8 @@ static void Blogic()
 		"        char *       string ;\n" +
 		"        } ;\n\n" ;
 	this_program +=
-		"void corlib$$System_Object_ctor(const void** args) {}\n\n" +
-		"void corlib$$System_Console$WriteLine(const void** args)\n" +
+		"static inline void corlib$$System_Object_ctor(const void** args) {}\n\n" +
+		"static inline void corlib$$System_Console$WriteLine(const void** args)\n" +
 		"        {\n" +
 		"        const struct _string* s = *args ;\n" +
 		"        write( 0 , s->string , s->length ) ;\n" +
