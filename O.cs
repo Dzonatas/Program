@@ -392,7 +392,7 @@ static private object[] methodDecl_instr()
 			this_program += "\n        stack[++stack_pointer] = 0 ;" ;
 			break ;
 		case "LDSTR":
-			this_program += "\n        stack[++stack_pointer] = 0 ;" ;
+			this_program += "\n        stack[++stack_pointer] = \"" + this_string + "\" ;" ;
 			break ;
 		case "CALL":
 			string name = "" ;
@@ -499,6 +499,7 @@ static private object[] methodDecl___entrypoint_()
 static private object[] compQstring_QSTRING()
 	{
 	var   _1 = stack_pop() ;
+	this_string = ((Item)_1).token._ ;
 	stack.Push( new object[] { this_xo_t, _1 } ) ;
 	return null ;
 	}

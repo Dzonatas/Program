@@ -12,6 +12,7 @@ static string             this_instr_list ;
 static string             this_program ;
 static string             this_methodName ;
 static string             this_className ;
+static string             this_string ;
 
 public struct Transition
 	{
