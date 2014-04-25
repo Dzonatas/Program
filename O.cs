@@ -392,7 +392,10 @@ static private object[] methodDecl_instr()
 			this_program += "\n        stack[++stack_pointer] = 0 ;" ;
 			break ;
 		case "LDSTR":
-			this_program += "\n        stack[++stack_pointer] = \"" + this_string + "\" ;" ;
+			this_program += "\n        static const struct _string s = { "
+				+ this_string.Length.ToString()
+				+ " , \"" + this_string + "\" } ;" ;
+			this_program += "\n        stack[++stack_pointer] = &s ;" ;
 			break ;
 		case "CALL":
 			string name = "" ;
