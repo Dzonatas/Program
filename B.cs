@@ -54,8 +54,18 @@ static void Blogic()
 	_.screen.DrawCode() ;
 	#endif
 	this_program =
-		"void* stack[64] ;\n" +
+		"#include <unistd.h>\n\n" +
+		"#include <string.h>\n\n" +
+		"const void* stack[64] ;\n" +
 		"int   stack_pointer = 0 ;\n\n" ;
+	this_program +=
+		"void corlib$$System_Object_ctor() {}\n\n" +
+		"void corlib$$System_Console$WriteLine()\n" +
+		"        {\n" +
+		"        const void* buf = stack[stack_pointer--] ;\n" +
+		"        write(0,buf,strlen(buf)) ;\n" +
+		"        write(0,\"\\n\",1) ;\n" +
+		"        }\n\n" ;
 	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
 	jump_( ref b ) ;
 	while( stack.Count > 0 )
