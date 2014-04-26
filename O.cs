@@ -385,22 +385,26 @@ static private object[] methodDecl_instr()
 	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
 	this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
 					 + this_instr + "$" + i ;
-	this_program += "static inline void " + this_instr + "$" + i + "(const void** stack)\n        {" ;
+	this_program += "static inline void " + this_instr + "$" + i + "( const void** stack , const void** args )\n        {" ;
 	switch( this_instr )
 		{
 		case "LDARG_0":
-			this_program += "\n        stack[0] = 0 ;" ;
+			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ;
+			this_stack_offset++ ;
 			break ;
 		case "LDSTR":
 			this_program += "\n        static const struct _string s = { "
 				+ this_string.Length.ToString()
 				+ " , \"" + this_string + "\" } ;" ;
-			this_program += "\n        stack[0] = &s ;" ;
+			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &s ;" ;
+			this_stack_offset++ ;
 			break ;
 		case "CALL":
 			string name = "" ;
 			name += this_className + this_methodName ;
-			this_program += "\n        " + name + "(stack) ;" ;
+			this_stack_offset -= this_sigArgs ;
+			this_program += "\n        " + name + "(stack+" + this_stack_offset.ToString() + ") ;" ;
+			this_stack_offset++ ;
 			break ;
 		case "RET":
 			break ;
@@ -459,7 +463,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 			s += "\n        " ;
 			continue ;
 			}
-		s += "\n        " + ss+"(stack) ;" ;
+		s += "\n        " + ss+"(stack,args) ;" ;
 		}
 	p += "\n        {"
 	   + "\n        const void** stack = alloca(1) ;"
@@ -468,6 +472,8 @@ static private object[] classDecl_methodHead_methodDecls____()
 	log( p ) ;
 	this_program += p + "\n\n" ;
 	this_instr_list = "" ;
+	this_stack_offset = 0 ;
+	this_sigArgs = 0 ;
 	stack.Push( new object[] { this_xo_t, _1, _2 } ) ;
 	return null ;
 	}
@@ -541,6 +547,7 @@ static private object[] sigArg_paramAttr_type()
 static private object[] sigArgs1_sigArg()
 	{
 	var   _1 = stack_pop() ;
+	this_sigArgs++ ;
 	stack.Push( new object[] { this_xo_t, _1 } ) ;
 	return null ;
 	}

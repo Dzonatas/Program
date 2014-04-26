@@ -13,6 +13,8 @@ static string             this_program ;
 static string             this_methodName ;
 static string             this_className ;
 static string             this_string ;
+static int                this_stack_offset ;
+static int                this_sigArgs ;
 
 public struct Transition
 	{
