@@ -32,12 +32,50 @@ class Stack
 		}
 	static public object[] Pop()
 		{
-		int point = this_xo_t.rhs.Length ;
 		object[] o = new object[ 1 + this_xo_t.rhs.Length ] ;
 		for( int i = this_xo_t.rhs.Length ; i > 0 ; i-- )
 			{
-			var _ = stack_pop() ;
-			o[i] = _ ;
+			var _ = stack.Peek() ;
+			if( _ is A335.Item )
+				{
+				string rhs = this_xo_t.rhs[i-1].s ;
+				if( rhs[0] == '\'' )
+					{
+					if(	rhs[1] == ((A335.Item)_).token._[0] )
+						o[i] = stack_pop() ;
+					else
+						o[i] = null ;
+					}
+				else
+				if( rhs[0] == '"' )
+					{
+					if( rhs == '"'+((A335.Item)_).token._+'"' )
+						o[i] = stack_pop() ;
+					else
+						o[i] = null ;
+					}
+				else
+					{
+					if( rhs == rhs.ToUpper() )
+						o[i] = stack_pop() ;
+					else
+						o[i] = null ;
+					}
+				}
+			else
+			if( _ is object[] )
+				{
+				object[] _o = (object[]) _ ;
+				string lhs = ((Xo_t)(_o[0])).lhs.s ;
+				string rhs = this_xo_t.rhs[i-1].s ;
+				log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
+				if( lhs == rhs )
+					o[i] = stack_pop() ;
+				else
+					o[i] = null ;
+				}
+			else
+				throw new System.NotImplementedException( "Unknown type on stack." ) ;
 			}
 		o[0] = this_xo_t ;
 		return o ;
