@@ -387,17 +387,11 @@ static private object[] methodDecl_instr()
 	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
 	this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
 					 + this_instr + "$" + i ;
-	if( this_method_static )
-		this_program += "static inline void " + this_instr + "$" + i + "( const void** stack , const void** args )\n        {" ;
-	else
-		this_program += "static inline void " + this_instr + "$" + i + "( const void** stack , const void* this, const void** args )\n        {" ;
+	this_program += "static inline void " + this_instr + "$" + i + "( const void** stack , const void** args )\n        {" ;
 	switch( this_instr )
 		{
 		case "LDARG_0":
-			if( this_method_static )
-				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = args[0] ;" ;
-			else
-				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = this ;" ;
+			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = args[0] ;" ;
 			this_stack_offset++ ;
 			break ;
 		case "LDSTR":
@@ -410,21 +404,12 @@ static private object[] methodDecl_instr()
 		case "CALL":
 			string name = "" ;
 			name += this_className + this_methodName ;
-			this_stack_offset -= this_sigArgs ;
-			if( this_callConv_instance )
-				{
-				if( this_sigArgs == 0 )
-					this_program += "\n        " + name + "( 0 /*this*/ ) ;" ;
-				else
-					this_program += "\n        " + name + "( 0 /*this*/ , stack+" + this_stack_offset.ToString() + ") ;" ;
-				}
+			int args = this_sigArgs + ( this_callConv_instance ? 1 : 0 ) ;
+			this_stack_offset -= args ;
+			if( args == 0 )
+				this_program += "\n        " + name + "() ;" ;
 			else
-				{
-				if( this_sigArgs == 0 )
-					this_program += "\n        " + name + "() ;" ;
-				else
-					this_program += "\n        " + name + "(stack+" + this_stack_offset.ToString() + ") ;" ;
-				}
+				this_program += "\n        " + name + "(stack+" + this_stack_offset.ToString() + ") ;" ;
 			if( !this_type_void )
 				this_stack_offset++ ;
 			break ;
@@ -480,10 +465,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
 	string p = "" ;
-	if( this_method_static )
-		p = "static inline void " + this_class_id+this_method_name + "(const void** args)" ;
-	else
-		p = "static inline void " + this_class_id+this_method_name + "(const void* this, const void** args)" ;
+	p = "static inline void " + this_class_id+this_method_name + "(const void** args)" ;
 	string s = "" ;
 	foreach( string ss in this_instr_list.Split('\n') )
 		{
@@ -492,10 +474,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 			s += "\n        " ;
 			continue ;
 			}
-		if( this_method_static )
-			s += "\n        " + ss+"( stack , args ) ;" ;
-		else
-			s += "\n        " + ss+"( stack , this , args ) ;" ;
+		s += "\n        " + ss+"( stack , args ) ;" ;
 		}
 	p += "\n        {"
 	   + "\n        const void** stack = alloca(1) ;"
@@ -610,7 +589,7 @@ static private object[] START_decls()
 	this_program += "int main( int argc , char** args , char** env )\n" +
                     "        {\n" +
                     "        const void** stack = alloca(0) ;\n" +
-                    "        " + this_start_class + "_ctor(0,stack) ;\n" +
+                    "        " + this_start_class + "_ctor(stack) ;\n" +
                     "        " + this_start_class + "$Main(stack) ;\n" +
                     "        }\n\n" ;
 	return null ;
