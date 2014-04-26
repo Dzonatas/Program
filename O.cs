@@ -351,6 +351,7 @@ static private object[] methodDecl___maxstack__int32()
 	{
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
+	this_maxstack = int.Parse( ((Item)((object[])_2)[1]).token._ ) ;
 	stack.Push( new object[] { this_xo_t, _2 } ) ;
 	return null ;
 	}
@@ -475,7 +476,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 		s += "\n        " + ss+"( stack , args ) ;" ;
 		}
 	p += "\n        {"
-	   + "\n        const void** stack = alloca(1) ;"
+	   + "\n        const void** stack = alloca( "+this_maxstack.ToString()+" ) ;"
 	   + s 
 	   + "\n        }" ;
 	log( p ) ;

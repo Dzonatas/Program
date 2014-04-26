@@ -19,6 +19,7 @@ static int                this_sigArgs ;
 static bool               this_type_void ;
 static bool               this_method_static ;
 static bool               this_callConv_instance ;
+static int                this_maxstack ;
 
 public struct Transition
 	{
