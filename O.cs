@@ -35,7 +35,10 @@ class Stack
 		object[] o = new object[ 1 + this_xo_t.rhs.Length ] ;
 		for( int i = this_xo_t.rhs.Length ; i > 0 ; i-- )
 			{
-			var _ = stack.Peek() ;
+			var _ = stack.Count > 0 ? stack.Peek() : null ;
+			if( _ == null )
+				o[i] = null ;
+			else
 			if( _ is A335.Item )
 				{
 				string rhs = this_xo_t.rhs[i-1].s ;
@@ -84,32 +87,17 @@ class Stack
 
 static private void _0_0_1()
 	{
-	var    _2 = stack_pop() ;
-	var    _1 = stack.Count > 0 ? stack.Peek() : null ;
-	if( ! ( _1 is object[] ) )
+	object[] _ = Stack.Pop() ;
+	if( _[1] == null )
 		{
-		stack.Push( new object[] { this_xo_t, _2 } ) ;
+		stack.Push( new object[] { this_xo_t, _[2] } ) ;
 		return ;
 		}
-	if( _2 is object[] && ((Xo_t)((object[])_2)[0]).lhs.s == ((Xo_t)(((object[])_1)[0])).rhs[1].s )
-		{
-		object[] o = (object[])stack_pop() ;
-		System.Array.Resize( ref o, o.Length + 1 ) ;
-		o[ o.Length - 1 ] = _2 ;
-		stack.Push( o ) ;
-		return ;
-		}
-	if( _2 is Item && xo_t[((Item)_2).state.x][((Item)_2).state.y].s == ((Xo_t)(((object[])_1)[0])).rhs[0].s )
-		{
-		object[] o = (object[])stack_pop() ;
-		System.Array.Resize( ref o, o.Length + 1 ) ;
-		o[ o.Length - 1 ] = _2 ;
-		stack.Push( o ) ;
-		}
-	else
-		{
-		stack.Push( new object[] { this_xo_t, _2 } ) ;
-		}
+	object[] o = (object[]) _[1] ;
+	System.Array.Resize( ref o, o.Length + 1 ) ;
+	o[ o.Length - 1 ] = _[2] ;
+	stack.Push( o ) ;
+	return ;
 	}
 	
 static private object[] id_ID()
