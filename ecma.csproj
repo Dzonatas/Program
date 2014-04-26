@@ -99,6 +99,7 @@
   <ItemGroup>
     <Folder Include="#\" />
     <Folder Include="#\.Second\" />
+    <Folder Include="~\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\ecma335\compile.sh">
@@ -152,5 +153,6 @@
     <None Include="..\..\..\..\..\tmp\5a7160ed-13d5-4923-a1f9-3e32a47d558a.program.c">
       <Link>ref\5a7160ed-13d5-4923-a1f9-3e32a47d558a.program.c</Link>
     </None>
+    <None Include="~\test.sh" />
   </ItemGroup>
 </Project>
