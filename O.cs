@@ -297,6 +297,7 @@ static private object[] type__void_()
 	{
 	var   _1 = stack_pop() ;
 	this_method_type = "void" ;
+	this_type_void = true ;
 	stack.Push( new object[] { this_xo_t } ) ;
 	return null ;
 	}
@@ -404,11 +405,14 @@ static private object[] methodDecl_instr()
 			name += this_className + this_methodName ;
 			this_stack_offset -= this_sigArgs ;
 			this_program += "\n        " + name + "(stack+" + this_stack_offset.ToString() + ") ;" ;
-			this_stack_offset++ ;
+			if( !this_type_void )
+				this_stack_offset++ ;
 			break ;
 		case "RET":
 			break ;
 		}
+	this_sigArgs = 0 ;
+	this_type_void = false ;
 	this_program += "\n        }\n\n" ;
 	log( "[instr] "+ this_instr ) ;
 	stack.Push( new object[] { this_xo_t, _1 } ) ;
@@ -474,6 +478,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	this_instr_list = "" ;
 	this_stack_offset = 0 ;
 	this_sigArgs = 0 ;
+	this_type_void = false ;
 	stack.Push( new object[] { this_xo_t, _1, _2 } ) ;
 	return null ;
 	}
