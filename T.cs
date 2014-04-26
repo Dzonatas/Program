@@ -16,6 +16,8 @@ static string             this_string ;
 static int                this_stack_offset ;
 static int                this_sigArgs ;
 static bool               this_type_void ;
+static bool               this_method_static ;
+static bool               this_callConv_instance ;
 
 public struct Transition
 	{
