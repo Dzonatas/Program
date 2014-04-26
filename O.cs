@@ -343,8 +343,6 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 		this_method_name = (string) ((object[])_6)[1] ;
 	else
 		this_method_name = "$" + ( (Item)((object[])_6)[1] ).token._ ;
-	if( this_method_name == "$Main" )
-		this_start_class = this_class_id ;
 	stack.Push( new object[] { this_xo_t, _1, _2, _3, _4, _5, _6, _A } ) ;
 	return null ;
 	}
@@ -516,6 +514,9 @@ static private object[] methodName_name1()
 static private object[] methodDecl___entrypoint_()
 	{
 	var   _1 = stack_pop() ;
+	if( System.String.IsNullOrEmpty(this_class_id) )
+		throw new System.NotImplementedException( "entrypoint outside class" ) ;
+	this_start_class = this_class_id ;
 	stack.Push( new object[] { this_xo_t } ) ;
 	return null ;
 	}
@@ -582,6 +583,7 @@ static private object[] decl_classHead_____classDecls____()
 	var   _3 = stack_pop() ;
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
+	this_class_id = "" ;
 	stack.Push( new object[] { this_xo_t, _1, _3 } ) ;
 	return null ;
 	}
