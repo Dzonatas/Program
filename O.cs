@@ -4,6 +4,46 @@ using System.Text.RegularExpressions ;
 public partial class A335
 {
 
+class Stack
+	{
+	static System.Collections.Generic.Stack<Item> _stack = new System.Collections.Generic.Stack<Item>() ;
+	public class Item
+		{
+		public Xo_t Rule ;
+		public Item()
+			{
+			Rule = this_xo_t ;
+			}
+		public class Token : Item
+			{
+			public xyzzyy  State ;
+			public _.Token _Token ;
+			public Token( xyzzyy _0, _.Token _1 )
+				{
+				State = _0 ;
+				_Token = _1 ;
+				}
+			}
+		}
+	static public void Push( Item item )
+		{
+		//stack.Push( o ) ;
+		//o = null ;
+		}
+	static public object[] Pop()
+		{
+		int point = this_xo_t.rhs.Length ;
+		object[] o = new object[ 1 + this_xo_t.rhs.Length ] ;
+		for( int i = this_xo_t.rhs.Length ; i > 0 ; i-- )
+			{
+			var _ = stack_pop() ;
+			o[i] = _ ;
+			}
+		o[0] = this_xo_t ;
+		return o ;
+		}
+	}
+
 static private void _0_0_1()
 	{
 	var    _2 = stack_pop() ;
@@ -33,34 +73,32 @@ static private void _0_0_1()
 		stack.Push( new object[] { this_xo_t, _2 } ) ;
 		}
 	}
-		
+	
 static private object[] id_ID()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
 static private object[] name1_id()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, ((object[])_1)[1] } ) ;
+	object[] o = Stack.Pop() ;
+	o[1] = ((object[])o[1])[1] ;
+	stack.Push( o ) ;
 	return null ;
 	}
 
 static private object[] assemblyRefHead___assembly___extern__name1()
 	{
-	var   _3 = stack_pop() ;
-	var   _2 = stack_pop() ;
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, ((object[])_3)[1] } ) ;
+	object[] o = Stack.Pop() ;
+	o[3] = ((object[])o[3])[1] ;
+	stack.Push( o ) ;
 	return null ;
 	}
 
 static private object[] int32_INT64()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -77,8 +115,7 @@ static private object[] asmOrRefDecl___ver__int32_____int32_____int32_____int32(
 	
 static private object[] assemblyRefDecl_asmOrRefDecl()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -90,11 +127,7 @@ static private object[] assemblyRefDecls_assemblyRefDecls_assemblyRefDecl()
 	
 static private object[] decl_assemblyRefHead_____assemblyRefDecls____()
 	{
-	var    _4 = stack_pop() ;
-	var    _3 = stack_pop() ;
-	var    _2 = stack_pop() ;
-	var    _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1, _3 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -106,8 +139,7 @@ static private object[] decls_decls_decl()
 
 static private object[] id_SQSTRING()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -142,8 +174,7 @@ static private object[] assemblyDecls_assemblyDecls_assemblyDecl()
 
 static private object[] assemblyDecl_asmOrRefDecl()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -183,8 +214,7 @@ static private object[] classAttr_classAttr__beforefieldinit_()
 
 static private object[] name1_DOTTEDNAME()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -234,8 +264,7 @@ static private object[] classHead___class__classAttr_id_extendsClause_implClause
 
 static private object[] methodHeadPart1___method_()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -265,8 +294,7 @@ static private object[] methAttr_methAttr__rtspecialname_()
 
 static private object[] callKind__default_()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -372,8 +400,7 @@ static private object[] methodDecl_id____()
 
 static private object[] instr_INSTR_NONE()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -434,8 +461,7 @@ static private object[] type__valuetype__className()
 
 static private object[] typeSpec_type()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -573,8 +599,7 @@ static private object[] sigArgs1_sigArg()
 
 static private object[] sigArgs0_sigArgs1()
 	{
-	var   _1 = stack_pop() ;
-	stack.Push( new object[] { this_xo_t, _1 } ) ;
+	stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
