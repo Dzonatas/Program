@@ -297,7 +297,7 @@ static private object[] callConv__instance__callConv()
 static private object[] type__void_()
 	{
 	var   _1 = stack_pop() ;
-	this_method_type = "void" ;
+	this_type = "void" ;
 	this_type_void = true ;
 	stack.Push( new object[] { this_xo_t } ) ;
 	return null ;
@@ -465,7 +465,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
 	string p = "" ;
-	p = "static inline void " + this_class_id+this_method_name + "(const void** args)" ;
+	p = "static inline void " + this_class_id+this_method_name+this_sigArg_types + "(const void** args)" ;
 	string s = "" ;
 	foreach( string ss in this_instr_list.Split('\n') )
 		{
@@ -488,6 +488,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	this_type_void = false ;
 	this_method_static = false ;
 	this_callConv_instance = false ;
+	this_sigArg_types = "" ;
 	stack.Push( new object[] { this_xo_t, _1, _2 } ) ;
 	return null ;
 	}
@@ -546,7 +547,7 @@ static private object[] type__class__className()
 static private object[] type__string_()
 	{
 	var   _1 = stack_pop() ;
-	this_method_type = "string" ;
+	this_type = "string" ;
 	stack.Push( new object[] { this_xo_t } ) ;
 	return null ;
 	}
@@ -555,6 +556,7 @@ static private object[] sigArg_paramAttr_type()
 	{
 	var   _2 = stack_pop() ;
 	var   _1 = stack_pop() ;
+	this_sigArg_types += "$" + this_type ;
 	stack.Push( new object[] { this_xo_t, _1, _2 } ) ;
 	return null ;
 	}
@@ -590,7 +592,7 @@ static private object[] START_decls()
                     "        {\n" +
                     "        const void** stack = alloca(0) ;\n" +
                     "        " + this_start_class + "_ctor(stack) ;\n" +
-                    "        " + this_start_class + "$Main(stack) ;\n" +
+                    "        " + this_start_class + "$Main$string(stack) ;\n" +
                     "        }\n\n" ;
 	return null ;
 	}
