@@ -604,7 +604,6 @@ static private object[] START_decls()
 	this_program += "int main( int argc , char** args , char** env )\n" +
                     "        {\n" +
                     "        const void** stack = alloca(0) ;\n" +
-                    "        " + this_start_class + "_ctor(stack) ;\n" +
                     "        " + this_start_class + "$Main(stack) ;\n" +
                     "        }\n\n" ;
 	Stack.Push( o ) ;
