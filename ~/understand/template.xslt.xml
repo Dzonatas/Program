@@ -1,0 +1,16 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+      <xsl:for-each select="bison-xml-report/grammar/terminals/terminal">
+        <xsl:value-of select="@name"/>
+	<xsl:text> { text= </xsl:text>
+        <xsl:value-of select="@name"/>
+	<xsl:text> ; return TERMINAL_( </xsl:text>
+	<xsl:value-of select="@token-number"/>
+	<xsl:text>, text, yylval_param ) ; }
+</xsl:text>
+      </xsl:for-each>
+</xsl:template>
+</xsl:stylesheet>
+
+

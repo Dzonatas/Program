@@ -100,53 +100,9 @@
     <Folder Include="#\" />
     <Folder Include="#\.Second\" />
     <Folder Include="~\" />
+    <Folder Include="~\understand\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\ecma335\compile.sh">
-      <Link>ref\ecma335\compile.sh</Link>
-    </None>
-    <None Include="..\..\..\ecma335\dis.txt">
-      <Link>ref\ecma335\dis.txt</Link>
-    </None>
-    <None Include="..\..\..\ecma335\dis2.txt">
-      <Link>ref\ecma335\dis2.txt</Link>
-    </None>
-    <None Include="..\..\..\ecma335\ecma335 grammar.txt">
-      <Link>ref\ecma335\ecma335 grammar.txt</Link>
-    </None>
-    <None Include="..\..\..\ecma335\ecma335 keywords.txt">
-      <Link>ref\ecma335\ecma335 keywords.txt</Link>
-    </None>
-    <None Include="..\..\..\ecma335\lex.footer">
-      <Link>ref\ecma335\lex.footer</Link>
-    </None>
-    <None Include="..\..\..\ecma335\lex.head">
-      <Link>ref\ecma335\lex.head</Link>
-    </None>
-    <None Include="..\..\..\ecma335\main.c">
-      <Link>ref\ecma335\main.c</Link>
-    </None>
-    <None Include="..\..\..\ecma335\make.sh">
-      <Link>ref\ecma335\make.sh</Link>
-    </None>
-    <None Include="..\..\..\ecma335\opcode.def">
-      <Link>ref\ecma335\opcode.def</Link>
-    </None>
-    <None Include="..\..\..\ecma335\opcode.part.xslt.xml">
-      <Link>ref\ecma335\opcode.part.xslt.xml</Link>
-    </None>
-    <None Include="..\..\..\ecma335\opcode.xslt.xml">
-      <Link>ref\ecma335\opcode.xslt.xml</Link>
-    </None>
-    <None Include="..\..\..\ecma335\template.xslt.xml">
-      <Link>ref\ecma335\template.xslt.xml</Link>
-    </None>
-    <None Include="..\..\..\ecma335\grammar.xml">
-      <Link>ref\ecma335\grammar.xml</Link>
-    </None>
-    <None Include="..\..\..\ecma335\grammar.tab.c">
-      <Link>ref\ecma335\grammar.tab.c</Link>
-    </None>
     <None Include="..\..\..\..\..\tmp\5a7160ed-13d5-4923-a1f9-3e32a47d558a.log.text">
       <Link>ref\5a7160ed-13d5-4923-a1f9-3e32a47d558a.log.text</Link>
     </None>
@@ -154,5 +110,28 @@
       <Link>ref\5a7160ed-13d5-4923-a1f9-3e32a47d558a.program.c</Link>
     </None>
     <None Include="~\test.sh" />
+    <None Include="~\compile.sh" />
+    <None Include="~\hello.mono.world.il.text" />
+    <None Include="~\understand\Makefile" />
+    <None Include="~\understand\ecma335 grammar.txt" />
+    <None Include="~\understand\grammar.output" />
+    <None Include="~\understand\grammar.tab.c" />
+    <None Include="~\understand\grammar.tab.h" />
+    <None Include="~\understand\grammar.xml" />
+    <None Include="~\understand\grammar.y" />
+    <None Include="~\understand\lex.footer" />
+    <None Include="~\understand\lex.head" />
+    <None Include="~\understand\lex.y" />
+    <None Include="~\understand\lex.yy.c" />
+    <None Include="~\understand\main.c" />
+    <None Include="~\understand\make.sh" />
+    <None Include="~\understand\opcode.c" />
+    <None Include="~\understand\opcode.def" />
+    <None Include="~\understand\opcode.part.xslt.xml" />
+    <None Include="~\understand\opcode.t.c" />
+    <None Include="~\understand\opcode.t.y" />
+    <None Include="~\understand\opcode.xml" />
+    <None Include="~\understand\opcode.y" />
+    <None Include="~\understand\template.xslt.xml" />
   </ItemGroup>
 </Project>
