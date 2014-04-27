@@ -23,6 +23,10 @@ class Stack
 				State = _0 ;
 				_Token = _1 ;
 				}
+			public override string ToString()
+					{
+					return _Token.ToString() ;
+					}
 			}
 		}
 	static public void Dump()
