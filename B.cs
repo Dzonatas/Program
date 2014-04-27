@@ -71,16 +71,7 @@ static void Blogic()
 		"        }\n\n" ;
 	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
 	jump_( ref b ) ;
-	while( stack.Count > 0 )
-		{
-		object o = stack.Pop() ;
-		if( o is object[] )
-			foreach( object i in (object[])o )
-				log( "[stack.o#] "+ ( i == null ? "null" : i).ToString() ) ;
-		else
-			log( "[stack] "+o.ToString() ) ;
-		log( "[program]\n" + this_program ) ;
-		}
+	Stack.Dump() ;
 	program_ready() ;
 	program( this_program ) ;
 	program_output.Close() ;

@@ -27,7 +27,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	if( state.shiftset.ContainsKey( xml_translate[token.Value.c] ) )
 		{
 		b.yy  = xml_translate[token.Value.c] ;
-		stack.Push( new Stack.Item.Token( b, token.Value ) ) ;
+		Stack.Push( new Stack.Item.Token( b, token.Value ) ) ;
 		token = null ;
 		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
 		state.zlog.Add( t ) ;

@@ -93,6 +93,7 @@ static string r_number( int n )
 
 static bool requested_system ;
 
+#if OLD_ITEM
 static void request( ref Item i )
 	{
 	if( i.stacked )
@@ -123,6 +124,7 @@ static Item respond()
 	i.bit.One = false ;
 	return i ;
 	}
+#endif
 
 static void request( ref State s )
 	{
