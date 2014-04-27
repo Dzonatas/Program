@@ -39,12 +39,13 @@ class Stack
 			if( _ == null )
 				o[i] = null ;
 			else
-			if( _ is A335.Item )
+			if( _ is Item.Token )
 				{
+				Item.Token t = (Item.Token)_ ;
 				string rhs = this_xo_t.rhs[i-1].s ;
 				if( rhs[0] == '\'' )
 					{
-					if(	rhs[1] == ((A335.Item)_).token._[0] )
+					if(	rhs[1] == t._Token._[0] )
 						o[i] = stack_pop() ;
 					else
 						o[i] = null ;
@@ -52,7 +53,7 @@ class Stack
 				else
 				if( rhs[0] == '"' )
 					{
-					if( rhs == '"'+((A335.Item)_).token._+'"' )
+					if( rhs == '"'+t._Token._+'"' )
 						o[i] = stack_pop() ;
 					else
 						o[i] = null ;
@@ -238,9 +239,9 @@ static private object[] slashedName_name1()
 static private object[] className_____name1_____slashedName()
 	{
 	object[] o = Stack.Pop() ;
-	this_className  = Regex.Replace( ((Item)((object[])o[2])[1]).token._, "[^A-Za-z_0-9]", "_") ;
+	this_className  = Regex.Replace( ((Stack.Item.Token)((object[])o[2])[1])._Token._, "[^A-Za-z_0-9]", "_") ;
 	this_className += "$$" ;
-	this_className += Regex.Replace( ((Item)((object[])o[4])[1]).token._, "[^A-Za-z_0-9]", "_") ;
+	this_className += Regex.Replace( ((Stack.Item.Token)((object[])o[4])[1])._Token._, "[^A-Za-z_0-9]", "_") ;
 	o[2] = ((object[])o[2])[1] ;
 	o[4] = ((object[])o[4])[1] ;
 	stack.Push( o ) ;
@@ -256,7 +257,7 @@ static private object[] extendsClause__extends__className()
 static private object[] classHead___class__classAttr_id_extendsClause_implClause()
 	{
 	object[] o = Stack.Pop() ;
-	this_class_id = ( (Item)((object[])o[3])[1] ).token._ ;
+	this_class_id = ( (Stack.Item.Token)((object[])o[3])[1] )._Token._ ;
 	stack.Push( o ) ;
 	return null ;
 	}
@@ -344,7 +345,7 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 	if( ((object[])o[6])[1] is string )
 		this_method_name = (string) ((object[])o[6])[1] ;
 	else
-		this_method_name = "$" + ( (Item)((object[])o[6])[1] ).token._ ;
+		this_method_name = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
 	stack.Push( o ) ;
 	return null ;
 	}
@@ -352,7 +353,7 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 static private object[] methodDecl___maxstack__int32()
 	{
 	object[] o = Stack.Pop() ;
-	this_maxstack = int.Parse( ((Item)((object[])o[2])[1]).token._ ) ;
+	this_maxstack = int.Parse( ((Stack.Item.Token)((object[])o[2])[1])._Token._ ) ;
 	stack.Push( o ) ;
 	return null ;
 	}
@@ -378,7 +379,7 @@ static private object[] instr_INSTR_NONE()
 static private object[] methodDecl_instr()
 	{
 	object[] o = Stack.Pop() ;
-	this_instr = ( (Item)((object[])o[1])[1] ).token._ ;
+	this_instr = ( (Stack.Item.Token)((object[])o[1])[1] )._Token._ ;
 	this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 	string i = System.Guid.NewGuid().ToString() ;
 	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
@@ -440,7 +441,7 @@ static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodNam
 	if( ((object[])o[6])[1] is string )
 		this_methodName = (string) ((object[])o[6])[1] ;
 	else
-		this_methodName = "$" + ( (Item)((object[])o[6])[1] ).token._ ;
+		this_methodName = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
 	stack.Push( o ) ;
 	return null ;
 	}
@@ -510,7 +511,7 @@ static private object[] methodDecl___entrypoint_()
 static private object[] compQstring_QSTRING()
 	{
 	object[] o = Stack.Pop() ;
-	this_string = ((Item)o[1]).token._ ;
+	this_string = ((Stack.Item.Token)o[1])._Token._ ;
 	stack.Push( o ) ;
 	return null ;
 	}
@@ -575,7 +576,7 @@ static private object[] START_decls()
 static private object[] _accept_START__end()
 	{
 	var _end = stack_pop() ;
-	if( _end is Item && ((Item)_end).token.c == 0 )
+	if( _end is Stack.Item.Token && ((Stack.Item.Token)_end)._Token.c == 0 )
 		return null ;
 	log( "[OOP!] _accept_START__end != end" ) ;
 	return null ;
