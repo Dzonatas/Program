@@ -24,6 +24,8 @@ static bool               this_type_void ;
 static bool               this_method_static ;
 static bool               this_callConv_instance ;
 static int                this_maxstack ;
+static bool               this_instr_callConv_instance ;
+static bool               this_method_callConv_instance ;
 
 public struct Transition
 	{

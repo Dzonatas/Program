@@ -373,8 +373,10 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 		this_method_name = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
 	this_method_sigArgs = this_sigArgs ;
 	this_method_sigArg_types = this_sigArg_types ;
+	this_method_callConv_instance = this_callConv_instance ;
 	this_sigArgs = 0 ;
 	this_sigArg_types = null ;
+	this_callConv_instance = false ;
 	Stack.Push( o ) ;
 	return null ;
 	}
@@ -414,7 +416,12 @@ static private object[] methodDecl_instr()
 	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
 	this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
 					 + this_instr + "$" + i ;
-	this_program += "static inline void " + this_instr + "$" + i + "( const void** stack , const void** args )\n        {" ;
+	int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
+	this_program += "static inline void " + this_instr + "$" + i ;
+	if( args == 0 )
+		this_program += "( const void** stack )\n        {" ;
+	else
+		this_program += "( const void** stack , const void** args )\n        {" ;
 	switch( this_instr )
 		{
 		case "LDARG_0":
@@ -433,23 +440,24 @@ static private object[] methodDecl_instr()
 			name += this_className + this_methodName ;
 			if( ! System.String.IsNullOrEmpty(this_instr_sigArg_types) )
 				name += this_instr_sigArg_types ;
-			int args = this_instr_sigArgs + ( this_callConv_instance ? 1 : 0 ) ;
-			this_stack_offset -= args ;
-			if( args == 0 )
-				this_program += "\n        " + name + "() ;" ;
+			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
+			this_stack_offset -= iargs ;
+			this_program += "\n        " + name ;
+			if( iargs == 0 )
+				this_program += "() ;" ;
 			else
-				this_program += "\n        " + name + "(stack+" + this_stack_offset.ToString() + ") ;" ;
+				this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
 			if( !this_type_void )
 				this_stack_offset++ ;
 			break ;
 		case "RET":
 			break ;
 		}
-	this_callConv_instance = false ;
 	this_type_void = false ;
 	this_program += "\n        }\n\n" ;
 	this_instr_sigArg_types = null ;
 	this_instr_sigArgs = 0 ;
+	this_instr_callConv_instance = false ;
 	log( "[instr] "+ this_instr ) ;
 	Stack.Push( o ) ;
 	return null ;
@@ -476,8 +484,10 @@ static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodNam
 		this_methodName = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
 	this_instr_sigArgs = this_sigArgs ;
 	this_instr_sigArg_types = this_sigArg_types ;
+	this_instr_callConv_instance = this_callConv_instance ;
 	this_sigArgs = 0 ;
 	this_sigArg_types = null ;
+	this_callConv_instance = false ;
 	Stack.Push( o ) ;
 	return null ;
 	}
@@ -486,7 +496,12 @@ static private object[] classDecl_methodHead_methodDecls____()
 	{
 	object[] o = Stack.Pop() ;
 	string p = "" ;
-	p = "static inline void " + this_class_id+this_method_name+this_method_sigArg_types + "( const void** args )" ;
+	int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
+	p = "static inline void " + this_class_id+this_method_name+this_method_sigArg_types ;
+	if( args == 0 )
+		p += "()" ;
+	else
+		p += "( const void** args )" ;
 	string s = "" ;
 	foreach( string ss in this_instr_list.Split('\n') )
 		{
@@ -495,7 +510,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 			s += "\n        " ;
 			continue ;
 			}
-		s += "\n        " + ss+"( stack , args ) ;" ;
+		s += "\n        " + ss+"( stack " + ( args == 0 ? ") ;" : ", args ) ;" ) ;
 		}
 	p += "\n        {"
 	   + "\n        const void** stack = alloca( "+this_maxstack.ToString()+" ) ;"
@@ -507,7 +522,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	this_stack_offset = 0 ;
 	this_type_void = false ;
 	this_method_static = false ;
-	this_callConv_instance = false ;
+	this_method_callConv_instance = false ;
 	this_method_sigArg_types = null ;
 	this_method_sigArgs = 0 ;
 	Stack.Push( o ) ;
@@ -604,7 +619,7 @@ static private object[] START_decls()
 	this_program += "int main( int argc , char** args , char** env )\n" +
                     "        {\n" +
                     "        const void** stack = alloca(0) ;\n" +
-                    "        " + this_start_class + "$Main(stack) ;\n" +
+                    "        " + this_start_class + "$Main() ;\n" +
                     "        }\n\n" ;
 	Stack.Push( o ) ;
 	return null ;
