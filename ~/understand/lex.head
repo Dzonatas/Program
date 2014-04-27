@@ -4,7 +4,7 @@ F ({L}|{N})
 D [0-9]
 C ({L}|{D}|{N})
 H ([a-fA-F]|{D})
-P [;,.:\{\}\[\]\(\)=]
+P [;,.:\{\}\[\]\(\)=/]
 WS [ \t\n\v\f]
 %{
 #include "grammar.tab.h"
@@ -38,3 +38,7 @@ struct _opcodes {
 %%
 "//".* 
 "#line".*
+
+"'.ctor'"		{ int i ; for( i = 5 ; i > 0 ; i-- ) unput( ".ctor"[i-1] ) ;  }
+"'.cctor'"		{ int i ; for( i = 6 ; i > 0 ; i-- ) unput( ".cctor"[i-1] ) ;  }
+
