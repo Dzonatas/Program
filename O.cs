@@ -87,6 +87,14 @@ class Stack
 						o[i] = null ;
 					}
 				else
+				if( rhs[0] == '$' )
+					{
+					if( rhs == t._Token._ )
+						o[i] = stack_pop() ;
+					else
+						o[i] = null ;
+					}
+				else
 					{
 					if( rhs == rhs.ToUpper() )
 						o[i] = stack_pop() ;
@@ -588,12 +596,14 @@ static private object[] decl_classHead_____classDecls____()
 
 static private object[] START_decls()
 	{
+	object[] o = Stack.Pop() ;
 	this_program += "int main( int argc , char** args , char** env )\n" +
                     "        {\n" +
                     "        const void** stack = alloca(0) ;\n" +
                     "        " + this_start_class + "_ctor(stack) ;\n" +
                     "        " + this_start_class + "$Main(stack) ;\n" +
                     "        }\n\n" ;
+	Stack.Push( o ) ;
 	return null ;
 	}
 
