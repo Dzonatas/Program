@@ -359,6 +359,10 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 		this_method_name = (string) ((object[])o[6])[1] ;
 	else
 		this_method_name = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
+	this_method_sigArgs = this_sigArgs ;
+	this_method_sigArg_types = this_sigArg_types ;
+	this_sigArgs = 0 ;
+	this_sigArg_types = null ;
 	Stack.Push( o ) ;
 	return null ;
 	}
@@ -415,7 +419,9 @@ static private object[] methodDecl_instr()
 		case "CALL":
 			string name = "" ;
 			name += this_className + this_methodName ;
-			int args = this_sigArgs + ( this_callConv_instance ? 1 : 0 ) ;
+			if( ! System.String.IsNullOrEmpty(this_instr_sigArg_types) )
+				name += this_instr_sigArg_types ;
+			int args = this_instr_sigArgs + ( this_callConv_instance ? 1 : 0 ) ;
 			this_stack_offset -= args ;
 			if( args == 0 )
 				this_program += "\n        " + name + "() ;" ;
@@ -428,9 +434,10 @@ static private object[] methodDecl_instr()
 			break ;
 		}
 	this_callConv_instance = false ;
-	this_sigArgs = 0 ;
 	this_type_void = false ;
 	this_program += "\n        }\n\n" ;
+	this_instr_sigArg_types = null ;
+	this_instr_sigArgs = 0 ;
 	log( "[instr] "+ this_instr ) ;
 	Stack.Push( o ) ;
 	return null ;
@@ -455,6 +462,10 @@ static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodNam
 		this_methodName = (string) ((object[])o[6])[1] ;
 	else
 		this_methodName = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
+	this_instr_sigArgs = this_sigArgs ;
+	this_instr_sigArg_types = this_sigArg_types ;
+	this_sigArgs = 0 ;
+	this_sigArg_types = null ;
 	Stack.Push( o ) ;
 	return null ;
 	}
@@ -463,7 +474,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	{
 	object[] o = Stack.Pop() ;
 	string p = "" ;
-	p = "static inline void " + this_class_id+this_method_name+this_sigArg_types + "(const void** args)" ;
+	p = "static inline void " + this_class_id+this_method_name+this_method_sigArg_types + "( const void** args )" ;
 	string s = "" ;
 	foreach( string ss in this_instr_list.Split('\n') )
 		{
@@ -482,11 +493,11 @@ static private object[] classDecl_methodHead_methodDecls____()
 	this_program += p + "\n\n" ;
 	this_instr_list = "" ;
 	this_stack_offset = 0 ;
-	this_sigArgs = 0 ;
 	this_type_void = false ;
 	this_method_static = false ;
 	this_callConv_instance = false ;
-	this_sigArg_types = "" ;
+	this_method_sigArg_types = null ;
+	this_method_sigArgs = 0 ;
 	Stack.Push( o ) ;
 	return null ;
 	}
@@ -581,7 +592,7 @@ static private object[] START_decls()
                     "        {\n" +
                     "        const void** stack = alloca(0) ;\n" +
                     "        " + this_start_class + "_ctor(stack) ;\n" +
-                    "        " + this_start_class + "$Main$string(stack) ;\n" +
+                    "        " + this_start_class + "$Main(stack) ;\n" +
                     "        }\n\n" ;
 	return null ;
 	}
