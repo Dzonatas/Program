@@ -53,22 +53,7 @@ static void Blogic()
 	#if SCREEN
 	_.screen.DrawCode() ;
 	#endif
-	this_program =
-		"#include <alloca.h>\n" +
-		"#include <unistd.h>\n\n" +
-		"struct _string\n" +
-		"        {\n" +
-		"        unsigned int length ;\n" +
-		"        char *       string ;\n" +
-		"        } ;\n\n" ;
-	this_program +=
-		"static inline void corlib$$System_Object_ctor(const void** args) {}\n\n" +
-		"static inline void corlib$$System_Console$WriteLine$string(const void** args)\n" +
-		"        {\n" +
-		"        const struct _string* s = *args ;\n" +
-		"        write( 0 , s->string , s->length ) ;\n" +
-		"        write( 0 , \"\\n\" , 1 ) ;\n" +
-		"        }\n\n" ;
+	this_program = "#include <BCL.HPP>\n\n" ;
 	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
 	jump_( ref b ) ;
 	Stack.Dump() ;

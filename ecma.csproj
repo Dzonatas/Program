@@ -143,5 +143,6 @@
     <None Include="~\understand\template.xslt.xml" />
     <None Include="~\test2\test.sh" />
     <None Include="~\test2\hello.world.cs" />
+    <None Include="#\BCL.HPP" />
   </ItemGroup>
 </Project>
