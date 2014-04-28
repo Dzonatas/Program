@@ -31,6 +31,18 @@
     <PlatformTarget>x86</PlatformTarget>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test2|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+    <Commandlineparameters>--shell="sh ../../~/compile.sh /tmp/5a7160ed-13d5-4923-a1f9-3e32a47d558a.il.text"</Commandlineparameters>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -101,14 +113,10 @@
     <Folder Include="#\.Second\" />
     <Folder Include="~\" />
     <Folder Include="~\understand\" />
+    <Folder Include="~\test2\" />
+    <Folder Include="ref\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\tmp\5a7160ed-13d5-4923-a1f9-3e32a47d558a.log.text">
-      <Link>ref\5a7160ed-13d5-4923-a1f9-3e32a47d558a.log.text</Link>
-    </None>
-    <None Include="..\..\..\..\..\tmp\5a7160ed-13d5-4923-a1f9-3e32a47d558a.program.c">
-      <Link>ref\5a7160ed-13d5-4923-a1f9-3e32a47d558a.program.c</Link>
-    </None>
     <None Include="~\test.sh" />
     <None Include="~\compile.sh" />
     <None Include="~\hello.mono.world.il.text" />
@@ -133,5 +141,7 @@
     <None Include="~\understand\opcode.xml" />
     <None Include="~\understand\opcode.y" />
     <None Include="~\understand\template.xslt.xml" />
+    <None Include="~\test2\test.sh" />
+    <None Include="~\test2\hello.world.cs" />
   </ItemGroup>
 </Project>
