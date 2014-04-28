@@ -19,7 +19,7 @@
         // Code size 7 (0x7)
         .maxstack 8
         ld: ldarg.0
-        call instance void valuetype [corlib]System.Object::.ctor()
+        call instance void valuetype [mscorlib]System.Object::.ctor()
         ret
     } // end of method instance default void .ctor()
 
@@ -32,7 +32,7 @@
         // Code size 11 (0xb)
         .maxstack 8
         ldstr "Hello Mono World!"
-        call void class [corlib]System.Console::WriteLine(string)
+        call void class [mscorlib]System.Console::WriteLine(string)
         ret
     } // end of method default void Main()
 
