@@ -125,6 +125,11 @@ class Stack
 		return o ;
 		}
 	}
+
+static private string resolve_type( object _type )
+	{
+	return ((Stack.Item.Token)((object[])_type)[1])._Token._ ;
+	}
 	
 static private object[] id_ID()
 	{
@@ -338,8 +343,6 @@ static private object[] callConv__instance__callConv()
 
 static private object[] type__void_()
 	{
-	this_type = "void" ;
-	this_type_void = true ;
 	Stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
@@ -363,7 +366,7 @@ static private object[] implAttr_implAttr__managed_()
 	Stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
-	
+
 static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____()
 	{
 	object[] o = Stack.Pop() ;
@@ -371,6 +374,7 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 		this_method_name = (string) ((object[])o[6])[1] ;
 	else
 		this_method_name = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
+	this_method_type = resolve_type( o[5] ) ;
 	this_method_sigArgs = this_sigArgs ;
 	this_method_sigArg_types = this_sigArg_types ;
 	this_method_callConv_instance = this_callConv_instance ;
@@ -447,13 +451,12 @@ static private object[] methodDecl_instr()
 				this_program += "() ;" ;
 			else
 				this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
-			if( !this_type_void )
+			if( this_instr_type != "void" )
 				this_stack_offset++ ;
 			break ;
 		case "RET":
 			break ;
 		}
-	this_type_void = false ;
 	this_program += "\n        }\n\n" ;
 	this_instr_sigArg_types = null ;
 	this_instr_sigArgs = 0 ;
@@ -482,6 +485,7 @@ static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodNam
 		this_methodName = (string) ((object[])o[6])[1] ;
 	else
 		this_methodName = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
+	this_instr_type = resolve_type( o[3] ) ;
 	this_instr_sigArgs = this_sigArgs ;
 	this_instr_sigArg_types = this_sigArg_types ;
 	this_instr_callConv_instance = this_callConv_instance ;
@@ -520,7 +524,6 @@ static private object[] classDecl_methodHead_methodDecls____()
 	this_program += p + "\n\n" ;
 	this_instr_list = "" ;
 	this_stack_offset = 0 ;
-	this_type_void = false ;
 	this_method_static = false ;
 	this_method_callConv_instance = false ;
 	this_method_sigArg_types = null ;
@@ -581,15 +584,15 @@ static private object[] type__class__className()
 
 static private object[] type__string_()
 	{
-	this_type = "string" ;
 	Stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
 static private object[] sigArg_paramAttr_type()
 	{
-	this_sigArg_types += "$" + this_type ;
-	Stack.Push( Stack.Pop() ) ;
+	object[] o = Stack.Pop() ;
+	this_sigArg_types += "$" + resolve_type( o[2] ) ;
+	Stack.Push( o ) ;
 	return null ;
 	}
 
@@ -703,7 +706,6 @@ static private object[] classAttr_classAttr__public_()
 static private object[] type__object_()
 	{
 	Stack.Push( Stack.Pop() ) ;
-	this_type = "object" ;
 	return null ;
 	}
 
