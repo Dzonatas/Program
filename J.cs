@@ -66,7 +66,8 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		}
 	catch( System.MissingMemberException e )
 		{
-		log( "["+e.GetType().ToString()+"] " + e.ToString() ) ;
+		log( "["+e.GetType().ToString()+"] " + e.Message ) ;
+		Stack.Push( Stack.Pop() ) ;
 		}
 	throw new ReducedAcception( state.reductionset[state.default_reduction.Value].rule ) ;
 
