@@ -23,6 +23,10 @@ class Stack
 				State = _0 ;
 				_Token = _1 ;
 				}
+			static public explicit operator string( Token t )
+				{
+				return t._Token._ ;
+				}
 			public override string ToString()
 					{
 					return _Token.ToString() ;
@@ -128,7 +132,7 @@ class Stack
 
 static private string resolve_type( object _type )
 	{
-	return ((Stack.Item.Token)((object[])_type)[1])._Token._ ;
+	return (string) (Stack.Item.Token)((object[])_type)[1] ;
 	}
 	
 static private object[] id_ID()
@@ -269,9 +273,9 @@ static private object[] slashedName_name1()
 static private object[] className_____name1_____slashedName()
 	{
 	object[] o = Stack.Pop() ;
-	this_className  = Regex.Replace( ((Stack.Item.Token)((object[])o[2])[1])._Token._, "[^A-Za-z_0-9]", "_") ;
+	this_className  = Regex.Replace( (string)((Stack.Item.Token)((object[])o[2])[1]), "[^A-Za-z_0-9]", "_") ;
 	this_className += "$$" ;
-	this_className += Regex.Replace( ((Stack.Item.Token)((object[])o[4])[1])._Token._, "[^A-Za-z_0-9]", "_") ;
+	this_className += Regex.Replace( (string)((Stack.Item.Token)((object[])o[4])[1]), "[^A-Za-z_0-9]", "_") ;
 	o[2] = ((object[])o[2])[1] ;
 	o[4] = ((object[])o[4])[1] ;
 	Stack.Push( o ) ;
@@ -287,7 +291,7 @@ static private object[] extendsClause__extends__className()
 static private object[] classHead___class__classAttr_id_extendsClause_implClause()
 	{
 	object[] o = Stack.Pop() ;
-	this_class_id = ( (Stack.Item.Token)((object[])o[3])[1] )._Token._ ;
+	this_class_id = (string) (Stack.Item.Token)((object[])o[3])[1] ;
 	Stack.Push( o ) ;
 	return null ;
 	}
@@ -373,7 +377,7 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 	if( ((object[])o[6])[1] is string )
 		this_method_name = (string) ((object[])o[6])[1] ;
 	else
-		this_method_name = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
+		this_method_name = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
 	this_method_type = resolve_type( o[5] ) ;
 	this_method_sigArgs = this_sigArgs ;
 	this_method_sigArg_types = this_sigArg_types ;
@@ -388,7 +392,7 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 static private object[] methodDecl___maxstack__int32()
 	{
 	object[] o = Stack.Pop() ;
-	this_maxstack = int.Parse( ((Stack.Item.Token)((object[])o[2])[1])._Token._ ) ;
+	this_maxstack = int.Parse( (string) (Stack.Item.Token)((object[])o[2])[1] ) ;
 	Stack.Push( o ) ;
 	return null ;
 	}
@@ -414,7 +418,7 @@ static private object[] instr_INSTR_NONE()
 static private object[] methodDecl_instr()
 	{
 	object[] o = Stack.Pop() ;
-	this_instr = ( (Stack.Item.Token)((object[])o[1])[1] )._Token._ ;
+	this_instr = (string) (Stack.Item.Token)((object[])o[1])[1] ;
 	this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 	string i = System.Guid.NewGuid().ToString() ;
 	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
@@ -484,7 +488,7 @@ static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodNam
 	if( ((object[])o[6])[1] is string )
 		this_methodName = (string) ((object[])o[6])[1] ;
 	else
-		this_methodName = "$" + ( (Stack.Item.Token)((object[])o[6])[1] )._Token._ ;
+		this_methodName = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
 	this_instr_type = resolve_type( o[3] ) ;
 	this_instr_sigArgs = this_sigArgs ;
 	this_instr_sigArg_types = this_sigArg_types ;
@@ -565,7 +569,7 @@ static private object[] methodDecl___entrypoint_()
 static private object[] compQstring_QSTRING()
 	{
 	object[] o = Stack.Pop() ;
-	this_string = ((Stack.Item.Token)o[1])._Token._ ;
+	this_string = (string) (Stack.Item.Token)o[1] ;
 	Stack.Push( o ) ;
 	return null ;
 	}
