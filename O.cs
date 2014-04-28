@@ -703,6 +703,7 @@ static private object[] classAttr_classAttr__public_()
 static private object[] type__object_()
 	{
 	Stack.Push( Stack.Pop() ) ;
+	this_type = "object" ;
 	return null ;
 	}
 
