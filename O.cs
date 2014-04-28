@@ -634,6 +634,126 @@ static private object[] _accept_START__end()
 	return null ;
 	}
 
+static private object[] publicKeyTokenHead___publickeytoken_________()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] hexbytes_HEXBYTE()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] hexbytes_hexbytes_HEXBYTE()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] bytes_hexbytes()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] assemblyRefDecl_publicKeyTokenHead_bytes____()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] customType_callConv_type_typeSpec________ctor______sigArgs0____()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] customHead___custom__customType________()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] customAttrDecl_customHead_bytes____()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] asmOrRefDecl_customAttrDecl()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] moduleHead___module__name1()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] classAttr_classAttr__public_()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] type__object_()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] methAttr_methAttr__private_()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] slashedName_slashedName_____name1()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] className_slashedName()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] sigArgs1_sigArgs1_____sigArg()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] classAttr_classAttr__nested___private_()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] methAttr_methAttr__virtual_()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] classDecl_classHead_____classDecls____()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
+static private object[] decl_moduleHead()
+	{
+	Stack.Push( Stack.Pop() ) ;
+	return null ;
+	}
+
 }
 
 
