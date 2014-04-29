@@ -1,8 +1,10 @@
 //|#(!)using System;
 using System.Text.RegularExpressions ;
+using System.Collections ;
 
 public partial class A335
 {
+static System.Collections.Generic.Dictionary<string,object> virtualset = new System.Collections.Generic.Dictionary<string,object>() ;
 
 class Stack
 	{
@@ -173,6 +175,31 @@ static private string resolve_typeSpec( object _typeSpec )
 		case "string" : return "BCL$$System_String" ;
 		}
 	return s ;
+	}
+
+static private bool resolved_methAttr_contains_virtual( object _methAttr )
+	{
+	string s = "" ;
+	object[] o = (object[])_methAttr ;
+	for( int i = 1 ; i < o.Length ; i++ )
+		{
+		if( o[i] is Stack.Item.Token )
+			{
+			string t = (string) (Stack.Item.Token)o[i] ;
+			if( "virtual" == (string) t )
+				return true ;
+			}
+		else
+		if( o[i] is object[] )
+			{
+			if( resolved_methAttr_contains_virtual( o[i] ) )
+				return true ;
+			}
+		else
+		if( ! ( o[i] == null ) )
+			throw new System.NotImplementedException( "Unresolved methAttr." ) ;
+		}
+	return false ;
 	}
 
 static private object[] id_ID()
@@ -416,6 +443,12 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 	this_method_sigArgs = this_sigArgs ;
 	this_method_sigArg_types = this_sigArg_types ;
 	this_method_callConv_instance = this_callConv_instance ;
+	string symbol = this_class_symbol + this_method_name + this_sigArg_types ;
+	if( resolved_methAttr_contains_virtual( o[2] ) )
+		{
+		if( ! virtualset.ContainsKey( symbol ) )
+			virtualset.Add( symbol, null ) ;
+		}
 	this_sigArgs = 0 ;
 	this_sigArg_types = null ;
 	this_callConv_instance = false ;
