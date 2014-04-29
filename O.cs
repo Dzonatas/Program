@@ -497,6 +497,7 @@ static private object[] methodDecl_instr()
 			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 			this_stack_offset++ ;
 			this_stack_offset -= iargs ;
+			this_program += "\n        extern void " + this_instr_symbol + "( const void** ) ;" ;
 			this_program += "\n        static const struct _object obj = { 0 } ;" ;
 			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &obj ;" ;
 			this_program += "\n        " + this_instr_symbol ;
@@ -554,7 +555,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	object[] o = Stack.Pop() ;
 	string p = "" ;
 	int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
-	p = "static inline void " + this_class_symbol+this_method_name+this_method_sigArg_types ;
+	p = "void " + this_class_symbol+this_method_name+this_method_sigArg_types ;
 	if( args == 0 )
 		p += "()" ;
 	else
