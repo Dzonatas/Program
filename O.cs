@@ -488,6 +488,10 @@ static private object[] methodDecl_instr()
 			break ;
 		case "RET":
 			break ;
+		case "NEWOBJ":
+			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ;
+			this_stack_offset++ ;
+			break ;
 		}
 	this_program += "\n        }\n\n" ;
 	this_instr_sigArg_types = null ;
