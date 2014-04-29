@@ -11,7 +11,6 @@ static string             this_instr ;
 static string             this_instr_list ;
 static string             this_program ;
 static string             this_methodName ;
-static string             this_className ;
 static string             this_string ;
 static int                this_stack_offset ;
 static int                this_sigArgs ;
@@ -26,6 +25,7 @@ static bool               this_callConv_instance ;
 static int                this_maxstack ;
 static bool               this_instr_callConv_instance ;
 static bool               this_method_callConv_instance ;
+static string             this_instr_symbol ;
 
 public struct Transition
 	{

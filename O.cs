@@ -132,9 +132,49 @@ class Stack
 
 static private string resolve_type( object _type )
 	{
-	return (string) (Stack.Item.Token)((object[])_type)[1] ;
+	string s = "" ;
+	object[] o = (object[])_type ;
+	for( int i = 1 ; i < o.Length ; i++ )
+		{
+		if( o[i] is Stack.Item.Token )
+			{
+			string t = (string) (Stack.Item.Token)o[i] ;
+			t = Regex.Replace( t, "[^A-Za-z_0-9/]", "_" ).Replace( "/", "$" ) ;
+			if( s.EndsWith("$") || t == "$" )
+				s += t ;
+			else
+				s += ( i == 1 ? "" : "_" ) + t ;
+			}
+		else
+		if( o[i] is object[] )
+			s += ( ( i == 1 || s.EndsWith("$") || s.EndsWith("__") ) ? "" : "_" ) + resolve_type( o[i] ) ;
+		else
+			throw new System.NotImplementedException( "Unresolved type." ) ;
+		}
+	return s ;
 	}
-	
+
+static private string resolve_typeSpec( object _typeSpec )
+	{
+	string s = (string) resolve_type( ((object[])_typeSpec)[1] ) ;
+	if( s.StartsWith( "class_" ) )
+		s = s.Substring( 6 ) ;
+	else
+	if( s.StartsWith( "valuetype_" ) )
+		s = s.Substring( 10 ) ;
+	if( s.StartsWith( "__mscorlib__" ) )
+		return "BCL$$" + s.Substring( 12 ) ;
+	else
+	if( s.StartsWith( "__corlib__" ) )
+		return "BCL$$" + s.Substring( 10 ) ;
+	switch( s )
+		{
+		case "object" : return "BCL$$System_Object" ;
+		case "string" : return "BCL$$System_String" ;
+		}
+	return s ;
+	}
+
 static private object[] id_ID()
 	{
 	Stack.Push( Stack.Pop() ) ;
@@ -264,21 +304,13 @@ static private object[] name1_DOTTEDNAME()
 
 static private object[] slashedName_name1()
 	{
-	object[] o = Stack.Pop() ;
-	o[1] = ((object[])o[1])[1] ;
-	Stack.Push( o ) ;
+	Stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
 static private object[] className_____name1_____slashedName()
 	{
-	object[] o = Stack.Pop() ;
-	this_className  = Regex.Replace( (string)((Stack.Item.Token)((object[])o[2])[1]), "[^A-Za-z_0-9]", "_") ;
-	this_className += "$$" ;
-	this_className += Regex.Replace( (string)((Stack.Item.Token)((object[])o[4])[1]), "[^A-Za-z_0-9]", "_") ;
-	o[2] = ((object[])o[2])[1] ;
-	o[4] = ((object[])o[4])[1] ;
-	Stack.Push( o ) ;
+	Stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
 
@@ -444,13 +476,9 @@ static private object[] methodDecl_instr()
 			this_stack_offset++ ;
 			break ;
 		case "CALL":
-			string name = "" ;
-			name += this_className + this_methodName ;
-			if( ! System.String.IsNullOrEmpty(this_instr_sigArg_types) )
-				name += this_instr_sigArg_types ;
 			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 			this_stack_offset -= iargs ;
-			this_program += "\n        " + name ;
+			this_program += "\n        " + this_instr_symbol ;
 			if( iargs == 0 )
 				this_program += "() ;" ;
 			else
@@ -490,6 +518,7 @@ static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodNam
 	else
 		this_methodName = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
 	this_instr_type = resolve_type( o[3] ) ;
+	this_instr_symbol = resolve_typeSpec( o[4] ) + this_methodName + this_sigArg_types ;
 	this_instr_sigArgs = this_sigArgs ;
 	this_instr_sigArg_types = this_sigArg_types ;
 	this_instr_callConv_instance = this_callConv_instance ;

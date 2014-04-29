@@ -7,9 +7,9 @@ struct _string
         char *       string ;
         } ;
 
-static inline void mscorlib$$System_Object_ctor(const void** args) {}
+static inline void BCL$$System_Object_ctor(const void** args) {}
 
-static inline void mscorlib$$System_Console$WriteLine$string(const void** args)
+static inline void BCL$$System_Console$WriteLine$string(const void** args)
         {
         const struct _string* s = *args ;
         write( 0 , s->string , s->length ) ;
