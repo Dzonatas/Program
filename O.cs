@@ -762,6 +762,7 @@ static private object[] className_slashedName()
 
 static private object[] sigArgs1_sigArgs1_____sigArg()
 	{
+	this_sigArgs++ ;
 	Stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
