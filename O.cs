@@ -324,6 +324,8 @@ static private object[] classHead___class__classAttr_id_extendsClause_implClause
 	{
 	object[] o = Stack.Pop() ;
 	this_class_id = (string) (Stack.Item.Token)((object[])o[3])[1] ;
+	this_class_symbol += ( System.String.IsNullOrEmpty( this_class_symbol ) ? "" : "$" ) ;
+	this_class_symbol +=  this_class_id ;
 	Stack.Push( o ) ;
 	return null ;
 	}
@@ -552,7 +554,7 @@ static private object[] classDecl_methodHead_methodDecls____()
 	object[] o = Stack.Pop() ;
 	string p = "" ;
 	int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
-	p = "static inline void " + this_class_id+this_method_name+this_method_sigArg_types ;
+	p = "static inline void " + this_class_symbol+this_method_name+this_method_sigArg_types ;
 	if( args == 0 )
 		p += "()" ;
 	else
@@ -606,9 +608,9 @@ static private object[] methodName_name1()
 
 static private object[] methodDecl___entrypoint_()
 	{
-	if( System.String.IsNullOrEmpty(this_class_id) )
+	if( System.String.IsNullOrEmpty(this_class_symbol) )
 		throw new System.NotImplementedException( "entrypoint outside class" ) ;
-	this_start_class = this_class_id ;
+	this_start_class = this_class_symbol ;
 	Stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
@@ -663,6 +665,7 @@ static private object[] sigArgs0_sigArgs1()
 static private object[] decl_classHead_____classDecls____()
 	{
 	this_class_id = "" ;
+	this_class_symbol = "" ;
 	Stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
@@ -799,6 +802,8 @@ static private object[] methAttr_methAttr__virtual_()
 
 static private object[] classDecl_classHead_____classDecls____()
 	{
+	string[] s = this_class_symbol.Split( '$' ) ;
+	this_class_symbol = System.String.Join( "$", s, 0, s.Length - 1 ) ;
 	Stack.Push( Stack.Pop() ) ;
 	return null ;
 	}
