@@ -21,3 +21,4 @@ static inline void BCL$$System_Console$WriteLine$string(const void** args)
         write( 0 , "\n" , 1 ) ;
         }
 
+static inline void BCL$$System_String$Concat$object$object$object(const void** args) {}
