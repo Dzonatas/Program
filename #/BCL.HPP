@@ -7,6 +7,11 @@ struct _string
         char *       string ;
         } ;
 
+struct _object
+        {
+        void* this ;
+        } ;
+
 static inline void BCL$$System_Object_ctor(const void** args) {}
 
 static inline void BCL$$System_Console$WriteLine$string(const void** args)

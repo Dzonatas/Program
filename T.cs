@@ -26,6 +26,7 @@ static int                this_maxstack ;
 static bool               this_instr_callConv_instance ;
 static bool               this_method_callConv_instance ;
 static string             this_instr_symbol ;
+static string             this_instr_class_symbol ;
 
 public struct Transition
 	{

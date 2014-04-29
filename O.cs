@@ -476,6 +476,7 @@ static private object[] methodDecl_instr()
 			this_stack_offset++ ;
 			break ;
 		case "CALL":
+			{
 			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 			this_stack_offset -= iargs ;
 			this_program += "\n        " + this_instr_symbol ;
@@ -486,12 +487,24 @@ static private object[] methodDecl_instr()
 			if( this_instr_type != "void" )
 				this_stack_offset++ ;
 			break ;
+			}
 		case "RET":
 			break ;
 		case "NEWOBJ":
-			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ;
+			{
+			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
+			this_stack_offset++ ;
+			this_stack_offset -= iargs ;
+			this_program += "\n        static const struct _object obj = { 0 } ;" ;
+			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &obj ;" ;
+			this_program += "\n        " + this_instr_symbol ;
+			if( iargs == 0 )
+				this_program += "() ;" ;
+			else
+				this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
 			this_stack_offset++ ;
 			break ;
+			}
 		}
 	this_program += "\n        }\n\n" ;
 	this_instr_sigArg_types = null ;
@@ -522,7 +535,8 @@ static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodNam
 	else
 		this_methodName = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
 	this_instr_type = resolve_type( o[3] ) ;
-	this_instr_symbol = resolve_typeSpec( o[4] ) + this_methodName + this_sigArg_types ;
+	this_instr_class_symbol = resolve_typeSpec( o[4] ) ;
+	this_instr_symbol = this_instr_class_symbol + this_methodName + this_sigArg_types ;
 	this_instr_sigArgs = this_sigArgs ;
 	this_instr_sigArg_types = this_sigArg_types ;
 	this_instr_callConv_instance = this_callConv_instance ;
