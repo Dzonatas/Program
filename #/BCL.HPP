@@ -28,13 +28,9 @@ static inline void BCL$$System_String$Concat$object$object$object(const void** a
 	static char buf[30] ;
 	struct _string a, b, c ;
 	static struct _string s = { 0, buf } ;
-	struct _object A, C ;
-	A = *(struct _object *) ((struct _object *)args[0])->this ;
-	b = *(struct _string *) ((struct _object *)args[1])->this ;
-	C = *(struct _object *) ((struct _object *)args[2])->this ;
-	const void* p[2] = { &A, &C } ;
-	a = (A).$ToString( p ) ;
-	c = (C).$ToString( p+1 ) ;
+	a = (*(struct _object *) ((struct _object *)args[0])->this).$ToString( args+0 ) ;
+	b =  *(struct _string *) ((struct _object *)args[1])->this ;
+	c = (*(struct _object *) ((struct _object *)args[2])->this).$ToString( args+2 ) ;
 	strncpy( s.string, a.string, a.length ) ;
 	strncpy( &s.string[a.length], b.string, b.length ) ;
 	strncpy( &s.string[a.length+b.length], c.string, c.length ) ;
