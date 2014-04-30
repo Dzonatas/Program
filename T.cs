@@ -29,6 +29,7 @@ static string             this_instr_symbol ;
 static string             this_instr_class_symbol ;
 static string             this_class_symbol ;
 static string[]           this_stack ;
+static bool               this_method_virtual ;
 
 public struct Transition
 	{

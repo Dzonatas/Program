@@ -442,7 +442,8 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 	this_method_sigArgs = this_sigArgs ;
 	this_method_sigArg_types = this_sigArg_types ;
 	this_method_callConv_instance = this_callConv_instance ;
-	if( resolved_methAttr_contains_virtual( o[2] ) )
+	this_method_virtual = resolved_methAttr_contains_virtual( o[2] ) ;
+	if( this_method_virtual )
 		{
 		if( ! virtualset.ContainsKey( this_class_symbol ) )
 			virtualset.Add( this_class_symbol, new List<string>() ) ;
@@ -609,7 +610,11 @@ static private object[] classDecl_methodHead_methodDecls____()
 	object[] o = Stack.Pop() ;
 	string p = "" ;
 	int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
-	p = "void " + this_class_symbol+this_method_name+this_method_sigArg_types ;
+	if( this_method_virtual )
+		p = "struct _string " ;
+	else
+		p = "void " ;
+	p += this_class_symbol+this_method_name+this_method_sigArg_types ;
 	if( args == 0 )
 		p += "()" ;
 	else
@@ -624,6 +629,8 @@ static private object[] classDecl_methodHead_methodDecls____()
 			}
 		s += "\n        " + ss+"( stack " + ( args == 0 ? ") ;" : ", args ) ;" ) ;
 		}
+	if( this_method_virtual )
+		s += "\n        return *(struct _string *)*stack ;" ;
 	p += "\n        {"
 	   + "\n        const void** stack = alloca( "+this_maxstack.ToString()+" ) ;"
 	   + s 
