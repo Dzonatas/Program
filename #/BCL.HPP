@@ -10,6 +10,7 @@ struct _string
 struct _object
         {
         void* this ;
+       	void (*$ToString)(const void**) ;
         } ;
 
 static inline void BCL$$System_Object_ctor(const void** args) {}

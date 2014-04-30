@@ -1,10 +1,10 @@
 //|#(!)using System;
 using System.Text.RegularExpressions ;
-using System.Collections ;
+using System.Collections.Generic ;
 
 public partial class A335
 {
-static System.Collections.Generic.Dictionary<string,object> virtualset = new System.Collections.Generic.Dictionary<string,object>() ;
+static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
 
 class Stack
 	{
@@ -443,11 +443,11 @@ static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_t
 	this_method_sigArgs = this_sigArgs ;
 	this_method_sigArg_types = this_sigArg_types ;
 	this_method_callConv_instance = this_callConv_instance ;
-	string symbol = this_class_symbol + this_method_name + this_sigArg_types ;
 	if( resolved_methAttr_contains_virtual( o[2] ) )
 		{
-		if( ! virtualset.ContainsKey( symbol ) )
-			virtualset.Add( symbol, null ) ;
+		if( ! virtualset.ContainsKey( this_class_symbol ) )
+			virtualset.Add( this_class_symbol, new List<string>() ) ;
+		((List<string>) virtualset[this_class_symbol]).Add( this_method_name + this_sigArg_types ) ;
 		}
 	this_sigArgs = 0 ;
 	this_sigArg_types = null ;
@@ -531,7 +531,8 @@ static private object[] methodDecl_instr()
 			this_stack_offset++ ;
 			this_stack_offset -= iargs ;
 			this_program += "\n        extern void " + this_instr_symbol + "( const void** ) ;" ;
-			this_program += "\n        static const struct _object obj = { 0 } ;" ;
+			this_program += "\n        extern struct _object " + this_instr_class_symbol + " ;" ;
+			this_program += "\n        static const struct _object obj = { &" + this_instr_class_symbol + " } ;" ;
 			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &obj ;" ;
 			this_program += "\n        " + this_instr_symbol ;
 			if( iargs == 0 )
@@ -712,6 +713,15 @@ static private object[] START_decls()
                     "        const void** stack = alloca(0) ;\n" +
                     "        " + this_start_class + "$Main() ;\n" +
                     "        }\n\n" ;
+    foreach( string class_symbol in virtualset.Keys )
+		{
+		List<string> l = (List<string>) virtualset[class_symbol] ;
+		this_program += "struct _object " + class_symbol + " =\n" +
+		                "        {\n" ;
+		foreach( string s in l )
+			this_program += "        ." + s + " = " + class_symbol + s + " ,\n" ;
+		this_program += "        } ;\n\n" ;
+		}
 	Stack.Push( o ) ;
 	return null ;
 	}
