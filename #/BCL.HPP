@@ -1,6 +1,7 @@
 #include <alloca.h>
 #include <unistd.h>
 #include <string.h>
+#include <malloc.h>
 
 struct _string
 	{
@@ -25,15 +26,15 @@ static inline void BCL$$System_Console$WriteLine$string(const void** args)
 
 static inline const struct _string BCL$$System_String$Concat$object$object$object(const void** args)
 	{
-	static char buf[30] ;
 	struct _string a, b, c ;
-	static struct _string s = { 0, buf } ;
 	a = (*(struct _object *) ((struct _object *)args[0])->this).$ToString( args+0 ) ;
 	b =  *(struct _string *) ((struct _object *)args[1])->this ;
 	c = (*(struct _object *) ((struct _object *)args[2])->this).$ToString( args+2 ) ;
+	static struct _string s ;
+	s.length = a.length + b.length + c.length ;
+	s.string = malloc(a.length + b.length + c.length) ;
 	strncpy( s.string, a.string, a.length ) ;
 	strncpy( &s.string[a.length], b.string, b.length ) ;
 	strncpy( &s.string[a.length+b.length], c.string, c.length ) ;
-	s.length = a.length + b.length + c.length ;
 	return s ;
 	}

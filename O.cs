@@ -5,6 +5,7 @@ using System.Collections.Generic ;
 public partial class A335
 {
 static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
+static List<object> freeset = new List<object>() ;
 
 class Stack
 	{
@@ -533,8 +534,11 @@ static private object[] methodDecl_instr()
 				}
 			this_program += "\n        " ;
 			if( this_instr_type == "string" )
+				{
 				this_program += "static struct _string item" + this_stack_offset.ToString() + " ;"
 					+ "\n        item" + this_stack_offset.ToString() + " = " ;
+				freeset.Add( this_stack_offset ) ;
+				}
 			this_program += this_instr_symbol ;
 			if( iargs == 0 )
 				this_program += "() ;" ;
@@ -551,7 +555,15 @@ static private object[] methodDecl_instr()
 			break ;
 			}
 		case "RET":
+			{
+			foreach( object z in freeset )
+				{
+				if( z is int )
+					this_program += "\n        free( ((struct _string *)stack[" + z + "])->string ) ;" ;
+				}
+			freeset.Clear() ;
 			break ;
+			}
 		case "NEWOBJ":
 			{
 			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
