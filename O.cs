@@ -179,7 +179,6 @@ static private string resolve_typeSpec( object _typeSpec )
 
 static private bool resolved_methAttr_contains_virtual( object _methAttr )
 	{
-	string s = "" ;
 	object[] o = (object[])_methAttr ;
 	for( int i = 1 ; i < o.Length ; i++ )
 		{
