@@ -23,7 +23,7 @@ static inline void BCL$$System_Console$WriteLine$string(const void** args)
 	write( 0 , "\n" , 1 ) ;
 	}
 
-static inline void BCL$$System_String$Concat$object$object$object(const void** args)
+static inline const struct _string BCL$$System_String$Concat$object$object$object(const void** args)
 	{
 	static char buf[30] ;
 	struct _string a, b, c ;
@@ -35,5 +35,5 @@ static inline void BCL$$System_String$Concat$object$object$object(const void** a
 	strncpy( &s.string[a.length], b.string, b.length ) ;
 	strncpy( &s.string[a.length+b.length], c.string, c.length ) ;
 	s.length = a.length + b.length + c.length ;
-	args[0] = &s ;
+	return s ;
 	}

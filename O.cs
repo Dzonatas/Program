@@ -531,11 +531,18 @@ static private object[] methodDecl_instr()
 						}
 					}
 				}
-			this_program += "\n        " + this_instr_symbol ;
+			this_program += "\n        " ;
+			if( this_instr_type == "string" )
+				this_program += "static struct _string item" + this_stack_offset.ToString() + " ;"
+					+ "\n        item" + this_stack_offset.ToString() + " = " ;
+			this_program += this_instr_symbol ;
 			if( iargs == 0 )
 				this_program += "() ;" ;
 			else
 				this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
+			if( this_instr_type == "string" )
+				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = "
+					+ "&item" + this_stack_offset.ToString() + " ;" ;
 			if( this_instr_type != "void" )
 				{
 				this_stack[this_stack_offset] = this_instr_type ;
