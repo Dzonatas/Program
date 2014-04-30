@@ -459,6 +459,7 @@ static private object[] methodDecl___maxstack__int32()
 	{
 	object[] o = Stack.Pop() ;
 	this_maxstack = int.Parse( (string) (Stack.Item.Token)((object[])o[2])[1] ) ;
+	this_stack = new string[this_maxstack] ;
 	Stack.Push( o ) ;
 	return null ;
 	}
@@ -500,6 +501,7 @@ static private object[] methodDecl_instr()
 		{
 		case "LDARG_0":
 			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = args[0] ;" ;
+			this_stack[this_stack_offset] = "object" ;
 			this_stack_offset++ ;
 			break ;
 		case "LDSTR":
@@ -507,19 +509,37 @@ static private object[] methodDecl_instr()
 				+ this_string.Length.ToString()
 				+ " , \"" + this_string + "\" } ;" ;
 			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &s ;" ;
+			this_stack[this_stack_offset] = "string" ;
 			this_stack_offset++ ;
 			break ;
 		case "CALL":
 			{
 			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 			this_stack_offset -= iargs ;
+			if( !System.String.IsNullOrEmpty(this_instr_sigArg_types) )
+				{
+				string[] s = this_instr_sigArg_types.Split( '$' ) ;
+				for( int a = ( this_instr_callConv_instance ? 2 : 1 ) ; a < iargs ; a++ )
+					{
+					int offset = this_stack_offset+a-1+( this_instr_callConv_instance ? 1 : 0 ) ;
+					if( s[a] != this_stack[offset] )
+						{
+						this_program += "\n        static struct _object obj = { 0 } ;" ;
+						this_program += "\n        obj.this = (void*) stack["+offset+"] ;" ;
+						this_program += "\n        stack[" + offset + "] =  &obj;" ;
+						}
+					}
+				}
 			this_program += "\n        " + this_instr_symbol ;
 			if( iargs == 0 )
 				this_program += "() ;" ;
 			else
 				this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
 			if( this_instr_type != "void" )
+				{
+				this_stack[this_stack_offset] = this_instr_type ;
 				this_stack_offset++ ;
+				}
 			break ;
 			}
 		case "RET":
@@ -538,6 +558,7 @@ static private object[] methodDecl_instr()
 				this_program += "() ;" ;
 			else
 				this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
+			this_stack[this_stack_offset] = "object" ;
 			this_stack_offset++ ;
 			break ;
 			}

@@ -28,6 +28,7 @@ static bool               this_method_callConv_instance ;
 static string             this_instr_symbol ;
 static string             this_instr_class_symbol ;
 static string             this_class_symbol ;
+static string[]           this_stack ;
 
 public struct Transition
 	{
