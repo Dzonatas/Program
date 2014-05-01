@@ -58,7 +58,11 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		goto _jump ;
 		}
 	log( "[Default] " + b.yy ) ;
-	default_ :
+	if( b.yy == _default && ! state.default_reduction.HasValue )
+		{
+		log( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
+		throw new System.NotImplementedException( "Missed token?" ) ;
+		}
 	this_xo_t = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
 	try {
 		log( "[reduce] " + this_xo_t.ReductionMethod ) ;
