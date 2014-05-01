@@ -507,39 +507,6 @@ static bool xml_get_()
 	//state   = 0; //int.MaxValue ;s
 	return false ;
 	}
-
-struct xyzzyy
-	{
-	internal int    x ;
-	internal int    y ;
-	internal int    zz ;
-	internal int    yy ;
-	internal xyzzyy( int x, int y, int z )
-		{
-		this.x = x ;
-		this.y = y ;
-		this.zz = z ;
-		this.yy = 0 ;
-		}
-	internal xyzzyy( int x, int y, int zz, int yy )
-		{
-		this.x = x ;
-		this.y = y ;
-		this.zz = zz ;
-		this.yy = yy ;
-		}
-	internal xyzzyy transition( int z )
-		{
-		return new xyzzyy( x, y, z, yy ) ;
-		}
-	public override string ToString()
-			{
-			if( y < xo_t[x].rhs.Length )
-				return string.Format("[{0},{1};{2},{3}]",xo_t[x],xo_t[x][y],zz,yy) ;
-			return string.Format("[{0},{1};{2},{3}]",xo_t[x],y,zz,yy) ;
-			}
-	}
-	
 }
 
 #if XML_BISON_REPORT

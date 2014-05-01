@@ -19,9 +19,9 @@ class Stack
 			}
 		public class Token : Item
 			{
-			public xyzzyy  State ;
+			public planet  State ;
 			public _.Token _Token ;
-			public Token( xyzzyy _0, _.Token _1 )
+			public Token( planet _0, _.Token _1 )
 				{
 				State = _0 ;
 				_Token = _1 ;

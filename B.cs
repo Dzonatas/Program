@@ -3,12 +3,12 @@ using System.Extensions ;
 
 partial class A335
 {
-static private void beginning( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_nybbles,_4_integers_used,_spase
+static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_effective_nybbles,_4_integers_used,_spase
 	{
 	State      state = stateset[b.zz] ;
 	setstate:
 	request( ref state ) ;
-	xyzzyy     xyzzy ;
+	planet     xyzzy ;
 
 	log( "[State] " + state ) ;
 	if( ! token.HasValue )
@@ -28,7 +28,7 @@ static private void beginning( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_
 		Stack.Push( new Stack.Item.Token( b, token.Value ) ) ;
 		token = null ;
 		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
-		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, _default ) ;
+		xyzzy = new planet( t.item.rule, t.item.point, t.state, _default ) ;
 		log( "[Shift] " + t ) ;
 		goto new_state ;
 		}
@@ -51,7 +51,7 @@ static private void beginning( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_
 	if( state.gotoset.ContainsKey( b.yy ) )
 		{
 		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
-		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
+		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		log( "[Goto] " + t ) ;
 		goto new_state ;
 		}
@@ -91,7 +91,7 @@ static private void beginning( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_
 	if( state.gotoset.ContainsKey( b.yy ) )
 		{
 		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
-		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
+		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		goto new_state ;
 		}
 	if( token.Value.c != 0 )
@@ -152,7 +152,7 @@ static void Begin()
 	_.screen.DrawCode() ;
 	#endif
 	this_program = "#include <BCL.HPP>\n\n" ;
-	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
+	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	beginning( ref b ) ;
 	Stack.Dump() ;
 	program_ready() ;

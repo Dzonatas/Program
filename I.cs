@@ -61,7 +61,7 @@ public struct Itemset
 struct Item
 	{
 	public _.Token                       token ;
-	public xyzzyy                        state ;
+	public planet                        state ;
 	public bool                          imaginary ;
 	public bool                          stacked ;
 	public bool                          existential ;
@@ -89,7 +89,7 @@ struct Item
 		{
 		return i.token ;
 		}
-	public static implicit operator xyzzyy( Item i )
+	public static implicit operator planet( Item i )
 		{
 		return i.state ;
 		}
@@ -105,7 +105,7 @@ struct Item
 		{
 		return token.ToString() ;
 		}
-	public Item( _.Token token, xyzzyy state )
+	public Item( _.Token token, planet state )
 		{
 		this.token       = token ;
 		this.state       = state ;
