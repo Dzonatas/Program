@@ -3,13 +3,111 @@ using System.Extensions ;
 
 partial class A335
 {
+static private void beginning( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_nybbles,_4_integers_used,_spase
+	{
+	State      state = stateset[b.zz] ;
+	setstate:
+	request( ref state ) ;
+	xyzzyy     xyzzy ;
+
+	log( "[State] " + state ) ;
+	if( ! token.HasValue )
+		{
+		token = input( ref Hacked.Materials.H.Line ) ;
+		log( "[Token] " + token ) ;
+		}
+	if( state.lookaheadset.Contains( xml_translate[token.Value.c] ) )
+		{
+		b.yy = xml_translate[token.Value.c] ;
+		log( "[Lookahead] " + token + " -> " + b.yy ) ;
+		goto reduce ;
+		}
+	if( state.shiftset.ContainsKey( xml_translate[token.Value.c] ) )
+		{
+		b.yy  = xml_translate[token.Value.c] ;
+		Stack.Push( new Stack.Item.Token( b, token.Value ) ) ;
+		token = null ;
+		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
+		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, _default ) ;
+		log( "[Shift] " + t ) ;
+		goto new_state ;
+		}
+	reduce :
+	foreach( Reduction rr in state.reductionset )
+		if( rr == b.yy )
+			{
+			if( ! rr.enabled )
+				{
+				log( "[Disabled] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
+				continue ;
+				}
+			log( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
+			b.yy = xo_t[rr.rule] ;
+			goto transit ;
+			}
+	if( state.default_reduction.HasValue )
+		b.yy = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
+	transit:
+	if( state.gotoset.ContainsKey( b.yy ) )
+		{
+		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
+		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
+		log( "[Goto] " + t ) ;
+		goto new_state ;
+		}
+	log( "[Default] " + b.yy ) ;
+	if( b.yy == _default && ! state.default_reduction.HasValue )
+		{
+		log( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
+		throw new System.NotImplementedException( "Missed token?" ) ;
+		}
+	this_xo_t = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
+	try {
+		log( "[reduce] " + this_xo_t.ReductionMethod ) ;
+		typeof(A335).InvokeMember( this_xo_t.ReductionMethod,
+			System.Reflection.BindingFlags.InvokeMethod |
+			System.Reflection.BindingFlags.NonPublic |
+			System.Reflection.BindingFlags.Static,
+			null, null, null ) ;
+		}
+	catch( System.MissingMemberException e )
+		{
+		log( "["+e.GetType().ToString()+"] " + e.Message ) ;
+		Stack.Push( Stack.Pop() ) ;
+		}
+	throw new ReducedAcception( state.reductionset[state.default_reduction.Value].rule ) ;
+
+	new_state :
+	try {
+		beginning( ref xyzzy ) ;
+		b.yy = xyzzy.yy ;
+		}
+	catch ( ReducedAcception bb )
+		{
+		if( --bb.backup > 0 )
+			throw bb ;
+		b.yy = xo_t[bb.rule] ;
+		}
+	if( state.gotoset.ContainsKey( b.yy ) )
+		{
+		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
+		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
+		goto new_state ;
+		}
+	if( token.Value.c != 0 )
+		throw new System.NotImplementedException( "token != $end" ) ;
+	return ;
+	}
+
+
+
 static string b_two_c_ ;//;//#(<#>)'['([public|private]:"BIT":...)']'
 string binary_compiles_and_linked_p ;//;_FIX:'&'
 static int    b_v      ;//view:locution[,view:orbit]
 
 //[static____] /*{::}*/ string                     b_io_path_four ; //{:(_counted):} //blit.prompt.IPVI(.ico)
 
-static void Blogic()
+static void Begin()
 	{
 	_.assimulation() ;
 	//Console.WriteLine( "symbolset={0} tokenset={1}", xml_symbolset.Count, xml_tokenset.Count ) ;
@@ -55,7 +153,7 @@ static void Blogic()
 	#endif
 	this_program = "#include <BCL.HPP>\n\n" ;
 	xyzzyy b = new xyzzyy(0,0,0,(-ʄ)._default(_default)) ;
-	jump_( ref b ) ;
+	beginning( ref b ) ;
 	Stack.Dump() ;
 	program_ready() ;
 	program( this_program ) ;

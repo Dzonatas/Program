@@ -13,7 +13,7 @@ public static void Main( string[] args )
 	Application.Program.Parse( args ) ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
 	if( Application.Parameter.Value("synopsis") == "false" ) 
-		Blogic() ;
+		Begin() ;
 #if RELEASE
 	else
 		Tutorial() ;
