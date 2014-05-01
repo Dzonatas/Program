@@ -15,13 +15,16 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	request( ref state ) ;
 	xyzzyy     xyzzy ;
 	
+	log( "[State] " + state ) ;
 	if( ! token.HasValue ) 
 		{
 		token = input( ref Hacked.Materials.H.Line ) ;
+		log( "[Token] " + token ) ;
 		}
 	if( state.lookaheadset.Contains( xml_translate[token.Value.c] ) )
 		{
 		b.yy = xml_translate[token.Value.c] ;
+		log( "[Lookahead] " + token + " -> " + b.yy ) ;
 		goto reduce ;
 		}
 	if( state.shiftset.ContainsKey( xml_translate[token.Value.c] ) )
@@ -32,6 +35,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
 		state.zlog.Add( t ) ;
 		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, _default ) ;
+		log( "[Shift] " + t ) ;
 		goto _jump ;
 		}
 	reduce :
@@ -39,6 +43,7 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		if( rr == b.yy )
 			{
 			state.zlog.Add( rr ) ;
+			log( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 			b.yy = xo_t[rr.rule] ;
 			if( ! rr.enabled )
 				2.Beep() ;
@@ -52,8 +57,10 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
 		state.zlog.Add( t ) ;
 		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
+		log( "[Goto] " + t ) ;
 		goto _jump ;
 		}
+	log( "[Default] " + b.yy ) ;
 	default_ :
 	this_xo_t = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
 	try {
