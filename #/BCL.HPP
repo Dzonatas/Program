@@ -2,20 +2,30 @@
 #include <unistd.h>
 #include <string.h>
 #include <malloc.h>
+#include <stdio.h>
 
-struct _string
+union _  //regression: string (void*) -> managed pointer (void**) -> atomic matrix (void***…)
 	{
-	unsigned int length ;
-	char *       string ;
+	struct _base
+		{
+		void* managed ;
+		void* pointer ;
+		} base;
+
+	struct _string
+		{
+		unsigned int length ;
+		char *       string ;
+		} string ;
+
+	struct _object
+		{
+		void*  this ;
+		struct _string (*$ToString)(const void**) ;
+		} object ;
 	} ;
 
-struct _object
-	{
-	void* this ;
-	struct _string (*$ToString)(const void**) ;
-	} ;
-
-static inline void BCL$$System_Object_ctor(const void** args) {}
+static inline void BCL$$System_Object_ctor(const void** args) {  }
 
 static inline void BCL$$System_Console$WriteLine$string(const void** args)
 	{
@@ -27,9 +37,18 @@ static inline void BCL$$System_Console$WriteLine$string(const void** args)
 static inline const struct _string BCL$$System_String$Concat$object$object$object(const void** args)
 	{
 	struct _string a, b, c ;
-	a = (*(struct _object *) ((struct _object *)args[0])->this).$ToString( args+0 ) ;
-	b =  *(struct _string *) ((struct _object *)args[1])->this ;
-	c = (*(struct _object *) ((struct _object *)args[2])->this).$ToString( args+2 ) ;
+	if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )
+		a =  ((union _*)args[0])->string ;
+	else
+		a = (*(struct _object *) ((struct _object *)args[0])->this).$ToString( args+0 ) ;
+	if( ((union _*)args[1])->base.managed && ((union _*)args[1])->base.pointer )
+		b =  ((union _*)args[1])->string ;
+	else
+		b = (*(struct _object *) ((struct _object *)args[1])->this).$ToString( args+1 ) ;
+	if( ((union _*)args[2])->base.managed && ((union _*)args[2])->base.pointer )
+		c =  ((union _*)args[2])->string ;
+	else
+		c = (*(struct _object *) ((struct _object *)args[2])->this).$ToString( args+2 ) ;
 	static struct _string s ;
 	s.length = a.length + b.length + c.length ;
 	s.string = malloc(a.length + b.length + c.length) ;

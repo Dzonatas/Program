@@ -518,6 +518,7 @@ static private object[] methodDecl_instr()
 			{
 			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 			this_stack_offset -= iargs ;
+			/*
 			if( !System.String.IsNullOrEmpty(this_instr_sigArg_types) )
 				{
 				string[] s = this_instr_sigArg_types.Split( '$' ) ;
@@ -532,6 +533,7 @@ static private object[] methodDecl_instr()
 						}
 					}
 				}
+			*/
 			this_program += "\n        " ;
 			if( this_instr_type == "string" )
 				{
