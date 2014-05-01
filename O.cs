@@ -119,11 +119,13 @@ class Stack
 				object[] _o = (object[]) _ ;
 				string lhs = ((Xo_t)(_o[0])).lhs.s ;
 				string rhs = this_xo_t.rhs[i-1].s ;
-				log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
 				if( lhs == rhs )
 					o[i] = stack_pop() ;
 				else
+					{
+					log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
 					o[i] = null ;
+					}
 				}
 			else
 				throw new System.NotImplementedException( "Unknown type on stack." ) ;
