@@ -1,3 +1,4 @@
+using System.Diagnostics ;
 using System.Extensions ;
 //using System.Runtime ;//[br_ide:(('target'![branch:.]))
 
@@ -10,16 +11,16 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	request( ref state ) ;
 	planet     xyzzy ;
 
-	log( "[State] " + state ) ;
+	Debug.WriteLine( "[State] " + state ) ;
 	if( ! token.HasValue )
 		{
 		token = input( ref Hacked.Materials.H.Line ) ;
-		log( "[Token] " + token ) ;
+		Debug.WriteLine( "[Token] " + token ) ;
 		}
 	if( state.lookaheadset.Contains( xml_translate[token.Value.c] ) )
 		{
 		b.yy = xml_translate[token.Value.c] ;
-		log( "[Lookahead] " + token + " -> " + b.yy ) ;
+		Debug.WriteLine( "[Lookahead] " + token + " -> " + b.yy ) ;
 		goto reduce ;
 		}
 	if( state.shiftset.ContainsKey( xml_translate[token.Value.c] ) )
@@ -29,7 +30,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		token = null ;
 		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, _default ) ;
-		log( "[Shift] " + t ) ;
+		Debug.WriteLine( "[Shift] " + t ) ;
 		goto new_state ;
 		}
 	reduce :
@@ -38,10 +39,10 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			{
 			if( ! rr.enabled )
 				{
-				log( "[Disabled] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
+				Debug.WriteLine( "[Disabled] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 				continue ;
 				}
-			log( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
+			Debug.WriteLine( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 			b.yy = xo_t[rr.rule] ;
 			goto transit ;
 			}
@@ -52,18 +53,18 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		{
 		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
-		log( "[Goto] " + t ) ;
+		Debug.WriteLine( "[Goto] " + t ) ;
 		goto new_state ;
 		}
-	log( "[Default] " + b.yy ) ;
+	Debug.WriteLine( "[Default] " + b.yy ) ;
 	if( b.yy == _default && ! state.default_reduction.HasValue )
 		{
-		log( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
+		Debug.WriteLine( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
 		throw new System.NotImplementedException( "Missed token?" ) ;
 		}
 	this_xo_t = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
 	try {
-		log( "[reduce] " + this_xo_t.ReductionMethod ) ;
+		Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
 		typeof(A335).InvokeMember( this_xo_t.ReductionMethod,
 			System.Reflection.BindingFlags.InvokeMethod |
 			System.Reflection.BindingFlags.NonPublic |
@@ -72,7 +73,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		}
 	catch( System.MissingMemberException e )
 		{
-		log( "["+e.GetType().ToString()+"] " + e.Message ) ;
+		Debug.WriteLine( "["+e.GetType().ToString()+"] " + e.Message ) ;
 		Stack.Push( Stack.Pop() ) ;
 		}
 	throw new ReducedAcception( state.reductionset[state.default_reduction.Value].rule ) ;
