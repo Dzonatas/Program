@@ -41,10 +41,13 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	foreach( Reduction rr in state.reductionset )
 		if( rr == b.yy )
 			{
+			if( ! rr.enabled )
+				{
+				log( "[Disabled] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
+				continue ;
+				}
 			log( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 			b.yy = xo_t[rr.rule] ;
-			if( ! rr.enabled )
-				2.Beep() ;
 			goto transit ;
 			}
 	if( state.default_reduction.HasValue )
