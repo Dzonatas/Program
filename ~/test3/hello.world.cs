@@ -1,4 +1,4 @@
-public class Test2
+public class Test3
 	{
 	static string[] text = { "Hello", "World" } ;
 	static void Main()
@@ -9,7 +9,7 @@ public class Test2
 		switch( i )
 			{
 			case 0  : a = text[0] ; break ;
-			case 2  : a = text[2] ; break ;
+			case 2  : a = text[1] ; break ;
 			default : a = " "     ; break ;
 			}
 		b += a ;
