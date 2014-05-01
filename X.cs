@@ -391,7 +391,6 @@ static void xml_get_state()
 	x_state.lookaheadset = new List<int>() ;
 	x_state.default_item = null ;
 	x_state.default_reduction = null ;
-	x_state.zlog = new List<object>() ;
 	}
 
 static void xml_get_item()

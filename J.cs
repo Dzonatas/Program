@@ -33,7 +33,6 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		Stack.Push( new Stack.Item.Token( b, token.Value ) ) ;
 		token = null ;
 		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
-		state.zlog.Add( t ) ;
 		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, _default ) ;
 		log( "[Shift] " + t ) ;
 		goto _jump ;
@@ -42,7 +41,6 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	foreach( Reduction rr in state.reductionset )
 		if( rr == b.yy )
 			{
-			state.zlog.Add( rr ) ;
 			log( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 			b.yy = xo_t[rr.rule] ;
 			if( ! rr.enabled )
@@ -55,7 +53,6 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	if( state.gotoset.ContainsKey( b.yy ) )
 		{
 		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
-		state.zlog.Add( t ) ;
 		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		log( "[Goto] " + t ) ;
 		goto _jump ;
@@ -85,7 +82,6 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 		}
 	catch ( ReducedAcception bb )
 		{
-		state.zlog.Add( bb ) ;
 		if( --bb.backup > 0 )
 			throw bb ;
 		b.yy = xo_t[bb.rule] ;
@@ -93,7 +89,6 @@ static void jump_( ref xyzzyy b )  //_FIXT:_not_replicative,_8*2=16_effective_ny
 	if( state.gotoset.ContainsKey( b.yy ) )
 		{
 		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
-		state.zlog.Add( t ) ;
 		xyzzy = new xyzzyy( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		goto _jump ;
 		}

@@ -38,7 +38,6 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 	public Reduction []         reductionset ;
 	public Nullable<int>        default_item ;
 	public Nullable<int>        default_reduction ;
-	public List<object>         zlog ;
 	public List<string>         zla
 		{
 		get { return list() ; }

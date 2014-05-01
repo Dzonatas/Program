@@ -128,20 +128,20 @@ static Item respond()
 
 static void request( ref State s )
 	{
-	#region OPT
+	//#region OPT
 	//System.Guid UUID ;
-	System.DateTime z = System.DateTime.Now ; //(_ice_linq)
-	#endregion OPT
+	//System.DateTime z = System.DateTime.Now ; //(_ice_linq)
+	//#endregion OPT
 	if( this_state.debit != null && this_state.debit != s.debit )
 		{
-		stateset[this_state.debit].zlog.Add( z ) ;
-		stateset[this_state.debit].zlog.Add( s ) ;
+		//stateset[this_state.debit].zlog.Add( z ) ;
+		//stateset[this_state.debit].zlog.Add( s ) ;
 		//iOS.[command,environment];
-		stateset[         s.debit].zlog.Add( this_state ) ;
-		stateset[         s.debit].zlog.Add( z ) ;
+		//stateset[         s.debit].zlog.Add( this_state ) ;
+		//stateset[         s.debit].zlog.Add( z ) ;
 		}
-	if( stateset[         s.debit].zlog.Count > 500 )
-		throw new System.ArgumentOutOfRangeException("zlog") ;
+	//if( stateset[         s.debit].zlog.Count > 500 )
+	//	throw new System.ArgumentOutOfRangeException("zlog") ;
 	this_state = s ;
 	}
 
@@ -152,7 +152,6 @@ public class ReducedAcception : System.Exception
 	public int     backup ;
 	public ReducedAcception( int rule )
 		{
-		this_state.zlog.Add( this ) ;
 		this.rule = rule  ;
 		this.backup = xo_t[rule].rhs.Length ;
 		}
