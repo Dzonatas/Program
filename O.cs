@@ -96,19 +96,22 @@ class Object : Stack.Item
 		}
 	}
 
-
 class Automatrix : Object
 	{
-	public Automatrix() : base( this_xo_t.rhs.Length ) {}
+	public Automatrix() : base( this_xo_t.rhs.Length ) 
+		{
+		main() ;
+		}
 	public new object this[int n]
 		{
 		get { return o[n] ; }
 		set { o[n] = value ; }
 		}
+	virtual protected void main() {}
 	}
 
 [Automaton] class   id_ID
-	: Automatrix {}
+	: Automatrix	{}
 
 [Automaton] class   name1_id
 	: Automatrix {}
@@ -177,10 +180,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   classHead___class__classAttr_id_extendsClause_implClause
-	: Automatrix
-	{
-	public classHead___class__classAttr_id_extendsClause_implClause()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_class_id = (string) (Stack.Item.Token)((object[])o[3])[1] ;
 		this_class_symbol += ( System.String.IsNullOrEmpty( this_class_symbol ) ? "" : "$" ) ;
@@ -210,10 +211,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   callConv__instance__callConv
-	: Automatrix
-	{
-	public callConv__instance__callConv()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_callConv_instance = true ;
 		}
@@ -223,10 +222,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   methodName___ctor_
-	: Automatrix
-	{
-	public methodName___ctor_()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		o[1] = "_ctor" ;
 		}
@@ -239,10 +236,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____
-	: Automatrix
-	{
-	public methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		if( ((object[])o[6])[1] is string )
 			this_method_name = (string) ((object[])o[6])[1] ;
@@ -266,9 +261,8 @@ class Automatrix : Object
 	}
 
 [Automaton] class   methodDecl___maxstack__int32
-	: Automatrix
-	{
-	public methodDecl___maxstack__int32()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_maxstack = int.Parse( (string) (Stack.Item.Token)((object[])o[2])[1] ) ;
 		this_stack = new string[this_maxstack] ;
@@ -285,10 +279,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   methodDecl_instr
-	: Automatrix
-	{
-	public methodDecl_instr()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		object[] o = Stack.Pop() ;
 		this_instr = (string) (Stack.Item.Token)((object[])o[1])[1] ;
@@ -404,10 +396,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
-	: Automatrix
-	{
-	public instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		if( ((object[])o[6])[1] is string )
 			this_methodName = (string) ((object[])o[6])[1] ;
@@ -426,10 +416,8 @@ class Automatrix : Object
 	}
 
 [Automaton] class   classDecl_methodHead_methodDecls____
-	: Automatrix
-	{
-	public classDecl_methodHead_methodDecls____()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		string p = "" ;
 		int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
@@ -473,10 +461,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   methAttr_methAttr__static_
-	: Automatrix
-	{
-	public methAttr_methAttr__static_()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_method_static = true ;
 		}
@@ -486,10 +472,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   methodDecl___entrypoint_
-	: Automatrix
-	{
-	public methodDecl___entrypoint_()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		if( System.String.IsNullOrEmpty(this_class_symbol) )
 			throw new System.NotImplementedException( "entrypoint outside class" ) ;
@@ -498,10 +482,8 @@ class Automatrix : Object
 	}
 
 [Automaton] class   compQstring_QSTRING
-	: Automatrix
-	{
-	public compQstring_QSTRING()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_string = (string) (Stack.Item.Token)o[1] ;
 		}
@@ -517,20 +499,16 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   sigArg_paramAttr_type
-	: Automatrix
-	{
-	public sigArg_paramAttr_type()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_sigArg_types += "$" + resolve_type( o[2] ) ;
 		}
 	}
 
 [Automaton] class   sigArgs1_sigArg
-	: Automatrix
-	{
-	public sigArgs1_sigArg()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_sigArgs++ ;
 		}
@@ -540,10 +518,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   decl_classHead_____classDecls____
-	: Automatrix
-	{
-	public decl_classHead_____classDecls____()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_class_id = "" ;
 		this_class_symbol = "" ;
@@ -551,10 +527,8 @@ class Automatrix : Object
 	}
 
 [Automaton] class   START_decls
-	: Automatrix
-	{
-	public START_decls()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_program += "int main( int argc , char** args , char** env )\n" +
 	                    "        {\n" +
@@ -574,10 +548,8 @@ class Automatrix : Object
 	}
 
 [Automaton] class   _accept_START__end
-	: Automatrix
-	{
-	public _accept_START__end()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		if( o[1] != null && o[2] != null )
 			return ;
@@ -631,10 +603,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   sigArgs1_sigArgs1_____sigArg
-	: Automatrix
-	{
-	public sigArgs1_sigArgs1_____sigArg()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		this_sigArgs++ ;
 		}
@@ -647,10 +617,8 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   classDecl_classHead_____classDecls____
-	: Automatrix
-	{
-	public classDecl_classHead_____classDecls____()
-		: base()
+	: Automatrix	{
+	protected override void main()
 		{
 		string[] s = this_class_symbol.Split( '$' ) ;
 		this_class_symbol = System.String.Join( "$", s, 0, s.Length - 1 ) ;
