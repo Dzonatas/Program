@@ -107,709 +107,558 @@ class Automatrix : Object
 		}
 	}
 
+[Automaton] class   id_ID
+	: Automatrix {}
 
-[Automaton] class id_ID : Automatrix	{}
+[Automaton] class   name1_id
+	: Automatrix {}
 
-[Automaton] class name1_id : Automatrix
+[Automaton] class   assemblyRefHead___assembly___extern__name1
+	: Automatrix {}
+
+[Automaton] class   int32_INT64
+	: Automatrix {}
+
+[Automaton] class   asmOrRefDecl___ver__int32_____int32_____int32_____int32
+	: Automatrix {}
+	
+[Automaton] class   assemblyRefDecl_asmOrRefDecl
+	: Automatrix {}
+
+[Automaton] class   assemblyRefDecls_assemblyRefDecls_assemblyRefDecl
+	: Automatrix {}
+	
+[Automaton] class   decl_assemblyRefHead_____assemblyRefDecls____
+	: Automatrix {}
+
+[Automaton] class   decls_decls_decl
+	: Automatrix {}
+
+[Automaton] class   id_SQSTRING
+	: Automatrix {}
+
+[Automaton] class   assemblyHead___assembly__asmAttr_name1
+	: Automatrix {}
+
+[Automaton] class   assemblyDecl___hash___algorithm__int32
+	: Automatrix {}
+
+[Automaton] class   assemblyDecls_assemblyDecls_assemblyDecl
+	: Automatrix {}
+
+[Automaton] class   assemblyDecl_asmOrRefDecl
+	: Automatrix {}
+
+[Automaton] class   decl_assemblyHead_____assemblyDecls____
+	: Automatrix {}
+
+[Automaton] class   classAttr_classAttr__private_
+	: Automatrix {}
+
+[Automaton] class   classAttr_classAttr__auto_
+	: Automatrix {}
+
+[Automaton] class   classAttr_classAttr__ansi_
+	: Automatrix {}
+
+[Automaton] class   classAttr_classAttr__beforefieldinit_
+	: Automatrix {}
+
+[Automaton] class   name1_DOTTEDNAME
+	: Automatrix {}
+
+[Automaton] class   slashedName_name1
+	: Automatrix {}
+
+[Automaton] class   className_____name1_____slashedName
+	: Automatrix {}
+
+[Automaton] class   extendsClause__extends__className
+	: Automatrix {}
+
+[Automaton] class   classHead___class__classAttr_id_extendsClause_implClause
+	: Automatrix
 	{
-	public name1_id() : base()
+	public classHead___class__classAttr_id_extendsClause_implClause()
+		: base()
 		{
-		Object _ = (Object)o[1] ;
-		o[1] = _[1] ;
+		this_class_id = (string) (Stack.Item.Token)((object[])o[3])[1] ;
+		this_class_symbol += ( System.String.IsNullOrEmpty( this_class_symbol ) ? "" : "$" ) ;
+		this_class_symbol +=  this_class_id ;
 		}
 	}
 
+[Automaton] class   methodHeadPart1___method_
+	: Automatrix {}
 
-static private object[] assemblyRefHead___assembly___extern__name1()
-	{
-	object[] o = Stack.Pop() ;
-	o[3] = ((object[])o[3])[1] ;
-	Stack.Push( o ) ;
-	return null ;
-	}
+[Automaton] class   methAttr_methAttr__public_
+	: Automatrix {}
 
-static private object[] int32_INT64()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
+[Automaton] class   methAttr_methAttr__hidebysig_
+	: Automatrix {}
 
-static private object[] asmOrRefDecl___ver__int32_____int32_____int32_____int32()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-	
-static private object[] assemblyRefDecl_asmOrRefDecl()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
+[Automaton] class   methAttr_methAttr__specialname_
+	: Automatrix {}
 
-static private object[] assemblyRefDecls_assemblyRefDecls_assemblyRefDecl()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-	
-static private object[] decl_assemblyRefHead_____assemblyRefDecls____()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
+[Automaton] class   methAttr_methAttr__rtspecialname_
+	: Automatrix {}
 
-static private object[] decls_decls_decl()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
+[Automaton] class   callKind__default_
+	: Automatrix {}
 
-static private object[] id_SQSTRING()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
+[Automaton] class   callConv_callKind
+	: Automatrix {}
 
-static private object[] assemblyHead___assembly__asmAttr_name1()
+[Automaton] class   callConv__instance__callConv
+	: Automatrix
 	{
-	object[] o = Stack.Pop() ;
-	Stack.Push( new object[] { this_xo_t, o[2], ((object[])o[3])[1] } ) ;
-	return null ;
-	}
-
-static private object[] assemblyDecl___hash___algorithm__int32()
-	{
-	object[] o = Stack.Pop() ;
-	o[3] = ((object[])o[3])[1] ;
-	Stack.Push( o ) ;
-	return null ;
-	}
-
-static private object[] assemblyDecls_assemblyDecls_assemblyDecl()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] assemblyDecl_asmOrRefDecl()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] decl_assemblyHead_____assemblyDecls____()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] classAttr_classAttr__private_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] classAttr_classAttr__auto_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] classAttr_classAttr__ansi_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] classAttr_classAttr__beforefieldinit_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] name1_DOTTEDNAME()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] slashedName_name1()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] className_____name1_____slashedName()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] extendsClause__extends__className()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] classHead___class__classAttr_id_extendsClause_implClause()
-	{
-	object[] o = Stack.Pop() ;
-	this_class_id = (string) (Stack.Item.Token)((object[])o[3])[1] ;
-	this_class_symbol += ( System.String.IsNullOrEmpty( this_class_symbol ) ? "" : "$" ) ;
-	this_class_symbol +=  this_class_id ;
-	Stack.Push( o ) ;
-	return null ;
-	}
-
-static private object[] methodHeadPart1___method_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methAttr_methAttr__public_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methAttr_methAttr__hidebysig_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methAttr_methAttr__specialname_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methAttr_methAttr__rtspecialname_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] callKind__default_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] callConv_callKind()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] callConv__instance__callConv()
-	{
-	this_callConv_instance = true ;
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] type__void_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methodName___ctor_()
-	{
-	object[] o = Stack.Pop() ;
-	o[1] = "_ctor" ;
-	Stack.Push( o ) ;
-	return null ;
-	}
-
-static private object[] implAttr_implAttr__cil_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] implAttr_implAttr__managed_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____()
-	{
-	object[] o = Stack.Pop() ;
-	if( ((object[])o[6])[1] is string )
-		this_method_name = (string) ((object[])o[6])[1] ;
-	else
-		this_method_name = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
-	this_method_type = resolve_type( o[5] ) ;
-	this_method_sigArgs = this_sigArgs ;
-	this_method_sigArg_types = this_sigArg_types ;
-	this_method_callConv_instance = this_callConv_instance ;
-	this_method_virtual = resolved_methAttr_contains_virtual( o[2] ) ;
-	if( this_method_virtual )
+	public callConv__instance__callConv()
+		: base()
 		{
-		if( ! virtualset.ContainsKey( this_class_symbol ) )
-			virtualset.Add( this_class_symbol, new List<string>() ) ;
-		((List<string>) virtualset[this_class_symbol]).Add( this_method_name + this_sigArg_types ) ;
+		this_callConv_instance = true ;
 		}
-	this_sigArgs = 0 ;
-	this_sigArg_types = null ;
-	this_callConv_instance = false ;
-	Stack.Push( o ) ;
-	return null ;
 	}
 
-static private object[] methodDecl___maxstack__int32()
-	{
-	object[] o = Stack.Pop() ;
-	this_maxstack = int.Parse( (string) (Stack.Item.Token)((object[])o[2])[1] ) ;
-	this_stack = new string[this_maxstack] ;
-	Stack.Push( o ) ;
-	return null ;
-	}
+[Automaton] class   type__void_
+	: Automatrix {}
 
-static private object[] methodDecls_methodDecls_methodDecl()
+[Automaton] class   methodName___ctor_
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methodDecl_id____()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] instr_INSTR_NONE()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methodDecl_instr()
-	{
-	object[] o = Stack.Pop() ;
-	this_instr = (string) (Stack.Item.Token)((object[])o[1])[1] ;
-	this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
-	string i = System.Guid.NewGuid().ToString() ;
-	i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
-	this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
-					 + this_instr + "$" + i ;
-	int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
-	this_program += "static inline void " + this_instr + "$" + i ;
-	if( args == 0 )
-		this_program += "( const void** stack )\n        {" ;
-	else
-		this_program += "( const void** stack , const void** args )\n        {" ;
-	switch( this_instr )
+	public methodName___ctor_()
+		: base()
 		{
-		case "LDARG_0":
-			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = args[0] ;" ;
-			this_stack[this_stack_offset] = "object" ;
-			this_stack_offset++ ;
-			break ;
-		case "LDSTR":
-			this_program += "\n        static const struct _string s = { "
-				+ this_string.Length.ToString()
-				+ " , \"" + this_string + "\" } ;" ;
-			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &s ;" ;
-			this_stack[this_stack_offset] = "string" ;
-			this_stack_offset++ ;
-			break ;
-		case "CALL":
+		o[1] = "_ctor" ;
+		}
+	}
+
+[Automaton] class   implAttr_implAttr__cil_
+	: Automatrix {}
+
+[Automaton] class   implAttr_implAttr__managed_
+	: Automatrix {}
+
+[Automaton] class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____
+	: Automatrix
+	{
+	public methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____()
+		: base()
+		{
+		if( ((object[])o[6])[1] is string )
+			this_method_name = (string) ((object[])o[6])[1] ;
+		else
+			this_method_name = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
+		this_method_type = resolve_type( o[5] ) ;
+		this_method_sigArgs = this_sigArgs ;
+		this_method_sigArg_types = this_sigArg_types ;
+		this_method_callConv_instance = this_callConv_instance ;
+		this_method_virtual = resolved_methAttr_contains_virtual( o[2] ) ;
+		if( this_method_virtual )
 			{
-			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
-			this_stack_offset -= iargs ;
-			/*
-			if( !System.String.IsNullOrEmpty(this_instr_sigArg_types) )
+			if( ! virtualset.ContainsKey( this_class_symbol ) )
+				virtualset.Add( this_class_symbol, new List<string>() ) ;
+			((List<string>) virtualset[this_class_symbol]).Add( this_method_name + this_sigArg_types ) ;
+			}
+		this_sigArgs = 0 ;
+		this_sigArg_types = null ;
+		this_callConv_instance = false ;
+		}
+	}
+
+[Automaton] class   methodDecl___maxstack__int32
+	: Automatrix
+	{
+	public methodDecl___maxstack__int32()
+		{
+		this_maxstack = int.Parse( (string) (Stack.Item.Token)((object[])o[2])[1] ) ;
+		this_stack = new string[this_maxstack] ;
+		}
+	}
+
+[Automaton] class   methodDecls_methodDecls_methodDecl
+	: Automatrix {}
+
+[Automaton] class   methodDecl_id____
+	: Automatrix {}
+
+[Automaton] class   instr_INSTR_NONE
+	: Automatrix {}
+
+[Automaton] class   methodDecl_instr
+	: Automatrix
+	{
+	public methodDecl_instr()
+		: base()
+		{
+		object[] o = Stack.Pop() ;
+		this_instr = (string) (Stack.Item.Token)((object[])o[1])[1] ;
+		this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
+		string i = System.Guid.NewGuid().ToString() ;
+		i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
+		this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
+						 + this_instr + "$" + i ;
+		int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
+		this_program += "static inline void " + this_instr + "$" + i ;
+		if( args == 0 )
+			this_program += "( const void** stack )\n        {" ;
+		else
+			this_program += "( const void** stack , const void** args )\n        {" ;
+		switch( this_instr )
+			{
+			case "LDARG_0":
+				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = args[0] ;" ;
+				this_stack[this_stack_offset] = "object" ;
+				this_stack_offset++ ;
+				break ;
+			case "LDSTR":
+				this_program += "\n        static const struct _string s = { "
+					+ this_string.Length.ToString()
+					+ " , \"" + this_string + "\" } ;" ;
+				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &s ;" ;
+				this_stack[this_stack_offset] = "string" ;
+				this_stack_offset++ ;
+				break ;
+			case "CALL":
 				{
-				string[] s = this_instr_sigArg_types.Split( '$' ) ;
-				for( int a = ( this_instr_callConv_instance ? 2 : 1 ) ; a < iargs ; a++ )
+				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
+				this_stack_offset -= iargs ;
+				/*
+				if( !System.String.IsNullOrEmpty(this_instr_sigArg_types) )
 					{
-					int offset = this_stack_offset+a-1+( this_instr_callConv_instance ? 1 : 0 ) ;
-					if( s[a] != this_stack[offset] )
+					string[] s = this_instr_sigArg_types.Split( '$' ) ;
+					for( int a = ( this_instr_callConv_instance ? 2 : 1 ) ; a < iargs ; a++ )
 						{
-						this_program += "\n        static struct _object obj = { 0 } ;" ;
-						this_program += "\n        obj.this = (void*) stack["+offset+"] ;" ;
-						this_program += "\n        stack[" + offset + "] =  &obj;" ;
+						int offset = this_stack_offset+a-1+( this_instr_callConv_instance ? 1 : 0 ) ;
+						if( s[a] != this_stack[offset] )
+							{
+							this_program += "\n        static struct _object obj = { 0 } ;" ;
+							this_program += "\n        obj.this = (void*) stack["+offset+"] ;" ;
+							this_program += "\n        stack[" + offset + "] =  &obj;" ;
+							}
 						}
 					}
+				*/
+				this_program += "\n        " ;
+				if( this_instr_type == "string" )
+					{
+					this_program += "static struct _string item" + this_stack_offset.ToString() + " ;"
+						+ "\n        item" + this_stack_offset.ToString() + " = " ;
+					freeset.Add( this_stack_offset ) ;
+					}
+				this_program += this_instr_symbol ;
+				if( iargs == 0 )
+					this_program += "() ;" ;
+				else
+					this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
+				if( this_instr_type == "string" )
+					this_program += "\n        stack[" + this_stack_offset.ToString() + "] = "
+						+ "&item" + this_stack_offset.ToString() + " ;" ;
+				if( this_instr_type != "void" )
+					{
+					this_stack[this_stack_offset] = this_instr_type ;
+					this_stack_offset++ ;
+					}
+				break ;
 				}
-			*/
-			this_program += "\n        " ;
-			if( this_instr_type == "string" )
+			case "RET":
 				{
-				this_program += "static struct _string item" + this_stack_offset.ToString() + " ;"
-					+ "\n        item" + this_stack_offset.ToString() + " = " ;
-				freeset.Add( this_stack_offset ) ;
+				foreach( object z in freeset )
+					{
+					if( z is int )
+						this_program += "\n        free( ((struct _string *)stack[" + z + "])->string ) ;" ;
+					}
+				freeset.Clear() ;
+				break ;
 				}
-			this_program += this_instr_symbol ;
-			if( iargs == 0 )
-				this_program += "() ;" ;
-			else
-				this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
-			if( this_instr_type == "string" )
-				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = "
-					+ "&item" + this_stack_offset.ToString() + " ;" ;
-			if( this_instr_type != "void" )
+			case "NEWOBJ":
 				{
-				this_stack[this_stack_offset] = this_instr_type ;
+				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 				this_stack_offset++ ;
+				this_stack_offset -= iargs ;
+				this_program += "\n        extern void " + this_instr_symbol + "( const void** ) ;" ;
+				this_program += "\n        extern struct _object " + this_instr_class_symbol + " ;" ;
+				this_program += "\n        static const struct _object obj = { &" + this_instr_class_symbol + " } ;" ;
+				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &obj ;" ;
+				this_program += "\n        " + this_instr_symbol ;
+				if( iargs == 0 )
+					this_program += "() ;" ;
+				else
+					this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
+				this_stack[this_stack_offset] = "object" ;
+				this_stack_offset++ ;
+				break ;
 				}
-			break ;
 			}
-		case "RET":
+		this_program += "\n        }\n\n" ;
+		this_instr_sigArg_types = null ;
+		this_instr_sigArgs = 0 ;
+		this_instr_callConv_instance = false ;
+		log( "[instr] "+ this_instr ) ;
+		}
+	}
+
+[Automaton] class   type__valuetype__className
+	: Automatrix {}
+
+[Automaton] class   typeSpec_type
+	: Automatrix {}
+
+[Automaton] class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
+	: Automatrix
+	{
+	public instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____()
+		: base()
+		{
+		if( ((object[])o[6])[1] is string )
+			this_methodName = (string) ((object[])o[6])[1] ;
+		else
+			this_methodName = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
+		this_instr_type = resolve_type( o[3] ) ;
+		this_instr_class_symbol = resolve_typeSpec( o[4] ) ;
+		this_instr_symbol = this_instr_class_symbol + this_methodName + this_sigArg_types ;
+		this_instr_sigArgs = this_sigArgs ;
+		this_instr_sigArg_types = this_sigArg_types ;
+		this_instr_callConv_instance = this_callConv_instance ;
+		this_sigArgs = 0 ;
+		this_sigArg_types = null ;
+		this_callConv_instance = false ;
+		}
+	}
+
+[Automaton] class   classDecl_methodHead_methodDecls____
+	: Automatrix
+	{
+	public classDecl_methodHead_methodDecls____()
+		: base()
+		{
+		string p = "" ;
+		int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
+		if( this_method_virtual )
+			p = "struct _string " ;
+		else
+			p = "void " ;
+		p += this_class_symbol+this_method_name+this_method_sigArg_types ;
+		if( args == 0 )
+			p += "()" ;
+		else
+			p += "( const void** args )" ;
+		string s = "" ;
+		foreach( string ss in this_instr_list.Split('\n') )
 			{
-			foreach( object z in freeset )
+			if( ss == "" )
 				{
-				if( z is int )
-					this_program += "\n        free( ((struct _string *)stack[" + z + "])->string ) ;" ;
+				s += "\n        " ;
+				continue ;
 				}
-			freeset.Clear() ;
-			break ;
+			s += "\n        " + ss+"( stack " + ( args == 0 ? ") ;" : ", args ) ;" ) ;
 			}
-		case "NEWOBJ":
-			{
-			int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
-			this_stack_offset++ ;
-			this_stack_offset -= iargs ;
-			this_program += "\n        extern void " + this_instr_symbol + "( const void** ) ;" ;
-			this_program += "\n        extern struct _object " + this_instr_class_symbol + " ;" ;
-			this_program += "\n        static const struct _object obj = { &" + this_instr_class_symbol + " } ;" ;
-			this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &obj ;" ;
-			this_program += "\n        " + this_instr_symbol ;
-			if( iargs == 0 )
-				this_program += "() ;" ;
-			else
-				this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
-			this_stack[this_stack_offset] = "object" ;
-			this_stack_offset++ ;
-			break ;
-			}
+		if( this_method_virtual )
+			s += "\n        return *(struct _string *)*stack ;" ;
+		p += "\n        {"
+		   + "\n        const void** stack = alloca( "+this_maxstack.ToString()+" ) ;"
+		   + s 
+		   + "\n        }" ;
+		log( p ) ;
+		this_program += p + "\n\n" ;
+		this_instr_list = "" ;
+		this_stack_offset = 0 ;
+		this_method_static = false ;
+		this_method_callConv_instance = false ;
+		this_method_sigArg_types = null ;
+		this_method_sigArgs = 0 ;
 		}
-	this_program += "\n        }\n\n" ;
-	this_instr_sigArg_types = null ;
-	this_instr_sigArgs = 0 ;
-	this_instr_callConv_instance = false ;
-	log( "[instr] "+ this_instr ) ;
-	Stack.Push( o ) ;
-	return null ;
 	}
 
-static private object[] type__valuetype__className()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
+[Automaton] class   classDecls_classDecls_classDecl
+	: Automatrix {}
 
-static private object[] typeSpec_type()
+[Automaton] class   methAttr_methAttr__static_
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____()
-	{
-	object[] o = Stack.Pop() ;
-	if( ((object[])o[6])[1] is string )
-		this_methodName = (string) ((object[])o[6])[1] ;
-	else
-		this_methodName = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
-	this_instr_type = resolve_type( o[3] ) ;
-	this_instr_class_symbol = resolve_typeSpec( o[4] ) ;
-	this_instr_symbol = this_instr_class_symbol + this_methodName + this_sigArg_types ;
-	this_instr_sigArgs = this_sigArgs ;
-	this_instr_sigArg_types = this_sigArg_types ;
-	this_instr_callConv_instance = this_callConv_instance ;
-	this_sigArgs = 0 ;
-	this_sigArg_types = null ;
-	this_callConv_instance = false ;
-	Stack.Push( o ) ;
-	return null ;
-	}
-
-static private object[] classDecl_methodHead_methodDecls____()
-	{
-	object[] o = Stack.Pop() ;
-	string p = "" ;
-	int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
-	if( this_method_virtual )
-		p = "struct _string " ;
-	else
-		p = "void " ;
-	p += this_class_symbol+this_method_name+this_method_sigArg_types ;
-	if( args == 0 )
-		p += "()" ;
-	else
-		p += "( const void** args )" ;
-	string s = "" ;
-	foreach( string ss in this_instr_list.Split('\n') )
+	public methAttr_methAttr__static_()
+		: base()
 		{
-		if( ss == "" )
-			{
-			s += "\n        " ;
-			continue ;
-			}
-		s += "\n        " + ss+"( stack " + ( args == 0 ? ") ;" : ", args ) ;" ) ;
+		this_method_static = true ;
 		}
-	if( this_method_virtual )
-		s += "\n        return *(struct _string *)*stack ;" ;
-	p += "\n        {"
-	   + "\n        const void** stack = alloca( "+this_maxstack.ToString()+" ) ;"
-	   + s 
-	   + "\n        }" ;
-	log( p ) ;
-	this_program += p + "\n\n" ;
-	this_instr_list = "" ;
-	this_stack_offset = 0 ;
-	this_method_static = false ;
-	this_method_callConv_instance = false ;
-	this_method_sigArg_types = null ;
-	this_method_sigArgs = 0 ;
-	Stack.Push( o ) ;
-	return null ;
 	}
 
-static private object[] classDecls_classDecls_classDecl()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
+[Automaton] class   methodName_name1
+	: Automatrix {}
 
-static private object[] methAttr_methAttr__static_()
+[Automaton] class   methodDecl___entrypoint_
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	this_method_static = true ;
-	return null ;
-	}
-
-static private object[] methodName_name1()
-	{
-	object[] o = Stack.Pop() ;
-	o[1] = ((object[])o[1])[1] ;
-	Stack.Push( o ) ;
-	return null ;
-	}
-
-static private object[] methodDecl___entrypoint_()
-	{
-	if( System.String.IsNullOrEmpty(this_class_symbol) )
-		throw new System.NotImplementedException( "entrypoint outside class" ) ;
-	this_start_class = this_class_symbol ;
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] compQstring_QSTRING()
-	{
-	object[] o = Stack.Pop() ;
-	this_string = (string) (Stack.Item.Token)o[1] ;
-	Stack.Push( o ) ;
-	return null ;
-	}
-
-static private object[] instr_INSTR_STRING_compQstring()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] type__class__className()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] type__string_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] sigArg_paramAttr_type()
-	{
-	object[] o = Stack.Pop() ;
-	this_sigArg_types += "$" + resolve_type( o[2] ) ;
-	Stack.Push( o ) ;
-	return null ;
-	}
-
-static private object[] sigArgs1_sigArg()
-	{
-	this_sigArgs++ ;
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] sigArgs0_sigArgs1()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] decl_classHead_____classDecls____()
-	{
-	this_class_id = "" ;
-	this_class_symbol = "" ;
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] START_decls()
-	{
-	object[] o = Stack.Pop() ;
-	this_program += "int main( int argc , char** args , char** env )\n" +
-                    "        {\n" +
-                    "        const void** stack = alloca(0) ;\n" +
-                    "        " + this_start_class + "$Main() ;\n" +
-                    "        }\n\n" ;
-    foreach( string class_symbol in virtualset.Keys )
+	public methodDecl___entrypoint_()
+		: base()
 		{
-		List<string> l = (List<string>) virtualset[class_symbol] ;
-		this_program += "struct _object " + class_symbol + " =\n" +
-		                "        {\n" ;
-		foreach( string s in l )
-			this_program += "        ." + s + " = " + class_symbol + s + " ,\n" ;
-		this_program += "        } ;\n\n" ;
+		if( System.String.IsNullOrEmpty(this_class_symbol) )
+			throw new System.NotImplementedException( "entrypoint outside class" ) ;
+		this_start_class = this_class_symbol ;
 		}
-	Stack.Push( o ) ;
-	return null ;
 	}
 
-static private object[] _accept_START__end()
+[Automaton] class   compQstring_QSTRING
+	: Automatrix
 	{
-	object[] o = Stack.Pop() ;
-	if( o[1] != null && o[2] != null )
-		return null ;
-	log( "[OOP!] _accept_START__end != {START,.end}" ) ;
-	return null ;
+	public compQstring_QSTRING()
+		: base()
+		{
+		this_string = (string) (Stack.Item.Token)o[1] ;
+		}
 	}
 
-static private object[] publicKeyTokenHead___publickeytoken_________()
+[Automaton] class   instr_INSTR_STRING_compQstring
+	: Automatrix {}
+
+[Automaton] class   type__class__className
+	: Automatrix {}
+
+[Automaton] class   type__string_
+	: Automatrix {}
+
+[Automaton] class   sigArg_paramAttr_type
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
+	public sigArg_paramAttr_type()
+		: base()
+		{
+		this_sigArg_types += "$" + resolve_type( o[2] ) ;
+		}
 	}
 
-static private object[] hexbytes_HEXBYTE()
+[Automaton] class   sigArgs1_sigArg
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
+	public sigArgs1_sigArg()
+		: base()
+		{
+		this_sigArgs++ ;
+		}
 	}
 
-static private object[] hexbytes_hexbytes_HEXBYTE()
+[Automaton] class   sigArgs0_sigArgs1
+	: Automatrix {}
+
+[Automaton] class   decl_classHead_____classDecls____
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
+	public decl_classHead_____classDecls____()
+		: base()
+		{
+		this_class_id = "" ;
+		this_class_symbol = "" ;
+		}
 	}
 
-static private object[] bytes_hexbytes()
+[Automaton] class   START_decls
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
+	public START_decls()
+		: base()
+		{
+		this_program += "int main( int argc , char** args , char** env )\n" +
+	                    "        {\n" +
+	                    "        const void** stack = alloca(0) ;\n" +
+	                    "        " + this_start_class + "$Main() ;\n" +
+	                    "        }\n\n" ;
+	    foreach( string class_symbol in virtualset.Keys )
+			{
+			List<string> l = (List<string>) virtualset[class_symbol] ;
+			this_program += "struct _object " + class_symbol + " =\n" +
+			                "        {\n" ;
+			foreach( string s in l )
+				this_program += "        ." + s + " = " + class_symbol + s + " ,\n" ;
+			this_program += "        } ;\n\n" ;
+			}
+		}
 	}
 
-static private object[] assemblyRefDecl_publicKeyTokenHead_bytes____()
+[Automaton] class   _accept_START__end
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
+	public _accept_START__end()
+		: base()
+		{
+		if( o[1] != null && o[2] != null )
+			return ;
+		log( "[OOP!] _accept_START__end != {START,.end}" ) ;
+		}
 	}
 
-static private object[] customType_callConv_type_typeSpec________ctor______sigArgs0____()
+[Automaton] class   publicKeyTokenHead___publickeytoken_________
+	: Automatrix {}
+
+[Automaton] class   hexbytes_HEXBYTE
+	: Automatrix {}
+
+[Automaton] class   hexbytes_hexbytes_HEXBYTE
+	: Automatrix {}
+
+[Automaton] class   bytes_hexbytes
+	: Automatrix {}
+
+[Automaton] class   assemblyRefDecl_publicKeyTokenHead_bytes____
+	: Automatrix {}
+
+[Automaton] class   customType_callConv_type_typeSpec________ctor______sigArgs0____
+	: Automatrix {}
+
+[Automaton] class   customHead___custom__customType________
+	: Automatrix {}
+
+[Automaton] class   customAttrDecl_customHead_bytes____
+	: Automatrix {}
+
+[Automaton] class   asmOrRefDecl_customAttrDecl
+	: Automatrix {}
+
+[Automaton] class   moduleHead___module__name1
+	: Automatrix {}
+
+[Automaton] class   classAttr_classAttr__public_
+	: Automatrix {}
+
+[Automaton] class   type__object_
+	: Automatrix {}
+
+[Automaton] class   methAttr_methAttr__private_
+	: Automatrix {}
+
+[Automaton] class   slashedName_slashedName_____name1
+	: Automatrix {}
+
+[Automaton] class   className_slashedName
+	: Automatrix {}
+
+[Automaton] class   sigArgs1_sigArgs1_____sigArg
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
+	public sigArgs1_sigArgs1_____sigArg()
+		: base()
+		{
+		this_sigArgs++ ;
+		}
 	}
 
-static private object[] customHead___custom__customType________()
+[Automaton] class   classAttr_classAttr__nested___private_
+	: Automatrix {}
+
+[Automaton] class   methAttr_methAttr__virtual_
+	: Automatrix {}
+
+[Automaton] class   classDecl_classHead_____classDecls____
+	: Automatrix
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
+	public classDecl_classHead_____classDecls____()
+		: base()
+		{
+		string[] s = this_class_symbol.Split( '$' ) ;
+		this_class_symbol = System.String.Join( "$", s, 0, s.Length - 1 ) ;
+		}
 	}
 
-static private object[] customAttrDecl_customHead_bytes____()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] asmOrRefDecl_customAttrDecl()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] moduleHead___module__name1()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] classAttr_classAttr__public_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] type__object_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methAttr_methAttr__private_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] slashedName_slashedName_____name1()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] className_slashedName()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] sigArgs1_sigArgs1_____sigArg()
-	{
-	this_sigArgs++ ;
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] classAttr_classAttr__nested___private_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] methAttr_methAttr__virtual_()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] classDecl_classHead_____classDecls____()
-	{
-	string[] s = this_class_symbol.Split( '$' ) ;
-	this_class_symbol = System.String.Join( "$", s, 0, s.Length - 1 ) ;
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
-static private object[] decl_moduleHead()
-	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
-	}
-
+[Automaton] class   decl_moduleHead
+	: Automatrix {}
 }
 
 
