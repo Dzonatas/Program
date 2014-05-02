@@ -21,6 +21,7 @@ union _  //regression: string (void*) -> managed pointer (void**) -> atomic matr
 		{
 		struct _object*  this ;
 		struct _string (*$ToString)(const void**) ;
+		//struct _string (*$ToObjectNotation)(const void**) ;
 		} object ;
 	} ;
 

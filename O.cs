@@ -7,134 +7,6 @@ public partial class A335
 static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
 static List<object> freeset = new List<object>() ;
 
-class Stack
-	{
-	static System.Collections.Generic.Stack<object> stack = new System.Collections.Generic.Stack<object>() ;
-	public class Item
-		{
-		public Xo_t Rule ;
-		public Item()
-			{
-			Rule = this_xo_t ;
-			}
-		public class Token : Item
-			{
-			public planet  State ;
-			public _.Token _Token ;
-			public Token( planet _0, _.Token _1 )
-				{
-				State = _0 ;
-				_Token = _1 ;
-				}
-			static public explicit operator string( Token t )
-				{
-				return t._Token._ ;
-				}
-			public override string ToString()
-					{
-					return _Token.ToString() ;
-					}
-			}
-		}
-	static public void Dump()
-		{
-		while( stack.Count > 0 )
-			{
-			object o = stack.Pop() ;
-			if( o is object[] )
-				foreach( object i in (object[])o )
-					log( "[stack.o#] "+ ( i == null ? "null" : i).ToString() ) ;
-			else
-				log( "[stack] "+o.ToString() ) ;
-			log( "[program]\n" + this_program ) ;
-			}
-		}
-	static public void Push( object o )
-		{
-		stack.Push( o ) ;
-		o = null ;
-		}
-	static private object stack_pop()
-		{
-		object o = stack.Pop() ;
-		string s ;
-		if( o is object[] ) 
-			{
-			s = "{ " ;
-			foreach( object i in (object[])o )
-				s += ( i == null ? "null" : i ).ToString() + " , ";
-			}
-		else
-			s = o.ToString() ;
-		log( "[pop] " + s ) ;
-		return o ;
-		}
-	static public object[] Pop()
-		{
-		object[] o = new object[ 1 + this_xo_t.rhs.Length ] ;
-		for( int i = this_xo_t.rhs.Length ; i > 0 ; i-- )
-			{
-			var _ = stack.Count > 0 ? stack.Peek() : null ;
-			if( _ == null )
-				o[i] = null ;
-			else
-			if( _ is Item.Token )
-				{
-				Item.Token t = (Item.Token)_ ;
-				string rhs = this_xo_t.rhs[i-1].s ;
-				if( rhs[0] == '\'' )
-					{
-					if(	rhs[1] == t._Token._[0] )
-						o[i] = stack_pop() ;
-					else
-						o[i] = null ;
-					}
-				else
-				if( rhs[0] == '"' )
-					{
-					if( rhs == '"'+t._Token._+'"' )
-						o[i] = stack_pop() ;
-					else
-						o[i] = null ;
-					}
-				else
-				if( rhs[0] == '$' )
-					{
-					if( rhs == t._Token._ )
-						o[i] = stack_pop() ;
-					else
-						o[i] = null ;
-					}
-				else
-					{
-					if( rhs == rhs.ToUpper() )
-						o[i] = stack_pop() ;
-					else
-						o[i] = null ;
-					}
-				}
-			else
-			if( _ is object[] )
-				{
-				object[] _o = (object[]) _ ;
-				string lhs = ((Xo_t)(_o[0])).lhs.s ;
-				string rhs = this_xo_t.rhs[i-1].s ;
-				if( lhs == rhs )
-					o[i] = stack_pop() ;
-				else
-					{
-					log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
-					o[i] = null ;
-					}
-				}
-			else
-				throw new System.NotImplementedException( "Unknown type on stack." ) ;
-			}
-		o[0] = this_xo_t ;
-		return o ;
-		}
-	}
-
 static private string resolve_type( object _type )
 	{
 	string s = "" ;
@@ -204,19 +76,49 @@ static private bool resolved_methAttr_contains_virtual( object _methAttr )
 	return false ;
 	}
 
-static private object[] id_ID()
+class Object : Stack.Item
 	{
-	Stack.Push( Stack.Pop() ) ;
-	return null ;
+	protected object[] o ;
+	public Object( object[] _ ) : base()
+		{
+		o = _ ;
+		}
+	public Object( int n ) : base()
+		{
+		o = new object[n+1] ;
+		Stack.Pop( ref o ) ;
+		o[0] = this ;
+		}
+	public Stack.Item this[int n]
+		{
+		get { return (Stack.Item) o[n] ; }
+		set { o[n] = value ; }
+		}
 	}
 
-static private object[] name1_id()
+
+class Automatrix : Object
 	{
-	object[] o = Stack.Pop() ;
-	o[1] = ((object[])o[1])[1] ;
-	Stack.Push( o ) ;
-	return null ;
+	public Automatrix() : base( this_xo_t.rhs.Length ) {}
+	public new object this[int n]
+		{
+		get { return o[n] ; }
+		set { o[n] = value ; }
+		}
 	}
+
+
+[Automaton] class id_ID : Automatrix	{}
+
+[Automaton] class name1_id : Automatrix
+	{
+	public name1_id() : base()
+		{
+		Object _ = (Object)o[1] ;
+		o[1] = _[1] ;
+		}
+	}
+
 
 static private object[] assemblyRefHead___assembly___extern__name1()
 	{

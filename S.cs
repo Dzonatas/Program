@@ -27,6 +27,168 @@ static        /* used */  Item    system = new Item() ; // auto-registry, File s
 static internal      IPAddress system_ip = IPAddress.Any ;
 static State []                 stateset = new State[1125] ;
 
+class Stack
+	{
+	static System.Collections.Generic.Stack<object> stack = new System.Collections.Generic.Stack<object>() ;
+	public class Item
+		{
+		public Xo_t Rule ;
+		public Item()
+			{
+			Rule = this_xo_t ;
+			}
+		public class Token : Item
+			{
+			public planet  State ;
+			public _.Token _Token ;
+			public Token( planet _0, _.Token _1 )
+				{
+				State = _0 ;
+				_Token = _1 ;
+				}
+			static public explicit operator string( Token t )
+				{
+				return t._Token._ ;
+				}
+			public override string ToString()
+				{
+				return _Token.ToString() ;
+				}
+			}
+		}
+	static public void Dump()
+		{
+		while( stack.Count > 0 )
+			{
+			object o = stack.Pop() ;
+			if( o is object[] )
+				foreach( object i in (object[])o )
+					log( "[stack.o#] "+ ( i == null ? "null" : i).ToString() ) ;
+			else
+				log( "[stack] "+o.ToString() ) ;
+			log( "[program]\n" + this_program ) ;
+			}
+		}
+	static public void Push( object o )
+		{
+		stack.Push( o ) ;
+		o = null ;
+		}
+	static private object stack_pop()
+		{
+		object o = stack.Pop() ;
+		string s ;
+		if( o is object[] )
+			{
+			s = "{ " ;
+			foreach( object i in (object[])o )
+				s += ( i == null ? "null" : i ).ToString() + " , ";
+			}
+		else
+			s = o.ToString() ;
+		log( "[pop] " + s ) ;
+		return o ;
+		}
+	static private object peak
+		{
+		get { return stack.Count > 0 ? stack.Peek() : null ; }
+		}
+	static private bool peakIsNull
+		{
+		get { return peak == null ; }
+		}
+	static private bool peakIsItemToken
+		{
+		get { return peak is Item.Token ; }
+		}
+	static private bool peakIsObject
+		{
+		get { return peak is Object ; }
+		}
+	static private bool peakIsArray
+		{
+		get { return peak is object[] ; }
+		}
+	static public object[] Pop()
+		{
+		throw new System.NotImplementedException() ;
+		}
+	static public void Pop( ref object[] o )
+		{
+		for( int i = o.Length - 1 ; i > 0 ; i-- )
+			{
+			if( peakIsNull )
+				o[i] = null ;
+			else
+			if( peakIsItemToken )
+				{
+				Item.Token t = peak as Item.Token ;
+				string rhs = this_xo_t.rhs[i-1].s ;
+				if( rhs[0] == '\'' )
+					{
+					if(	rhs[1] == t._Token._[0] )
+						o[i] = stack_pop() as Stack.Item.Token ;
+					else
+						o[i] = null ;
+					}
+				else
+				if( rhs[0] == '"' )
+					{
+					if( rhs == '"'+t._Token._+'"' )
+						o[i] = stack_pop() as Stack.Item.Token ;
+					else
+						o[i] = null ;
+					}
+				else
+				if( rhs[0] == '$' )
+					{
+					if( rhs == t._Token._ )
+						o[i] = stack_pop() as Stack.Item.Token ;
+					else
+						o[i] = null ;
+					}
+				else
+					{
+					if( rhs == rhs.ToUpper() )
+						o[i] = stack_pop() as Stack.Item.Token ;
+					else
+						o[i] = null ;
+					}
+				}
+			else
+			if( peakIsObject )
+				{
+				Object p = peak as Object ;
+				string lhs = ((Xo_t)(p.Rule)).lhs.s ;
+				string rhs = this_xo_t.rhs[i-1].s ;
+				if( lhs == rhs )
+					o[i] = stack_pop() as Object ;
+				else
+					{
+					log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
+					o[i] = null ;
+					}
+				}
+			else
+			if( peakIsArray )
+				{
+				object[] p = peak as object[] ;
+				string lhs = ((Xo_t)(p[0])).lhs.s ;
+				string rhs = this_xo_t.rhs[i-1].s ;
+				if( lhs == rhs )
+					o[i] = new Object( stack_pop() as object[] ) ;
+				else
+					{
+					log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
+					o[i] = null ;
+					}
+				}
+			else
+				throw new System.NotImplementedException( "Unknown type on stack." ) ;
+			}
+		}
+	}
+
 public struct State                //_FIX:$State,_State,_State:=$State,$State!=_State
 	{
 	public Number               debit ;
