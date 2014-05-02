@@ -1,5 +1,8 @@
 using System.Diagnostics ;
 using System.Extensions ;
+using System.Reflection ;
+using System.Linq ;
+using System ;
 //using System.Runtime ;//[br_ide:(('target'![branch:.]))
 
 partial class A335
@@ -63,13 +66,27 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		throw new System.NotImplementedException( "Missed token?" ) ;
 		}
 	this_xo_t = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
+	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
+	if( this_xo_t.ReductionMethod == "name1_id" )
+		{
+		new name1_id() ;
+		}
+	else
+	if( automatrix.ContainsKey(this_xo_t.ReductionMethod) )
+		{
+		automatrix[this_xo_t.ReductionMethod].InvokeMember( null ,
+			            System.Reflection.BindingFlags.CreateInstance  ,
+			                                               null , null , null ) ;
+		}
+	else
 	try {
-		Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
+		/*
 		typeof(A335).InvokeMember( this_xo_t.ReductionMethod,
 			System.Reflection.BindingFlags.InvokeMethod |
 			System.Reflection.BindingFlags.NonPublic |
 			System.Reflection.BindingFlags.Static,
 			null, null, null ) ;
+		*/
 		}
 	catch( System.MissingMemberException e )
 		{
@@ -110,6 +127,15 @@ static int    b_v      ;//view:locution[,view:orbit]
 
 static void Begin()
 	{
+	var types =
+		from  type in Assembly.GetExecutingAssembly().GetTypes()
+		from  atrb in Attribute.GetCustomAttributes( type )
+		where atrb is AutomatonAttribute
+		select type ;
+	foreach( Type t in types  )
+		{
+		automatrix.Add( t.Name , t ) ;
+		}
 	_.assimulation() ;
 	//Console.WriteLine( "symbolset={0} tokenset={1}", xml_symbolset.Count, xml_tokenset.Count ) ;
 	/*
