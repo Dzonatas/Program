@@ -67,9 +67,14 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		}
 	this_xo_t = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
+	if( this_xo_t.ReductionMethod == "id_ID" )
+		{
+		Stack.Push( new id_ID() ) ;
+		}
+	else
 	if( this_xo_t.ReductionMethod == "name1_id" )
 		{
-		new name1_id() ;
+		Stack.Push( new name1_id() ) ;
 		}
 	else
 	if( automatrix.ContainsKey(this_xo_t.ReductionMethod) )
