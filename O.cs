@@ -148,6 +148,7 @@ class Argument
 					}
 				}
 			}
+		throw new System.NotImplementedException( "Unresolved casts to dotted names." ) ;
 		return null ;
 		}
 	}
