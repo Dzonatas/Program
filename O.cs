@@ -327,7 +327,7 @@ class Automatrix : Object
 		if( Arg6[1] is string )
 			this_method_name = (string) Arg6[1] ;
 		else
-			this_method_name = "$" + (string) (Stack.Item.Token) Arg6[1] ;
+			this_method_name = "$" + Arg6.Token ;
 		this_method_type = resolve_type( Arg5 ) ;
 		this_method_sigArgs = this_sigArgs ;
 		this_method_sigArg_types = this_sigArg_types ;
@@ -368,7 +368,7 @@ class Automatrix : Object
 	protected override void main()
 		{
 		object[] o = Stack.Pop() ;
-		this_instr = (string) (Stack.Item.Token)((object[])o[1])[1] ;
+		this_instr = Arg1.Token ;
 		this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 		string i = System.Guid.NewGuid().ToString() ;
 		i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
@@ -487,7 +487,7 @@ class Automatrix : Object
 		if( ((object[])o[6])[1] is string )
 			this_methodName = (string) ((object[])o[6])[1] ;
 		else
-			this_methodName = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
+			this_methodName = "$" + Arg6.Token ;
 		this_instr_type = resolve_type( o[3] ) ;
 		this_instr_class_symbol = resolve_typeSpec( o[4] ) ;
 		this_instr_symbol = this_instr_class_symbol + this_methodName + this_sigArg_types ;
@@ -570,7 +570,7 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		this_string = (string) (Stack.Item.Token)o[1] ;
+		this_string = Arg1.Token ;
 		}
 	}
 
