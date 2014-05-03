@@ -1,6 +1,7 @@
 //|#(!)using System;
 using System.Text.RegularExpressions ;
 using System.Collections.Generic ;
+using System.Diagnostics ;
 
 public partial class A335
 {
@@ -81,13 +82,16 @@ class Object : Stack.Item
 	protected object[] o ;
 	public Object( object[] _ ) : base()
 		{
+		Debug.WriteLine( "<A Object " + GetType().Name + " />"  ) ;
 		o = _ ;
 		}
 	public Object( int n ) : base()
 		{
+		Debug.WriteLine( "<A Object " + GetType().Name + ">"  ) ;
 		o = new object[n+1] ;
 		Stack.Pop( ref o ) ;
 		o[0] = this ;
+		Debug.WriteLine( "</A>"  ) ;
 		}
 	public Stack.Item this[int n]
 		{
@@ -96,22 +100,103 @@ class Object : Stack.Item
 		}
 	}
 
+class Argument
+	{
+	object arg ;
+	public Argument( ref object o )
+		{
+		Debug.WriteLine( "<A Arg/> " + o.ToString() ) ;
+		arg = o ;
+		}
+	public object this[int n]
+		{
+		get {
+			if( arg is object[] )
+				return ((object[])arg)[n] ;
+			if( arg is Object )
+				return ((Object)arg)[n] ;
+			if( arg is Stack.Item.Token )
+				return ((Object)arg)[n] ;
+			return null ;
+			}
+		}
+	public string Token
+		{
+		get { return resolve_token( ref arg ) ; }
+		}
+	string resolve_token( ref object _arg )
+		{
+		string s = "" ;
+		if( _arg is Stack.Item.Token )
+			{
+			Stack.Item.Token t = (Stack.Item.Token) _arg ;
+			return t._Token._ ;
+			}
+		if( _arg is Automatrix )
+			{
+			Automatrix a = _arg as Automatrix ;
+			for( int i = 1 ; i < a.Length ; i++ )
+				{
+				if( a.Args[i] is Stack.Item.Token )
+					{
+					Stack.Item.Token t = (Stack.Item.Token) a.Args[i] ;
+					return t._Token._ ;
+					}
+				if( a.Args[i] is Automatrix )
+					{
+					return resolve_token( ref a.Args[i] ) ;
+					}
+				}
+			}
+		return null ;
+		}
+	}
+
 class Automatrix : Object
 	{
 	public Automatrix() : base( this_xo_t.rhs.Length ) 
 		{
+		Debug.WriteLine( "<A Automatrix " + GetType().Name + "/>"  ) ;
 		main() ;
+		Debug.WriteLine( "</A>" ) ;
 		}
-	public new object this[int n]
+	public new Argument this[int n]
 		{
-		get { return o[n] ; }
+		get { Debug.WriteLine( GetType().Name + '[' + n + ']'  ) ; return new Argument( ref o[n] ) ; }
 		set { o[n] = value ; }
 		}
 	virtual protected void main() {}
+	public Argument Arg0		{ get { return new Argument( ref o[0x00] ) ; } }
+	public Argument Arg1		{ get { return new Argument( ref o[0x01] ) ; } }
+	public Argument Arg2		{ get { return new Argument( ref o[0x02] ) ; } }
+	public Argument Arg3		{ get { return new Argument( ref o[0x03] ) ; } }
+	public Argument Arg4		{ get { return new Argument( ref o[0x04] ) ; } }
+	public Argument Arg5		{ get { return new Argument( ref o[0x05] ) ; } }
+	public Argument Arg6		{ get { return new Argument( ref o[0x06] ) ; } }
+	public Argument Arg7		{ get { return new Argument( ref o[0x07] ) ; } }
+	public Argument Arg8		{ get { return new Argument( ref o[0x08] ) ; } }
+	public Argument Arg9		{ get { return new Argument( ref o[0x09] ) ; } }
+	public Argument ArgA		{ get { return new Argument( ref o[0x0A] ) ; } }
+	public Argument ArgB		{ get { return new Argument( ref o[0x0B] ) ; } }
+	public Argument ArgC		{ get { return new Argument( ref o[0x0C] ) ; } }
+	public Argument ArgD		{ get { return new Argument( ref o[0x0D] ) ; } }
+	public Argument ArgE		{ get { return new Argument( ref o[0x0E] ) ; } }
+	public Argument ArgF		{ get { return new Argument( ref o[0x0F] ) ; } }
+	public object[] Args		{ get { return o ; } }
+	public int Length
+		{
+		get { return o.Length ; }
+		}
 	}
 
 [Automaton] class   id_ID
-	: Automatrix	{}
+	: Automatrix	{
+	protected override void main()
+		{
+		Debug.WriteLine( "[DEBUG:id_ID] " + Arg1.Token ) ;
+		}
+	}
+
 
 [Automaton] class   name1_id
 	: Automatrix {}
@@ -183,7 +268,7 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		this_class_id = (string) (Stack.Item.Token)((object[])o[3])[1] ;
+		this_class_id = Arg3.Token ;
 		this_class_symbol += ( System.String.IsNullOrEmpty( this_class_symbol ) ? "" : "$" ) ;
 		this_class_symbol +=  this_class_id ;
 		}
@@ -239,15 +324,15 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		if( ((object[])o[6])[1] is string )
-			this_method_name = (string) ((object[])o[6])[1] ;
+		if( Arg6[1] is string )
+			this_method_name = (string) Arg6[1] ;
 		else
-			this_method_name = "$" + (string) (Stack.Item.Token)((object[])o[6])[1] ;
-		this_method_type = resolve_type( o[5] ) ;
+			this_method_name = "$" + (string) (Stack.Item.Token) Arg6[1] ;
+		this_method_type = resolve_type( Arg5 ) ;
 		this_method_sigArgs = this_sigArgs ;
 		this_method_sigArg_types = this_sigArg_types ;
 		this_method_callConv_instance = this_callConv_instance ;
-		this_method_virtual = resolved_methAttr_contains_virtual( o[2] ) ;
+		this_method_virtual = resolved_methAttr_contains_virtual( Arg2 ) ;
 		if( this_method_virtual )
 			{
 			if( ! virtualset.ContainsKey( this_class_symbol ) )

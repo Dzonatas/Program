@@ -41,7 +41,7 @@ class Stack
 			{
 			public planet  State ;
 			public _.Token _Token ;
-			public Token( planet _0, _.Token _1 )
+			public Token( planet _0, _.Token _1 ) : base()
 				{
 				State = _0 ;
 				_Token = _1 ;
