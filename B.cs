@@ -77,6 +77,13 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Stack.Push( new name1_id() ) ;
 		}
 	else
+	if( this_xo_t.ReductionMethod ==
+		"methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName"
+		+ "_____sigArgs0_____implAttr____" )
+		{
+		Stack.Push( new methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____() ) ;
+		}
+	else
 	if( automatrix.ContainsKey(this_xo_t.ReductionMethod) )
 		{
 		automatrix[this_xo_t.ReductionMethod].InvokeMember( null ,
