@@ -236,6 +236,10 @@ class Automatrix : Object
 			return false ;
 			}
 		}
+	public override string ToString()
+		{
+		return string.Format("[Automatrix] " + Rule.ReductionMethod );
+		}
 	}
 
 [Automaton] class   id_ID
