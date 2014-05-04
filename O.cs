@@ -8,75 +8,6 @@ public partial class A335
 static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
 static List<object> freeset = new List<object>() ;
 
-static private string resolve_type( object _type )
-	{
-	string s = "" ;
-	object[] o = (object[])_type ;
-	for( int i = 1 ; i < o.Length ; i++ )
-		{
-		if( o[i] is Stack.Item.Token )
-			{
-			string t = (string) (Stack.Item.Token)o[i] ;
-			t = Regex.Replace( t, "[^A-Za-z_0-9/]", "_" ).Replace( "/", "$" ) ;
-			if( s.EndsWith("$") || t == "$" )
-				s += t ;
-			else
-				s += ( i == 1 ? "" : "_" ) + t ;
-			}
-		else
-		if( o[i] is object[] )
-			s += ( ( i == 1 || s.EndsWith("$") || s.EndsWith("__") ) ? "" : "_" ) + resolve_type( o[i] ) ;
-		else
-			throw new System.NotImplementedException( "Unresolved type." ) ;
-		}
-	return s ;
-	}
-
-static private string resolve_typeSpec( object _typeSpec )
-	{
-	string s = (string) resolve_type( ((object[])_typeSpec)[1] ) ;
-	if( s.StartsWith( "class_" ) )
-		s = s.Substring( 6 ) ;
-	else
-	if( s.StartsWith( "valuetype_" ) )
-		s = s.Substring( 10 ) ;
-	if( s.StartsWith( "__mscorlib__" ) )
-		return "BCL$$" + s.Substring( 12 ) ;
-	else
-	if( s.StartsWith( "__corlib__" ) )
-		return "BCL$$" + s.Substring( 10 ) ;
-	switch( s )
-		{
-		case "object" : return "BCL$$System_Object" ;
-		case "string" : return "BCL$$System_String" ;
-		}
-	return s ;
-	}
-
-static private bool resolved_methAttr_contains_virtual( object _methAttr )
-	{
-	object[] o = (object[])_methAttr ;
-	for( int i = 1 ; i < o.Length ; i++ )
-		{
-		if( o[i] is Stack.Item.Token )
-			{
-			string t = (string) (Stack.Item.Token)o[i] ;
-			if( "virtual" == (string) t )
-				return true ;
-			}
-		else
-		if( o[i] is object[] )
-			{
-			if( resolved_methAttr_contains_virtual( o[i] ) )
-				return true ;
-			}
-		else
-		if( ! ( o[i] == null ) )
-			throw new System.NotImplementedException( "Unresolved methAttr." ) ;
-		}
-	return false ;
-	}
-
 class Object : Stack.Item
 	{
 	protected object[] o ;
@@ -120,6 +51,7 @@ class Argument
 			return null ;
 			}
 		}
+	public object[] Args		{ get { return arg as object[] ; } }
 	public string Token
 		{
 		get { return resolve_token( ref arg ) ; }
@@ -150,6 +82,75 @@ class Argument
 			}
 		throw new System.NotImplementedException( "Unresolved casts to dotted names." ) ;
 		return null ;
+		}
+	public string ResolveType()
+		{
+		string s = "" ;
+		if( arg is Stack.Item.Token )
+			{
+			string t = (string) (Stack.Item.Token)arg ;
+			t = Regex.Replace( t, "[^A-Za-z_0-9/]", "_" ).Replace( "/", "$" ) ;
+			return t ;
+			}
+		if( arg is Automatrix )
+			{
+			return (arg as Automatrix).ResolveType() ;
+			}
+		for( int i = 1 ; i < Args.Length ; i++ )
+			{
+			if( Args[i] is Stack.Item.Token )
+				{
+				string t = (string) (Stack.Item.Token)Args[i] ;
+				t = Regex.Replace( t, "[^A-Za-z_0-9/]", "_" ).Replace( "/", "$" ) ;
+				if( s.EndsWith("$") || t == "$" )
+					s += t ;
+				else
+					s += ( i == 1 ? "" : "_" ) + t ;
+				}
+			else
+			if( Args[i] is Automatrix )
+				s += ( ( i == 1 || s.EndsWith("$") || s.EndsWith("__") ) ? "" : "_" )
+					+ ( Args[i] as Automatrix ).ResolveType() ;
+			else
+				throw new System.NotImplementedException( "Unresolved type." ) ;
+			}
+		return s ;
+		}
+	public string ResolveTypeSpec()
+		{
+		string s = (string) ResolveType() ;
+		if( s.StartsWith( "class_" ) )
+			s = s.Substring( 6 ) ;
+		else
+		if( s.StartsWith( "valuetype_" ) )
+			s = s.Substring( 10 ) ;
+		if( s.StartsWith( "__mscorlib__" ) )
+			return "BCL$$" + s.Substring( 12 ) ;
+		else
+		if( s.StartsWith( "__corlib__" ) )
+			return "BCL$$" + s.Substring( 10 ) ;
+		switch( s )
+			{
+			case "object" : return "BCL$$System_Object" ;
+			case "string" : return "BCL$$System_String" ;
+			}
+		return s ;
+		}
+	public bool ResolvedMethAttrContainsVirtual
+		{
+		get {
+			if( arg is Stack.Item.Token )
+				{
+				string t = (string) (Stack.Item.Token) arg ;
+				if( "virtual" == (string) t )
+					return true ;
+				}
+			if( arg is Automatrix )
+				{
+				return ( arg as Automatrix ).ResolvedMethAttrContainsVirtual ;
+				}
+			throw new System.NotImplementedException( "Unresolved methAttr." ) ;
+			}
 		}
 	}
 
@@ -187,6 +188,53 @@ class Automatrix : Object
 	public int Length
 		{
 		get { return o.Length ; }
+		}
+	public string ResolveType()
+		{
+		string s = "" ;
+		for( int i = 1 ; i < Args.Length ; i++ )
+			{
+			if( Args[i] is Stack.Item.Token )
+				{
+				string t = (string) (Stack.Item.Token)Args[i] ;
+				t = Regex.Replace( t, "[^A-Za-z_0-9/]", "_" ).Replace( "/", "$" ) ;
+				if( s.EndsWith("$") || t == "$" )
+					s += t ;
+				else
+					s += ( i == 1 ? "" : "_" ) + t ;
+				}
+			else
+			if( Args[i] is Automatrix )
+				s += ( ( i == 1 || s.EndsWith("$") || s.EndsWith("__") ) ? "" : "_" )
+					+ ((Automatrix)Args[i] ).ResolveType() ;
+			else
+				throw new System.NotImplementedException( "Unresolved type." ) ;
+			}
+		return s ;
+		}
+	public bool ResolvedMethAttrContainsVirtual
+		{
+		get {
+			for( int i = 1 ; i < Args.Length ; i++ )
+				{
+				if( Args[i] is Stack.Item.Token )
+					{
+					string t = (string) (Stack.Item.Token)Args[i] ;
+					if( "virtual" == (string) t )
+						return true ;
+					}
+				else
+				if( Args[i] is Automatrix )
+					{
+					if( ( Args[i] as Automatrix ).ResolvedMethAttrContainsVirtual )
+						return true ;
+					}
+				else
+				if( ! ( Args[i] == null ) )
+					throw new System.NotImplementedException( "Unresolved methAttr." ) ;
+				}
+			return false ;
+			}
 		}
 	}
 
@@ -324,11 +372,11 @@ class Automatrix : Object
 			this_method_name = "_ctor" ;
 		else
 			this_method_name = "$" + Arg6.Token ;
-		this_method_type = resolve_type( Arg5 ) ;
+		this_method_type = Arg5.ResolveType() ;
 		this_method_sigArgs = this_sigArgs ;
 		this_method_sigArg_types = this_sigArg_types ;
 		this_method_callConv_instance = this_callConv_instance ;
-		this_method_virtual = resolved_methAttr_contains_virtual( Arg2 ) ;
+		this_method_virtual = Arg2.ResolvedMethAttrContainsVirtual ;
 		if( this_method_virtual )
 			{
 			if( ! virtualset.ContainsKey( this_class_symbol ) )
@@ -484,8 +532,8 @@ class Automatrix : Object
 			this_methodName = (string) ((object[])o[6])[1] ;
 		else
 			this_methodName = "$" + Arg6.Token ;
-		this_instr_type = resolve_type( o[3] ) ;
-		this_instr_class_symbol = resolve_typeSpec( o[4] ) ;
+		this_instr_type = Arg3.ResolveType() ;
+		this_instr_class_symbol = Arg4.ResolveTypeSpec() ;
 		this_instr_symbol = this_instr_class_symbol + this_methodName + this_sigArg_types ;
 		this_instr_sigArgs = this_sigArgs ;
 		this_instr_sigArg_types = this_sigArg_types ;
@@ -583,7 +631,7 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		this_sigArg_types += "$" + resolve_type( o[2] ) ;
+		this_sigArg_types += "$" + Arg2.ResolveType() ;
 		}
 	}
 
