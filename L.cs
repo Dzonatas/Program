@@ -18,6 +18,7 @@ static public void log_ready()
 		).Value	+ ".txt" ;
 	*/
 	log_output = System.IO.File.CreateText( log_file ) ;
+	log_output.AutoFlush = true ;
 	}
 
 static public void log( string s )
