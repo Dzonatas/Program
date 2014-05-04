@@ -29,7 +29,7 @@ static State []                 stateset = new State[1125] ;
 
 class Stack
 	{
-	static System.Collections.Generic.Stack<object> stack = new System.Collections.Generic.Stack<object>() ;
+	static System.Collections.Generic.Stack<Item> stack = new System.Collections.Generic.Stack<Item>() ;
 	public class Item
 		{
 		public Xo_t Rule ;
@@ -69,9 +69,14 @@ class Stack
 			log( "[program]\n" + this_program ) ;
 			}
 		}
-	static public void Push( object o )
+	static public void Push( Item o )
 		{
 		stack.Push( o ) ;
+		o = null ;
+		}
+	static public void Push( object[] o )
+		{
+		stack.Push( (Object) o[0] ) ;
 		o = null ;
 		}
 	static private object stack_pop()
