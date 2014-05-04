@@ -139,16 +139,19 @@ class Argument
 	public bool ResolvedMethAttrContainsVirtual
 		{
 		get {
+			if( arg is methAttr_methAttr__virtual_ )
+				return true ;
+			if( arg is Automatrix )
+				return ( arg as Automatrix ).ResolvedMethAttrContainsVirtual ;
 			if( arg is Stack.Item.Token )
 				{
 				string t = (string) (Stack.Item.Token) arg ;
 				if( "virtual" == (string) t )
 					return true ;
+				return false ;
 				}
-			if( arg is Automatrix )
-				{
-				return ( arg as Automatrix ).ResolvedMethAttrContainsVirtual ;
-				}
+			if( arg is Stack.Item.Empty )
+				return false ;
 			throw new System.NotImplementedException( "Unresolved methAttr." ) ;
 			}
 		}
@@ -217,21 +220,24 @@ class Automatrix : Object
 		get {
 			for( int i = 1 ; i < Args.Length ; i++ )
 				{
+				if( Args[i] is methAttr_methAttr__virtual_ )
+					return true ;
+				if( Args[i] is Automatrix )
+					{
+					if( ( Args[i] as Automatrix ).ResolvedMethAttrContainsVirtual )
+						return true ;
+					continue ;
+					}
 				if( Args[i] is Stack.Item.Token )
 					{
 					string t = (string) (Stack.Item.Token)Args[i] ;
 					if( "virtual" == (string) t )
 						return true ;
+					continue ;
 					}
-				else
-				if( Args[i] is Automatrix )
-					{
-					if( ( Args[i] as Automatrix ).ResolvedMethAttrContainsVirtual )
-						return true ;
-					}
-				else
-				if( ! ( Args[i] == null ) )
-					throw new System.NotImplementedException( "Unresolved methAttr." ) ;
+				if( ( Args[i] is Stack.Item.Empty ) )
+					continue ;
+				throw new System.NotImplementedException( "Unresolved methAttr." ) ;
 				}
 			return false ;
 			}
