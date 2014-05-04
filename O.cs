@@ -411,7 +411,6 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		object[] o = Stack.Pop() ;
 		this_instr = Arg1.Token ;
 		this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 		string i = System.Guid.NewGuid().ToString() ;
