@@ -356,6 +356,9 @@ class Automatrix : Object
 [Automaton] class   methodName___ctor_
 	: Automatrix {}
 
+[Automaton] class   methodName___cctor_
+	: Automatrix {}
+
 [Automaton] class   implAttr_implAttr__cil_
 	: Automatrix {}
 
