@@ -299,6 +299,12 @@ class Automatrix : Object
 [Automaton] class   classAttr_classAttr__beforefieldinit_
 	: Automatrix {}
 
+[Automaton] class   fieldAttr_fieldAttr__private_
+	: Automatrix {}
+
+[Automaton] class   fieldAttr_fieldAttr__static_
+	: Automatrix {}
+
 [Automaton] class   name1_DOTTEDNAME
 	: Automatrix {}
 
@@ -755,6 +761,27 @@ class Automatrix : Object
 	}
 
 [Automaton] class   decl_moduleHead
+	: Automatrix {}
+
+[Automaton] class   bounds1_bound
+	: Automatrix {}
+
+[Automaton] class   type_type_____bounds1____
+	: Automatrix {}
+
+[Automaton] class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt
+	: Automatrix {}
+
+[Automaton] class   classDecl_fieldDecl
+	: Automatrix {}
+
+[Automaton] class   typeSpec_className
+	: Automatrix {}
+
+[Automaton] class   instr_INSTR_TYPE_typeSpec
+	: Automatrix {}
+
+[Automaton] class   instr_INSTR_FIELD_type_id
 	: Automatrix {}
 }
 
