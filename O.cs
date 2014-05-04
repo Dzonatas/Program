@@ -54,34 +54,22 @@ class Argument
 	public object[] Args		{ get { return arg as object[] ; } }
 	public string Token
 		{
-		get { return resolve_token( ref arg ) ; }
-		}
-	string resolve_token( ref object _arg )
-		{
-		string s = "" ;
-		if( _arg is Stack.Item.Token )
-			{
-			Stack.Item.Token t = (Stack.Item.Token) _arg ;
-			return t._Token._ ;
-			}
-		if( _arg is Automatrix )
-			{
-			Automatrix a = _arg as Automatrix ;
-			for( int i = 1 ; i < a.Length ; i++ )
+		get {
+			if( arg is Stack.Item.Token )
+				return (arg as Stack.Item.Token)._Token._ ;
+			if( arg is Automatrix )
 				{
-				if( a.Args[i] is Stack.Item.Token )
+				Automatrix a = arg as Automatrix ;
+				for( int i = 1 ; i < a.Length ; i++ )
 					{
-					Stack.Item.Token t = (Stack.Item.Token) a.Args[i] ;
-					return t._Token._ ;
-					}
-				if( a.Args[i] is Automatrix )
-					{
-					return resolve_token( ref a.Args[i] ) ;
+					if( a.Args[i] is Stack.Item.Token )
+						return (a.Args[i] as Stack.Item.Token)._Token._ ;
+					if( a.Args[i] is Automatrix )
+						return new Argument( ref a.Args[i] ).Token ;
 					}
 				}
+			throw new System.NotImplementedException( "Unresolved casts to dotted names." ) ;
 			}
-		throw new System.NotImplementedException( "Unresolved casts to dotted names." ) ;
-		return null ;
 		}
 	public string ResolveType()
 		{
