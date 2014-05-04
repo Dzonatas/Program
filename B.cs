@@ -86,9 +86,11 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	else
 	if( automatrix.ContainsKey(this_xo_t.ReductionMethod) )
 		{
-		automatrix[this_xo_t.ReductionMethod].InvokeMember( null ,
+		Automatrix a = automatrix[this_xo_t.ReductionMethod].InvokeMember( null ,
 			            System.Reflection.BindingFlags.CreateInstance  ,
-			                                               null , null , null ) ;
+			                                               null , null , null )
+			                                                    as Automatrix ;
+		Stack.Push( a ) ;
 		}
 	else
 	try {
