@@ -308,12 +308,7 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   methodName___ctor_
-	: Automatrix	{
-	protected override void main()
-		{
-		o[1] = "_ctor" ;
-		}
-	}
+	: Automatrix {}
 
 [Automaton] class   implAttr_implAttr__cil_
 	: Automatrix {}
@@ -325,8 +320,8 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		if( Arg6[1] is string )
-			this_method_name = (string) Arg6[1] ;
+		if( Args[6] is methodName___ctor_ )
+			this_method_name = "_ctor" ;
 		else
 			this_method_name = "$" + Arg6.Token ;
 		this_method_type = resolve_type( Arg5 ) ;
