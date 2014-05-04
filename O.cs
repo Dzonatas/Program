@@ -393,7 +393,7 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		this_maxstack = int.Parse( (string) (Stack.Item.Token)((object[])o[2])[1] ) ;
+		this_maxstack = int.Parse( Arg2.Token ) ;
 		this_stack = new string[this_maxstack] ;
 		}
 	}
