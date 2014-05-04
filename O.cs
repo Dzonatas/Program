@@ -527,8 +527,8 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		if( ((object[])o[6])[1] is string )
-			this_methodName = (string) ((object[])o[6])[1] ;
+		if( Args[6] is methodName___ctor_ )
+			this_methodName = "_ctor" ;
 		else
 			this_methodName = "$" + Arg6.Token ;
 		this_instr_type = Arg3.ResolveType() ;
