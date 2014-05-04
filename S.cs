@@ -55,6 +55,18 @@ class Stack
 				return _Token.ToString() ;
 				}
 			}
+		public class Empty : Item
+			{
+			public string Assertive ;
+			public Empty( string assertive ) : base()
+				{
+				Assertive = assertive ;
+				}
+			public override string ToString()
+				{
+				return "[Empty] " + Assertive ;
+				}
+			}
 		}
 	static public void Dump()
 		{
@@ -72,12 +84,10 @@ class Stack
 	static public void Push( Item o )
 		{
 		stack.Push( o ) ;
-		o = null ;
 		}
 	static public void Push( object[] o )
 		{
 		stack.Push( (Object) o[0] ) ;
-		o = null ;
 		}
 	static private object stack_pop()
 		{
@@ -134,7 +144,7 @@ class Stack
 					if(	rhs[1] == t._Token._[0] )
 						o[i] = stack_pop() as Stack.Item.Token ;
 					else
-						o[i] = null ;
+						o[i] = new Item.Empty( "rhs==" + rhs + "  stack==" + t._Token._ ) ;
 					}
 				else
 				if( rhs[0] == '"' )
@@ -142,7 +152,7 @@ class Stack
 					if( rhs == '"'+t._Token._+'"' )
 						o[i] = stack_pop() as Stack.Item.Token ;
 					else
-						o[i] = null ;
+						o[i] = new Item.Empty( "rhs==" + rhs + "  stack==" + t._Token._ ) ;
 					}
 				else
 				if( rhs[0] == '$' )
@@ -150,14 +160,14 @@ class Stack
 					if( rhs == t._Token._ )
 						o[i] = stack_pop() as Stack.Item.Token ;
 					else
-						o[i] = null ;
+						o[i] = new Item.Empty( "rhs==" + rhs + "  stack==" + t._Token._ ) ;
 					}
 				else
 					{
 					if( rhs == rhs.ToUpper() )
 						o[i] = stack_pop() as Stack.Item.Token ;
 					else
-						o[i] = null ;
+						o[i] = new Item.Empty( "rhs==" + rhs + "  stack==" + t._Token._ + " (not UPPER)" ) ;
 					}
 				}
 			else
@@ -171,7 +181,7 @@ class Stack
 				else
 					{
 					log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
-					o[i] = null ;
+					o[i] = new Item.Empty( "lhs="+lhs+"   rhs="+rhs ) ;
 					}
 				}
 			else
@@ -185,7 +195,7 @@ class Stack
 				else
 					{
 					log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
-					o[i] = null ;
+					o[i] = new Item.Empty( "lhs="+lhs+"   rhs="+rhs ) ;
 					}
 				}
 			else
