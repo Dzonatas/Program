@@ -797,7 +797,12 @@ class Automatrix : Object
 	: Automatrix {}
 
 [Automaton] class   sigArg_paramAttr_type_id
-	: Automatrix {}
+	: Automatrix {
+	protected override void main()
+		{
+		this_sigArg_types += "$" + Arg2.ResolveType() +'_'+ Arg3.Token ;
+		}
+	}
 
 [Automaton] class   methodDecl_localsHead__init______sigArgs0____
 	: Automatrix {}
