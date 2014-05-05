@@ -13,6 +13,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	setstate:
 	request( ref state ) ;
 	planet     xyzzy ;
+	int rule = -1 ;
 
 	Debug.WriteLine( "[State] " + state ) ;
 	if( ! token.HasValue )
@@ -47,10 +48,17 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 				}
 			Debug.WriteLine( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 			b.yy = xo_t[rr.rule] ;
-			goto transit ;
+			rule = rr.rule ;
+			if( state.gotoset.ContainsKey( b.yy ) )
+				goto transit ;
+			this_xo_t = xo_t[rr.rule] ;
+			goto jump ;
 			}
 	if( state.default_reduction.HasValue )
-		b.yy = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
+		{
+		rule = state.reductionset[state.default_reduction.Value].rule ;
+		b.yy = xo_t[rule] ;
+		}
 	transit:
 	if( state.gotoset.ContainsKey( b.yy ) )
 		{
@@ -65,7 +73,8 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Debug.WriteLine( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
 		throw new System.NotImplementedException( "Missed token?" ) ;
 		}
-	this_xo_t = xo_t[state.reductionset[state.default_reduction.Value].rule] ;
+	this_xo_t = xo_t[rule] ;
+	jump :
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
 	if( this_xo_t.ReductionMethod == "id_ID" )
 		{
@@ -102,21 +111,8 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Stack.Push( (Automatrix) o ) ;
 		}
 	else
-	try {
-		/*
-		typeof(A335).InvokeMember( this_xo_t.ReductionMethod,
-			System.Reflection.BindingFlags.InvokeMethod |
-			System.Reflection.BindingFlags.NonPublic |
-			System.Reflection.BindingFlags.Static,
-			null, null, null ) ;
-		*/
-		}
-	catch( System.MissingMemberException e )
-		{
-		Debug.WriteLine( "["+e.GetType().ToString()+"] " + e.Message ) ;
-		Stack.Push( Stack.Pop() ) ;
-		}
-	throw new ReducedAcception( state.reductionset[state.default_reduction.Value].rule ) ;
+		Debug.WriteLine( "[beginning] Defaulted on "+this_xo_t.ReductionMethod ) ;
+	throw new ReducedAcception( rule ) ;
 
 	new_state :
 	try {
