@@ -783,6 +783,36 @@ class Automatrix : Object
 
 [Automaton] class   instr_INSTR_FIELD_type_id
 	: Automatrix {}
+
+[Automaton] class   decls
+	: Automatrix {}
+
+[Automaton] class   instr_INSTR_FIELD_type_typeSpec______id
+	: Automatrix {}
+
+[Automaton] class   localsHead___locals_
+	: Automatrix {}
+
+[Automaton] class   type__int32_
+	: Automatrix {}
+
+[Automaton] class   sigArg_paramAttr_type_id
+	: Automatrix {}
+
+[Automaton] class   methodDecl_localsHead__init______sigArgs0____
+	: Automatrix {}
+
+[Automaton] class   labels_id
+	: Automatrix {}
+
+[Automaton] class   labels_id_____labels
+	: Automatrix {}
+
+[Automaton] class   instr_INSTR_SWITCH_____labels____
+	: Automatrix {}
+
+[Automaton] class   instr_INSTR_BRTARGET_id
+	: Automatrix {}
 }
 
 
