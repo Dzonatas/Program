@@ -515,6 +515,29 @@ class Automatrix : Object
 				this_stack_offset++ ;
 				break ;
 				}
+			case "LDC_I4_0" :
+			case "LDC_I4_1" :
+			case "LDC_I4_2" :
+			case "STELEM_REF" :
+			case "NEWARR" :
+			case "STSFLD" :
+			case "STLOC_0" :
+			case "LDSFLD" :
+			case "STLOC_1" :
+			case "STLOC_2" :
+			case "STLOC_3" :
+			case "LDLOC_0" :
+			case "LDLOC_1" :
+			case "LDLOC_2" :
+			case "LDLOC_3" :
+			case "DUP" :
+			case "SWITCH" :
+			case "BR" :
+			case "LDELEM_REF" :
+				break ;
+			default :
+				Debug.WriteLine( "[methodDecl_instr] Defaulted on " + this_instr ) ;
+				break ;
 			}
 		this_program += "\n        }\n\n" ;
 		this_instr_sigArg_types = null ;
