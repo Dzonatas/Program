@@ -516,24 +516,67 @@ class Automatrix : Object
 				break ;
 				}
 			case "LDC_I4_0" :
+				this_stack_offset++ ;
+				break ;
 			case "LDC_I4_1" :
+				this_stack_offset++ ;
+				break ;
 			case "LDC_I4_2" :
+				this_stack_offset++ ;
+				break ;
 			case "STELEM_REF" :
+				this_stack_offset-- ;
+				this_stack_offset-- ;
+				this_stack_offset-- ;
+				break ;
 			case "NEWARR" :
+				this_stack_offset++ ;
+				this_stack_offset-- ;
+				break ;
 			case "STSFLD" :
-			case "STLOC_0" :
+				this_stack_offset-- ;
+				break ;
 			case "LDSFLD" :
+				this_stack_offset++ ;
+				break ;
+			case "STLOC_0" :
+				this_stack_offset-- ;
+				break ;
 			case "STLOC_1" :
+				this_stack_offset-- ;
+				break ;
 			case "STLOC_2" :
+				this_stack_offset-- ;
+				break ;
 			case "STLOC_3" :
+				this_stack_offset-- ;
+				break ;
 			case "LDLOC_0" :
+				this_stack_offset++ ;
+				break ;
 			case "LDLOC_1" :
+				this_stack_offset++ ;
+				break ;
 			case "LDLOC_2" :
+				this_stack_offset++ ;
+				break ;
 			case "LDLOC_3" :
+				this_stack_offset++ ;
+				break ;
 			case "DUP" :
+				this_stack_offset++ ;
+				this_stack_offset-- ;
+				this_stack_offset++ ;
+				break ;
 			case "SWITCH" :
+				this_stack_offset-- ;
+				break ;
 			case "BR" :
+				break ;
 			case "LDELEM_REF" :
+				this_stack_offset++ ;
+				this_stack_offset-- ;
+				this_stack_offset-- ;
 				break ;
 			default :
 				Debug.WriteLine( "[methodDecl_instr] Defaulted on " + this_instr ) ;
