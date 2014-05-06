@@ -516,12 +516,15 @@ class Automatrix : Object
 				break ;
 				}
 			case "LDC_I4_0" :
+				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ;
 				this_stack_offset++ ;
 				break ;
 			case "LDC_I4_1" :
+				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ;
 				this_stack_offset++ ;
 				break ;
 			case "LDC_I4_2" :
+				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ;
 				this_stack_offset++ ;
 				break ;
 			case "STELEM_REF" :
