@@ -143,9 +143,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 [Automaton] class   type__string_
 	: Automatrix {}
 
-[Automaton] class   sigArgs0_sigArgs1
-	: Automatrix {}
-
 [Automaton] class   publicKeyTokenHead___publickeytoken_________
 	: Automatrix {}
 
@@ -159,9 +156,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 	: Automatrix {}
 
 [Automaton] class   assemblyRefDecl_publicKeyTokenHead_bytes____
-	: Automatrix {}
-
-[Automaton] class   customType_callConv_type_typeSpec________ctor______sigArgs0____
 	: Automatrix {}
 
 [Automaton] class   customHead___custom__customType________
@@ -231,9 +225,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 	: Automatrix {}
 
 [Automaton] class   type__int32_
-	: Automatrix {}
-
-[Automaton] class   methodDecl_localsHead__init______sigArgs0____
 	: Automatrix {}
 
 [Automaton] class   labels_id

@@ -199,6 +199,7 @@ class Automatrix : Object
 			this_program += "( const void** stack )\n        {" ;
 		else
 			this_program += "( const void** stack , const void** args )\n        {" ;
+		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", this_stack_offset, args ) ;
 		switch( this_instr )
 			{
 			case "LDARG_0":
@@ -216,6 +217,7 @@ class Automatrix : Object
 				break ;
 			case "CALL":
 				{
+				Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
 				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 				this_stack_offset -= iargs ;
 				/*
@@ -251,6 +253,7 @@ class Automatrix : Object
 						+ "&item" + this_stack_offset.ToString() + " ;" ;
 				if( this_instr_type != "void" )
 					{
+					Debug.WriteLine( " [methodDecl_instr] this_stack={0} offset={1}", this_stack.Length, this_stack_offset ) ;
 					this_stack[this_stack_offset] = this_instr_type ;
 					this_stack_offset++ ;
 					}
@@ -354,6 +357,7 @@ class Automatrix : Object
 				Debug.WriteLine( "[methodDecl_instr] Defaulted on " + this_instr ) ;
 				break ;
 			}
+		Debug.WriteLine( "[methodDecl_instr] stack={0}", this_stack_offset ) ;
 		this_program += "\n        }\n\n" ;
 		this_instr_sigArg_types = null ;
 		this_instr_sigArgs = 0 ;
@@ -531,6 +535,27 @@ class Automatrix : Object
 	protected override void main()
 		{
 		this_sigArg_types += "$" + Arg2.ResolveType() +'_'+ Arg3.Token ;
+		}
+	}
+
+[Automaton] class   sigArgs0_sigArgs1
+	: Automatrix {}
+
+[Automaton] class   customType_callConv_type_typeSpec________ctor______sigArgs0____
+	: Automatrix {
+	protected override void main()
+		{
+		this_sigArgs = 0 ;
+		this_sigArg_types = null ;
+		}
+	}
+
+[Automaton] class   methodDecl_localsHead__init______sigArgs0____
+	: Automatrix {
+	protected override void main()
+		{
+		this_sigArgs = 0 ;
+		this_sigArg_types = null ;
 		}
 	}
 
