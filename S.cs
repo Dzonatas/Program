@@ -78,7 +78,6 @@ class Stack
 					log( "[stack.o#] "+ ( i == null ? "null" : i).ToString() ) ;
 			else
 				log( "[stack] "+o.ToString() ) ;
-			log( "[program]\n" + this_program ) ;
 			}
 		}
 	static public void Push( Item o )

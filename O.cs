@@ -194,24 +194,24 @@ class Automatrix : Object
 		this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
 						 + this_instr + "$" + i ;
 		int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
-		this_program += "static inline void " + this_instr + "$" + i ;
+		Program.Add( "static inline void " + this_instr + "$" + i ) ;
 		if( args == 0 )
-			this_program += "( const void** stack )\n        {" ;
+			Program.Add( "( const void** stack )\n        {" ) ;
 		else
-			this_program += "( const void** stack , const void** args )\n        {" ;
+			Program.Add( "( const void** stack , const void** args )\n        {" ) ;
 		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", this_stack_offset, args ) ;
 		switch( this_instr )
 			{
 			case "LDARG_0":
-				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = args[0] ;" ;
+				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = args[0] ;" ) ;
 				this_stack[this_stack_offset] = "object" ;
 				this_stack_offset++ ;
 				break ;
 			case "LDSTR":
-				this_program += "\n        static const struct _string s = { "
+				Program.Add( "\n        static const struct _string s = { "
 					+ this_string.Length.ToString()
-					+ " , \"" + this_string + "\" } ;" ;
-				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &s ;" ;
+					+ " , \"" + this_string + "\" } ;" ) ;
+				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = &s ;" ) ;
 				this_stack[this_stack_offset] = "string" ;
 				this_stack_offset++ ;
 				break ;
@@ -236,21 +236,21 @@ class Automatrix : Object
 						}
 					}
 				*/
-				this_program += "\n        " ;
+				Program.Add( "\n        " ) ;
 				if( this_instr_type == "string" )
 					{
-					this_program += "static struct _string item" + this_stack_offset.ToString() + " ;"
-						+ "\n        item" + this_stack_offset.ToString() + " = " ;
+					Program.Add( "static struct _string item" + this_stack_offset.ToString() + " ;"
+						+ "\n        item" + this_stack_offset.ToString() + " = " ) ;
 					freeset.Add( this_stack_offset ) ;
 					}
-				this_program += this_instr_symbol ;
+				Program.Add( this_instr_symbol ) ;
 				if( iargs == 0 )
-					this_program += "() ;" ;
+					Program.Add( "() ;" ) ;
 				else
-					this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
+					Program.Add( "(stack+" + this_stack_offset.ToString() + ") ;" ) ;
 				if( this_instr_type == "string" )
-					this_program += "\n        stack[" + this_stack_offset.ToString() + "] = "
-						+ "&item" + this_stack_offset.ToString() + " ;" ;
+					Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = "
+						+ "&item" + this_stack_offset.ToString() + " ;" ) ;
 				if( this_instr_type != "void" )
 					{
 					Debug.WriteLine( " [methodDecl_instr] this_stack={0} offset={1}", this_stack.Length, this_stack_offset ) ;
@@ -264,7 +264,7 @@ class Automatrix : Object
 				foreach( object z in freeset )
 					{
 					if( z is int )
-						this_program += "\n        free( ((struct _string *)stack[" + z + "])->string ) ;" ;
+						Program.Add( "\n        free( ((struct _string *)stack[" + z + "])->string ) ;" ) ;
 					}
 				freeset.Clear() ;
 				break ;
@@ -274,29 +274,29 @@ class Automatrix : Object
 				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 				this_stack_offset++ ;
 				this_stack_offset -= iargs ;
-				this_program += "\n        extern void " + this_instr_symbol + "( const void** ) ;" ;
-				this_program += "\n        extern struct _object " + this_instr_class_symbol + " ;" ;
-				this_program += "\n        static const struct _object obj = { &" + this_instr_class_symbol + " } ;" ;
-				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = &obj ;" ;
-				this_program += "\n        " + this_instr_symbol ;
+				Program.Add( "\n        extern void " + this_instr_symbol + "( const void** ) ;" ) ;
+				Program.Add( "\n        extern struct _object " + this_instr_class_symbol + " ;" ) ;
+				Program.Add( "\n        static const struct _object obj = { &" + this_instr_class_symbol + " } ;" ) ;
+				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = &obj ;" ) ;
+				Program.Add( "\n        " + this_instr_symbol ) ;
 				if( iargs == 0 )
-					this_program += "() ;" ;
+					Program.Add( "() ;" ) ;
 				else
-					this_program += "(stack+" + this_stack_offset.ToString() + ") ;" ;
+					Program.Add( "(stack+" + this_stack_offset.ToString() + ") ;" ) ;
 				this_stack[this_stack_offset] = "object" ;
 				this_stack_offset++ ;
 				break ;
 				}
 			case "LDC_I4_0" :
-				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ;
+				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "LDC_I4_1" :
-				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ;
+				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "LDC_I4_2" :
-				this_program += "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ;
+				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "STELEM_REF" :
@@ -358,7 +358,7 @@ class Automatrix : Object
 				break ;
 			}
 		Debug.WriteLine( "[methodDecl_instr] stack={0}", this_stack_offset ) ;
-		this_program += "\n        }\n\n" ;
+		Program.Add( "\n        }\n\n" ) ;
 		this_instr_sigArg_types = null ;
 		this_instr_sigArgs = 0 ;
 		this_instr_callConv_instance = false ;
@@ -418,7 +418,7 @@ class Automatrix : Object
 		   + s 
 		   + "\n        }" ;
 		log( p ) ;
-		this_program += p + "\n\n" ;
+		Program.Add( p + "\n\n" ) ;
 		this_instr_list = "" ;
 		this_stack_offset = 0 ;
 		this_method_static = false ;
@@ -486,19 +486,19 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		this_program += "int main( int argc , char** args , char** env )\n" +
+		Program.Add( "int main( int argc , char** args , char** env )\n" +
 	                    "        {\n" +
 	                    "        const void** stack = alloca(0) ;\n" +
 	                    "        " + this_start_class + "$Main() ;\n" +
-	                    "        }\n\n" ;
+	                    "        }\n\n" ) ;
 	    foreach( string class_symbol in virtualset.Keys )
 			{
 			List<string> l = (List<string>) virtualset[class_symbol] ;
-			this_program += "struct _object " + class_symbol + " =\n" +
-			                "        {\n" ;
+			Program.Add( "struct _object " + class_symbol + " =\n" +
+			                "        {\n" ) ;
 			foreach( string s in l )
-				this_program += "        ." + s + " = " + class_symbol + s + " ,\n" ;
-			this_program += "        } ;\n\n" ;
+				Program.Add( "        ." + s + " = " + class_symbol + s + " ,\n" ) ;
+			Program.Add( "        } ;\n\n" ) ;
 			}
 		}
 	}

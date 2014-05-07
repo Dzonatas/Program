@@ -102,3 +102,32 @@ namespace Application
 			}
 		}
 	}
+
+public partial class A335
+{
+class Program
+	{
+	static List<string> list = new List<string>() ;
+	static public void Add( string text )
+		{
+		list.Add( text ) ;
+		}
+	static public string Composite()
+		{
+		string program = "" ;
+		foreach( string s in list )
+			{
+			program += s ;
+			}
+		return program ;
+		}
+	static public void Start()
+		{
+		Add( "#include <BCL.HPP>\n\n" ) ;
+		}
+	public override string ToString()
+		{
+		return Composite() ;
+		}
+	}
+}

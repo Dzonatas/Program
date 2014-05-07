@@ -197,12 +197,12 @@ static void Begin()
 	#if SCREEN
 	_.screen.DrawCode() ;
 	#endif
-	this_program = "#include <BCL.HPP>\n\n" ;
+	Program.Start() ;
 	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	beginning( ref b ) ;
 	Stack.Dump() ;
 	program_ready() ;
-	program( this_program ) ;
+	program( Program.Composite() ) ;
 	program_output.Close() ;
 	if( log_output != null )
 		{
