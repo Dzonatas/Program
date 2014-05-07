@@ -115,9 +115,13 @@ class Program
 	static public string Composite()
 		{
 		string program = "" ;
+		int i = 0 ;
 		foreach( string s in list )
 			{
+			program += "#line " + i++ + "\n" ;
 			program += s ;
+			if( ! program.EndsWith( "\n" ) )
+				program += "\n" ;
 			}
 		return program ;
 		}
