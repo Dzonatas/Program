@@ -158,13 +158,3 @@ namespace A.org.com.edu.mil.net
 	//Abyssmal...
 	}
 
-partial class A335
-	{
-	class Automaton {} ;
-
-	[System.AttributeUsage(System.AttributeTargets.Class)]
-	public class AutomatonAttribute : System.Attribute {}
-
-	static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
-		new System.Collections.Generic.Dictionary<string,System.Type>() ;
-	}
