@@ -486,19 +486,10 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		Program.Add( "int main( int argc , char** args , char** env )\n" +
-	                    "        {\n" +
-	                    "        const void** stack = alloca(0) ;\n" +
-	                    "        " + this_start_class + "$Main() ;\n" +
-	                    "        }\n\n" ) ;
+		Program.C_Main() ;
 	    foreach( string class_symbol in virtualset.Keys )
 			{
-			List<string> l = (List<string>) virtualset[class_symbol] ;
-			Program.Add( "struct _object " + class_symbol + " =\n" +
-			                "        {\n" ) ;
-			foreach( string s in l )
-				Program.Add( "        ." + s + " = " + class_symbol + s + " ,\n" ) ;
-			Program.Add( "        } ;\n\n" ) ;
+			Program.C_Object( class_symbol ) ;
 			}
 		}
 	}

@@ -133,5 +133,30 @@ class Program
 		{
 		return Composite() ;
 		}
+	static public void C_Main()
+		{
+		Program.Add
+			(
+			"int main( int argc , char** args , char** env )\n" +
+	        "        {\n" +
+	        "        const void** stack = alloca(0) ;\n" +
+	        "        " + this_start_class + "$Main() ;\n" +
+	        "        }\n\n"
+	        ) ;
+		}
+	static public void C_Object( string class_symbol )
+		{
+		List<string> l = (List<string>) virtualset[class_symbol] ;
+		string p = "" ;
+		foreach( string s in l )
+			p += "        ." + s + " = " + class_symbol + s + " ,\n" ;
+		Program.Add
+			(
+			"struct _object " + class_symbol + " =\n" +
+			"        {\n" +
+			p +
+			"        } ;\n\n"
+			) ;
+		}
 	}
 }
