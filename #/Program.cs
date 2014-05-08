@@ -116,13 +116,9 @@ class Program
 	static public string Composite()
 		{
 		string program = "" ;
-		int i = 0 ;
 		foreach( Line l in list )
 			{
-			program += "#line " + i++ + "\n" ;
-			program += l ;
-			if( ! program.EndsWith( "\n" ) )
-				program += "\n" ;
+			program += l + "\n" ;
 			}
 		return program ;
 		}
@@ -136,33 +132,70 @@ class Program
 		}
 	public class Line
 		{
+		static int counter ;
 		List<string> list = new List<string>() ;
 		public Line()
 			{
 			Program.list.Add( this ) ;
+			list.Add( "#line " + counter++ ) ;
+			}
+		public Line( bool numbered )
+			{
+			Program.list.Add( this ) ;
+			if( numbered )
+				list.Add( "#line " + counter++ ) ;
 			}
 		public void Add( string text )
 			{
 			list.Add( text ) ;
 			}
-		public override string ToString()
+		static public implicit operator string( Line t )
 			{
 			string line = "" ;
-			foreach( string s in list )
-				line += s ;
+			foreach( string s in t.list )
+				line += s + "\n" ;
 			return line ;
+			}
+		public override string ToString()
+			{
+			return this ;
+			}
+		}
+	public class Declaration
+		{
+		Line header = new Line() ;
+		Line body = new Line( false ) ;
+		Line footer = new Line( false ) ;
+		public Declaration() : base()
+			{
+			body.Add(   "        {" ) ;
+			footer.Add( "        }" ) ;
+			}
+		public Line Header
+			{
+			get { return header ; }
+			}
+		public void Add( string text )
+			{
+			body.Add( text ) ;
+			}
+		static public implicit operator string( Declaration d )
+			{
+			return d.header + d.body + d.footer ;
+			}
+		public override string ToString()
+			{
+			return header + body + footer ;
 			}
 		}
 	static public void C_Main()
 		{
-		Program.Add
-			(
-			"int main( int argc , char** args , char** env )\n" +
-	        "        {\n" +
-	        "        const void** stack = alloca(0) ;\n" +
-	        "        " + this_start_class + "$Main() ;\n" +
-	        "        }\n\n"
-	        ) ;
+		var d = new Declaration() ;
+		d.Header.Add( "int main( int argc , char** args , char** env )" ) ;
+		d.Add( "        const void** stack = alloca(0) ;\n" ) ;
+		d.Add("        " + this_start_class + "$Main() ;\n" ) ;
+		var l = new Line() ;
+		l.Add( d ) ;
 		}
 	static public void C_Objects()
 		{
