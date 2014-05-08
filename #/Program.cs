@@ -107,19 +107,20 @@ public partial class A335
 {
 class Program
 	{
-	static List<string> list = new List<string>() ;
+	static List<Line> list = new List<Line>() ;
 	static public void Add( string text )
 		{
-		list.Add( text ) ;
+		Line l = new Line() ;
+		l.Add( text ) ;
 		}
 	static public string Composite()
 		{
 		string program = "" ;
 		int i = 0 ;
-		foreach( string s in list )
+		foreach( Line l in list )
 			{
 			program += "#line " + i++ + "\n" ;
-			program += s ;
+			program += l ;
 			if( ! program.EndsWith( "\n" ) )
 				program += "\n" ;
 			}
@@ -132,6 +133,25 @@ class Program
 	public override string ToString()
 		{
 		return Composite() ;
+		}
+	public class Line
+		{
+		List<string> list = new List<string>() ;
+		public Line()
+			{
+			Program.list.Add( this ) ;
+			}
+		public void Add( string text )
+			{
+			list.Add( text ) ;
+			}
+		public override string ToString()
+			{
+			string line = "" ;
+			foreach( string s in list )
+				line += s ;
+			return line ;
+			}
 		}
 	static public void C_Main()
 		{
