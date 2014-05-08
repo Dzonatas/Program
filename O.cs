@@ -305,6 +305,10 @@ class Automatrix : Object
 				d.Statement( "stack[" + this_stack_offset.ToString() + "] = 0" ) ;
 				this_stack_offset++ ;
 				break ;
+			case "LDC_I4_3" :
+				d.Statement( "stack[" + this_stack_offset.ToString() + "] = 0" ) ;
+				this_stack_offset++ ;
+				break ;
 			case "STELEM_REF" :
 				this_stack_offset-- ;
 				this_stack_offset-- ;
@@ -356,6 +360,18 @@ class Automatrix : Object
 				d.Statement( "goto " + this_instr_brtarget_id ) ;
 				d.IsFlowControl = true ;
 				this_method.RegisterLabel( this_instr_brtarget_id ) ;
+				break ;
+			case "BGE" :
+				this_stack_offset-- ;
+				this_stack_offset-- ;
+				d.Statement( "goto " + this_instr_brtarget_id ) ;
+				d.IsFlowControl = true ;
+				this_method.RegisterLabel( this_instr_brtarget_id ) ;
+				break ;
+			case "ADD" :
+				this_stack_offset-- ;
+				this_stack_offset-- ;
+				this_stack_offset++ ;
 				break ;
 			case "LDELEM_REF" :
 				this_stack_offset++ ;
