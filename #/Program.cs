@@ -108,11 +108,6 @@ public partial class A335
 class Program
 	{
 	static List<Line> list = new List<Line>() ;
-	static public void Add( string text )
-		{
-		Line l = new Line() ;
-		l.Add( text ) ;
-		}
 	static public string Composite()
 		{
 		string program = "" ;
@@ -124,7 +119,8 @@ class Program
 		}
 	static public void Start()
 		{
-		Add( "#include <BCL.HPP>" ) ;
+		var l = new Line() ;
+		l.Add( "#include <BCL.HPP>" ) ;
 		}
 	public override string ToString()
 		{

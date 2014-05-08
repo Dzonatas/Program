@@ -194,24 +194,23 @@ class Automatrix : Object
 		this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
 						 + this_instr + "$" + i ;
 		int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
-		Program.Add( "static inline void " + this_instr + "$" + i ) ;
-		if( args == 0 )
-			Program.Add( "( const void** stack )\n        {" ) ;
-		else
-			Program.Add( "( const void** stack , const void** args )\n        {" ) ;
+		var d = new Program.Declaration() ;
+		d.Header.Add( "static inline void " + this_instr + "$" + i
+			+ ( args == 0 ?	"( const void** stack )"
+				: "( const void** stack , const void** args )" ) ) ;
 		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", this_stack_offset, args ) ;
 		switch( this_instr )
 			{
 			case "LDARG_0":
-				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = args[0] ;" ) ;
+				d.Add( "        stack[" + this_stack_offset.ToString() + "] = args[0] ;" ) ;
 				this_stack[this_stack_offset] = "object" ;
 				this_stack_offset++ ;
 				break ;
 			case "LDSTR":
-				Program.Add( "\n        static const struct _string s = { "
+				d.Add( "        static const struct _string s = { "
 					+ this_string.Length.ToString()
 					+ " , \"" + this_string + "\" } ;" ) ;
-				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = &s ;" ) ;
+				d.Add( "        stack[" + this_stack_offset.ToString() + "] = &s ;" ) ;
 				this_stack[this_stack_offset] = "string" ;
 				this_stack_offset++ ;
 				break ;
@@ -229,27 +228,25 @@ class Automatrix : Object
 						int offset = this_stack_offset+a-1+( this_instr_callConv_instance ? 1 : 0 ) ;
 						if( s[a] != this_stack[offset] )
 							{
-							this_program += "\n        static struct _object obj = { 0 } ;" ;
-							this_program += "\n        obj.this = (void*) stack["+offset+"] ;" ;
-							this_program += "\n        stack[" + offset + "] =  &obj;" ;
+							this_program += "        static struct _object obj = { 0 } ;" ;
+							this_program += "        obj.this = (void*) stack["+offset+"] ;" ;
+							this_program += "        stack[" + offset + "] =  &obj;" ;
 							}
 						}
 					}
 				*/
-				Program.Add( "\n        " ) ;
 				if( this_instr_type == "string" )
 					{
-					Program.Add( "static struct _string item" + this_stack_offset.ToString() + " ;"
-						+ "\n        item" + this_stack_offset.ToString() + " = " ) ;
+					d.Add( "        static struct _string item" + this_stack_offset.ToString() + " ;"
+						+ "        item" + this_stack_offset.ToString() + " = " ) ;
 					freeset.Add( this_stack_offset ) ;
 					}
-				Program.Add( this_instr_symbol ) ;
 				if( iargs == 0 )
-					Program.Add( "() ;" ) ;
+					d.Add( "        " + this_instr_symbol + "() ;" ) ;
 				else
-					Program.Add( "(stack+" + this_stack_offset.ToString() + ") ;" ) ;
+					d.Add( "        " + this_instr_symbol + "(stack+" + this_stack_offset.ToString() + ") ;" ) ;
 				if( this_instr_type == "string" )
-					Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = "
+					d.Add( "        stack[" + this_stack_offset.ToString() + "] = "
 						+ "&item" + this_stack_offset.ToString() + " ;" ) ;
 				if( this_instr_type != "void" )
 					{
@@ -264,7 +261,7 @@ class Automatrix : Object
 				foreach( object z in freeset )
 					{
 					if( z is int )
-						Program.Add( "\n        free( ((struct _string *)stack[" + z + "])->string ) ;" ) ;
+						d.Add( "        free( ((struct _string *)stack[" + z + "])->string ) ;" ) ;
 					}
 				freeset.Clear() ;
 				break ;
@@ -274,29 +271,28 @@ class Automatrix : Object
 				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 				this_stack_offset++ ;
 				this_stack_offset -= iargs ;
-				Program.Add( "\n        extern void " + this_instr_symbol + "( const void** ) ;" ) ;
-				Program.Add( "\n        extern struct _object " + this_instr_class_symbol + " ;" ) ;
-				Program.Add( "\n        static const struct _object obj = { &" + this_instr_class_symbol + " } ;" ) ;
-				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = &obj ;" ) ;
-				Program.Add( "\n        " + this_instr_symbol ) ;
+				d.Add( "        extern void " + this_instr_symbol + "( const void** ) ;" ) ;
+				d.Add( "        extern struct _object " + this_instr_class_symbol + " ;" ) ;
+				d.Add( "        static const struct _object obj = { &" + this_instr_class_symbol + " } ;" ) ;
+				d.Add( "        stack[" + this_stack_offset.ToString() + "] = &obj ;" ) ;
 				if( iargs == 0 )
-					Program.Add( "() ;" ) ;
+					d.Add( "        " + this_instr_symbol + "() ;" ) ;
 				else
-					Program.Add( "(stack+" + this_stack_offset.ToString() + ") ;" ) ;
+					d.Add( "        " + this_instr_symbol + "(stack+" + this_stack_offset.ToString() + ") ;" ) ;
 				this_stack[this_stack_offset] = "object" ;
 				this_stack_offset++ ;
 				break ;
 				}
 			case "LDC_I4_0" :
-				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ) ;
+				d.Add( "        stack[" + this_stack_offset.ToString() + "] = 0 ;" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "LDC_I4_1" :
-				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ) ;
+				d.Add( "        stack[" + this_stack_offset.ToString() + "] = 0 ;" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "LDC_I4_2" :
-				Program.Add( "\n        stack[" + this_stack_offset.ToString() + "] = 0 ;" ) ;
+				d.Add( "        stack[" + this_stack_offset.ToString() + "] = 0 ;" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "STELEM_REF" :
@@ -358,7 +354,6 @@ class Automatrix : Object
 				break ;
 			}
 		Debug.WriteLine( "[methodDecl_instr] stack={0}", this_stack_offset ) ;
-		Program.Add( "\n        }\n\n" ) ;
 		this_instr_sigArg_types = null ;
 		this_instr_sigArgs = 0 ;
 		this_instr_callConv_instance = false ;
@@ -418,7 +413,8 @@ class Automatrix : Object
 		   + s 
 		   + "\n        }" ;
 		log( p ) ;
-		Program.Add( p + "\n\n" ) ;
+		var d = new Program.Line() ;
+		d.Add( p ) ;
 		this_instr_list = "" ;
 		this_stack_offset = 0 ;
 		this_method_static = false ;
