@@ -144,6 +144,13 @@ class Program
 	        "        }\n\n"
 	        ) ;
 		}
+	static public void C_Objects()
+		{
+	    foreach( string class_symbol in virtualset.Keys )
+			{
+			Program.C_Object( class_symbol ) ;
+			}
+		}
 	static public void C_Object( string class_symbol )
 		{
 		List<string> l = (List<string>) virtualset[class_symbol] ;

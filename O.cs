@@ -487,10 +487,7 @@ class Automatrix : Object
 	protected override void main()
 		{
 		Program.C_Main() ;
-	    foreach( string class_symbol in virtualset.Keys )
-			{
-			Program.C_Object( class_symbol ) ;
-			}
+		Program.C_Objects() ;
 		}
 	}
 
