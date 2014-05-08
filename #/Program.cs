@@ -166,8 +166,8 @@ class Program
 		Line footer = new Line( false ) ;
 		public Declaration() : base()
 			{
-			body.Add(   "        {" ) ;
-			footer.Add( "        }" ) ;
+			body.Add(   "\t{" ) ;
+			footer.Add( " \t}" ) ;
 			}
 		public Line Header
 			{
@@ -180,6 +180,10 @@ class Program
 		public void Add( string text )
 			{
 			body.Add( text ) ;
+			}
+		public void Statement( string text )
+			{
+			body.Add( "\t" + text + " ;" ) ;
 			}
 		static public implicit operator string( Declaration d )
 			{
@@ -194,8 +198,8 @@ class Program
 		{
 		var d = new Declaration() ;
 		d.Header.Add( "int main( int argc , char** args , char** env )" ) ;
-		d.Add( "        const void** stack = alloca(0) ;" ) ;
-		d.Add("        " + this_start_class + "$Main() ;" ) ;
+		d.Statement( "const void** stack = alloca(0)" ) ;
+		d.Statement( this_start_class + "$Main()" ) ;
 		}
 	static public void C_Objects()
 		{
@@ -210,8 +214,8 @@ class Program
 		d.Header.Add( "struct _object " + class_symbol + " =" ) ;
 		List<string> l = (List<string>) virtualset[class_symbol] ;
 		foreach( string s in l )
-			d.Add( "        ." + s + " = " + class_symbol + s + " ," ) ;
-		d.Footer.Add( "        ;" ) ;
+			d.Add( "\t." + s + " = " + class_symbol + s + " ," ) ;
+		d.Footer.Add( "\t;" ) ;
 		}
 	}
 }
