@@ -134,7 +134,7 @@ class Program
 		public Line()
 			{
 			Program.list.Add( this ) ;
-			list.Add( "#line " + counter++ ) ;
+			list.Add( "//#line " + counter++ ) ;
 			numbered = false ;
 			}
 		public Line( bool numbered )
