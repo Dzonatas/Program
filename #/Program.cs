@@ -107,7 +107,8 @@ public partial class A335
 {
 class Program
 	{
-	static List<Line> list = new List<Line>() ;
+	static List<Line>    list = new List<Line>() ;
+	static List<Method>  methodset = new List<Method>() ;
 	static public string Composite()
 		{
 		string program = "" ;
@@ -262,6 +263,55 @@ class Program
 		public void Statement( string text )
 			{
 			list.Add( text ) ;
+			}
+		}
+	static public void Methods()
+		{
+		foreach( Program.Method m in methodset )
+			m.Compose() ;
+		}
+	public class Method
+		{
+		List<Oprand> list = new List<Oprand>() ;
+		public bool    Virtual ;
+		public bool    Static ;
+		public bool    CallConvInstance ;
+		public string  Type ;
+		public string  ClassSymbol ;
+		public string  Name ;
+		public string  SigArgTypes ;
+		public int     SigArgs ;
+		public int     MaxStack ;
+		public Method()
+			{
+			methodset.Add( this ) ;
+			}
+		public void Add( Oprand oprand )
+			{
+			list.Add( oprand ) ;
+			}
+		public void Compose()
+			{
+			foreach( Oprand o in list )
+				o.Compose() ;
+			var d = new Program.Declaration() ;
+			string p = "" ;
+			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
+			if( Virtual )
+				p = "struct _string " ;
+			else
+				p = "void " ;
+			p += ClassSymbol + Name + SigArgTypes ;
+			if( args == 0 )
+				p += "()" ;
+			else
+				p += "( const void** args )" ;
+			d.Header.Add( p ) ;
+			d.Statement( "const void** stack = alloca( " + MaxStack + " )" ) ;
+			foreach( Oprand o in list )
+				d.Statement( o.Instruction + "$" + o.ID + "( stack " + ( args == 0 ? ")" : ", args )" ) ) ;
+			if( Virtual )
+				d.Statement( "return *(struct _string *)*stack" ) ;
 			}
 		}
 	}

@@ -80,9 +80,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 [Automaton] class   extendsClause__extends__className
 	: Automatrix {}
 
-[Automaton] class   methodHeadPart1___method_
-	: Automatrix {}
-
 [Automaton] class   methAttr_methAttr__public_
 	: Automatrix {}
 

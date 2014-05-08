@@ -149,20 +149,29 @@ class Automatrix : Object
 		}
 	}
 
+[Automaton] class   methodHeadPart1___method_
+	: Automatrix {
+	protected override void main()
+		{
+		this_method = new Program.Method() ;
+		this_method.ClassSymbol = this_class_symbol ;
+		}
+	}
+
 [Automaton] class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____
 	: Automatrix	{
 	protected override void main()
 		{
 		if( Args[6] is methodName___ctor_ )
-			this_method_name = "_ctor" ;
+			this_method.Name = "_ctor" ;
 		else
-			this_method_name = "$" + Arg6.Token ;
-		this_method_type = Arg5.ResolveType() ;
-		this_method_sigArgs = this_sigArgs ;
-		this_method_sigArg_types = this_sigArg_types ;
-		this_method_callConv_instance = this_callConv_instance ;
-		this_method_virtual = Arg2.ResolvedMethAttrContainsVirtual ;
-		if( this_method_virtual )
+			this_method.Name = "$" + Arg6.Token ;
+		this_method.Type              = Arg5.ResolveType() ;
+		this_method.SigArgs           = this_sigArgs ;
+		this_method.SigArgTypes       = this_sigArg_types ;
+		this_method.CallConvInstance  = this_callConv_instance ;
+		this_method.Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
+		if( this_method.Virtual )
 			{
 			Program.C_Struct c ;
 			if( ! virtualset.ContainsKey( this_class_symbol ) )
@@ -173,7 +182,7 @@ class Automatrix : Object
 				}
 			else
 				c = ((Program.C_Struct) virtualset[this_class_symbol]) ;
-			c.Assign( this_method_name + this_sigArg_types ) ;
+			c.Assign( this_method.Name + this_sigArg_types ) ;
 			}
 		this_sigArgs = 0 ;
 		this_sigArg_types = null ;
@@ -185,8 +194,8 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		this_maxstack = int.Parse( Arg2.Token ) ;
-		this_stack = new string[this_maxstack] ;
+		this_method.MaxStack = int.Parse( Arg2.Token ) ;
+		this_stack = new string[this_method.MaxStack] ;
 		}
 	}
 
@@ -195,9 +204,8 @@ class Automatrix : Object
 	protected override void main()
 		{
 		var d = new Program.Oprand( Arg1.Token ) ;
-		this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
-						 + d.Instruction + "$" + d.ID ;
-		int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
+		this_method.Add( d ) ;
+		int args = this_method.SigArgs + ( this_method.CallConvInstance ? 1 : 0 ) ;
 		d.HasArgs = args > 0 ;
 		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", this_stack_offset, args ) ;
 		switch( d.Instruction )
@@ -355,7 +363,6 @@ class Automatrix : Object
 				Debug.WriteLine( "[methodDecl_instr] Defaulted on " + d.Instruction ) ;
 				break ;
 			}
-		d.Compose() ;
 		Debug.WriteLine( "[methodDecl_instr] stack={0}", this_stack_offset ) ;
 		this_instr_sigArg_types = null ;
 		this_instr_sigArgs = 0 ;
@@ -388,34 +395,7 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		var d = new Program.Declaration() ;
-		string p = "" ;
-		int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
-		if( this_method_virtual )
-			p = "struct _string " ;
-		else
-			p = "void " ;
-		p += this_class_symbol+this_method_name+this_method_sigArg_types ;
-		if( args == 0 )
-			p += "()" ;
-		else
-			p += "( const void** args )" ;
-		d.Header.Add( p ) ;
-		d.Statement( "const void** stack = alloca( "+this_maxstack.ToString()+" )" ) ;
-		foreach( string s in this_instr_list.Split('\n') )
-			{
-			if( s == "" )
-				continue ;
-			d.Statement( s + "( stack " + ( args == 0 ? ")" : ", args )" ) ) ;
-			}
-		if( this_method_virtual )
-			d.Statement( "return *(struct _string *)*stack" ) ;
-		this_instr_list = "" ;
 		this_stack_offset = 0 ;
-		this_method_static = false ;
-		this_method_callConv_instance = false ;
-		this_method_sigArg_types = null ;
-		this_method_sigArgs = 0 ;
 		}
 	}
 
@@ -423,7 +403,7 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		this_method_static = true ;
+		this_method.Static = true ;
 		}
 	}
 
@@ -477,6 +457,7 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
+		Program.Methods() ;
 		Program.C_Main() ;
 		Program.C_Objects() ;
 		}
