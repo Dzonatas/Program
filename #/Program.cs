@@ -208,14 +208,36 @@ class Program
 			Program.C_Object( class_symbol ) ;
 			}
 		}
+	public class C_Struct
+		{
+		public string Type ;
+		public string Symbol ;
+		List<string> list = new List<string>() ;
+		public C_Struct()
+			{
+			}
+		public void Add( string text )
+			{
+			list.Add( text ) ;
+			}
+		public void Compose()
+			{
+			var d = new Declaration() ;
+			d.Header.Add( "struct "+ Type + " " + Symbol + " =" ) ;
+			foreach( string s in list )
+				d.Add( "\t" + s + " ," ) ;
+			d.Footer.Add( "\t;" ) ;
+			}
+		}
 	static public void C_Object( string class_symbol )
 		{
-		var d = new Declaration() ;
-		d.Header.Add( "struct _object " + class_symbol + " =" ) ;
+		var c = new C_Struct() ;
+		c.Type = "_object" ;
+		c.Symbol = class_symbol ;
 		List<string> l = (List<string>) virtualset[class_symbol] ;
 		foreach( string s in l )
-			d.Add( "\t." + s + " = " + class_symbol + s + " ," ) ;
-		d.Footer.Add( "\t;" ) ;
+			c.Add( "." + s + " = " + class_symbol + s ) ;
+		c.Compose() ;
 		}
 	}
 }
