@@ -253,20 +253,33 @@ class Program
 			}
 		public void Compose()
 			{
-			if( IsFlowControl )
+			if( IsFlowControl && Instruction == "BR" )
 				return ;
+			string type = "void" ;
+			if( IsFlowControl )
+				type = "int" ;
 			var d = new Declaration() ;
-			d.Header.Add( "static inline void " + Instruction + "$" + ID
+			d.Header.Add( "static inline " + type + " " + Instruction + "$" + ID
 				+ "( const void** stack"
 				+ ( HasArgs ? ", const void** args" : "" )
 				+ " )" ) ;
-			foreach( string s in list )
-				d.Statement( s ) ;
+			switch( Instruction )
+				{
+				case "BGE" :
+					d.Statement( "return 1" ) ;
+					break ;
+				default:
+					foreach( string s in list )
+						d.Statement( s ) ;
+					break ;
+				}
 			}
 		static public implicit operator string( Oprand d )
 			{
-			if( d.IsFlowControl )
+			if( d.IsFlowControl && d.Instruction == "BR" )
 				return d.list[0] ;
+			if( d.IsFlowControl )
+				return "if( " + d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) + " ) " + d.list[0] ;
 			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
 			}
 		public void Statement( string text )
