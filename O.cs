@@ -173,8 +173,7 @@ class Automatrix : Object
 				}
 			else
 				c = ((Program.C_Struct) virtualset[this_class_symbol]) ;
-			string s = this_method_name + this_sigArg_types ;
-			c.Add( "." + s + " = " + this_class_symbol + s ) ;
+			c.Assign( this_method_name + this_sigArg_types ) ;
 			}
 		this_sigArgs = 0 ;
 		this_sigArg_types = null ;

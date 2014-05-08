@@ -222,6 +222,10 @@ class Program
 			{
 			list.Add( text ) ;
 			}
+		public void Assign( string text )
+			{
+			list.Add( "." + text + " = " + Symbol + text ) ;
+			}
 		public void Compose()
 			{
 			var d = new Declaration() ;
