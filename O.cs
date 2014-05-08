@@ -164,9 +164,17 @@ class Automatrix : Object
 		this_method_virtual = Arg2.ResolvedMethAttrContainsVirtual ;
 		if( this_method_virtual )
 			{
+			Program.C_Struct c ;
 			if( ! virtualset.ContainsKey( this_class_symbol ) )
-				virtualset.Add( this_class_symbol, new List<string>() ) ;
-			((List<string>) virtualset[this_class_symbol]).Add( this_method_name + this_sigArg_types ) ;
+				{
+				c = new Program.C_Struct() ;
+				c.Symbol = this_class_symbol ;
+				virtualset.Add( this_class_symbol, c ) ;
+				}
+			else
+				c = ((Program.C_Struct) virtualset[this_class_symbol]) ;
+			string s = this_method_name + this_sigArg_types ;
+			c.Add( "." + s + " = " + this_class_symbol + s ) ;
 			}
 		this_sigArgs = 0 ;
 		this_sigArg_types = null ;

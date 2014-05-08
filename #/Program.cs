@@ -205,7 +205,8 @@ class Program
 		{
 	    foreach( string class_symbol in virtualset.Keys )
 			{
-			Program.C_Object( class_symbol ) ;
+			var c = ((Program.C_Struct) virtualset[class_symbol]) ;
+			c.Compose() ;
 			}
 		}
 	public class C_Struct
@@ -215,6 +216,7 @@ class Program
 		List<string> list = new List<string>() ;
 		public C_Struct()
 			{
+			Type = "_object" ;
 			}
 		public void Add( string text )
 			{
@@ -228,16 +230,6 @@ class Program
 				d.Add( "\t" + s + " ," ) ;
 			d.Footer.Add( "\t;" ) ;
 			}
-		}
-	static public void C_Object( string class_symbol )
-		{
-		var c = new C_Struct() ;
-		c.Type = "_object" ;
-		c.Symbol = class_symbol ;
-		List<string> l = (List<string>) virtualset[class_symbol] ;
-		foreach( string s in l )
-			c.Add( "." + s + " = " + class_symbol + s ) ;
-		c.Compose() ;
 		}
 	}
 }
