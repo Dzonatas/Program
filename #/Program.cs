@@ -235,5 +235,34 @@ class Program
 			d.Footer.Add( "\t;" ) ;
 			}
 		}
+	public class Oprand
+		{
+		public string Instruction ;
+		public string ID ;
+		public bool HasArgs ;
+		List<string> list = new List<string>() ;
+		public Oprand( string instr )
+			{
+			string id = Guid.NewGuid().ToString() ;
+			id = System.Text.RegularExpressions.Regex.Replace( id, "[^A-Za-z_0-9]", "_").ToLower() ;
+			ID = id ;
+			instr = System.Text.RegularExpressions.Regex.Replace( instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
+			Instruction = instr ;
+			}
+		public void Compose()
+			{
+			var d = new Declaration() ;
+			d.Header.Add( "static inline void " + Instruction + "$" + ID
+				+ "( const void** stack"
+				+ ( HasArgs ? ", const void** args" : "" )
+				+ " )" ) ;
+			foreach( string s in list )
+				d.Statement( s ) ;
+			}
+		public void Statement( string text )
+			{
+			list.Add( text ) ;
+			}
+		}
 	}
 }

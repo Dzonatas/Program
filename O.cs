@@ -194,19 +194,13 @@ class Automatrix : Object
 	: Automatrix	{
 	protected override void main()
 		{
-		this_instr = Arg1.Token ;
-		this_instr = System.Text.RegularExpressions.Regex.Replace( this_instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
-		string i = System.Guid.NewGuid().ToString() ;
-		i = System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_").ToLower() ;
+		var d = new Program.Oprand( Arg1.Token ) ;
 		this_instr_list += (System.String.IsNullOrEmpty(this_instr_list) ? "" : "\n")
-						 + this_instr + "$" + i ;
+						 + d.Instruction + "$" + d.ID ;
 		int args = this_method_sigArgs + ( this_method_callConv_instance ? 1 : 0 ) ;
-		var d = new Program.Declaration() ;
-		d.Header.Add( "static inline void " + this_instr + "$" + i
-			+ ( args == 0 ?	"( const void** stack )"
-				: "( const void** stack , const void** args )" ) ) ;
+		d.HasArgs = args > 0 ;
 		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", this_stack_offset, args ) ;
-		switch( this_instr )
+		switch( d.Instruction )
 			{
 			case "LDARG_0":
 				d.Statement( "stack[" + this_stack_offset.ToString() + "] = args[0]" ) ;
@@ -358,14 +352,15 @@ class Automatrix : Object
 				this_stack_offset-- ;
 				break ;
 			default :
-				Debug.WriteLine( "[methodDecl_instr] Defaulted on " + this_instr ) ;
+				Debug.WriteLine( "[methodDecl_instr] Defaulted on " + d.Instruction ) ;
 				break ;
 			}
+		d.Compose() ;
 		Debug.WriteLine( "[methodDecl_instr] stack={0}", this_stack_offset ) ;
 		this_instr_sigArg_types = null ;
 		this_instr_sigArgs = 0 ;
 		this_instr_callConv_instance = false ;
-		log( "[instr] "+ this_instr ) ;
+		log( "[instr] "+ d.Instruction ) ;
 		}
 	}
 
