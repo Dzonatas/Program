@@ -272,7 +272,7 @@ class Program
 		}
 	public class Method
 		{
-		List<Oprand> list = new List<Oprand>() ;
+		List<object> list = new List<object>() ;
 		public bool    Virtual ;
 		public bool    Static ;
 		public bool    CallConvInstance ;
@@ -290,10 +290,15 @@ class Program
 			{
 			list.Add( oprand ) ;
 			}
+		public void AddLabel( string text )
+			{
+			list.Add( text ) ;
+			}
 		public void Compose()
 			{
-			foreach( Oprand o in list )
-				o.Compose() ;
+			foreach( object o in list )
+				if( o is Oprand )
+					(o as Oprand).Compose() ;
 			var d = new Program.Declaration() ;
 			string p = "" ;
 			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
@@ -308,8 +313,13 @@ class Program
 				p += "( const void** args )" ;
 			d.Header.Add( p ) ;
 			d.Statement( "const void** stack = alloca( " + MaxStack + " )" ) ;
-			foreach( Oprand o in list )
-				d.Statement( o.Instruction + "$" + o.ID + "( stack " + ( args == 0 ? ")" : ", args )" ) ) ;
+			foreach( object o in list )
+				{
+				if( o is Oprand )
+					d.Statement( (o as Oprand).Instruction + "$" + (o as Oprand).ID + "( stack " + ( args == 0 ? ")" : ", args )" ) ) ;
+				else
+					d.Add( "\t" + (string) o + " :" ) ;
+				}
 			if( Virtual )
 				d.Statement( "return *(struct _string *)*stack" ) ;
 			}

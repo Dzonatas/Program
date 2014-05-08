@@ -519,6 +519,14 @@ class Automatrix : Object
 		}
 	}
 
+[Automaton] class   methodDecl_id____
+	: Automatrix {
+	protected override void main()
+		{
+		this_method.AddLabel( Arg1.Token ) ;
+		}
+	}
+
 }
 
 

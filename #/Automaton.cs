@@ -116,9 +116,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 [Automaton] class   methodDecls_methodDecls_methodDecl
 	: Automatrix {}
 
-[Automaton] class   methodDecl_id____
-	: Automatrix {}
-
 [Automaton] class   instr_INSTR_NONE
 	: Automatrix {}
 
