@@ -353,6 +353,9 @@ class Automatrix : Object
 				this_stack_offset-- ;
 				break ;
 			case "BR" :
+				d.Statement( "goto " + this_instr_brtarget_id ) ;
+				d.IsFlowControl = true ;
+				this_method.RegisterLabel( this_instr_brtarget_id ) ;
 				break ;
 			case "LDELEM_REF" :
 				this_stack_offset++ ;
@@ -527,6 +530,13 @@ class Automatrix : Object
 		}
 	}
 
+[Automaton] class   instr_INSTR_BRTARGET_id
+	: Automatrix {
+	protected override void main()
+		{
+		this_instr_brtarget_id = Arg2.Token ;
+		}
+	}
 }
 
 

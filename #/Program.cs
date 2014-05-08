@@ -241,6 +241,7 @@ class Program
 		public string Instruction ;
 		public string ID ;
 		public bool HasArgs ;
+		public bool IsFlowControl ;
 		List<string> list = new List<string>() ;
 		public Oprand( string instr )
 			{
@@ -252,6 +253,8 @@ class Program
 			}
 		public void Compose()
 			{
+			if( IsFlowControl )
+				return ;
 			var d = new Declaration() ;
 			d.Header.Add( "static inline void " + Instruction + "$" + ID
 				+ "( const void** stack"
@@ -259,6 +262,12 @@ class Program
 				+ " )" ) ;
 			foreach( string s in list )
 				d.Statement( s ) ;
+			}
+		static public implicit operator string( Oprand d )
+			{
+			if( d.IsFlowControl )
+				return d.list[0] ;
+			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
 			}
 		public void Statement( string text )
 			{
@@ -273,6 +282,7 @@ class Program
 	public class Method
 		{
 		List<object> list = new List<object>() ;
+		List<string> labels = new List<string>() ;
 		public bool    Virtual ;
 		public bool    Static ;
 		public bool    CallConvInstance ;
@@ -293,6 +303,10 @@ class Program
 		public void AddLabel( string text )
 			{
 			list.Add( text ) ;
+			}
+		public void RegisterLabel( string text )
+			{
+			labels.Add( text ) ;
 			}
 		public void Compose()
 			{
@@ -316,9 +330,13 @@ class Program
 			foreach( object o in list )
 				{
 				if( o is Oprand )
-					d.Statement( (o as Oprand).Instruction + "$" + (o as Oprand).ID + "( stack " + ( args == 0 ? ")" : ", args )" ) ) ;
+					d.Statement( (string) (o as Oprand) ) ;
 				else
-					d.Add( "\t" + (string) o + " :" ) ;
+					{
+					string label = (string) o ;
+					if( labels.Contains( label ) )
+						d.Add( "\t" + label + " :" ) ;
+					}
 				}
 			if( Virtual )
 				d.Statement( "return *(struct _string *)*stack" ) ;
