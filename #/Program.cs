@@ -118,13 +118,13 @@ class Program
 		string program = "" ;
 		foreach( Line l in list )
 			{
-			program += l + "\n" ;
+			program += l ;
 			}
 		return program ;
 		}
 	static public void Start()
 		{
-		Add( "#include <BCL.HPP>\n\n" ) ;
+		Add( "#include <BCL.HPP>" ) ;
 		}
 	public override string ToString()
 		{
@@ -133,16 +133,18 @@ class Program
 	public class Line
 		{
 		static int counter ;
+		bool numbered = false ;
 		List<string> list = new List<string>() ;
 		public Line()
 			{
 			Program.list.Add( this ) ;
 			list.Add( "#line " + counter++ ) ;
+			numbered = false ;
 			}
 		public Line( bool numbered )
 			{
 			Program.list.Add( this ) ;
-			if( numbered )
+			if( this.numbered = numbered )
 				list.Add( "#line " + counter++ ) ;
 			}
 		public void Add( string text )
@@ -175,6 +177,10 @@ class Program
 			{
 			get { return header ; }
 			}
+		public Line Footer
+			{
+			get { return footer ; }
+			}
 		public void Add( string text )
 			{
 			body.Add( text ) ;
@@ -192,10 +198,8 @@ class Program
 		{
 		var d = new Declaration() ;
 		d.Header.Add( "int main( int argc , char** args , char** env )" ) ;
-		d.Add( "        const void** stack = alloca(0) ;\n" ) ;
-		d.Add("        " + this_start_class + "$Main() ;\n" ) ;
-		var l = new Line() ;
-		l.Add( d ) ;
+		d.Add( "        const void** stack = alloca(0) ;" ) ;
+		d.Add("        " + this_start_class + "$Main() ;" ) ;
 		}
 	static public void C_Objects()
 		{
@@ -206,17 +210,12 @@ class Program
 		}
 	static public void C_Object( string class_symbol )
 		{
+		var d = new Declaration() ;
+		d.Header.Add( "struct _object " + class_symbol + " =" ) ;
 		List<string> l = (List<string>) virtualset[class_symbol] ;
-		string p = "" ;
 		foreach( string s in l )
-			p += "        ." + s + " = " + class_symbol + s + " ,\n" ;
-		Program.Add
-			(
-			"struct _object " + class_symbol + " =\n" +
-			"        {\n" +
-			p +
-			"        } ;\n\n"
-			) ;
+			d.Add( "        ." + s + " = " + class_symbol + s + " ," ) ;
+		d.Footer.Add( "        ;" ) ;
 		}
 	}
 }
