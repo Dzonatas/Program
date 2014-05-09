@@ -472,16 +472,6 @@ class Automatrix : Object
 		}
 	}
 
-[Automaton] class   START_decls
-	: Automatrix	{
-	protected override void main()
-		{
-		Program.Methods() ;
-		Program.C_Main() ;
-		Program.C_Objects() ;
-		}
-	}
-
 [Automaton] class   _accept_START__end
 	: Automatrix	{
 	protected override void main()

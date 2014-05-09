@@ -229,4 +229,7 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 
 [Automaton] class   instr_INSTR_SWITCH_____labels____
 	: Automatrix {}
+
+[Automaton] class   START_decls
+	: Automatrix {}
 }

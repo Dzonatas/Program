@@ -201,6 +201,9 @@ static void Begin()
 	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	beginning( ref b ) ;
 	Stack.Dump() ;
+	Program.Methods() ;
+	Program.C_Main() ;
+	Program.C_Objects() ;
 	program_ready() ;
 	program( Program.Composite() ) ;
 	program_output.Close() ;
