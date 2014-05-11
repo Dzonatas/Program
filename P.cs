@@ -39,7 +39,8 @@ struct planet
 
 static public void program_ready()
 	{
-	program_file = "/tmp/5a7160ed-13d5-4923-a1f9-3e32a47d558a.program.c" ;
+	current_working_directory() ;
+	program_file = directory.FullName + "/program.c" ;
 	/*
 		(
 		(System.Runtime.InteropServices.GuidAttribute)

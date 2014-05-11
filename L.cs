@@ -7,7 +7,8 @@ static public System.IO.StreamWriter  log_output ;
 
 static public void log_ready()
 	{
-	log_file = "/tmp/5a7160ed-13d5-4923-a1f9-3e32a47d558a.log.text" ;
+	current_working_directory() ;
+	log_file = directory.FullName + "/log.text" ;
 	/*
 		(
 		(System.Runtime.InteropServices.GuidAttribute)

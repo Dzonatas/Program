@@ -1,3 +1,5 @@
+using System.IO ;
+
 partial class A335
 {
 public static System.Decimal Dzonexus ; //_dzonux.NET!(sendme:(vector|scalar|"sector"){(".get"|git:"voxel")})(-)
@@ -9,6 +11,20 @@ static bool debug ; //_passive((_d))_##IPVI
 //_FIXT:(bit.switch),INSTR_FOR...N0P[,_canonical][,_blitter]
 //_FIX:_stackless-C[,_hyper-|_math__][,_embedded]
 //static int d_linear_d    ; //_simulate:intranet[,_override_lineage_and_raise_hexed_flag]
+
+static DirectoryInfo directory ;
+
+static void current_working_directory()
+	{
+	string path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d" ;
+	directory = new DirectoryInfo(path) ;
+	if( directory.Exists )
+		return ;
+	directory = System.IO.Directory.CreateDirectory(path) ;
+	if( directory.Exists )
+		return ;
+	throw new System.NotSupportedException( "Obtained path collusion." ) ;
+	}
 }
 
 namespace Directory._
