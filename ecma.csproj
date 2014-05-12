@@ -108,7 +108,6 @@
     <Compile Include="#\Atomatrix.Four.cs" />
     <Compile Include="#\Argument.cs" />
     <Compile Include="#\Automaton.cs" />
-    <Compile Include="~\test3\hello.world.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -149,5 +148,6 @@
     <None Include="~\test2\hello.world.cs" />
     <None Include="#\BCL.HPP" />
     <None Include="~\test3\test.sh" />
+    <None Include="~\test3\hello.world.cs" />
   </ItemGroup>
 </Project>
