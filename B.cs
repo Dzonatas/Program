@@ -207,6 +207,7 @@ static void Begin()
 	program_ready() ;
 	program( Program.Composite() ) ;
 	program_output.Close() ;
+	Program.WriteMethods() ;
 	if( log_output != null )
 		{
 		log_output.Close() ;

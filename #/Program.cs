@@ -3,6 +3,7 @@ using System.Diagnostics ;
 using System.Collections ;
 using System.Reflection ;
 using System.Linq ;
+using System.IO ;
 using System ;
 
 //http://icyspherical.blogspot.com/2012/05/singletons-c-to-c-main-primer-and.html
@@ -194,6 +195,10 @@ class Program
 			{
 			return header + body + footer ;
 			}
+		public void WriteTo( StreamWriter sw )
+			{
+			sw.WriteLine( header + body + footer ) ;
+			}
 		}
 	static public void C_Main()
 		{
@@ -251,7 +256,19 @@ class Program
 			instr = System.Text.RegularExpressions.Regex.Replace( instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 			Instruction = instr ;
 			}
-		public void Compose()
+		static public implicit operator string( Oprand d )
+			{
+			if( d.IsFlowControl && d.Instruction == "BR" )
+				return d.list[0] ;
+			if( d.IsFlowControl )
+				return "if( " + d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) + " ) " + d.list[0] ;
+			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
+			}
+		public void Statement( string text )
+			{
+			list.Add( text ) ;
+			}
+		public void WriteTo( StreamWriter sw )
 			{
 			if( IsFlowControl && Instruction == "BR" )
 				return ;
@@ -273,24 +290,18 @@ class Program
 						d.Statement( s ) ;
 					break ;
 				}
-			}
-		static public implicit operator string( Oprand d )
-			{
-			if( d.IsFlowControl && d.Instruction == "BR" )
-				return d.list[0] ;
-			if( d.IsFlowControl )
-				return "if( " + d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) + " ) " + d.list[0] ;
-			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
-			}
-		public void Statement( string text )
-			{
-			list.Add( text ) ;
+			d.WriteTo( sw ) ;
 			}
 		}
 	static public void Methods()
 		{
 		foreach( Program.Method m in methodset )
 			m.Compose() ;
+		}
+	static public void WriteMethods()
+		{
+		foreach( Program.Method m in methodset )
+			m.Write() ;
 		}
 	public class Method
 		{
@@ -323,10 +334,16 @@ class Program
 			}
 		public void Compose()
 			{
+			var l = new Line() ;
+			l.Add( "#include \"" + ClassSymbol + Name + SigArgTypes + ".c\"" ) ;
+			}
+		public void Write()
+			{
+			StreamWriter sw = File.CreateText( directory.FullName + "/" +	ClassSymbol + Name + SigArgTypes + ".c" ) ;
 			foreach( object o in list )
 				if( o is Oprand )
-					(o as Oprand).Compose() ;
-			var d = new Program.Declaration() ;
+					(o as Oprand).WriteTo( sw ) ;
+			var d = new Declaration() ;
 			string p = "" ;
 			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
 			if( Virtual )
@@ -353,6 +370,8 @@ class Program
 				}
 			if( Virtual )
 				d.Statement( "return *(struct _string *)*stack" ) ;
+			d.WriteTo( sw ) ;
+			sw.Close() ;
 			}
 		}
 	}
