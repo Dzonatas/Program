@@ -41,7 +41,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
-    <Commandlineparameters>--shell="sh ../../~/compile.sh /tmp/5a7160ed-13d5-4923-a1f9-3e32a47d558a.il.text"</Commandlineparameters>
+    <Commandlineparameters>--shell="sh ../../~/compile.sh /tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d/il.text"</Commandlineparameters>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
