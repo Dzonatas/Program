@@ -211,8 +211,18 @@ class Program
 		{
 	    foreach( string class_symbol in virtualset.Keys )
 			{
-			var c = ((Program.C_Struct) virtualset[class_symbol]) ;
+			var c = ((C_Struct) virtualset[class_symbol]) ;
 			c.Compose() ;
+			}
+		}
+	static public void WriteC_Objects()
+		{
+	    foreach( string class_symbol in virtualset.Keys )
+			{
+			StreamWriter sw = File.CreateText( directory.FullName + "/" + class_symbol + ".c" ) ;
+			var c = ((C_Struct) virtualset[class_symbol]) ;
+			c.WriteTo( sw ) ;
+			sw.Close() ;
 			}
 		}
 	public class C_Struct
@@ -234,11 +244,17 @@ class Program
 			}
 		public void Compose()
 			{
+			var l = new Line() ;
+			l.Add( "#include \"" + Symbol + ".c\"" ) ;
+			}
+		public void WriteTo( StreamWriter sw )
+			{
 			var d = new Declaration() ;
 			d.Header.Add( "struct "+ Type + " " + Symbol + " =" ) ;
 			foreach( string s in list )
 				d.Add( "\t" + s + " ," ) ;
 			d.Footer.Add( "\t;" ) ;
+			d.WriteTo( sw ) ;
 			}
 		}
 	public class Oprand

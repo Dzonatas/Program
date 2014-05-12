@@ -208,6 +208,7 @@ static void Begin()
 	program( Program.Composite() ) ;
 	program_output.Close() ;
 	Program.WriteMethods() ;
+	Program.WriteC_Objects() ;
 	if( log_output != null )
 		{
 		log_output.Close() ;
