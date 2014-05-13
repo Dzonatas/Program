@@ -197,14 +197,11 @@ static void Begin()
 	#if SCREEN
 	_.screen.DrawCode() ;
 	#endif
-	Program.Start() ;
 	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	beginning( ref b ) ;
 	Stack.Dump() ;
 	program_ready() ;
 	Program.WriteC_Main() ;
-	Program.Methods() ;
-	Program.C_Objects() ;
 	program( Program.Composite() ) ;
 	program_output.Close() ;
 	Program.WriteMethods() ;

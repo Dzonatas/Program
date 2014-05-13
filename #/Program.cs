@@ -121,11 +121,6 @@ class Program
 			}
 		return program ;
 		}
-	static public void Start()
-		{
-		var l = new Line() ;
-		l.Add( "#include <BCL.HPP>" ) ;
-		}
 	public override string ToString()
 		{
 		return Composite() ;
@@ -270,14 +265,11 @@ class Program
 		c.Statement( "extern void " + this_start_method.ClassSymbol + "$Main()" ) ;
 		c.Statement( this_start_method.ClassSymbol + "$Main()" ) ;
 		c.WriteTo( program_output ) ;
-		}
-	static public void C_Objects()
-		{
+		program_output.WriteLine( "#include <BCL.HPP>" ) ;
+		foreach( Program.Method m in methodset )
+			m.WriteInclude( program_output ) ;
 	    foreach( string class_symbol in virtualset.Keys )
-			{
-			var c = ((C_Struct) virtualset[class_symbol]) ;
-			c.Compose() ;
-			}
+			C_Struct.FromSymbol( class_symbol ).WriteInclude( program_output ) ;
 		}
 	static public void WriteC_Objects()
 		{
@@ -306,10 +298,9 @@ class Program
 			{
 			list.Add( "." + text + " = " + Symbol + text ) ;
 			}
-		public void Compose()
+		public void WriteInclude( StreamWriter sw )
 			{
-			var l = new Line() ;
-			l.Add( "#include \"" + Symbol + ".c\"" ) ;
+			sw.WriteLine( "#include \"" + Symbol + ".c\"" ) ;
 			}
 		public void WriteTo( StreamWriter sw )
 			{
@@ -384,11 +375,6 @@ class Program
 			c.WriteTo( sw ) ;
 			}
 		}
-	static public void Methods()
-		{
-		foreach( Program.Method m in methodset )
-			m.Compose() ;
-		}
 	static public void WriteMethods()
 		{
 		foreach( Program.Method m in methodset )
@@ -440,10 +426,9 @@ class Program
 			{
 			cctorset.Add( ClassSymbol ) ;
 			}
-		public void Compose()
+		public void WriteInclude( StreamWriter sw )
 			{
-			var l = new Line() ;
-			l.Add( "#include \"" + ClassSymbol + Name + SigArgTypes + ".c\"" ) ;
+			sw.WriteLine( "#include \"" + ClassSymbol + Name + SigArgTypes + ".c\"" ) ;
 			}
 		public void Write()
 			{
