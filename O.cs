@@ -166,7 +166,10 @@ class Automatrix : Object
 			this_method.Name = "_ctor" ;
 		else
 		if( Args[6] is methodName___cctor_ )
+			{
 			this_method.Name = "_cctor" ;
+			this_method.RegisterCctor() ;
+			}
 		else
 			this_method.Name = "$" + Arg6.Token ;
 		this_method.Type              = Arg5.ResolveType() ;

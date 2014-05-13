@@ -110,6 +110,7 @@ class Program
 	{
 	static List<Line>    list = new List<Line>() ;
 	static List<Method>  methodset = new List<Method>() ;
+	static List<string>  cctorset = new List<string>() ;
 	static public string Composite()
 		{
 		string program = "" ;
@@ -205,6 +206,8 @@ class Program
 		var d = new Declaration() ;
 		d.Header.Add( "int main( int argc , char** args , char** env )" ) ;
 		d.Statement( "const void** stack = alloca(0)" ) ;
+		if( cctorset.Contains(this_start_method.ClassSymbol) )
+			d.Statement( this_start_method.ClassSymbol + "_cctor()" ) ;
 		d.Statement( this_start_method.ClassSymbol + "$Main()" ) ;
 		}
 	static public void C_Objects()
@@ -347,6 +350,10 @@ class Program
 		public void RegisterLabel( string text )
 			{
 			labels.Add( text ) ;
+			}
+		public void RegisterCctor()
+			{
+			cctorset.Add( ClassSymbol ) ;
 			}
 		public void Compose()
 			{
