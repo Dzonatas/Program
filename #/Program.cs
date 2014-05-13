@@ -163,6 +163,62 @@ class Program
 			return this ;
 			}
 		}
+	public class C_Function
+		{
+		public bool Static ;
+		public bool Inline ;
+		public bool Void
+			{
+			set {
+				if( value )
+					Type = "void" ;
+				}
+			}
+		public bool Bool
+			{
+			set {
+				if( value )
+					Type = "int" ;
+				}
+			}
+		public string Type ;
+		public string Symbol ;
+		public bool   HasArgs ;
+		public string Args ;
+		List<string> list = new List<string>() ;
+		public C_Function( string S )
+			{
+			Type = "void" ;
+			Symbol = S ;
+			}
+		public void Statement( string line )
+			{
+			list.Add( "\t" + line + " ;" ) ;
+			}
+		public void WriteTo( StreamWriter sw )
+			{
+			var line = new List<string>() ;
+			if( Static )
+				line.Add( "static" ) ;
+			if( Inline )
+				line.Add( "inline" ) ;
+			line.Add( Type ) ;
+			line.Add( Symbol ) ;
+			string a ;
+			if( Args == null )
+				a = "( const void** stack"
+				+ ( HasArgs ? ", const void** args" : "" )
+				+ " )" ;
+			else
+				a = Args ;
+			sw.WriteLine( String.Join( " ", line ) + a ) ;
+			sw.WriteLine( "\t{" ) ;
+			foreach( string s in list )
+				sw.WriteLine( s ) ;
+			sw.WriteLine( "\t}" ) ;
+			sw.WriteLine() ;
+			}
+		}
 	public class Declaration
 		{
 		Line header = new Line() ;
@@ -202,14 +258,18 @@ class Program
 			sw.WriteLine( header + body + footer ) ;
 			}
 		}
-	static public void C_Main()
+	static public void WriteC_Main()
 		{
-		var d = new Declaration() ;
-		d.Header.Add( "int main( int argc , char** args , char** env )" ) ;
-		d.Statement( "const void** stack = alloca(0)" ) ;
+		var c = new C_Function( "main" ) ;
+		c.Args = "( int argc , char** args , char** env )" ;
 		if( cctorset.Contains(this_start_method.ClassSymbol) )
-			d.Statement( this_start_method.ClassSymbol + "_cctor()" ) ;
-		d.Statement( this_start_method.ClassSymbol + "$Main()" ) ;
+			{
+			c.Statement( "extern void " + this_start_method.ClassSymbol + "_cctor()" ) ;
+			c.Statement( this_start_method.ClassSymbol + "_cctor()" ) ;
+			}
+		c.Statement( "extern void " + this_start_method.ClassSymbol + "$Main()" ) ;
+		c.Statement( this_start_method.ClassSymbol + "$Main()" ) ;
+		c.WriteTo( program_output ) ;
 		}
 	static public void C_Objects()
 		{
@@ -305,25 +365,23 @@ class Program
 			{
 			if( IsFlowControl && Instruction == "BR" )
 				return ;
-			string type = "void" ;
+			var c = new C_Function( Instruction + "$" + ID ) ;
 			if( IsFlowControl )
-				type = "int" ;
-			var d = new Declaration() ;
-			d.Header.Add( "static inline " + type + " " + Instruction + "$" + ID
-				+ "( const void** stack"
-				+ ( HasArgs ? ", const void** args" : "" )
-				+ " )" ) ;
+				c.Bool = true ;
+			c.Static = true ;
+			c.Inline = true ;
+			c.HasArgs = HasArgs ;
 			switch( Instruction )
 				{
 				case "BGE" :
-					d.Statement( "return 1" ) ;
+					c.Statement( "return 1" ) ;
 					break ;
 				default:
 					foreach( string s in list )
-						d.Statement( s ) ;
+						c.Statement( s ) ;
 					break ;
 				}
-			d.WriteTo( sw ) ;
+			c.WriteTo( sw ) ;
 			}
 		}
 	static public void Methods()
