@@ -6,7 +6,7 @@ static Xo_t               this_xo_t ;
 static Program.Method     this_method ;
 static string             this_sigArg_types ;
 static string             this_class_id ;
-static string             this_start_class ;
+static Program.Method     this_start_method ;
 static string             this_methodName ;
 static string             this_string ;
 static int                this_stack_offset ;

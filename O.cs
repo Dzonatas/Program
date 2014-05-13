@@ -435,7 +435,7 @@ class Automatrix : Object
 		{
 		if( System.String.IsNullOrEmpty(this_class_symbol) )
 			throw new System.NotImplementedException( "entrypoint outside class" ) ;
-		this_start_class = this_class_symbol ;
+		this_start_method = this_method ;
 		}
 	}
 

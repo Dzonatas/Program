@@ -205,7 +205,7 @@ class Program
 		var d = new Declaration() ;
 		d.Header.Add( "int main( int argc , char** args , char** env )" ) ;
 		d.Statement( "const void** stack = alloca(0)" ) ;
-		d.Statement( this_start_class + "$Main()" ) ;
+		d.Statement( this_start_method.ClassSymbol + "$Main()" ) ;
 		}
 	static public void C_Objects()
 		{
