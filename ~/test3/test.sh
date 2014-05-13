@@ -3,6 +3,7 @@
 # Example: sh ./~/test3/test.sh
 ID="5a7160ed-13d5-4923-a1f9-3e32a47d558a"
 
+mkdir /tmp/.$ID.d
 gmcs ./~/test3/hello.world.cs -out:/tmp/.$ID.d/hello.world.exe
 monodis /tmp/.$ID.d/hello.world.exe --output=/tmp/.$ID.d/il.text
 
