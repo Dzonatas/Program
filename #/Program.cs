@@ -108,6 +108,7 @@ public partial class A335
 {
 class Program
 	{
+	static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
 	static List<Line>    list = new List<Line>() ;
 	static List<Method>  methodset = new List<Method>() ;
 	static List<string>  cctorset = new List<string>() ;
@@ -326,7 +327,6 @@ class Program
 		{
 		List<object> list = new List<object>() ;
 		List<string> labels = new List<string>() ;
-		public bool    Virtual ;
 		public bool    Static ;
 		public bool    CallConvInstance ;
 		public string  Type ;
@@ -335,6 +335,28 @@ class Program
 		public string  SigArgTypes ;
 		public int     SigArgs ;
 		public int     MaxStack ;
+		bool _virtual ;
+		public bool    Virtual
+			{
+			set {
+				if( ( _virtual = value ) )
+					{
+					C_Struct c ;
+					if( ! virtualset.ContainsKey( ClassSymbol ) )
+						{
+						c = new C_Struct() ;
+						c.Symbol = ClassSymbol ;
+						virtualset.Add( ClassSymbol, c ) ;
+						}
+					else
+						c = ((C_Struct) virtualset[ClassSymbol]) ;
+					c.Assign( Name + SigArgTypes ) ;
+					}
+				}
+			get {
+				return _virtual ;
+				}
+			}
 		public Method()
 			{
 			methodset.Add( this ) ;

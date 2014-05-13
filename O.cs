@@ -5,7 +5,6 @@ using System.Diagnostics ;
 
 public partial class A335
 {
-static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
 static List<object> freeset = new List<object>() ;
 
 class Object : Stack.Item
@@ -177,19 +176,6 @@ class Automatrix : Object
 		this_method.SigArgTypes       = this_sigArg_types ;
 		this_method.CallConvInstance  = this_callConv_instance ;
 		this_method.Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
-		if( this_method.Virtual )
-			{
-			Program.C_Struct c ;
-			if( ! virtualset.ContainsKey( this_class_symbol ) )
-				{
-				c = new Program.C_Struct() ;
-				c.Symbol = this_class_symbol ;
-				virtualset.Add( this_class_symbol, c ) ;
-				}
-			else
-				c = ((Program.C_Struct) virtualset[this_class_symbol]) ;
-			c.Assign( this_method.Name + this_sigArg_types ) ;
-			}
 		this_sigArgs = 0 ;
 		this_sigArg_types = null ;
 		this_callConv_instance = false ;
