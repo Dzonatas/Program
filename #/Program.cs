@@ -260,6 +260,19 @@ class Program
 			d.Footer.Add( "\t;" ) ;
 			d.WriteTo( sw ) ;
 			}
+		static public C_Struct FromSymbol( string S )
+			{
+			C_Struct c ;
+			if( ! virtualset.ContainsKey( S ) )
+				{
+				c = new C_Struct() ;
+				c.Symbol = S ;
+				virtualset.Add( S, c ) ;
+				}
+			else
+				c = virtualset[S] as C_Struct ;
+			return c ;
+			}
 		}
 	public class Oprand
 		{
@@ -341,15 +354,7 @@ class Program
 			set {
 				if( ( _virtual = value ) )
 					{
-					C_Struct c ;
-					if( ! virtualset.ContainsKey( ClassSymbol ) )
-						{
-						c = new C_Struct() ;
-						c.Symbol = ClassSymbol ;
-						virtualset.Add( ClassSymbol, c ) ;
-						}
-					else
-						c = ((C_Struct) virtualset[ClassSymbol]) ;
+					C_Struct c = C_Struct.FromSymbol( ClassSymbol ) ;
 					c.Assign( Name + SigArgTypes ) ;
 					}
 				}
