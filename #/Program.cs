@@ -109,55 +109,8 @@ public partial class A335
 class Program
 	{
 	static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
-	static List<Line>    list = new List<Line>() ;
 	static List<Method>  methodset = new List<Method>() ;
 	static List<string>  cctorset = new List<string>() ;
-	static public string Composite()
-		{
-		string program = "" ;
-		foreach( Line l in list )
-			{
-			program += l ;
-			}
-		return program ;
-		}
-	public override string ToString()
-		{
-		return Composite() ;
-		}
-	public class Line
-		{
-		static int counter ;
-		bool numbered = false ;
-		List<string> list = new List<string>() ;
-		public Line()
-			{
-			Program.list.Add( this ) ;
-			list.Add( "//#line " + counter++ ) ;
-			numbered = false ;
-			}
-		public Line( bool numbered )
-			{
-			Program.list.Add( this ) ;
-			if( this.numbered = numbered )
-				list.Add( "#line " + counter++ ) ;
-			}
-		public void Add( string text )
-			{
-			list.Add( text ) ;
-			}
-		static public implicit operator string( Line t )
-			{
-			string line = "" ;
-			foreach( string s in t.list )
-				line += s + "\n" ;
-			return line ;
-			}
-		public override string ToString()
-			{
-			return this ;
-			}
-		}
 	public class C_Function
 		{
 		public bool Static ;
@@ -181,14 +134,18 @@ class Program
 		public bool   HasArgs ;
 		public string Args ;
 		List<string> list = new List<string>() ;
-		public C_Function( string S )
+		public C_Function( string symbol )
 			{
 			Type = "void" ;
-			Symbol = S ;
+			Symbol = symbol ;
 			}
 		public void Statement( string line )
 			{
 			list.Add( "\t" + line + " ;" ) ;
+			}
+		public void Label( string label )
+			{
+			list.Add( "\t" + label + " ;" ) ;
 			}
 		public void WriteTo( StreamWriter sw )
 			{
@@ -212,45 +169,6 @@ class Program
 				sw.WriteLine( s ) ;
 			sw.WriteLine( "\t}" ) ;
 			sw.WriteLine() ;
-			}
-		}
-	public class Declaration
-		{
-		Line header = new Line() ;
-		Line body = new Line( false ) ;
-		Line footer = new Line( false ) ;
-		public Declaration() : base()
-			{
-			body.Add(   "\t{" ) ;
-			footer.Add( " \t}" ) ;
-			}
-		public Line Header
-			{
-			get { return header ; }
-			}
-		public Line Footer
-			{
-			get { return footer ; }
-			}
-		public void Add( string text )
-			{
-			body.Add( text ) ;
-			}
-		public void Statement( string text )
-			{
-			body.Add( "\t" + text + " ;" ) ;
-			}
-		static public implicit operator string( Declaration d )
-			{
-			return d.header + d.body + d.footer ;
-			}
-		public override string ToString()
-			{
-			return header + body + footer ;
-			}
-		public void WriteTo( StreamWriter sw )
-			{
-			sw.WriteLine( header + body + footer ) ;
 			}
 		}
 	static public void WriteC_Main()
@@ -304,12 +222,12 @@ class Program
 			}
 		public void WriteTo( StreamWriter sw )
 			{
-			var d = new Declaration() ;
-			d.Header.Add( "struct "+ Type + " " + Symbol + " =" ) ;
+			sw.WriteLine( "struct "+ Type + " " + Symbol + " =" ) ;
+			sw.WriteLine( "\t{" ) ;
 			foreach( string s in list )
-				d.Add( "\t" + s + " ," ) ;
-			d.Footer.Add( "\t;" ) ;
-			d.WriteTo( sw ) ;
+				sw.WriteLine( "\t" + s + " ," ) ;
+			sw.WriteLine( "\t} ;" ) ;
+			sw.WriteLine() ;
 			}
 		static public C_Struct FromSymbol( string S )
 			{
@@ -432,38 +350,33 @@ class Program
 			}
 		public void Write()
 			{
-			StreamWriter sw = File.CreateText( directory.FullName + "/" +	ClassSymbol + Name + SigArgTypes + ".c" ) ;
+			var c = new C_Function( ClassSymbol + Name + SigArgTypes ) ;
+			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
 			foreach( object o in list )
 				if( o is Oprand )
 					(o as Oprand).WriteTo( sw ) ;
-			var d = new Declaration() ;
-			string p = "" ;
 			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
 			if( Virtual )
-				p = "struct _string " ;
-			else
-				p = "void " ;
-			p += ClassSymbol + Name + SigArgTypes ;
+				c.Type = "struct _string" ;
 			if( args == 0 )
-				p += "()" ;
+				c.Args = "()" ;
 			else
-				p += "( const void** args )" ;
-			d.Header.Add( p ) ;
-			d.Statement( "const void** stack = alloca( " + MaxStack + " )" ) ;
+				c.Args = "( const void** args )" ;
+			c.Statement( "const void** stack = alloca( " + MaxStack + " )" ) ;
 			foreach( object o in list )
 				{
 				if( o is Oprand )
-					d.Statement( (string) (o as Oprand) ) ;
+					c.Statement( (string) (o as Oprand) ) ;
 				else
 					{
 					string label = (string) o ;
 					if( labels.Contains( label ) )
-						d.Add( "\t" + label + " :" ) ;
+						c.Label( "\t" + label + " :" ) ;
 					}
 				}
 			if( Virtual )
-				d.Statement( "return *(struct _string *)*stack" ) ;
-			d.WriteTo( sw ) ;
+				c.Statement( "return *(struct _string *)*stack" ) ;
+			c.WriteTo( sw ) ;
 			sw.Close() ;
 			}
 		}

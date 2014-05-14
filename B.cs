@@ -202,7 +202,6 @@ static void Begin()
 	Stack.Dump() ;
 	program_ready() ;
 	Program.WriteC_Main() ;
-	program( Program.Composite() ) ;
 	program_output.Close() ;
 	Program.WriteMethods() ;
 	Program.WriteC_Objects() ;
