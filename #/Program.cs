@@ -550,7 +550,7 @@ class Program
 					{
 					string label = (string) o ;
 					if( labels.Contains( label ) )
-						c.Label( "\t" + label + " :" ) ;
+						c.Label( label ) ;
 					}
 				}
 			if( Virtual )
