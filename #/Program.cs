@@ -112,10 +112,18 @@ class Program
 	static List<Method>  methodset = new List<Method>() ;
 	static List<string>  cctorset = new List<string>() ;
 	static Dictionary<string,C_Function> c_functionset = new Dictionary<string, C_Function>() ;
+	static Dictionary<string,C_Symbol> symbolset = new Dictionary<string, C_Symbol>() ;
 	static public void Begin()
 		{
+		C_Method m ;
+		m = new C_Method() ;
+		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+		m.ClassName.Add( C_Symbol.Acquire( "Object" ) ) ;
+		m.Name = C_Symbol.Acquire( "_ctor" ) ;
 		C_Function c ;
-		c = C_Function.FromSymbol( "BCL$$System_Object_ctor" ) ;
+		c = m.CreateFunction() ;
+		//c = C_Function.FromSymbol( "BCL$$System_Object_ctor" ) ;
 		c.Static = true ;
 		c.Inline = true ;
 		c.Args = "( const void** args )" ;
@@ -159,8 +167,76 @@ class Program
 		Program.WriteMethods() ;
 		Program.WriteC_Objects() ;
 		}
+	public class C_Symbol
+		{
+		//Guid ID ;
+		string symbol ;
+		C_Symbol( string symbol )
+			{
+			this.symbol = symbol ;
+			//ID = Guid.NewGuid() ;
+			}
+		static public C_Symbol Acquire( string symbol )
+			{
+			C_Symbol c ;
+			if( ! symbolset.ContainsKey( symbol ) )
+				symbolset.Add( symbol, c = new C_Symbol( symbol ) ) ;
+			else
+				c = symbolset[symbol] ;
+			return c ;
+			}
+		static public implicit operator string( C_Symbol c )
+			{
+			return c.symbol ;
+			}
+		}
+	public class C_Method
+		{
+		//Guid ID ;
+		public List<C_Symbol>  NameSpace = new List<C_Symbol>() ;
+		public List<C_Symbol>  ClassName = new List<C_Symbol>() ;
+		public C_Symbol        Name ;
+		public List<C_Symbol>  Args  = new List<C_Symbol>() ;
+		public C_Function      Function ;
+		public C_Method()
+			{
+			//ID = Guid.NewGuid() ;
+			}
+		public C_Function CreateFunction()
+			{
+			string ns = "" ;
+			foreach( C_Symbol e in NameSpace )
+				{
+				if( ns != "" )
+					ns += "$$" ;
+				ns += e ;
+				}
+			string cn = "" ;
+			foreach( C_Symbol e in ClassName )
+				{
+				if( cn != "" )
+					cn += "$" ;
+				cn += e ;
+				}
+			string a = "" ;
+			foreach( C_Symbol e in Args )
+				{
+				if( a != "" )
+					a += "$" ;
+				a += e ;
+				}
+			string s = "" ;
+			s += ns + "_" + cn + Name + ( a == "" ? "" : "$" + a ) ;
+			C_Symbol symbol = C_Symbol.Acquire( s ) ;
+			Function = C_Function.FromSymbol( symbol ) ;
+			Function.Method = this ;
+			return Function ;
+			}
+		}
 	public class C_Function
 		{
+		//Guid ID ;
+		public C_Method Method ;
 		public bool Static ;
 		public bool Inline ;
 		public bool Void
@@ -178,6 +254,7 @@ class Program
 				}
 			}
 		public string Type ;
+		C_Symbol symbol ;
 		public string Symbol ;
 		public bool   HasArgs ;
 		public string Args ;
@@ -187,9 +264,16 @@ class Program
 		C_Function( string symbol )
 			{
 			Type = "void" ;
+			this.symbol = C_Symbol.Acquire( symbol ) ;
 			Symbol = symbol ;
+			//ID = Guid.NewGuid() ;
 			}
 		static public C_Function FromSymbol( string symbol )
+			{
+			C_Symbol s = C_Symbol.Acquire( symbol ) ;
+			return FromSymbol( s ) ;
+			}
+		static public C_Function FromSymbol( C_Symbol symbol )
 			{
 			C_Function c ;
 			if( ! c_functionset.ContainsKey( symbol ) )
