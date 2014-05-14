@@ -152,7 +152,7 @@ class Program
 			}
 		public void Label( string label )
 			{
-			list.Add( "\t" + label + " ;" ) ;
+			list.Add( "\t" + label + " :" ) ;
 			}
 		public void WriteTo( StreamWriter sw )
 			{
