@@ -237,6 +237,7 @@ class Automatrix : Object
 					}
 				*/
 				string item = "" ;
+				Program.C_Function.Require( this_instr_symbol ) ;
 				if( this_instr_type == "string" )
 					{
 					d.Statement( "static struct _string item" + this_stack_offset.ToString() ) ;

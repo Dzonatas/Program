@@ -111,6 +111,47 @@ class Program
 	static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
 	static List<Method>  methodset = new List<Method>() ;
 	static List<string>  cctorset = new List<string>() ;
+	static Dictionary<string,C_Function> c_functionset = new Dictionary<string, C_Function>() ;
+	static public void Begin()
+		{
+		C_Function c ;
+		c = C_Function.FromSymbol( "BCL$$System_Object_ctor" ) ;
+		c.Static = true ;
+		c.Inline = true ;
+		c.Args = "( const void** args )" ;
+		c = C_Function.FromSymbol( "BCL$$System_Console$WriteLine$string" ) ;
+		c.Static = true ;
+		c.Inline = true ;
+		c.Args = "( const void** args )" ;
+		c.Statement( "const struct _string* s = *args" ) ;
+		c.Statement( "write( 0 , s->string , s->length )" ) ;
+		c.Statement( "write( 0 , \"\\n\" , 1 )" ) ;
+		c = C_Function.FromSymbol( "BCL$$System_String$Concat$object$object$object" ) ;
+		c.Static = true ;
+		c.Inline = true ;
+		c.Args = "( const void** args )" ;
+		c.Type = "const struct _string" ;
+		c.Statement( "struct _string a, b, c" ) ;
+		c.Statement( "if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )" ) ;
+		c.Statement( "	a =  ((union _*)args[0])->string" ) ;
+		c.Statement( "else" ) ;
+		c.Statement( "	a =  ((struct _object *)args[0])->this->$ToString( args+0 )" ) ;
+		c.Statement( "if( ((union _*)args[1])->base.managed && ((union _*)args[1])->base.pointer )" ) ;
+		c.Statement( "	b =  ((union _*)args[1])->string" ) ;
+		c.Statement( "else" ) ;
+		c.Statement( "	b =  ((struct _object *)args[1])->this->$ToString( args+1 )" ) ;
+		c.Statement( "if( ((union _*)args[2])->base.managed && ((union _*)args[2])->base.pointer )" ) ;
+		c.Statement( "	c =  ((union _*)args[2])->string" ) ;
+		c.Statement( "else" ) ;
+		c.Statement( "	c =  ((struct _object *)args[2])->this->$ToString( args+2 )" ) ;
+		c.Statement( "static struct _string s" ) ;
+		c.Statement( "s.length = a.length + b.length + c.length" ) ;
+		c.Statement( "s.string = malloc(a.length + b.length + c.length)" ) ;
+		c.Statement( "strncpy( s.string, a.string, a.length )" ) ;
+		c.Statement( "strncpy( &s.string[a.length], b.string, b.length )" ) ;
+		c.Statement( "strncpy( &s.string[a.length+b.length], c.string, c.length )" ) ;
+		c.Statement( "return s" ) ;
+		}
 	static public void Write()
 		{
 		current_working_directory() ;
@@ -140,15 +181,37 @@ class Program
 		public string Symbol ;
 		public bool   HasArgs ;
 		public string Args ;
+		public bool   Written ;
+		public bool   Required ;
 		List<string> list = new List<string>() ;
-		public C_Function( string symbol )
+		C_Function( string symbol )
 			{
 			Type = "void" ;
 			Symbol = symbol ;
 			}
+		static public C_Function FromSymbol( string symbol )
+			{
+			C_Function c ;
+			if( ! c_functionset.ContainsKey( symbol ) )
+				c_functionset.Add( symbol, c = new C_Function( symbol ) ) ;
+			else
+				c = c_functionset[symbol] ;
+			return c ;
+			}
+		static public void Require( string symbol )
+			{
+			C_Function c ;
+			if( ! c_functionset.ContainsKey( symbol ) )
+				c_functionset.Add( symbol, c = new C_Function( symbol ) ) ;
+			else
+				c = c_functionset[symbol] ;
+			c.Required = true ;
+			c_functionset[symbol].Required = true ;
+			}
 		public void Statement( string line )
 			{
-			list.Add( "\t" + line + " ;" ) ;
+			bool eos = line.StartsWith( "if" ) || line.StartsWith( "else" ) ;
+			list.Add( "\t" + line + ( eos ? "" : " ;" ) ) ;
 			}
 		public void Label( string label )
 			{
@@ -176,12 +239,13 @@ class Program
 				sw.WriteLine( s ) ;
 			sw.WriteLine( "\t}" ) ;
 			sw.WriteLine() ;
+			Written = true ;
 			}
 		}
 	static public void WriteC_Main()
 		{
 		StreamWriter sw = File.CreateText( directory.FullName + "/" + "program.c" ) ;
-		var c = new C_Function( "main" ) ;
+		var c = C_Function.FromSymbol( "main" ) ;
 		c.Args = "( int argc , char** args , char** env )" ;
 		if( cctorset.Contains(this_start_method.ClassSymbol) )
 			{
@@ -192,6 +256,13 @@ class Program
 		c.Statement( this_start_method.ClassSymbol + "$Main()" ) ;
 		c.WriteTo( sw ) ;
 		sw.WriteLine( "#include <BCL.HPP>" ) ;
+		foreach( C_Function f in c_functionset.Values )
+			{
+			if( f.Required && f.Symbol.StartsWith( "BCL$" ) )
+				{
+				f.WriteTo( sw ) ;
+				}
+			}
 		foreach( Program.Method m in methodset )
 			m.WriteInclude( sw ) ;
 	    foreach( string class_symbol in virtualset.Keys )
@@ -283,7 +354,7 @@ class Program
 			{
 			if( IsFlowControl && Instruction == "BR" )
 				return ;
-			var c = new C_Function( Instruction + "$" + ID ) ;
+			var c = C_Function.FromSymbol( Instruction + "$" + ID ) ;
 			if( IsFlowControl )
 				c.Bool = true ;
 			c.Static = true ;
@@ -359,7 +430,7 @@ class Program
 			}
 		public void Write()
 			{
-			var c = new C_Function( ClassSymbol + Name + SigArgTypes ) ;
+			var c = C_Function.FromSymbol( ClassSymbol + Name + SigArgTypes ) ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
 			foreach( object o in list )
 				if( o is Oprand )

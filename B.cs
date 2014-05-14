@@ -197,6 +197,7 @@ static void Begin()
 	#if SCREEN
 	_.screen.DrawCode() ;
 	#endif
+	Program.Begin() ;
 	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	beginning( ref b ) ;
 	Stack.Dump() ;

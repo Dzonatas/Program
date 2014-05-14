@@ -26,6 +26,7 @@ union _  //regression: string (void*) -> managed pointer (void**) -> atomic matr
 		} object ;
 	} ;
 
+/*
 static inline void BCL$$System_Object_ctor(const void** args) {  }
 
 static inline void BCL$$System_Console$WriteLine$string(const void** args)
@@ -58,3 +59,4 @@ static inline const struct _string BCL$$System_String$Concat$object$object$objec
 	strncpy( &s.string[a.length+b.length], c.string, c.length ) ;
 	return s ;
 	}
+*/
