@@ -309,7 +309,7 @@ class Program
 			}
 		public void Statement( string line )
 			{
-			bool eos = line.StartsWith( "if" ) || line.StartsWith( "else" ) ;
+			bool eos = ( line.StartsWith( "if" ) && ! line.Contains( "goto" ) )  || line.StartsWith( "else" ) ;
 			list.Add( "\t" + line + ( eos ? "" : " ;" ) ) ;
 			}
 		public void Label( string label )
