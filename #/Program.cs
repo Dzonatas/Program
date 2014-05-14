@@ -175,6 +175,16 @@ class Program
 		c.Statement( "strncpy( &s.string[a.length], b.string, b.length )" ) ;
 		c.Statement( "strncpy( &s.string[a.length+b.length], c.string, c.length )" ) ;
 		c.Statement( "return s" ) ;
+		//
+		m = new C_Method() ;
+		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+		m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
+		m.Name = C_Symbol.Acquire( "$Concat" ) ;
+		m.Args.Add( C_Type.Acquire( "string" ) ) ;
+		m.Args.Add( C_Type.Acquire( "string" ) ) ;
+		m.Type = C_Type.Acquire( "string" ) ;
+		c = m.CreateFunction() ;
 		}
 	static public void Write()
 		{
@@ -228,6 +238,12 @@ class Program
 			{
 			return c.symbol ;
 			}
+		static public implicit operator C_Symbol( C_Type c )
+			{
+			if( c.symbol == "string" )
+				return C_Symbol.Acquire( "struct _string" ) ;
+			return c.symbol ;
+			}
 		}
 	public class C_Method
 		{
@@ -270,6 +286,8 @@ class Program
 			C_Symbol symbol = C_Symbol.Acquire( s ) ;
 			Function = C_Function.FromSymbol( symbol ) ;
 			Function.Method = this ;
+			if( Type != null )
+				Function.Type = "const " + (C_Symbol) Type ;
 			return Function ;
 			}
 		}
