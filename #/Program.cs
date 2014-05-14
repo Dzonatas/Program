@@ -113,6 +113,7 @@ class Program
 	static List<string>  cctorset = new List<string>() ;
 	static Dictionary<string,C_Function> c_functionset = new Dictionary<string, C_Function>() ;
 	static Dictionary<string,C_Symbol> symbolset = new Dictionary<string, C_Symbol>() ;
+	static Dictionary<string,C_Type> typeset = new Dictionary<string, C_Type>() ;
 	static public void Begin()
 		{
 		C_Method m ;
@@ -132,7 +133,7 @@ class Program
 		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
 		m.ClassName.Add( C_Symbol.Acquire( "Console" ) ) ;
 		m.Name = C_Symbol.Acquire( "$WriteLine" ) ;
-		m.Args.Add( C_Symbol.Acquire( "string" ) ) ;
+		m.Args.Add( C_Type.Acquire( "string" ) ) ;
 		c = m.CreateFunction() ;
 		c.Static = true ;
 		c.Inline = true ;
@@ -146,9 +147,9 @@ class Program
 		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
 		m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
 		m.Name = C_Symbol.Acquire( "$Concat" ) ;
-		m.Args.Add( C_Symbol.Acquire( "object" ) ) ;
-		m.Args.Add( C_Symbol.Acquire( "object" ) ) ;
-		m.Args.Add( C_Symbol.Acquire( "object" ) ) ;
+		m.Args.Add( C_Type.Acquire( "object" ) ) ;
+		m.Args.Add( C_Type.Acquire( "object" ) ) ;
+		m.Args.Add( C_Type.Acquire( "object" ) ) ;
 		c = m.CreateFunction() ;
 		c.Static = true ;
 		c.Inline = true ;
@@ -205,13 +206,37 @@ class Program
 			return c.symbol ;
 			}
 		}
+	public class C_Type
+		{
+		C_Symbol symbol ;
+		//Guid ID ;
+		public C_Type( string symbol )
+			{
+			//ID = Guid.NewGuid() ;
+			this.symbol = C_Symbol.Acquire( symbol ) ;
+			}
+		static public C_Type Acquire( string symbol )
+			{
+			C_Type c;
+			if( ! typeset.ContainsKey( symbol ) )
+				typeset.Add( symbol, c = new C_Type( symbol ) ) ;
+			else
+				c = typeset[symbol] ;
+			return c ;
+			}
+		static public implicit operator string( C_Type c )
+			{
+			return c.symbol ;
+			}
+		}
 	public class C_Method
 		{
 		//Guid ID ;
 		public List<C_Symbol>  NameSpace = new List<C_Symbol>() ;
 		public List<C_Symbol>  ClassName = new List<C_Symbol>() ;
 		public C_Symbol        Name ;
-		public List<C_Symbol>  Args  = new List<C_Symbol>() ;
+		public List<C_Type>    Args  = new List<C_Type>() ;
+		public C_Type          Type ;
 		public C_Function      Function ;
 		public C_Method()
 			{
@@ -234,7 +259,7 @@ class Program
 				cn += e ;
 				}
 			string a = "" ;
-			foreach( C_Symbol e in Args )
+			foreach( C_Type e in Args )
 				{
 				if( a != "" )
 					a += "$" ;
