@@ -217,44 +217,16 @@ partial class Program
 	static public void Begin()
 		{
 		C_Method m ;
-		m = new C_Method() ;
-		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
-		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
-		m.ClassName.Add( C_Symbol.Acquire( "Object" ) ) ;
-		m.Name = C_Symbol.Acquire( "_ctor" ) ;
 		C_Function c ;
-		c = m.CreateFunction() ;
-		c.Static = true ;
-		c.Inline = true ;
-		c.Args = "( const void** args )" ;
 		//
-		m = new C_Method() ;
-		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
-		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
-		m.ClassName.Add( C_Symbol.Acquire( "Console" ) ) ;
-		m.Name = C_Symbol.Acquire( "$WriteLine" ) ;
-		m.Args.Add( C_Type.Acquire( "string" ) ) ;
-		c = m.CreateFunction() ;
-		c.Static = true ;
-		c.Inline = true ;
-		c.Args = "( const void** args )" ;
+		c = C_Method.CreateFunction( "object::.ctor" ) ;
+		//
+		c = C_Method.CreateFunction( "console::WriteLine(string)" ) ;
 		c.Statement( "const struct _string* s = *args" ) ;
 		c.Statement( "write( 0 , s->string , s->length )" ) ;
 		c.Statement( "write( 0 , \"\\n\" , 1 )" ) ;
 		//
-		m = new C_Method() ;
-		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
-		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
-		m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
-		m.Name = C_Symbol.Acquire( "$Concat" ) ;
-		m.Args.Add( C_Type.Acquire( "object" ) ) ;
-		m.Args.Add( C_Type.Acquire( "object" ) ) ;
-		m.Args.Add( C_Type.Acquire( "object" ) ) ;
-		c = m.CreateFunction() ;
-		c.Static = true ;
-		c.Inline = true ;
-		c.Args = "( const void** args )" ;
-		//c.Type = "const struct _string" ;
+		c = C_Method.CreateFunction( "string string::Concat(object,object,object)" ) ;
 		c.Statement( "struct _string a, b, c" ) ;
 		c.Statement( "if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )" ) ;
 		c.Statement( "	a =  ((union _*)args[0])->string" ) ;
@@ -276,18 +248,7 @@ partial class Program
 		c.Statement( "strncpy( &s.string[a.length+b.length], c.string, c.length )" ) ;
 		c.Statement( "return s" ) ;
 		//
-		m = new C_Method() ;
-		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
-		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
-		m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
-		m.Name = C_Symbol.Acquire( "$Concat" ) ;
-		m.Args.Add( C_Type.Acquire( "string" ) ) ;
-		m.Args.Add( C_Type.Acquire( "string" ) ) ;
-		m.Type = C_Type.Acquire( "string" ) ;
-		c = m.CreateFunction() ;
-		c.Static = true ;
-		c.Inline = true ;
-		c.Args = "( const void** args )" ;
+		c = C_Method.CreateFunction( "string string::Concat(string,string)" ) ;
 		}
 	}
 

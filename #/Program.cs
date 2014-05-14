@@ -186,6 +186,52 @@ partial class Program
 			{
 			//ID = Guid.NewGuid() ;
 			}
+		static public C_Function CreateFunction( string typedef )
+			{
+			C_Method m ;
+			C_Function c ;
+			m = new C_Method() ;
+			m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+			m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+			if( typedef == "object::.ctor" )
+				{
+				m.ClassName.Add( C_Symbol.Acquire( "Object" ) ) ;
+				m.Name = C_Symbol.Acquire( "_ctor" ) ;
+				}
+			else
+			if( typedef == "console::WriteLine(string)" )
+				{
+				m.ClassName.Add( C_Symbol.Acquire( "Console" ) ) ;
+				m.Name = C_Symbol.Acquire( "$WriteLine" ) ;
+				m.Args.Add( C_Type.Acquire( "string" ) ) ;
+				}
+			else
+			if( typedef == "string string::Concat(object,object,object)" )
+				{
+				m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
+				m.Name = C_Symbol.Acquire( "$Concat" ) ;
+				m.Args.Add( C_Type.Acquire( "object" ) ) ;
+				m.Args.Add( C_Type.Acquire( "object" ) ) ;
+				m.Args.Add( C_Type.Acquire( "object" ) ) ;
+				m.Type = C_Type.Acquire( "string" ) ;
+				}
+			else
+			if( typedef == "string string::Concat(string,string)" )
+				{
+				m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
+				m.Name = C_Symbol.Acquire( "$Concat" ) ;
+				m.Args.Add( C_Type.Acquire( "string" ) ) ;
+				m.Args.Add( C_Type.Acquire( "string" ) ) ;
+				m.Type = C_Type.Acquire( "string" ) ;
+				}
+			else
+				throw new System.NotImplementedException( typedef ) ;
+			c = m.CreateFunction() ;
+			c.Static = true ;
+			c.Inline = true ;
+			c.Args = "( const void** args )" ;
+			return c ;
+			}
 		public C_Function CreateFunction()
 			{
 			string ns = "" ;
