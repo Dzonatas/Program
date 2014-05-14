@@ -419,6 +419,14 @@ class Automatrix : Object
 		}
 	}
 
+[Automaton] class   methAttr_methAttr__specialname_
+	: Automatrix {
+	protected override void main()
+		{
+		//this_method.SpecialName = true ;
+		}
+	}
+
 [Automaton] class   methodDecl___entrypoint_
 	: Automatrix	{
 	protected override void main()

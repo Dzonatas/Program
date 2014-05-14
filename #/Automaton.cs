@@ -86,9 +86,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 [Automaton] class   methAttr_methAttr__hidebysig_
 	: Automatrix {}
 
-[Automaton] class   methAttr_methAttr__specialname_
-	: Automatrix {}
-
 [Automaton] class   methAttr_methAttr__rtspecialname_
 	: Automatrix {}
 
