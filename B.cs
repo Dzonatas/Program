@@ -200,11 +200,7 @@ static void Begin()
 	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	beginning( ref b ) ;
 	Stack.Dump() ;
-	program_ready() ;
-	Program.WriteC_Main() ;
-	program_output.Close() ;
-	Program.WriteMethods() ;
-	Program.WriteC_Objects() ;
+	Program.Write() ;
 	if( log_output != null )
 		{
 		log_output.Close() ;

@@ -24,6 +24,15 @@ static void current_working_directory()
 	if( directory.Exists )
 		return ;
 	throw new System.NotSupportedException( "Obtained path collusion." ) ;
+	/*
+		(
+		(System.Runtime.InteropServices.GuidAttribute)
+		//System.AppDomain.CurrentDomain.DomainManager.EntryAssembly.GetCustomAttributes(
+		(typeof(A335).Assembly.GetCustomAttributes(
+			typeof(System.Runtime.InteropServices.GuidAttribute), true
+			)[0])
+		).Value	+ ".c" ;
+	*/
 	}
 }
 

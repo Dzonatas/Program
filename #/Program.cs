@@ -111,6 +111,13 @@ class Program
 	static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
 	static List<Method>  methodset = new List<Method>() ;
 	static List<string>  cctorset = new List<string>() ;
+	static public void Write()
+		{
+		current_working_directory() ;
+		Program.WriteC_Main() ;
+		Program.WriteMethods() ;
+		Program.WriteC_Objects() ;
+		}
 	public class C_Function
 		{
 		public bool Static ;
@@ -173,6 +180,7 @@ class Program
 		}
 	static public void WriteC_Main()
 		{
+		StreamWriter sw = File.CreateText( directory.FullName + "/" + "program.c" ) ;
 		var c = new C_Function( "main" ) ;
 		c.Args = "( int argc , char** args , char** env )" ;
 		if( cctorset.Contains(this_start_method.ClassSymbol) )
@@ -182,12 +190,13 @@ class Program
 			}
 		c.Statement( "extern void " + this_start_method.ClassSymbol + "$Main()" ) ;
 		c.Statement( this_start_method.ClassSymbol + "$Main()" ) ;
-		c.WriteTo( program_output ) ;
-		program_output.WriteLine( "#include <BCL.HPP>" ) ;
+		c.WriteTo( sw ) ;
+		sw.WriteLine( "#include <BCL.HPP>" ) ;
 		foreach( Program.Method m in methodset )
-			m.WriteInclude( program_output ) ;
+			m.WriteInclude( sw ) ;
 	    foreach( string class_symbol in virtualset.Keys )
-			C_Struct.FromSymbol( class_symbol ).WriteInclude( program_output ) ;
+			C_Struct.FromSymbol( class_symbol ).WriteInclude( sw ) ;
+		sw.Close() ;
 		}
 	static public void WriteC_Objects()
 		{
