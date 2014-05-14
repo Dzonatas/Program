@@ -212,6 +212,85 @@ static void Begin()
 	//_.prompt(_.string_t) ;
 	}
 
+partial class Program
+	{
+	static public void Begin()
+		{
+		C_Method m ;
+		m = new C_Method() ;
+		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+		m.ClassName.Add( C_Symbol.Acquire( "Object" ) ) ;
+		m.Name = C_Symbol.Acquire( "_ctor" ) ;
+		C_Function c ;
+		c = m.CreateFunction() ;
+		c.Static = true ;
+		c.Inline = true ;
+		c.Args = "( const void** args )" ;
+		//
+		m = new C_Method() ;
+		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+		m.ClassName.Add( C_Symbol.Acquire( "Console" ) ) ;
+		m.Name = C_Symbol.Acquire( "$WriteLine" ) ;
+		m.Args.Add( C_Type.Acquire( "string" ) ) ;
+		c = m.CreateFunction() ;
+		c.Static = true ;
+		c.Inline = true ;
+		c.Args = "( const void** args )" ;
+		c.Statement( "const struct _string* s = *args" ) ;
+		c.Statement( "write( 0 , s->string , s->length )" ) ;
+		c.Statement( "write( 0 , \"\\n\" , 1 )" ) ;
+		//
+		m = new C_Method() ;
+		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+		m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
+		m.Name = C_Symbol.Acquire( "$Concat" ) ;
+		m.Args.Add( C_Type.Acquire( "object" ) ) ;
+		m.Args.Add( C_Type.Acquire( "object" ) ) ;
+		m.Args.Add( C_Type.Acquire( "object" ) ) ;
+		c = m.CreateFunction() ;
+		c.Static = true ;
+		c.Inline = true ;
+		c.Args = "( const void** args )" ;
+		//c.Type = "const struct _string" ;
+		c.Statement( "struct _string a, b, c" ) ;
+		c.Statement( "if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )" ) ;
+		c.Statement( "	a =  ((union _*)args[0])->string" ) ;
+		c.Statement( "else" ) ;
+		c.Statement( "	a =  ((struct _object *)args[0])->this->$ToString( args+0 )" ) ;
+		c.Statement( "if( ((union _*)args[1])->base.managed && ((union _*)args[1])->base.pointer )" ) ;
+		c.Statement( "	b =  ((union _*)args[1])->string" ) ;
+		c.Statement( "else" ) ;
+		c.Statement( "	b =  ((struct _object *)args[1])->this->$ToString( args+1 )" ) ;
+		c.Statement( "if( ((union _*)args[2])->base.managed && ((union _*)args[2])->base.pointer )" ) ;
+		c.Statement( "	c =  ((union _*)args[2])->string" ) ;
+		c.Statement( "else" ) ;
+		c.Statement( "	c =  ((struct _object *)args[2])->this->$ToString( args+2 )" ) ;
+		c.Statement( "static struct _string s" ) ;
+		c.Statement( "s.length = a.length + b.length + c.length" ) ;
+		c.Statement( "s.string = malloc(a.length + b.length + c.length)" ) ;
+		c.Statement( "strncpy( s.string, a.string, a.length )" ) ;
+		c.Statement( "strncpy( &s.string[a.length], b.string, b.length )" ) ;
+		c.Statement( "strncpy( &s.string[a.length+b.length], c.string, c.length )" ) ;
+		c.Statement( "return s" ) ;
+		//
+		m = new C_Method() ;
+		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+		m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
+		m.Name = C_Symbol.Acquire( "$Concat" ) ;
+		m.Args.Add( C_Type.Acquire( "string" ) ) ;
+		m.Args.Add( C_Type.Acquire( "string" ) ) ;
+		m.Type = C_Type.Acquire( "string" ) ;
+		c = m.CreateFunction() ;
+		c.Static = true ;
+		c.Inline = true ;
+		c.Args = "( const void** args )" ;
+		}
+	}
+
 static int b_muon_css     ;                          //_FIXT:_second,_hexed,<s>tainted</>,'/\_.css'
 static char b_custom_map  ;                          //sd['map'] = '.custom "map":.ctor(binary) = (...)'
 #region MUONS_b
