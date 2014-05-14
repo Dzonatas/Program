@@ -123,18 +123,33 @@ class Program
 		m.Name = C_Symbol.Acquire( "_ctor" ) ;
 		C_Function c ;
 		c = m.CreateFunction() ;
-		//c = C_Function.FromSymbol( "BCL$$System_Object_ctor" ) ;
 		c.Static = true ;
 		c.Inline = true ;
 		c.Args = "( const void** args )" ;
-		c = C_Function.FromSymbol( "BCL$$System_Console$WriteLine$string" ) ;
+		//
+		m = new C_Method() ;
+		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+		m.ClassName.Add( C_Symbol.Acquire( "Console" ) ) ;
+		m.Name = C_Symbol.Acquire( "$WriteLine" ) ;
+		m.Args.Add( C_Symbol.Acquire( "string" ) ) ;
+		c = m.CreateFunction() ;
 		c.Static = true ;
 		c.Inline = true ;
 		c.Args = "( const void** args )" ;
 		c.Statement( "const struct _string* s = *args" ) ;
 		c.Statement( "write( 0 , s->string , s->length )" ) ;
 		c.Statement( "write( 0 , \"\\n\" , 1 )" ) ;
-		c = C_Function.FromSymbol( "BCL$$System_String$Concat$object$object$object" ) ;
+		//
+		m = new C_Method() ;
+		m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+		m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+		m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
+		m.Name = C_Symbol.Acquire( "$Concat" ) ;
+		m.Args.Add( C_Symbol.Acquire( "object" ) ) ;
+		m.Args.Add( C_Symbol.Acquire( "object" ) ) ;
+		m.Args.Add( C_Symbol.Acquire( "object" ) ) ;
+		c = m.CreateFunction() ;
 		c.Static = true ;
 		c.Inline = true ;
 		c.Args = "( const void** args )" ;
