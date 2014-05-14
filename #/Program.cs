@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions ;
 using System.Collections.Generic ;
 using System.Diagnostics ;
 using System.Collections ;
@@ -193,39 +194,29 @@ partial class Program
 			m = new C_Method() ;
 			m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
 			m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
-			if( typedef == "object::.ctor" )
-				{
-				m.ClassName.Add( C_Symbol.Acquire( "Object" ) ) ;
-				m.Name = C_Symbol.Acquire( "_ctor" ) ;
-				}
-			else
-			if( typedef == "console::WriteLine(string)" )
-				{
-				m.ClassName.Add( C_Symbol.Acquire( "Console" ) ) ;
-				m.Name = C_Symbol.Acquire( "$WriteLine" ) ;
-				m.Args.Add( C_Type.Acquire( "string" ) ) ;
-				}
-			else
-			if( typedef == "string string::Concat(object,object,object)" )
-				{
-				m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
-				m.Name = C_Symbol.Acquire( "$Concat" ) ;
-				m.Args.Add( C_Type.Acquire( "object" ) ) ;
-				m.Args.Add( C_Type.Acquire( "object" ) ) ;
-				m.Args.Add( C_Type.Acquire( "object" ) ) ;
-				m.Type = C_Type.Acquire( "string" ) ;
-				}
-			else
-			if( typedef == "string string::Concat(string,string)" )
-				{
-				m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ;
-				m.Name = C_Symbol.Acquire( "$Concat" ) ;
-				m.Args.Add( C_Type.Acquire( "string" ) ) ;
-				m.Args.Add( C_Type.Acquire( "string" ) ) ;
-				m.Type = C_Type.Acquire( "string" ) ;
-				}
-			else
+			Match y = Regex.Match( typedef, @"^(?<type>\S+)\s" ) ;
+			if( y.Success )
+				m.Type = C_Type.Acquire( y.Groups[ "type" ].Value ) ;
+			Match x = Regex.Match( typedef, @"^(\S+\s|)(?<classname>\S+)::(?<methodname>[^\(]+)(\((?<args>\S+)\)|)" ) ;
+			if( ! x.Success )
 				throw new System.NotImplementedException( typedef ) ;
+			switch( x.Groups[ "classname" ].Value )
+				{
+				case "object"  : m.ClassName.Add( C_Symbol.Acquire( "Object" ) ) ; break ;
+				case "console" : m.ClassName.Add( C_Symbol.Acquire( "Console" ) ) ; break ;
+				case "string"  : m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ; break ;
+				default        : throw new System.NotImplementedException( typedef ) ;
+				}
+			string name ;
+			switch( name = x.Groups[ "methodname" ].Value )
+				{
+				case ".ctor"   : m.Name = C_Symbol.Acquire( "_ctor" ) ; break ;
+				default        : m.Name = C_Symbol.Acquire( "$" + name ) ; break ;
+				}
+			string args = x.Groups[ "args" ].Value ;
+			if( ! String.IsNullOrEmpty( args ) )
+				foreach( string a in x.Groups[ "args" ].Value.Split( ',' ) )
+					m.Args.Add( C_Type.Acquire( a ) ) ;
 			c = m.CreateFunction() ;
 			c.Static = true ;
 			c.Inline = true ;
