@@ -154,7 +154,7 @@ class Program
 		c.Static = true ;
 		c.Inline = true ;
 		c.Args = "( const void** args )" ;
-		c.Type = "const struct _string" ;
+		//c.Type = "const struct _string" ;
 		c.Statement( "struct _string a, b, c" ) ;
 		c.Statement( "if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )" ) ;
 		c.Statement( "	a =  ((union _*)args[0])->string" ) ;
@@ -185,6 +185,9 @@ class Program
 		m.Args.Add( C_Type.Acquire( "string" ) ) ;
 		m.Type = C_Type.Acquire( "string" ) ;
 		c = m.CreateFunction() ;
+		c.Static = true ;
+		c.Inline = true ;
+		c.Args = "( const void** args )" ;
 		}
 	static public void Write()
 		{
@@ -287,7 +290,7 @@ class Program
 			Function = C_Function.FromSymbol( symbol ) ;
 			Function.Method = this ;
 			if( Type != null )
-				Function.Type = "const " + (C_Symbol) Type ;
+				Function.Type = Type ;
 			return Function ;
 			}
 		}
@@ -301,17 +304,17 @@ class Program
 			{
 			set {
 				if( value )
-					Type = "void" ;
+					Type = C_Symbol.Acquire( "void" ) ;
 				}
 			}
 		public bool Bool
 			{
 			set {
 				if( value )
-					Type = "int" ;
+					Type = C_Symbol.Acquire( "int" ) ;
 				}
 			}
-		public string Type ;
+		public C_Symbol Type ;
 		C_Symbol symbol ;
 		public string Symbol ;
 		public bool   HasArgs ;
@@ -321,7 +324,7 @@ class Program
 		List<string> list = new List<string>() ;
 		C_Function( string symbol )
 			{
-			Type = "void" ;
+			Void = true ;
 			this.symbol = C_Symbol.Acquire( symbol ) ;
 			Symbol = symbol ;
 			//ID = Guid.NewGuid() ;
@@ -579,7 +582,7 @@ class Program
 					(o as Oprand).WriteTo( sw ) ;
 			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
 			if( Virtual )
-				c.Type = "struct _string" ;
+				c.Type = C_Symbol.Acquire( "struct _string" ) ;
 			if( args == 0 )
 				c.Args = "()" ;
 			else
