@@ -105,7 +105,7 @@ class Object : Stack.Item
 	: Automatrix	{
 	protected override void main()
 		{
-		var d = new Program.Oprand( Arg1.Token ) ;
+		var d = C.Oprand( Arg1.Token ) ;
 		this_method.Add( d ) ;
 		int args = this_method.SigArgs + ( this_method.CallConvInstance ? 1 : 0 ) ;
 		d.HasArgs = args > 0 ;

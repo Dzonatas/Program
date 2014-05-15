@@ -116,6 +116,16 @@ partial class Program
 	static Dictionary<string,C_Symbol> symbolset = new Dictionary<string, C_Symbol>() ;
 	static Dictionary<string,C_Type> typeset = new Dictionary<string, C_Type>() ;
 	static Dictionary<string,C_TypeDef> typedefset = new Dictionary<string, C_TypeDef>() ;
+	Program()
+		{
+		}
+	public Program( Automatrix auto )
+		{
+		}
+	public Program Language
+		{
+		get { return this ; }
+		}
 	static public void Write()
 		{
 		current_working_directory() ;
@@ -147,17 +157,25 @@ partial class Program
 		{
 		get { return C_Symbol.Acquire( "struct _string*" ) ; }
 		}
-	static public C_Function ʄ( string symbol )
+	static public C_Function ʄ( string description )
 		{
-		return C_Method.CreateFunction( symbol ) ;
+		return C_Method.CreateFunction( description ) ;
 		}
-	public class TypeDef
+	static public Type Function
 		{
-		static public C_Struct String
+		get { return typeof(C_Function) ; }
+		}
+	public _TypeDef TypeDef
+		{
+		get { return new _TypeDef() ; }
+		}
+	public class _TypeDef
+		{
+		public C_Struct String
 			{
 			get { return C_TypeDef.CreateStructure( "string" ) ; }
 			}
-		static public C_Struct Object
+		public C_Struct Object
 			{
 			get { return C_TypeDef.CreateStructure( "object" ) ; }
 			}
@@ -329,6 +347,20 @@ partial class Program
 		public bool   Written ;
 		public bool   Required ;
 		List<string> list = new List<string>() ;
+		public C_Function ConstLocal( C_Symbol type, string text )
+			{
+			var symbol = C_Symbol.Acquire( "_local" ) ;
+			return Statement( "const " + type + " " + symbol + " = " + text ) ;
+			}
+		public C_Function StandardOutputWriteLocal( string _string, string _length )
+			{
+			var symbol = C_Symbol.Acquire( "_local" ) ;
+			return Statement( "write( 0 , " + symbol + "->" + _string + " , " + symbol + "->" + _length + " )" ) ;
+			}
+		public C_Function StandardOutputWriteLine()
+			{
+			return Statement( "write( 0 , \"\\012\" , 1 )" ) ;
+			}
 		C_Function( string symbol )
 			{
 			Void = true ;
@@ -528,14 +560,18 @@ partial class Program
 			return c ;
 			}
 		}
-	public class Oprand
+	public C_Oprand Oprand( string instr )
+		{
+		return new C_Oprand( instr ) ;
+		}
+	public class C_Oprand
 		{
 		public string Instruction ;
 		public string ID ;
 		public bool HasArgs ;
 		public bool IsFlowControl ;
 		List<string> list = new List<string>() ;
-		public Oprand( string instr )
+		public C_Oprand( string instr )
 			{
 			string id = Guid.NewGuid().ToString() ;
 			id = System.Text.RegularExpressions.Regex.Replace( id, "[^A-Za-z_0-9]", "_").ToLower() ;
@@ -543,7 +579,7 @@ partial class Program
 			instr = System.Text.RegularExpressions.Regex.Replace( instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 			Instruction = instr ;
 			}
-		static public implicit operator string( Oprand d )
+		static public implicit operator string( C_Oprand d )
 			{
 			if( d.IsFlowControl && d.Instruction == "BR" )
 				return d.list[0] ;
@@ -551,48 +587,48 @@ partial class Program
 				return "if( " + d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) + " ) " + d.list[0] ;
 			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
 			}
-		public Oprand Statement( string text )
+		public C_Oprand Statement( string text )
 			{
 			list.Add( text ) ;
 			return this ;
 			}
-		public Oprand AssignStack( int offset, string text )
+		public C_Oprand AssignStack( int offset, string text )
 			{
 			return Statement( "stack[" + offset + "] = " + text ) ;
 			}
-		public Oprand AssignStaticConst( C_Symbol type, C_Symbol symbol, string text )
+		public C_Oprand AssignStaticConst( C_Symbol type, C_Symbol symbol, string text )
 			{
 			return Statement( "static const " + type + " " + symbol + " = " + text ) ;
 			}
-		public Oprand LocalStatic( C_Symbol type, C_Symbol symbol )
+		public C_Oprand LocalStatic( C_Symbol type, C_Symbol symbol )
 			{
 			return Statement( "static " + type + " " + symbol ) ;
 			}
-		public Oprand ExternCall( C_Symbol symbol )
+		public C_Oprand ExternCall( C_Symbol symbol )
 			{
 			return Statement( "extern void " + symbol + "( const void** )" ) ;
 			}
-		public Oprand Extern( C_Symbol type, C_Symbol symbol )
+		public C_Oprand Extern( C_Symbol type, C_Symbol symbol )
 			{
 			return Statement( "extern " + type + " " + symbol  ) ;
 			}
-		public Oprand Call( C_Symbol symbol )
+		public C_Oprand Call( C_Symbol symbol )
 			{
 			return Statement( symbol + "()"  ) ;
 			}
-		public Oprand Call( C_Symbol symbol, string args )
+		public C_Oprand Call( C_Symbol symbol, string args )
 			{
 			return Statement( symbol + "( " + args + " )"  ) ;
 			}
-		public Oprand CallAssign( C_Symbol item, C_Symbol symbol )
+		public C_Oprand CallAssign( C_Symbol item, C_Symbol symbol )
 			{
 			return Statement( item + " = " + symbol + "()"  ) ;
 			}
-		public Oprand CallAssign( C_Symbol item, C_Symbol symbol, string args )
+		public C_Oprand CallAssign( C_Symbol item, C_Symbol symbol, string args )
 			{
 			return Statement( item + " = " + symbol + "( " + args + " )"  ) ;
 			}
-		public Oprand FreeStackString( int offset )
+		public C_Oprand FreeStackString( int offset )
 			{
 			return Statement( "free( ((struct _string *)stack[" + offset + "])->string )" ) ;
 			}
@@ -654,7 +690,7 @@ partial class Program
 			{
 			methodset.Add( this ) ;
 			}
-		public void Add( Oprand oprand )
+		public void Add( C_Oprand oprand )
 			{
 			list.Add( oprand ) ;
 			}
@@ -679,8 +715,8 @@ partial class Program
 			var c = C_Function.FromSymbol( ClassSymbol + Name + SigArgTypes ) ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
 			foreach( object o in list )
-				if( o is Oprand )
-					(o as Oprand).WriteTo( sw ) ;
+				if( o is C_Oprand )
+					(o as C_Oprand).WriteTo( sw ) ;
 			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
 			if( Virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
@@ -691,8 +727,8 @@ partial class Program
 			c.Statement( "const void** stack = alloca( " + MaxStack + " * sizeof(void*) )" ) ;
 			foreach( object o in list )
 				{
-				if( o is Oprand )
-					c.Statement( (string) (o as Oprand) ) ;
+				if( o is C_Oprand )
+					c.Statement( (string) (o as C_Oprand) ) ;
 				else
 					{
 					string label = (string) o ;

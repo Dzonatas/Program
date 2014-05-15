@@ -165,7 +165,7 @@ class Automatrix : Object
 	Program cc = null ;
 	public Program C
 		{
-		get { return cc ; }
+		get { if( cc != null ) return cc.Language ; else return new Program( this ) ; }
 		}
 	public Automatrix() : base( this_xo_t.rhs.Length ) 
 		{

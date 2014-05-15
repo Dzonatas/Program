@@ -216,23 +216,21 @@ partial class Program
 	{
 	static public void Begin()
 		{
-		C_Function c ;
-		C_Struct s ;
-		//
-		TypeDef.String
+		var C = new Program() ;
+		C.TypeDef.String
 			.Parameter( UnsignedInt, "length" )
 			.Parameter( Char_, "string" )
 			;
-		TypeDef.Object
+		C.TypeDef.Object
 			.Parameter( StructObject_, "this" )
 			.Parameter( StructString, "(*$ToString)(const void**)" )
 			;
 		ʄ( "object::.ctor" )
 			;
 		ʄ( "console::WriteLine(string)" )
-			.Statement( "const struct _string* s = *args" )
-			.Statement( "write( 0 , s->string , s->length )" )
-			.Statement( "write( 0 , \"\\n\" , 1 )" )
+			.ConstLocal( StructString_, "*args" )
+			.StandardOutputWriteLocal( "string" , "length" )
+			.StandardOutputWriteLine()
 			;
 		ʄ( "string string::Concat(object,object,object)" )
 			.Statement( "struct _string a, b, c" )
