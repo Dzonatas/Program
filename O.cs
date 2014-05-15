@@ -222,6 +222,7 @@ class Automatrix : Object
 				}
 			case "CALL":
 				{
+				var _call  = Program.C_Symbol.Acquire( this_instr_symbol ) ;
 				Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
 				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 				this_stack_offset -= iargs ;
@@ -251,13 +252,19 @@ class Automatrix : Object
 					//d.Statement( "static struct _string item" + this_stack_offset.ToString() ) ;
 					item = symbol + " = " ;
 					freeset.Add( this_stack_offset ) ;
-					}
-				if( iargs == 0 )
-					d.Statement( item + this_instr_symbol + "()" ) ;
-				else
-					d.Statement( item + this_instr_symbol + "(stack+" + this_stack_offset.ToString() + ")" ) ;
-				if( this_instr_type == "string" )
+					if( iargs == 0 )
+						d.CallAssign( symbol, _call ) ;
+					else
+						d.CallAssign( symbol, _call, "stack+" + this_stack_offset ) ;
 					d.AssignStack( this_stack_offset, "&" + symbol ) ;
+					}
+				else
+					{
+					if( iargs == 0 )
+						d.Call( _call ) ;
+					else
+						d.Call( _call, "stack+" + this_stack_offset ) ;
+					}
 				if( this_instr_type != "void" )
 					{
 					Debug.WriteLine( " [methodDecl_instr] this_stack={0} offset={1}", this_stack.Length, this_stack_offset ) ;
@@ -271,42 +278,45 @@ class Automatrix : Object
 				foreach( object z in freeset )
 					{
 					if( z is int )
-						d.Statement( "free( ((struct _string *)stack[" + z + "])->string )" ) ;
+						d.FreeStackString( (int) z ) ;
 					}
 				freeset.Clear() ;
 				break ;
 				}
 			case "NEWOBJ":
 				{
+				var symbol = new Program.C_Symbol() ;
+				var _class = Program.C_Symbol.Acquire( this_instr_class_symbol ) ;
+				var _call  = Program.C_Symbol.Acquire( this_instr_symbol ) ;
 				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 				this_stack_offset++ ;
 				this_stack_offset -= iargs ;
-				d.Statement( "extern void " + this_instr_symbol + "( const void** )" ) ;
-				d.Statement( "extern struct _object " + this_instr_class_symbol  ) ;
-				d.Statement( "static const struct _object obj = { &" + this_instr_class_symbol + " }" ) ;
-				d.Statement( "stack[" + this_stack_offset.ToString() + "] = &obj" ) ;
+				d.ExternCall( _call ) ;
+				d.Extern( Program.StructObject, _class ) ;
+				d.AssignStaticConst( Program.StructObject, symbol, "{ &" + _class + " }" ) ;
+				d.AssignStack( this_stack_offset, "&" + symbol ) ;
 				if( iargs == 0 )
-					d.Statement( this_instr_symbol + "()" ) ;
+					d.Call( _call ) ;
 				else
-					d.Statement( this_instr_symbol + "(stack+" + this_stack_offset.ToString() + ")" ) ;
+					d.Call( _call, "stack+" + this_stack_offset ) ;
 				this_stack[this_stack_offset] = "object" ;
 				this_stack_offset++ ;
 				break ;
 				}
 			case "LDC_I4_0" :
-				d.Statement( "stack[" + this_stack_offset.ToString() + "] = 0" ) ;
+				d.AssignStack( this_stack_offset, "0" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "LDC_I4_1" :
-				d.Statement( "stack[" + this_stack_offset.ToString() + "] = 0" ) ;
+				d.AssignStack( this_stack_offset, "0" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "LDC_I4_2" :
-				d.Statement( "stack[" + this_stack_offset.ToString() + "] = 0" ) ;
+				d.AssignStack( this_stack_offset, "0" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "LDC_I4_3" :
-				d.Statement( "stack[" + this_stack_offset.ToString() + "] = 0" ) ;
+				d.AssignStack( this_stack_offset, "0" ) ;
 				this_stack_offset++ ;
 				break ;
 			case "STELEM_REF" :

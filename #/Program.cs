@@ -568,6 +568,34 @@ partial class Program
 			{
 			return Statement( "static " + type + " " + symbol ) ;
 			}
+		public Oprand ExternCall( C_Symbol symbol )
+			{
+			return Statement( "extern void " + symbol + "( const void** )" ) ;
+			}
+		public Oprand Extern( C_Symbol type, C_Symbol symbol )
+			{
+			return Statement( "extern " + type + " " + symbol  ) ;
+			}
+		public Oprand Call( C_Symbol symbol )
+			{
+			return Statement( symbol + "()"  ) ;
+			}
+		public Oprand Call( C_Symbol symbol, string args )
+			{
+			return Statement( symbol + "( " + args + " )"  ) ;
+			}
+		public Oprand CallAssign( C_Symbol item, C_Symbol symbol )
+			{
+			return Statement( item + " = " + symbol + "()"  ) ;
+			}
+		public Oprand CallAssign( C_Symbol item, C_Symbol symbol, string args )
+			{
+			return Statement( item + " = " + symbol + "( " + args + " )"  ) ;
+			}
+		public Oprand FreeStackString( int offset )
+			{
+			return Statement( "free( ((struct _string *)stack[" + offset + "])->string )" ) ;
+			}
 		public void WriteTo( StreamWriter sw )
 			{
 			if( IsFlowControl && Instruction == "BR" )
