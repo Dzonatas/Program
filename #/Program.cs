@@ -642,7 +642,7 @@ partial class Program
 				c.Args = "()" ;
 			else
 				c.Args = "( const void** args )" ;
-			c.Statement( "const void** stack = alloca( " + MaxStack + " )" ) ;
+			c.Statement( "const void** stack = alloca( " + MaxStack + " * sizeof(void*) )" ) ;
 			foreach( object o in list )
 				{
 				if( o is Oprand )
