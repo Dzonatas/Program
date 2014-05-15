@@ -123,6 +123,30 @@ partial class Program
 		Program.WriteMethods() ;
 		Program.WriteC_Objects() ;
 		}
+	static public C_Symbol UnsignedInt
+		{
+		get { return C_Symbol.Acquire( "unsigned int" ) ; }
+		}
+	static public C_Symbol Char_
+		{
+		get { return C_Symbol.Acquire( "char*" ) ; }
+		}
+	static public C_Symbol StructObject
+		{
+		get { return C_Symbol.Acquire( "struct _object" ) ; }
+		}
+	static public C_Symbol StructObject_
+		{
+		get { return C_Symbol.Acquire( "struct _object*" ) ; }
+		}
+	static public C_Symbol StructString
+		{
+		get { return C_Symbol.Acquire( "struct _string" ) ; }
+		}
+	static public C_Symbol StructString_
+		{
+		get { return C_Symbol.Acquire( "struct _string*" ) ; }
+		}
 	public class C_Symbol
 		{
 		//Guid ID ;
@@ -436,9 +460,9 @@ partial class Program
 			{
 			list.Add( text ) ;
 			}
-		public void Parameter( string text )
+		public void Parameter( C_Symbol symbol, string text )
 			{
-			list.Add( text ) ;
+			list.Add( symbol + " " + text ) ;
 			}
 		public void Assign( string text )
 			{

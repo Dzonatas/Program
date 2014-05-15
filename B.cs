@@ -221,12 +221,12 @@ partial class Program
 		C_Struct s ;
 		//
 		s = C_TypeDef.CreateStructure( "string" ) ;
-		s.Parameter( "unsigned int length" ) ;
-		s.Parameter( "char * string" ) ;
+		s.Parameter( UnsignedInt, "length" ) ;
+		s.Parameter( Char_, "string" ) ;
 		//
 		s = C_TypeDef.CreateStructure( "object" ) ;
-		s.Parameter( "struct _object*  this" ) ;
-		s.Parameter( "struct _string (*$ToString)(const void**)" ) ;
+		s.Parameter( StructObject_, "this" ) ;
+		s.Parameter( StructString, "(*$ToString)(const void**)" ) ;
 		//
 		c = C_Method.CreateFunction( "object::.ctor" ) ;
 		//
