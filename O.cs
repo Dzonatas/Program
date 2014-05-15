@@ -32,6 +32,11 @@ class Object : Stack.Item
 
 class Automatrix : Object
 	{
+	Program cc = null ;
+	public Program C
+		{
+		get { return cc ; }
+		}
 	public Automatrix() : base( this_xo_t.rhs.Length ) 
 		{
 		Debug.WriteLine( "<A Automatrix " + GetType().Name + "/>"  ) ;
