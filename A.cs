@@ -158,3 +158,99 @@ namespace A.org.com.edu.mil.net
 	//Abyssmal...
 	}
 
+partial class A335
+{
+class Automatrix : Object
+	{
+	Program cc = null ;
+	public Program C
+		{
+		get { return cc ; }
+		}
+	public Automatrix() : base( this_xo_t.rhs.Length ) 
+		{
+		main() ;
+		}
+	public new Argument this[int n]
+		{
+		get { return new Argument( ref o[n] ) ; }
+		set { o[n] = value ; }
+		}
+	virtual protected void main() {}
+	public Argument Arg0		{ get { return new Argument( ref o[0x00] ) ; } }
+	public Argument Arg1		{ get { return new Argument( ref o[0x01] ) ; } }
+	public Argument Arg2		{ get { return new Argument( ref o[0x02] ) ; } }
+	public Argument Arg3		{ get { return new Argument( ref o[0x03] ) ; } }
+	public Argument Arg4		{ get { return new Argument( ref o[0x04] ) ; } }
+	public Argument Arg5		{ get { return new Argument( ref o[0x05] ) ; } }
+	public Argument Arg6		{ get { return new Argument( ref o[0x06] ) ; } }
+	public Argument Arg7		{ get { return new Argument( ref o[0x07] ) ; } }
+	public Argument Arg8		{ get { return new Argument( ref o[0x08] ) ; } }
+	public Argument Arg9		{ get { return new Argument( ref o[0x09] ) ; } }
+	public Argument ArgA		{ get { return new Argument( ref o[0x0A] ) ; } }
+	public Argument ArgB		{ get { return new Argument( ref o[0x0B] ) ; } }
+	public Argument ArgC		{ get { return new Argument( ref o[0x0C] ) ; } }
+	public Argument ArgD		{ get { return new Argument( ref o[0x0D] ) ; } }
+	public Argument ArgE		{ get { return new Argument( ref o[0x0E] ) ; } }
+	public Argument ArgF		{ get { return new Argument( ref o[0x0F] ) ; } }
+	public object[] Args		{ get { return o ; } }
+	public int Length
+		{
+		get { return o.Length ; }
+		}
+	public string ResolveType()
+		{
+		string s = "" ;
+		for( int i = 1 ; i < Args.Length ; i++ )
+			{
+			if( Args[i] is Stack.Item.Token )
+				{
+				string t = (string) (Stack.Item.Token)Args[i] ;
+				t = System.Text.RegularExpressions.Regex.Replace( t, "[^A-Za-z_0-9/]", "_" ).Replace( "/", "$" ) ;
+				if( s.EndsWith("$") || t == "$" )
+					s += t ;
+				else
+					s += ( i == 1 ? "" : "_" ) + t ;
+				}
+			else
+			if( Args[i] is Automatrix )
+				s += ( ( i == 1 || s.EndsWith("$") || s.EndsWith("__") ) ? "" : "_" )
+					+ ((Automatrix)Args[i] ).ResolveType() ;
+			else
+				throw new System.NotImplementedException( "Unresolved type." ) ;
+			}
+		return s ;
+		}
+	public bool ResolvedMethAttrContainsVirtual
+		{
+		get {
+			for( int i = 1 ; i < Args.Length ; i++ )
+				{
+				if( Args[i] is methAttr_methAttr__virtual_ )
+					return true ;
+				if( Args[i] is Automatrix )
+					{
+					if( ( Args[i] as Automatrix ).ResolvedMethAttrContainsVirtual )
+						return true ;
+					continue ;
+					}
+				if( Args[i] is Stack.Item.Token )
+					{
+					string t = (string) (Stack.Item.Token)Args[i] ;
+					if( "virtual" == (string) t )
+						return true ;
+					continue ;
+					}
+				if( ( Args[i] is Stack.Item.Empty ) )
+					continue ;
+				throw new System.NotImplementedException( "Unresolved methAttr." ) ;
+				}
+			return false ;
+			}
+		}
+	public override string ToString()
+		{
+		return string.Format("[Automatrix] " + Rule.ReductionMethod );
+		}
+	}
+}
