@@ -51,6 +51,9 @@ namespace Application
 			#if EXTENTIALISM
 				parameter.Add( "OOXML",     "false"  ) ;
 			#endif
+			#if MAGIC
+				parameter.Add( "magic",     "true"  ) ;
+			#endif
 			}
 
 		static void parse( string[] args )
