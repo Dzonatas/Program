@@ -164,12 +164,17 @@ partial class Program
 		}
 	public class C_Symbol
 		{
-		//Guid ID ;
+		Guid ID ;
 		string symbol ;
 		C_Symbol( string symbol )
 			{
 			this.symbol = symbol ;
-			//ID = Guid.NewGuid() ;
+			ID = Guid.NewGuid() ;
+			}
+		public C_Symbol()
+			{
+			ID = Guid.NewGuid() ;
+			symbol = "_" + Regex.Replace( ID.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
 			}
 		static public C_Symbol Acquire( string symbol )
 			{
@@ -546,9 +551,22 @@ partial class Program
 				return "if( " + d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) + " ) " + d.list[0] ;
 			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
 			}
-		public void Statement( string text )
+		public Oprand Statement( string text )
 			{
 			list.Add( text ) ;
+			return this ;
+			}
+		public Oprand AssignStack( int offset, string text )
+			{
+			return Statement( "stack[" + offset + "] = " + text ) ;
+			}
+		public Oprand AssignStaticConst( C_Symbol type, C_Symbol symbol, string text )
+			{
+			return Statement( "static const " + type + " " + symbol + " = " + text ) ;
+			}
+		public Oprand LocalStatic( C_Symbol type, C_Symbol symbol )
+			{
+			return Statement( "static " + type + " " + symbol ) ;
 			}
 		public void WriteTo( StreamWriter sw )
 			{

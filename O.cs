@@ -203,18 +203,23 @@ class Automatrix : Object
 		switch( d.Instruction )
 			{
 			case "LDARG_0":
-				d.Statement( "stack[" + this_stack_offset.ToString() + "] = args[0]" ) ;
+				d.AssignStack( this_stack_offset, "args[0]" ) ;
 				this_stack[this_stack_offset] = "object" ;
 				this_stack_offset++ ;
 				break ;
 			case "LDSTR":
-				d.Statement( "static const struct _string s = { "
-					+ this_string.Length.ToString()
-					+ " , \"" + this_string + "\" }" ) ;
-				d.Statement( "stack[" + this_stack_offset.ToString() + "] = &s" ) ;
+				{
+				var symbol = new Program.C_Symbol() ;
+				d.AssignStaticConst( Program.StructString, symbol,
+					"{ "
+					+ this_string.Length.ToString() + " , "
+					+ '"' + this_string + '"'
+					+ " }" ) ;
+				d.AssignStack( this_stack_offset, "&" + symbol ) ;
 				this_stack[this_stack_offset] = "string" ;
 				this_stack_offset++ ;
 				break ;
+				}
 			case "CALL":
 				{
 				Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
@@ -237,11 +242,14 @@ class Automatrix : Object
 					}
 				*/
 				string item = "" ;
+				Program.C_Symbol symbol = null ;
 				Program.C_Function.Require( this_instr_symbol ) ;
 				if( this_instr_type == "string" )
 					{
-					d.Statement( "static struct _string item" + this_stack_offset.ToString() ) ;
-					item = "item" + this_stack_offset.ToString() + " = " ;
+					symbol = new Program.C_Symbol() ;
+					d.LocalStatic( Program.StructString, symbol ) ;
+					//d.Statement( "static struct _string item" + this_stack_offset.ToString() ) ;
+					item = symbol + " = " ;
 					freeset.Add( this_stack_offset ) ;
 					}
 				if( iargs == 0 )
@@ -249,8 +257,7 @@ class Automatrix : Object
 				else
 					d.Statement( item + this_instr_symbol + "(stack+" + this_stack_offset.ToString() + ")" ) ;
 				if( this_instr_type == "string" )
-					d.Statement( "stack[" + this_stack_offset.ToString() + "] = "
-						+ "&item" + this_stack_offset.ToString() ) ;
+					d.AssignStack( this_stack_offset, "&" + symbol ) ;
 				if( this_instr_type != "void" )
 					{
 					Debug.WriteLine( " [methodDecl_instr] this_stack={0} offset={1}", this_stack.Length, this_stack_offset ) ;
