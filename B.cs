@@ -218,6 +218,15 @@ partial class Program
 		{
 		C_Method m ;
 		C_Function c ;
+		C_Struct s ;
+		//
+		s = C_TypeDef.CreateStructure( "string" ) ;
+		s.Parameter( "unsigned int length" ) ;
+		s.Parameter( "char * string" ) ;
+		//
+		s = C_TypeDef.CreateStructure( "object" ) ;
+		s.Parameter( "struct _object*  this" ) ;
+		s.Parameter( "struct _string (*$ToString)(const void**)" ) ;
 		//
 		c = C_Method.CreateFunction( "object::.ctor" ) ;
 		//
@@ -229,15 +238,15 @@ partial class Program
 		c = C_Method.CreateFunction( "string string::Concat(object,object,object)" ) ;
 		c.Statement( "struct _string a, b, c" ) ;
 		c.Statement( "if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )" ) ;
-		c.Statement( "	a =  ((union _*)args[0])->string" ) ;
+		c.Statement( "	a =  *((struct _string *)args[0])" ) ;
 		c.Statement( "else" ) ;
 		c.Statement( "	a =  ((struct _object *)args[0])->this->$ToString( args+0 )" ) ;
 		c.Statement( "if( ((union _*)args[1])->base.managed && ((union _*)args[1])->base.pointer )" ) ;
-		c.Statement( "	b =  ((union _*)args[1])->string" ) ;
+		c.Statement( "	b =  *((struct _string *)args[1])" ) ;
 		c.Statement( "else" ) ;
 		c.Statement( "	b =  ((struct _object *)args[1])->this->$ToString( args+1 )" ) ;
 		c.Statement( "if( ((union _*)args[2])->base.managed && ((union _*)args[2])->base.pointer )" ) ;
-		c.Statement( "	c =  ((union _*)args[2])->string" ) ;
+		c.Statement( "	c =  *((struct _string *)args[2])" ) ;
 		c.Statement( "else" ) ;
 		c.Statement( "	c =  ((struct _object *)args[2])->this->$ToString( args+2 )" ) ;
 		c.Statement( "static struct _string s" ) ;

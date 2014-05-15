@@ -115,6 +115,7 @@ partial class Program
 	static Dictionary<string,C_Function> c_functionset = new Dictionary<string, C_Function>() ;
 	static Dictionary<string,C_Symbol> symbolset = new Dictionary<string, C_Symbol>() ;
 	static Dictionary<string,C_Type> typeset = new Dictionary<string, C_Type>() ;
+	static Dictionary<string,C_TypeDef> typedefset = new Dictionary<string, C_TypeDef>() ;
 	static public void Write()
 		{
 		current_working_directory() ;
@@ -363,6 +364,7 @@ partial class Program
 		c.Statement( this_start_method.ClassSymbol + "$Main()" ) ;
 		c.WriteTo( sw ) ;
 		sw.WriteLine( "#include <BCL.HPP>" ) ;
+		C_TypeDef.WriteTo( sw ) ;
 		foreach( C_Function f in c_functionset.Values )
 			{
 			if( f.Required && f.Symbol.StartsWith( "BCL$" ) )
@@ -386,16 +388,55 @@ partial class Program
 			sw.Close() ;
 			}
 		}
+	public class C_TypeDef
+		{
+		C_Symbol symbol ;
+		C_Symbol alias ; //_C_Type
+		public C_Struct Struct ;
+		public C_TypeDef( string symbol, string alias )
+			{
+			//ID = Guid.NewGuid() ;
+			this.symbol = C_Symbol.Acquire( symbol ) ;
+			//this.alias  = C_Symbol.Acquire( alias ) ;
+			}
+		static public C_TypeDef Acquire( string symbol )
+			{
+			C_TypeDef c;
+			if( ! typeset.ContainsKey( symbol ) )
+				typedefset.Add( symbol, c = new C_TypeDef( symbol, "" ) ) ;
+			else
+				c = typedefset[symbol] ;
+			return c ;
+			}
+		static public C_Struct CreateStructure( string type )
+			{
+			C_Struct s = new C_Struct() ;
+			s.Type = "_" + type ;
+			s.TypeDef = Acquire( type ) ;
+			s.TypeDef.Struct = s ;
+			return s ;
+			}
+		static public void WriteTo( StreamWriter sw )
+			{
+			foreach( C_TypeDef t in typedefset.Values )
+				t.Struct.WriteTo( sw ) ;
+			}
+		}
 	public class C_Struct
 		{
 		public string Type ;
 		public string Symbol ;
+		public C_TypeDef TypeDef ;
 		List<string> list = new List<string>() ;
 		public C_Struct()
 			{
 			Type = "_object" ;
 			}
 		public void Add( string text )
+			{
+			list.Add( text ) ;
+			}
+		public void Parameter( string text )
 			{
 			list.Add( text ) ;
 			}
@@ -409,11 +450,22 @@ partial class Program
 			}
 		public void WriteTo( StreamWriter sw )
 			{
-			sw.WriteLine( "struct "+ Type + " " + Symbol + " =" ) ;
-			sw.WriteLine( "\t{" ) ;
-			foreach( string s in list )
-				sw.WriteLine( "\t" + s + " ," ) ;
-			sw.WriteLine( "\t} ;" ) ;
+			if( Symbol != null )
+				{
+				sw.WriteLine( "struct "+ Type + " " + Symbol + " =" ) ;
+				sw.WriteLine( "\t{" ) ;
+				foreach( string s in list )
+					sw.WriteLine( "\t" + s + " ," ) ;
+				sw.WriteLine( "\t} ;" ) ;
+				}
+			else
+				{
+				sw.WriteLine( "struct "+ Type ) ;
+				sw.WriteLine( "\t{" ) ;
+				foreach( string s in list )
+					sw.WriteLine( "\t" + s + " ;" ) ;
+				sw.WriteLine( "\t} ;" ) ;
+				}
 			sw.WriteLine() ;
 			}
 		static public C_Struct FromSymbol( string S )
