@@ -147,6 +147,21 @@ partial class Program
 		{
 		get { return C_Symbol.Acquire( "struct _string*" ) ; }
 		}
+	static public C_Function ʄ( string symbol )
+		{
+		return C_Method.CreateFunction( symbol ) ;
+		}
+	public class TypeDef
+		{
+		static public C_Struct String
+			{
+			get { return C_TypeDef.CreateStructure( "string" ) ; }
+			}
+		static public C_Struct Object
+			{
+			get { return C_TypeDef.CreateStructure( "object" ) ; }
+			}
+		}
 	public class C_Symbol
 		{
 		//Guid ID ;
@@ -340,10 +355,11 @@ partial class Program
 			c.Required = true ;
 			c_functionset[symbol].Required = true ;
 			}
-		public void Statement( string line )
+		public C_Function Statement( string line )
 			{
 			bool eos = ( line.StartsWith( "if" ) && ! line.Contains( "goto" ) )  || line.StartsWith( "else" ) ;
 			list.Add( "\t" + line + ( eos ? "" : " ;" ) ) ;
+			return this ;
 			}
 		public void Label( string label )
 			{
@@ -460,9 +476,10 @@ partial class Program
 			{
 			list.Add( text ) ;
 			}
-		public void Parameter( C_Symbol symbol, string text )
+		public C_Struct Parameter( C_Symbol symbol, string text )
 			{
 			list.Add( symbol + " " + text ) ;
+			return this ;
 			}
 		public void Assign( string text )
 			{

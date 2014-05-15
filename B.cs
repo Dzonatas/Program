@@ -216,48 +216,48 @@ partial class Program
 	{
 	static public void Begin()
 		{
-		C_Method m ;
 		C_Function c ;
 		C_Struct s ;
 		//
-		s = C_TypeDef.CreateStructure( "string" ) ;
-		s.Parameter( UnsignedInt, "length" ) ;
-		s.Parameter( Char_, "string" ) ;
-		//
-		s = C_TypeDef.CreateStructure( "object" ) ;
-		s.Parameter( StructObject_, "this" ) ;
-		s.Parameter( StructString, "(*$ToString)(const void**)" ) ;
-		//
-		c = C_Method.CreateFunction( "object::.ctor" ) ;
-		//
-		c = C_Method.CreateFunction( "console::WriteLine(string)" ) ;
-		c.Statement( "const struct _string* s = *args" ) ;
-		c.Statement( "write( 0 , s->string , s->length )" ) ;
-		c.Statement( "write( 0 , \"\\n\" , 1 )" ) ;
-		//
-		c = C_Method.CreateFunction( "string string::Concat(object,object,object)" ) ;
-		c.Statement( "struct _string a, b, c" ) ;
-		c.Statement( "if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )" ) ;
-		c.Statement( "	a =  *((struct _string *)args[0])" ) ;
-		c.Statement( "else" ) ;
-		c.Statement( "	a =  ((struct _object *)args[0])->this->$ToString( args+0 )" ) ;
-		c.Statement( "if( ((union _*)args[1])->base.managed && ((union _*)args[1])->base.pointer )" ) ;
-		c.Statement( "	b =  *((struct _string *)args[1])" ) ;
-		c.Statement( "else" ) ;
-		c.Statement( "	b =  ((struct _object *)args[1])->this->$ToString( args+1 )" ) ;
-		c.Statement( "if( ((union _*)args[2])->base.managed && ((union _*)args[2])->base.pointer )" ) ;
-		c.Statement( "	c =  *((struct _string *)args[2])" ) ;
-		c.Statement( "else" ) ;
-		c.Statement( "	c =  ((struct _object *)args[2])->this->$ToString( args+2 )" ) ;
-		c.Statement( "static struct _string s" ) ;
-		c.Statement( "s.length = a.length + b.length + c.length" ) ;
-		c.Statement( "s.string = malloc(a.length + b.length + c.length)" ) ;
-		c.Statement( "strncpy( s.string, a.string, a.length )" ) ;
-		c.Statement( "strncpy( &s.string[a.length], b.string, b.length )" ) ;
-		c.Statement( "strncpy( &s.string[a.length+b.length], c.string, c.length )" ) ;
-		c.Statement( "return s" ) ;
-		//
-		c = C_Method.CreateFunction( "string string::Concat(string,string)" ) ;
+		TypeDef.String
+			.Parameter( UnsignedInt, "length" )
+			.Parameter( Char_, "string" )
+			;
+		TypeDef.Object
+			.Parameter( StructObject_, "this" )
+			.Parameter( StructString, "(*$ToString)(const void**)" )
+			;
+		ʄ( "object::.ctor" )
+			;
+		ʄ( "console::WriteLine(string)" )
+			.Statement( "const struct _string* s = *args" )
+			.Statement( "write( 0 , s->string , s->length )" )
+			.Statement( "write( 0 , \"\\n\" , 1 )" )
+			;
+		ʄ( "string string::Concat(object,object,object)" )
+			.Statement( "struct _string a, b, c" )
+			.Statement( "if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )" )
+			.Statement( "	a =  *((struct _string *)args[0])" )
+			.Statement( "else" )
+			.Statement( "	a =  ((struct _object *)args[0])->this->$ToString( args+0 )" )
+			.Statement( "if( ((union _*)args[1])->base.managed && ((union _*)args[1])->base.pointer )" )
+			.Statement( "	b =  *((struct _string *)args[1])" )
+			.Statement( "else" )
+			.Statement( "	b =  ((struct _object *)args[1])->this->$ToString( args+1 )" )
+			.Statement( "if( ((union _*)args[2])->base.managed && ((union _*)args[2])->base.pointer )" )
+			.Statement( "	c =  *((struct _string *)args[2])" )
+			.Statement( "else" )
+			.Statement( "	c =  ((struct _object *)args[2])->this->$ToString( args+2 )" )
+			.Statement( "static struct _string s" )
+			.Statement( "s.length = a.length + b.length + c.length" )
+			.Statement( "s.string = malloc(a.length + b.length + c.length)" )
+			.Statement( "strncpy( s.string, a.string, a.length )" )
+			.Statement( "strncpy( &s.string[a.length], b.string, b.length )" )
+			.Statement( "strncpy( &s.string[a.length+b.length], c.string, c.length )" )
+			.Statement( "return s" )
+			;
+		ʄ( "string string::Concat(string,string)" )
+			;
 		}
 	}
 
