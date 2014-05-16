@@ -133,14 +133,6 @@ partial class Program
 		Program.WriteMethods() ;
 		Program.WriteC_Objects() ;
 		}
-	static public C_Symbol UnsignedInt
-		{
-		get { return C_Symbol.Acquire( "unsigned int" ) ; }
-		}
-	static public C_Symbol Char_
-		{
-		get { return C_Symbol.Acquire( "char*" ) ; }
-		}
 	static public C_Symbol StructObject
 		{
 		get { return C_Symbol.Acquire( "struct _object" ) ; }
