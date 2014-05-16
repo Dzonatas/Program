@@ -304,6 +304,10 @@ partial class Program
 			{
 			return Statement( "write( 0 , \"\\012\" , 1 )" ) ;
 			}
+		public C_Function Return( string symbol )
+			{
+			return Statement( "return " + symbol ) ;
+			}
 		C_Function( string symbol )
 			{
 			Void = true ;

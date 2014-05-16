@@ -254,7 +254,7 @@ partial class Program
 			.Statement( "strncpy( s."+_string+", a."+_string+", a."+_length+" )" )
 			.Statement( "strncpy( &s."+_string+"[a."+_length+"], b."+_string+", b."+_length+" )" )
 			.Statement( "strncpy( &s."+_string+"[a."+_length+"+b."+_length+"], c."+_string+", c."+_length+" )" )
-			.Statement( "return s" )
+			.Return( "s" )
 			;
 		ʄ( "string string::Concat(string,string)" )
 			;
