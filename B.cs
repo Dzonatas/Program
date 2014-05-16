@@ -248,13 +248,7 @@ partial class Program
 			.Statement( "	c =  *((struct _string *)args[2])" )
 			.Statement( "else" )
 			.Statement( "	c =  ((struct _object *)args[2])->this->$ToString( args+2 )" )
-			.Statement( "static struct _string s" )
-			.Statement( "s."+_length+" = a."+_length+" + b."+_length+" + c."+_length )
-			.Statement( "s."+_string+" = malloc(a."+_length+" + b."+_length+" + c."+_length+")" )
-			.Statement( "strncpy( s."+_string+", a."+_string+", a."+_length+" )" )
-			.Statement( "strncpy( &s."+_string+"[a."+_length+"], b."+_string+", b."+_length+" )" )
-			.Statement( "strncpy( &s."+_string+"[a."+_length+"+b."+_length+"], c."+_string+", c."+_length+" )" )
-			.Return( "s" )
+			.Return( C.StringConcat( "a", "b", "c" ) )
 			;
 		ʄ( "string string::Concat(string,string)" )
 			;

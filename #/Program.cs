@@ -151,7 +151,7 @@ partial class Program
 		}
 	static public C_Function ʄ( string description )
 		{
-		return C_Method.CreateFunction( description ) ;
+		return C.This = C_Method.CreateFunction( description ) ;
 		}
 	static public Type Function
 		{

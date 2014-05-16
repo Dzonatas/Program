@@ -27,6 +27,21 @@ partial class Program
 			c = typeset[symbol] ;
 		return c ;
 		}
+	public C_Symbol StringConcat( string a, string b, string c )
+		{
+		C_TypeDef typedef = typedefset["string"] ;
+		string _length = typedef.Struct[0] ;
+		string _string = typedef.Struct[1] ;
+		This.Statement( "static struct _string s" )
+			.Statement( "s."+_length+" = a."+_length+" + b."+_length+" + c."+_length )
+			.Statement( "s."+_string+" = malloc(a."+_length+" + b."+_length+" + c."+_length+")" )
+			.Statement( "strncpy( s."+_string+", a."+_string+", a."+_length+" )" )
+			.Statement( "strncpy( &s."+_string+"[a."+_length+"], b."+_string+", b."+_length+" )" )
+			.Statement( "strncpy( &s."+_string+"[a."+_length+"+b."+_length+"], c."+_string+", c."+_length+" )" )
+			;
+		return C_Symbol.Acquire( "s" ) ;
+		}
+	public C_Function This ;
 	}
 
 public class C_Symbol
