@@ -214,9 +214,10 @@ static void Begin()
 
 partial class Program
 	{
+	static Program C = new Program() ;
 	static public void Begin()
 		{
-		var C = new Program() ;
+		C_Symbol c = "length".UnsignedInt() ;
 		C.TypeDef.String
 			.Parameter( UnsignedInt, "length" )
 			.Parameter( Char_, "string" )

@@ -180,34 +180,6 @@ partial class Program
 			get { return C_TypeDef.CreateStructure( "object" ) ; }
 			}
 		}
-	public class C_Symbol
-		{
-		Guid ID ;
-		string symbol ;
-		C_Symbol( string symbol )
-			{
-			this.symbol = symbol ;
-			ID = Guid.NewGuid() ;
-			}
-		public C_Symbol()
-			{
-			ID = Guid.NewGuid() ;
-			symbol = "_" + Regex.Replace( ID.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
-			}
-		static public C_Symbol Acquire( string symbol )
-			{
-			C_Symbol c ;
-			if( ! symbolset.ContainsKey( symbol ) )
-				symbolset.Add( symbol, c = new C_Symbol( symbol ) ) ;
-			else
-				c = symbolset[symbol] ;
-			return c ;
-			}
-		static public implicit operator string( C_Symbol c )
-			{
-			return c.symbol ;
-			}
-		}
 	public class C_Type
 		{
 		C_Symbol symbol ;

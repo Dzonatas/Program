@@ -119,7 +119,7 @@ class Object : Stack.Item
 				break ;
 			case "LDSTR":
 				{
-				var symbol = new Program.C_Symbol() ;
+				var symbol = new C_Symbol() ;
 				d.AssignStaticConst( Program.StructString, symbol,
 					"{ "
 					+ this_string.Length.ToString() + " , "
@@ -132,7 +132,7 @@ class Object : Stack.Item
 				}
 			case "CALL":
 				{
-				var _call  = Program.C_Symbol.Acquire( this_instr_symbol ) ;
+				var _call  = C_Symbol.Acquire( this_instr_symbol ) ;
 				Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
 				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 				this_stack_offset -= iargs ;
@@ -153,11 +153,11 @@ class Object : Stack.Item
 					}
 				*/
 				string item = "" ;
-				Program.C_Symbol symbol = null ;
+				C_Symbol symbol = null ;
 				Program.C_Function.Require( this_instr_symbol ) ;
 				if( this_instr_type == "string" )
 					{
-					symbol = new Program.C_Symbol() ;
+					symbol = new C_Symbol() ;
 					d.LocalStatic( Program.StructString, symbol ) ;
 					//d.Statement( "static struct _string item" + this_stack_offset.ToString() ) ;
 					item = symbol + " = " ;
@@ -195,9 +195,9 @@ class Object : Stack.Item
 				}
 			case "NEWOBJ":
 				{
-				var symbol = new Program.C_Symbol() ;
-				var _class = Program.C_Symbol.Acquire( this_instr_class_symbol ) ;
-				var _call  = Program.C_Symbol.Acquire( this_instr_symbol ) ;
+				var symbol = new C_Symbol() ;
+				var _class = C_Symbol.Acquire( this_instr_class_symbol ) ;
+				var _call  = C_Symbol.Acquire( this_instr_symbol ) ;
 				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
 				this_stack_offset++ ;
 				this_stack_offset -= iargs ;

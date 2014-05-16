@@ -45,6 +45,11 @@ namespace System.Extensions
 			#endif
 			}
 
+		public static A335.C_Symbol UnsignedInt(this string d)
+			{
+			return A335.C_Symbol.Acquire( d ) ;
+			}
+
 
 		//[Oprand({'B', 'l'})]
 		[DllImport("libX11", EntryPoint = "XOpenDisplay")]
