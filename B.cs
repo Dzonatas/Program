@@ -235,7 +235,9 @@ partial class Program
 			.StandardOutputWriteLine()
 			;
 		ʄ( "string string::Concat(object,object,object)" )
-			.Statement( "struct _string a, b, c" )
+			.Register( StructString, "a" )
+			.Register( StructString, "b" )
+			.Register( StructString, "c" )
 			.Statement( "if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )" )
 			.Statement( "	a =  *((struct _string *)args[0])" )
 			.Statement( "else" )
@@ -248,7 +250,7 @@ partial class Program
 			.Statement( "	c =  *((struct _string *)args[2])" )
 			.Statement( "else" )
 			.Statement( "	c =  ((struct _object *)args[2])->this->$ToString( args+2 )" )
-			.Return( C.StringConcat( "a", "b", "c" ) )
+			.Return( C.StringConcat( C[0], C[1], C[2] ) )
 			;
 		ʄ( "string string::Concat(string,string)" )
 			;

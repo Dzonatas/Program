@@ -300,6 +300,10 @@ partial class Program
 			{
 			return Statement( "return " + symbol ) ;
 			}
+		public C_Function Register( C_Symbol type, string name )
+			{
+			return C.Register( this, type, name ) ;
+			}
 		C_Function( string symbol )
 			{
 			Void = true ;

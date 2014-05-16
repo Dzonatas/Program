@@ -27,21 +27,75 @@ partial class Program
 			c = typeset[symbol] ;
 		return c ;
 		}
-	public C_Symbol StringConcat( string a, string b, string c )
+	public C_Symbol StringConcat( C_Literal a, C_Literal b, C_Literal c )
 		{
 		C_TypeDef typedef = typedefset["string"] ;
 		string _length = typedef.Struct[0] ;
 		string _string = typedef.Struct[1] ;
+		string s_length = "s." + _length ;
+		string s_string = "s." + _string ;
+		string a_length = a + "." + _length ;
+		string a_string = a + "." + _string ;
+		string b_length = b + "." + _length ;
+		string b_string = b + "." + _string ;
+		string c_length = c + "." + _length ;
+		string c_string = c + "." + _string ;
 		This.Statement( "static struct _string s" )
-			.Statement( "s."+_length+" = a."+_length+" + b."+_length+" + c."+_length )
-			.Statement( "s."+_string+" = malloc(a."+_length+" + b."+_length+" + c."+_length+")" )
-			.Statement( "strncpy( s."+_string+", a."+_string+", a."+_length+" )" )
-			.Statement( "strncpy( &s."+_string+"[a."+_length+"], b."+_string+", b."+_length+" )" )
-			.Statement( "strncpy( &s."+_string+"[a."+_length+"+b."+_length+"], c."+_string+", c."+_length+" )" )
+			.Statement( s_length+" = "+a_length+" + "+b_length+" + "+c_length )
+			.Statement( s_string+" = malloc( "+a_length+" + "+b_length+" + "+c_length+" )" )
+			.Statement( "strncpy( "+s_string+", "+a_string+", "+a_length+" )" )
+			.Statement( "strncpy( &"+s_string+"["+a_length+"], "+b_string+", "+b_length+" )" )
+			.Statement( "strncpy( &"+s_string+"["+a_length+"+"+b_length+"], "+c_string+", "+c_length+" )" )
 			;
 		return C_Symbol.Acquire( "s" ) ;
 		}
 	public C_Function This ;
+	C_Literal[] register ;
+	public C_Function Register( C_Function f, C_Symbol type, string name )
+		{
+		C_Literal literal ;
+		if( register == null )
+			{
+			register = new C_Literal[1] ;
+			literal = register[0] ;
+			}
+		else
+			{
+			Array.Resize( ref register, register.Length + 1 ) ;
+			literal = register[ register.Length - 1 ] ;
+			}
+		literal.Function  = f ;
+		literal.Type      = type ;
+		literal.Name      = name ;
+		register[ register.Length - 1 ] = literal ;
+		This.Statement( type + " " + name ) ;
+		return f ;
+		}
+	public struct C_Literal
+		{
+		public C_Function  Function ;
+		public C_Symbol    Type ;
+		public string      Name ;
+		public override string ToString()
+				{
+				return Name ;
+				}
+		}
+	public C_Literal this[int n]
+		{
+		get {
+			return register[n] ;
+			}
+		}
+	public C_Literal this[string name]
+		{
+		get {
+			foreach( C_Literal literal in register )
+				if( name == literal.Name )
+					return literal ;
+			throw new FieldAccessException( name ) ;
+			}
+		}
 	}
 
 public class C_Symbol
