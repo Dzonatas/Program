@@ -22,7 +22,16 @@ static public void START()
 		*/
 		}
 	}
-	
+
+struct StringTheory
+	{
+	int     integer  ;
+	string  string_  ;
+	uint    capacity ;
+	//bool  null_terminated ;
+	//bool  terminal ;
+	} //_reserved_;
+
 static        /* used */  Item    system = new Item() ; // auto-registry, File system_file_x...
 static internal      IPAddress system_ip = IPAddress.Any ;
 static State []                 stateset = new State[1125] ;
