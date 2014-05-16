@@ -217,10 +217,11 @@ partial class Program
 	static Program C = new Program() ;
 	static public void Begin()
 		{
-		C_Symbol c = "length".UnsignedInt() ;
+		C_Type _length = Guid.NewGuid().UnsignedInt() ;
+		C_Type _string = Guid.NewGuid().Char_() ;
 		C.TypeDef.String
-			.Parameter( UnsignedInt, "length" )
-			.Parameter( Char_, "string" )
+			.Parameter( _length )
+			.Parameter( _string )
 			;
 		C.TypeDef.Object
 			.Parameter( StructObject_, "this" )
@@ -230,7 +231,7 @@ partial class Program
 			;
 		ʄ( "console::WriteLine(string)" )
 			.ConstLocal( StructString_, "*args" )
-			.StandardOutputWriteLocal( "string" , "length" )
+			.StandardOutputWriteLocal( _string , _length )
 			.StandardOutputWriteLine()
 			;
 		ʄ( "string string::Concat(object,object,object)" )
@@ -248,11 +249,11 @@ partial class Program
 			.Statement( "else" )
 			.Statement( "	c =  ((struct _object *)args[2])->this->$ToString( args+2 )" )
 			.Statement( "static struct _string s" )
-			.Statement( "s.length = a.length + b.length + c.length" )
-			.Statement( "s.string = malloc(a.length + b.length + c.length)" )
-			.Statement( "strncpy( s.string, a.string, a.length )" )
-			.Statement( "strncpy( &s.string[a.length], b.string, b.length )" )
-			.Statement( "strncpy( &s.string[a.length+b.length], c.string, c.length )" )
+			.Statement( "s."+_length+" = a."+_length+" + b."+_length+" + c."+_length )
+			.Statement( "s."+_string+" = malloc(a."+_length+" + b."+_length+" + c."+_length+")" )
+			.Statement( "strncpy( s."+_string+", a."+_string+", a."+_length+" )" )
+			.Statement( "strncpy( &s."+_string+"[a."+_length+"], b."+_string+", b."+_length+" )" )
+			.Statement( "strncpy( &s."+_string+"[a."+_length+"+b."+_length+"], c."+_string+", c."+_length+" )" )
 			.Statement( "return s" )
 			;
 		ʄ( "string string::Concat(string,string)" )

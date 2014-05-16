@@ -180,35 +180,6 @@ partial class Program
 			get { return C_TypeDef.CreateStructure( "object" ) ; }
 			}
 		}
-	public class C_Type
-		{
-		C_Symbol symbol ;
-		//Guid ID ;
-		public C_Type( string symbol )
-			{
-			//ID = Guid.NewGuid() ;
-			this.symbol = C_Symbol.Acquire( symbol ) ;
-			}
-		static public C_Type Acquire( string symbol )
-			{
-			C_Type c;
-			if( ! typeset.ContainsKey( symbol ) )
-				typeset.Add( symbol, c = new C_Type( symbol ) ) ;
-			else
-				c = typeset[symbol] ;
-			return c ;
-			}
-		static public implicit operator string( C_Type c )
-			{
-			return c.symbol ;
-			}
-		static public implicit operator C_Symbol( C_Type c )
-			{
-			if( c.symbol == "string" )
-				return C_Symbol.Acquire( "struct _string" ) ;
-			return c.symbol ;
-			}
-		}
 	public class C_Method
 		{
 		//Guid ID ;
@@ -477,6 +448,7 @@ partial class Program
 		public string Symbol ;
 		public C_TypeDef TypeDef ;
 		List<string> list = new List<string>() ;
+		List<C_Type> parameterset = new List<C_Type>() ;
 		public C_Struct()
 			{
 			Type = "_object" ;
@@ -485,10 +457,20 @@ partial class Program
 			{
 			list.Add( text ) ;
 			}
+		public C_Struct Parameter( C_Type symbol )
+			{
+			list.Add( symbol.Type + " " + symbol ) ;
+			parameterset.Add( symbol ) ;
+			return this ;
+			}
 		public C_Struct Parameter( C_Symbol symbol, string text )
 			{
 			list.Add( symbol + " " + text ) ;
 			return this ;
+			}
+		public C_Type this[int n]
+			{
+			get{ return parameterset[n] ; }
 			}
 		public void Assign( string text )
 			{
@@ -602,7 +584,9 @@ partial class Program
 			}
 		public C_Oprand FreeStackString( int offset )
 			{
-			return Statement( "free( ((struct _string *)stack[" + offset + "])->string )" ) ;
+			C_TypeDef typedef = typedefset["string"] ;
+			string field = typedef.Struct[1] ;
+			return Statement( "free( ((struct _string *)stack[" + offset + "])->"+field+" )" ) ;
 			}
 		public void WriteTo( StreamWriter sw )
 			{

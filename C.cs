@@ -18,6 +18,15 @@ partial class Program
 			c = symbolset[symbol] ;
 		return c ;
 		}
+	static public C_Type C_Type_Acquire( string symbol )
+		{
+		C_Type c;
+		if( ! typeset.ContainsKey( symbol ) )
+			typeset.Add( symbol, c = new C_Type( symbol ) ) ;
+		else
+			c = typeset[symbol] ;
+		return c ;
+		}
 	}
 
 public class C_Symbol
@@ -41,6 +50,43 @@ public class C_Symbol
 	static public implicit operator string( C_Symbol c )
 		{
 		return c.symbol ;
+		}
+	}
+
+public class C_Type
+	{
+	C_Symbol symbol ;
+	//Guid ID ;
+	public C_Type( string symbol )
+		{
+		//ID = Guid.NewGuid() ;
+		this.symbol = C_Symbol.Acquire( symbol ) ;
+		}
+	static public C_Type Acquire( string symbol )
+		{
+		return Program.C_Type_Acquire( symbol ) ;
+		}
+	static public implicit operator string( C_Type c )
+		{
+		return c.symbol ;
+		}
+	static public implicit operator C_Symbol( C_Type c )
+		{
+		if( c.symbol == "string" )
+			return C_Symbol.Acquire( "struct _string" ) ;
+		return c.symbol ;
+		}
+	public string Type
+		{
+		get
+			{
+			string text = symbol ;
+			if( text.EndsWith( "_unsigned_int" ) )
+				return "unsigned int" ;
+			if( text.EndsWith( "_char_p" ) )
+				return "char*" ;
+			throw new System.NotSupportedException( "Unknown type." ) ; //_ID_ID_ID_...
+			}
 		}
 	}
 

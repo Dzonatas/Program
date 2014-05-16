@@ -45,9 +45,17 @@ namespace System.Extensions
 			#endif
 			}
 
-		public static A335.C_Symbol UnsignedInt(this string d)
+		public static A335.C_Type UnsignedInt(this System.Guid d)
 			{
-			return A335.C_Symbol.Acquire( d ) ;
+			string id = "_" + System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
+			id += "_unsigned_int" ;
+			return A335.C_Type.Acquire( id ) ;
+			}
+		public static A335.C_Type Char_(this System.Guid d)
+			{
+			string id = "_" + System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
+			id += "_char_p" ;
+			return A335.C_Type.Acquire( id ) ;
 			}
 
 
