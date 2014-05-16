@@ -164,7 +164,14 @@ public class C_Type
 				return "unsigned int" ;
 			if( text.EndsWith( "_char_p" ) )
 				return "char*" ;
-			throw new System.NotSupportedException( "Unknown type." ) ; //_ID_ID_ID_...
+			if( text.EndsWith( "_p" ) && text != "_p" )
+				{
+				string capitol = text.Substring( text.Length - "_p".Length ) ;
+				if( capitol == capitol.ToUpper() )
+					return capitol + "_type" ;
+				throw new System.NotSupportedException() ;
+				}
+			throw new System.NotImplementedException( "Unknown type." ) ; //_ID_ID_ID_...
 			}
 		}
 	}
