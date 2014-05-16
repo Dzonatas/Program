@@ -1,4 +1,5 @@
 //using System.C.IDE.MonoDevelop;//C.I.S.("ecma.cproj")
+using System.Extensions ;
 using System.Text.RegularExpressions ;
 using System ;
 
@@ -100,17 +101,26 @@ partial class Program
 
 public class C_Symbol
 	{
-	Guid ID ;
+	Guid id ;
 	string symbol ;
+	public string By_p()
+		{
+		string pid = Guid.NewGuid().ToString().ToStemString() ;
+		if( this.symbol[0] == '_' )  //Logical+ID,^'_'[<IDc>]+
+			return pid + this.symbol + "_p" ;
+		string symbol ;
+		symbol = "_" + this.symbol.ToStemString() ;
+		return pid + symbol + "_p" ;
+		}
 	internal C_Symbol( string symbol )
 		{
 		this.symbol = symbol ;
-		ID = Guid.NewGuid() ;
+		id = Guid.NewGuid() ;
 		}
 	public C_Symbol()
 		{
-		ID = Guid.NewGuid() ;
-		symbol = "_" + Regex.Replace( ID.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
+		id = Guid.NewGuid() ;
+		symbol = "_" + id.ToID() ;
 		}
 	static public C_Symbol Acquire( string symbol )
 		{

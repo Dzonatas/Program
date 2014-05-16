@@ -304,6 +304,11 @@ partial class Program
 			{
 			return C.Register( this, type, name ) ;
 			}
+		public C_Function Register( C_Symbol type )
+			{
+			string name = type.By_p() ; //_CPP_FLOW,P(==|!=)NP
+			return C.Register( this, type, name ) ;
+			}
 		C_Function( string symbol )
 			{
 			Void = true ;

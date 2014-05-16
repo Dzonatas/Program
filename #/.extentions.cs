@@ -1,5 +1,6 @@
 namespace System.Extensions
 	{
+	using System.Text.RegularExpressions ;
 	using System.Runtime.InteropServices ;
 	using System.Drawing ;
 	using Drawable  = System.IntPtr ;         //_window,_pixmap
@@ -57,7 +58,18 @@ namespace System.Extensions
 			id += "_char_p" ;
 			return A335.C_Type.Acquire( id ) ;
 			}
-
+		public static string ToID(this System.Guid d)
+			{
+			return Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
+			}
+		public static string ToStemString(this string d)
+			{
+			string a = d ;
+			a = Regex.Replace( a, "[^A-Za-z_0-9]", "_") ;
+			a = a.ToUpper() ;
+			return "_" + a ;
+			//return "_" + Regex.Replace( d, "[^A-Za-z_0-9]", "_").ToUpper() ;
+			}
 
 		//[Oprand({'B', 'l'})]
 		[DllImport("libX11", EntryPoint = "XOpenDisplay")]

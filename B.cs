@@ -235,22 +235,18 @@ partial class Program
 			.StandardOutputWriteLine()
 			;
 		ʄ( "string string::Concat(object,object,object)" )
-			.Register( StructString, "a" )
-			.Register( StructString, "b" )
-			.Register( StructString, "c" )
-			.Statement( "if( ((union _*)args[0])->base.managed && ((union _*)args[0])->base.pointer )" )
-			.Statement( "	a =  *((struct _string *)args[0])" )
-			.Statement( "else" )
-			.Statement( "	a =  ((struct _object *)args[0])->this->$ToString( args+0 )" )
-			.Statement( "if( ((union _*)args[1])->base.managed && ((union _*)args[1])->base.pointer )" )
-			.Statement( "	b =  *((struct _string *)args[1])" )
-			.Statement( "else" )
-			.Statement( "	b =  ((struct _object *)args[1])->this->$ToString( args+1 )" )
-			.Statement( "if( ((union _*)args[2])->base.managed && ((union _*)args[2])->base.pointer )" )
-			.Statement( "	c =  *((struct _string *)args[2])" )
-			.Statement( "else" )
-			.Statement( "	c =  ((struct _object *)args[2])->this->$ToString( args+2 )" )
-			.Return( C.StringConcat( C[0], C[1], C[2] ) )
+			.Register( StructString )
+			.Register( StructString )
+			.Register( StructString )
+			;
+		foreach( int i in new int[] { 0, 1, 2 } )
+			{
+			C.This.Statement( "if( ((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer )" )
+			      .Statement( "\t" + C[i] + " =  *((struct _string *)args["+i+"])" )
+			      .Statement( "else" )
+			      .Statement( "\t" + C[i] + " =  ((struct _object *)args["+i+"])->this->$ToString( args+"+i+" )" ) ;
+			}
+		C.This.Return( C.StringConcat( C[0], C[1], C[2] ) )
 			;
 		ʄ( "string string::Concat(string,string)" )
 			;
