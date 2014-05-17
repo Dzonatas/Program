@@ -318,10 +318,11 @@ partial class Program
 	{
 	static List<object> stack = new List<object>() ;
 	static int stack_offset ;
+	static int stack_down ;
 	//static uint effective_symbolic_objective_credit ;
 	public int StackOffset
 		{
-		get { return stack_offset ; }
+		get { return stack_offset - stack_down ; }
 		}
 	public void Push( string obj )
 		{
@@ -339,7 +340,7 @@ partial class Program
 		}
 	public void Hangdown()
 		{
-		stack_offset = 0 ;
+		stack_down = stack_offset ;
 		}
 	public int MaxStack
 		{
