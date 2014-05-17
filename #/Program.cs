@@ -309,6 +309,13 @@ partial class Program
 			string name = type.By_p() ; //_CPP_FLOW,P(==|!=)NP
 			return C.Register( this, type, name ) ;
 			}
+		public C_Function ManagedPointerToString( C_Literal l, int i )
+			{
+			return Statement( "if( ((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer )" )
+			      .Statement( "\t" + l + " =  *((struct _string *)args["+i+"])" )
+			      .Statement( "else" )
+			      .Statement( "\t" + l + " =  ((struct _object *)args["+i+"])->this->$ToString( args+"+i+" )" ) ;
+			}
 		C_Function( string symbol )
 			{
 			Void = true ;

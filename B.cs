@@ -238,15 +238,10 @@ partial class Program
 			.Register( StructString )
 			.Register( StructString )
 			.Register( StructString )
-			;
-		foreach( int i in new int[] { 0, 1, 2 } )
-			{
-			C.This.Statement( "if( ((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer )" )
-			      .Statement( "\t" + C[i] + " =  *((struct _string *)args["+i+"])" )
-			      .Statement( "else" )
-			      .Statement( "\t" + C[i] + " =  ((struct _object *)args["+i+"])->this->$ToString( args+"+i+" )" ) ;
-			}
-		C.This.Return( C.StringConcat( C[0], C[1], C[2] ) )
+			.ManagedPointerToString( C[0], 0 )
+			.ManagedPointerToString( C[1], 1 )
+			.ManagedPointerToString( C[2], 2 )
+			.Return( C.StringConcat( C[0], C[1], C[2] ) )
 			;
 		ʄ( "string string::Concat(string,string)" )
 			;
