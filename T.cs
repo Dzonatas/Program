@@ -4,13 +4,11 @@ static System.Nullable<_.Token>  /*t_##*/token ; ///lowercased.Any(_atomatrix:IP
 static State              this_state ;
 static Xo_t               this_xo_t ;
 static Program.Method     this_method ;
-static string             this_sigArg_types ;
 static string             this_class_id ;
 static Program.Method     this_start_method ;
 static string             this_methodName ;
 static string             this_string ;
 static int                this_stack_offset ;
-static int                this_sigArgs ;
 static string             this_instr_type ;
 static int                this_instr_sigArgs ;
 static string             this_instr_sigArg_types ;

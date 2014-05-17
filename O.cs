@@ -82,14 +82,25 @@ class Object : Stack.Item
 		else
 			this_method.Name = "$" + Arg6.Token ;
 		this_method.Type              = Arg5.ResolveType() ;
-		this_method.SigArgs           = this_sigArgs ;
-		this_method.SigArgTypes       = this_sigArg_types ;
+		this_method.SigArgs           = SigArg.Count() ;
+		this_method.SigArgTypes       = SigArg.Types() ;
 		this_method.CallConvInstance  = this_callConv_instance ;
 		this_method.Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
-		this_sigArgs = 0 ;
-		this_sigArg_types = null ;
+		SigArg.Clear() ;
 		this_callConv_instance = false ;
 		}
+	}
+
+static void push( string obj )
+	{
+	this_stack[this_stack_offset] = obj ;
+	this_stack_offset++ ;
+	}
+
+static string pop()
+	{
+	this_stack_offset-- ;
+	return this_stack[this_stack_offset+1] ;
 	}
 
 [Automaton] class   methodDecl___maxstack__int32
@@ -114,8 +125,7 @@ class Object : Stack.Item
 			{
 			case "LDARG_0":
 				d.AssignStack( this_stack_offset, "args[0]" ) ;
-				this_stack[this_stack_offset] = "object" ;
-				this_stack_offset++ ;
+				push( "object" ) ;
 				break ;
 			case "LDSTR":
 				{
@@ -126,8 +136,7 @@ class Object : Stack.Item
 					+ '"' + this_string + '"'
 					+ " }" ) ;
 				d.AssignStack( this_stack_offset, "&" + symbol ) ;
-				this_stack[this_stack_offset] = "string" ;
-				this_stack_offset++ ;
+				push( "string" ) ;
 				break ;
 				}
 			case "CALL":
@@ -178,8 +187,7 @@ class Object : Stack.Item
 				if( this_instr_type != "void" )
 					{
 					Debug.WriteLine( " [methodDecl_instr] this_stack={0} offset={1}", this_stack.Length, this_stack_offset ) ;
-					this_stack[this_stack_offset] = this_instr_type ;
-					this_stack_offset++ ;
+					push( this_instr_type ) ;
 					}
 				break ;
 				}
@@ -209,72 +217,71 @@ class Object : Stack.Item
 					d.Call( _call ) ;
 				else
 					d.Call( _call, "stack+" + this_stack_offset ) ;
-				this_stack[this_stack_offset] = "object" ;
-				this_stack_offset++ ;
+				push( "object" ) ;
 				break ;
 				}
 			case "LDC_I4_0" :
 				d.AssignStack( this_stack_offset, "0" ) ;
-				this_stack_offset++ ;
+				push( null ) ;
 				break ;
 			case "LDC_I4_1" :
 				d.AssignStack( this_stack_offset, "0" ) ;
-				this_stack_offset++ ;
+				push( null ) ;
 				break ;
 			case "LDC_I4_2" :
 				d.AssignStack( this_stack_offset, "0" ) ;
-				this_stack_offset++ ;
+				push( null ) ;
 				break ;
 			case "LDC_I4_3" :
 				d.AssignStack( this_stack_offset, "0" ) ;
-				this_stack_offset++ ;
+				push( null ) ;
 				break ;
 			case "STELEM_REF" :
-				this_stack_offset-- ;
-				this_stack_offset-- ;
-				this_stack_offset-- ;
+				pop() ;
+				pop() ;
+				pop() ;
 				break ;
 			case "NEWARR" :
-				this_stack_offset++ ;
-				this_stack_offset-- ;
+				push( null ) ;
+				pop() ;
 				break ;
 			case "STSFLD" :
-				this_stack_offset-- ;
+				pop() ;
 				break ;
 			case "LDSFLD" :
-				this_stack_offset++ ;
+				push( null ) ;
 				break ;
 			case "STLOC_0" :
-				this_stack_offset-- ;
+				pop() ;
 				break ;
 			case "STLOC_1" :
-				this_stack_offset-- ;
+				pop() ;
 				break ;
 			case "STLOC_2" :
-				this_stack_offset-- ;
+				pop() ;
 				break ;
 			case "STLOC_3" :
-				this_stack_offset-- ;
+				pop() ;
 				break ;
 			case "LDLOC_0" :
-				this_stack_offset++ ;
+				push( null ) ;
 				break ;
 			case "LDLOC_1" :
-				this_stack_offset++ ;
+				push( null ) ;
 				break ;
 			case "LDLOC_2" :
-				this_stack_offset++ ;
+				push( null ) ;
 				break ;
 			case "LDLOC_3" :
-				this_stack_offset++ ;
+				push( null ) ;
 				break ;
 			case "DUP" :
-				this_stack_offset++ ;
-				this_stack_offset-- ;
-				this_stack_offset++ ;
+				pop() ;
+				push( null ) ;
+				push( null ) ;
 				break ;
 			case "SWITCH" :
-				this_stack_offset-- ;
+				pop() ;
 				break ;
 			case "BR" :
 				d.Statement( "goto " + this_instr_brtarget_id ) ;
@@ -282,21 +289,21 @@ class Object : Stack.Item
 				this_method.RegisterLabel( this_instr_brtarget_id ) ;
 				break ;
 			case "BGE" :
-				this_stack_offset-- ;
-				this_stack_offset-- ;
+				pop() ;
+				pop() ;
 				d.Statement( "goto " + this_instr_brtarget_id ) ;
 				d.IsFlowControl = true ;
 				this_method.RegisterLabel( this_instr_brtarget_id ) ;
 				break ;
 			case "ADD" :
-				this_stack_offset-- ;
-				this_stack_offset-- ;
-				this_stack_offset++ ;
+				pop() ;
+				pop() ;
+				push( null ) ;
 				break ;
 			case "LDELEM_REF" :
-				this_stack_offset++ ;
-				this_stack_offset-- ;
-				this_stack_offset-- ;
+				pop() ;
+				pop() ;
+				push( null ) ;
 				break ;
 			default :
 				Debug.WriteLine( "[methodDecl_instr] Defaulted on " + d.Instruction ) ;
@@ -320,12 +327,11 @@ class Object : Stack.Item
 			this_methodName = "$" + Arg6.Token ;
 		this_instr_type = Arg3.ResolveType() ;
 		this_instr_class_symbol = Arg4.ResolveTypeSpec() ;
-		this_instr_symbol = this_instr_class_symbol + this_methodName + this_sigArg_types ;
-		this_instr_sigArgs = this_sigArgs ;
-		this_instr_sigArg_types = this_sigArg_types ;
+		this_instr_symbol = this_instr_class_symbol + this_methodName + SigArg.Types() ;
+		this_instr_sigArgs = SigArg.Count() ;
+		this_instr_sigArg_types = SigArg.Types() ;
 		this_instr_callConv_instance = this_callConv_instance ;
-		this_sigArgs = 0 ;
-		this_sigArg_types = null ;
+		SigArg.Clear() ;
 		this_callConv_instance = false ;
 		}
 	}
@@ -375,22 +381,6 @@ class Object : Stack.Item
 [Automaton] class   instr_INSTR_STRING_compQstring
 	: Automatrix {}
 
-[Automaton] class   sigArg_paramAttr_type
-	: Automatrix	{
-	protected override void main()
-		{
-		this_sigArg_types += "$" + Arg2.ResolveType() ;
-		}
-	}
-
-[Automaton] class   sigArgs1_sigArg
-	: Automatrix	{
-	protected override void main()
-		{
-		this_sigArgs++ ;
-		}
-	}
-
 [Automaton] class   decl_classHead_____classDecls____
 	: Automatrix	{
 	protected override void main()
@@ -410,14 +400,6 @@ class Object : Stack.Item
 		}
 	}
 
-[Automaton] class   sigArgs1_sigArgs1_____sigArg
-	: Automatrix	{
-	protected override void main()
-		{
-		this_sigArgs++ ;
-		}
-	}
-
 [Automaton] class   classDecl_classHead_____classDecls____
 	: Automatrix	{
 	protected override void main()
@@ -427,23 +409,11 @@ class Object : Stack.Item
 		}
 	}
 
-[Automaton] class   sigArg_paramAttr_type_id
-	: Automatrix {
-	protected override void main()
-		{
-		this_sigArg_types += "$" + Arg2.ResolveType() +'_'+ Arg3.Token ;
-		}
-	}
-
-[Automaton] class   sigArgs0_sigArgs1
-	: Automatrix {}
-
 [Automaton] class   customType_callConv_type_typeSpec________ctor______sigArgs0____
 	: Automatrix {
 	protected override void main()
 		{
-		this_sigArgs = 0 ;
-		this_sigArg_types = null ;
+		SigArg.Clear() ;
 		}
 	}
 
@@ -451,8 +421,7 @@ class Object : Stack.Item
 	: Automatrix {
 	protected override void main()
 		{
-		this_sigArgs = 0 ;
-		this_sigArg_types = null ;
+		SigArg.Clear() ;
 		}
 	}
 

@@ -259,6 +259,55 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		}
 	}
 
+class SigArg
+	{
+	static SigArg instance = new SigArg() ;
+	List<string> Type = new List<string>() ;
+	List<string> Name = new List<string>() ;
+	public SigArg() {}
+	static void add( string type, string name )
+		{
+		instance.Type.Add( type ) ;
+		instance.Name.Add( name ) ;
+		}
+	static public void Clear()
+		{
+		instance.Type.Clear() ;
+		instance.Name.Clear() ;
+		}
+	static public int Count()
+		{
+		return instance.Type.Count ;
+		}
+	static public string Types()
+		{
+		string i = null ;
+		foreach( string s in instance.Type )
+			i += "$" + s ;
+		return i ;
+		}
+	[Automaton] class   sigArg_paramAttr_type
+		: Automatrix	{
+		protected override void main()
+			{
+			add( Arg2.ResolveType(), null ) ;
+			}
+		}
+	[Automaton] class   sigArg_paramAttr_type_id
+		: Automatrix {
+		protected override void main()
+			{
+			add( Arg2.ResolveType(), Arg3.Token ) ;
+			}
+		}
+	[Automaton] class   sigArgs1_sigArgs1_____sigArg
+		: Automatrix	{}
+	[Automaton] class   sigArgs1_sigArg
+		: Automatrix	{}
+	[Automaton] class   sigArgs0_sigArgs1
+		: Automatrix {}
+	}
+
 static Symbol sym_token ;
 static State  sym_state ;
 static string sym_text ;
