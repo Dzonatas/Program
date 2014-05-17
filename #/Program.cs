@@ -630,6 +630,7 @@ partial class Program
 		}
 	public class Method
 		{
+		int maxstack ;
 		List<object> list = new List<object>() ;
 		List<string> labels = new List<string>() ;
 		public bool    Static ;
@@ -639,7 +640,11 @@ partial class Program
 		public string  Name ;
 		public string  SigArgTypes ;
 		public int     SigArgs ;
-		public int     MaxStack ;
+		public int     MaxStack
+			{
+			set { C.MaxStack = maxstack = value ; }
+			//get { return maxstack ; }
+			}
 		bool _virtual ;
 		public bool    Virtual
 			{
@@ -692,7 +697,7 @@ partial class Program
 				c.Args = "()" ;
 			else
 				c.Args = "( const void** args )" ;
-			c.Statement( "const void** stack = alloca( " + MaxStack + " * sizeof(void*) )" ) ;
+			c.Statement( "const void** stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
 			foreach( object o in list )
 				{
 				if( o is C_Oprand )

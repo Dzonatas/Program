@@ -8,7 +8,6 @@ static string             this_class_id ;
 static Program.Method     this_start_method ;
 static string             this_methodName ;
 static string             this_string ;
-static int                this_stack_offset ;
 static string             this_instr_type ;
 static int                this_instr_sigArgs ;
 static string             this_instr_sigArg_types ;
@@ -17,7 +16,6 @@ static bool               this_instr_callConv_instance ;
 static string             this_instr_symbol ;
 static string             this_instr_class_symbol ;
 static string             this_class_symbol ;
-static string[]           this_stack ;
 static string             this_instr_brtarget_id ;
 
 public struct Transition

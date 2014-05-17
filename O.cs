@@ -91,24 +91,11 @@ class Object : Stack.Item
 		}
 	}
 
-static void push( string obj )
-	{
-	this_stack[this_stack_offset] = obj ;
-	this_stack_offset++ ;
-	}
-
-static string pop()
-	{
-	this_stack_offset-- ;
-	return this_stack[this_stack_offset+1] ;
-	}
-
 [Automaton] class   methodDecl___maxstack__int32
 	: Automatrix	{
 	protected override void main()
 		{
 		this_method.MaxStack = int.Parse( Arg2.Token ) ;
-		this_stack = new string[this_method.MaxStack] ;
 		}
 	}
 
@@ -120,12 +107,12 @@ static string pop()
 		this_method.Add( d ) ;
 		int args = this_method.SigArgs + ( this_method.CallConvInstance ? 1 : 0 ) ;
 		d.HasArgs = args > 0 ;
-		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", this_stack_offset, args ) ;
+		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", C.StackOffset, args ) ;
 		switch( d.Instruction )
 			{
 			case "LDARG_0":
-				d.AssignStack( this_stack_offset, "args[0]" ) ;
-				push( "object" ) ;
+				d.AssignStack( C.StackOffset, "args[0]" ) ;
+				C.Push( "object" ) ;
 				break ;
 			case "LDSTR":
 				{
@@ -135,8 +122,8 @@ static string pop()
 					+ this_string.Length.ToString() + " , "
 					+ '"' + this_string + '"'
 					+ " }" ) ;
-				d.AssignStack( this_stack_offset, "&" + symbol ) ;
-				push( "string" ) ;
+				d.AssignStack( C.StackOffset, "&" + symbol ) ;
+				C.Push( "string" ) ;
 				break ;
 				}
 			case "CALL":
@@ -144,14 +131,14 @@ static string pop()
 				var _call  = C_Symbol.Acquire( this_instr_symbol ) ;
 				Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
 				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
-				this_stack_offset -= iargs ;
+				C.Hangup( iargs ) ;
 				/*
 				if( !System.String.IsNullOrEmpty(this_instr_sigArg_types) )
 					{
 					string[] s = this_instr_sigArg_types.Split( '$' ) ;
 					for( int a = ( this_instr_callConv_instance ? 2 : 1 ) ; a < iargs ; a++ )
 						{
-						int offset = this_stack_offset+a-1+( this_instr_callConv_instance ? 1 : 0 ) ;
+						int offset = C.StackOffset+a-1+( this_instr_callConv_instance ? 1 : 0 ) ;
 						if( s[a] != this_stack[offset] )
 							{
 							this_program += "static struct _object obj = { 0 } ;" ;
@@ -168,27 +155,24 @@ static string pop()
 					{
 					symbol = new C_Symbol() ;
 					d.LocalStatic( Program.StructString, symbol ) ;
-					//d.Statement( "static struct _string item" + this_stack_offset.ToString() ) ;
+					//d.Statement( "static struct _string item" + C.StackOffset.ToString() ) ;
 					item = symbol + " = " ;
-					freeset.Add( this_stack_offset ) ;
+					freeset.Add( C.StackOffset ) ;
 					if( iargs == 0 )
 						d.CallAssign( symbol, _call ) ;
 					else
-						d.CallAssign( symbol, _call, "stack+" + this_stack_offset ) ;
-					d.AssignStack( this_stack_offset, "&" + symbol ) ;
+						d.CallAssign( symbol, _call, "stack+" + C.StackOffset ) ;
+					d.AssignStack( C.StackOffset, "&" + symbol ) ;
 					}
 				else
 					{
 					if( iargs == 0 )
 						d.Call( _call ) ;
 					else
-						d.Call( _call, "stack+" + this_stack_offset ) ;
+						d.Call( _call, "stack+" + C.StackOffset ) ;
 					}
 				if( this_instr_type != "void" )
-					{
-					Debug.WriteLine( " [methodDecl_instr] this_stack={0} offset={1}", this_stack.Length, this_stack_offset ) ;
-					push( this_instr_type ) ;
-					}
+					C.Push( this_instr_type ) ;
 				break ;
 				}
 			case "RET":
@@ -207,81 +191,80 @@ static string pop()
 				var _class = C_Symbol.Acquire( this_instr_class_symbol ) ;
 				var _call  = C_Symbol.Acquire( this_instr_symbol ) ;
 				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
-				this_stack_offset++ ;
-				this_stack_offset -= iargs ;
+				C.Hangup( iargs - 1 ) ;
 				d.ExternCall( _call ) ;
 				d.Extern( Program.StructObject, _class ) ;
 				d.AssignStaticConst( Program.StructObject, symbol, "{ &" + _class + " }" ) ;
-				d.AssignStack( this_stack_offset, "&" + symbol ) ;
+				d.AssignStack( C.StackOffset, "&" + symbol ) ;
 				if( iargs == 0 )
 					d.Call( _call ) ;
 				else
-					d.Call( _call, "stack+" + this_stack_offset ) ;
-				push( "object" ) ;
+					d.Call( _call, "stack+" + C.StackOffset ) ;
+				C.Push( "object" ) ;
 				break ;
 				}
 			case "LDC_I4_0" :
-				d.AssignStack( this_stack_offset, "0" ) ;
-				push( null ) ;
+				d.AssignStack( C.StackOffset, "0" ) ;
+				C.Push( null ) ;
 				break ;
 			case "LDC_I4_1" :
-				d.AssignStack( this_stack_offset, "0" ) ;
-				push( null ) ;
+				d.AssignStack( C.StackOffset, "0" ) ;
+				C.Push( null ) ;
 				break ;
 			case "LDC_I4_2" :
-				d.AssignStack( this_stack_offset, "0" ) ;
-				push( null ) ;
+				d.AssignStack( C.StackOffset, "0" ) ;
+				C.Push( null ) ;
 				break ;
 			case "LDC_I4_3" :
-				d.AssignStack( this_stack_offset, "0" ) ;
-				push( null ) ;
+				d.AssignStack( C.StackOffset, "0" ) ;
+				C.Push( null ) ;
 				break ;
 			case "STELEM_REF" :
-				pop() ;
-				pop() ;
-				pop() ;
+				C.Pop() ;
+				C.Pop() ;
+				C.Pop() ;
 				break ;
 			case "NEWARR" :
-				push( null ) ;
-				pop() ;
+				C.Push( null ) ;
+				C.Pop() ;
 				break ;
 			case "STSFLD" :
-				pop() ;
+				C.Pop() ;
 				break ;
 			case "LDSFLD" :
-				push( null ) ;
+				C.Push( null ) ;
 				break ;
 			case "STLOC_0" :
-				pop() ;
+				C.Pop() ;
 				break ;
 			case "STLOC_1" :
-				pop() ;
+				C.Pop() ;
 				break ;
 			case "STLOC_2" :
-				pop() ;
+				C.Pop() ;
 				break ;
 			case "STLOC_3" :
-				pop() ;
+				C.Pop() ;
 				break ;
 			case "LDLOC_0" :
-				push( null ) ;
+				C.Push( null ) ;
 				break ;
 			case "LDLOC_1" :
-				push( null ) ;
+				C.Push( null ) ;
 				break ;
 			case "LDLOC_2" :
-				push( null ) ;
+				C.Push( null ) ;
 				break ;
 			case "LDLOC_3" :
-				push( null ) ;
+				C.Push( null ) ;
 				break ;
 			case "DUP" :
-				pop() ;
-				push( null ) ;
-				push( null ) ;
+				C.Pop() ;
+				C.Push( null ) ;
+				C.Push( null ) ;
 				break ;
 			case "SWITCH" :
-				pop() ;
+				C.Pop() ;
 				break ;
 			case "BR" :
 				d.Statement( "goto " + this_instr_brtarget_id ) ;
@@ -289,27 +272,27 @@ static string pop()
 				this_method.RegisterLabel( this_instr_brtarget_id ) ;
 				break ;
 			case "BGE" :
-				pop() ;
-				pop() ;
+				C.Pop() ;
+				C.Pop() ;
 				d.Statement( "goto " + this_instr_brtarget_id ) ;
 				d.IsFlowControl = true ;
 				this_method.RegisterLabel( this_instr_brtarget_id ) ;
 				break ;
 			case "ADD" :
-				pop() ;
-				pop() ;
-				push( null ) ;
+				C.Pop() ;
+				C.Pop() ;
+				C.Push( null ) ;
 				break ;
 			case "LDELEM_REF" :
-				pop() ;
-				pop() ;
-				push( null ) ;
+				C.Pop() ;
+				C.Pop() ;
+				C.Push( null ) ;
 				break ;
 			default :
 				Debug.WriteLine( "[methodDecl_instr] Defaulted on " + d.Instruction ) ;
 				break ;
 			}
-		Debug.WriteLine( "[methodDecl_instr] stack={0}", this_stack_offset ) ;
+		Debug.WriteLine( "[methodDecl_instr] stack={0}", C.StackOffset ) ;
 		this_instr_sigArg_types = null ;
 		this_instr_sigArgs = 0 ;
 		this_instr_callConv_instance = false ;
@@ -340,7 +323,7 @@ static string pop()
 	: Automatrix	{
 	protected override void main()
 		{
-		this_stack_offset = 0 ;
+		C.Hangdown() ;
 		}
 	}
 

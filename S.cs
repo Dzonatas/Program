@@ -308,6 +308,45 @@ class SigArg
 		: Automatrix {}
 	}
 
+partial class Program
+	{
+	static List<object> stack = new List<object>() ;
+	static int stack_offset ;
+	public int StackOffset
+		{
+		get { return stack_offset ; }
+		}
+	public void Push( string obj )
+		{
+		stack[stack_offset] = obj ;
+		stack_offset++ ;
+		}
+	public object Pop()
+		{
+		stack_offset-- ;
+		return stack[stack_offset+1] ;
+		}
+	public void Hangup( int iargs )
+		{
+		stack_offset -= iargs ;
+		}
+	public void Hangdown()
+		{
+		stack_offset = 0 ;
+		}
+	public int MaxStack
+		{
+		set {
+			if( stack_offset + value > stack.Count )
+				{
+				stack.Capacity += value ;
+				for( int i = 0 ; i < value ; i++ )
+					stack.Add( null ) ;
+				}
+			}
+		}
+	}
+
 static Symbol sym_token ;
 static State  sym_state ;
 static string sym_text ;
