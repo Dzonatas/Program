@@ -11,6 +11,7 @@ static object s_cl__t ; //__FIXT:(E1..:)abend:(__)swp,"...": "(swp) -> ./#/.urn"
 
 static public void START()
 	{
+	#if SYSTEM_GUID
 	if( system.guid == null )
 		{
 		xml_load_grammar() ;
@@ -21,6 +22,9 @@ static public void START()
 		system.guid  = Guid.Empty ;
 		*/
 		}
+	#else
+	xml_load_grammar() ;
+	#endif
 	}
 
 struct StringTheory
@@ -32,7 +36,9 @@ struct StringTheory
 	//bool  terminal ;
 	} //_reserved_;
 
+#if SYSTEM_GUID
 static        /* used */  Item    system = new Item() ; // auto-registry, File system_file_x...
+#endif
 static internal      IPAddress system_ip = IPAddress.Any ;
 static State []                 stateset = new State[1125] ;
 
@@ -312,6 +318,7 @@ partial class Program
 	{
 	static List<object> stack = new List<object>() ;
 	static int stack_offset ;
+	//static uint effective_symbolic_objective_credit ;
 	public int StackOffset
 		{
 		get { return stack_offset ; }
@@ -347,9 +354,6 @@ partial class Program
 		}
 	}
 
-static Symbol sym_token ;
-static State  sym_state ;
-static string sym_text ;
 public struct Symbol                //_FIX:$Symbol,_Symbol,.ibid
 	{
 	public Number  credit ;
@@ -418,7 +422,7 @@ public struct Symbol                //_FIX:$Symbol,_Symbol,.ibid
 		symbol_from_token.Add( token , this ) ;
 		}*/
 	}
-	
+
 //static Dictionary<Number,Symbol>    symbol_from_number = new Dictionary<Number, Symbol>() ;
 static Dictionary<Number,Symbol>    symbol_from_token = new Dictionary<Number, Symbol>() ;
 //static Dictionary<Number,Symbol>    symbol_from_null_token = new Dictionary<Number, Symbol>() ;

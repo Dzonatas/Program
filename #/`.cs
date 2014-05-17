@@ -2100,3 +2100,73 @@ static void goto_( ref b_state b ) //_FIX:x,c
 			}
 		}
 	#endif
+
+#if SIUGWBSJNS
+static Symbol sym_token ;
+static State  sym_state ;
+static string sym_text ;
+#endif
+
+#if SUYVWJKNSUSNH && SYSTEM_GUID
+struct Item
+	{
+	public _.Token                       token ;
+	public planet                        state ;
+	public bool                          imaginary ;
+	public bool                          stacked ;
+	public bool                          existential ;
+	public Quant                         q ;
+	public Quant                         bit ;
+	public System.Action                 _oprand ;
+	public System.Nullable<System.Guid>  guid ;
+	public static implicit operator Item( State state )
+		{
+		throw new System.NotImplementedException( "Stackless." ) ;
+		}
+	public static implicit operator Item( Symbol symbol )
+		{
+		throw new System.NotImplementedException( "Stateless." ) ;
+		}
+	public static implicit operator Item( bool parity )
+		{
+		throw new System.NotImplementedException( "Finite truths, linearly." ) ;
+		}
+	public static implicit operator bool( Item i )
+		{
+		return i.existential ;
+		}
+	public static implicit operator _.Token( Item i )
+		{
+		return i.token ;
+		}
+	public static implicit operator planet( Item i )
+		{
+		return i.state ;
+		}
+	public static implicit operator System.Decimal( Item i )
+		{
+		return System.Decimal.Parse( i.state.zz +"."+ i.state.yy ) ;
+		}
+	public static implicit operator State( Item i )
+		{
+		return stateset[i.state.zz] ;
+		}
+	public override string ToString()
+		{
+		return token.ToString() ;
+		}
+	public Item( _.Token token, planet state )
+		{
+		this.token       = token ;
+		this.state       = state ;
+		this.stacked     = false ;
+		this.existential = false ;
+		this.imaginary   = true ;
+		this.q           = new Quant() ;
+		this.bit         = new Quant() ;
+		this._oprand     = null ;
+		// {0:0:0} ;
+		}
+	}
+
+#endif
