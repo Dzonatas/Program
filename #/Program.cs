@@ -199,7 +199,7 @@ partial class Program
 			C_Method m ;
 			C_Function c ;
 			m = new C_Method() ;
-			m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
+			//m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
 			m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
 			Match y = Regex.Match( typedef, @"^(?<type>\S+)\s" ) ;
 			if( y.Success )
@@ -280,7 +280,7 @@ partial class Program
 		C_TypeDef.WriteTo( sw ) ;
 		foreach( C_Function f in c_functionset.Values )
 			{
-			if( f.Required && f.Symbol.StartsWith( "BCL$" ) )
+			if( f.Required && ( f.Symbol.StartsWith( "BCL$" ) || f.Symbol.StartsWith( "System" ) ) )
 				{
 				f.WriteTo( sw ) ;
 				}

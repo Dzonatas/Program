@@ -85,14 +85,14 @@ class Argument
 		if( s.StartsWith( "valuetype_" ) )
 			s = s.Substring( 10 ) ;
 		if( s.StartsWith( "__mscorlib__" ) )
-			return "BCL$$" + s.Substring( 12 ) ;
+			return /*"BCL$$" +*/ s.Substring( 12 ) ;
 		else
 		if( s.StartsWith( "__corlib__" ) )
-			return "BCL$$" + s.Substring( 10 ) ;
+			return /*"BCL$$" +*/ s.Substring( 10 ) ;
 		switch( s )
 			{
-			case "object" : return "BCL$$System_Object" ;
-			case "string" : return "BCL$$System_String" ;
+			case "object" : return /*"BCL$$"+*/"System_Object" ;
+			case "string" : return /*"BCL$$"+*/"System_String" ;
 			}
 		return s ;
 		}
