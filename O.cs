@@ -45,8 +45,6 @@ class Object : Stack.Item
 	protected override void main()
 		{
 		ID = Arg3.Token ;
-		Symbol += ( System.String.IsNullOrEmpty( Symbol ) ? "" : "$" ) ;
-		Symbol +=  ID ;
 		}
 	}
 
@@ -62,7 +60,7 @@ class Object : Stack.Item
 	: Method.Head   {
 	protected override void main()
 		{
-		NewMethod( Class.Head.Symbol ) ;
+		NewMethod( Class.Symbol ) ;
 		}
 	}
 
@@ -390,8 +388,7 @@ class Object : Stack.Item
 	: Class.Decl	{
 	protected override void main()
 		{
-		string[] s = Class.Head.Symbol.Split( '$' ) ;
-		Class.Head.Symbol = System.String.Join( "$", s, 0, s.Length - 1 ) ;
+		Declared() ;
 		}
 	}
 

@@ -1,6 +1,7 @@
 //using System.C.IDE.MonoDevelop;//C.I.S.("ecma.cproj")
 using System.Extensions ;
 using System.Text.RegularExpressions ;
+using System.Collections.Generic ;
 using System ;
 
 partial class A335
@@ -179,27 +180,35 @@ public class C_Type
 class Class
 	{
 	static string id ;
+	static string symbol ;
+	static List<string>  idset = new List<string>() ;
 	public class Head : Automatrix
 		{
-		static string symbol ;
 		static public string ID
 			{
-			set { id = value ; }
-			get { return id ; }
-			}
-		static public string Symbol
-			{
-			set { symbol = value ; }
-			get { return symbol ; }
+			set { id = value ; idset.Add( id ) ;  }
 			}
 		}
 	public class Decl : Automatrix
 		{
+		public void Declared()
+			{
+			idset.RemoveAt( idset.Count - 1 ) ;
+			}
+		}
+	static public string Symbol
+		{
+		get {
+			string s = null ;
+			foreach( string i in idset )
+				s += ( s == null ? String.Empty : "$" ) + i ;
+			return s ;
+			}
 		}
 	static public void Declared()
 		{
-		Head.ID = "" ;
-		Head.Symbol = "" ;
+		id = String.Empty ;
+		idset.Clear() ;
 		}
 	}
 
