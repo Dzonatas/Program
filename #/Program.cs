@@ -582,7 +582,9 @@ partial class Program
 			}
 		public C_Oprand NewOprand( string instr )
 			{
-			return new C_Oprand( function, instr ) ;
+			var d = new C_Oprand( function, instr ) ;
+			Add( d ) ;
+			return d ;
 			}
 		public void Write()
 			{

@@ -105,7 +105,6 @@ class Object : Stack.Item
 	protected override void main()
 		{
 		var d = this_method.NewOprand( Arg1.Token ) ;
-		this_method.Add( d ) ;
 		int args = this_method.SigArgs + ( this_method.CallConvInstance ? 1 : 0 ) ;
 		d.HasArgs = args > 0 ;
 		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", C.StackOffset, args ) ;
