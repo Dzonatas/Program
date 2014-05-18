@@ -128,8 +128,8 @@ partial class Program
 		int            maxstack ;
 		C_Method       method ;
 		C_Function     function ;
-		List<object>   list = new List<object>() ;
-		List<string>   labels = new List<string>() ;
+		List<object>   oprandset = new List<object>() ;
+		List<string>   labelset = new List<string>() ;
 		public bool    Static ;
 		public bool    CallConvInstance ;
 		public string  Type ;
@@ -162,15 +162,15 @@ partial class Program
 			}
 		public void Add( C_Oprand oprand )
 			{
-			list.Add( oprand ) ;
+			oprandset.Add( oprand ) ;
 			}
 		public void AddLabel( string text )
 			{
-			list.Add( text ) ;
+			oprandset.Add( text ) ;
 			}
 		public void RegisterLabel( string text )
 			{
-			labels.Add( text ) ;
+			labelset.Add( text ) ;
 			}
 		public void RegisterCctor()
 			{
@@ -202,7 +202,7 @@ partial class Program
 			{
 			var c = function ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
-			foreach( object o in list )
+			foreach( object o in oprandset )
 				if( o is C_Oprand )
 					(o as C_Oprand).WriteTo( sw ) ;
 			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
@@ -213,14 +213,14 @@ partial class Program
 			else
 				c.Args = "( const void** args )" ;
 			c.Statement( "const void** stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
-			foreach( object o in list )
+			foreach( object o in oprandset )
 				{
 				if( o is C_Oprand )
 					c.Statement( (string) (o as C_Oprand) ) ;
 				else
 					{
 					string label = (string) o ;
-					if( labels.Contains( label ) )
+					if( labelset.Contains( label ) )
 						c.Label( label ) ;
 					}
 				}
