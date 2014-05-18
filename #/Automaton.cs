@@ -228,5 +228,5 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 	: Automatrix {}
 
 [Automaton] class   START_decls
-	: Automatrix {}
+	: _START {}
 }

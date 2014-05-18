@@ -12,7 +12,7 @@ static A335()
 	#if SCREEN
 	_.screen.start() ;
 	#endif
-	START() ; // $end(.a,<unix><a/></unixed!(.) default=\"un(ico:=QR:='BIT')ded.\"/_ode="votes.counted"-ai-(&[^ice:fg,.)>) (;)
+	Method.Start() ; // $end(.a,<unix><a/></unixed!(.) default=\"un(ico:=QR:='BIT')ded.\"/_ode="votes.counted"-ai-(&[^ice:fg,.)>) (;)
 	//<unixed>Distributed Garbage Collector</unixed>
 	//<a ID=".gitignore" i=".nexus.ico" regex=""/>
 	//<git commit-m='("$$$") -> $Assembler.Override = {} ; decodes non-encrypted unicoded characters.'/>

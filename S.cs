@@ -9,23 +9,7 @@ static object sphere_nt_ ;
 
 static object s_cl__t ; //__FIXT:(E1..:)abend:(__)swp,"...": "(swp) -> ./#/.urn" ;
 
-static public void START()
-	{
-	#if SYSTEM_GUID
-	if( system.guid == null )
-		{
-		xml_load_grammar() ;
-		byte []    b = system_ip.GetAddressBytes() ;
-		Array.Reverse( b ) ;
-		/*
-		system       = b_enter( b[3], b[2], b[1], b[0] ) ;
-		system.guid  = Guid.Empty ;
-		*/
-		}
-	#else
-	xml_load_grammar() ;
-	#endif
-	}
+class _START : Automatrix {}
 
 struct StringTheory
 	{
