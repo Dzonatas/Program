@@ -230,7 +230,7 @@ partial class Program
 		ʄ( "object::.ctor" )
 			;
 		ʄ( "console::WriteLine(string)" )
-			.ConstLocal( StructString_, "*args" )
+			.ConstLocalArg0
 			.StandardOutputWriteLocal( _string , _length )
 			.StandardOutputWriteLine()
 			;

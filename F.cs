@@ -60,10 +60,13 @@ partial class Program
 			{
 			get { return this ; }
 			}
-		public C_Function ConstLocal( C_Symbol type, string text )
+		public C_Function ConstLocalArg0
 			{
-			var symbol = C_Symbol.Acquire( "_local" ) ;
-			return Statement( "const " + type + " " + symbol + " = " + text ) ;
+			get {
+				C_Symbol arg0 = Method.Args[0] ;
+				var symbol = C_Symbol.Acquire( "_local" ) ;
+				return Statement( "const " + arg0 + "* " + symbol + " = *args" ) ;
+				}
 			}
 		public C_Function StandardOutputWriteLocal( string _string, string _length )
 			{
