@@ -86,6 +86,7 @@ class Object : Stack.Item
 		this_method.SigArgTypes       = SigArg.Types() ;
 		this_method.CallConvInstance  = this_callConv_instance ;
 		this_method.Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
+		this_method.CreateFunction() ;
 		SigArg.Clear() ;
 		this_callConv_instance = false ;
 		}
@@ -103,7 +104,7 @@ class Object : Stack.Item
 	: Automatrix	{
 	protected override void main()
 		{
-		var d = C.Oprand( Arg1.Token ) ;
+		var d = this_method.NewOprand( Arg1.Token ) ;
 		this_method.Add( d ) ;
 		int args = this_method.SigArgs + ( this_method.CallConvInstance ? 1 : 0 ) ;
 		d.HasArgs = args > 0 ;
@@ -111,9 +112,16 @@ class Object : Stack.Item
 		switch( d.Instruction )
 			{
 			case "LDARG_0":
+				{
+				string type ;
+				if( this_method.CallConvInstance )
+					type = d.Method.ClassNameType ;
+				else
+					type = d.Method.Args[0].Type ;
 				d.AssignStack( C.StackOffset, "args[0]" ) ;
-				C.Push( "object" ) ;
+				C.Push( type ) ;
 				break ;
+				}
 			case "LDSTR":
 				{
 				var symbol = new C_Symbol() ;

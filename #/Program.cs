@@ -185,6 +185,15 @@ partial class Program
 			{
 			//ID = Guid.NewGuid() ;
 			}
+		public string ClassNameType
+			{
+			get {
+				string type = null ;
+				foreach( C_Symbol s in ClassName )
+					type += (type == null ? "" : "$" ) + s ;
+				return type ;
+				}
+			}
 		static public C_Function CreateFunction( string typedef )
 			{
 			C_Method m ;
@@ -398,19 +407,21 @@ partial class Program
 			return c ;
 			}
 		}
-	public C_Oprand Oprand( string instr )
-		{
-		return new C_Oprand( instr ) ;
-		}
 	public class C_Oprand
 		{
+		C_Function function ;
 		public string Instruction ;
 		public string ID ;
 		public bool HasArgs ;
 		public bool IsFlowControl ;
 		List<string> list = new List<string>() ;
-		public C_Oprand( string instr )
+		public C_Method Method
 			{
+			get { return function.Method ; }
+			}
+		public C_Oprand( C_Function function, string instr )
+			{
+			this.function = function ;
 			string id = Guid.NewGuid().ToString() ;
 			id = System.Text.RegularExpressions.Regex.Replace( id, "[^A-Za-z_0-9]", "_").ToLower() ;
 			ID = id ;
@@ -503,6 +514,8 @@ partial class Program
 	public class Method
 		{
 		int maxstack ;
+		C_Method   method ;
+		C_Function function ;
 		List<object> list = new List<object>() ;
 		List<string> labels = new List<string>() ;
 		public bool    Static ;
@@ -555,9 +568,25 @@ partial class Program
 			{
 			sw.WriteLine( "#include \"" + ClassSymbol + Name + SigArgTypes + ".c\"" ) ;
 			}
+		public void CreateFunction()
+			{
+			method = new C_Method() ;
+			method.Type = C_Type.Acquire( Type ) ;
+			method.Name = C_Symbol.Acquire( Name ) ;
+			foreach( string s in ClassSymbol.Split( '$' ) )
+				method.ClassName.Add( C_Type.Acquire( s ) ) ;
+			foreach( string a in SigArg.Typeset )
+				method.Args.Add( C_Type.Acquire( a ) ) ;
+			function = C_Function.FromSymbol( ClassSymbol + Name + SigArgTypes ) ;
+			function.Method = method ;
+			}
+		public C_Oprand NewOprand( string instr )
+			{
+			return new C_Oprand( function, instr ) ;
+			}
 		public void Write()
 			{
-			var c = C_Function.FromSymbol( ClassSymbol + Name + SigArgTypes ) ;
+			var c = function ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
 			foreach( object o in list )
 				if( o is C_Oprand )

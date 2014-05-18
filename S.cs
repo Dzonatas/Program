@@ -268,27 +268,35 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 class SigArg
 	{
 	static SigArg instance = new SigArg() ;
-	List<string> Type = new List<string>() ;
-	List<string> Name = new List<string>() ;
+	List<string> type = new List<string>() ;
+	List<string> name = new List<string>() ;
 	public SigArg() {}
+	static public List<string> Typeset
+		{
+		get { return instance.type ; }
+		}
+	static public List<string> Nameset
+		{
+		get { return instance.type ; }
+		}
 	static void add( string type, string name )
 		{
-		instance.Type.Add( type ) ;
-		instance.Name.Add( name ) ;
+		instance.type.Add( type ) ;
+		instance.name.Add( name ) ;
 		}
 	static public void Clear()
 		{
-		instance.Type.Clear() ;
-		instance.Name.Clear() ;
+		instance.type.Clear() ;
+		instance.name.Clear() ;
 		}
 	static public int Count()
 		{
-		return instance.Type.Count ;
+		return instance.type.Count ;
 		}
 	static public string Types()
 		{
 		string i = null ;
-		foreach( string s in instance.Type )
+		foreach( string s in instance.type )
 			i += "$" + s ;
 		return i ;
 		}
