@@ -128,7 +128,7 @@ partial class Program
 		int            maxstack ;
 		C_Method       method ;
 		C_Function     function ;
-		List<object>   oprandset = new List<object>() ;
+		List<C_Oprand> oprandset = new List<C_Oprand>() ;
 		List<string>   labelset = new List<string>() ;
 		public bool    Static ;
 		public bool    CallConvInstance ;
@@ -164,10 +164,6 @@ partial class Program
 			{
 			oprandset.Add( oprand ) ;
 			}
-		public void AddLabel( string text )
-			{
-			oprandset.Add( text ) ;
-			}
 		public void RegisterLabel( string text )
 			{
 			labelset.Add( text ) ;
@@ -202,9 +198,8 @@ partial class Program
 			{
 			var c = function ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
-			foreach( object o in oprandset )
-				if( o is C_Oprand )
-					(o as C_Oprand).WriteTo( sw ) ;
+			foreach( C_Oprand o in oprandset )
+				o.WriteTo( sw ) ;
 			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
 			if( Virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
