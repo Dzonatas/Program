@@ -152,9 +152,6 @@ partial class Program
 					c.Assign( Name + SigArgTypes ) ;
 					}
 				}
-			get {
-				return _virtual ;
-				}
 			}
 		public Method()
 			{
@@ -201,7 +198,7 @@ partial class Program
 			foreach( C_Oprand o in oprandset )
 				o.WriteTo( sw ) ;
 			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
-			if( Virtual )
+			if( _virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
 			if( args == 0 )
 				c.Args = "()" ;
@@ -219,7 +216,7 @@ partial class Program
 						c.Label( label ) ;
 					}
 				}
-			if( Virtual )
+			if( _virtual )
 				c.Statement( "return *(struct _string *)*stack" ) ;
 			c.WriteTo( sw ) ;
 			sw.Close() ;
