@@ -1,3 +1,11 @@
+using System.Text.RegularExpressions ;
+using System.Collections.Generic ;
+using System.Diagnostics ;
+using System.Collections ;
+using System.Reflection ;
+using System.IO ;
+using System ;
+
 public partial class A335
 {
 int f_rune_sharp ; //#`s (-> ./#/...)
@@ -11,6 +19,150 @@ const System.Decimal flag_rune__ = 0.0m ; //# (-> ./#/___.(./#/_]](.ico:EMBED`QR
 // jo <environment,spin{::}>{$loop=true;}  /*$jQ$CPP*/
 // jo quant <environment,spin>{.loop.up}   /*$E$#*/_OK,_FIX:_pure_virtual_phantoms.assertion("collusion")
 // jo quant <environment,paravirtual>{.loop.down}   /*$E$#*/_NAK:(in-session:...)
+
+partial class Program
+	{
+	public class C_Function
+		{
+		//Guid ID ;
+		public C_Method Method ;
+		public bool Static ;
+		public bool Inline ;
+		public bool Void
+			{
+			set {
+				if( value )
+					Type = C_Symbol.Acquire( "void" ) ;
+				}
+			}
+		public bool Bool
+			{
+			set {
+				if( value )
+					Type = C_Symbol.Acquire( "int" ) ;
+				}
+			}
+		public C_Symbol Type ;
+		C_Symbol symbol ;
+		public string Symbol ;
+		public bool   HasArgs ;
+		public string Args ;
+		public bool   Written ;
+		public bool   Required ;
+		C_Literal let ;
+		List<string> list = new List<string>() ;
+		public C_Function Let( C_Literal literal )
+			{
+			let = literal ;
+			return this ;
+			}
+		public C_Function Equal
+			{
+			get { return this ; }
+			}
+		public C_Function ConstLocal( C_Symbol type, string text )
+			{
+			var symbol = C_Symbol.Acquire( "_local" ) ;
+			return Statement( "const " + type + " " + symbol + " = " + text ) ;
+			}
+		public C_Function StandardOutputWriteLocal( string _string, string _length )
+			{
+			var symbol = C_Symbol.Acquire( "_local" ) ;
+			return Statement( "write( 0 , " + symbol + "->" + _string + " , " + symbol + "->" + _length + " )" ) ;
+			}
+		public C_Function StandardOutputWriteLine()
+			{
+			return Statement( "write( 0 , \"\\012\" , 1 )" ) ;
+			}
+		public C_Function Return( string symbol )
+			{
+			return Statement( "return " + symbol ) ;
+			}
+		public C_Function Register( C_Symbol type, string name )
+			{
+			return C.Register( this, type, name ) ;
+			}
+		public C_Function Register( C_Symbol type )
+			{
+			string name = type.By_p() ; //_CPP_FLOW,P(==|!=)NP
+			return C.Register( this, type, name ) ;
+			}
+		public C_Function ManagedArgument( int i )
+			{
+			if( let.Type == StructObject || let.Type == StructString )
+					return Statement( "if( ((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer )" )
+					      .Statement( "\t" + let + " =  *((struct _string *)args["+i+"])" )
+					      .Statement( "else" )
+					      .Statement( "\t" + let + " =  ((struct _object *)args["+i+"])->this->$ToString( args+"+i+" )" ) ;
+			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;
+			}
+		C_Function( string symbol )
+			{
+			Void = true ;
+			this.symbol = C_Symbol.Acquire( symbol ) ;
+			Symbol = symbol ;
+			//ID = Guid.NewGuid() ;
+			}
+		static public C_Function FromSymbol( string symbol )
+			{
+			C_Symbol s = C_Symbol.Acquire( symbol ) ;
+			return FromSymbol( s ) ;
+			}
+		static public C_Function FromSymbol( C_Symbol symbol )
+			{
+			C_Function c ;
+			if( ! c_functionset.ContainsKey( symbol ) )
+				c_functionset.Add( symbol, c = new C_Function( symbol ) ) ;
+			else
+				c = c_functionset[symbol] ;
+			return c ;
+			}
+		static public void Require( string symbol )
+			{
+			C_Function c ;
+			if( ! c_functionset.ContainsKey( symbol ) )
+				c_functionset.Add( symbol, c = new C_Function( symbol ) ) ;
+			else
+				c = c_functionset[symbol] ;
+			c.Required = true ;
+			c_functionset[symbol].Required = true ;
+			}
+		public C_Function Statement( string line )
+			{
+			bool eos = ( line.StartsWith( "if" ) && ! line.Contains( "goto" ) )  || line.StartsWith( "else" ) ;
+			list.Add( "\t" + line + ( eos ? "" : " ;" ) ) ;
+			return this ;
+			}
+		public void Label( string label )
+			{
+			list.Add( "\t" + label + " :" ) ;
+			}
+		public void WriteTo( StreamWriter sw )
+			{
+			var line = new List<string>() ;
+			if( Static )
+				line.Add( "static" ) ;
+			if( Inline )
+				line.Add( "inline" ) ;
+			line.Add( Type ) ;
+			line.Add( Symbol ) ;
+			string a ;
+			if( Args == null )
+				a = "( const void** stack"
+				+ ( HasArgs ? ", const void** args" : "" )
+				+ " )" ;
+			else
+				a = Args ;
+			sw.WriteLine( String.Join( " ", line ) + a ) ;
+			sw.WriteLine( "\t{" ) ;
+			foreach( string s in list )
+				sw.WriteLine( s ) ;
+			sw.WriteLine( "\t}" ) ;
+			sw.WriteLine() ;
+			Written = true ;
+			}
+		}
+	}
 
 public class far : Future.ʄutex<string>
 	{

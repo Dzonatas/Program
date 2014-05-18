@@ -238,9 +238,9 @@ partial class Program
 			.Register( StructString )
 			.Register( StructString )
 			.Register( StructString )
-			.ManagedPointerToString( C[0], 0 )
-			.ManagedPointerToString( C[1], 1 )
-			.ManagedPointerToString( C[2], 2 )
+			.Let( C[0] ).Equal.ManagedArgument( 0 )
+			.Let( C[1] ).Equal.ManagedArgument( 1 )
+			.Let( C[2] ).Equal.ManagedArgument( 2 )
 			.Return( C.StringConcat( C[0], C[1], C[2] ) )
 			;
 		ʄ( "string string::Concat(string,string)" )
