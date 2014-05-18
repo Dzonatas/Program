@@ -140,7 +140,6 @@ partial class Program
 		public int     MaxStack
 			{
 			set { C.MaxStack = maxstack = value ; }
-			//get { return maxstack ; }
 			}
 		bool _virtual ;
 		public bool    Virtual
