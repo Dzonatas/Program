@@ -28,6 +28,99 @@ public static void Main( string[] args )
 #endif
 	}
 
+class Method
+	{
+	static Program.Method method ;
+	public class Head : Automatrix
+		{
+		protected void    NewMethod( string class_symbol )
+			{
+			method = new Program.Method() ;
+			method.ClassSymbol = class_symbol ;
+			}
+		protected bool    Static
+			{
+			set { method.Static = value ; }
+			}
+		protected bool    CallConvInstance
+			{
+			set { method.CallConvInstance = value ; }
+			}
+		protected string  Type
+			{
+			set { method.Type = value ; }
+			}
+		protected string  ClassSymbol
+			{
+			set { method.ClassSymbol = value ; }
+			}
+		protected string  Name
+			{
+			set { method.Name = value ; }
+			}
+		protected string  SigArgTypes
+			{
+			set { method.SigArgTypes = value ; }
+			}
+		protected int     SigArgs
+			{
+			set { method.SigArgs = value ; }
+			}
+		protected bool    Virtual
+			{
+			set { method.Virtual = value ; }
+			}
+		protected void    RegisterCctor()
+			{
+			method.RegisterCctor() ;
+			}
+		protected void    CreateFunction()
+			{
+			method.CreateFunction() ;
+			}
+		}
+	public class Decl : Automatrix
+		{
+		protected int     MaxStack
+			{
+			set { method.MaxStack = value ; }
+			}
+		protected bool    CallConvInstance
+			{
+			get { return method.CallConvInstance ; }
+			}
+		protected int     SigArgs
+			{
+			get { return method.SigArgs ; }
+			}
+		protected void    RegisterLabel( string text )
+			{
+			method.RegisterLabel( text ) ;
+			}
+		protected void    AddLabel( string text )
+			{
+			method.RegisterLabel( text ) ;
+			}
+		protected void    EntryPoint()
+			{
+			if( System.String.IsNullOrEmpty(this_class_symbol) )
+				throw new System.NotImplementedException( "entrypoint outside class" ) ;
+			this_start_method = method ;
+			}
+		protected Program.C_Oprand NewOprand( string instr )
+			{
+			return method.NewOprand( instr ) ;
+			}
+		}
+	public class Attr : Automatrix
+		{
+		protected bool    Static
+			{
+			set { method.Static = value ; }
+			}
+		}
+	}
+
 partial class Program
 	{
 	public class Method

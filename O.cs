@@ -59,53 +59,52 @@ class Object : Stack.Item
 	}
 
 [Automaton] class   methodHeadPart1___method_
-	: Automatrix {
+	: Method.Head   {
 	protected override void main()
 		{
-		this_method = new Program.Method() ;
-		this_method.ClassSymbol = this_class_symbol ;
+		NewMethod( this_class_symbol ) ;
 		}
 	}
 
 [Automaton] class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____
-	: Automatrix	{
+	: Method.Head   {
 	protected override void main()
 		{
 		if( Args[6] is methodName___ctor_ )
-			this_method.Name = "_ctor" ;
+			Name = "_ctor" ;
 		else
 		if( Args[6] is methodName___cctor_ )
 			{
-			this_method.Name = "_cctor" ;
-			this_method.RegisterCctor() ;
+			Name = "_cctor" ;
+			RegisterCctor() ;
 			}
 		else
-			this_method.Name = "$" + Arg6.Token ;
-		this_method.Type              = Arg5.ResolveType() ;
-		this_method.SigArgs           = SigArg.Count() ;
-		this_method.SigArgTypes       = SigArg.Types() ;
-		this_method.CallConvInstance  = this_callConv_instance ;
-		this_method.Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
-		this_method.CreateFunction() ;
+			Name = "$" + Arg6.Token ;
+		Type              = Arg5.ResolveType() ;
+		SigArgs           = SigArg.Count() ;
+		SigArgTypes       = SigArg.Types() ;
+		CallConvInstance  = this_callConv_instance ;
+		Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
+		CreateFunction() ;
 		SigArg.Clear() ;
 		this_callConv_instance = false ;
 		}
 	}
 
 [Automaton] class   methodDecl___maxstack__int32
-	: Automatrix	{
+	: Method.Decl   {
 	protected override void main()
 		{
-		this_method.MaxStack = int.Parse( Arg2.Token ) ;
+		MaxStack = int.Parse( Arg2.Token ) ;
 		}
 	}
 
 [Automaton] class   methodDecl_instr
-	: Automatrix	{
+	: Method.Decl	{
 	protected override void main()
 		{
-		var d = this_method.NewOprand( Arg1.Token ) ;
-		int args = this_method.SigArgs + ( this_method.CallConvInstance ? 1 : 0 ) ;
+		var d = NewOprand( Arg1.Token ) ;
+		int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
 		d.HasArgs = args > 0 ;
 		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", C.StackOffset, args ) ;
 		switch( d.Instruction )
@@ -113,7 +112,7 @@ class Object : Stack.Item
 			case "LDARG_0":
 				{
 				string type ;
-				if( this_method.CallConvInstance )
+				if( CallConvInstance )
 					type = d.Method.ClassNameType ;
 				else
 					type = d.Method.Args[0].Type ;
@@ -276,14 +275,14 @@ class Object : Stack.Item
 			case "BR" :
 				d.Statement( "goto " + this_instr_brtarget_id ) ;
 				d.IsFlowControl = true ;
-				this_method.RegisterLabel( this_instr_brtarget_id ) ;
+				RegisterLabel( this_instr_brtarget_id ) ;
 				break ;
 			case "BGE" :
 				C.Pop() ;
 				C.Pop() ;
 				d.Statement( "goto " + this_instr_brtarget_id ) ;
 				d.IsFlowControl = true ;
-				this_method.RegisterLabel( this_instr_brtarget_id ) ;
+				RegisterLabel( this_instr_brtarget_id ) ;
 				break ;
 			case "ADD" :
 				C.Pop() ;
@@ -335,15 +334,15 @@ class Object : Stack.Item
 	}
 
 [Automaton] class   methAttr_methAttr__static_
-	: Automatrix	{
+	: Method.Attr   {
 	protected override void main()
 		{
-		this_method.Static = true ;
+		Static = true ;
 		}
 	}
 
 [Automaton] class   methAttr_methAttr__specialname_
-	: Automatrix {
+	: Method.Attr   {
 	protected override void main()
 		{
 		//this_method.SpecialName = true ;
@@ -351,12 +350,10 @@ class Object : Stack.Item
 	}
 
 [Automaton] class   methodDecl___entrypoint_
-	: Automatrix	{
+	: Method.Decl   {
 	protected override void main()
 		{
-		if( System.String.IsNullOrEmpty(this_class_symbol) )
-			throw new System.NotImplementedException( "entrypoint outside class" ) ;
-		this_start_method = this_method ;
+		EntryPoint() ;
 		}
 	}
 
@@ -408,7 +405,7 @@ class Object : Stack.Item
 	}
 
 [Automaton] class   methodDecl_localsHead__init______sigArgs0____
-	: Automatrix {
+	: Method.Decl   {
 	protected override void main()
 		{
 		SigArg.Clear() ;
@@ -416,10 +413,10 @@ class Object : Stack.Item
 	}
 
 [Automaton] class   methodDecl_id____
-	: Automatrix {
+	: Method.Decl   {
 	protected override void main()
 		{
-		this_method.AddLabel( Arg1.Token ) ;
+		AddLabel( Arg1.Token ) ;
 		}
 	}
 
