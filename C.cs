@@ -176,6 +176,32 @@ public class C_Type
 		}
 	}
 
+class Class
+	{
+	static string id ;
+	public class Head : Automatrix
+		{
+		static string symbol ;
+		static public string ID
+			{
+			set { id = value ; }
+			get { return id ; }
+			}
+		static public string Symbol
+			{
+			set { symbol = value ; }
+			get { return symbol ; }
+			}
+		}
+	public class Decl : Automatrix
+		{
+		}
+	static public void Declared()
+		{
+		Head.ID = "" ;
+		Head.Symbol = "" ;
+		}
+	}
 
 public class Channel   // : X-Window
 	{

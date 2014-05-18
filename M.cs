@@ -103,7 +103,7 @@ class Method
 			}
 		protected void    EntryPoint()
 			{
-			if( System.String.IsNullOrEmpty(this_class_symbol) )
+			if( System.String.IsNullOrEmpty(Class.Head.Symbol) )
 				throw new System.NotImplementedException( "entrypoint outside class" ) ;
 			this_start_method = method ;
 			}

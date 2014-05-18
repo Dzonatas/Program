@@ -41,12 +41,12 @@ class Object : Stack.Item
 
 
 [Automaton] class   classHead___class__classAttr_id_extendsClause_implClause
-	: Automatrix	{
+	: Class.Head	{
 	protected override void main()
 		{
-		this_class_id = Arg3.Token ;
-		this_class_symbol += ( System.String.IsNullOrEmpty( this_class_symbol ) ? "" : "$" ) ;
-		this_class_symbol +=  this_class_id ;
+		ID = Arg3.Token ;
+		Symbol += ( System.String.IsNullOrEmpty( Symbol ) ? "" : "$" ) ;
+		Symbol +=  ID ;
 		}
 	}
 
@@ -62,7 +62,7 @@ class Object : Stack.Item
 	: Method.Head   {
 	protected override void main()
 		{
-		NewMethod( this_class_symbol ) ;
+		NewMethod( Class.Head.Symbol ) ;
 		}
 	}
 
@@ -326,7 +326,7 @@ class Object : Stack.Item
 	}
 
 [Automaton] class   classDecl_methodHead_methodDecls____
-	: Automatrix	{
+	: Class.Decl	{
 	protected override void main()
 		{
 		C.Hangdown() ;
@@ -372,8 +372,7 @@ class Object : Stack.Item
 	: Automatrix	{
 	protected override void main()
 		{
-		this_class_id = "" ;
-		this_class_symbol = "" ;
+		Class.Declared() ;
 		}
 	}
 
@@ -388,11 +387,11 @@ class Object : Stack.Item
 	}
 
 [Automaton] class   classDecl_classHead_____classDecls____
-	: Automatrix	{
+	: Class.Decl	{
 	protected override void main()
 		{
-		string[] s = this_class_symbol.Split( '$' ) ;
-		this_class_symbol = System.String.Join( "$", s, 0, s.Length - 1 ) ;
+		string[] s = Class.Head.Symbol.Split( '$' ) ;
+		Class.Head.Symbol = System.String.Join( "$", s, 0, s.Length - 1 ) ;
 		}
 	}
 
