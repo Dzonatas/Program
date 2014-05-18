@@ -3,6 +3,7 @@
 # Example: sh ./~/test.sh
 ID="5a7160ed-13d5-4923-a1f9-3e32a47d558a"
 
+[ ! -d "/tmp/.$ID.d" ] && mkdir /tmp/.$ID.d
 cd ./bin/Debug \
   && ./ecma.exe --shell="sh ../../~/compile.sh ../../~/hello.mono.world.il.text" \
   && gcc -std=c99 -O3 -S -I ../../# /tmp/.$ID.d/program.c -o /tmp/.$ID.d/native.assembly.s \
