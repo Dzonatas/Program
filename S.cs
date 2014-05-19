@@ -308,7 +308,7 @@ class SigArg
 
 partial class Program
 	{
-	static List<object> stack = new List<object>() ;
+	static List<C_Type> stack = new List<C_Type>() ;
 	static int stack_offset ;
 	static int stack_down ;
 	//static uint effective_symbolic_objective_credit ;
@@ -316,10 +316,14 @@ partial class Program
 		{
 		get { return stack_offset - stack_down ; }
 		}
-	public void Push( string obj )
+	public void Push( C_Type obj )
 		{
 		stack[stack_offset] = obj ;
 		stack_offset++ ;
+		}
+	public void Push( string type )
+		{
+		Push( C_Type.Acquire( type ) ) ;
 		}
 	public object Pop()
 		{
