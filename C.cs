@@ -101,12 +101,11 @@ partial class Program
 
 public class C_Symbol
 	{
-	Guid id ;
 	string symbol ;
 	public string By_p()
 		{
 		string pid = Guid.NewGuid().ToString().ToStemString() ;
-		if( this.symbol[0] == '_' )  //Logical+ID,^'_'[<IDc>]+
+		if( this.symbol[0] == '_' )  //Logical+ID,^'_'[<IDc>]+,(P==NP)=>>(P!=NP)
 			return pid + this.symbol + "_p" ;
 		string symbol ;
 		symbol = "_" + this.symbol.ToStemString() ;
@@ -115,12 +114,10 @@ public class C_Symbol
 	internal C_Symbol( string symbol )
 		{
 		this.symbol = symbol ;
-		id = Guid.NewGuid() ;
 		}
 	public C_Symbol()
 		{
-		id = Guid.NewGuid() ;
-		symbol = "_" + id.ToID() ;
+		symbol = "_" + Guid.NewGuid().ToID() ;
 		}
 	static public C_Symbol Acquire( string symbol )
 		{
