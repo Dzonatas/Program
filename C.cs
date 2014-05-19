@@ -132,14 +132,21 @@ public class C_Symbol
 		}
 	}
 
+public class C_Undefined : C_Symbol
+	{
+	public C_Undefined()
+		: base( Regex.Replace( Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_").ToUpper() )
+		{}
+	}
+
 public class C_Type
 	{
-	C_Symbol symbol ;
-	//Guid ID ;
+	C_Symbol[] idset ;
 	public C_Type( string symbol )
 		{
-		//ID = Guid.NewGuid() ;
-		this.symbol = C_Symbol.Acquire( symbol ) ;
+		idset    = new C_Symbol[2] ;
+		idset[0] = new C_Undefined() ;
+		idset[1] = C_Symbol.Acquire( symbol ) ;
 		}
 	static public C_Type Acquire( string symbol )
 		{
@@ -147,19 +154,19 @@ public class C_Type
 		}
 	static public implicit operator string( C_Type c )
 		{
-		return c.symbol ;
+		return c.idset[c.idset.Length-1] ;
 		}
 	static public implicit operator C_Symbol( C_Type c )
 		{
-		if( c.symbol == "string" )
+		if( (string) c == "string" )
 			return C_Symbol.Acquire( "struct _string" ) ;
-		return c.symbol ;
+		return c.idset[c.idset.Length-1] ;
 		}
 	public string Type
 		{
 		get
 			{
-			string text = symbol ;
+			string text = idset[idset.Length-1] ;
 			if( text.EndsWith( "_unsigned_int" ) )
 				return "unsigned int" ;
 			if( text.EndsWith( "_char_p" ) )
