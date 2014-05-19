@@ -32,13 +32,7 @@ class Object : Stack.Item
 
 
 [Automaton] class   id_ID
-	: Automatrix	{
-	protected override void main()
-		{
-		Debug.WriteLine( "[DEBUG:id_ID] " + Arg1.Token ) ;
-		}
-	}
-
+	: Automatrix	{}
 
 [Automaton] class   classHead___class__classAttr_id_extendsClause_implClause
 	: Class.Head	{

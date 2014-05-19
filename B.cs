@@ -15,16 +15,22 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	planet     xyzzy ;
 	int rule = -1 ;
 
+	#if DEBUG_STATE
 	Debug.WriteLine( "[State] " + state ) ;
+	#endif
 	if( ! token.HasValue )
 		{
 		token = input( ref Hacked.Materials.H.Line ) ;
+		#if !DEBUG_TOKEN
 		Debug.WriteLine( "[Token] " + token ) ;
+		#endif
 		}
 	if( state.lookaheadset.Contains( xml_translate[token.Value.c] ) )
 		{
 		b.yy = xml_translate[token.Value.c] ;
+		#if DEBUG_LOGICAL_ALPHABET
 		Debug.WriteLine( "[Lookahead] " + token + " -> " + b.yy ) ;
+		#endif
 		goto reduce ;
 		}
 	if( state.shiftset.ContainsKey( xml_translate[token.Value.c] ) )
@@ -34,7 +40,9 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		token = null ;
 		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, _default ) ;
+		#if DEBUG_SHIFT
 		Debug.WriteLine( "[Shift] " + t ) ;
+		#endif
 		goto new_state ;
 		}
 	reduce :
@@ -43,10 +51,14 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			{
 			if( ! rr.enabled )
 				{
+				#if DEBUG_DISABLED
 				Debug.WriteLine( "[Disabled] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
+				#endif
 				continue ;
 				}
+			#if DEBUG_REDUCTIONSET
 			Debug.WriteLine( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
+			#endif
 			b.yy = xo_t[rr.rule] ;
 			rule = rr.rule ;
 			if( state.gotoset.ContainsKey( b.yy ) )
@@ -64,10 +76,14 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		{
 		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
+		#if DEBUG_GOTO
 		Debug.WriteLine( "[Goto] " + t ) ;
+		#endif
 		goto new_state ;
 		}
+	#if DEBUG_DEFAULT
 	Debug.WriteLine( "[Default] " + b.yy ) ;
+	#endif
 	if( b.yy == _default && ! state.default_reduction.HasValue )
 		{
 		Debug.WriteLine( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
@@ -75,7 +91,9 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		}
 	this_xo_t = xo_t[rule] ;
 	jump :
+	#if DEBUG_REDUCE
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
+	#endif
 	if( this_xo_t.ReductionMethod == "id_ID" )
 		{
 		Stack.Push( new id_ID() ) ;

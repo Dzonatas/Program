@@ -32,11 +32,15 @@ namespace Application
 			}
 		static Initializer()
 			{
+			#if DEBUG_LOG
 			A335.log( "Initializer" ) ;
+			#endif
 			}
 		~Initializer()
 			{
+			#if DEBUG_LOG
 			A335.log( "~Initializer" ) ;
+			#endif
 			}
 		}
 

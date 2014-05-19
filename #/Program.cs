@@ -83,7 +83,7 @@ namespace Application
 			
 			foreach( Type t in types  )
 				{
-				#if DEBUG
+				#if DEBUG_SINGLETON
 				Debug.WriteLine( "Singleton: " + t.ToString() ) ;
 				#endif
 				try
