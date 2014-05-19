@@ -19,7 +19,7 @@ partial class Program
 			c = symbolset[symbol] ;
 		return c ;
 		}
-	static public C_Type C_Type_Acquire( string symbol )
+	static public C_Type C_Type_Acquire( C_Symbol symbol )
 		{
 		C_Type c;
 		if( ! typeset.ContainsKey( symbol ) )
@@ -142,13 +142,21 @@ public class C_Undefined : C_Symbol
 public class C_Type
 	{
 	C_Symbol[] idset ;
-	public C_Type( string symbol )
+	public C_Type( C_Symbol symbol )
 		{
 		idset    = new C_Symbol[2] ;
 		idset[0] = new C_Undefined() ;
-		idset[1] = C_Symbol.Acquire( symbol ) ;
+		idset[1] = symbol ;
 		}
-	static public C_Type Acquire( string symbol )
+	public C_Type( string symbol )
+		: this( C_Symbol.Acquire( symbol ) )
+		{}
+	static public C_Type Acquire( string type )
+		{
+		C_Symbol symbol = C_Symbol.Acquire( type ) ;
+		return Program.C_Type_Acquire( symbol ) ;
+		}
+	static public C_Type Acquire( C_Symbol symbol )
 		{
 		return Program.C_Type_Acquire( symbol ) ;
 		}

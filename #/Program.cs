@@ -115,7 +115,7 @@ partial class Program
 	static List<string>  cctorset = new List<string>() ;
 	static Dictionary<string,C_Function> c_functionset = new Dictionary<string, C_Function>() ;
 	static Dictionary<string,C_Symbol> symbolset = new Dictionary<string, C_Symbol>() ;
-	static Dictionary<string,C_Type> typeset = new Dictionary<string, C_Type>() ;
+	static Dictionary<C_Symbol,C_Type> typeset = new Dictionary<C_Symbol, C_Type>() ;
 	static Dictionary<string,C_TypeDef> typedefset = new Dictionary<string, C_TypeDef>() ;
 	Program()
 		{
@@ -316,10 +316,10 @@ partial class Program
 		static public C_TypeDef Acquire( string symbol )
 			{
 			C_TypeDef c;
-			if( ! typeset.ContainsKey( symbol ) )
-				typedefset.Add( symbol, c = new C_TypeDef( symbol, "" ) ) ;
-			else
+			if( typedefset.ContainsKey( symbol ) )
 				c = typedefset[symbol] ;
+			else
+				typedefset.Add( symbol, c = new C_TypeDef( symbol, "" ) ) ;
 			return c ;
 			}
 		static public C_Struct CreateStructure( string type )
