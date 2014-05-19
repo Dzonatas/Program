@@ -153,8 +153,7 @@ public class C_Type
 		{}
 	static public C_Type Acquire( string type )
 		{
-		C_Symbol symbol = C_Symbol.Acquire( type ) ;
-		return Program.C_Type_Acquire( symbol ) ;
+		return Program.C_Type_Acquire( C_Symbol.Acquire( type ) ) ;
 		}
 	static public C_Type Acquire( C_Symbol symbol )
 		{

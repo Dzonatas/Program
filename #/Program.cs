@@ -305,13 +305,13 @@ partial class Program
 	public class C_TypeDef
 		{
 		C_Symbol symbol ;
-		C_Symbol alias ; //_C_Type
+		C_Type   alias ;
 		public C_Struct Struct ;
-		public C_TypeDef( string symbol, string alias )
+		C_TypeDef( string symbol, C_Type alias )
 			{
 			//ID = Guid.NewGuid() ;
 			this.symbol = C_Symbol.Acquire( symbol ) ;
-			//this.alias  = C_Symbol.Acquire( alias ) ;
+			this.alias  = alias ;
 			}
 		static public C_TypeDef Acquire( string symbol )
 			{
@@ -319,7 +319,7 @@ partial class Program
 			if( typedefset.ContainsKey( symbol ) )
 				c = typedefset[symbol] ;
 			else
-				typedefset.Add( symbol, c = new C_TypeDef( symbol, "" ) ) ;
+				typedefset.Add( symbol, c = new C_TypeDef( symbol, C_Type.Acquire( String.Empty ) ) ) ;
 			return c ;
 			}
 		static public C_Struct CreateStructure( string type )
