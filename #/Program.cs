@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions ;
 using System.Collections.Generic ;
+using System.Extensions ;
 using System.Diagnostics ;
 using System.Collections ;
 using System.Reflection ;
@@ -428,11 +429,8 @@ partial class Program
 		public C_Oprand( C_Function function, string instr )
 			{
 			this.function = function ;
-			string id = Guid.NewGuid().ToString() ;
-			id = System.Text.RegularExpressions.Regex.Replace( id, "[^A-Za-z_0-9]", "_").ToLower() ;
-			ID = id ;
-			instr = System.Text.RegularExpressions.Regex.Replace( instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
-			Instruction = instr ;
+			ID = Guid.NewGuid().ToID() ;
+			Instruction = System.Text.RegularExpressions.Regex.Replace( instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 			}
 		static public implicit operator string( C_Oprand d )
 			{
