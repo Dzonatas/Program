@@ -178,18 +178,17 @@ public class C_Type
 
 class Class
 	{
-	static string id ;
 	static C_Symbol[] idset = new C_Symbol[0] ;
-	static void idset_add()
+	static void idset_add( string id )
 		{
-		Array.Resize( ref idset, idset.Length + 1 ) ;
+		Array.Resize( ref idset, idset.Length +1 ) ;
 		idset[idset.Length - 1] = C_Symbol.Acquire( id ) ;
 		}
 	public class Head : Automatrix
 		{
 		static public string ID
 			{
-			set { id = value ; idset_add() ;  }
+			set { idset_add( value ) ;  }
 			}
 		}
 	public class Decl : Automatrix
@@ -197,7 +196,6 @@ class Class
 		public void Declared()
 			{
 			Array.Resize( ref idset, idset.Length -1 ) ;
-			return ;
 			}
 		}
 	static public string Symbol
@@ -211,8 +209,7 @@ class Class
 		}
 	static public void Declared()
 		{
-		Array.Resize( ref idset, (id = String.Empty).Length ) ;
-		return ;
+		Array.Resize( ref idset, String.Empty.Length ) ;
 		}
 	}
 
