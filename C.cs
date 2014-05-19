@@ -196,7 +196,8 @@ class Class
 		{
 		public void Declared()
 			{
-			Array.Resize( ref idset, idset.Length ) ;
+			Array.Resize( ref idset, idset.Length -1 ) ;
+			return ;
 			}
 		}
 	static public string Symbol
@@ -211,6 +212,7 @@ class Class
 	static public void Declared()
 		{
 		Array.Resize( ref idset, (id = String.Empty).Length ) ;
+		return ;
 		}
 	}
 
