@@ -28,6 +28,25 @@ public static void Main( string[] args )
 #endif
 	}
 
+class Microdata : C_Type //,IOprand
+	{
+	int     capacity ; //itemscope
+	string  _char_np ; //itemtype="data:xml::C#<C++0x11>(<*.cs>)_,<Method>_,"
+	string  type     ; //<itemprop item="<Method.Type>">
+	public object[] ToArray() { return new object[] { capacity, _char_np, type } ; }
+	static public Microdata N0P
+		{
+		get { return new Microdata( 0, null, new C_Undefined() ) ; }
+		}
+	public Microdata( int _1, string _2, string _3 )
+		: base( C_Type.Acquire( _3 ) )
+		{
+		this.capacity  = _1 ; //<br/>
+		this._char_np  = _2 ; //<br/>
+		this.type      = _3 ; //<br/>
+		} //</itemprop>
+	}
+
 class Method
 	{
 	static Program.Method method ;

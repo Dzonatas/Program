@@ -308,7 +308,7 @@ class SigArg
 
 partial class Program
 	{
-	static List<C_Type> stack = new List<C_Type>() ;
+	static List<Microdata> stack = new List<Microdata>() ;
 	static int stack_offset ;
 	static int stack_down ;
 	//static uint effective_symbolic_objective_credit ;
@@ -316,10 +316,14 @@ partial class Program
 		{
 		get { return stack_offset - stack_down ; }
 		}
-	public void Push( C_Type obj )
+	public void Push( Microdata stack_item_data )
 		{
-		stack[stack_offset] = obj ;
+		stack[stack_offset] = stack_item_data ;
 		stack_offset++ ;
+		}
+	public void Push( C_Type string_line )
+		{
+		Push( new Microdata( 0, null, string_line ) ) ;
 		}
 	public void Push( string type )
 		{
