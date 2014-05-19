@@ -96,9 +96,7 @@ class Object : Stack.Item
 	protected override void main()
 		{
 		var d = NewOprand( Arg1.Token ) ;
-		int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
-		d.HasArgs = args > 0 ;
-		Debug.WriteLine( "[methodDecl_instr] stack={0} args={1}", C.StackOffset, args ) ;
+		d.HasArgs = ( 0 < Args ) ;
 		switch( d.Instruction )
 			{
 			case "LDARG_0":

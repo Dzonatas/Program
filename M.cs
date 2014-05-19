@@ -94,6 +94,10 @@ class Method
 			{
 			get { return method.SigArgs ; }
 			}
+		protected new int Args
+			{
+			get { return SigArgs + ( CallConvInstance ? 1 : 0 ) ; }
+			}
 		protected void    RegisterLabel( string text )
 			{
 			method.RegisterLabel( text ) ;
