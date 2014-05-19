@@ -412,7 +412,7 @@ class Object : Stack.Item
 	: Method.Decl   {
 	protected override void main()
 		{
-		AddLabel( Arg1.Token ) ;
+		Label = C_Symbol.Acquire( Arg1.Token ) ;
 		}
 	}
 

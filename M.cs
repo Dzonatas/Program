@@ -81,6 +81,7 @@ class Method
 		}
 	public class Decl : Automatrix
 		{
+		static C_Symbol   label = C_Symbol.Acquire( System.String.Empty ) ;
 		protected int     MaxStack
 			{
 			set { method.MaxStack = value ; }
@@ -97,9 +98,10 @@ class Method
 			{
 			method.RegisterLabel( text ) ;
 			}
-		protected void    AddLabel( string text )
+		static public C_Symbol Label
 			{
-			method.RegisterLabel( text ) ;
+			set { label = value ; }
+			get { return label ; }
 			}
 		protected void    EntryPoint()
 			{
@@ -175,6 +177,8 @@ partial class Program
 			}
 		public void Add( C_Oprand oprand )
 			{
+			oprand.Label = A335.Method.Decl.Label ;
+			A335.Method.Decl.Label = C_Symbol.Acquire( System.String.Empty ) ;
 			oprandset.Add( oprand ) ;
 			}
 		public void RegisterLabel( string text )
@@ -221,15 +225,16 @@ partial class Program
 			else
 				c.Args = "( const void** args )" ;
 			c.Statement( "const void** stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
-			foreach( object o in oprandset )
+			foreach( C_Oprand o in oprandset )
 				{
-				if( o is C_Oprand )
+				string label = System.String.Empty ;
+				if( System.String.Empty == ( label = o.Label ) )
 					c.Statement( (string) (o as C_Oprand) ) ;
 				else
 					{
-					string label = (string) o ;
 					if( labelset.Contains( label ) )
 						c.Label( label ) ;
+					c.Statement( (string) (o as C_Oprand) ) ;
 					}
 				}
 			if( _virtual )

@@ -409,12 +409,18 @@ partial class Program
 		}
 	public class C_Oprand
 		{
+		C_Symbol label ;
 		C_Function function ;
 		public string Instruction ;
 		public string ID ;
 		public bool HasArgs ;
 		public bool IsFlowControl ;
 		List<string> list = new List<string>() ;
+		public C_Symbol Label
+			{
+			set { label = value ; }
+			get { return label ; }
+			}
 		public C_Method Method
 			{
 			get { return function.Method ; }

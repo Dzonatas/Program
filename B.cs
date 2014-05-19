@@ -81,9 +81,9 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Stack.Push( new id_ID() ) ;
 		}
 	else
-	if( this_xo_t.ReductionMethod == "name1_id" )
+	if( this_xo_t.ReductionMethod == "methodDecl_id____" )
 		{
-		Stack.Push( new name1_id() ) ;
+		Stack.Push( new methodDecl_id____() ) ;
 		}
 	else
 	if( this_xo_t.ReductionMethod == "instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____" )
