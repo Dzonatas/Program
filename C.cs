@@ -142,13 +142,13 @@ public class C_Undefined : C_Symbol
 public class C_Type
 	{
 	C_Symbol[] idset ;
-	public C_Type( C_Symbol symbol )
+	internal C_Type( C_Symbol symbol )
 		{
 		idset    = new C_Symbol[2] ;
 		idset[0] = new C_Undefined() ;
 		idset[1] = symbol ;
 		}
-	public C_Type( string symbol )
+	C_Type( string symbol )
 		: this( C_Symbol.Acquire( symbol ) )
 		{}
 	static public C_Type Acquire( string type )
