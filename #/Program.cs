@@ -176,15 +176,34 @@ partial class Program
 	public class C_Method
 		{
 		//Guid ID ;
-		public List<C_Symbol>  NameSpace = new List<C_Symbol>() ;
+		//public List<C_Symbol>  NameSpace = new List<C_Symbol>() ;
 		public List<C_Symbol>  ClassName = new List<C_Symbol>() ;
 		public C_Symbol        Name ;
 		public List<C_Type>    Args  = new List<C_Type>() ;
 		public C_Type          Type ;
 		public C_Function      Function ;
+		/*
 		public C_Method()
 			{
 			//ID = Guid.NewGuid() ;
+			}
+		*/
+		public C_Method( C_Type context )
+			{
+			//ID = Guid.NewGuid() ;
+			foreach( string s in (string[]) context )
+				ClassName.Add( C_Symbol_Acquire( s ) ) ;
+			}
+		public C_Type ClassType
+			{
+			get {
+				var type = new string[ClassName.Count];
+				int i = 0 ;
+				foreach( C_Symbol symbol in ClassName )
+					type[i++] = symbol ;
+				//type[i] = Name ;
+				return C_Type.Acquire( type ) ;
+				}
 			}
 		public C_Type ThisType
 			{
@@ -202,9 +221,10 @@ partial class Program
 			{
 			C_Method m ;
 			C_Function c ;
-			m = new C_Method() ;
+			var context = new string[] { "System" } ;
+			m = new C_Method( C_Type.Acquire( context ) ) ;
 			//m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
-			m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
+			//m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
 			Match y = Regex.Match( typedef, @"^(?<type>\S+)\s" ) ;
 			if( y.Success )
 				m.Type = C_Type.Acquire( y.Groups[ "type" ].Value ) ;
@@ -237,17 +257,19 @@ partial class Program
 		public C_Function CreateFunction()
 			{
 			string ns = "" ;
+			/*
 			foreach( C_Symbol e in NameSpace )
 				{
 				if( ns != "" )
 					ns += "$$" ;
 				ns += e ;
 				}
+			*/
 			string cn = "" ;
 			foreach( C_Symbol e in ClassName )
 				{
 				if( cn != "" )
-					cn += "$" ;
+					cn += "_" ;
 				cn += e ;
 				}
 			string a = "" ;
@@ -258,7 +280,7 @@ partial class Program
 				a += e ;
 				}
 			string s = "" ;
-			s += ns + "_" + cn + Name + ( a == "" ? "" : "$" + a ) ;
+			s += /*ns + "_" +*/ cn + Name + ( a == "" ? "" : "$" + a ) ;
 			C_Symbol symbol = C_Symbol.Acquire( s ) ;
 			Function = C_Function.FromSymbol( symbol ) ;
 			Function.Method = this ;

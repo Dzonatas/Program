@@ -10,7 +10,7 @@ partial class A335
 
 partial class Program
 	{
-	static internal C_Symbol C_Symbol_Aquire( string symbol )
+	static internal C_Symbol C_Symbol_Acquire( string symbol )
 		{
 		C_Symbol c ;
 		if( ! symbolset.ContainsKey( symbol ) )
@@ -30,7 +30,20 @@ partial class Program
 		}
 	static internal C_Type C_Type_Acquire( string[] symbolset )
 		{
-		var symbol = C_Symbol_Aquire( String.Join( ",", symbolset ) ) ;
+		var symbol = C_Symbol_Acquire( String.Join( ",", symbolset ) ) ;
+		C_Type c ;
+		if( ! typeset.ContainsKey( symbol ) )
+			typeset.Add( symbol, c = new C_Type( symbolset ) ) ;
+		else
+			c = typeset[symbol] ;
+		return c ;
+		}
+	static internal C_Type C_Type_Acquire( C_Symbol[] symbolset )
+		{
+		string _symbol = null ;
+		foreach( string i in symbolset )
+			_symbol += ( _symbol == null ? String.Empty : "," ) + i ;
+		var symbol = C_Symbol_Acquire( _symbol ) ;
 		C_Type c ;
 		if( ! typeset.ContainsKey( symbol ) )
 			typeset.Add( symbol, c = new C_Type( symbolset ) ) ;
@@ -131,7 +144,7 @@ public class C_Symbol
 		}
 	static public C_Symbol Acquire( string symbol )
 		{
-		return Program.C_Symbol_Aquire( symbol ) ;
+		return Program.C_Symbol_Acquire( symbol ) ;
 		}
 	static public implicit operator string( C_Symbol c )
 		{
@@ -157,6 +170,10 @@ public class C_Type
 		foreach( string s in symbolset )
 			idset[i++] = C_Symbol.Acquire( s ) ;
 		}
+	internal C_Type( C_Symbol[] symbolset )
+		{
+		idset = symbolset ;
+		}
 	internal C_Type( C_Symbol symbol )
 		{
 		idset    = new C_Symbol[2] ;
@@ -178,6 +195,10 @@ public class C_Type
 		{
 		return Program.C_Type_Acquire( symbolset ) ;
 		}
+	static public C_Type Acquire( C_Symbol[] symbolset )
+		{
+		return Program.C_Type_Acquire( symbolset ) ;
+		}
 	static public implicit operator string( C_Type c )
 		{
 		string s = null ;
@@ -185,7 +206,7 @@ public class C_Type
 			{
 			if( symbol is C_Undefined && s == null )
 				continue ;
-			s += ( s == null ? String.Empty : "," ) + symbol ;
+			s += ( s == null ? String.Empty : "$" ) + symbol ;
 			}
 		return s ;
 		}
@@ -194,6 +215,22 @@ public class C_Type
 		if( (string) c == "string" )
 			return C_Symbol.Acquire( "struct _string" ) ;
 		return c.idset[c.idset.Length-1] ;
+		}
+	static public explicit operator string[]( C_Type c )
+		{
+		string[] s = new string[c.idset.Length] ;
+		int i = 0 ;
+		foreach( C_Symbol symbol in c.idset )
+			s[i++] = symbol ;
+		return s ;
+		}
+	public int Count
+		{
+		get { return idset.Length ; }
+		}
+	public C_Symbol this[int n]
+		{
+		get { return idset[n] ; }
 		}
 	public string Type
 		{
@@ -223,6 +260,7 @@ class Class
 		{
 		Array.Resize( ref idset, idset.Length +1 ) ;
 		idset[idset.Length - 1] = C_Symbol.Acquire( id ) ;
+		return ;
 		}
 	public class Head : Automatrix
 		{
@@ -246,6 +284,10 @@ class Class
 				s += ( s == null ? String.Empty : "$" ) + i ;
 			return s ;
 			}
+		}
+	static public C_Type Type
+		{
+		get { return C_Type.Acquire( idset ) ; }
 		}
 	static public void Declared()
 		{

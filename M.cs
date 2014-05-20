@@ -52,10 +52,9 @@ class Method
 	static Program.Method method ;
 	public class Head : Automatrix
 		{
-		protected void    NewMethod( string class_symbol )
+		protected void    NewMethod( C_Type context )
 			{
-			method = new Program.Method() ;
-			method.ClassSymbol = class_symbol ;
+			method = new Program.Method( context ) ;
 			}
 		protected bool    Static
 			{
@@ -68,10 +67,6 @@ class Method
 		protected string  Type
 			{
 			set { method.Type = value ; }
-			}
-		protected string  ClassSymbol
-			{
-			set { method.ClassSymbol = value ; }
 			}
 		protected string  Name
 			{
@@ -174,11 +169,22 @@ partial class Program
 		List<string>   labelset = new List<string>() ;
 		public bool    Static ;
 		public bool    CallConvInstance ;
-		public string  Type ;
-		public string  ClassSymbol ;
-		public string  Name ;
+		public string  Type
+			{
+			set { method.Type = C_Type.Acquire( value ) ; }
+			get { return (string) method.Type ; }
+			}
+		public string  Name
+			{
+			set { method.Name = C_Symbol_Acquire( value ) ; }
+			get { return (string) method.Name ; }
+			}
 		public string  SigArgTypes ;
 		public int     SigArgs ;
+		public string  ClassSymbol
+			{
+			get { return (string) method.ClassType ; }
+			}
 		public int     MaxStack
 			{
 			set { C.MaxStack = maxstack = value ; }
@@ -194,8 +200,9 @@ partial class Program
 					}
 				}
 			}
-		public Method()
+		public Method( C_Type context )
 			{
+			method = new C_Method( context ) ;
 			methodset.Add( this ) ;
 			}
 		public void Add( C_Oprand oprand )
@@ -218,11 +225,6 @@ partial class Program
 			}
 		public void CreateFunction()
 			{
-			method = new C_Method() ;
-			method.Type = C_Type.Acquire( Type ) ;
-			method.Name = C_Symbol.Acquire( Name ) ;
-			foreach( string s in ClassSymbol.Split( '$' ) )
-				method.ClassName.Add( C_Type.Acquire( s ) ) ;
 			foreach( string a in SigArg.Typeset )
 				method.Args.Add( C_Type.Acquire( a ) ) ;
 			function = C_Function.FromSymbol( ClassSymbol + Name + SigArgTypes ) ;

@@ -54,7 +54,7 @@ class Object : Stack.Item
 	: Method.Head   {
 	protected override void main()
 		{
-		NewMethod( Class.Symbol ) ;
+		NewMethod( Class.Type ) ;
 		}
 	}
 
