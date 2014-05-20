@@ -46,7 +46,14 @@ class Object : Stack.Item
 	: Automatrix	{
 	protected override void main()
 		{
-		this_callConv_instance = true ;
+		CallConv.Instance = Microdata.N0P ;
+		}
+	class CallConv
+		{
+		static public Microdata Instance
+			{
+			set { this_callConv_instance = true ; }
+			}
 		}
 	}
 
@@ -75,11 +82,19 @@ class Object : Stack.Item
 		Type              = Arg5.ResolveType() ;
 		SigArgs           = SigArg.Count() ;
 		SigArgTypes       = SigArg.Types() ;
-		CallConvInstance  = this_callConv_instance ;
+		CallConvInstance  = CallConv.Instance ;
 		Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
 		CreateFunction() ;
 		SigArg.Clear() ;
-		this_callConv_instance = false ;
+		CallConv.Instance = null ;
+		}
+	class CallConv
+		{
+		static public Microdata Instance
+			{
+			get { return new Microdata( this_callConv_instance ) ; }
+			set { this_callConv_instance = false ; }
+			}
 		}
 	}
 
@@ -311,7 +326,15 @@ class Object : Stack.Item
 		this_instr_sigArg_types = SigArg.Types() ;
 		this_instr_callConv_instance = this_callConv_instance ;
 		SigArg.Clear() ;
-		this_callConv_instance = false ;
+		CallConv.Instance = null ;
+		}
+	class CallConv
+		{
+		static public Microdata Instance
+			{
+			get { return new Microdata( this_callConv_instance ) ; }
+			set { this_callConv_instance = false ; }
+			}
 		}
 	}
 

@@ -323,11 +323,11 @@ partial class Program
 		}
 	public void Push1( C_Type string_line_x )
 		{
-		Push( new Microdata( 1, String.Empty, string_line_x ) ) ;
+		Push( new Microdata( true, string_line_x ) ) ;
 		}
 	public void Push( C_Type string_line )
 		{
-		Push( new Microdata( 0, null, string_line ) ) ;
+		Push( new Microdata( false, string_line ) ) ;
 		}
 	public void Push( string type )
 		{

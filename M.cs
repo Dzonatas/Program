@@ -30,9 +30,9 @@ public static void Main( string[] args )
 
 class Microdata : C_Type //,IOprand
 	{
-	int     capacity ; //itemscope
-	string  _char_np ; //itemtype="data:xml::C#<C++0x11>(<*.cs>)_,<Method>_,"
-	string  type     ; //<itemprop item="<Method.Type>">
+	public int     capacity ; //itemscope
+	public string  _char_np ; //itemtype="data:xml::C#<C++0x11>(<*.cs>)_,<Method>_,"
+	public string  type     ; //<itemprop item="<Method.Type>">
 	public object[] ToArray() { return new object[] { capacity, _char_np, type } ; }
 	static public Microdata N0P
 		{
@@ -45,6 +45,42 @@ class Microdata : C_Type //,IOprand
 		this._char_np  = _2 ; //<br/>
 		this.type      = _3 ; //<br/>
 		} //</itemprop>
+	public Microdata( bool _1, string type )
+		: base( C_Type.Acquire( type ) )
+		{
+		this.capacity  = _1 ? 1 : 0 ;
+		this._char_np  = _1 ? System.String.Empty : null ;
+		this.type      = type ;
+		}
+	public Microdata( bool _1 )
+		: base( new C_Undefined() )
+		{
+		this.capacity  = _1 ? 1 : 0 ;
+		this._char_np  = _1 ? System.String.Empty : null ;
+		}
+	public Microdata( int _1, string _char_np )
+		: base( new C_Undefined() )
+		{
+		this.capacity  = _1 ;
+		this._char_np  = _char_np ;
+		}
+	public Microdata( string _char_np )
+		: base( new C_Undefined() )
+		{
+		this.capacity  = _char_np.Length ;
+		this._char_np  = _char_np ;
+		}
+	public Microdata( string _char_np, string type )
+		: base( C_Type.Acquire( type ) )
+		{
+		this.capacity  = _char_np.Length ;
+		this._char_np  = _char_np ;
+		this.type      = type ;
+		}
+	static public explicit operator bool(Microdata d)
+		{
+		return d.capacity == 0 ? false : true ;
+		}
 	}
 
 class Method
@@ -60,9 +96,9 @@ class Method
 			{
 			set { method.Static = value ; }
 			}
-		protected bool    CallConvInstance
+		protected Microdata    CallConvInstance
 			{
-			set { method.CallConvInstance = value ; }
+			set { method.CallConvInstance = (bool) value ; }
 			}
 		protected string  Type
 			{
