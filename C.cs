@@ -30,7 +30,13 @@ partial class Program
 		}
 	static internal C_Type C_Type_Acquire( string[] symbolset )
 		{
-		return C_Type_Acquire( C_Symbol_Aquire( String.Join( ",", symbolset ) ) ) ;
+		var symbol = C_Symbol_Aquire( String.Join( ",", symbolset ) ) ;
+		C_Type c ;
+		if( ! typeset.ContainsKey( symbol ) )
+			typeset.Add( symbol, c = new C_Type( symbolset ) ) ;
+		else
+			c = typeset[symbol] ;
+		return c ;
 		}
 	public C_Symbol StringConcat( C_Literal a, C_Literal b, C_Literal c )
 		{
@@ -143,13 +149,14 @@ public class C_Undefined : C_Symbol
 public class C_Type
 	{
 	C_Symbol[] idset ;
-	/*//internal string StemString ;
-	internal C_Type( C_Symbol[] symbolset )
+	//internal string StemString ;
+	internal C_Type( string[] symbolset )
 		{
-		idset    = new C_Symbol[ 1 + symbolset.Length ] ;
-		idset[0] = new C_Undefined() ;
-		symbolset.CopyTo( idset, 1 ) ;
-		}*/
+		idset = new C_Symbol[symbolset.Length] ;
+		int i = 0 ;
+		foreach( string s in symbolset )
+			idset[i++] = C_Symbol.Acquire( s ) ;
+		}
 	internal C_Type( C_Symbol symbol )
 		{
 		idset    = new C_Symbol[2] ;
@@ -173,7 +180,14 @@ public class C_Type
 		}
 	static public implicit operator string( C_Type c )
 		{
-		return c.idset[c.idset.Length-1] ;
+		string s = null ;
+		foreach( C_Symbol symbol in c.idset )
+			{
+			if( symbol is C_Undefined && s == null )
+				continue ;
+			s += ( s == null ? String.Empty : "," ) + symbol ;
+			}
+		return s ;
 		}
 	static public implicit operator C_Symbol( C_Type c )
 		{
