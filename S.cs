@@ -321,6 +321,10 @@ partial class Program
 		stack[stack_offset] = stack_item_data ;
 		stack_offset++ ;
 		}
+	public void Push1( C_Type string_line_x )
+		{
+		Push( new Microdata( 1, String.Empty, string_line_x ) ) ;
+		}
 	public void Push( C_Type string_line )
 		{
 		Push( new Microdata( 0, null, string_line ) ) ;

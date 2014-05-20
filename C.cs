@@ -10,7 +10,7 @@ partial class A335
 
 partial class Program
 	{
-	static public C_Symbol C_Symbol_Aquire( string symbol )
+	static internal C_Symbol C_Symbol_Aquire( string symbol )
 		{
 		C_Symbol c ;
 		if( ! symbolset.ContainsKey( symbol ) )
@@ -19,7 +19,7 @@ partial class Program
 			c = symbolset[symbol] ;
 		return c ;
 		}
-	static public C_Type C_Type_Acquire( C_Symbol symbol )
+	static internal C_Type C_Type_Acquire( C_Symbol symbol )
 		{
 		C_Type c;
 		if( ! typeset.ContainsKey( symbol ) )
@@ -27,6 +27,10 @@ partial class Program
 		else
 			c = typeset[symbol] ;
 		return c ;
+		}
+	static internal C_Type C_Type_Acquire( string[] symbolset )
+		{
+		return C_Type_Acquire( C_Symbol_Aquire( String.Join( ",", symbolset ) ) ) ;
 		}
 	public C_Symbol StringConcat( C_Literal a, C_Literal b, C_Literal c )
 		{
@@ -139,6 +143,13 @@ public class C_Undefined : C_Symbol
 public class C_Type
 	{
 	C_Symbol[] idset ;
+	/*//internal string StemString ;
+	internal C_Type( C_Symbol[] symbolset )
+		{
+		idset    = new C_Symbol[ 1 + symbolset.Length ] ;
+		idset[0] = new C_Undefined() ;
+		symbolset.CopyTo( idset, 1 ) ;
+		}*/
 	internal C_Type( C_Symbol symbol )
 		{
 		idset    = new C_Symbol[2] ;
@@ -155,6 +166,10 @@ public class C_Type
 	static public C_Type Acquire( C_Symbol symbol )
 		{
 		return Program.C_Type_Acquire( symbol ) ;
+		}
+	static public C_Type Acquire( string[] symbolset )
+		{
+		return Program.C_Type_Acquire( symbolset ) ;
 		}
 	static public implicit operator string( C_Type c )
 		{

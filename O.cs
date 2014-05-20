@@ -101,13 +101,13 @@ class Object : Stack.Item
 			{
 			case "LDARG_0":
 				{
-				string type ;
+				C_Type type ;
 				if( CallConvInstance )
-					type = d.Method.ClassNameType ;
+					type = d.Method.ThisType ;
 				else
-					type = d.Method.Args[0].Type ;
+					type = d.Method.Args[0] ;
 				d.AssignStack( C.StackOffset, "args[0]" ) ;
-				C.Push( type ) ;
+				C.Push1( type ) ;
 				break ;
 				}
 			case "LDSTR":
