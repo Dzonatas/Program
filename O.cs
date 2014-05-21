@@ -67,7 +67,7 @@ class Object : Stack.Item
 		this_instr_symbol = this_instr_class_symbol + this_methodName + SigArg.Types() ;
 		this_instr_sigArgs = SigArg.Count() ;
 		this_instr_sigArg_types = SigArg.Types() ;
-		this_instr_callConv_instance = this_callConv_instance ;
+		this_instr_callConv_instance = (bool) CallConv.Instance ;
 		SigArg.Clear() ;
 		CallConv.Instance = null ;
 		}
