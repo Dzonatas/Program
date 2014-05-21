@@ -43,58 +43,68 @@ class Argument
 			throw new System.NotImplementedException( "Unresolved casts to dotted names." ) ;
 			}
 		}
-	public string ResolveType()
+	static char[] separators = new char[] { '/', '.' } ;
+	public string[] ResolveType()
 		{
-		string s = "" ;
 		if( arg is Stack.Item.Token )
 			{
 			string t = (string) (Stack.Item.Token)arg ;
-			t = Regex.Replace( t, "[^A-Za-z_0-9/]", "_" ).Replace( "/", "$" ) ;
-			return t ;
+			t = Regex.Replace( t, "[^A-Za-z_0-9/.]", "_" ) ;
+			return t.Split( separators ) ;
 			}
 		if( arg is Automatrix )
 			{
 			return (arg as Automatrix).ResolveType() ;
 			}
+		string[] s = new string[0] ;
 		for( int i = 1 ; i < Args.Length ; i++ )
 			{
 			if( Args[i] is Stack.Item.Token )
 				{
 				string t = (string) (Stack.Item.Token)Args[i] ;
-				t = Regex.Replace( t, "[^A-Za-z_0-9/]", "_" ).Replace( "/", "$" ) ;
-				if( s.EndsWith("$") || t == "$" )
-					s += t ;
-				else
-					s += ( i == 1 ? "" : "_" ) + t ;
+				if( t != "[" && t != "]" )
+					t = Regex.Replace( t, "[^A-Za-z_0-9/.]", "_" ) ;
+				foreach( string z in t.Split(separators) )
+					{
+					if( System.String.IsNullOrEmpty( z ) )
+						continue ;
+					System.Array.Resize( ref s, s.Length +1 ) ;
+					s[s.Length-1] = z ;
+					}
 				}
 			else
 			if( Args[i] is Automatrix )
-				s += ( ( i == 1 || s.EndsWith("$") || s.EndsWith("__") ) ? "" : "_" )
-					+ ( Args[i] as Automatrix ).ResolveType() ;
+				{
+				string[] ts = ( Args[i] as Automatrix ).ResolveType() ;
+				System.Array.Resize( ref s, s.Length + ts.Length ) ;
+				ts.CopyTo( s, s.Length - ts.Length ) ;
+				}
 			else
 				throw new System.NotImplementedException( "Unresolved type." ) ;
 			}
 		return s ;
 		}
-	public string ResolveTypeSpec()
+	public string[] ResolveTypeSpec()
 		{
-		string s = (string) ResolveType() ;
-		if( s.StartsWith( "class_" ) )
-			s = s.Substring( 6 ) ;
+		string[] s = ResolveType() ;
+		int i = 0 ;
+		if( s[i] == "class" )
+			i++ ;
 		else
-		if( s.StartsWith( "valuetype_" ) )
-			s = s.Substring( 10 ) ;
-		if( s.StartsWith( "__mscorlib__" ) )
-			return /*"BCL$$" +*/ s.Substring( 12 ) ;
-		else
-		if( s.StartsWith( "__corlib__" ) )
-			return /*"BCL$$" +*/ s.Substring( 10 ) ;
-		switch( s )
-			{
-			case "object" : return /*"BCL$$"+*/"System_Object" ;
-			case "string" : return /*"BCL$$"+*/"System_String" ;
-			}
-		return s ;
+		if( s[i] == "valuetype" )
+			i++ ;
+		if( s[i] == "[" )
+			i += 3 ;
+		if( i == s.Length-1 )
+			switch( s[i] )
+				{
+				case "object" : return new string[] { "System", "Object" } ;
+				case "string" : return new string[] { "System", "String" } ;
+				}
+		string[] r = new string[s.Length-i] ;
+		for( int x = 0 ; x < r.Length ; x++ )
+			r[x] = s[x+i] ;
+		return r ;
 		}
 	}
 }

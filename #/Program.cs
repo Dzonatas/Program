@@ -269,7 +269,7 @@ partial class Program
 			foreach( C_Symbol e in ClassName )
 				{
 				if( cn != "" )
-					cn += "_" ;
+					cn += "$" ;
 				cn += e ;
 				}
 			string a = "" ;
@@ -486,7 +486,7 @@ partial class Program
 			{
 			return Statement( "extern void " + symbol + "( const void** )" ) ;
 			}
-		public C_Oprand Extern( C_Symbol type, C_Symbol symbol )
+		public C_Oprand Extern( C_Symbol type, C_Type symbol )
 			{
 			return Statement( "extern " + type + " " + symbol  ) ;
 			}

@@ -103,7 +103,7 @@ class Method
 			{
 			set { method.CallConvInstance = value is CallConv ? value.Instance : false ; }
 			}
-		protected string  Type
+		protected C_Type  Type
 			{
 			set { method.Type = value ; }
 			}

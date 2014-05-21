@@ -22,7 +22,7 @@ partial class A335
 			}
 		else
 			Name = "$" + Arg6.Token ;
-		Type              = Arg5.ResolveType() ;
+		Type              = C_Type.Acquire( Arg5.ResolveType() ) ;
 		SigArgs           = SigArg.Count() ;
 		SigArgTypes       = SigArg.Types() ;
 		CallConvList      = A335.CallConv.List ;

@@ -198,24 +198,32 @@ class Automatrix : Object
 		{
 		get { return o.Length ; }
 		}
-	public string ResolveType()
+	static char[] separators = new char[] { '/', '.' } ;
+	public string[] ResolveType()
 		{
-		string s = "" ;
+		string[] s = new string[0] ;
 		for( int i = 1 ; i < Args.Length ; i++ )
 			{
 			if( Args[i] is Stack.Item.Token )
 				{
 				string t = (string) (Stack.Item.Token)Args[i] ;
-				t = System.Text.RegularExpressions.Regex.Replace( t, "[^A-Za-z_0-9/]", "_" ).Replace( "/", "$" ) ;
-				if( s.EndsWith("$") || t == "$" )
-					s += t ;
-				else
-					s += ( i == 1 ? "" : "_" ) + t ;
+				if( t != "[" && t != "]" )
+					t = System.Text.RegularExpressions.Regex.Replace( t, "[^A-Za-z_0-9/.]", "_" ) ;
+				foreach( string z in t.Split(separators) )
+					{
+					if( System.String.IsNullOrEmpty( z ) )
+						continue ;
+					System.Array.Resize( ref s, s.Length +1 ) ;
+					s[s.Length-1] = z ;
+					}
 				}
 			else
 			if( Args[i] is Automatrix )
-				s += ( ( i == 1 || s.EndsWith("$") || s.EndsWith("__") ) ? "" : "_" )
-					+ ((Automatrix)Args[i] ).ResolveType() ;
+				{
+				string[] ts = ( Args[i] as Automatrix ).ResolveType() ;
+				System.Array.Resize( ref s, s.Length + ts.Length ) ;
+				ts.CopyTo( s, s.Length - ts.Length ) ;
+				}
 			else
 				throw new System.NotImplementedException( "Unresolved type." ) ;
 			}

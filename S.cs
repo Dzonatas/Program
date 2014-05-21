@@ -263,7 +263,7 @@ class SigArg
 		{
 		get { return instance.type ; }
 		}
-	static void add( string type, string name )
+	static void add( C_Type type, string name )
 		{
 		instance.type.Add( type ) ;
 		instance.name.Add( name ) ;
@@ -288,14 +288,14 @@ class SigArg
 		: Automatrix	{
 		protected override void main()
 			{
-			add( Arg2.ResolveType(), null ) ;
+			add( C_Type.Acquire( Arg2.ResolveType() ), null ) ;
 			}
 		}
 	[Automaton] class   sigArg_paramAttr_type_id
 		: Automatrix {
 		protected override void main()
 			{
-			add( Arg2.ResolveType(), Arg3.Token ) ;
+			add( C_Type.Acquire( Arg2.ResolveType() ), Arg3.Token ) ;
 			}
 		}
 	[Automaton] class   sigArgs1_sigArgs1_____sigArg

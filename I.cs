@@ -102,7 +102,7 @@ class Instr
 		static public C_Type   Type ;
 		static public int      SigArgs ;
 		static public string   SigArgTypes ;
-		static public C_Symbol Class ;
+		static public C_Type   Class ;
 		static public C_Symbol Symbol ;
 		static public bool CallConvInstance ;
 		public CallConv CallConvList
@@ -134,7 +134,7 @@ class Instr
 		else
 			methodName = "$" + Arg6.Token ;
 		Type          = C_Type.Acquire( Arg3.ResolveType() ) ;
-		Class         = C_Symbol.Acquire( Arg4.ResolveTypeSpec() ) ;
+		Class         = C_Type.Acquire( Arg4.ResolveTypeSpec() ) ;
 		Symbol        = C_Symbol.Acquire( Class + methodName + SigArg.Types() ) ;
 		SigArgs       = SigArg.Count() ;
 		SigArgTypes   = SigArg.Types() ;
