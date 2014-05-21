@@ -8,6 +8,9 @@ public class AutomatonAttribute : System.Attribute {}
 static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 	new System.Collections.Generic.Dictionary<string,System.Type>() ;
 
+[Automaton] class   id_ID
+	: Automatrix	{}
+
 [Automaton] class   name1_id
 	: Automatrix {}
 

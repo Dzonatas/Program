@@ -108,6 +108,9 @@
     <Compile Include="#\Atomatrix.Four.cs" />
     <Compile Include="#\Argument.cs" />
     <Compile Include="#\Automaton.cs" />
+    <Compile Include="#\Method.Head.cs" />
+    <Compile Include="#\Method.Decl.cs" />
+    <Compile Include="#\Method.Attr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
