@@ -25,11 +25,10 @@ partial class A335
 		Type              = Arg5.ResolveType() ;
 		SigArgs           = SigArg.Count() ;
 		SigArgTypes       = SigArg.Types() ;
-		CallConvInstance  = A335.CallConv.Instance ;
+		CallConvList      = A335.CallConv.List ;
 		Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
 		CreateFunction() ;
 		SigArg.Clear() ;
-		object o = CallConv.List ;
 		}
 	}
 }

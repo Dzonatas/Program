@@ -97,15 +97,12 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 
 class Instr
 	{
-	static public class CallConv
-		{
-		static public bool Instance
-			{
-			set { this_instr_callConv_instance = value ; }
-			}
-		}
 	public class Method : Automatrix
 		{
+		public CallConv CallConvList
+			{
+			set { this_instr_callConv_instance = value is CallConv ? value.Instance : false ; }
+			}
 		}
 	}
 }

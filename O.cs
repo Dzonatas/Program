@@ -41,20 +41,22 @@ class Object : Stack.Item
 
 class CallConv : Automatrix
 	{
+	static CallConv current = null ;
+	CallConv next ;
 	protected override void main()
 		{
-		list.Add( this ) ;
+		next = current ;
+		current = this ;
 		}
-	static List<CallConv> list = new List<CallConv>() ;
-	static public List<CallConv> List
+	static public CallConv List
 		{
-		get { List<CallConv> l = list ; list = new List<CallConv>() ; return l ; }
+		get { CallConv l = current ; current = null ; return l ; }
 		}
-	static public bool Instance
+	public bool Instance
 		{
 		get {
-			foreach( CallConv cc in list )
-				if( cc is callConv__instance__callConv )
+			for( CallConv i = this ; i is CallConv ; i = i.next )
+				if( i is callConv__instance__callConv )
 					return true ;
 			return false ;
 			}
@@ -76,9 +78,8 @@ class CallConv : Automatrix
 		this_instr_symbol = this_instr_class_symbol + this_methodName + SigArg.Types() ;
 		this_instr_sigArgs = SigArg.Count() ;
 		this_instr_sigArg_types = SigArg.Types() ;
-		Instr.CallConv.Instance = A335.CallConv.Instance ;
+		CallConvList = A335.CallConv.List ;
 		SigArg.Clear() ;
-		object o = A335.CallConv.List ;
 		}
 	}
 

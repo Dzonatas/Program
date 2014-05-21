@@ -96,9 +96,9 @@ class Method
 			{
 			set { method.Static = value ; }
 			}
-		protected bool    CallConvInstance
+		protected CallConv CallConvList
 			{
-			set { method.CallConvInstance = value ; }
+			set { method.CallConvInstance = value is CallConv ? value.Instance : false ; }
 			}
 		protected string  Type
 			{
