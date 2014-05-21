@@ -65,25 +65,6 @@ class CallConv : Automatrix
 		: CallConv	{}
 	}
 
-[Automaton] class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
-	: Instr.Method	{
-	protected override void main()
-		{
-		string methodName = System.String.Empty ;
-		if( Args[6] is methodName___ctor_ )
-			methodName = "_ctor" ;
-		else
-			methodName = "$" + Arg6.Token ;
-		this_instr_type = Arg3.ResolveType() ;
-		this_instr_class_symbol = Arg4.ResolveTypeSpec() ;
-		this_instr_symbol = this_instr_class_symbol + methodName + SigArg.Types() ;
-		this_instr_sigArgs = SigArg.Count() ;
-		this_instr_sigArg_types = SigArg.Types() ;
-		CallConvList = A335.CallConv.List ;
-		SigArg.Clear() ;
-		}
-	}
-
 [Automaton] class   classDecl_methodHead_methodDecls____
 	: Class.Decl	{
 	protected override void main()

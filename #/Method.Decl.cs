@@ -65,9 +65,9 @@ partial class A335
 				}
 			case "CALL":
 				{
-				var _call  = C_Symbol.Acquire( this_instr_symbol ) ;
+				var _call  = Instr.Method.Symbol ;
 				//Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
-				int iargs = this_instr_sigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
+				int iargs = Instr.Method.SigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
 				C.Hangup( iargs ) ;
 				/*
 				if( !System.String.IsNullOrEmpty(this_instr_sigArg_types) )
@@ -87,8 +87,8 @@ partial class A335
 				*/
 				string item = "" ;
 				C_Symbol symbol = null ;
-				Program.C_Function.Require( this_instr_symbol ) ;
-				if( this_instr_type == "string" )
+				Program.C_Function.Require( Instr.Method.Symbol ) ;
+				if( Instr.Method.Type == "string" )
 					{
 					symbol = new C_Symbol() ;
 					d.LocalStatic( Program.StructString, symbol ) ;
@@ -108,8 +108,8 @@ partial class A335
 					else
 						d.Call( _call, "stack+" + C.StackOffset ) ;
 					}
-				if( this_instr_type != "void" )
-					C.Push( this_instr_type ) ;
+				if( Instr.Method.Type != "void" )
+					C.Push( Instr.Method.Type ) ;
 				break ;
 				}
 			case "RET":
@@ -125,9 +125,9 @@ partial class A335
 			case "NEWOBJ":
 				{
 				var symbol = new C_Symbol() ;
-				var _class = C_Symbol.Acquire( this_instr_class_symbol ) ;
-				var _call  = C_Symbol.Acquire( this_instr_symbol ) ;
-				int iargs = this_instr_sigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
+				var _class = Instr.Method.Class ;
+				var _call  = C_Symbol.Acquire( Instr.Method.Symbol ) ;
+				int iargs = Instr.Method.SigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
 				C.Hangup( iargs - 1 ) ;
 				d.ExternCall( _call ) ;
 				d.Extern( Program.StructObject, _class ) ;
@@ -230,8 +230,8 @@ partial class A335
 				break ;
 			}
 		//Debug.WriteLine( "[methodDecl_instr] stack={0}", C.StackOffset ) ;
-		this_instr_sigArg_types = null ;
-		this_instr_sigArgs = 0 ;
+		Instr.Method.SigArgTypes = null ;
+		Instr.Method.SigArgs = 0 ;
 		Instr.Method.CallConvInstance = false ;
 		log( "[instr] "+ d.Instruction ) ;
 		}

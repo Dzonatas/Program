@@ -95,16 +95,15 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	#endif
 	}
 
-static string             this_instr_type ;
-static int                this_instr_sigArgs ;
-static string             this_instr_sigArg_types ;
-static string             this_instr_symbol ;
-static string             this_instr_class_symbol ;
-
 class Instr
 	{
 	public class Method : Automatrix
 		{
+		static public C_Type   Type ;
+		static public int      SigArgs ;
+		static public string   SigArgTypes ;
+		static public C_Symbol Class ;
+		static public C_Symbol Symbol ;
 		static public bool CallConvInstance ;
 		public CallConv CallConvList
 			{
@@ -122,6 +121,25 @@ class Instr
 	protected override void main()
 		{
 		ID = Arg2.Token ;
+		}
+	}
+
+[Automaton] class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
+	: Instr.Method	{
+	protected override void main()
+		{
+		string methodName = System.String.Empty ;
+		if( Args[6] is methodName___ctor_ )
+			methodName = "_ctor" ;
+		else
+			methodName = "$" + Arg6.Token ;
+		Type          = C_Type.Acquire( Arg3.ResolveType() ) ;
+		Class         = C_Symbol.Acquire( Arg4.ResolveTypeSpec() ) ;
+		Symbol        = C_Symbol.Acquire( Class + methodName + SigArg.Types() ) ;
+		SigArgs       = SigArg.Count() ;
+		SigArgTypes   = SigArg.Types() ;
+		CallConvList  = A335.CallConv.List ;
+		SigArg.Clear() ;
 		}
 	}
 }
