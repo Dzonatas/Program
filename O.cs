@@ -69,13 +69,14 @@ class CallConv : Automatrix
 	: Instr.Method	{
 	protected override void main()
 		{
+		string methodName = System.String.Empty ;
 		if( Args[6] is methodName___ctor_ )
-			this_methodName = "_ctor" ;
+			methodName = "_ctor" ;
 		else
-			this_methodName = "$" + Arg6.Token ;
+			methodName = "$" + Arg6.Token ;
 		this_instr_type = Arg3.ResolveType() ;
 		this_instr_class_symbol = Arg4.ResolveTypeSpec() ;
-		this_instr_symbol = this_instr_class_symbol + this_methodName + SigArg.Types() ;
+		this_instr_symbol = this_instr_class_symbol + methodName + SigArg.Types() ;
 		this_instr_sigArgs = SigArg.Count() ;
 		this_instr_sigArg_types = SigArg.Types() ;
 		CallConvList = A335.CallConv.List ;
