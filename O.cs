@@ -55,7 +55,7 @@ class Object : Stack.Item
 	}
 
 [Automaton] class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
-	: Automatrix	{
+	: Instr.Method	{
 	protected override void main()
 		{
 		if( Args[6] is methodName___ctor_ )
@@ -67,11 +67,11 @@ class Object : Stack.Item
 		this_instr_symbol = this_instr_class_symbol + this_methodName + SigArg.Types() ;
 		this_instr_sigArgs = SigArg.Count() ;
 		this_instr_sigArg_types = SigArg.Types() ;
-		this_instr_callConv_instance = (bool) CallConv.Instance ;
+		Instr.CallConv.Instance = CallConv.Instance ;
 		SigArg.Clear() ;
 		CallConv.Instance = null ;
 		}
-	class CallConv
+	static class CallConv
 		{
 		static public Microdata Instance
 			{

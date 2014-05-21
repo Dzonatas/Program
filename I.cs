@@ -94,6 +94,18 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	return _.input() ;
 	#endif
 	}
-	
 
+class Instr
+	{
+	static public class CallConv
+		{
+		static public Microdata Instance
+			{
+			set { this_instr_callConv_instance = (bool) value ; }
+			}
+		}
+	public class Method : Automatrix
+		{
+		}
+	}
 }
