@@ -221,33 +221,6 @@ class Automatrix : Object
 			}
 		return s ;
 		}
-	public bool ResolvedMethAttrContainsVirtual
-		{
-		get {
-			for( int i = 1 ; i < Args.Length ; i++ )
-				{
-				if( Args[i] is methAttr_methAttr__virtual_ )
-					return true ;
-				if( Args[i] is Automatrix )
-					{
-					if( ( Args[i] as Automatrix ).ResolvedMethAttrContainsVirtual )
-						return true ;
-					continue ;
-					}
-				if( Args[i] is Stack.Item.Token )
-					{
-					string t = (string) (Stack.Item.Token)Args[i] ;
-					if( "virtual" == (string) t )
-						return true ;
-					continue ;
-					}
-				if( ( Args[i] is Stack.Item.Empty ) )
-					continue ;
-				throw new System.NotImplementedException( "Unresolved methAttr." ) ;
-				}
-			return false ;
-			}
-		}
 	public override string ToString()
 		{
 		return string.Format("[Automatrix] " + Rule.ReductionMethod );

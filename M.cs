@@ -94,7 +94,10 @@ class Method
 			}
 		protected Attr    AttrList
 			{
-			set { method.Static = value is Attr ? value.Static : false ; }
+			set {
+				  method.Static  = value is Attr ? value.Static : false ;
+				  method.Virtual = value is Attr ? value.Virtual : false ;
+				}
 			}
 		protected CallConv CallConvList
 			{
@@ -115,10 +118,6 @@ class Method
 		protected int     SigArgs
 			{
 			set { method.SigArgs = value ; }
-			}
-		protected bool    Virtual
-			{
-			set { method.Virtual = value ; }
 			}
 		protected void    RegisterCctor()
 			{
@@ -186,6 +185,15 @@ class Method
 			get {
 				for( Attr i = this ; i is Attr ; i = i.next )
 					if( i is methAttr_methAttr__static_ )
+						return true ;
+				return false ;
+				}
+			}
+		public bool Virtual
+			{
+			get {
+				for( Attr i = this ; i is Attr ; i = i.next )
+					if( i is methAttr_methAttr__virtual_ )
 						return true ;
 				return false ;
 				}

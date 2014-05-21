@@ -83,15 +83,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 [Automaton] class   extendsClause__extends__className
 	: Automatrix {}
 
-[Automaton] class   methAttr_methAttr__public_
-	: Automatrix {}
-
-[Automaton] class   methAttr_methAttr__hidebysig_
-	: Automatrix {}
-
-[Automaton] class   methAttr_methAttr__rtspecialname_
-	: Automatrix {}
-
 [Automaton] class   callKind__default_
 	: Automatrix {}
 
@@ -170,9 +161,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 [Automaton] class   type__object_
 	: Automatrix {}
 
-[Automaton] class   methAttr_methAttr__private_
-	: Automatrix {}
-
 [Automaton] class   slashedName_slashedName_____name1
 	: Automatrix {}
 
@@ -180,9 +168,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 	: Automatrix {}
 
 [Automaton] class   classAttr_classAttr__nested___private_
-	: Automatrix {}
-
-[Automaton] class   methAttr_methAttr__virtual_
 	: Automatrix {}
 
 [Automaton] class   decl_moduleHead

@@ -26,7 +26,6 @@ partial class A335
 		SigArgs           = SigArg.Count() ;
 		SigArgTypes       = SigArg.Types() ;
 		CallConvList      = A335.CallConv.List ;
-		Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
 		AttrList          = Method.Attr.List ;
 		CreateFunction() ;
 		SigArg.Clear() ;

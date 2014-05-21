@@ -96,24 +96,5 @@ class Argument
 			}
 		return s ;
 		}
-	public bool ResolvedMethAttrContainsVirtual
-		{
-		get {
-			if( arg is methAttr_methAttr__virtual_ )
-				return true ;
-			if( arg is Automatrix )
-				return ( arg as Automatrix ).ResolvedMethAttrContainsVirtual ;
-			if( arg is Stack.Item.Token )
-				{
-				string t = (string) (Stack.Item.Token) arg ;
-				if( "virtual" == (string) t )
-					return true ;
-				return false ;
-				}
-			if( arg is Stack.Item.Empty )
-				return false ;
-			throw new System.NotImplementedException( "Unresolved methAttr." ) ;
-			}
-		}
 	}
 }
