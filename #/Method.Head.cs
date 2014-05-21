@@ -24,10 +24,10 @@ partial class A335
 	string[] name = { "_ctor", "_cctor", "$" } ;
 	string arg6_methodname()
 		{
-		if( Args[6] is methodName___ctor_ )
+		if( Argv[6] is methodName___ctor_ )
 			return name[0] ;
 		else
-		if( Args[6] is methodName___cctor_ )
+		if( Argv[6] is methodName___cctor_ )
 			{
 			RegisterCctor() ;
 			return name[1] ;

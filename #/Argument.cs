@@ -34,10 +34,10 @@ class Argument
 				Automatrix a = arg as Automatrix ;
 				for( int i = 1 ; i < a.Length ; i++ )
 					{
-					if( a.Args[i] is Stack.Item.Token )
-						return (a.Args[i] as Stack.Item.Token)._Token._ ;
-					if( a.Args[i] is Automatrix )
-						return new Argument( ref a.Args[i] ).Token ;
+					if( a.Argv[i] is Stack.Item.Token )
+						return (a.Argv[i] as Stack.Item.Token)._Token._ ;
+					if( a.Argv[i] is Automatrix )
+						return new Argument( ref a.Argv[i] ).Token ;
 					}
 				}
 			throw new System.NotImplementedException( "Unresolved casts to dotted names." ) ;

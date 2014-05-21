@@ -193,7 +193,7 @@ class Automatrix : Object
 	public Argument ArgD		{ get { return new Argument( ref o[0x0D] ) ; } }
 	public Argument ArgE		{ get { return new Argument( ref o[0x0E] ) ; } }
 	public Argument ArgF		{ get { return new Argument( ref o[0x0F] ) ; } }
-	public object[] Args		{ get { return o ; } }
+	public object[] Argv		{ get { return o ; } }
 	public int Length
 		{
 		get { return o.Length ; }
@@ -202,11 +202,11 @@ class Automatrix : Object
 	public string[] ResolveType()
 		{
 		string[] s = new string[0] ;
-		for( int i = 1 ; i < Args.Length ; i++ )
+		for( int i = 1 ; i < Argv.Length ; i++ )
 			{
-			if( Args[i] is Stack.Item.Token )
+			if( Argv[i] is Stack.Item.Token )
 				{
-				string t = (string) (Stack.Item.Token)Args[i] ;
+				string t = (string) (Stack.Item.Token)Argv[i] ;
 				if( t != "[" && t != "]" )
 					t = System.Text.RegularExpressions.Regex.Replace( t, "[^A-Za-z_0-9/.]", "_" ) ;
 				foreach( string z in t.Split(separators) )
@@ -218,9 +218,9 @@ class Automatrix : Object
 					}
 				}
 			else
-			if( Args[i] is Automatrix )
+			if( Argv[i] is Automatrix )
 				{
-				string[] ts = ( Args[i] as Automatrix ).ResolveType() ;
+				string[] ts = ( Argv[i] as Automatrix ).ResolveType() ;
 				System.Array.Resize( ref s, s.Length + ts.Length ) ;
 				ts.CopyTo( s, s.Length - ts.Length ) ;
 				}

@@ -129,7 +129,7 @@ class Instr
 	protected override void main()
 		{
 		string methodName = System.String.Empty ;
-		if( Args[6] is methodName___ctor_ )
+		if( Argv[6] is methodName___ctor_ )
 			methodName = "_ctor" ;
 		else
 			methodName = "$" + Arg6.Token ;
