@@ -12,14 +12,13 @@ partial class A335
 	: Method.Head   {
 	protected override void main()
 		{
+		Type              = Arg5 ;
 		Name              = arg6_methodname() ;
-		Type              = C_Type.Acquire( Arg5.ResolveType() ) ;
 		SigArgs           = SigArg.Count() ;
 		SigArgTypes       = SigArg.Types() ;
 		CallConvList      = A335.CallConv.List ;
 		AttrList          = Method.Attr.List ;
-		CreateFunction() ;
-		SigArg.Clear() ;
+		methodHead() ;
 		}
 	string[] name = { "_ctor", "_cctor", "$" } ;
 	string arg6_methodname()

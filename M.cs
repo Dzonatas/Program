@@ -88,6 +88,11 @@ class Method
 	static Program.Method method ;
 	public class Head : Automatrix
 		{
+		protected void methodHead()
+			{
+			CreateFunction() ;
+			SigArg.Clear() ;
+			}
 		protected void    NewMethod( C_Type context )
 			{
 			method = new Program.Method( context ) ;
@@ -103,9 +108,9 @@ class Method
 			{
 			set { method.CallConvInstance = value is CallConv ? value.Instance : false ; }
 			}
-		protected C_Type  Type
+		protected A335.Argument  Type
 			{
-			set { method.Type = value ; }
+			set { method.Type = C_Type.Acquire( value.ResolveType() ) ; }
 			}
 		protected string  Name
 			{
