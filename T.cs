@@ -9,7 +9,7 @@ static string             this_string ;
 static string             this_instr_type ;
 static int                this_instr_sigArgs ;
 static string             this_instr_sigArg_types ;
-static bool               this_callConv_instance ;
+//static bool               this_callConv_instance ;
 static bool               this_instr_callConv_instance ;
 static string             this_instr_symbol ;
 static string             this_instr_class_symbol ;

@@ -39,19 +39,28 @@ class Object : Stack.Item
 		}
 	}
 
-[Automaton] class   callConv__instance__callConv
-	: Automatrix	{
+class CallConv : Automatrix
+	{
 	protected override void main()
 		{
-		CallConv.Instance = Microdata.N0P ;
+		list.Add( this ) ;
 		}
-	class CallConv
+	static List<CallConv> list = new List<CallConv>() ;
+	static public List<CallConv> List
 		{
-		static public Microdata Instance
-			{
-			set { this_callConv_instance = true ; }
+		get { List<CallConv> l = list ; list = new List<CallConv>() ; return l ; }
+		}
+	static public bool Instance
+		{
+		get {
+			foreach( CallConv cc in list )
+				if( cc is callConv__instance__callConv )
+					return true ;
+			return false ;
 			}
 		}
+	[Automaton] class   callConv__instance__callConv
+		: CallConv	{}
 	}
 
 [Automaton] class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
@@ -67,17 +76,9 @@ class Object : Stack.Item
 		this_instr_symbol = this_instr_class_symbol + this_methodName + SigArg.Types() ;
 		this_instr_sigArgs = SigArg.Count() ;
 		this_instr_sigArg_types = SigArg.Types() ;
-		Instr.CallConv.Instance = CallConv.Instance ;
+		Instr.CallConv.Instance = A335.CallConv.Instance ;
 		SigArg.Clear() ;
-		CallConv.Instance = null ;
-		}
-	static class CallConv
-		{
-		static public Microdata Instance
-			{
-			get { return new Microdata( this_callConv_instance ) ; }
-			set { this_callConv_instance = false ; }
-			}
+		object o = A335.CallConv.List ;
 		}
 	}
 

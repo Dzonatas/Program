@@ -96,9 +96,9 @@ class Method
 			{
 			set { method.Static = value ; }
 			}
-		protected Microdata    CallConvInstance
+		protected bool    CallConvInstance
 			{
-			set { method.CallConvInstance = (bool) value ; }
+			set { method.CallConvInstance = value ; }
 			}
 		protected string  Type
 			{

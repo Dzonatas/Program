@@ -25,19 +25,11 @@ partial class A335
 		Type              = Arg5.ResolveType() ;
 		SigArgs           = SigArg.Count() ;
 		SigArgTypes       = SigArg.Types() ;
-		CallConvInstance  = CallConv.Instance ;
+		CallConvInstance  = A335.CallConv.Instance ;
 		Virtual           = Arg2.ResolvedMethAttrContainsVirtual ;
 		CreateFunction() ;
 		SigArg.Clear() ;
-		CallConv.Instance = null ;
-		}
-	class CallConv
-		{
-		static public Microdata Instance
-			{
-			get { return new Microdata( this_callConv_instance ) ; }
-			set { this_callConv_instance = false ; }
-			}
+		object o = CallConv.List ;
 		}
 	}
 }

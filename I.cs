@@ -99,9 +99,9 @@ class Instr
 	{
 	static public class CallConv
 		{
-		static public Microdata Instance
+		static public bool Instance
 			{
-			set { this_instr_callConv_instance = (bool) value ; }
+			set { this_instr_callConv_instance = value ; }
 			}
 		}
 	public class Method : Automatrix
