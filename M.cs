@@ -92,9 +92,9 @@ class Method
 			{
 			method = new Program.Method( context ) ;
 			}
-		protected bool    Static
+		protected Attr    AttrList
 			{
-			set { method.Static = value ; }
+			set { method.Static = value is Attr ? value.Static : false ; }
 			}
 		protected CallConv CallConvList
 			{
@@ -170,9 +170,25 @@ class Method
 		}
 	public class Attr : Automatrix
 		{
-		protected bool    Static
+		static Attr current = null ;
+		Attr next ;
+		protected override void main()
 			{
-			set { method.Static = value ; }
+			next = current ;
+			current = this ;
+			}
+		static public Attr List
+			{
+			get { Attr l = current ; current = null ; return l ; }
+			}
+		public bool Static
+			{
+			get {
+				for( Attr i = this ; i is Attr ; i = i.next )
+					if( i is methAttr_methAttr__static_ )
+						return true ;
+				return false ;
+				}
 			}
 		}
 	static public void Start()
