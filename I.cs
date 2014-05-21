@@ -95,14 +95,33 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	#endif
 	}
 
+static string             this_instr_type ;
+static int                this_instr_sigArgs ;
+static string             this_instr_sigArg_types ;
+static string             this_instr_symbol ;
+static string             this_instr_class_symbol ;
+
 class Instr
 	{
 	public class Method : Automatrix
 		{
+		static public bool CallConvInstance ;
 		public CallConv CallConvList
 			{
-			set { this_instr_callConv_instance = value is CallConv ? value.Instance : false ; }
+			set { CallConvInstance = value is CallConv ? value.Instance : false ; }
 			}
+		}
+	public class BrTarget : Automatrix
+		{
+		static public string ID ;
+		}
+	}
+
+[Automaton] class   instr_INSTR_BRTARGET_id
+	: Instr.BrTarget {
+	protected override void main()
+		{
+		ID = Arg2.Token ;
 		}
 	}
 }

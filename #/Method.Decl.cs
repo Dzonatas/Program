@@ -67,7 +67,7 @@ partial class A335
 				{
 				var _call  = C_Symbol.Acquire( this_instr_symbol ) ;
 				//Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
-				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
+				int iargs = this_instr_sigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
 				C.Hangup( iargs ) ;
 				/*
 				if( !System.String.IsNullOrEmpty(this_instr_sigArg_types) )
@@ -127,7 +127,7 @@ partial class A335
 				var symbol = new C_Symbol() ;
 				var _class = C_Symbol.Acquire( this_instr_class_symbol ) ;
 				var _call  = C_Symbol.Acquire( this_instr_symbol ) ;
-				int iargs = this_instr_sigArgs + ( this_instr_callConv_instance ? 1 : 0 ) ;
+				int iargs = this_instr_sigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
 				C.Hangup( iargs - 1 ) ;
 				d.ExternCall( _call ) ;
 				d.Extern( Program.StructObject, _class ) ;
@@ -204,16 +204,16 @@ partial class A335
 				C.Pop() ;
 				break ;
 			case "BR" :
-				d.Statement( "goto " + this_instr_brtarget_id ) ;
+				d.Statement( "goto " + Instr.BrTarget.ID ) ;
 				d.IsFlowControl = true ;
-				RegisterLabel( this_instr_brtarget_id ) ;
+				RegisterLabel( Instr.BrTarget.ID ) ;
 				break ;
 			case "BGE" :
 				C.Pop() ;
 				C.Pop() ;
-				d.Statement( "goto " + this_instr_brtarget_id ) ;
+				d.Statement( "goto " + Instr.BrTarget.ID ) ;
 				d.IsFlowControl = true ;
-				RegisterLabel( this_instr_brtarget_id ) ;
+				RegisterLabel( Instr.BrTarget.ID ) ;
 				break ;
 			case "ADD" :
 				C.Pop() ;
@@ -232,7 +232,7 @@ partial class A335
 		//Debug.WriteLine( "[methodDecl_instr] stack={0}", C.StackOffset ) ;
 		this_instr_sigArg_types = null ;
 		this_instr_sigArgs = 0 ;
-		this_instr_callConv_instance = false ;
+		Instr.Method.CallConvInstance = false ;
 		log( "[instr] "+ d.Instruction ) ;
 		}
 	}

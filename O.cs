@@ -137,13 +137,6 @@ class CallConv : Automatrix
 		}
 	}
 
-[Automaton] class   instr_INSTR_BRTARGET_id
-	: Automatrix {
-	protected override void main()
-		{
-		this_instr_brtarget_id = Arg2.Token ;
-		}
-	}
 }
 
 
