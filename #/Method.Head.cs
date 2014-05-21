@@ -12,16 +12,7 @@ partial class A335
 	: Method.Head   {
 	protected override void main()
 		{
-		if( Args[6] is methodName___ctor_ )
-			Name = "_ctor" ;
-		else
-		if( Args[6] is methodName___cctor_ )
-			{
-			Name = "_cctor" ;
-			RegisterCctor() ;
-			}
-		else
-			Name = "$" + Arg6.Token ;
+		Name              = arg6_methodname() ;
 		Type              = C_Type.Acquire( Arg5.ResolveType() ) ;
 		SigArgs           = SigArg.Count() ;
 		SigArgTypes       = SigArg.Types() ;
@@ -29,6 +20,19 @@ partial class A335
 		AttrList          = Method.Attr.List ;
 		CreateFunction() ;
 		SigArg.Clear() ;
+		}
+	string[] name = { "_ctor", "_cctor", "$" } ;
+	string arg6_methodname()
+		{
+		if( Args[6] is methodName___ctor_ )
+			return name[0] ;
+		else
+		if( Args[6] is methodName___cctor_ )
+			{
+			RegisterCctor() ;
+			return name[1] ;
+			}
+		return name[2] + Arg6.Token ;
 		}
 	}
 }
