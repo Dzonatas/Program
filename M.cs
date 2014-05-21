@@ -88,14 +88,23 @@ class Method
 	static Program.Method method ;
 	public class Head : Automatrix
 		{
+		public class Part1 : Method.Head
+			{
+			protected override void main()
+				{
+				method = new Program.Method( Class.Type ) ;
+				}
+			}
+		static protected string[] name    = { "_ctor", "_cctor", "$" } ;
+		protected C_Symbol _ctor          = C_Type.Acquire( name[0] ) ;
+		protected C_Symbol _cctor
+			{
+			get { RegisterCctor() ; return C_Type.Acquire( name[1] ) ; }
+			}
 		protected void methodHead()
 			{
 			CreateFunction() ;
 			SigArg.Clear() ;
-			}
-		protected void    NewMethod( C_Type context )
-			{
-			method = new Program.Method( context ) ;
 			}
 		protected Attr    AttrList
 			{

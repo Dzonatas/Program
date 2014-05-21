@@ -1,12 +1,7 @@
 partial class A335
 {
 [Automaton] class   methodHeadPart1___method_
-	: Method.Head   {
-	protected override void main()
-		{
-		NewMethod( Class.Type ) ;
-		}
-	}
+	: Method.Head.Part1   {}
 
 [Automaton] class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____
 	: Method.Head   {
@@ -20,18 +15,13 @@ partial class A335
 		AttrList          = Method.Attr.List ;
 		methodHead() ;
 		}
-	string[] name = { "_ctor", "_cctor", "$" } ;
 	string arg6_methodname()
 		{
-		if( Argv[6] is methodName___ctor_ )
-			return name[0] ;
-		else
-		if( Argv[6] is methodName___cctor_ )
-			{
-			RegisterCctor() ;
-			return name[1] ;
-			}
-		return name[2] + Arg6.Token ;
+		return        Argv[6] is methodName___ctor_
+			? _ctor : Argv[6] is methodName___cctor_
+			? _cctor
+			: name[2] + Arg6.Token
+			;
 		}
 	}
 }
