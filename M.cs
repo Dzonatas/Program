@@ -83,6 +83,7 @@ class Microdata : C_Type //,IOprand
 		}
 	}
 
+	static Program.Method method ;
 class Method
 	{
 	static Program.Method method ;
@@ -139,6 +140,7 @@ class Method
 		protected void    CreateFunction()
 			{
 			method.CreateFunction() ;
+			A335.method = method ;
 			}
 		}
 	public class Decl : Automatrix
@@ -159,10 +161,6 @@ class Method
 		protected new int Args
 			{
 			get { return SigArgs + ( CallConvInstance ? 1 : 0 ) ; }
-			}
-		protected void    RegisterLabel( string text )
-			{
-			method.RegisterLabel( text ) ;
 			}
 		static public C_Symbol Label
 			{

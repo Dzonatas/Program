@@ -124,7 +124,6 @@ class Instr
 		}
 	public class BrTarget : Automatrix
 		{
-		static public string ID ;
 		}
 	public class Type : Automatrix
 		{

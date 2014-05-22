@@ -203,18 +203,6 @@ partial class A335
 			case "SWITCH" :
 				C.Pop() ;
 				break ;
-			case "BR" :
-				d.Statement( "goto " + Instr.BrTarget.ID ) ;
-				d.IsFlowControl = true ;
-				RegisterLabel( Instr.BrTarget.ID ) ;
-				break ;
-			case "BGE" :
-				C.Pop() ;
-				C.Pop() ;
-				d.Statement( "goto " + Instr.BrTarget.ID ) ;
-				d.IsFlowControl = true ;
-				RegisterLabel( Instr.BrTarget.ID ) ;
-				break ;
 			case "ADD" :
 				C.Pop() ;
 				C.Pop() ;

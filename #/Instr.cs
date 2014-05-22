@@ -4,7 +4,31 @@ partial class A335
 	: Instr.BrTarget {
 	protected override void main()
 		{
-		ID = Arg2.Token ;
+		brtarget( Arg1.Token, Arg2.Token ) ;
+		}
+	protected void brtarget( string op, string id )
+		{
+		var d = A335.method.NewOprand( op ) ;
+		//d.HasArgs = ( 0 < Args ) ;
+		switch( d.Instruction )
+			{
+			case "BR" :
+				d.Statement( "goto " + id ) ;
+				d.IsFlowControl = true ;
+				RegisterLabel( id ) ;
+				break ;
+			case "BGE" :
+				C.Pop() ;
+				C.Pop() ;
+				d.Statement( "goto " + id ) ;
+				d.IsFlowControl = true ;
+				RegisterLabel( id ) ;
+				break ;
+			}
+		}
+	protected void    RegisterLabel( string text )
+		{
+		method.RegisterLabel( text ) ;
 		}
 	}
 
