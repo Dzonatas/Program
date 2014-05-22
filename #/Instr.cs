@@ -1,5 +1,6 @@
 partial class A335
 {
+static Program.C_Oprand oprand ;
 [Automaton] class   instr_INSTR_BRTARGET_id
 	: Instr.BrTarget {
 	protected override void main()
@@ -9,7 +10,8 @@ partial class A335
 	protected void brtarget( string op, string id )
 		{
 		var d = A335.method.NewOprand( op ) ;
-		//d.HasArgs = ( 0 < Args ) ;
+		oprand = d ;
+		//d.HasArgs = false ;
 		switch( d.Instruction )
 			{
 			case "BR" :

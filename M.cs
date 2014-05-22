@@ -240,6 +240,10 @@ partial class Program
 		List<string>   labelset = new List<string>() ;
 		public bool    Static ;
 		public bool    CallConvInstance ;
+		public bool    Bool
+			{
+			set { function.Bool = value ; }
+			}
 		public string  Type
 			{
 			set { method.Type = C_Type.Acquire( value ) ; }

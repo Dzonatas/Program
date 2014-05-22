@@ -36,7 +36,7 @@ partial class A335
 	: Method.Decl	{
 	protected override void main()
 		{
-		var d = NewOprand( Arg1.Token ) ;
+		var d = A335.oprand == null ? NewOprand( Arg1.Token ) : A335.oprand ;
 		d.HasArgs = ( 0 < Args ) ;
 		switch( d.Instruction )
 			{
@@ -222,6 +222,7 @@ partial class A335
 		Instr.Method.SigArgs = 0 ;
 		Instr.Method.CallConvInstance = false ;
 		log( "[instr] "+ d.Instruction ) ;
+		oprand = null ;
 		}
 	}
 }
