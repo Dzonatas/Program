@@ -28,17 +28,17 @@ partial class A335
 	}
 
 [Automaton] class   instr_INSTR_TYPE_typeSpec
-	: Automatrix {}
+	: Instr.Type    {}
 
 [Automaton] class   instr_INSTR_FIELD_type_id
-	: Automatrix {}
+	: Instr.Field   {}
 
 [Automaton] class   instr_INSTR_FIELD_type_typeSpec______id
-	: Automatrix {}
+	: Instr.Field   {}
 
 [Automaton] class   instr_INSTR_SWITCH_____labels____
-	: Automatrix {}
+	: Instr.Switch  {}
 
 [Automaton] class   instr_INSTR_NONE
-	: Automatrix {}
+	: Instr.None    {}
 }

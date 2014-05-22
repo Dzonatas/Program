@@ -114,5 +114,17 @@ class Instr
 		{
 		static public string ID ;
 		}
+	public class Type : Automatrix
+		{
+		}
+	public class Field : Automatrix
+		{
+		}
+	public class Switch : Automatrix
+		{
+		}
+	public class None : Automatrix
+		{
+		}
 	}
 }
