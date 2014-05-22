@@ -95,11 +95,10 @@ class Method
 				method = new Program.Method( Class.Type ) ;
 				}
 			}
-		static protected string[] name    = { "_ctor", "_cctor", "$" } ;
-		protected C_Symbol _ctor          = C_Type.Acquire( name[0] ) ;
+		protected C_Symbol _ctor          = C_Type.Acquire( Nameset[0] ) ;
 		protected C_Symbol _cctor
 			{
-			get { RegisterCctor() ; return C_Type.Acquire( name[1] ) ; }
+			get { RegisterCctor() ; return C_Type.Acquire( Nameset[1] ) ; }
 			}
 		protected void methodHead()
 			{

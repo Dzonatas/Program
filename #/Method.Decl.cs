@@ -88,7 +88,7 @@ partial class A335
 				string item = "" ;
 				C_Symbol symbol = null ;
 				Program.C_Function.Require( Instr.Method.Symbol ) ;
-				if( Instr.Method.Type == "string" )
+				if( A335.type == "string" )
 					{
 					symbol = new C_Symbol() ;
 					d.LocalStatic( Program.StructString, symbol ) ;
@@ -108,8 +108,8 @@ partial class A335
 					else
 						d.Call( _call, "stack+" + C.StackOffset ) ;
 					}
-				if( Instr.Method.Type != "void" )
-					C.Push( Instr.Method.Type ) ;
+				if( A335.type != "void" )
+					C.Push( A335.type ) ;
 				break ;
 				}
 			case "RET":
@@ -125,7 +125,7 @@ partial class A335
 			case "NEWOBJ":
 				{
 				var symbol = new C_Symbol() ;
-				var _class = Instr.Method.Class ;
+				var _class = A335.typespec ;
 				var _call  = C_Symbol.Acquire( Instr.Method.Symbol ) ;
 				int iargs = Instr.Method.SigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
 				C.Hangup( iargs - 1 ) ;

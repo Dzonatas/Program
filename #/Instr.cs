@@ -12,18 +12,28 @@ partial class A335
 	: Instr.Method	{
 	protected override void main()
 		{
-		string methodName = System.String.Empty ;
-		if( Argv[6] is methodName___ctor_ )
-			methodName = "_ctor" ;
-		else
-			methodName = "$" + Arg6.Token ;
-		Type          = C_Type.Acquire( Arg3.ResolveType() ) ;
-		Class         = C_Type.Acquire( Arg4.ResolveTypeSpec() ) ;
-		Symbol        = C_Symbol.Acquire( Class + methodName + SigArg.Types() ) ;
+		CallConvList  = A335.CallConv.List ;
+		Type          = Arg3 ;
+		TypeSpec      = Arg4 ;
+		// '::'
+		Symbol        = _arg6_methodname() ;
+		// '('
 		SigArgs       = SigArg.Count() ;
 		SigArgTypes   = SigArg.Types() ;
-		CallConvList  = A335.CallConv.List ;
 		SigArg.Clear() ;
+		// ')'
+		}
+	C_Symbol _arg6_methodname()
+		{
+		string symbol = A335.typespec + arg6_methodname() + SigArg.Types() ;
+		return C_Symbol.Acquire( symbol ) ;
+		}
+	string arg6_methodname()
+		{
+		return        Argv[6] is methodName___ctor_
+			? _ctor
+			: Nameset[2] + Arg6.Token
+			;
 		}
 	}
 

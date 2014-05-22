@@ -8,7 +8,9 @@ static int chromatic_n ; //_scalar_lexical:<NEXUS> | <'chromatic'> specific_n ||
 #if DEBUG
 object NOUN ;
 #endif 
-	
+
+static string[] Nameset    = { "_ctor", "_cctor", "$" } ;
+
 public class Number
 	{
 	public System.Decimal n ;

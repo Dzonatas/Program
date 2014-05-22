@@ -20,7 +20,7 @@ partial class A335
 		return        Argv[6] is methodName___ctor_
 			? _ctor : Argv[6] is methodName___cctor_
 			? _cctor
-			: name[2] + Arg6.Token
+			: Nameset[2] + Arg6.Token
 			;
 		}
 	}

@@ -95,14 +95,26 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	#endif
 	}
 
+	static protected C_Type type ;
+	static protected C_Type typespec ;
 class Instr
 	{
 	public class Method : Automatrix
 		{
-		static public C_Type   Type ;
+		protected C_Symbol _ctor
+			{
+			get { return C_Type.Acquire( Nameset[0] ) ; }
+			}
+		protected A335.Argument   Type
+			{
+			set { A335.type = C_Type.Acquire( value.ResolveType() ) ; }
+			}
 		static public int      SigArgs ;
 		static public string   SigArgTypes ;
-		static public C_Type   Class ;
+		protected A335.Argument   TypeSpec
+			{
+			set { typespec = C_Type.Acquire( value.ResolveTypeSpec() ) ; }
+			}
 		static public C_Symbol Symbol ;
 		static public bool CallConvInstance ;
 		public CallConv CallConvList
