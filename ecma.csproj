@@ -111,6 +111,7 @@
     <Compile Include="#\Method.Head.cs" />
     <Compile Include="#\Method.Decl.cs" />
     <Compile Include="#\Method.Attr.cs" />
+    <Compile Include="#\Instr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

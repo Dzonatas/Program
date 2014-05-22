@@ -107,9 +107,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 [Automaton] class   methodDecls_methodDecls_methodDecl
 	: Automatrix {}
 
-[Automaton] class   instr_INSTR_NONE
-	: Automatrix {}
-
 [Automaton] class   type__valuetype__className
 	: Automatrix {}
 
@@ -188,16 +185,7 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 [Automaton] class   typeSpec_className
 	: Automatrix {}
 
-[Automaton] class   instr_INSTR_TYPE_typeSpec
-	: Automatrix {}
-
-[Automaton] class   instr_INSTR_FIELD_type_id
-	: Automatrix {}
-
 [Automaton] class   decls
-	: Automatrix {}
-
-[Automaton] class   instr_INSTR_FIELD_type_typeSpec______id
 	: Automatrix {}
 
 [Automaton] class   localsHead___locals_
@@ -210,9 +198,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 	: Automatrix {}
 
 [Automaton] class   labels_id_____labels
-	: Automatrix {}
-
-[Automaton] class   instr_INSTR_SWITCH_____labels____
 	: Automatrix {}
 
 [Automaton] class   START_decls
