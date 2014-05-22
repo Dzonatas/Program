@@ -137,18 +137,44 @@ class Instr
 		}
 	public class BrTarget : Automatrix
 		{
+		protected Program.C_Oprand Declare( string op )
+			{
+			oprand = A335.method.NewOprand( op ) ;
+			oprand.BrTarget = true ;
+			return oprand ;
+			}
 		}
 	public class Type : Automatrix
 		{
+		protected Program.C_Oprand Declare( string op )
+			{
+			oprand = A335.method.NewOprand( op ) ;
+			return oprand ;
+			}
 		}
 	public class Field : Automatrix
 		{
+		protected Program.C_Oprand Declare( string op )
+			{
+			oprand = A335.method.NewOprand( op ) ;
+			return oprand ;
+			}
 		}
 	public class Switch : Automatrix
 		{
+		protected Program.C_Oprand Declare( string op )
+			{
+			oprand = A335.method.NewOprand( op ) ;
+			return oprand ;
+			}
 		}
 	public class None : Automatrix
 		{
+		protected Program.C_Oprand Declare( string op )
+			{
+			oprand = A335.method.NewOprand( op ) ;
+			return oprand ;
+			}
 		}
 	}
 }

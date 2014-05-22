@@ -8,9 +8,8 @@ partial class A335
 		}
 	protected void brtarget( string op, string id )
 		{
-		var d = Instr.Declare( op ) ;
-		d.IsFlowControl = true ;
-		RegisterLabel( id ) ;
+		var d = Declare( op ) ;
+		A335.method.RegisterLabel( id ) ;
 		switch( d.Instruction )
 			{
 			case "BR" :
@@ -22,10 +21,6 @@ partial class A335
 				d.Statement( "goto " + id ) ;
 				return ;
 			}
-		}
-	protected void    RegisterLabel( string text )
-		{
-		method.RegisterLabel( text ) ;
 		}
 	}
 
@@ -71,5 +66,20 @@ partial class A335
 	: Instr.Switch  {}
 
 [Automaton] class   instr_INSTR_NONE
-	: Instr.None    {}
+	: Instr.None    {
+	protected override void main()
+		{
+		none( Arg1.Token ) ;
+		}
+	protected void none( string op )
+		{
+		var d = Declare( op ) ;
+		switch( d.Instruction )
+			{
+			default :
+				log( "NONE " + op ) ;
+				return ;
+			}
+		}
+	}
 }
