@@ -440,7 +440,7 @@ partial class Program
 		public string Instruction ;
 		public string ID ;
 		public bool HasArgs ;
-		public bool IsFlowControl ;
+		public bool BrTarget ;
 		List<string> list = new List<string>() ;
 		public C_Symbol Label
 			{
@@ -459,9 +459,9 @@ partial class Program
 			}
 		static public implicit operator string( C_Oprand d )
 			{
-			if( d.IsFlowControl && d.Instruction == "BR" )
+			if( d.BrTarget && d.Instruction == "BR" )
 				return d.list[0] ;
-			if( d.IsFlowControl )
+			if( d.BrTarget )
 				return "if( " + d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) + " ) " + d.list[0] ;
 			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
 			}
@@ -514,10 +514,10 @@ partial class Program
 			}
 		public void WriteTo( StreamWriter sw )
 			{
-			if( IsFlowControl && Instruction == "BR" )
+			if( BrTarget && Instruction == "BR" )
 				return ;
 			var c = C_Function.FromSymbol( Instruction + "$" + ID ) ;
-			if( IsFlowControl )
+			if( BrTarget )
 				c.Bool = true ;
 			c.Static = true ;
 			c.Inline = true ;
