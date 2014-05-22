@@ -81,9 +81,6 @@ class CallConv : Automatrix
 		}
 	}
 
-[Automaton] class   instr_INSTR_STRING_compQstring
-	: Automatrix {}
-
 [Automaton] class   decl_classHead_____classDecls____
 	: Automatrix	{
 	protected override void main()

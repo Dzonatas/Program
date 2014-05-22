@@ -114,6 +114,15 @@ class Instr
 		}
 	public class Method : Automatrix
 		{
+		protected Program.C_Oprand Declare( string op )
+			{
+			oprand = A335.method.NewOprand( op ) ;
+			return oprand ;
+			}
+		protected int Args
+			{
+			get { return SigArgs + ( CallConvInstance ? 1 : 0 ) ; }
+			}
 		protected C_Symbol _ctor
 			{
 			get { return C_Type.Acquire( Nameset[0] ) ; }
@@ -169,6 +178,14 @@ class Instr
 			}
 		}
 	public class None : Automatrix
+		{
+		protected Program.C_Oprand Declare( string op )
+			{
+			oprand = A335.method.NewOprand( op ) ;
+			return oprand ;
+			}
+		}
+	public class String : Automatrix
 		{
 		protected Program.C_Oprand Declare( string op )
 			{
