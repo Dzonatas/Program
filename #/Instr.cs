@@ -1,6 +1,5 @@
 partial class A335
 {
-static Program.C_Oprand oprand ;
 [Automaton] class   instr_INSTR_BRTARGET_id
 	: Instr.BrTarget {
 	protected override void main()
@@ -9,23 +8,19 @@ static Program.C_Oprand oprand ;
 		}
 	protected void brtarget( string op, string id )
 		{
-		var d = A335.method.NewOprand( op ) ;
-		oprand = d ;
-		//d.HasArgs = false ;
+		var d = Instr.Declare( op ) ;
+		d.IsFlowControl = true ;
+		RegisterLabel( id ) ;
 		switch( d.Instruction )
 			{
 			case "BR" :
 				d.Statement( "goto " + id ) ;
-				d.IsFlowControl = true ;
-				RegisterLabel( id ) ;
-				break ;
+				return ;
 			case "BGE" :
 				C.Pop() ;
 				C.Pop() ;
 				d.Statement( "goto " + id ) ;
-				d.IsFlowControl = true ;
-				RegisterLabel( id ) ;
-				break ;
+				return ;
 			}
 		}
 	protected void    RegisterLabel( string text )

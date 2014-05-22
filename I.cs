@@ -99,6 +99,19 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	static protected C_Type typespec ;
 class Instr
 	{
+	static Program.C_Oprand oprand ;
+	static Program.C_Oprand Oprand
+		{
+		get { return oprand ; }
+		}
+	static public Program.C_Oprand Declare( string op )
+		{
+		return oprand == null ? oprand = A335.method.NewOprand( op ) : oprand ;
+		}
+	static public void Declared()
+		{
+		oprand = null ;
+		}
 	public class Method : Automatrix
 		{
 		protected C_Symbol _ctor
