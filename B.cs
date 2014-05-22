@@ -245,14 +245,14 @@ partial class Program
 			.Parameter( StructObject_, "this" )
 			.Parameter( StructString, "(*$ToString)(const void**)" )
 			;
-		ʄ( "object::.ctor" )
+		jiffy( "object::.ctor" )
 			;
-		ʄ( "console::WriteLine(string)" )
+		jiffy( "console::WriteLine(string)" )
 			.ConstLocalArg0
 			.StandardOutputWriteLocal( _string , _length )
 			.StandardOutputWriteLine()
 			;
-		ʄ( "string string::Concat(object,object,object)" )
+		jiffy( "string string::Concat(object,object,object)" )
 			.Register( StructString )
 			.Register( StructString )
 			.Register( StructString )
@@ -261,7 +261,7 @@ partial class Program
 			.Let( C[2] ).Equal.ManagedArgument( 2 )
 			.Return( C.StringConcat( C[0], C[1], C[2] ) )
 			;
-		ʄ( "string string::Concat(string,string)" )
+		jiffy( "string string::Concat(string,string)" )
 			;
 		}
 	}

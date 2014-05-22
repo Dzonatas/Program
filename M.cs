@@ -190,7 +190,7 @@ class Method
 			next = current ;
 			current = this ;
 			}
-		static public Attr List
+		static public Attr microURL
 			{
 			get { Attr l = current ; current = null ; return l ; }
 			}

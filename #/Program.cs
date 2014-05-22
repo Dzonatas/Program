@@ -150,7 +150,7 @@ partial class Program
 		{
 		get { return C_Symbol.Acquire( "struct _string*" ) ; }
 		}
-	static public C_Function ʄ( string description )
+	static public C_Function jiffy( string description )
 		{
 		return C.This = C_Method.CreateFunction( description ) ;
 		}
