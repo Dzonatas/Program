@@ -12,7 +12,7 @@ partial class A335
 		SigArgs           = SigArg.Count() ;
 		SigArgTypes       = SigArg.Types() ;
 		CallConvList      = A335.CallConv.List ;
-		AttrList          = Method.Attr.microURL ;
+		AttrList          = Method.Attr.List ;
 		methodHead() ;
 		}
 	string arg6_methodname()
