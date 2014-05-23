@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions ;
+
 public partial class A335
 {
 static string iconic_Earth ; //[static:Earth:"EARTH"]
@@ -97,26 +99,71 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 
 	static protected C_Type type ;
 	static protected C_Type typespec ;
-class Instr
+class Instr : Automatrix
 	{
-	static Program.C_Oprand oprand ;
-	static Program.C_Oprand Oprand
+	const string start_s = "start" ;
+	static Oprand _start ;
+	static Instr()
 		{
-		get { return oprand ; }
+		_start = new Oprand( start_s ) ;
 		}
-	static public Program.C_Oprand Declare( string op )
+	public class Oprand
 		{
-		return oprand == null ? oprand = A335.method.NewOprand( op ) : oprand ;
+		Instr _instr ;
+		Program.C_Oprand c_oprand ;
+		static Oprand current ;
+		static public A335.Program.C_Oprand Current
+			{
+			get { return current.c_oprand ; }
+			}
+		public A335.Program.C_Oprand C
+			{
+			get { return c_oprand ; }
+			}
+		public bool BrTarget
+			{
+			set { c_oprand.BrTarget = value ; }
+			}
+		public Oprand( Instr instr )
+			{
+			c_oprand = A335.method.NewOprand( op ) ;
+			op = c_oprand.Instruction ;
+			log( "[Instr.Oprand] "+ op ) ;
+			current = this ;
+			_instr = instr ;
+			}
+		public Oprand( string instr )
+			{
+			c_oprand = A335.method.NewOprand( instr ) ;
+			op = c_oprand.Instruction ;
+			log( "[Instr.Oprand] "+ op ) ;
+			current = this ;
+			_instr = null ;
+			}
+		static public void Declared()
+			{
+			current = null ;
+			}
 		}
+	static string op ;
+	protected string Op
+		{
+		set { op = value ; op = (oprand = new Oprand(this)).C.Instruction ; }
+		get { return op ; }
+		}
+	protected Oprand oprand ;
 	static public void Declared()
 		{
-		oprand = null ;
+		Oprand.Declared() ;
+		Method.SigArgTypes = null ;
+		Method.SigArgs = 0 ;
+		Method.CallConvInstance = false ;
 		}
-	public class Method : Automatrix
+	public class Method : Instr
 		{
-		protected Program.C_Oprand Declare( string op )
+		protected Oprand Declare( string op )
 			{
-			oprand = A335.method.NewOprand( op ) ;
+			oprand = new Oprand( op ) ;
 			return oprand ;
 			}
 		protected int Args
@@ -144,53 +191,56 @@ class Instr
 			set { CallConvInstance = value is CallConv ? value.Instance : false ; }
 			}
 		}
-	public class BrTarget : Automatrix
+	public class BrTarget : Instr
 		{
-		protected Program.C_Oprand Declare( string op )
+		protected string Id ;
+		protected override void main()
 			{
-			oprand = A335.method.NewOprand( op ) ;
+			Op = Arg1.Token ;
 			oprand.BrTarget = true ;
-			return oprand ;
+			Id = Arg2.Token ;
+			brtarget() ;
 			}
+		protected virtual void brtarget() {}
 		}
-	public class Type : Automatrix
+	public class Type : Instr
 		{
 		protected Program.C_Oprand Declare( string op )
 			{
-			oprand = A335.method.NewOprand( op ) ;
-			return oprand ;
+			oprand = new Oprand( op ) ;
+			return oprand.C ;
 			}
 		}
-	public class Field : Automatrix
+	public class Field : Instr
 		{
 		protected Program.C_Oprand Declare( string op )
 			{
-			oprand = A335.method.NewOprand( op ) ;
-			return oprand ;
+			oprand = new Oprand( op ) ;
+			return oprand.C ;
 			}
 		}
-	public class Switch : Automatrix
+	public class Switch : Instr
 		{
 		protected Program.C_Oprand Declare( string op )
 			{
-			oprand = A335.method.NewOprand( op ) ;
-			return oprand ;
+			oprand = new Oprand( op ) ;
+			return oprand.C ;
 			}
 		}
-	public class None : Automatrix
+	public class None : Instr
 		{
 		protected Program.C_Oprand Declare( string op )
 			{
-			oprand = A335.method.NewOprand( op ) ;
-			return oprand ;
+			oprand = new Oprand( op ) ;
+			return oprand.C ;
 			}
 		}
-	public class String : Automatrix
+	public class String : Instr
 		{
 		protected Program.C_Oprand Declare( string op )
 			{
-			oprand = A335.method.NewOprand( op ) ;
-			return oprand ;
+			oprand = new Oprand( op ) ;
+			return oprand.C ;
 			}
 		}
 	}

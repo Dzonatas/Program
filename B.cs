@@ -119,6 +119,11 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Stack.Push( new instr_INSTR_BRTARGET_id() ) ;
 		}
 	else
+	if( this_xo_t.ReductionMethod == "instr_INSTR_NONE" )
+		{
+		Stack.Push( new instr_INSTR_NONE() ) ;
+		}
+	else
 	if( this_xo_t.ReductionMethod == "instr_INSTR_TYPE_typeSpec" )
 		{
 		Stack.Push( new instr_INSTR_TYPE_typeSpec() ) ;

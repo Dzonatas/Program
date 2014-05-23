@@ -470,6 +470,11 @@ partial class Program
 			list.Add( text ) ;
 			return this ;
 			}
+		public C_Oprand Jump( string id )
+			{
+			list.Add( "goto " + id ) ;
+			return this ;
+			}
 		public C_Oprand AssignStack( int offset, string text )
 			{
 			return Statement( "stack[" + offset + "] = " + text ) ;

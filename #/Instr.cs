@@ -2,26 +2,21 @@ partial class A335
 {
 [Automaton] class   instr_INSTR_BRTARGET_id
 	: Instr.BrTarget {
-	protected override void main()
+	protected override void brtarget()
 		{
-		brtarget( Arg1.Token, Arg2.Token ) ;
-		}
-	protected void brtarget( string op, string id )
-		{
-		var d = Declare( op ) ;
-		A335.method.RegisterLabel( id ) ;
-		switch( d.Instruction )
+		A335.method.RegisterLabel( Id ) ;
+		switch( Op )
 			{
 			case "BR" :
-				d.Statement( "goto " + id ) ;
+				oprand.C.Jump( Id ) ;
 				return ;
 			case "BGE" :
 				C.Pop() ;
 				C.Pop() ;
-				d.Statement( "goto " + id ) ;
+				oprand.C.Jump( Id ) ;
 				return ;
 			default :
-				log( "[INSTR_BRTARGET] Defaulted on " + op ) ;
+				log( "[INSTR_BRTARGET] Defaulted on " + Op ) ;
 				return ;
 			}
 		}
@@ -57,9 +52,9 @@ partial class A335
 		}
 	protected void method( string op )
 		{
-		var d = Declare( op ) ;
+		var d = Declare( op ).C ;
 		d.HasArgs = ( 0 < Args ) ;
-		switch( d.Instruction )
+		switch( Op )
 			{
 			case "CALL":
 				{

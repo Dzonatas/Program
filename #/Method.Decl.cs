@@ -36,19 +36,9 @@ partial class A335
 	: Method.Decl	{
 	protected override void main()
 		{
-		var d = Instr.Declare( Arg1.Token ) ;
+		var d = Instr.Oprand.Current ;
 		d.HasArgs = ( 0 < Args ) ;
-		switch( d.Instruction )
-			{
-			default :
-				//Debug.WriteLine( "[methodDecl_instr] Defaulted on " + d.Instruction ) ;
-				break ;
-			}
 		//Debug.WriteLine( "[methodDecl_instr] stack={0}", C.StackOffset ) ;
-		Instr.Method.SigArgTypes = null ;
-		Instr.Method.SigArgs = 0 ;
-		Instr.Method.CallConvInstance = false ;
-		log( "[instr] "+ d.Instruction ) ;
 		Instr.Declared() ;
 		}
 	}
