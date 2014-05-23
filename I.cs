@@ -189,11 +189,6 @@ class Instr : Automatrix
 				: Nameset[2] + Arg6.Token
 				;
 			}
-		protected Oprand Declare( string op )
-			{
-			oprand = new Oprand( op ) ;
-			return oprand ;
-			}
 		protected int Args
 			{
 			get { return SigArgs + ( CallConvInstance ? 1 : 0 ) ; }
