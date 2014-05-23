@@ -242,35 +242,27 @@ class Instr : Automatrix
 		}
 	public class Field : Instr
 		{
-		protected Program.C_Oprand Declare( string op )
-			{
-			oprand = new Oprand( op ) ;
-			return oprand.C ;
-			}
 		}
 	public class Switch : Instr
 		{
-		protected Program.C_Oprand Declare( string op )
-			{
-			oprand = new Oprand( op ) ;
-			return oprand.C ;
-			}
 		}
 	public class None : Instr
 		{
-		protected Program.C_Oprand Declare( string op )
+		protected override void main()
 			{
-			oprand = new Oprand( op ) ;
-			return oprand.C ;
+			Op = Arg1.Token ;
+			NONE() ;
 			}
+		protected virtual void NONE() {}
 		}
 	public class String : Instr
 		{
-		protected Program.C_Oprand Declare( string op )
+		protected override void main()
 			{
-			oprand = new Oprand( op ) ;
-			return oprand.C ;
+			Op = Arg1.Token ;
+			STRING( Arg2 ) ;
 			}
+		protected virtual void STRING( Argument compQstring ) {}
 		}
 	}
 }

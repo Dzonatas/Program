@@ -125,15 +125,15 @@ partial class A335
 	: Instr.Field   {
 	protected override void main()
 		{
-		field( Arg1.Token, Arg2, Arg3 ) ;
+		Op = Arg1.Token ;
+		FIELD( Arg2, Arg3 ) ;
 		}
-	protected void field( string op, Argument type, Argument id )
+	protected void FIELD( Argument type, Argument id )
 		{
-		var d = Declare( op ) ;
-		switch( d.Instruction )
+		switch( Op )
 			{
 			default :
-				log( "[INSTR_FIELD-2] Defaulted on " + op ) ;
+				log( "[INSTR_FIELD-2] Defaulted on " + Op ) ;
 				return ;
 			}
 		}
@@ -143,12 +143,12 @@ partial class A335
 	: Instr.Field   {
 	protected override void main()
 		{
-		field( Arg1.Token, Arg2, Arg3, Arg5 ) ;
+		Op = Arg1.Token ;
+		FIELD( Arg2, Arg3, Arg5 ) ;
 		}
-	protected void field( string op, Argument type, Argument typeSpec, Argument id )
+	protected void FIELD( Argument type, Argument typeSpec, Argument id )
 		{
-		var d = Declare( op ) ;
-		switch( d.Instruction )
+		switch( Op )
 			{
 			case "LDSFLD" :
 				C.Push( null ) ;
@@ -157,7 +157,7 @@ partial class A335
 				C.Pop() ;
 				break ;
 			default :
-				log( "[INSTR_FIELD-3] Defaulted on " + op ) ;
+				log( "[INSTR_FIELD-3] Defaulted on " + Op ) ;
 				return ;
 			}
 		}
@@ -167,18 +167,18 @@ partial class A335
 	: Instr.Switch  {
 	protected override void main()
 		{
-		_switch( Arg1.Token, Arg3 ) ;
+		Op = Arg1.Token ;
+		SWITCH( Arg3 ) ;
 		}
-	protected void _switch( string op, Argument labels )
+	protected void SWITCH( Argument labels )
 		{
-		var d = Declare( op ) ;
-		switch( d.Instruction )
+		switch( Op )
 			{
 			case "SWITCH" :
 				C.Pop() ;
 				break ;
 			default :
-				log( "[INSTR_SWITCH] Defaulted on " + op ) ;
+				log( "[INSTR_SWITCH] Defaulted on " + Op ) ;
 				return ;
 			}
 		}
@@ -186,14 +186,10 @@ partial class A335
 
 [Automaton] class   instr_INSTR_NONE
 	: Instr.None    {
-	protected override void main()
+	protected override void NONE()
 		{
-		none( Arg1.Token ) ;
-		}
-	protected void none( string op )
-		{
-		var d = Declare( op ) ;
-		switch( d.Instruction )
+		var d = oprand.C ;
+		switch( Op )
 			{
 			case "LDARG_0":
 				{
@@ -277,7 +273,7 @@ partial class A335
 				C.Push( null ) ;
 				break ;
 			default :
-				log( "[INSTR_NONE] Defaulted on " + op ) ;
+				log( "[INSTR_NONE] Defaulted on " + Op ) ;
 				return ;
 			}
 		}
@@ -285,14 +281,10 @@ partial class A335
 
 [Automaton] class   instr_INSTR_STRING_compQstring
 	: Instr.String {
-	protected override void main()
+	protected override void STRING( Argument compQstring )
 		{
-		_string( Arg1.Token, Arg2 ) ;
-		}
-	protected void _string( string op, Argument compQstring )
-		{
-		var d = Declare( op ) ;
-		switch( d.Instruction )
+		var d = oprand.C ;
+		switch( Op )
 			{
 			case "LDSTR":
 				{
@@ -307,7 +299,7 @@ partial class A335
 				break ;
 				}
 			default :
-				log( "[INSTR_STRING] Defaulted on " + op ) ;
+				log( "[INSTR_STRING] Defaulted on " + Op ) ;
 				return ;
 			}
 		}
