@@ -2,7 +2,7 @@ partial class A335
 {
 [Automaton] class   instr_INSTR_BRTARGET_id
 	: Instr.BrTarget {
-	protected override void brtarget()
+	protected override void BRTARGET()
 		{
 		A335.method.RegisterLabel( Id ) ;
 		switch( Op )
@@ -24,7 +24,7 @@ partial class A335
 
 [Automaton] class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
 	: Instr.Method	{
-	protected override void method()
+	protected override void METHOD()
 		{
 		var d = oprand.C ;
 		d.HasArgs = ( 0 < Args ) ;
@@ -106,21 +106,16 @@ partial class A335
 
 [Automaton] class   instr_INSTR_TYPE_typeSpec
 	: Instr.Type    {
-	protected override void main()
+	protected override void TYPE( Argument typeSpec )
 		{
-		field( Arg1.Token, Arg2 ) ;
-		}
-	protected void field( string op, Argument typeSpec )
-		{
-		var d = Declare( op ) ;
-		switch( d.Instruction )
+		switch( Op )
 			{
 			case "NEWARR" :
 				C.Push( null ) ;
 				C.Pop() ;
 				break ;
 			default :
-				log( "[INSTR_TYPE] Defaulted on " + op ) ;
+				log( "[INSTR_TYPE] Defaulted on " + Op ) ;
 				return ;
 			}
 		}

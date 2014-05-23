@@ -174,9 +174,9 @@ class Instr : Automatrix
 			SigArgTypes   = SigArg.Types() ;
 			SigArg.Clear() ;
 			// ')'
-			method() ;
+			METHOD() ;
 			}
-		protected virtual void method() {}
+		protected virtual void METHOD() {}
 		C_Symbol _arg6_methodname()
 			{
 			string symbol = A335.typespec + arg6_methodname() + SigArg.Types() ;
@@ -222,12 +222,18 @@ class Instr : Automatrix
 			Op = Arg1.Token ;
 			oprand.BrTarget = true ;
 			Id = Arg2.Token ;
-			brtarget() ;
+			BRTARGET() ;
 			}
-		protected virtual void brtarget() {}
+		protected virtual void BRTARGET() {}
 		}
 	public class Type : Instr
 		{
+		protected override void main()
+			{
+			Op = Arg1.Token ;
+			TYPE( Arg2 ) ;
+			}
+		protected virtual void TYPE( Argument typeSpec ) {}
 		protected Program.C_Oprand Declare( string op )
 			{
 			oprand = new Oprand( op ) ;
