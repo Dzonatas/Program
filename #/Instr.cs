@@ -24,35 +24,9 @@ partial class A335
 
 [Automaton] class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
 	: Instr.Method	{
-	protected override void main()
+	protected override void method()
 		{
-		CallConvList  = A335.CallConv.List ;
-		Type          = Arg3 ;
-		TypeSpec      = Arg4 ;
-		// '::'
-		Symbol        = _arg6_methodname() ;
-		// '('
-		SigArgs       = SigArg.Count() ;
-		SigArgTypes   = SigArg.Types() ;
-		SigArg.Clear() ;
-		// ')'
-		method( Arg1.Token ) ;
-		}
-	C_Symbol _arg6_methodname()
-		{
-		string symbol = A335.typespec + arg6_methodname() + SigArg.Types() ;
-		return C_Symbol.Acquire( symbol ) ;
-		}
-	string arg6_methodname()
-		{
-		return        Argv[6] is methodName___ctor_
-			? _ctor
-			: Nameset[2] + Arg6.Token
-			;
-		}
-	protected void method( string op )
-		{
-		var d = Declare( op ).C ;
+		var d = oprand.C ;
 		d.HasArgs = ( 0 < Args ) ;
 		switch( Op )
 			{
@@ -124,7 +98,7 @@ partial class A335
 				break ;
 				}
 			default :
-				log( "[INSTR_METHOD] Defaulted on " + op ) ;
+				log( "[INSTR_METHOD] Defaulted on " + Op ) ;
 				return ;
 			}
 		}

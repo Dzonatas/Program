@@ -161,6 +161,34 @@ class Instr : Automatrix
 		}
 	public class Method : Instr
 		{
+		protected override void main()
+			{
+			Op            = Arg1.Token ;
+			CallConvList  = A335.CallConv.List ;
+			Type          = Arg3 ;
+			TypeSpec      = Arg4 ;
+			// '::'
+			Symbol        = _arg6_methodname() ;
+			// '('
+			SigArgs       = SigArg.Count() ;
+			SigArgTypes   = SigArg.Types() ;
+			SigArg.Clear() ;
+			// ')'
+			method() ;
+			}
+		protected virtual void method() {}
+		C_Symbol _arg6_methodname()
+			{
+			string symbol = A335.typespec + arg6_methodname() + SigArg.Types() ;
+			return C_Symbol.Acquire( symbol ) ;
+			}
+		string arg6_methodname()
+			{
+			return        Argv[6] is methodName___ctor_
+				? _ctor
+				: Nameset[2] + Arg6.Token
+				;
+			}
 		protected Oprand Declare( string op )
 			{
 			oprand = new Oprand( op ) ;
