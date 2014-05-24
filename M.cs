@@ -83,10 +83,13 @@ class Microdata : C_Type //,IOprand
 		}
 	}
 
-	static Program.Method method ;
 class Method
 	{
 	static Program.Method method ;
+	static public Program.Method Current
+		{
+		get { return method ; }
+		}
 	public class Head : Automatrix
 		{
 		public class Part1 : Method.Head
@@ -140,7 +143,6 @@ class Method
 		protected void    CreateFunction()
 			{
 			method.CreateFunction() ;
-			A335.method = method ;
 			}
 		}
 	public class Decl : Automatrix

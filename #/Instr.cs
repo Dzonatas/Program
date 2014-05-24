@@ -4,7 +4,7 @@ partial class A335
 	: Instr.BrTarget {
 	protected override void BRTARGET()
 		{
-		A335.method.RegisterLabel( Id ) ;
+		A335.Method.Current.RegisterLabel( Id ) ;
 		switch( Op )
 			{
 			case "BR" :
@@ -194,7 +194,7 @@ partial class A335
 			case "LDARG_0":
 				{
 				C_Type type ;
-				if( A335.method.CallConvInstance )
+				if( A335.Method.Current.CallConvInstance )
 					type = d.Method.ThisType ;
 				else
 					type = d.Method.Args[0] ;

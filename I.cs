@@ -133,7 +133,7 @@ class Instr : Automatrix
 			}
 		public Oprand( Instr instr )
 			{
-			c_oprand = A335.method.NewOprand( op ) ;
+			c_oprand = A335.Method.Current.NewOprand( op ) ;
 			op = c_oprand.Instruction ;
 			log( "[Instr.Oprand] "+ op ) ;
 			current = this ;
