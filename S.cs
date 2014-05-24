@@ -261,7 +261,7 @@ class SigArg
 		}
 	static public List<string> Nameset
 		{
-		get { return instance.type ; }
+		get { return instance.name ; }
 		}
 	static void add( C_Type type, string name )
 		{
