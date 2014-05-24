@@ -236,8 +236,7 @@ partial class Program
 		int            maxstack ;
 		C_Method       method ;
 		C_Function     function ;
-		public Instr   Code ;
-		List<C_Oprand> oprandset = new List<C_Oprand>() ;
+		public Instr   Instrset ;
 		List<string>   labelset = new List<string>() ;
 		public bool    Static ;
 		public bool    CallConvInstance ;
@@ -285,7 +284,6 @@ partial class Program
 			{
 			oprand.Label = A335.Method.Decl.Label ;
 			A335.Method.Decl.Label = C_Symbol.Acquire( System.String.Empty ) ;
-			oprandset.Add( oprand ) ;
 			}
 		public void RegisterLabel( string text )
 			{
@@ -316,8 +314,8 @@ partial class Program
 			{
 			var c = function ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
-			foreach( C_Oprand o in oprandset )
-				o.WriteTo( sw ) ;
+			for( Instr i = Instrset ; i is Instr ; i = i.Next )
+				i._C_Oprand.WriteTo( sw ) ;
 			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
 			if( _virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
@@ -326,16 +324,16 @@ partial class Program
 			else
 				c.Args = "( const void** args )" ;
 			c.Statement( "const void** stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
-			foreach( C_Oprand o in oprandset )
+			for( Instr i = Instrset ; i is Instr ; i = i.Next )
 				{
 				string label = System.String.Empty ;
-				if( System.String.Empty == ( label = o.Label ) )
-					c.Statement( (string) (o as C_Oprand) ) ;
+				if( System.String.Empty == ( label = i._C_Oprand.Label ) )
+					c.Statement( (string) i._C_Oprand ) ;
 				else
 					{
 					if( labelset.Contains( label ) )
 						c.Label( label ) ;
-					c.Statement( (string) (o as C_Oprand) ) ;
+					c.Statement( (string) i._C_Oprand ) ;
 					}
 				}
 			if( _virtual )

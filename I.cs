@@ -110,6 +110,10 @@ class Instr : Automatrix
 		{
 		get { Instr l = list ; list = previous = current = null ; return l ; }
 		}
+	public Instr Next
+		{
+		get { return next ; }
+		}
 	public class Oprand
 		{
 		Instr _instr ;
@@ -162,6 +166,10 @@ class Instr : Automatrix
 		get { return op ; }
 		}
 	protected Oprand oprand ;
+	public Program.C_Oprand _C_Oprand
+		{
+		get { return oprand.C ; }
+		}
 	public bool C_OprandHasArgs
 		{
 		set { oprand.C.HasArgs = value ; }
