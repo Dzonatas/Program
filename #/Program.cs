@@ -546,4 +546,116 @@ partial class Program
 			m.Write() ;
 		}
 	}
+
+partial class Program
+	{
+	public class Method
+		{
+		C_Method       method ;
+		C_Function     function ;
+		public Instr   Instrset ;
+		List<string>   labelset = new List<string>() ;
+		public A335.Method.Head Head ;
+		public bool    Static ;
+		public bool    CallConvInstance ;
+		public bool    Bool
+			{
+			set { function.Bool = value ; }
+			}
+		public string  Type
+			{
+			set { method.Type = C_Type.Acquire( value ) ; }
+			get { return (string) method.Type ; }
+			}
+		public string  Name
+			{
+			set { method.Name = C_Symbol_Acquire( value ) ; }
+			get { return (string) method.Name ; }
+			}
+		public string  SigArgTypes ;
+		public int     SigArgs ;
+		public string  ClassSymbol
+			{
+			get { return (string) method.ClassType ; }
+			}
+		public int     MaxStack
+			{
+			set { C.MaxStack = value ; }
+			}
+		bool _virtual ;
+		public bool    Virtual
+			{
+			set {
+				if( ( _virtual = value ) )
+					{
+					C_Struct c = C_Struct.FromSymbol( ClassSymbol ) ;
+					c.Assign( Name + SigArgTypes ) ;
+					}
+				}
+			}
+		public Method( C_Type context )
+			{
+			method = new C_Method( context ) ;
+			methodset.Add( this ) ;
+			}
+		public void RegisterLabel( string text )
+			{
+			labelset.Add( text ) ;
+			}
+		public void RegisterCctor()
+			{
+			cctorset.Add( ClassSymbol ) ;
+			}
+		public void WriteInclude( StreamWriter sw )
+			{
+			sw.WriteLine( "#include \"" + ClassSymbol + Name + SigArgTypes + ".c\"" ) ;
+			}
+		public void CreateFunction()
+			{
+			foreach( string a in SigArg.Typeset )
+				method.Args.Add( C_Type.Acquire( a ) ) ;
+			function = C_Function.FromSymbol( ClassSymbol + Name + SigArgTypes ) ;
+			function.Method = method ;
+			}
+		public C_Oprand NewOprand( string instr )
+			{
+			var d = new C_Oprand( function, instr ) ;
+			d.Label = A335.Method.Decl.Label ;
+			A335.Method.Decl.Label = C_Symbol.Acquire( System.String.Empty ) ;
+			return d ;
+			}
+		public void Write()
+			{
+			var c = function ;
+			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
+			for( Instr i = Instrset ; i is Instr ; i = i.Next )
+				i._C_Oprand.WriteTo( sw ) ;
+			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
+			if( _virtual )
+				c.Type = C_Symbol.Acquire( "struct _string" ) ;
+			if( args == 0 )
+				c.Args = "()" ;
+			else
+				c.Args = "( const void** args )" ;
+			c.Statement( "const void** stack = alloca( " + Head.MaxStack + " * sizeof(void*) )" ) ;
+			for( Instr i = Instrset ; i is Instr ; i = i.Next )
+				{
+				string label = i._C_Oprand.Label ;
+				if( System.String.Empty == label )
+					c.Statement( (string) i._C_Oprand ) ;
+				else
+					{
+					if( labelset.Contains( label ) )
+						c.Label( label ) ;
+					c.Statement( (string) i._C_Oprand ) ;
+					}
+				}
+			if( _virtual )
+				c.Statement( "return *(struct _string *)*stack" ) ;
+			c.WriteTo( sw ) ;
+			sw.Close() ;
+			}
+		}
+	}
+
 }
