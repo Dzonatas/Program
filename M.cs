@@ -324,8 +324,8 @@ partial class Program
 			c.Statement( "const void** stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
 			for( Instr i = Instrset ; i is Instr ; i = i.Next )
 				{
-				string label = System.String.Empty ;
-				if( System.String.Empty == ( label = i._C_Oprand.Label ) )
+				string label = i._C_Oprand.Label ;
+				if( System.String.Empty == label )
 					c.Statement( (string) i._C_Oprand ) ;
 				else
 					{
