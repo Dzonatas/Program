@@ -96,6 +96,7 @@ class Method
 		C_Type  classType ;
 		Decl    declList ;
 		int     maxstack ;
+		bool    _static ;
 		public class Part1 : Method.Head
 			{
 			protected override void main()
@@ -123,7 +124,7 @@ class Method
 		protected Attr    AttrList
 			{
 			set {
-				  method.Static  = value is Attr ? value.Static : false ;
+				  Static  = value is Attr ? value.Static : false ;
 				  method.Virtual = value is Attr ? value.Virtual : false ;
 				}
 			}
@@ -160,6 +161,11 @@ class Method
 			set { maxstack = value ; }
 			get { return maxstack ; }
 			}
+		public bool Static
+			{
+			set { _static = value ; }
+			get { return _static ; }
+			}
 		}
 	public class Decl : Automatrix
 		{
@@ -193,8 +199,8 @@ class Method
 			}
 		static public C_Symbol Label
 			{
-			set { current.label = value ; }
-			get { return current.label != null ? current.label : C_Symbol.Acquire( System.String.Empty ) ; }
+			set { if( current != null ) current.label = value ; }
+			get { return (current != null && current.label != null) ? current.label : C_Symbol.Acquire( System.String.Empty ) ; }
 			}
 		public Decl this[string id]
 			{

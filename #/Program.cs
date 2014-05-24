@@ -556,7 +556,6 @@ partial class Program
 		public Instr   Instrset ;
 		List<string>   labelset = new List<string>() ;
 		public A335.Method.Head Head ;
-		public bool    Static ;
 		public bool    CallConvInstance ;
 		public bool    Bool
 			{

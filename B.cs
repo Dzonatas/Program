@@ -129,6 +129,11 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Stack.Push( new instr_INSTR_TYPE_typeSpec() ) ;
 		}
 	else
+	if( this_xo_t.ReductionMethod == "instr_INSTR_STRING_compQstring" )
+		{
+		Stack.Push( new instr_INSTR_STRING_compQstring() ) ;
+		}
+	else
 	if( this_xo_t.ReductionMethod ==
 		"methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName"
 		+ "_____sigArgs0_____implAttr____" )
