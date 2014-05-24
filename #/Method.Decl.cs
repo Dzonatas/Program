@@ -36,10 +36,10 @@ partial class A335
 	: Method.Decl	{
 	protected override void main()
 		{
-		var d = Instr.Oprand.Current ;
-		d.HasArgs = ( 0 < Args ) ;
+		var instr = Argv[1] as Instr ;
+		instr.C_OprandHasArgs = ( 0 < Args ) ;
+		instr.Defined() ;
 		//Debug.WriteLine( "[methodDecl_instr] stack={0}", C.StackOffset ) ;
-		Instr.Declared() ;
 		}
 	}
 }

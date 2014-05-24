@@ -162,7 +162,11 @@ class Instr : Automatrix
 		get { return op ; }
 		}
 	protected Oprand oprand ;
-	static public void Declared()
+	public bool C_OprandHasArgs
+		{
+		set { oprand.C.HasArgs = value ; }
+		}
+	public void Defined()
 		{
 		Oprand.Declared() ;
 		Method.SigArgTypes = null ;
