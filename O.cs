@@ -69,6 +69,7 @@ class CallConv : Automatrix
 	: Class.Decl	{
 	protected override void main()
 		{
+		A335.method.Code = Instr.List ;
 		C.Hangdown() ;
 		}
 	}

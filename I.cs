@@ -101,11 +101,14 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	static protected C_Type typespec ;
 class Instr : Automatrix
 	{
-	const string start_s = "start" ;
-	static Oprand _start ;
-	static Instr()
+	Instr next ;
+	string code ;
+	static Instr list ;
+	static Instr previous ;
+	static Instr current ;
+	static public Instr List
 		{
-		_start = new Oprand( start_s ) ;
+		get { Instr l = list ; list = previous = current = null ; return l ; }
 		}
 	public class Oprand
 		{
@@ -148,7 +151,14 @@ class Instr : Automatrix
 	static string op ;
 	protected string Op
 		{
-		set { op = value ; op = (oprand = new Oprand(this)).C.Instruction ; }
+		set {
+			current = this ;
+			if( previous != null ) previous.next = current ;
+			if( list == null ) list = this ;
+			op = value ;
+			op = (oprand = new Oprand(this)).C.Instruction ;
+			code = op ;
+			}
 		get { return op ; }
 		}
 	protected Oprand oprand ;
@@ -158,6 +168,7 @@ class Instr : Automatrix
 		Method.SigArgTypes = null ;
 		Method.SigArgs = 0 ;
 		Method.CallConvInstance = false ;
+		previous = current ;
 		}
 	public class Method : Instr
 		{
@@ -264,5 +275,9 @@ class Instr : Automatrix
 			}
 		protected virtual void STRING( Argument compQstring ) {}
 		}
+	public override string ToString()
+			{
+			return "[Instr] " + code ;
+			}
 	}
 }

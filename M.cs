@@ -236,6 +236,7 @@ partial class Program
 		int            maxstack ;
 		C_Method       method ;
 		C_Function     function ;
+		public Instr   Code ;
 		List<C_Oprand> oprandset = new List<C_Oprand>() ;
 		List<string>   labelset = new List<string>() ;
 		public bool    Static ;
