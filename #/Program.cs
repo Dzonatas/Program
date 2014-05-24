@@ -545,10 +545,6 @@ partial class Program
 		foreach( Program.Method m in methodset )
 			m.Write() ;
 		}
-	}
-
-partial class Program
-	{
 	public class Method
 		{
 		C_Method       method ;
