@@ -280,11 +280,6 @@ partial class Program
 			method = new C_Method( context ) ;
 			methodset.Add( this ) ;
 			}
-		public void Add( C_Oprand oprand )
-			{
-			oprand.Label = A335.Method.Decl.Label ;
-			A335.Method.Decl.Label = C_Symbol.Acquire( System.String.Empty ) ;
-			}
 		public void RegisterLabel( string text )
 			{
 			labelset.Add( text ) ;
@@ -307,7 +302,8 @@ partial class Program
 		public C_Oprand NewOprand( string instr )
 			{
 			var d = new C_Oprand( function, instr ) ;
-			Add( d ) ;
+			d.Label = A335.Method.Decl.Label ;
+			A335.Method.Decl.Label = C_Symbol.Acquire( System.String.Empty ) ;
 			return d ;
 			}
 		public void Write()
