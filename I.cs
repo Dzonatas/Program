@@ -139,14 +139,6 @@ class Instr : Automatrix
 			current = this ;
 			_instr = instr ;
 			}
-		public Oprand( string instr )
-			{
-			c_oprand = A335.method.NewOprand( instr ) ;
-			op = c_oprand.Instruction ;
-			log( "[Instr.Oprand] "+ op ) ;
-			current = this ;
-			_instr = null ;
-			}
 		static public void Declared()
 			{
 			current = null ;
@@ -257,11 +249,6 @@ class Instr : Automatrix
 			TYPE( Arg2 ) ;
 			}
 		protected virtual void TYPE( Argument typeSpec ) {}
-		protected Program.C_Oprand Declare( string op )
-			{
-			oprand = new Oprand( op ) ;
-			return oprand.C ;
-			}
 		}
 	public class Field : Instr
 		{
