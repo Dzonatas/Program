@@ -69,7 +69,8 @@ class CallConv : Automatrix
 	: Class.Decl	{
 	protected override void main()
 		{
-		A335.Method.Current.Instrset = Instr.List ;
+		(Argv[1] as Method.Head).DeclList = Method.Decl.List ;
+		Method.Current.Instrset = Instr.List ;
 		C.Hangdown() ;
 		}
 	}

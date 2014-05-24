@@ -92,6 +92,7 @@ class Method
 		}
 	public class Head : Automatrix
 		{
+		Decl declList ;
 		public class Part1 : Method.Head
 			{
 			protected override void main()
@@ -108,6 +109,10 @@ class Method
 			{
 			CreateFunction() ;
 			SigArg.Clear() ;
+			}
+		public Decl    DeclList
+			{
+			set { declList = value ; }
 			}
 		protected Attr    AttrList
 			{
@@ -147,7 +152,18 @@ class Method
 		}
 	public class Decl : Automatrix
 		{
-		static C_Symbol   label = C_Symbol.Acquire( System.String.Empty ) ;
+		static Decl current = null ;
+		Decl next ;
+		C_Symbol   label ;
+		static public Decl List
+			{
+			get { Decl l = current ; current = null ; return l ; }
+			}
+		protected void Enlist()
+			{
+			next = current ;
+			current = this ;
+			}
 		protected int     MaxStack
 			{
 			set { method.MaxStack = value ; }
@@ -166,8 +182,17 @@ class Method
 			}
 		static public C_Symbol Label
 			{
-			set { label = value ; }
-			get { return label ; }
+			set { current.label = value ; }
+			get { return current.label != null ? current.label : C_Symbol.Acquire( System.String.Empty ) ; }
+			}
+		public Decl this[string id]
+			{
+			get {
+				for( Decl i = this ; i is Decl ; i = i.next )
+					if( i.label != null && id == i.label )
+						return i ;
+				throw new System.ArgumentOutOfRangeException( id ) ;
+				}
 			}
 		protected void    EntryPoint()
 			{
