@@ -136,7 +136,7 @@ partial class Program
 			list.Add( "\t" + line + ( eos ? "" : " ;" ) ) ;
 			return this ;
 			}
-		public void Label( string label )
+		public void Label( C_Label label )
 			{
 			list.Add( "\t" + label + " :" ) ;
 			}

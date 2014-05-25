@@ -187,7 +187,7 @@ class Method
 		{
 		static Decl current = null ;
 		Decl next ;
-		C_Symbol   label ;
+		C_Label   label ;
 		static public Decl List
 			{
 			get { Decl l = current ; current = null ; return l ; }
@@ -205,19 +205,17 @@ class Method
 			{
 			get { return head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ; }
 			}
-		static public C_Symbol Label
+		static public C_Label Label
 			{
 			set { if( current != null ) current.label = value ; }
-			get { return (current != null && current.label != null) ? current.label : C_Symbol.Acquire( System.String.Empty ) ; }
+			get { return (current != null && current.label != null) ? current.label : C_Label.Empty ; }
 			}
-		public Decl this[string id]
+		static public C_Label AcquireLabel( string id )
 			{
-			get {
-				for( Decl i = this ; i is Decl ; i = i.next )
-					if( i.label != null && id == i.label )
-						return i ;
-				throw new System.ArgumentOutOfRangeException( id ) ;
-				}
+			for( Decl i = current ; i is Decl ; i = i.next )
+				if( i.label != null && id == i.label )
+					return i.label ;
+			return C_Label.Acquire( id ) ;
 			}
 		protected void    EntryPoint()
 			{

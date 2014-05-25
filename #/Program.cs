@@ -435,14 +435,14 @@ partial class Program
 		}
 	public class C_Oprand
 		{
-		C_Symbol label ;
+		C_Label label ;
 		C_Function function ;
 		public string Instruction ;
 		public string ID ;
 		public bool HasArgs ;
 		public bool BrTarget ;
 		List<string> list = new List<string>() ;
-		public C_Symbol Label
+		public C_Label Label
 			{
 			set { label = value ; }
 			get { return label ; }
@@ -551,7 +551,6 @@ partial class Program
 		A335.Method.Head head ;
 		C_Function     function ;
 		public Instr   Instrset ;
-		List<string>   labelset = new List<string>() ;
 		public A335.Method.Head Head
 			{
 			set { head = value ; }
@@ -596,7 +595,7 @@ partial class Program
 			}
 		public void RegisterLabel( string text )
 			{
-			labelset.Add( text ) ;
+			C_Label.Acquire( text ).Required = true ;
 			}
 		public void RegisterCctor()
 			{
@@ -617,7 +616,7 @@ partial class Program
 			{
 			var d = new C_Oprand( function, instr ) ;
 			d.Label = A335.Method.Decl.Label ;
-			A335.Method.Decl.Label = C_Symbol.Acquire( System.String.Empty ) ;
+			A335.Method.Decl.Label = C_Label.Empty ;
 			return d ;
 			}
 		public void Write()
@@ -636,12 +635,12 @@ partial class Program
 			c.Statement( "const void** stack = alloca( " + head.MaxStack + " * sizeof(void*) )" ) ;
 			for( Instr i = Instrset ; i is Instr ; i = i.Next )
 				{
-				string label = i._C_Oprand.Label ;
-				if( System.String.Empty == label )
+				C_Label label = i._C_Oprand.Label ;
+				if( C_Label.Empty == label )
 					c.Statement( (string) i._C_Oprand ) ;
 				else
 					{
-					if( labelset.Contains( label ) )
+					if( label.Required )
 						c.Label( label ) ;
 					c.Statement( (string) i._C_Oprand ) ;
 					}

@@ -253,6 +253,46 @@ public class C_Type
 		}
 	}
 
+class C_Label
+	{
+	C_Symbol  label ;
+	bool      required ;
+	static C_Label[] labelset = new C_Label[0] ;
+	C_Label( string label )
+		{
+		this.label = C_Symbol.Acquire( System.String.Empty ) ;
+		}
+	C_Label( C_Symbol symbol )
+		{
+		label = symbol ;
+		}
+	static public C_Label Acquire( C_Symbol symbol )
+		{
+		for( int i = 0 ; i < labelset.Length ; i++ )
+			{
+			if( labelset[i].label == symbol )
+				return labelset[i] ;
+			}
+		Array.Resize( ref labelset, labelset.Length +1 ) ;
+		labelset[labelset.Length-1] = new C_Label( symbol ) ;
+		return null ;
+		}
+	static public C_Label Acquire( string symbol )
+		{
+		return Acquire( C_Symbol.Acquire( symbol ) ) ;
+		}
+	static public C_Label Empty = new C_Label( System.String.Empty ) ;
+	public bool Required
+		{
+		set { required = value ; }
+		get { return required ; }
+		}
+	static public implicit operator string( C_Label label )
+		{
+		return label.label ;
+		}
+	}
+
 class Class
 	{
 	static C_Symbol[] idset = new C_Symbol[0] ;
