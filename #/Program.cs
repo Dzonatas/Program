@@ -610,9 +610,7 @@ partial class Program
 			}
 		public C_Oprand NewOprand( string instr )
 			{
-			var d = new C_Oprand( function, instr ) ;
-			d.Label = A335.Method.Decl.Label ;
-			return d ;
+			return new C_Oprand( function, instr ) ;
 			}
 		public void Write()
 			{
@@ -628,17 +626,13 @@ partial class Program
 			else
 				c.Args = "( const void** args )" ;
 			c.Statement( "const void** stack = alloca( " + head.MaxStack + " * sizeof(void*) )" ) ;
-			for( Instr i = Instrset ; i is Instr ; i = i.Next )
+			for( A335.Method.Decl d = head.DeclList ; d is A335.Method.Decl ; d = d.Next )
 				{
-				C_Label label = i._C_Oprand.Label ;
-				if( C_Label.Empty == label )
-					c.Statement( (string) i._C_Oprand ) ;
+				if( d.Label != null && d.Label.Required )
+					c.Label( d.Label ) ;
 				else
-					{
-					if( label.Required )
-						c.Label( label ) ;
-					c.Statement( (string) i._C_Oprand ) ;
-					}
+				if( d.Instr != null )
+					c.Statement( (string) d.Instr._C_Oprand ) ;
 				}
 			if( _virtual )
 				c.Statement( "return *(struct _string *)*stack" ) ;

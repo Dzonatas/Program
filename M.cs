@@ -125,6 +125,7 @@ class Method
 		public Decl    DeclList
 			{
 			set { declList = value ; }
+			get { return declList ; }
 			}
 		protected Attr    AttrList
 			{
@@ -186,15 +187,39 @@ class Method
 	public class Decl : Automatrix
 		{
 		static Decl current = null ;
+		Decl previous ;
 		Decl next ;
 		C_Label   label ;
+		Instr     _Instr ;
+		public Decl Next
+			{
+			get { return next ; }
+			}
+		public Instr     Instr
+			{
+			set { _Instr = value ; }
+			get { return _Instr ; }
+			}
 		static public Decl List
 			{
-			get { Decl l = current ; current = null ; return l ; }
+			get {
+				Decl i ;
+				for( i = current ; i is Decl ; i = i.previous )
+					{
+					if( i.previous == null )
+						{
+						current = null ;
+						return i ;
+						}
+					else
+						i.previous.next = i ;
+					}
+				return i ;
+				}
 			}
 		protected void Enlist()
 			{
-			next = current ;
+			previous = current ;
 			current = this ;
 			}
 		protected int     MaxStack
@@ -205,10 +230,10 @@ class Method
 			{
 			get { return head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ; }
 			}
-		static public C_Label Label
+		public C_Label Label
 			{
-			set { if( current != null ) current.label = value ; }
-			get { return (current != null && current.label != null) ? current.label : C_Label.Empty ; }
+			set { label = value ; }
+			get { return label != null ? label : C_Label.Empty ; }
 			}
 		static public C_Label Find( C_Symbol id )
 			{
