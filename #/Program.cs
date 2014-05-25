@@ -571,8 +571,14 @@ partial class Program
 			set { method.Name = C_Symbol_Acquire( value ) ; }
 			get { return (string) method.Name ; }
 			}
-		public string  SigArgTypes ;
-		public int     SigArgs ;
+		public string  SigArgTypes
+			{
+			get { return Head.SigArgTypes ; }
+			}
+		public int     SigArgs
+			{
+			get { return Head.SigArgs ; }
+			}
 		public string  ClassSymbol
 			{
 			get { return (string) method.ClassType ; }

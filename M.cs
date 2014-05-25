@@ -98,6 +98,8 @@ class Method
 		int     maxstack ;
 		bool    _static ;
 		bool    _CallConvInstance ;
+		int     _SigArgs ;
+		string  _SigArgTypes ;
 		public class Part1 : Method.Head
 			{
 			protected override void main()
@@ -141,13 +143,15 @@ class Method
 			{
 			set { method.Name = value ; }
 			}
-		protected string  SigArgTypes
+		public string  SigArgTypes
 			{
-			set { method.SigArgTypes = value ; }
+			set { _SigArgTypes = value ; }
+			get { return _SigArgTypes ; }
 			}
-		protected int     SigArgs
+		public int     SigArgs
 			{
-			set { method.SigArgs = value ; }
+			set { _SigArgs = value ; }
+			get { return _SigArgs ; }
 			}
 		protected void    RegisterCctor()
 			{
