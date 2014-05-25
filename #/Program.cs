@@ -548,14 +548,18 @@ partial class Program
 	public class Method
 		{
 		C_Method       method ;
+		A335.Method.Head head ;
 		C_Function     function ;
 		public Instr   Instrset ;
 		List<string>   labelset = new List<string>() ;
-		public A335.Method.Head Head ;
+		public A335.Method.Head Head
+			{
+			set { head = value ; }
+			}
 		public bool    CallConvInstance
 			{
-			set { Head.CallConvInstance = value ; }
-			get { return Head.CallConvInstance ; }
+			set { head.CallConvInstance = value ; }
+			get { return head.CallConvInstance ; }
 			}
 		public bool    Bool
 			{
@@ -573,11 +577,11 @@ partial class Program
 			}
 		public string  SigArgTypes
 			{
-			get { return Head.SigArgTypes ; }
+			get { return head.SigArgTypes ; }
 			}
 		public int     SigArgs
 			{
-			get { return Head.SigArgs ; }
+			get { return head.SigArgs ; }
 			}
 		public string  ClassSymbol
 			{
@@ -642,7 +646,7 @@ partial class Program
 				c.Args = "()" ;
 			else
 				c.Args = "( const void** args )" ;
-			c.Statement( "const void** stack = alloca( " + Head.MaxStack + " * sizeof(void*) )" ) ;
+			c.Statement( "const void** stack = alloca( " + head.MaxStack + " * sizeof(void*) )" ) ;
 			for( Instr i = Instrset ; i is Instr ; i = i.Next )
 				{
 				string label = i._C_Oprand.Label ;
