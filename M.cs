@@ -97,6 +97,7 @@ class Method
 		Decl    declList ;
 		int     maxstack ;
 		bool    _static ;
+		bool    _CallConvInstance ;
 		public class Part1 : Method.Head
 			{
 			protected override void main()
@@ -165,6 +166,11 @@ class Method
 			{
 			set { _static = value ; }
 			get { return _static ; }
+			}
+		public bool CallConvInstance
+			{
+			set { _CallConvInstance = value ; }
+			get { return _CallConvInstance ; }
 			}
 		}
 	public class Decl : Automatrix

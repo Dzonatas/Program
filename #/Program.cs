@@ -552,7 +552,11 @@ partial class Program
 		public Instr   Instrset ;
 		List<string>   labelset = new List<string>() ;
 		public A335.Method.Head Head ;
-		public bool    CallConvInstance ;
+		public bool    CallConvInstance
+			{
+			set { Head.CallConvInstance = value ; }
+			get { return Head.CallConvInstance ; }
+			}
 		public bool    Bool
 			{
 			set { function.Bool = value ; }
