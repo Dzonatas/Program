@@ -575,14 +575,6 @@ partial class Program
 			set { method.Name = C_Symbol_Acquire( value ) ; }
 			get { return (string) method.Name ; }
 			}
-		public string  SigArgTypes
-			{
-			get { return head.SigArgTypes ; }
-			}
-		public int     SigArgs
-			{
-			get { return head.SigArgs ; }
-			}
 		public string  ClassSymbol
 			{
 			get { return (string) method.ClassType ; }
@@ -598,7 +590,7 @@ partial class Program
 				if( ( _virtual = value ) )
 					{
 					C_Struct c = C_Struct.FromSymbol( ClassSymbol ) ;
-					c.Assign( Name + SigArgTypes ) ;
+					c.Assign( Name + head.SigArgTypes ) ;
 					}
 				}
 			}
@@ -617,13 +609,13 @@ partial class Program
 			}
 		public void WriteInclude( StreamWriter sw )
 			{
-			sw.WriteLine( "#include \"" + ClassSymbol + Name + SigArgTypes + ".c\"" ) ;
+			sw.WriteLine( "#include \"" + ClassSymbol + Name + head.SigArgTypes + ".c\"" ) ;
 			}
 		public void CreateFunction()
 			{
 			foreach( string a in SigArg.Typeset )
 				method.Args.Add( C_Type.Acquire( a ) ) ;
-			function = C_Function.FromSymbol( ClassSymbol + Name + SigArgTypes ) ;
+			function = C_Function.FromSymbol( ClassSymbol + Name + head.SigArgTypes ) ;
 			function.Method = method ;
 			}
 		public C_Oprand NewOprand( string instr )
@@ -639,7 +631,7 @@ partial class Program
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
 			for( Instr i = Instrset ; i is Instr ; i = i.Next )
 				i._C_Oprand.WriteTo( sw ) ;
-			int args = SigArgs + ( CallConvInstance ? 1 : 0 ) ;
+			int args = head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ;
 			if( _virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
 			if( args == 0 )

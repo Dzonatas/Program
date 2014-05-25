@@ -195,9 +195,9 @@ class Method
 			{
 			set { head.MaxStack = value ; method.MaxStack = value ; }
 			}
-		protected new int Args
+		protected int Args
 			{
-			get { return method.SigArgs + ( method.CallConvInstance ? 1 : 0 ) ; }
+			get { return head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ; }
 			}
 		static public C_Symbol Label
 			{
