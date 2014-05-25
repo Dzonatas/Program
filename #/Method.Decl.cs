@@ -29,7 +29,7 @@ partial class A335
 	protected override void main()
 		{
 		Enlist() ;
-		Label = AcquireLabel( Arg1.Token ) ;
+		Label = C_Label.Acquire( Arg1.Token ) ;
 		}
 	}
 

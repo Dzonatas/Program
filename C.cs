@@ -268,6 +268,9 @@ class C_Label
 		}
 	static public C_Label Acquire( C_Symbol symbol )
 		{
+		C_Label label = A335.Method.Decl.Find( symbol ) ;
+		if( label != null )
+			return label ;
 		for( int i = 0 ; i < labelset.Length ; i++ )
 			{
 			if( labelset[i].label == symbol )

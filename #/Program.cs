@@ -612,7 +612,6 @@ partial class Program
 			{
 			var d = new C_Oprand( function, instr ) ;
 			d.Label = A335.Method.Decl.Label ;
-			A335.Method.Decl.Label = C_Label.Empty ;
 			return d ;
 			}
 		public void Write()

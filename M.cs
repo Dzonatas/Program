@@ -210,12 +210,12 @@ class Method
 			set { if( current != null ) current.label = value ; }
 			get { return (current != null && current.label != null) ? current.label : C_Label.Empty ; }
 			}
-		static public C_Label AcquireLabel( string id )
+		static public C_Label Find( C_Symbol id )
 			{
 			for( Decl i = current ; i is Decl ; i = i.next )
 				if( i.label != null && id == i.label )
 					return i.label ;
-			return C_Label.Acquire( id ) ;
+			return null ;
 			}
 		protected void    EntryPoint()
 			{
