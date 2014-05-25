@@ -260,7 +260,7 @@ class C_Label
 	static C_Label[] labelset = new C_Label[0] ;
 	C_Label( string label )
 		{
-		this.label = C_Symbol.Acquire( System.String.Empty ) ;
+		this.label = C_Symbol.Acquire( label ) ;
 		}
 	C_Label( C_Symbol symbol )
 		{
@@ -274,17 +274,21 @@ class C_Label
 				return labelset[i] ;
 			}
 		Array.Resize( ref labelset, labelset.Length +1 ) ;
-		labelset[labelset.Length-1] = new C_Label( symbol ) ;
-		return null ;
+		return labelset[labelset.Length-1] = new C_Label( symbol ) ;
 		}
 	static public C_Label Acquire( string symbol )
 		{
 		return Acquire( C_Symbol.Acquire( symbol ) ) ;
 		}
+	static public C_Label Require( string symbol )
+		{
+		C_Label label = Acquire( symbol ) ;
+		label.required = true ;
+		return label ;
+		}
 	static public C_Label Empty = new C_Label( System.String.Empty ) ;
 	public bool Required
 		{
-		set { required = value ; }
 		get { return required ; }
 		}
 	static public implicit operator string( C_Label label )

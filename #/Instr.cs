@@ -4,8 +4,6 @@ partial class A335
 	: Instr.BrTarget {
 	protected override void BRTARGET()
 		{
-		var a = A335.Method.Decl.AcquireLabel( Id ) ;
-		A335.Method.Current.RegisterLabel( Id ) ;
 		switch( Op )
 			{
 			case "BR" :

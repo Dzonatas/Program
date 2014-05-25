@@ -593,10 +593,6 @@ partial class Program
 			method = new C_Method( context ) ;
 			methodset.Add( this ) ;
 			}
-		public void RegisterLabel( string text )
-			{
-			C_Label.Acquire( text ).Required = true ;
-			}
 		public void RegisterCctor()
 			{
 			cctorset.Add( ClassSymbol ) ;

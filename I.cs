@@ -231,12 +231,12 @@ class Instr : Automatrix
 		}
 	public class BrTarget : Instr
 		{
-		protected string Id ;
+		protected C_Label Id ;
 		protected override void main()
 			{
 			Op = Arg1.Token ;
 			oprand.BrTarget = true ;
-			Id = Arg2.Token ;
+			Id = C_Label.Require( Arg2.Token ) ;
 			BRTARGET() ;
 			}
 		protected virtual void BRTARGET() {}
