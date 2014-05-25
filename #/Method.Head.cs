@@ -5,7 +5,7 @@ partial class A335
 
 [Automaton] class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____
 	: Method.Head   {
-	protected override void main()
+	protected override void methodHead()
 		{
 		Type              = Arg5 ;
 		Name              = arg6_methodname() ;
@@ -13,7 +13,6 @@ partial class A335
 		SigArgTypes       = SigArg.Types() ;
 		CallConvList      = A335.CallConv.List ;
 		AttrList          = Method.Attr.List ;
-		methodHead() ;
 		}
 	string arg6_methodname()
 		{

@@ -100,14 +100,11 @@ class Method
 		bool    _CallConvInstance ;
 		int     _SigArgs ;
 		string  _SigArgTypes ;
-		public class Part1 : Method.Head
+		public class Part1 : Automatrix
 			{
 			protected override void main()
 				{
-				head = this ;
-				classType = Class.Type ;
 				method = new Program.Method( Class.Type ) ;
-				method.Head = this ;
 				}
 			}
 		protected C_Symbol _ctor          = C_Type.Acquire( Nameset[0] ) ;
@@ -115,11 +112,16 @@ class Method
 			{
 			get { RegisterCctor() ; return C_Type.Acquire( Nameset[1] ) ; }
 			}
-		protected void methodHead()
+		protected override void main()
 			{
+			head = this ;
+			classType = Class.Type ;
+			method.Head = this ;
+			methodHead() ;
 			CreateFunction() ;
 			SigArg.Clear() ;
 			}
+		virtual protected void methodHead() {}
 		public Decl    DeclList
 			{
 			set { declList = value ; }
@@ -133,7 +135,7 @@ class Method
 			}
 		protected CallConv CallConvList
 			{
-			set { head.CallConvInstance = value is CallConv ? value.Instance : false ; }
+			set { _CallConvInstance = value is CallConv ? value.Instance : false ; }
 			}
 		protected A335.Argument  Type
 			{
@@ -173,8 +175,8 @@ class Method
 			}
 		public bool CallConvInstance
 			{
-			set { head._CallConvInstance = value ; }
-			get { return head._CallConvInstance ; }
+			set { _CallConvInstance = value ; }
+			get { return _CallConvInstance ; }
 			}
 		static public Method.Head Current
 			{
