@@ -194,7 +194,7 @@ partial class A335
 			case "LDARG_0":
 				{
 				C_Type type ;
-				if( A335.Method.Current.CallConvInstance )
+				if( A335.Method.Head.Current.CallConvInstance )
 					type = d.Method.ThisType ;
 				else
 					type = d.Method.Args[0] ;

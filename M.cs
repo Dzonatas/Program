@@ -133,7 +133,7 @@ class Method
 			}
 		protected CallConv CallConvList
 			{
-			set { method.CallConvInstance = value is CallConv ? value.Instance : false ; }
+			set { head.CallConvInstance = value is CallConv ? value.Instance : false ; }
 			}
 		protected A335.Argument  Type
 			{
@@ -173,8 +173,12 @@ class Method
 			}
 		public bool CallConvInstance
 			{
-			set { _CallConvInstance = value ; }
-			get { return _CallConvInstance ; }
+			set { head._CallConvInstance = value ; }
+			get { return head._CallConvInstance ; }
+			}
+		static public Method.Head Current
+			{
+			get { return head ; }
 			}
 		}
 	public class Decl : Automatrix

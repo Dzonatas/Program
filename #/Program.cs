@@ -556,11 +556,6 @@ partial class Program
 			{
 			set { head = value ; }
 			}
-		public bool    CallConvInstance
-			{
-			set { head.CallConvInstance = value ; }
-			get { return head.CallConvInstance ; }
-			}
 		public bool    Bool
 			{
 			set { function.Bool = value ; }
