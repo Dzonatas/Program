@@ -278,10 +278,12 @@ class Instr : Automatrix
 			{
 			return "[Instr] " + code ;
 			}
-	static public void WriteList( System.IO.StreamWriter sw, Instr instr )
+	static public void WriteList( string symbol, Instr instr )
 		{
+		var sw = System.IO.File.CreateText( directory.FullName + "/" + symbol + ".hpp" ) ;
 		for( Instr i = instr ; i is Instr ; i = i.Next )
 			i._C_Oprand.WriteTo( sw ) ;
+		sw.Close() ;
 		}
 	}
 }

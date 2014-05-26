@@ -615,8 +615,7 @@ partial class Program
 		public void Write()
 			{
 			var c = function ;
-			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
-			Instr.WriteList( sw, Instrset ) ;
+			Instr.WriteList( c.Symbol, Instrset ) ;
 			int args = head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ;
 			if( _virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
@@ -628,6 +627,8 @@ partial class Program
 			A335.Method.WriteList( function, head.DeclList ) ;
 			if( _virtual )
 				c.Statement( "return *(struct _string *)*stack" ) ;
+			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
+			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
 			c.WriteTo( sw ) ;
 			sw.Close() ;
 			}
