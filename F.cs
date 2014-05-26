@@ -128,7 +128,6 @@ partial class Program
 			else
 				c = c_functionset[symbol] ;
 			c.Required = true ;
-			c_functionset[symbol].Required = true ;
 			}
 		public C_Function Statement( string line )
 			{
