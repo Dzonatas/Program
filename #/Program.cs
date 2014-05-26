@@ -616,8 +616,7 @@ partial class Program
 			{
 			var c = function ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
-			for( Instr i = Instrset ; i is Instr ; i = i.Next )
-				i._C_Oprand.WriteTo( sw ) ;
+			Instr.WriteList( sw, Instrset ) ;
 			int args = head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ;
 			if( _virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
