@@ -625,14 +625,7 @@ partial class Program
 			else
 				c.Args = "( const void** args )" ;
 			c.Statement( "const void** stack = alloca( " + head.MaxStack + " * sizeof(void*) )" ) ;
-			for( A335.Method.Decl d = head.DeclList ; d is A335.Method.Decl ; d = d.Next )
-				{
-				if( d.Label != null && d.Label.Required )
-					c.Label( d.Label ) ;
-				else
-				if( d.Instr != null )
-					c.Statement( (string) d.Instr._C_Oprand ) ;
-				}
+			A335.Method.WriteList( function, head.DeclList ) ;
 			if( _virtual )
 				c.Statement( "return *(struct _string *)*stack" ) ;
 			c.WriteTo( sw ) ;

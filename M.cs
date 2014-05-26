@@ -302,6 +302,17 @@ class Method
 		xml_load_grammar() ;
 		#endif
 		}
+	static public void WriteList( Program.C_Function function, Decl declList )
+		{
+		for( A335.Method.Decl d = declList ; d is A335.Method.Decl ; d = d.Next )
+			{
+			if( d.Label != null && d.Label.Required )
+				function.Label( d.Label ) ;
+			else
+			if( d.Instr != null )
+				function.Statement( (string) d.Instr._C_Oprand ) ;
+			}
+		}
 	}
 
 
