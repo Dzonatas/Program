@@ -562,7 +562,6 @@ partial class Program
 		public string  Type
 			{
 			set { method.Type = C_Type.Acquire( value ) ; }
-			get { return (string) method.Type ; }
 			}
 		public string  Name
 			{
