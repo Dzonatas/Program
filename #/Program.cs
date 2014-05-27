@@ -550,7 +550,6 @@ partial class Program
 		C_Method       method ;
 		A335.Method.Head head ;
 		C_Function     function ;
-		public Instr   Instrset ;
 		public A335.Method.Head Head
 			{
 			set { head = value ; }
@@ -614,7 +613,6 @@ partial class Program
 		public void Write()
 			{
 			var c = function ;
-			Instr.WriteList( c.Symbol, Instrset ) ;
 			int args = head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ;
 			if( _virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;

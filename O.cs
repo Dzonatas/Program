@@ -70,7 +70,8 @@ class CallConv : Automatrix
 	protected override void main()
 		{
 		(Argv[1] as Method.Head).DeclList = Method.Decl.List ;
-		Method.Current.Instrset = Instr.List ;
+		string symbol = Class.Type + Method.Current.Name ;
+		Instr.WriteList( symbol, Instr.List ) ;
 		C.Hangdown() ;
 		}
 	}
