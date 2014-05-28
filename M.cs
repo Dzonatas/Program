@@ -100,6 +100,7 @@ class Method
 		bool    _CallConvInstance ;
 		int     _SigArgs ;
 		string  _SigArgTypes ;
+		bool    _Virtual ;
 		public class Part1 : Automatrix
 			{
 			protected override void main()
@@ -131,7 +132,7 @@ class Method
 			{
 			set {
 				  Static  = value is Attr ? value.Static : false ;
-				  method.Virtual = value is Attr ? value.Virtual : false ;
+				  Virtual = value is Attr ? value.Virtual : false ;
 				}
 			}
 		protected CallConv CallConvList
@@ -182,6 +183,17 @@ class Method
 		static public Method.Head Current
 			{
 			get { return head ; }
+			}
+		public bool    Virtual
+			{
+			set {
+				if( ( _Virtual = value ) )
+					{
+					var c = Program.C_Struct.FromSymbol( classType ) ;
+					c.Assign( method.Name + _SigArgTypes ) ;
+					}
+				}
+			get { return _Virtual ; }
 			}
 		}
 	public class Decl : Automatrix

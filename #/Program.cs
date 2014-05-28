@@ -571,17 +571,6 @@ partial class Program
 			{
 			get { return (string) method.ClassType ; }
 			}
-		bool _virtual ;
-		public bool    Virtual
-			{
-			set {
-				if( ( _virtual = value ) )
-					{
-					C_Struct c = C_Struct.FromSymbol( ClassSymbol ) ;
-					c.Assign( Name + head.SigArgTypes ) ;
-					}
-				}
-			}
 		public Method( C_Type context )
 			{
 			method = new C_Method( context ) ;
@@ -610,7 +599,7 @@ partial class Program
 			{
 			var c = function ;
 			int args = head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ;
-			if( _virtual )
+			if( head.Virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
 			if( args == 0 )
 				c.Args = "()" ;
@@ -618,7 +607,7 @@ partial class Program
 				c.Args = "( const void** args )" ;
 			c.Statement( "const void** stack = alloca( " + head.MaxStack + " * sizeof(void*) )" ) ;
 			A335.Method.WriteList( function, head.DeclList ) ;
-			if( _virtual )
+			if( head.Virtual )
 				c.Statement( "return *(struct _string *)*stack" ) ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
 			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
