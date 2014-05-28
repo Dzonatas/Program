@@ -558,10 +558,6 @@ partial class Program
 			{
 			set { function.Bool = value ; }
 			}
-		public string  Type
-			{
-			set { method.Type = C_Type.Acquire( value ) ; }
-			}
 		public string  ClassSymbol
 			{
 			get { return (string) method.ClassType ; }
