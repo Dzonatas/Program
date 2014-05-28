@@ -224,7 +224,7 @@ class Method
 			}
 		protected int     MaxStack
 			{
-			set { head.MaxStack = value ; method.MaxStack = value ; }
+			set { head.MaxStack = value ; C.MaxStack = value ; }
 			}
 		protected int Args
 			{

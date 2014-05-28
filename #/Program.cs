@@ -571,10 +571,6 @@ partial class Program
 			{
 			get { return (string) method.ClassType ; }
 			}
-		public int     MaxStack
-			{
-			set { C.MaxStack = value ; }
-			}
 		bool _virtual ;
 		public bool    Virtual
 			{
