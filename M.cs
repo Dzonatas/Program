@@ -87,12 +87,15 @@ class Method
 	{
 	static Program.Method method ;
 	static Head head ;
+	static Head begin ;
 	static public Program.Method Current
 		{
 		get { return method ; }
 		}
 	public class Head : Automatrix
 		{
+		Head    previous ;
+		Head    next ;
 		Program.C_Method c_method ;
 		C_Type  classType ;
 		C_Symbol name ;
@@ -117,6 +120,10 @@ class Method
 			}
 		protected override void main()
 			{
+			if( null != ( previous = head ) )
+				previous.next = this ;
+			else
+				begin = this ;
 			head = this ;
 			c_method = method.method ;
 			classType = Class.Type ;
@@ -199,6 +206,47 @@ class Method
 				}
 			get { return _Virtual ; }
 			}
+		public void WriteInclude( StreamWriter sw )
+			{
+			sw.WriteLine( "#include \"" + classType + name + _SigArgTypes + ".c\"" ) ;
+			}
+		static public Head Begin
+			{
+			get { return begin ; }
+			}
+		public Head Next
+			{
+			get { return next ; }
+			}
+		public void Write()
+			{
+			var c = c_method.Function ;
+			int args = _SigArgs + ( _CallConvInstance ? 1 : 0 ) ;
+			if( _Virtual )
+				c.Type = C_Symbol.Acquire( "struct _string" ) ;
+			if( args == 0 )
+				c.Args = "()" ;
+			else
+				c.Args = "( const void** args )" ;
+			c.Statement( "const void** stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
+			A335.Method.WriteList( c, declList ) ;
+			if( _Virtual )
+				c.Statement( "return *(struct _string *)*stack" ) ;
+			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
+			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
+			c.WriteTo( sw ) ;
+			sw.Close() ;
+			}
+		}
+	static public void WriteIncludesTo( StreamWriter sw )
+		{
+		for( Head i = Head.Begin ; i is Head ; i = i.Next )
+			i.WriteInclude( sw ) ;
+		}
+	static public void Write()
+		{
+		for( Head i = Head.Begin ; i is Head ; i = i.Next )
+			i.Write() ;
 		}
 	public class Decl : Automatrix
 		{

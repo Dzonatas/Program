@@ -111,7 +111,6 @@ public partial class A335
 partial class Program
 	{
 	static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
-	static List<Method>  methodset = new List<Method>() ;
 	static List<string>  cctorset = new List<string>() ;
 	static Dictionary<string,C_Function> c_functionset = new Dictionary<string, C_Function>() ;
 	static Dictionary<string,C_Symbol> symbolset = new Dictionary<string, C_Symbol>() ;
@@ -131,7 +130,7 @@ partial class Program
 		{
 		current_working_directory() ;
 		Program.WriteC_Main() ;
-		Program.WriteMethods() ;
+		A335.Method.Write() ;
 		Program.WriteC_Objects() ;
 		}
 	static public C_Symbol StructObject
@@ -311,8 +310,7 @@ partial class Program
 				f.WriteTo( sw ) ;
 				}
 			}
-		foreach( Program.Method m in methodset )
-			m.WriteInclude( sw ) ;
+		A335.Method.WriteIncludesTo( sw ) ;
 	    foreach( string class_symbol in virtualset.Keys )
 			C_Struct.FromSymbol( class_symbol ).WriteInclude( sw ) ;
 		sw.Close() ;
@@ -540,11 +538,6 @@ partial class Program
 			c.WriteTo( sw ) ;
 			}
 		}
-	static public void WriteMethods()
-		{
-		foreach( Program.Method m in methodset )
-			m.Write() ;
-		}
 	public class Method
 		{
 		public C_Method       method ;
@@ -565,15 +558,10 @@ partial class Program
 		public Method( C_Type context )
 			{
 			method = new C_Method( context ) ;
-			methodset.Add( this ) ;
 			}
 		public void RegisterCctor()
 			{
 			cctorset.Add( ClassSymbol ) ;
-			}
-		public void WriteInclude( StreamWriter sw )
-			{
-			sw.WriteLine( "#include \"" + ClassSymbol + head.Name + head.SigArgTypes + ".c\"" ) ;
 			}
 		public void CreateFunction()
 			{
@@ -581,29 +569,11 @@ partial class Program
 				method.Args.Add( C_Type.Acquire( a ) ) ;
 			function = C_Function.FromSymbol( ClassSymbol + head.Name + head.SigArgTypes ) ;
 			function.Method = method ;
+			method.Function = function ;
 			}
 		public C_Oprand NewOprand( string instr )
 			{
 			return new C_Oprand( function, instr ) ;
-			}
-		public void Write()
-			{
-			var c = function ;
-			int args = head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ;
-			if( head.Virtual )
-				c.Type = C_Symbol.Acquire( "struct _string" ) ;
-			if( args == 0 )
-				c.Args = "()" ;
-			else
-				c.Args = "( const void** args )" ;
-			c.Statement( "const void** stack = alloca( " + head.MaxStack + " * sizeof(void*) )" ) ;
-			A335.Method.WriteList( function, head.DeclList ) ;
-			if( head.Virtual )
-				c.Statement( "return *(struct _string *)*stack" ) ;
-			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
-			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
-			c.WriteTo( sw ) ;
-			sw.Close() ;
 			}
 		}
 	}
