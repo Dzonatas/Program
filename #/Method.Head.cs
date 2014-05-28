@@ -14,12 +14,12 @@ partial class A335
 		CallConvList      = A335.CallConv.List ;
 		AttrList          = Method.Attr.List ;
 		}
-	string arg6_methodname()
+	C_Symbol arg6_methodname()
 		{
 		return        Argv[6] is methodName___ctor_
 			? _ctor : Argv[6] is methodName___cctor_
 			? _cctor
-			: Nameset[2] + Arg6.Token
+			: C_Symbol.Acquire( Nameset[2] + Arg6.Token )
 			;
 		}
 	}

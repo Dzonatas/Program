@@ -93,7 +93,9 @@ class Method
 		}
 	public class Head : Automatrix
 		{
+		Program.C_Method c_method ;
 		C_Type  classType ;
+		C_Symbol name ;
 		Decl    declList ;
 		int     maxstack ;
 		bool    _static ;
@@ -116,6 +118,7 @@ class Method
 		protected override void main()
 			{
 			head = this ;
+			c_method = method.method ;
 			classType = Class.Type ;
 			method.Head = this ;
 			methodHead() ;
@@ -143,9 +146,10 @@ class Method
 			{
 			set { method.Type = C_Type.Acquire( value.ResolveType() ) ; }
 			}
-		protected string  Name
+		public C_Symbol  Name
 			{
-			set { method.Name = value ; }
+			set { c_method.Name = name = value ; }
+			get { return name ; }
 			}
 		public string  SigArgTypes
 			{
@@ -190,7 +194,7 @@ class Method
 				if( ( _Virtual = value ) )
 					{
 					var c = Program.C_Struct.FromSymbol( classType ) ;
-					c.Assign( method.Name + _SigArgTypes ) ;
+					c.Assign( name + _SigArgTypes ) ;
 					}
 				}
 			get { return _Virtual ; }

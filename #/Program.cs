@@ -547,9 +547,9 @@ partial class Program
 		}
 	public class Method
 		{
-		C_Method       method ;
+		public C_Method       method ;
 		A335.Method.Head head ;
-		C_Function     function ;
+		public C_Function     function ;
 		public A335.Method.Head Head
 			{
 			set { head = value ; }
@@ -561,11 +561,6 @@ partial class Program
 		public string  Type
 			{
 			set { method.Type = C_Type.Acquire( value ) ; }
-			}
-		public string  Name
-			{
-			set { method.Name = C_Symbol_Acquire( value ) ; }
-			get { return (string) method.Name ; }
 			}
 		public string  ClassSymbol
 			{
@@ -582,13 +577,13 @@ partial class Program
 			}
 		public void WriteInclude( StreamWriter sw )
 			{
-			sw.WriteLine( "#include \"" + ClassSymbol + Name + head.SigArgTypes + ".c\"" ) ;
+			sw.WriteLine( "#include \"" + ClassSymbol + head.Name + head.SigArgTypes + ".c\"" ) ;
 			}
 		public void CreateFunction()
 			{
 			foreach( string a in SigArg.Typeset )
 				method.Args.Add( C_Type.Acquire( a ) ) ;
-			function = C_Function.FromSymbol( ClassSymbol + Name + head.SigArgTypes ) ;
+			function = C_Function.FromSymbol( ClassSymbol + head.Name + head.SigArgTypes ) ;
 			function.Method = method ;
 			}
 		public C_Oprand NewOprand( string instr )

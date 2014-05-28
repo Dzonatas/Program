@@ -69,8 +69,9 @@ class CallConv : Automatrix
 	: Class.Decl	{
 	protected override void main()
 		{
-		(Argv[1] as Method.Head).DeclList = Method.Decl.List ;
-		string symbol = Class.Type + Method.Current.Name ;
+		var methodHead = (Argv[1] as Method.Head) ;
+		methodHead.DeclList = Method.Decl.List ;
+		string symbol = Class.Type + methodHead.Name ;
 		Instr.WriteList( symbol, Instr.List ) ;
 		C.Hangdown() ;
 		}
