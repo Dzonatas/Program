@@ -111,7 +111,6 @@ public partial class A335
 partial class Program
 	{
 	static Dictionary<string,object> virtualset = new Dictionary<string,object>() ;
-	static List<string>  cctorset = new List<string>() ;
 	static Dictionary<string,C_Function> c_functionset = new Dictionary<string, C_Function>() ;
 	static Dictionary<string,C_Symbol> symbolset = new Dictionary<string, C_Symbol>() ;
 	static Dictionary<C_Symbol,C_Type> typeset = new Dictionary<C_Symbol, C_Type>() ;
@@ -293,13 +292,14 @@ partial class Program
 		StreamWriter sw = File.CreateText( directory.FullName + "/" + "program.c" ) ;
 		var c = C_Function.FromSymbol( "main" ) ;
 		c.Args = "( int argc , char** args , char** env )" ;
-		if( cctorset.Contains(this_start_method.ClassSymbol) )
+		var e = A335.Method.EntryPoint.Head ;
+		if( A335.Method.cctorset.Contains(e.ClassType) )
 			{
-			c.Statement( "extern void " + this_start_method.ClassSymbol + "_cctor()" ) ;
-			c.Statement( this_start_method.ClassSymbol + "_cctor()" ) ;
+			c.Statement( "extern void " + e.ClassType + "_cctor()" ) ;
+			c.Statement( e.ClassType + "_cctor()" ) ;
 			}
-		c.Statement( "extern void " + this_start_method.ClassSymbol + "$Main()" ) ;
-		c.Statement( this_start_method.ClassSymbol + "$Main()" ) ;
+		c.Statement( "extern void " + e.ClassType + "$Main()" ) ;
+		c.Statement( e.ClassType + "$Main()" ) ;
 		c.WriteTo( sw ) ;
 		sw.WriteLine( "#include <BCL.HPP>" ) ;
 		C_TypeDef.WriteTo( sw ) ;
@@ -536,27 +536,6 @@ partial class Program
 					break ;
 				}
 			c.WriteTo( sw ) ;
-			}
-		}
-	public class Method
-		{
-		public C_Method       method ;
-		A335.Method.Head head ;
-		public A335.Method.Head Head
-			{
-			set { head = value ; }
-			}
-		public string  ClassSymbol
-			{
-			get { return (string) method.ClassType ; }
-			}
-		public Method( C_Type context )
-			{
-			method = new C_Method( context ) ;
-			}
-		public void RegisterCctor()
-			{
-			cctorset.Add( ClassSymbol ) ;
 			}
 		}
 	}

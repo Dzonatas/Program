@@ -85,13 +85,9 @@ class Microdata : C_Type //,IOprand
 
 class Method
 	{
-	static Program.Method method ;
 	static Head head ;
 	static Head begin ;
-	static public Program.Method Current
-		{
-		get { return method ; }
-		}
+	static public List<string>  cctorset = new List<string>() ;
 	public class Head : Automatrix
 		{
 		Head    previous ;
@@ -110,13 +106,12 @@ class Method
 			{
 			protected override void main()
 				{
-				method = new Program.Method( Class.Type ) ;
 				}
 			}
 		protected C_Symbol _ctor          = C_Type.Acquire( Nameset[0] ) ;
 		protected C_Symbol _cctor
 			{
-			get { RegisterCctor() ; return C_Type.Acquire( Nameset[1] ) ; }
+			get { cctorset.Add( classType ) ; return C_Type.Acquire( Nameset[1] ) ; }
 			}
 		protected override void main()
 			{
@@ -125,9 +120,8 @@ class Method
 			else
 				begin = this ;
 			head = this ;
-			c_method = method.method ;
+			c_method = new Program.C_Method( Class.Type ) ;
 			classType = Class.Type ;
-			method.Head = this ;
 			methodHead() ;
 			CreateFunction() ;
 			SigArg.Clear() ;
@@ -151,7 +145,11 @@ class Method
 			}
 		protected A335.Argument  Type
 			{
-			set { c_method.Type = C_Type.Acquire( value.ResolveType() ) ; }
+			set { c_method.Type = type = C_Type.Acquire( value.ResolveType() ) ; }
+			}
+		public C_Type  ClassType
+			{
+			get { return classType ; }
 			}
 		public C_Symbol  Name
 			{
@@ -167,10 +165,6 @@ class Method
 			{
 			set { _SigArgs = value ; }
 			get { return _SigArgs ; }
-			}
-		protected void    RegisterCctor()
-			{
-			method.RegisterCctor() ;
 			}
 		protected void    CreateFunction()
 			{
@@ -258,6 +252,7 @@ class Method
 	public class Decl : Automatrix
 		{
 		static Decl current = null ;
+		Head _head ;
 		Decl previous ;
 		Decl next ;
 		C_Label   label ;
@@ -313,16 +308,31 @@ class Method
 					return i.label ;
 			return null ;
 			}
-		protected void    EntryPoint()
+		protected Decl    EntryPoint
 			{
-			if( System.String.IsNullOrEmpty(Class.Symbol) )
-				throw new System.NotImplementedException( "entrypoint outside class" ) ;
-			this_start_method = method ;
+			set {
+				_EntryPoint = value ;
+				_head = head ;
+				if( System.String.IsNullOrEmpty(Class.Symbol) )
+					throw new System.NotImplementedException( "entrypoint outside class" ) ;
+				}
+			get {
+				return _EntryPoint ;
+				}
 			}
 		protected Program.C_Oprand NewOprand( string instr )
 			{
 			return head.NewOprand( instr ) ;
 			}
+		public Head Head
+			{
+			get { return _head ; }
+			}
+		}
+	static Decl _EntryPoint ;
+	static public Decl EntryPoint
+		{
+		get { return _EntryPoint ; }
 		}
 	public class Attr : Automatrix
 		{

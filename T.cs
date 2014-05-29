@@ -3,7 +3,6 @@ public partial class A335
 static System.Nullable<_.Token>  /*t_##*/token ; ///lowercased.Any(_atomatrix:IP)
 static State              this_state ;
 static Xo_t               this_xo_t ;
-static Program.Method     this_start_method ;
 static string             this_string ;
 
 public struct Transition

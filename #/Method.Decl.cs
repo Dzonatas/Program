@@ -4,7 +4,7 @@ partial class A335
 	: Method.Decl   {
 	protected override void main()
 		{
-		EntryPoint() ;
+		EntryPoint = this ;
 		}
 	}
 
