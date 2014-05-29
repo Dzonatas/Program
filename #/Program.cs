@@ -542,14 +542,9 @@ partial class Program
 		{
 		public C_Method       method ;
 		A335.Method.Head head ;
-		public C_Function     function ;
 		public A335.Method.Head Head
 			{
 			set { head = value ; }
-			}
-		public bool    Bool
-			{
-			set { function.Bool = value ; }
 			}
 		public string  ClassSymbol
 			{
@@ -562,18 +557,6 @@ partial class Program
 		public void RegisterCctor()
 			{
 			cctorset.Add( ClassSymbol ) ;
-			}
-		public void CreateFunction()
-			{
-			foreach( string a in SigArg.Typeset )
-				method.Args.Add( C_Type.Acquire( a ) ) ;
-			function = C_Function.FromSymbol( ClassSymbol + head.Name + head.SigArgTypes ) ;
-			function.Method = method ;
-			method.Function = function ;
-			}
-		public C_Oprand NewOprand( string instr )
-			{
-			return new C_Oprand( function, instr ) ;
 			}
 		}
 	}

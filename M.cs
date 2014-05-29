@@ -174,7 +174,10 @@ class Method
 			}
 		protected void    CreateFunction()
 			{
-			method.CreateFunction() ;
+			foreach( string a in SigArg.Typeset )
+				c_method.Args.Add( C_Type.Acquire( a ) ) ;
+			c_method.Function = Program.C_Function.FromSymbol( classType + name + _SigArgTypes ) ;
+			c_method.Function.Method = c_method ;
 			}
 		public int MaxStack
 			{
@@ -236,6 +239,10 @@ class Method
 			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
 			c.WriteTo( sw ) ;
 			sw.Close() ;
+			}
+		public Program.C_Oprand NewOprand( string instr )
+			{
+			return new Program.C_Oprand( c_method.Function, instr ) ;
 			}
 		}
 	static public void WriteIncludesTo( StreamWriter sw )
@@ -314,7 +321,7 @@ class Method
 			}
 		protected Program.C_Oprand NewOprand( string instr )
 			{
-			return method.NewOprand( instr ) ;
+			return head.NewOprand( instr ) ;
 			}
 		}
 	public class Attr : Automatrix
