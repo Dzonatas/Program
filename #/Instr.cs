@@ -51,7 +51,6 @@ partial class A335
 						}
 					}
 				*/
-				string item = "" ;
 				C_Symbol symbol = null ;
 				Program.C_Function.Require( Instr.Method.Symbol ) ;
 				if( _Type == "string" )
@@ -59,7 +58,6 @@ partial class A335
 					symbol = new C_Symbol() ;
 					d.LocalStatic( Program.StructString, symbol ) ;
 					//d.Statement( "static struct _string item" + C.StackOffset.ToString() ) ;
-					item = symbol + " = " ;
 					freeset.Add( C.StackOffset ) ;
 					if( iargs == 0 )
 						d.CallAssign( symbol, _call ) ;
