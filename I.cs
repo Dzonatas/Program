@@ -97,8 +97,6 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	#endif
 	}
 
-	static protected C_Type type ;
-	static protected C_Type typespec ;
 class Instr : Automatrix
 	{
 	Instr next ;
@@ -176,6 +174,8 @@ class Instr : Automatrix
 		}
 	public class Method : Instr
 		{
+		protected C_Type _Type ;
+		protected C_Type _TypeSpec ;
 		protected override void main()
 			{
 			Op            = Arg1.Token ;
@@ -194,7 +194,7 @@ class Instr : Automatrix
 		protected virtual void METHOD() {}
 		C_Symbol _arg6_methodname()
 			{
-			string symbol = A335.typespec + arg6_methodname() + SigArg.Types() ;
+			string symbol = _TypeSpec + arg6_methodname() + SigArg.Types() ;
 			return C_Symbol.Acquire( symbol ) ;
 			}
 		string arg6_methodname()
@@ -214,13 +214,13 @@ class Instr : Automatrix
 			}
 		protected A335.Argument   Type
 			{
-			set { A335.type = C_Type.Acquire( value.ResolveType() ) ; }
+			set { _Type = C_Type.Acquire( value.ResolveType() ) ; }
 			}
 		static public int      SigArgs ;
 		static public string   SigArgTypes ;
 		protected A335.Argument   TypeSpec
 			{
-			set { typespec = C_Type.Acquire( value.ResolveTypeSpec() ) ; }
+			set { _TypeSpec = C_Type.Acquire( value.ResolveTypeSpec() ) ; }
 			}
 		static public C_Symbol Symbol ;
 		static public bool CallConvInstance ;

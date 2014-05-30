@@ -145,7 +145,7 @@ class Method
 			}
 		protected A335.Argument  Type
 			{
-			set { c_method.Type = type = C_Type.Acquire( value.ResolveType() ) ; }
+			set { c_method.Type = C_Type.Acquire( value.ResolveType() ) ; }
 			}
 		public C_Type  ClassType
 			{
