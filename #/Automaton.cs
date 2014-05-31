@@ -86,9 +86,6 @@ static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 [Automaton] class   callKind__default_
 	: Automatrix {}
 
-[Automaton] class   callConv_callKind
-	: Automatrix {}
-
 [Automaton] class   type__void_
 	: Automatrix {}
 

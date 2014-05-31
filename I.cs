@@ -180,7 +180,7 @@ class Instr : Automatrix
 		protected override void main()
 			{
 			Op            = Arg1.Token ;
-			CallConvList  = A335.CallConv.List ;
+			CallConv      = Arg2 ;
 			Type          = Arg3 ;
 			TypeSpec      = Arg4 ;
 			// '::'
@@ -193,6 +193,10 @@ class Instr : Automatrix
 			METHOD() ;
 			}
 		protected virtual void METHOD() {}
+		protected Argument CallConv
+			{
+			set { CallConvList = (((Automatrix) value) as CallConv).List ; }
+			}
 		protected Argument MethodName
 			{
 			set { _Call = C_Symbol.Acquire( _TypeSpec + methodname( value ) + SigArg.Types() ) ; }

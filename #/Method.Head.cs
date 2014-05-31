@@ -11,7 +11,7 @@ partial class A335
 		Name              = arg6_methodname() ;
 		SigArgs           = SigArg.Count() ;
 		SigArgTypes       = SigArg.Types() ;
-		CallConvList      = A335.CallConv.List ;
+		CallConv          = Arg3 ;
 		AttrList          = Method.Attr.List ;
 		}
 	C_Symbol arg6_methodname()
@@ -21,6 +21,10 @@ partial class A335
 			? _cctor
 			: C_Symbol.Acquire( Nameset[2] + Arg6.Token )
 			;
+		}
+	protected Argument CallConv
+		{
+		set { CallConvList = (((Automatrix) value) as CallConv).List ; }
 		}
 	}
 }

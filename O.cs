@@ -48,9 +48,9 @@ class CallConv : Automatrix
 		next = current ;
 		current = this ;
 		}
-	static public CallConv List
+	public CallConv List
 		{
-		get { CallConv l = current ; current = null ; return l ; }
+		get { current = null ; return this ; }
 		}
 	public bool Instance
 		{
@@ -63,6 +63,9 @@ class CallConv : Automatrix
 		}
 	[Automaton] class   callConv__instance__callConv
 		: CallConv	{}
+
+	[Automaton] class   callConv_callKind
+		: CallConv {}
 	}
 
 [Automaton] class   classDecl_methodHead_methodDecls____
