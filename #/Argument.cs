@@ -106,5 +106,9 @@ class Argument
 			r[x] = s[x+i] ;
 		return r ;
 		}
+	static public explicit operator Automatrix( Argument a )
+		{
+		return a.arg as Automatrix ;
+		}
 	}
 }

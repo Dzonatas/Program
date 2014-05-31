@@ -176,6 +176,7 @@ class Instr : Automatrix
 		{
 		protected C_Type _Type ;
 		protected C_Type _TypeSpec ;
+		protected C_Symbol _Call ;
 		protected override void main()
 			{
 			Op            = Arg1.Token ;
@@ -183,7 +184,7 @@ class Instr : Automatrix
 			Type          = Arg3 ;
 			TypeSpec      = Arg4 ;
 			// '::'
-			Symbol        = _arg6_methodname() ;
+			MethodName    = Arg6 ;
 			// '('
 			SigArgs       = SigArg.Count() ;
 			SigArgTypes   = SigArg.Types() ;
@@ -192,16 +193,15 @@ class Instr : Automatrix
 			METHOD() ;
 			}
 		protected virtual void METHOD() {}
-		C_Symbol _arg6_methodname()
+		protected Argument MethodName
 			{
-			string symbol = _TypeSpec + arg6_methodname() + SigArg.Types() ;
-			return C_Symbol.Acquire( symbol ) ;
+			set { _Call = C_Symbol.Acquire( _TypeSpec + methodname( value ) + SigArg.Types() ) ; }
 			}
-		string arg6_methodname()
+		string methodname( Argument arg )
 			{
-			return        Argv[6] is methodName___ctor_
+			return        (Automatrix) arg is methodName___ctor_
 				? _ctor
-				: Nameset[2] + Arg6.Token
+				: Nameset[2] + arg.Token
 				;
 			}
 		protected int Args
@@ -222,7 +222,6 @@ class Instr : Automatrix
 			{
 			set { _TypeSpec = C_Type.Acquire( value.ResolveTypeSpec() ) ; }
 			}
-		static public C_Symbol Symbol ;
 		static public bool CallConvInstance ;
 		public CallConv CallConvList
 			{

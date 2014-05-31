@@ -31,7 +31,6 @@ partial class A335
 			{
 			case "CALL":
 				{
-				var _call  = Instr.Method.Symbol ;
 				//Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
 				int iargs = Instr.Method.SigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
 				C.Hangup( iargs ) ;
@@ -52,7 +51,7 @@ partial class A335
 					}
 				*/
 				C_Symbol symbol = null ;
-				Program.C_Function.Require( Instr.Method.Symbol ) ;
+				Program.C_Function.Require( _Call ) ;
 				if( _Type == "string" )
 					{
 					symbol = new C_Symbol() ;
@@ -60,17 +59,17 @@ partial class A335
 					//d.Statement( "static struct _string item" + C.StackOffset.ToString() ) ;
 					freeset.Add( C.StackOffset ) ;
 					if( iargs == 0 )
-						d.CallAssign( symbol, _call ) ;
+						d.CallAssign( symbol, _Call ) ;
 					else
-						d.CallAssign( symbol, _call, "stack+" + C.StackOffset ) ;
+						d.CallAssign( symbol, _Call, "stack+" + C.StackOffset ) ;
 					d.AssignStack( C.StackOffset, "&" + symbol ) ;
 					}
 				else
 					{
 					if( iargs == 0 )
-						d.Call( _call ) ;
+						d.Call( _Call ) ;
 					else
-						d.Call( _call, "stack+" + C.StackOffset ) ;
+						d.Call( _Call, "stack+" + C.StackOffset ) ;
 					}
 				if( _Type != "void" )
 					C.Push( _Type ) ;
@@ -80,17 +79,16 @@ partial class A335
 				{
 				var symbol = new C_Symbol() ;
 				var _class = _TypeSpec ;
-				var _call  = C_Symbol.Acquire( Instr.Method.Symbol ) ;
 				int iargs = Instr.Method.SigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
 				C.Hangup( iargs - 1 ) ;
-				d.ExternCall( _call ) ;
+				d.ExternCall( _Call ) ;
 				d.Extern( Program.StructObject, _class ) ;
 				d.AssignStaticConst( Program.StructObject, symbol, "{ &" + _class + " }" ) ;
 				d.AssignStack( C.StackOffset, "&" + symbol ) ;
 				if( iargs == 0 )
-					d.Call( _call ) ;
+					d.Call( _Call ) ;
 				else
-					d.Call( _call, "stack+" + C.StackOffset ) ;
+					d.Call( _Call, "stack+" + C.StackOffset ) ;
 				C.Push( "object" ) ;
 				break ;
 				}
