@@ -174,8 +174,8 @@ class Instr : Automatrix
 		protected C_Type _Type ;
 		protected C_Type _TypeSpec ;
 		protected C_Symbol _Call ;
-		protected int      SigArgs ;
-		protected string   SigArgTypes ;
+		protected int      _SigArgs ;
+		protected string   _SigArgTypes ;
 		protected bool     CallConvInstance ;
 		protected override void main()
 			{
@@ -184,22 +184,35 @@ class Instr : Automatrix
 			Type          = Arg3 ;
 			TypeSpec      = Arg4 ;
 			// '::'
-			MethodName    = Arg6 ;
+			//MethodName    = Arg6 ;
 			// '('
-			SigArgs       = SigArg.Count() ;
-			SigArgTypes   = SigArg.Types() ;
-			SigArg.Clear() ;
+			SigArgs0      = Arg8 ;
 			// ')'
+			MethodName    = Arg6 ;
 			METHOD() ;
 			}
 		protected virtual void METHOD() {}
+		protected Argument SigArgs0
+			{
+			set { if ( value is Argument )
+					{
+					var a = (Automatrix) value ;
+					if( a is Automatrix )
+						{
+						var b = a as SigArgs0 ;
+						_SigArgs     = b.Count() ;
+						_SigArgTypes = b.Types() ;
+						}
+					}
+				}
+			}
 		protected Argument CallConv
 			{
 			set { CallConvList = (((Automatrix) value) as CallConv).List ; }
 			}
 		protected Argument MethodName
 			{
-			set { _Call = C_Symbol.Acquire( _TypeSpec + methodname( value ) + SigArg.Types() ) ; }
+			set { _Call = C_Symbol.Acquire( _TypeSpec + methodname( value ) + _SigArgTypes ) ; }
 			}
 		string methodname( Argument arg )
 			{
@@ -210,7 +223,7 @@ class Instr : Automatrix
 			}
 		protected int Args
 			{
-			get { return SigArgs + ( CallConvInstance ? 1 : 0 ) ; }
+			get { return _SigArgs + ( CallConvInstance ? 1 : 0 ) ; }
 			}
 		protected C_Symbol _ctor
 			{

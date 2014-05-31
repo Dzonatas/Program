@@ -9,8 +9,7 @@ partial class A335
 		{
 		Type              = Arg5 ;
 		Name              = arg6_methodname() ;
-		SigArgs           = SigArg.Count() ;
-		SigArgTypes       = SigArg.Types() ;
+		SigArgs0          = Arg8 ;
 		CallConv          = Arg3 ;
 		AttrList          = Method.Attr.List ;
 		}
@@ -21,6 +20,21 @@ partial class A335
 			? _cctor
 			: C_Symbol.Acquire( Nameset[2] + Arg6.Token )
 			;
+		}
+	protected Argument SigArgs0
+		{
+		set {
+			if ( value is Argument )
+				{
+				var a = (Automatrix) value ;
+				if( a is Automatrix )
+					{
+					var b = a as SigArgs0 ;
+					base.SigArgs     = b.Count() ;
+					base.SigArgTypes = b.Types() ;
+					}
+				}
+			}
 		}
 	protected Argument CallConv
 		{

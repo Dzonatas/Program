@@ -249,6 +249,36 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		}
 	}
 
+class SigArgs0 : Automatrix
+	{
+	string[] typeset ;
+	string[] nameset ;
+	[Automaton] public class   sigArgs0_sigArgs1
+		: SigArgs0
+		{
+		protected override void main()
+			{
+			int argc = SigArg.Typeset.Count ;
+			typeset = new string[argc] ;
+			nameset = new string[argc] ;
+			SigArg.Typeset.CopyTo( typeset ) ;
+			SigArg.Nameset.CopyTo( nameset ) ;
+			SigArg.Clear() ;
+			}
+		}
+	public int Count()
+		{
+		return typeset.Length ;
+		}
+	public string Types()
+		{
+		string i = null ;
+		foreach( string s in typeset )
+			i += "$" + s ;
+		return i ;
+		}
+	}
+
 class SigArg
 	{
 	static SigArg instance = new SigArg() ;
@@ -273,17 +303,6 @@ class SigArg
 		instance.type.Clear() ;
 		instance.name.Clear() ;
 		}
-	static public int Count()
-		{
-		return instance.type.Count ;
-		}
-	static public string Types()
-		{
-		string i = null ;
-		foreach( string s in instance.type )
-			i += "$" + s ;
-		return i ;
-		}
 	[Automaton] class   sigArg_paramAttr_type
 		: Automatrix	{
 		protected override void main()
@@ -302,8 +321,6 @@ class SigArg
 		: Automatrix	{}
 	[Automaton] class   sigArgs1_sigArg
 		: Automatrix	{}
-	[Automaton] class   sigArgs0_sigArgs1
-		: Automatrix {}
 	}
 
 partial class Program
