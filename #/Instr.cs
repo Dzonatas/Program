@@ -32,7 +32,7 @@ partial class A335
 			case "CALL":
 				{
 				//Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
-				int iargs = Instr.Method.SigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
+				int iargs = Args ;
 				C.Hangup( iargs ) ;
 				/*
 				if( !System.String.IsNullOrEmpty(this_instr_sigArg_types) )
@@ -79,7 +79,7 @@ partial class A335
 				{
 				var symbol = new C_Symbol() ;
 				var _class = _TypeSpec ;
-				int iargs = Instr.Method.SigArgs + ( Instr.Method.CallConvInstance ? 1 : 0 ) ;
+				int iargs  = Args ;
 				C.Hangup( iargs - 1 ) ;
 				d.ExternCall( _Call ) ;
 				d.Extern( Program.StructObject, _class ) ;

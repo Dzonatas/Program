@@ -167,9 +167,6 @@ class Instr : Automatrix
 	public void Defined()
 		{
 		Oprand.Declared() ;
-		Method.SigArgTypes = null ;
-		Method.SigArgs = 0 ;
-		Method.CallConvInstance = false ;
 		previous = current ;
 		}
 	public class Method : Instr
@@ -177,6 +174,9 @@ class Instr : Automatrix
 		protected C_Type _Type ;
 		protected C_Type _TypeSpec ;
 		protected C_Symbol _Call ;
+		protected int      SigArgs ;
+		protected string   SigArgTypes ;
+		protected bool     CallConvInstance ;
 		protected override void main()
 			{
 			Op            = Arg1.Token ;
@@ -220,13 +220,10 @@ class Instr : Automatrix
 			{
 			set { _Type = C_Type.Acquire( value.ResolveType() ) ; }
 			}
-		static public int      SigArgs ;
-		static public string   SigArgTypes ;
 		protected A335.Argument   TypeSpec
 			{
 			set { _TypeSpec = C_Type.Acquire( value.ResolveTypeSpec() ) ; }
 			}
-		static public bool CallConvInstance ;
 		public CallConv CallConvList
 			{
 			set { CallConvInstance = value is CallConv ? value.Instance : false ; }
