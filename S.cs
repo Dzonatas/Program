@@ -355,9 +355,13 @@ partial class Program
 		stack_offset-- ;
 		return stack[stack_offset+1] ;
 		}
-	public void Hangup( int iargs )
+	public List<Microdata> Hangup( int iargs )
 		{
+		var list = new List<Microdata>() ;
 		stack_offset -= iargs ;
+		for( int i = 0 ; i < iargs ; i++ )
+			list.Add( stack[stack_offset+i] ) ;
+		return list ;
 		}
 	public void Hangdown()
 		{

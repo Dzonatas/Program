@@ -33,13 +33,13 @@ partial class A335
 				{
 				//Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
 				int iargs = Args ;
-				C.Hangup( iargs ) ;
-				/*
-				if( !System.String.IsNullOrEmpty(this_instr_sigArg_types) )
+				var data = C.Hangup( iargs ) ;
+				if( !System.String.IsNullOrEmpty( _SigArgTypes ) )
 					{
-					string[] s = this_instr_sigArg_types.Split( '$' ) ;
-					for( int a = ( this_instr_callConv_instance ? 2 : 1 ) ; a < iargs ; a++ )
+					string[] s = _SigArgTypes.Split( '$' ) ;
+					for( int a = ( CallConvInstance ? 2 : 1 ) ; a < iargs ; a++ )
 						{
+					/*
 						int offset = C.StackOffset+a-1+( this_instr_callConv_instance ? 1 : 0 ) ;
 						if( s[a] != this_stack[offset] )
 							{
@@ -47,9 +47,9 @@ partial class A335
 							this_program += "obj.this = (void*) stack["+offset+"] ;" ;
 							this_program += "stack[" + offset + "] =  &obj;" ;
 							}
+					*/
 						}
 					}
-				*/
 				C_Symbol symbol = null ;
 				Program.C_Function.Require( _Call ) ;
 				if( _Type == "string" )
