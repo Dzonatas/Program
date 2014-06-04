@@ -106,8 +106,8 @@ partial class A335
 		switch( Op )
 			{
 			case "NEWARR" :
-				C.Push( null ) ;
 				C.Pop() ;
+				C.Push( null ) ;
 				break ;
 			default :
 				log( "[INSTR_TYPE] Defaulted on " + Op ) ;
