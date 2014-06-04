@@ -39,15 +39,15 @@ partial class A335
 					string[] s = _SigArgTypes.Split( '$' ) ;
 					for( int a = ( CallConvInstance ? 2 : 1 ) ; a < iargs ; a++ )
 						{
-					/*
-						int offset = C.StackOffset+a-1+( this_instr_callConv_instance ? 1 : 0 ) ;
-						if( s[a] != this_stack[offset] )
+						int offset = a-1+( CallConvInstance ? 1 : 0 ) ;
+						if( s[a] != data[offset] )
 							{
+					/*
 							this_program += "static struct _object obj = { 0 } ;" ;
 							this_program += "obj.this = (void*) stack["+offset+"] ;" ;
 							this_program += "stack[" + offset + "] =  &obj;" ;
-							}
 					*/
+							}
 						}
 					}
 				C_Symbol symbol = null ;
