@@ -115,12 +115,7 @@ class CallConv : Automatrix
 	}
 
 [Automaton] class   customType_callConv_type_typeSpec________ctor______sigArgs0____
-	: Automatrix {
-	protected override void main()
-		{
-		SigArg.Clear() ;
-		}
-	}
+	: Automatrix {}
 
 }
 

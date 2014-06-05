@@ -251,70 +251,98 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 
 class SigArgs0 : Automatrix
 	{
-	string[] typeset ;
-	string[] nameset ;
+	SigArg list ;
 	[Automaton] public class   sigArgs0_sigArgs1
 		: SigArgs0
 		{
 		protected override void main()
 			{
-			int argc = SigArg.Typeset.Count ;
-			typeset = new string[argc] ;
-			nameset = new string[argc] ;
-			SigArg.Typeset.CopyTo( typeset ) ;
-			SigArg.Nameset.CopyTo( nameset ) ;
-			SigArg.Clear() ;
+			list = SigArg.List ;
 			}
 		}
 	public int Count()
 		{
-		return typeset.Length ;
+		int i = 0 ;
+		for( SigArg s = list ; s is SigArg ; s = s.Next )
+			i++ ;
+		return i ;
 		}
 	public string Types()
 		{
 		string i = null ;
-		foreach( string s in typeset )
-			i += "$" + s ;
+		for( SigArg s = list ; s is SigArg ; s = s.Next )
+			{
+			i += "$" + s._Type ;
+			}
 		return i ;
+		}
+	public void ForEach( Action<SigArg> action )
+		{
+		for( SigArg s = list ; s is SigArg ; s = s.Next )
+			action( s ) ;
 		}
 	}
 
-class SigArg
+class SigArg : Automatrix
 	{
-	static SigArg instance = new SigArg() ;
-	List<string> type = new List<string>() ;
-	List<string> name = new List<string>() ;
-	public SigArg() {}
-	static public List<string> Typeset
+	static SigArg current = null ;
+	SigArg previous ;
+	SigArg next ;
+	internal protected C_Type _Type ;
+	internal protected string _ID ;
+	protected Argument Type
 		{
-		get { return instance.type ; }
+		set { _Type = C_Type.Acquire( value.ResolveType() ) ; }
 		}
-	static public List<string> Nameset
+	protected Argument ID
 		{
-		get { return instance.name ; }
+		set { _ID = value.Token ; }
 		}
-	static void add( C_Type type, string name )
+	protected void Enlist()
 		{
-		instance.type.Add( type ) ;
-		instance.name.Add( name ) ;
+		previous = current ;
+		current = this ;
 		}
-	static public void Clear()
+	static public SigArg List
 		{
-		instance.type.Clear() ;
-		instance.name.Clear() ;
+		get {
+			SigArg i ;
+			for( i = current ; i is SigArg ; i = i.previous )
+				{
+				if( i.previous == null )
+					{
+					current = null ;
+					return i ;
+					}
+				else
+					i.previous.next = i ;
+				}
+			return i ;
+			}
+		}
+	public SigArg Next
+		{
+		get { return next ; }
+		}
+	public SigArg Previous
+		{
+		get { return previous ; }
 		}
 	[Automaton] class   sigArg_paramAttr_type
-		: Automatrix	{
+		: SigArg	{
 		protected override void main()
 			{
-			add( C_Type.Acquire( Arg2.ResolveType() ), null ) ;
+			Type = Arg2 ;
+			Enlist() ;
 			}
 		}
 	[Automaton] class   sigArg_paramAttr_type_id
-		: Automatrix {
+		: SigArg {
 		protected override void main()
 			{
-			add( C_Type.Acquire( Arg2.ResolveType() ), Arg3.Token ) ;
+			Type = Arg2 ;
+			ID   = Arg3 ;
+			Enlist() ;
 			}
 		}
 	[Automaton] class   sigArgs1_sigArgs1_____sigArg

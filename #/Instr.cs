@@ -34,9 +34,9 @@ partial class A335
 				//Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
 				int iargs = Args ;
 				var data = C.Hangup( iargs ) ;
-				if( !System.String.IsNullOrEmpty( _SigArgTypes ) )
+				if( _SigArgs0 != null )
 					{
-					string[] s = _SigArgTypes.Split( '$' ) ;
+					string[] s = _SigArgs0.Types().Split( '$' ) ;
 					for( int a = ( CallConvInstance ? 2 : 1 ) ; a < iargs ; a++ )
 						{
 						int offset = a-1+( CallConvInstance ? 1 : 0 ) ;

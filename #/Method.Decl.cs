@@ -17,12 +17,7 @@ partial class A335
 	}
 
 [Automaton] class   methodDecl_localsHead__init______sigArgs0____
-	: Method.Decl   {
-	protected override void main()
-		{
-		SigArg.Clear() ;
-		}
-	}
+	: Method.Decl   {}
 
 [Automaton] class   methodDecl_id____
 	: Method.Decl   {

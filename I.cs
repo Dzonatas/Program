@@ -174,8 +174,7 @@ class Instr : Automatrix
 		protected C_Type _Type ;
 		protected C_Type _TypeSpec ;
 		protected C_Symbol _Call ;
-		protected int      _SigArgs ;
-		protected string   _SigArgTypes ;
+		protected SigArgs0 _SigArgs0 ;
 		protected bool     CallConvInstance ;
 		protected override void main()
 			{
@@ -199,9 +198,7 @@ class Instr : Automatrix
 					var a = (Automatrix) value ;
 					if( a is Automatrix )
 						{
-						var b = a as SigArgs0 ;
-						_SigArgs     = b.Count() ;
-						_SigArgTypes = b.Types() ;
+						_SigArgs0 = a as SigArgs0 ;
 						}
 					}
 				}
@@ -212,7 +209,7 @@ class Instr : Automatrix
 			}
 		protected Argument MethodName
 			{
-			set { _Call = C_Symbol.Acquire( _TypeSpec + methodname( value ) + _SigArgTypes ) ; }
+			set { _Call = C_Symbol.Acquire( _TypeSpec + methodname( value ) + ( _SigArgs0 == null ? "" : _SigArgs0.Types() ) ) ; }
 			}
 		string methodname( Argument arg )
 			{
@@ -223,7 +220,7 @@ class Instr : Automatrix
 			}
 		protected int Args
 			{
-			get { return _SigArgs + ( CallConvInstance ? 1 : 0 ) ; }
+			get { return ( _SigArgs0 == null ? 0 : _SigArgs0.Count() ) + ( CallConvInstance ? 1 : 0 ) ; }
 			}
 		protected C_Symbol _ctor
 			{

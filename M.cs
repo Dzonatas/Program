@@ -99,8 +99,7 @@ class Method
 		int     maxstack ;
 		bool    _static ;
 		bool    _CallConvInstance ;
-		int     _SigArgs ;
-		string  _SigArgTypes ;
+		SigArgs0 _SigArgs0 ;
 		bool    _Virtual ;
 		public class Part1 : Automatrix
 			{
@@ -124,7 +123,6 @@ class Method
 			classType = Class.Type ;
 			methodHead() ;
 			CreateFunction() ;
-			SigArg.Clear() ;
 			}
 		virtual protected void methodHead() {}
 		public Decl    DeclList
@@ -156,21 +154,20 @@ class Method
 			set { c_method.Name = name = value ; }
 			get { return name ; }
 			}
-		public string  SigArgTypes
+		public SigArgs0 SigArgs0
 			{
-			set { _SigArgTypes = value ; }
-			get { return _SigArgTypes ; }
-			}
-		public int     SigArgs
-			{
-			set { _SigArgs = value ; }
-			get { return _SigArgs ; }
+			set { _SigArgs0 = value ; }
+			get { return _SigArgs0 ; }
 			}
 		protected void    CreateFunction()
 			{
-			foreach( string a in SigArg.Typeset )
-				c_method.Args.Add( C_Type.Acquire( a ) ) ;
-			c_method.Function = Program.C_Function.FromSymbol( classType + name + _SigArgTypes ) ;
+			string symbol = classType + name ;
+			if( _SigArgs0 != null )
+				{
+				_SigArgs0.ForEach( (a) => c_method.Args.Add( a._Type ) ) ;
+				symbol += _SigArgs0.Types() ;
+				}
+			c_method.Function = Program.C_Function.FromSymbol( symbol ) ;
 			c_method.Function.Method = c_method ;
 			}
 		public int MaxStack
@@ -198,14 +195,14 @@ class Method
 				if( ( _Virtual = value ) )
 					{
 					var c = Program.C_Struct.FromSymbol( classType ) ;
-					c.Assign( name + _SigArgTypes ) ;
+					c.Assign( name + _SigArgs0.Types() ) ;
 					}
 				}
 			get { return _Virtual ; }
 			}
 		public void WriteInclude( StreamWriter sw )
 			{
-			sw.WriteLine( "#include \"" + classType + name + _SigArgTypes + ".c\"" ) ;
+			sw.WriteLine( "#include \"" + classType + name + _SigArgs0.Types() + ".c\"" ) ;
 			}
 		static public Head Begin
 			{
@@ -218,7 +215,7 @@ class Method
 		public void Write()
 			{
 			var c = c_method.Function ;
-			int args = _SigArgs + ( _CallConvInstance ? 1 : 0 ) ;
+			int args = _SigArgs0.Count() + ( _CallConvInstance ? 1 : 0 ) ;
 			if( _Virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
 			if( args == 0 )
@@ -294,7 +291,7 @@ class Method
 			}
 		protected int Args
 			{
-			get { return head.SigArgs + ( head.CallConvInstance ? 1 : 0 ) ; }
+			get { return ( head.SigArgs0 == null ? 0 : head.SigArgs0.Count() ) + ( head.CallConvInstance ? 1 : 0 ) ; }
 			}
 		public C_Label Label
 			{

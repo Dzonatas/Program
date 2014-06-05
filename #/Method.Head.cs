@@ -21,18 +21,14 @@ partial class A335
 			: C_Symbol.Acquire( Nameset[2] + Arg6.Token )
 			;
 		}
-	protected Argument SigArgs0
+	protected new Argument SigArgs0
 		{
 		set {
 			if ( value is Argument )
 				{
 				var a = (Automatrix) value ;
 				if( a is Automatrix )
-					{
-					var b = a as SigArgs0 ;
-					base.SigArgs     = b.Count() ;
-					base.SigArgTypes = b.Types() ;
-					}
+					base.SigArgs0 = a as SigArgs0 ;
 				}
 			}
 		}
