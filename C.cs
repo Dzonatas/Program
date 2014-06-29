@@ -199,6 +199,10 @@ public class C_Type
 		{
 		return Program.C_Type_Acquire( symbolset ) ;
 		}
+	static public C_Type Undefined
+		{
+		get { return C_Type.Acquire( new C_Undefined() ) ; }
+		}
 	static public implicit operator string( C_Type c )
 		{
 		string s = null ;
@@ -248,7 +252,7 @@ public class C_Type
 					return capitol + "_type" ;
 				throw new System.NotSupportedException() ;
 				}
-			throw new System.NotImplementedException( "Unknown type." ) ; //_ID_ID_ID_...
+			throw new System.NotImplementedException( "Undefined type." ) ; //_ID_ID_ID_...
 			}
 		}
 	}

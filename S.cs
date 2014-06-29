@@ -411,7 +411,7 @@ partial class Program
 		var list = new List<C_Type>() ;
 		stack_offset -= iargs ;
 		for( int i = 0 ; i < iargs ; i++ )
-			list.Add( stack[stack_offset+i] ) ;
+			list.Add( stack[stack_offset+i] == null ? C_Type.Undefined : stack[stack_offset+i] ) ;
 		return list ;
 		}
 	#endif
