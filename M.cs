@@ -28,6 +28,8 @@ public static void Main( string[] args )
 #endif
 	}
 
+#if MICRODATA
+
 class Microdata : C_Type //,IOprand
 	{
 	public int     capacity ; //itemscope
@@ -82,6 +84,8 @@ class Microdata : C_Type //,IOprand
 		return d.capacity == 0 ? false : true ;
 		}
 	}
+
+#endif //MICRODATA
 
 class Method
 	{

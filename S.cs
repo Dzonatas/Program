@@ -353,7 +353,7 @@ class SigArg : Automatrix
 
 partial class Program
 	{
-	static List<Microdata> stack = new List<Microdata>() ;
+	static List<C_Type> stack = new List<C_Type>() ;
 	static int stack_offset ;
 	static int stack_down ;
 	//static uint effective_symbolic_objective_credit ;
@@ -361,6 +361,7 @@ partial class Program
 		{
 		get { return stack_offset - stack_down ; }
 		}
+	#if MICRODATA
 	public void Push( Microdata stack_item_data )
 		{
 		stack[stack_offset] = stack_item_data ;
@@ -374,6 +375,18 @@ partial class Program
 		{
 		Push( new Microdata( false, string_line ) ) ;
 		}
+	#else
+	public void Push1( C_Type string_line_x )
+		{
+		stack[stack_offset] = string_line_x ;
+		stack_offset++ ;
+		}
+	public void Push( C_Type string_line )
+		{
+		stack[stack_offset] = string_line ;
+		stack_offset++ ;
+		}
+	#endif
 	public void Push( string type )
 		{
 		Push( C_Type.Acquire( type ) ) ;
@@ -383,6 +396,7 @@ partial class Program
 		stack_offset-- ;
 		return stack[stack_offset+1] ;
 		}
+	#if MICRODATA
 	public List<Microdata> Hangup( int iargs )
 		{
 		var list = new List<Microdata>() ;
@@ -391,6 +405,16 @@ partial class Program
 			list.Add( stack[stack_offset+i] ) ;
 		return list ;
 		}
+	#else
+	public List<C_Type> Hangup( int iargs )
+		{
+		var list = new List<C_Type>() ;
+		stack_offset -= iargs ;
+		for( int i = 0 ; i < iargs ; i++ )
+			list.Add( stack[stack_offset+i] ) ;
+		return list ;
+		}
+	#endif
 	public void Hangdown()
 		{
 		stack_down = stack_offset ;
