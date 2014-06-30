@@ -396,7 +396,7 @@ partial class Program
 	public object Pop()
 		{
 		stack_offset-- ;
-		return stack[stack_offset+1] ;
+		return stack[stack_offset] ;
 		}
 	#if MICRODATA
 	public List<Microdata> Hangup( int iargs )

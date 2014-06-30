@@ -223,9 +223,9 @@ partial class A335
 				C.Push( C_I4_3 ) ;
 				break ;
 			case "DUP" :
-				C.Pop() ;
-				C.Push( null ) ;
-				C.Push( null ) ;
+				var t = C.Pop() as C_Type ;
+				C.Push( t ) ;
+				C.Push( t ) ;
 				break ;
 			case "LDELEM_REF" :
 				C.Pop() ;
