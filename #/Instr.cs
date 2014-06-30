@@ -145,7 +145,7 @@ partial class A335
 		switch( Op )
 			{
 			case "LDSFLD" :
-				C.Push( null ) ;
+				C.Push( C_Type.Acquire( "_C_LDSFLD" ) ) ;
 				break ;
 			case "STSFLD" :
 				C.Pop() ;
@@ -230,7 +230,7 @@ partial class A335
 			case "LDELEM_REF" :
 				C.Pop() ;
 				C.Pop() ;
-				C.Push( null ) ;
+				C.Push( C_Type.Acquire( "_C_" + Op ) ) ;
 				break ;
 			case "STELEM_REF" :
 				C.Pop() ;
@@ -250,21 +250,21 @@ partial class A335
 				C.Pop() ;
 				break ;
 			case "LDLOC_0" :
-				C.Push( null ) ;
+				C.Push( C_Type.Acquire( "_C_LDLOC_0" ) ) ;
 				break ;
 			case "LDLOC_1" :
-				C.Push( null ) ;
+				C.Push( C_Type.Acquire( "_C_LDLOC_1" ) ) ;
 				break ;
 			case "LDLOC_2" :
-				C.Push( null ) ;
+				C.Push( C_Type.Acquire( "_C_LDLOC_2" ) ) ;
 				break ;
 			case "LDLOC_3" :
-				C.Push( null ) ;
+				C.Push( C_Type.Acquire( "_C_LDLOC_3" ) ) ;
 				break ;
 			case "ADD" :
 				C.Pop() ;
 				C.Pop() ;
-				C.Push( null ) ;
+				C.Push( C_Type.Acquire( "_C_" + Op ) ) ;
 				break ;
 			default :
 				log( "[INSTR_NONE] Defaulted on " + Op ) ;
