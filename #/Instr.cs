@@ -105,8 +105,8 @@ partial class A335
 		switch( Op )
 			{
 			case "NEWARR" :
-				C.Pop() ;
-				C.Push( null ) ;
+				object o = C.Pop() ;
+				C.Push( _C_ARY ) ;
 				break ;
 			default :
 				log( "[INSTR_TYPE] Defaulted on " + Op ) ;
@@ -208,19 +208,19 @@ partial class A335
 				}
 			case "LDC_I4_0" :
 				d.AssignStack( C.StackOffset, "0" ) ;
-				C.Push( null ) ;
+				C.Push( C_I4_0 ) ;
 				break ;
 			case "LDC_I4_1" :
-				d.AssignStack( C.StackOffset, "0" ) ;
-				C.Push( null ) ;
+				d.AssignStack( C.StackOffset, "1" ) ;
+				C.Push( C_I4_1 ) ;
 				break ;
 			case "LDC_I4_2" :
-				d.AssignStack( C.StackOffset, "0" ) ;
-				C.Push( null ) ;
+				d.AssignStack( C.StackOffset, "2" ) ;
+				C.Push( C_I4_2 ) ;
 				break ;
 			case "LDC_I4_3" :
-				d.AssignStack( C.StackOffset, "0" ) ;
-				C.Push( null ) ;
+				d.AssignStack( C.StackOffset, "3" ) ;
+				C.Push( C_I4_3 ) ;
 				break ;
 			case "DUP" :
 				C.Pop() ;

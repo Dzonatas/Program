@@ -383,6 +383,8 @@ partial class Program
 		}
 	public void Push( C_Type string_line )
 		{
+		if( string_line == null )
+			string_line = null ;
 		stack[stack_offset] = string_line ;
 		stack_offset++ ;
 		}
