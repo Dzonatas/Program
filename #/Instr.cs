@@ -36,19 +36,24 @@ partial class A335
 				var data = C.Hangup( iargs ) ;
 				if( _SigArgs0 != null )
 					{
-					int i = CallConvInstance ? 1 : 0 ;
-					_SigArgs0.ForEach( (a) =>
-						{
-						if( a._Type != data[i].Type )
+					try {
+						int i = CallConvInstance ? 1 : 0 ;
+						_SigArgs0.ForEach( (a) =>
 							{
-							//pet( "::", a, data);
-					/*
-							this_program += "static struct _object obj = { 0 } ;" ;
-							this_program += "obj.this = (void*) stack["+offset+"] ;" ;
-							this_program += "stack[" + offset + "] =  &obj;" ;
-					*/
-							}
-						} ) ;
+							if( a._Type != data[i].Type )
+								{
+								//type=pet( "nexus:CTS:get0,sphere,cube,square,point", a, data );
+								}
+							} ) ;
+						}
+					catch( System.Exception e )
+						{
+						/*
+								this_program += "static struct _object obj = { 0 } ;" ;
+								this_program += "obj.this = (void*) stack["+offset+"] ;" ;
+								this_program += "stack[" + offset + "] =  &obj;" ;
+						*/
+						}
 					}
 				C_Symbol symbol = null ;
 				Program.C_Function.Require( _Call ) ;

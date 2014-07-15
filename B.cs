@@ -283,6 +283,8 @@ partial class Program
 			;
 		jiffy( "string string::Concat(string,string)" )
 			;
+		//jiffy( pet( "fetch::", cube, sphere ) )
+		//	;
 		}
 	}
 

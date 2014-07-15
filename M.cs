@@ -206,7 +206,10 @@ class Method
 			}
 		public void WriteInclude( StreamWriter sw )
 			{
-			sw.WriteLine( "#include \"" + classType + name + _SigArgs0.Types() + ".c\"" ) ;
+			if( _SigArgs0 == null )
+				sw.WriteLine( "#include \"" + classType + name + ".c\"" ) ;
+			else
+				sw.WriteLine( "#include \"" + classType + name + _SigArgs0.Types() + ".c\"" ) ;
 			}
 		static public Head Begin
 			{
@@ -219,7 +222,7 @@ class Method
 		public void Write()
 			{
 			var c = c_method.Function ;
-			int args = _SigArgs0.Count() + ( _CallConvInstance ? 1 : 0 ) ;
+			int args = ( _SigArgs0 == null ? 0 :_SigArgs0.Count() ) + ( _CallConvInstance ? 1 : 0 ) ;
 			if( _Virtual )
 				c.Type = C_Symbol.Acquire( "struct _string" ) ;
 			if( args == 0 )
