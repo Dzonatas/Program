@@ -41,7 +41,7 @@ partial class A335
 						{
 						if( a._Type != data[i].Type )
 							{
-							//jiffy( "::", a, data)jkkkkkkkkkkkkkkkkkkkkkkkkkkkkkknml;
+							//pet( "::", a, data);
 					/*
 							this_program += "static struct _object obj = { 0 } ;" ;
 							this_program += "obj.this = (void*) stack["+offset+"] ;" ;
