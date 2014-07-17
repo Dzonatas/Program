@@ -235,3 +235,7 @@ class Automatrix : Object
 		}
 	}
 }
+
+class APOST   { /* static APOST   { ...test1... } */ }
+class APUT    { /* static APUT    { ...test2... } */ }
+class ADELETE { /* static ADELETE { ...test3... } */ }
