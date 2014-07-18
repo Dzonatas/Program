@@ -1,6 +1,6 @@
 static class Board
 {
-class Post   : global::Post   {}
-class Put    : global::Put    {}
-class Delete : global::Delete {}
+class Post   : /* [Snew] */ global::Post   {}
+class Put    : /* [Snew] */ global::Put    {}
+class Delete : /* [Snew] */ global::Delete {}
 }
