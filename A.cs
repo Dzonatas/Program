@@ -231,11 +231,13 @@ class Automatrix : Object
 		}
 	public override string ToString()
 		{
-		return string.Format("[Automatrix] " + Rule.ReductionMethod );
+		return "[Automatrix] " + Rule.ReductionMethod ;
 		}
 	}
 }
 
-class APOST   { /* static APOST   { ...test1... } */ }
-class APUT    { /* static APUT    { ...test2... } */ }
-class ADELETE { /* static ADELETE { ...test3... } */ }
+//(C)ommon-(C)ore: "Did it print in yellow? Rationalize your answer."
+class APOST   { /* ((PC),ARM[0,0.0]): static APOST   { ...test1... } */ }
+class APUT    { /* ((PC),ARM[0,1.0]): static APUT    { ...test2... } */ }
+class ADELETE { /* ((PC),ARM[0,2.0]): static ADELETE { ...test3... } */ }
+//#(Printed materials and sanitized liter (boards) accepted.)
