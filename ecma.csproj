@@ -112,6 +112,9 @@
     <Compile Include="#\Method.Decl.cs" />
     <Compile Include="#\Method.Attr.cs" />
     <Compile Include="#\Instr.cs" />
+    <Compile Include="#\Post.cs" />
+    <Compile Include="#\Put.cs" />
+    <Compile Include="#\Delete.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
