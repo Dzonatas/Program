@@ -241,3 +241,12 @@ class APOST   { /* ((PC),ARM[0,0.0]): static APOST   { ...test1... } */ }
 class APUT    { /* ((PC),ARM[0,1.0]): static APUT    { ...test2... } */ }
 class ADELETE { /* ((PC),ARM[0,2.0]): static ADELETE { ...test3... } */ }
 //#(Printed materials and sanitized liter (boards) accepted.)
+
+class ASATURDAY {}
+class ADAY        : ASATURDAY {}
+class AMONDAY     : ADAY {}
+class ATUESDAY    : AMONDAY {}
+class AWEDNESDAY  : ATUESDAY {}
+class ATHURSDAY   : AWEDNESDAY {}
+class AFRIDAY     : ATHURSDAY {}
+class ASUNDAY     : AFRIDAY {}
