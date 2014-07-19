@@ -250,3 +250,6 @@ class AWEDNESDAY  : ATUESDAY {}
 class ATHURSDAY   : AWEDNESDAY {}
 class AFRIDAY     : ATHURSDAY {}
 class ASUNDAY     : AFRIDAY {}
+
+class ACOLOR {}
+class AYELLOW : ACOLOR {}
