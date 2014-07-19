@@ -251,5 +251,5 @@ class ATHURSDAY   : AWEDNESDAY {}
 class AFRIDAY     : ATHURSDAY {}
 class ASUNDAY     : AFRIDAY {}
 
-class ACOLOR {}
-class AYELLOW : ACOLOR {}
+public class ACOLOR {}
+public class AYELLOW : ACOLOR {}

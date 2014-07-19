@@ -16,8 +16,8 @@ public class Yellow : AYELLOW
 			//Main(...)
 			}
 		}
-	public class Bus {}
-	public class Phone {}
-	public class Flag {}
+	public class Bus { /* PHONE:: */ }
+	public class Phone { /* ENV:: */ }
+	public class Flag { /* ENV::WINDOWID */ }
 	}
 }
