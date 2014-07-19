@@ -4,6 +4,8 @@ class Zone
 	{
 	class IP {}
 	class Time {}
+	//class Client {}
+	//class Server {}
 	}
 
 #region micro
