@@ -18,6 +18,18 @@ public class Yellow : AYELLOW
 		}
 	public class Bus { /* PHONE:: */ }
 	public class Phone { /* ENV:: */ }
-	public class Flag { /* ENV::WINDOWID */ }
+	public class Flag
+		{
+		public class Down   {}
+		public class Up     {}
+		public class Right  {}
+		public class Left   {}
+		public class Back   {}
+		public class Forth  {}
+		public Flag()
+			{
+			throw new System.Exception( /* ENV::WINDOWID */ ) ;
+			}
+		}
 	}
 }
