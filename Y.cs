@@ -5,10 +5,19 @@ static State           yystate ;
 static Rule            yyrule ;
 static Symbol          yytoken ;
 
-class Yellow : AYELLOW
+public class Yellow : AYELLOW
 	{
 	//class Box {}
 	//class Window {}
+	public class Border
+		{
+		public Border()
+			{
+			//Main(...)
+			}
+		}
+	public class Bus {}
+	public class Phone {}
+	public class Flag {}
 	}
-
 }
