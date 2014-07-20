@@ -6,6 +6,10 @@ class Zone
 	class Time {}
 	//class Client {}
 	//class Server {}
+	public class Sleep
+		{
+		Zone z ;
+		}
 	}
 
 #region micro
