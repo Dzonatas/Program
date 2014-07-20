@@ -236,20 +236,25 @@ class Automatrix : Object
 	}
 }
 
+namespace A {
 //(C)ommon-(C)ore: "Did it print in yellow? Rationalize your answer."
-class APOST   { /* ((PC),ARM[0,0.0]): static APOST   { ...test1... } */ }
-class APUT    { /* ((PC),ARM[0,1.0]): static APUT    { ...test2... } */ }
-class ADELETE { /* ((PC),ARM[0,2.0]): static ADELETE { ...test3... } */ }
+public class POST   { /* ((PC),ARM[0,0.0]): static APOST   { ...test1... } */ }
+public class PUT    { /* ((PC),ARM[0,1.0]): static APUT    { ...test2... } */ }
+public class DELETE { /* ((PC),ARM[0,2.0]): static ADELETE { ...test3... } */ }
 //#(Printed materials and sanitized liter (boards) accepted.)
+}
 
-class ASATURDAY {}
-class ADAY        : ASATURDAY {}
-class AMONDAY     : ADAY {}
-class ATUESDAY    : AMONDAY {}
-class AWEDNESDAY  : ATUESDAY {}
-class ATHURSDAY   : AWEDNESDAY {}
-class AFRIDAY     : ATHURSDAY {}
-class ASUNDAY     : AFRIDAY {}
+namespace A
+	{
+	public class SATURDAY {}
+	public class DAY        : SATURDAY {}
+	public class MONDAY     : DAY {}
+	public class TUESDAY    : MONDAY {}
+	public class WEDNESDAY  : TUESDAY {}
+	public class THURSDAY   : WEDNESDAY {}
+	public class FRIDAY     : THURSDAY {}
+	public class SUNDAY     : FRIDAY {}
 
-public class ACOLOR {}
-public class AYELLOW : ACOLOR {}
+	public class COLOR {}
+	public class YELLOW : COLOR {}
+	}

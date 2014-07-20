@@ -5,7 +5,7 @@ static State           yystate ;
 static Rule            yyrule ;
 static Symbol          yytoken ;
 
-public class Yellow : AYELLOW
+public class Yellow : global::A.YELLOW
 	{
 	//class Box {}
 	//class Window {}

@@ -1,9 +1,8 @@
 static class Board
 {
 class Post   : /* [Snew] */ global::Post   {}
-class Put    : /* [Snew] */ global::Put    {}
-class Delete : /* [Snew] */ global::Delete {}
+class Delete : /* [Snew] */ A335.Delete {}
 //class "Signal"
-//	: Automaton
+//	: Automaton, IPut
 //...
 }

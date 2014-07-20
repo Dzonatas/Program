@@ -1,3 +1,3 @@
-class Post : APOST
+class Post : global::A.POST
 {
 }

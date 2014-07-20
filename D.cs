@@ -34,6 +34,14 @@ static void current_working_directory()
 		).Value	+ ".c" ;
 	*/
 	}
+
+public class Delete : global::A.DELETE
+	{
+	Object dispose ;
+	public Delete()
+		{
+		}
+	}
 }
 
 namespace Directory._
