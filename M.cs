@@ -10,7 +10,7 @@ public partial class A335
 
 public static void Main( string[] args )
 	{
-	//'POST ip time/0.0'
+	current_working_directory() ;	//'POST ip time/0.0'
 	Application.Program.Parse( args ) ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
 	if( Application.Parameter.Value("synopsis") == "false" ) 

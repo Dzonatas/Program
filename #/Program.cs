@@ -127,7 +127,6 @@ partial class Program
 		}
 	static public void Write()
 		{
-		current_working_directory() ;
 		Program.WriteC_Main() ;
 		A335.Method.Write() ;
 		Program.WriteC_Objects() ;

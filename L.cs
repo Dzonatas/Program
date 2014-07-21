@@ -7,7 +7,6 @@ static public System.IO.StreamWriter  log_output ;
 
 static public void log_ready()
 	{
-	current_working_directory() ;
 	log_file = directory.FullName + "/log.text" ;
 	/*
 		(
