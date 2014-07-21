@@ -10,6 +10,10 @@ class Zone
 		{
 		Zone z ;
 		}
+	public class Start : Zone { IP ip ; }
+	public class Stop  : Zone { Time time ; }
+	//$=first+last
+	//'PUT ip time/#.#'
 	}
 
 #region micro
