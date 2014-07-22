@@ -167,7 +167,7 @@ static void xml_load_grammar()
 	xml_loaded = true ;
 	}
 
-class X //_: YY
+partial class X //_: YY
 	{
 	void filename()     {}
 	void grammar()      {}
