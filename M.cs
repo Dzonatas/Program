@@ -16,6 +16,7 @@ public static void Main( string[] args )
 	current_working_directory() ;	//'POST ip time/0.0'
 	Application.Program.Parse( args ) ;
 	X.Simple.Map() ;
+	X.Window() ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
 	if( Application.Parameter.Value("synopsis") == "false" ) 
 		Begin() ;
