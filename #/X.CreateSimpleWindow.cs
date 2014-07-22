@@ -54,19 +54,34 @@ partial class X
 				ʄ.DrawPoint( drawable, gc, x, x ) ;
 			}
 		}
+	static XAnyEvent zone ;
 	static public void Window()
 		{
+		zone = XStart.ip ;
 		loop:
 		ʄ.NextEvent( out _event ) ;
 		switch( _event.Type )
 			{
 			case 4:
 			case 5:
-				return ;
+				if( zone.Type != _event.Type )
+					return ;
+				break ;
+			default:
+				zone = _event.XAny ;
+				System.Console.WriteLine( "Event type: {0} {1}", _event.Type, _event.XAny.Serial ) ;
+				Simple.Redraw() ;
+				goto loop ;
 			}
-		System.Console.WriteLine( "Event type: {0} {1}", _event.Type, _event.XAny.Serial ) ;
-		Simple.Redraw() ;
-		goto loop ;
+		for(;;) goto loop ;
+		}
+	class XStart : Zone.Start
+		{
+		public static XAnyEvent ip = new XAnyEvent() ;
+		}
+	class XStop  : Zone.Stop
+		{
+		public static XAnyEvent time = new XAnyEvent() ;
 		}
 	}
 }
