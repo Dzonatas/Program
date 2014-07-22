@@ -8,7 +8,7 @@ class Zone
 	//class Server {}
 	public class Sleep
 		{
-		Zone z ;
+		public static Zone z ;
 		}
 	public class Start : Zone { IP ip ; }
 	public class Stop  : Zone { Time time ; }
