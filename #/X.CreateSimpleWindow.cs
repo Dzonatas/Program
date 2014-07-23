@@ -51,6 +51,7 @@ partial class X
 					if( x+x_i < 300 && y+y_i < 300 )
 						ʄ.DrawPoint( drawable, _gc, x+x_i, y+y_i ) ;
 			}
+			static ulong serial ;
 		static ulong response( XAnyEvent e )
 			{
 			switch( e.Type )
@@ -62,7 +63,9 @@ partial class X
 				case 4 : return global::X.Predefined.Color.AluminiumDark ;
 				case 5 : return global::X.Predefined.Color.AluminiumExtraDark ;
 				}
-			switch( e.Serial % 10 )
+			ulong w = (ulong)((long)e.Serial - (long)serial) + (ulong)3 ;
+			serial = e.Serial ;
+			switch( w )
 				{
 				case 0 : return global::X.Predefined.Color.Butter ;
 				case 1 : return global::X.Predefined.Color.Orange ;
@@ -71,7 +74,7 @@ partial class X
 				case 4 : return global::X.Predefined.Color.SkyBlue ;
 				case 5 : return global::X.Predefined.Color.Plum ;
 				case 6 : return global::X.Predefined.Color.ScarletRed ;
-				default: return ulong.MaxValue ;
+				default: return ( e.SendEvent ? ulong.MinValue : 0xFFFFFF ) ;
 				}
 			}
 		static public void QuickResponseEncodedSplash( XAnyEvent e )
