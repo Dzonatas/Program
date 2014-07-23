@@ -319,6 +319,20 @@ namespace System.Extensions
 			return colormap_default(display,scrnum) ;
 			}
 
+		[DllImport("libX11", EntryPoint = "XSetWindowColormap")]
+			extern static void set_window_colormap(System.IntPtr display, Drawable d, IntPtr colormap )  ;
+			public static void SetWindowColormap(this IntPtr display, Drawable d, IntPtr colormap )
+			{
+			set_window_colormap(display,d,colormap) ;
+			}
+
+		[DllImport("libX11", EntryPoint = "XParseColor")]
+			extern static void color_parse(System.IntPtr diplay, IntPtr colormap, string name, out XColor color)  ;
+			public static void ParseColor(this IntPtr display, IntPtr colormap, string name, out XColor color)
+			{
+			color_parse(display,colormap, name, out color) ;
+			}
+
 		[DllImport("libX11", EntryPoint = "XLookupColor")]
 			extern static int color_lookup(System.IntPtr diplay, IntPtr colormap, string name, out XColor softcolor, out XColor hardcolor)  ;
 			public static int LookupColor(this IntPtr display, IntPtr colormap, string name, out XColor softcolor, out XColor hardcolor)
