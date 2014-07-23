@@ -55,22 +55,22 @@ partial class X
 			{
 			switch( e.Type )
 				{
-				case 1  : return global::X.Predefined.Color.Butter ;
-				case 2  : return global::X.Predefined.Color.Orange ;
-				case 3  : return global::X.Predefined.Color.Chocolate ;
-				case 4  : return global::X.Predefined.Color.Chameleon ;
-				case 5  : return global::X.Predefined.Color.SkyBlue ;
-				case 6  : return global::X.Predefined.Color.Plum ;
-				case 7  : return global::X.Predefined.Color.ScarletRed ;
-				}
-			switch( e.Serial % 6 )
-				{
 				case 0 : return global::X.Predefined.Color.AluminiumExtraLight ;
 				case 1 : return global::X.Predefined.Color.AluminiumLight ;
 				case 2 : return global::X.Predefined.Color.AluminiumMediumLight ;
 				case 3 : return global::X.Predefined.Color.AluminiumMediumDark ;
 				case 4 : return global::X.Predefined.Color.AluminiumDark ;
 				case 5 : return global::X.Predefined.Color.AluminiumExtraDark ;
+				}
+			switch( e.Serial % 10 )
+				{
+				case 0 : return global::X.Predefined.Color.Butter ;
+				case 1 : return global::X.Predefined.Color.Orange ;
+				case 2 : return global::X.Predefined.Color.Chocolate ;
+				case 3 : return global::X.Predefined.Color.Chameleon ;
+				case 4 : return global::X.Predefined.Color.SkyBlue ;
+				case 5 : return global::X.Predefined.Color.Plum ;
+				case 6 : return global::X.Predefined.Color.ScarletRed ;
 				default: return ulong.MaxValue ;
 				}
 			}
