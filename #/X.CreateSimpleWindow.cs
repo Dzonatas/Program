@@ -17,7 +17,8 @@ partial class X
 		static public IntPtr gc ;
 		static public IntPtr gc_erase ;
 		static public Values values ;
-		static public long   mask = GCValue.Function | GCValue.Background | GCValue.Foreground ;
+		static public long   mask = GCValue.Function | GCValue.PlaneMask | GCValue.Background | GCValue.Foreground ;
+		const  ulong  pmask  = ulong.MaxValue ;
 		static Simple()
 			{
 			":0".OpenDisplay( out ʄ ) ;
@@ -27,9 +28,10 @@ partial class X
 			System.Console.WriteLine( "X-ServerVendor: {0}", x_server_vendor ) ;
 			#endif
 			values.Function  = GX.Clear ;
-			ʄ.CreateGC( drawable, mask, ref values, out gc_erase ) ;
+			ʄ.CreateGC( drawable, GCValue.Function, ref values, out gc_erase ) ;
 			ʄ.GCValues( ʄ.DefaultGC(), mask, out values ) ;
 			values.Function  = GX.Set ;
+			//values.PlaneMask = 0x77777777 ;
 			ʄ.CreateGC( drawable, mask, ref values, out gc ) ;
 			ʄ.SelectInput( drawable, 0xFFFFFF ) ;
 			}
@@ -49,11 +51,11 @@ partial class X
 					if( x+x_i < 300 && y+y_i < 300 )
 						ʄ.DrawPoint( drawable, _gc, x+x_i, y+y_i ) ;
 			}
-		static public void QuickResponseEncodedSplash()
+		static public void QuickResponseEncodedSplash( XAnyEvent e )
 			{
-			ʄ.DrawPoint( drawable, gc, 0, 0 ) ;
-			ʄ.DrawPoint( drawable, gc_erase, 0, 0 ) ;
-			for( int i = bit.Next(4) ; i > 0 ; i-- )
+			values.PlaneMask = (ulong)(1<<(int)(e.Serial%24)) ;
+			ʄ.ChangeGC( gc, GCValue.PlaneMask, ref values) ;
+			int i = e.Type ; //for( int i = bit.Next(4) ; i > 0 ; i-- )
 				for( int x = 0 ; x < 300 ; x+= i+1 )
 					for( int y = 0 ; y < 300 ; y+= i+1 )
 						plot( x, y, i+1 ) ;
@@ -86,7 +88,7 @@ partial class X
 				break ;
 			default:
 				zone = _event.XAny ;
-				Simple.QuickResponseEncodedSplash() ;
+				Simple.QuickResponseEncodedSplash( _event.XAny ) ;
 				goto loop ;
 			}
 		System.Console.WriteLine( "zone: {0} {1}", _event.Type, _event.XAny.Serial ) ;
