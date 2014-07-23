@@ -51,11 +51,34 @@ partial class X
 					if( x+x_i < 300 && y+y_i < 300 )
 						ʄ.DrawPoint( drawable, _gc, x+x_i, y+y_i ) ;
 			}
+		static ulong response( XAnyEvent e )
+			{
+			switch( e.Type )
+				{
+				case 1  : return global::X.Predefined.Color.Butter ;
+				case 2  : return global::X.Predefined.Color.Orange ;
+				case 3  : return global::X.Predefined.Color.Chocolate ;
+				case 4  : return global::X.Predefined.Color.Chameleon ;
+				case 5  : return global::X.Predefined.Color.SkyBlue ;
+				case 6  : return global::X.Predefined.Color.Plum ;
+				case 7  : return global::X.Predefined.Color.ScarletRed ;
+				}
+			switch( e.Serial % 6 )
+				{
+				case 0 : return global::X.Predefined.Color.AluminiumExtraLight ;
+				case 1 : return global::X.Predefined.Color.AluminiumLight ;
+				case 2 : return global::X.Predefined.Color.AluminiumMediumLight ;
+				case 3 : return global::X.Predefined.Color.AluminiumMediumDark ;
+				case 4 : return global::X.Predefined.Color.AluminiumDark ;
+				case 5 : return global::X.Predefined.Color.AluminiumExtraDark ;
+				default: return ulong.MaxValue ;
+				}
+			}
 		static public void QuickResponseEncodedSplash( XAnyEvent e )
 			{
-			values.PlaneMask = (ulong)(1<<(int)(e.Serial%24)) ;
+			values.PlaneMask = response( e ) ;
 			ʄ.ChangeGC( gc, GCValue.PlaneMask, ref values) ;
-			int i = e.Type ; //for( int i = bit.Next(4) ; i > 0 ; i-- )
+			for( int i = bit.Next(4) ; i > 0 ; i-- )
 				for( int x = 0 ; x < 300 ; x+= i+1 )
 					for( int y = 0 ; y < 300 ; y+= i+1 )
 						plot( x, y, i+1 ) ;

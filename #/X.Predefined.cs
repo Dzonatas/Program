@@ -181,5 +181,36 @@ namespace X.Predefined
 		*/
 	} /* C */ ;
 
+	public class Color
+		{
+		// Tango Palette
+		public const ulong      ButterLight          = 0xfce94f ;
+		public const ulong      Butter               = 0xEDD400 ;
+		public const ulong      ButterDark           = 0xc4a000 ;
+		public const ulong      OrangeLight          = 0xfcaf3e ;
+		public const ulong      Orange               = 0xF57900 ;
+		public const ulong      OrangeDark           = 0xce5c00 ;
+		public const ulong      ChocolateLight       = 0xe9b96e ;
+		public const ulong      Chocolate            = 0xC17D11 ;
+		public const ulong      ChocolateDark        = 0x8f5902 ;
+		public const ulong      ChameleonLight       = 0x8ae234 ;
+		public const ulong      Chameleon            = 0x73D216 ;
+		public const ulong      ChameleonDark        = 0x4e9a06 ;
+		public const ulong      SkyBlueLight         = 0x729fcf ;
+		public const ulong      SkyBlue              = 0x3465a4 ;
+		public const ulong      SkyBlueDark          = 0x204A87 ;
+		public const ulong      PlumLight            = 0xad7fa8 ;
+		public const ulong      Plum                 = 0x75507B ;
+		public const ulong      PlumDark             = 0x5c3566 ;
+		public const ulong      ScarletRedLight      = 0xef2929 ;
+		public const ulong      ScarletRed           = 0xCC0000 ;
+		public const ulong      ScarletRedDark       = 0xa40000 ;
+		public const ulong      AluminiumExtraLight  = 0xEEEEEC ;
+		public const ulong      AluminiumLight       = 0xD3D7CF ;
+		public const ulong      AluminiumMediumLight = 0xBABDB6 ;
+		public const ulong      AluminiumMediumDark  = 0x888A85 ;
+		public const ulong      AluminiumDark        = 0x555753 ;
+		public const ulong      AluminiumExtraDark   = 0x2e3426 ;
+		}
 }
 
