@@ -5,12 +5,25 @@ using X.Predefined ;
 public partial class A335
 {
 
-partial class X
+partial class XLogo
 	{
 	static System.IntPtr ʄ ;
 	static string x_server_vendor ;
 	static public XEvent _event ;
-	public static class Simple
+	int  CSS = A335.b_muon_css ;
+	char MAP = A335.b_custom_map ;
+	#if INTERACTIVE
+	//XEvent[] instructions ;
+	#else
+	Simple simple ;
+	#endif
+	public XLogo()
+		{
+		ʄ = X.Display ;
+		simple = new Simple() ;
+		simple.Map() ;
+		}
+	public class Simple
 		{
 		static Random bit = new Random() ;
 		static public IntPtr drawable ;
@@ -19,9 +32,10 @@ partial class X
 		static public Values values ;
 		static public long   mask = GCValue.Function | GCValue.PlaneMask | GCValue.Background | GCValue.Foreground ;
 		const  ulong  pmask  = ulong.MaxValue ;
-		static Simple()
+		public Simple()
 			{
-			":0".OpenDisplay( out ʄ ) ;
+			//":0".OpenDisplay( out ʄ ) ;
+			IntPtr d = ʄ ;
 			ʄ.CreateSimpleWindow( out drawable ) ;
 			x_server_vendor = ʄ.ServerVendor() ;
 			#if DEBUG
@@ -35,7 +49,7 @@ partial class X
 			ʄ.CreateGC( drawable, mask, ref values, out gc ) ;
 			ʄ.SelectInput( drawable, 0xFFFFFF ) ;
 			}
-		static public void Map()
+		public void Map()
 			{
 			ʄ.MapWindow( drawable ) ;
 			}
@@ -91,7 +105,7 @@ partial class X
 			}
 		}
 	static XAnyEvent zone ;
-	static public void Window()
+	public void Window()
 		{
 		zone = XStart.ip ;
 		loop:
@@ -127,10 +141,6 @@ partial class X
 	class XStop  : Zone.Stop
 		{
 		public static XAnyEvent time = new XAnyEvent() ;
-		}
-	public static IntPtr Display
-		{
-		get { return XStop.time.Display == IntPtr.Zero ? ʄ : XStop.time.Display ; }
 		}
 	}
 }

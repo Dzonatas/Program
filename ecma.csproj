@@ -118,6 +118,7 @@
     <Compile Include="#\Board.cs" />
     <Compile Include="#\X.CreateSimpleWindow.cs" />
     <Compile Include="#\X.Predefined.cs" />
+    <Compile Include="#\X.Logo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

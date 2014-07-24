@@ -18,6 +18,8 @@ public static void Main( string[] args )
 	Application.Program.Parse( args ) ;
 	X.Simple.Map() ;
 	X.Window() ;
+	XLogo logo = new XLogo() ;
+	logo.Window() ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
 	if( Application.Parameter.Value("synopsis") == "false" ) 
 		Begin() ;
