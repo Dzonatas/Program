@@ -8,7 +8,7 @@ public partial class A335
 partial class X
 	{
 	static System.IntPtr ʄ ;
-	static string x_server_vendor ;
+	static IntPtr x_server_vendor ;
 	static public XEvent _event ;
 	public static class Simple
 		{

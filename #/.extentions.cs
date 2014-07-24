@@ -86,8 +86,8 @@ namespace System.Extensions
 			}
 
 		[DllImport("libX11", EntryPoint = "XServerVendor")]
-			extern static string server_vendor(IntPtr display) ;
-			public static string ServerVendor(this IntPtr display)
+			extern static IntPtr server_vendor(IntPtr display) ;
+			public static IntPtr ServerVendor(this IntPtr display)
 			{
 			return server_vendor( display ) ;
 			}

@@ -14,7 +14,7 @@ partial class XLogo
 	static public IntPtr Bit ;
 	#endif
 	static System.IntPtr ʄ ;
-	static string x_server_vendor ;
+	static IntPtr x_server_vendor ;
 	static public XEvent _event ;
 	int  CSS = A335.b_muon_css ;
 	char MAP = A335.b_custom_map ;
@@ -53,9 +53,7 @@ partial class XLogo
 			IntPtr d = ʄ ;
 			ʄ.CreateSimpleWindow( out drawable ) ;
 			x_server_vendor = ʄ.ServerVendor() ;
-			#if DEBUG
 			System.Console.WriteLine( "X-ServerVendor: {0}", x_server_vendor ) ;
-			#endif
 			values.Function  = GX.Clear ;
 			ʄ.CreateGC( drawable, GCValue.Function, ref values, out gc_erase ) ;
 			ʄ.GCValues( ʄ.DefaultGC(), mask, out values ) ;
