@@ -63,7 +63,7 @@ partial class X
 				case 4 : return global::X.Predefined.Color.AluminiumDark ;
 				case 5 : return global::X.Predefined.Color.AluminiumExtraDark ;
 				}
-			ulong w = (ulong)((long)e.Serial - (long)serial) + (ulong)3 ;
+			ulong w = (ulong)((long)e.Serial - (long)serial + (long)3) ;
 			serial = e.Serial ;
 			switch( w )
 				{
