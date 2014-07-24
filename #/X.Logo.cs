@@ -7,6 +7,12 @@ public partial class A335
 
 partial class XLogo
 	{
+	#if O1AUTHUNK
+	static public IntPtr _ ;
+	static public IntPtr Rubis ;
+	static public IntPtr Q ;
+	static public IntPtr Bit ;
+	#endif
 	static System.IntPtr ʄ ;
 	static string x_server_vendor ;
 	static public XEvent _event ;
@@ -20,6 +26,15 @@ partial class XLogo
 	public XLogo()
 		{
 		ʄ = X.Display ;
+		#if O1AUTHUNK
+		switch( ʄ )
+			{
+			case _
+			case Rubis
+			case Q
+			case Bit
+			}
+		#endif
 		simple = new Simple() ;
 		simple.Map() ;
 		}
