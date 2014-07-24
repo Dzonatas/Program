@@ -159,3 +159,10 @@ partial class XLogo
 		}
 	}
 }
+
+namespace X.String
+{
+class StandardStringInput  : StandardStringError {}
+class StandardStringOutput : StandardStringError {}
+class StandardStringError  {}
+}
