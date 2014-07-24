@@ -165,4 +165,9 @@ namespace X.String
 class StandardStringInput  : StandardStringError {}
 class StandardStringOutput : StandardStringError {}
 class StandardStringError  {}
+class TZN : TZ {}
+class TZS : TZ {}
+class TZ : StandardZone {}
+class StandardZone : BuildString /*: A335.Zone*/ {}
+class BuildString {}
 }
