@@ -2,6 +2,8 @@ using System.Extensions ;
 using System ;
 using X.Predefined ;
 
+using Fixture = System.IntPtr ;
+
 public partial class A335
 {
 
@@ -14,7 +16,7 @@ partial class XLogo
 	static public IntPtr Bit ;
 	#endif
 	static System.IntPtr ʄ ;
-	static IntPtr x_server_vendor ;
+	static Fixture x_server_vendor ;
 	static public XEvent _event ;
 	int  CSS = A335.b_muon_css ;
 	char MAP = A335.b_custom_map ;
