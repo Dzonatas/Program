@@ -1,27 +1,9 @@
 using System.Extensions ;
 using System ;
 using X.Predefined ;
+using X.String ;
 
 using Fixture = System.IntPtr ;
-
-namespace X.String
-{
-public class XIPv6
-	{
-	public class alpha
-		{
-		public XAnyEvent beta ;
-		#if ETCGAMES || XXELF
-		public XAnyEvent buildPoint ; //Γ
-		public XAnyEvent buildPoints ; //Δ
-		#else
-		public XAnyEvent buildPoint ; //Δ
-		public XAnyEvent buildPoints ; //Γ
-		#endif
-		}
-	}
-}
-
 
 public partial class A335
 {
@@ -47,7 +29,7 @@ partial class XLogo
 	#endif
 	public XLogo()
 		{
-		ʄ = X.Display ;
+		XIPv6.alpha.beta.Display = ʄ = X.Display ;
 		#if O1AUTHUNK
 		switch( ʄ )
 			{
@@ -57,8 +39,12 @@ partial class XLogo
 			case Bit
 			}
 		#endif
-		simple = new Simple() ;
-		simple.Map() ;
+		XIPv6.alpha.Switch(
+			() => { return 1 ; },
+			() => { (simple = new Simple()).Map() ; return 2 ; },
+			() => { return 3 ; },
+			ref _event.XAny
+			);
 		}
 	public class Simple
 		{
