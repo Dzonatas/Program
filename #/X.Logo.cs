@@ -4,8 +4,28 @@ using X.Predefined ;
 
 using Fixture = System.IntPtr ;
 
+namespace X.String
+{
+public class XIPv6
+	{
+	public class alpha
+		{
+		public XAnyEvent beta ;
+		#if ETCGAMES || XXELF
+		public XAnyEvent buildPoint ; //Γ
+		public XAnyEvent buildPoints ; //Δ
+		#else
+		public XAnyEvent buildPoint ; //Δ
+		public XAnyEvent buildPoints ; //Γ
+		#endif
+		}
+	}
+}
+
+
 public partial class A335
 {
+
 
 partial class XLogo
 	{
