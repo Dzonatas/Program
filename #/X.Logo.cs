@@ -22,6 +22,8 @@ partial class XLogo
 	static public XEvent _event ;
 	int  CSS = A335.b_muon_css ;
 	char MAP = A335.b_custom_map ;
+	static int max_x ;
+	static int max_y ;
 	#if INTERACTIVE
 	//XEvent[] instructions ;
 	#else
@@ -74,8 +76,32 @@ partial class XLogo
 			{
 			ʄ.MapWindow( drawable ) ;
 			}
+		static int degree = 45 ;
 		static public void plot( int x, int y, int size )
 			{
+			var border = 300 ;
+			Decimal i = 300 ; //(Decimal)border - border ;
+			var rad_i  = Math.PI/180 ;
+			var arc_i  = degree*rad_i ;
+
+			//var radius = (Decimal)border / 2 ;
+			var cosine = (Decimal)Math.Cos(arc_i) ;
+			var sine   = (Decimal)Math.Sin(arc_i) ;
+
+			#if !BITR
+			Decimal dx = (Decimal)x + y * cosine ;
+			Decimal dy = (Decimal)y + x * sine ;
+
+			x = (int)dx ;
+			y = (int)dy ;
+			#else
+			Decimal dx = (Decimal)x * cosine - y * sine ;
+			Decimal dy = (Decimal)x * sine + y * cosine ;
+
+			x = (int)dx + border /2;
+			y = (int)dy + border /5;
+			#endif
+
 			IntPtr _gc ;
 			if( bit.Next(2) == 0 ? false : true )
 				_gc = gc ;
@@ -83,8 +109,12 @@ partial class XLogo
 				_gc = gc_erase ;
 			for( int x_i = 0 ; x_i < size ; x_i++ )
 				for( int y_i = 0 ; y_i < size ; y_i++ )
+					{
+					if( x+x_i > max_x ) max_x = x+x_i ;
+					if( y+y_i > max_y ) max_y = y+y_i ;
 					if( x+x_i < 300 && y+y_i < 300 )
 						ʄ.DrawPoint( drawable, _gc, x+x_i, y+y_i ) ;
+					}
 			}
 			static ulong serial ;
 		static ulong response( XAnyEvent e )
@@ -114,15 +144,21 @@ partial class XLogo
 			}
 		static public void QuickResponseEncodedSplash( XAnyEvent e )
 			{
+			#if !BITR
+			const int l = 300 ;
+			#else
+			const int l = 128 ;
+			#endif
 			values.PlaneMask = response( e ) ;
+			degree = 45 ;
 			ʄ.ChangeGC( gc, GCValue.PlaneMask, ref values) ;
 			for( int i = bit.Next(4) ; i > 0 ; i-- )
-				for( int x = 0 ; x < 300 ; x+= i+1 )
-					for( int y = 0 ; y < 300 ; y+= i+1 )
+				for( int x = 0 ; x < l ; x+= i+1 )
+					for( int y = 0 ; y < l ; y+= i+1 )
 						plot( x, y, i+1 ) ;
 			Random yy = new Random() ;
-			for( int x = 0 ; x < 300 ; x++ )
-					plot( x,  yy.Next(300), 1 ) ;
+			for( int x = 0 ; x < l ; x++ )
+					plot( x,  yy.Next(l), 1 ) ;
 			}
 		}
 	static XAnyEvent zone ;
@@ -144,6 +180,7 @@ partial class XLogo
 				if( zone.Type != _event.Type )
 					{
 					XStop.time = zone ;
+					System.Console.WriteLine("{0} {1}", max_x, max_y) ;
 					return ;
 					}
 				break ;
