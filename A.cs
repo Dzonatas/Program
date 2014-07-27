@@ -1,6 +1,8 @@
 partial class A335
 {
 
+//icyspherical.blogspot.com/2014/07/pnp-in-laymans-terms.html
+
 A335()
 	{
 	/*<code default=".voxel.nexus">*/// Console.WriteLine( Application.Data:[ihave.sendme:RFC:IPv6]:a_balance ) ;
