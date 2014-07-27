@@ -57,6 +57,7 @@ partial class X
 			static ulong serial ;
 		static ulong response( XAnyEvent e )
 			{
+			//icyspherical.blogspot.com/2013/12/delineation-by-absence-of-sound.html
 			switch( e.Type )
 				{
 				case 0 : return global::X.Predefined.Color.AluminiumExtraLight ;
