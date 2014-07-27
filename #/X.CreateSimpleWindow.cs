@@ -10,6 +10,9 @@ partial class X
 	static System.IntPtr ʄ ;
 	static IntPtr x_server_vendor ;
 	static public XEvent _event ;
+	#if WM_VM
+	static public XEvent[] eventset ;
+	#endif
 	public static class Simple
 		{
 		static Random bit = new Random() ;
