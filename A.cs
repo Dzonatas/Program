@@ -260,3 +260,8 @@ namespace A
 	public class COLOR {}
 	public class YELLOW : COLOR {}
 	}
+
+namespace B
+	{
+	class D2 : A.COLOR {}
+	}
