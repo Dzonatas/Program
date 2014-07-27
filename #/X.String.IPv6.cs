@@ -1,6 +1,8 @@
 using System ;
 using X.Predefined ;
 
+//icyspherical.blogspot.com/2012/03/trademarks-other-end-of-dtv-rainbow.html
+
 namespace X.String
 {
 public class XIPv6
