@@ -263,5 +263,5 @@ namespace A
 
 namespace B
 	{
-	class D2 : A.COLOR {}
+	public class D2 : A.COLOR {}
 	}

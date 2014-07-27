@@ -394,3 +394,18 @@ C ()
 #endregion micro
 */
 }
+
+namespace B
+	{
+	public class BRandomColor : Random
+		{
+		D2 random ;
+		D2 color ;
+		public D2 Value
+			{
+			get { return random ; }
+			set { random = value ; }
+			}
+		public new Func<D2> Next ;
+		};
+	}
