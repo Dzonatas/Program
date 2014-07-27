@@ -89,12 +89,15 @@ partial class XLogo
 			var sine   = (Decimal)Math.Sin(arc_i) ;
 
 			#if !BITR
+			//Z
 			Decimal dx = (Decimal)x + y * cosine ;
 			Decimal dy = (Decimal)y + x * sine ;
 
 			x = (int)dx ;
 			y = (int)dy ;
 			#else
+			//icyspherical.blogspot.com/2010/07/optimizing-simulations-with-basic.html
+			//YX
 			Decimal dx = (Decimal)x * cosine - y * sine ;
 			Decimal dy = (Decimal)x * sine + y * cosine ;
 
