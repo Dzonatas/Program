@@ -89,6 +89,7 @@ partial class X
 				for( int x = 0 ; x < 300 ; x+= i+1 )
 					for( int y = 0 ; y < 300 ; y+= i+1 )
 						plot( x, y, i+1 ) ;
+			//icyspherical.blogspot.com/2011/05/make-my-restful-url-bar-day-in-multi.html
 			Random yy = new Random() ;
 			for( int x = 0 ; x < 300 ; x++ )
 					plot( x,  yy.Next(300), 1 ) ;
