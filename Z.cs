@@ -1,12 +1,12 @@
 public partial class A335
 {
-class Zone
+public class Zone
 	{
 	class IP {}
 	class Time {}
 	//class Client {}
 	//class Server {}
-	public class Sleep
+	class Sleep
 		{
 		public static Zone z ;
 		}
