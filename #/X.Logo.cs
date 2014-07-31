@@ -55,7 +55,7 @@ partial class XLogo
 		static public IntPtr gc ;
 		static public IntPtr gc_erase ;
 		static public Values values ;
-		static public long   mask = GCValue.Function | GCValue.PlaneMask | GCValue.Background | GCValue.Foreground ;
+		static public ulong   mask = GCValue.Function | GCValue.PlaneMask | GCValue.Background | GCValue.Foreground ;
 		const  ulong  pmask  = ulong.MaxValue ;
 		public Simple()
 			{

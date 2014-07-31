@@ -10,6 +10,7 @@ namespace X.Predefined
 	using Rectangle = System.IntPtr ;         //X-defined-default:[x,y]:=upper-left
 	using Colormap  = System.IntPtr ;
 	using Display   = System.IntPtr ;
+	using Visual    = System.IntPtr ;
 
 	public enum Atom
 		{
@@ -76,29 +77,29 @@ namespace X.Predefined
 
 	public static class GCValue
 		{
-		public static long Function          = (1L<<0) ;
-		public static long PlaneMask         = (1L<<1) ;
-		public static long Foreground        = (1L<<2) ;
-		public static long Background        = (1L<<3) ;
-		public static long LineWidth         = (1L<<4) ;
-		public static long LineStyle         = (1L<<5) ;
-		public static long CapStyle          = (1L<<6) ;
-		public static long JoinStyle         = (1L<<7) ;
-		public static long FillStyle         = (1L<<8) ;
-		public static long FillRule          = (1L<<9) ;
-		public static long Tile              = (1L<<10) ;
-		public static long Stipple           = (1L<<11) ;
-		public static long TileStipXOrigin   = (1L<<12) ;
-		public static long TileStipYOrigin   = (1L<<13) ;
-		public static long Font              = (1L<<14) ;
-		public static long SubwindowMode     = (1L<<15) ;
-		public static long GraphicsExposures = (1L<<16) ;
-		public static long ClipXOrigin       = (1L<<17) ;
-		public static long ClipYOrigin       = (1L<<18) ;
-		public static long ClipMask          = (1L<<19) ;
-		public static long DashOffset        = (1L<<20) ;
-		public static long DashList          = (1L<<21) ;
-		public static long ArcMode           = (1L<<22) ;
+		public static ulong Function          = (1L<<0) ;
+		public static ulong PlaneMask         = (1L<<1) ;
+		public static ulong Foreground        = (1L<<2) ;
+		public static ulong Background        = (1L<<3) ;
+		public static ulong LineWidth         = (1L<<4) ;
+		public static ulong LineStyle         = (1L<<5) ;
+		public static ulong CapStyle          = (1L<<6) ;
+		public static ulong JoinStyle         = (1L<<7) ;
+		public static ulong FillStyle         = (1L<<8) ;
+		public static ulong FillRule          = (1L<<9) ;
+		public static ulong Tile              = (1L<<10) ;
+		public static ulong Stipple           = (1L<<11) ;
+		public static ulong TileStipXOrigin   = (1L<<12) ;
+		public static ulong TileStipYOrigin   = (1L<<13) ;
+		public static ulong Font              = (1L<<14) ;
+		public static ulong SubwindowMode     = (1L<<15) ;
+		public static ulong GraphicsExposures = (1L<<16) ;
+		public static ulong ClipXOrigin       = (1L<<17) ;
+		public static ulong ClipYOrigin       = (1L<<18) ;
+		public static ulong ClipMask          = (1L<<19) ;
+		public static ulong DashOffset        = (1L<<20) ;
+		public static ulong DashList          = (1L<<21) ;
+		public static ulong ArcMode           = (1L<<22) ;
 		public static long Simple            = (1L<<23)-1 ;
 		}
 
@@ -212,5 +213,58 @@ namespace X.Predefined
 		public const ulong      AluminiumDark        = 0x555753 ;
 		public const ulong      AluminiumExtraDark   = 0x2e3426 ;
 		}
-}
 
+	[StructLayout(LayoutKind.Sequential)]
+	public struct VisualInfo
+		{
+		public System.IntPtr  Visual ;
+		public System.Int64   VisualID ;
+		public System.Int32   Screen ;
+		public System.UInt32  Depth ;
+		public System.Int32   Class ;
+		public System.Int64   RedMask ;
+		public System.Int64   GreenMask ;
+		public System.Int64   BlueMask ;
+		public System.Int32   ColormapSize ;
+		public System.Int32   BitsPerRGB ;
+		}
+
+	[StructLayout(LayoutKind.Sequential)]
+	public struct SetWindowAttributes
+		{
+		public System.Int32 background_pixmap; /* background, None, or ParentRelative */
+		public ulong background_pixel; /* background pixel */
+		public System.Int32 border_pixmap; /* border of the window or CopyFromParent */
+		public ulong border_pixel; /* border pixel value */
+		public int bit_gravity; /* one of bit gravity values */
+		public int win_gravity; /* one of the window gravity values */
+		public int backing_store; /* NotUseful, WhenMapped, Always */
+		public ulong backing_planes; /* planes to be preserved if possible */
+		public ulong backing_pixel; /* value to use in restoring planes */
+		public bool save_under; /* should bits under be saved? (popups) */
+		public long event_mask; /* set of events that should be saved */
+		public long do_not_propagate_mask; /* set of events that should not propagate */
+		public bool override_redirect; /* boolean value for override_redirect */
+		public System.IntPtr colormap; /* color map to be associated with window */
+		public System.IntPtr cursor; /* cursor to be displayed (or None) */
+		}
+
+	public static class CW
+		{
+		public static ulong 	BackPixmap       = (1L<<0)  ;
+		public static ulong 	BackPixel        = (1L<<1)  ;
+		public static ulong 	BorderPixmap     = (1L<<2)  ;
+		public static ulong 	BorderPixel      = (1L<<3)  ;
+		public static ulong 	BitGravity       = (1L<<4)  ;
+		public static ulong 	WinGravity       = (1L<<5)  ;
+		public static ulong 	BackingStore     = (1L<<6)  ;
+		public static ulong 	BackingPlanes    = (1L<<7)  ;
+		public static ulong 	BackingPixel     = (1L<<8)  ;
+		public static ulong 	OverrideRedirect = (1L<<9)  ;
+		public static ulong 	SaveUnder        = (1L<<10) ;
+		public static ulong 	EventMask        = (1L<<11) ;
+		public static ulong 	DontPropagate    = (1L<<12) ;
+		public static ulong 	Colormap         = (1L<<13) ;
+		public static ulong 	Cursor           = (1L<<14) ;
+		}
+}

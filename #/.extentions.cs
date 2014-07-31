@@ -232,31 +232,31 @@ namespace System.Extensions
 			{
 			pixmap_free(display,pixmap) ;
 			}
-		
+
 		[DllImport("libX11", EntryPoint = "XCreateGC")]
-			extern static IntPtr gc_create(IntPtr display, Drawable d, long value_mask, ref Values values)  ;
-			public static void CreateGC(this IntPtr display, Drawable d, long mask, ref Values values, out IntPtr xgc )
+			extern static IntPtr gc_create(IntPtr display, Drawable d, ulong value_mask, ref Values values)  ;
+			public static void CreateGC(this IntPtr display, Drawable d, ulong mask, ref Values values, out IntPtr xgc )
 			{
 			xgc = gc_create( display, d, mask, ref values ) ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XGetGCValues")]
-			extern static void gc_values(IntPtr display, IntPtr gc, long valuemask, out Values values )  ;
-			public static void GCValues(this IntPtr display, IntPtr gc, long valuemask, out Values values )
+			extern static void gc_values(IntPtr display, IntPtr gc, ulong valuemask, out Values values )  ;
+			public static void GCValues(this IntPtr display, IntPtr gc, ulong valuemask, out Values values )
 			{
 			gc_values(display,gc,valuemask, out values) ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XCopyGC")]
-			extern static void gc_copy(IntPtr display, IntPtr gc, long valuemask, IntPtr xgc )  ;
-			public static void CopyGC(this IntPtr display, IntPtr gc, long valuemask, IntPtr xgc )
+			extern static void gc_copy(IntPtr display, IntPtr gc, ulong valuemask, IntPtr xgc )  ;
+			public static void CopyGC(this IntPtr display, IntPtr gc, ulong valuemask, IntPtr xgc )
 			{
 			gc_copy(display,gc,valuemask, xgc) ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XChangeGC")]
-			extern static void gc_change(IntPtr display, IntPtr gc, long valuemask, ref Values values )  ;
-			public static void ChangeGC(this IntPtr display, IntPtr gc, long valuemask, ref Values values )
+			extern static void gc_change(IntPtr display, IntPtr gc, ulong valuemask, ref Values values )  ;
+			public static void ChangeGC(this IntPtr display, IntPtr gc, ulong valuemask, ref Values values )
 			{
 			gc_change(display,gc,valuemask, ref values) ;
 			}
