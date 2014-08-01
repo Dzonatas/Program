@@ -143,10 +143,23 @@ namespace X.Predefined
 		//long[] pad ; //24
 		}
 
+	[StructLayout(LayoutKind.Sequential)]
+	public struct XC_Event
+		{
+		public int           Type                 ;
+		public ulong         Serial               ; /* # of last request processed by server */
+		public bool          SendEvent            ; /* true if this came from a SendEvent request */
+		public Display       Display              ; /* Display the event was read from */
+		public Drawable      Window               ;
+		public System.IntPtr CodePage             ;
+		/* C# */
+		}
+
 	[StructLayout(LayoutKind.Explicit)]
 	public struct XEvent {
 		[FieldOffset(0)] public int          Type  ; /* must not be changed */
 		[FieldOffset(0)] public XAnyEvent    XAny  ;
+		[FieldOffset(0)] public XC_Event     XCC   ; //_CSS,_MAP,"work",code...
 		/*
 		XKeyEvent xkey;
 		XButtonEvent xbutton;
