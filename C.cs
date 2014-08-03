@@ -401,6 +401,21 @@ static class Work
 		}
 	}
 #endif
+static class Estate
+	{
+	const  string     path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d/.git" ;
+	static class        DI
+		{
+		static System.IO.DirectoryInfo directory ;
+		static DI()
+			{
+			directory = new System.IO.DirectoryInfo(path) ;
+			if( directory.Exists )
+				return ;
+			throw new System.NotSupportedException( "Obtained region collusion." ) ;
+			}
+		}
+	}
 static class Path
 	{
 	const  string     path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d" ;

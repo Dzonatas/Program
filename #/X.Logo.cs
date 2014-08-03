@@ -17,6 +17,7 @@ partial class XLogo
 	static public IntPtr Q ;
 	static public IntPtr Bit ;
 	#endif
+
 	static System.IntPtr ʄ ;
 	static Fixture x_server_vendor ;
 	static public XEvent _event ;
