@@ -401,7 +401,7 @@ static class Work
 		}
 	}
 #endif
-static class Estate
+public static class Estate
 	{
 	const  string     path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d/.git" ;
 	static class        DI
@@ -412,7 +412,7 @@ static class Estate
 			directory = new System.IO.DirectoryInfo(path) ;
 			if( directory.Exists )
 				return ;
-			throw new System.NotSupportedException( "Obtained region collusion." ) ;
+			throw new System.NotImplementedException( "Obtained region collusion." ) ;
 			}
 		}
 	}

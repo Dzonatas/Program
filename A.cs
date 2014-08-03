@@ -248,17 +248,65 @@ public class DELETE { /* ((PC),ARM[0,2.0]): static ADELETE { ...test3... } */ }
 
 namespace A
 	{
-	public class SATURDAY {}
+	public class SATURDAY
+		{
+		public override string ToString()
+			{
+			return "[ATA] No carrier." ;
+			}
+		}
 	public class DAY        : SATURDAY {}
-	public class MONDAY     : DAY {}
-	public class TUESDAY    : MONDAY {}
-	public class WEDNESDAY  : TUESDAY {}
-	public class THURSDAY   : WEDNESDAY {}
-	public class FRIDAY     : THURSDAY {}
-	public class SUNDAY     : FRIDAY {}
+	public class MONDAY     : DAY
+		{
+		public override string ToString()
+			{
+			return string.Format( "{0}", global::X.Predefined.Color.SkyBlue ) ;
+			}
+		}
+	public class TUESDAY    : MONDAY
+		{
+		public override string ToString()
+			{
+			return string.Format( "{0}", global::X.Predefined.Color.Plum ) ;
+			}
+		}
+	public class WEDNESDAY  : TUESDAY
+		{
+		public override string ToString()
+			{
+			return string.Format( "{0}", global::X.Predefined.Color.Chocolate ) ;
+			}
+		}
+	public class THURSDAY   : WEDNESDAY
+		{
+		public override string ToString()
+			{
+			return string.Format( "{0}", global::X.Predefined.Color.Chameleon ) ;
+			}
+		}
+	public class FRIDAY     : THURSDAY
+		{
+		public override string ToString()
+			{
+			return string.Format( "{0}", global::X.Predefined.Color.ScarletRed ) ;
+			}
+		}
+	public class SUNDAY     : FRIDAY
+		{
+		public override string ToString()
+			{
+			return string.Format( "{0}", global::X.Predefined.Color.Orange ) ;
+			}
+		}
 
 	public class COLOR {}
-	public class YELLOW : COLOR {}
+	public class YELLOW : COLOR
+		{
+		public override string ToString()
+			{
+			return string.Format( "{0}", global::X.Predefined.Color.Butter ) ;
+			}
+		}
 	}
 
 namespace B
