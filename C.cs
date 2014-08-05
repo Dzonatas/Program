@@ -404,6 +404,7 @@ static class Work
 public static class Estate
 	{
 	const  string     path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d/.git" ;
+	//const  string      uri = @"git:5a7160ed-13d5-4923-a1f9-3e32a47d558a:master" ;
 	static class        DI
 		{
 		static System.IO.DirectoryInfo directory ;

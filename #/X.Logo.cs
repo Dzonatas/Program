@@ -120,7 +120,7 @@ partial class XLogo
 						ʄ.DrawPoint( drawable, _gc, x+x_i, y+y_i ) ;
 					}
 			}
-			static ulong serial ;
+		static ulong serial ;
 		static ulong response( XAnyEvent e )
 			{
 			switch( e.Type )
