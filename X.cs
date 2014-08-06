@@ -39,6 +39,10 @@ public class Xo
 		{
 		get { return x ; }
 		}
+	internal int Y
+		{
+		get { return y ; }
+		}
 	public Rule Rule
 		{
 		get { return ruleset[x] ; }
@@ -126,13 +130,20 @@ class Xo_t
 	static public void Build()
 		{
 		var sw = Current.Path.CreateText( "grammar.html" ) ;
+		var s = Current.Path.CreateText( "auto.cs" ) ;
 		sw.Write( "<head></head><body><table>" ) ;
+		s.WriteLine( "public partial class A335" ) ;
+		s.WriteLine( "{" ) ;
 		foreach( Xo_t xo in xo_t )
 			{
-			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
+			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
+			s.WriteLine( "[Automaton] class   " + xo.ReductionMethod ) ;
+			s.WriteLine( "    : Automatrix    {}" ) ;
 			}
 		sw.WriteLine( "</table></body>" ) ;
 		sw.Close() ;
+		s.WriteLine( "}" ) ;
+		s.Close() ;
 		}
 	}
 
