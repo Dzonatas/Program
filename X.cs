@@ -35,6 +35,10 @@ public class Xo
 		this.o     = null ;
 		this.left  = false ;
 		}
+	internal int X
+		{
+		get { return x ; }
+		}
 	public Rule Rule
 		{
 		get { return ruleset[x] ; }
@@ -119,6 +123,17 @@ class Xo_t
 			{
 			return string.Format("[Xo_t:{0}[{1}]]", lhs, rhs.Length);
 			}
+	static public void Build()
+		{
+		var sw = Current.Path.CreateText( "grammar.html" ) ;
+		sw.Write( "<head></head><body><table>" ) ;
+		foreach( Xo_t xo in xo_t )
+			{
+			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
+			}
+		sw.WriteLine( "</table></body>" ) ;
+		sw.Close() ;
+		}
 	}
 
 //static Dictionary<string,Symbol> x_lhs_s = new Dictionary<string, Symbol>() ;

@@ -420,19 +420,20 @@ public static class Estate
 static class Path
 	{
 	const  string     path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d" ;
-	static class        DI
+	static System.IO.DirectoryInfo directory ;
+	static Path()
 		{
-		static System.IO.DirectoryInfo directory ;
-		static DI()
-			{
-			directory = new System.IO.DirectoryInfo(path) ;
-			if( directory.Exists )
-				return ;
-			directory = System.IO.Directory.CreateDirectory(path) ;
-			if( directory.Exists )
-				return ;
-			throw new System.NotSupportedException( "Obtained path collusion." ) ;
-			}
+		directory = new System.IO.DirectoryInfo(path) ;
+		if( directory.Exists )
+			return ;
+		directory = System.IO.Directory.CreateDirectory(path) ;
+		if( directory.Exists )
+			return ;
+		throw new System.NotSupportedException( "Obtained path collusion." ) ;
+		}
+	static public System.IO.StreamWriter CreateText( string name )
+		{
+		return System.IO.File.CreateText( path + "/" + name ) ;
 		}
 	}
 }
