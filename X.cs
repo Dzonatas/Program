@@ -132,7 +132,7 @@ class Xo_t
 		var sw = Current.Path.CreateText( "grammar.html" ) ;
 		var s = Current.Path.CreateText( "auto.cs" ) ;
 		var g = Current.Path.CreateText( "glossary.html" ) ;
-		sw.Write( "<head></head><body><table>" ) ;
+		sw.Write( "<head></head><body><table style=\"font: monospace;\">" ) ;
 		g.Write( "<head></head><body><table>" ) ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
