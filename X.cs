@@ -131,19 +131,32 @@ class Xo_t
 		{
 		var sw = Current.Path.CreateText( "grammar.html" ) ;
 		var s = Current.Path.CreateText( "auto.cs" ) ;
+		var g = Current.Path.CreateText( "glossary.html" ) ;
 		sw.Write( "<head></head><body><table>" ) ;
-		s.WriteLine( "public partial class A335" ) ;
+		g.Write( "<head></head><body><table>" ) ;
+		Xo_t n = xo_t[0] ;
+		Xo_t xo ;
+		s.WriteLine( "namespace _accept" ) ;
 		s.WriteLine( "{" ) ;
-		foreach( Xo_t xo in xo_t )
+		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
+			xo = xo_t[i] ;
+			n = xo ;
+			s.WriteLine( "}" ) ;
+			s.WriteLine( ) ;
+			s.WriteLine( "namespace {0}._{1}", n.lhs.s, n.lhs.X ) ;
+			s.WriteLine( "{" ) ;
+			g.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.lhs.s + "</td></tr>" ) ;
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
-			s.WriteLine( "[Automaton] class   " + xo.ReductionMethod ) ;
+			s.WriteLine( "[A335.Automaton] class   " + xo.ReductionMethod ) ;
 			s.WriteLine( "    : Automatrix    {}" ) ;
 			}
 		sw.WriteLine( "</table></body>" ) ;
+		g.WriteLine( "</table></body>" ) ;
 		sw.Close() ;
 		s.WriteLine( "}" ) ;
 		s.Close() ;
+		g.Close() ;
 		}
 	}
 
