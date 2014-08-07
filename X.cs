@@ -138,6 +138,10 @@ class Xo_t
 		Xo_t xo ;
 		s.WriteLine( "namespace _accept" ) ;
 		s.WriteLine( "{" ) ;
+		s.WriteLine( "//await" ) ;
+		s.WriteLine( "//awhile" ) ;
+		s.WriteLine( "//aaccept" ) ;
+		s.WriteLine( "//bookkeeping" ) ; //bookkeeppong
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
