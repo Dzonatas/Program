@@ -151,10 +151,17 @@ class Xo_t
 			s.WriteLine( ) ;
 			s.WriteLine( "namespace {0}._{1}", n.lhs.s, n.lhs.X ) ;
 			s.WriteLine( "{" ) ;
+			#if XYP
 			if( head )
 				g.WriteLine( "<tr><td><h1>" + xo.lhs.X + "</h1></td><td><h1>" + xo.lhs.Y + "</h1></td><td><h1>" + xo.lhs.s + "</h1></td></tr>" ) ;
 			else
 				g.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.lhs.s + "</td></tr>" ) ;
+			#else
+			if( head )
+				g.WriteLine( "<tr><td><h1>" + xo.lhs.X + "." + xo.lhs.Y + "</h1></td><td><h1>" + xo.lhs.s + "</h1></td></tr>" ) ;
+			else
+				g.WriteLine( "<tr><td>" + xo.lhs.X + "." + xo.lhs.Y + "</td><td>" + xo.lhs.s + "</td></tr>" ) ;
+			#endif
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
 			s.WriteLine( "[A335.Automaton] class   " + xo.ReductionMethod ) ;
 			s.WriteLine( "    : Automatrix    {}" ) ;
