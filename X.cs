@@ -133,7 +133,7 @@ class Xo_t
 		var s = Current.Path.CreateText( "auto.cs" ) ;
 		var g = Current.Path.CreateText( "glossary.html" ) ;
 		sw.Write( "<head></head><body><table style=\"font: monospace;\">" ) ;
-		g.Write( "<head></head><body><table>" ) ;
+		g.Write( "<head></head><body><table {0}>", "ITEMSCOPE" ) ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
 		s.WriteLine( "namespace _accept" ) ;
@@ -160,7 +160,18 @@ class Xo_t
 			if( head )
 				g.WriteLine( "<tr><td><h1>" + xo.lhs.X + "." + xo.lhs.Y + "</h1></td><td><h1>" + xo.lhs.s + "</h1></td></tr>" ) ;
 			else
-				g.WriteLine( "<tr><td>" + xo.lhs.X + "." + xo.lhs.Y + "</td><td>" + xo.lhs.s + "</td></tr>" ) ;
+				{
+				g.Write( "<tr>" ) ;
+				g.Write( "<td {0}>", "ITEMTYPE" ) ;
+				g.Write( xo.lhs.X ) ;
+				g.Write( "." ) ;
+				g.Write( xo.lhs.Y ) ;
+				g.Write( "</td>" ) ;
+				g.Write( "<td {0}>", "ITEMPROP" ) ;
+				g.Write( xo.lhs.s ) ;
+				g.Write( "</td>" ) ;
+				g.Write( "</tr>" ) ;
+				}
 			#endif
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
 			s.WriteLine( "[A335.Automaton] class   " + xo.ReductionMethod ) ;
