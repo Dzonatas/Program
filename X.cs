@@ -129,7 +129,7 @@ class Xo_t
 			}
 	static public void Build()
 		{
-		var sw = Current.Path.CreateText( "grammar.html" ) ;
+		var sw = Current.Path.CreateText( "x-y-text.tab.html" ) ;
 		var s = Current.Path.CreateText( "auto.cs" ) ;
 		var g = Current.Path.CreateText( "glossary.html" ) ;
 		sw.Write( "<head></head><body><table style=\"font: monospace;\">" ) ;
