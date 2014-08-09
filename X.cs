@@ -33163,7 +33163,3 @@ static bool xml_get_()
 </bison-xml-report>
 #endregion
 #endif
-
-#if RECODE
-#do BUILD
-#endif
