@@ -132,7 +132,11 @@ partial class XLogo
 				case 4 : return global::X.Predefined.Color.AluminiumDark ;
 				case 5 : return global::X.Predefined.Color.AluminiumExtraDark ;
 				}
+			#if OFFBY2
 			ulong w = (ulong)((long)e.Serial - (long)serial + (long)3) ;
+			#else
+			ulong w = e.Serial - serial + 3 ;
+			#endif
 			serial = e.Serial ;
 			switch( w )
 				{
