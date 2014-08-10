@@ -101,6 +101,7 @@ partial class X
 		zone = XStart.ip ;
 		loop:
 		ʄ.NextEvent( out _event ) ;
+		System.Console.WriteLine( "zone: {0} {1} {2} {3}", _event.Type, _event.XAny.Serial, _event.XAny.Display, _event.XAny.Window ) ;
 		switch( _event.Type )
 			{
 			case 4:

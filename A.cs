@@ -248,7 +248,7 @@ public class DELETE { /* ((PC),ARM[0,2.0]): static ADELETE { ...test3... } */ }
 
 namespace A
 	{
-	public class SATURDAY
+	public class SATURDAY //ITaskAssemble
 		{
 		public override string ToString()
 			{
@@ -291,7 +291,7 @@ namespace A
 			return string.Format( "{0}", global::X.Predefined.Color.ScarletRed ) ;
 			}
 		}
-	public class SUNDAY     : FRIDAY
+	public class SUNDAY     : FRIDAY //ITaskBuild
 		{
 		public override string ToString()
 			{
