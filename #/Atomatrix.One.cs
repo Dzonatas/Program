@@ -1,6 +1,6 @@
 namespace Atomatrice
 {
-using System ;
+using IntPtr = System.IntPtr ;
 static public class One
 	{
 	static IntPtr _precursor  = (IntPtr)01010100010101 ;
