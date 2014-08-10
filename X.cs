@@ -142,6 +142,9 @@ class Xo_t
 		s.WriteLine( "//awhile" ) ;
 		s.WriteLine( "//aaccept" ) ;
 		s.WriteLine( "//bookkeeping" ) ; //bookkeeppong
+		#if !XYP
+		g.WriteLine( "<tr><th ITEMTYPE>technique</th><th ITEMPROP>profile</th></tr>" ) ;
+		#endif
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
@@ -162,12 +165,12 @@ class Xo_t
 			else
 				{
 				g.Write( "<tr>" ) ;
-				g.Write( "<td {0}>", "ITEMTYPE" ) ;
+				g.Write( "<td>" ) ;
 				g.Write( xo.lhs.X ) ;
 				g.Write( "." ) ;
 				g.Write( xo.lhs.Y ) ;
 				g.Write( "</td>" ) ;
-				g.Write( "<td {0}>", "ITEMPROP" ) ;
+				g.Write( "<td>" ) ;
 				g.Write( xo.lhs.s ) ;
 				g.Write( "</td>" ) ;
 				g.Write( "</tr>" ) ;
