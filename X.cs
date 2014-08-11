@@ -161,7 +161,14 @@ class Xo_t
 				g.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.lhs.s + "</td></tr>" ) ;
 			#else
 			if( head )
-				g.WriteLine( "<tr><td><h1>" + xo.lhs.X + "." + xo.lhs.Y + "</h1></td><td><h1>" + xo.lhs.s + "</h1></td></tr>" ) ;
+				{
+				g.Write( "<tr><td><h1>" + xo.lhs.X + "." + xo.lhs.Y + "</h1></td><td><h1>" + xo.lhs.s + "</h1></td>" ) ;
+				g.Write( "<td>" ) ;
+				g.Write( (char) xo ) ;
+				g.Write( xo.ReductionMethod.Substring( xo.lhs.s.Length ) ) ;
+				g.Write( "</td>" ) ;
+				g.WriteLine( "</tr>" ) ;
+				}
 			else
 				{
 				g.Write( "<tr>" ) ;
@@ -172,6 +179,10 @@ class Xo_t
 				g.Write( "</td>" ) ;
 				g.Write( "<td>" ) ;
 				g.Write( xo.lhs.s ) ;
+				g.Write( "</td>" ) ;
+				g.Write( "<td>" ) ;
+				g.Write( (char) xo ) ;
+				g.Write( xo.ReductionMethod.Substring( xo.lhs.s.Length ) ) ;
 				g.Write( "</td>" ) ;
 				g.Write( "</tr>" ) ;
 				}
