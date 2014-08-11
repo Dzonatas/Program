@@ -133,7 +133,7 @@ class Xo_t
 		var s = Current.Path.CreateText( "auto.cs" ) ;
 		var g = Current.Path.CreateText( "glossary.html" ) ;
 		sw.Write( "<head></head><body><table style=\"font: monospace;\">" ) ;
-		g.Write( "<head {0}></head><body><table {1}>", "UUID", "ITEMSCOPE" ) ;
+		g.Write( "<head {0}></head><body style=\"color: red ; background: antiquewhite ;\"><table {1}>", "UUID", "ITEMSCOPE" ) ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
 		s.WriteLine( "namespace _accept" ) ;
@@ -143,7 +143,7 @@ class Xo_t
 		s.WriteLine( "//aaccept" ) ;
 		s.WriteLine( "//bookkeeping" ) ; //bookkeeppong
 		#if !XYP
-		g.WriteLine( "<tr><th ITEMTYPE>technique</th><th ITEMPROP>profile</th></tr>" ) ;
+		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>UNICODED</td></tr>" ) ;
 		#endif
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
