@@ -143,7 +143,7 @@ class Xo_t
 		s.WriteLine( "//aaccept" ) ;
 		s.WriteLine( "//bookkeeping" ) ; //bookkeeppong
 		#if !XYP
-		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>ENTITY</td></tr>" ) ;
+		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>C</td><td>ENTITY</td><td>PROTOTYPE</td></tr>" ) ;
 		#endif
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
@@ -160,29 +160,24 @@ class Xo_t
 			else
 				g.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.lhs.s + "</td></tr>" ) ;
 			#else
-			string entity = "&" + xo.lhs.s + xo.ReductionMethod.Substring( xo.lhs.s.Length ) + ";" ;
+			string entity = "&0." + xo.lhs.X + ";" ;
+			string prototype = xo.ReductionMethod.Substring( xo.lhs.s.Length ) ;
 			if( head )
 				{
 				g.Write( "<tr><td><h1>" + xo.lhs.X + "." + xo.lhs.Y + "</h1></td><td><h1>" + xo.lhs.s + "</h1></td>" ) ;
-				g.Write( "<td>" ) ;
-				g.Write( entity ) ;
-				g.Write( "</td>" ) ;
+				g.Write( "<td>" + (char)xo + "</td>" ) ;
+				g.Write( "<td>" + entity + "</td>" ) ;
+				g.Write( "<td>" + prototype + "</td>" ) ;
 				g.WriteLine( "</tr>" ) ;
 				}
 			else
 				{
 				g.Write( "<tr>" ) ;
-				g.Write( "<td>" ) ;
-				g.Write( xo.lhs.X ) ;
-				g.Write( "." ) ;
-				g.Write( xo.lhs.Y ) ;
-				g.Write( "</td>" ) ;
-				g.Write( "<td>" ) ;
-				g.Write( xo.lhs.s ) ;
-				g.Write( "</td>" ) ;
-				g.Write( "<td>" ) ;
-				g.Write( entity ) ;
-				g.Write( "</td>" ) ;
+				g.Write( "<td>" + xo.lhs.X + "." + xo.lhs.Y + "</td>" ) ;
+				g.Write( "<td>" + xo.lhs.s + "</td>" ) ;
+				g.Write( "<td>" + (char)xo + "</td>" ) ;
+				g.Write( "<td>" + entity + "</td>" ) ;
+				g.Write( "<td>" + prototype + "</td>" ) ;
 				g.Write( "</tr>" ) ;
 				}
 			#endif
