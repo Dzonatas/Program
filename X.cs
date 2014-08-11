@@ -133,7 +133,7 @@ class Xo_t
 		var s = Current.Path.CreateText( "auto.cs" ) ;
 		var g = Current.Path.CreateText( "glossary.html" ) ;
 		sw.Write( "<head></head><body><table style=\"font: monospace;\">" ) ;
-		g.Write( "<head></head><body><table {0}>", "ITEMSCOPE" ) ;
+		g.Write( "<head {0}></head><body><table {1}>", "UUID", "ITEMSCOPE" ) ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
 		s.WriteLine( "namespace _accept" ) ;
