@@ -17,6 +17,17 @@
 *
 *********************************/
 
+/************************
+* { Current-News: 2014-08-12                    }
+* { Hypercard:    /tmp                          }
+* { Intents:      /System,/Program,/Debian.dpkg }
+* { Internet:     Offline                       }
+* { Domain:       .NET                          }
+* { Trademarks:   Ballard,<embed>,(-1)          }
+* { Map:          Earth,(Moon),(Mars),...       }
+* { Spreadsheet:  () as imaginary precedes i    }
+*/
+
 #include <stdio.h>
 extern int yydebug ;
 
