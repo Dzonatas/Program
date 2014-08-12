@@ -34,7 +34,7 @@ int TERMINAL_( int n, char *str, YYSTYPE * yylval_param )
 
 int TERMINAL( int n, char *str, YYSTYPE* yylval_param )
 	{
-			printf("<_%d-%d/>%s", n, (int)yylval_param, str);
+			printf("&_%d_%d;%s", (int)yylval_param, n, str);
 		/*
 	switch( n )
 		{

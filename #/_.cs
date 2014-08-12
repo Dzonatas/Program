@@ -336,12 +336,25 @@ public static Token input()
 	int x = System.Console.CursorTop ;
 	int y = System.Console.CursorLeft ;
 	#endif
-	if( xml.Read() && xml.NodeType == System.Xml.XmlNodeType.Element )
+	if( xml.Read() )
 		{
-		string [] s = xml.Name.Split("_-".ToCharArray()) ;
-		xml.Read() ;
-		string text = xml.Value ;
-		return new Token( (char)int.Parse( s[1] ), text ) ; //_point3D:___(s[2,text]),_xor_URN:s[0]:_
+		switch( xml.NodeType )
+			{
+			case System.Xml.XmlNodeType.Element:
+				{
+				string [] s = xml.Name.Split("_-".ToCharArray()) ;
+				xml.Read() ;
+				string text = xml.Value ;
+				return new Token( (char)int.Parse( s[1] ), text ) ; //_point3D:___(s[2,text]),_xor_URN:s[0]:_
+				}
+			case System.Xml.XmlNodeType.EntityReference:
+				{
+				string [] s = xml.Name.Split("_".ToCharArray()) ;
+				xml.Read() ;
+				string text = xml.Value ;
+				return new Token( (char)int.Parse( s[2] ), text ) ; //s[1]_estate
+				}
+			}
 		}
 	Token t = new Token( '\0', "$end" ) ;
 	#if DEBUG_INPUT && CONSOLE

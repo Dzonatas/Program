@@ -191,6 +191,16 @@ class Xo_t
 		s.WriteLine( "}" ) ;
 		s.Close() ;
 		g.Close() ;
+		#if POSTBACK
+		var c = Current.Path.CreateText( "entset.csv" ) ;
+		foreach( var i in xml_translate )
+			{
+			//string entity = "&0." + xo.lhs.X + ";" ;
+			//string prototype = xo.ReductionMethod.Substring( xo.lhs.s.Length ) ;
+			c.WriteLine( "\"&{0}.{1}\",", i.Value, (int)i.Key /* (char)xo, prototype*/ ) ;
+			}
+		c.Close() ;
+		#endif
 		}
 	}
 
