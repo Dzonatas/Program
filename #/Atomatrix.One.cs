@@ -3,13 +3,13 @@ namespace Atomatrice
 using IntPtr = System.IntPtr ;
 static public class One
 	{
-	static IntPtr _precursor  = (IntPtr)01010100010101 ;
-	static IntPtr _intraface  = (IntPtr)01010101010010 ;
-	static IntPtr _intrafaces = (IntPtr)01010101010101 ;
-	static IntPtr _orbit      = (IntPtr)01010101011010 ;
-	static IntPtr _interface  = (IntPtr)01011101010101 ;
-	static IntPtr _interfaces = (IntPtr)01010101010101 ;
-	static IntPtr _item       = (IntPtr)01010101010101 ;
+	static IntPtr _precursor  = (IntPtr)01010100010101 ; //gist
+	static IntPtr _intraface  = (IntPtr)01010101010010 ; //intragist,this
+	static IntPtr _intrafaces = (IntPtr)01010101010101 ; //intragistics,nexus
+	static IntPtr _orbit      = (IntPtr)01010101011010 ; //!gist
+	static IntPtr _interface  = (IntPtr)01011101010101 ; //intergist,this,(that)
+	static IntPtr _interfaces = (IntPtr)01010101010101 ; //intergistics,nexus
+	static IntPtr _item       = (IntPtr)01010101010101 ; //Δ
 	static public IntPtr Precursor
 		{
 		get { return _precursor ; }
