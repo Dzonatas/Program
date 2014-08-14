@@ -416,6 +416,15 @@ public static class Estate
 			throw new System.NotImplementedException( "Obtained region collusion." ) ;
 			}
 		}
+	public static class        Current__System_File
+		{
+		static System.IO.DirectoryInfo directory ;
+		static Current__System_File()
+			{
+			//return:git.head:System.File.cs
+			throw new System.NotImplementedException( "Initialized." ) ;
+			}
+		}
 	}
 static class Path
 	{
