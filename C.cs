@@ -418,6 +418,10 @@ public static class Estate
 		}
 	public static class        Current__System_File
 		{
+		static public string Path
+			{
+			get { return "PANZOR/" + path ; }
+			}
 		static System.IO.DirectoryInfo directory ;
 		static Current__System_File()
 			{
