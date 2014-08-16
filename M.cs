@@ -13,9 +13,10 @@ public partial class A335
 
 public static void Main( string[] args )
 	{
-	System.Console.WriteLine( "{0} {1} {2}", (1<<22), (1L<<22)-1, Current.Estate.Current__System_File.Path ) ;
+	System.Console.WriteLine( "{0} {1} {2}", (1<<22), (1L<<22)-1, Environment.GetEnvironmentVariable("PANZOR") ) ;
 	current_working_directory() ;	//'POST ip time/0.0'
 	Application.Program.Parse( args ) ;
+	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
 	//X.Simple.Map() ;
 	//X.Window() ;
 	//XLogo logo = new XLogo() ;

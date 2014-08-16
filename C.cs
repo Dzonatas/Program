@@ -416,14 +416,17 @@ public static class Estate
 		}
 	public static class        Current__System_File
 		{
+		static string panzor ;
 		static public string Path
 			{
-			get { return "PANZOR/" + path ; }
+			set { panzor = value + path ; }
 			}
 		static System.IO.DirectoryInfo directory ;
 		static Current__System_File()
 			{
 			//return:git.head:System.File.cs
+			if( String.IsNullOrEmpty( panzor ) )
+				return ;
 			throw new System.NotImplementedException( "Initialized." ) ;
 			}
 		}
