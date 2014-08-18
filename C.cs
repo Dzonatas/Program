@@ -407,6 +407,7 @@ public static class Estate
 	//const  string      uri = @"git:5a7160ed-13d5-4923-a1f9-3e32a47d558a:gradient,region,shadow" ;
 	//const  string      uri = @"git:5a7160ed-13d5-4923-a1f9-3e32a47d558a:N,L,P" ;
 	//const  string      uri = @"nlp:5a7160ed-13d5-4923-a1f9-3e32a47d558a:get,yellow,from,encave" ;
+	//const  string      uri = @"tig:5a7160ed-13d5-4923-a1f9-3e32a47d558a:run,nandom,main" ;
 	static class        DI
 		{
 		static System.IO.DirectoryInfo directory ;
