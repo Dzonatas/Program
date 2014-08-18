@@ -430,6 +430,7 @@ public static class Estate
 		static Current__System_File()
 			{
 			//return:git.head:System.File.cs   //C-Shader(File)
+			//return:git.head:System.File.cs   //C-Source(Function)
 			if( String.IsNullOrEmpty( panzor ) )
 				return ;
 			throw new System.NotImplementedException( "Initialized." ) ;
