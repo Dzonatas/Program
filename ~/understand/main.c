@@ -26,6 +26,7 @@
 * { Trademarks:   Ballard,<embed>,(-1)          }
 * { Map:          Earth,(Moon),(Mars),...       }
 * { Spreadsheet:  () as imaginary precedes i    }
+* { Wall:         $=<compQstring/postback>      }
 */
 
 #include <stdio.h>
