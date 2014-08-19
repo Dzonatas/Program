@@ -32,11 +32,13 @@
 #include <stdio.h>
 extern int yydebug ;
 
-int main()
+int main( int ARGc, char** ARGv, char**ENVi )
   {
-  yydebug = 0 ;
-
-  printf( "<?xml version=\"1.0\" ?>\n<xml>" ) ;
+  yydebug = ARGc ? -1 : 0 ;                       //restful?
+  if( ENVi == 0 )                                 //stateless?
+	  printf( "<?xml version=\"1.0\" ?>\n<xml>" ) ;
+  else
+	  printf( "<?xml version=\"1.1\" ?>\n<xml>" ) ;
   yyparse() ;
   printf( "</xml>\n" ) ;
   return 0 ;

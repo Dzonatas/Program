@@ -511,7 +511,7 @@ int TERMINAL_( int n, char *str, YYSTYPE * yylval_param )
 
 int TERMINAL( int n, char *str, YYSTYPE* yylval_param )
 	{
-			printf("&_%d_%d;%s", (int)yylval_param, n, str);
+			printf("&_%d_%d;%s", (unsigned long)yylval_param, n, str);
 		/*
 	switch( n )
 		{
@@ -577,7 +577,7 @@ int INSTRUCTION_( char *inst, int n, char *str, YYSTYPE* yylval_param )
 
 int PUNCTUATION( int n, YYSTYPE* yylval_param )
 	{
-  	printf("<_%d-%d/>%c", n, (int)yylval_param, n);
+	printf("<_%d-%d/>%c", n, (unsigned long)yylval_param, n);
 	return n ;
 	}
 int PUNCTUATION2( int n, int m )
