@@ -38,6 +38,7 @@ int main( int ARGc, char** ARGv, char**ENVi )
   yydebug = (ARGc-1) ? -1 : 0 ;                   //restful?
   if( ENVi == 0 )                                 //stateful?
 	  what = "\"0.9\"" ;
+  else
   if( ARGv == 0 )                                 //stateless?
 	  what = "\"1.1\"" ;
   else
