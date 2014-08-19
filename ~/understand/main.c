@@ -34,11 +34,15 @@ extern int yydebug ;
 
 int main( int ARGc, char** ARGv, char**ENVi )
   {
-  yydebug = ARGc ? -1 : 0 ;                       //restful?
-  if( ENVi == 0 )                                 //stateless?
-	  printf( "<?xml version=\"1.0\" ?>\n<xml>" ) ;
+  char* what = "\"2.0\"" ;                        //(20.0)
+  yydebug = (ARGc-1) ? -1 : 0 ;                   //restful?
+  if( ENVi == 0 )                                 //stateful?
+	  what = "\"0.9\"" ;
+  if( ARGv == 0 )                                 //stateless?
+	  what = "\"1.1\"" ;
   else
-	  printf( "<?xml version=\"1.1\" ?>\n<xml>" ) ;
+	  what = "\"1.0\"" ;
+  printf( "<?xml version=%s ?>\n<xml>", what ) ;
   yyparse() ;
   printf( "</xml>\n" ) ;
   return 0 ;
