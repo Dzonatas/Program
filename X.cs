@@ -192,7 +192,7 @@ class Xo_t
 		s.Close() ;
 		g.Close() ;
 		#if POSTBACK
-		//((v8)|v16)[f32|.]v64
+		//[((v8)|v16)[f32|.]v64]|v8sidv64
 		var c = Current.Path.CreateText( "entset.csv" ) ;
 		foreach( var i in xml_translate )
 			{
