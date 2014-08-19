@@ -43,7 +43,11 @@ int main( int ARGc, char** ARGv, char**ENVi )
 	  what = "\"1.1\"" ;
   else
 	  what = "\"1.0\"" ;
-  printf( "<?xml version=%s ?>\n<xml>", what ) ;
+  #if SHORTLISTED
+	printf( "<?xml version=%s ?>\n<xml shortlisted=\"%s\">", what, ARGv[0] ) ;
+  #else
+	printf( "<?xml version=%s ?>\n<xml>", what ) ;
+  #endif
   yyparse() ;
   printf( "</xml>\n" ) ;
   return 0 ;
