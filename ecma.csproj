@@ -120,6 +120,7 @@
     <Compile Include="#\X.Predefined.cs" />
     <Compile Include="#\X.Logo.cs" />
     <Compile Include="#\X.String.IPv6.cs" />
+    <Compile Include="~\X.Y.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
