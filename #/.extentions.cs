@@ -75,14 +75,16 @@ namespace System.Extensions
 		//[Oprand({'B', 'l'})]
 		[DllImport("libX11", EntryPoint = "XOpenDisplay")]
 			extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
-			public static void OpenDisplay(this string _, out IntPtr display)
+			public static void OpenDisplay(this double _, out IntPtr display)
 			{
 			#if DEBUG || DIRECTX
 			//IceSetHostBasedAuthProc(listener,always_true) ;
 			#elif WIN8 || VAX
 			//IceSetHostBasedAuthProc(listener,trait) ;
 			#endif
-			display = display_open(_) ;
+			string s = _.ToString().Replace(".",":") ;
+			System.Console.WriteLine(s) ;
+			display = display_open(":"+s) ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XServerVendor")]

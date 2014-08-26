@@ -24,7 +24,7 @@ partial class X
 		const  ulong  pmask  = ulong.MaxValue ;
 		static Simple()
 			{
-			":0".OpenDisplay( out ʄ ) ;
+			0.0.OpenDisplay( out ʄ ) ;
 			ʄ.CreateSimpleWindow( out drawable ) ;
 			x_server_vendor = ʄ.ServerVendor() ;
 			#if DEBUG
