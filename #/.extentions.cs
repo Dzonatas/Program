@@ -75,7 +75,7 @@ namespace System.Extensions
 		//[Oprand({'B', 'l'})]
 		[DllImport("libX11", EntryPoint = "XOpenDisplay")]
 			extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
-			public static void OpenDisplay(this double _, out IntPtr display)
+			public static IntPtr OpenDisplay(this double _, out IntPtr display)
 			{
 			#if DEBUG || DIRECTX
 			//IceSetHostBasedAuthProc(listener,always_true) ;
@@ -83,26 +83,27 @@ namespace System.Extensions
 			//IceSetHostBasedAuthProc(listener,trait) ;
 			#endif
 			string s = _.ToString().Replace(".",":") ;
-			System.Console.WriteLine(s) ;
-			display = display_open(":"+s) ;
+			return display = display_open(":"+s) ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XServerVendor")]
 			extern static IntPtr server_vendor(IntPtr display) ;
-			public static IntPtr ServerVendor(this IntPtr display)
+			public static IntPtr ServerVendor(this IntPtr display, out IntPtr sv )
 			{
-			return server_vendor( display ) ;
+			sv = server_vendor( display ) ;
+			return display ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XCreateSimpleWindow")]
 			extern static IntPtr window_create_simple(IntPtr display, IntPtr window, int x, int y, uint width, uint height, uint border_width, ulong border, ulong background) ;
-			public static void CreateSimpleWindow(this IntPtr display, out Drawable d )
+			public static IntPtr CreateSimpleWindow(this IntPtr display, out Drawable d )
 			{
 			int     s  = screen_default(display) ;
 			IntPtr  r  = root_window( display, s ) ;
 			ulong pixel_border = pixel_server( display, s ) ;
 			ulong pixel_background = pixel_client( display, s ) ;
 			d = window_create_simple(display, r, 3, 3, 300, 300, 1, pixel_border, pixel_background ) ;
+			return display ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XDefaultGC")]

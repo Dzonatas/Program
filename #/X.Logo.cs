@@ -63,7 +63,7 @@ partial class XLogo
 			//":0".OpenDisplay( out ʄ ) ;
 			IntPtr d = ʄ ;
 			ʄ.CreateSimpleWindow( out drawable ) ;
-			x_server_vendor = ʄ.ServerVendor() ;
+			ʄ.ServerVendor( out x_server_vendor ) ;
 			System.Console.WriteLine( "X-ServerVendor: {0}", x_server_vendor ) ;
 			values.Function  = GX.Clear ;
 			ʄ.CreateGC( drawable, GCValue.Function, ref values, out gc_erase ) ;
