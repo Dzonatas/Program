@@ -20,23 +20,24 @@ partial class X
 		static public IntPtr gc ;
 		static public IntPtr gc_erase ;
 		static public Values values ;
+		static public Values values_erase ;
 		static public ulong   mask = GCValue.Function | GCValue.PlaneMask | GCValue.Background | GCValue.Foreground ;
 		const  ulong  pmask  = ulong.MaxValue ;
 		static Simple()
 			{
+			values_erase.Function  = GX.Clear ;
+			values.Function        = GX.Set ;
+			//values.PlaneMask = 0x77777777 ;
 			0.0.OpenDisplay( out ʄ )
 				.CreateSimpleWindow( out drawable )
-				.ServerVendor( out x_server_vendor ) ;
+				.ServerVendor( out x_server_vendor )
+				.CreateGC( drawable, GCValue.Function, ref values_erase, out gc_erase )
+				.GCValues( ʄ.DefaultGC(), mask, out values )
+				.CreateGC( drawable, mask, ref values, out gc )
+				.SelectInput( drawable, 0xFFFFFF ) ;
 			#if DEBUG
 			System.Console.WriteLine( "X-ServerVendor: {0}", x_server_vendor ) ;
 			#endif
-			values.Function  = GX.Clear ;
-			ʄ.CreateGC( drawable, GCValue.Function, ref values, out gc_erase ) ;
-			ʄ.GCValues( ʄ.DefaultGC(), mask, out values ) ;
-			values.Function  = GX.Set ;
-			//values.PlaneMask = 0x77777777 ;
-			ʄ.CreateGC( drawable, mask, ref values, out gc ) ;
-			ʄ.SelectInput( drawable, 0xFFFFFF ) ;
 			}
 		static public void Map()
 			{

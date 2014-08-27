@@ -238,16 +238,18 @@ namespace System.Extensions
 
 		[DllImport("libX11", EntryPoint = "XCreateGC")]
 			extern static IntPtr gc_create(IntPtr display, Drawable d, ulong value_mask, ref Values values)  ;
-			public static void CreateGC(this IntPtr display, Drawable d, ulong mask, ref Values values, out IntPtr xgc )
+			public static IntPtr CreateGC(this IntPtr display, Drawable d, ulong mask, ref Values values, out IntPtr xgc )
 			{
 			xgc = gc_create( display, d, mask, ref values ) ;
+			return display ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XGetGCValues")]
 			extern static void gc_values(IntPtr display, IntPtr gc, ulong valuemask, out Values values )  ;
-			public static void GCValues(this IntPtr display, IntPtr gc, ulong valuemask, out Values values )
+			public static IntPtr GCValues(this IntPtr display, IntPtr gc, ulong valuemask, out Values values )
 			{
 			gc_values(display,gc,valuemask, out values) ;
+			return display ;
 			}
 
 		[DllImport("libX11", EntryPoint = "XCopyGC")]
