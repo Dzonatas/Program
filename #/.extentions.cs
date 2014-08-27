@@ -77,9 +77,9 @@ namespace System.Extensions
 			extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
 			public static IntPtr OpenDisplay(this double _, out IntPtr display)
 			{
-			#if DEBUG || DIRECTX
+			#if ECMA || ( DEBUG || DIRECTX )
 			//IceSetHostBasedAuthProc(listener,always_true) ;
-			#elif WIN8 || VAX
+			#elif BUILD || ( WIN8 || VAX )
 			//IceSetHostBasedAuthProc(listener,trait) ;
 			#endif
 			switch(_.CompareTo(0.0))
