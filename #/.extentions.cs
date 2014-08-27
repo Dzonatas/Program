@@ -82,8 +82,15 @@ namespace System.Extensions
 			#elif WIN8 || VAX
 			//IceSetHostBasedAuthProc(listener,trait) ;
 			#endif
-			string s = _.ToString().Replace(".",":") ;
-			return display = display_open(":"+s) ;
+			switch(_.CompareTo(0.0))
+				{
+				case 0: return display = display_open(":0") ;
+				default:
+					{
+					string s = _.ToString().Replace(".",":") ;
+					return display = display_open(":"+s) ;
+					}
+				}
 			}
 
 		[DllImport("libX11", EntryPoint = "XServerVendor")]
