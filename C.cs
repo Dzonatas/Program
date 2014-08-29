@@ -380,7 +380,7 @@ namespace Current {
 #if WORK
 static class Work
 	{
-	static string     path = @"/tmp/."+0.0.GUID()+".d" ;
+	static string     path = 1.1.GUID() ;
 	static string  current = path ;
 	static XEvent        _ ;
 	static class        DI
