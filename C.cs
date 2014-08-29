@@ -439,7 +439,7 @@ public static class Estate
 	}
 static class Path
 	{
-	static string     path = @"/tmp/."+0.1.GUID()+".d" ;
+	static string     path = 0.1.GUID() ;
 	static System.IO.DirectoryInfo directory ;
 	static Path()
 		{
