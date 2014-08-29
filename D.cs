@@ -1,4 +1,5 @@
 using System.IO ;
+using System.Extensions ;
 
 partial class A335
 {
@@ -16,7 +17,7 @@ static DirectoryInfo directory ;
 
 static void current_working_directory()
 	{
-	string path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d" ;
+	string path = @"/tmp/."+0.0.GUID()+".d" ;
 	directory = new DirectoryInfo(path) ;
 	if( directory.Exists )
 		return ;

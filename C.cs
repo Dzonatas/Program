@@ -380,7 +380,7 @@ namespace Current {
 #if WORK
 static class Work
 	{
-	const  string     path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d" ;
+	static string     path = @"/tmp/."+0.0.GUID()+".d" ;
 	static string  current = path ;
 	static XEvent        _ ;
 	static class        DI
@@ -401,13 +401,13 @@ static class Work
 #endif
 public static class Estate
 	{
-	const  string     path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d/.git" ;
-	//const  string      uri = @"git:5a7160ed-13d5-4923-a1f9-3e32a47d558a:master,constitution,encave" ;
-	//const  string      uri = @"git:5a7160ed-13d5-4923-a1f9-3e32a47d558a:blueprint,grayons,yellow" ;
-	//const  string      uri = @"git:5a7160ed-13d5-4923-a1f9-3e32a47d558a:gradient,region,shadow" ;
-	//const  string      uri = @"git:5a7160ed-13d5-4923-a1f9-3e32a47d558a:N,L,P" ;
-	//const  string      uri = @"nlp:5a7160ed-13d5-4923-a1f9-3e32a47d558a:get,yellow,from,encave" ;
-	//const  string      uri = @"tig:5a7160ed-13d5-4923-a1f9-3e32a47d558a:run,nandom,main" ;
+	static string     path = @"/tmp/."+0.0.GUID()+".d/.git" ;
+	//const  string      uri = @"git:0.0:master,constitution,encave" ;
+	//const  string      uri = @"git:0.0:blueprint,grayons,yellow" ;
+	//const  string      uri = @"git:0.0:gradient,region,shadow" ;
+	//const  string      uri = @"git:0.0:N,L,P" ;
+	//const  string      uri = @"nlp:0.0:get,yellow,from,encave" ;
+	//const  string      uri = @"tig:0.0:run,nandom,main" ;
 	static class        DI
 		{
 		static System.IO.DirectoryInfo directory ;
@@ -439,7 +439,7 @@ public static class Estate
 	}
 static class Path
 	{
-	const  string     path = @"/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d" ;
+	static string     path = @"/tmp/."+0.0.GUID()+".d" ;
 	static System.IO.DirectoryInfo directory ;
 	static Path()
 		{

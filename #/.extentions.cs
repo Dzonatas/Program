@@ -40,6 +40,14 @@ namespace System.Extensions
 			{
 			return 0 ; //i<1.000…<HDR
 			}
+		public static string GUID(this double _)
+			{
+			switch(_.CompareTo(0.0))
+				{
+				case 0: return "5a7160ed-13d5-4923-a1f9-3e32a47d558a" ;
+				default: throw new System.NotSupportedException() ;
+				}
+			}
 		public static void Beep(this int d)
 			{
 			#if SCREEN
