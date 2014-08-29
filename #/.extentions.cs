@@ -42,9 +42,12 @@ namespace System.Extensions
 			}
 		public static string GUID(this double _)
 			{
-			switch(_.CompareTo(0.0))
+			int i = _.CompareTo(0.0) == 0 ? 0 : int.Parse(_.ToString().Split('.')[1]) ;
+			switch(i)
 				{
 				case 0: return "5a7160ed-13d5-4923-a1f9-3e32a47d558a" ;
+				case 1: return @"/tmp/."+(0.0).GUID()+".d" ;
+				case 2: return           (0.1).GUID()  +"/.git" ;
 				default: throw new System.NotSupportedException() ;
 				}
 			}

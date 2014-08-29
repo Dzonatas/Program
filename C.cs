@@ -401,7 +401,7 @@ static class Work
 #endif
 public static class Estate
 	{
-	static string     path = @"/tmp/."+0.0.GUID()+".d/.git" ;
+	static string     path = 0.2.GUID() ;
 	//const  string      uri = @"git:0.0:master,constitution,encave" ;
 	//const  string      uri = @"git:0.0:blueprint,grayons,yellow" ;
 	//const  string      uri = @"git:0.0:gradient,region,shadow" ;
@@ -439,7 +439,7 @@ public static class Estate
 	}
 static class Path
 	{
-	static string     path = @"/tmp/."+0.0.GUID()+".d" ;
+	static string     path = @"/tmp/."+0.1.GUID()+".d" ;
 	static System.IO.DirectoryInfo directory ;
 	static Path()
 		{
