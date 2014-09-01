@@ -51,6 +51,51 @@ namespace System.Extensions
 				default: throw new System.NotSupportedException() ;
 				}
 			}
+		static string guid = 0.0.GUID() ;
+		public static int Post(this double _)
+			{
+			int i = _.CompareTo(0.0) == 0 ? 0 : int.Parse(_.ToString().Split('.')[1]) ;
+			switch(i)
+				{
+				case 0: return int.Parse(guid = _.ToString().Split('.')[0]) ;
+				case 1: return (1.0).Post() ;
+				case 2: return           (2.0).Post() ;
+				default: throw new System.NotSupportedException() ;
+				}
+			}
+		public static string Get(this double _)
+			{
+			int i = _.CompareTo(0.0) == 0 ? 0 : int.Parse(_.ToString().Split('.')[1]) ;
+			switch(i)
+				{
+				case 0: return 0.0.GUID() ;
+				case 1: return 0.1.GUID() ;
+				case 2: return 0.2.GUID() ;
+				default: throw new System.NotSupportedException() ;
+				}
+			}
+		public static string Put(this double _)
+			{
+			int i = _.CompareTo(0.0) == 0 ? 0 : int.Parse(_.ToString().Split('.')[1]) ;
+			switch(i)
+				{
+				case 0: return 0.0.GUID() ;
+				case 1: return 0.1.GUID() ;
+				case 2: return 0.2.GUID() ;
+				default: throw new System.NotSupportedException() ;
+				}
+			}
+		public static string Delete(this double _)
+			{
+			int i = _.CompareTo(0.0) == 0 ? 0 : int.Parse(_.ToString().Split('.')[1]) ;
+			switch(i)
+				{
+				case 0: return 0.0.GUID() ;
+				case 1: return 0.1.GUID() ;
+				case 2: return 0.2.GUID() ;
+				default: throw new System.NotSupportedException() ;
+				}
+			}
 		public static void Beep(this int d)
 			{
 			#if SCREEN
