@@ -63,6 +63,17 @@ namespace System.Extensions
 				default: throw new System.NotSupportedException() ;
 				}
 			}
+		public static int Post(this double _, System.Uri uniform)
+			{
+			int i = _.CompareTo(0.0) == 0 ? 0 : int.Parse(_.ToString().Split('.')[1]) ;
+			switch(i)
+				{
+				//case 0: return converged_glsl(uniform) ;
+				case 1: return (1.0).Post(uniform) ;
+				case 2: return           (2.0).Post(uniform) ;
+				default: throw new System.NotSupportedException() ;
+				}
+			}
 		public static int Post(this double _, System.IO.MemoryStream z)
 			{
 			int i = _.CompareTo(0.0) == 0 ? 0 : int.Parse(_.ToString().Split('.')[1]) ;
