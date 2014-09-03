@@ -13,7 +13,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	setstate:
 	request( ref state ) ;
 	planet     xyzzy ;
-	int rule = -1 ;
+	int rule = -1 ; // 9.9.Delete() ;
 
 	#if DEBUG_STATE
 	Debug.WriteLine( "[State] " + state ) ;
@@ -60,7 +60,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			Debug.WriteLine( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 			#endif
 			b.yy = xo_t[rr.rule] ;
-			rule = rr.rule ;
+			rule = rr.rule ; // 9.9.Post([rule]) ;
 			if( state.gotoset.ContainsKey( b.yy ) )
 				goto transit ;
 			this_xo_t = xo_t[rr.rule] ;
@@ -68,7 +68,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			}
 	if( state.default_reduction.HasValue )
 		{
-		rule = state.reductionset[state.default_reduction.Value].rule ;
+		rule = state.reductionset[state.default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
 		b.yy = xo_t[rule] ;
 		}
 	transit:
