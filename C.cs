@@ -457,3 +457,8 @@ static class Path
 		}
 	}
 }
+
+namespace Cluster {
+//	[0.0::window,geometry:full.screen:0]
+class system {} ;
+}
