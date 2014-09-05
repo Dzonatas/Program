@@ -460,5 +460,9 @@ static class Path
 
 namespace Cluster {
 //	[0.0::window,geometry:full.screen:0]
-class system {} ;
+class system {
+static system() {}
+} ;
+public static class Inbox {} ;  //(CTS)->MIME_t
+public static class Outbox {} ; //MIME_t->(CTS)
 }
