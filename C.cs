@@ -465,4 +465,18 @@ static system() {}
 } ;
 public static class Inbox {} ;  //(CTS)->MIME_t
 public static class Outbox {} ; //MIME_t->(CTS)
+public class Social
+	{
+	public class Security
+		{
+		static System.IO.MemoryStream license ;
+		static Security() { license = null ; }
+		public struct register
+			{
+			public int[]     _SSNo ;
+			public string[]  _NAMe ;
+			public A335.Zone _DISp ;
+			}
+		}
+	} ; //MIME_t->(MIME)
 }
