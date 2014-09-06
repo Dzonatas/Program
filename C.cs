@@ -476,13 +476,15 @@ public class Social
 			public int[]     _SSNo ;
 			public string[]  _NAMe ;
 			public A335.Zone _DISp ;
+			//system.ARM[]   __PCi ;
 			}
 		}
 	} ; //MIME_t->(MIME)
 public interface Screen
 	{
-	string Saver { set ; get ; }
-	string Word  { set ; get ; }
+	string Saver        { set ; get ; }
+	string Word         { set ; get ; }
+	double BackAngle    { set ; get ; }
 	}
 public class Passport
 	{
