@@ -482,5 +482,13 @@ public class Social
 public interface Screen
 	{
 	string Saver { set ; get ; }
+	string Word  { set ; get ; }
+	}
+public class Passport
+	{
+	System.DateTime[] dt ;
+	System.DateTime[] prefixed ;
+	System.DateTime[] suffixed ;
+	System.DateTime[] objected ;
 	}
 }
