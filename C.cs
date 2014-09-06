@@ -462,6 +462,10 @@ namespace Cluster {
 //	[0.0::window,geometry:full.screen:0]
 class system {
 static system() {}
+public class Post {} ;
+public class Put {} ;
+public class Get {} ;
+public class Delete {} ;
 } ;
 public static class Inbox {} ;  //(CTS)->MIME_t
 public static class Outbox {} ; //MIME_t->(CTS)
@@ -485,6 +489,8 @@ public interface Screen
 	string Saver        { set ; get ; }
 	string Word         { set ; get ; }
 	double BackAngle    { set ; get ; }
+	bool   Standard     { set ; get ; }
+	//method
 	}
 public class Passport
 	{
