@@ -479,4 +479,8 @@ public class Social
 			}
 		}
 	} ; //MIME_t->(MIME)
+public interface Screen
+	{
+	string Saver { set ; get ; }
+	}
 }
