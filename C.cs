@@ -499,4 +499,6 @@ public class Passport
 	System.DateTime[] suffixed ;
 	System.DateTime[] objected ;
 	}
+public class Idle {} ;
+public class Idol {} ;
 }
