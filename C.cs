@@ -491,6 +491,7 @@ public interface Screen
 	double BackAngle    { set ; get ; }
 	bool   Standard     { set ; get ; }
 	bool   Astro_       { set ; get ; }
+	//Atomatrix recursed { set ; }
 	}
 public class Passport
 	{
