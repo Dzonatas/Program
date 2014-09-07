@@ -486,12 +486,12 @@ public class Social
 	} ; //MIME_t->(MIME)
 public interface Screen
 	{
-	string Saver        { set ; get ; }
-	string Word         { set ; get ; }
-	double BackAngle    { set ; get ; }
-	bool   Standard     { set ; get ; }
-	bool   Astro_       { set ; get ; }
-	//Atomatrix recursed { set ; }
+	Idol      Saver        { set ; get ; }
+	Idle      Word         { set ; get ; }
+	double    BackAngle    { set ; get ; }
+	bool      Standard     { set ; get ; }
+	bool      Astro_       { set ; get ; }
+	Passport  Present      { set ; }
 	}
 public class Passport
 	{
@@ -503,4 +503,5 @@ public class Passport
 public class Idle {} ;
 public class Idol {} ;
 public class Logical {} ;
+public class Presence {} ;
 }
