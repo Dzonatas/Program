@@ -490,7 +490,7 @@ public interface Screen
 	string Word         { set ; get ; }
 	double BackAngle    { set ; get ; }
 	bool   Standard     { set ; get ; }
-	//method
+	bool   Astro_       { set ; get ; }
 	}
 public class Passport
 	{
@@ -501,4 +501,5 @@ public class Passport
 	}
 public class Idle {} ;
 public class Idol {} ;
+public class Logical {} ;
 }
