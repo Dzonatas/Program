@@ -98,5 +98,12 @@ namespace Neural
 	public class Cyborg
 		{
 		//old_main,defunc_system
+		//representing?
+		}
+	public class Extensions
+		{
+		//gramsByNamedWeight
+		//current?
+		//balanced?
 		}
 	}
