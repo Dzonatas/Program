@@ -490,7 +490,7 @@ public interface Screen
 	Idle      Word         { set ; get ; }
 	double    BackAngle    { set ; get ; }
 	bool      Standard     { set ; get ; }
-	bool      Astro_       { set ; get ; }
+	bool      DDS          { set ; get ; } //∞
 	Passport  Present      { set ; }
 	}
 public class Passport
