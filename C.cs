@@ -461,7 +461,10 @@ static class Path
 namespace Cluster {
 //	[0.0::window,geometry:full.screen:0]
 class system {
-static system() { /* X.Y.MapZ() */ }
+static system() {
+ ///www.debian.org/News/2014/20140908
+ /* X.Y.MapZ() */
+}
 public class Post {} ;
 public class Put {} ;
 public class Get {} ;
