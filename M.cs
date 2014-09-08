@@ -17,6 +17,7 @@ public static void Main( string[] args )
 	current_working_directory() ;	//'POST ip time/0.0'
 	Application.Program.Parse( args ) ;
 	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
+	System.Console.WriteLine( Cluster.Shell.Dpkg__p_LSB() ) ;
 	X.Simple.Map() ;
 	//X.Window() ;
 	//XLogo logo = new XLogo() ;
