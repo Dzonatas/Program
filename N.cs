@@ -92,3 +92,11 @@ static string n_number( int n )
 #endregion
 */
 }
+
+namespace Neural
+	{
+	public class Cyborg
+		{
+		//old_main,defunc_system
+		}
+	}
