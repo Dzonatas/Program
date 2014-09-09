@@ -43,6 +43,11 @@ partial class X
 			{
 			ʄ.MapWindow( drawable ) ;
 			}
+		static public void Map( string text )
+			{
+			ʄ.MapWindow( drawable ) ;
+			//extents
+			}
 		static public void plot( int x, int y, int size )
 			{
 			IntPtr _gc ;
