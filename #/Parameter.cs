@@ -25,6 +25,7 @@ namespace Application
         
 		static Parameter()
 			{
+			parameter.Add( "PANZORK", "cyanics" ) ;
 			parameter.Add( "synopsis", "false" ) ;
 			parameter.Add( "shell",    "bash"  ) ;
 			parameter.Add( "headless", "false" ) ;	//https://code.google.com/p/dpkg-scripts/wiki/HOWTO#Creating_a_Simple_Package
