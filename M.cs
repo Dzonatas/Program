@@ -13,7 +13,6 @@ public partial class A335
 
 public static void Main( string[] args )
 	{
-	System.Console.WriteLine( "{0} {1} {2}", (1<<22), (1L<<22)-1, Environment.GetEnvironmentVariable("DECISION") ) ;
 	current_working_directory() ;	//'POST ip time/0.0'
 	Application.Program.Parse( args ) ;
 	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
@@ -21,6 +20,7 @@ public static void Main( string[] args )
 	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
 	///googlechromereleases.blogspot.com
 	#elif SID
+	System.Console.WriteLine( "{0} {1} {2}", (1<<22), (1L<<22)-1, Environment.GetEnvironmentVariable("DECISION") ) ;
 	//Chrome-Version: M38(JE)
 	#else
 	//Chrome-Version: 37.0.2062.94
