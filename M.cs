@@ -19,7 +19,11 @@ public static void Main( string[] args )
 	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
 	#if !STABLE
 	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
+	///googlechromereleases.blogspot.com
+	#elif SID
+	//Chrome-Version: M38(JE)
 	#else
+	//Chrome-Version: 37.0.2062.94
 	System.Console.WriteLine( Cluster.Shell.Dpkg__p_LSB() ) ;
 	X.Simple.Map() ;
 	#endif
