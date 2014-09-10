@@ -23,6 +23,9 @@ public static void Main( string[] args )
 	//:vi::4,$s//
 	//:!export WINDOWID
 	#endif
+	#if CPU_FAN
+	NICE
+	#endif
 	#if !STABLE
 	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
 	///googlechromereleases.blogspot.com
