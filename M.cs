@@ -24,7 +24,7 @@ public static void Main( string[] args )
 	//Chrome-Version: M38(JE)
 	#else
 	//Chrome-Version: 37.0.2062.94
-	System.Console.WriteLine( Cluster.Shell.Dpkg__p_LSB() ) ;
+	System.Console.WriteLine( Cluster.Shell.Dpkg__p_LSB() ) ; /* Override 'START' with 'LSB' for XHAL. */
 	X.Simple.Map() ;
 	#endif
 	//X.Window() ;
