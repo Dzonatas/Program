@@ -26,6 +26,9 @@ public static void Main( string[] args )
 	#if CPU_FAN
 	NICE
 	#endif
+	#if OEM
+	#QED
+	#endif
 	#if !STABLE
 	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
 	///googlechromereleases.blogspot.com
