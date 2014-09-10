@@ -22,6 +22,8 @@ public static void Main( string[] args )
 	#elif SID
 	System.Console.WriteLine( "{0} {1} {2}", (1<<22), (1L<<22)-1, Environment.GetEnvironmentVariable("DECISION") ) ;
 	//Chrome-Version: M38(JE)
+	#elif ASL
+	//Y.x() ;
 	#else
 	//Chrome-Version: 37.0.2062.94
 	System.Console.WriteLine( Cluster.Shell.Dpkg__p_LSB() ) ; /* Override 'START' with 'LSB' for XHAL. */
