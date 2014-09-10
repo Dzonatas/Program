@@ -16,6 +16,9 @@ public static void Main( string[] args )
 	current_working_directory() ;	//'POST ip time/0.0'
 	Application.Program.Parse( args ) ;
 	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
+	#if PRIME
+	X.Simple.Map( Cluster.Shell.Dpkg__p_START() ) ;
+	#endif
 	#if !STABLE
 	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
 	///googlechromereleases.blogspot.com
