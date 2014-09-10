@@ -18,6 +18,10 @@ public static void Main( string[] args )
 	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
 	#if PRIME
 	X.Simple.Map( Cluster.Shell.Dpkg__p_START() ) ;
+	#elif TOP
+	//:vi::1,3d,top
+	//:vi::4,$s//
+	//:!export WINDOWID
 	#endif
 	#if !STABLE
 	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
