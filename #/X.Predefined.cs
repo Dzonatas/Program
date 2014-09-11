@@ -160,6 +160,7 @@ namespace X.Predefined
 		[FieldOffset(0)] public int          Type  ; /* must not be changed */
 		[FieldOffset(0)] public XAnyEvent    XAny  ;
 		[FieldOffset(0)] public XC_Event     XCC   ; //_CSS,_MAP,"work",code...
+		///github.com/Microsoft/Win2D
 		/*
 		XKeyEvent xkey;
 		XButtonEvent xbutton;
