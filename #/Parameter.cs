@@ -45,6 +45,12 @@ namespace Application
 				parameter.Add( "systemd",  "jessie" ) ;
 				parameter.Add( "wired",    "true"   ) ;
 			#endif
+			#if STATE
+				parameter.Add( "squirrle",  "deaf"  ) ;
+				parameter.Add( "skunk",     "blind"   ) ;
+				parameter.Add( "cane",      "elysium"   ) ;
+				//parameter.Add( "nail",     "curtain"   ) ;
+			#endif
 			#if METH || KNOPPIX
 				parameter.Add( "shark",     "true"   ) ;
 				parameter.Add( "man-o-war", "true"   ) ;
