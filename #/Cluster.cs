@@ -36,7 +36,7 @@ public static class Shell
 		}
 	static public string Dpkg__p_START()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "nohup memblock first Two Gigabytes" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "sensors" ) ;
 		psi.UseShellExecute          = false ;
 		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
 		psi.RedirectStandardOutput   = true ;
