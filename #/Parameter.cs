@@ -63,6 +63,8 @@ namespace Application
 			#endif
 			#if FED
 				parameter.Add( "toggle",     "URI"  ) ;
+				parameter.Add( "president", "[URN]"  ) ; ///URN:RFC:###-##-###,RFC,(FOIA),$
+				parameter.Add( "doubletters", "url"  ) ;
 			#endif
 			}
 
