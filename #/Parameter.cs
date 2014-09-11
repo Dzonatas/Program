@@ -61,6 +61,9 @@ namespace Application
 			#if MAGIC
 				parameter.Add( "magic",     "true"  ) ;
 			#endif
+			#if FED
+				parameter.Add( "toggle",     "URI"  ) ;
+			#endif
 			}
 
 		static void parse( string[] args )
