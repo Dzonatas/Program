@@ -68,7 +68,7 @@ public static partial class Shell
 		}
 	static public int Sensors___grep_ALARM()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "rgrep --mmap /sys/class ALARM" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "rgrep --mmap /sys/class ALARM" ) ; //XHAL
 		psi.UseShellExecute          = true ;
 		//psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
 		psi.RedirectStandardOutput   = false ;
