@@ -10,12 +10,17 @@ using X.Predefined ;
 
 public partial class A335
 {
+static char[] MSB = new char[] { ' ', '.' } ;
 
 public static void Main( string[] args )
 	{
 	current_working_directory() ;	//'POST ip time/0.0'
 	Application.Program.Parse( args ) ;
 	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
+	#if !UX && !LNGJMP
+	int sps = Cluster.Shell.Cat__sys_power_state().Split( MSB ).Length ;
+	System.Console.WriteLine( ":{0}", sps ) ;
+	#endif
 	#if PRIME
 	X.Simple.Map( Cluster.Shell.Dpkg__p_START() ) ;
 	#elif TOP || (J2K_80) && (OPENJPEG_1)

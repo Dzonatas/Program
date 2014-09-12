@@ -1,5 +1,5 @@
 namespace Cluster {
-public static class Shell
+public static partial class Shell
 	{
 	static System.Diagnostics.ProcessStartInfo psi ;
 	static public string Dpkg__p_LSB()
