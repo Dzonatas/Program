@@ -38,7 +38,7 @@ public static void Main( string[] args )
 	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
 	///googlechromereleases.blogspot.com
 	#elif SID
-	System.Console.WriteLine( "{0} {1} {2}", (1<<22), (1L<<22)-1, Environment.GetEnvironmentVariable("DECISION") ) ;
+	//System.Console.WriteLine( "{0} {1} {2}", (1<<22), (1L<<22)-1, Environment.GetEnvironmentVariable("DECISION") ) ;
 	//Chrome-Version: M38(JE)
 	#elif ASL
 	//Y.x() ;
