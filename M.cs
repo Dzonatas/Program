@@ -21,7 +21,7 @@ public static void Main( string[] args )
 	int sps = Cluster.Shell.Cat__sys_power_state() ;
 	int msb = Cluster.Shell.Test__sys_class___sys_power_state_() ;
 	int ala = Cluster.Shell.Sensors___grep_ALARM() ;
-	//...r...t.
+	int rt  = Cluster.Shell.RT() ;
 	#endif
 	#if PRIME
 	X.Simple.Map( Cluster.Shell.Dpkg__p_START() ) ;
