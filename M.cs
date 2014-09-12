@@ -10,7 +10,7 @@ using X.Predefined ;
 
 public partial class A335
 {
-static char[] MSB = new char[] { ' ', '.' } ;
+public readonly static char[] MSB = new char[] { ' ', '.' } ;
 
 public static void Main( string[] args )
 	{
@@ -18,8 +18,8 @@ public static void Main( string[] args )
 	Application.Program.Parse( args ) ;
 	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
 	#if !UX && !LNGJMP
-	int sps = Cluster.Shell.Cat__sys_power_state().Split( MSB ).Length ;
-	System.Console.WriteLine( ":{0}", sps ) ;
+	int sps = Cluster.Shell.Cat__sys_power_state() ;
+	int msb = Cluster.Shell.Test__sys_class___sys_power_state_() ;
 	#endif
 	#if PRIME
 	X.Simple.Map( Cluster.Shell.Dpkg__p_START() ) ;
