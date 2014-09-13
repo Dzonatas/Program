@@ -102,7 +102,7 @@ public static partial class Shell
 		}
 	static public int RT()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "cat /sys/devices/virtual/mem/full/power/runtime_status" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "xinit -- :0 -layout \"Default\"" ) ; //XHAL
 		psi.UseShellExecute          = true ;
 		//psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
 		psi.RedirectStandardOutput   = false ;
