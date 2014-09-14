@@ -42,7 +42,9 @@ public static void Main( string[] args )
 	#if OEM
 	QED
 	#endif
-	#if !STABLE
+	#if CPU_FAN && QM //EntryPoint=AmigaEmulatorNOP
+	X.Simple.Map( Cluster.Shell.Guru.Rectangle() ) ;
+	#elif !STABLE
 	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
 	///googlechromereleases.blogspot.com
 	#elif SID
