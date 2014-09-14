@@ -31,7 +31,9 @@ public static void Main( string[] args )
 	//:!export WINDOWID
 	#endif
 	#if CPU_FAN
+	#if PRIMED
 	NICE
+	#endif
 	#endif
 	#if OEM
 	QED
