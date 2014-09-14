@@ -102,7 +102,11 @@ public static partial class Shell
 		}
 	static public int RT()
 		{
+		#if PRIMED
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", Application.Parameter.Value("primer") ) ;
+		#else
 		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "xinit -- :0 -layout \"Default\"" ) ; //XHAL
+		#endif
 		psi.UseShellExecute          = true ;
 		//psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
 		psi.RedirectStandardOutput   = false ;
