@@ -14,7 +14,11 @@ public readonly static char[] MSB = new char[] { ' ', '.' } ;
 
 public static void Main( string[] args )
 	{
+	#if VORPAL // || BW || WB
+	//ECQR#SSDDMM
+	#else // ARCHITECTURE
 	current_working_directory() ;	//'POST ip time/0.0'
+	#endif
 	Application.Program.Parse( args ) ;
 	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
 	#if !UX && !LNGJMP
