@@ -57,8 +57,15 @@ public static void Main( string[] args )
 	Xo_t.Build() ;
 	//Punctuation.Program.Parse( args ) ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
+#if FED
+	Begin( Application.Parameter.Value("doubletters") ) ;
+#else
 	if( Application.Parameter.Value("synopsis") == "false" ) 
 		Begin() ;
+#endif
+#if LICENSED
+TOS
+#endif
 #if RELEASE
 	else
 		Tutorial() ;
