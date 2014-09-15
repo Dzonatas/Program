@@ -52,6 +52,9 @@ public static void Main( string[] args )
 	#elif !STABLE
 	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
 	///googlechromereleases.blogspot.com
+	#if !FANCONTROL
+	0.0.FAN() ;
+	#endif
 	#elif SID
 	//System.Console.WriteLine( "{0} {1} {2}", (1<<22), (1L<<22)-1, Environment.GetEnvironmentVariable("DECISION") ) ;
 	//Chrome-Version: M38(JE)
