@@ -29,7 +29,7 @@ public static void Main( string[] args )
 	#endif
 	#if PRIME
 	X.Simple.Map( Cluster.Shell.Dpkg__p_START() ) ;
-	#elif TOP || (J2K_80) && (OPENJPEG_1)
+	#elif ( TOP || (J2K_80) && (OPENJPEG_1) ) || XWebFinger
 	//:vi::1,3d,top
 	//:vi::4,$s//
 	//:!export WINDOWID
