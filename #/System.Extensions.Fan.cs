@@ -20,7 +20,11 @@ public static class Solution
 		}
 	public static int Tool(this double _)
 		{
+		#if GLSL
+		///www.shadertoy.com/view/XsjGRd
+		#else
 		bubbles++ ;
+		#endif
 		//GrabScreenSaver
 		//sensors->:9
 		return 0 ;
