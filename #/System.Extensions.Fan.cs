@@ -17,5 +17,11 @@ public static class Solution
 		//'Post /etc/heading.d nice/0.0'
 		return 0 ;
 		}
+	public static int Tool(this double _)
+		{
+		//GrabScreenSaver
+		//sensors->:9
+		return 0 ;
+		}
 	}
 }
