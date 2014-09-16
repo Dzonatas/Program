@@ -123,6 +123,7 @@
     <Compile Include="~\X.Y.cs" />
     <Compile Include="#\Cluster.cs" />
     <Compile Include="#\Cyborg.Power.State.cs" />
+    <Compile Include="#\System.Extensions.Fan.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
