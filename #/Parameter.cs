@@ -32,6 +32,9 @@ namespace Application
 			#if PRIMED
 			parameter.Add( "primer",    "xinit -- :0 -layout \"Default\""  ) ;
 			#endif
+			#if !BIPOLAR
+				parameter.Add( "mouse",    "true"  ) ;
+			#endif
 			#if DEBUG
 				parameter.Add( "debug",    "true"  ) ;
 				parameter.Add( "point",    "0.0"   ) ;
