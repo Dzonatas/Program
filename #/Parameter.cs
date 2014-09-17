@@ -27,7 +27,7 @@ namespace Application
 			{
 			parameter.Add( "PANZORK", "cyanics" ) ;
 			parameter.Add( "synopsis", "false" ) ;
-			parameter.Add( "shell",    "bash"  ) ;
+			parameter.Add( "shell",    "/bin/sh"  ) ;
 			parameter.Add( "headless", "false" ) ;	//https://code.google.com/p/dpkg-scripts/wiki/HOWTO#Creating_a_Simple_Package
 			#if PRIMED
 			parameter.Add( "primer",    "xinit -- :0 -layout \"Default\""  ) ;
