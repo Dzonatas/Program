@@ -19,6 +19,7 @@ namespace System.Extensions
 		{
 		static int digits ;
 		static System.Decimal sid ;
+		static public IntPtr display ;
 		public static int _(this int d)
 			{
 			switch(d)
@@ -162,11 +163,11 @@ namespace System.Extensions
 			#endif
 			switch(_.CompareTo(0.0))
 				{
-				case 0: return display = display_open(":0") ;
+				case 0: return var_.display = display = display_open(":0") ;
 				default:
 					{
 					string s = _.ToString().Replace(".",":") ;
-					return display = display_open(":"+s) ;
+					return var_.display = display = display_open(":"+s) ;
 					}
 				}
 			}
