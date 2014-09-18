@@ -14,6 +14,9 @@ public readonly static char[] MSB = new char[] { ' ', '.' } ;
 
 public static void Main( string[] args )
 	{
+	#if PROXY
+	throw new System.Exception("((new)project?) Remainder.") ;
+	#endif
 	#if VORPAL // || BW || WB
 	//ECQR#SSDDMM
 	#else // ARCHITECTURE
