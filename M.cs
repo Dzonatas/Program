@@ -16,6 +16,8 @@ public static void Main( string[] args )
 	{
 	#if PROXY
 	throw new System.Exception("((new)project?) Remainder.") ;
+	#elif RECOMPILED
+	int xp = Shell.XProxy() ;
 	#endif
 	#if VORPAL // || BW || WB
 	//ECQR#SSDDMM
