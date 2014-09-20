@@ -23,6 +23,8 @@ public static class Solution
 		#if GLSL
 		///www.shadertoy.com/view/XsjGRd
 		screensaver_reset( var_.display ) ;
+		#elif iDNA
+		Cluster.Shell.XOverlay() ;
 		#else
 		bubbles++ ;
 		screensaver_activate( var_.display ) ;
