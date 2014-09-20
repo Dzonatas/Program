@@ -94,6 +94,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	#if DEBUG_REDUCE
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
 	#endif
+	#if !FANCONTROL && !ENGINE_DYNAMICS
 	if( this_xo_t.ReductionMethod == "id_ID" )
 		{
 		Stack.Push( new id_ID() ) ;
@@ -150,6 +151,12 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		}
 	else
 		Debug.WriteLine( "[beginning] Defaulted on "+this_xo_t.ReductionMethod ) ;
+	#else
+	var PEM = Shell.ConveyEnvironmentReductionMethod( this_xo_t.ReductionMethod ) ;
+	PEM.CompileLeft() ;
+	PEM.CompileRight() ;
+	PEM.Generate() ;
+	#endif
 	throw new ReducedAcception( rule ) ;
 
 	new_state :
