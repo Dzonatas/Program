@@ -183,7 +183,7 @@ class Xo_t
 			#endif
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
 			s.WriteLine( "[A335.Automaton] class   " + xo.ReductionMethod ) ;
-			s.WriteLine( "    : Automatrix, Cluster.Screen {}" ) ;
+			s.WriteLine( "    : Automatrix    {}" ) ;
 			}
 		sw.WriteLine( "</table></body>" ) ;
 		g.WriteLine( "</table></body>" ) ;
