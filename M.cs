@@ -49,7 +49,7 @@ public static void Main( string[] args )
 	//Chrome-Version: GlassDuckRubberFoot
 	//Voxel-Boxed: GC#
 	#endif
-	#if OEM
+	#if OEM || System_Collections
 	QED
 	#endif
 	#if !CPU_FAN && !QM //EntryPoint=AmigaEmulatorNOP
