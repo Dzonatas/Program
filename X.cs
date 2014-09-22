@@ -142,6 +142,7 @@ class Xo_t
 		s.WriteLine( "//awhile" ) ;
 		s.WriteLine( "//aaccept" ) ;
 		s.WriteLine( "//bookkeeping" ) ; //bookkeeppong
+		s.WriteLine( "public class START	{ global::START._1.START_decls alpha ;	}" ) ;
 		#if !XYP
 		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>C</td><td>ENTITY</td><td>PROTOTYPE</td></tr>" ) ;
 		#endif
@@ -182,7 +183,7 @@ class Xo_t
 				}
 			#endif
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
-			s.WriteLine( "[A335.Automaton] class   " + xo.ReductionMethod ) ;
+			s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
 			s.WriteLine( "    : Automatrix    {}" ) ;
 			}
 		sw.WriteLine( "</table></body>" ) ;
