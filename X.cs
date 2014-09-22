@@ -127,6 +127,7 @@ class Xo_t
 			{
 			return string.Format("[Xo_t:{0}[{1}]]", lhs, rhs.Length);
 			}
+	static readonly char[] entity_trim =  { ';' };
 	static public void Build()
 		{
 		var sw = Current.Path.CreateText( "x-y-text.tab.html" ) ;
@@ -191,7 +192,15 @@ class Xo_t
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
 			#if iDNA
 			s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
-			s.WriteLine( "    : Automatrix    {}" ) ;
+			s.WriteLine( "  : Automatrix" ) ;
+			s.WriteLine( "  {" ) ;
+			s.WriteLine( "  public const           char     C       = '"+ (char)xo +"' ;" ) ;
+			s.Write(     "  public static readonly char[]   Entity  = { " ) ;
+			foreach( char c in entity.TrimEnd( entity_trim ) )
+				s.Write( "'"+c+"', " ) ;
+			s.Write( "'" + entity[entity.Length-1] + "'" ) ;
+			s.WriteLine( " } ;" ) ;
+			s.WriteLine( "  }" ) ;
 			#endif
 			}
 		sw.WriteLine( "</table></body>" ) ;
