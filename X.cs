@@ -130,12 +130,15 @@ class Xo_t
 	static public void Build()
 		{
 		var sw = Current.Path.CreateText( "x-y-text.tab.html" ) ;
+		#if iDNA
 		var s = Current.Path.CreateText( "auto.cs" ) ;
+		#endif
 		var g = Current.Path.CreateText( "glossary.html" ) ;
 		sw.Write( "<head></head><body><table style=\"font: monospace;\">" ) ;
 		g.Write( "<head {0}></head><body style=\"color: red ; background: antiquewhite ;\"><table {1}>", "UUID", "ITEMSCOPE" ) ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
+		#if iDNA
 		s.WriteLine( "namespace _accept" ) ;
 		s.WriteLine( "{" ) ;
 		s.WriteLine( "//await" ) ;
@@ -143,6 +146,7 @@ class Xo_t
 		s.WriteLine( "//aaccept" ) ;
 		s.WriteLine( "//bookkeeping" ) ; //bookkeeppong
 		s.WriteLine( "public class START	{ global::START._1.START_decls alpha ;	}" ) ;
+		#endif
 		#if !XYP
 		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>C</td><td>ENTITY</td><td>PROTOTYPE</td></tr>" ) ;
 		#endif
@@ -151,10 +155,12 @@ class Xo_t
 			xo = xo_t[i] ;
 			bool head = n.lhs.s != xo.lhs.s ;
 			n = xo ;
+			#if iDNA
 			s.WriteLine( "}" ) ;
 			s.WriteLine( ) ;
 			s.WriteLine( "namespace {0}._{1}", n.lhs.s, n.lhs.X ) ;
 			s.WriteLine( "{" ) ;
+			#endif
 			#if XYP
 			if( head )
 				g.WriteLine( "<tr><td><h1>" + xo.lhs.X + "</h1></td><td><h1>" + xo.lhs.Y + "</h1></td><td><h1>" + xo.lhs.s + "</h1></td></tr>" ) ;
@@ -183,14 +189,18 @@ class Xo_t
 				}
 			#endif
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
+			#if iDNA
 			s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
 			s.WriteLine( "    : Automatrix    {}" ) ;
+			#endif
 			}
 		sw.WriteLine( "</table></body>" ) ;
 		g.WriteLine( "</table></body>" ) ;
 		sw.Close() ;
+		#if iDNA
 		s.WriteLine( "}" ) ;
 		s.Close() ;
+		#endif
 		g.Close() ;
 		#if POSTBACK
 		//[((v8)|v16)[f32|.]v64]|v8sidv64
