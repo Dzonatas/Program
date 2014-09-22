@@ -145,7 +145,7 @@ class Xo_t
 		s.WriteLine( "//awhile" ) ;
 		s.WriteLine( "//aaccept" ) ;
 		s.WriteLine( "//bookkeeping" ) ; //bookkeeppong
-		s.WriteLine( "public class START	{ global::START._1.START_decls alpha ;	}" ) ;
+		s.WriteLine( "public partial class A335	{ static A335() {} }" ) ;
 		#endif
 		#if !XYP
 		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>C</td><td>ENTITY</td><td>PROTOTYPE</td></tr>" ) ;

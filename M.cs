@@ -8,11 +8,22 @@ using System.Extensions ;
 using System ;
 using X.Predefined ;
 
+namespace _accept {
+public partial class A335
+	{
+	public static void Main( string[] args )
+		{
+		global::A335._Main( args ) ;
+		}
+	}
+}
+
 public partial class A335
 {
+//static global::START._1.START_decls alpha ;
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
 
-public static void Main( string[] args )
+internal static void _Main( string[] args )
 	{
 	#if PROXY
 	throw new System.Exception("((new)project?) Remainder.") ;
