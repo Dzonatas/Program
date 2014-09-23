@@ -146,7 +146,12 @@ class Xo_t
 		s.WriteLine( "//awhile" ) ;
 		s.WriteLine( "//aaccept" ) ;
 		s.WriteLine( "//bookkeeping" ) ; //bookkeeppong
-		s.WriteLine( "public partial class A335	{ static A335() {} }" ) ;
+		s.WriteLine( "public partial class A335 {" ) ;
+		s.WriteLine( "static A335() {}" ) ;
+		s.WriteLine( "#if EMBED" ) ;
+		s.WriteLine( "public static void Main( string[] args ) { }" ) ;
+		s.WriteLine( "#endif" ) ;
+		s.WriteLine( "}" ) ;
 		#endif
 		#if !XYP
 		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>C</td><td>ENTITY</td><td>PROTOTYPE</td></tr>" ) ;
@@ -191,8 +196,9 @@ class Xo_t
 			#endif
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
 			#if iDNA
-			s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
-			s.WriteLine( "  : Automatrix" ) ;
+			s.WriteLine( "internal class   " + xo.ReductionMethod ) ;
+			//s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
+			//s.WriteLine( "  : Automatrix" ) ;
 			s.WriteLine( "  {" ) ;
 			s.WriteLine( "  public const           char     C       = '"+ (char)xo +"' ;" ) ;
 			s.Write(     "  public static readonly char[]   Entity  = { " ) ;
@@ -209,6 +215,7 @@ class Xo_t
 		#if iDNA
 		s.WriteLine( "}" ) ;
 		s.Close() ;
+		Cluster.Shell.Embed( "auto.cs" ) ;
 		#endif
 		g.Close() ;
 		#if POSTBACK

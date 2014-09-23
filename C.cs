@@ -455,6 +455,10 @@ static class Path
 		{
 		return System.IO.File.CreateText( path + "/" + name ) ;
 		}
+	static public string Entry( string name )
+		{
+		return path + "/" + name ;
+		}
 	}
 }
 

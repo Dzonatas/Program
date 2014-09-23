@@ -66,6 +66,42 @@ public static partial class Shell
 		p.WaitForExit() ;
 		return sb.ToString() ;
 		}
+	static public string Embed( string name )
+		{
+		psi = new System.Diagnostics.ProcessStartInfo
+			(
+			"/usr/bin/env",
+			"gmcs -define:EMBED"
+			+ " " + Current.Path.Entry( name )
+			+ " "
+			+ "-out:" + Current.Path.Entry( "a.exe" )
+			) ;
+		psi.UseShellExecute          = false ;
+		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
+		psi.RedirectStandardOutput   = true ;
+		psi.RedirectStandardInput    = true ;
+		psi.CreateNoWindow           = true ;
+		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
+		System.Diagnostics.Process p ;
+		//try {
+			p= System.Diagnostics.Process.Start(psi) ;
+			p.StandardInput.AutoFlush = true ;
+			p.WaitForInputIdle() ;
+			p.StandardInput.Close() ;
+			while(!p.StandardOutput.EndOfStream)
+				{
+				string x = p.StandardOutput.ReadLine() ;
+				if( x == null )
+					break ;
+				sb.Append( x ) ;
+				sb.Append( '\n' ) ;
+				}
+			goto done ;
+			//} catch {}
+		done:
+		p.WaitForExit() ;
+		return sb.ToString() ;
+		}
 	}
 }
 
