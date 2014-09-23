@@ -219,7 +219,11 @@ class Xo_t
 		s.WriteLine( "public partial class A335 {" ) ;
 		s.WriteLine( "static A335() {}" ) ;
 		s.WriteLine( "#if EMBED" ) ;
-		s.WriteLine( "public static void Main( string[] args ) { System.Console.WriteLine(iDNA.C) ; }" ) ;
+		//s.WriteLine( "public static void Main( string[] args ) { System.Console.WriteLine(iDNA.C) ; }" ) ;
+		s.WriteLine( "public static void Main( string[] args )" ) ;
+		s.WriteLine( "  {" ) ;
+		s.Write( _.xml_reader() ) ;
+		s.WriteLine( "  }" ) ;
 		s.WriteLine( "#endif" ) ;
 		s.WriteLine( "}" ) ;
 		s.WriteLine( "struct iDNA" ) ;
@@ -699,6 +703,7 @@ static bool xml_get_()
 	return false ;
 	}
 }
+
 
 #if XML_BISON_REPORT
 #region XML`
