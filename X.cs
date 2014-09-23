@@ -176,6 +176,27 @@ class Xo_t
 		*/
 		return sb.ToString() ;
 		}
+	static string _io( int i )
+		{
+		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
+		sb.AppendLine
+			(
+			 "  public static void Element( string l )\n"
+			+"    {\n"
+			+"    iDNA.EntityReference( l ) ;\n"
+			+"    System.Console.WriteLine() ;\n"
+			+"    }\n"
+			+"  public static void EntityReference( string l )\n"
+			+"    {\n"
+			+"    System.Console.Write( l ) ;\n"
+			+"    }\n"
+			+"  public static void Text( string l )\n"
+			+"    {\n"
+			+"    System.Console.Write( l ) ;\n"
+			+"    }"
+			) ;
+		return sb.ToString() ;
+		}
 	static readonly char[] entity_trim =  { ';' };
 	static public void Build()
 		{
@@ -204,6 +225,7 @@ class Xo_t
 		s.WriteLine( "struct iDNA" ) ;
 		s.WriteLine( "  {" ) ;
 		s.Write( list( 0 ) ) ;
+		s.Write( _io( 0 ) ) ;
 		s.WriteLine( "  }" ) ;
 
 		#endif
@@ -258,6 +280,7 @@ class Xo_t
 				s.Write( "'"+c+"', " ) ;
 			s.WriteLine( "'" + entity[entity.Length-1] + "' } ;" ) ;
 			s.Write( list( i ) ) ;
+			s.Write( _io( i ) ) ;
 			s.WriteLine( "  }" ) ;
 			s.WriteLine( "internal static class   " + xo.ReductionMethod ) ;
 			//s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
