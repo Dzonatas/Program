@@ -127,6 +127,55 @@ class Xo_t
 			{
 			return string.Format("[Xo_t:{0}[{1}]]", lhs, rhs.Length);
 			}
+	static string list( int i )
+		{
+		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
+		sb.AppendLine( "  public const           char     C       = '"+ (char)xo_t[i] +"' ;" ) ;
+		foreach( Itemset item in stateset[i].itemset )
+			{
+			//s.Write( item ) ;
+			if( item.rule == i || item.rule == 0 )
+				{
+				continue ;
+				}
+			sb.Append(     "  public static readonly char     " ) ;
+			string rule = item.rule == 0 ? "_accept" : xo_t[item.rule].lhs.s ;
+			string point ;
+			if( item.rule == 0 )
+				{
+				rule = "_accept" ;
+				}
+			else
+				{
+				rule = xo_t[item.rule].lhs.s ;
+				}
+			if( xo_t[item.rule].rhs.Length != item.point )
+				{
+				point = xo_t[item.rule][item.point].X.ToString() ;
+				point += "_" ;
+				point += xo_t[item.rule][item.point].Y.ToString() ;
+				sb.Append( "" + rule +'_'+ point ) ;
+				sb.Append( " = " ) ;
+				sb.Append( "global::" + rule +"._"+ xo_t[item.rule][item.point].X.ToString() ) ;
+				sb.AppendLine( ".iDNA.C ;" ) ;
+				}
+			else
+				{
+				point = xo_t[item.rule][item.point].X.ToString() ;
+				sb.Append( "" + rule +'_'+ point ) ;
+				sb.Append( " = " ) ;
+				sb.Append( "global::" + rule +"._"+ point ) ;
+				sb.AppendLine( ".iDNA.C ;" ) ;
+				}
+			}
+		/*
+		if( i == (xo_t.Length - 1) )
+			sb.AppendLine( "  public override string ToString() { return \"\" + C ; }" ) ;
+		else
+			sb.AppendLine( "  public override string ToString() { return \"\" + C + global::" + xo_t[i+1].lhs.s + "._" + (i+1) + ".iDNA.ToString() ; }" ) ;
+		*/
+		return sb.ToString() ;
+		}
 	static readonly char[] entity_trim =  { ';' };
 	static public void Build()
 		{
@@ -149,9 +198,14 @@ class Xo_t
 		s.WriteLine( "public partial class A335 {" ) ;
 		s.WriteLine( "static A335() {}" ) ;
 		s.WriteLine( "#if EMBED" ) ;
-		s.WriteLine( "public static void Main( string[] args ) { }" ) ;
+		s.WriteLine( "public static void Main( string[] args ) { System.Console.WriteLine(iDNA.C) ; }" ) ;
 		s.WriteLine( "#endif" ) ;
 		s.WriteLine( "}" ) ;
+		s.WriteLine( "struct iDNA" ) ;
+		s.WriteLine( "  {" ) ;
+		s.Write( list( 0 ) ) ;
+		s.WriteLine( "  }" ) ;
+
 		#endif
 		#if !XYP
 		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>C</td><td>ENTITY</td><td>PROTOTYPE</td></tr>" ) ;
@@ -196,16 +250,19 @@ class Xo_t
 			#endif
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
 			#if iDNA
-			s.WriteLine( "internal class   " + xo.ReductionMethod ) ;
-			//s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
-			//s.WriteLine( "  : Automatrix" ) ;
+			s.WriteLine( "public struct iDNA" ) ;
 			s.WriteLine( "  {" ) ;
-			s.WriteLine( "  public const           char     C       = '"+ (char)xo +"' ;" ) ;
+			//s.WriteLine( "  public const           char     C       = '"+ (char)xo +"' ;" ) ;
 			s.Write(     "  public static readonly char[]   Entity  = { " ) ;
 			foreach( char c in entity.TrimEnd( entity_trim ) )
 				s.Write( "'"+c+"', " ) ;
-			s.Write( "'" + entity[entity.Length-1] + "'" ) ;
-			s.WriteLine( " } ;" ) ;
+			s.WriteLine( "'" + entity[entity.Length-1] + "' } ;" ) ;
+			s.Write( list( i ) ) ;
+			s.WriteLine( "  }" ) ;
+			s.WriteLine( "internal static class   " + xo.ReductionMethod ) ;
+			//s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
+			//s.WriteLine( "  : Automatrix" ) ;
+			s.WriteLine( "  {" ) ;
 			s.WriteLine( "  }" ) ;
 			#endif
 			}

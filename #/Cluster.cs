@@ -71,7 +71,7 @@ public static partial class Shell
 		psi = new System.Diagnostics.ProcessStartInfo
 			(
 			"/usr/bin/env",
-			"gmcs -define:EMBED"
+			"gmcs -define:EMBED" //-main:_accept.A335
 			+ " " + Current.Path.Entry( name )
 			+ " "
 			+ "-out:" + Current.Path.Entry( "a.exe" )
