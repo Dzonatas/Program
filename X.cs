@@ -179,6 +179,12 @@ class Xo_t
 	static string _io( int i )
 		{
 		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
+		int rule = -1 ;
+		if( stateset[i].default_reduction.HasValue )
+			{
+			rule = stateset[i].reductionset[stateset[i].default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
+			sb.AppendLine( "//" + xo_t[rule] ) ;
+			}
 		sb.AppendLine
 			(
 			 "  public static void Element( string l )\n"
@@ -187,9 +193,27 @@ class Xo_t
 			+"    System.Console.WriteLine() ;\n"
 			+"    }\n"
 			+"  public static void EntityReference( string l )\n"
-			+"    {\n"
-			+"    System.Console.Write( l ) ;\n"
-			+"    }\n"
+			+"    {"
+			) ;
+		if( rule != -1 )
+		  sb.AppendLine
+			(
+			 "    switch( l )\n"
+			+"      {\n"
+			+"      default : "
+			        + ( rule == 0 ? "_accept" : xo_t[rule].lhs.s + "._" + xo_t[rule].lhs.X )
+			        + ".iDNA.EntityReference(l) ; "
+			        + "return ;\n"
+			+"      }"
+			) ;
+		else
+		  sb.AppendLine
+			(
+			 "    System.Console.Write( l ) ;"
+			) ;
+		sb.AppendLine
+			(
+			 "    }\n"
 			+"  public static void Text( string l )\n"
 			+"    {\n"
 			+"    System.Console.Write( l ) ;\n"
