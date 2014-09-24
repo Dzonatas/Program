@@ -78,7 +78,7 @@ public static partial class Shell
 			#endif
 			+ " " + Current.Path.Entry( name )
 			+ " "
-			+ "-out:" + Current.Path.Entry( "a.exe" )
+			+ "-out:" + Current.Path.Entry( "infrastructure.exe" )
 			) ;
 		psi.UseShellExecute          = false ;
 		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
