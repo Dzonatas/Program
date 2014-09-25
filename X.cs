@@ -174,6 +174,14 @@ class Xo_t
 		else
 			sb.AppendLine( "  public override string ToString() { return \"\" + C + global::" + xo_t[i+1].lhs.s + "._" + (i+1) + ".iDNA.ToString() ; }" ) ;
 		*/
+		if( stateset[i].lookaheadset.Count != 0 )
+			{
+			sb.Append(     "  public static readonly int[]    LookAhead  = { " ) ;
+			foreach( var c in stateset[i].lookaheadset )
+				sb.Append( c+", " ) ;
+			sb.Remove( sb.Length-2, 2 ) ;
+			sb.AppendLine( " } ;" ) ;
+			}
 		return sb.ToString() ;
 		}
 	static string _io( int i )
@@ -188,13 +196,32 @@ class Xo_t
 		sb.AppendLine
 			(
 			 "  public static void Element( string l )\n"
-			+"    {\n"
-			+"    iDNA.EntityReference( l ) ;\n"
-			+"    System.Console.WriteLine() ;\n"
-			+"    }\n"
-			+"  public static void EntityReference( string l )\n"
 			+"    {"
 			) ;
+		foreach( var t in stateset[i].shiftset )
+			sb.AppendLine( "//" + stateset[i].transitionset[ t.Value ] ) ;
+		foreach( Reduction r in stateset[i].reductionset )
+			sb.AppendLine( "//" + r ) ;
+		if( stateset[i].gotoset.Count != 0 )
+		  sb.AppendLine
+			(
+			 "    iDNA.EntityReference( l ) ;\n"
+			+"    System.Console.WriteLine(C) ;\n"
+			+"    }"
+			) ;
+		else
+		  sb.AppendLine
+			(
+			 "    //#!\n"
+			+"    }"
+			) ;
+		sb.AppendLine
+			(
+			 "  public static void EntityReference( string l )\n"
+			+"    {"
+			) ;
+		foreach( var t in stateset[i].gotoset )
+			sb.AppendLine( "//" + stateset[i].transitionset[ t.Value ] ) ;
 		if( rule != -1 )
 		  sb.AppendLine
 			(
@@ -209,7 +236,7 @@ class Xo_t
 		else
 		  sb.AppendLine
 			(
-			 "    System.Console.Write( l ) ;"
+			 "    System.Console.Write( '.'+l ) ;"
 			) ;
 		sb.AppendLine
 			(
