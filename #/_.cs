@@ -373,7 +373,7 @@ public static string xml_reader()
 	 "var s = System.IO.File.OpenText( \"/tmp/5a7160ed-13d5-4923-a1f9-3e32a47d558a.il.xml\" ) ;\n"
 	+"var t = s.ReadToEnd() ;\n"
 	+"var e = t.GetEnumerator() ;\n"
-	+"//string entity ;\n"
+	+"//string INSTANCE_entity ;\n"
 	+"string n = string.Empty ;\n"
 	+"string l = string.Empty ;\n"
 	+"bool process = false ;\n"
