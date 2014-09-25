@@ -370,7 +370,7 @@ public static Token input()
 public static string xml_reader()
 	{
 	return
-	 "var s = System.IO.File.OpenText( \"/tmp/5a7160ed-13d5-4923-a1f9-3e32a47d558a.il.xml\" ) ;\n"
+	 "var s = System.IO.File.OpenText( \"/tmp/" + 0.0.GUID() + ".il.xml\" ) ;\n"
 	+"var t = s.ReadToEnd() ;\n"
 	+"var e = t.GetEnumerator() ;\n"
 	+"//string INSTANCE_entity ;\n"
