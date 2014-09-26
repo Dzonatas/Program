@@ -197,15 +197,16 @@ static public partial class Y
 	static int py = 20 ;
 	static public void Print( string text )
 		{
+		int x = px ;
 		XIP f = query_font( Display, gcontext_from_gc( gc ) ) ;
 		int w = text_width( f, text, text.Length ) ;
-		draw_string( Display, drawable, gc, px, py, text, text.Length ) ;
 		px += w ;
-		if( px > 300 )
+		if( px > 280 )
 			{
-			px = 20 ;
+			x = px = 20 ;
 			py += 20 ;
 			}
+		draw_string( Display, drawable, gc, x, py, text, text.Length ) ;
 		}
 	static public void Z( uint x, uint y, int r, int g, int b )
 		{
