@@ -1,6 +1,29 @@
-#if BACKPORT
 using X.Predefined ;
 using XIP = System.IntPtr ;
+
+namespace X  {
+static public partial class Y
+			{
+			public static System.IntPtr OpenDisplay(this double _, out System.IntPtr display)
+			{
+			#if ECMA || ( DEBUG || DIRECTX )
+			//IceSetHostBasedAuthProc(listener,always_true) ;
+			#elif BUILD || ( WIN8 || VAX )
+			//IceSetHostBasedAuthProc(listener,trait) ;
+			#endif
+			switch(_.CompareTo(0.0))
+				{
+				case 0: return display = display_open(":0") ;
+				default:
+					{
+					string s = _.ToString().Replace(".",":") ;
+					return display = display_open(":"+s) ;
+					}
+				}
+			}
+		}
+}
+
 
 namespace X {
 using System ;
@@ -18,8 +41,8 @@ static public partial class Y
 	static public void Z( uint x, uint y, int z )
 		{
 		IntPtr _gc ;
-		if( bit.Next(2) == 0 ? false : true )
-			_gc = c[bit.Next(6)] ;
+		if( z < 0 ? false : true )
+			_gc = c[z] ;
 		else
 			_gc = gc_erase ;
 		if( x < 300 && y < 300 )
@@ -85,10 +108,12 @@ static public partial class Y
 			}
 		}
 	static XAnyEvent zone ;
-	static public void Window()
+	static public void Sync()
 		{
-		zone = XStart.ip ;
-		loop:
+		sync( Display, false ) ;
+		}
+	static bool next()
+		{
 		next_event( Display, out _event ) ;
 		switch( _event.Type )
 			{
@@ -96,24 +121,31 @@ static public partial class Y
 				if( zone.Type != _event.Type )
 					{
 					XStart.ip = zone ;
-					return ;
+					return false ;
 					}
 				break ;
 			case 5:
 				if( zone.Type != _event.Type )
 					{
 					XStop.time = zone ;
-					return ;
+					return false ;
 					}
 				break ;
 			default:
 				zone = _event.XAny ;
-		System.Console.WriteLine( "zone: {0} {1}", _event.Type, _event.XAny.Serial ) ;
-				QuickResponseEncodedSplash( ref _event.XAny ) ;
-				goto loop ;
+				//QuickResponseEncodedSplash( ref _event.XAny ) ;
+				return true ;
 			}
-		System.Console.WriteLine( "zone: {0} {1}", _event.Type, _event.XAny.Serial ) ;
-		for(;;) goto loop ;
+		return true ;
+		}
+	static public void Window()
+		{
+		for(zone = XStart.ip;next();)
+			System.Console.WriteLine( "zone: {0} {1}", _event.Type, _event.XAny.Serial ) ;
+		}
+	static public void Next()
+		{
+		next() ;
 		}
 	class XStart : A335.Zone.Start
 		{
@@ -161,6 +193,13 @@ static public partial class Y
 			for( uint y = 0 ; y < 300 ; y++ )
 				X.Y.Z( y, x, 1 ) ;
 		}
+	static public void Z( uint x, uint y, int r, int g, int b )
+		{
+		values.PlaneMask = (ulong)( r<<16 | g<<8 | b ) ;
+		gc_change( Display, gc, GCValue.PlaneMask, ref values ) ;
+		if( x < 300 && y < 300 )
+			draw_point( Display, drawable, gc, (int)x, (int)y ) ;
+		}
 	[DllImport("libX11", EntryPoint = "XDefaultRootWindow")] extern static IntPtr default_root_window(IntPtr display) ;
 	[DllImport("libX11", EntryPoint = "XDrawPoint")] extern static IntPtr draw_point(XIP display, XIP drawable, XIP gc, int x, int y )  ;
 	[DllImport("libX11", EntryPoint = "XRootWindow")] extern internal static IntPtr root_window(IntPtr display, int screen) ;
@@ -177,12 +216,35 @@ static public partial class Y
 	[DllImport("libX11", EntryPoint = "XSelectInput")] extern static IntPtr select_input(System.IntPtr display, XIP d, ulong fg )  ;
 	[DllImport("libX11", EntryPoint = "XMapWindow")]   extern static void map_window(IntPtr display, IntPtr window) ;
 	[DllImport("libX11", EntryPoint = "XNextEvent")]   extern static void next_event(IntPtr display, out XEvent _event) ;
+	[DllImport("libX11", EntryPoint = "XPeekEvent")]   extern static void peek_event(IntPtr display, out XEvent _event) ;
 	[DllImport("libX11", EntryPoint = "XChangeGC")] extern static void gc_change(IntPtr display, IntPtr gc, ulong valuemask, ref Values values )  ;
 	[DllImport("libX11", EntryPoint = "XMatchVisualInfo")] extern static void match_visual_info(IntPtr display, int scrnum, int depth, int _class, out X.Predefined.VisualInfo info )  ;
 	[DllImport("libX11", EntryPoint = "XSetWindowColormap")] extern static void set_window_colormap(System.IntPtr display, XIP drawable, IntPtr colormap )  ;
 	[DllImport("libX11", EntryPoint = "XCreateColormap")] extern static IntPtr colormap_create( XIP display, XIP drawable, XIP visual, int alloc )  ;
 	[DllImport("libX11", EntryPoint = "XChangeWindowAttributes")] extern static void change_window_attributes(IntPtr display, IntPtr drawable, ulong valuemask, ref SetWindowAttributes values ) ;
+	[DllImport("libX11", EntryPoint = "XSync")]   extern static void sync(IntPtr display, bool discard) ;
 	}
 }
 
-#endif
+namespace Current {
+public static class Interval
+	{
+	static int nop = 0 ;
+	static Interval()
+		{
+		psi = new System.Diagnostics.ProcessStartInfo( "/bin/sleep", "0" ) ;
+		psi.UseShellExecute          = false ;
+		psi.RedirectStandardOutput   = false ;
+		psi.RedirectStandardInput    = false ;
+		psi.CreateNoWindow           = true ;
+		}
+	public static void NOP()
+		{
+		var p = System.Diagnostics.Process.Start(psi) ;
+		p.WaitForExit() ;
+		p.Close() ;
+		X.Y.Sync() ;
+		}
+	internal static System.Diagnostics.ProcessStartInfo psi ;
+	}
+}

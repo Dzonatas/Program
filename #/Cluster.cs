@@ -77,6 +77,9 @@ public static partial class Shell
 			"gmcs -define:EMBED"
 			#endif
 			+ " " + Current.Path.Entry( name )
+			+ " ../../~/X.Y.cs"
+			+ " ../../#/X.Predefined.cs"
+			+ " ../../Z.cs"
 			+ " "
 			+ "-out:" + Current.Path.Entry( "infrastructure.exe" )
 			) ;

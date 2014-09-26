@@ -273,7 +273,9 @@ class Xo_t
 		//s.WriteLine( "public static void Main( string[] args ) { System.Console.WriteLine(iDNA.C) ; }" ) ;
 		s.WriteLine( "public static void Main( string[] args )" ) ;
 		s.WriteLine( "  {" ) ;
+		s.WriteLine( "  X.Y.MapZ() ;" ) ;
 		s.Write( _.xml_reader() ) ;
+		s.WriteLine( "  Current.Interval.NOP() ;" ) ;
 		s.WriteLine( "  }" ) ;
 		s.WriteLine( "#endif" ) ;
 		s.WriteLine( "}" ) ;

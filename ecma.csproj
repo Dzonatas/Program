@@ -120,7 +120,6 @@
     <Compile Include="#\X.Predefined.cs" />
     <Compile Include="#\X.Logo.cs" />
     <Compile Include="#\X.String.IPv6.cs" />
-    <Compile Include="~\X.Y.cs" />
     <Compile Include="#\Cluster.cs" />
     <Compile Include="#\Cyborg.Power.State.cs" />
     <Compile Include="#\System.Extensions.Fan.cs" />
@@ -165,5 +164,6 @@
     <None Include="#\BCL.HPP" />
     <None Include="~\test3\test.sh" />
     <None Include="~\test3\hello.world.cs" />
+    <None Include="~\X.Y.cs" />
   </ItemGroup>
 </Project>
