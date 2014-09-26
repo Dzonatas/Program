@@ -5206,7 +5206,7 @@ int TERMINAL_( int n, char *str, YYSTYPE * yylval_param )
 int TERMINAL( int n, char *str, YYSTYPE* yylval_param )
 	{
 	#ifdef MMAP
-		printf("&_%d_%d_%d;%s", (unsigned long)yylval_param, n, str);
+		printf("&_%d_%d_%d;%s", (unsigned long)yylval_param, n, strlen(str), str);
 	#else
 		printf("&_%d_%d;%s", (unsigned long)yylval_param, n, str);
 	#endif
