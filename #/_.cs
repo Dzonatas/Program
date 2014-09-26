@@ -380,10 +380,13 @@ public static string xml_reader()
 	+"bool process = false ;\n"
 	+"while( e.MoveNext() )\n"
 	+"	{\n"
+	#if DEBUG
+	+"	Current.Interval.NOP() ;\n"
+	#endif
 	+"	if( e.Current == '<' )\n"
 	+"		{\n"
 	+"		if( process )\n"
-	+"			iDNA.Text( l ) ;\n"
+	+"			{ iDNA.Text( l ) ; X.Y.Print( l ) ; }\n"
 	+"		l = string.Empty ;\n"
 	+"		e.MoveNext() ;\n"
 	+"		if( e.Current == '_' )\n"
@@ -407,7 +410,7 @@ public static string xml_reader()
 	+"	if( e.Current == '&' )\n"
 	+"		{\n"
 	+"		if( process )\n"
-	+"			iDNA.Text( l ) ;\n"
+	+"			{ iDNA.Text( l ) ; X.Y.Print( l ) ; }\n"
 	+"		l = string.Empty ;\n"
 	+"		e.MoveNext() ;\n"
 	+"		if( e.Current == '_' )\n"

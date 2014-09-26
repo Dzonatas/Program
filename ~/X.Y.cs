@@ -193,6 +193,20 @@ static public partial class Y
 			for( uint y = 0 ; y < 300 ; y++ )
 				X.Y.Z( y, x, 1 ) ;
 		}
+	static int px = 20 ;
+	static int py = 20 ;
+	static public void Print( string text )
+		{
+		XIP f = query_font( Display, gcontext_from_gc( gc ) ) ;
+		int w = text_width( f, text, text.Length ) ;
+		draw_string( Display, drawable, gc, px, py, text, text.Length ) ;
+		px += w ;
+		if( px > 300 )
+			{
+			px = 20 ;
+			py += 20 ;
+			}
+		}
 	static public void Z( uint x, uint y, int r, int g, int b )
 		{
 		values.PlaneMask = (ulong)( r<<16 | g<<8 | b ) ;
@@ -223,6 +237,10 @@ static public partial class Y
 	[DllImport("libX11", EntryPoint = "XCreateColormap")] extern static IntPtr colormap_create( XIP display, XIP drawable, XIP visual, int alloc )  ;
 	[DllImport("libX11", EntryPoint = "XChangeWindowAttributes")] extern static void change_window_attributes(IntPtr display, IntPtr drawable, ulong valuemask, ref SetWindowAttributes values ) ;
 	[DllImport("libX11", EntryPoint = "XSync")]   extern static void sync(IntPtr display, bool discard) ;
+	[DllImport("libX11", EntryPoint = "XDrawString")]   extern static void draw_string(XIP display, XIP drawable, XIP gc, int x, int y, string text, int length ) ;
+	[DllImport("libX11", EntryPoint = "XQueryFont")]   extern static XIP query_font(XIP display, XIP font_id ) ;
+	[DllImport("libX11", EntryPoint = "XTextWidth")]   extern static int text_width(XIP font_struct, string text, int length ) ;
+	[DllImport("libX11", EntryPoint = "XGContextFromGC")]   extern static XIP gcontext_from_gc( XIP gc ) ;
 	}
 }
 
