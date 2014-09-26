@@ -74,7 +74,7 @@ public static partial class Shell
 			#if LEAN_AND_MEAN
 			"gmcs -define:EMBED -nostdlib" //-main:_accept.A335
 			#else
-			"gmcs -define:EMBED"
+			"gmcs -define:EMBED -nowarn:0169,219,414,649"
 			#endif
 			+ " " + Current.Path.Entry( name )
 			+ " ../../~/X.Y.cs"
