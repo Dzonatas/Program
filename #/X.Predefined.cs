@@ -281,4 +281,58 @@ namespace X.Predefined
 		public static ulong 	Colormap         = (1L<<13) ;
 		public static ulong 	Cursor           = (1L<<14) ;
 		}
+
+	public static class SH
+		{
+		public static long     USPosition       = (1L<<0) ;
+		public static long     USSize           = (1L<<1) ;
+		public static long     PPosition        = (1L<<2) ;
+		public static long     PSize            = (1L<<3) ;
+		public static long     PMinSize         = (1L<<4) ;
+		public static long     PMaxSize         = (1L<<5) ;
+		public static long     PResizeInc       = (1L<<6) ;
+		public static long     PAspect          = (1L<<7) ;
+		public static long     PBaseSize        = (1L<<8) ;
+		public static long     PWinGravity      = (1L<<9) ;
+		public static long     PAllHints        = (PPosition|PSize|PMinSize|PMaxSize|PResizeInc|PAspect) ;
+		}
+
+	[StructLayout(LayoutKind.Sequential)]
+	public struct SizeHints
+		{
+		public long flags ;
+		public int _x, _y ;
+		public int _width, _height ;
+		public int min_width, min_height ;
+		public int max_width, max_height ;
+		public int width_inc, height_inc ;
+		public int min_aspect_x ;
+		public int min_aspect_y ;
+		public int max_aspect_x ;
+		public int max_aspect_y ;
+		public int base_width, base_height ;
+		public int win_gravity ;
+		}
+
+	public static class WC
+		{
+		public static ulong 	X           = (1<<0) ;
+		public static ulong 	Y           = (1<<1) ;
+		public static ulong 	Width       = (1<<2) ;
+		public static ulong 	Height      = (1<<3) ;
+		public static ulong 	BorderWidth = (1<<4) ;
+		public static ulong 	Sibling     = (1<<5) ;
+		public static ulong 	StackMode   = (1<<6) ;
+		}
+
+	[StructLayout(LayoutKind.Sequential)]
+	public struct WindowChanges
+		{
+		public int x, y ;
+		public int width, height ;
+		public int border_width ;
+		public Drawable sibling ;
+		public int stack_mode ;
+		}
+
 }

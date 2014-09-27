@@ -48,6 +48,7 @@ static public partial class Y
 		if( x < 300 && y < 300 )
 			draw_point( Display, drawable, _gc, (int)x, (int)y ) ;
 		}
+	static XIP overlay ;
 	static public void MapZ()
 		{
 		Display = display_open( ":0" ) ;
@@ -57,7 +58,14 @@ static public partial class Y
 		IntPtr  d  = default_root_window( Display ) ;
 		ulong pixel_border = pixel_server( Display, s ) ;
 		ulong pixel_background = pixel_client( Display, s ) ;
+		composite_redirect( Display, d, 0 ) ; //0=auto
+		select_input( Display, d, (1<<19) ) ; //SubstructureNotifyMask
 		match_visual_info( Display, screen_default(Display), 32, 4, out visual_info );
+		overlay = composite_overlay( Display, d ) ;
+		XIP region = region_create( Display, IntPtr.Zero, 0 ) ;
+		fix( Display, overlay, 0, 0, 0, IntPtr.Zero ) ; //shape_kind=bounding
+		fix( Display, overlay, 2, 0, 0, region ) ; //shape_kind=input
+		region_destroy( Display, region ) ;
 //		window_attr.colormap = (System.Int32)colormap_create( Display, default_root_window( Display ), visual_info.Visual, 0 ) ;
 		//change_window_attributes( Display, drawable, (1L<<13), ref window_attr ) ;
 		//drawable = window_create_simple(Display, r, 3, 3, 300, 300, 1, pixel_border, pixel_background ) ;
@@ -65,7 +73,32 @@ static public partial class Y
 		window_attr.colormap = colormap_create( Display, default_root_window( Display ), visual_info.Visual, 0 ) ;
 		window_attr.border_pixel =  0 ; //pixel_border ;
 		window_attr.background_pixel = 0 ; //pixel_background ;
-		drawable = window_create(Display, d, 3, 3, 300, 300, 1, (int)visual_info.Depth, 1, (XIP)visual_info.Visual, CW.BackPixel | CW.BorderPixel | CW.Colormap, ref window_attr ) ;
+		drawable = window_create(Display, d, 3, 3, 1280, 800, 1, (int)visual_info.Depth, 1, (XIP)visual_info.Visual, CW.BackPixel | CW.BorderPixel | CW.Colormap, ref window_attr ) ;
+		XIP size_p = allocate_size_hints() ;
+		SizeHints size = (SizeHints)Marshal.PtrToStructure( size_p , typeof( SizeHints )) ;
+		size.base_height = 1280 ;
+		size.base_width  = 800 ;
+		size.max_height  = 1280 ;
+		size.min_height  = 600 ;
+		size.max_width   = 800 ;
+		size.min_width   = 300 ;
+		size.min_aspect_x = 9 ;
+		size.min_aspect_y = 4 ;
+		size.max_aspect_x = 16 ;
+		size.max_aspect_y = 9 ;
+		size.flags       = SH.PBaseSize | SH.PMaxSize | SH.PMinSize | SH.PAspect ;
+		Marshal.StructureToPtr( size, size_p, false ) ;
+		set_normal_hints( Display, drawable, size_p ) ;
+		XIP sp = allocate_size_hints() ;
+		long supplied ;
+		get_normal_hints( Display, drawable, sp, out supplied ) ;
+		SizeHints size_t = (SizeHints)Marshal.PtrToStructure( sp , typeof( SizeHints )) ;
+			/*
+		item = new XIP[nitems] ;
+		for( int i = 0 ; i < nitems ; i++ )
+			item[i] = (IntPtr)Marshal.PtrToStructure((IntPtr)(ip + (IntPtr.Size * i)), typeof(IntPtr)) ;
+		free(ip) ;
+		*/
 		System.Console.WriteLine( "X-ServerVendor: {0}", Vendor ) ;
 		padD() ;
 		}
@@ -108,8 +141,23 @@ static public partial class Y
 			}
 		}
 	static XAnyEvent zone ;
+	static int sz_i = 700 ;
 	static public void Sync()
 		{
+		XIP rr ;
+		XIP sid ;
+		XIP[] item ;
+		IntPtr ip ;
+		int nitems ;
+		int sx, sy ;
+		uint sw, sh, border, depth ;
+		get_geometry( Display, drawable, out rr, out sx, out sy, out sw, out sh, out border, out depth ) ;
+		WindowChanges wc = new WindowChanges() ;
+		wc.height = (int)sh - 1  ;
+		wc.width = (int)sw - 1 ;
+		configure( Display, drawable, WC.Height | WC.Width, ref wc ) ;
+		resize( Display, drawable, (uint)wc.height, (uint)wc.width ) ;
+		System.Console.WriteLine( "{0} {1} {2} {3}", sx, sy, sw, sh ) ;
 		sync( Display, false ) ;
 		}
 	static bool next()
@@ -197,6 +245,7 @@ static public partial class Y
 	static int py = 20 ;
 	static public void Print( string text )
 		{
+		//rectify( Display, drawable, overlay, 0, 0 ) ;
 		int x = px ;
 		XIP f = query_font( Display, gcontext_from_gc( gc ) ) ;
 		int w = text_width( f, text, text.Length ) ;
@@ -207,6 +256,7 @@ static public partial class Y
 			py += 20 ;
 			}
 		draw_string( Display, drawable, gc, x, py, text, text.Length ) ;
+		System.Console.Write( text ) ;
 		}
 	static public void Z( uint x, uint y, int r, int g, int b )
 		{
@@ -242,6 +292,20 @@ static public partial class Y
 	[DllImport("libX11", EntryPoint = "XQueryFont")]   extern static XIP query_font(XIP display, XIP font_id ) ;
 	[DllImport("libX11", EntryPoint = "XTextWidth")]   extern static int text_width(XIP font_struct, string text, int length ) ;
 	[DllImport("libX11", EntryPoint = "XGContextFromGC")]   extern static XIP gcontext_from_gc( XIP gc ) ;
+	[DllImport("libX11", EntryPoint = "XQueryTree")]	extern static void query_tree(XIP display, XIP window, out XIP root, out XIP sid, out XIP items, out int nitems) ;
+	[DllImport("libX11", EntryPoint = "XFree")]			extern static void free(XIP data) ;
+	[DllImport("libX11", EntryPoint = "XReparentWindow")] extern static IntPtr rectify(XIP display, XIP w, XIP sid, int x, int y) ;
+	[DllImport("libX11", EntryPoint = "XGetGeometry")] extern static IntPtr get_geometry(XIP display, XIP drawable, out XIP root, out int x, out int y, out uint width, out uint height, out uint border, out uint depth) ;
+	[DllImport("libX11", EntryPoint = "XResizeWindow")] extern static IntPtr resize(XIP display, XIP drawable, uint width, uint height ) ;
+	[DllImport("libX11", EntryPoint = "XGetWMNormalHints")] extern static IntPtr get_normal_hints(XIP display, XIP drawable, XIP sizehints, out long supplied ) ;
+	[DllImport("libX11", EntryPoint = "XSetWMNormalHints")] extern static IntPtr set_normal_hints(XIP display, XIP drawable, XIP sizehints ) ;
+	[DllImport("libX11", EntryPoint = "XAllocSizeHints")] extern static IntPtr allocate_size_hints() ;
+	[DllImport("libX11", EntryPoint = "XConfigureWindow")] extern static IntPtr configure(XIP display, XIP drawable, ulong mask, ref WindowChanges change) ;
+	[DllImport("libXcomposite.so.1", EntryPoint = "XCompositeGetOverlayWindow")] extern static XIP composite_overlay(XIP display, XIP drawable) ;
+	[DllImport("libXcomposite.so.1", EntryPoint = "XCompositeRedirectSubwindows")] extern static XIP composite_redirect(XIP display, XIP drawable, int update ) ;
+	[DllImport("libXfixes.so.3", EntryPoint = "XFixesSetWindowShapeRegion")] extern static XIP fix(XIP display, XIP drawable, int shape_kind, int xoff, int yoff, XIP region ) ;
+	[DllImport("libXfixes.so.3", EntryPoint = "XFixesCreateRegion")] extern static XIP region_create(XIP display, XIP rectangles, int nrectangles ) ;
+	[DllImport("libXfixes.so.3", EntryPoint = "XFixesDestroyRegion")] extern static void region_destroy(XIP display, XIP region ) ;
 	}
 }
 
