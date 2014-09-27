@@ -1,107 +1,60 @@
 using X.Predefined ;
 using XIP = System.IntPtr ;
 
-namespace X  {
-static public partial class Y
-			{
-			public static System.IntPtr OpenDisplay(this double _, out System.IntPtr display)
-			{
-			#if ECMA || ( DEBUG || DIRECTX )
-			//IceSetHostBasedAuthProc(listener,always_true) ;
-			#elif BUILD || ( WIN8 || VAX )
-			//IceSetHostBasedAuthProc(listener,trait) ;
-			#endif
-			switch(_.CompareTo(0.0))
-				{
-				case 0: return display = display_open(":0") ;
-				default:
-					{
-					string s = _.ToString().Replace(".",":") ;
-					return display = display_open(":"+s) ;
-					}
-				}
-			}
-		}
-}
-
-
 namespace X {
 using System ;
 using System.Runtime.InteropServices ;
 static public partial class Y
 	{
-	static Random bit = new Random() ;
-	static XIP Display ;
-	static XIP Vendor ;
-	static public XEvent _event ;
-	static internal XIP drawable ;
-	static XIP Image ;
-	static VisualInfo visual_info ;
-	static SetWindowAttributes window_attr ;
 	static public void Z( uint x, uint y, int z )
 		{
+		Point_t p = new Point_t( (ushort)x, (ushort)y ) ;
+//		p.x = (ushort)x ;
+//		p.y = (ushort)y ;
+		/*
 		IntPtr _gc ;
 		if( z < 0 ? false : true )
 			_gc = c[z] ;
 		else
 			_gc = gc_erase ;
+		*/
 		if( x < 300 && y < 300 )
-			draw_point( Display, drawable, _gc, (int)x, (int)y ) ;
+			xcb_poly_point( ki, 0, _window, foreground, (uint)1, ref p ) ;
 		}
-	static XIP overlay ;
+	static XIP ki ;
+	static XIP setup ;
+	static int screen_i ;
+	static XIP screen ;
+	static uint root ;
+	static uint foreground ;
+	static uint _window ;
 	static public void MapZ()
 		{
-		Display = display_open( ":0" ) ;
-		Vendor  = server_vendor( Display ) ;
-		int     s  = screen_default( Display ) ;
-		IntPtr  r  = root_window( Display, s ) ;
-		IntPtr  d  = default_root_window( Display ) ;
-		ulong pixel_border = pixel_server( Display, s ) ;
-		ulong pixel_background = pixel_client( Display, s ) ;
-		composite_redirect( Display, d, 0 ) ; //0=auto
-		select_input( Display, d, (1<<19) ) ; //SubstructureNotifyMask
-		match_visual_info( Display, screen_default(Display), 32, 4, out visual_info );
-		overlay = composite_overlay( Display, d ) ;
-		XIP region = region_create( Display, IntPtr.Zero, 0 ) ;
-		fix( Display, overlay, 0, 0, 0, IntPtr.Zero ) ; //shape_kind=bounding
-		fix( Display, overlay, 2, 0, 0, region ) ; //shape_kind=input
-		region_destroy( Display, region ) ;
-//		window_attr.colormap = (System.Int32)colormap_create( Display, default_root_window( Display ), visual_info.Visual, 0 ) ;
-		//change_window_attributes( Display, drawable, (1L<<13), ref window_attr ) ;
-		//drawable = window_create_simple(Display, r, 3, 3, 300, 300, 1, pixel_border, pixel_background ) ;
-		window_attr = new SetWindowAttributes() ;
-		window_attr.colormap = colormap_create( Display, default_root_window( Display ), visual_info.Visual, 0 ) ;
-		window_attr.border_pixel =  0 ; //pixel_border ;
-		window_attr.background_pixel = 0 ; //pixel_background ;
-		drawable = window_create(Display, d, 3, 3, 1280, 800, 1, (int)visual_info.Depth, 1, (XIP)visual_info.Visual, CW.BackPixel | CW.BorderPixel | CW.Colormap, ref window_attr ) ;
-		XIP size_p = allocate_size_hints() ;
-		SizeHints size = (SizeHints)Marshal.PtrToStructure( size_p , typeof( SizeHints )) ;
-		size.base_height = 1280 ;
-		size.base_width  = 800 ;
-		size.max_height  = 1280 ;
-		size.min_height  = 600 ;
-		size.max_width   = 800 ;
-		size.min_width   = 300 ;
-		size.min_aspect_x = 9 ;
-		size.min_aspect_y = 4 ;
-		size.max_aspect_x = 16 ;
-		size.max_aspect_y = 9 ;
-		size.flags       = SH.PBaseSize | SH.PMaxSize | SH.PMinSize | SH.PAspect ;
-		Marshal.StructureToPtr( size, size_p, false ) ;
-		set_normal_hints( Display, drawable, size_p ) ;
-		XIP sp = allocate_size_hints() ;
-		long supplied ;
-		get_normal_hints( Display, drawable, sp, out supplied ) ;
-		SizeHints size_t = (SizeHints)Marshal.PtrToStructure( sp , typeof( SizeHints )) ;
-			/*
-		item = new XIP[nitems] ;
-		for( int i = 0 ; i < nitems ; i++ )
-			item[i] = (IntPtr)Marshal.PtrToStructure((IntPtr)(ip + (IntPtr.Size * i)), typeof(IntPtr)) ;
-		free(ip) ;
-		*/
-		System.Console.WriteLine( "X-ServerVendor: {0}", Vendor ) ;
-		padD() ;
+		ki         = xcb_connect( ":0", out screen_i ) ;
+		setup      = xcb_get_setup( ki ) ;
+		screen     = xcb_setup_roots_iterator( setup ).screen ;
+		var s      = (Screen_t) Marshal.PtrToStructure( screen , typeof(Screen_t) ) ;
+		root       = s.root ;
+		foreground = xcb_generate_id( ki ) ;
+		uint mask  = 4 | 65536 ; //foreground|graphic_expose
+		Values2 v  = new Values2( s.black_pixel , 0 ) ;
+
+		xcb_create_gc( ki, foreground, root, mask, ref v ) ;
+
+		_window    = xcb_generate_id( ki ) ;
+		mask       = 2 | 2048 ;  //cw_back_pixel|cw_event_mask
+		Values2 vv = new Values2( s.white_pixel , 32768 ) ; //event_mask_expose
+
+		xcb_create_window( ki, 0, _window, root, 0, 0, 800, 1280, 1, 1, s.root_visual, mask, ref vv ) ;
+		xcb_map_window( ki, _window ) ;
+		xcb_flush( ki ) ;
+
+		var e = xcb_wait_for_event( ki ) ;
+		xcb_free( e ) ;
+
+		//padD() ;
 		}
+	/*
 	static Values values ;
 	static internal XIP gc ;
 	static internal XIP gc_erase ;
@@ -116,6 +69,8 @@ static public partial class Y
 		select_input( Display, drawable, 0xFFFFFF ) ;
 		mapD() ;
 		}
+	*/
+	/*
 	static XIP[] c ;
 	static void mapD()
 		{
@@ -140,28 +95,18 @@ static public partial class Y
 			default : return global::X.Predefined.Color.AluminiumExtraDark ;
 			}
 		}
+	*/
 	static XAnyEvent zone ;
-	static int sz_i = 700 ;
 	static public void Sync()
 		{
-		XIP rr ;
-		XIP sid ;
-		XIP[] item ;
-		IntPtr ip ;
-		int nitems ;
-		int sx, sy ;
-		uint sw, sh, border, depth ;
-		get_geometry( Display, drawable, out rr, out sx, out sy, out sw, out sh, out border, out depth ) ;
-		WindowChanges wc = new WindowChanges() ;
-		wc.height = (int)sh - 1  ;
-		wc.width = (int)sw - 1 ;
-		configure( Display, drawable, WC.Height | WC.Width, ref wc ) ;
-		resize( Display, drawable, (uint)wc.height, (uint)wc.width ) ;
-		System.Console.WriteLine( "{0} {1} {2} {3}", sx, sy, sw, sh ) ;
-		sync( Display, false ) ;
+		xcb_flush( ki ) ;
+		//sync( Display, false ) ;
 		}
 	static bool next()
 		{
+		var e = xcb_wait_for_event( ki ) ;
+		xcb_free( e ) ;
+		/*
 		next_event( Display, out _event ) ;
 		switch( _event.Type )
 			{
@@ -184,12 +129,15 @@ static public partial class Y
 				//QuickResponseEncodedSplash( ref _event.XAny ) ;
 				return true ;
 			}
+		*/
 		return true ;
 		}
 	static public void Window()
 		{
+		/*
 		for(zone = XStart.ip;next();)
 			System.Console.WriteLine( "zone: {0} {1}", _event.Type, _event.XAny.Serial ) ;
+		*/
 		}
 	static public void Next()
 		{
@@ -246,6 +194,7 @@ static public partial class Y
 	static public void Print( string text )
 		{
 		//rectify( Display, drawable, overlay, 0, 0 ) ;
+		/*
 		int x = px ;
 		XIP f = query_font( Display, gcontext_from_gc( gc ) ) ;
 		int w = text_width( f, text, text.Length ) ;
@@ -256,56 +205,29 @@ static public partial class Y
 			py += 20 ;
 			}
 		draw_string( Display, drawable, gc, x, py, text, text.Length ) ;
+		*/
 		System.Console.Write( text ) ;
 		}
+		/*
 	static public void Z( uint x, uint y, int r, int g, int b )
 		{
-		values.PlaneMask = (ulong)( r<<16 | g<<8 | b ) ;
-		gc_change( Display, gc, GCValue.PlaneMask, ref values ) ;
+		//values.PlaneMask = (ulong)( r<<16 | g<<8 | b ) ;
+		//gc_change( Display, gc, GCValue.PlaneMask, ref values ) ;
 		if( x < 300 && y < 300 )
 			draw_point( Display, drawable, gc, (int)x, (int)y ) ;
 		}
-	[DllImport("libX11", EntryPoint = "XDefaultRootWindow")] extern static IntPtr default_root_window(IntPtr display) ;
-	[DllImport("libX11", EntryPoint = "XDrawPoint")] extern static IntPtr draw_point(XIP display, XIP drawable, XIP gc, int x, int y )  ;
-	[DllImport("libX11", EntryPoint = "XRootWindow")] extern internal static IntPtr root_window(IntPtr display, int screen) ;
-	[DllImport("libX11", EntryPoint = "XBlackPixel")] extern static ulong pixel_client(System.IntPtr display, int scrnum )  ;
-	[DllImport("libX11", EntryPoint = "XWhitePixel")] extern static ulong pixel_server(System.IntPtr display, int scrnum )  ;
-	[DllImport("libX11", EntryPoint = "XOpenDisplay")] extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
-	[DllImport("libX11", EntryPoint = "XServerVendor")] extern static IntPtr server_vendor(IntPtr display) ;
-	[DllImport("libX11", EntryPoint = "XDefaultScreen")] extern static int screen_default(System.IntPtr display)  ;
-	[DllImport("libX11", EntryPoint = "XCreateSimpleWindow")] extern static XIP window_create_simple(XIP display, XIP window, int x, int y, uint width, uint height, uint border_width, ulong border, ulong background) ;
-	[DllImport("libX11", EntryPoint = "XCreateWindow")] extern static XIP window_create(XIP display, XIP sid, int x, int y, uint width, uint height, uint border_width, int depth, uint clas_, XIP visual, ulong mask, ref SetWindowAttributes attributes ) ;
-	[DllImport("libX11", EntryPoint = "XCreateGC")]    extern static IntPtr gc_create(XIP display, XIP d, ulong value_mask, ref Values values)  ;
-	[DllImport("libX11", EntryPoint = "XGetGCValues")] extern static void gc_values(IntPtr display, IntPtr gc, ulong valuemask, out Values values )  ;
-	[DllImport("libX11", EntryPoint = "XDefaultGC")]   extern static IntPtr gc_default(System.IntPtr display, int scrnum )  ;
-	[DllImport("libX11", EntryPoint = "XSelectInput")] extern static IntPtr select_input(System.IntPtr display, XIP d, ulong fg )  ;
-	[DllImport("libX11", EntryPoint = "XMapWindow")]   extern static void map_window(IntPtr display, IntPtr window) ;
-	[DllImport("libX11", EntryPoint = "XNextEvent")]   extern static void next_event(IntPtr display, out XEvent _event) ;
-	[DllImport("libX11", EntryPoint = "XPeekEvent")]   extern static void peek_event(IntPtr display, out XEvent _event) ;
-	[DllImport("libX11", EntryPoint = "XChangeGC")] extern static void gc_change(IntPtr display, IntPtr gc, ulong valuemask, ref Values values )  ;
-	[DllImport("libX11", EntryPoint = "XMatchVisualInfo")] extern static void match_visual_info(IntPtr display, int scrnum, int depth, int _class, out X.Predefined.VisualInfo info )  ;
-	[DllImport("libX11", EntryPoint = "XSetWindowColormap")] extern static void set_window_colormap(System.IntPtr display, XIP drawable, IntPtr colormap )  ;
-	[DllImport("libX11", EntryPoint = "XCreateColormap")] extern static IntPtr colormap_create( XIP display, XIP drawable, XIP visual, int alloc )  ;
-	[DllImport("libX11", EntryPoint = "XChangeWindowAttributes")] extern static void change_window_attributes(IntPtr display, IntPtr drawable, ulong valuemask, ref SetWindowAttributes values ) ;
-	[DllImport("libX11", EntryPoint = "XSync")]   extern static void sync(IntPtr display, bool discard) ;
-	[DllImport("libX11", EntryPoint = "XDrawString")]   extern static void draw_string(XIP display, XIP drawable, XIP gc, int x, int y, string text, int length ) ;
-	[DllImport("libX11", EntryPoint = "XQueryFont")]   extern static XIP query_font(XIP display, XIP font_id ) ;
-	[DllImport("libX11", EntryPoint = "XTextWidth")]   extern static int text_width(XIP font_struct, string text, int length ) ;
-	[DllImport("libX11", EntryPoint = "XGContextFromGC")]   extern static XIP gcontext_from_gc( XIP gc ) ;
-	[DllImport("libX11", EntryPoint = "XQueryTree")]	extern static void query_tree(XIP display, XIP window, out XIP root, out XIP sid, out XIP items, out int nitems) ;
-	[DllImport("libX11", EntryPoint = "XFree")]			extern static void free(XIP data) ;
-	[DllImport("libX11", EntryPoint = "XReparentWindow")] extern static IntPtr rectify(XIP display, XIP w, XIP sid, int x, int y) ;
-	[DllImport("libX11", EntryPoint = "XGetGeometry")] extern static IntPtr get_geometry(XIP display, XIP drawable, out XIP root, out int x, out int y, out uint width, out uint height, out uint border, out uint depth) ;
-	[DllImport("libX11", EntryPoint = "XResizeWindow")] extern static IntPtr resize(XIP display, XIP drawable, uint width, uint height ) ;
-	[DllImport("libX11", EntryPoint = "XGetWMNormalHints")] extern static IntPtr get_normal_hints(XIP display, XIP drawable, XIP sizehints, out long supplied ) ;
-	[DllImport("libX11", EntryPoint = "XSetWMNormalHints")] extern static IntPtr set_normal_hints(XIP display, XIP drawable, XIP sizehints ) ;
-	[DllImport("libX11", EntryPoint = "XAllocSizeHints")] extern static IntPtr allocate_size_hints() ;
-	[DllImport("libX11", EntryPoint = "XConfigureWindow")] extern static IntPtr configure(XIP display, XIP drawable, ulong mask, ref WindowChanges change) ;
-	[DllImport("libXcomposite.so.1", EntryPoint = "XCompositeGetOverlayWindow")] extern static XIP composite_overlay(XIP display, XIP drawable) ;
-	[DllImport("libXcomposite.so.1", EntryPoint = "XCompositeRedirectSubwindows")] extern static XIP composite_redirect(XIP display, XIP drawable, int update ) ;
-	[DllImport("libXfixes.so.3", EntryPoint = "XFixesSetWindowShapeRegion")] extern static XIP fix(XIP display, XIP drawable, int shape_kind, int xoff, int yoff, XIP region ) ;
-	[DllImport("libXfixes.so.3", EntryPoint = "XFixesCreateRegion")] extern static XIP region_create(XIP display, XIP rectangles, int nrectangles ) ;
-	[DllImport("libXfixes.so.3", EntryPoint = "XFixesDestroyRegion")] extern static void region_destroy(XIP display, XIP region ) ;
+		*/
+	[DllImport("libxcb.so.1")] extern static XIP              xcb_connect( string display, out int screen ) ;
+	[DllImport("libxcb.so.1")] extern static uint             xcb_generate_id( XIP connection ) ;
+	[DllImport("libxcb.so.1")] extern static XIP              xcb_get_setup( XIP connection ) ;
+	[DllImport("libxcb.so.1")] extern static ScreenIterator   xcb_setup_roots_iterator( XIP setup ) ;
+	[DllImport("libxcb.so.1")] extern static uint             xcb_create_gc( XIP connection, uint foreground, uint window, uint mask, ref Values2 values ) ;
+	[DllImport("libxcb.so.1")] extern static uint             xcb_create_window( XIP connection, byte depth, uint window, uint sid, short x, short y, ushort width, ushort height, ushort border, ushort _class, uint visual, uint mask, ref Values2 values ) ;
+	[DllImport("libxcb.so.1")] extern static uint             xcb_map_window( XIP connection, uint window ) ;
+	[DllImport("libxcb.so.1")] extern static uint             xcb_flush( XIP connection ) ;
+	[DllImport("libxcb.so.1")] extern static XIP              xcb_wait_for_event( XIP connection ) ;
+	[DllImport("libc.so.6", EntryPoint="free")] extern static void             xcb_free( XIP memory ) ;
+	[DllImport("libxcb.so.1")] extern static XIP              xcb_poly_point( XIP connection, byte mode, uint drawable, uint gc, uint npoints, ref Point_t point ) ;
 	}
 }
 

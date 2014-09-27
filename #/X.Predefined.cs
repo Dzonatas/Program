@@ -12,6 +12,8 @@ namespace X.Predefined
 	using Display   = System.IntPtr ;
 	using Visual    = System.IntPtr ;
 
+	using XIP       = System.IntPtr ;
+
 	public enum Atom
 		{
 		Default,
@@ -333,6 +335,61 @@ namespace X.Predefined
 		public int border_width ;
 		public Drawable sibling ;
 		public int stack_mode ;
+		}
+
+	[StructLayout(LayoutKind.Sequential)]
+	public struct ScreenIterator
+		{
+		public XIP    screen ;
+		public int    rem    ;
+		public int    index  ;
+		}
+
+	[StructLayout(LayoutKind.Sequential)]
+	public struct Screen_t
+		{
+		public uint           root ;
+		public uint           default_colormap ;
+		public uint           white_pixel ;
+		public uint           black_pixel ;
+		public uint           current_input_masks ;
+		public ushort         width_in_pixels ;
+		public ushort         height_in_pixels ;
+		public ushort         width_in_millimeters ;
+		public ushort         height_in_millimeters ;
+		public ushort         min_installed_maps ;
+		public ushort         max_installed_maps ;
+		public uint           root_visual ;
+		public byte           backing_stores ;
+		public byte           save_unders ;
+		public byte           root_depth ;
+		public byte           allowed_depths_len ;
+		}
+
+	[StructLayout(LayoutKind.Sequential)]
+	public struct Values2
+		{
+		public uint _0 ;
+		public uint _1 ;
+		public Values2( uint __0, uint __1 ) { _0 = __0 ; _1 = __1 ; }
+		}
+
+	[StructLayout(LayoutKind.Sequential)]
+	public struct Event_t
+		{
+		public byte    response_type ;
+		public byte    pad0 ;
+		public ushort  sequence ;
+		public uint    pad00, pad01, pad02, pad03, pad04, pad05, pad06, pad07 ;
+		public uint    full_sequence ;
+		}
+
+	[StructLayout(LayoutKind.Sequential)]
+	public struct Point_t
+		{
+		public ushort  x ;
+		public ushort  y ;
+		public Point_t( ushort __0, ushort __1 ) { x = __0 ; y = __1 ; }
 		}
 
 }
