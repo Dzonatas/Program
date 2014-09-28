@@ -148,7 +148,7 @@ static public partial class Y
 		}
 	static ushort px = 20 ;
 	static ushort py = 20 ;
-	static public void Print( string text )
+	static public void Z( string text )
 		{
 		ushort x = px ;
 		px += (ushort)(8 * text.Length) ;
@@ -160,18 +160,20 @@ static public partial class Y
 		xcb_image_text_8( ki, (byte)text.Length, _window, foreground, x, py, text ) ;
 		System.Console.Write( text ) ;
 		}
-	[DllImport("libxcb.so.1")] extern static XIP              xcb_connect( string display, out int screen ) ;
-	[DllImport("libxcb.so.1")] extern static uint             xcb_generate_id( XIP connection ) ;
-	[DllImport("libxcb.so.1")] extern static XIP              xcb_get_setup( XIP connection ) ;
-	[DllImport("libxcb.so.1")] extern static ScreenIterator   xcb_setup_roots_iterator( XIP setup ) ;
-	[DllImport("libxcb.so.1")] extern static uint             xcb_create_gc( XIP connection, uint foreground, uint window, uint mask, ref UInt3 values ) ;
-	[DllImport("libxcb.so.1")] extern static uint             xcb_create_window( XIP connection, byte depth, uint window, uint sid, short x, short y, ushort width, ushort height, ushort border, ushort _class, uint visual, uint mask, ref UInt3 values ) ;
-	[DllImport("libxcb.so.1")] extern static uint             xcb_map_window( XIP connection, uint window ) ;
-	[DllImport("libxcb.so.1")] extern static uint             xcb_flush( XIP connection ) ;
-	[DllImport("libxcb.so.1")] extern static XIP              xcb_wait_for_event( XIP connection ) ;
-	[DllImport("libc.so.6", EntryPoint="free")] extern static void             xcb_free( XIP memory ) ;
-	[DllImport("libxcb.so.1")] extern static XIP              xcb_poly_point( XIP connection, byte mode, uint drawable, uint gc, uint npoints, ref Point_t point ) ;
-	[DllImport("libxcb.so.1")] extern static XIP              xcb_image_text_8( XIP connection, byte length, uint drawable, uint gc, ushort x, ushort y, string text ) ;
+	const string libxcb_so = "libxcb.so.1" ;
+	const string libc_so   = "libc.so.6" ;
+	[DllImport( libxcb_so )] extern static XIP              xcb_connect( string display, out int screen ) ;
+	[DllImport( libxcb_so )] extern static uint             xcb_generate_id( XIP connection ) ;
+	[DllImport( libxcb_so )] extern static XIP              xcb_get_setup( XIP connection ) ;
+	[DllImport( libxcb_so )] extern static ScreenIterator   xcb_setup_roots_iterator( XIP setup ) ;
+	[DllImport( libxcb_so )] extern static uint             xcb_create_gc( XIP connection, uint foreground, uint window, uint mask, ref UInt3 values ) ;
+	[DllImport( libxcb_so )] extern static uint             xcb_create_window( XIP connection, byte depth, uint window, uint sid, short x, short y, ushort width, ushort height, ushort border, ushort _class, uint visual, uint mask, ref UInt3 values ) ;
+	[DllImport( libxcb_so )] extern static uint             xcb_map_window( XIP connection, uint window ) ;
+	[DllImport( libxcb_so )] extern static uint             xcb_flush( XIP connection ) ;
+	[DllImport( libxcb_so )] extern static XIP              xcb_wait_for_event( XIP connection ) ;
+	[DllImport( libc_so , EntryPoint="free")] extern static void             xcb_free( XIP memory ) ;
+	[DllImport( libxcb_so )] extern static XIP              xcb_poly_point( XIP connection, byte mode, uint drawable, uint gc, uint npoints, ref Point_t point ) ;
+	[DllImport( libxcb_so )] extern static XIP              xcb_image_text_8( XIP connection, byte length, uint drawable, uint gc, ushort x, ushort y, string text ) ;
 	}
 }
 
