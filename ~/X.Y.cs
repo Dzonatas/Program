@@ -88,7 +88,7 @@ static public partial class Y
 		xcb_flush( ki ) ;
 
 		var e = xcb_wait_for_event( ki ) ;
-		xcb_free( e ) ;
+		C699.free( e ) ;
 
 		}
 	static XAnyEvent zone ;
@@ -100,7 +100,7 @@ static public partial class Y
 	static bool next()
 		{
 		var e = xcb_wait_for_event( ki ) ;
-		xcb_free( e ) ;
+		C699.free( e ) ;
 		/*
 		next_event( Display, out _event ) ;
 		switch( _event.Type )
@@ -171,7 +171,6 @@ static public partial class Y
 	[DllImport( libxcb_so )] extern static uint             xcb_map_window( XIP connection, uint window ) ;
 	[DllImport( libxcb_so )] extern static uint             xcb_flush( XIP connection ) ;
 	[DllImport( libxcb_so )] extern static XIP              xcb_wait_for_event( XIP connection ) ;
-	[DllImport( libc_so , EntryPoint="free")] extern static void             xcb_free( XIP memory ) ;
 	[DllImport( libxcb_so )] extern static XIP              xcb_poly_point( XIP connection, byte mode, uint drawable, uint gc, uint npoints, ref Point_t point ) ;
 	[DllImport( libxcb_so )] extern static XIP              xcb_image_text_8( XIP connection, byte length, uint drawable, uint gc, ushort x, ushort y, string text ) ;
 	}
