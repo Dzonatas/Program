@@ -124,6 +124,7 @@
     <Compile Include="#\Cyborg.Power.State.cs" />
     <Compile Include="#\System.Extensions.Fan.cs" />
     <Compile Include="~\C699.cs" />
+    <Compile Include="~\C699.free.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
