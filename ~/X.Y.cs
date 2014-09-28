@@ -49,36 +49,41 @@ static public partial class Y
 		var s      = (Screen_t) Marshal.PtrToStructure( screen , typeof(Screen_t) ) ;
 		root       = s.root ;
 		foreground = xcb_generate_id( ki ) ;
-		uint mask  = 4 | 65536 ; //foreground|graphic_expose
-		Values2 v  = new Values2( s.black_pixel , 0 ) ;
+		uint mask  = 4 | 8 | 65536 ; //foreground|background|graphic_expose
+		UInt3 v    ;
+		v._0       = s.black_pixel ;
+		v._1       = s.white_pixel ;
+		v._2       = 0 ;
 
 		xcb_create_gc( ki, foreground, root, mask, ref v ) ;
 
 		mask       = 2 | 65536 ; //planemask|graphic_expose
+		v._1       = 0 ;
 		_aluminate = new uint[aluminate.Length] ;
 		for( int i = 0 ; i < aluminate.Length ; i++ )
 			{
 			_aluminate[i] = xcb_generate_id( ki ) ;
-			v._0  = (uint)aluminate[i] ;
+			v._0   = (uint)aluminate[i] ;
 			xcb_create_gc( ki, _aluminate[i], root, mask, ref v ) ;
 			}
 		_palette   = new uint[palette.Length] ;
 		for( int i = 1 ; i < palette.Length ; i++ )
 			{
 			_palette[i] = xcb_generate_id( ki ) ;
-			v._0  = (uint)palette[i] ;
+			v._0   = (uint)palette[i] ;
 			xcb_create_gc( ki, _palette[i], root, mask, ref v ) ;
 			}
-		mask      = 1  ;        //function
+		mask       = 1  ;        //function
 		_palette[0] = xcb_generate_id( ki ) ;
-		v._0  = 0 ; //clear
+		v._0       = 0 ; //clear
 		xcb_create_gc( ki, _palette[0], root, mask, ref v ) ;
 
 		_window    = xcb_generate_id( ki ) ;
 		mask       = 2 | 2048 ;  //cw_back_pixel|cw_event_mask
-		Values2 vv = new Values2( s.white_pixel , 32768 ) ; //event_mask_expose
+		v._0       = s.white_pixel ;
+		v._1       = 32768 ; //event_mask_expose
 
-		xcb_create_window( ki, 0, _window, root, 0, 0, 800, 1280, 1, 1, s.root_visual, mask, ref vv ) ;
+		xcb_create_window( ki, 0, _window, root, 0, 0, 800, 1280, 1, 1, s.root_visual, mask, ref v ) ;
 		xcb_map_window( ki, _window ) ;
 		xcb_flush( ki ) ;
 
@@ -141,45 +146,32 @@ static public partial class Y
 		{
 		public static XAnyEvent time = new XAnyEvent() ;
 		}
-	static int px = 20 ;
-	static int py = 20 ;
+	static ushort px = 20 ;
+	static ushort py = 20 ;
 	static public void Print( string text )
 		{
-		//rectify( Display, drawable, overlay, 0, 0 ) ;
-		/*
-		int x = px ;
-		XIP f = query_font( Display, gcontext_from_gc( gc ) ) ;
-		int w = text_width( f, text, text.Length ) ;
-		px += w ;
+		ushort x = px ;
+		px += (ushort)(8 * text.Length) ;
 		if( px > 280 )
 			{
 			x = px = 20 ;
 			py += 20 ;
 			}
-		draw_string( Display, drawable, gc, x, py, text, text.Length ) ;
-		*/
+		xcb_image_text_8( ki, (byte)text.Length, _window, foreground, x, py, text ) ;
 		System.Console.Write( text ) ;
 		}
-		/*
-	static public void Z( uint x, uint y, int r, int g, int b )
-		{
-		//values.PlaneMask = (ulong)( r<<16 | g<<8 | b ) ;
-		//gc_change( Display, gc, GCValue.PlaneMask, ref values ) ;
-		if( x < 300 && y < 300 )
-			draw_point( Display, drawable, gc, (int)x, (int)y ) ;
-		}
-		*/
 	[DllImport("libxcb.so.1")] extern static XIP              xcb_connect( string display, out int screen ) ;
 	[DllImport("libxcb.so.1")] extern static uint             xcb_generate_id( XIP connection ) ;
 	[DllImport("libxcb.so.1")] extern static XIP              xcb_get_setup( XIP connection ) ;
 	[DllImport("libxcb.so.1")] extern static ScreenIterator   xcb_setup_roots_iterator( XIP setup ) ;
-	[DllImport("libxcb.so.1")] extern static uint             xcb_create_gc( XIP connection, uint foreground, uint window, uint mask, ref Values2 values ) ;
-	[DllImport("libxcb.so.1")] extern static uint             xcb_create_window( XIP connection, byte depth, uint window, uint sid, short x, short y, ushort width, ushort height, ushort border, ushort _class, uint visual, uint mask, ref Values2 values ) ;
+	[DllImport("libxcb.so.1")] extern static uint             xcb_create_gc( XIP connection, uint foreground, uint window, uint mask, ref UInt3 values ) ;
+	[DllImport("libxcb.so.1")] extern static uint             xcb_create_window( XIP connection, byte depth, uint window, uint sid, short x, short y, ushort width, ushort height, ushort border, ushort _class, uint visual, uint mask, ref UInt3 values ) ;
 	[DllImport("libxcb.so.1")] extern static uint             xcb_map_window( XIP connection, uint window ) ;
 	[DllImport("libxcb.so.1")] extern static uint             xcb_flush( XIP connection ) ;
 	[DllImport("libxcb.so.1")] extern static XIP              xcb_wait_for_event( XIP connection ) ;
 	[DllImport("libc.so.6", EntryPoint="free")] extern static void             xcb_free( XIP memory ) ;
 	[DllImport("libxcb.so.1")] extern static XIP              xcb_poly_point( XIP connection, byte mode, uint drawable, uint gc, uint npoints, ref Point_t point ) ;
+	[DllImport("libxcb.so.1")] extern static XIP              xcb_image_text_8( XIP connection, byte length, uint drawable, uint gc, ushort x, ushort y, string text ) ;
 	}
 }
 

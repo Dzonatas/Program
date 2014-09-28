@@ -367,11 +367,11 @@ namespace X.Predefined
 		}
 
 	[StructLayout(LayoutKind.Sequential)]
-	public struct Values2
+	public struct UInt3
 		{
 		public uint _0 ;
 		public uint _1 ;
-		public Values2( uint __0, uint __1 ) { _0 = __0 ; _1 = __1 ; }
+		public uint _2 ;
 		}
 
 	[StructLayout(LayoutKind.Sequential)]
