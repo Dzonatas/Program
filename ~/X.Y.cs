@@ -6,20 +6,33 @@ using System ;
 using System.Runtime.InteropServices ;
 static public partial class Y
 	{
+	static readonly ulong[] aluminate =
+		{
+		global::X.Predefined.Color.AluminiumExtraLight,
+		global::X.Predefined.Color.AluminiumLight,
+		global::X.Predefined.Color.AluminiumMediumLight,
+		global::X.Predefined.Color.AluminiumMediumDark,
+		global::X.Predefined.Color.AluminiumDark,
+		global::X.Predefined.Color.AluminiumExtraDark
+		} ;
+	static uint[] _aluminate ;
+	static readonly ulong[] palette =
+		{
+		0 ,
+		global::X.Predefined.Color.Butter,
+		global::X.Predefined.Color.Orange,
+		global::X.Predefined.Color.Chocolate,
+		global::X.Predefined.Color.Chameleon,
+		global::X.Predefined.Color.SkyBlue,
+		global::X.Predefined.Color.Plum,
+		global::X.Predefined.Color.ScarletRed
+		} ;
+	static uint[] _palette ;
 	static public void Z( uint x, uint y, int z )
 		{
 		Point_t p = new Point_t( (ushort)x, (ushort)y ) ;
-//		p.x = (ushort)x ;
-//		p.y = (ushort)y ;
-		/*
-		IntPtr _gc ;
-		if( z < 0 ? false : true )
-			_gc = c[z] ;
-		else
-			_gc = gc_erase ;
-		*/
 		if( x < 300 && y < 300 )
-			xcb_poly_point( ki, 0, _window, foreground, (uint)1, ref p ) ;
+			xcb_poly_point( ki, 0, _window, _palette[z], (uint)1, ref p ) ;
 		}
 	static XIP ki ;
 	static XIP setup ;
@@ -41,6 +54,26 @@ static public partial class Y
 
 		xcb_create_gc( ki, foreground, root, mask, ref v ) ;
 
+		mask       = 2 | 65536 ; //planemask|graphic_expose
+		_aluminate = new uint[aluminate.Length] ;
+		for( int i = 0 ; i < aluminate.Length ; i++ )
+			{
+			_aluminate[i] = xcb_generate_id( ki ) ;
+			v._0  = (uint)aluminate[i] ;
+			xcb_create_gc( ki, _aluminate[i], root, mask, ref v ) ;
+			}
+		_palette   = new uint[palette.Length] ;
+		for( int i = 1 ; i < palette.Length ; i++ )
+			{
+			_palette[i] = xcb_generate_id( ki ) ;
+			v._0  = (uint)palette[i] ;
+			xcb_create_gc( ki, _palette[i], root, mask, ref v ) ;
+			}
+		mask      = 1  ;        //function
+		_palette[0] = xcb_generate_id( ki ) ;
+		v._0  = 0 ; //clear
+		xcb_create_gc( ki, _palette[0], root, mask, ref v ) ;
+
 		_window    = xcb_generate_id( ki ) ;
 		mask       = 2 | 2048 ;  //cw_back_pixel|cw_event_mask
 		Values2 vv = new Values2( s.white_pixel , 32768 ) ; //event_mask_expose
@@ -52,50 +85,7 @@ static public partial class Y
 		var e = xcb_wait_for_event( ki ) ;
 		xcb_free( e ) ;
 
-		//padD() ;
 		}
-	/*
-	static Values values ;
-	static internal XIP gc ;
-	static internal XIP gc_erase ;
-	static public ulong   mask = GCValue.Function | GCValue.PlaneMask | GCValue.Background | GCValue.Foreground ;
-	static void padD()
-		{
-		values.Function  = GX.Clear ;
-		gc_erase = gc_create( Display, drawable, GCValue.Function, ref values ) ;
-		gc_values( Display, gc_default(Display,screen_default(Display)), mask, out values ) ;
-		values.Function  = GX.Set ;
-		gc = gc_create( Display, drawable, mask, ref values ) ;
-		select_input( Display, drawable, 0xFFFFFF ) ;
-		mapD() ;
-		}
-	*/
-	/*
-	static XIP[] c ;
-	static void mapD()
-		{
-		c = new XIP[6] ;
-		for( int i = 0 ; i < 6 ; i++ )
-			{
-			values.PlaneMask = cs6(i) ;
-			c[i] = gc_create( Display, drawable, mask, ref values ) ;
-			}
-		map_window( Display, drawable ) ;
-		}
-	static ulong cs6( int i )
-		{
-		switch( i )
-			{
-			case 0 : return global::X.Predefined.Color.AluminiumExtraLight ;
-			case 1 : return global::X.Predefined.Color.AluminiumLight ;
-			case 2 : return global::X.Predefined.Color.AluminiumMediumLight ;
-			case 3 : return global::X.Predefined.Color.AluminiumMediumDark ;
-			case 4 : return global::X.Predefined.Color.AluminiumDark ;
-			case 5 :
-			default : return global::X.Predefined.Color.AluminiumExtraDark ;
-			}
-		}
-	*/
 	static XAnyEvent zone ;
 	static public void Sync()
 		{
@@ -150,44 +140,6 @@ static public partial class Y
 	class XStop  : A335.Zone.Stop
 		{
 		public static XAnyEvent time = new XAnyEvent() ;
-		}
-	static ulong serial ;
-	static ulong window = 3 ;
-	static ulong response( ref XAnyEvent e )
-		{
-		switch( e.Type )
-			{
-			case 0 : return global::X.Predefined.Color.AluminiumExtraLight ;
-			case 1 : return global::X.Predefined.Color.AluminiumLight ;
-			case 2 : return global::X.Predefined.Color.AluminiumMediumLight ;
-			case 3 : return global::X.Predefined.Color.AluminiumMediumDark ;
-			case 4 : return global::X.Predefined.Color.AluminiumDark ;
-			case 5 : return global::X.Predefined.Color.AluminiumExtraDark ;
-			}
-		if( serial == e.Serial )
-			++window ;
-		else
-			window = 3 ;
-		serial = e.Serial ;
-		switch( window )
-			{
-			case 0 : return global::X.Predefined.Color.Butter ;
-			case 1 : return global::X.Predefined.Color.Orange ;
-			case 2 : return global::X.Predefined.Color.Chocolate ;
-			case 3 : return global::X.Predefined.Color.Chameleon ;
-			case 4 : return global::X.Predefined.Color.SkyBlue ;
-			case 5 : return global::X.Predefined.Color.Plum ;
-			case 6 : return global::X.Predefined.Color.ScarletRed ;
-			default: return ( e.SendEvent ? ulong.MinValue : 0xFFFFFF ) ;
-			}
-		}
-	static public void QuickResponseEncodedSplash( ref XAnyEvent e )
-		{
-		//values.PlaneMask = response( ref e ) ;
-		//gc_change( Display, gc, GCValue.PlaneMask, ref values ) ;
-		for( uint x = 0 ; x < 300 ; x++ )
-			for( uint y = 0 ; y < 300 ; y++ )
-				X.Y.Z( y, x, 1 ) ;
 		}
 	static int px = 20 ;
 	static int py = 20 ;
