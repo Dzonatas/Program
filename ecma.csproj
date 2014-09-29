@@ -125,6 +125,7 @@
     <Compile Include="#\System.Extensions.Fan.cs" />
     <Compile Include="~\C699.cs" />
     <Compile Include="~\C699.free.cs" />
+    <Compile Include="~\C699.Main.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

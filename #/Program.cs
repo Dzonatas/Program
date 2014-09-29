@@ -288,7 +288,7 @@ partial class Program
 		}
 	static public void WriteC_Main()
 		{
-		var sw = Current.Path.CreateText( "program.c" ) ;
+		var sw = C699.Main.C() ;
 		var c = C_Function.FromSymbol( "main" ) ;
 		c.Args = "( int argc , char** args , char** env )" ;
 		var e = A335.Method.EntryPoint.Head ;
@@ -300,7 +300,6 @@ partial class Program
 		c.Statement( "extern void " + e.ClassType + "$Main()" ) ;
 		c.Statement( e.ClassType + "$Main()" ) ;
 		c.WriteTo( sw ) ;
-		sw.WriteLine( "#include <BCL.HPP>" ) ;
 		C_TypeDef.WriteTo( sw ) ;
 		foreach( C_Function f in c_functionset.Values )
 			{
