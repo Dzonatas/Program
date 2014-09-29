@@ -47,26 +47,10 @@ public partial class A335
 public class Main
 	{
 	public readonly static C_Symbol     Symbol = C_Symbol.Acquire( "main" ) ;
-	public static          C699_Function   Function
-		{
-		get { return new C699_Function( A335.Main.Symbol ) ; }
-		}
-	}
-public struct C699_Function
-	{
-	public C_Symbol Symbol ;
-	public C699_Function( C_Symbol symbol )
-		{
-		Symbol = symbol ;
-		}
-	public void WriteTo( C699.File.Structure fs )
-		{
-		Program.C_Function.FromSymbol( Symbol ).WriteTo( fs ) ;
-		}
 	}
 partial class Program
 	{
-	public static C699_Function C699_Main_Function()
+	public static System.IO.StreamWriter C699_Main_Function___WriteTo__C699_Main_FileStructure__()
 		{
 		var c = C_Function.FromSymbol( A335.Main.Symbol ) ;
 		c.Args = "( int argc , char** args , char** env )" ;
@@ -78,7 +62,8 @@ partial class Program
 			}
 		c.Statement( "extern void " + e.ClassType + "$Main()" ) ;
 		c.Statement( e.ClassType + "$Main()" ) ;
-		return new C699_Function( A335.Main.Symbol ) ;
+		c.WriteTo( C699.Main.FileStructure ) ;
+		return C699.Main.FileStructure ;
 		}
 	}
 }
