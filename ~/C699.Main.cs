@@ -4,13 +4,10 @@ public partial class C699 {
 		{
 		public static File.Structure FileStructure ;
 		const string entry = "program" ;
-		public static File.Structure C()
+		static Main()
 			{
-			if( FileStructure.FileName != null )
-				return FileStructure ;
-			var fc = File.C( entry ) ;
-			fc.WriteLine( "#include <BCL.HPP>" ) ;
-			return (FileStructure = fc) ;
+			FileStructure = File.C( entry ) ;
+			FileStructure.WriteLine( "#include <BCL.HPP>" ) ;
 			}
 		}
 	public static class File

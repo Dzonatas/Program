@@ -288,7 +288,7 @@ partial class Program
 		}
 	static public void WriteC_Main()
 		{
-		var sw = C699.Main.C() ;
+		var sw = C699.Main.FileStructure ;
 		C699_Main_Function().WriteTo( sw ) ;
 		C_TypeDef.WriteTo( sw ) ;
 		foreach( C_Function f in c_functionset.Values )
