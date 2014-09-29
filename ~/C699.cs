@@ -1,5 +1,6 @@
 //namespace C {
 public partial class C699 {
+	#if !EMBED
 	static System.Diagnostics.ProcessStartInfo psi ;
 	static C699()
 		{
@@ -47,4 +48,5 @@ public partial class C699 {
 		p.WaitForExit() ;
 		return sb.ToString() ;
 		}
+	#endif
 }//}

@@ -288,7 +288,7 @@ partial class Program
 		}
 	static public void WriteC_Main()
 		{
-		StreamWriter sw = File.CreateText( directory.FullName + "/" + "program.c" ) ;
+		var sw = Current.Path.CreateText( "program.c" ) ;
 		var c = C_Function.FromSymbol( "main" ) ;
 		c.Args = "( int argc , char** args , char** env )" ;
 		var e = A335.Method.EntryPoint.Head ;

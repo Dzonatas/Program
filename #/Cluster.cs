@@ -80,6 +80,8 @@ public static partial class Shell
 			+ " ../../~/X.Y.cs"
 			+ " ../../#/X.Predefined.cs"
 			+ " ../../Z.cs"
+			+ " ../.././~/C699.cs"
+			+ " ../.././~/C699.free.cs"
 			+ " "
 			+ "-out:" + Current.Path.Entry( "infrastructure.exe" )
 			) ;
