@@ -2,19 +2,45 @@
 public partial class C699 {
 	public static class Main
 		{
+		public static File.Structure FileStructure ;
 		const string entry = "program" ;
-		public static System.IO.StreamWriter C()
+		public static File.Structure C()
 			{
-			var sw = File.C( entry ) ;
-			sw.WriteLine( "#include <BCL.HPP>" ) ;
-			return sw ;
+			if( FileStructure.FileName != null )
+				return FileStructure ;
+			var fc = File.C( entry ) ;
+			fc.WriteLine( "#include <BCL.HPP>" ) ;
+			return (FileStructure = fc) ;
 			}
 		}
 	public static class File
 		{
-		public static System.IO.StreamWriter C( string filename )
+		public struct Structure
 			{
-			return Current.Path.CreateText( filename + ".c" ) ;
+			public string FileName ;
+			System.IO.StreamWriter sw ;
+			public Structure WriteLine( string line )
+				{
+				sw.WriteLine( line ) ;
+				return this ;
+				}
+			internal Structure( string filename )
+				{
+				FileName = filename ;
+				sw = Current.Path.CreateText( filename + ".c" ) ;
+				}
+			public static implicit operator System.IO.StreamWriter( Structure s )
+				{
+				return s.sw ;
+				}
+			public void Close()
+				{
+				sw.Close() ;
+				}
+			}
+		public static Structure C( string filename )
+			{
+			return new Structure( filename ) ;
 			}
 		}
 }//}
@@ -36,9 +62,9 @@ public struct C699_Function
 		{
 		Symbol = symbol ;
 		}
-	public void WriteTo( System.IO.StreamWriter sw )
+	public void WriteTo( C699.File.Structure fs )
 		{
-		Program.C_Function.FromSymbol( Symbol ).WriteTo( sw ) ;
+		Program.C_Function.FromSymbol( Symbol ).WriteTo( fs ) ;
 		}
 	}
 partial class Program
