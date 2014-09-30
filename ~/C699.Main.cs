@@ -9,6 +9,7 @@ public partial class C699 {
 			FileStructure = File.C( entry ) ;
 			FileStructure.WriteLine( "#include <BCL.HPP>" ) ;
 			}
+		public static readonly string Args = '('+C.Int.ArgC+','+C.Charpp.ArgV+','+C.Charpp.Env+')' ;
 		}
 	public static class File
 		{
@@ -46,22 +47,22 @@ public partial class A335
 {
 public class Main
 	{
-	public readonly static C_Symbol     Symbol = C_Symbol.Acquire( "main" ) ;
+	public readonly static C_Symbol     Symbol = C_Symbol.Acquire( C699.KeyedWord.Main ) ;
 	}
 partial class Program
 	{
 	public static System.IO.StreamWriter C699_Main_Function___WriteTo__C699_Main_FileStructure__()
 		{
 		var c = C_Function.FromSymbol( A335.Main.Symbol ) ;
-		c.Args = "( "+C699.KeyedWord.Int+" argc , "+C699.KeyedWord.Char+"** args , "+C699.KeyedWord.Char+"** env )" ;
+		c.Args = C699.Main.Args ;
 		var e = A335.Method.EntryPoint.Head ;
 		if( A335.Method.cctorset.Contains(e.ClassType) )
 			{
-			c.Statement( C699.C.Extern.Void+" " + e.ClassType + "_cctor()" ) ;
-			c.Statement( e.ClassType + "_cctor()" ) ;
+			c.Statement( C699.C.Extern.Void.Cctor(e.ClassType) ) ;
+			c.Statement( C699.C.Cctor(e.ClassType) ) ;
 			}
-		c.Statement( C699.C.Extern.Void + e.ClassType + "$Main()" ) ;
-		c.Statement( e.ClassType + "$Main()" ) ;
+		c.Statement( C699.C.Extern.Void.Function(e.ClassType,  "Main") ) ;
+		c.Statement( C699.C.Function(e.ClassType, "Main") ) ;
 		c.WriteTo( C699.Main.FileStructure ) ;
 		return C699.Main.FileStructure ;
 		}

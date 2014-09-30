@@ -20,14 +20,34 @@ public static class KeyedWord
 	}
 public struct C
 	{
+	static public c Charpp
+		{
+		get { return (new c()).Charpp ; }
+		}
 	static public c Extern
 		{
 		get { return (new c()).Extern ; }
+		}
+	static public c Int
+		{
+		get { return (new c()).Int ; }
+		}
+	static public c Cctor( string classtype )
+		{
+		return (new c(classtype)).Cctor() ;
+		}
+	static public c Function( string classtype, string fn )
+		{
+		return (new c()).Function(classtype, fn) ;
 		}
 	}
 public struct c
 	{
 	string s ;
+	public c Charpp
+		{
+		get { s += KeyedWord.Char+'*'+'*' + ' '  ; return this ; }
+		}
 	public c Extern
 		{
 		get { s += KeyedWord.Extern + ' '  ; return this ; }
@@ -36,9 +56,41 @@ public struct c
 		{
 		get { s += KeyedWord.Void + ' '  ; return this ; }
 		}
+	public c Int
+		{
+		get { s += KeyedWord.Int + ' '  ; return this ; }
+		}
+	public c ArgC
+		{
+		get { s += "argc" + ' '  ; return this ; }
+		}
+	public c ArgV
+		{
+		get { s += "args" + ' '  ; return this ; }
+		}
+	public c Env
+		{
+		get { s += "env" + ' '  ; return this ; }
+		}
+	public c Cctor( string classtype )
+		{
+		s += classtype + "_cctor()" + ' ' ; return this ;
+		}
+	public c Cctor()
+		{
+		s += "_cctor()" + ' ' ; return this ;
+		}
+	public c Function( string classtype, string fn )
+		{
+		s += classtype + '$' + fn +'('+')'+' ' ; return this ;
+		}
 	public static implicit operator string( c c )
 		{
 		return c.s ;
+		}
+	public c( string text )
+		{
+		s = text ;
 		}
 	}
 }//}
