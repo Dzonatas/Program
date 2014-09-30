@@ -289,7 +289,8 @@ partial class Program
 	static public void WriteC_Main()
 		{
 		var sw = C699_Main_Function___WriteTo__C699_Main_FileStructure__() ;
-		C_TypeDef.WriteTo( sw ) ;
+		foreach( C_TypeDef t in typedefset.Values )
+			t.Struct.WriteTo( sw ) ;
 		foreach( C_Function f in c_functionset.Values )
 			{
 			if( f.Required && ( f.Symbol.StartsWith( "BCL$" ) || f.Symbol.StartsWith( "System" ) ) )
@@ -339,11 +340,6 @@ partial class Program
 			s.TypeDef = Acquire( type ) ;
 			s.TypeDef.Struct = s ;
 			return s ;
-			}
-		static public void WriteTo( StreamWriter sw )
-			{
-			foreach( C_TypeDef t in typedefset.Values )
-				t.Struct.WriteTo( sw ) ;
 			}
 		}
 	public class C_Struct
