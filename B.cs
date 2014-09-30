@@ -263,7 +263,7 @@ partial class Program
 			;
 		C.TypeDef.Object
 			.Parameter( StructObject_, "this" )
-			.Parameter( StructString, C699.C.Restricted("(*$ToString)")+'('+C699.C.Const.Voidpp+')' )
+			.Parameter( StructString, C699.C.Restricted("(*$ToString)").Tut(C699.C.Const.Voidpp) )
 			;
 		jiffy( "object::.ctor" )
 			;

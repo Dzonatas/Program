@@ -72,7 +72,7 @@ public struct C
 		{
 		return (new c()).Function(classtype, fn) ;
 		}
-	static public c Restricted( string expression ) //($(X)RSH)|$futex_unknown
+	static public c/**/ Restricted( string expression ) //($(X)RSH)|$futex_unknown
 		{
 		return (new c(expression)) ;
 		}
@@ -80,6 +80,12 @@ public struct C
 public struct c
 	{
 	string s ;
+	#if !____biz
+	public c Tut( c c )
+		{
+		s += '('+c+ ')'  ; return this ;
+		}
+	#endif
 	public c Charpp
 		{
 		get { s += KeyedWord.Char+'*'+'*' + ' '  ; return this ; }
