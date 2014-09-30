@@ -422,7 +422,7 @@ partial class Program
 		public string ID ;
 		public bool HasArgs ;
 		public bool BrTarget ;
-		#if UNICODE
+		#if !ASCII
 		List<string> list = new List<string>() ;
 		#else
 		List<C699.c> list = new List<C699.c>() ;
