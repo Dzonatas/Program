@@ -62,7 +62,7 @@ partial class Program
 		string b_string = b + "." + _string ;
 		string c_length = c + "." + _length ;
 		string c_string = c + "." + _string ;
-		This.Statement( "static struct _string s" )
+		This.Statement( C699.C.Static.Struct+"_string s" )
 			.Statement( s_length+" = "+a_length+" + "+b_length+" + "+c_length )
 			.Statement( s_string+" = malloc( "+a_length+" + "+b_length+" + "+c_length+" )" )
 			.Statement( "strncpy( "+s_string+", "+a_string+", "+a_length+" )" )

@@ -65,7 +65,7 @@ partial class Program
 			get {
 				C_Symbol arg0 = Method.Args[0] ;
 				var symbol = C_Symbol.Acquire( "_local" ) ;
-				return Statement( "const " + arg0 + "* " + symbol + " = *args" ) ;
+				return Statement( C699.C.Const+ arg0 + "* " + symbol + " = *args" ) ;
 				}
 			}
 		public C_Function StandardOutputWriteLocal( string _string, string _length )
@@ -79,7 +79,7 @@ partial class Program
 			}
 		public C_Function Return( string symbol )
 			{
-			return Statement( "return " + symbol ) ;
+			return Statement( C699.C.Return+symbol ) ;
 			}
 		public C_Function Register( C_Symbol type, string name )
 			{
@@ -93,10 +93,10 @@ partial class Program
 		public C_Function ManagedArgument( int i )
 			{
 			if( let.Type == StructObject || let.Type == StructString )
-					return Statement( "if( ((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer )" )
-					      .Statement( "\t" + let + " =  *((struct _string *)args["+i+"])" )
-					      .Statement( "else" )
-					      .Statement( "\t" + let + " =  ((struct _object *)args["+i+"])->this->$ToString( args+"+i+" )" ) ;
+					return Statement( C699.C.If("((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer") )
+					      .Statement( "\t" + let + " =  *(("+C699.C.Struct+"_string *)args["+i+"])" )
+					      .Statement( C699.C.Else )
+					      .Statement( "\t" + let + " =  (("+C699.C.Struct+" _object *)args["+i+"])->this->$ToString( args+"+i+" )" ) ;
 			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;
 			}
 		C_Function( string symbol )
@@ -131,7 +131,7 @@ partial class Program
 			}
 		public C_Function Statement( string line )
 			{
-			bool eos = ( line.StartsWith( "if" ) && ! line.Contains( "goto" ) )  || line.StartsWith( "else" ) ;
+			bool eos = ( line.StartsWith( C699.KeyedWord.If ) && ! line.Contains( C699.KeyedWord.Goto ) )  || line.StartsWith( C699.KeyedWord.Else ) ;
 			list.Add( "\t" + line + ( eos ? "" : " ;" ) ) ;
 			return this ;
 			}
@@ -143,16 +143,16 @@ partial class Program
 			{
 			var line = new List<string>() ;
 			if( Static )
-				line.Add( "static" ) ;
+				line.Add( C699.C.Static ) ;
 			if( Inline )
-				line.Add( "inline" ) ;
+				line.Add( C699.C.Inline ) ;
 			line.Add( Type ) ;
 			line.Add( Symbol ) ;
 			string a ;
 			if( Args == null )
-				a = "( const void** stack"
-				+ ( HasArgs ? ", const void** args" : "" )
-				+ " )" ;
+				a = '('+C699.C.Const.Voidpp+"stack"
+				+ ( HasArgs ? ','+C699.C.Const.Voidpp.ArgV : "" )
+				+ ')' ;
 			else
 				a = Args ;
 			sw.WriteLine( String.Join( " ", line ) + a ) ;

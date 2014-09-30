@@ -16,7 +16,11 @@ public static class KeyedWord
 	public const string Int    = "int"    ;
 	public const string Struct = "struct" ;
 	public const string Extern = "extern" ;
+	public const string Const  = "const"  ;
+	public const string Static = "static" ;
+	public const string Inline = "inline" ;
 	public const string Main   = "main"   ;
+	//public const string U3n   = "u3n"   ;
 	}
 public struct C
 	{
@@ -31,6 +35,34 @@ public struct C
 	static public c Int
 		{
 		get { return (new c()).Int ; }
+		}
+	static public c Static
+		{
+		get { return (new c()).Static ; }
+		}
+	static public c Struct
+		{
+		get { return (new c()).Struct ; }
+		}
+	static public c Const
+		{
+		get { return (new c()).Const ; }
+		}
+	static public c Return
+		{
+		get { return (new c()).Return ; }
+		}
+	static public c If( string expression )
+		{
+		return (new c()).If(expression) ;
+		}
+	static public c Else
+		{
+		get { return (new c()).Else ; }
+		}
+	static public c Inline
+		{
+		get { return (new c()).Inline ; }
 		}
 	static public c Cctor( string classtype )
 		{
@@ -56,9 +88,41 @@ public struct c
 		{
 		get { s += KeyedWord.Void + ' '  ; return this ; }
 		}
+	public c Voidpp
+		{
+		get { s += KeyedWord.Void+'*'+'*' + ' '  ; return this ; }
+		}
 	public c Int
 		{
 		get { s += KeyedWord.Int + ' '  ; return this ; }
+		}
+	public c Static
+		{
+		get { s += KeyedWord.Static + ' '  ; return this ; }
+		}
+	public c Struct
+		{
+		get { s += KeyedWord.Struct + ' '  ; return this ; }
+		}
+	public c Const
+		{
+		get { s += KeyedWord.Const + ' '  ; return this ; }
+		}
+	public c Return
+		{
+		get { s += KeyedWord.Return + ' '  ; return this ; }
+		}
+	public c If( string expression )
+		{
+		s += KeyedWord.If + ' '  ; return this ;
+		}
+	public c Else
+		{
+		get { s += KeyedWord.Else + ' '  ; return this ; }
+		}
+	public c Inline
+		{
+		get { s += KeyedWord.Inline + ' '  ; return this ; }
 		}
 	public c ArgC
 		{

@@ -511,7 +511,7 @@ partial class Program
 			switch( Instruction )
 				{
 				case "BGE" :
-					c.Statement( "return 1" ) ;
+					c.Statement( C699.C.Return+"1" ) ;
 					break ;
 				default:
 					foreach( string s in list )

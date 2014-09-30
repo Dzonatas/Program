@@ -306,15 +306,15 @@ class Method
 			var c = c_method.Function ;
 			int args = ( _SigArgs0 == null ? 0 :_SigArgs0.Count() ) + ( _CallConvInstance ? 1 : 0 ) ;
 			if( _Virtual )
-				c.Type = C_Symbol.Acquire( "struct _string" ) ;
+				c.Type = C_Symbol.Acquire( C699.C.Struct+"_string" ) ;
 			if( args == 0 )
 				c.Args = "()" ;
 			else
-				c.Args = "( const void** args )" ;
-			c.Statement( "const void** stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
+				c.Args = '('+C699.C.Const.Voidpp.ArgV+')' ;
+			c.Statement( C699.C.Const.Voidpp+"stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
 			A335.Method.WriteList( c, declList ) ;
 			if( _Virtual )
-				c.Statement( "return *(struct _string *)*stack" ) ;
+				c.Statement( C699.C.Return+"*("+C699.C.Struct+"_string *) *stack" ) ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
 			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
 			c.WriteTo( sw ) ;
