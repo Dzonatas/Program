@@ -72,6 +72,10 @@ public struct C
 		{
 		return (new c()).Function(classtype, fn) ;
 		}
+	static public c Restricted( string expression ) //($(X)RSH)|$futex_unknown
+		{
+		return (new c(expression)) ;
+		}
 	}
 public struct c
 	{
