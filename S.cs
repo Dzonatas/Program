@@ -522,7 +522,7 @@ namespace Spatial.Mesh
 		}
 	}
 
-namespace Spherical.Mesh
+namespace Spherical.Mesh //:(∅°<<π²)  //∅°:~="tilde zero"  //(πr²)!=(a²|[x,y,z](u,v))
 	{
 	static class generator
 		{
