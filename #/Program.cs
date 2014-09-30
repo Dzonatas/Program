@@ -422,7 +422,7 @@ partial class Program
 		public string ID ;
 		public bool HasArgs ;
 		public bool BrTarget ;
-		#if !ASCII
+		#if !iDNA
 		List<string> list = new List<string>() ;
 		#else
 		List<C699.c> list = new List<C699.c>() ;
@@ -450,20 +450,19 @@ partial class Program
 				return "if( " + d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) + " ) " + d.list[0] ;
 			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
 			}
-		public C_Oprand Statement( C699.c text )
+		public C_Oprand Statement( C699.c c )
 			{
-			list.Add( (string) text ) ;
+			list.Add( c ) ;
 			return this ;
 			}
 		public C_Oprand Statement( string text )
 			{
-			list.Add( text ) ;
+			list.Add( C699.C.Restricted(text) ) ;
 			return this ;
 			}
 		public C_Oprand Jump( string id )
 			{
-			list.Add( "goto " + id ) ;
-			return this ;
+			return Statement( "goto " + id ) ;
 			}
 		public C_Oprand AssignStack( int offset, string text )
 			{
