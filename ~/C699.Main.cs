@@ -53,14 +53,14 @@ partial class Program
 	public static System.IO.StreamWriter C699_Main_Function___WriteTo__C699_Main_FileStructure__()
 		{
 		var c = C_Function.FromSymbol( A335.Main.Symbol ) ;
-		c.Args = "( int argc , char** args , char** env )" ;
+		c.Args = "( "+C699.KeyedWord.Int+" argc , "+C699.KeyedWord.Char+"** args , "+C699.KeyedWord.Char+"** env )" ;
 		var e = A335.Method.EntryPoint.Head ;
 		if( A335.Method.cctorset.Contains(e.ClassType) )
 			{
-			c.Statement( "extern void " + e.ClassType + "_cctor()" ) ;
+			c.Statement( C699.C.Extern.Void+" " + e.ClassType + "_cctor()" ) ;
 			c.Statement( e.ClassType + "_cctor()" ) ;
 			}
-		c.Statement( "extern void " + e.ClassType + "$Main()" ) ;
+		c.Statement( C699.C.Extern.Void + e.ClassType + "$Main()" ) ;
 		c.Statement( e.ClassType + "$Main()" ) ;
 		c.WriteTo( C699.Main.FileStructure ) ;
 		return C699.Main.FileStructure ;
