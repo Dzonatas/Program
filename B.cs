@@ -263,7 +263,7 @@ partial class Program
 			;
 		C.TypeDef.Object
 			.Parameter( StructObject_, "this" )
-			.Parameter( StructString, "(*$ToString)(const void**)" )
+			.Parameter( StructString, "(*$ToString)"+'('+C699.C.Const.Voidpp+')' )
 			;
 		jiffy( "object::.ctor" )
 			;
