@@ -133,19 +133,19 @@ partial class Program
 		}
 	static public C_Symbol StructObject
 		{
-		get { return C_Symbol.Acquire( "struct _object" ) ; }
+		get { return C_Symbol.Acquire( C699.C.Struct+"_object" ) ; }
 		}
 	static public C_Symbol StructObject_
 		{
-		get { return C_Symbol.Acquire( "struct _object*" ) ; }
+		get { return C_Symbol.Acquire( C699.C.Struct+"_object*" ) ; }
 		}
 	static public C_Symbol StructString
 		{
-		get { return C_Symbol.Acquire( "struct _string" ) ; }
+		get { return C_Symbol.Acquire( C699.C.Struct+"_string" ) ; }
 		}
 	static public C_Symbol StructString_
 		{
-		get { return C_Symbol.Acquire( "struct _string*" ) ; }
+		get { return C_Symbol.Acquire( C699.C.Struct+"_string*" ) ; }
 		}
 	static public C_Function jiffy( string description )
 		{
@@ -248,7 +248,7 @@ partial class Program
 			c = m.CreateFunction() ;
 			c.Static = true ;
 			c.Inline = true ;
-			c.Args = "( const void** args )" ;
+			c.Args = '('+C699.C.Const.Voidpp.ArgV+')' ;
 			return c ;
 			}
 		public C_Function CreateFunction()
@@ -384,7 +384,7 @@ partial class Program
 			{
 			if( Symbol != null )
 				{
-				sw.WriteLine( "struct "+ Type + " " + Symbol + " =" ) ;
+				sw.WriteLine( C699.C.Struct+ Type + " " + Symbol + " =" ) ;
 				sw.WriteLine( "\t{" ) ;
 				foreach( string s in list )
 					sw.WriteLine( "\t" + s + " ," ) ;
@@ -392,7 +392,7 @@ partial class Program
 				}
 			else
 				{
-				sw.WriteLine( "struct "+ Type ) ;
+				sw.WriteLine( C699.C.Struct+ Type ) ;
 				sw.WriteLine( "\t{" ) ;
 				foreach( string s in list )
 					sw.WriteLine( "\t" + s + " ;" ) ;
@@ -422,7 +422,11 @@ partial class Program
 		public string ID ;
 		public bool HasArgs ;
 		public bool BrTarget ;
+		#if UNICODE
 		List<string> list = new List<string>() ;
+		#else
+		List<C699.c> list = new List<C699.c>() ;
+		#endif
 		public C_Label Label
 			{
 			set { label = value ; }
@@ -446,6 +450,11 @@ partial class Program
 				return "if( " + d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) + " ) " + d.list[0] ;
 			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
 			}
+		public C_Oprand Statement( C699.c text )
+			{
+			list.Add( (string) text ) ;
+			return this ;
+			}
 		public C_Oprand Statement( string text )
 			{
 			list.Add( text ) ;
@@ -462,19 +471,19 @@ partial class Program
 			}
 		public C_Oprand AssignStaticConst( C_Symbol type, C_Symbol symbol, string text )
 			{
-			return Statement( "static const " + type + " " + symbol + " = " + text ) ;
+			return Statement( C699.C.Static.Const+ type + " " + symbol + " = " + text ) ;
 			}
 		public C_Oprand LocalStatic( C_Symbol type, C_Symbol symbol )
 			{
-			return Statement( "static " + type + " " + symbol ) ;
+			return Statement( C699.C.Static+ type + " " + symbol ) ;
 			}
 		public C_Oprand ExternCall( C_Symbol symbol )
 			{
-			return Statement( "extern void " + symbol + "( const void** )" ) ;
+			return Statement( C699.C.Extern.Void+ symbol + '('+C699.C.Const.Voidpp+')' ) ;
 			}
 		public C_Oprand Extern( C_Symbol type, C_Type symbol )
 			{
-			return Statement( "extern " + type + " " + symbol  ) ;
+			return Statement( C699.C.Extern+ type + " " + symbol  ) ;
 			}
 		public C_Oprand Call( C_Symbol symbol )
 			{
