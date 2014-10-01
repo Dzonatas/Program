@@ -74,6 +74,8 @@ public struct C
 		}
 	static public c/**/ Restricted( string expression ) //($(X)RSH)|$futex_unknown
 		{
+		if( expression.StartsWith(C699.KeyedWord.Goto) )
+			return (new c(expression)) ; //c.Goto(#|Label|IntPtr)
 		return (new c(expression)) ;
 		}
 	}

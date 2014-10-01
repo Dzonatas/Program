@@ -504,7 +504,7 @@ partial class Program
 			{
 			C_TypeDef typedef = typedefset["string"] ;
 			string field = typedef.Struct[1] ;
-			return Statement( "free( ((struct _string *)stack[" + offset + "])->"+field+" )" ) ;
+			return Statement( "free( (("+C699.C.Struct+"_string *)stack[" + offset + "])->"+field+" )" ) ;
 			}
 		public void WriteTo( StreamWriter sw )
 			{
