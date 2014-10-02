@@ -94,53 +94,6 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	#if DEBUG_REDUCE
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
 	#endif
-	if( this_xo_t.ReductionMethod == "id_ID" )
-		{
-		Stack.Push( new id_ID() ) ;
-		}
-	else
-	if( this_xo_t.ReductionMethod == "methodDecl_id____" )
-		{
-		Stack.Push( new methodDecl_id____() ) ;
-		}
-	else
-	if( this_xo_t.ReductionMethod == "instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____" )
-		{
-		Stack.Push( new instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____() ) ;
-		}
-	else
-	if( this_xo_t.ReductionMethod == "methodDecl_instr" )
-		{
-		Stack.Push( new methodDecl_instr() ) ;
-		}
-	else
-	if( this_xo_t.ReductionMethod == "instr_INSTR_BRTARGET_id" )
-		{
-		Stack.Push( new instr_INSTR_BRTARGET_id() ) ;
-		}
-	else
-	if( this_xo_t.ReductionMethod == "instr_INSTR_NONE" )
-		{
-		Stack.Push( new instr_INSTR_NONE() ) ;
-		}
-	else
-	if( this_xo_t.ReductionMethod == "instr_INSTR_TYPE_typeSpec" )
-		{
-		Stack.Push( new instr_INSTR_TYPE_typeSpec() ) ;
-		}
-	else
-	if( this_xo_t.ReductionMethod == "instr_INSTR_STRING_compQstring" )
-		{
-		Stack.Push( new instr_INSTR_STRING_compQstring() ) ;
-		}
-	else
-	if( this_xo_t.ReductionMethod ==
-		"methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName"
-		+ "_____sigArgs0_____implAttr____" )
-		{
-		Stack.Push( new methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____() ) ;
-		}
-	else
 	if( automatrix.ContainsKey(this_xo_t.ReductionMethod) )
 		{
 		object o = automatrix[this_xo_t.ReductionMethod].InvokeMember( null ,
