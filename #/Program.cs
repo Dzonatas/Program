@@ -447,7 +447,7 @@ partial class Program
 			if( d.BrTarget && d.Instruction == "BR" )
 				return d.list[0] ;
 			if( d.BrTarget )
-				return "if( " + d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) + " ) " + d.list[0] ;
+				return C699.C.If( d.Instruction+'$'+d.ID+'('+"stack"+' '+(d.HasArgs?','+"args"+')':")") )+d.list[0] ;
 			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
 			}
 		public C_Oprand Statement( C699.c c )

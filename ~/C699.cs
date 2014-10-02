@@ -126,7 +126,7 @@ public struct c
 		}
 	public c If( string expression )
 		{
-		s += KeyedWord.If + ' '  ; return this ;
+		s += KeyedWord.If+'('+expression+')' + ' '  ; return this ;
 		}
 	public c Else
 		{
