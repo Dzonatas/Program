@@ -215,7 +215,7 @@ public class C_Type
 	static public implicit operator C_Symbol( C_Type c )
 		{
 		if( (string) c == "string" )
-			return C_Symbol.Acquire( "struct _string" ) ;
+			return C_Symbol.Acquire( C699.C.Struct+"_string" ) ;
 		return c.idset[c.idset.Length-1] ;
 		}
 	static public explicit operator string[]( C_Type c )

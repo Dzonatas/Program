@@ -20,10 +20,10 @@ public partial class C699 {
 		sw.WriteLine( "#include <stdio.h>" ) ;
 		sw.WriteLine( "#include <xcb/xcb.h>" ) ;
 		sw.WriteLine( "#include <inttypes.h>" ) ;
-		sw.WriteLine( "int main(int argc, char** argv, char** env) {" ) ;
+		sw.WriteLine( C.Int+KeyedWord.Main+'('+C.Int.ArgC+','+C.Charpp.ArgV+','+C.Charpp.Env+')'+'{' ) ;
 		sw.WriteLine( text ) ;
-		sw.WriteLine( "return 0 ;" ) ;
-		sw.WriteLine( "}" ) ;
+		sw.WriteLine( C.Return+'0'+';' ) ;
+		sw.WriteLine( '}' ) ;
 		sw.Close() ;
 		psi.Arguments = "-o a."+embed_i+" -std=c99 "+embed_i ;
 		//psi.Arguments = "-std=c99 "+embed_i ;
