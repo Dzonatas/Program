@@ -127,6 +127,7 @@
     <Compile Include="~\C699.free.cs" />
     <Compile Include="~\C699.Main.cs" />
     <Compile Include="~\C699.EMBED.cs" />
+    <Compile Include="~\C699.etc.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

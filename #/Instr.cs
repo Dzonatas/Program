@@ -88,8 +88,8 @@ partial class A335
 				C.Hangup( iargs - 1 ) ;
 				d.ExternCall( _Call ) ;
 				d.Extern( Program.StructObject, _class ) ;
-				d.AssignStaticConst( Program.StructObject, symbol, "{ &" + _class + " }" ) ;
-				d.AssignStack( C.StackOffset, "&" + symbol ) ;
+				d.Assign( C699.C.Static.Const, Program.StructObject, symbol, '&'+_class ) ;
+				d.AssignStack( C.StackOffset, '&'+symbol ) ;
 				if( iargs == 0 )
 					d.Call( _Call ) ;
 				else
@@ -288,13 +288,10 @@ partial class A335
 			{
 			case "LDSTR":
 				{
-				var symbol = new C_Symbol() ;
-				d.AssignStaticConst( Program.StructString, symbol,
-					"{ "
-					+ this_string.Length.ToString() + " , "
-					+ '"' + this_string + '"'
-					+ " }" ) ;
-				d.AssignStack( C.StackOffset, "&" + symbol ) ;
+				var c = C699.C.Static.Const.Type(C699.String) ;
+				var s = new C_Symbol() ;
+				d.Assign( c, s, this_string.Length.ToString()+','+'"'+this_string+'"' ) ;
+				d.AssignStack( C.StackOffset, "&"+s ) ;
 				C.Push( "string" ) ;
 				break ;
 				}

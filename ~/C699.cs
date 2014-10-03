@@ -40,9 +40,9 @@ public struct C
 		{
 		get { return (new c()).Static ; }
 		}
-	static public c Struct
+	static public c Struct(C699.c c)
 		{
-		get { return (new c()).Struct ; }
+		return (new c()).Struct(c) ;
 		}
 	static public c Const
 		{
@@ -74,9 +74,10 @@ public struct C
 		}
 	static public c/**/ Restricted( string expression ) //($(X)RSH)|$futex_unknown
 		{
+		System.Console.WriteLine(expression) ;
 		if( expression.StartsWith(C699.KeyedWord.Goto) )
 			return (new c(expression)) ; //c.Goto(#|Label|IntPtr)
-		return (new c(expression)) ;
+		return (new c(expression+' ')) ;
 		}
 	}
 public struct c
@@ -112,9 +113,9 @@ public struct c
 		{
 		get { s += KeyedWord.Static + ' '  ; return this ; }
 		}
-	public c Struct
+	public c Struct(C699.c c)
 		{
-		get { s += KeyedWord.Struct + ' '  ; return this ; }
+		s += KeyedWord.Struct+' '+c.s+' '  ; return this ;
 		}
 	public c Const
 		{
@@ -159,6 +160,14 @@ public struct c
 	public c Function( string classtype, string fn )
 		{
 		s += classtype + '$' + fn +'('+')'+' ' ; return this ;
+		}
+	public c Equate(string text)
+		{
+		s += '='+text+' ' ; return this ;
+		}
+	public c Type(C699.c c)
+		{
+		s += c+' ' ; return this ;
 		}
 	public static implicit operator string( c c )
 		{

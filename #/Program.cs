@@ -133,19 +133,19 @@ partial class Program
 		}
 	static public C_Symbol StructObject
 		{
-		get { return C_Symbol.Acquire( C699.C.Struct+"_object" ) ; }
+		get { return C_Symbol.Acquire( "struct _object" ) ; }
 		}
 	static public C_Symbol StructObject_
 		{
-		get { return C_Symbol.Acquire( C699.C.Struct+"_object*" ) ; }
+		get { return C_Symbol.Acquire( C699.C.Restricted("struct _object*") ) ; }
 		}
 	static public C_Symbol StructString
 		{
-		get { return C_Symbol.Acquire( C699.C.Struct+"_string" ) ; }
+		get { return C_Symbol.Acquire( C699.C.Struct(C699.String) ) ; }
 		}
 	static public C_Symbol StructString_
 		{
-		get { return C_Symbol.Acquire( C699.C.Struct+"_string*" ) ; }
+		get { return C_Symbol.Acquire( C699.C.Restricted("struct _string*") ) ; }
 		}
 	static public C_Function jiffy( string description )
 		{
@@ -384,7 +384,7 @@ partial class Program
 			{
 			if( Symbol != null )
 				{
-				sw.WriteLine( C699.C.Struct+ Type + " " + Symbol + " =" ) ;
+				sw.WriteLine( C699.C.Restricted("struct")+ Type + ' ' + Symbol + " =" ) ;
 				sw.WriteLine( "\t{" ) ;
 				foreach( string s in list )
 					sw.WriteLine( "\t" + s + " ," ) ;
@@ -392,7 +392,7 @@ partial class Program
 				}
 			else
 				{
-				sw.WriteLine( C699.C.Struct+ Type ) ;
+				sw.WriteLine( C699.C.Restricted("struct")+ Type ) ;
 				sw.WriteLine( "\t{" ) ;
 				foreach( string s in list )
 					sw.WriteLine( "\t" + s + " ;" ) ;
@@ -462,15 +462,19 @@ partial class Program
 			}
 		public C_Oprand Jump( string id )
 			{
-			return Statement( "goto " + id ) ;
+			return Statement( C699.Goto.Label(id) ) ;
 			}
 		public C_Oprand AssignStack( int offset, string text )
 			{
-			return Statement( "stack[" + offset + "] = " + text ) ;
+			return Statement( C699.Stack.Offset(offset).Equate(text) ) ;
 			}
-		public C_Oprand AssignStaticConst( C_Symbol type, C_Symbol symbol, string text )
+		public C_Oprand Assign( C699.c c, C_Symbol symbol, string embracement )
 			{
-			return Statement( C699.C.Static.Const+ type + " " + symbol + " = " + text ) ;
+			return Statement( c+symbol+'='+'{'+embracement+'}' ) ;
+			}
+		public C_Oprand Assign( C699.c c, C_Symbol type, C_Symbol symbol, string embracement )
+			{
+			return Statement( c+ type + ' ' + symbol+'='+'{'+embracement+'}' ) ;
 			}
 		public C_Oprand LocalStatic( C_Symbol type, C_Symbol symbol )
 			{
@@ -504,7 +508,7 @@ partial class Program
 			{
 			C_TypeDef typedef = typedefset["string"] ;
 			string field = typedef.Struct[1] ;
-			return Statement( C699.Free('('+'('+C699.C.Struct+"_string"+'*'+')'+"stack"+'['+offset+']'+')'+"->"+field ) ) ;
+			return Statement( C699.Free('('+'('+C699.C.Struct(C699.String)+'*'+')'+"stack"+'['+offset+']'+')'+"->"+field ) ) ;
 			}
 		public void WriteTo( StreamWriter sw )
 			{
