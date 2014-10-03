@@ -23,4 +23,5 @@ static public c Object(int i)
 	{
 	return new c(KeyedWord.Struct+' '+_obj[i,i]) ;
 	}
+public static string[,] _IDE = null ;
 }//}
