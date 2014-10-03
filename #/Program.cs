@@ -133,11 +133,11 @@ partial class Program
 		}
 	static public C_Symbol StructObject
 		{
-		get { return C_Symbol.Acquire( "struct _object" ) ; }
+		get { return C_Symbol.Acquire( C699.Object(0) ) ; }
 		}
 	static public C_Symbol StructObject_
 		{
-		get { return C_Symbol.Acquire( C699.C.Restricted("struct _object*") ) ; }
+		get { return C_Symbol.Acquire( C699.C.Restricted(C699.Object(0)+'*') ) ; }
 		}
 	static public C_Symbol StructString
 		{
@@ -145,7 +145,7 @@ partial class Program
 		}
 	static public C_Symbol StructString_
 		{
-		get { return C_Symbol.Acquire( C699.C.Restricted("struct _string*") ) ; }
+		get { return C_Symbol.Acquire( C699.C.Restricted(C699.String+'*') ) ; }
 		}
 	static public C_Function jiffy( string description )
 		{
@@ -336,7 +336,12 @@ partial class Program
 		static public C_Struct CreateStructure( string type )
 			{
 			C_Struct s = new C_Struct() ;
-			s.Type = "_" + type ;
+			switch( type )
+				{
+				case "string": s.Type = C699.String ; break ;
+			  case "object": s.Type = C699.Object(0) ; break ;
+			  default      : s.Type = C699.C.Restricted("_" + type) ; break ;
+			  }
 			s.TypeDef = Acquire( type ) ;
 			s.TypeDef.Struct = s ;
 			return s ;
@@ -344,14 +349,14 @@ partial class Program
 		}
 	public class C_Struct
 		{
-		public string Type ;
+		public C699.c Type ;
 		public string Symbol ;
 		public C_TypeDef TypeDef ;
 		List<string> list = new List<string>() ;
 		List<C_Type> parameterset = new List<C_Type>() ;
 		public C_Struct()
 			{
-			Type = "_object" ;
+			Type = C699.Object(0) ;
 			}
 		public void Add( string text )
 			{
@@ -384,7 +389,7 @@ partial class Program
 			{
 			if( Symbol != null )
 				{
-				sw.WriteLine( C699.C.Restricted("struct")+ Type + ' ' + Symbol + " =" ) ;
+				sw.WriteLine( Type + ' ' + Symbol + " =" ) ;
 				sw.WriteLine( "\t{" ) ;
 				foreach( string s in list )
 					sw.WriteLine( "\t" + s + " ," ) ;
@@ -392,7 +397,7 @@ partial class Program
 				}
 			else
 				{
-				sw.WriteLine( C699.C.Restricted("struct")+ Type ) ;
+				sw.WriteLine( Type ) ;
 				sw.WriteLine( "\t{" ) ;
 				foreach( string s in list )
 					sw.WriteLine( "\t" + s + " ;" ) ;
