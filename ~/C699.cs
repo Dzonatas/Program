@@ -115,7 +115,7 @@ public struct c
 		}
 	public c Struct(C699.c c)
 		{
-		s += KeyedWord.Struct+' '+c.s+' '  ; return this ;
+		s += /*KeyedWord.Struct+' '+*/c.s+' '  ; return this ;
 		}
 	public c Const
 		{
@@ -164,10 +164,6 @@ public struct c
 	public c Equate(string text)
 		{
 		s += '='+text+' ' ; return this ;
-		}
-	public c Type(C699.c c)
-		{
-		s += c+' ' ; return this ;
 		}
 	public static implicit operator string( c c )
 		{

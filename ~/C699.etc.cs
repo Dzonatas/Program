@@ -15,4 +15,8 @@ static public c Label(string id)
 static public c String {
 	get { return new c(KeyedWord.Struct+' '+"_string") ; }
 }
+/* "actions" and "functions"
+public struct _str {...}
+public struct _obj {...}
+*/
 }//}

@@ -288,7 +288,7 @@ partial class A335
 			{
 			case "LDSTR":
 				{
-				var c = C699.C.Static.Const.Type(C699.String) ;
+				var c = C699.C.Static.Const.Struct(C699.String) ;
 				var s = new C_Symbol() ;
 				d.Assign( c, s, this_string.Length.ToString()+','+'"'+this_string+'"' ) ;
 				d.AssignStack( C.StackOffset, "&"+s ) ;
