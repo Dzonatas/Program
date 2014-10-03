@@ -17,9 +17,10 @@ static public c String {
 }
 /* "actions" and "functions"
 public struct _str {...}
-public struct _obj {...}
 */
-static public c Object {
-	get { return new c(KeyedWord.Struct+' '+"_object") ; }
-}
+private static string[,] _obj = {{"_object"}} ;
+static public c Object(int i)
+	{
+	return new c(KeyedWord.Struct+' '+_obj[i,i]) ;
+	}
 }//}
