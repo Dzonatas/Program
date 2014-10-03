@@ -96,7 +96,7 @@ partial class Program
 					return Statement( C699.C.If("((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer") )
 					      .Statement( "\t" + let + " =  *(("+C699.C.Struct(C699.String)+" *)args["+i+"])" )
 					      .Statement( C699.C.Else )
-					      .Statement( "\t" + let + " =  (("+C699.C.Restricted("struct _object *)args["+i+"])->this->$ToString( args+"+i+" )") ) ;
+					      .Statement( "\t" + let + " =  (("+C699.Object(0)+" *)args["+i+"])->this->$ToString( args+"+i+" )") ;
 			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;
 			}
 		C_Function( string symbol )
