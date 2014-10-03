@@ -18,7 +18,7 @@ static public c String {
 /* "actions" and "functions"
 public struct _str {...}
 */
-private static string[,] _obj = {{"_object"}} ;
+private static string[,] _obj = {{"_object"}/*,...{"_hurd"}*/} ;
 static public c Object(int i)
 	{
 	return new c(KeyedWord.Struct+' '+_obj[i,i]) ;
