@@ -19,4 +19,7 @@ static public c String {
 public struct _str {...}
 public struct _obj {...}
 */
+static public c Object {
+	get { return new c(KeyedWord.Struct+' '+"_object") ; }
+}
 }//}
