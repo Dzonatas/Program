@@ -282,7 +282,12 @@ partial class Program
 			Function = C_Function.FromSymbol( symbol ) ;
 			Function.Method = this ;
 			if( Type != null )
-				Function.Type = C699.C.Restricted(Type) ;
+				{
+				if( Type == C_Type.Acquire("string") )
+					Function.Type = C699.String ;
+				else
+					Function.Type = C699.C.Restricted(Type) ;
+				}
 			return Function ;
 			}
 		}
@@ -465,22 +470,6 @@ partial class Program
 			list.Add( C699.C.Restricted(text) ) ;
 			return this ;
 			}
-		public C_Oprand Jump( string id )
-			{
-			return Statement( C699.Goto.Label(id) ) ;
-			}
-		public C_Oprand AssignStack( int offset, string text )
-			{
-			return Statement( C699.Stack.Offset(offset).Equate(text) ) ;
-			}
-		public C_Oprand Assign( C699.c c, C_Symbol symbol, string embracement )
-			{
-			return Statement( c.Equate(symbol,embracement) ) ;
-			}
-		public C_Oprand LocalStatic( C_Symbol type, C_Symbol symbol )
-			{
-			return Statement( C699.C.Static(C699.C.Restricted(type)) + " " + symbol ) ;
-			}
 		public C_Oprand ExternCall( C_Symbol symbol )
 			{
 			return Statement( C699.C.Extern.Void.Function(symbol,C699.C.Const.Voidpp) ) ;
@@ -488,22 +477,6 @@ partial class Program
 		public C_Oprand Extern( C_Symbol type, C_Type symbol )
 			{
 			return Statement( C699.C.Extern+ type + " " + symbol  ) ;
-			}
-		public C_Oprand Call( C_Symbol symbol )
-			{
-			return Statement( C699.C.Function(symbol) ) ;
-			}
-		public C_Oprand Call( C_Symbol symbol, string args )
-			{
-			return Statement( C699.C.Function(symbol, C699.C.Restricted(args) ) ) ;
-			}
-		public C_Oprand CallAssign( C_Symbol item, C_Symbol symbol )
-			{
-			return Statement( item + " = " + symbol + "()"  ) ;
-			}
-		public C_Oprand CallAssign( C_Symbol item, C_Symbol symbol, string args )
-			{
-			return Statement( item + " = " + symbol + "( " + args + " )"  ) ;
 			}
 		public C_Oprand FreeStackString( int offset )
 			{

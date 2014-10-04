@@ -1,9 +1,13 @@
 //namespace C {
 public partial class C699 {
 public struct Stack {
-static public c Offset(int i)
+static public c Index(int i)
 	{
 	return new c("stack"+'['+i+']') ;
+	}
+static public c Pointer(int i)
+	{
+	return new c("stack"+'+'+i+' ') ;
 	}
 }
 public struct Goto {

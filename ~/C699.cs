@@ -40,6 +40,10 @@ public struct C
 		{
 		return (new c()).Static(c) ;
 		}
+	static public c Static(C699.c c,string symbol)
+		{
+		return (new c()).Static(c,new c(symbol)) ;
+		}
 	static public c Struct(C699.c c)
 		{
 		return (new c()).Struct(c) ;
@@ -120,6 +124,10 @@ public struct c
 	public c Int
 		{
 		get { s += KeyedWord.Int + ' '  ; return this ; }
+		}
+	public c Static(C699.c c, C699.c symbol)
+		{
+		s += KeyedWord.Static+' '+c.s+' '+symbol.s + ' ' ; return this ;
 		}
 	public c Static(C699.c c)
 		{

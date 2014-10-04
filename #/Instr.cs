@@ -7,12 +7,12 @@ partial class A335
 		switch( Op )
 			{
 			case "BR" :
-				oprand.C.Jump( Id ) ;
+				oprand.C.Statement( C699.Goto.Label(Id) ) ;
 				return ;
 			case "BGE" :
 				C.Pop() ;
 				C.Pop() ;
-				oprand.C.Jump( Id ) ;
+				oprand.C.Statement( C699.Goto.Label(Id) ) ;
 				return ;
 			default :
 				log( "[INSTR_BRTARGET] Defaulted on " + Op ) ;
@@ -60,21 +60,20 @@ partial class A335
 				if( _Type == "string" )
 					{
 					symbol = new C_Symbol() ;
-					d.LocalStatic( Program.StructString, symbol ) ;
-					//d.Statement( "static struct _string item" + C.StackOffset.ToString() ) ;
+					d.Statement( C699.C.Static(C699.String,symbol) ) ;
 					freeset.Add( C.StackOffset ) ;
 					if( iargs == 0 )
-						d.CallAssign( symbol, _Call ) ;
+						d.Statement( C699.C.Restricted(symbol).Equate(C699.C.Function(_Call)) ) ;
 					else
-						d.CallAssign( symbol, _Call, "stack+" + C.StackOffset ) ;
-					d.AssignStack( C.StackOffset, "&" + symbol ) ;
+						d.Statement( C699.C.Restricted(symbol).Equate(C699.C.Function(_Call,C699.Stack.Pointer(C.StackOffset))) ) ;
+					d.Statement( C699.Stack.Index(C.StackOffset).Equate("&"+symbol) ) ;
 					}
 				else
 					{
 					if( iargs == 0 )
-						d.Call( _Call ) ;
+						d.Statement( C699.C.Function(_Call) ) ;
 					else
-						d.Call( _Call, "stack+" + C.StackOffset ) ;
+						d.Statement( C699.C.Function(_Call,C699.Stack.Pointer(C.StackOffset)) ) ;
 					}
 				if( _Type != "void" )
 					C.Push( _Type ) ;
@@ -88,12 +87,12 @@ partial class A335
 				C.Hangup( iargs - 1 ) ;
 				d.ExternCall( _Call ) ;
 				d.Extern( Program.StructObject, _class ) ;
-				d.Assign( C699.C.Const.Static(C699.Object(0)), symbol, '&'+_class ) ;
-				d.AssignStack( C.StackOffset, '&'+symbol ) ;
+				d.Statement( C699.C.Const.Static(C699.Object(0)).Equate(symbol,"&"+_class) ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("&"+symbol) ) ;
 				if( iargs == 0 )
-					d.Call( _Call ) ;
+					d.Statement( C699.C.Function(_Call) ) ;
 				else
-					d.Call( _Call, "stack+" + C.StackOffset ) ;
+					d.Statement( C699.C.Function(_Call,C699.C.Restricted("stack+"+C.StackOffset)) ) ;
 				C.Push( "object" ) ;
 				break ;
 				}
@@ -198,7 +197,7 @@ partial class A335
 					type = d.Method.ThisType ;
 				else
 					type = d.Method.Args[0] ;
-				d.AssignStack( C.StackOffset, "args[0]" ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("args[0]") ) ;
 				C.Push1( type ) ;
 				break ;
 				}
@@ -213,19 +212,19 @@ partial class A335
 				break ;
 				}
 			case "LDC_I4_0" :
-				d.AssignStack( C.StackOffset, "0" ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("0") ) ;
 				C.Push( C_I4_0 ) ;
 				break ;
 			case "LDC_I4_1" :
-				d.AssignStack( C.StackOffset, "1" ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("1") ) ;
 				C.Push( C_I4_1 ) ;
 				break ;
 			case "LDC_I4_2" :
-				d.AssignStack( C.StackOffset, "2" ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("2") ) ;
 				C.Push( C_I4_2 ) ;
 				break ;
 			case "LDC_I4_3" :
-				d.AssignStack( C.StackOffset, "3" ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("3") ) ;
 				C.Push( C_I4_3 ) ;
 				break ;
 			case "DUP" :
@@ -290,8 +289,9 @@ partial class A335
 				{
 				var c = C699.C.Const.Static(C699.String) ;
 				var s = new C_Symbol() ;
-				d.Assign( c, s, this_string.Length.ToString()+','+'"'+this_string+'"' ) ;
-				d.AssignStack( C.StackOffset, "&"+s ) ;
+				var args = this_string.Length.ToString()+','+'"'+this_string+'"' ;
+				d.Statement( c.Equate(s,args) ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("&"+s) ) ;
 				C.Push( "string" ) ;
 				break ;
 				}
