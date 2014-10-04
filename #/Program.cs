@@ -137,7 +137,7 @@ partial class Program
 		}
 	static public C_Symbol StructObject_
 		{
-		get { return C_Symbol.Acquire( C699.C.Restricted(C699.Object(0)+'*') ) ; }
+		get { return C_Symbol.Acquire( C699.Object(1) ) ; }
 		}
 	static public C_Symbol StructString
 		{

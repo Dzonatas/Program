@@ -18,9 +18,15 @@ static public c String {
 /* "actions" and "functions"
 public struct _str {...}
 */
-private static string[,] _obj = {{"_object"}/*,...{"_hurd"}*/} ;
+private static string[,] _obj =
+	{
+	{"_object", null },
+	{ null, "*" }
+	} ;
 static public c Object(int i)
 	{
+	if( i == 1 )
+		return new c(KeyedWord.Struct+' '+_obj[i-1,i-1]+_obj[i,i]) ;
 	return new c(KeyedWord.Struct+' '+_obj[i,i]) ;
 	}
 public static string[,] _IDE = null ;
