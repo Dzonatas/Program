@@ -76,6 +76,14 @@ public struct C
 		{
 		return (new c()).Function(classtype, fn) ;
 		}
+	static public c Function( string fn )
+		{
+		return (new c()).Function(fn) ;
+		}
+	static public c Function( string fn, C699.c arg0 )
+		{
+		return (new c()).Function(fn, arg0) ;
+		}
 	static public c/**/ Restricted( string expression ) //($(X)RSH)|$futex_unknown
 		{
 		System.Console.WriteLine(expression) ;
@@ -164,6 +172,14 @@ public struct c
 	public c Function( string classtype, string fn )
 		{
 		s += classtype + '$' + fn +'('+')'+' ' ; return this ;
+		}
+	public c Function( string fn )
+		{
+		s += fn +'('+')'+' ' ; return this ;
+		}
+	public c Function( string fn, C699.c arg0 )
+		{
+		s += fn +'('+arg0+')'+' ' ; return this ;
 		}
 	public c Equate(string text)
 		{

@@ -483,7 +483,7 @@ partial class Program
 			}
 		public C_Oprand ExternCall( C_Symbol symbol )
 			{
-			return Statement( C699.C.Extern.Void+ symbol + '('+C699.C.Const.Voidpp+')' ) ;
+			return Statement( C699.C.Extern.Void.Function(symbol,C699.C.Const.Voidpp) ) ;
 			}
 		public C_Oprand Extern( C_Symbol type, C_Type symbol )
 			{
@@ -491,11 +491,11 @@ partial class Program
 			}
 		public C_Oprand Call( C_Symbol symbol )
 			{
-			return Statement( symbol + "()"  ) ;
+			return Statement( C699.C.Function(symbol) ) ;
 			}
 		public C_Oprand Call( C_Symbol symbol, string args )
 			{
-			return Statement( symbol + "( " + args + " )"  ) ;
+			return Statement( C699.C.Function(symbol, C699.C.Restricted(args) ) ) ;
 			}
 		public C_Oprand CallAssign( C_Symbol item, C_Symbol symbol )
 			{
