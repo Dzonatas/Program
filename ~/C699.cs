@@ -169,6 +169,10 @@ public struct c
 		{
 		s += '='+text+' ' ; return this ;
 		}
+	public c Equate(string symbol, string embracement)
+		{
+		s += symbol+'='+'{'+embracement+'}' ; return this ;
+		}
 	public static implicit operator string( c c )
 		{
 		return c.s ;

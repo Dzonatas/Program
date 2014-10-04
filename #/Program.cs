@@ -475,11 +475,7 @@ partial class Program
 			}
 		public C_Oprand Assign( C699.c c, C_Symbol symbol, string embracement )
 			{
-			return Statement( c+symbol+'='+'{'+embracement+'}' ) ;
-			}
-		public C_Oprand Assign( C699.c c, C_Symbol type, C_Symbol symbol, string embracement )
-			{
-			return Statement( c+ type + ' ' + symbol+'='+'{'+embracement+'}' ) ;
+			return Statement( c.Equate(symbol,embracement) ) ;
 			}
 		public C_Oprand LocalStatic( C_Symbol type, C_Symbol symbol )
 			{
