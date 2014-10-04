@@ -141,7 +141,7 @@ partial class Program
 		}
 	static public C_Symbol StructString
 		{
-		get { return C_Symbol.Acquire( C699.C.Struct(C699.String) ) ; }
+		get { return C_Symbol.Acquire( C699.String ) ; }
 		}
 	static public C_Symbol StructString_
 		{
@@ -282,7 +282,7 @@ partial class Program
 			Function = C_Function.FromSymbol( symbol ) ;
 			Function.Method = this ;
 			if( Type != null )
-				Function.Type = Type ;
+				Function.Type = C699.C.Restricted(Type) ;
 			return Function ;
 			}
 		}
@@ -483,7 +483,7 @@ partial class Program
 			}
 		public C_Oprand LocalStatic( C_Symbol type, C_Symbol symbol )
 			{
-			return Statement( C699.C.Static+ type + " " + symbol ) ;
+			return Statement( C699.C.Static(C699.C.Restricted(type)) + " " + symbol ) ;
 			}
 		public C_Oprand ExternCall( C_Symbol symbol )
 			{
@@ -513,7 +513,7 @@ partial class Program
 			{
 			C_TypeDef typedef = typedefset["string"] ;
 			string field = typedef.Struct[1] ;
-			return Statement( C699.Free('('+'('+C699.C.Struct(C699.String)+'*'+')'+"stack"+'['+offset+']'+')'+"->"+field ) ) ;
+			return Statement( C699.Free('('+'('+C699.String+'*'+')'+"stack"+'['+offset+']'+')'+"->"+field ) ) ;
 			}
 		public void WriteTo( StreamWriter sw )
 			{

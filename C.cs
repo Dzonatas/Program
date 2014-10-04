@@ -62,7 +62,7 @@ partial class Program
 		string b_string = b + "." + _string ;
 		string c_length = c + "." + _length ;
 		string c_string = c + "." + _string ;
-		This.Statement( C699.C.Static.Struct(C699.String)+"s" )
+		This.Statement( C699.C.Static(C699.String)+"s" )
 			.Statement( s_length+" = "+a_length+" + "+b_length+" + "+c_length )
 			.Statement( s_string+" = malloc( "+a_length+" + "+b_length+" + "+c_length+" )" )
 			.Statement( "strncpy( "+s_string+", "+a_string+", "+a_length+" )" )
@@ -215,7 +215,7 @@ public class C_Type
 	static public implicit operator C_Symbol( C_Type c )
 		{
 		if( (string) c == "string" )
-			return C_Symbol.Acquire( C699.C.Struct(C699.String) ) ;
+			return C_Symbol.Acquire( C699.String ) ;
 		return c.idset[c.idset.Length-1] ;
 		}
 	static public explicit operator string[]( C_Type c )

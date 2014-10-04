@@ -36,9 +36,9 @@ public struct C
 		{
 		get { return (new c()).Int ; }
 		}
-	static public c Static
+	static public c Static(C699.c c)
 		{
-		get { return (new c()).Static ; }
+		return (new c()).Static(c) ;
 		}
 	static public c Struct(C699.c c)
 		{
@@ -63,6 +63,10 @@ public struct C
 	static public c Inline
 		{
 		get { return (new c()).Inline ; }
+		}
+	static public c Void
+		{
+		get { return (new c()).Void ; }
 		}
 	static public c Cctor( string classtype )
 		{
@@ -109,13 +113,13 @@ public struct c
 		{
 		get { s += KeyedWord.Int + ' '  ; return this ; }
 		}
-	public c Static
+	public c Static(C699.c c)
 		{
-		get { s += KeyedWord.Static + ' '  ; return this ; }
+		s += KeyedWord.Static+' '+c.s + ' '  ; return this ;
 		}
 	public c Struct(C699.c c)
 		{
-		s += /*KeyedWord.Struct+' '+*/c.s+' '  ; return this ;
+		s += KeyedWord.Struct+' '+c.s + ' '  ; return this ;
 		}
 	public c Const
 		{

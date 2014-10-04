@@ -12,22 +12,23 @@ static public c Label(string id)
 	return new c(KeyedWord.Goto+' '+id) ;
 	}
 }
-static public c String {
-	get { return new c(KeyedWord.Struct+' '+"_string") ; }
+static readonly c _string = C.Struct(new c("_string")) ;
+static public   c String {
+	get { return _string ; }
 }
 /* "actions" and "functions"
 public struct _str {...}
 */
 private static string[,] _obj =
 	{
-	{"_object", null },
+	{ "_object", null },
 	{ null, "*" }
 	} ;
 static public c Object(int i)
 	{
 	if( i == 1 )
-		return new c(KeyedWord.Struct+' '+_obj[i-1,i-1]+_obj[i,i]) ;
-	return new c(KeyedWord.Struct+' '+_obj[i,i]) ;
+		return C.Struct(new c(_obj[i-1,i-1]+_obj[i,i])) ;
+	return C.Struct(new c(_obj[i,i])) ;
 	}
 public static string[,] _IDE = null ;
 }//}

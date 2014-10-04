@@ -306,7 +306,7 @@ class Method
 			var c = c_method.Function ;
 			int args = ( _SigArgs0 == null ? 0 :_SigArgs0.Count() ) + ( _CallConvInstance ? 1 : 0 ) ;
 			if( _Virtual )
-				c.Type = C_Symbol.Acquire( C699.C.Struct(C699.String) ) ;
+				c.Type = C699.String ;
 			if( args == 0 )
 				c.Args = "()" ;
 			else
@@ -314,7 +314,7 @@ class Method
 			c.Statement( C699.C.Const.Voidpp+"stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
 			A335.Method.WriteList( c, declList ) ;
 			if( _Virtual )
-				c.Statement( C699.C.Return+"*("+C699.C.Struct(C699.String)+" *) *stack" ) ;
+				c.Statement( C699.C.Return+"*("+C699.String+" *) *stack" ) ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
 			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
 			c.WriteTo( sw ) ;

@@ -32,17 +32,17 @@ partial class Program
 			{
 			set {
 				if( value )
-					Type = C_Symbol.Acquire( "void" ) ;
+					Type = C699.C.Void ;
 				}
 			}
 		public bool Bool
 			{
 			set {
 				if( value )
-					Type = C_Symbol.Acquire( "int" ) ;
+					Type = C699.C.Int ;
 				}
 			}
-		public C_Symbol Type ;
+		public C699.c Type ;
 		C_Symbol symbol ;
 		public string Symbol ;
 		public bool   HasArgs ;
@@ -94,7 +94,7 @@ partial class Program
 			{
 			if( let.Type == StructObject || let.Type == StructString )
 					return Statement( C699.C.If("((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer") )
-					      .Statement( "\t" + let + " =  *(("+C699.C.Struct(C699.String)+" *)args["+i+"])" )
+					      .Statement( "\t" + let + " =  *(("+C699.String+" *)args["+i+"])" )
 					      .Statement( C699.C.Else )
 					      .Statement( "\t" + let + " =  (("+C699.Object(0)+" *)args["+i+"])->this->$ToString( args+"+i+" )") ;
 			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;
@@ -142,11 +142,12 @@ partial class Program
 		public void WriteTo( StreamWriter sw )
 			{
 			var line = new List<string>() ;
-			if( Static )
-				line.Add( C699.C.Static ) ;
 			if( Inline )
 				line.Add( C699.C.Inline ) ;
-			line.Add( Type ) ;
+			if( Static )
+				line.Add( C699.C.Static(Type) ) ;
+			else
+				line.Add( Type ) ;
 			line.Add( Symbol ) ;
 			string a ;
 			if( Args == null )
