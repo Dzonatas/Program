@@ -81,18 +81,17 @@ partial class Program
 			{
 			return Statement( C699.C.Return+symbol ) ;
 			}
-		public C_Function Register( C_Symbol type, string name )
+		public C_Function Register( C699.c type, string name )
 			{
-			return C.Register( this, type, name ) ;
+			return C.Register( this, type, C_Symbol.Acquire(name) ) ;
 			}
-		public C_Function Register( C_Symbol type )
+		public C_Function Register( C699.c type )
 			{
-			string name = type.By_p() ; //_CPP_FLOW,P(==|!=)NP
-			return C.Register( this, type, name ) ;
+			return Register( type, C_Symbol.Acquire(type).By_p() ) ;
 			}
 		public C_Function ManagedArgument( int i )
 			{
-			if( let.Type == StructObject || let.Type == StructString )
+			if( let.Type == C699.Object(0) || let.Type == C699.String )
 					return Statement( C699.C.If("((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer") )
 					      .Statement( "\t" + let + " =  *(("+C699.String+" *)args["+i+"])" )
 					      .Statement( C699.C.Else )
@@ -129,11 +128,15 @@ partial class Program
 				c = c_functionset[symbol] ;
 			c.Required = true ;
 			}
-		public C_Function Statement( string line )
+		public C_Function Statement( C699.c line )
 			{
-			bool eos = ( line.StartsWith( C699.KeyedWord.If ) && ! line.Contains( C699.KeyedWord.Goto ) )  || line.StartsWith( C699.KeyedWord.Else ) ;
+			bool eos = ( line.Bits & (C699.Bit.If|C699.Bit.Else) ) != 0 && (line.Bits & C699.Bit.Goto) == 0 ;
 			list.Add( "\t" + line + ( eos ? "" : " ;" ) ) ;
 			return this ;
+			}
+		public C_Function Statement( string line )
+			{
+			return Statement( C699.C.Restricted(line) ) ;
 			}
 		public void Label( C_Label label )
 			{

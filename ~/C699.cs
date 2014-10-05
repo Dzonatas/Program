@@ -92,13 +92,24 @@ public struct C
 		{
 		System.Console.WriteLine(expression) ;
 		if( expression.StartsWith(C699.KeyedWord.Goto) )
-			return (new c(expression)) ; //c.Goto(#|Label|IntPtr)
+			{
+			var c = new c(expression) ;
+			c.Bits = C699.Bit.Goto ;
+			return c ; //c.Goto(#|Label|IntPtr)
+			}
 		return (new c(expression+' ')) ;
 		}
+	}
+public enum Bit
+	{
+	If   = 0x01,
+	Goto = 0x02,
+	Else = 0x04
 	}
 public struct c
 	{
 	string s ;
+	public Bit Bits ;
 	#if !____biz
 	public c Tut( c c )
 		{
@@ -143,11 +154,11 @@ public struct c
 		}
 	public c If( string expression )
 		{
-		s += KeyedWord.If+'('+expression+')' + ' '  ; return this ;
+		s += KeyedWord.If+'('+expression+')' + ' '  ; Bits &= Bit.If ; return this ;
 		}
 	public c Else
 		{
-		get { s += KeyedWord.Else + ' '  ; return this ; }
+		get { s += KeyedWord.Else + ' '  ; Bits &= Bit.Else ; return this ; }
 		}
 	public c Inline
 		{
@@ -208,6 +219,7 @@ public struct c
 	public c( string text )
 		{
 		s = text ;
+		Bits = 0 ;
 		}
 	}
 }//}

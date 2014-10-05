@@ -62,7 +62,7 @@ partial class Program
 		string b_string = b + "." + _string ;
 		string c_length = c + "." + _length ;
 		string c_string = c + "." + _string ;
-		This.Statement( C699.C.Static(C699.String)+"s" )
+		This.Statement( C699.C.Static(C699.String,"s") )
 			.Statement( s_length+" = "+a_length+" + "+b_length+" + "+c_length )
 			.Statement( s_string+" = malloc( "+a_length+" + "+b_length+" + "+c_length+" )" )
 			.Statement( "strncpy( "+s_string+", "+a_string+", "+a_length+" )" )
@@ -73,7 +73,7 @@ partial class Program
 		}
 	public C_Function This ;
 	C_Literal[] register ;
-	public C_Function Register( C_Function f, C_Symbol type, string name )
+	public C_Function Register( C_Function f, C699.c type, string name )
 		{
 		C_Literal literal ;
 		if( register == null )
@@ -90,13 +90,13 @@ partial class Program
 		literal.Type      = type ;
 		literal.Name      = name ;
 		register[ register.Length - 1 ] = literal ;
-		This.Statement( type + " " + name ) ;
+		This.Statement( C699.C.Restricted(type+name) ) ;
 		return f ;
 		}
 	public struct C_Literal
 		{
 		public C_Function  Function ;
-		public C_Symbol    Type ;
+		public C699.c      Type ;
 		public string      Name ;
 		public override string ToString()
 				{

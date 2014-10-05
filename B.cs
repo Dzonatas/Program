@@ -215,8 +215,8 @@ partial class Program
 			.Parameter( _string )
 			;
 		C.TypeDef.Object
-			.Parameter( StructObject_, "this" )
-			.Parameter( StructString, C699.C.Restricted("(*$ToString)").Tut(C699.C.Const.Voidpp) )
+			.Parameter( C699.Object(1) , "this" )
+			.Parameter( C699.String, C699.C.Restricted("(*$ToString)").Tut(C699.C.Const.Voidpp) )
 			;
 		jiffy( "object::.ctor" )
 			;
@@ -226,9 +226,9 @@ partial class Program
 			.StandardOutputWriteLine()
 			;
 		jiffy( "string string::Concat(object,object,object)" )
-			.Register( StructString )
-			.Register( StructString )
-			.Register( StructString )
+			.Register( C699.String )
+			.Register( C699.String )
+			.Register( C699.String )
 			.Let( C[0] ).Equal.ManagedArgument( 0 )
 			.Let( C[1] ).Equal.ManagedArgument( 1 )
 			.Let( C[2] ).Equal.ManagedArgument( 2 )

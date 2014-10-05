@@ -139,9 +139,9 @@ partial class Program
 		{
 		get { return C_Symbol.Acquire( C699.Object(1) ) ; }
 		}
-	static public C_Symbol StructString
+	static public C699.c StructString
 		{
-		get { return C_Symbol.Acquire( C699.String ) ; }
+		get { return C699.String ; }
 		}
 	static public C_Symbol StructString_
 		{
@@ -373,7 +373,7 @@ partial class Program
 			parameterset.Add( symbol ) ;
 			return this ;
 			}
-		public C_Struct Parameter( C_Symbol symbol, string text )
+		public C_Struct Parameter( C699.c symbol, string text )
 			{
 			list.Add( symbol + " " + text ) ;
 			return this ;
