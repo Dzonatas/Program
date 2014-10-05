@@ -102,9 +102,10 @@ public struct C
 	}
 public enum Bit
 	{
-	If   = 0x01,
-	Goto = 0x02,
-	Else = 0x04
+	If     = 0x01 ,
+	Goto   = 0x02 ,
+	Else   = 0x04 ,
+	Object = 0x08 ,
 	}
 public struct c
 	{

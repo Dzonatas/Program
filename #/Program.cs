@@ -147,11 +147,11 @@ partial class Program
 		{
 		public C_Struct String
 			{
-			get { return C_TypeDef.CreateStructure( "string" ) ; }
+			get { return new C_Struct("string") ; }
 			}
 		public C_Struct Object
 			{
-			get { return C_TypeDef.CreateStructure( "object" ) ; }
+			get { return new C_Struct("object") ; }
 			}
 		}
 	public class C_Method
@@ -322,19 +322,6 @@ partial class Program
 				typedefset.Add( symbol, c = new C_TypeDef( symbol, C_Type.Acquire( String.Empty ) ) ) ;
 			return c ;
 			}
-		static public C_Struct CreateStructure( string type )
-			{
-			C_Struct s = new C_Struct() ;
-			switch( type )
-				{
-				case "string": s.Type = C699.String ; break ;
-			  case "object": s.Type = C699.Object(0) ; break ;
-			  default      : s.Type = C699.C.Restricted("_" + type) ; break ;
-			  }
-			s.TypeDef = Acquire( type ) ;
-			s.TypeDef.Struct = s ;
-			return s ;
-			}
 		}
 	public class C_Struct
 		{
@@ -343,6 +330,18 @@ partial class Program
 		public C_TypeDef TypeDef ;
 		List<string> list = new List<string>() ;
 		List<C_Type> parameterset = new List<C_Type>() ;
+		public C_Struct( string type )
+			{
+			TypeDef = C_TypeDef.Acquire( type ) ;
+			if( TypeDef.Struct == null )
+				TypeDef.Struct = this ;
+			switch( type )
+				{
+				case "string": Type = C699.String ; return ;
+				case "object": Type = C699.Object(0) ; return ;
+				default      : Type = C699.C.Restricted("_" + type) ; return ;
+				}
+			}
 		public C_Struct()
 			{
 			Type = C699.Object(0) ;

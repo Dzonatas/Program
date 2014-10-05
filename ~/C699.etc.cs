@@ -30,9 +30,16 @@ private static string[,] _obj =
 	} ;
 static public c Object(int i)
 	{
+	c c ;
 	if( i == 1 )
-		return C.Struct(new c(_obj[i-1,i-1]+_obj[i,i])) ;
-	return C.Struct(new c(_obj[i,i])) ;
+		{
+		c = C.Struct(new c(_obj[i-1,i-1]+_obj[i,i])) ;
+		c.Bits = Bit.Object ;
+		return c ;
+		}
+	c = C.Struct(new c(_obj[i,i])) ;
+	c.Bits = Bit.Object ;
+	return c ;
 	}
 public static string[,] _IDE = null ;
 }//}
