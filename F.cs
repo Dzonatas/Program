@@ -63,9 +63,9 @@ partial class Program
 		public C_Function ConstLocalArg0
 			{
 			get {
-				C_Symbol arg0 = Method.Args[0] ;
+				var arg0 = new C_Struct(Method.Args[0]) ;
 				var symbol = C_Symbol.Acquire( "_local" ) ;
-				return Statement( C699.C.Const+ arg0 + "* " + symbol + " = *args" ) ;
+				return Statement( C699.C.Const.Struct(arg0.Type.p,symbol).Equate("*args") ) ;
 				}
 			}
 		public C_Function StandardOutputWriteLocal( string _string, string _length )

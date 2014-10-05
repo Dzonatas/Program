@@ -93,7 +93,7 @@ public struct C
 		System.Console.WriteLine(expression) ;
 		if( expression.StartsWith(C699.KeyedWord.Goto) )
 			{
-			var c = new c(expression) ;
+			var c = new c(expression+' ') ;
 			c.Bits = C699.Bit.Goto ;
 			return c ; //c.Goto(#|Label|IntPtr)
 			}
@@ -212,6 +212,10 @@ public struct c
 	public c Equate(string symbol, string embracement)
 		{
 		s += symbol+'='+'{'+embracement+'}' ; return this ;
+		}
+	public c p
+		{
+		get { s += '*' ; return this ; }
 		}
 	public static implicit operator string( c c )
 		{
