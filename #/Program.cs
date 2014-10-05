@@ -131,22 +131,6 @@ partial class Program
 		A335.Method.Write() ;
 		Program.WriteC_Objects() ;
 		}
-	static public C_Symbol StructObject
-		{
-		get { return C_Symbol.Acquire( C699.Object(0) ) ; }
-		}
-	static public C_Symbol StructObject_
-		{
-		get { return C_Symbol.Acquire( C699.Object(1) ) ; }
-		}
-	static public C699.c StructString
-		{
-		get { return C699.String ; }
-		}
-	static public C_Symbol StructString_
-		{
-		get { return C_Symbol.Acquire( C699.C.Restricted(C699.String+'*') ) ; }
-		}
 	static public C_Function jiffy( string description )
 		{
 		return C.This = C_Method.CreateFunction( description ) ;
