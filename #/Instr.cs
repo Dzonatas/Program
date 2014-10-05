@@ -85,8 +85,8 @@ partial class A335
 				var _class = _TypeSpec ;
 				int iargs  = Args ;
 				C.Hangup( iargs - 1 ) ;
-				d.ExternCall( _Call ) ;
-				d.Extern( Program.StructObject, _class ) ;
+				d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
+				d.Statement( C699.C.Extern.Struct(C699.Object(0),_class) ) ;
 				d.Statement( C699.C.Const.Static(C699.Object(0)).Equate(symbol,"&"+_class) ) ;
 				d.Statement( C699.Stack.Index(C.StackOffset).Equate("&"+symbol) ) ;
 				if( iargs == 0 )
@@ -203,10 +203,12 @@ partial class A335
 				}
 			case "RET":
 				{
+				var typedef = Program.C_TypeDef.Acquire("string") ;
+				string field = typedef.Struct[1] ;
 				foreach( object z in freeset )
 					{
 					if( z is int )
-						d.FreeStackString( (int) z ) ;
+						d.Statement( C699.Free('('+'('+C699.String+'*'+')'+C699.Stack.Index((int)z)+')'+"->"+field ) ) ;
 					}
 				freeset.Clear() ;
 				break ;

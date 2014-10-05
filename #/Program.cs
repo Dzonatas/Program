@@ -470,20 +470,6 @@ partial class Program
 			list.Add( C699.C.Restricted(text) ) ;
 			return this ;
 			}
-		public C_Oprand ExternCall( C_Symbol symbol )
-			{
-			return Statement( C699.C.Extern.Void.Function(symbol,C699.C.Const.Voidpp) ) ;
-			}
-		public C_Oprand Extern( C_Symbol type, C_Type symbol )
-			{
-			return Statement( C699.C.Extern+ type + " " + symbol  ) ;
-			}
-		public C_Oprand FreeStackString( int offset )
-			{
-			C_TypeDef typedef = typedefset["string"] ;
-			string field = typedef.Struct[1] ;
-			return Statement( C699.Free('('+'('+C699.String+'*'+')'+"stack"+'['+offset+']'+')'+"->"+field ) ) ;
-			}
 		public void WriteTo( StreamWriter sw )
 			{
 			if( BrTarget && Instruction == "BR" )

@@ -133,10 +133,6 @@ public struct c
 		{
 		s += KeyedWord.Static+' '+c.s + ' '  ; return this ;
 		}
-	public c Struct(C699.c c)
-		{
-		s += KeyedWord.Struct+' '+c.s + ' '  ; return this ;
-		}
 	public c Const
 		{
 		get { s += KeyedWord.Const + ' '  ; return this ; }
@@ -156,6 +152,14 @@ public struct c
 	public c Inline
 		{
 		get { s += KeyedWord.Inline + ' '  ; return this ; }
+		}
+	public c Struct(C699.c c)
+		{
+		s += KeyedWord.Struct+' '+c.s + ' '  ; return this ;
+		}
+	public c Struct(C699.c c,string symbol)
+		{
+		s += c.s+' '+symbol + ' '  ; return this ;
 		}
 	public c ArgC
 		{
