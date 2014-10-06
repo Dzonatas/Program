@@ -7,6 +7,6 @@ public  const  string                               LIBC_so = "libc.so.6" ;
 public extern  static void                          free( System.IntPtr memory ) ;
 public         static c                             Free( string expression )
 	{
-	return new c( "free"+'('+' '+expression+' '+')'+' ' ) ;
+	return C.Function("free",new c(expression)) ;
 	}
 }//}

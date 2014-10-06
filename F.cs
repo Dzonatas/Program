@@ -71,15 +71,15 @@ partial class Program
 		public C_Function StandardOutputWriteLocal( string _string, string _length )
 			{
 			var symbol = C_Symbol.Acquire( "_local" ) ;
-			return Statement( "write( 0 , " + symbol + "->" + _string + " , " + symbol + "->" + _length + " )" ) ;
+			return Statement( C699.Write( 0, symbol+"->"+_string, symbol+"->"+_length ) ) ;
 			}
 		public C_Function StandardOutputWriteLine()
 			{
-			return Statement( "write( 0 , \"\\012\" , 1 )" ) ;
+			return Statement( C699.Write( 0, "\"\\012\"" , "1" ) ) ;
 			}
 		public C_Function Return( string symbol )
 			{
-			return Statement( C699.C.Return+symbol ) ;
+			return Statement( C699.C.Return(symbol) ) ;
 			}
 		public C_Function Register( C699.c type, string name )
 			{
@@ -91,11 +91,11 @@ partial class Program
 			}
 		public C_Function ManagedArgument( int i )
 			{
-			if( let.Type == C699.Object(0) || let.Type == C699.String )
+			if( (let.Type.Bits & C699.Bit.Object) != 0 || let.Type == C699.String )
 					return Statement( C699.C.If("((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer") )
-					      .Statement( "\t" + let + " =  *(("+C699.String+" *)args["+i+"])" )
+					      .Statement( let.Name.Equate("*(("+C699.String+" *)args["+i+"])") )
 					      .Statement( C699.C.Else )
-					      .Statement( "\t" + let + " =  (("+C699.Object(0)+" *)args["+i+"])->this->$ToString( args+"+i+" )") ;
+					      .Statement( let.Name.Equate("(("+C699.Object(0)+" *)args["+i+"])->this->$ToString( args+"+i+" )") ) ;
 			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;
 			}
 		C_Function( string symbol )

@@ -54,20 +54,20 @@ partial class Program
 		C_TypeDef typedef = typedefset["string"] ;
 		string _length = typedef.Struct[0] ;
 		string _string = typedef.Struct[1] ;
-		string s_length = "s." + _length ;
-		string s_string = "s." + _string ;
-		string a_length = a + "." + _length ;
-		string a_string = a + "." + _string ;
-		string b_length = b + "." + _length ;
-		string b_string = b + "." + _string ;
-		string c_length = c + "." + _length ;
-		string c_string = c + "." + _string ;
+		var    s_length = C699.C.Literal( "s."   + _length) ;
+		var    s_string = C699.C.Literal( "s."   + _string) ;
+		var    a_length = C699.C.Literal(a + "." + _length) ;
+		var    a_string = C699.C.Literal(a + "." + _string) ;
+		var    b_length = C699.C.Literal(b + "." + _length) ;
+		var    b_string = C699.C.Literal(b + "." + _string) ;
+		var    c_length = C699.C.Literal(c + "." + _length) ;
+		var    c_string = C699.C.Literal(c + "." + _string) ;
 		This.Statement( C699.C.Static(C699.String,"s") )
-			.Statement( s_length+" = "+a_length+" + "+b_length+" + "+c_length )
-			.Statement( s_string+" = malloc( "+a_length+" + "+b_length+" + "+c_length+" )" )
-			.Statement( "strncpy( "+s_string+", "+a_string+", "+a_length+" )" )
-			.Statement( "strncpy( &"+s_string+"["+a_length+"], "+b_string+", "+b_length+" )" )
-			.Statement( "strncpy( &"+s_string+"["+a_length+"+"+b_length+"], "+c_string+", "+c_length+" )" )
+			.Statement( s_length.Equate(a_length+" + "+b_length+" + "+c_length) )
+			.Statement( s_string.Equate("malloc( "+a_length+" + "+b_length+" + "+c_length+" )" ) )
+			.Statement( C699.Strncpy(s_string,a_string,a_length) )
+			.Statement( C699.Strncpy('&'+s_string+'['+a_length+']',b_string,b_length) )
+			.Statement( C699.Strncpy('&'+s_string+'['+a_length+'+'+b_length+']',c_string,c_length) )
 			;
 		return C_Symbol.Acquire( "s" ) ;
 		}
@@ -88,20 +88,16 @@ partial class Program
 			}
 		literal.Function  = f ;
 		literal.Type      = type ;
-		literal.Name      = name ;
+		literal.Name      = C699.C.Literal(name) ;
 		register[ register.Length - 1 ] = literal ;
-		This.Statement( C699.C.Restricted(type+name) ) ;
+		This.Statement( C699.C.Struct(type,name) ) ;
 		return f ;
 		}
 	public struct C_Literal
 		{
 		public C_Function  Function ;
 		public C699.c      Type ;
-		public string      Name ;
-		public override string ToString()
-				{
-				return Name ;
-				}
+		public C699.c      Name ;
 		}
 	public C_Literal this[int n]
 		{

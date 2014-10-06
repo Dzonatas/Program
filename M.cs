@@ -311,10 +311,10 @@ class Method
 				c.Args = "()" ;
 			else
 				c.Args = '('+C699.C.Const.Voidpp.ArgV+')' ;
-			c.Statement( C699.C.Const.Voidpp+"stack = alloca( " + maxstack + " * sizeof(void*) )" ) ;
+			c.Statement( C699.C.Const.Voidpp.Equate("stack",C699.Alloca(maxstack + " * sizeof(void*)") ) ) ;
 			A335.Method.WriteList( c, declList ) ;
 			if( _Virtual )
-				c.Statement( C699.C.Return+"*("+C699.String+" *) *stack" ) ;
+				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
 			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
 			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
 			c.WriteTo( sw ) ;
@@ -477,7 +477,7 @@ class Method
 				function.Label( d.Label ) ;
 			else
 			if( d.Instr != null )
-				function.Statement( (string) d.Instr._C_Oprand ) ;
+				function.Statement( d.Instr._C_Oprand ) ;
 			}
 		}
 	}

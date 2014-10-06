@@ -435,13 +435,18 @@ partial class Program
 			ID = Guid.NewGuid().ToID() ;
 			Instruction = System.Text.RegularExpressions.Regex.Replace( instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 			}
-		static public implicit operator string( C_Oprand d )
+		static public implicit operator C699.c( C_Oprand d )
 			{
 			if( d.BrTarget && d.Instruction == "BR" )
 				return d.list[0] ;
+			var f = C699.C.Function( d.Instruction, d.ID,"stack " + ( d.HasArgs ? ", args" : "" ) ) ;
 			if( d.BrTarget )
-				return C699.C.If( d.Instruction+'$'+d.ID+'('+"stack"+' '+(d.HasArgs?','+"args"+')':")") )+d.list[0] ;
-			return d.Instruction + "$" + d.ID + "( stack " + ( d.HasArgs ? ", args )" : ")" ) ;
+				return C699.C.If( f, d.list[0] ) ;
+			return f ;
+			}
+		static public explicit operator string( C_Oprand d )
+			{
+			return ((C699.c)d) ;
 			}
 		public C_Oprand Statement( C699.c c )
 			{
@@ -466,10 +471,10 @@ partial class Program
 			switch( Instruction )
 				{
 				case "BGE" :
-					c.Statement( C699.C.Return+"1" ) ;
+					c.Statement( C699.C.Return("1") ) ;
 					break ;
 				default:
-					foreach( string s in list )
+					foreach( C699.c s in list )
 						c.Statement( s ) ;
 					break ;
 				}

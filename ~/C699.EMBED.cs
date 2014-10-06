@@ -22,7 +22,7 @@ public partial class C699 {
 		sw.WriteLine( "#include <inttypes.h>" ) ;
 		sw.WriteLine( C.Int+KeyedWord.Main+'('+C.Int.ArgC+','+C.Charpp.ArgV+','+C.Charpp.Env+')'+'{' ) ;
 		sw.WriteLine( text ) ;
-		sw.WriteLine( C.Return+'0'+';' ) ;
+		sw.WriteLine( C.Return("0")+';' ) ;
 		sw.WriteLine( '}' ) ;
 		sw.Close() ;
 		psi.Arguments = "-o a."+embed_i+" -std=c99 "+embed_i ;

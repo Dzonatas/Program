@@ -48,17 +48,25 @@ public struct C
 		{
 		return (new c()).Struct(c) ;
 		}
+	static public c Struct(C699.c c,string symbol)
+		{
+		return (new c()).Struct(c,symbol) ;
+		}
 	static public c Const
 		{
 		get { return (new c()).Const ; }
 		}
-	static public c Return
+	static public c Return(string symbol)
 		{
-		get { return (new c()).Return ; }
+		return (new c()).Return(symbol) ;
 		}
 	static public c If( string expression )
 		{
 		return (new c()).If(expression) ;
+		}
+	static public c If( string expression, C699.c then )
+		{
+		return (new c()).If(expression,then) ;
 		}
 	static public c Else
 		{
@@ -80,6 +88,10 @@ public struct C
 		{
 		return (new c()).Function(classtype, fn) ;
 		}
+	static public c Function( string classtype, string fn, string args )
+		{
+		return (new c()).Function(classtype, fn, args) ;
+		}
 	static public c Function( string fn )
 		{
 		return (new c()).Function(fn) ;
@@ -98,6 +110,10 @@ public struct C
 			return c ; //c.Goto(#|Label|IntPtr)
 			}
 		return (new c(expression+' ')) ;
+		}
+	static public c/**/ Literal( string value )
+		{
+		return (new c(value+' ')) ;
 		}
 	}
 public enum Bit
@@ -149,13 +165,17 @@ public struct c
 		{
 		get { s += KeyedWord.Const + ' '  ; return this ; }
 		}
-	public c Return
+	public c Return(string symbol)
 		{
-		get { s += KeyedWord.Return + ' '  ; return this ; }
+		s += KeyedWord.Return+' '+symbol + ' '  ; return this ;
 		}
 	public c If( string expression )
 		{
 		s += KeyedWord.If+'('+expression+')' + ' '  ; Bits &= Bit.If ; return this ;
+		}
+	public c If( string expression, c then )
+		{
+		s += KeyedWord.If+'('+expression+')'+' '+then + ' '  ; Bits &= Bit.If & then.Bits ; return this ;
 		}
 	public c Else
 		{
@@ -196,6 +216,10 @@ public struct c
 	public c Function( string classtype, string fn )
 		{
 		s += classtype + '$' + fn +'('+')'+' ' ; return this ;
+		}
+	public c Function( string classtype, string fn, string args )
+		{
+		s += classtype + '$' + fn +'('+args+')'+' ' ; return this ;
 		}
 	public c Function( string fn )
 		{
