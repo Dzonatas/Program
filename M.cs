@@ -87,6 +87,8 @@ internal static void _Main( string[] args )
 	Xo_t.Build() ;
 	//Punctuation.Program.Parse( args ) ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
+if( Application.Parameter.Value("headless") == "true" && Application.Parameter.Value("synopsis") == "false" )
+	Review.Cloud() ;
 #if FED
 	Begin( Application.Parameter.Value("doubletters") ) ;
 #else
