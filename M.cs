@@ -89,6 +89,10 @@ internal static void _Main( string[] args )
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
 if( Application.Parameter.Value("headless") == "true" && Application.Parameter.Value("synopsis") == "false" )
 	Review.Cloud() ;
+#if DEBUG
+else
+	Review.Board() ;
+#endif
 #if FED
 	Begin( Application.Parameter.Value("doubletters") ) ;
 #else
