@@ -87,17 +87,22 @@ internal static void _Main( string[] args )
 	Xo_t.Build() ;
 	//Punctuation.Program.Parse( args ) ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
+bool board = false ;
 if( Application.Parameter.Value("headless") == "true" && Application.Parameter.Value("synopsis") == "false" )
 	Review.Cloud() ;
 #if DEBUG
 else
-	Review.Board() ;
+	board = true ;
 #endif
 #if FED
 	Begin( Application.Parameter.Value("doubletters") ) ;
 #else
 	if( Application.Parameter.Value("synopsis") == "false" ) 
 		Begin() ;
+#endif
+#if DEBUG
+if( board )
+	Review.Board() ;
 #endif
 #if LICENSED
 TOS
