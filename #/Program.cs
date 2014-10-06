@@ -415,11 +415,7 @@ partial class Program
 		public string ID ;
 		public bool HasArgs ;
 		public bool BrTarget ;
-		#if !iDNA
-		List<string> list = new List<string>() ;
-		#else
 		List<C699.c> list = new List<C699.c>() ;
-		#endif
 		public C_Label Label
 			{
 			set { label = value ; }
@@ -451,11 +447,6 @@ partial class Program
 		public C_Oprand Statement( C699.c c )
 			{
 			list.Add( c ) ;
-			return this ;
-			}
-		public C_Oprand Statement( string text )
-			{
-			list.Add( C699.C.Restricted(text) ) ;
 			return this ;
 			}
 		public void WriteTo( StreamWriter sw )
