@@ -38,6 +38,7 @@ static void panel_dir(System.IntPtr w, string path)
 		waddnstr(w,t,x) ;
 		e = readdir(d) ;
 		}
+	closedir(d) ;
 	}
 
 [System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
