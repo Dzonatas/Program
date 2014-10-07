@@ -420,7 +420,14 @@ public static class Estate
 		static string panzor ;
 		static public string Path
 			{
-			set { panzor = value + path ; }
+			set {
+				switch(value)
+					{
+					case "cyanics": panzor = path ; return ;
+					case "config": panzor = "~/.config/.git" ; return ;
+					default : panzor = "/etc/games/.git" ; /*ro?ibid:0.3.GUID()*/ return ;
+					}
+				}
 			}
 		static System.IO.DirectoryInfo directory ;
 		static Current__System_File()
