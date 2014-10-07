@@ -370,6 +370,8 @@ class Xo_t
 		public static void OutputGraph()
 			{
 			//reserved
+			///www.stenyak.com/archives/1208/trick-of-the-day-rendering-graphics-in-your-terminal/
+			///usr/share/doc/plotutils/tek2plot/dmerc.tek.gz
 			}
 	}
 

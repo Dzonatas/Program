@@ -141,7 +141,7 @@ public static partial class Shell
 	static System.Diagnostics.Process p_temp ;
 	static public System.Diagnostics.Process Xnest()
 		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "Xnest -- :2" ) ;
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "Xnest :2" ) ;
 		psi.UseShellExecute          = true ;
 		//psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
 		psi.RedirectStandardOutput   = false ;
