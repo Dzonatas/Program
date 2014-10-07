@@ -66,7 +66,7 @@ internal static void _Main( string[] args )
 	#if !CPU_FAN && !QM //EntryPoint=AmigaEmulatorNOP
 	X.Simple.Map( Cluster.Shell.Guru.Rectangle() ) ;
 	#elif !STABLE
-	X.Simple.Map( Cluster.Shell.Dpkg__p_LSB() ) ;
+	X.Simple.Map( /*Cluster.Shell.Xnest()*/ ) ;
 	///googlechromereleases.blogspot.com
 	#if !FANCONTROL
 	0.0.FAN() ;
@@ -85,6 +85,9 @@ internal static void _Main( string[] args )
 	//XLogo logo = new XLogo() ;
 	//logo.Window() ;
 	Xo_t.Build() ;
+	#if !UNICODED_SVG
+	Xo_t.OutputGraph() ;
+	#endif
 	//Punctuation.Program.Parse( args ) ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
 bool board = false ;

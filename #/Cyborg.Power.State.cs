@@ -138,5 +138,19 @@ public static partial class Shell
 		p.WaitForExit() ;
 		return p.ExitCode ;
 		}
+	static System.Diagnostics.Process p_temp ;
+	static public System.Diagnostics.Process Xnest()
+		{
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env", "Xnest -- :2" ) ;
+		psi.UseShellExecute          = true ;
+		//psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
+		psi.RedirectStandardOutput   = false ;
+		psi.RedirectStandardInput    = false ;
+		psi.CreateNoWindow           = true ;
+		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
+		System.Diagnostics.Process p ;
+			p= System.Diagnostics.Process.Start(psi) ;
+		return (p_temp = p) ;
+		}
 	}
 }

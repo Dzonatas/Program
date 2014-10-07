@@ -43,6 +43,11 @@ partial class X
 			{
 			ʄ.MapWindow( drawable ) ;
 			}
+		static public void Map( System.Diagnostics.Process process )
+			{
+			ʄ.MapWindow( drawable ) ;
+			//graph
+			}
 		static public void Map( string text )
 			{
 			ʄ.MapWindow( drawable ) ;

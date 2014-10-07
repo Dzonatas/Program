@@ -367,6 +367,10 @@ class Xo_t
 		c.Close() ;
 		#endif
 		}
+		public static void OutputGraph()
+			{
+			//reserved
+			}
 	}
 
 //static Dictionary<string,Symbol> x_lhs_s = new Dictionary<string, Symbol>() ;
