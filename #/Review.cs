@@ -16,8 +16,9 @@ public static void Board()
 	var w = initscr() ;
 	int y = getmaxy(w) ;
 	endwin() ;
-	System.Console.WriteLine("y={0}...",y) ;
 	var dt = dirent.top(0.1.GUID(),y-3) ;
+	if( term != "xterm" )
+		return ;
 	w = initscr() ;
 	cbreak() ;
 	noecho() ;
@@ -59,7 +60,7 @@ class dirent
 			_dirent.inode = s.inode ;
 			_dirent.name  = System.Text.Encoding.ASCII.GetString(s.name) ;
 			_dirent.path  = path ;
-			if( _dirent.name.Contains(".") && _dirent.name != "." && _dirent.name != ".." )
+			if( _dirent.name.Contains(".") && _dirent.name[0] != '.' )
 				de[i++]         = _dirent ;
 			else
 				System.Console.WriteLine(_dirent.name) ;
