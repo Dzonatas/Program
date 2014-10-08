@@ -139,10 +139,6 @@ class dirent
 			_dirent.path  = path ;
 			if( _dirent.name.Contains(".") && _dirent.name[0] != '.' )
 				de[i++]         = _dirent ;
-			foreach( char c in _dirent.name )
-				{
-				System.Console.Write("{0}.{1} ", c, ((int)c).ToString("X") ) ;
-				}
 			}
 		closedir(d) ;
 		if( i < entries )
