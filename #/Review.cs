@@ -62,13 +62,7 @@ public static void Board()
 		i3m( "fullscreen" ) ;
 	else
 	if( c == 32 )
-		i3m( "layout default" ) ;
-	else
-	if( c == 's' )
-		i3m( "layout stacking" ) ;
-	else
-	if( c == 't' )
-		i3m( "layout tabbed" ) ;
+		i3m( "floating toggle" ) ;
 	else
 	if( c == '1' )
 		i3m( "border 1pixel" ) ;
