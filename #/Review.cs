@@ -8,6 +8,7 @@ public static void Cloud()
 	Board() ;
 	//vi /tmp/*.[cs|c|h|hpp]  //...->(i.i)
 	}
+#if !UX
 public static void Board()
 	{
 	var term = System.Environment.GetEnvironmentVariable("TERM") ;
@@ -32,6 +33,78 @@ public static void Board()
 	wgetch(w) ;
 	endwin() ;
 	}
+#else //i3
+public static void Board()
+	{
+	var term = System.Environment.GetEnvironmentVariable("TERM") ;
+	if( ! ( term == "xterm" || term == "linux" ) )
+		return ;
+	var w = initscr() ;
+	int y = getmaxy(w) ;
+	endwin() ;
+	var dt = dirent.top(0.1.GUID(),y-3) ;
+	if( term != "xterm" )
+		return ;
+	w = initscr() ;
+	cbreak() ;
+	noecho() ;
+	intrflush(w, false) ;
+	keypad(w, true) ;
+	wborder(w, 0, 0, 0, 0, 0, 0, 0, 0) ;
+
+	panel_dir(w,dt) ;
+
+	wmove(w,0,0) ;
+	waddstr(w,"<menu><space>&st10xX#") ;
+	input:
+	var c = wgetch(w) ;
+	if( c == 27 )
+		i3m( "fullscreen" ) ;
+	else
+	if( c == 32 )
+		i3m( "layout default" ) ;
+	else
+	if( c == 's' )
+		i3m( "layout stacking" ) ;
+	else
+	if( c == 't' )
+		i3m( "layout tabbed" ) ;
+	else
+	if( c == '1' )
+		i3m( "border 1pixel" ) ;
+	else
+	if( c == '0' )
+		i3m( "border normal" ) ;
+	//else
+	if( ! ( c == 'x' || c == 'X' ) )
+		goto input ;
+	endwin() ;
+	if( c == 'X' )
+		i3m( "exec /usr/bin/xterm" ) ;
+	else
+		{
+		System.Console.WriteLine() ;
+		System.Console.WriteLine("c={0} {1}",c,(char)c) ;
+		}
+	}
+static System.Diagnostics.ProcessStartInfo psi ;
+static public void i3m( string m )
+	{
+	if( psi == null )
+		{
+		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/i3-msg" ) ;
+		psi.CreateNoWindow           = true ;
+		psi.UseShellExecute          = true ;
+		//psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
+		psi.RedirectStandardOutput   = false ;
+		psi.RedirectStandardInput    = false ;
+		}
+	psi.Arguments = m ;
+	var p= System.Diagnostics.Process.Start(psi) ;
+	p.WaitForExit() ;
+	return ;
+	}
+#endif
 class dirent
 	{
 	string  path ;
@@ -62,8 +135,6 @@ class dirent
 			_dirent.path  = path ;
 			if( _dirent.name.Contains(".") && _dirent.name[0] != '.' )
 				de[i++]         = _dirent ;
-			else
-				System.Console.WriteLine(_dirent.name) ;
 			}
 		closedir(d) ;
 		if( i < entries )
