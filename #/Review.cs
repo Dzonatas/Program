@@ -132,10 +132,10 @@ class dirent
 			_dirent.type  = s.type ;
 			_dirent.inode = s.inode ;
 			_dirent.name  = System.Text.Encoding.ASCII.GetString(s.name) ;
-			var iii = _dirent.name.LastIndexOf((char)0) ;
-			var iiz = _dirent.name.LastIndexOf(' ') ;
-			var xx = _dirent.name.Length ;
-			System.Console.WriteLine("`ix={0} {1} {2} {3}#",iii, xx, iiz, _dirent.name ) ;
+			#if !UTF7
+			var z = _dirent.name.IndexOf((char)0) ; //"safe"
+			_dirent.name  = System.Text.Encoding.ASCII.GetString(s.name,0,z) ; //fixt
+			#endif
 			_dirent.path  = path ;
 			if( _dirent.name.Contains(".") && _dirent.name[0] != '.' )
 				de[i++]         = _dirent ;
