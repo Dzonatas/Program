@@ -39,13 +39,19 @@ public static void Board()
 	var term = System.Environment.GetEnvironmentVariable("TERM") ;
 	if( ! ( term == "xterm" || term == "linux" ) )
 		return ;
-	var w = initscr() ;
-	int y = getmaxy(w) ;
-	endwin() ;
+	int y ;
+	if( term == "xterm" )
+		{
+		var _w = initscr() ;
+		y = getmaxy(_w) ;
+		endwin() ;
+		}
+	else
+		y = byte.MaxValue ; //atomically
 	var dt = dirent.top(0.1.GUID(),y-3) ;
 	if( term != "xterm" )
 		return ;
-	w = initscr() ;
+	var w = initscr() ;
 	cbreak() ;
 	noecho() ;
 	intrflush(w, false) ;
@@ -133,6 +139,10 @@ class dirent
 			_dirent.path  = path ;
 			if( _dirent.name.Contains(".") && _dirent.name[0] != '.' )
 				de[i++]         = _dirent ;
+			foreach( char c in _dirent.name )
+				{
+				System.Console.Write("{0}.{1} ", c, ((int)c).ToString("X") ) ;
+				}
 			}
 		closedir(d) ;
 		if( i < entries )
