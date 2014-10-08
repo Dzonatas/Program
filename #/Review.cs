@@ -113,7 +113,7 @@ class dirent
 		const int _PC_NAME_MAX = 3 ;
 		var maxd = pathconf(path,_PC_NAME_MAX) ;
 		if( maxd > byte.MaxValue || maxd == -1 )
-			throw new System.Exception("PC?") ;
+			throw new System.Exception("University.") ;
 		var g = Marshal.AllocHGlobal( Marshal.SizeOf(typeof(dirent_t)) ) ;
 		var gp = Marshal.AllocHGlobal( Marshal.SizeOf(typeof(System.IntPtr)) ) ;
 		for( i = 0 ; i < entries ; /**/ )
@@ -126,6 +126,10 @@ class dirent
 			_dirent.type  = s.type ;
 			_dirent.inode = s.inode ;
 			_dirent.name  = System.Text.Encoding.ASCII.GetString(s.name) ;
+			var iii = _dirent.name.LastIndexOf((char)0) ;
+			var iiz = _dirent.name.LastIndexOf(' ') ;
+			var xx = _dirent.name.Length ;
+			System.Console.WriteLine("`ix={0} {1} {2} {3}#",iii, xx, iiz, _dirent.name ) ;
 			_dirent.path  = path ;
 			if( _dirent.name.Contains(".") && _dirent.name[0] != '.' )
 				de[i++]         = _dirent ;
