@@ -129,6 +129,7 @@
     <Compile Include="~\C699.EMBED.cs" />
     <Compile Include="~\C699.etc.cs" />
     <Compile Include="#\Review.cs" />
+    <Compile Include="~\Cluster.Cli.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

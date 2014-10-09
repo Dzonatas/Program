@@ -121,6 +121,8 @@ TOS
 		{
 		throw new _.exception() ;
 		}
+#else
+	Cluster.Cli.NoOperation() ;
 #endif
 	}
 

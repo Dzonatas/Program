@@ -66,50 +66,34 @@ public static partial class Shell
 		p.WaitForExit() ;
 		return sb.ToString() ;
 		}
-	static public string Embed( string name )
+	static readonly string[,] file =
 		{
-		psi = new System.Diagnostics.ProcessStartInfo
-			(
-			"/usr/bin/env",
+		{ "~/", "X.Y.cs" },
+		{ "#/", "X.Predefined.cs" },
+		{ "",   "Z.cs" },
+		{ "~/", "C699.cs" },
+		{ "~/", "C699.free.cs" }
+		} ;
+	static public void Embed( string name )
+		{
+		string files = "" ;
+		for( int i = 0 ; i < file.GetLength(0) ; i++ )
+			{
+			var f = " ../../"+file[i,0]+file[i,1] ;
+			files += " "+file[i,1] ;
+			Cli.Start( "cp"+f+" "+ Current.Path.Entry( file[i,1] ) ) ;
+			}
+		Cli.AutoStart(
 			#if LEAN_AND_MEAN
 			"gmcs -define:EMBED -nostdlib" //-main:_accept.A335
 			#else
 			"gmcs -define:EMBED -nowarn:0169,219,414,649"
 			#endif
 			+ " " + Current.Path.Entry( name )
-			+ " ../../~/X.Y.cs"
-			+ " ../../#/X.Predefined.cs"
-			+ " ../../Z.cs"
-			+ " ../.././~/C699.cs"
-			+ " ../.././~/C699.free.cs"
+			+ files
 			+ " "
 			+ "-out:" + Current.Path.Entry( "infrastructure.exe" )
 			) ;
-		psi.UseShellExecute          = false ;
-		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
-		psi.RedirectStandardOutput   = true ;
-		psi.RedirectStandardInput    = true ;
-		psi.CreateNoWindow           = true ;
-		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
-		System.Diagnostics.Process p ;
-		//try {
-			p= System.Diagnostics.Process.Start(psi) ;
-			p.StandardInput.AutoFlush = true ;
-			p.WaitForInputIdle() ;
-			p.StandardInput.Close() ;
-			while(!p.StandardOutput.EndOfStream)
-				{
-				string x = p.StandardOutput.ReadLine() ;
-				if( x == null )
-					break ;
-				sb.Append( x ) ;
-				sb.Append( '\n' ) ;
-				}
-			goto done ;
-			//} catch {}
-		done:
-		p.WaitForExit() ;
-		return sb.ToString() ;
 		}
 	}
 }
