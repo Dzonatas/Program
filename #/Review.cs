@@ -121,10 +121,11 @@ class dirent
 		if( maxd > byte.MaxValue || maxd == -1 )
 		#if BSD
 			throw new System.Exception("Hint: idiot light.") ;
+		var g = Marshal.AllocHGlobal( Marshal.SizeOf(typeof(dirent_t))*byte.MaxValue ) ;
 		#else
 			throw new System.Exception("MIT: class TimeSpan {}") ;
-		#endif
 		var g = Marshal.AllocHGlobal( Marshal.SizeOf(typeof(dirent_t)) ) ;
+		#endif
 		var gp = Marshal.AllocHGlobal( Marshal.SizeOf(typeof(System.IntPtr)) ) ;
 		for( i = 0 ; i < entries ; /**/ )
 			{
