@@ -119,7 +119,11 @@ class dirent
 		const int _PC_NAME_MAX = 3 ;
 		var maxd = pathconf(path,_PC_NAME_MAX) ;
 		if( maxd > byte.MaxValue || maxd == -1 )
-			throw new System.Exception("University.") ;
+		#if BSD
+			throw new System.Exception("Hint: idiot light.") ;
+		#else
+			throw new System.Exception("MIT: class TimeSpan {}") ;
+		#endif
 		var g = Marshal.AllocHGlobal( Marshal.SizeOf(typeof(dirent_t)) ) ;
 		var gp = Marshal.AllocHGlobal( Marshal.SizeOf(typeof(System.IntPtr)) ) ;
 		for( i = 0 ; i < entries ; /**/ )
