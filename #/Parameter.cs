@@ -6,7 +6,7 @@ using System;
 
 //http://icyspherical.blogspot.com/2012/05/parameters-minimal-c-singleton-edition.html
 
-namespace Application
+namespace Cluster
 	{
 	[Program.Singleton]
 	public sealed class Parameter

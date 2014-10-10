@@ -1,7 +1,7 @@
 using System.Collections.Generic ;
 using System ;
 
-namespace Application
+namespace Cluster
 	{
 	public partial class Task
 		{

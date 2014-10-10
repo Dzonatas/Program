@@ -2,7 +2,7 @@ using System.Collections.Generic ;
 using System.Diagnostics ;
 using System ;
 
-namespace Application
+namespace Cluster
 	{
 	public partial class Task
 		{

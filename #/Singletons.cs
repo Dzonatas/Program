@@ -2,7 +2,7 @@ using System ;
 
 //http://icyspherical.blogspot.com/2012/05/programsingleton-revised-example.html
 
-namespace Application
+namespace Cluster
 	{
 /*
 	[Program.Singleton]

@@ -35,8 +35,8 @@ internal static void _Main( string[] args )
 	#else // ARCHITECTURE
 	current_working_directory() ;	//'POST ip time/0.0'
 	#endif
-	Application.Program.Parse( args ) ;
-	Current.Estate.Current__System_File.Path = Application.Parameter.Value("PANZOR") ;
+	Cluster.Program.Parse( args ) ;
+	Current.Estate.Current__System_File.Path = Cluster.Parameter.Value("PANZOR") ;
 	#if !UX && !LNGJMP
 	int sps = Cluster.Shell.Cat__sys_power_state() ;
 	int msb = Cluster.Shell.Test__sys_class___sys_power_state_() ;
@@ -91,7 +91,7 @@ internal static void _Main( string[] args )
 	//Punctuation.Program.Parse( args ) ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
 bool board = false ;
-if( Application.Parameter.Value("headless") == "true" && Application.Parameter.Value("synopsis") == "false" )
+if( Cluster.Parameter.Value("headless") == "true" && Cluster.Parameter.Value("synopsis") == "false" )
 	Review.Cloud() ;
 #if DEBUG
 else
@@ -100,7 +100,7 @@ else
 #if FED
 	Begin( Application.Parameter.Value("doubletters") ) ;
 #else
-	if( Application.Parameter.Value("synopsis") == "false" ) 
+	if( Cluster.Parameter.Value("synopsis") == "false" )
 		Begin() ;
 #endif
 #if DEBUG

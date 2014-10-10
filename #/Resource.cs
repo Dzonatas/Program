@@ -15,7 +15,7 @@ using System.Text ;
 
 //using System ;
 
-namespace Application
+namespace Cluster
 	{
 	[Program.Singleton]
 	public class Resource

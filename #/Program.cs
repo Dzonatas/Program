@@ -10,7 +10,7 @@ using System ;
 
 //http://icyspherical.blogspot.com/2012/05/singletons-c-to-c-main-primer-and.html
 
-namespace Application
+namespace Cluster
 	{
 	public sealed class Program
 		{

@@ -2,7 +2,7 @@ using System.Threading ;
 using System.Diagnostics ;
 using System ;
 
-namespace Application
+namespace Cluster
 	{
 	[Program.Singleton]
 	public sealed class Processor

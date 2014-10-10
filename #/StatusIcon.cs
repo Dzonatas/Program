@@ -2,7 +2,7 @@ using System ;
 
 //http://icyspherical.blogspot.com/2012/05/gtkstatusicon-what-every-app-needs.html
 
-namespace Application
+namespace Cluster
 	{
 	[Program.Singleton]
 	sealed class StatusIcon : Gtk.StatusIcon

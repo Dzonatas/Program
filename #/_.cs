@@ -159,7 +159,7 @@ internal static class shell
 			// " -c " + Application.Parameter.Value("systemd") +
 			// " /usr/bin/env DISPLAY=host:2 " +
 			#endif
-			Application.Parameter.Value("shell") ) ;
+			Cluster.Parameter.Value("shell") ) ;
 		psi.UseShellExecute          = false ;
 		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
 		psi.RedirectStandardOutput   = true ;

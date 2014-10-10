@@ -17,7 +17,7 @@ namespace Application
 */
 
 
-namespace Application
+namespace Cluster
 	{
 	using Application.Orbs ;
 	using Application.Atomatrice ;
@@ -75,10 +75,10 @@ namespace Application
 	*/
 	}
 	
-
+/*
 namespace Application
 	{
-	public abstract class OutputText : Task
+	public abstract class OutputText : Cluster.Task
 		{
 		abstract protected string	Text { get ; }
 		override protected void Process()
@@ -101,11 +101,11 @@ namespace Application
 			{
 			Program.Run += () =>
 				{
-				Task.Queue( new OutputText1() ) ;
-				Task.Queue( new OutputText2() ) ;
+				Cluster.Task.Queue( new OutputText1() ) ;
+				Cluster.Task.Queue( new OutputText2() ) ;
 				} ;
 			}
 		}
 	}
-			
+*/
 
