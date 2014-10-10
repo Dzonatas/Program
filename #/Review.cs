@@ -51,7 +51,9 @@ public static void Board()
 	var dt = dirent.top(0.1.GUID(),y-3) ;
 	if( term != "xterm" )
 		return ;
+	view:
 	var w = initscr() ;
+	wclear(w) ;
 	cbreak() ;
 	noecho() ;
 	intrflush(w, false) ;
@@ -62,8 +64,8 @@ public static void Board()
 
 	wmove(w,0,0) ;
 	waddstr(w,"<menu><space>&st10xX#") ;
-	input:
 	var c = wgetch(w) ;
+	endwin() ;
 	if( c == 27 )
 		i3m( "fullscreen" ) ;
 	else
@@ -77,8 +79,7 @@ public static void Board()
 		i3m( "border normal" ) ;
 	//else
 	if( ! ( c == 'x' || c == 'X' ) )
-		goto input ;
-	endwin() ;
+		goto view ;
 	if( c == 'X' )
 		i3m( "exec /usr/bin/xterm" ) ;
 	else
@@ -215,6 +216,9 @@ public extern  static   int             getmaxx(System.IntPtr window) ;
 
 [System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
 public extern  static   int             getmaxy(System.IntPtr window) ;
+
+[System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
+public extern  static   int             wclear(System.IntPtr window) ;
 
 [System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
 public extern  static   int             wborder(System.IntPtr window, uint left, uint right, uint top, uint bot, uint tl, uint tr, uint bl, uint br) ;
