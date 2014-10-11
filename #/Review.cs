@@ -78,10 +78,14 @@ public static void Board()
 	if( c == '0' )
 		i3m( "border normal" ) ;
 	//else
-	if( ! ( c == 'x' || c == 'X' ) )
+	if( c != 'x' )
 		goto view ;
 	if( c == 'X' )
-		i3m( "exec /usr/bin/xterm" ) ;
+		{
+		var id = "0x"+(int.Parse(System.Environment.GetEnvironmentVariable("WINDOWID"))).ToString("X") ;
+		System.Console.WriteLine("id={0}", id ) ;
+		i3m( "exec 'xterm -into "+id+" -e /bin/sh -c xterm'" ) ;
+		}
 	else
 		{
 		System.Console.WriteLine() ;
