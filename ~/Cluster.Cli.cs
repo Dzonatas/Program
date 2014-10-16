@@ -4,12 +4,15 @@ public static class Cli
 	{
 	static System.Diagnostics.ProcessStartInfo  psi ;
 	static System.Diagnostics.Process           p ;
+	static System.Action<string>                put ;
+	static System.Text.StringBuilder            sb ;
 	static Cli()
 		{
+		sb = new System.Text.StringBuilder() ;
 		psi   = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env" ) ;
 		psi.UseShellExecute          = false ;
-		//psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
-		psi.RedirectStandardOutput   = false ;
+		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
+		psi.RedirectStandardOutput   = true ;
 		psi.RedirectStandardInput    = false ;
 		psi.CreateNoWindow           = false ;
 		psi.WindowStyle              = System.Diagnostics.ProcessWindowStyle.Normal ;
@@ -19,13 +22,28 @@ public static class Cli
 		//psi.Password
 		//psi.UserName
 		}
+	static void set()
+		{
+		if( put == null )
+			return ;
+		while(!p.StandardOutput.EndOfStream)
+			{
+			string x = p.StandardOutput.ReadLine() ;
+			if( x == null )
+				break ;
+			sb.AppendLine( x ) ;
+			}
+		goto done ;
+		done:
+		p.WaitForExit() ;
+		put( sb.ToString() ) ;
+		put = null ;
+		p.Close() ;
+		}
 	static public void reset()
 		{
-		if( p == null )
-			return ;
-		if( ! p.HasExited )
-			p.WaitForExit() ;
-		p.Close() ;
+		set() ;
+		sb.Clear() ;
 		}
 	static public void NoOperation()
 		{
@@ -36,6 +54,13 @@ public static class Cli
 		reset() ;
 		psi.Arguments = clicmd ;
 		p = System.Diagnostics.Process.Start(psi) ;
+		}
+	static public void Start( string clicmd, System.Action<string> put )
+		{
+		reset() ;
+		psi.Arguments = clicmd ;
+		p = System.Diagnostics.Process.Start(psi) ;
+		Cli.put = put ;
 		}
 	static public void AutoStart( string clicmd )
 		{

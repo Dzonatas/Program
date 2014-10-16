@@ -51,6 +51,8 @@ public static void Board()
 	var dt = dirent.top(0.1.GUID(),y-3) ;
 	if( term != "xterm" )
 		return ;
+	string mail_status = "" ;
+	Cluster.Cli.Start( "from -c", (o) => mail_status = o ) ;
 	view:
 	var w = initscr() ;
 	wclear(w) ;
@@ -62,15 +64,15 @@ public static void Board()
 
 	panel_dir(w,dt) ;
 
-	wmove(w,0,0) ;
-	waddstr(w,"<menu><space>&st10xX#") ;
+	wmove(w,0,1) ;
+	waddstr(w,"<menu><space>&st10xX#"+mail_status) ;
 	var c = wgetch(w) ;
 	endwin() ;
 	if( c == 27 )
 		i3m( "fullscreen" ) ;
 	else
 	if( c == 32 )
-		i3m( "floating toggle" ) ;
+		Cluster.Cli.Start( "i3-msg floating toggle" ) ;
 	else
 	if( c == '1' )
 		i3m( "border 1pixel" ) ;
