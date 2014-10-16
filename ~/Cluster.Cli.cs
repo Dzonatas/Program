@@ -5,9 +5,11 @@ public static class Cli
 	static System.Diagnostics.ProcessStartInfo  psi ;
 	static System.Diagnostics.Process           p ;
 	static System.Action<string>                put ;
+	static System.Func<string>                  get ;
 	static System.Text.StringBuilder            sb ;
 	static Cli()
 		{
+		get = () => { return string.Empty ; } ;
 		put = (o) => {} ;
 		sb = new System.Text.StringBuilder() ;
 		psi   = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env" ) ;
@@ -32,16 +34,13 @@ public static class Cli
 				break ;
 			sb.AppendLine( x ) ;
 			}
-		goto done ;
-		done:
 		p.WaitForExit() ;
 		p.Close() ;
 		}
 	static public void reset()
 		{
-		if( p != null )
-			set() ;
-		put( sb.ToString() ) ;
+		put( get() ) ;
+		get = () => { return string.Empty ; } ;
 		put = (o) => {} ;
 		sb.Clear() ;
 		}
@@ -61,6 +60,7 @@ public static class Cli
 		psi.Arguments = clicmd ;
 		p = System.Diagnostics.Process.Start(psi) ;
 		Cli.put = put ;
+		Cli.get = () => { set() ; return sb.ToString() ; } ;
 		}
 	static public void AutoStart( string clicmd )
 		{
