@@ -8,6 +8,7 @@ public static class Cli
 	static System.Text.StringBuilder            sb ;
 	static Cli()
 		{
+		put = (o) => {} ;
 		sb = new System.Text.StringBuilder() ;
 		psi   = new System.Diagnostics.ProcessStartInfo( "/usr/bin/env" ) ;
 		psi.UseShellExecute          = false ;
@@ -24,8 +25,6 @@ public static class Cli
 		}
 	static void set()
 		{
-		if( put == null )
-			return ;
 		while(!p.StandardOutput.EndOfStream)
 			{
 			string x = p.StandardOutput.ReadLine() ;
@@ -36,13 +35,14 @@ public static class Cli
 		goto done ;
 		done:
 		p.WaitForExit() ;
-		put( sb.ToString() ) ;
-		put = null ;
 		p.Close() ;
 		}
 	static public void reset()
 		{
-		set() ;
+		if( p != null )
+			set() ;
+		put( sb.ToString() ) ;
+		put = (o) => {} ;
 		sb.Clear() ;
 		}
 	static public void NoOperation()
