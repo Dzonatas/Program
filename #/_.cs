@@ -297,27 +297,6 @@ public static class Windows
 
 #endif
 
-static string read()
-	{
-	System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
-	System.Diagnostics.Process p ;
-	try {
-		p= System.Diagnostics.Process.Start(shell.psi) ;
-		while(true)
-			{
-			string x = p.StandardOutput.ReadLine() ;
-			if( x == null )
-				break ;
-			sb.Append( x ) ;
-			sb.Append( '\n' ) ;
-			}
-		goto done ;
-		} catch {}
-	done:
-	p.WaitForExit() ;
-	return sb.ToString() ;
-	}
-
 /*
 public struct (O(QR))(^)__
 	{
