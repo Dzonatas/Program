@@ -71,5 +71,11 @@ public static class Cli
 		p = System.Diagnostics.Process.Start(psi) ;
 		psi.WorkingDirectory = d ;
 		}
+	static public void Copy( string arg1, string arg2 )
+		{
+		reset() ;
+		psi.Arguments = "cp"+' '+arg1+' '+arg2 ;
+		p = System.Diagnostics.Process.Start(psi) ;
+		}
 	}
 }

@@ -79,9 +79,9 @@ public static partial class Shell
 		string files = "" ;
 		for( int i = 0 ; i < file.GetLength(0) ; i++ )
 			{
-			var f = " ../../"+file[i,0]+file[i,1] ;
+			var f = "../../"+file[i,0]+file[i,1] ;
 			files += " "+file[i,1] ;
-			Cli.Start( "cp"+f+" "+ Current.Path.Entry( file[i,1] ) ) ;
+			Cli.Copy( f, Current.Path.Entry( file[i,1] ) ) ;
 			}
 		Cli.AutoStart(
 			#if LEAN_AND_MEAN
