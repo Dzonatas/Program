@@ -16,7 +16,7 @@ public static class Cli
 		psi.UseShellExecute          = false ;
 		psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
 		psi.RedirectStandardOutput   = true ;
-		psi.RedirectStandardInput    = false ;
+		psi.RedirectStandardInput    = true ;
 		psi.CreateNoWindow           = false ;
 		psi.WindowStyle              = System.Diagnostics.ProcessWindowStyle.Normal ;
 		psi.Arguments                = "" ;
@@ -50,32 +50,43 @@ public static class Cli
 		}
 	static public void Start( string clicmd )
 		{
+		Start( clicmd, put ) ;
+		}
+	static public void Start( string clicmd, string input )
+		{
 		reset() ;
-		psi.Arguments = clicmd ;
-		p = System.Diagnostics.Process.Start(psi) ;
+		sb.Append( input ) ;
+		start( clicmd, put ) ;
 		}
 	static public void Start( string clicmd, System.Action<string> put )
 		{
 		reset() ;
+		start( clicmd, put ) ;
+		}
+	static void start( string clicmd, System.Action<string> put )
+		{
 		psi.Arguments = clicmd ;
 		p = System.Diagnostics.Process.Start(psi) ;
 		Cli.put = put ;
 		Cli.get = () => { set() ; return sb.ToString() ; } ;
+		if( sb.Length != 0 )
+			{
+			p.StandardInput.Write( sb.ToString() ) ;
+			p.StandardInput.Flush() ;
+			p.StandardInput.Close() ;
+			}
 		}
 	static public void AutoStart( string clicmd )
 		{
 		reset() ;
 		var d = psi.WorkingDirectory ;
 		psi.WorkingDirectory = 0.1.GUID() ;
-		psi.Arguments = clicmd ;
-		p = System.Diagnostics.Process.Start(psi) ;
+		start( clicmd, put ) ;
 		psi.WorkingDirectory = d ;
 		}
 	static public void Copy( string arg1, string arg2 )
 		{
-		reset() ;
-		psi.Arguments = "cp"+' '+arg1+' '+arg2 ;
-		p = System.Diagnostics.Process.Start(psi) ;
+		Start( "cp"+' '+arg1+' '+arg2 ) ;
 		}
 	}
 }
