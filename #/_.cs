@@ -41,7 +41,9 @@ public static char prompt( Token t )
 public static void assimulation()
 	{
 	//In re: "assimilated" -> icyspherical.blogspot.com/2010/07/why-resthttp-based-client-side.html
-	string input = read() ;
+	string input = string.Empty ;
+	Cluster.Cli.Start( Cluster.Parameter.Value("shell"), (o) => input = o ) ;
+	Cluster.Cli.Refine() ;
 	xml = new System.Xml.XmlTextReader( new System.IO.StringReader( input ) ) ;
 	while( xml.Read() && ! ( xml.NodeType == System.Xml.XmlNodeType.Element && xml.Name == "xml" ) ) ;
 	}

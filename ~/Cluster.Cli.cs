@@ -63,12 +63,17 @@ public static class Cli
 		reset() ;
 		start( clicmd, put ) ;
 		}
+	static public void Refine()
+		{
+		p.WaitForExit() ;
+		reset() ;
+		}
 	static void start( string clicmd, System.Action<string> put )
 		{
 		psi.Arguments = clicmd ;
-		p = System.Diagnostics.Process.Start(psi) ;
 		Cli.put = put ;
 		Cli.get = () => { set() ; return sb.ToString() ; } ;
+		p = System.Diagnostics.Process.Start(psi) ;
 		if( sb.Length != 0 )
 			{
 			p.StandardInput.Write( sb.ToString() ) ;
