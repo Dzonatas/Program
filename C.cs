@@ -500,7 +500,7 @@ public interface Screen
 	Idle      Word         { set ; get ; }
 	double    BackAngle    { set ; get ; }
 	bool      Standard     { set ; get ; }
-	bool      DDS          { set ; get ; } //∞
+	bool      UnifiedPort  { set ; get ; } //IPv6-UDP-Content-Length:[0|#]
 	Passport  Present      { set ; }
 	}
 public class Passport
