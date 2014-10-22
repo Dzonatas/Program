@@ -137,6 +137,7 @@ static int    b_v      ;//view:locution[,view:orbit]
 
 static void Begin()
 	{
+	Cluster.Cli.Start( Cluster.Parameter.Value("shell"), _.assimulation ) ;
 	var types =
 		from  type in Assembly.GetExecutingAssembly().GetTypes()
 		from  atrb in Attribute.GetCustomAttributes( type )
@@ -146,7 +147,6 @@ static void Begin()
 		{
 		automatrix.Add( t.Name , t ) ;
 		}
-	_.assimulation() ;
 	//Console.WriteLine( "symbolset={0} tokenset={1}", xml_symbolset.Count, xml_tokenset.Count ) ;
 	/*
 	foreach( State s in stateset )
@@ -190,6 +190,7 @@ static void Begin()
 	#endif
 	Program.Begin() ;
 	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
+	Cluster.Cli.Refine() ;
 	beginning( ref b ) ;
 	Stack.Dump() ;
 	Program.Write() ;
