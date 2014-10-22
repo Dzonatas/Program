@@ -328,7 +328,7 @@ class SigArg : Automatrix
 		{
 		get { return previous ; }
 		}
-	[Automaton] class   sigArg_paramAttr_type
+	[Automaton] public class   sigArg_paramAttr_type
 		: SigArg	{
 		protected override void main()
 			{
@@ -336,7 +336,7 @@ class SigArg : Automatrix
 			Enlist() ;
 			}
 		}
-	[Automaton] class   sigArg_paramAttr_type_id
+	[Automaton] public class   sigArg_paramAttr_type_id
 		: SigArg {
 		protected override void main()
 			{
@@ -345,9 +345,9 @@ class SigArg : Automatrix
 			Enlist() ;
 			}
 		}
-	[Automaton] class   sigArgs1_sigArgs1_____sigArg
+	[Automaton] public class   sigArgs1_sigArgs1_____sigArg
 		: Automatrix	{}
-	[Automaton] class   sigArgs1_sigArg
+	[Automaton] public class   sigArgs1_sigArg
 		: Automatrix	{}
 	}
 

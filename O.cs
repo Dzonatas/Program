@@ -61,10 +61,10 @@ class CallConv : Automatrix
 			return false ;
 			}
 		}
-	[Automaton] class   callConv__instance__callConv
+	[Automaton] public class   callConv__instance__callConv
 		: CallConv	{}
 
-	[Automaton] class   callConv_callKind
+	[Automaton] public class   callConv_callKind
 		: CallConv {}
 	}
 

@@ -94,15 +94,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	#if DEBUG_REDUCE
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
 	#endif
-	if( automatrix.ContainsKey(this_xo_t.ReductionMethod) )
-		{
-		object o = automatrix[this_xo_t.ReductionMethod].InvokeMember( null ,
-			            System.Reflection.BindingFlags.CreateInstance  ,
-			                                               null , null , null ) ;			                                                    ;
-		Stack.Push( (Automatrix) o ) ;
-		}
-	else
-		Debug.WriteLine( "[beginning] Defaulted on "+this_xo_t.ReductionMethod ) ;
+	Auto( this_xo_t.ReductionMethod ) ;
 	throw new ReducedAcception( rule ) ;
 
 	new_state :
