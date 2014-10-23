@@ -74,7 +74,7 @@ public static partial class Shell
 		{ "~/", "C699.cs" },
 		{ "~/", "C699.free.cs" }
 		} ;
-	static public void Embed( string name )
+	static public void Embed( string[] compile )
 		{
 		string files = "" ;
 		for( int i = 0 ; i < file.GetLength(0) ; i++ )
@@ -83,13 +83,14 @@ public static partial class Shell
 			files += " "+file[i,1] ;
 			Cli.Copy( f, Current.Path.Entry( file[i,1] ) ) ;
 			}
+		foreach( string filename in compile )
+			files += " "+Current.Path.Entry( filename ) ;
 		Cli.AutoStart(
 			#if LEAN_AND_MEAN
 			"gmcs -define:EMBED -nostdlib" //-main:_accept.A335
 			#else
 			"gmcs -define:EMBED -nowarn:0169,219,414,649"
 			#endif
-			+ " " + Current.Path.Entry( name )
 			+ files
 			+ " "
 			+ "-out:" + Current.Path.Entry( "infrastructure.exe" )

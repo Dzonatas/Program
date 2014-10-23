@@ -251,9 +251,11 @@ class Xo_t
 	static readonly char[] entity_trim =  { ';' };
 	static public void Build()
 		{
+		string[] compile = new string[xo_t.Length] ;
 		var sw = Current.Path.CreateText( "x-y-text.tab.html" ) ;
 		#if iDNA
 		var s = Current.Path.CreateText( "auto.cs" ) ;
+		compile[0] = "auto.cs" ;
 		#endif
 		var g = Current.Path.CreateText( "glossary.html" ) ;
 		sw.Write( "<head></head><body><table style=\"font: monospace;\">" ) ;
@@ -284,7 +286,25 @@ class Xo_t
 		s.Write( list( 0 ) ) ;
 		s.Write( _io( 0 ) ) ;
 		s.WriteLine( "  }" ) ;
-
+		s.WriteLine( "public static class Codex" ) ;
+		s.WriteLine( "{" ) ;
+		s.WriteLine( "public static object Switch( int code )" ) ;
+		s.WriteLine( "{" ) ;
+		s.WriteLine( "switch( code ) {" ) ;
+		for( int i = 1 ; i < xo_t.Length ; i++ )
+			{
+			xo = xo_t[i] ;
+			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ xo.ReductionMethod ;
+			compile[i] = filename ;
+			s.WriteLine( "case "+i+" : return new {0}() ;", filename ) ;
+			}
+		s.WriteLine( "default: throw new System.NotImplementedException() ;" ) ;
+		s.WriteLine( "}" ) ;
+		s.WriteLine( "}" ) ;
+		s.WriteLine( "}" ) ;
+		s.WriteLine( "}" ) ;
+		s.WriteLine( ) ;
+		s.Close() ;
 		#endif
 		#if !XYP
 		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>C</td><td>ENTITY</td><td>PROTOTYPE</td></tr>" ) ;
@@ -294,11 +314,11 @@ class Xo_t
 			xo = xo_t[i] ;
 			bool head = n.lhs.s != xo.lhs.s ;
 			n = xo ;
+			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ xo.ReductionMethod ;
+			var f = Current.Path.CreateText( filename ) ;
 			#if iDNA
-			s.WriteLine( "}" ) ;
-			s.WriteLine( ) ;
-			s.WriteLine( "namespace {0}._{1}", n.lhs.s, n.lhs.X ) ;
-			s.WriteLine( "{" ) ;
+			f.WriteLine( "namespace {0}._{1}", n.lhs.s, n.lhs.X ) ;
+			f.WriteLine( "{" ) ;
 			#endif
 			#if XYP
 			if( head )
@@ -329,46 +349,31 @@ class Xo_t
 			#endif
 			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
 			#if iDNA
-			s.WriteLine( "public struct iDNA" ) ;
-			s.WriteLine( "  {" ) ;
+			f.WriteLine( "public struct iDNA" ) ;
+			f.WriteLine( "  {" ) ;
 			//s.WriteLine( "  public const           char     C       = '"+ (char)xo +"' ;" ) ;
-			s.Write(     "  public static readonly char[]   Entity  = { " ) ;
+			f.Write(     "  public static readonly char[]   Entity  = { " ) ;
 			foreach( char c in entity.TrimEnd( entity_trim ) )
-				s.Write( "'"+c+"', " ) ;
-			s.WriteLine( "'" + entity[entity.Length-1] + "' } ;" ) ;
-			s.Write( list( i ) ) ;
-			s.Write( _io( i ) ) ;
-			s.WriteLine( "  }" ) ;
-			s.WriteLine( "internal static class   " + xo.ReductionMethod ) ;
+				f.Write( "'"+c+"', " ) ;
+			f.WriteLine( "'" + entity[entity.Length-1] + "' } ;" ) ;
+			f.Write( list( i ) ) ;
+			f.Write( _io( i ) ) ;
+			f.WriteLine( "  }" ) ;
+			f.WriteLine( "public class   " + xo.ReductionMethod ) ;
 			//s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
 			//s.WriteLine( "  : Automatrix" ) ;
-			s.WriteLine( "  {" ) ;
-			s.WriteLine( "  }" ) ;
+			f.WriteLine( "  {" ) ;
+			f.WriteLine( "  }" ) ;
+			f.WriteLine( "}" ) ;
+			f.WriteLine( ) ;
+			f.Close() ;
 			#endif
 			}
 		sw.WriteLine( "</table></body>" ) ;
 		g.WriteLine( "</table></body>" ) ;
 		sw.Close() ;
 		#if iDNA
-		s.WriteLine( "}" ) ;
-		s.WriteLine( "namespace _accept" ) ;
-		s.WriteLine( "{" ) ;
-		s.WriteLine( "public static class Codex" ) ;
-		s.WriteLine( "{" ) ;
-		s.WriteLine( "public static object Switch( int code )" ) ;
-		s.WriteLine( "{" ) ;
-		s.WriteLine( "switch( code ) {" ) ;
-		for( int i = 1 ; i < xo_t.Length ; i++ )
-			{
-			xo = xo_t[i] ;
-			s.WriteLine( "case "+i+" : return new {0}._{1}.{2}() ;", xo.lhs.s, xo.lhs.X, xo.ReductionMethod ) ;
-			}
-		s.WriteLine( "default: throw new System.NotImplementedException() ;" ) ;
-		s.WriteLine( "}" ) ;
-		s.WriteLine( "}" ) ;
-		s.WriteLine( "}" ) ;
-		s.Close() ;
-		Cluster.Shell.Embed( "auto.cs" ) ;
+		Cluster.Shell.Embed( compile ) ;
 		#endif
 		g.Close() ;
 		#if POSTBACK
