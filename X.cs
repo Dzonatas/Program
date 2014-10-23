@@ -351,6 +351,22 @@ class Xo_t
 		sw.Close() ;
 		#if iDNA
 		s.WriteLine( "}" ) ;
+		s.WriteLine( "namespace _accept" ) ;
+		s.WriteLine( "{" ) ;
+		s.WriteLine( "public static class Codex" ) ;
+		s.WriteLine( "{" ) ;
+		s.WriteLine( "public static object Switch( int code )" ) ;
+		s.WriteLine( "{" ) ;
+		s.WriteLine( "switch( code ) {" ) ;
+		for( int i = 1 ; i < xo_t.Length ; i++ )
+			{
+			xo = xo_t[i] ;
+			s.WriteLine( "case "+i+" : return new {0}._{1}.{2}() ;", xo.lhs.s, xo.lhs.X, xo.ReductionMethod ) ;
+			}
+		s.WriteLine( "default: throw new System.NotImplementedException() ;" ) ;
+		s.WriteLine( "}" ) ;
+		s.WriteLine( "}" ) ;
+		s.WriteLine( "}" ) ;
 		s.Close() ;
 		Cluster.Shell.Embed( "auto.cs" ) ;
 		#endif
