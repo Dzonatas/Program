@@ -359,9 +359,7 @@ class Xo_t
 			f.Write( list( i ) ) ;
 			f.Write( _io( i ) ) ;
 			f.WriteLine( "  }" ) ;
-			f.WriteLine( "public class   " + xo.ReductionMethod ) ;
-			//s.WriteLine( "[A335.Automaton] internal class   " + xo.ReductionMethod ) ;
-			//s.WriteLine( "  : Automatrix" ) ;
+			f.WriteLine( "public partial class   " + xo.ReductionMethod ) ;
 			f.WriteLine( "  {" ) ;
 			f.WriteLine( "  }" ) ;
 			f.WriteLine( "}" ) ;
