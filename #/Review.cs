@@ -60,8 +60,11 @@ public static void Board()
 	noecho() ;
 	intrflush(w, false) ;
 	keypad(w, true) ;
-	ulong mouse_mask ;
-	mousemask( ulong.MaxValue, out mouse_mask ) ;
+	if( Cluster.Parameter.Value("mouse") == "true" )
+		{
+		ulong mouse_mask ;
+		mousemask( ulong.MaxValue, out mouse_mask ) ;
+		}
 	wborder(w, 0, 0, 0, 0, 0, 0, 0, 0) ;
 
 	panel_dir(w,dt) ;
