@@ -60,6 +60,8 @@ public static void Board()
 	noecho() ;
 	intrflush(w, false) ;
 	keypad(w, true) ;
+	ulong mouse_mask ;
+	mousemask( ulong.MaxValue, out mouse_mask ) ;
 	wborder(w, 0, 0, 0, 0, 0, 0, 0, 0) ;
 
 	panel_dir(w,dt) ;
@@ -68,6 +70,7 @@ public static void Board()
 	waddstr(w,"<menu><space>&st10xX#"+mail_status) ;
 	var c = wgetch(w) ;
 	endwin() ;
+	System.Console.WriteLine("c={0} {1}",c,(char)c) ;
 	if( c == 27 )
 		i3m( "fullscreen" ) ;
 	else
@@ -80,19 +83,14 @@ public static void Board()
 	if( c == '0' )
 		i3m( "border normal" ) ;
 	//else
-	if( c != 'x' )
-		goto view ;
-	if( c == 'X' )
+	if( c == 409 )
 		{
 		var id = "0x"+(int.Parse(System.Environment.GetEnvironmentVariable("WINDOWID"))).ToString("X") ;
 		System.Console.WriteLine("id={0}", id ) ;
-		i3m( "exec 'xterm -into "+id+" -e /bin/sh -c xterm'" ) ;
+		i3m( "exec 'xterm -into "+id+" -e vi "+Current.Path.Entry("auto.cs")+"'" ) ;
 		}
-	else
-		{
-		System.Console.WriteLine() ;
-		System.Console.WriteLine("c={0} {1}",c,(char)c) ;
-		}
+	if( c != 'x' )
+		goto view ;
 	}
 static System.Diagnostics.ProcessStartInfo psi ;
 static public void i3m( string m )
@@ -225,6 +223,9 @@ public extern  static   int             getmaxy(System.IntPtr window) ;
 
 [System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
 public extern  static   int             wclear(System.IntPtr window) ;
+
+[System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
+public extern  static   int             mousemask(ulong newmask, out ulong oldmask) ;
 
 [System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
 public extern  static   int             wborder(System.IntPtr window, uint left, uint right, uint top, uint bot, uint tl, uint tr, uint bl, uint br) ;
