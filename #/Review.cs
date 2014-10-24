@@ -89,8 +89,10 @@ public static void Board()
 	if( c == 409 )
 		{
 		var id = "0x"+(int.Parse(System.Environment.GetEnvironmentVariable("WINDOWID"))).ToString("X") ;
-		System.Console.WriteLine("id={0}", id ) ;
-		i3m( "exec 'xterm -into "+id+" -e vi "+Current.Path.Entry("auto.cs")+"'" ) ;
+		Cluster.Cli.Start( "i3-msg exec 'Xnest -parent "+id+" :2'" ) ;
+		Cluster.Cli.Start( "xterm -display :2" ) ;
+		Cluster.Cli.Refine() ;
+		Cluster.Cli.Start( "pkill Xnest" ) ;
 		}
 	if( c != 'x' )
 		goto view ;
