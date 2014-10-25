@@ -64,6 +64,10 @@ public static void Board()
 		{
 		ulong mouse_mask ;
 		mousemask( ulong.MaxValue, out mouse_mask ) ;
+		#if specific_n
+		mouseinterval(1) ;
+		timeout(1) ;
+		#endif
 		}
 	wborder(w, 0, 0, 0, 0, 0, 0, 0, 0) ;
 
@@ -78,7 +82,7 @@ public static void Board()
 		i3m( "fullscreen" ) ;
 	else
 	if( c == 32 )
-		Cluster.Cli.Start( "i3-msg floating toggle" ) ;
+		i3m( "floating toggle" ) ;
 	else
 	if( c == '1' )
 		i3m( "border 1pixel" ) ;
@@ -89,30 +93,19 @@ public static void Board()
 	if( c == 409 )
 		{
 		var id = "0x"+(int.Parse(System.Environment.GetEnvironmentVariable("WINDOWID"))).ToString("X") ;
-		Cluster.Cli.Start( "i3-msg exec 'Xnest -parent "+id+" :2'" ) ;
+		i3m( "exec 'Xnest -parent "+id+" :2'" ) ;
 		Cluster.Cli.Start( "xterm -display :2" ) ;
 		Cluster.Cli.Refine() ;
 		Cluster.Cli.Start( "pkill Xnest" ) ;
+		Cluster.Cli.Refine() ;
+		Cluster.Cli.NoOperation() ;
 		}
 	if( c != 'x' )
 		goto view ;
 	}
-static System.Diagnostics.ProcessStartInfo psi ;
 static public void i3m( string m )
 	{
-	if( psi == null )
-		{
-		psi = new System.Diagnostics.ProcessStartInfo( "/usr/bin/i3-msg" ) ;
-		psi.CreateNoWindow           = true ;
-		psi.UseShellExecute          = true ;
-		//psi.StandardOutputEncoding   = System.Text.Encoding.ASCII ;
-		psi.RedirectStandardOutput   = false ;
-		psi.RedirectStandardInput    = false ;
-		}
-	psi.Arguments = m ;
-	var p= System.Diagnostics.Process.Start(psi) ;
-	p.WaitForExit() ;
-	return ;
+	Cluster.Cli.Start( "i3-msg "+m ) ;
 	}
 #endif
 class dirent
