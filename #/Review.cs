@@ -92,6 +92,9 @@ public static void Board()
 	//else
 	if( c == 409 )
 		{
+		filter() ;
+		w = initscr() ;
+		noecho() ;
 		var id = "0x"+(int.Parse(System.Environment.GetEnvironmentVariable("WINDOWID"))).ToString("X") ;
 		i3m( "exec 'Xnest -parent "+id+" :2'" ) ;
 		Cluster.Cli.Start( "xterm -display :2" ) ;
@@ -99,6 +102,9 @@ public static void Board()
 		Cluster.Cli.Start( "pkill Xnest" ) ;
 		Cluster.Cli.Refine() ;
 		Cluster.Cli.NoOperation() ;
+		flushinp() ;
+		endwin() ;
+		nofilter() ;
 		}
 	if( c != 'x' )
 		goto view ;
@@ -224,6 +230,15 @@ public extern  static   int             wclear(System.IntPtr window) ;
 
 [System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
 public extern  static   int             mousemask(ulong newmask, out ulong oldmask) ;
+
+[System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
+public extern  static   void            filter() ;
+
+[System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
+public extern  static   void            nofilter() ;
+
+[System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
+public extern  static   int             flushinp() ;
 
 [System.Runtime.InteropServices.DllImport( "libncurses.so.5" )]
 public extern  static   int             wborder(System.IntPtr window, uint left, uint right, uint top, uint bot, uint tl, uint tr, uint bl, uint br) ;
