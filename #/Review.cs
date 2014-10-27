@@ -96,10 +96,11 @@ public static void Board()
 		w = initscr() ;
 		noecho() ;
 		var id = "0x"+(int.Parse(System.Environment.GetEnvironmentVariable("WINDOWID"))).ToString("X") ;
-		i3m( "exec 'Xnest -parent "+id+" :2'" ) ;
+		var xnest = "Xnest -parent "+id+" :2" ;
+		i3m( "exec '"+xnest+"'" ) ;
 		Cluster.Cli.Start( "xterm -display :2" ) ;
 		Cluster.Cli.Refine() ;
-		Cluster.Cli.Start( "pkill Xnest" ) ;
+		Cluster.Cli.Start( "pkill -f '"+xnest+"'" ) ;
 		Cluster.Cli.Refine() ;
 		Cluster.Cli.NoOperation() ;
 		flushinp() ;
