@@ -7,10 +7,9 @@ static int root_n ; //<KNOWN> | root: <NOUN default="FILE:" refinery-technique-p
 string rune___; /*C`__ -volume:0.00 (+"rc:") */
 //const int __swp_regex_d ; /* lexical-skew: 'vim was always in re-lexicate screen-mode, vi was not.' */
 
-static Rule [] ruleset = new Rule[606] ; //_FIX:__'_rune(\"_code\");'
-
 public struct Rule
 	{
+	public static Rule [] Set = new Rule[606] ;
 	public Number        number ;
 	public xml_s         lhs ;
 	public List<xml_s>   rhs ;

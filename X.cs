@@ -45,7 +45,7 @@ public class Xo
 		}
 	public Rule Rule
 		{
-		get { return ruleset[x] ; }
+		get { return Rule.Set[x] ; }
 		}
 	internal bool Left
 		{
@@ -532,7 +532,7 @@ public class xml_rule
 		r.rhs = rhs ;
 		r.useful = usefulness.s == "useful" ;
 		Xo_t.Add( r ) ;
-		ruleset[number] = r ;
+		Rule.Set[number] = r ;
 		//if( ! x_lhs.ContainsKey( lhs.s ) )
 		//	x_lhs.Add( lhs.s, null ) ;
 		//foreach( xml_s s in rhs ) 
