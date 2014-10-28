@@ -205,8 +205,9 @@ class Xo_t
 		if( stateset[i].gotoset.Count != 0 )
 		  sb.AppendLine
 			(
-			 "    iDNA.EntityReference( l ) ;\n"
-			+"    System.Console.WriteLine(C) ;\n"
+			 "    //iDNA.EntityReference( l ) ;\n"
+			+"    System.Console.WriteLine(l) ;\n"
+//			+"    System.Console.WriteLine(C) ;\n"
 			+"    }"
 			) ;
 		else
@@ -243,7 +244,7 @@ class Xo_t
 			 "    }\n"
 			+"  public static void Text( string l )\n"
 			+"    {\n"
-			+"    System.Console.Write( l ) ;\n"
+			+"    //System.Console.Write( l ) ;\n"
 			+"    }"
 			) ;
 		return sb.ToString() ;
@@ -286,9 +287,19 @@ class Xo_t
 		s.Write( list( 0 ) ) ;
 		s.Write( _io( 0 ) ) ;
 		s.WriteLine( "  }" ) ;
+		s.WriteLine( "public abstract class Auto" ) ;
+		s.WriteLine( "{" ) ;
+		s.WriteLine( "public abstract string LHS { get; }" ) ;
+		s.WriteLine( "public abstract string[] RHS { get; }" ) ;
+		s.WriteLine( "}" ) ;
+		s.WriteLine( "public class _Auto : Auto" ) ;
+		s.WriteLine( "{" ) ;
+		s.WriteLine( "public override string LHS { get { return string.Empty ; } }" ) ;
+		s.WriteLine( "public override string[] RHS { get { return null ; } }" ) ;
+		s.WriteLine( "}" ) ;
 		s.WriteLine( "public static class Codex" ) ;
 		s.WriteLine( "{" ) ;
-		s.WriteLine( "public static object Switch( int code )" ) ;
+		s.WriteLine( "public static Auto Switch( int code )" ) ;
 		s.WriteLine( "{" ) ;
 		s.WriteLine( "switch( code ) {" ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
@@ -298,7 +309,7 @@ class Xo_t
 			compile[i] = filename ;
 			s.WriteLine( "case "+i+" : return new {0}() ;", filename ) ;
 			}
-		s.WriteLine( "default: throw new System.NotImplementedException() ;" ) ;
+		s.WriteLine( "default: return new _Auto() ;" ) ;
 		s.WriteLine( "}" ) ;
 		s.WriteLine( "}" ) ;
 		s.WriteLine( "}" ) ;
@@ -360,7 +371,26 @@ class Xo_t
 			f.Write( _io( i ) ) ;
 			f.WriteLine( "  }" ) ;
 			f.WriteLine( "public partial class   " + xo.ReductionMethod ) ;
+			f.WriteLine( "  : _accept.Auto " ) ;
 			f.WriteLine( "  {" ) ;
+			f.Write(     "  static readonly char[]   lhs = { " ) ;
+			foreach( char c in Rule.Set[i].lhs.s )
+				f.Write( "'"+c+"', " ) ;
+			f.WriteLine( " } ;" ) ;
+			f.WriteLine( "  public override string   LHS { get { return new string(lhs) ; } }" ) ;
+			f.WriteLine( "  public override string[] RHS { get { return rhs ; } } ") ;
+			f.Write(     "  static readonly string[] rhs = ") ;
+			if( Rule.Set[i].rhs.Count > 0 )
+				{
+				var sb = new System.Text.StringBuilder() ;
+				foreach( var rhs in Rule.Set[i].rhs )
+					sb.Append("\"" + rhs.s.Replace("\"","\\\"") + "\", " ) ;
+				sb.Remove( sb.Length-2, 2 ) ;
+				f.Write( "{ " + sb.ToString() + " }" ) ;
+				}
+			else
+				f.Write( "{}" ) ;
+			f.WriteLine( " ;" ) ;
 			f.WriteLine( "  }" ) ;
 			f.WriteLine( "}" ) ;
 			f.WriteLine( ) ;
