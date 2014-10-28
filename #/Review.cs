@@ -98,7 +98,7 @@ public static void Board()
 		var id = "0x"+(int.Parse(System.Environment.GetEnvironmentVariable("WINDOWID"))).ToString("X") ;
 		var xnest = "Xnest -parent "+id+" :2" ;
 		i3m( "exec '"+xnest+"'" ) ;
-		Cluster.Cli.Start( "xterm -display :2" ) ;
+		Cluster.Cli.Start( "/var/system.d/wine/sh -display :2" ) ;
 		Cluster.Cli.Refine() ;
 		Cluster.Cli.Start( "pkill -f '"+xnest+"'" ) ;
 		Cluster.Cli.Refine() ;
