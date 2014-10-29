@@ -297,13 +297,11 @@ class Xo_t
 				X.Auto.Add(auto,script.Substring(1)) ;
 			script = "" ;
 			}
-		var sw = Current.Path.CreateText( "x-y-text.tab.html" ) ;
 		#if iDNA
 		var s = Current.Path.CreateText( "auto.cs" ) ;
 		compile[0] = "auto.cs" ;
 		#endif
 		var g = Current.Path.CreateText( "glossary.html" ) ;
-		sw.Write( "<head></head><body><table style=\"font: monospace;\">" ) ;
 		g.Write( "<head {0}></head><body style=\"color: red ; background: antiquewhite ;\"><table {1}>", "UUID", "ITEMSCOPE" ) ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
@@ -366,7 +364,6 @@ class Xo_t
 				g.Write( "</tr>" ) ;
 				}
 			#endif
-			sw.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.ReductionMethod + "</td></tr>" ) ;
 			#if iDNA
 			f.WriteLine( "public struct iDNA" ) ;
 			f.WriteLine( "  {" ) ;
@@ -405,9 +402,7 @@ class Xo_t
 			f.Close() ;
 			#endif
 			}
-		sw.WriteLine( "</table></body>" ) ;
 		g.WriteLine( "</table></body>" ) ;
-		sw.Close() ;
 		#if iDNA
 		Cluster.Shell.Embed( compile ) ;
 		#endif
