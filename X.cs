@@ -431,8 +431,7 @@ static void xml_load_grammar()
 	{
 	if( xml_loaded )
 		return ;
-	Stream s = File.OpenRead( "../../~/understand/grammar.xml" ) ;
-	xml = new XmlTextReader( new StreamReader( s ) ) ;
+	xml = new XmlTextReader( new StreamReader( "../../~/understand/grammar.xml" ) ) ;
 	while( xml.Read() )
 		if( xml.NodeType == XmlNodeType.Element && xml.Name == "bison-xml-report" )
 			break ;
@@ -441,14 +440,9 @@ static void xml_load_grammar()
 		{
 		if( XmlNodeType.Element == xml.NodeType )
 			{
-			string name = xml.Name ;
-			//if( name == "reduction" )
-			//	x.reduction() ;
-			//else
 			if( xml.Name == "solved-conflicts" )
-				name = "solved_conflicts" ;
-			else
-			typeof(X).InvokeMember( name, 
+				continue ;
+			typeof(X).InvokeMember( xml.Name,
 				System.Reflection.BindingFlags.InvokeMethod |
 				System.Reflection.BindingFlags.NonPublic,
 				null, x, null ) ;
