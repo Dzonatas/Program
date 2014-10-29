@@ -435,18 +435,10 @@ static void xml_load_grammar()
 	while( xml.Read() )
 		if( xml.NodeType == XmlNodeType.Element && xml.Name == "bison-xml-report" )
 			break ;
-	X x = new X() ;
 	while( xml.Read() )
 		{
 		if( XmlNodeType.Element == xml.NodeType )
-			{
-			if( xml.Name == "solved-conflicts" )
-				continue ;
-			typeof(X).InvokeMember( xml.Name,
-				System.Reflection.BindingFlags.InvokeMethod |
-				System.Reflection.BindingFlags.NonPublic,
-				null, x, null ) ;
-			}
+			X.Element[xml.Name]() ;
 		else
 		if( XmlNodeType.EndElement == xml.NodeType )
 			{
@@ -464,31 +456,34 @@ static void xml_load_grammar()
 
 partial class X //_: YY
 	{
-	void filename()     {}
-	void grammar()      {}
-	void rules()        { rules_b = true ; }
-	void rule()         { xml_get_rule() ; }
-	void lhs()          { xml_get_lhs() ; }
-	void rhs()          {}
-	void symbol()       { xml_get_symbol(rules_b) ; }
-	void empty()        { x_empty_ruleset.Add(x_rule.number) ; }
-	void terminals()    { rules_b = false ; }
-	void terminal()     { xml_get_terminal() ; }
-	void nonterminals() {}
-	void nonterminal()  { xml_get_nonterminal() ; }
-	void automaton()    { _default = new xml_token( xml_symbolset["$accept"], new xml_s("$default") ) ; }
-	void state()        { xml_get_state() ; }
-	void itemset()      {}
-	void item()         { xml_get_item() ; }
-	void actions()      {}
-	void transitions()  {}
-	void transition()   { xml_get_transition() ; }
-	void errors()       {}
-	void reductions()   {}
-	void reduction()    { xml_get_reduction() ; }
-	void lookaheads()   {}
-	void solved_conflicts() {}
-	bool rules_b = false ;
+	public static readonly Dictionary<string,System.Action> Element = new Dictionary<string,System.Action>()
+		{
+		{ "filename",     () => {} },
+		{ "grammar",      () => {} },
+		{ "rules",        () => { rules_b = true ; } },
+		{ "rule",         xml_get_rule },
+		{ "lhs",          xml_get_lhs  },
+		{ "rhs",          () => {} },
+		{ "symbol",       () => { xml_get_symbol(rules_b) ; } },
+		{ "empty",        () => { x_empty_ruleset.Add(x_rule.number) ; } },
+		{ "terminals",    () => { rules_b = false ; } },
+		{ "terminal",     xml_get_terminal },
+		{ "nonterminals", () => {} },
+		{ "nonterminal",  xml_get_nonterminal },
+		{ "automaton",    () => { _default = new xml_token( xml_symbolset["$accept"], new xml_s("$default") ) ; } },
+		{ "state",        xml_get_state },
+		{ "itemset",      () => {} },
+		{ "item",         xml_get_item },
+		{ "actions",      () => {} },
+		{ "transitions",  () => {} },
+		{ "transition",   xml_get_transition },
+		{ "errors",       () => {} },
+		{ "reductions",   () => {} },
+		{ "reduction",    xml_get_reduction },
+		{ "lookaheads",   () => {} },
+		{ "solved-conflicts", () => {} }
+		} ;
+	static bool rules_b = false ;
 	}
 
 
