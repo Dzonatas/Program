@@ -297,15 +297,10 @@ class Xo_t
 				X.Auto.Add(auto,script.Substring(1)) ;
 			script = "" ;
 			}
-		#if iDNA
 		var s = Current.Path.CreateText( "auto.cs" ) ;
 		compile[0] = "auto.cs" ;
-		#endif
-		var g = Current.Path.CreateText( "glossary.html" ) ;
-		g.Write( "<head {0}></head><body style=\"color: red ; background: antiquewhite ;\"><table {1}>", "UUID", "ITEMSCOPE" ) ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
-		#if iDNA
 		s.Write( X.Auto["A335-Xo_t-Build-iDNA-1"] ) ;
 		s.Write( X.Auto["_xml_reader"] ) ;
 		s.Write( X.Auto["A335-Xo_t-Build-iDNA-2"] ) ;
@@ -322,10 +317,6 @@ class Xo_t
 		s.Write( X.Auto["A335-Xo_t-Build-iDNA-4"] ) ;
 		s.WriteLine( ) ;
 		s.Close() ;
-		#endif
-		#if !XYP
-		g.WriteLine( "<tr><th ITEMTYPE>Technique</th><th ITEMPROP>Profile</th><td>C</td><td>ENTITY</td><td>PROTOTYPE</td></tr>" ) ;
-		#endif
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
@@ -333,38 +324,10 @@ class Xo_t
 			n = xo ;
 			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ xo.ReductionMethod ;
 			var f = Current.Path.CreateText( filename ) ;
-			#if iDNA
 			f.WriteLine( "namespace {0}._{1}", n.lhs.s, n.lhs.X ) ;
 			f.WriteLine( "{" ) ;
-			#endif
-			#if XYP
-			if( head )
-				g.WriteLine( "<tr><td><h1>" + xo.lhs.X + "</h1></td><td><h1>" + xo.lhs.Y + "</h1></td><td><h1>" + xo.lhs.s + "</h1></td></tr>" ) ;
-			else
-				g.WriteLine( "<tr><td>" + xo.lhs.X + "</td><td>" + xo.lhs.Y + "</td><td>" + xo.lhs.s + "</td></tr>" ) ;
-			#else
 			string entity = "&0." + xo.lhs.X + ";" ;
 			string prototype = xo.ReductionMethod.Substring( xo.lhs.s.Length ) ;
-			if( head )
-				{
-				g.Write( "<tr><td><h1>" + xo.lhs.X + "." + xo.lhs.Y + "</h1></td><td><h1>" + xo.lhs.s + "</h1></td>" ) ;
-				g.Write( "<td>" + (char)xo + "</td>" ) ;
-				g.Write( "<td>" + entity + "</td>" ) ;
-				g.Write( "<td>" + prototype + "</td>" ) ;
-				g.WriteLine( "</tr>" ) ;
-				}
-			else
-				{
-				g.Write( "<tr>" ) ;
-				g.Write( "<td>" + xo.lhs.X + "." + xo.lhs.Y + "</td>" ) ;
-				g.Write( "<td>" + xo.lhs.s + "</td>" ) ;
-				g.Write( "<td>" + (char)xo + "</td>" ) ;
-				g.Write( "<td>" + entity + "</td>" ) ;
-				g.Write( "<td>" + prototype + "</td>" ) ;
-				g.Write( "</tr>" ) ;
-				}
-			#endif
-			#if iDNA
 			f.WriteLine( "public struct iDNA" ) ;
 			f.WriteLine( "  {" ) ;
 			//s.WriteLine( "  public const           char     C       = '"+ (char)xo +"' ;" ) ;
@@ -400,13 +363,8 @@ class Xo_t
 			f.WriteLine( "}" ) ;
 			f.WriteLine( ) ;
 			f.Close() ;
-			#endif
 			}
-		g.WriteLine( "</table></body>" ) ;
-		#if iDNA
 		Cluster.Shell.Embed( compile ) ;
-		#endif
-		g.Close() ;
 		#if POSTBACK
 		//[((v8)|v16)[f32|.]v64]|v8sidv64
 		var c = Current.Path.CreateText( "entset.csv" ) ;
