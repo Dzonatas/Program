@@ -253,6 +253,20 @@ class Xo_t
 	static public void Build()
 		{
 		string[] compile = new string[xo_t.Length] ;
+		var xml = new XmlTextReader( new StreamReader( "../../#/Auto.xml" ) ) ;
+		while( xml.Read() )
+			{
+			if( XmlNodeType.Element != xml.NodeType )
+				continue ;
+			var auto = xml.Name ;
+			//var type = MICRODATA ;
+			xml.Read() ;
+			var script = xml.Value ;
+			if( script[0] != '\n' )
+				X.Auto.Add(auto,script) ;
+			else
+				X.Auto.Add(auto,script.Substring(1)) ;
+			}
 		var sw = Current.Path.CreateText( "x-y-text.tab.html" ) ;
 		#if iDNA
 		var s = Current.Path.CreateText( "auto.cs" ) ;
@@ -264,44 +278,12 @@ class Xo_t
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
 		#if iDNA
-		s.WriteLine( "namespace _accept" ) ;
-		s.WriteLine( "{" ) ;
-		s.WriteLine( "//await" ) ;
-		s.WriteLine( "//awhile" ) ;
-		s.WriteLine( "//aaccept" ) ;
-		s.WriteLine( "//bookkeeping" ) ; //bookkeeppong
-		s.WriteLine( "public partial class A335 {" ) ;
-		s.WriteLine( "static A335() {}" ) ;
-		s.WriteLine( "#if EMBED" ) ;
-		//s.WriteLine( "public static void Main( string[] args ) { System.Console.WriteLine(iDNA.C) ; }" ) ;
-		s.WriteLine( "public static void Main( string[] args )" ) ;
-		s.WriteLine( "  {" ) ;
-		s.WriteLine( "  X.Y.MapZ() ;" ) ;
+		s.WriteLine( X.Auto["A335-Xo_t-Build-iDNA-1"] ) ;
 		s.Write( _.xml_reader() ) ;
-		s.WriteLine( "  Current.Interval.NOP() ;" ) ;
-		s.WriteLine( "  }" ) ;
-		s.WriteLine( "#endif" ) ;
-		s.WriteLine( "}" ) ;
-		s.WriteLine( "struct iDNA" ) ;
-		s.WriteLine( "  {" ) ;
+		s.WriteLine( X.Auto["A335-Xo_t-Build-iDNA-2"] ) ;
 		s.Write( list( 0 ) ) ;
 		s.Write( _io( 0 ) ) ;
-		s.WriteLine( "  }" ) ;
-		s.WriteLine( "public abstract class Auto" ) ;
-		s.WriteLine( "{" ) ;
-		s.WriteLine( "public abstract string LHS { get; }" ) ;
-		s.WriteLine( "public abstract string[] RHS { get; }" ) ;
-		s.WriteLine( "}" ) ;
-		s.WriteLine( "public class _Auto : Auto" ) ;
-		s.WriteLine( "{" ) ;
-		s.WriteLine( "public override string LHS { get { return string.Empty ; } }" ) ;
-		s.WriteLine( "public override string[] RHS { get { return null ; } }" ) ;
-		s.WriteLine( "}" ) ;
-		s.WriteLine( "public static class Codex" ) ;
-		s.WriteLine( "{" ) ;
-		s.WriteLine( "public static Auto Switch( int code )" ) ;
-		s.WriteLine( "{" ) ;
-		s.WriteLine( "switch( code ) {" ) ;
+		s.WriteLine( X.Auto["A335-Xo_t-Build-iDNA-3"] ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
@@ -309,11 +291,7 @@ class Xo_t
 			compile[i] = filename ;
 			s.WriteLine( "case "+i+" : return new {0}() ;", filename ) ;
 			}
-		s.WriteLine( "default: return new _Auto() ;" ) ;
-		s.WriteLine( "}" ) ;
-		s.WriteLine( "}" ) ;
-		s.WriteLine( "}" ) ;
-		s.WriteLine( "}" ) ;
+		s.WriteLine( X.Auto["A335-Xo_t-Build-iDNA-4"] ) ;
 		s.WriteLine( ) ;
 		s.Close() ;
 		#endif
@@ -456,6 +434,7 @@ static void xml_load_grammar()
 
 partial class X //_: YY
 	{
+	public static readonly Dictionary<string,string> Auto = new Dictionary<string,string>() ;
 	public static readonly Dictionary<string,System.Action> Element = new Dictionary<string,System.Action>()
 		{
 		{ "filename",     () => {} },

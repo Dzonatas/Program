@@ -1,4 +1,45 @@
 <?xml version="1.0" ?>
-<script>
-</script>
-
+<auto>
+<A335-Xo_t-Build-iDNA-1>
+namespace _accept {
+public partial class A335 {
+static A335() {}
+#if EMBED
+public static void Main( string[] args )
+  {
+  X.Y.MapZ() ;
+</A335-Xo_t-Build-iDNA-1>
+<A335-Xo_t-Build-iDNA-2>
+  Current.Interval.NOP() ;
+  }
+#endif
+}
+struct iDNA
+  {
+</A335-Xo_t-Build-iDNA-2>
+<A335-Xo_t-Build-iDNA-3>
+  }
+public abstract class Auto
+{
+public abstract string LHS { get; }
+public abstract string[] RHS { get; }
+}
+public class _Auto : Auto
+{
+public override string LHS { get { return string.Empty ; } }
+public override string[] RHS { get { return null ; } }
+}
+public static class Codex
+{
+public static Auto Switch( int code )
+{
+switch( code ) {
+</A335-Xo_t-Build-iDNA-3>
+<A335-Xo_t-Build-iDNA-4>
+default: return new _Auto() ;
+}
+}
+}
+}
+</A335-Xo_t-Build-iDNA-4>
+</auto>
