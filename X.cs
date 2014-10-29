@@ -1,6 +1,7 @@
 using System.Xml ;
 using System.IO ;
 using System.Collections.Generic ;
+using System.Extensions ;
 
 public partial class A335
 {
@@ -254,18 +255,47 @@ class Xo_t
 		{
 		string[] compile = new string[xo_t.Length] ;
 		var xml = new XmlTextReader( new StreamReader( "../../#/Auto.xml" ) ) ;
+		string script = "" ;
+		bool content = false ;
 		while( xml.Read() )
 			{
-			if( XmlNodeType.Element != xml.NodeType )
+			if( XmlNodeType.Element == xml.NodeType )
+				{
+				content = true ;
+				continue ;
+				}
+			else
+			if( content && XmlNodeType.EntityReference == xml.NodeType )
+				{
+				switch(xml.Name)
+					{
+					case "guid" : script += 0.0.GUID() ; return ;
+					#if DEBUG
+					case "debug_nop" : script += "Current.Interval.NOP() ;" ; return ;
+					#else
+					case "debug_nop" : return ;
+					#endif
+					default: break ;
+					}
+				throw new System.NotImplementedException() ;
+				}
+			else
+			if( content && XmlNodeType.EndElement != xml.NodeType )
+				{
+				script += xml.Value ;
+				continue ;
+				}
+			else
+			if( !content )
 				continue ;
 			var auto = xml.Name ;
 			//var type = MICRODATA ;
-			xml.Read() ;
-			var script = xml.Value ;
+			script += xml.Value ;
 			if( script[0] != '\n' )
 				X.Auto.Add(auto,script) ;
 			else
 				X.Auto.Add(auto,script.Substring(1)) ;
+			script = "" ;
 			}
 		var sw = Current.Path.CreateText( "x-y-text.tab.html" ) ;
 		#if iDNA
@@ -278,12 +308,12 @@ class Xo_t
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
 		#if iDNA
-		s.WriteLine( X.Auto["A335-Xo_t-Build-iDNA-1"] ) ;
-		s.Write( _.xml_reader() ) ;
-		s.WriteLine( X.Auto["A335-Xo_t-Build-iDNA-2"] ) ;
+		s.Write( X.Auto["A335-Xo_t-Build-iDNA-1"] ) ;
+		s.Write( X.Auto["_xml_reader"] ) ;
+		s.Write( X.Auto["A335-Xo_t-Build-iDNA-2"] ) ;
 		s.Write( list( 0 ) ) ;
 		s.Write( _io( 0 ) ) ;
-		s.WriteLine( X.Auto["A335-Xo_t-Build-iDNA-3"] ) ;
+		s.Write( X.Auto["A335-Xo_t-Build-iDNA-3"] ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
@@ -291,7 +321,7 @@ class Xo_t
 			compile[i] = filename ;
 			s.WriteLine( "case "+i+" : return new {0}() ;", filename ) ;
 			}
-		s.WriteLine( X.Auto["A335-Xo_t-Build-iDNA-4"] ) ;
+		s.Write( X.Auto["A335-Xo_t-Build-iDNA-4"] ) ;
 		s.WriteLine( ) ;
 		s.Close() ;
 		#endif

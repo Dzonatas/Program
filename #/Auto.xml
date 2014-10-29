@@ -42,4 +42,91 @@ default: return new _Auto() ;
 }
 }
 </A335-Xo_t-Build-iDNA-4>
+<_xml_reader>
+var s = System.IO.File.OpenText( "/tmp/&guid;.il.xml" ) ;
+var t = s.ReadToEnd() ;
+var e = t.GetEnumerator() ;
+//string INSTANCE_entity ;
+string n = string.Empty ;
+string l = string.Empty ;
+string p = string.Empty ;
+bool process = false ;
+while( e.MoveNext() )
+	{
+	&debug_nop;
+	if( e.Current == '&lt;' )
+		{
+		if( process )
+			{ iDNA.Text( l ) ; X.Y.Z( l ) ; }
+		l = string.Empty ;
+		e.MoveNext() ;
+		if( e.Current == '_' )
+			{
+			process = true ;
+			e.MoveNext() ;
+			while( e.Current >= '0' && '9' >= e.Current )
+				{
+				n += e.Current ;
+				e.MoveNext() ;
+				}
+	//		iDNA.Element( n ) ;
+			iDNA.Element( _accept.Codex.Switch(int.Parse(n)).LHS ) ;
+			}
+		else
+			process = false ;
+		while( e.Current != '>' )
+			e.MoveNext() ;
+		n = string.Empty ;
+		continue ;
+		}
+	if( e.Current == '&' )
+		{
+		if( process )
+			{ iDNA.Text( l ) ; X.Y.Z( l ) ; }
+		l = string.Empty ;
+		e.MoveNext() ;
+		if( e.Current == '_' )
+			{
+			process = true ;
+			e.MoveNext() ;
+			/*
+			while( e.Current >= '0' && '9' >= e.Current )
+				{
+				n += e.Current ;
+				e.MoveNext() ;
+				}
+			*/
+			while( e.Current != '_' )
+				e.MoveNext() ;
+			e.MoveNext() ;
+			while( e.Current >= '0' && '9' >= e.Current )
+				{
+				n += e.Current ;
+				e.MoveNext() ;
+				}
+			iDNA.EntityReference( n ) ;
+			}
+		else
+			process = false ;
+		while( e.Current != ';' )
+			e.MoveNext() ;
+		n = string.Empty ;
+		continue ;
+		}
+	if( process )
+		{
+		l += e.Current ;
+		if( p != string.Empty )
+			{
+			for( int i = int.Parse(p) ; i > 1 ; --i )
+				{
+				e.MoveNext() ;
+				l += e.Current ;
+				}
+			p = string.Empty ;
+			}
+		}
+	}
+s.Close() ;
+</_xml_reader>
 </auto>
