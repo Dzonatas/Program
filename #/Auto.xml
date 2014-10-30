@@ -100,43 +100,37 @@ public static void Main( string[] args )
   }
 #endif
 }
-struct iDNA
-  {
-  &list;
-  &io;
-  }
-public abstract class Auto
-{
-public abstract string LHS { get; }
-public abstract string[] RHS { get; }
+struct iDNA {
+	&list;
+	&io;
 }
-public class _Auto : Auto
-{
-public override string LHS { get { return string.Empty ; } }
-public override string[] RHS { get { return null ; } }
+public abstract class Auto {
+	public abstract string LHS { get; }
+	public abstract string[] RHS { get; }
+}
+public class _Auto : Auto {
+	public override string LHS { get { return string.Empty ; } }
+	public override string[] RHS { get { return null ; } }
 }
 public static class Codex
-{
-public static Auto Switch( int code )
-{
-switch( code ) {
+	{
+	public static Auto Switch( int code ) {
+		switch( code ) {
 </A335-Xo_t-Build-iDNA-1>
 <A335-Xo_t-Build-iDNA-4>
-default: return new _Auto() ;
-}
-}
-}
+		default: return new _Auto() ;
+		}
+	}
+	}
 }
 </A335-Xo_t-Build-iDNA-4>
 <A335-Xo_t-Build-iDNA-5>
-namespace &namespace;
-{
-public struct iDNA
-	{
+namespace &namespace; {
+public struct iDNA {
 	public static readonly char[]   Entity  = &Entity; ;
 	&list;
 	&io;
-	}
+}
 public partial class  &signal;
 	: _accept.Auto
 	{
