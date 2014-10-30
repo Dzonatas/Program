@@ -1,47 +1,5 @@
 <?xml version="1.0" ?>
 <auto>
-<A335-Xo_t-Build-iDNA-1>
-namespace _accept {
-public partial class A335 {
-static A335() {}
-#if EMBED
-public static void Main( string[] args )
-  {
-  X.Y.MapZ() ;
-</A335-Xo_t-Build-iDNA-1>
-<A335-Xo_t-Build-iDNA-2>
-  Current.Interval.NOP() ;
-  }
-#endif
-}
-struct iDNA
-  {
-</A335-Xo_t-Build-iDNA-2>
-<A335-Xo_t-Build-iDNA-3>
-  }
-public abstract class Auto
-{
-public abstract string LHS { get; }
-public abstract string[] RHS { get; }
-}
-public class _Auto : Auto
-{
-public override string LHS { get { return string.Empty ; } }
-public override string[] RHS { get { return null ; } }
-}
-public static class Codex
-{
-public static Auto Switch( int code )
-{
-switch( code ) {
-</A335-Xo_t-Build-iDNA-3>
-<A335-Xo_t-Build-iDNA-4>
-default: return new _Auto() ;
-}
-}
-}
-}
-</A335-Xo_t-Build-iDNA-4>
 <_xml_reader>
 var s = System.IO.File.OpenText( "/tmp/&guid;.il.xml" ) ;
 var t = s.ReadToEnd() ;
@@ -64,7 +22,7 @@ while( e.MoveNext() )
 			{
 			process = true ;
 			e.MoveNext() ;
-			while( e.Current >= '0' && '9' >= e.Current )
+			while( e.Current >= '0' &amp;&amp; '9' >= e.Current )
 				{
 				n += e.Current ;
 				e.MoveNext() ;
@@ -79,7 +37,7 @@ while( e.MoveNext() )
 		n = string.Empty ;
 		continue ;
 		}
-	if( e.Current == '&' )
+	if( e.Current == '&amp;' )
 		{
 		if( process )
 			{ iDNA.Text( l ) ; X.Y.Z( l ) ; }
@@ -90,7 +48,7 @@ while( e.MoveNext() )
 			process = true ;
 			e.MoveNext() ;
 			/*
-			while( e.Current >= '0' && '9' >= e.Current )
+			while( e.Current >= '0' &amp;&amp; '9' >= e.Current )
 				{
 				n += e.Current ;
 				e.MoveNext() ;
@@ -99,7 +57,7 @@ while( e.MoveNext() )
 			while( e.Current != '_' )
 				e.MoveNext() ;
 			e.MoveNext() ;
-			while( e.Current >= '0' && '9' >= e.Current )
+			while( e.Current >= '0' &amp;&amp; '9' >= e.Current )
 				{
 				n += e.Current ;
 				e.MoveNext() ;
@@ -129,4 +87,64 @@ while( e.MoveNext() )
 	}
 s.Close() ;
 </_xml_reader>
+<A335-Xo_t-Build-iDNA-1>
+namespace _accept {
+public partial class A335 {
+static A335() {}
+#if EMBED
+public static void Main( string[] args )
+  {
+  X.Y.MapZ() ;
+  &_xml_reader;
+  Current.Interval.NOP() ;
+  }
+#endif
+}
+struct iDNA
+  {
+  &list;
+  &io;
+  }
+public abstract class Auto
+{
+public abstract string LHS { get; }
+public abstract string[] RHS { get; }
+}
+public class _Auto : Auto
+{
+public override string LHS { get { return string.Empty ; } }
+public override string[] RHS { get { return null ; } }
+}
+public static class Codex
+{
+public static Auto Switch( int code )
+{
+switch( code ) {
+</A335-Xo_t-Build-iDNA-1>
+<A335-Xo_t-Build-iDNA-4>
+default: return new _Auto() ;
+}
+}
+}
+}
+</A335-Xo_t-Build-iDNA-4>
+<A335-Xo_t-Build-iDNA-5>
+namespace &namespace;
+{
+public struct iDNA
+	{
+	public static readonly char[]   Entity  = &Entity; ;
+	&list;
+	&io;
+	}
+public partial class  &signal;
+	: _accept.Auto
+	{
+	static readonly char[]   lhs = &lhs; ;
+	public override string   LHS { get { return new string(lhs) ; } }
+	public override string[] RHS { get { return rhs ; } }
+	static readonly string[] rhs = &rhs; ;
+	}
+}
+</A335-Xo_t-Build-iDNA-5>
 </auto>

@@ -229,7 +229,7 @@ class Xo_t
 			(
 			 "    switch( l )\n"
 			+"      {\n"
-			+"      default : "
+			+"      default : global::"
 			        + ( rule == 0 ? "_accept" : xo_t[rule].lhs.s + "._" + xo_t[rule].lhs.X )
 			        + ".iDNA.EntityReference(l) ; "
 			        + "return ;\n"
@@ -250,63 +250,52 @@ class Xo_t
 			) ;
 		return sb.ToString() ;
 		}
+	static void read( XmlReader xml )
+		{
+		bool content = false ;
+		string text  = "" ;
+		while( xml.Read() )
+			{
+			if( XmlNodeType.Element == xml.NodeType )
+				content = true ;
+			else
+			if( content && XmlNodeType.EntityReference == xml.NodeType )
+				{
+				if( X.Auto[xml.Name] == null )
+					text += '&'+xml.Name+';' ;
+				else
+					text += X.Auto[xml.Name] ;
+				}
+			else
+			if( content && XmlNodeType.EndElement == xml.NodeType )
+				{
+				if( xml.Name == "text" )
+					X.Auto[xml.Name] = text ;
+				else
+					X.Auto.Add(xml.Name, text ) ;
+				content = false ;
+				text = "" ;
+				}
+			else
+			if( content )
+				{
+				text += xml.Value ;
+				}
+			}
+		}
 	static readonly char[] entity_trim =  { ';' };
 	static public void Build()
 		{
 		string[] compile = new string[xo_t.Length] ;
-		var xml = new XmlTextReader( new StreamReader( "../../#/Auto.xml" ) ) ;
-		string script = "" ;
-		bool content = false ;
-		while( xml.Read() )
-			{
-			if( XmlNodeType.Element == xml.NodeType )
-				{
-				content = true ;
-				continue ;
-				}
-			else
-			if( content && XmlNodeType.EntityReference == xml.NodeType )
-				{
-				switch(xml.Name)
-					{
-					case "guid" : script += 0.0.GUID() ; return ;
-					#if DEBUG
-					case "debug_nop" : script += "Current.Interval.NOP() ;" ; return ;
-					#else
-					case "debug_nop" : return ;
-					#endif
-					default: break ;
-					}
-				throw new System.NotImplementedException() ;
-				}
-			else
-			if( content && XmlNodeType.EndElement != xml.NodeType )
-				{
-				script += xml.Value ;
-				continue ;
-				}
-			else
-			if( !content )
-				continue ;
-			var auto = xml.Name ;
-			//var type = MICRODATA ;
-			script += xml.Value ;
-			if( script[0] != '\n' )
-				X.Auto.Add(auto,script) ;
-			else
-				X.Auto.Add(auto,script.Substring(1)) ;
-			script = "" ;
-			}
-		var s = Current.Path.CreateText( "auto.cs" ) ;
 		compile[0] = "auto.cs" ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
+		X.Auto["list"] = list( 0 ) ;
+		X.Auto["io"] = _io( 0 ) ;
+		var xml = new XmlTextReader( new StreamReader( "../../#/Auto.xml" ) ) ;
+		read(xml) ;
+		var s = Current.Path.CreateText( compile[0] ) ;
 		s.Write( X.Auto["A335-Xo_t-Build-iDNA-1"] ) ;
-		s.Write( X.Auto["_xml_reader"] ) ;
-		s.Write( X.Auto["A335-Xo_t-Build-iDNA-2"] ) ;
-		s.Write( list( 0 ) ) ;
-		s.Write( _io( 0 ) ) ;
-		s.Write( X.Auto["A335-Xo_t-Build-iDNA-3"] ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
@@ -323,44 +312,36 @@ class Xo_t
 			bool head = n.lhs.s != xo.lhs.s ;
 			n = xo ;
 			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ xo.ReductionMethod ;
-			var f = Current.Path.CreateText( filename ) ;
-			f.WriteLine( "namespace {0}._{1}", n.lhs.s, n.lhs.X ) ;
-			f.WriteLine( "{" ) ;
 			string entity = "&0." + xo.lhs.X + ";" ;
 			string prototype = xo.ReductionMethod.Substring( xo.lhs.s.Length ) ;
-			f.WriteLine( "public struct iDNA" ) ;
-			f.WriteLine( "  {" ) ;
-			//s.WriteLine( "  public const           char     C       = '"+ (char)xo +"' ;" ) ;
-			f.Write(     "  public static readonly char[]   Entity  = { " ) ;
+			X.Auto["namespace"] = n.lhs.s + "._" + n.lhs.X ;
+			//X.Auto["lhs_X"] = n.lhs.X.ToString() ;
+			X.Auto["Entity"] = "{ " ;
 			foreach( char c in entity.TrimEnd( entity_trim ) )
-				f.Write( "'"+c+"', " ) ;
-			f.WriteLine( "'" + entity[entity.Length-1] + "' } ;" ) ;
-			f.Write( list( i ) ) ;
-			f.Write( _io( i ) ) ;
-			f.WriteLine( "  }" ) ;
-			f.WriteLine( "public partial class   " + xo.ReductionMethod ) ;
-			f.WriteLine( "  : _accept.Auto " ) ;
-			f.WriteLine( "  {" ) ;
-			f.Write(     "  static readonly char[]   lhs = { " ) ;
+				X.Auto["Entity"] += "'"+c+"', " ;
+			X.Auto["Entity"] += "'" + entity[entity.Length-1] + "' }" ;
+			X.Auto["list"] = list( i ) ;
+			X.Auto["io"] = _io( i ) ;
+			X.Auto["signal"] = xo.ReductionMethod ;
+			X.Auto["lhs"] = "{ " ;
 			foreach( char c in Rule.Set[i].lhs.s )
-				f.Write( "'"+c+"', " ) ;
-			f.WriteLine( " } ;" ) ;
-			f.WriteLine( "  public override string   LHS { get { return new string(lhs) ; } }" ) ;
-			f.WriteLine( "  public override string[] RHS { get { return rhs ; } } ") ;
-			f.Write(     "  static readonly string[] rhs = ") ;
+				X.Auto["lhs"] += "'"+c+"', " ;
+			X.Auto["lhs"] += " }" ;
 			if( Rule.Set[i].rhs.Count > 0 )
 				{
 				var sb = new System.Text.StringBuilder() ;
 				foreach( var rhs in Rule.Set[i].rhs )
 					sb.Append("\"" + rhs.s.Replace("\"","\\\"") + "\", " ) ;
 				sb.Remove( sb.Length-2, 2 ) ;
-				f.Write( "{ " + sb.ToString() + " }" ) ;
+				X.Auto["rhs"] = "{ " + sb.ToString() + " }" ;
 				}
 			else
-				f.Write( "{}" ) ;
-			f.WriteLine( " ;" ) ;
-			f.WriteLine( "  }" ) ;
-			f.WriteLine( "}" ) ;
+				X.Auto["rhs"] = "{}" ;
+			var sxml = "<text>"+X.Auto["A335-Xo_t-Build-iDNA-5"]+"</text>" ;
+			var _xml = new XmlTextReader( new StringReader( sxml ) ) ;
+			read( _xml ) ;
+			var f = Current.Path.CreateText( filename ) ;
+			f.Write( X.Auto["text"] ) ;
 			f.WriteLine( ) ;
 			f.Close() ;
 			}
@@ -417,7 +398,23 @@ static void xml_load_grammar()
 
 partial class X //_: YY
 	{
-	public static readonly Dictionary<string,string> Auto = new Dictionary<string,string>() ;
+	public static readonly Dictionary<string,string> Auto = new Dictionary<string,string>()
+		{
+		{ "Entity",     null },
+		{ "list",       null },
+		{ "io",         null },
+		{ "namespace",  null },
+		{ "lhs",        null },
+		{ "rhs",        null },
+		{ "lhs_X",      null },
+		{ "signal",     null },
+		{ "guid",       0.0.GUID() },
+		#if DEBUG
+		{ "debug_nop", "Current.Interval.NOP() ;" }
+		#else
+		{ "debug_nop", string.Empty }
+		#endif
+		} ;
 	public static readonly Dictionary<string,System.Action> Element = new Dictionary<string,System.Action>()
 		{
 		{ "filename",     () => {} },
