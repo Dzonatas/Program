@@ -131,15 +131,19 @@ class Xo_t
 	static string list( int i )
 		{
 		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
-		sb.AppendLine( "  public const           char     C       = '"+ (char)xo_t[i] +"' ;" ) ;
+		X.Auto["glyph"] = ((char)xo_t[i]).ToString() ;
+		X.Auto["lookahead"] = "{ " ;
+		if( stateset[i].lookaheadset.Count != 0 )
+			{
+			foreach( var c in stateset[i].lookaheadset )
+				X.Auto["lookahead"] += c+", " ;
+			}
+		X.Auto["lookahead"] += " }" ;
+		sb.Append( put("A335-Xo_t-list-top") ) ;
 		foreach( Itemset item in stateset[i].itemset )
 			{
-			//s.Write( item ) ;
 			if( item.rule == i || item.rule == 0 )
-				{
 				continue ;
-				}
-			sb.Append(     "  public static readonly char     " ) ;
 			string rule = item.rule == 0 ? "_accept" : xo_t[item.rule].lhs.s ;
 			string point ;
 			if( item.rule == 0 )
@@ -155,33 +159,18 @@ class Xo_t
 				point = xo_t[item.rule][item.point].X.ToString() ;
 				point += "_" ;
 				point += xo_t[item.rule][item.point].Y.ToString() ;
-				sb.Append( "" + rule +'_'+ point ) ;
-				sb.Append( " = " ) ;
-				sb.Append( "global::" + rule +"._"+ xo_t[item.rule][item.point].X.ToString() ) ;
-				sb.AppendLine( ".iDNA.C ;" ) ;
+				X.Auto["global"] = "global::" + rule +"._"
+					+ xo_t[item.rule][item.point].X.ToString()
+					+ ".iDNA.C" ;
 				}
 			else
 				{
 				point = xo_t[item.rule][item.point].X.ToString() ;
-				sb.Append( "" + rule +'_'+ point ) ;
-				sb.Append( " = " ) ;
-				sb.Append( "global::" + rule +"._"+ point ) ;
-				sb.AppendLine( ".iDNA.C ;" ) ;
+				X.Auto["global"] = "global::"+rule+"._"+point+".iDNA.C" ;
 				}
-			}
-		/*
-		if( i == (xo_t.Length - 1) )
-			sb.AppendLine( "  public override string ToString() { return \"\" + C ; }" ) ;
-		else
-			sb.AppendLine( "  public override string ToString() { return \"\" + C + global::" + xo_t[i+1].lhs.s + "._" + (i+1) + ".iDNA.ToString() ; }" ) ;
-		*/
-		if( stateset[i].lookaheadset.Count != 0 )
-			{
-			sb.Append(     "  public static readonly int[]    LookAhead  = { " ) ;
-			foreach( var c in stateset[i].lookaheadset )
-				sb.Append( c+", " ) ;
-			sb.Remove( sb.Length-2, 2 ) ;
-			sb.AppendLine( " } ;" ) ;
+			X.Auto["rule"] = rule ;
+			X.Auto["point"] = point ;
+			sb.Append( put("A335-Xo_t-list") ) ;
 			}
 		return sb.ToString() ;
 		}
@@ -250,6 +239,15 @@ class Xo_t
 			) ;
 		return sb.ToString() ;
 		}
+	static string put( string s )
+		{
+		var sxml = "<text>"+X.Auto[s]+"</text>" ;
+		var xml = new XmlTextReader( new StringReader( sxml ) ) ;
+		read( xml ) ;
+		return X.Auto["text"] ;
+		}
+	static readonly char[] trimchar = { '\n','\r'} ;
+	static bool resolve = false ;
 	static void read( XmlReader xml )
 		{
 		bool content = false ;
@@ -257,7 +255,17 @@ class Xo_t
 		while( xml.Read() )
 			{
 			if( XmlNodeType.Element == xml.NodeType )
+				{
+				if( xml.Name == "auto" )
+					continue ;
 				content = true ;
+				if( ! resolve )
+					{
+					text = xml.Name ;
+					xml.MoveToContent() ;
+					X.Auto[text] = xml.ReadInnerXml().TrimStart(trimchar) ;
+					}
+				}
 			else
 			if( content && XmlNodeType.EntityReference == xml.NodeType )
 				{
@@ -282,6 +290,7 @@ class Xo_t
 				text += xml.Value ;
 				}
 			}
+		resolve = true ;
 		}
 	static readonly char[] entity_trim =  { ';' };
 	static public void Build()
@@ -290,18 +299,22 @@ class Xo_t
 		compile[0] = "auto.cs" ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
-		X.Auto["list"] = list( 0 ) ;
-		X.Auto["io"] = _io( 0 ) ;
 		var xml = new XmlTextReader( new StreamReader( "../../#/Auto.xml" ) ) ;
 		read(xml) ;
+		X.Auto["_xml_reader"] = put("_xml_reader") ;
+		X.Auto["list"] = list( 0 ) ;
+		X.Auto["io"] = _io( 0 ) ;
 		var s = Current.Path.CreateText( compile[0] ) ;
-		s.Write( X.Auto["A335-Xo_t-Build-iDNA-1"] ) ;
+		s.Write( put("A335-Xo_t-Build-iDNA-1") ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
 			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ xo.ReductionMethod ;
 			compile[i] = filename ;
-			s.WriteLine( "case "+i+" : return new {0}() ;", filename ) ;
+			X.Auto["namespace"] = xo.lhs.s + "._" + xo.lhs.X ;
+			X.Auto["signal"] = xo.ReductionMethod ;
+			X.Auto["i"] = i.ToString() ;
+			s.Write( put("A335-Xo_t-Build-iDNA-2") ) ;
 			}
 		s.Write( X.Auto["A335-Xo_t-Build-iDNA-4"] ) ;
 		s.WriteLine( ) ;
@@ -315,7 +328,6 @@ class Xo_t
 			string entity = "&0." + xo.lhs.X + ";" ;
 			string prototype = xo.ReductionMethod.Substring( xo.lhs.s.Length ) ;
 			X.Auto["namespace"] = n.lhs.s + "._" + n.lhs.X ;
-			//X.Auto["lhs_X"] = n.lhs.X.ToString() ;
 			X.Auto["Entity"] = "{ " ;
 			foreach( char c in entity.TrimEnd( entity_trim ) )
 				X.Auto["Entity"] += "'"+c+"', " ;
@@ -337,11 +349,8 @@ class Xo_t
 				}
 			else
 				X.Auto["rhs"] = "{}" ;
-			var sxml = "<text>"+X.Auto["A335-Xo_t-Build-iDNA-5"]+"</text>" ;
-			var _xml = new XmlTextReader( new StringReader( sxml ) ) ;
-			read( _xml ) ;
 			var f = Current.Path.CreateText( filename ) ;
-			f.Write( X.Auto["text"] ) ;
+			f.Write( put("A335-Xo_t-Build-iDNA-5") ) ;
 			f.WriteLine( ) ;
 			f.Close() ;
 			}
@@ -408,6 +417,12 @@ partial class X //_: YY
 		{ "rhs",        null },
 		{ "lhs_X",      null },
 		{ "signal",     null },
+		{ "glyph",      null },
+		{ "lookahead",  null },
+		{ "rule",       null },
+		{ "point",      null },
+		{ "i",          null },
+		{ "global",     null },
 		{ "guid",       0.0.GUID() },
 		#if DEBUG
 		{ "debug_nop", "Current.Interval.NOP() ;" }
