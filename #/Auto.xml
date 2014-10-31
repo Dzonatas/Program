@@ -151,4 +151,38 @@ public partial class  &signal;
 <A335-Xo_t-list>
 	public static readonly char     &rule;_&point; = &global; ;
 </A335-Xo_t-list>
+<A335-Xo_t-_io-1>
+	public static void Element( string l )
+		{
+</A335-Xo_t-_io-1>
+<A335-Xo_t-_io-2>
+		//iDNA.EntityReference( l ) ;
+		System.Console.WriteLine(l) ;
+		//System.Console.WriteLine(C) ;
+		}
+</A335-Xo_t-_io-2>
+<A335-Xo_t-_io-3>
+		//#!
+		}
+</A335-Xo_t-_io-3>
+<A335-Xo_t-_io-4>
+	public static void EntityReference( string l )
+		{
+</A335-Xo_t-_io-4>
+<A335-Xo_t-_io-5>
+		switch( l )
+		{
+		default : &global;.iDNA.EntityReference(l) ; return ;
+		}
+</A335-Xo_t-_io-5>
+<A335-Xo_t-_io-6>
+		System.Console.Write( '.'+l ) ;
+</A335-Xo_t-_io-6>
+<A335-Xo_t-_io-7>
+		}
+	public static void Text( string l )
+		{
+		//System.Console.Write( l ) ;
+		}
+</A335-Xo_t-_io-7>
 </auto>

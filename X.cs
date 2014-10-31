@@ -183,60 +183,27 @@ class Xo_t
 			rule = stateset[i].reductionset[stateset[i].default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
 			sb.AppendLine( "//" + xo_t[rule] ) ;
 			}
-		sb.AppendLine
-			(
-			 "  public static void Element( string l )\n"
-			+"    {"
-			) ;
+		sb.Append( put("A335-Xo_t-_io-1") ) ;
 		foreach( var t in stateset[i].shiftset )
 			sb.AppendLine( "//" + stateset[i].transitionset[ t.Value ] ) ;
 		foreach( Reduction r in stateset[i].reductionset )
 			sb.AppendLine( "//" + r ) ;
 		if( stateset[i].gotoset.Count != 0 )
-		  sb.AppendLine
-			(
-			 "    //iDNA.EntityReference( l ) ;\n"
-			+"    System.Console.WriteLine(l) ;\n"
-//			+"    System.Console.WriteLine(C) ;\n"
-			+"    }"
-			) ;
+			sb.Append( put("A335-Xo_t-_io-2") ) ;
 		else
-		  sb.AppendLine
-			(
-			 "    //#!\n"
-			+"    }"
-			) ;
-		sb.AppendLine
-			(
-			 "  public static void EntityReference( string l )\n"
-			+"    {"
-			) ;
+			sb.Append( put("A335-Xo_t-_io-3") ) ;
+		sb.Append( put("A335-Xo_t-_io-4") ) ;
 		foreach( var t in stateset[i].gotoset )
 			sb.AppendLine( "//" + stateset[i].transitionset[ t.Value ] ) ;
 		if( rule != -1 )
-		  sb.AppendLine
-			(
-			 "    switch( l )\n"
-			+"      {\n"
-			+"      default : global::"
-			        + ( rule == 0 ? "_accept" : xo_t[rule].lhs.s + "._" + xo_t[rule].lhs.X )
-			        + ".iDNA.EntityReference(l) ; "
-			        + "return ;\n"
-			+"      }"
-			) ;
+			{
+			X.Auto["global"] = "global::"+( rule == 0 ? "_accept" : xo_t[rule].lhs.s )
+				+( rule == 0 ? string.Empty : "._"+xo_t[rule].lhs.X.ToString() ) ;
+			sb.Append( put("A335-Xo_t-_io-5") ) ;
+			}
 		else
-		  sb.AppendLine
-			(
-			 "    System.Console.Write( '.'+l ) ;"
-			) ;
-		sb.AppendLine
-			(
-			 "    }\n"
-			+"  public static void Text( string l )\n"
-			+"    {\n"
-			+"    //System.Console.Write( l ) ;\n"
-			+"    }"
-			) ;
+			sb.Append( put("A335-Xo_t-_io-6") ) ;
+		sb.Append( put("A335-Xo_t-_io-7") ) ;
 		return sb.ToString() ;
 		}
 	static string put( string s )
