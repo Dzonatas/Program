@@ -15,7 +15,7 @@ while( e.MoveNext() )
 	if( e.Current == '&lt;' )
 		{
 		if( process )
-			{ iDNA.Text( l ) ; X.Y.Z( l ) ; }
+			_accept.Auto.Text(l) ;
 		l = string.Empty ;
 		e.MoveNext() ;
 		if( e.Current == '_' )
@@ -27,8 +27,7 @@ while( e.MoveNext() )
 				n += e.Current ;
 				e.MoveNext() ;
 				}
-	//		iDNA.Element( n ) ;
-			iDNA.Element( _accept.Codex.Switch(int.Parse(n)).LHS ) ;
+			_accept.Codex.Switch(int.Parse(n)).Element() ;
 			}
 		else
 			process = false ;
@@ -40,7 +39,7 @@ while( e.MoveNext() )
 	if( e.Current == '&amp;' )
 		{
 		if( process )
-			{ iDNA.Text( l ) ; X.Y.Z( l ) ; }
+			_accept.Auto.Text(l) ;
 		l = string.Empty ;
 		e.MoveNext() ;
 		if( e.Current == '_' )
@@ -62,7 +61,7 @@ while( e.MoveNext() )
 				n += e.Current ;
 				e.MoveNext() ;
 				}
-			iDNA.EntityReference( n ) ;
+			_accept.Codex.Switch(int.Parse(n)).EntityReference() ;
 			}
 		else
 			process = false ;
@@ -105,12 +104,19 @@ struct iDNA {
 &io;
 }
 public abstract class Auto {
+	protected static Auto auto ;
 	public abstract string LHS { get; }
 	public abstract string[] RHS { get; }
+	public abstract void Element() ;
+	public abstract void EntityReference() ;
+	public static void Text( string text ) { auto.text(text) ; }
+	protected void text( string text ) { X.Y.Z(text) ; }
 }
 public class _Auto : Auto {
 	public override string LHS { get { return string.Empty ; } }
 	public override string[] RHS { get { return null ; } }
+	public override void Element() { }
+	public override void EntityReference() { }
 }
 public static class Codex
 	{
@@ -141,6 +147,8 @@ public partial class  &signal;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = &rhs; ;
+	public override void Element() { auto = this ; }
+	public override void EntityReference() { auto = this ; }
 	}
 }
 </A335-Xo_t-Build-iDNA-5>
