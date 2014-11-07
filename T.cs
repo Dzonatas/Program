@@ -27,7 +27,7 @@ public struct Transition
 	
 static bool transition( int i, out Transition tr )
 	{
-	foreach( Transition t in this_state.transitionset )
+	foreach( Transition t in this_state.Transitionset )
 		if( t == i )
 			{
 			tr = t ;

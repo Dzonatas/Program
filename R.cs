@@ -125,25 +125,6 @@ static Item respond()
 	}
 #endif
 
-static void request( ref State s )
-	{
-	//#region OPT
-	//System.Guid UUID ;
-	//System.DateTime z = System.DateTime.Now ; //(_ice_linq)
-	//#endregion OPT
-	if( this_state.debit != null && this_state.debit != s.debit )
-		{
-		//stateset[this_state.debit].zlog.Add( z ) ;
-		//stateset[this_state.debit].zlog.Add( s ) ;
-		//iOS.[command,environment];
-		//stateset[         s.debit].zlog.Add( this_state ) ;
-		//stateset[         s.debit].zlog.Add( z ) ;
-		}
-	//if( stateset[         s.debit].zlog.Count > 500 )
-	//	throw new System.ArgumentOutOfRangeException("zlog") ;
-	this_state = s ;
-	}
-
 	
 public class ReducedAcception : System.Exception
 	{
@@ -162,7 +143,7 @@ public class ReducedAcception : System.Exception
 
 static bool reduction( int c, out Reduction rr )
 	{
-	foreach( Reduction r in this_state.reductionset )
+	foreach( Reduction r in this_state.Reductionset )
 		if( r == c )
 			{
 			rr = r ;

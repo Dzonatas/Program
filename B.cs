@@ -11,7 +11,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	{
 	State      state = stateset[b.zz] ;
 	setstate:
-	request( ref state ) ;
+	this_state = state ;
 	planet     xyzzy ;
 	int rule = -1 ; // 9.9.Delete() ;
 
@@ -25,7 +25,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Debug.WriteLine( "[Token] " + token ) ;
 		#endif
 		}
-	if( state.lookaheadset.Contains( xml_translate[token.Value.c] ) )
+	if( state.Lookaheadset.Contains( xml_translate[token.Value.c] ) )
 		{
 		b.yy = xml_translate[token.Value.c] ;
 		#if DEBUG_LOGICAL_ALPHABET
@@ -33,12 +33,12 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		#endif
 		goto reduce ;
 		}
-	if( state.shiftset.ContainsKey( xml_translate[token.Value.c] ) )
+	if( state.Shiftset.ContainsKey( xml_translate[token.Value.c] ) )
 		{
 		b.yy  = xml_translate[token.Value.c] ;
 		Stack.Push( new Stack.Item.Token( b, token.Value ) ) ;
 		token = null ;
-		Transition t = state.transitionset[ state.shiftset[b.yy] ] ;
+		Transition t = state.Transitionset[ state.Shiftset[b.yy] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, _default ) ;
 		#if DEBUG_SHIFT
 		Debug.WriteLine( "[Shift] " + t ) ;
@@ -46,7 +46,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		goto new_state ;
 		}
 	reduce :
-	foreach( Reduction rr in state.reductionset )
+	foreach( Reduction rr in state.Reductionset )
 		if( rr == b.yy )
 			{
 			if( ! rr.enabled )
@@ -61,20 +61,20 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			#endif
 			b.yy = xo_t[rr.rule] ;
 			rule = rr.rule ; // 9.9.Post([rule]) ;
-			if( state.gotoset.ContainsKey( b.yy ) )
+			if( state.Gotoset.ContainsKey( b.yy ) )
 				goto transit ;
 			this_xo_t = xo_t[rr.rule] ;
 			goto jump ;
 			}
-	if( state.default_reduction.HasValue )
+	if( state.Default_reduction.HasValue )
 		{
-		rule = state.reductionset[state.default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
+		rule = state.Reductionset[state.Default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
 		b.yy = xo_t[rule] ;
 		}
 	transit:
-	if( state.gotoset.ContainsKey( b.yy ) )
+	if( state.Gotoset.ContainsKey( b.yy ) )
 		{
-		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
+		Transition t = state.Transitionset[ state.Gotoset[b.yy] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		#if DEBUG_GOTO
 		Debug.WriteLine( "[Goto] " + t ) ;
@@ -84,7 +84,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	#if DEBUG_DEFAULT
 	Debug.WriteLine( "[Default] " + b.yy ) ;
 	#endif
-	if( b.yy == _default && ! state.default_reduction.HasValue )
+	if( b.yy == _default && ! state.Default_reduction.HasValue )
 		{
 		Debug.WriteLine( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
 		throw new System.NotImplementedException( "Missed token?" ) ;
@@ -108,9 +108,9 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			throw bb ;
 		b.yy = xo_t[bb.rule] ;
 		}
-	if( state.gotoset.ContainsKey( b.yy ) )
+	if( state.Gotoset.ContainsKey( b.yy ) )
 		{
-		Transition t = state.transitionset[ state.gotoset[b.yy] ] ;
+		Transition t = state.Transitionset[ state.Gotoset[b.yy] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		goto new_state ;
 		}

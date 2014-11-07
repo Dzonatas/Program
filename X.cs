@@ -133,14 +133,14 @@ class Xo_t
 		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 		X.Auto["glyph"] = ((char)xo_t[i]).ToString() ;
 		X.Auto["lookahead"] = "{ " ;
-		if( stateset[i].lookaheadset.Count != 0 )
+		if( stateset[i].Lookaheadset.Count != 0 )
 			{
-			foreach( var c in stateset[i].lookaheadset )
+			foreach( var c in stateset[i].Lookaheadset )
 				X.Auto["lookahead"] += c+", " ;
 			}
 		X.Auto["lookahead"] += " }" ;
 		sb.Append( put("A335-Xo_t-list-top") ) ;
-		foreach( Itemset item in stateset[i].itemset )
+		foreach( Itemset item in stateset[i].Itemset )
 			{
 			if( item.rule == i || item.rule == 0 )
 				continue ;
@@ -178,23 +178,23 @@ class Xo_t
 		{
 		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 		int rule = -1 ;
-		if( stateset[i].default_reduction.HasValue )
+		if( stateset[i].Default_reduction.HasValue )
 			{
-			rule = stateset[i].reductionset[stateset[i].default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
+			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
 			sb.AppendLine( "//" + xo_t[rule] ) ;
 			}
 		sb.Append( put("A335-Xo_t-_io-1") ) ;
-		foreach( var t in stateset[i].shiftset )
-			sb.AppendLine( "//" + stateset[i].transitionset[ t.Value ] ) ;
-		foreach( Reduction r in stateset[i].reductionset )
+		foreach( var t in stateset[i].Shiftset )
+			sb.AppendLine( "//" + stateset[i].Transitionset[ t.Value ] ) ;
+		foreach( Reduction r in stateset[i].Reductionset )
 			sb.AppendLine( "//" + r ) ;
-		if( stateset[i].gotoset.Count != 0 )
+		if( stateset[i].Gotoset.Count != 0 )
 			sb.Append( put("A335-Xo_t-_io-2") ) ;
 		else
 			sb.Append( put("A335-Xo_t-_io-3") ) ;
 		sb.Append( put("A335-Xo_t-_io-4") ) ;
-		foreach( var t in stateset[i].gotoset )
-			sb.AppendLine( "//" + stateset[i].transitionset[ t.Value ] ) ;
+		foreach( var t in stateset[i].Gotoset )
+			sb.AppendLine( "//" + stateset[i].Transitionset[ t.Value ] ) ;
 		if( rule != -1 )
 			{
 			X.Auto["global"] = "global::"+( rule == 0 ? "_accept" : xo_t[rule].lhs.s )
@@ -361,7 +361,7 @@ static void xml_load_grammar()
 		if( XmlNodeType.EndElement == xml.NodeType )
 			{
 			if( xml.Name == "state" )
-				stateset[(int)x_state] = x_state ;
+				x_state.Set() ;
 			if( xml.Name == "rule" )
 				x_rule.post() ;
 			if( xml.Name == "bison-xml-report" )
@@ -512,7 +512,7 @@ static void xml_get_symbol( bool _rule )
 		x_rule.rhs.Add( new xml_s( xml.Value ) ) ;
 	else
 		{
-		x_state.lookaheadset.Add ( (int)xml_tokenset[xml.Value] ) ;
+		x_state.Lookaheadset.Add ( (int)xml_tokenset[xml.Value] ) ;
 		}
 	xml.Read() ;
 	}
@@ -613,15 +613,7 @@ static State x_state ;
 static void xml_get_state()
 	{
 	xml.MoveToFirstAttribute() ;
-	x_state.debit = Number.Parse( xml.Value ) ;
-	x_state.transitionset = new Transition[0] ;
-	x_state.shiftset = new Dictionary<int,int>() ;
-	x_state.gotoset = new Dictionary<int,int>() ;
-	x_state.itemset = new Itemset[0] ;
-	x_state.reductionset = new Reduction[0] ;
-	x_state.lookaheadset = new List<int>() ;
-	x_state.default_item = null ;
-	x_state.default_reduction = null ;
+	x_state.Number = Number.Parse( xml.Value ) ;
 	}
 
 static void xml_get_item()
@@ -631,8 +623,7 @@ static void xml_get_item()
 	i.rule = Number.Parse( xml.Value ) ;
 	xml.MoveToNextAttribute() ;
 	i.point = Number.Parse( xml.Value ) ;
-	System.Array.Resize(ref x_state.itemset, x_state.itemset.Length + 1 ) ;
-	x_state.itemset[ x_state.itemset.Length - 1 ] = i ;
+	x_state.Append( i ) ;
 	}
 
 static void xml_get_transition()
@@ -647,21 +638,20 @@ static void xml_get_transition()
 		t.symbol = xml_tokenset[xml.Value] ;
 	xml.MoveToNextAttribute() ;
 	t.state = Number.Parse( xml.Value );
-	foreach( Itemset i in x_state.itemset )
+	foreach( Itemset i in x_state.Itemset )
 		if( t.symbol == (int)i )
 			{
 			t.item = i ;
 			break ;
 			}
-	System.Array.Resize(ref x_state.transitionset,  x_state.transitionset.Length + 1 ) ;
-	x_state.transitionset[  x_state.transitionset.Length - 1 ] = t ;
+	x_state.Append( t ) ;
 	if( t.type == "shift" )
 		{
-		x_state.shiftset.Add( t.symbol, x_state.transitionset.Length - 1 ) ;
+		x_state.Shiftset.Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
 		}
 	else
 		{
-		x_state.gotoset.Add( t.symbol, x_state.transitionset.Length - 1 ) ;
+		x_state.Gotoset.Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
 		}
 	}
 
@@ -675,7 +665,7 @@ static void xml_get_reduction()
 		r.rule = Number.Parse( xml.Value ) ;
 	xml.MoveToNextAttribute() ;
 	r.enabled = bool.Parse( xml.Value ) ;
-	foreach( Itemset i in x_state.itemset )
+	foreach( Itemset i in x_state.Itemset )
 		if( r.symbol == (int)i )
 			{
 			r.item = i ;
@@ -683,17 +673,16 @@ static void xml_get_reduction()
 			}
 	if( r.symbol == _default )
 		{
-		x_state.default_reduction = x_state.reductionset.Length ;
-		for( int x = 0 ; x < x_state.itemset.Length ; x++ )
-			if( (Xo)x_state.itemset[x] == (Xo)r )
+		x_state.Default_reduction = x_state.Reductionset.Length ;
+		for( int x = 0 ; x < x_state.Itemset.Length ; x++ )
+			if( (Xo)x_state.Itemset[x] == (Xo)r )
 				{
-				r.item = x_state.itemset[x] ;
-				x_state.default_item = x ;
+				r.item = x_state.Itemset[x] ;
+				x_state.Default_item = x ;
 				break ;
 				}
 		}
-	System.Array.Resize(ref  x_state.reductionset,  x_state.reductionset.Length + 1 ) ;
-	x_state.reductionset[  x_state.reductionset.Length - 1 ] = r ;
+	x_state.Append( r ) ;
 	}
 	
 static xml_rule x_rule ;

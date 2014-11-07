@@ -204,37 +204,62 @@ class Stack
 
 public struct State                //_FIX:$State,_State,_State:=$State,$State!=_State
 	{
-	public Number               debit ;
-	public Itemset []           itemset ;
-	public Transition []        transitionset ;
-	public Dictionary<int,int>  shiftset ;
-	public Dictionary<int,int>  gotoset ;
-	public List<int>            lookaheadset ;
-	public Reduction []         reductionset ;
-	public Nullable<int>        default_item ;
-	public Nullable<int>        default_reduction ;
-	public List<string>         zla
+	public Number               Number
 		{
-		get { return list() ; }
-		}
-	
-	public List<string> list()
-		{
-		List<string> l = new List<string>() ;
-		foreach( int i in lookaheadset )
-			{
-			foreach( KeyValuePair<string,xml_token> kv in xml_tokenset )
-				{
-				if( i == (int)(xml_token)kv.Value )
-					{
-					l.Add( kv.Value.ToString() ) ;
-					break ;
-					}
-				}
+		get { return debit ; }
+		set {
+			debit             = value ;
+			transitionset     = new Transition[0] ;
+			shiftset          = new Dictionary<int,int>() ;
+			gotoset           = new Dictionary<int,int>() ;
+			itemset           = new Itemset[0] ;
+			reductionset      = new Reduction[0] ;
+			lookaheadset      = new List<int>() ;
+			default_item      = null ;
+			default_reduction = null ;
 			}
-		return l ;
 		}
-	
+	public Itemset []           Itemset               { get { return itemset ; } }
+	public Transition []        Transitionset         { get { return transitionset ; } }
+	public Dictionary<int,int>  Shiftset              { get { return shiftset ; } }
+	public Dictionary<int,int>  Gotoset               { get { return gotoset ; } }
+	public List<int>            Lookaheadset          { get { return lookaheadset ; } }
+	public Reduction []         Reductionset          { get { return reductionset ; } }
+	public Nullable<int>        Default_item          { get { return default_item ; } set { default_item = value ; } }
+	public Nullable<int>        Default_reduction     { get { return default_reduction ; } set { default_reduction = value ; } }
+	Number               debit ;
+	Itemset []           itemset ;
+	Transition []        transitionset ;
+	Dictionary<int,int>  shiftset ;
+	Dictionary<int,int>  gotoset ;
+	List<int>            lookaheadset ;
+	Reduction []         reductionset ;
+	Nullable<int>        default_item ;
+	Nullable<int>        default_reduction ;
+
+	public void Append( Itemset i )
+		{
+		System.Array.Resize(ref itemset, itemset.Length + 1 ) ;
+		itemset[ itemset.Length - 1 ] = i ;
+		}
+
+	public void Append( Transition t )
+		{
+		System.Array.Resize(ref transitionset,  transitionset.Length + 1 ) ;
+		transitionset[  transitionset.Length - 1 ] = t ;
+		}
+
+	public void Append( Reduction r )
+		{
+		System.Array.Resize(ref  reductionset,  reductionset.Length + 1 ) ;
+		reductionset[  reductionset.Length - 1 ] = r ;
+		}
+
+	public void Set()
+		{
+		stateset[(int)debit] = x_state ;
+		}
+
 	static public implicit operator Decimal( State s )
 		{
 		return s.debit ;
