@@ -71,16 +71,16 @@ static string n_number( int n )
 	{
 	switch( n )
 		{
-		case 0 : return "_" ;
-		case 1 : return "One" ;
-		case 2 : return "Two" ;
-		case 3 : return "Three" ;
-		case 4 : return "Four" ;
-		case 5 : return "Five" ;
-		case 6 : return "Six" ;
-		case 7 : return "Seven" ;
-		case 8 : return "Eight" ;
-		case 9 : return "Nine" ;
+		case 0 : return "▒"    ;
+		case 1 : return "█"    ;
+		case 2 : return "abc"  ;
+		case 3 : return "def"  ;
+		case 4 : return "ghi"  ;
+		case 5 : return "jkl"  ;
+		case 6 : return "mno"  ;
+		case 7 : return "pqrs" ;
+		case 8 : return "tuv"  ;
+		case 9 : return "wxyz" ;
 		default: throw new System.NotImplementedException() ;
 		}
 	}
