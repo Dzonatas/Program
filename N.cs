@@ -47,44 +47,36 @@ public class Number
 	public override string ToString()
 			{
 			if( n == 0 )
-				return "$default" ;
+				return n_number[0] ;
 			if( n < 10 )
-				return r_number( (int)n ) ;
+				return n_number[ (int)n ] ;
 			System.Decimal d ;
 			string s = "" ;
 			if( n >= 1000 )
-				s += n_number( (int)((n%1000)/100) ) + "T" ;
+				s += n_number[ (int)((n%1000)/100) ] + "T" ;
 			d = n % 1000 ;
 			if( d >= 100 )
-				s += n_number( (int)(d/100) ) + "H" ;
+				s += n_number[ (int)(d/100) ] + "H" ;
 			d = d % 100 ;
 			if( d >= 10 )
-				s += "_" + n_number( (int)(d/10) )  ;
+				s += "_" + n_number[ (int)(d/10) ]  ;
 			d = n % 10 ;
-			s += n_number( (int)d ) ;
+			s += n_number[ (int)d ] ;
 			return s ;
 			//return '#'+ n.ToString() + d;
 			}
 	}
 
-static string n_number( int n )
-	{
-	switch( n )
-		{
-		case 0 : return "▒"    ;
-		case 1 : return "█"    ;
-		case 2 : return "abc"  ;
-		case 3 : return "def"  ;
-		case 4 : return "ghi"  ;
-		case 5 : return "jkl"  ;
-		case 6 : return "mno"  ;
-		case 7 : return "pqrs" ;
-		case 8 : return "tuv"  ;
-		case 9 : return "wxyz" ;
-		default: throw new System.NotImplementedException() ;
-		}
-	}
-	
+const string Abc  = "abc"  ;
+const string Def  = "def"  ;
+const string Ghi  = "ghi"  ;
+const string Jkl  = "jkl"  ;
+const string Mno  = "mno"  ;
+const string Pqrs = "pqrs" ;
+const string Tuv  = "tuv"  ;
+const string Wxyz = "wxyz" ;
+static readonly string[] n_number = { "▒", "█", Abc, Def, Ghi, Jkl, Mno, Pqrs, Tuv, Wxyz } ;
+
 /*
 #region macro
 <TENTHS> | .0
