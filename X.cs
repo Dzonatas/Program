@@ -107,9 +107,9 @@ class Xo_t
 		{
 		return x.lhs ;
 		}
-	public string ReductionMethod
+	public Number ReductionMethod
 		{
-		get { return lhs.Rule.Mangle ; }
+		get { return lhs.Rule ; }
 		}
 	public int Length
 		{
@@ -215,6 +215,11 @@ class Xo_t
 		}
 	static readonly char[] trimchar = { '\n','\r'} ;
 	static bool resolve = false ;
+	static void read( StreamReader sr )
+		{
+		resolve = false ;
+		read( new XmlTextReader( sr ) ) ;
+		}
 	static void read( XmlReader xml )
 		{
 		bool content = false ;
@@ -247,6 +252,7 @@ class Xo_t
 				if( xml.Name == "text" )
 					X.Auto[xml.Name] = text ;
 				else
+				if( xml.Name != "auto" )
 					X.Auto.Add(xml.Name, text ) ;
 				content = false ;
 				text = "" ;
@@ -266,8 +272,8 @@ class Xo_t
 		compile[0] = "auto.cs" ;
 		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
-		var xml = new XmlTextReader( new StreamReader( "../../#/Auto.xml" ) ) ;
-		read(xml) ;
+		read( new StreamReader( "../../#/Auto.xml" ) ) ;
+		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
 		X.Auto["_xml_reader"] = put("_xml_reader") ;
 		X.Auto["list"] = list( 0 ) ;
 		X.Auto["io"] = _io( 0 ) ;
@@ -276,10 +282,11 @@ class Xo_t
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
+			X.Auto["_"+xo.lhs.X] = X.Auto["_"+xo.lhs.X].TrimEnd() ;
 			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ xo.ReductionMethod ;
 			compile[i] = filename ;
 			X.Auto["namespace"] = xo.lhs.s + "._" + xo.lhs.X ;
-			X.Auto["signal"] = xo.ReductionMethod ;
+			X.Auto["signal"] = put("_"+xo.lhs.X ) ;
 			X.Auto["i"] = i.ToString() ;
 			s.Write( put("A335-Xo_t-Build-iDNA-2") ) ;
 			}
@@ -293,7 +300,7 @@ class Xo_t
 			n = xo ;
 			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ xo.ReductionMethod ;
 			string entity = "&0." + xo.lhs.X + ";" ;
-			string prototype = xo.ReductionMethod.Substring( xo.lhs.s.Length ) ;
+			string prototype = put("_"+xo.lhs.X ).Substring( xo.lhs.s.Length ) ;
 			X.Auto["namespace"] = n.lhs.s + "._" + n.lhs.X ;
 			X.Auto["Entity"] = "{ " ;
 			foreach( char c in entity.TrimEnd( entity_trim ) )
@@ -301,7 +308,7 @@ class Xo_t
 			X.Auto["Entity"] += "'" + entity[entity.Length-1] + "' }" ;
 			X.Auto["list"] = list( i ) ;
 			X.Auto["io"] = _io( i ) ;
-			X.Auto["signal"] = xo.ReductionMethod ;
+			X.Auto["signal"] = put("_"+xo.lhs.X ) ;
 			X.Auto["lhs"] = "{ " ;
 			foreach( char c in Rule.Set[i].lhs.s )
 				X.Auto["lhs"] += "'"+c+"', " ;

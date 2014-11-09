@@ -4,20 +4,15 @@ using System.Reflection ;
 using System.Linq ;
 using System ;
 public partial class A335 {
-public static void Auto( string method )
-{
-	if( automatrix.ContainsKey(method) )
-		{
-		object o = _auto(method) ;
-//		object o = automatrix[method].InvokeMember( null ,
-//			            System.Reflection.BindingFlags.CreateInstance  ,
-//			                                               null , null , null ) ;			                                                    ;
-		Stack.Push( (Automatrix) o ) ;
-		}
-	else
-		Debug.WriteLine( "[beginning] Defaulted on "+method ) ;
+public static void Auto( Number n )
+	{
+	string method = ((int)n).ToString() ;
+	if( method == "0" )
+		return ;
+	object o = _auto(X.Auto["_"+method]) ;
+	Stack.Push( (Automatrix) o ) ;
 	return ;
-}
+	}
 
 
 public static object _auto( string method ) {
