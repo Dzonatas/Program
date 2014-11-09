@@ -233,7 +233,7 @@ class Automatrix : Object
 		}
 	public override string ToString()
 		{
-		return "[Automatrix] " + Rule.ReductionMethod ;
+		return "[Automatrix] " + Rule ;
 		}
 	}
 }

@@ -107,9 +107,9 @@ class Xo_t
 		{
 		return x.lhs ;
 		}
-	public Number ReductionMethod
+	static public implicit operator Number( Xo_t x )
 		{
-		get { return lhs.Rule ; }
+		return x.lhs.Rule ;
 		}
 	public int Length
 		{
@@ -283,10 +283,11 @@ class Xo_t
 			{
 			xo = xo_t[i] ;
 			X.Auto["_"+xo.lhs.X] = X.Auto["_"+xo.lhs.X].TrimEnd() ;
-			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ xo.ReductionMethod ;
+			string reduction = put("_"+xo.lhs.X ) ;
+			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ reduction ;
 			compile[i] = filename ;
 			X.Auto["namespace"] = xo.lhs.s + "._" + xo.lhs.X ;
-			X.Auto["signal"] = put("_"+xo.lhs.X ) ;
+			X.Auto["signal"] = reduction ;
 			X.Auto["i"] = i.ToString() ;
 			s.Write( put("A335-Xo_t-Build-iDNA-2") ) ;
 			}
@@ -298,9 +299,10 @@ class Xo_t
 			xo = xo_t[i] ;
 			bool head = n.lhs.s != xo.lhs.s ;
 			n = xo ;
-			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ xo.ReductionMethod ;
+			string reduction = put("_"+xo.lhs.X ) ;
+			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ reduction ;
 			string entity = "&0." + xo.lhs.X + ";" ;
-			string prototype = put("_"+xo.lhs.X ).Substring( xo.lhs.s.Length ) ;
+			string prototype = reduction.Substring( xo.lhs.s.Length ) ;
 			X.Auto["namespace"] = n.lhs.s + "._" + n.lhs.X ;
 			X.Auto["Entity"] = "{ " ;
 			foreach( char c in entity.TrimEnd( entity_trim ) )
@@ -308,7 +310,7 @@ class Xo_t
 			X.Auto["Entity"] += "'" + entity[entity.Length-1] + "' }" ;
 			X.Auto["list"] = list( i ) ;
 			X.Auto["io"] = _io( i ) ;
-			X.Auto["signal"] = put("_"+xo.lhs.X ) ;
+			X.Auto["signal"] = reduction ;
 			X.Auto["lhs"] = "{ " ;
 			foreach( char c in Rule.Set[i].lhs.s )
 				X.Auto["lhs"] += "'"+c+"', " ;

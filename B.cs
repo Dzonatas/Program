@@ -94,7 +94,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	#if DEBUG_REDUCE
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
 	#endif
-	Auto( this_xo_t.ReductionMethod ) ;
+	Auto( this_xo_t ) ;
 	throw new ReducedAcception( rule ) ;
 
 	new_state :
