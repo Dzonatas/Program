@@ -270,40 +270,39 @@ class Xo_t
 		{
 		string[] compile = new string[xo_t.Length] ;
 		compile[0] = "auto.cs" ;
-		Xo_t n = xo_t[0] ;
 		Xo_t xo ;
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
 		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
 		X.Auto["_xml_reader"] = put("_xml_reader") ;
 		X.Auto["list"] = list( 0 ) ;
 		X.Auto["io"] = _io( 0 ) ;
-		var s = Current.Path.CreateText( compile[0] ) ;
-		s.Write( put("A335-Xo_t-Build-iDNA-1") ) ;
+		var f = Current.Path.CreateText( compile[0] ) ;
+		f.Write( put("A335-Xo_t-Build-iDNA-1") ) ;
+		string filename = "" ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
 			X.Auto["_"+xo.lhs.X] = X.Auto["_"+xo.lhs.X].TrimEnd() ;
-			string reduction = put("_"+xo.lhs.X ) ;
-			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ reduction ;
-			compile[i] = filename ;
+			compile[i] = xo.lhs.s +".cs" ;
 			X.Auto["namespace"] = xo.lhs.s + "._" + xo.lhs.X ;
-			X.Auto["signal"] = reduction ;
+			X.Auto["signal"] = put( "_"+xo.lhs.X ) ;
 			X.Auto["i"] = i.ToString() ;
-			s.Write( put("A335-Xo_t-Build-iDNA-2") ) ;
+			f.Write( put("A335-Xo_t-Build-iDNA-2") ) ;
 			}
-		s.Write( X.Auto["A335-Xo_t-Build-iDNA-4"] ) ;
-		s.WriteLine( ) ;
-		s.Close() ;
+		f.Write( X.Auto["A335-Xo_t-Build-iDNA-4"] ) ;
+		f.WriteLine( ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
-			bool head = n.lhs.s != xo.lhs.s ;
-			n = xo ;
+			if( compile[i-1] != compile[i] )
+				{
+				f.Close() ;
+				f = Current.Path.CreateText( compile[i] ) ;
+				}
 			string reduction = put("_"+xo.lhs.X ) ;
-			string filename = xo.lhs.s +"._"+ xo.lhs.X +'.'+ reduction ;
 			string entity = "&0." + xo.lhs.X + ";" ;
 			string prototype = reduction.Substring( xo.lhs.s.Length ) ;
-			X.Auto["namespace"] = n.lhs.s + "._" + n.lhs.X ;
+			X.Auto["namespace"] = xo.lhs.s + "._" + xo.lhs.X ;
 			X.Auto["Entity"] = "{ " ;
 			foreach( char c in entity.TrimEnd( entity_trim ) )
 				X.Auto["Entity"] += "'"+c+"', " ;
@@ -325,11 +324,10 @@ class Xo_t
 				}
 			else
 				X.Auto["rhs"] = "{}" ;
-			var f = Current.Path.CreateText( filename ) ;
 			f.Write( put("A335-Xo_t-Build-iDNA-5") ) ;
 			f.WriteLine( ) ;
-			f.Close() ;
 			}
+		f.Close() ;
 		Cluster.Shell.Embed( compile ) ;
 		#if POSTBACK
 		//[((v8)|v16)[f32|.]v64]|v8sidv64

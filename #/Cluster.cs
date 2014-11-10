@@ -84,7 +84,8 @@ public static partial class Shell
 			Cli.Copy( f, Current.Path.Entry( file[i,1] ) ) ;
 			}
 		foreach( string filename in compile )
-			files += " "+Current.Path.Entry( filename ) ;
+			if( ! files.Contains( filename ) )
+				files += " "+Current.Path.Entry( filename ) ;
 		Cli.AutoStart(
 			#if LEAN_AND_MEAN
 			"gmcs -define:EMBED -nostdlib" //-main:_accept.A335
