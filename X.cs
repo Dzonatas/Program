@@ -298,7 +298,11 @@ class Xo_t
 				{
 				f.Close() ;
 				f = Current.Path.CreateText( compile[i] ) ;
+				X.Auto["interface"] = xo.lhs.s ;
+				X.Auto["i"] = "" ;
+				f.Write( put("A335-Xo_t-Build-iDNA-5i") ) ;
 				}
+			X.Auto["interface"] = "global::Item, basic."+xo.lhs.s ;
 			string reduction = put("_"+xo.lhs.X ) ;
 			string entity = "&0." + xo.lhs.X + ";" ;
 			string prototype = reduction.Substring( xo.lhs.s.Length ) ;
@@ -397,6 +401,7 @@ partial class X //_: YY
 		{ "point",      null },
 		{ "i",          null },
 		{ "global",     null },
+		{ "interface",  null },
 		{ "guid",       0.0.GUID() },
 		#if DEBUG
 		{ "debug_nop", "Current.Interval.NOP() ;" }

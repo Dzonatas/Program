@@ -87,6 +87,7 @@ while( e.MoveNext() )
 s.Close() ;
 </_xml_reader>
 <A335-Xo_t-Build-iDNA-1>
+interface Item { }
 namespace _accept {
 public partial class A335 {
 static A335() {}
@@ -133,6 +134,11 @@ public static class Codex
 	}
 }
 </A335-Xo_t-Build-iDNA-4>
+<A335-Xo_t-Build-iDNA-5i>
+namespace basic {
+interface &interface; { &i; }
+}
+</A335-Xo_t-Build-iDNA-5i>
 <A335-Xo_t-Build-iDNA-5>
 namespace &namespace; {
 public struct iDNA {
@@ -141,7 +147,7 @@ public struct iDNA {
 &io;
 }
 public partial class  &signal;
-	: _accept.Auto
+	: _accept.Auto, &interface;
 	{
 	static readonly char[]   lhs = &lhs; ;
 	public override string   LHS { get { return new string(lhs) ; } }
