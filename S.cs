@@ -28,8 +28,8 @@ static State []                 stateset = new State[1125] ;
 
 class Stack
 	{
-	static System.Collections.Generic.Stack<Item> stack = new System.Collections.Generic.Stack<Item>() ;
-	public class Item
+	static System.Collections.Generic.Stack<global::Item> stack = new System.Collections.Generic.Stack<global::Item>() ;
+	public class Item : global::Item
 		{
 		public Xo_t Rule ;
 		public Item()

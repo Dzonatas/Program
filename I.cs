@@ -1,5 +1,7 @@
 using System.Text.RegularExpressions ;
 
+interface Item {}
+
 public partial class A335
 {
 static string iconic_Earth ; //[static:Earth:"EARTH"]
