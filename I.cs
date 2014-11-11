@@ -4,6 +4,7 @@ public interface Item {}
 
 public partial class A335
 {
+public class I : global::Item {}
 static string iconic_Earth ; //[static:Earth:"EARTH"]
 static string icon_dae_s ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b
 static string icon_dae_q ; //_X-CONSOLE:_requires:pointed:'Atomatrix'b:[Q,r]

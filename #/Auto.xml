@@ -136,7 +136,7 @@ public static class Codex
 </A335-Xo_t-Build-iDNA-4>
 <A335-Xo_t-Build-iDNA-5i>
 namespace basic {
-interface &interface; { &i; }
+interface &interface; { &I; }
 }
 namespace synthetic {
 struct operator {
