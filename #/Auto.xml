@@ -138,6 +138,11 @@ public static class Codex
 namespace basic {
 interface &interface; { &i; }
 }
+namespace synthetic {
+struct operator {
+&A;
+}
+}
 </A335-Xo_t-Build-iDNA-5i>
 <A335-Xo_t-Build-iDNA-5>
 namespace &namespace; {
