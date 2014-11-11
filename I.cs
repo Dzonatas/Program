@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions ;
 
-interface Item {}
+public interface Item {}
 
 public partial class A335
 {

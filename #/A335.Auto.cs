@@ -9,13 +9,12 @@ public static void Auto( Number n )
 	string method = ((int)n).ToString() ;
 	if( method == "0" )
 		return ;
-	object o = _auto(X.Auto["_"+method]) ;
-	Stack.Push( (Automatrix) o ) ;
+	Stack.Push( (Automatrix) _auto(X.Auto["_"+method]) ) ;
 	return ;
 	}
 
 
-public static object _auto( string method ) {
+public static global::Item _auto( string method ) {
 switch( method ) {
 case "sigArgs0_sigArgs1" : return new SigArgs0.sigArgs0_sigArgs1() ;
 case "sigArg_paramAttr_type" : return new SigArg.sigArg_paramAttr_type() ;
@@ -117,7 +116,7 @@ case "instr_INSTR_FIELD_type_typeSpec______id" : return new instr_INSTR_FIELD_ty
 case "instr_INSTR_SWITCH_____labels____" : return new instr_INSTR_SWITCH_____labels____() ;
 case "instr_INSTR_NONE" : return new instr_INSTR_NONE() ;
 case "instr_INSTR_STRING_compQstring" : return new instr_INSTR_STRING_compQstring() ;
-default: return new object() ;
+default: throw new System.DuplicateWaitObjectException() ;
 }
 }
 }
