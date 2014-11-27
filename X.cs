@@ -318,6 +318,7 @@ class Xo_t
 			foreach( char c in Rule.Set[i].lhs.s )
 				X.Auto["lhs"] += "'"+c+"', " ;
 			X.Auto["lhs"] += " }" ;
+			X.Auto["synopsis"] = "; }" ;
 			if( Rule.Set[i].rhs.Count > 0 )
 				{
 				var sb = new System.Text.StringBuilder() ;
@@ -400,6 +401,9 @@ partial class X //_: YY
 		{ "rule",       null },
 		{ "point",      null },
 		{ "i",          null },
+		{ "I",          "" },
+		{ "A",          "" },
+		{ "synopsis",   null },
 		{ "global",     null },
 		{ "interface",  null },
 		{ "guid",       0.0.GUID() },
