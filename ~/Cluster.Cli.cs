@@ -93,5 +93,10 @@ public static class Cli
 		{
 		Start( "cp"+' '+arg1+' '+arg2 ) ;
 		}
+	static public void Relink( string arg1, string arg2 )
+		{
+		Start( "rm -f "+arg2 ) ;
+		Start( "ln -s "+' '+arg1+' '+arg2 ) ;
+		}
 	}
 }
