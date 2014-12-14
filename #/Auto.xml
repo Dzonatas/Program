@@ -92,6 +92,7 @@ namespace _accept {
 public partial class A335 {
 static A335() {}
 #if EMBED
+public readonly static char[] MSB = new char[] { ' ', '.' } ;
 public static void Main( string[] args )
   {
   if( System.Environment.GetCommandLineArgs()[0].EndsWith("infrastructure.exe") )
@@ -99,6 +100,12 @@ public static void Main( string[] args )
 	X.Y.MapZ() ;
 	&_xml_reader;
 	Current.Interval.NOP() ;
+	}
+  else
+	{
+	string[] cl0 = System.Environment.GetCommandLineArgs()[0].Split(MSB) ;
+	string n = cl0[cl0.Length-2] ;
+	_accept.Codex.Switch(int.Parse(n)).Element() ;
 	}
   }
 #endif
