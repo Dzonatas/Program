@@ -94,9 +94,12 @@ static A335() {}
 #if EMBED
 public static void Main( string[] args )
   {
-  X.Y.MapZ() ;
-  &_xml_reader;
-  Current.Interval.NOP() ;
+  if( System.Environment.GetCommandLineArgs()[0].EndsWith("infrastructure.exe") )
+	{
+	X.Y.MapZ() ;
+	&_xml_reader;
+	Current.Interval.NOP() ;
+	}
   }
 #endif
 }
