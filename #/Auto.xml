@@ -103,9 +103,10 @@ public static void Main( string[] args )
 	}
   else
 	{
-	string[] cl0 = System.Environment.GetCommandLineArgs()[0].Split(MSB) ;
-	string n = cl0[cl0.Length-2] ;
-	_accept.Codex.Switch(int.Parse(n)).Element() ;
+	string cl0 = System.Environment.GetCommandLineArgs()[0] ;
+	string[] cl = cl0.Substring(cl0.LastIndexOf('/')+1).Split(MSB) ;
+	for( int i = 1 ; i &lt; cl.Length -1 ; i++ )
+		_accept.Codex.Switch(int.Parse(cl[i])).Element() ;
 	}
   }
 #endif
