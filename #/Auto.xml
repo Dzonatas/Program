@@ -212,4 +212,33 @@ public partial class  &signal;
 		//System.Console.Write( l ) ;
 		}
 </A335-Xo_t-_io-7>
+<main_c>
+#include &lt;stdlib.h>
+#include &lt;sys/types.h>
+#include &lt;sys/wait.h>
+#include &lt;stdio.h>
+#include &lt;unistd.h>
+int debug = 0 ;
+fn(char *const argv[])
+{
+pid_t pid ;
+int status ;
+if( (pid = vfork()) == 0 )
+	{
+	if( debug )
+		printf("%s\n",argv[0]) ;
+	execve( argv[0] , argv, 0 ) ;
+	abort() ;
+	}
+waitpid( pid, &amp;status, 0 ) ;
+}
+main(int argc, char** argv, char** envp)
+{
+if(argc>1) debug = 1 ;
+&list;
+}
+</main_c>
+<fn_c>
+fn( (char*[]) &argv; ) ;
+</fn_c>
 </auto>

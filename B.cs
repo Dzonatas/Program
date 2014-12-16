@@ -184,6 +184,11 @@ static void Begin()
 	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	Cluster.Cli.Refine() ;
 	beginning( ref b ) ;
+	var main_c = Current.Path.CreateText( "main.c" ) ;
+	X.Auto["list"] = b_list ;
+	main_c.WriteLine( Xo_t.put("main_c") ) ;
+	main_c.Close() ;
+	Cluster.Cli.AutoStart( "cc main.c -o main" ) ;
 	Stack.Dump() ;
 	Program.Write() ;
 	if( log_output != null )
@@ -195,6 +200,7 @@ static void Begin()
 		}
 	//_.prompt(_.string_t) ;
 	}
+static string b_list = "" ;
 
 partial class Program
 	{

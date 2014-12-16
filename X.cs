@@ -206,7 +206,7 @@ class Xo_t
 		sb.Append( put("A335-Xo_t-_io-7") ) ;
 		return sb.ToString() ;
 		}
-	static string put( string s )
+	public static string put( string s )
 		{
 		var sxml = "<text>"+X.Auto[s]+"</text>" ;
 		var xml = new XmlTextReader( new StringReader( sxml ) ) ;
@@ -394,6 +394,7 @@ partial class X //_: YY
 		{
 		{ "Entity",     null },
 		{ "list",       null },
+		{ "argv",       null },
 		{ "io",         null },
 		{ "namespace",  null },
 		{ "lhs",        null },

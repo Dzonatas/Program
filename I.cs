@@ -106,7 +106,12 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 			filename += "." + xml_translate[i.c] ;
 		filename = string.Format( "{0,4:X4}{1}.exe",lineno,filename ) ;
 		Cluster.Cli.Relink( Current.Path.Entry( "infrastructure.exe" ), Current.Path.Entry( filename ) ) ;
-		System.Console.WriteLine( filename ) ;
+		string args = "{ \"" + filename + "\", " ;
+		foreach( _.Token i in b_line )
+			args += '"'+i._+'"'+','+' ' ;
+		args += " 0 }" ;
+		X.Auto["argv"] = args ;
+		b_list += Xo_t.put("fn_c" ) ;
 		b_line.Clear() ;
 		lineno++ ;
 		}
