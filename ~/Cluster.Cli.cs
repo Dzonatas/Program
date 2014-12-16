@@ -95,8 +95,7 @@ public static class Cli
 		}
 	static public void Relink( string arg1, string arg2 )
 		{
-		Start( "rm -f "+arg2 ) ;
-		Start( "ln -s "+' '+arg1+' '+arg2 ) ;
+		Shell.system( "for file in "+arg2+" ; do ln -fs "+arg1+" $file ; done" ) ;
 		}
 	}
 }

@@ -334,8 +334,10 @@ class Xo_t
 			}
 		f.Close() ;
 		string infrastruct = Cluster.Shell.Embed( compile ) ;
+		string linkset = "" ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
-			Cluster.Cli.Relink( infrastruct, Current.Path.Entry( xo_t[i].lhs.s + '.' + i + ".exe" ) ) ;
+			linkset += Current.Path.Entry( "." + i + ".exe" ) + " " ;
+		Cluster.Cli.Relink( infrastruct, linkset ) ;
 		#if POSTBACK
 		//[((v8)|v16)[f32|.]v64]|v8sidv64
 		var c = Current.Path.CreateText( "entset.csv" ) ;

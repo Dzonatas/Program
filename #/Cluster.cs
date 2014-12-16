@@ -1,6 +1,7 @@
 namespace Cluster {
 public static partial class Shell
 	{
+	[System.Runtime.InteropServices.DllImport( "libc.so.6" )]	public extern  static   int             system(string command) ;
 	static System.Diagnostics.ProcessStartInfo psi ;
 	static public string Dpkg__p_LSB()
 		{
