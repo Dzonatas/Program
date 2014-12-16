@@ -63,6 +63,7 @@ public struct Itemset
 	*/
 	}
 
+static int lineno = 0 ;
 static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	{
 	#if DEBUG_INPUT
@@ -96,7 +97,20 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	b_line.RemoveAt(0) ;
 	return token ;
 	#else
-	return _.input() ;
+	_.Token t = _.input() ;
+	b_line.Add( t ) ;
+	if( t.terminal )
+		{
+		string filename = "" ;
+		foreach( _.Token i in b_line )
+			filename += "." + xml_translate[i.c] ;
+		filename = string.Format( "{0,4:X4}{1}.exe",lineno,filename ) ;
+		Cluster.Cli.Relink( Current.Path.Entry( "infrastructure.exe" ), Current.Path.Entry( filename ) ) ;
+		System.Console.WriteLine( filename ) ;
+		b_line.Clear() ;
+		lineno++ ;
+		}
+	return t ;
 	#endif
 	}
 

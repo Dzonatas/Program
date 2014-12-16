@@ -330,7 +330,7 @@ public static Token input()
 				string [] s = xml.Name.Split("_".ToCharArray()) ;
 				xml.Read() ;
 				string text = xml.Value ;
-				return new Token( (char)int.Parse( s[2] ), text ) ; //s[1]_estate
+				return new Token( (char)int.Parse( s[2] ), text, false ) ; //s[1]_estate
 				}
 			}
 		}

@@ -34,10 +34,18 @@ public struct Token
 	{
 	public char    c ;
 	public string  _ ;
+	public bool    terminal ;
 	internal Token( char _char, string _string )
 		{
 		c = _char ;
 		_ = _string ;
+		terminal = true ;
+		}
+	internal Token( char _char, string _string, bool _terminal )
+		{
+		c = _char ;
+		_ = _string ;
+		terminal = _terminal ;
 		}
 	public override string ToString()
 			{
