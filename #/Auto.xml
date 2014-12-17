@@ -219,7 +219,7 @@ public partial class  &signal;
 #include &lt;stdio.h>
 #include &lt;unistd.h>
 int debug = 0 ;
-fn(char *const argv[])
+fasm(char *const argv[])
 {
 pid_t pid ;
 int status ;
@@ -238,7 +238,7 @@ if(argc>1) debug = 1 ;
 &list;
 }
 </main_c>
-<fn_c>
-fn( (char*[]) &argv; ) ;
-</fn_c>
+<fasm_c>
+fasm( (char*[]) &argv; ) ;
+</fasm_c>
 </auto>

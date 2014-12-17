@@ -116,7 +116,7 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 			args += '"'+i._+'"'+','+' ' ;
 		args += " 0 }" ;
 		X.Auto["argv"] = args ;
-		b_list += Xo_t.put("fn_c" ) ;
+		b_list += Xo_t.put("fasm_c" ) ;
 		b_line.Clear() ;
 		lineno++ ;
 		}
