@@ -64,6 +64,7 @@ public struct Itemset
 	}
 
 static int lineno = 0 ;
+static int depth = 0 ;
 static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	{
 	#if DEBUG_INPUT
@@ -99,8 +100,12 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	#else
 	_.Token t = _.input() ;
 	b_line.Add( t ) ;
-	if( t.terminal )
+	if( t._ == "{" ) depth ++ ;
+	if( t._ == "}" ) depth -- ;
+	if( t.terminal && depth < 2 && "{}".Contains(t._) )
 		{
+		if( depth == 1 )
+			return t ;
 		string filename = "" ;
 		foreach( _.Token i in b_line )
 			filename += "." + xml_translate[i.c] ;
