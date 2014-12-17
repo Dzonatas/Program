@@ -100,11 +100,14 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	#else
 	_.Token t = _.input() ;
 	b_line.Add( t ) ;
-	if( t._ == "{" ) depth ++ ;
-	if( t._ == "}" ) depth -- ;
-	if( t.terminal && depth < 2 && "{}".Contains(t._) )
+	if( t.terminal )
 		{
-		if( depth == 1 )
+		if( t._ == "{" )
+			depth ++ ;
+		else
+		if( t._ == "}" )
+			depth -- ;
+		if( depth == 1 || ! ( depth < 2 && "{}".Contains(t._) ) )
 			return t ;
 		string filename = "" ;
 		foreach( _.Token i in b_line )
