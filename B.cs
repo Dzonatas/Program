@@ -189,7 +189,12 @@ static void Begin()
 	main_c.WriteLine( Xo_t.put("main_c") ) ;
 	main_c.Close() ;
 	Cluster.Cli.AutoStart( "cc main.c -o main" ) ;
+	main_c = Current.Path.CreateText( "dmain.c" ) ;
+	b_list = "" ;
 	Stack.Dump() ;
+	X.Auto["list"] = b_list ;
+	main_c.WriteLine( Xo_t.put("main_c") ) ;
+	main_c.Close() ;
 	Program.Write() ;
 	if( log_output != null )
 		{

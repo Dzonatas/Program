@@ -67,17 +67,74 @@ class Stack
 				}
 			}
 		}
+	static bool position0 = true ;
+	static void writeline()
+		{
+		if( position0 )
+			return ;
+		args += " 0 }" ;
+		X.Auto["argv"] = args ;
+		b_list += Xo_t.put("fasm_c" ) ;
+		position0 = true ;
+		args = "{ /*fn*/0, " ;
+		}
+	static void write( string s )
+		{
+		position0 = false ;
+		args += '"'+s+'"'+','+' ' ;
+		}
+	static void write_( string s )
+		{
+		if( position0 )
+			return ;
+		position0 = false ;
+		args += s+','+' ' ;
+		}
+	static string args = "{ /*fn*/0, " ;
+	static public void dump( Automatrix a )
+		{
+		for( int i = 1 ; i < a.Argv.Length ; i++ )
+			{
+			if( a.Argv[i] is Stack.Item.Token )
+				{
+				string t = (string) (Stack.Item.Token)a.Argv[i] ;
+				if( t[0] == '.' && t != ".ctor" && t != ".cctor" )
+					writeline() ;
+				write( t ) ;
+				if( t[0] == '{' )
+					writeline() ;
+				}
+			else
+			if( a.Argv[i] is Automatrix )
+				dump( a.Argv[i] as Automatrix ) ;
+			else
+			if( a.Argv[i] is Stack.Item.Empty )
+				write_( "/*empty*/0" ) ;
+			else
+			if( a.Argv[i] == null )
+				write_( "/*null*/0" ) ;
+			else
+				System.Console.Write( "["+a.Argv[i].GetType()+"]" ) ;
+			}
+		}
 	static public void Dump()
 		{
-		while( stack.Count > 0 )
+		foreach( global::Item o in stack )
 			{
-			object o = stack.Pop() ;
-			if( o is object[] )
-				foreach( object i in (object[])o )
-					log( "[stack.o#] "+ ( i == null ? "null" : i).ToString() ) ;
+			if( o is Stack.Item.Token )
+				{
+				string t = (string) (Stack.Item.Token)o ;
+				if( t == "$end" )
+					continue ;
+				System.Console.WriteLine( "[stack.t] "+ t ) ;
+				}
 			else
-				log( "[stack] "+o.ToString() ) ;
+			if( o is Automatrix )
+				dump( o as Automatrix ) ;
+			else
+				System.Console.WriteLine( "[stack] "+o.ToString() ) ;
 			}
+		writeline() ;
 		}
 	static public void Push( Item o )
 		{
