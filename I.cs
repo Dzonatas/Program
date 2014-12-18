@@ -111,7 +111,7 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 			return t ;
 		string filename = "" ;
 		foreach( _.Token i in b_line )
-			filename += "." + xml_translate[i.c] ;
+			filename += "." + i.point ;
 		filename = string.Format( "{0,4:X4}{1}.exe",lineno,filename ) ;
 		Cluster.Cli.Relink( Current.Path.Entry( "infrastructure.exe" ), Current.Path.Entry( filename ) ) ;
 		string args = "{ \"" + filename + "\", " ;

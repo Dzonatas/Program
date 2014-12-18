@@ -94,21 +94,15 @@ static A335() {}
 #if EMBED
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
 public static void Main( string[] args )
-  {
-  if( System.Environment.GetCommandLineArgs()[0].EndsWith("infrastructure.exe") )
-	{
-	X.Y.MapZ() ;
-	&_xml_reader;
-	Current.Interval.NOP() ;
-	}
-  else
 	{
 	string cl0 = System.Environment.GetCommandLineArgs()[0] ;
-	string[] cl = cl0.Substring(cl0.LastIndexOf('/')+1).Split(MSB) ;
-	for( int i = 1 ; i &lt; cl.Length -1 ; i++ )
-		_accept.Codex.Switch(int.Parse(cl[i])).Element() ;
+	var cl = cl0.Substring(cl0.LastIndexOf('/')+1).Split(MSB).GetEnumerator() ;
+	cl.MoveNext() ;
+	cl.MoveNext() ;
+	var argv = args.GetEnumerator() ;
+	argv.MoveNext() ;
+	_accept.Codex.Switch(cl,argv) ;
 	}
-  }
 #endif
 }
 struct iDNA {
@@ -132,11 +126,11 @@ public class _Auto : Auto {
 }
 public static class Codex
 	{
-	public static Auto Switch( int code ) {
-		switch( code ) {
+	public static Auto Switch( System.Collections.IEnumerator cl, System.Collections.IEnumerator args ) {
+		switch( int.Parse((string)cl.Current) ) {
 </A335-Xo_t-Build-iDNA-1>
 <A335-Xo_t-Build-iDNA-2>
-		case &i; : return new &namespace;.&signal;() ;
+		case &i; : return new &namespace;.&signal;(cl,args) ;
 </A335-Xo_t-Build-iDNA-2>
 <A335-Xo_t-Build-iDNA-4>
 		default: return new _Auto() ;
@@ -168,6 +162,15 @@ public partial class  &signal;
 	static readonly string[] rhs = &rhs; ;
 	public override void Element() { auto = this ; }
 	public override void EntityReference() { auto = this ; }
+	public &signal;( System.Collections.IEnumerator cl, System.Collections.IEnumerator args )
+		{
+		System.Console.WriteLine("{0}{1} &signal;",cl.Current,args.Current) ;
+		if( args.MoveNext() )
+			{
+			cl.MoveNext() ;
+			_accept.Codex.Switch(cl,args) ;
+			}
+		}
 	}
 }
 </A335-Xo_t-Build-iDNA-5>

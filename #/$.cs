@@ -35,17 +35,20 @@ public struct Token
 	public char    c ;
 	public string  _ ;
 	public bool    terminal ;
+	public int     point ;
 	internal Token( char _char, string _string )
 		{
 		c = _char ;
 		_ = _string ;
 		terminal = true ;
+		point = 0 ;
 		}
-	internal Token( char _char, string _string, bool _terminal )
+	internal Token( char _char, string _string, bool _terminal, int _point )
 		{
 		c = _char ;
 		_ = _string ;
 		terminal = _terminal ;
+		point = _point ;
 		}
 	public override string ToString()
 			{

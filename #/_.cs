@@ -323,14 +323,14 @@ public static Token input()
 				string [] s = xml.Name.Split("_-".ToCharArray()) ;
 				xml.Read() ;
 				string text = xml.Value ;
-				return new Token( (char)int.Parse( s[1] ), text ) ; //_point3D:___(s[2,text]),_xor_URN:s[0]:_
+				return new Token( (char)int.Parse( s[1] ), text, true, int.Parse( s[2] )) ; //_point3D:___(s[2,text]),_xor_URN:s[0]:_
 				}
 			case System.Xml.XmlNodeType.EntityReference:
 				{
 				string [] s = xml.Name.Split("_".ToCharArray()) ;
 				xml.Read() ;
 				string text = xml.Value ;
-				return new Token( (char)int.Parse( s[2] ), text, false ) ; //s[1]_estate
+				return new Token( (char)int.Parse( s[2] ), text, false, int.Parse( s[1] ) ) ; //s[1]_estate
 				}
 			}
 		}
