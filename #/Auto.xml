@@ -242,6 +242,6 @@ if(argc>1) debug = 1 ;
 }
 </main_c>
 <fasm_c>
-fasm( (char*[]) &argv; ) ;
+fasm( (char*[]) &A;&argv; ) ;
 </fasm_c>
 </auto>

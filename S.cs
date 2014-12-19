@@ -69,10 +69,9 @@ class Stack
 		}
 	static void writeline()
 		{
-		if( args.Split(',').Length == 2 )
+		if( args.Length == 0 )
 			return ;
-		args += " 0 }" ;
-		X.Auto["argv"] = args ;
+		X.Auto["argv"] = ", "+args+" 0 }" ;
 		b_list += Xo_t.put("fasm_c" ) ;
 		args = "" ;
 		}
@@ -82,7 +81,7 @@ class Stack
 		}
 	static void write_( string s )
 		{
-		if( args.Split(',').Length == 2 )
+		if( args.Length == 0 )
 			return ;
 		args += s+','+' ' ;
 		}
@@ -90,7 +89,7 @@ class Stack
 	static public void dump( Automatrix a )
 		{
 		if( args.Length == 0 )
-			args = "{"+a.Arg0.Token+", " ;
+			X.Auto["A"] = "{"+a.Arg0.Token ;
 		for( int i = 1 ; i < a.Argv.Length ; i++ )
 			{
 			if( a.Argv[i] is Stack.Item.Token )
@@ -100,7 +99,7 @@ class Stack
 					{
 					writeline() ;
 					if( args.Length == 0 )
-						args = "{"+a.Arg0.Token+", " ;
+						X.Auto["A"] = "{"+a.Arg0.Token ;
 					}
 				write( t ) ;
 				if( t[0] == '{' )
@@ -121,6 +120,7 @@ class Stack
 		}
 	static public void Dump()
 		{
+		X.Auto["A"] = "" ;
 		foreach( global::Item o in stack )
 			{
 			if( o is Stack.Item.Token )
