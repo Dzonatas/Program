@@ -67,39 +67,37 @@ class Stack
 				}
 			}
 		}
-	static bool position0 = true ;
 	static void writeline()
 		{
-		if( position0 )
-			return ;
 		args += " 0 }" ;
 		X.Auto["argv"] = args ;
 		b_list += Xo_t.put("fasm_c" ) ;
-		position0 = true ;
-		args = "{ /*fn*/0, " ;
+		args = "" ;
 		}
 	static void write( string s )
 		{
-		position0 = false ;
 		args += '"'+s+'"'+','+' ' ;
 		}
 	static void write_( string s )
 		{
-		if( position0 )
-			return ;
-		position0 = false ;
 		args += s+','+' ' ;
 		}
-	static string args = "{ /*fn*/0, " ;
+	static string args = "" ;
 	static public void dump( Automatrix a )
 		{
+		if( args.Length == 0 )
+			args = "{"+a.Arg0.Token+", " ;
 		for( int i = 1 ; i < a.Argv.Length ; i++ )
 			{
 			if( a.Argv[i] is Stack.Item.Token )
 				{
 				string t = (string) (Stack.Item.Token)a.Argv[i] ;
 				if( t[0] == '.' && t != ".ctor" && t != ".cctor" )
+					{
 					writeline() ;
+					if( args.Length == 0 )
+						args = "{"+a.Arg0.Token+", " ;
+					}
 				write( t ) ;
 				if( t[0] == '{' )
 					writeline() ;
