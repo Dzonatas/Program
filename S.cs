@@ -69,6 +69,8 @@ class Stack
 		}
 	static void writeline()
 		{
+		if( args.Split(',').Length == 2 )
+			return ;
 		args += " 0 }" ;
 		X.Auto["argv"] = args ;
 		b_list += Xo_t.put("fasm_c" ) ;
@@ -80,6 +82,8 @@ class Stack
 		}
 	static void write_( string s )
 		{
+		if( args.Split(',').Length == 2 )
+			return ;
 		args += s+','+' ' ;
 		}
 	static string args = "" ;
