@@ -336,7 +336,13 @@ class Xo_t
 		string infrastruct = Cluster.Shell.Embed( compile ) ;
 		string linkset = "" ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
+			{
+			if( xo_t[i].rhs.Length == 0 )
+				continue ;
+			if( xo_t[i].rhs[0].s[0] != '"' || xo_t[i].rhs[0].s[1] != '.' || xo_t[i].rhs[0].s[2] == '.' )
+				continue ;
 			linkset += Current.Path.Entry( "." + i + ".exe" ) + " " ;
+			}
 		Cluster.Cli.Relink( infrastruct, linkset ) ;
 		#if POSTBACK
 		//[((v8)|v16)[f32|.]v64]|v8sidv64
