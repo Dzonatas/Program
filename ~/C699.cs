@@ -115,6 +115,10 @@ public struct C
 		{
 		return (new c(value+' ')) ;
 		}
+	static public cso Array
+		{
+		get { return (new cso(new c())) ; }
+		}
 	}
 public enum Bit
 	{
@@ -249,6 +253,24 @@ public struct c
 		{
 		s = text ;
 		Bits = 0 ;
+		}
+	}
+public struct cso
+	{
+	c _c ;
+	string s ;
+	public cso(c cc)
+		{
+		_c = cc ;
+		s = "" ;
+		}
+	public cso assembly
+		{
+		get { s += "{.assembly"  ; return this ; }
+		}
+	public c asm
+		{
+		get { return _c.Function( "fasm", C.Restricted( "(char*[]) "+s+"}" ) ) ; }
 		}
 	}
 }//}
