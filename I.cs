@@ -63,8 +63,6 @@ public struct Itemset
 	*/
 	}
 
-static int lineno = 0 ;
-static int depth = 0 ;
 static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	{
 	#if DEBUG_INPUT
@@ -98,32 +96,7 @@ static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
 	b_line.RemoveAt(0) ;
 	return token ;
 	#else
-	_.Token t = _.input() ;
-	b_line.Add( t ) ;
-	if( t.terminal )
-		{
-		if( t._ == "{" )
-			depth ++ ;
-		else
-		if( t._ == "}" )
-			depth -- ;
-		if( depth == 1 || ! ( depth < 2 && "{}".Contains(t._) ) )
-			return t ;
-		string filename = "" ;
-		foreach( _.Token i in b_line )
-			filename += "." + i.point ;
-		filename = string.Format( "{0,4:X4}{1}.exe",lineno,filename ) ;
-		Cluster.Cli.Relink( Current.Path.Entry( "infrastructure.exe" ), Current.Path.Entry( filename ) ) ;
-		string args = "{ \"" + filename + "\", " ;
-		foreach( _.Token i in b_line )
-			args += '"'+i._+'"'+','+' ' ;
-		args += " 0 }" ;
-		X.Auto["argv"] = args ;
-		b_list += Xo_t.put("fasm_c" ) ;
-		b_line.Clear() ;
-		lineno++ ;
-		}
-	return t ;
+	return _.input() ;
 	#endif
 	}
 
