@@ -266,7 +266,12 @@ public struct cso
 		}
 	public cso assembly
 		{
-		get { s += "{.assembly"  ; return this ; }
+		get { s += "{ \""+System.Extensions.var_.GUID(0.1)+"/.assembly.exe\"" ; return this ; }
+		}
+	public cso argv(string args)
+		{
+		s += ", "+args+" 0 " ;
+		return this ;
 		}
 	public c asm
 		{

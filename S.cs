@@ -71,8 +71,16 @@ class Stack
 		{
 		if( args.Length == 0 )
 			return ;
-		X.Auto["argv"] = ", "+args+" 0 }" ;
-		b_list += Xo_t.put("fasm_c" ) ;
+		switch( X.Auto["A"] )
+			{
+			case "{.assembly":
+				b_list += C699.C.Array.assembly.argv(args).asm + "; \n" ;
+				break ;
+			default:
+				X.Auto["argv"] = ", "+args+" 0 }" ;
+				b_list += Xo_t.put("fasm_c" ) ;
+				break ;
+			}
 		args = "" ;
 		}
 	static void write( string s )
