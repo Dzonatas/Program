@@ -278,4 +278,8 @@ public struct cso
 		get { return _c.Function( "fasm", C.Restricted( "(char*[]) "+s+"}" ) ) ; }
 		}
 	}
+public struct cil
+	{
+	//https://github.com/CosmosOS/Cosmos/tree/c591a7ff1b7d8e37871b3cc75999df4fa6817e9f/source/Cosmos.IL2CPU
+	}
 }//}
