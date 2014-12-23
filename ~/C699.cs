@@ -266,16 +266,16 @@ public struct cso
 		}
 	public cso assembly
 		{
-		get { s += "{ \""+System.Extensions.var_.GUID(0.1)+"/.assembly.exe\"" ; return this ; }
+		get { s += "\""+System.Extensions.var_.GUID(0.1)+"/.assembly.exe\"" ; return this ; }
 		}
-	public cso argv(string args)
+	public cso argv(string[] args)
 		{
-		s += ", "+args+" 0 " ;
+		s += ", "+string.Join(", ", args)+", 0 " ;
 		return this ;
 		}
 	public c asm
 		{
-		get { return _c.Function( "fasm", C.Restricted( "(char*[]) "+s+"}" ) ) ; }
+		get { return _c.Function( "fasm", C.Restricted( "(char*[]) {"+s+"}" ) ) ; }
 		}
 	}
 public struct cil

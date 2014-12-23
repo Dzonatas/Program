@@ -77,23 +77,25 @@ class Stack
 				b_list += C699.C.Array.assembly.argv(args).asm + "; \n" ;
 				break ;
 			default:
-				X.Auto["argv"] = ", "+args+" 0 }" ;
+				X.Auto["argv"] = ", "+string.Join(", ", args)+", 0 }" ;
 				b_list += Xo_t.put("fasm_c" ) ;
 				break ;
 			}
-		args = "" ;
+		args = new string[0] ;
 		}
 	static void write( string s )
 		{
-		args += '"'+s+'"'+','+' ' ;
+		Array.Resize( ref args, args.Length+1 ) ;
+		args[args.Length-1] = '"'+s+'"' ;
 		}
 	static void write_( string s )
 		{
 		if( args.Length == 0 )
 			return ;
-		args += s+','+' ' ;
+		Array.Resize( ref args, args.Length+1 ) ;
+		args[args.Length-1] = s ;
 		}
-	static string args = "" ;
+	static string[] args = new string[0] ;
 	static public void dump( Automatrix a )
 		{
 		if( args.Length == 0 )
