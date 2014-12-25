@@ -26,7 +26,7 @@ namespace Hacked.Materials
 	using System.Collections.Generic ;
 	static class H 
 		{
-		static public List<_.Token> Line = new List<_.Token>() ;
+		static public _.Token[] Line = new _.Token[0] ;
 		static readonly global::Materials.M m ;
 		static H()
 			{

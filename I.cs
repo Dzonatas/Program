@@ -63,7 +63,7 @@ public struct Itemset
 	*/
 	}
 
-static _.Token input( ref System.Collections.Generic.List<_.Token> b_line )
+static _.Token input( ref _.Token[] b_line )
 	{
 	#if DEBUG_INPUT
 	int y = 0 ;

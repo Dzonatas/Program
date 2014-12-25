@@ -61,7 +61,8 @@ partial class A335
 					{
 					symbol = new C_Symbol() ;
 					d.Statement( C699.C.Static(C699.String,symbol) ) ;
-					freeset.Add( C.StackOffset ) ;
+					System.Array.Resize( ref freeset, freeset.Length+1 ) ;
+					freeset[freeset.Length-1] = C.StackOffset ;
 					if( iargs == 0 )
 						d.Statement( C699.C.Restricted(symbol).Equate(C699.C.Function(_Call)) ) ;
 					else
@@ -210,7 +211,7 @@ partial class A335
 					if( z is int )
 						d.Statement( C699.Free('('+'('+C699.String+'*'+')'+C699.Stack.Index((int)z)+')'+"->"+field ) ) ;
 					}
-				freeset.Clear() ;
+				freeset = new object[0] ;
 				break ;
 				}
 			case "LDC_I4_0" :

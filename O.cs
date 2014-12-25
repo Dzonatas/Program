@@ -1,11 +1,10 @@
 //|#(!)using System;
 using System.Text.RegularExpressions ;
-using System.Collections.Generic ;
 using System.Diagnostics ;
 
 public partial class A335
 {
-static List<object> freeset = new List<object>() ;
+static object[] freeset = new object[0] ;
 
 class Object : Stack.Item
 	{
