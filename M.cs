@@ -3,7 +3,6 @@
 //using System;
 //using System.Xml ;
 using System.IO ;
-using System.Collections.Generic ;
 using System.Extensions ;
 using System ;
 using X.Predefined ;
@@ -189,7 +188,6 @@ class Method
 	{
 	static Head head ;
 	static Head begin ;
-	static public List<string>  cctorset = new List<string>() ;
 	public class Head : Automatrix
 		{
 		Head    previous ;
@@ -203,6 +201,7 @@ class Method
 		bool    _CallConvInstance ;
 		SigArgs0 _SigArgs0 ;
 		bool    _Virtual ;
+		bool    __cctor = false ;
 		public class Part1 : Automatrix
 			{
 			protected override void main()
@@ -212,7 +211,11 @@ class Method
 		protected C_Symbol _ctor          = C_Type.Acquire( Nameset[0] ) ;
 		protected C_Symbol _cctor
 			{
-			get { cctorset.Add( classType ) ; return C_Type.Acquire( Nameset[1] ) ; }
+			get { __cctor = true ; ; return C_Type.Acquire( Nameset[1] ) ; }
+			}
+		public bool Cctor
+			{
+			get { return __cctor ; }
 			}
 		protected override void main()
 			{

@@ -56,7 +56,7 @@ partial class Program
 		var c = C_Function.FromSymbol( A335.Main.Symbol ) ;
 		c.Args = C699.Main.Args ;
 		var e = A335.Method.EntryPoint.Head ;
-		if( A335.Method.cctorset.Contains(e.ClassType) )
+		if( e.Cctor )
 			{
 			c.Statement( C699.C.Extern.Void.Cctor(e.ClassType) ) ;
 			c.Statement( C699.C.Cctor(e.ClassType) ) ;
