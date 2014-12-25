@@ -1,6 +1,5 @@
 using System.Xml ;
 using System.IO ;
-using System.Collections.Generic ;
 using System.Extensions ;
 
 public partial class A335
@@ -9,7 +8,7 @@ public partial class A335
 static XmlTextReader   xml ;
 static string          xml_text ;
 static bool            xml_loaded ;
-static List<Number>    x_empty_ruleset = new List<Number>() ;
+static Number[]        x_empty_ruleset = new Number[0] ;
 static Xo_t[]          xo_t   = new Xo_t[603] ;  //_overflow(>ASCII(7-bit))_FIX:_common_cause:_unicode_precedence,_entity_not_implemented
 //static xml_s           _empty = new xml_s( "" ) ;
 
@@ -396,7 +395,7 @@ static void xml_load_grammar()
 
 partial class X //_: YY
 	{
-	public static readonly Dictionary<string,string> Auto = new Dictionary<string,string>()
+	public static readonly System.Collections.Generic.Dictionary<string,string> Auto = new System.Collections.Generic.Dictionary<string,string>()
 		{
 		{ "Entity",     null },
 		{ "list",       null },
@@ -424,7 +423,7 @@ partial class X //_: YY
 		{ "debug_nop", string.Empty }
 		#endif
 		} ;
-	public static readonly Dictionary<string,System.Action> Element = new Dictionary<string,System.Action>()
+	public static readonly System.Collections.Generic.Dictionary<string,System.Action> Element = new System.Collections.Generic.Dictionary<string,System.Action>()
 		{
 		{ "filename",     () => {} },
 		{ "grammar",      () => {} },
@@ -433,7 +432,7 @@ partial class X //_: YY
 		{ "lhs",          xml_get_lhs  },
 		{ "rhs",          () => {} },
 		{ "symbol",       () => { xml_get_symbol(rules_b) ; } },
-		{ "empty",        () => { x_empty_ruleset.Add(x_rule.number) ; } },
+		{ "empty",        () => { System.Array.Resize( ref x_empty_ruleset, x_empty_ruleset.Length+1 ) ; x_empty_ruleset[x_empty_ruleset.Length-1] = x_rule.number ; } },
 		{ "terminals",    () => { rules_b = false ; } },
 		{ "terminal",     xml_get_terminal },
 		{ "nonterminals", () => {} },
@@ -610,9 +609,9 @@ struct xml_symbol
 	//	}
 	}
 	
-static Dictionary<char,int> xml_translate          = new Dictionary<char,int>() ;
-static Dictionary<string,xml_token>  xml_tokenset  = new Dictionary<string, xml_token>() ;
-static Dictionary<string,xml_symbol> xml_symbolset = new Dictionary<string, xml_symbol>() ;
+static System.Collections.Generic.Dictionary<char,int> xml_translate          = new System.Collections.Generic.Dictionary<char,int>() ;
+static System.Collections.Generic.Dictionary<string,xml_token>  xml_tokenset  = new System.Collections.Generic.Dictionary<string, xml_token>() ;
+static System.Collections.Generic.Dictionary<string,xml_symbol> xml_symbolset = new System.Collections.Generic.Dictionary<string, xml_symbol>() ;
 
 static xml_token _default ;
 static void xml_get_terminal()
