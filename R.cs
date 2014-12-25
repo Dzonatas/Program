@@ -1,5 +1,3 @@
-using System.Collections.Generic ;
-
 public partial class A335
 {
 string rune__ ; /*C`_ -rc:"BRANCH" +volume:0.00*/
@@ -12,7 +10,7 @@ public struct Rule
 	public static Rule [] Set = new Rule[606] ;
 	public Number        number ;
 	public xml_s         lhs ;
-	public List<xml_s>   rhs ;
+	public xml_s[]       rhs ;
 	public bool          useful ;
 	public Rule( Rule r )
 		{
@@ -31,9 +29,9 @@ public struct Rule
 		if( useful )
 			return +'('+lhs.s+')'
 				+ number 
-				+'['+ rhs.Count.ToString() +']' ;
+				+'['+ rhs.Length.ToString() +']' ;
 			
-		return string.Format("({0}{1},{2})", lhs, number, rhs.Count );
+		return string.Format("({0}{1},{2})", lhs, number, rhs.Length );
 		//return string.Format("({0}{1},{2})", lhs, number, rhs.Count );
 		}
 	}

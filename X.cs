@@ -92,7 +92,7 @@ class Xo_t
 	static public void Add( Rule r )
 		{
 		int x = r.number ;
-		int y = r.rhs.Count ;
+		int y = r.rhs.Length ;
 		xo_t[x]     = new Xo_t() ;
 		xo_t[x].lhs = new Xo( x, r.lhs ) ;
 		xo_t[x].rhs = new Xo[y] ;
@@ -319,7 +319,7 @@ class Xo_t
 				X.Auto["lhs"] += "'"+c+"', " ;
 			X.Auto["lhs"] += " }" ;
 			X.Auto["synopsis"] = "; }" ;
-			if( Rule.Set[i].rhs.Count > 0 )
+			if( Rule.Set[i].rhs.Length > 0 )
 				{
 				var sb = new System.Text.StringBuilder() ;
 				foreach( var rhs in Rule.Set[i].rhs )
@@ -507,7 +507,7 @@ public class xml_rule
 	{
 	public Number       number ;
 	public xml_s        lhs ;
-	public List<xml_s>  rhs ;
+	public xml_s[]      rhs ;
 	public xml_s        usefulness ;
 	internal void post()
 		{
@@ -528,7 +528,7 @@ public class xml_rule
 		{
 		xml.MoveToFirstAttribute() ;
 		number = Number.Parse( xml.Value ) ;
-		rhs = new List<xml_s>() ;
+		rhs = new xml_s[0] ;
 		}
 	}
 
@@ -536,7 +536,10 @@ static void xml_get_symbol( bool _rule )
 	{
 	xml.Read() ;
 	if( _rule )
-		x_rule.rhs.Add( new xml_s( xml.Value ) ) ;
+		{
+		System.Array.Resize( ref x_rule.rhs, x_rule.rhs.Length+1 ) ;
+		x_rule.rhs[x_rule.rhs.Length-1] = new xml_s( xml.Value ) ;
+		}
 	else
 		{
 		x_state.Lookaheadset_Add ( (int)xml_tokenset[xml.Value] ) ;
