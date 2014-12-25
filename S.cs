@@ -27,7 +27,7 @@ static State []                 stateset = new State[1125] ;
 
 class Stack
 	{
-	static System.Collections.Generic.Stack<global::Item> stack = new System.Collections.Generic.Stack<global::Item>() ;
+	static global::Item[] stack = new global::Item[0] ;
 	public class Item : global::Item
 		{
 		public Xo_t Rule ;
@@ -149,15 +149,18 @@ class Stack
 		}
 	static public void Push( Item o )
 		{
-		stack.Push( o ) ;
+		Array.Resize( ref stack, stack.Length+1 ) ;
+		stack[stack.Length-1] = o ;
 		}
 	static public void Push( object[] o )
 		{
-		stack.Push( (Object) o[0] ) ;
+		Array.Resize( ref stack, stack.Length+1 ) ;
+		stack[stack.Length-1] = (Object) o[0] ;
 		}
 	static private object stack_pop()
 		{
-		object o = stack.Pop() ;
+		object o = stack[stack.Length-1] ;
+		Array.Resize( ref stack, stack.Length-1 ) ;
 		string s ;
 		if( o is object[] )
 			{
@@ -172,7 +175,7 @@ class Stack
 		}
 	static private object peak
 		{
-		get { return stack.Count > 0 ? stack.Peek() : null ; }
+		get { return stack.Length > 0 ? stack[stack.Length-1] : null ; }
 		}
 	static private bool peakIsNull
 		{
