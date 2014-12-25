@@ -1,4 +1,3 @@
-using System.Collections.Generic ;
 using System.Net ;
 using System ;
 
@@ -279,29 +278,29 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		set {
 			debit             = value ;
 			transitionset     = new Transition[0] ;
-			shiftset          = new Dictionary<int,int>() ;
-			gotoset           = new Dictionary<int,int>() ;
+			shiftset          = new System.Collections.Generic.Dictionary<int,int>() ;
+			gotoset           = new System.Collections.Generic.Dictionary<int,int>() ;
 			itemset           = new Itemset[0] ;
 			reductionset      = new Reduction[0] ;
-			lookaheadset      = new List<int>() ;
+			lookaheadset      = new System.Collections.Generic.List<int>() ;
 			default_item      = null ;
 			default_reduction = null ;
 			}
 		}
 	public Itemset []           Itemset               { get { return itemset ; } }
 	public Transition []        Transitionset         { get { return transitionset ; } }
-	public Dictionary<int,int>  Shiftset              { get { return shiftset ; } }
-	public Dictionary<int,int>  Gotoset               { get { return gotoset ; } }
-	public List<int>            Lookaheadset          { get { return lookaheadset ; } }
+	public System.Collections.Generic.Dictionary<int,int>  Shiftset              { get { return shiftset ; } }
+	public System.Collections.Generic.Dictionary<int,int>  Gotoset               { get { return gotoset ; } }
+	public System.Collections.Generic.List<int>            Lookaheadset          { get { return lookaheadset ; } }
 	public Reduction []         Reductionset          { get { return reductionset ; } }
 	public Nullable<int>        Default_item          { get { return default_item ; } set { default_item = value ; } }
 	public Nullable<int>        Default_reduction     { get { return default_reduction ; } set { default_reduction = value ; } }
 	Number               debit ;
 	Itemset []           itemset ;
 	Transition []        transitionset ;
-	Dictionary<int,int>  shiftset ;
-	Dictionary<int,int>  gotoset ;
-	List<int>            lookaheadset ;
+	System.Collections.Generic.Dictionary<int,int>  shiftset ;
+	System.Collections.Generic.Dictionary<int,int>  gotoset ;
+	System.Collections.Generic.List<int>            lookaheadset ;
 	Reduction []         reductionset ;
 	Nullable<int>        default_item ;
 	Nullable<int>        default_reduction ;
@@ -447,10 +446,15 @@ class SigArg : Automatrix
 
 partial class Program
 	{
-	static List<C_Type> stack = new List<C_Type>() ;
+	static C_Type[] stack = new C_Type[0] ;
 	static int stack_offset ;
 	static int stack_down ;
 	//static uint effective_symbolic_objective_credit ;
+	static void stack_add( C_Type type )
+		{
+		Array.Resize( ref stack, stack.Length+1 ) ;
+		stack[stack.Length-1] = type ;
+		}
 	public int StackOffset
 		{
 		get { return stack_offset - stack_down ; }
@@ -502,12 +506,14 @@ partial class Program
 		return list ;
 		}
 	#else
-	public List<C_Type> Hangup( int iargs )
+	public C_Type[] Hangup( int iargs )
 		{
-		var list = new List<C_Type>() ;
+		if( iargs < 1 )
+			return new C_Type[] {} ;
+		var list = new C_Type[iargs] ;
 		stack_offset -= iargs ;
 		for( int i = 0 ; i < iargs ; i++ )
-			list.Add( stack[stack_offset+i] == null ? C_Type.Undefined : stack[stack_offset+i] ) ;
+			list[i] = stack[stack_offset+i] == null ? C_Type.Undefined : stack[stack_offset+i] ;
 		return list ;
 		}
 	#endif
@@ -518,11 +524,11 @@ partial class Program
 	public int MaxStack
 		{
 		set {
-			if( stack_offset + value > stack.Count )
+			if( stack_offset + value > stack.Length )
 				{
-				stack.Capacity += value ;
+				//stack.Capacity += value ;
 				for( int i = 0 ; i < value ; i++ )
-					stack.Add( null ) ;
+					stack_add( null ) ;
 				}
 			}
 		}
@@ -598,9 +604,9 @@ public struct Symbol                //_FIX:$Symbol,_Symbol,.ibid
 	}
 
 //static Dictionary<Number,Symbol>    symbol_from_number = new Dictionary<Number, Symbol>() ;
-static Dictionary<Number,Symbol>    symbol_from_token = new Dictionary<Number, Symbol>() ;
+static System.Collections.Generic.Dictionary<Number,Symbol>    symbol_from_token = new System.Collections.Generic.Dictionary<Number, Symbol>() ;
 //static Dictionary<Number,Symbol>    symbol_from_null_token = new Dictionary<Number, Symbol>() ;
-static Dictionary<string,Symbol>    symbol_from_name = new Dictionary<string, Symbol>() ;
+static System.Collections.Generic.Dictionary<string,Symbol>    symbol_from_name = new System.Collections.Generic.Dictionary<string, Symbol>() ;
 
 }
 
