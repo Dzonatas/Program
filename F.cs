@@ -1,5 +1,4 @@
 using System.Text.RegularExpressions ;
-using System.Collections.Generic ;
 using System.Diagnostics ;
 using System.Collections ;
 using System.Reflection ;
@@ -50,7 +49,12 @@ partial class Program
 		public bool   Written ;
 		public bool   Required ;
 		C_Literal let ;
-		List<string> list = new List<string>() ;
+		string[]      list = new string[0] ;
+		void list_add( string s )
+			{
+			Array.Resize( ref list, list.Length+1 ) ;
+			list[list.Length-1] = s ;
+			}
 		public C_Function Let( C_Literal literal )
 			{
 			let = literal ;
@@ -131,7 +135,7 @@ partial class Program
 		public C_Function Statement( C699.c line )
 			{
 			bool eos = ( line.Bits & (C699.Bit.If|C699.Bit.Else) ) != 0 && (line.Bits & C699.Bit.Goto) == 0 ;
-			list.Add( "\t" + line + ( eos ? "" : " ;" ) ) ;
+			list_add( "\t" + line + ( eos ? "" : " ;" ) ) ;
 			return this ;
 			}
 		public C_Function Statement( string line )
@@ -140,26 +144,25 @@ partial class Program
 			}
 		public void Label( C_Label label )
 			{
-			list.Add( "\t" + label + " :" ) ;
+			list_add( "\t" + label + " :" ) ;
 			}
 		public void WriteTo( StreamWriter sw )
 			{
-			var line = new List<string>() ;
+			string line = "" ;
 			if( Inline )
-				line.Add( C699.C.Inline ) ;
+				line += C699.C.Inline + " " ;
 			if( Static )
-				line.Add( C699.C.Static(Type) ) ;
+				line += C699.C.Static(Type) ;
 			else
-				line.Add( Type ) ;
-			line.Add( Symbol ) ;
-			string a ;
+				line += Type ;
+			line += " " + Symbol ;
 			if( Args == null )
-				a = '('+C699.C.Const.Voidpp+"stack"
+				line += '('+C699.C.Const.Voidpp+"stack"
 				+ ( HasArgs ? ','+C699.C.Const.Voidpp.ArgV : "" )
 				+ ')' ;
 			else
-				a = Args ;
-			sw.WriteLine( String.Join( " ", line ) + a ) ;
+				line += Args ;
+			sw.WriteLine( line ) ;
 			sw.WriteLine( "\t{" ) ;
 			foreach( string s in list )
 				sw.WriteLine( s ) ;
