@@ -725,33 +725,4 @@ static void xml_get_lhs()
 	xml.Read() ;
 	}
 
-
-static bool xml_get_()
-	{
-	if( xml.Read() && xml.NodeType == XmlNodeType.Element )
-		{
-		//status = true ;
-		//state++ ;
-		if( xml.Name[0] == '_' ) 
-			{
-			string [] s = xml.Name.Split("_-".ToCharArray()) ;
-			yytoken = symbol_from_token[ int.Parse( s[1] ) ];
-			yystate = stateset[ int.Parse( s[2] ) ] ;
-			xml.Read() ;
-			xml_text = xml.Value ;
-			//yyrule = resolve() ;
-			//stack.Push( symbol_from_token[yytoken] ) ;
-			//System.Console.WriteLine("<{0}/>{2}", yyrule,yytoken,xml_text) ;
-			//Console.WriteLine("{0} {1} {2}", yytoken, text, yyrule.lhs) ;
-			return true ;
-			}
-		}
-	//if( ! xml.EOF )
-	//	throw new Exception() ;
-	//xml_element = null ;
-	xml_text    = null ;
-	//status  = false ;
-	//state   = 0; //int.MaxValue ;s
-	return false ;
-	}
 }
