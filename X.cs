@@ -133,7 +133,7 @@ class Xo_t
 		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 		X.Auto["glyph"] = ((char)xo_t[i]).ToString() ;
 		X.Auto["lookahead"] = "{ " ;
-		if( stateset[i].Lookaheadset.Count != 0 )
+		if( stateset[i].Lookaheadset.Length != 0 )
 			{
 			foreach( var c in stateset[i].Lookaheadset )
 				X.Auto["lookahead"] += c+", " ;
@@ -539,7 +539,7 @@ static void xml_get_symbol( bool _rule )
 		x_rule.rhs.Add( new xml_s( xml.Value ) ) ;
 	else
 		{
-		x_state.Lookaheadset.Add ( (int)xml_tokenset[xml.Value] ) ;
+		x_state.Lookaheadset_Add ( (int)xml_tokenset[xml.Value] ) ;
 		}
 	xml.Read() ;
 	}

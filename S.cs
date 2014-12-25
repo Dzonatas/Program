@@ -282,7 +282,7 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 			gotoset           = new System.Collections.Generic.Dictionary<int,int>() ;
 			itemset           = new Itemset[0] ;
 			reductionset      = new Reduction[0] ;
-			lookaheadset      = new System.Collections.Generic.List<int>() ;
+			lookaheadset      = new int[0] ;
 			default_item      = null ;
 			default_reduction = null ;
 			}
@@ -291,7 +291,7 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 	public Transition []        Transitionset         { get { return transitionset ; } }
 	public System.Collections.Generic.Dictionary<int,int>  Shiftset              { get { return shiftset ; } }
 	public System.Collections.Generic.Dictionary<int,int>  Gotoset               { get { return gotoset ; } }
-	public System.Collections.Generic.List<int>            Lookaheadset          { get { return lookaheadset ; } }
+	public int []               Lookaheadset          { get { return lookaheadset ; } }
 	public Reduction []         Reductionset          { get { return reductionset ; } }
 	public Nullable<int>        Default_item          { get { return default_item ; } set { default_item = value ; } }
 	public Nullable<int>        Default_reduction     { get { return default_reduction ; } set { default_reduction = value ; } }
@@ -300,7 +300,7 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 	Transition []        transitionset ;
 	System.Collections.Generic.Dictionary<int,int>  shiftset ;
 	System.Collections.Generic.Dictionary<int,int>  gotoset ;
-	System.Collections.Generic.List<int>            lookaheadset ;
+	int []               lookaheadset ;
 	Reduction []         reductionset ;
 	Nullable<int>        default_item ;
 	Nullable<int>        default_reduction ;
@@ -321,6 +321,12 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		{
 		System.Array.Resize(ref  reductionset,  reductionset.Length + 1 ) ;
 		reductionset[  reductionset.Length - 1 ] = r ;
+		}
+
+	public void Lookaheadset_Add( int lookahead )
+		{
+		System.Array.Resize( ref lookaheadset, lookaheadset.Length+1 ) ;
+		lookaheadset[lookaheadset.Length-1] = lookahead ;
 		}
 
 	public void Set()
