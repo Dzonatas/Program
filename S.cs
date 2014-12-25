@@ -281,8 +281,8 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		set {
 			debit             = value ;
 			transitionset     = new Transition[0] ;
-			shiftset          = new System.Collections.Generic.Dictionary<int,int>() ;
-			gotoset           = new System.Collections.Generic.Dictionary<int,int>() ;
+			shiftset          = new int[0,0] ;
+			gotoset           = new int[0,0] ;
 			itemset           = new Itemset[0] ;
 			reductionset      = new Reduction[0] ;
 			lookaheadset      = new int[0] ;
@@ -292,8 +292,8 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		}
 	public Itemset []           Itemset               { get { return itemset ; } }
 	public Transition []        Transitionset         { get { return transitionset ; } }
-	public System.Collections.Generic.Dictionary<int,int>  Shiftset              { get { return shiftset ; } }
-	public System.Collections.Generic.Dictionary<int,int>  Gotoset               { get { return gotoset ; } }
+	public int [,]              Shiftset              { get { return shiftset ; } }
+	public int [,]              Gotoset               { get { return gotoset ; } }
 	public int []               Lookaheadset          { get { return lookaheadset ; } }
 	public Reduction []         Reductionset          { get { return reductionset ; } }
 	public Nullable<int>        Default_item          { get { return default_item ; } set { default_item = value ; } }
@@ -301,8 +301,8 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 	Number               debit ;
 	Itemset []           itemset ;
 	Transition []        transitionset ;
-	System.Collections.Generic.Dictionary<int,int>  shiftset ;
-	System.Collections.Generic.Dictionary<int,int>  gotoset ;
+	int [,]              shiftset ;
+	int [,]              gotoset ;
 	int []               lookaheadset ;
 	Reduction []         reductionset ;
 	Nullable<int>        default_item ;
@@ -324,6 +324,32 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		{
 		System.Array.Resize(ref  reductionset,  reductionset.Length + 1 ) ;
 		reductionset[  reductionset.Length - 1 ] = r ;
+		}
+
+	public void Shiftset_Add( int _0, int _1  )
+		{
+		int[,] a = new int[shiftset.GetLength(0)+1,2] ;
+		for( int i = 0 ; i < shiftset.GetLength(0) ; i++ )
+			{
+			a[i,0] = shiftset[i,0] ;
+			a[i,1] = shiftset[i,1] ;
+			}
+		a[a.GetLength(0)-1,0] = _0 ;
+		a[a.GetLength(0)-1,1] = _1 ;
+		shiftset = a ;
+		}
+
+	public void Gotoset_Add( int _0, int _1  )
+		{
+		int[,] a = new int[gotoset.GetLength(0)+1,2] ;
+		for( int i = 0 ; i < gotoset.GetLength(0) ; i++ )
+			{
+			a[i,0] = gotoset[i,0] ;
+			a[i,1] = gotoset[i,1] ;
+			}
+		a[a.GetLength(0)-1,0] = _0 ;
+		a[a.GetLength(0)-1,1] = _1 ;
+		gotoset = a ;
 		}
 
 	public void Lookaheadset_Add( int lookahead )

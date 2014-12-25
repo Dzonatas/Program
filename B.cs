@@ -33,12 +33,14 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		#endif
 		goto reduce ;
 		}
-	if( state.Shiftset.ContainsKey( xml_translate[token.Value.c] ) )
+	for( int i = 0 ; i < state.Shiftset.GetLength(0) ; i++ )
+		if( state.Shiftset[i,0] == xml_translate[token.Value.c] )
+	//if( state.Shiftset.ContainsKey( xml_translate[token.Value.c] ) )
 		{
 		b.yy  = xml_translate[token.Value.c] ;
 		Stack.Push( new Stack.Item.Token( b, token.Value ) ) ;
 		token = null ;
-		Transition t = state.Transitionset[ state.Shiftset[b.yy] ] ;
+		Transition t = state.Transitionset[ state.Shiftset[i,1] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, _default ) ;
 		#if DEBUG_SHIFT
 		Debug.WriteLine( "[Shift] " + t ) ;
@@ -61,7 +63,9 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			#endif
 			b.yy = xo_t[rr.rule] ;
 			rule = rr.rule ; // 9.9.Post([rule]) ;
-			if( state.Gotoset.ContainsKey( b.yy ) )
+			for( int i = 0 ; i < state.Gotoset.GetLength(0) ; i++ )
+				if( state.Gotoset[i,0] == b.yy )
+			//if( state.Gotoset.ContainsKey( b.yy ) )
 				goto transit ;
 			this_xo_t = xo_t[rr.rule] ;
 			goto jump ;
@@ -72,9 +76,11 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		b.yy = xo_t[rule] ;
 		}
 	transit:
-	if( state.Gotoset.ContainsKey( b.yy ) )
+	for( int i = 0 ; i < state.Gotoset.GetLength(0) ; i++ )
+		if( state.Gotoset[i,0] == b.yy )
+	//if( state.Gotoset.ContainsKey( b.yy ) )
 		{
-		Transition t = state.Transitionset[ state.Gotoset[b.yy] ] ;
+		Transition t = state.Transitionset[ state.Gotoset[i,1] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		#if DEBUG_GOTO
 		Debug.WriteLine( "[Goto] " + t ) ;
@@ -108,9 +114,11 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			throw bb ;
 		b.yy = xo_t[bb.rule] ;
 		}
-	if( state.Gotoset.ContainsKey( b.yy ) )
+	for( int i = 0 ; i < state.Gotoset.GetLength(0) ; i++ )
+		if( state.Gotoset[i,0] == b.yy )
+	//if( state.Gotoset.ContainsKey( b.yy ) )
 		{
-		Transition t = state.Transitionset[ state.Gotoset[b.yy] ] ;
+		Transition t = state.Transitionset[ state.Gotoset[i,1] ] ;
 		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
 		goto new_state ;
 		}

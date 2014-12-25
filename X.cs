@@ -183,17 +183,17 @@ class Xo_t
 			sb.AppendLine( "//" + xo_t[rule] ) ;
 			}
 		sb.Append( put("A335-Xo_t-_io-1") ) ;
-		foreach( var t in stateset[i].Shiftset )
-			sb.AppendLine( "//" + stateset[i].Transitionset[ t.Value ] ) ;
+		for( int x = 0 ; x < stateset[i].Shiftset.GetLength(0) ; x++ )
+			sb.AppendLine( "//" + stateset[i].Transitionset[ stateset[i].Shiftset[x,1] ] ) ;
 		foreach( Reduction r in stateset[i].Reductionset )
 			sb.AppendLine( "//" + r ) ;
-		if( stateset[i].Gotoset.Count != 0 )
+		if( stateset[i].Gotoset.GetLength(0) != 0 )
 			sb.Append( put("A335-Xo_t-_io-2") ) ;
 		else
 			sb.Append( put("A335-Xo_t-_io-3") ) ;
 		sb.Append( put("A335-Xo_t-_io-4") ) ;
-		foreach( var t in stateset[i].Gotoset )
-			sb.AppendLine( "//" + stateset[i].Transitionset[ t.Value ] ) ;
+		for( int x = 0 ; x < stateset[i].Gotoset.GetLength(0) ; x++ )
+			sb.AppendLine( "//" + stateset[i].Transitionset[ stateset[i].Gotoset[x,1] ] ) ;
 		if( rule != -1 )
 			{
 			X.Auto["global"] = "global::"+( rule == 0 ? "_accept" : xo_t[rule].lhs.s )
@@ -675,13 +675,9 @@ static void xml_get_transition()
 			}
 	x_state.Append( t ) ;
 	if( t.type == "shift" )
-		{
-		x_state.Shiftset.Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
-		}
+		x_state.Shiftset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
 	else
-		{
-		x_state.Gotoset.Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
-		}
+		x_state.Gotoset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
 	}
 
 static void xml_get_reduction()
