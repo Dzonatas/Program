@@ -184,6 +184,11 @@ public partial class  &signal;
 <A335-Xo_t-_io-1>
 	public static readonly int[,]   Shiftset  = &shiftset; ;
 	public static readonly int[,]   Gotoset   = &gotoset; ;
+	public static readonly string[] Typeset   = &typeset; ;
+	public static readonly int[]    Symbolset = &symbolset; ;
+	public static readonly int[]    Stateset  = &stateset; ;
+	public static readonly int[]    Ruleset   = &ruleset; ;
+	public static readonly int[]    Pointset  = &pointset; ;
 	public static void Element( string l )
 		{
 </A335-Xo_t-_io-1>

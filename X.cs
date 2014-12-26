@@ -185,6 +185,24 @@ class Xo_t
 		string s = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
 			s += "{ "+stateset[i].Shiftset[z,0]+", "+stateset[i].Shiftset[z,1]+" }, " ;
+		X.Auto["typeset"]   = "{ " ;
+		X.Auto["symbolset"] = "{ " ;
+		X.Auto["stateset"]  = "{ " ;
+		X.Auto["ruleset"]   = "{ " ;
+		X.Auto["pointset"]  = "{ " ;
+		foreach( Transition t in stateset[i].Transitionset )
+			{
+			X.Auto["typeset"]   = X.Auto["typeset"]+'"'+t.type+'"'+", " ;
+			X.Auto["symbolset"] = X.Auto["symbolset"]+t.symbol+", " ;
+			X.Auto["stateset"]  = X.Auto["stateset"]+t.state+", " ;
+			X.Auto["ruleset"]   = X.Auto["ruleset"]+t.item.rule+", " ;
+			X.Auto["pointset"]  = X.Auto["pointset"]+t.item.point+", " ;
+			}
+		X.Auto["typeset"]   = X.Auto["typeset"]+" }" ;
+		X.Auto["symbolset"] = X.Auto["symbolset"]+" }" ;
+		X.Auto["stateset"]  = X.Auto["stateset"]+" }" ;
+		X.Auto["ruleset"]   = X.Auto["ruleset"]+" }" ;
+		X.Auto["pointset"]  = X.Auto["pointset"]+" }" ;
 		X.Auto["shiftset"] = "{ "+s+" }" ;
 		s = "" ;
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
@@ -426,6 +444,11 @@ partial class X //_: YY
 		{ "interface",  null },
 		{ "gotoset",    null },
 		{ "shiftset",   null },
+		{ "stateset",   null },
+		{ "symbolset",  null },
+		{ "typeset",    null },
+		{ "ruleset",    null },
+		{ "pointset",   null },
 		{ "guid",       0.0.GUID() },
 		#if DEBUG
 		{ "debug_nop", "Current.Interval.NOP() ;" }
