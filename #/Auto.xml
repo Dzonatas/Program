@@ -182,6 +182,8 @@ public partial class  &signal;
 	public static readonly char     &rule;_&point; = &global; ;
 </A335-Xo_t-list>
 <A335-Xo_t-_io-1>
+	public static readonly int[,]   Shiftset  = &shiftset; ;
+	public static readonly int[,]   Gotoset   = &gotoset; ;
 	public static void Element( string l )
 		{
 </A335-Xo_t-_io-1>

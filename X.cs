@@ -182,6 +182,14 @@ class Xo_t
 			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
 			sb.AppendLine( "//" + xo_t[rule] ) ;
 			}
+		string s = "" ;
+		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
+			s += "{ "+stateset[i].Shiftset[z,0]+", "+stateset[i].Shiftset[z,1]+" }, " ;
+		X.Auto["shiftset"] = "{ "+s+" }" ;
+		s = "" ;
+		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
+			s += "{ "+stateset[i].Gotoset[z,0]+", "+stateset[i].Gotoset[z,1]+" }, " ;
+		X.Auto["gotoset"] = "{ "+s+" }" ;
 		sb.Append( put("A335-Xo_t-_io-1") ) ;
 		for( int x = 0 ; x < stateset[i].Shiftset.GetLength(0) ; x++ )
 			sb.AppendLine( "//" + stateset[i].Transitionset[ stateset[i].Shiftset[x,1] ] ) ;
@@ -416,6 +424,8 @@ partial class X //_: YY
 		{ "synopsis",   null },
 		{ "global",     null },
 		{ "interface",  null },
+		{ "gotoset",    null },
+		{ "shiftset",   null },
 		{ "guid",       0.0.GUID() },
 		#if DEBUG
 		{ "debug_nop", "Current.Interval.NOP() ;" }
