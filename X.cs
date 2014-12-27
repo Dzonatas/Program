@@ -210,9 +210,15 @@ class Xo_t
 			s += "{ "+stateset[i].Gotoset[z,0]+", "+stateset[i].Gotoset[z,1]+" }, " ;
 		X.Auto["gotoset"] = "{ "+s+" }" ;
 		s = "" ;
+		string[] ss = new string[stateset[i].Reductionset.Length] ;
+		int zz = 0 ;
+		string tab = "\t\t\t\t\t\t\t" ;
 		foreach( Reduction r in stateset[i].Reductionset )
-			s += "\t{ "+r.symbol+", "+r.rule+", "+(r.enabled?'1':'0')+", "+r.item.rule+", "+r.item.point+" },\n" ;
-		X.Auto["reductionset"] = "\n\t{\n"+s+"\t}" ;
+			ss[zz++] = "{ "+r.symbol+", "+r.rule+", "+(r.enabled?'1':'0')+", "+r.item.rule+", "+r.item.point+" }" ;
+		if( zz < 2 )
+			X.Auto["reductionset"] = "{ "+string.Concat(ss)+" }" ;
+		else
+			X.Auto["reductionset"] = "\n"+tab+"{\n"+tab+string.Join(",\n"+tab,ss)+"\n"+tab+"}" ;
 		sb.Append( put("A335-Xo_t-_io-1") ) ;
 		return sb.ToString() ;
 		}
