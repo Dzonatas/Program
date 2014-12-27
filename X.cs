@@ -284,6 +284,8 @@ class Xo_t
 	static readonly char[] entity_trim =  { ';' };
 	static public void Build()
 		{
+		if( Cluster.Parameter.Value("build") == "false" )
+			return ;
 		string[] compile = new string[xo_t.Length] ;
 		compile[0] = "auto.cs" ;
 		Xo_t xo ;

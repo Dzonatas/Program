@@ -462,7 +462,7 @@ static class Path
 		{
 		return path + "/" + name ;
 		}
-	static bool Existed
+	static public bool Existed
 		{
 		get { return directory != null && directory.Exists ; }
 		}
