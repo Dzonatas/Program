@@ -177,10 +177,11 @@ class Xo_t
 		{
 		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 		int rule = -1 ;
+		X.Auto["rule"] = "-1" ;
 		if( stateset[i].Default_reduction.HasValue )
 			{
-			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
-			sb.AppendLine( "//" + xo_t[rule] ) ;
+			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
+			X.Auto["rule"] = stateset[i].Default_reduction.Value.ToString() ;
 			}
 		string s = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
@@ -208,11 +209,11 @@ class Xo_t
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
 			s += "{ "+stateset[i].Gotoset[z,0]+", "+stateset[i].Gotoset[z,1]+" }, " ;
 		X.Auto["gotoset"] = "{ "+s+" }" ;
-		sb.Append( put("A335-Xo_t-_io-1") ) ;
-		for( int x = 0 ; x < stateset[i].Shiftset.GetLength(0) ; x++ )
-			sb.AppendLine( "//" + stateset[i].Transitionset[ stateset[i].Shiftset[x,1] ] ) ;
+		s = "" ;
 		foreach( Reduction r in stateset[i].Reductionset )
-			sb.AppendLine( "//" + r ) ;
+			s += "\t{ "+r.symbol+", "+r.rule+", "+(r.enabled?'1':'0')+", "+r.item.rule+", "+r.item.point+" },\n" ;
+		X.Auto["reductionset"] = "\n\t{\n"+s+"\t}" ;
+		sb.Append( put("A335-Xo_t-_io-1") ) ;
 		if( stateset[i].Gotoset.GetLength(0) != 0 )
 			sb.Append( put("A335-Xo_t-_io-2") ) ;
 		else
