@@ -19,7 +19,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
-    <Commandlineparameters>--shell="sh ../../~/compile.sh ../../~/hello.mono.world.il.text"</Commandlineparameters>
+    <Commandlineparameters>--shell="sh ../../~/compile.sh ../../~/hello.mono.world.il.text" --build=rebuild</Commandlineparameters>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
