@@ -214,22 +214,6 @@ class Xo_t
 			s += "\t{ "+r.symbol+", "+r.rule+", "+(r.enabled?'1':'0')+", "+r.item.rule+", "+r.item.point+" },\n" ;
 		X.Auto["reductionset"] = "\n\t{\n"+s+"\t}" ;
 		sb.Append( put("A335-Xo_t-_io-1") ) ;
-		if( stateset[i].Gotoset.GetLength(0) != 0 )
-			sb.Append( put("A335-Xo_t-_io-2") ) ;
-		else
-			sb.Append( put("A335-Xo_t-_io-3") ) ;
-		sb.Append( put("A335-Xo_t-_io-4") ) ;
-		for( int x = 0 ; x < stateset[i].Gotoset.GetLength(0) ; x++ )
-			sb.AppendLine( "//" + stateset[i].Transitionset[ stateset[i].Gotoset[x,1] ] ) ;
-		if( rule != -1 )
-			{
-			X.Auto["global"] = "global::"+( rule == 0 ? "_accept" : xo_t[rule].lhs.s )
-				+( rule == 0 ? string.Empty : "._"+xo_t[rule].lhs.X.ToString() ) ;
-			sb.Append( put("A335-Xo_t-_io-5") ) ;
-			}
-		else
-			sb.Append( put("A335-Xo_t-_io-6") ) ;
-		sb.Append( put("A335-Xo_t-_io-7") ) ;
 		return sb.ToString() ;
 		}
 	public static string put( string s )
