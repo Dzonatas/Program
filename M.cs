@@ -25,9 +25,7 @@ public readonly static char[] MSB = new char[] { ' ', '.' } ;
 internal static void _Main( string[] args )
 	{
 	#if PROXY
-	throw new System.Exception("((new)project?) Remainder.") ;
-	#elif RECOMPILED
-	int xp = Shell.XProxy() ;
+	Cluster.Program.Proxy = true ;
 	#endif
 	#if VORPAL // || BW || WB
 	//ECQR#SSDDMM

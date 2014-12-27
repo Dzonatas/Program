@@ -14,6 +14,7 @@ namespace Cluster
 	{
 	public sealed class Program
 		{
+		static public bool                      Proxy      = false ;
 		static public Action<string[]>          Parse      = (args) => {} ;
 		static public Action                    Initialize = () => {} ;
 		static public Action                    Run        = () => {} ;
