@@ -71,6 +71,7 @@ public static partial class Shell
 		{
 		{ "~/", "X.Y.cs" },
 		{ "#/", "X.Predefined.cs" },
+		{ "#/", "Tokenset.cs" },
 		{ "",   "Z.cs" },
 		{ "~/", "C699.cs" },
 		{ "~/", "C699.free.cs" }
@@ -95,6 +96,7 @@ public static partial class Shell
 			"gmcs -define:EMBED -nowarn:0169,219,414,649"
 			#endif
 			+ files
+			+ " "+Current.Path.Entry("tokenset.cs")
 			+ " "
 			+ "-out:" + infrastruct
 			) ;

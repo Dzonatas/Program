@@ -95,11 +95,9 @@ static A335() {}
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
 public static void Main( string[] args )
 	{
-	string cl0 = System.Environment.GetCommandLineArgs()[0] ;
-	var cl = cl0.Substring(cl0.LastIndexOf('/')+1).Split(MSB).GetEnumerator() ;
+	var cl = Tokenset.Points.GetEnumerator() ;
 	cl.MoveNext() ;
-	cl.MoveNext() ;
-	var argv = args.GetEnumerator() ;
+	var argv = Tokenset.Argv.GetEnumerator() ;
 	argv.MoveNext() ;
 	_accept.Codex.Switch(cl,argv) ;
 	}
