@@ -72,9 +72,11 @@ class Stack
 			return ;
 		switch( X.Auto["A"] )
 			{
+			#if DEBUG
 			case "{.assembly":
 				b_list += C699.C.Array.assembly.argv(args).asm + "; \n" ;
 				break ;
+			#endif
 			default:
 				X.Auto["argv"] = ", "+string.Join(", ", args)+", 0 }" ;
 				b_list += Xo_t.put("fasm_c" ) ;

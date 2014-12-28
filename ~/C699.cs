@@ -264,6 +264,7 @@ public struct cso
 		_c = cc ;
 		s = "" ;
 		}
+	#if DEBUG
 	public cso assembly
 		{
 		get { s += "\""+System.Extensions.var_.GUID(0.1)+"/.assembly.exe\"" ; return this ; }
@@ -277,6 +278,7 @@ public struct cso
 		{
 		get { return _c.Function( "fasm", C.Restricted( "(char*[]) {"+s+"}" ) ) ; }
 		}
+	#endif
 	}
 public struct cil
 	{
