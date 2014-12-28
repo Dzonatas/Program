@@ -43,6 +43,22 @@ public static void assimulation( string input )
 	//In re: "assimilated" -> icyspherical.blogspot.com/2010/07/why-resthttp-based-client-side.html
 	xml = new System.Xml.XmlTextReader( new System.IO.StringReader( input ) ) ;
 	while( xml.Read() && ! ( xml.NodeType == System.Xml.XmlNodeType.Element && xml.Name == "xml" ) ) ;
+	#if DEBUG
+	_.Token[] buffer = new Token[0] ;
+	_.Token t ;
+	var sw = Current.Path.CreateText( "tokenset.cs" ) ;
+	sw.WriteLine( "public static partial class Tokenset {" ) ;
+	sw.WriteLine( "static object[,] tokenset =\n\t{" ) ;
+	while( (t = _.input())._ != "$end" )
+		{
+		System.Array.Resize( ref buffer, buffer.Length+1 ) ;
+		buffer[buffer.Length-1] = t ;
+		sw.WriteLine( "\t{ "+((int)t.c)+", \""+t._+"\", "+(t.terminal?'1':'0')+", "+t.point+" }," ) ;
+		}
+	sw.WriteLine( "\t{ "+((int)t.c)+", \""+t._+"\", "+(t.terminal?'1':'0')+", "+t.point+" }" ) ;
+	sw.WriteLine( "\t} ;\n}" ) ;
+	sw.Close() ;
+	#endif
 	}
 
 #if SCREEN	

@@ -96,7 +96,11 @@ static _.Token input( ref _.Token[] b_line )
 	b_line.RemoveAt(0) ;
 	return token ;
 	#else
+	#if DEBUG
+	return Tokenset.Input ;
+	#else
 	return _.input() ;
+	#endif
 	#endif
 	}
 
