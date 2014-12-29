@@ -63,47 +63,6 @@ public struct Itemset
 	*/
 	}
 
-static _.Token input( ref _.Token[] b_line )
-	{
-	#if DEBUG_INPUT
-	int y = 0 ;
-	foreach( _.Token t in b_line )
-		{
-		string text = "<"+t._+">" ;
-		y += text.Length ;
-		}
-	while( y < System.Console.WindowWidth )
-		{
-		_.Token t = _.input() ;
-		b_line.Add( t ) ;
-		string text = "<"+t._+">" ;
-		y += text.Length ;
-		}
-	y = 0 ;
-	foreach( _.Token t in b_line )
-		{
-		int z = y ;
-		string text = "<"+t._+">" ;
-		y += text.Length ;
-		if( y >= System.Console.WindowWidth )
-			break ;
-		System.Console.SetCursorPosition( z, 20 ) ;
-		System.Console.Write( text ) ;
-		}
-	_.Token token = b_line[0] ;
-	if( debug ) 
-		_.prompt(token) ;
-	b_line.RemoveAt(0) ;
-	return token ;
-	#else
-	#if DEBUG
-	return Tokenset.Input ;
-	#else
-	return _.input() ;
-	#endif
-	#endif
-	}
-
 class Instr : Automatrix
 	{
 	Instr next ;

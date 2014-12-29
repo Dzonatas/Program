@@ -20,7 +20,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	#endif
 	if( ! token.HasValue )
 		{
-		token = input( ref Hacked.Materials.H.Line ) ;
+		token = Tokenset.Input ;
 		#if !DEBUG_TOKEN
 		Debug.WriteLine( "[Token] " + token ) ;
 		#endif

@@ -21,28 +21,6 @@ bo.jo
 
 }
 
-namespace Hacked.Materials
-	{
-	static class H 
-		{
-		static public _.Token[] Line = new _.Token[0] ;
-		static readonly global::Materials.M m ;
-		static H()
-			{
-			m = new global::Materials.M() ;
-			#if DRM
-			//m.attach(global::Materials.library_collada.id) ;
-			//m.attach(RED_RIBBON) ;
-			#else
-			//m.attach(CONSOLE) ;
-			//m.attach(RIBBON) ;
-			//m.apply(Sperical.Mesh.generator.parameters) ;
-			//m.attach(DREAMLAND) ;
-			#endif
-			}
-		}
-	}
-	
 namespace Hypervisor.Materials
 	{
 	static class Handle
