@@ -5,18 +5,18 @@ public static partial class Tokenset
 	public static string[] Argv
 		{
 		get {
-			string[] p = new string[tokenset.GetLength(0)] ;
-			for( int i = 0 ; i < p.Length ; i++ )
-				p[i] = (string)tokenset[i,1] ;
+			string[] p = new string[tokenset.Length] ;
+			for( int i = 0 ; i < tokenset.Length ; i++ )
+				p[i] = tokenset[i]._ ;
 			return p ;
 		    }
 		}
 	public static string[] Points
 		{
 		get {
-			string[] p = new string[tokenset.GetLength(0)] ;
-			for( int i = 0 ; i < p.Length ; i++ )
-				p[i] = ((int)tokenset[i,3]).ToString() ;
+			string[] p = new string[tokenset.Length] ;
+			for( int i = 0 ; i < tokenset.Length ; i++ )
+				p[i] = tokenset[i].point.ToString() ;
 			return p ;
 		    }
 		}
@@ -42,9 +42,9 @@ public static partial class Tokenset
 			point = _point ;
 			}
 		public override string ToString()
-				{
-				return string.Format( "({0},{1})", c, _ );
-				}
+			{
+			return string.Format( "({0},{1})", c, _ );
+			}
 		}
 	static System.Xml.XmlTextReader   xml ;
 	public static void Assimulation( string input )
