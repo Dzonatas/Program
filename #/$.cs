@@ -16,10 +16,10 @@ public static void Main( string[] args )
 	}
 
 #endif
-static public Token string_t     = new Token( '$' , "string" ) ;
-static public Token underline_t  = new Token( '_' , "underline" ) ;
-static public Token accent_t     = new Token( '`' , "accent" ) ;
-static public Token entity_t     = new Token( '&' , "entity" ) ;  //_amper`sand,_resource
+static public Tokenset.Token string_t     = new Tokenset.Token( '$' , "string" ) ;
+static public Tokenset.Token underline_t  = new Tokenset.Token( '_' , "underline" ) ;
+static public Tokenset.Token accent_t     = new Tokenset.Token( '`' , "accent" ) ;
+static public Tokenset.Token entity_t     = new Tokenset.Token( '&' , "entity" ) ;  //_amper`sand,_resource
 //<s>public Token string_t     = new Token( '$' , "string" ) ;</t=noise.switch>//_FIXT:_string_precedes,_or_char_precedes
 //<s>public Token string_t     = new Token( '$' , "string" ) ;</t=formed.key>//_FIXT:(numbers_or_unicoded_char)->(#)
 //<s>public Token string_t     = new Token( '$' , "string" ) ;</t=repo.rep..>//_FIXT:<s[0]/t=[.post|.get]>
@@ -30,31 +30,6 @@ static public Token entity_t     = new Token( '&' , "entity" ) ;  //_amper`sand,
 //<s>public Token string_t     = new Token( '>' , "shift-out" ) ; //_FIXT:.custom '>':.ctor = ( SO )
 //@Expect: Assembler ASCII encoded ECMA335 with '.custom' modules
 
-public struct Token
-	{
-	public char    c ;
-	public string  _ ;
-	public bool    terminal ;
-	public int     point ;
-	internal Token( char _char, string _string )
-		{
-		c = _char ;
-		_ = _string ;
-		terminal = true ;
-		point = 0 ;
-		}
-	internal Token( char _char, string _string, bool _terminal, int _point )
-		{
-		c = _char ;
-		_ = _string ;
-		terminal = _terminal ;
-		point = _point ;
-		}
-	public override string ToString()
-			{
-			return string.Format( "({0},{1})", c, _ );
-			}
-	}
 #region macro
 #if RELEASE
 <KNOWN> | "manifest"

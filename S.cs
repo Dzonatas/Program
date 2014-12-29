@@ -38,8 +38,8 @@ class Stack
 		public class Token : Item
 			{
 			public planet  State ;
-			public _.Token _Token ;
-			public Token( planet _0, _.Token _1 ) : base()
+			public Tokenset.Token _Token ;
+			public Token( planet _0, Tokenset.Token _1 ) : base()
 				{
 				State = _0 ;
 				_Token = _1 ;
@@ -675,9 +675,9 @@ namespace Spherical.Mesh //:(∅°<<π²)  //∅°:~="tilde zero"  //(πr²)!=(a
 			get { return "[x,y,z](u,v) = [ cos(u)sin(v)a , sin(u)sin(v)a , cos(v)a ]" ; }
 			//tessellation:{ u=2πn/N ; v=πm/M ; m=[1±polarity,M±polarity) ; n=[1,N) }
 			}
-		static _.Token artifact
+		static Tokenset.Token artifact
 			{
-			get { return new _.Token( 'ʄ' , cartesian ) ; }
+			get { return new Tokenset.Token( 'ʄ' , cartesian ) ; }
 			set { artifact = value ; }
 			}
 		static generator()

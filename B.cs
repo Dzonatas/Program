@@ -137,7 +137,7 @@ static int    b_v      ;//view:locution[,view:orbit]
 
 static void Begin()
 	{
-	Cluster.Cli.Start( Cluster.Parameter.Value("shell"), _.assimulation ) ;
+	Cluster.Cli.Start( Cluster.Parameter.Value("shell"), Tokenset.Assimulation ) ;
 	var types =
 		from  type in Assembly.GetExecutingAssembly().GetTypes()
 		from  atrb in Attribute.GetCustomAttributes( type )
