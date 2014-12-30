@@ -215,6 +215,11 @@ static void Begin()
 	}
 static string b_list = "" ;
 
+static void Build()
+	{
+	Xo_t.Build() ;
+	}
+
 partial class Program
 	{
 	static Program C = new Program() ;

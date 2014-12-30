@@ -282,11 +282,11 @@ class Xo_t
 		resolve = true ;
 		}
 	static readonly char[] entity_trim =  { ';' };
-	static public void Build()
+	static string[] compile = new string[xo_t.Length] ;
+	static public void Compile()
 		{
 		if( Cluster.Parameter.Value("build") == "false" )
 			return ;
-		string[] compile = new string[xo_t.Length] ;
 		compile[0] = "auto.cs" ;
 		Xo_t xo ;
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
@@ -351,6 +351,9 @@ class Xo_t
 			f.WriteLine( ) ;
 			}
 		f.Close() ;
+		}
+	static public void Build()
+		{
 		string infrastruct = Cluster.Shell.Embed( compile ) ;
 		string linkset = "" ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )

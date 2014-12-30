@@ -81,7 +81,7 @@ internal static void _Main( string[] args )
 	//X.Window() ;
 	//XLogo logo = new XLogo() ;
 	//logo.Window() ;
-	Xo_t.Build() ;
+	Xo_t.Compile() ;
 	#if !UNICODED_SVG
 	Xo_t.OutputGraph() ;
 	#endif
@@ -100,6 +100,7 @@ else
 	if( Cluster.Parameter.Value("synopsis") == "false" )
 		Begin() ;
 #endif
+	Build() ;
 #if DEBUG
 if( board )
 	Review.Board() ;
