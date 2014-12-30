@@ -43,7 +43,14 @@ public static partial class Tokenset
 			}
 		public override string ToString()
 			{
-			return string.Format( "({0},{1})", c, _ );
+			return string.Format
+				(
+				"( '\\u{0:X4}', \"{1}\", {2}, {3} )",
+				System.Convert.ToInt16(c),
+				_,
+				terminal.ToString().ToLower(),
+				point
+				) ;
 			}
 		}
 	static System.Xml.XmlTextReader   xml ;

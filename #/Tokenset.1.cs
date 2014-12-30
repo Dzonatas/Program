@@ -23,19 +23,11 @@ public static partial class Tokenset
 			{
 			System.Array.Resize( ref tokenset, tokenset.Length+1 ) ;
 			tokenset[tokenset.Length-1] = t ;
-			sw.WriteLine( "\tnew Token( '\\u{0:X4}', \"{1}\", {2}, {3} ),",
-				System.Convert.ToInt16(t.c),
-				t._,
-				t.terminal.ToString().ToLower(),
-				t.point ) ;
+			sw.WriteLine( "\tnew Token"+t+"," ) ;
 			}
 		System.Array.Resize( ref tokenset, tokenset.Length+1 ) ;
 		tokenset[tokenset.Length-1] = t ;
-		sw.WriteLine( "\tnew Token( '\\u{0:X4}', \"{1}\", {2}, {3} )"+"\t}} ;\n}}",
-			System.Convert.ToInt16(t.c),
-			t._,
-			t.terminal.ToString().ToLower(),
-			t.point ) ;
+		sw.WriteLine( "\tnew Token"+t+"\n\t} ;\n}" ) ;
 		sw.Close() ;
 		}
 	}
