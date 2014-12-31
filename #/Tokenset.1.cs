@@ -1,17 +1,6 @@
 public static partial class Tokenset
 	{
 	static Token[] tokenset ;
-	public static Token Input
-		{
-		get {
-			if( tokenset == null )
-				return input() ;
-			Token t = tokenset[index] ;
-			if( t._ != "$end")
-				index++ ;
-			return t ;
-		    }
-		}
 	public static void Lift()
 		{
 		Token t ;
@@ -23,11 +12,11 @@ public static partial class Tokenset
 			{
 			System.Array.Resize( ref tokenset, tokenset.Length+1 ) ;
 			tokenset[tokenset.Length-1] = t ;
-			sw.WriteLine( "\tnew Token"+t+"," ) ;
+			sw.WriteLine( "\tnew Token"+((string)t)+"," ) ;
 			}
 		System.Array.Resize( ref tokenset, tokenset.Length+1 ) ;
 		tokenset[tokenset.Length-1] = t ;
-		sw.WriteLine( "\tnew Token"+t+"\n\t} ;\n}" ) ;
+		sw.WriteLine( "\tnew Token"+((string)t)+"\n\t} ;\n}" ) ;
 		sw.Close() ;
 		}
 	}

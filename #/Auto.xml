@@ -95,11 +95,7 @@ static A335() {}
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
 public static void Main( string[] args )
 	{
-	var cl = Tokenset.Points.GetEnumerator() ;
-	cl.MoveNext() ;
-	var argv = Tokenset.Argv.GetEnumerator() ;
-	argv.MoveNext() ;
-	_accept.Codex.Switch(cl,argv) ;
+	_accept.Codex.Switch( Tokenset.Input ) ;
 	}
 #endif
 }
@@ -124,11 +120,11 @@ public class _Auto : Auto {
 }
 public static class Codex
 	{
-	public static Auto Switch( System.Collections.IEnumerator cl, System.Collections.IEnumerator args ) {
-		switch( int.Parse((string)cl.Current) ) {
+	public static Auto Switch( Tokenset.Token t ) {
+		switch( t.point ) {
 </A335-Xo_t-Build-iDNA-1>
 <A335-Xo_t-Build-iDNA-2>
-		case &i; : return new &namespace;.&signal;(cl,args) ;
+		case &i; : return new &namespace;.&signal;(t) ;
 </A335-Xo_t-Build-iDNA-2>
 <A335-Xo_t-Build-iDNA-4>
 		default: return new _Auto() ;
@@ -160,14 +156,10 @@ public partial class  &signal;
 	static readonly string[] rhs = &rhs; ;
 	public override void Element() { auto = this ; }
 	public override void EntityReference() { auto = this ; }
-	public &signal;( System.Collections.IEnumerator cl, System.Collections.IEnumerator args )
+	public &signal;( Tokenset.Token t )
 		{
-		System.Console.WriteLine("{0}{1} &signal;",cl.Current,args.Current) ;
-		if( args.MoveNext() )
-			{
-			cl.MoveNext() ;
-			_accept.Codex.Switch(cl,args) ;
-			}
+		System.Console.WriteLine("&signal;"+t) ;
+		_accept.Codex.Switch( Tokenset.Input ) ;
 		}
 	}
 }

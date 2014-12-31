@@ -1,6 +1,17 @@
 public static partial class Tokenset
 	{
 	static int index = 0 ;
+	public static Token Input
+		{
+		get {
+			if( tokenset == null )
+				return input() ;
+			Token t = tokenset[index] ;
+			if( t._ != "$end")
+				index++ ;
+			return t ;
+		    }
+		}
 	#if EMBED
 	public static string[] Argv
 		{
@@ -41,6 +52,19 @@ public static partial class Tokenset
 			terminal = _terminal ;
 			point = _point ;
 			}
+		#if !EMBED
+		static public explicit operator string( Token t )
+			{
+			return string.Format
+				(
+				"( '\\u{0:X4}', \"{1}\", {2}, {3} )",
+				System.Convert.ToInt16(t.c),
+				t._,
+				t.terminal.ToString().ToLower(),
+				A335.xml_translate[t.c]
+				) ;
+			}
+		#endif
 		public override string ToString()
 			{
 			return string.Format
