@@ -130,7 +130,7 @@ class Xo_t
 	static string list( int i )
 		{
 		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
-		X.Auto["glyph"] = ((char)xo_t[i]).ToString() ;
+		X.Auto["glyph"] = string.Format( "\\u{0:X4}", System.Convert.ToInt16( (char)xo_t[i] ) ) ;
 		X.Auto["lookahead"] = "{ " ;
 		if( stateset[i].Lookaheadset.Length != 0 )
 			{
