@@ -95,7 +95,7 @@ static A335() {}
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
 public static void Main( string[] args )
 	{
-	_accept.Codex.Switch( Tokenset.Input ) ;
+	new &namespace;.&signal;( Tokenset.Input ) ;
 	}
 #endif
 }
