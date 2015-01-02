@@ -257,10 +257,16 @@ class Xo_t
 			else
 			if( content && XmlNodeType.EntityReference == xml.NodeType )
 				{
-				if( X.Auto[xml.Name] == null )
-					text += '&'+xml.Name+';' ;
-				else
-					text += X.Auto[xml.Name] ;
+				try {
+					if( X.Auto[xml.Name] == null )
+						text += '&'+xml.Name+';' ;
+					else
+						text += X.Auto[xml.Name] ;
+					}
+				catch( System.Collections.Generic.KeyNotFoundException eh )
+					{
+					System.Console.WriteLine( "Program: eh( &"+xml.Name+"; )" ) ;
+					}
 				}
 			else
 			if( content && XmlNodeType.EndElement == xml.NodeType )
