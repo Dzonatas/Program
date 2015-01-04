@@ -257,16 +257,19 @@ class Xo_t
 			else
 			if( content && XmlNodeType.EntityReference == xml.NodeType )
 				{
-				try {
-					if( X.Auto[xml.Name] == null )
-						text += '&'+xml.Name+';' ;
-					else
-						text += X.Auto[xml.Name] ;
-					}
+				bool nul = false ;
+				try { nul = X.Auto[xml.Name] == null ; }
 				catch( System.Collections.Generic.KeyNotFoundException eh )
 					{
-					System.Console.WriteLine( "Program: eh( &"+xml.Name+"; )" ) ;
+					if( Cluster.Parameter.Value( xml.Name ) == "false" )
+						System.Console.WriteLine( "Program: eh( &"+xml.Name+"; )" ) ;
+					else
+						X.Auto[xml.Name] = Cluster.Parameter.Value( xml.Name ) ;
 					}
+				if( nul )
+					text += '&'+xml.Name+';' ;
+				else
+					text += X.Auto[xml.Name] ;
 				}
 			else
 			if( content && XmlNodeType.EndElement == xml.NodeType )
