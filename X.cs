@@ -302,7 +302,6 @@ class Xo_t
 		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
 		X.Auto["_xml_reader"] = put("_xml_reader") ;
 		X.Auto["list"] = list( 0 ) ;
-		X.Auto["io"] = _io( 0 ) ;
 		var f = Current.Path.CreateText( compile[0] ) ;
 		string filename = "" ;
 		X.Auto["_"+xo.lhs.X] = X.Auto["_"+xo.lhs.X].TrimEnd() ;
@@ -321,6 +320,13 @@ class Xo_t
 			}
 		f.Write( X.Auto["A335-Xo_t-Build-iDNA-4"] ) ;
 		f.WriteLine( ) ;
+		f.Write( put("A335-Xo_t-_io-0") ) ;
+		for( int i = 0 ; i < stateset.Length ; i++ )
+			{
+			X.Auto["point"] = "_"+i.ToString() ;
+			f.Write( _io( i ) ) ;
+			}
+		f.Write( put("A335-Xo_t-_io-2") ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
@@ -342,7 +348,6 @@ class Xo_t
 				X.Auto["Entity"] += "'"+c+"', " ;
 			X.Auto["Entity"] += "'" + entity[entity.Length-1] + "' }" ;
 			X.Auto["list"] = list( i ) ;
-			X.Auto["io"] = _io( i ) ;
 			X.Auto["signal"] = reduction ;
 			X.Auto["lhs"] = "{ " ;
 			foreach( char c in Rule.Set[i].lhs.s )

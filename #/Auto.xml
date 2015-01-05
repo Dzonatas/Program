@@ -95,28 +95,21 @@ static A335() {}
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
 public static void Main( string[] args )
 	{
-	new &namespace;.&signal;( Tokenset.Input ) ;
+	new Automa._auto() ;
 	}
 #endif
 }
 struct iDNA {
 &list;
-&io;
 }
 public abstract class Auto {
-	protected static Auto auto ;
+	static public Tokenset.Token Token ;
 	public abstract string LHS { get; }
 	public abstract string[] RHS { get; }
-	public abstract void Element() ;
-	public abstract void EntityReference() ;
-	public static void Text( string text ) { auto.text(text) ; }
-	protected void text( string text ) { X.Y.Z(text) ; }
 }
 public class _Auto : Auto {
 	public override string LHS { get { return string.Empty ; } }
 	public override string[] RHS { get { return null ; } }
-	public override void Element() { }
-	public override void EntityReference() { }
 }
 public static class Codex
 	{
@@ -145,7 +138,6 @@ namespace &namespace; {
 public struct iDNA {
 	public static readonly char[]   Entity  = &Entity; ;
 &list;
-&io;
 }
 public partial class  &signal;
 	: _accept.Auto, &interface;
@@ -154,8 +146,6 @@ public partial class  &signal;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = &rhs; ;
-	public override void Element() { auto = this ; }
-	public override void EntityReference() { auto = this ; }
 	public &signal;( Tokenset.Token t )
 		{
 		System.Console.WriteLine("&signal;"+t) ;
@@ -171,17 +161,60 @@ public partial class  &signal;
 <A335-Xo_t-list>
 	public static readonly char     &rule;_&point; = &global; ;
 </A335-Xo_t-list>
+<A335-Xo_t-_io-0>
+namespace Automa {
+interface State {
+	int[,]               Shiftset                  { get; }
+	int[,]               Gotoset                   { get; }
+	string[]             Typeset                   { get; }
+	int[]                Symbolset                 { get; }
+	int[]                Stateset                  { get; }
+	int[]                Ruleset                   { get; }
+	int[]                Pointset                  { get; }
+	int[,]               Reductionset              { get; }
+	int                  Default                   { get; }
+	}
+public class _auto : State {
+	public int[,]   Shiftset     { get { return shiftset ; } }
+	public int[,]   Gotoset      { get { return gotoset ; } }
+	public string[] Typeset      { get { return typeset ; } }
+	public int[]    Symbolset    { get { return symbolset ; } }
+	public int[]    Stateset     { get { return stateset ; } }
+	public int[]    Ruleset      { get { return ruleset ; } }
+	public int[]    Pointset     { get { return pointset ; } }
+	public int[,]   Reductionset { get { return reductionset ; } }
+	public int      Default      { get { return _default ; } }
+	public static readonly int[,]   shiftset   ;
+	public static readonly int[,]   gotoset   ;
+	public static readonly string[] typeset   ;
+	public static readonly int[]    symbolset ;
+	public static readonly int[]    stateset  ;
+	public static readonly int[]    ruleset   ;
+	public static readonly int[]    pointset  ;
+	public static readonly int[,]   reductionset ;
+	public static readonly int      _default   ;
+	public _auto() {
+		new &namespace;.&signal;( Tokenset.Input ) ;
+	}
+}
+</A335-Xo_t-_io-0>
 <A335-Xo_t-_io-1>
-	public static readonly int[,]   Shiftset  = &shiftset; ;
-	public static readonly int[,]   Gotoset   = &gotoset; ;
-	public static readonly string[] Typeset   = &typeset; ;
-	public static readonly int[]    Symbolset = &symbolset; ;
-	public static readonly int[]    Stateset  = &stateset; ;
-	public static readonly int[]    Ruleset   = &ruleset; ;
-	public static readonly int[]    Pointset  = &pointset; ;
-	public static readonly int[,]   Reductionset  = &reductionset; ;
-	public static readonly int      Default   = &rule; ;
+public class &point; : _auto, State
+	{
+	public new static readonly int[,]   Shiftset  = &shiftset; ;
+	public new static readonly int[,]   Gotoset   = &gotoset; ;
+	public new static readonly string[] Typeset   = &typeset; ;
+	public new static readonly int[]    Symbolset = &symbolset; ;
+	public new static readonly int[]    Stateset  = &stateset; ;
+	public new static readonly int[]    Ruleset   = &ruleset; ;
+	public new static readonly int[]    Pointset  = &pointset; ;
+	public new static readonly int[,]   Reductionset  = &reductionset; ;
+	public new static readonly int      Default   = &rule; ;
+	}
 </A335-Xo_t-_io-1>
+<A335-Xo_t-_io-2>
+}
+</A335-Xo_t-_io-2>
 <main_c>
 #include &lt;stdlib.h>
 #include &lt;sys/types.h>
