@@ -297,16 +297,13 @@ class Xo_t
 		if( Cluster.Parameter.Value("build") == "false" )
 			return ;
 		compile[0] = "auto.cs" ;
-		Xo_t xo = xo_t[1] ;
+		Xo_t xo ;
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
 		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
 		X.Auto["_xml_reader"] = put("_xml_reader") ;
 		X.Auto["list"] = list( 0 ) ;
 		var f = Current.Path.CreateText( compile[0] ) ;
 		string filename = "" ;
-		X.Auto["_"+xo.lhs.X] = X.Auto["_"+xo.lhs.X].TrimEnd() ;
-		X.Auto["namespace"] = xo.lhs.s + "._" + xo.lhs.X  ;
-		X.Auto["signal"] = put( "_"+xo.lhs.X ) ;
 		f.Write( put("A335-Xo_t-Build-iDNA-1") ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{

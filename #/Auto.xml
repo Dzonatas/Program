@@ -194,7 +194,8 @@ public class _auto : State {
 	public static readonly int[,]   reductionset ;
 	public static readonly int      _default   ;
 	public _auto() {
-		new &namespace;.&signal;( Tokenset.Input ) ;
+		System.Console.WriteLine(this) ;
+		new _0() ;
 	}
 }
 </A335-Xo_t-_io-0>
@@ -210,6 +211,7 @@ public class &point; : _auto, State
 	public new static readonly int[]    Pointset  = &pointset; ;
 	public new static readonly int[,]   Reductionset  = &reductionset; ;
 	public new static readonly int      Default   = &rule; ;
+	public &point;() { 		System.Console.WriteLine(this) ; }
 	}
 </A335-Xo_t-_io-1>
 <A335-Xo_t-_io-2>
