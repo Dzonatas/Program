@@ -95,7 +95,7 @@ static A335() {}
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
 public static void Main( string[] args )
 	{
-	new Automa._auto() ;
+	Automa._0.main() ;
 	}
 #endif
 }
@@ -163,55 +163,23 @@ public partial class  &signal;
 </A335-Xo_t-list>
 <A335-Xo_t-_io-0>
 namespace Automa {
-interface State {
-	int[,]               Shiftset                  { get; }
-	int[,]               Gotoset                   { get; }
-	string[]             Typeset                   { get; }
-	int[]                Symbolset                 { get; }
-	int[]                Stateset                  { get; }
-	int[]                Ruleset                   { get; }
-	int[]                Pointset                  { get; }
-	int[,]               Reductionset              { get; }
-	int                  Default                   { get; }
-	}
-public class _auto : State {
-	public int[,]   Shiftset     { get { return shiftset ; } }
-	public int[,]   Gotoset      { get { return gotoset ; } }
-	public string[] Typeset      { get { return typeset ; } }
-	public int[]    Symbolset    { get { return symbolset ; } }
-	public int[]    Stateset     { get { return stateset ; } }
-	public int[]    Ruleset      { get { return ruleset ; } }
-	public int[]    Pointset     { get { return pointset ; } }
-	public int[,]   Reductionset { get { return reductionset ; } }
-	public int      Default      { get { return _default ; } }
-	public static readonly int[,]   shiftset   ;
-	public static readonly int[,]   gotoset   ;
-	public static readonly string[] typeset   ;
-	public static readonly int[]    symbolset ;
-	public static readonly int[]    stateset  ;
-	public static readonly int[]    ruleset   ;
-	public static readonly int[]    pointset  ;
-	public static readonly int[,]   reductionset ;
-	public static readonly int      _default   ;
-	public _auto() {
-		System.Console.WriteLine(this) ;
-		new _0() ;
-	}
-}
 </A335-Xo_t-_io-0>
 <A335-Xo_t-_io-1>
-public class &point; : _auto, State
+public static class &point;
 	{
-	public new static readonly int[,]   Shiftset  = &shiftset; ;
-	public new static readonly int[,]   Gotoset   = &gotoset; ;
-	public new static readonly string[] Typeset   = &typeset; ;
-	public new static readonly int[]    Symbolset = &symbolset; ;
-	public new static readonly int[]    Stateset  = &stateset; ;
-	public new static readonly int[]    Ruleset   = &ruleset; ;
-	public new static readonly int[]    Pointset  = &pointset; ;
-	public new static readonly int[,]   Reductionset  = &reductionset; ;
-	public new static readonly int      Default   = &rule; ;
-	public &point;() { 		System.Console.WriteLine(this) ; }
+	struct state
+		{
+		static readonly int[,]   shiftset  = &shiftset; ;
+		static readonly int[,]   gotoset   = &gotoset; ;
+		static readonly string[] typeset   = &typeset; ;
+		static readonly int[]    symbolset = &symbolset; ;
+		static readonly int[]    stateset  = &stateset; ;
+		static readonly int[]    ruleset   = &ruleset; ;
+		static readonly int[]    pointset  = &pointset; ;
+		static readonly int[,]   reductionset  = &reductionset; ;
+		static readonly int      _default   = &rule; ;
+		}
+	static public void main() { 		System.Console.WriteLine("&point;") ; }
 	}
 </A335-Xo_t-_io-1>
 <A335-Xo_t-_io-2>
