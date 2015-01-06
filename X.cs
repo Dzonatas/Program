@@ -175,25 +175,24 @@ class Xo_t
 		}
 	static string _io( int i )
 		{
-		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 		int rule = -1 ;
-		X.Auto["rule"] = "-1" ;
-		if( stateset[i].Default_reduction.HasValue )
-			{
-			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
-			X.Auto["rule"] = stateset[i].Default_reduction.Value.ToString() ;
-			}
-		X.Auto["shiftset"]  = "" ;
-		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
-			X.Auto["shiftset"] += "{ "+stateset[i].Shiftset[z,0]+", "+stateset[i].Shiftset[z,1]+" }, " ;
-		X.Auto["gotoset"]  = "" ;
-		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
-			X.Auto["gotoset"] += "{ "+stateset[i].Gotoset[z,0]+", "+stateset[i].Gotoset[z,1]+" }, " ;
+		X.Auto["rule"]      = "-1" ;
 		X.Auto["typeset"]   = "" ;
 		X.Auto["symbolset"] = "" ;
 		X.Auto["stateset"]  = "" ;
 		X.Auto["ruleset"]   = "" ;
 		X.Auto["pointset"]  = "" ;
+		X.Auto["gotoset"]   = "" ;
+		X.Auto["shiftset"]  = "" ;
+		if( stateset[i].Default_reduction.HasValue )
+			{
+			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
+			X.Auto["rule"] = stateset[i].Default_reduction.Value.ToString() ;
+			}
+		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
+			X.Auto["shiftset"] += "{ "+stateset[i].Shiftset[z,0]+", "+stateset[i].Shiftset[z,1]+" }, " ;
+		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
+			X.Auto["gotoset"] += "{ "+stateset[i].Gotoset[z,0]+", "+stateset[i].Gotoset[z,1]+" }, " ;
 		foreach( Transition t in stateset[i].Transitionset )
 			{
 			X.Auto["typeset"]   += '"'+t.type+'"'+", " ;
@@ -276,7 +275,7 @@ class Xo_t
 			list += "\t}\n\t" ;
 			}
 		if( stateset[i].Default_reduction.HasValue )
-			list += "rule = "+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+" ;\n\t" ;
+			list += "rule = "+X.Auto["rule"]+" ;\n\t" ;
 		if( _transit )
 			list += "transit:\n\t" ;
 		/*
@@ -293,8 +292,7 @@ class Xo_t
 			list += "new_state :\n\t" ;
 		list += "return ;" ;
 		X.Auto["list"] = list ;
-		sb.Append( put("A335-Xo_t-_io-1") ) ;
-		return sb.ToString() ;
+		return put("A335-Xo_t-_io-1") ;
 		}
 	public static string put( string s )
 		{
