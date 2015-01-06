@@ -171,12 +171,13 @@ partial class Automaton {
 		{
 		token = Tokenset.Input ;
 		new Automaton( _0 ) ;
+		log( null ) ;
 		}
 </A335-Xo_t-_io-0>
 <A335-Xo_t-_io-1>
 	public static void &point;( Automaton a )
 	{
-	//Debug.WriteLine("&point;") ;
+	log("&point;") ;
 	a.shiftset      = &shiftset; ;
 	/*
 	gotoset       = &gotoset; ;

@@ -14,4 +14,11 @@ partial class Automaton
 		{
 		_set( this ) ;
 		}
+	static void log( string point )
+		{
+		if( point == null )
+			System.Console.WriteLine() ;
+		else
+			System.Console.Write( point ) ;
+		}
 	}
