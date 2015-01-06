@@ -219,6 +219,78 @@ class Xo_t
 			X.Auto["reductionset"] = "{ "+string.Concat(ss)+" }" ;
 		else
 			X.Auto["reductionset"] = "\n"+tab+"{\n"+tab+string.Join(",\n"+tab,ss)+"\n"+tab+"}" ;
+		string list = "" ;
+		if( stateset[i].Lookaheadset.Length == 1 )
+			list += "if( token.point == "+stateset[i].Lookaheadset[0]+" ) goto reduce ;\n\t" ;
+		else
+		if( stateset[i].Lookaheadset.Length > 0 )
+			{
+			list += "if( " ;
+			int z ;
+			for( z = 0 ; z < stateset[i].Lookaheadset.Length-1 ; z++ )
+				list += "token.point == "+stateset[i].Lookaheadset[z]+" || " ;
+			list += "token.point == "+stateset[i].Lookaheadset[z]+" ) goto reduce ;\n\t" ;
+			}
+		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
+			{
+			int x = stateset[i].Shiftset[z,0] ;
+			int y = stateset[i].Shiftset[z,1] ;
+			list += "if( token.point == "+x+" ) { shift(); _"
+				+stateset[i].Transitionset[y].state+"() ; goto new_state ; }\n\t" ;
+			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
+				list += "else\n\t" ;
+			}
+		if( stateset[i].Lookaheadset.Length > 0 )
+			list += "reduce :\n\t" ;
+		if( stateset[i].Reductionset.Length > 0 )
+			list += "int rule = -1 ;\n\t" ;
+		bool _jump = false ;
+		bool _transit = false ;
+		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
+			{
+			Reduction r = stateset[i].Reductionset[z] ;
+			if( ! r.enabled )
+				continue ;
+			list += "if( token.point == "+r.rule+" )\n\t\t{\n\t" ;
+			list += "\tint yy = "+(int)xo_t[r.rule]+" ;\n\t" ;
+			list += "\trule = "+r.rule+" ;\n\t" ;
+			bool jmp = true ;
+			for( int x = 0 ; x < stateset[i].Gotoset.GetLength(0) ; x++ )
+				if( stateset[i].Gotoset[x,0] == (int)xo_t[r.rule] )
+					{
+					jmp = false ;
+					continue ;
+					}
+			if( jmp )
+				{
+				list += "\tgoto jump;\n\t" ;
+				_jump = true ;
+				}
+			else
+				{
+				_transit = true ;
+				list += "\tgoto transit;\n\t" ;
+				}
+			list += "\t}\n\t" ;
+			}
+		if( stateset[i].Default_reduction.HasValue )
+			list += "rule = "+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+" ;\n\t" ;
+		if( _transit )
+			list += "transit:\n\t" ;
+		/*
+		for( int x = 0 ; x < stateset[i].Gotoset.GetLength(0) ; x++ )
+			if( stateset[i].Gotoset[x,0] == (int)xo_t[r.rule] )
+				{
+				jmp = false ;
+				continue ;
+				}
+		*/
+		if( _jump )
+			list += "jump:\n\t" ;
+		if( stateset[i].Shiftset.GetLength(0) > 0 )
+			list += "new_state :\n\t" ;
+		list += "return ;" ;
+		X.Auto["list"] = list ;
 		sb.Append( put("A335-Xo_t-_io-1") ) ;
 		return sb.ToString() ;
 		}

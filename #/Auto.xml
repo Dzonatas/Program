@@ -95,7 +95,7 @@ static A335() {}
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
 public static void Main( string[] args )
 	{
-	Automa._0.main() ;
+	new Automaton() ;
 	}
 #endif
 }
@@ -162,26 +162,34 @@ public partial class  &signal;
 	public static readonly char     &rule;_&point; = &global; ;
 </A335-Xo_t-list>
 <A335-Xo_t-_io-0>
-namespace Automa {
+class Automaton {
+	static Tokenset.Token token ;
+	static void shift()
+		{
+		token = Tokenset.Input ;
+		}
+	public Automaton()
+		{
+		shift() ;
+		_0() ;
+		}
 </A335-Xo_t-_io-0>
 <A335-Xo_t-_io-1>
-struct state&point;
+	public static void &point;()
 	{
-	public static readonly int[,]   shiftset  = &shiftset; ;
+	System.Console.WriteLine("&point;") ;
 	/*
-	public static readonly int[,]   gotoset   = &gotoset; ;
-	public static readonly string[] typeset   = &typeset; ;
-	public static readonly int[]    symbolset = &symbolset; ;
-	public static readonly int[]    stateset  = &stateset; ;
-	public static readonly int[]    ruleset   = &ruleset; ;
-	public static readonly int[]    pointset  = &pointset; ;
-	public static readonly int[,]   reductionset  = &reductionset; ;
-	public static readonly int      _default   = &rule; ;
+	int[,]   shiftset  = &shiftset; ;
+	int[,]   gotoset   = &gotoset; ;
+	string[] typeset   = &typeset; ;
+	int[]    symbolset = &symbolset; ;
+	int[]    stateset  = &stateset; ;
+	int[]    ruleset   = &ruleset; ;
+	int[]    pointset  = &pointset; ;
+	int[,]   reductionset  = &reductionset; ;
+	int      _default   = &rule; ;
 	*/
-	}
-public static class &point;
-	{
-	static public void main() { 		System.Console.WriteLine("&point;{0}", state&point;.shiftset  ) ; }
+	&list;
 	}
 </A335-Xo_t-_io-1>
 <A335-Xo_t-_io-2>
