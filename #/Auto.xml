@@ -174,20 +174,19 @@ partial class Automaton {
 		}
 </A335-Xo_t-_io-0>
 <A335-Xo_t-_io-1>
-	public static void &point;()
+	public static void &point;( Automaton a )
 	{
-	System.Console.WriteLine("&point;") ;
-	int[,]   shiftset  = &shiftset; ;
+	//Debug.WriteLine("&point;") ;
+	a.shiftset      = &shiftset; ;
 	/*
-	int[,]   shiftset  = &shiftset; ;
-	int[,]   gotoset   = &gotoset; ;
-	string[] typeset   = &typeset; ;
-	int[]    symbolset = &symbolset; ;
-	int[]    stateset  = &stateset; ;
-	int[]    ruleset   = &ruleset; ;
-	int[]    pointset  = &pointset; ;
-	int[,]   reductionset  = &reductionset; ;
-	int      _default   = &rule; ;
+	gotoset       = &gotoset; ;
+	typeset       = &typeset; ;
+	symbolset     = &symbolset; ;
+	stateset      = &stateset; ;
+	ruleset       = &ruleset; ;
+	pointset      = &pointset; ;
+	reductionset  = &reductionset; ;
+	_default      = &rule; ;
 	*/
 	&list;
 	}

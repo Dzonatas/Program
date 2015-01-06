@@ -10,8 +10,8 @@ partial class Automaton
 	int[,]       reductionset  ;
 	int          _default      ;
 	static       Tokenset.Token token ;
-	public Automaton( System.Action _set )
+	public Automaton( System.Action<Automaton> _set )
 		{
-		_set() ;
+		_set( this ) ;
 		}
 	}

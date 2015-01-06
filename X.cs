@@ -204,7 +204,7 @@ class Xo_t
 		X.Auto["stateset"]  = X.Auto["stateset"]+" }" ;
 		X.Auto["ruleset"]   = X.Auto["ruleset"]+" }" ;
 		X.Auto["pointset"]  = X.Auto["pointset"]+" }" ;
-		X.Auto["shiftset"] = (s=="") ? "new int[0,0] ;" : "{ "+s+" }" ;
+		X.Auto["shiftset"] = (s=="") ? "new int[0,0]" : "new int[,] { "+s+" }" ;
 		s = "" ;
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
 			s += "{ "+stateset[i].Gotoset[z,0]+", "+stateset[i].Gotoset[z,1]+" }, " ;
@@ -235,8 +235,8 @@ class Xo_t
 			{
 			int x = stateset[i].Shiftset[z,0] ;
 			int y = stateset[i].Shiftset[z,1] ;
-			list += "if( token.point == "+x+" ) { shift(); _"
-				+stateset[i].Transitionset[y].state+"() ; goto new_state ; }\n\t" ;
+			list += "if( token.point == "+x+" ) { shift(); new Automaton( _"
+				+stateset[i].Transitionset[y].state+" ) ; goto new_state ; }\n\t" ;
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else\n\t" ;
 			}
