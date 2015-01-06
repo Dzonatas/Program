@@ -133,6 +133,7 @@
     <Compile Include="#\A335.Auto.cs" />
     <Compile Include="#\Tokenset.cs" />
     <Compile Include="#\Tokenset.1.cs" />
+    <Compile Include="#\Automaton.1.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -72,6 +72,7 @@ public static partial class Shell
 		{ "~/", "X.Y.cs" },
 		{ "#/", "X.Predefined.cs" },
 		{ "#/", "Tokenset.cs" },
+		{ "#/", "Automaton.1.cs" },
 		{ "",   "Z.cs" },
 		{ "~/", "C699.cs" },
 		{ "~/", "C699.free.cs" }
