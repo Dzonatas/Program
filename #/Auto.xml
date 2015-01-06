@@ -165,21 +165,23 @@ public partial class  &signal;
 namespace Automa {
 </A335-Xo_t-_io-0>
 <A335-Xo_t-_io-1>
+struct state&point;
+	{
+	public static readonly int[,]   shiftset  = &shiftset; ;
+	/*
+	public static readonly int[,]   gotoset   = &gotoset; ;
+	public static readonly string[] typeset   = &typeset; ;
+	public static readonly int[]    symbolset = &symbolset; ;
+	public static readonly int[]    stateset  = &stateset; ;
+	public static readonly int[]    ruleset   = &ruleset; ;
+	public static readonly int[]    pointset  = &pointset; ;
+	public static readonly int[,]   reductionset  = &reductionset; ;
+	public static readonly int      _default   = &rule; ;
+	*/
+	}
 public static class &point;
 	{
-	struct state
-		{
-		static readonly int[,]   shiftset  = &shiftset; ;
-		static readonly int[,]   gotoset   = &gotoset; ;
-		static readonly string[] typeset   = &typeset; ;
-		static readonly int[]    symbolset = &symbolset; ;
-		static readonly int[]    stateset  = &stateset; ;
-		static readonly int[]    ruleset   = &ruleset; ;
-		static readonly int[]    pointset  = &pointset; ;
-		static readonly int[,]   reductionset  = &reductionset; ;
-		static readonly int      _default   = &rule; ;
-		}
-	static public void main() { 		System.Console.WriteLine("&point;") ; }
+	static public void main() { 		System.Console.WriteLine("&point;{0}", state&point;.shiftset  ) ; }
 	}
 </A335-Xo_t-_io-1>
 <A335-Xo_t-_io-2>
