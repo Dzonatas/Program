@@ -204,7 +204,7 @@ class Xo_t
 		X.Auto["stateset"]  = X.Auto["stateset"]+" }" ;
 		X.Auto["ruleset"]   = X.Auto["ruleset"]+" }" ;
 		X.Auto["pointset"]  = X.Auto["pointset"]+" }" ;
-		X.Auto["shiftset"] = "{ "+s+" }" ;
+		X.Auto["shiftset"] = (s=="") ? "new int[0,0] ;" : "{ "+s+" }" ;
 		s = "" ;
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
 			s += "{ "+stateset[i].Gotoset[z,0]+", "+stateset[i].Gotoset[z,1]+" }, " ;

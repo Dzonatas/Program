@@ -178,6 +178,7 @@ class Automaton {
 	public static void &point;()
 	{
 	System.Console.WriteLine("&point;") ;
+	int[,]   shiftset  = &shiftset; ;
 	/*
 	int[,]   shiftset  = &shiftset; ;
 	int[,]   gotoset   = &gotoset; ;
