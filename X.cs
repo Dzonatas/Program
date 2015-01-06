@@ -244,7 +244,7 @@ class Xo_t
 		if( stateset[i].Lookaheadset.Length > 0 )
 			list += "reduce :\n\t" ;
 		if( stateset[i].Reductionset.Length > 0 )
-			list += "int rule = -1 ;\n\t" ;
+			list += "int rule = "+rule+" ;\n\t" ;
 		bool _jump = false ;
 		bool _transit = false ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
@@ -274,8 +274,6 @@ class Xo_t
 				}
 			list += "\t}\n\t" ;
 			}
-		if( stateset[i].Default_reduction.HasValue )
-			list += "rule = "+X.Auto["rule"]+" ;\n\t" ;
 		if( _transit )
 			list += "transit:\n\t" ;
 		/*
