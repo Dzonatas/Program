@@ -179,16 +179,14 @@ partial class Automaton {
 	{
 	log("&point;") ;
 	a.shiftset      = &shiftset; ;
-	/*
-	gotoset       = &gotoset; ;
-	typeset       = &typeset; ;
-	symbolset     = &symbolset; ;
-	stateset      = &stateset; ;
-	ruleset       = &ruleset; ;
-	pointset      = &pointset; ;
-	reductionset  = &reductionset; ;
-	_default      = &rule; ;
-	*/
+	a.gotoset       = &gotoset; ;
+	a.typeset       = &typeset; ;
+	a.symbolset     = &symbolset; ;
+	a.stateset      = &stateset; ;
+	a.ruleset       = &ruleset; ;
+	a.pointset      = &pointset; ;
+	a.reductionset  = &reductionset; ;
+	a._default      = &rule; ;
 	&list;
 	}
 </A335-Xo_t-_io-1>
