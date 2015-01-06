@@ -163,15 +163,10 @@ public partial class  &signal;
 </A335-Xo_t-list>
 <A335-Xo_t-_io-0>
 partial class Automaton {
-	static void shift()
-		{
-		token = Tokenset.Input ;
-		}
 	public Automaton()
 		{
-		token = Tokenset.Input ;
-		new Automaton( _0 ) ;
-		log( null ) ;
+		shift( _0 ) ;
+		log_end() ;
 		}
 </A335-Xo_t-_io-0>
 <A335-Xo_t-_io-1>

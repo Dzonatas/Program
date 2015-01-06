@@ -236,7 +236,7 @@ class Xo_t
 			{
 			int x = stateset[i].Shiftset[z,0] ;
 			int y = stateset[i].Shiftset[z,1] ;
-			list += "if( token.point == "+x+" ) { shift(); new Automaton( _"
+			list += "if( token.point == "+x+" ) { shift( _"
 				+stateset[i].Transitionset[y].state+" ) ; goto new_state ; }\n\t" ;
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else\n\t" ;

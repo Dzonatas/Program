@@ -16,9 +16,18 @@ partial class Automaton
 		}
 	static void log( string point )
 		{
-		if( point == null )
-			System.Console.WriteLine() ;
-		else
-			System.Console.Write( point ) ;
+		System.Console.Write( point ) ;
+		}
+	static void log_end()
+		{
+		System.Console.WriteLine() ;
+		}
+	static void unshift()
+		{
+		}
+	static void shift( System.Action<Automaton> _set )
+		{
+		token = Tokenset.Input ;
+		new Automaton( _set ) ;
 		}
 	}
