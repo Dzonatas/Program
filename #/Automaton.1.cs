@@ -26,6 +26,10 @@ partial class Automaton
 		{
 		_rule() ;
 		}
+	void Goto( System.Action<Automaton> new_state )
+		{
+		new Automaton( new_state ) ;
+		}
 	static void shift( System.Action<Automaton> _set )
 		{
 		token = Tokenset.Input ;

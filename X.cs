@@ -253,37 +253,30 @@ class Xo_t
 			if( ! r.enabled )
 				continue ;
 			list += "if( token.point == "+r.rule+" )\n\t\t{\n\t" ;
-			list += "\tint yy = "+(int)xo_t[r.rule]+" ;\n\t" ;
-			list += "\trule = __"+r.rule+" ;\n\t" ;
 			bool jmp = true ;
 			for( int x = 0 ; x < stateset[i].Gotoset.GetLength(0) ; x++ )
 				if( stateset[i].Gotoset[x,0] == (int)xo_t[r.rule] )
 					{
+					list += "\ta.Goto( _"+stateset[i].Gotoset[x,1]+" ) ;\n\t" ;
+					list += "\tgoto transit ;\n\t" ;
 					jmp = false ;
-					continue ;
+					_transit = true ;
+					break ;
 					}
 			if( jmp )
 				{
+				list += "\trule = __"+r.rule+" ;\n\t" ;
 				list += "\tgoto jump;\n\t" ;
 				_jump = true ;
-				}
-			else
-				{
-				_transit = true ;
-				list += "\tgoto transit;\n\t" ;
 				}
 			list += "\t}\n\t" ;
 			}
 		if( _transit )
 			list += "transit:\n\t" ;
-		/*
-		for( int x = 0 ; x < stateset[i].Gotoset.GetLength(0) ; x++ )
-			if( stateset[i].Gotoset[x,0] == (int)xo_t[r.rule] )
-				{
-				jmp = false ;
-				continue ;
-				}
-		*/
+		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
+			{
+			list += "if( token.point == "+stateset[i].Gotoset[z,0]+" ) a.Goto( _"+stateset[i].Gotoset[z,1]+" ) ;\n\t" ;
+			}
 		if( _jump )
 			list += "jump:\n\t" ;
 		list += "//a.unshift( rule ) ;\n\t" ;
