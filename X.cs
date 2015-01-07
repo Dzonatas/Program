@@ -244,7 +244,7 @@ class Xo_t
 		if( stateset[i].Lookaheadset.Length > 0 )
 			list += "reduce :\n\t" ;
 		if( stateset[i].Reductionset.Length > 0 )
-			list += "int rule = "+rule+" ;\n\t" ;
+			list += "System.Action rule = __"+rule+" ;\n\t" ;
 		bool _jump = false ;
 		bool _transit = false ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
@@ -254,7 +254,7 @@ class Xo_t
 				continue ;
 			list += "if( token.point == "+r.rule+" )\n\t\t{\n\t" ;
 			list += "\tint yy = "+(int)xo_t[r.rule]+" ;\n\t" ;
-			list += "\trule = "+r.rule+" ;\n\t" ;
+			list += "\trule = __"+r.rule+" ;\n\t" ;
 			bool jmp = true ;
 			for( int x = 0 ; x < stateset[i].Gotoset.GetLength(0) ; x++ )
 				if( stateset[i].Gotoset[x,0] == (int)xo_t[r.rule] )
@@ -286,12 +286,16 @@ class Xo_t
 		*/
 		if( _jump )
 			list += "jump:\n\t" ;
-		list += "a.unshift() ;\n\t" ;
+		list += "//a.unshift( rule ) ;\n\t" ;
 		if( stateset[i].Shiftset.GetLength(0) > 0 )
 			list += "new_state :\n\t" ;
 		list += "return ;" ;
 		X.Auto["list"] = list ;
-		return put("A335-Xo_t-_io-1") ;
+		if( i == 0 || i >= xo_t.Length )
+			return put("A335-Xo_t-_io-1") ;
+		X.Auto["namespace"] = xo_t[i].lhs.s + "._" + xo_t[i].lhs.X ;
+		X.Auto["signal"]    = X.Auto[ "_"+xo_t[i].lhs.X ] ;
+		return put("A335-Xo_t-_io-_1")+put("A335-Xo_t-_io-1") ;
 		}
 	public static string put( string s )
 		{

@@ -168,7 +168,16 @@ partial class Automaton {
 		shift( _0 ) ;
 		log_end() ;
 		}
+	public static void __0()
+		{
+		}
 </A335-Xo_t-_io-0>
+<A335-Xo_t-_io-_1>
+	public static void _&point;()
+		{
+		new &namespace;.&signal;(token) ;
+		}
+</A335-Xo_t-_io-_1>
 <A335-Xo_t-_io-1>
 	public static void &point;( Automaton a )
 	{

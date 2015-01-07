@@ -22,8 +22,9 @@ partial class Automaton
 		{
 		System.Console.WriteLine() ;
 		}
-	void unshift()
+	void unshift( System.Action _rule )
 		{
+		_rule() ;
 		}
 	static void shift( System.Action<Automaton> _set )
 		{
