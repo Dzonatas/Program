@@ -286,6 +286,7 @@ class Xo_t
 		*/
 		if( _jump )
 			list += "jump:\n\t" ;
+		list += "a.unshift() ;\n\t" ;
 		if( stateset[i].Shiftset.GetLength(0) > 0 )
 			list += "new_state :\n\t" ;
 		list += "return ;" ;
