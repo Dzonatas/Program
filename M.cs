@@ -31,6 +31,7 @@ internal static void _Main( string[] args )
 	//ECQR#SSDDMM
 	#else // ARCHITECTURE
 	current_working_directory() ;	//'POST ip time/0.0'
+	Cluster.Cli.Start( "git branch", Branch ) ;
 	#endif
 	Cluster.Program.Parse( args ) ;
 	Current.Estate.Current__System_File.Path = Cluster.Parameter.Value("PANZOR") ;

@@ -15,7 +15,7 @@ while( e.MoveNext() )
 	if( e.Current == '&lt;' )
 		{
 		if( process )
-			_accept.Auto.Text(l) ;
+			&branch;.Auto.Text(l) ;
 		l = string.Empty ;
 		e.MoveNext() ;
 		if( e.Current == '_' )
@@ -27,7 +27,7 @@ while( e.MoveNext() )
 				n += e.Current ;
 				e.MoveNext() ;
 				}
-			_accept.Codex.Switch(int.Parse(n)).Element() ;
+			&branch;.Codex.Switch(int.Parse(n)).Element() ;
 			}
 		else
 			process = false ;
@@ -39,7 +39,7 @@ while( e.MoveNext() )
 	if( e.Current == '&amp;' )
 		{
 		if( process )
-			_accept.Auto.Text(l) ;
+			&branch;.Auto.Text(l) ;
 		l = string.Empty ;
 		e.MoveNext() ;
 		if( e.Current == '_' )
@@ -61,7 +61,7 @@ while( e.MoveNext() )
 				n += e.Current ;
 				e.MoveNext() ;
 				}
-			_accept.Codex.Switch(int.Parse(n)).EntityReference() ;
+			&branch;.Codex.Switch(int.Parse(n)).EntityReference() ;
 			}
 		else
 			process = false ;
@@ -88,7 +88,7 @@ s.Close() ;
 </_xml_reader>
 <A335-Xo_t-Build-iDNA-1>
 interface Item { }
-namespace _accept {
+namespace &branch; {
 public partial class A335 {
 static A335() {}
 #if EMBED
@@ -140,7 +140,7 @@ public struct iDNA {
 &list;
 }
 public partial class  &signal;
-	: _accept.Auto, &interface;
+	: &branch;.Auto, &interface;
 	{
 	static readonly char[]   lhs = &lhs; ;
 	public override string   LHS { get { return new string(lhs) ; } }
@@ -149,7 +149,7 @@ public partial class  &signal;
 	public &signal;( Tokenset.Token t )
 		{
 		System.Console.WriteLine("&signal;"+t) ;
-		_accept.Codex.Switch( Tokenset.Input ) ;
+		&branch;.Codex.Switch( Tokenset.Input ) ;
 		}
 	}
 }

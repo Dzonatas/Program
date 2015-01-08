@@ -368,6 +368,8 @@ class Xo_t
 		Xo_t xo ;
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
 		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
+		Cluster.Cli.NoOperation() ;
+		X.Auto["branch"] = branch ;
 		X.Auto["_xml_reader"] = put("_xml_reader") ;
 		X.Auto["list"] = list( 0 ) ;
 		var f = Current.Path.CreateText( compile[0] ) ;
@@ -501,6 +503,7 @@ partial class X //_: YY
 	{
 	public static readonly System.Collections.Generic.Dictionary<string,string> Auto = new System.Collections.Generic.Dictionary<string,string>()
 		{
+		{ "branch",     null },
 		{ "Entity",     null },
 		{ "list",       null },
 		{ "argv",       null },

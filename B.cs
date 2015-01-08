@@ -220,6 +220,17 @@ static void Build()
 	Xo_t.Build() ;
 	}
 
+static string branch ;
+static void Branch( string input )
+	{
+	foreach( string s in input.Split( new char[] { '\n' } ) )
+		if( s.Length > 2 && s[0] == '*' )
+			{
+			branch = s.Substring( 2 ).Trim() ;
+			return ;
+			}
+	}
+
 partial class Program
 	{
 	static Program C = new Program() ;
