@@ -1,91 +1,5 @@
 <?xml version="1.0" ?>
 <auto>
-<_xml_reader>
-var s = System.IO.File.OpenText( "/tmp/&guid;.il.xml" ) ;
-var t = s.ReadToEnd() ;
-var e = t.GetEnumerator() ;
-//string INSTANCE_entity ;
-string n = string.Empty ;
-string l = string.Empty ;
-string p = string.Empty ;
-bool process = false ;
-while( e.MoveNext() )
-	{
-	&debug_nop;
-	if( e.Current == '&lt;' )
-		{
-		if( process )
-			&branch;.Auto.Text(l) ;
-		l = string.Empty ;
-		e.MoveNext() ;
-		if( e.Current == '_' )
-			{
-			process = true ;
-			e.MoveNext() ;
-			while( e.Current >= '0' &amp;&amp; '9' >= e.Current )
-				{
-				n += e.Current ;
-				e.MoveNext() ;
-				}
-			&branch;.Codex.Switch(int.Parse(n)).Element() ;
-			}
-		else
-			process = false ;
-		while( e.Current != '>' )
-			e.MoveNext() ;
-		n = string.Empty ;
-		continue ;
-		}
-	if( e.Current == '&amp;' )
-		{
-		if( process )
-			&branch;.Auto.Text(l) ;
-		l = string.Empty ;
-		e.MoveNext() ;
-		if( e.Current == '_' )
-			{
-			process = true ;
-			e.MoveNext() ;
-			/*
-			while( e.Current >= '0' &amp;&amp; '9' >= e.Current )
-				{
-				n += e.Current ;
-				e.MoveNext() ;
-				}
-			*/
-			while( e.Current != '_' )
-				e.MoveNext() ;
-			e.MoveNext() ;
-			while( e.Current >= '0' &amp;&amp; '9' >= e.Current )
-				{
-				n += e.Current ;
-				e.MoveNext() ;
-				}
-			&branch;.Codex.Switch(int.Parse(n)).EntityReference() ;
-			}
-		else
-			process = false ;
-		while( e.Current != ';' )
-			e.MoveNext() ;
-		n = string.Empty ;
-		continue ;
-		}
-	if( process )
-		{
-		l += e.Current ;
-		if( p != string.Empty )
-			{
-			for( int i = int.Parse(p) ; i > 1 ; --i )
-				{
-				e.MoveNext() ;
-				l += e.Current ;
-				}
-			p = string.Empty ;
-			}
-		}
-	}
-s.Close() ;
-</_xml_reader>
 <A335-Xo_t-Build-iDNA-1>
 interface Item { }
 namespace &branch; {
@@ -106,6 +20,10 @@ public abstract class Auto {
 	static public Tokenset.Token Token ;
 	public abstract string LHS { get; }
 	public abstract string[] RHS { get; }
+	protected static void log( string point )
+		{
+		System.Console.Write( point ) ;
+		}
 }
 public class _Auto : Auto {
 	public override string LHS { get { return string.Empty ; } }
@@ -148,8 +66,7 @@ public partial class  &signal;
 	static readonly string[] rhs = &rhs; ;
 	public &signal;( Tokenset.Token t )
 		{
-		System.Console.WriteLine("&signal;"+t) ;
-		&branch;.Codex.Switch( Tokenset.Input ) ;
+		log(" &signal;"+t) ;
 		}
 	}
 }
