@@ -252,24 +252,24 @@ class Xo_t
 			Reduction r = stateset[i].Reductionset[z] ;
 			if( ! r.enabled )
 				continue ;
-			list += "if( token.point == "+r.rule+" )\n\t\t{\n\t" ;
+			list += "if( token.point == "+r.rule+" )" ;
 			bool jmp = true ;
 			for( int x = 0 ; x < stateset[i].Gotoset.GetLength(0) ; x++ )
 				if( stateset[i].Gotoset[x,0] == (int)xo_t[r.rule] )
 					{
-					list += "\ta.Goto( _"+stateset[i].Gotoset[x,1]+" ) ;\n\t" ;
-					list += "\tgoto _transit ;\n\t" ;
+					list += " { a.Goto( _"+stateset[i].Gotoset[x,1]+" ) ; goto _transit ; }\n\t" ;
 					jmp = false ;
 					_transit = x ;
 					break ;
 					}
 			if( jmp )
 				{
+				list += "\n\t\t{\n\t" ;
 				list += "\trule = __"+r.rule+" ;\n\t" ;
 				list += "\tgoto jump;\n\t" ;
+				list += "\t}\n\t" ;
 				_jump = true ;
 				}
-			list += "\t}\n\t" ;
 			}
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
 			{
