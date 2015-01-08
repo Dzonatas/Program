@@ -243,8 +243,7 @@ class Xo_t
 			}
 		if( stateset[i].Lookaheadset.Length > 0 )
 			list += "reduce :\n\t" ;
-		if( stateset[i].Reductionset.Length > 0 )
-			list += "System.Action rule = __"+rule+" ;\n\t" ;
+		bool _ruler = stateset[i].Reductionset.Length > 0 ;
 		bool _jump = false ;
 		int _transit = -1 ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
@@ -265,10 +264,10 @@ class Xo_t
 			if( jmp )
 				{
 				list += "\n\t\t{\n\t" ;
-				list += "\trule = __"+r.rule+" ;\n\t" ;
-				list += "\tgoto jump;\n\t" ;
+				list += "\ta.unshift( __"+r.rule+" ) ;\n\t" ;
+				list += "\treturn ;\n\t" ;
 				list += "\t}\n\t" ;
-				_jump = true ;
+				//_jump = true ;
 				}
 			}
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
@@ -279,7 +278,8 @@ class Xo_t
 			}
 		if( _jump )
 			list += "jump:\n\t" ;
-		list += "//a.unshift( rule ) ;\n\t" ;
+		if( _ruler )
+			list += "//a.unshift( __"+rule+" ) ;\n\t" ;
 		if( stateset[i].Shiftset.GetLength(0) > 0 )
 			list += "new_state :\n\t" ;
 		list += "return ;" ;
