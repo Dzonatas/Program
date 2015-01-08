@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <auto>
-<A335-Xo_t-Build-iDNA-1>
+<A335-Xo_t-Build-0>
 interface Item { }
 namespace &branch; {
 public partial class A335 {
@@ -25,25 +25,8 @@ public abstract class Auto {
 		System.Console.Write( point ) ;
 		}
 }
-public class _Auto : Auto {
-	public override string LHS { get { return string.Empty ; } }
-	public override string[] RHS { get { return null ; } }
 }
-public static class Codex
-	{
-	public static Auto Switch( Tokenset.Token t ) {
-		switch( t.point ) {
-</A335-Xo_t-Build-iDNA-1>
-<A335-Xo_t-Build-iDNA-2>
-		case &i; : return new &namespace;.&signal;(t) ;
-</A335-Xo_t-Build-iDNA-2>
-<A335-Xo_t-Build-iDNA-4>
-		default: return new _Auto() ;
-		}
-	}
-	}
-}
-</A335-Xo_t-Build-iDNA-4>
+</A335-Xo_t-Build-0>
 <A335-Xo_t-Build-iDNA-5i>
 namespace basic { &lease;
 interface &interface; {

@@ -373,18 +373,13 @@ class Xo_t
 		X.Auto["list"] = list( 0 ) ;
 		var f = Current.Path.CreateText( compile[0] ) ;
 		string filename = "" ;
-		f.Write( put("A335-Xo_t-Build-iDNA-1") ) ;
+		f.Write( put("A335-Xo_t-Build-0") ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
 			X.Auto["_"+xo.lhs.X] = X.Auto["_"+xo.lhs.X].TrimEnd() ;
 			compile[i] = xo.lhs.s +".cs" ;
-			X.Auto["namespace"] = xo.lhs.s + "._" + xo.lhs.X ;
-			X.Auto["signal"] = put( "_"+xo.lhs.X ) ;
-			X.Auto["i"] = i.ToString() ;
-			f.Write( put("A335-Xo_t-Build-iDNA-2") ) ;
 			}
-		f.Write( X.Auto["A335-Xo_t-Build-iDNA-4"] ) ;
 		f.WriteLine( ) ;
 		f.Write( put("A335-Xo_t-_io-0") ) ;
 		for( int i = 0 ; i < stateset.Length ; i++ )
