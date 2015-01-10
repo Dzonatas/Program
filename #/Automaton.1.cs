@@ -47,10 +47,10 @@ partial class Automaton
 		internal Automaton  auto ;
 		internal planet( int x, int y, int z )
 			{
-			this.x = x ;
-			this.y = y ;
+			this.x  = x ;
+			this.y  = y ;
 			this.zz = z ;
-			this.yy = 0 ;
+			this.yy = __default ;
 			auto = new Automaton( xo_a[z] ) ;
 			}
 		internal planet( int x, int y, int zz, int yy )
@@ -112,7 +112,7 @@ partial class Automaton
 			new item( b, token ) ;
 			token_HasValue = false ;
 			int t = shiftset[i,1] ;
-			xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
+			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
 			#if !DEBUG_SHIFT
 			Debug.WriteLine( "[Shift] " + t ) ;
 			#endif
