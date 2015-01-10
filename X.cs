@@ -420,6 +420,7 @@ class Xo_t
 			compile[i] = xo.lhs.s +".cs" ;
 			}
 		f.WriteLine( ) ;
+		X.Auto["rule"] = ((int)_default).ToString() ;
 		f.Write( put("A335-Xo_t-_io-0") ) ;
 		for( int i = 0 ; i < stateset.Length ; i++ )
 			{

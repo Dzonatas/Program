@@ -63,6 +63,7 @@ public partial class  &signal;
 </A335-Xo_t-list>
 <A335-Xo_t-_io-0>
 partial class Automaton {
+	const int __default = &rule; ;
 	public Automaton()
 		{
 		planet b = new planet(0,0,0,__default) ;

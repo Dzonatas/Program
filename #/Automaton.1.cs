@@ -13,7 +13,6 @@ partial class Automaton
 	int          _default      ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
-	const  int __default          = 251 ;
 	public Automaton( System.Action<Automaton> _set )
 		{
 		_set( this ) ;
@@ -108,7 +107,6 @@ partial class Automaton
 			}
 		for( int i = 0 ; i < shiftset.GetLength(0) ; i++ )
 			if( shiftset[i,0] == token.point )
-		//if( state.Shiftset.ContainsKey( xml_translate[token.Value.c] ) )
 			{
 			b.yy  = token.point ;
 			new item( b, token ) ;
@@ -138,8 +136,7 @@ partial class Automaton
 				b.yy = xo_t[rule] ;
 				for( int z = 0 ; z < gotoset.GetLength(0) ; z++ )
 					if( gotoset[z,0] == b.yy )
-				//if( state.Gotoset.ContainsKey( b.yy ) )
-					goto transit ;
+						goto transit ;
 				goto jump ;
 				}
 		if( _default != -1 )
