@@ -131,13 +131,6 @@ class Xo_t
 		{
 		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 		X.Auto["glyph"] = string.Format( "\\u{0:X4}", System.Convert.ToInt16( (char)xo_t[i] ) ) ;
-		X.Auto["lookahead"] = "{ " ;
-		if( stateset[i].Lookaheadset.Length != 0 )
-			{
-			foreach( var c in stateset[i].Lookaheadset )
-				X.Auto["lookahead"] += c+", " ;
-			}
-		X.Auto["lookahead"] += " }" ;
 		sb.Append( put("A335-Xo_t-list-top") ) ;
 		foreach( Itemset item in stateset[i].Itemset )
 			{
