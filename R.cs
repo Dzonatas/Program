@@ -97,7 +97,7 @@ static Item respond()
 	}
 #endif
 
-	
+
 public class ReducedAcception : System.Exception
 	{
 	public int     rule ;

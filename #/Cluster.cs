@@ -98,6 +98,9 @@ public static partial class Shell
 			#endif
 			+ files
 			+ " "+Current.Path.Entry("tokenset.cs")
+			+ " "+Current.Path.Entry("Automaton.2.cs")
+			+ " "+Current.Path.Entry("Automaton.3.cs")
+			+ " "+Current.Path.Entry("Automaton.4.cs")
 			+ " "
 			+ "-out:" + infrastruct
 			) ;

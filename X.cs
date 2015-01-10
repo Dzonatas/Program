@@ -184,6 +184,7 @@ class Xo_t
 		X.Auto["pointset"]  = "" ;
 		X.Auto["gotoset"]   = "" ;
 		X.Auto["shiftset"]  = "" ;
+		X.Auto["lookaheadset"]  = "" ;
 		if( stateset[i].Default_reduction.HasValue )
 			{
 			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
@@ -201,6 +202,9 @@ class Xo_t
 			X.Auto["ruleset"]   += t.item.rule+", " ;
 			X.Auto["pointset"]  += t.item.point+", " ;
 			}
+		foreach( int z in stateset[i].Lookaheadset )
+			X.Auto["lookaheadset"]  += z+", " ;
+		X.Auto["lookaheadset"]   = (X.Auto["lookaheadset"]  =="") ? "new int[0]" : "new int[] { "+X.Auto["lookaheadset"]+" }" ;
 		X.Auto["typeset"]   = (X.Auto["typeset"]  =="") ? "new string[0]" : "new string[] { "+X.Auto["typeset"]+" }" ;
 		X.Auto["symbolset"] = (X.Auto["symbolset"]=="") ? "new int[0]" : "new int[] { "+X.Auto["symbolset"]+" }" ;
 		X.Auto["stateset"]  = (X.Auto["stateset"] =="") ? "new int[0]" : "new int[] { "+X.Auto["stateset"]+" }" ;
@@ -221,6 +225,7 @@ class Xo_t
 		else
 			X.Auto["reductionset"] = "new int[,]\n"+tab+"{\n"+tab+string.Join(",\n"+tab,ss)+"\n"+tab+"}" ;
 		string list = "" ;
+		/*
 		if( stateset[i].Lookaheadset.Length == 1 )
 			list += "if( token.point == "+stateset[i].Lookaheadset[0]+" ) goto reduce ;\n\t" ;
 		else
@@ -282,6 +287,7 @@ class Xo_t
 			list += "a.unshift( __"+rule+" ) ;\n\t" ;
 		if( stateset[i].Shiftset.GetLength(0) > 0 )
 			list += "new_state :\n\t" ;
+		*/
 		list += "return ;" ;
 		X.Auto["list"] = list ;
 		if( i == 0 || i >= xo_t.Length )
@@ -369,7 +375,40 @@ class Xo_t
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
 		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
 		Cluster.Cli.NoOperation() ;
+		var st = Current.Path.CreateText( "Automaton.2.cs" ) ;
+		st.Write("partial class Automaton {\nstatic int[] xo_t =\n\t{\n\t") ;
+		for( int z = 0 ; z < xo_t.Length ; z++ )
+			{
+			st.Write( "{0}\t, ", (int)xo_t[z] ) ;
+			if( z%10 == 9 )
+				st.Write( "\n\t" ) ;
+			}
+		st.WriteLine( "} ;" ) ;
+		st.WriteLine( "}" ) ;
+		st.Close() ;
+		var sl = Current.Path.CreateText( "Automaton.3.cs" ) ;
+		sl.Write("partial class Automaton {\nstatic int[] xo_l =\n\t{\n\t") ;
+		for( int z = 0 ; z < xo_t.Length ; z++ )
+			{
+			sl.Write( "{0}\t, ", xo_t[z].rhs.Length ) ;
+			if( z%10 == 9 )
+				sl.Write( "\n\t" ) ;
+			}
+		sl.WriteLine( "} ;" ) ;
+		sl.WriteLine( "}" ) ;
+		sl.Close() ;
 		X.Auto["branch"] = branch ;
+		var ss = Current.Path.CreateText( "Automaton.4.cs" ) ;
+		ss.Write("partial class Automaton {\nstatic System.Action<Automaton>[] xo_a =\n\t{\n\t") ;
+		for( int z = 0 ; z < stateset.Length ; z++ )
+			{
+			ss.Write( "_{0}\t, ", z ) ;
+			if( z%10 == 9 )
+				ss.Write( "\n\t" ) ;
+			}
+		ss.WriteLine( "} ;" ) ;
+		ss.WriteLine( "}" ) ;
+		ss.Close() ;
 		X.Auto["list"] = list( 0 ) ;
 		var f = Current.Path.CreateText( compile[0] ) ;
 		string filename = "" ;

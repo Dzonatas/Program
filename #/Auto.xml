@@ -65,7 +65,9 @@ public partial class  &signal;
 partial class Automaton {
 	public Automaton()
 		{
-		shift( _0 ) ;
+		planet b = new planet(0,0,0,__default) ;
+		b.auto.deploy( ref b ) ;
+		//shift( _0 ) ;
 		log_end() ;
 		}
 	public static void __0()
@@ -83,6 +85,7 @@ partial class Automaton {
 	public static void &point;( Automaton a )
 	{
 	log("&point;") ;
+	a.lookaheadset  = &lookaheadset; ;
 	a.shiftset      = &shiftset; ;
 	a.gotoset       = &gotoset; ;
 	a.typeset       = &typeset; ;
