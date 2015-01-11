@@ -52,6 +52,11 @@ partial class Automaton
 			this.zz = z ;
 			this.yy = __default ;
 			auto = new Automaton( xo_a[z] ) ;
+			if( ! token_HasValue )
+				{
+				token = Tokenset.Input ;
+				token_HasValue = true ;
+				}
 			}
 		internal planet( int x, int y, int zz, int yy )
 			{
@@ -60,6 +65,11 @@ partial class Automaton
 			this.zz = zz ;
 			this.yy = yy ;
 			auto = new Automaton( xo_a[zz] ) ;
+			if( ! token_HasValue )
+				{
+				token = Tokenset.Input ;
+				token_HasValue = true ;
+				}
 			}
 		internal planet transition( int z )
 			{
@@ -86,17 +96,6 @@ partial class Automaton
 		planet     xyzzy ;
 		int rule = -1 ; // 9.9.Delete() ;
 
-		#if !DEBUG_STATE
-		Debug.WriteLine( "[State] " + b.zz ) ;
-		#endif
-		if( ! token_HasValue )
-			{
-			token = Tokenset.Input ;
-			token_HasValue = true ;
-			#if !DEBUG_TOKEN
-			Debug.WriteLine( "[Token] " + token ) ;
-			#endif
-			}
 		foreach( int i in lookaheadset ) if( i == token.point )
 			{
 			b.yy = token.point ;
