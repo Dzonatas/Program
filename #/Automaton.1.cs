@@ -11,6 +11,7 @@ partial class Automaton
 	int[]        pointset      ;
 	int[,]       reductionset  ;
 	int          _default      ;
+	bool         lookahead_b   = false ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
 	public Automaton( System.Action<Automaton> _set )
@@ -51,12 +52,12 @@ partial class Automaton
 			this.y  = y ;
 			this.zz = z ;
 			this.yy = __default ;
-			auto = new Automaton( xo_a[z] ) ;
 			if( ! token_HasValue )
 				{
 				token = Tokenset.Input ;
 				token_HasValue = true ;
 				}
+			auto = new Automaton( xo_a[z] ) ;
 			}
 		internal planet( int x, int y, int zz, int yy )
 			{
@@ -64,16 +65,12 @@ partial class Automaton
 			this.y = y ;
 			this.zz = zz ;
 			this.yy = yy ;
-			auto = new Automaton( xo_a[zz] ) ;
 			if( ! token_HasValue )
 				{
 				token = Tokenset.Input ;
 				token_HasValue = true ;
 				}
-			}
-		internal planet transition( int z )
-			{
-			return new planet( x, y, z, yy ) ;
+			auto = new Automaton( xo_a[zz] ) ;
 			}
 		public override string ToString()
 				{
@@ -96,14 +93,7 @@ partial class Automaton
 		planet     xyzzy ;
 		int rule = -1 ; // 9.9.Delete() ;
 
-		foreach( int i in lookaheadset ) if( i == token.point )
-			{
-			b.yy = token.point ;
-			#if !DEBUG_LOGICAL_ALPHABET
-			Debug.WriteLine( "[Lookahead] " + token + " -> " + b.yy ) ;
-			#endif
-			goto reduce ;
-			}
+		if( lookahead_b ) { b.yy = token.point ; goto reduce ; }
 		for( int i = 0 ; i < shiftset.GetLength(0) ; i++ )
 			if( shiftset[i,0] == token.point )
 			{

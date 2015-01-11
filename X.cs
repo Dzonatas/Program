@@ -218,9 +218,8 @@ class Xo_t
 		else
 			X.Auto["reductionset"] = "new int[,]\n"+tab+"{\n"+tab+string.Join(",\n"+tab,ss)+"\n"+tab+"}" ;
 		string list = "" ;
-		/*
 		if( stateset[i].Lookaheadset.Length == 1 )
-			list += "if( token.point == "+stateset[i].Lookaheadset[0]+" ) goto reduce ;\n\t" ;
+			list += "if( token.point == "+stateset[i].Lookaheadset[0]+" ) a.lookahead_b = true ;\n\t" ;
 		else
 		if( stateset[i].Lookaheadset.Length > 0 )
 			{
@@ -228,8 +227,9 @@ class Xo_t
 			int z ;
 			for( z = 0 ; z < stateset[i].Lookaheadset.Length-1 ; z++ )
 				list += "token.point == "+stateset[i].Lookaheadset[z]+" || " ;
-			list += "token.point == "+stateset[i].Lookaheadset[z]+" ) goto reduce ;\n\t" ;
+			list += "token.point == "+stateset[i].Lookaheadset[z]+" ) a.lookahead_b = true ;\n\t" ;
 			}
+		/*
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
 			{
 			int x = stateset[i].Shiftset[z,0] ;

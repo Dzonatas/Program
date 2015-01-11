@@ -98,6 +98,10 @@ partial class Automaton {
 	&list;
 	}
 </A335-Xo_t-_io-1>
+<A335-Xo_t-_io-1-lookaheadset>
+	public static bool lookahead_&point;( Automaton a )
+	{
+</A335-Xo_t-_io-1-lookaheadset>
 <A335-Xo_t-_io-2>
 }
 </A335-Xo_t-_io-2>
