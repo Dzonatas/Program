@@ -174,7 +174,7 @@ partial class Automaton
 
 		new_state :
 		try {
-			b.auto.deploy( ref xyzzy ) ;
+			xyzzy.auto.deploy( ref xyzzy ) ;
 			b.yy = xyzzy.yy ;
 			}
 		catch ( ReducedAcception bb )
