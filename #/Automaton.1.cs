@@ -12,6 +12,7 @@ partial class Automaton
 	int[,]       reductionset  ;
 	int          _default      ;
 	bool         lookahead_b   = false ;
+	int          shiftset_i    = -1 ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
 	public Automaton( System.Action<Automaton> _set )
@@ -77,37 +78,22 @@ partial class Automaton
 				return string.Format("_{0}_{1}_{2}_{3}",x,y,zz,yy) ;
 				}
 		}
-	class item : global::Item
-		{
-		static item[]  stack = new item[0] ;
-		planet         point ;
-		Tokenset.Token token ;
-		public item( planet _point, Tokenset.Token token )
-			{
-			System.Array.Resize( ref stack, stack.Length+1 ) ;
-			stack[stack.Length-1] = this ;
-			}
-		}
 	void deploy( ref planet b )
 		{
 		planet     xyzzy ;
 		int rule = -1 ; // 9.9.Delete() ;
 
-		if( lookahead_b ) { b.yy = token.point ; goto reduce ; }
-		for( int i = 0 ; i < shiftset.GetLength(0) ; i++ )
-			if( shiftset[i,0] == token.point )
+		if( lookahead_b )
+			b.yy = token.point ;
+		else
+		if( shiftset_i != shiftset.GetLength(0) )
 			{
 			b.yy  = token.point ;
-			new item( b, token ) ;
 			token_HasValue = false ;
-			int t = shiftset[i,1] ;
+			int t = shiftset_i ;
 			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
-			#if !DEBUG_SHIFT
-			Debug.WriteLine( "[Shift] " + t ) ;
-			#endif
 			goto new_state ;
 			}
-		reduce :
 		for( int i = 0 ; i < reductionset.GetLength(0) ; i++ )
 			if( reductionset[i,0] == b.yy )
 				{
