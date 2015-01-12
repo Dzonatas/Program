@@ -85,7 +85,6 @@ partial class Automaton {
 	public static void &point;( Automaton a )
 	{
 	log("&point;") ;
-	a.lookaheadset  = &lookaheadset; ;
 	a.shiftset      = &shiftset; ;
 	a.gotoset       = &gotoset; ;
 	a.typeset       = &typeset; ;
@@ -95,7 +94,7 @@ partial class Automaton {
 	a.pointset      = &pointset; ;
 	a.reductionset  = &reductionset; ;
 	a._default      = &rule; ;
-	a.lookahead_b   = lookahead&point;() ;
+	a.lookahead_b   = &lookaheadset; ;
 	a.shiftset_i    = shiftset&point;() ;
 	a.reductionset_s = reductionset&point; ;
 	a.gotoset_s     = gotoset&point; ;

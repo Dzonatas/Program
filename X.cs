@@ -197,7 +197,6 @@ class Xo_t
 			}
 		foreach( int z in stateset[i].Lookaheadset )
 			X.Auto["lookaheadset"]  += z+", " ;
-		X.Auto["lookaheadset"]   = (X.Auto["lookaheadset"]  =="") ? "new int[0]" : "new int[] { "+X.Auto["lookaheadset"]+" }" ;
 		X.Auto["typeset"]   = (X.Auto["typeset"]  =="") ? "new string[0]" : "new string[] { "+X.Auto["typeset"]+" }" ;
 		X.Auto["symbolset"] = (X.Auto["symbolset"]=="") ? "new int[0]" : "new int[] { "+X.Auto["symbolset"]+" }" ;
 		X.Auto["stateset"]  = (X.Auto["stateset"] =="") ? "new int[0]" : "new int[] { "+X.Auto["stateset"]+" }" ;
@@ -229,8 +228,15 @@ class Xo_t
 				list += "token.point == "+stateset[i].Lookaheadset[z]+" || " ;
 			list += "token.point == "+stateset[i].Lookaheadset[z]+" ) return true ;\n\t\t" ;
 			}
-		X.Auto["list"] = list + "return false ;" ;
-		string lookahead = put("A335-Xo_t-_io-1-lookaheadset") ;
+		string lookahead = "" ;
+		if( list.Length == 0 )
+			X.Auto["lookaheadset"] = "false" ;
+		else
+			{
+			X.Auto["list"] = list + "return false ;" ;
+			lookahead = put("A335-Xo_t-_io-1-lookaheadset") ;
+			X.Auto["lookaheadset"] = "lookahead_"+i+"()" ;
+			}
 		list = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
 			{

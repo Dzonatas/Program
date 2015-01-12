@@ -1,7 +1,6 @@
 using Debug = System.Console ;
 partial class Automaton
 	{
-	int[]        lookaheadset  ;
 	int[,]       shiftset      ;
 	int[,]       gotoset       ;
 	string[]     typeset       ;
