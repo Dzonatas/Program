@@ -243,15 +243,20 @@ class Xo_t
 			int x = stateset[i].Shiftset[z,0] ;
 			int y = stateset[i].Shiftset[z,1] ;
 			list += "if( token.point == "+x+" ) return "+z+" ;\n\t\t" ;
-			/*
-			list += "if( token.point == "+x+" ) { shift( _"
-				+stateset[i].Transitionset[y].state+" ) ; goto new_state ; }\n\t" ;
-			*/
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else\n\t\t" ;
 			}
-		X.Auto["list"] = list + "return "+stateset[i].Shiftset.GetLength(0)+" ;" ;
-		string shiftset = put("A335-Xo_t-_io-1-shiftset") ;
+		string shiftset = "" ;
+		if( list.Length == 0 )
+			{
+			X.Auto["shiftset"] += "; a.shiftset_i = 0" ;
+			}
+		else
+			{
+			X.Auto["shiftset"] += ";\n\t a.shiftset_i = shiftset_"+i+"()" ;
+			X.Auto["list"] = list + "return "+stateset[i].Shiftset.GetLength(0)+" ;" ;
+			shiftset = put("A335-Xo_t-_io-1-shiftset") ;
+			}
 		list = "" ;
 		if( stateset[i].Default_reduction.HasValue )
 			list += "if( yy == __default ) return "+stateset[i].Default_reduction.Value+" ;\n\t\t" ;

@@ -95,7 +95,6 @@ partial class Automaton {
 	a.reductionset  = &reductionset; ;
 	a._default      = &rule; ;
 	a.lookahead_b   = &lookaheadset; ;
-	a.shiftset_i    = shiftset&point;() ;
 	a.reductionset_s = reductionset&point; ;
 	a.gotoset_s     = gotoset&point; ;
 	&list;
