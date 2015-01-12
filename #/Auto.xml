@@ -89,9 +89,6 @@ partial class Automaton {
 	a.stateset      = &stateset; ;
 	a.ruleset       = &ruleset; ;
 	a.pointset      = &pointset; ;
-	a.reductionset  = &reductionset; ;
-	a._default      = &rule; ;
-	a.reductionset_s = reductionset&point; ;
 	a.gotoset_s     = gotoset&point; ;
 	&list;
 	}

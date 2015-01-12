@@ -172,6 +172,7 @@ class Xo_t
 		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
 		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
 		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
+		bool reduction_volatile = stateset[i].Reductionset.GetLength(0) == 0 ;
 		X.Auto["rule"]      = "-1" ;
 		X.Auto["typeset"]   = "" ;
 		X.Auto["symbolset"] = "" ;
@@ -260,19 +261,23 @@ class Xo_t
 			shiftset = put("A335-Xo_t-_io-1-shiftset") ;
 			}
 		list = "" ;
-		if( stateset[i].Default_reduction.HasValue )
-			list += "if( yy == __default ) return "+stateset[i].Default_reduction.Value+" ;\n\t\t" ;
-		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
+		string reductionset = "" ;
+		if( ! reduction_volatile )
 			{
-			Reduction r = stateset[i].Reductionset[z] ;
-			if( ! r.enabled )
-				continue ;
-			if( r.symbol == _default )
-				continue ;
-			list += "if( yy == "+r.symbol+" ) return "+z+" ;\n\t\t" ;
+			if( stateset[i].Default_reduction.HasValue )
+				list += "if( yy == __default ) return "+stateset[i].Default_reduction.Value+" ;\n\t\t" ;
+			for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
+				{
+				Reduction r = stateset[i].Reductionset[z] ;
+				if( ! r.enabled )
+					continue ;
+				if( r.symbol == _default )
+					continue ;
+				list += "if( yy == "+r.symbol+" ) return "+z+" ;\n\t\t" ;
+				}
+			X.Auto["list"] = list + "return "+stateset[i].Reductionset.Length+" ;" ;
+			reductionset = put("A335-Xo_t-_io-1-reductionset") ;
 			}
-		X.Auto["list"] = list + "return "+stateset[i].Reductionset.Length+" ;" ;
-		string reductionset = put("A335-Xo_t-_io-1-reductionset") ;
 		list = "" ;
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
 			list += "if( yy == "+stateset[i].Gotoset[z,0]+" ) return "+z+" ;\n\t\t" ;
@@ -291,6 +296,17 @@ class Xo_t
 			list += "a.volatile_b = true ;\n\t" ;
 		else
 			list += list_v ;
+		if( reduction_volatile )
+			{
+			list += "a.reduction_v = true ;\n\t" ;
+			list += "a._default       = -1 ;\n\t" ;
+			}
+		else
+			{
+			list += "a.reductionset   = "+X.Auto["reductionset"]+" ;\n\t" ;
+			list += "a._default       = "+X.Auto["rule"]+" ;\n\t" ;
+			list += "a.reductionset_s = reductionset_"+i+" ;\n\t" ;
+			}
 		list += "return ;" ;
 		X.Auto["list"] = list ;
 		string sets = lookahead + shiftset + reductionset + gotoset ;
