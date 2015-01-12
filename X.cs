@@ -171,10 +171,7 @@ class Xo_t
 		int rule = -1 ;
 		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
 		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
-		if( lookahead_volatile && shiftset_volatile )
-			X.Auto["volatile"] = "true" ;
-		else
-			X.Auto["volatile"] = "false" ;
+		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
 		X.Auto["rule"]      = "-1" ;
 		X.Auto["typeset"]   = "" ;
 		X.Auto["symbolset"] = "" ;
@@ -234,14 +231,15 @@ class Xo_t
 				list += "token.point == "+stateset[i].Lookaheadset[z]+" || " ;
 			list += "token.point == "+stateset[i].Lookaheadset[z]+" ) return true ;\n\t\t" ;
 			}
+		string list_v = "" ;
 		string lookahead = "" ;
 		if( list.Length == 0 )
-			X.Auto["lookaheadset"] = "false" ;
+			list_v += "a.lookahead_b = false ;\n\t" ;
 		else
 			{
 			X.Auto["list"] = list + "return false ;" ;
 			lookahead = put("A335-Xo_t-_io-1-lookaheadset") ;
-			X.Auto["lookaheadset"] = "lookahead_"+i+"()" ;
+			list_v += "a.lookahead_b = lookahead_"+i+"() ;\n\t" ;
 			}
 		list = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
@@ -254,12 +252,10 @@ class Xo_t
 			}
 		string shiftset = "" ;
 		if( list.Length == 0 )
-			{
-			X.Auto["shiftset"] += "; a.shiftset_i = 0" ;
-			}
+			list_v += "a.shiftset_i = 0 ;\n\t" ;
 		else
 			{
-			X.Auto["shiftset"] += ";\n\t a.shiftset_i = shiftset_"+i+"()" ;
+			list_v += "a.shiftset_i = shiftset_"+i+"() ;\n\t" ;
 			X.Auto["list"] = list + "return "+stateset[i].Shiftset.GetLength(0)+" ;" ;
 			shiftset = put("A335-Xo_t-_io-1-shiftset") ;
 			}
@@ -289,6 +285,10 @@ class Xo_t
 		if( stateset[i].Shiftset.GetLength(0) > 0 )
 			list += "new_state :\n\t" ;
 		*/
+		if( volatile_b )
+			list += "a.volatile_b = true ;\n\t" ;
+		else
+			list += list_v ;
 		list += "return ;" ;
 		X.Auto["list"] = list ;
 		string sets = lookahead + shiftset + reductionset + gotoset ;
@@ -566,7 +566,6 @@ partial class X //_: YY
 		{ "typeset",    null },
 		{ "ruleset",    null },
 		{ "pointset",   null },
-		{ "volatile",   null },
 		{ "guid",       0.0.GUID() },
 		#if DEBUG
 		{ "debug_nop", "Current.Interval.NOP() ;" }

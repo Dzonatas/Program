@@ -1,17 +1,14 @@
 using Debug = System.Console ;
 partial class Automaton
 	{
-	int[,]       shiftset      ;
 	int[,]       gotoset       ;
-	//string[]     typeset       ;
-	//int[]        symbolset     ;
 	int[]        stateset      ;
 	int[]        ruleset       ;
 	int[]        pointset      ;
 	int[,]       reductionset  ;
 	int          _default      ;
-	bool         lookahead_b   = false ;
-	int          shiftset_i    = -1 ;
+	bool         lookahead_b   ;
+	int          shiftset_i    ;
 	bool         volatile_b    = false ;
 	System.Func<int,int> reductionset_s ;
 	System.Func<int,int> gotoset_s ;
@@ -90,7 +87,6 @@ partial class Automaton
 			if( lookahead_b )
 				b.yy = token.point ;
 			else
-			if( shiftset_i != shiftset.GetLength(0) )
 				{
 				b.yy  = token.point ;
 				token_HasValue = false ;

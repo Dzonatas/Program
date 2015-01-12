@@ -85,19 +85,14 @@ partial class Automaton {
 	public static void &point;( Automaton a )
 	{
 	log("&point;") ;
-	a.shiftset      = &shiftset; ;
 	a.gotoset       = &gotoset; ;
-	//a.typeset       = &typeset; ;
-	//a.symbolset     = &symbolset; ;
 	a.stateset      = &stateset; ;
 	a.ruleset       = &ruleset; ;
 	a.pointset      = &pointset; ;
 	a.reductionset  = &reductionset; ;
 	a._default      = &rule; ;
-	a.lookahead_b   = &lookaheadset; ;
 	a.reductionset_s = reductionset&point; ;
 	a.gotoset_s     = gotoset&point; ;
-	a.volatile_b    = &volatile; ;
 	&list;
 	}
 </A335-Xo_t-_io-1>
