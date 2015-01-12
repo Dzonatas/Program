@@ -267,6 +267,8 @@ class Xo_t
 			Reduction r = stateset[i].Reductionset[z] ;
 			if( ! r.enabled )
 				continue ;
+			if( r.symbol == _default )
+				continue ;
 			list += "if( yy == "+r.symbol+" ) return "+z+" ;\n\t\t" ;
 			}
 		X.Auto["list"] = list + "return "+stateset[i].Reductionset.Length+" ;" ;
