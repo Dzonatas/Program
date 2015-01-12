@@ -13,6 +13,7 @@ partial class Automaton
 	int          _default      ;
 	bool         lookahead_b   = false ;
 	int          shiftset_i    = -1 ;
+	System.Func<int,int> reductionset_s ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
 	public Automaton( System.Action<Automaton> _set )
@@ -81,7 +82,7 @@ partial class Automaton
 	void deploy( ref planet b )
 		{
 		planet     xyzzy ;
-		int rule = -1 ; // 9.9.Delete() ;
+		int rule = -1 ;
 
 		if( lookahead_b )
 			b.yy = token.point ;
@@ -94,29 +95,19 @@ partial class Automaton
 			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
 			goto new_state ;
 			}
-		for( int i = 0 ; i < reductionset.GetLength(0) ; i++ )
-			if( reductionset[i,0] == b.yy )
-				{
-				if( reductionset[i,2] == 0  )
-					{
-					#if DEBUG_DISABLED
-					Debug.WriteLine( "[Disabled] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
-					#endif
-					continue ;
-					}
-				rule = reductionset[i,1] ; // 9.9.Post([rule]) ;
-				#if !DEBUG_REDUCTIONSET
-				Debug.WriteLine( "[Reductionset]  ( " + b.yy + " -> " + xo_t[rule] + " ) " ) ;
-				#endif
-				b.yy = xo_t[rule] ;
-				for( int z = 0 ; z < gotoset.GetLength(0) ; z++ )
-					if( gotoset[z,0] == b.yy )
-						goto transit ;
-				goto jump ;
-				}
+		int x = reductionset_s( b.yy ) ;
+		if( x != reductionset.GetLength(0) )
+			{
+			rule = reductionset[x,1] ;
+			b.yy = xo_t[rule] ;
+			for( int z = 0 ; z < gotoset.GetLength(0) ; z++ )
+				if( gotoset[z,0] == b.yy )
+					goto transit ;
+			goto jump ;
+			}
 		if( _default != -1 )
 			{
-			rule = reductionset[_default,1] ; // 9.9.Post([rule]) ; ...
+			rule = reductionset[_default,1] ;
 			b.yy = xo_t[rule] ;
 			}
 		transit:

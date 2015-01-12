@@ -247,36 +247,19 @@ class Xo_t
 		X.Auto["list"] = list + "return "+stateset[i].Shiftset.GetLength(0)+" ;" ;
 		string shiftset = put("A335-Xo_t-_io-1-shiftset") ;
 		list = "" ;
-		/*
-		if( stateset[i].Lookaheadset.Length > 0 )
-			list += "reduce :\n\t" ;
-		bool _ruler = stateset[i].Reductionset.Length > 0 ;
-		bool _jump = false ;
-		int _transit = -1 ;
+		if( stateset[i].Default_reduction.HasValue )
+			list += "if( yy == __default ) return "+stateset[i].Default_reduction.Value+" ;\n\t\t" ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
 			{
 			Reduction r = stateset[i].Reductionset[z] ;
 			if( ! r.enabled )
 				continue ;
-			list += "if( token.point == "+r.rule+" )" ;
-			bool jmp = true ;
-			for( int x = 0 ; x < stateset[i].Gotoset.GetLength(0) ; x++ )
-				if( stateset[i].Gotoset[x,0] == (int)xo_t[r.rule] )
-					{
-					list += " { a.Goto( _"+stateset[i].Gotoset[x,1]+" ) ; goto _transit ; }\n\t" ;
-					jmp = false ;
-					_transit = x ;
-					break ;
-					}
-			if( jmp )
-				{
-				list += "\n\t\t{\n\t" ;
-				list += "\ta.unshift( __"+r.rule+" ) ;\n\t" ;
-				list += "\treturn ;\n\t" ;
-				list += "\t}\n\t" ;
-				//_jump = true ;
-				}
+			list += "if( yy == "+r.symbol+" ) return "+z+" ;\n\t\t" ;
 			}
+		X.Auto["list"] = list + "return "+stateset[i].Reductionset.Length+" ;" ;
+		string reductionset = put("A335-Xo_t-_io-1-reductionset") ;
+		list = "" ;
+		/*
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
 			{
 			list += "if( token.point == "+stateset[i].Gotoset[z,0]+" ) a.Goto( _"+stateset[i].Gotoset[z,1]+" ) ;\n\t" ;
@@ -292,11 +275,12 @@ class Xo_t
 		*/
 		list += "return ;" ;
 		X.Auto["list"] = list ;
+		string sets = lookahead+shiftset+reductionset ;
 		if( i == 0 || i >= xo_t.Length )
-			return put("A335-Xo_t-_io-1")+lookahead+shiftset ;
+			return put("A335-Xo_t-_io-1")+sets ;
 		X.Auto["namespace"] = xo_t[i].lhs.s + "._" + xo_t[i].lhs.X ;
 		X.Auto["signal"]    = X.Auto[ "_"+xo_t[i].lhs.X ] ;
-		return put("A335-Xo_t-_io-_1")+put("A335-Xo_t-_io-1")+lookahead+shiftset ;
+		return put("A335-Xo_t-_io-_1")+put("A335-Xo_t-_io-1")+sets ;
 		}
 	public static string put( string s )
 		{

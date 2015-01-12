@@ -97,6 +97,7 @@ partial class Automaton {
 	a._default      = &rule; ;
 	a.lookahead_b   = lookahead&point;() ;
 	a.shiftset_i    = shiftset&point;() ;
+	a.reductionset_s = reductionset&point; ;
 	&list;
 	}
 </A335-Xo_t-_io-1>
@@ -112,6 +113,12 @@ partial class Automaton {
 		&list;
 		}
 </A335-Xo_t-_io-1-shiftset>
+<A335-Xo_t-_io-1-reductionset>
+	public static int reductionset&point;( int yy )
+		{
+		&list;
+		}
+</A335-Xo_t-_io-1-reductionset>
 <A335-Xo_t-_io-2>
 }
 </A335-Xo_t-_io-2>
