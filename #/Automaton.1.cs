@@ -12,6 +12,7 @@ partial class Automaton
 	int          _default      ;
 	bool         lookahead_b   = false ;
 	int          shiftset_i    = -1 ;
+	bool         volatile_b    = false ;
 	System.Func<int,int> reductionset_s ;
 	System.Func<int,int> gotoset_s ;
 	static Tokenset.Token         token ;
@@ -84,16 +85,19 @@ partial class Automaton
 		planet     xyzzy ;
 		int rule = -1 ;
 
-		if( lookahead_b )
-			b.yy = token.point ;
-		else
-		if( shiftset_i != shiftset.GetLength(0) )
+		if( ! volatile_b )
 			{
-			b.yy  = token.point ;
-			token_HasValue = false ;
-			int t = shiftset_i ;
-			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
-			goto new_state ;
+			if( lookahead_b )
+				b.yy = token.point ;
+			else
+			if( shiftset_i != shiftset.GetLength(0) )
+				{
+				b.yy  = token.point ;
+				token_HasValue = false ;
+				int t = shiftset_i ;
+				xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
+				goto new_state ;
+				}
 			}
 		int x = reductionset_s( b.yy ) ;
 		if( x != reductionset.GetLength(0) )

@@ -169,6 +169,12 @@ class Xo_t
 	static string _io( int i )
 		{
 		int rule = -1 ;
+		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
+		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
+		if( lookahead_volatile && shiftset_volatile )
+			X.Auto["volatile"] = "true" ;
+		else
+			X.Auto["volatile"] = "false" ;
 		X.Auto["rule"]      = "-1" ;
 		X.Auto["typeset"]   = "" ;
 		X.Auto["symbolset"] = "" ;
@@ -560,6 +566,7 @@ partial class X //_: YY
 		{ "typeset",    null },
 		{ "ruleset",    null },
 		{ "pointset",   null },
+		{ "volatile",   null },
 		{ "guid",       0.0.GUID() },
 		#if DEBUG
 		{ "debug_nop", "Current.Interval.NOP() ;" }

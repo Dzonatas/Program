@@ -97,6 +97,7 @@ partial class Automaton {
 	a.lookahead_b   = &lookaheadset; ;
 	a.reductionset_s = reductionset&point; ;
 	a.gotoset_s     = gotoset&point; ;
+	a.volatile_b    = &volatile; ;
 	&list;
 	}
 </A335-Xo_t-_io-1>
