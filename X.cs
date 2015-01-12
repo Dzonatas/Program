@@ -259,13 +259,12 @@ class Xo_t
 		X.Auto["list"] = list + "return "+stateset[i].Reductionset.Length+" ;" ;
 		string reductionset = put("A335-Xo_t-_io-1-reductionset") ;
 		list = "" ;
-		/*
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
-			{
-			list += "if( token.point == "+stateset[i].Gotoset[z,0]+" ) a.Goto( _"+stateset[i].Gotoset[z,1]+" ) ;\n\t" ;
-			if( _transit == z )
-				list += "_transit:\n\t" ;
-			}
+			list += "if( yy == "+stateset[i].Gotoset[z,0]+" ) return "+z+" ;\n\t\t" ;
+		X.Auto["list"] = list + "return "+stateset[i].Gotoset.GetLength(0)+" ;" ;
+		string gotoset = put("A335-Xo_t-_io-1-gotoset") ;
+		list = "" ;
+		/*
 		if( _jump )
 			list += "jump:\n\t" ;
 		if( _ruler )
@@ -275,7 +274,7 @@ class Xo_t
 		*/
 		list += "return ;" ;
 		X.Auto["list"] = list ;
-		string sets = lookahead+shiftset+reductionset ;
+		string sets = lookahead + shiftset + reductionset + gotoset ;
 		if( i == 0 || i >= xo_t.Length )
 			return put("A335-Xo_t-_io-1")+sets ;
 		X.Auto["namespace"] = xo_t[i].lhs.s + "._" + xo_t[i].lhs.X ;

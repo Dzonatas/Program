@@ -14,6 +14,7 @@ partial class Automaton
 	bool         lookahead_b   = false ;
 	int          shiftset_i    = -1 ;
 	System.Func<int,int> reductionset_s ;
+	System.Func<int,int> gotoset_s ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
 	public Automaton( System.Action<Automaton> _set )
@@ -111,30 +112,19 @@ partial class Automaton
 			b.yy = xo_t[rule] ;
 			}
 		transit:
-		for( int i = 0 ; i < gotoset.GetLength(0) ; i++ )
-			if( gotoset[i,0] == b.yy )
+		x = gotoset_s( b.yy ) ;
+		if( x != gotoset.GetLength(0) )
+			if( gotoset[x,0] == b.yy )
 			{
-			int t = gotoset[i,1] ;
+			int t = gotoset[x,1] ;
 			xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
-			#if DEBUG_GOTO
-			Debug.WriteLine( "[Goto] " + t ) ;
-			#endif
 			goto new_state ;
 			}
-		#if !DEBUG_DEFAULT
-		Debug.WriteLine( "[Default] " + b.yy ) ;
-		#endif
 		if( b.yy == __default && _default == -1 )
 			{
-			#if DEBUG_OOP
-			Debug.WriteLine( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
-			#endif
 			throw new System.NotImplementedException( "Missed token?" ) ;
 			}
 		jump :
-		#if !DEBUG_REDUCE
-		Debug.WriteLine( "[reduce] " + rule ) ;
-		#endif
 		//Auto( this_xo_t ) ;
 		throw new ReducedAcception( rule ) ;
 
@@ -149,10 +139,10 @@ partial class Automaton
 				throw bb ;
 			b.yy = xo_t[bb.rule] ;
 			}
-		for( int i = 0 ; i < gotoset.GetLength(0) ; i++ )
-			if( gotoset[i,0] == b.yy )
+		x = gotoset_s( b.yy ) ;
+		if( x != gotoset.GetLength(0) )
 			{
-			int t = gotoset[i,1] ;
+			int t = gotoset[x,1] ;
 			xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
 			goto new_state ;
 			}

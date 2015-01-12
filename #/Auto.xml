@@ -98,6 +98,7 @@ partial class Automaton {
 	a.lookahead_b   = lookahead&point;() ;
 	a.shiftset_i    = shiftset&point;() ;
 	a.reductionset_s = reductionset&point; ;
+	a.gotoset_s     = gotoset&point; ;
 	&list;
 	}
 </A335-Xo_t-_io-1>
@@ -119,6 +120,12 @@ partial class Automaton {
 		&list;
 		}
 </A335-Xo_t-_io-1-reductionset>
+<A335-Xo_t-_io-1-gotoset>
+	public static int gotoset&point;( int yy )
+		{
+		&list;
+		}
+</A335-Xo_t-_io-1-gotoset>
 <A335-Xo_t-_io-2>
 }
 </A335-Xo_t-_io-2>
