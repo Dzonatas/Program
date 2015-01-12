@@ -3,8 +3,8 @@ partial class Automaton
 	{
 	int[,]       shiftset      ;
 	int[,]       gotoset       ;
-	string[]     typeset       ;
-	int[]        symbolset     ;
+	//string[]     typeset       ;
+	//int[]        symbolset     ;
 	int[]        stateset      ;
 	int[]        ruleset       ;
 	int[]        pointset      ;

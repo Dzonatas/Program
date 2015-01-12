@@ -87,8 +87,8 @@ partial class Automaton {
 	log("&point;") ;
 	a.shiftset      = &shiftset; ;
 	a.gotoset       = &gotoset; ;
-	a.typeset       = &typeset; ;
-	a.symbolset     = &symbolset; ;
+	//a.typeset       = &typeset; ;
+	//a.symbolset     = &symbolset; ;
 	a.stateset      = &stateset; ;
 	a.ruleset       = &ruleset; ;
 	a.pointset      = &pointset; ;
