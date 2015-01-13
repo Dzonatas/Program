@@ -16,6 +16,7 @@ partial class Automaton
 	System.Func<int,int> gotoset_s ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
+	static int   backup ;
 	public Automaton( System.Action<Automaton> _set )
 		{
 		_set( this ) ;
@@ -79,7 +80,7 @@ partial class Automaton
 				return string.Format("_{0}_{1}_{2}_{3}",x,y,zz,yy) ;
 				}
 		}
-	void deploy( ref planet b )
+	int deploy( ref planet b )
 		{
 		planet     xyzzy ;
 		int rule = -1 ;
@@ -138,18 +139,18 @@ partial class Automaton
 			}
 		jump :
 		//Auto( this_xo_t ) ;
-		throw new ReducedAcception( rule ) ;
+		backup = xo_l[rule] ;
+		return -rule ;
 
 		new_state :
-		try {
-			xyzzy.auto.deploy( ref xyzzy ) ;
+		rule = xyzzy.auto.deploy( ref xyzzy ) ;
+		if( rule >= 0 )
 			b.yy = xyzzy.yy ;
-			}
-		catch ( ReducedAcception bb )
+		else
 			{
-			if( --bb.backup > 0 )
-				throw bb ;
-			b.yy = xo_t[bb.rule] ;
+			if( --backup > 0 )
+				return rule ;
+			b.yy = xo_t[-rule] ;
 			}
 		if( ! goto_v )
 			{
@@ -163,20 +164,6 @@ partial class Automaton
 			}
 		if( token.c != 0 )
 			throw new System.NotImplementedException( "token != $end" ) ;
-		return ;
-		}
-	public class ReducedAcception : System.Exception
-		{
-		public int     rule ;
-		public int     backup ;
-		public ReducedAcception( int rule )
-			{
-			this.rule = rule  ;
-			this.backup = xo_l[rule] ;
-			}
-		public override string ToString()
-				{
-				return string.Format("[ReducedAcception={0}]{1}",backup,xo_t[rule]);
-				}
+		return 0 ;
 		}
 	}
