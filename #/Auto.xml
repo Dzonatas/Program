@@ -70,44 +70,44 @@ partial class Automaton {
 		//shift( _0 ) ;
 		log_end() ;
 		}
-	public static void __0()
+	static void __0()
 		{
 		//Target: xyzzyy tail or mantissa.
 		}
 </A335-Xo_t-_io-0>
 <A335-Xo_t-_io-_1>
-	public static void _&point;()
+	static void _&point;()
 		{
 		new &namespace;.&signal;(token) ;
 		}
 </A335-Xo_t-_io-_1>
 <A335-Xo_t-_io-1>
-	public static void &point;( Automaton a )
+	static void &point;( Automaton a )
 	{
 	log("&point;") ;
 	&list;
 	}
 </A335-Xo_t-_io-1>
 <A335-Xo_t-_io-1-lookaheadset>
-	public static bool lookahead&point;()
+	static bool lookahead&point;()
 		{
 		&list;
 		}
 </A335-Xo_t-_io-1-lookaheadset>
 <A335-Xo_t-_io-1-shiftset>
-	public static int shiftset&point;()
+	static int shiftset&point;()
 		{
 		&list;
 		}
 </A335-Xo_t-_io-1-shiftset>
 <A335-Xo_t-_io-1-reductionset>
-	public static int reductionset&point;( int yy )
+	static int reductionset&point;( int yy )
 		{
 		&list;
 		}
 </A335-Xo_t-_io-1-reductionset>
 <A335-Xo_t-_io-1-gotoset>
-	public static int gotoset&point;( int yy )
+	static int gotoset&point;( int yy )
 		{
 		&list;
 		}
