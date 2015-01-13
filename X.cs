@@ -173,6 +173,7 @@ class Xo_t
 		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
 		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
 		bool reduction_volatile = stateset[i].Reductionset.GetLength(0) == 0 ;
+		bool gotoset_volatile   = stateset[i].Gotoset.GetLength(0) == 0 ;
 		X.Auto["rule"]      = "-1" ;
 		X.Auto["typeset"]   = "" ;
 		X.Auto["symbolset"] = "" ;
@@ -279,10 +280,14 @@ class Xo_t
 			reductionset = put("A335-Xo_t-_io-1-reductionset") ;
 			}
 		list = "" ;
+		string gotoset = "" ;
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
 			list += "if( yy == "+stateset[i].Gotoset[z,0]+" ) return "+z+" ;\n\t\t" ;
-		X.Auto["list"] = list + "return "+stateset[i].Gotoset.GetLength(0)+" ;" ;
-		string gotoset = put("A335-Xo_t-_io-1-gotoset") ;
+		if( list.Length != 0 )
+			{
+			X.Auto["list"] = list + "return "+stateset[i].Gotoset.GetLength(0)+" ;" ;
+			gotoset = put("A335-Xo_t-_io-1-gotoset") ;
+			}
 		list = "" ;
 		/*
 		if( _jump )
@@ -306,6 +311,13 @@ class Xo_t
 			list += "a.reductionset   = "+X.Auto["reductionset"]+" ;\n\t" ;
 			list += "a._default       = "+X.Auto["rule"]+" ;\n\t" ;
 			list += "a.reductionset_s = reductionset_"+i+" ;\n\t" ;
+			}
+		if( gotoset_volatile )
+			list += "a.goto_v = true ;\n\t" ;
+		else
+			{
+			list += "a.gotoset_s     = gotoset_"+i+" ;\n\t" ;
+			list += "a.gotoset       = "+X.Auto["gotoset"]+" ;\n\t" ;
 			}
 		list += "return ;" ;
 		X.Auto["list"] = list ;

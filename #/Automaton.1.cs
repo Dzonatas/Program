@@ -11,6 +11,7 @@ partial class Automaton
 	int          shiftset_i    ;
 	bool         volatile_b    = false ;
 	bool         reduction_v   = false ;
+	bool         goto_v        = false ;
 	System.Func<int,int> reductionset_s ;
 	System.Func<int,int> gotoset_s ;
 	static Tokenset.Token         token ;
@@ -103,9 +104,16 @@ partial class Automaton
 				{
 				rule = reductionset[x,1] ;
 				b.yy = xo_t[rule] ;
-				for( int z = 0 ; z < gotoset.GetLength(0) ; z++ )
-					if( gotoset[z,0] == b.yy )
-						goto transit ;
+				if( ! goto_v )
+					{
+					x = gotoset_s( b.yy ) ;
+					if( x != gotoset.GetLength(0) )
+						{
+						int t = gotoset[x,1] ;
+						xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
+						goto new_state ;
+						}
+					}
 				goto jump ;
 				}
 			if( _default != -1 )
@@ -114,14 +122,15 @@ partial class Automaton
 				b.yy = xo_t[rule] ;
 				}
 			}
-		transit:
-		x = gotoset_s( b.yy ) ;
-		if( x != gotoset.GetLength(0) )
-			if( gotoset[x,0] == b.yy )
+		if( ! goto_v )
 			{
-			int t = gotoset[x,1] ;
-			xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
-			goto new_state ;
+			x = gotoset_s( b.yy ) ;
+			if( x != gotoset.GetLength(0) )
+				{
+				int t = gotoset[x,1] ;
+				xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
+				goto new_state ;
+				}
 			}
 		if( b.yy == __default && _default == -1 )
 			{
@@ -142,12 +151,15 @@ partial class Automaton
 				throw bb ;
 			b.yy = xo_t[bb.rule] ;
 			}
-		x = gotoset_s( b.yy ) ;
-		if( x != gotoset.GetLength(0) )
+		if( ! goto_v )
 			{
-			int t = gotoset[x,1] ;
-			xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
-			goto new_state ;
+			x = gotoset_s( b.yy ) ;
+			if( x != gotoset.GetLength(0) )
+				{
+				int t = gotoset[x,1] ;
+				xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
+				goto new_state ;
+				}
 			}
 		if( token.c != 0 )
 			throw new System.NotImplementedException( "token != $end" ) ;
