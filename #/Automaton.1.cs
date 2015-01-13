@@ -95,7 +95,7 @@ partial class Automaton
 				token_HasValue = false ;
 				int t = shiftset_i ;
 				xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
-				goto new_state ;
+				goto next_point ;
 				}
 			}
 		if( ! reduction_v )
@@ -106,11 +106,7 @@ partial class Automaton
 				b.yy = xo_t[rule] ;
 				if( ! goto_v )
 					if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
-						{
-						int t = gotoset[x,1] ;
-						xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
-						goto new_state ;
-						}
+						goto new_point ;
 				goto jump ;
 				}
 			if( _default != -1 )
@@ -121,21 +117,20 @@ partial class Automaton
 			}
 		if( ! goto_v )
 			if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
-				{
-				int t = gotoset[x,1] ;
-				xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
-				goto new_state ;
-				}
+				goto new_point ;
 		if( b.yy == __default && _default == -1 )
-			{
-			throw new System.NotImplementedException( "Missed token?" ) ;
-			}
+			throw new System.NotImplementedException() ;
 		jump :
 		//Auto( this_xo_t ) ;
 		backup = xo_l[rule] ;
 		return -rule ;
 
-		new_state :
+		new_point :
+			{
+			int t = gotoset[x,1] ;
+			xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
+			}
+		next_point :
 		rule = xyzzy.auto.deploy( ref xyzzy ) ;
 		if( rule >= 0 )
 			b.yy = xyzzy.yy ;
@@ -151,7 +146,7 @@ partial class Automaton
 				{
 				int t = gotoset[x,1] ;
 				xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
-				goto new_state ;
+				goto new_point ;
 				}
 			}
 		if( token.c != 0 )
