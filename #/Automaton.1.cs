@@ -100,8 +100,7 @@ partial class Automaton
 			}
 		if( ! reduction_v )
 			{
-			x = reductionset_s( b.yy ) ;
-			if( x != reductionset.GetLength(0) )
+			if( ( x = reductionset_s( b.yy ) ) != reductionset.GetLength(0) )
 				{
 				rule = reductionset[x,1] ;
 				b.yy = xo_t[rule] ;
@@ -124,15 +123,12 @@ partial class Automaton
 				}
 			}
 		if( ! goto_v )
-			{
-			x = gotoset_s( b.yy ) ;
-			if( x != gotoset.GetLength(0) )
+			if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
 				{
 				int t = gotoset[x,1] ;
 				xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
 				goto new_state ;
 				}
-			}
 		if( b.yy == __default && _default == -1 )
 			{
 			throw new System.NotImplementedException( "Missed token?" ) ;
@@ -153,15 +149,12 @@ partial class Automaton
 			b.yy = xo_t[-rule] ;
 			}
 		if( ! goto_v )
-			{
-			x = gotoset_s( b.yy ) ;
-			if( x != gotoset.GetLength(0) )
+			if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
 				{
 				int t = gotoset[x,1] ;
 				xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
 				goto new_state ;
 				}
-			}
 		if( token.c != 0 )
 			throw new System.NotImplementedException( "token != $end" ) ;
 		return 0 ;
