@@ -54,26 +54,16 @@ partial class Automaton
 			this.x  = x ;
 			this.y  = y ;
 			this.zz = z ;
-			this.yy = __default ;
 			if( ! token_HasValue )
 				{
 				token = Tokenset.Input ;
 				token_HasValue = true ;
 				}
 			auto = new Automaton( xo_a[z] ) ;
-			}
-		internal planet( int x, int y, int zz, int yy )
-			{
-			this.x = x ;
-			this.y = y ;
-			this.zz = zz ;
-			this.yy = yy ;
-			if( ! token_HasValue )
-				{
-				token = Tokenset.Input ;
-				token_HasValue = true ;
-				}
-			auto = new Automaton( xo_a[zz] ) ;
+			if( auto.volatile_b )
+				this.yy = __default ;
+			else
+				this.yy = token.point ;
 			}
 		public override string ToString()
 				{
@@ -85,18 +75,12 @@ partial class Automaton
 		planet     xyzzy ;
 		int rule = -1 ;
 		int x ;
-		if( ! volatile_b )
+		if( ! ( volatile_b || lookahead_b ) )
 			{
-			if( lookahead_b )
-				b.yy = token.point ;
-			else
-				{
-				b.yy  = token.point ;
-				token_HasValue = false ;
-				int t = shiftset_i ;
-				xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
-				goto next_point ;
-				}
+			token_HasValue = false ;
+			int t = shiftset_i ;
+			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
+			goto next_point ;
 			}
 		if( ! reduction_v )
 			{
@@ -107,7 +91,9 @@ partial class Automaton
 				if( ! goto_v )
 					if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
 						goto new_point ;
-				goto jump ;
+				//Auto( this_xo_t ) ;
+				backup = xo_l[rule] ;
+				return -rule ;
 				}
 			if( _default != -1 )
 				{
@@ -120,7 +106,6 @@ partial class Automaton
 				goto new_point ;
 		if( b.yy == __default && _default == -1 )
 			throw new System.NotImplementedException() ;
-		jump :
 		//Auto( this_xo_t ) ;
 		backup = xo_l[rule] ;
 		return -rule ;
@@ -128,7 +113,7 @@ partial class Automaton
 		new_point :
 			{
 			int t = gotoset[x,1] ;
-			xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
+			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
 			}
 		next_point :
 		rule = xyzzy.auto.deploy( ref xyzzy ) ;
@@ -145,7 +130,7 @@ partial class Automaton
 			if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
 				{
 				int t = gotoset[x,1] ;
-				xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
+				xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
 				goto new_point ;
 				}
 			}
