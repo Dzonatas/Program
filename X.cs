@@ -174,6 +174,7 @@ class Xo_t
 		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
 		bool reduction_volatile = stateset[i].Reductionset.GetLength(0) == 0 ;
 		bool gotoset_volatile   = stateset[i].Gotoset.GetLength(0) == 0 ;
+		bool transit_volatile   = stateset[i].Transitionset.Length == 0 ;
 		X.Auto["rule"]      = "-1" ;
 		X.Auto["typeset"]   = "" ;
 		X.Auto["symbolset"] = "" ;
@@ -297,6 +298,12 @@ class Xo_t
 		if( stateset[i].Shiftset.GetLength(0) > 0 )
 			list += "new_state :\n\t" ;
 		*/
+		if( ! transit_volatile )
+			{
+			list += "a.stateset      = "+X.Auto["stateset"]+" ;\n\t" ;
+			list += "a.ruleset       = "+X.Auto["ruleset"]+" ;\n\t" ;
+			list += "a.pointset      = "+X.Auto["pointset"]+" ;\n\t" ;
+			}
 		if( volatile_b )
 			list += "a.volatile_b = true ;\n\t" ;
 		else

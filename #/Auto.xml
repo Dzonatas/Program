@@ -85,9 +85,6 @@ partial class Automaton {
 	public static void &point;( Automaton a )
 	{
 	log("&point;") ;
-	a.stateset      = &stateset; ;
-	a.ruleset       = &ruleset; ;
-	a.pointset      = &pointset; ;
 	&list;
 	}
 </A335-Xo_t-_io-1>
