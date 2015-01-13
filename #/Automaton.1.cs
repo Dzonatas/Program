@@ -105,15 +105,12 @@ partial class Automaton
 				rule = reductionset[x,1] ;
 				b.yy = xo_t[rule] ;
 				if( ! goto_v )
-					{
-					x = gotoset_s( b.yy ) ;
-					if( x != gotoset.GetLength(0) )
+					if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
 						{
 						int t = gotoset[x,1] ;
 						xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
 						goto new_state ;
 						}
-					}
 				goto jump ;
 				}
 			if( _default != -1 )
@@ -149,12 +146,14 @@ partial class Automaton
 			b.yy = xo_t[-rule] ;
 			}
 		if( ! goto_v )
+			{
 			if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
 				{
 				int t = gotoset[x,1] ;
 				xyzzy = new planet( ruleset[t], pointset[t], stateset[t], __default ) ;
 				goto new_state ;
 				}
+			}
 		if( token.c != 0 )
 			throw new System.NotImplementedException( "token != $end" ) ;
 		return 0 ;
