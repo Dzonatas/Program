@@ -73,7 +73,7 @@ partial class Automaton
 	int deploy( ref planet b )
 		{
 		planet     xyzzy ;
-		int rule = -1 ;
+		int rule = (-__default) ;
 		int t ;
 		if( ! ( volatile_b || lookahead_b ) )
 			{
@@ -84,10 +84,8 @@ partial class Automaton
 			{
 			if( ! reduction_v )
 				{
-				int x ;
-				if( ( x = reductionset_s( b.yy ) ) != reductionset.GetLength(0) )
+				if( ( rule = reductionset_s( b.yy ) ) != (-__default) )
 					{
-					rule = reductionset[x,1] ;
 					b.yy = xo_t[rule] ;
 					if( ! goto_v )
 						if( ( t = gotoset_s( b.yy ) ) != __default )
@@ -105,7 +103,7 @@ partial class Automaton
 			if( ! goto_v )
 				if( ( t = gotoset_s( b.yy ) ) != __default )
 					goto new_point ;
-			if( b.yy == __default && _default == -1 )
+			if( b.yy == __default && _default == (-__default) )
 				throw new System.NotImplementedException() ;
 			//Auto( this_xo_t ) ;
 			backup = xo_l[rule] ;
