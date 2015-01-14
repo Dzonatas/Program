@@ -283,10 +283,10 @@ class Xo_t
 		list = "" ;
 		string gotoset = "" ;
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
-			list += "if( yy == "+stateset[i].Gotoset[z,0]+" ) return "+z+" ;\n\t\t" ;
+			list += "if( yy == "+stateset[i].Gotoset[z,0]+" ) return "+stateset[i].Gotoset[z,1]+" ;\n\t\t" ;
 		if( list.Length != 0 )
 			{
-			X.Auto["list"] = list + "return "+stateset[i].Gotoset.GetLength(0)+" ;" ;
+			X.Auto["list"] = list + "return __default ;" ;
 			gotoset = put("A335-Xo_t-_io-1-gotoset") ;
 			}
 		list = "" ;
