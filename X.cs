@@ -181,18 +181,12 @@ class Xo_t
 		X.Auto["stateset"]  = "" ;
 		X.Auto["ruleset"]   = "" ;
 		X.Auto["pointset"]  = "" ;
-		X.Auto["gotoset"]   = "" ;
-		X.Auto["shiftset"]  = "" ;
 		X.Auto["lookaheadset"]  = "" ;
 		if( stateset[i].Default_reduction.HasValue )
 			{
 			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
 			X.Auto["rule"] = stateset[i].Default_reduction.Value.ToString() ;
 			}
-		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
-			X.Auto["shiftset"] += "{ "+stateset[i].Shiftset[z,0]+", "+stateset[i].Shiftset[z,1]+" }, " ;
-		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
-			X.Auto["gotoset"] += "{ "+stateset[i].Gotoset[z,0]+", "+stateset[i].Gotoset[z,1]+" }, " ;
 		foreach( Transition t in stateset[i].Transitionset )
 			{
 			X.Auto["typeset"]   += '"'+t.type+'"'+", " ;
@@ -208,8 +202,6 @@ class Xo_t
 		X.Auto["stateset"]  = (X.Auto["stateset"] =="") ? "new int[0]" : "new int[] { "+X.Auto["stateset"]+" }" ;
 		X.Auto["ruleset"]   = (X.Auto["ruleset"]  =="") ? "new int[0]" : "new int[] { "+X.Auto["ruleset"]+" }" ;
 		X.Auto["pointset"]  = (X.Auto["pointset"] =="") ? "new int[0]" : "new int[] { "+X.Auto["pointset"]+" }" ;
-		X.Auto["shiftset"]  = (X.Auto["shiftset"] =="") ? "new int[0,0]" : "new int[,] { "+X.Auto["shiftset"]+" }" ;
-		X.Auto["gotoset"]   = (X.Auto["gotoset"]  =="") ? "new int[0,0]" : "new int[,] { "+X.Auto["gotoset"]+" }" ;
 		string[] ss = new string[stateset[i].Reductionset.Length] ;
 		int zz = 0 ;
 		string tab = "\t\t\t" ;
@@ -324,7 +316,6 @@ class Xo_t
 		else
 			{
 			list += "a.gotoset_s     = gotoset_"+i+" ;\n\t" ;
-			list += "a.gotoset       = "+X.Auto["gotoset"]+" ;\n\t" ;
 			}
 		list += "return ;" ;
 		X.Auto["list"] = list ;
@@ -596,8 +587,6 @@ partial class X //_: YY
 		{ "synopsis",   null },
 		{ "global",     null },
 		{ "interface",  null },
-		{ "gotoset",    null },
-		{ "shiftset",   null },
 		{ "stateset",   null },
 		{ "symbolset",  null },
 		{ "typeset",    null },
