@@ -80,38 +80,38 @@ partial class Automaton
 			token_HasValue = false ;
 			int t = shiftset_i ;
 			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
-			goto next_point ;
 			}
-		if( ! reduction_v )
+		else
 			{
-			if( ( x = reductionset_s( b.yy ) ) != reductionset.GetLength(0) )
+			if( ! reduction_v )
 				{
-				rule = reductionset[x,1] ;
-				b.yy = xo_t[rule] ;
-				if( ! goto_v )
-					if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
-						goto new_point ;
-				//Auto( this_xo_t ) ;
-				backup = xo_l[rule] ;
-				return -rule ;
+				if( ( x = reductionset_s( b.yy ) ) != reductionset.GetLength(0) )
+					{
+					rule = reductionset[x,1] ;
+					b.yy = xo_t[rule] ;
+					if( ! goto_v )
+						if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
+							goto new_point ;
+					//Auto( this_xo_t ) ;
+					backup = xo_l[rule] ;
+					return -rule ;
+					}
+				if( _default != -1 )
+					{
+					rule = reductionset[_default,1] ;
+					b.yy = xo_t[rule] ;
+					}
 				}
-			if( _default != -1 )
-				{
-				rule = reductionset[_default,1] ;
-				b.yy = xo_t[rule] ;
-				}
-			}
-		if( ! goto_v )
-			if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
-				goto new_point ;
-		if( b.yy == __default && _default == -1 )
-			throw new System.NotImplementedException() ;
-		//Auto( this_xo_t ) ;
-		backup = xo_l[rule] ;
-		return -rule ;
+			if( ! goto_v )
+				if( ( x = gotoset_s( b.yy ) ) != gotoset.GetLength(0) )
+					goto new_point ;
+			if( b.yy == __default && _default == -1 )
+				throw new System.NotImplementedException() ;
+			//Auto( this_xo_t ) ;
+			backup = xo_l[rule] ;
+			return -rule ;
 
-		new_point :
-			{
+			new_point :
 			int t = gotoset[x,1] ;
 			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
 			}
@@ -131,7 +131,7 @@ partial class Automaton
 				{
 				int t = gotoset[x,1] ;
 				xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
-				goto new_point ;
+				goto next_point ;
 				}
 			}
 		if( token.c != 0 )
