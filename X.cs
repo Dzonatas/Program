@@ -271,7 +271,12 @@ class Xo_t
 					continue ;
 				list += "if( yy == "+r.symbol+" ) return "+stateset[i].Reductionset[z].rule+" ;\n\t\t" ;
 				}
-			X.Auto["list"] = list + "return(-__default) ;" ;
+			if( stateset[i].Default_reduction.HasValue )
+				X.Auto["list"] = list + "return "
+					+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule
+					+" ;" ;
+			else
+				X.Auto["list"] = list + "return(-__default) ;" ;
 			reductionset = put("A335-Xo_t-_io-1-reductionset") ;
 			}
 		list = "" ;

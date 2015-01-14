@@ -81,35 +81,18 @@ partial class Automaton
 			t = shiftset_i ;
 			}
 		else
+		if( (! reduction_v) && (rule = reductionset_s( b.yy )) != (-__default) )
 			{
-			if( ! reduction_v )
+			b.yy = xo_t[rule] ;
+			if( goto_v || (t = gotoset_s( b.yy )) == __default )
 				{
-				if( ( rule = reductionset_s( b.yy ) ) != (-__default) )
-					{
-					b.yy = xo_t[rule] ;
-					if( ! goto_v )
-						if( ( t = gotoset_s( b.yy ) ) != __default )
-							goto new_point ;
-					//Auto( this_xo_t ) ;
-					backup = xo_l[rule] ;
-					return -rule ;
-					}
-				if( _default != -1 )
-					{
-					rule = reductionset[_default,1] ;
-					b.yy = xo_t[rule] ;
-					}
+				//Auto( this_xo_t ) ;
+				backup = xo_l[rule] ;
+				return -rule ;
 				}
-			if( ! goto_v )
-				if( ( t = gotoset_s( b.yy ) ) != __default )
-					goto new_point ;
-			if( b.yy == __default && _default == (-__default) )
-				throw new System.NotImplementedException() ;
-			//Auto( this_xo_t ) ;
-			backup = xo_l[rule] ;
-			return -rule ;
 			}
-		new_point :
+		else
+			throw new System.NotImplementedException() ;
 		do	{
 			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
 			if( (rule = xyzzy.auto.deploy( ref xyzzy )) >= 0 )
