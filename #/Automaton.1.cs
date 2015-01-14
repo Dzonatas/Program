@@ -116,8 +116,7 @@ partial class Automaton
 			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
 			}
 		next_point :
-		rule = xyzzy.auto.deploy( ref xyzzy ) ;
-		if( rule >= 0 )
+		if( (rule = xyzzy.auto.deploy( ref xyzzy )) >= 0 )
 			b.yy = xyzzy.yy ;
 		else
 			{
