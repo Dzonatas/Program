@@ -168,14 +168,13 @@ class Xo_t
 		}
 	static string _io( int i )
 		{
-		int rule = (-_default) ;
+		string rule = "(-__default)" ;
 		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
 		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
 		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
 		bool reduction_volatile = stateset[i].Reductionset.GetLength(0) == 0 ;
 		bool gotoset_volatile   = stateset[i].Gotoset.GetLength(0) == 0 ;
 		bool transit_volatile   = stateset[i].Transitionset.Length == 0 ;
-		X.Auto["rule"]      = "(-__default)" ;
 		X.Auto["typeset"]   = "" ;
 		X.Auto["symbolset"] = "" ;
 		X.Auto["stateset"]  = "" ;
@@ -183,10 +182,7 @@ class Xo_t
 		X.Auto["pointset"]  = "" ;
 		X.Auto["lookaheadset"]  = "" ;
 		if( stateset[i].Default_reduction.HasValue )
-			{
-			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
-			X.Auto["rule"] = stateset[i].Default_reduction.Value.ToString() ;
-			}
+			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
 		foreach( Transition t in stateset[i].Transitionset )
 			{
 			X.Auto["typeset"]   += '"'+t.type+'"'+", " ;
@@ -258,10 +254,6 @@ class Xo_t
 		string reductionset = "" ;
 		if( ! reduction_volatile )
 			{
-			if( stateset[i].Default_reduction.HasValue )
-				list += "if( yy == __default ) return "
-					+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule
-					+" ;\n\t\t" ;
 			for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
 				{
 				Reduction r = stateset[i].Reductionset[z] ;
@@ -271,12 +263,7 @@ class Xo_t
 					continue ;
 				list += "if( yy == "+r.symbol+" ) return "+stateset[i].Reductionset[z].rule+" ;\n\t\t" ;
 				}
-			if( stateset[i].Default_reduction.HasValue )
-				X.Auto["list"] = list + "return "
-					+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule
-					+" ;" ;
-			else
-				X.Auto["list"] = list + "return(-__default) ;" ;
+			X.Auto["list"] = list + "return "+rule+" ;" ;
 			reductionset = put("A335-Xo_t-_io-1-reductionset") ;
 			}
 		list = "" ;
@@ -310,12 +297,10 @@ class Xo_t
 		if( reduction_volatile )
 			{
 			list += "a.reduction_v = true ;\n\t" ;
-			list += "a._default       = (-__default) ;\n\t" ;
 			}
 		else
 			{
-			list += "a.reductionset   = "+X.Auto["reductionset"]+" ;\n\t" ;
-			list += "a._default       = "+X.Auto["rule"]+" ;\n\t" ;
+			list += "a.rule           = "+rule+" ;\n\t" ;
 			list += "a.reductionset_s = reductionset_"+i+" ;\n\t" ;
 			}
 		if( gotoset_volatile )

@@ -6,7 +6,7 @@ partial class Automaton
 	int[]        ruleset       ;
 	int[]        pointset      ;
 	int[,]       reductionset  ;
-	int          _default      ;
+	int          rule          ;
 	bool         lookahead_b   ;
 	int          shiftset_i    ;
 	bool         volatile_b    = false ;
@@ -73,7 +73,6 @@ partial class Automaton
 	int deploy( ref planet b )
 		{
 		planet     xyzzy ;
-		int rule = (-__default) ;
 		int t ;
 		if( ! ( volatile_b || lookahead_b ) )
 			{
