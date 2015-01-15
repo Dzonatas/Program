@@ -283,29 +283,25 @@ class Xo_t
 			list += "a.ruleset       = "+X.Auto["ruleset"]+" ;\n\t" ;
 			list += "a.pointset      = "+X.Auto["pointset"]+" ;\n\t" ;
 			}
+		string b = "" ;
 		if( volatile_b )
-			list += "a.volatile_b = true ;\n\t" ;
-		else
+			b += "a.volatile_b = " ;
+		if( reduction_volatile || reductionset.Length == 0 )
+			b += "a.reduction_v = " ;
+		if( gotoset_volatile )
+			b += "a.goto_v = " ;
+		if( b.Length != 0 )
+			list += b+"true ;\n\t" ;
+		if( ! volatile_b )
 			list += list_v ;
-		if( reduction_volatile )
+		list += "a.rule           = "+rule+" ;\n\t" ;
+		if( ! reduction_volatile )
 			{
-			list += "a.reduction_v    = true ;\n\t" ;
-			list += "a.rule           = "+rule+" ;\n\t" ;
-			}
-		else
-			{
-			list += "a.rule            = "+rule+" ;\n\t" ;
-			if( reductionset.Length == 0 )
-				list += "a.reduction_v     = true ;\n\t" ;
-			else
+			if( reductionset.Length != 0 )
 				list += "a.reductionset_s  = reductionset_"+i+" ;\n\t" ;
 			}
-		if( gotoset_volatile )
-			list += "a.goto_v = true ;\n\t" ;
-		else
-			{
+		if( ! gotoset_volatile )
 			list += "a.gotoset_s     = gotoset_"+i+" ;\n\t" ;
-			}
 		list += "return ;" ;
 		X.Auto["list"] = list ;
 		string sets = lookahead + shiftset + reductionset + gotoset ;

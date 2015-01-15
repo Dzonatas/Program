@@ -27,19 +27,6 @@ partial class Automaton
 		{
 		System.Console.WriteLine() ;
 		}
-	void unshift( System.Action _rule )
-		{
-		_rule() ;
-		}
-	void Goto( System.Action<Automaton> new_state )
-		{
-		new Automaton( new_state ) ;
-		}
-	static void shift( System.Action<Automaton> _set )
-		{
-		token = Tokenset.Input ;
-		new Automaton( _set ) ;
-		}
 	struct planet
 		{
 		internal int        x ;
