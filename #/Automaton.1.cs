@@ -1,17 +1,15 @@
 using Debug = System.Console ;
 partial class Automaton
 	{
-	int[,]       gotoset       ;
 	int[]        stateset      ;
 	int[]        ruleset       ;
 	int[]        pointset      ;
-	int[,]       reductionset  ;
 	int          rule          ;
-	bool         lookahead_b   ;
 	int          shiftset_i    ;
-	bool         volatile_b    = false ;
-	bool         reduction_v   = false ;
-	bool         goto_v        = false ;
+	bool         lookahead_b   ;
+	bool         volatile_b    ;
+	bool         reduction_v   ;
+	bool         goto_v        ;
 	System.Func<int,int> reductionset_s ;
 	System.Func<int,int> gotoset_s ;
 	static Tokenset.Token         token ;
@@ -80,7 +78,7 @@ partial class Automaton
 			t = shiftset_i ;
 			}
 		else
-		if( (! reduction_v) && (rule = reductionset_s( b.yy )) != (-__default) )
+		if( (reduction_v ? rule : rule = reductionset_s( b.yy )) != (-__default) )
 			{
 			b.yy = xo_t[rule] ;
 			if( goto_v || (t = gotoset_s( b.yy )) == __default )

@@ -224,9 +224,7 @@ class Xo_t
 			}
 		string list_v = "" ;
 		string lookahead = "" ;
-		if( list.Length == 0 )
-			list_v += "a.lookahead_b = false ;\n\t" ;
-		else
+		if( list.Length != 0 )
 			{
 			X.Auto["list"] = list + "return false ;" ;
 			lookahead = put("A335-Xo_t-_io-1-lookaheadset") ;
@@ -263,8 +261,11 @@ class Xo_t
 					continue ;
 				list += "if( yy == "+r.symbol+" ) return "+stateset[i].Reductionset[z].rule+" ;\n\t\t" ;
 				}
-			X.Auto["list"] = list + "return "+rule+" ;" ;
-			reductionset = put("A335-Xo_t-_io-1-reductionset") ;
+			if( list.Length != 0 )
+				{
+				X.Auto["list"] = list + "return "+rule+" ;" ;
+				reductionset = put("A335-Xo_t-_io-1-reductionset") ;
+				}
 			}
 		list = "" ;
 		string gotoset = "" ;
@@ -276,14 +277,6 @@ class Xo_t
 			gotoset = put("A335-Xo_t-_io-1-gotoset") ;
 			}
 		list = "" ;
-		/*
-		if( _jump )
-			list += "jump:\n\t" ;
-		if( _ruler )
-			list += "a.unshift( __"+rule+" ) ;\n\t" ;
-		if( stateset[i].Shiftset.GetLength(0) > 0 )
-			list += "new_state :\n\t" ;
-		*/
 		if( ! transit_volatile )
 			{
 			list += "a.stateset      = "+X.Auto["stateset"]+" ;\n\t" ;
@@ -296,12 +289,16 @@ class Xo_t
 			list += list_v ;
 		if( reduction_volatile )
 			{
-			list += "a.reduction_v = true ;\n\t" ;
+			list += "a.reduction_v    = true ;\n\t" ;
+			list += "a.rule           = "+rule+" ;\n\t" ;
 			}
 		else
 			{
-			list += "a.rule           = "+rule+" ;\n\t" ;
-			list += "a.reductionset_s = reductionset_"+i+" ;\n\t" ;
+			list += "a.rule            = "+rule+" ;\n\t" ;
+			if( reductionset.Length == 0 )
+				list += "a.reduction_v     = true ;\n\t" ;
+			else
+				list += "a.reductionset_s  = reductionset_"+i+" ;\n\t" ;
 			}
 		if( gotoset_volatile )
 			list += "a.goto_v = true ;\n\t" ;
