@@ -239,18 +239,14 @@ class Xo_t
 			ulong v2 = (ulong)stateset[i].Transitionset[y].item.point ;
 			ulong v3 = (v1 << 32) | (v2 << 16) | (ulong)stateset[i].Transitionset[y].state ;
 			string q = string.Format( "\t/* {0}, {1}, {2} */", v1, v2, (ulong)stateset[i].Transitionset[y].state ) ;
-			list += "if( token.point == "+x+" ) return "+v3+" ;"+q+"\n\t\t" ;
+			list += "if( token.point == "+x+" ) a.shiftset_i = "+v3+" ;"+q+"\n\t" ;
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
-				list += "else\n\t\t" ;
+				list += "else\n\t" ;
 			}
 		string shiftset = "" ;
-		if( list.Length == 0 )
-			list_v += "a.shiftset_i = 0 ;\n\t" ;
-		else
+		if( list.Length != 0 )
 			{
-			list_v += "a.shiftset_i = shiftset_"+i+"() ;\n\t" ;
-			X.Auto["list"] = list + "return "+stateset[i].Shiftset.GetLength(0)+" ;" ;
-			shiftset = put("A335-Xo_t-_io-1-shiftset") ;
+			list_v += list ;
 			}
 		list = "" ;
 		string reductionset = "" ;

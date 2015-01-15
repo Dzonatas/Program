@@ -71,8 +71,7 @@ partial class Automaton
 	int deploy( ref planet b )
 		{
 		planet     xyzzy ;
-		ulong t = 0;
-		int r = 0, p = 0, s = 0;
+		ulong t ;
 		if( ! ( volatile_b || lookahead_b ) )
 			{
 			token_HasValue = false ;

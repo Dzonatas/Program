@@ -94,12 +94,6 @@ partial class Automaton {
 		&list;
 		}
 </A335-Xo_t-_io-1-lookaheadset>
-<A335-Xo_t-_io-1-shiftset>
-	static ulong shiftset&point;()
-		{
-		&list;
-		}
-</A335-Xo_t-_io-1-shiftset>
 <A335-Xo_t-_io-1-reductionset>
 	static int reductionset&point;( int yy )
 		{
