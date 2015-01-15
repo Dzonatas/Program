@@ -1,17 +1,14 @@
 using Debug = System.Console ;
 partial class Automaton
 	{
-	int[]        stateset      ;
-	int[]        ruleset       ;
-	int[]        pointset      ;
 	int          rule          ;
-	int          shiftset_i    ;
+	ulong        shiftset_i    ;
 	bool         lookahead_b   ;
 	bool         volatile_b    ;
 	bool         reduction_v   ;
 	bool         goto_v        ;
 	System.Func<int,int> reductionset_s ;
-	System.Func<int,int> gotoset_s ;
+	System.Func<int,ulong> gotoset_s ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
 	static int   backup ;
@@ -46,7 +43,23 @@ partial class Automaton
 				}
 			auto = new Automaton( xo_a[z] ) ;
 			if( auto.volatile_b )
-				this.yy = __default ;
+				this.yy = (int)__default ;
+			else
+				this.yy = token.point ;
+			}
+		internal planet( ulong rps )
+			{
+			this.x  = (int) ((rps & (((ulong)ushort.MaxValue)<<32)) >> 32) ;
+			this.y  = (int) ((rps &   (((ulong)byte.MaxValue)<<16)) >> 16) ;
+			this.zz = (int) ((rps &  ((ulong)ushort.MaxValue))) ;
+			if( ! token_HasValue )
+				{
+				token = Tokenset.Input ;
+				token_HasValue = true ;
+				}
+			auto = new Automaton( xo_a[this.zz] ) ;
+			if( auto.volatile_b )
+				this.yy = (int)__default ;
 			else
 				this.yy = token.point ;
 			}
@@ -58,14 +71,15 @@ partial class Automaton
 	int deploy( ref planet b )
 		{
 		planet     xyzzy ;
-		int t ;
+		ulong t = 0;
+		int r = 0, p = 0, s = 0;
 		if( ! ( volatile_b || lookahead_b ) )
 			{
 			token_HasValue = false ;
 			t = shiftset_i ;
 			}
 		else
-		if( (reduction_v ? rule : rule = reductionset_s( b.yy )) != (-__default) )
+		if( (reduction_v ? rule : rule = reductionset_s( b.yy )) != (-(int)__default) )
 			{
 			b.yy = xo_t[rule] ;
 			if( goto_v || (t = gotoset_s( b.yy )) == __default )
@@ -78,7 +92,7 @@ partial class Automaton
 		else
 			throw new System.NotImplementedException() ;
 		do	{
-			xyzzy = new planet( ruleset[t], pointset[t], stateset[t] ) ;
+			xyzzy = new planet( t ) ;
 			if( (rule = xyzzy.auto.deploy( ref xyzzy )) >= 0 )
 				b.yy = xyzzy.yy ;
 			else

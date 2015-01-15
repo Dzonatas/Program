@@ -235,7 +235,11 @@ class Xo_t
 			{
 			int x = stateset[i].Shiftset[z,0] ;
 			int y = stateset[i].Shiftset[z,1] ;
-			list += "if( token.point == "+x+" ) return "+z+" ;\n\t\t" ;
+			ulong v1 = (ulong)stateset[i].Transitionset[y].item.rule ;
+			ulong v2 = (ulong)stateset[i].Transitionset[y].item.point ;
+			ulong v3 = (v1 << 32) | (v2 << 16) | (ulong)stateset[i].Transitionset[y].state ;
+			string q = string.Format( "\t/* {0}, {1}, {2} */", v1, v2, (ulong)stateset[i].Transitionset[y].state ) ;
+			list += "if( token.point == "+x+" ) return "+v3+" ;"+q+"\n\t\t" ;
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else\n\t\t" ;
 			}
@@ -270,19 +274,21 @@ class Xo_t
 		list = "" ;
 		string gotoset = "" ;
 		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
-			list += "if( yy == "+stateset[i].Gotoset[z,0]+" ) return "+stateset[i].Gotoset[z,1]+" ;\n\t\t" ;
+			{
+			int x = stateset[i].Gotoset[z,0] ;
+			int y = stateset[i].Gotoset[z,1] ;
+			ulong v1 = (ulong)stateset[i].Transitionset[y].item.rule ;
+			ulong v2 = (ulong)stateset[i].Transitionset[y].item.point ;
+			ulong v3 = (v1 << 32) | (v2 << 16) | (ulong)stateset[i].Transitionset[y].state ;
+			string q = string.Format( "\t/* {0}, {1}, {2} */", v1, v2, (ulong)stateset[i].Transitionset[y].state ) ;
+			list += "if( yy == "+x+" ) return "+v3+" ;"+q+"\n\t\t" ;
+			}
 		if( list.Length != 0 )
 			{
 			X.Auto["list"] = list + "return __default ;" ;
 			gotoset = put("A335-Xo_t-_io-1-gotoset") ;
 			}
 		list = "" ;
-		if( ! transit_volatile )
-			{
-			list += "a.stateset      = "+X.Auto["stateset"]+" ;\n\t" ;
-			list += "a.ruleset       = "+X.Auto["ruleset"]+" ;\n\t" ;
-			list += "a.pointset      = "+X.Auto["pointset"]+" ;\n\t" ;
-			}
 		string b = "" ;
 		if( volatile_b )
 			b += "a.volatile_b = " ;
