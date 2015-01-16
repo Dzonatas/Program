@@ -12,9 +12,9 @@ partial class Automaton
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
 	static int   backup ;
-	public Automaton( System.Action<Automaton> _set )
+	public Automaton( System.Func<Automaton,ulong> _set )
 		{
-		_set( this ) ;
+		shiftset_i = _set( this ) ;
 		}
 	static void log( string point )
 		{
@@ -71,12 +71,9 @@ partial class Automaton
 	int deploy( ref planet b )
 		{
 		planet     xyzzy ;
-		ulong t ;
+		ulong t = shiftset_i ;
 		if( ! ( volatile_b || lookahead_b ) )
-			{
 			token_HasValue = false ;
-			t = shiftset_i ;
-			}
 		else
 		if( (reduction_v ? rule : rule = reductionset_s( b.yy )) != (-(int)__default) )
 			{

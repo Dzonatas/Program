@@ -239,7 +239,7 @@ class Xo_t
 			ulong v2 = (ulong)stateset[i].Transitionset[y].item.point ;
 			ulong v3 = (v1 << 32) | (v2 << 16) | (ulong)stateset[i].Transitionset[y].state ;
 			string q = string.Format( "\t/* {0}, {1}, {2} */", v1, v2, (ulong)stateset[i].Transitionset[y].state ) ;
-			list += "if( token.point == "+x+" ) a.shiftset_i = "+v3+" ;"+q+"\n\t" ;
+			list += "if( token.point == "+x+" ) return "+v3+" ;"+q+"\n\t" ;
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else\n\t" ;
 			}
@@ -294,8 +294,6 @@ class Xo_t
 			b += "a.goto_v = " ;
 		if( b.Length != 0 )
 			list += b+"true ;\n\t" ;
-		if( ! volatile_b )
-			list += list_v ;
 		list += "a.rule           = "+rule+" ;\n\t" ;
 		if( ! reduction_volatile )
 			{
@@ -304,7 +302,9 @@ class Xo_t
 			}
 		if( ! gotoset_volatile )
 			list += "a.gotoset_s     = gotoset_"+i+" ;\n\t" ;
-		list += "return ;" ;
+		if( ! volatile_b )
+			list += list_v ;
+		list += "return __default ;" ;
 		X.Auto["list"] = list ;
 		string sets = lookahead + shiftset + reductionset + gotoset ;
 		if( i == 0 || i >= xo_t.Length )
@@ -416,7 +416,7 @@ class Xo_t
 		sl.Close() ;
 		X.Auto["branch"] = branch ;
 		var ss = Current.Path.CreateText( "Automaton.4.cs" ) ;
-		ss.Write("partial class Automaton {\nstatic System.Action<Automaton>[] xo_a =\n\t{\n\t") ;
+		ss.Write("partial class Automaton {\nstatic System.Func<Automaton,ulong>[] xo_a =\n\t{\n\t") ;
 		for( int z = 0 ; z < stateset.Length ; z++ )
 			{
 			ss.Write( "_{0}\t, ", z ) ;

@@ -82,7 +82,7 @@ partial class Automaton {
 		}
 </A335-Xo_t-_io-_1>
 <A335-Xo_t-_io-1>
-	static void &point;( Automaton a )
+	static ulong &point;( Automaton a )
 	{
 	log("&point;") ;
 	&list;
