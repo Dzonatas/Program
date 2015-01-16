@@ -182,7 +182,7 @@ class Xo_t
 		X.Auto["pointset"]  = "" ;
 		X.Auto["lookaheadset"]  = "" ;
 		if( stateset[i].Default_reduction.HasValue )
-			rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
+			rule = '-'+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
 		foreach( Transition t in stateset[i].Transitionset )
 			{
 			X.Auto["typeset"]   += '"'+t.type+'"'+", " ;
@@ -228,7 +228,7 @@ class Xo_t
 			{
 			X.Auto["list"] = list + "return false ;" ;
 			lookahead = put("A335-Xo_t-_io-1-lookaheadset") ;
-			list_v += "a.lookahead_b = lookahead_"+i+"() ;\n\t" ;
+			list_v += "if( (a.lookahead_b = lookahead_"+i+"()) ) return a.rule ;\n\t" ;
 			}
 		list = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
@@ -259,7 +259,7 @@ class Xo_t
 					continue ;
 				if( r.symbol == _default )
 					continue ;
-				list += "if( yy == "+r.symbol+" ) return "+stateset[i].Reductionset[z].rule+" ;\n\t\t" ;
+				list += "if( yy == "+r.symbol+" ) return -"+stateset[i].Reductionset[z].rule+" ;\n\t\t" ;
 				}
 			if( list.Length != 0 )
 				{
@@ -416,7 +416,7 @@ class Xo_t
 		sl.Close() ;
 		X.Auto["branch"] = branch ;
 		var ss = Current.Path.CreateText( "Automaton.4.cs" ) ;
-		ss.Write("partial class Automaton {\nstatic System.Func<Automaton,ulong>[] xo_a =\n\t{\n\t") ;
+		ss.Write("partial class Automaton {\nstatic System.Func<Automaton,long>[] xo_a =\n\t{\n\t") ;
 		for( int z = 0 ; z < stateset.Length ; z++ )
 			{
 			ss.Write( "_{0}\t, ", z ) ;

@@ -1,18 +1,18 @@
 using Debug = System.Console ;
 partial class Automaton
 	{
-	int          rule          ;
-	ulong        shiftset_i    ;
+	long         rule          ;
+	long         shiftset_i    ;
 	bool         lookahead_b   ;
 	bool         volatile_b    ;
 	bool         reduction_v   ;
 	bool         goto_v        ;
-	System.Func<int,int> reductionset_s ;
-	System.Func<int,ulong> gotoset_s ;
+	System.Func<int,long> reductionset_s ;
+	System.Func<int,long> gotoset_s ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
 	static int   backup ;
-	public Automaton( System.Func<Automaton,ulong> _set )
+	public Automaton( System.Func<Automaton,long> _set )
 		{
 		shiftset_i = _set( this ) ;
 		}
@@ -71,31 +71,33 @@ partial class Automaton
 	int deploy( ref planet b )
 		{
 		planet     xyzzy ;
-		ulong t = shiftset_i ;
+		long t = shiftset_i ;
 		if( ! ( volatile_b || lookahead_b ) )
 			token_HasValue = false ;
 		else
-		if( (reduction_v ? rule : rule = reductionset_s( b.yy )) != (-(int)__default) )
+		if( t <= __default )
 			{
-			b.yy = xo_t[rule] ;
+			if( t == __default )
+				t = -rule ;
+			else
+				t = -( rule = (reduction_v ? rule : reductionset_s( b.yy )) ) ;
+			b.yy = xo_t[t] ;
 			if( goto_v || (t = gotoset_s( b.yy )) == __default )
 				{
 				//Auto( this_xo_t ) ;
-				backup = xo_l[rule] ;
-				return -rule ;
+				backup = xo_l[-rule] ;
+				return (int)rule ;
 				}
 			}
-		else
-			throw new System.NotImplementedException() ;
 		do	{
-			xyzzy = new planet( t ) ;
-			if( (rule = xyzzy.auto.deploy( ref xyzzy )) >= 0 )
+			xyzzy = new planet( (ulong)t ) ;
+			if( (t = xyzzy.auto.deploy( ref xyzzy )) >= 0 )
 				b.yy = xyzzy.yy ;
 			else
 				{
 				if( --backup > 0 )
-					return rule ;
-				b.yy = xo_t[-rule] ;
+					return (int)t ;
+				b.yy = xo_t[-t] ;
 				}
 			} while( (! goto_v) && (t = gotoset_s( b.yy )) != __default ) ;
 		if( token.c != 0 )
