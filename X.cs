@@ -168,7 +168,7 @@ class Xo_t
 		}
 	static string _io( int i )
 		{
-		string rule = "(-__default)" ;
+		string rule = "__default" ;
 		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
 		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
 		bool volatile_b         = lookahead_volatile && shiftset_volatile ;

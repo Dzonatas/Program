@@ -72,6 +72,10 @@ partial class Automaton
 		{
 		planet     xyzzy ;
 		long t = shiftset_i ;
+		#if DEBUG
+		if( t > 0 && t <= __default )
+			log( "("+t+")" ) ;
+		#endif
 		if( ! ( volatile_b || lookahead_b ) )
 			token_HasValue = false ;
 		else
