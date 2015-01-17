@@ -198,7 +198,8 @@ class Xo_t
 			list += "if( " ;
 			int z ;
 			for( z = 0 ; z < stateset[i].Lookaheadset.Length-1 ; z++ )
-				list += "token.point == "+stateset[i].Lookaheadset[z]+" || " ;
+				list += "token.point == "+stateset[i].Lookaheadset[z]
+				+ ( z%3 == 2 ? "\n\t\t" : "" ) +" || " ;
 			list += "token.point == "+stateset[i].Lookaheadset[z]+" ) return true ;\n\t\t" ;
 			}
 		string list_v = "" ;
