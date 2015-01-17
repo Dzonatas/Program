@@ -175,41 +175,8 @@ class Xo_t
 		bool reduction_volatile = stateset[i].Reductionset.GetLength(0) == 0 ;
 		bool gotoset_volatile   = stateset[i].Gotoset.GetLength(0) == 0 ;
 		bool transit_volatile   = stateset[i].Transitionset.Length == 0 ;
-		X.Auto["typeset"]   = "" ;
-		X.Auto["symbolset"] = "" ;
-		X.Auto["stateset"]  = "" ;
-		X.Auto["ruleset"]   = "" ;
-		X.Auto["pointset"]  = "" ;
-		X.Auto["lookaheadset"]  = "" ;
 		if( stateset[i].Default_reduction.HasValue )
 			rule = '-'+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
-		foreach( Transition t in stateset[i].Transitionset )
-			{
-			X.Auto["typeset"]   += '"'+t.type+'"'+", " ;
-			X.Auto["symbolset"] += t.symbol+", " ;
-			X.Auto["stateset"]  += t.state+", " ;
-			X.Auto["ruleset"]   += t.item.rule+", " ;
-			X.Auto["pointset"]  += t.item.point+", " ;
-			}
-		foreach( int z in stateset[i].Lookaheadset )
-			X.Auto["lookaheadset"]  += z+", " ;
-		X.Auto["typeset"]   = (X.Auto["typeset"]  =="") ? "new string[0]" : "new string[] { "+X.Auto["typeset"]+" }" ;
-		X.Auto["symbolset"] = (X.Auto["symbolset"]=="") ? "new int[0]" : "new int[] { "+X.Auto["symbolset"]+" }" ;
-		X.Auto["stateset"]  = (X.Auto["stateset"] =="") ? "new int[0]" : "new int[] { "+X.Auto["stateset"]+" }" ;
-		X.Auto["ruleset"]   = (X.Auto["ruleset"]  =="") ? "new int[0]" : "new int[] { "+X.Auto["ruleset"]+" }" ;
-		X.Auto["pointset"]  = (X.Auto["pointset"] =="") ? "new int[0]" : "new int[] { "+X.Auto["pointset"]+" }" ;
-		string[] ss = new string[stateset[i].Reductionset.Length] ;
-		int zz = 0 ;
-		string tab = "\t\t\t" ;
-		foreach( Reduction r in stateset[i].Reductionset )
-			ss[zz++] = "{ "+r.symbol+", "+r.rule+", "+(r.enabled?'1':'0')+", "+r.item.rule+", "+r.item.point+" }" ;
-		if( zz == 0 )
-			X.Auto["reductionset"] = "new int[0,0]" ;
-		else
-		if( zz < 2 )
-			X.Auto["reductionset"] = "new int[,] { "+string.Concat(ss)+" }" ;
-		else
-			X.Auto["reductionset"] = "new int[,]\n"+tab+"{\n"+tab+string.Join(",\n"+tab,ss)+"\n"+tab+"}" ;
 		string list = "" ;
 		if( stateset[i].Lookaheadset.Length == 1 )
 			list += "if( token.point == "+stateset[i].Lookaheadset[0]+" ) return true ;\n\t\t" ;
@@ -574,11 +541,6 @@ partial class X //_: YY
 		{ "synopsis",   null },
 		{ "global",     null },
 		{ "interface",  null },
-		{ "stateset",   null },
-		{ "symbolset",  null },
-		{ "typeset",    null },
-		{ "ruleset",    null },
-		{ "pointset",   null },
 		{ "guid",       0.0.GUID() },
 		#if DEBUG
 		{ "debug_nop", "Current.Interval.NOP() ;" }
