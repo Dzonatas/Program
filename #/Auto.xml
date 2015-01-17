@@ -70,15 +70,19 @@ partial class Automaton {
 		//shift( _0 ) ;
 		log_end() ;
 		}
-	static void __0()
+	static int __0()
 		{
+		backup = &argc; ;
 		//Target: xyzzyy tail or mantissa.
+		return &i; ;
 		}
 </A335-Xo_t-_io-0>
 <A335-Xo_t-_io-_1>
-	static void _&point;()
+	static int _&point;()
 		{
+		backup = &argc; ;
 		new &namespace;.&signal;(token) ;
+		return &i; ;
 		}
 </A335-Xo_t-_io-_1>
 <A335-Xo_t-_io-1>

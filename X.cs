@@ -290,6 +290,8 @@ class Xo_t
 			return put("A335-Xo_t-_io-1")+sets ;
 		X.Auto["namespace"] = xo_t[i].lhs.s + "._" + xo_t[i].lhs.X ;
 		X.Auto["signal"]    = X.Auto[ "_"+xo_t[i].lhs.X ] ;
+		X.Auto["argc"]      = xo_t[i].rhs.Length.ToString() ;
+		X.Auto["i"]         = '-'+i.ToString() ;
 		return put("A335-Xo_t-_io-_1")+put("A335-Xo_t-_io-1")+sets ;
 		}
 	public static string put( string s )
@@ -382,18 +384,18 @@ class Xo_t
 		st.WriteLine( "} ;" ) ;
 		st.WriteLine( "}" ) ;
 		st.Close() ;
-		var sl = Current.Path.CreateText( "Automaton.3.cs" ) ;
-		sl.Write("partial class Automaton {\nstatic int[] xo_l =\n\t{\n\t") ;
+		X.Auto["branch"] = branch ;
+		var sr = Current.Path.CreateText( "Automaton.3.cs" ) ;
+		sr.Write("partial class Automaton {\nstatic System.Func<int>[] xo_r =\n\t{\n\t") ;
 		for( int z = 0 ; z < xo_t.Length ; z++ )
 			{
-			sl.Write( "{0}\t, ", xo_t[z].rhs.Length ) ;
+			sr.Write( "__{0}\t, ", z ) ;
 			if( z%10 == 9 )
-				sl.Write( "\n\t" ) ;
+				sr.Write( "\n\t" ) ;
 			}
-		sl.WriteLine( "} ;" ) ;
-		sl.WriteLine( "}" ) ;
-		sl.Close() ;
-		X.Auto["branch"] = branch ;
+		sr.WriteLine( "} ;" ) ;
+		sr.WriteLine( "}" ) ;
+		sr.Close() ;
 		var ss = Current.Path.CreateText( "Automaton.4.cs" ) ;
 		ss.Write("partial class Automaton {\nstatic System.Func<Automaton,long>[] xo_a =\n\t{\n\t") ;
 		for( int z = 0 ; z < stateset.Length ; z++ )
@@ -417,6 +419,8 @@ class Xo_t
 			}
 		f.WriteLine( ) ;
 		X.Auto["rule"] = ((int)_default).ToString() ;
+		X.Auto["argc"] = xo_t[0].rhs.Length.ToString() ;
+		X.Auto["i"]    = "0" ;
 		f.Write( put("A335-Xo_t-_io-0") ) ;
 		for( int i = 0 ; i < stateset.Length ; i++ )
 			{
@@ -537,6 +541,7 @@ partial class X //_: YY
 		{ "Entity",     null },
 		{ "list",       null },
 		{ "argv",       null },
+		{ "argc",       null },
 		{ "io",         null },
 		{ "namespace",  null },
 		{ "lhs",        null },

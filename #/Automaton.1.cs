@@ -84,11 +84,7 @@ partial class Automaton
 			t = -rule ;
 			b.yy = xo_t[t] ;
 			if( goto_v || (t = gotoset_s( b.yy )) == __default )
-				{
-				//Auto( this_xo_t ) ;
-				backup = xo_l[-rule] ;
-				return (int)rule ;
-				}
+				return xo_r[-rule]() ;
 			}
 		do	{
 			xyzzy = new planet( (ulong)t ) ;
