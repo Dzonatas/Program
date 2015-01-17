@@ -177,6 +177,18 @@ class Xo_t
 		bool transit_volatile   = stateset[i].Transitionset.Length == 0 ;
 		if( stateset[i].Default_reduction.HasValue )
 			rule = '-'+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
+		string _rule = "a.rule" ;
+		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
+			{
+			Reduction r = stateset[i].Reductionset[z] ;
+			if( ! r.enabled )
+				continue ;
+			if( r.symbol == _default )
+				continue ;
+			if( ! volatile_b )
+				_rule = "a.rule = reductionset_"+i+"( token.point )" ;
+			break ;
+			}
 		string list = "" ;
 		if( stateset[i].Lookaheadset.Length == 1 )
 			list += "if( token.point == "+stateset[i].Lookaheadset[0]+" ) return true ;\n\t\t" ;
@@ -195,7 +207,7 @@ class Xo_t
 			{
 			X.Auto["list"] = list + "return false ;" ;
 			lookahead = put("A335-Xo_t-_io-1-lookaheadset") ;
-			list_v += "if( (a.lookahead_b = lookahead_"+i+"()) ) return a.rule ;\n\t" ;
+			list_v += "if( (a.lookahead_b = lookahead_"+i+"()) ) return "+_rule+" ;\n\t" ;
 			}
 		list = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
@@ -271,7 +283,7 @@ class Xo_t
 			list += "a.gotoset_s     = gotoset_"+i+" ;\n\t" ;
 		if( ! volatile_b )
 			list += list_v ;
-		list += "return __default ;" ;
+		list += "return "+_rule+" ;" ;
 		X.Auto["list"] = list ;
 		string sets = lookahead + shiftset + reductionset + gotoset ;
 		if( i == 0 || i >= xo_t.Length )

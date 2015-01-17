@@ -75,12 +75,9 @@ partial class Automaton
 		if( ! ( volatile_b || lookahead_b ) )
 			token_HasValue = false ;
 		else
-		if( t <= __default )
+		if( t <= 0 )
 			{
-			if( t == __default )
-				t = -rule ;
-			else
-				t = -( rule = (reduction_v ? rule : reductionset_s( b.yy )) ) ;
+			t = -rule ;
 			b.yy = xo_t[t] ;
 			if( goto_v || (t = gotoset_s( b.yy )) == __default )
 				{
