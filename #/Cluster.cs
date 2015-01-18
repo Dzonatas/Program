@@ -69,6 +69,7 @@ public static partial class Shell
 		}
 	static readonly string[,] file =
 		{
+		{ "#/", "" },
 		{ "~/", "X.Y.cs" },
 		{ "#/", "X.Predefined.cs" },
 		{ "#/", "Tokenset.cs" },
@@ -80,6 +81,7 @@ public static partial class Shell
 	static public string Embed( string[] compile )
 		{
 		string files = "" ;
+		file[0,1] = "Auto."+A335.Branch+".cs" ;
 		for( int i = 0 ; i < file.GetLength(0) ; i++ )
 			{
 			var f = "../../"+file[i,0]+file[i,1] ;
