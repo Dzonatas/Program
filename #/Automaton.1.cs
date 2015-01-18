@@ -9,9 +9,11 @@ partial class Automaton
 	bool         goto_v        ;
 	System.Func<int,long> reductionset_s ;
 	System.Func<int,long> gotoset_s ;
+	Tokenset.Token                _token ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
 	static int   backup ;
+	static global::Item auto ;
 	public Automaton( System.Func<Automaton,long> _set )
 		{
 		shiftset_i = _set( this ) ;
@@ -72,15 +74,18 @@ partial class Automaton
 		{
 		planet     xyzzy ;
 		long t = shiftset_i ;
-		#if DEBUG
 		if( t > 0 && t <= __default )
 			log( "("+t+")" ) ;
-		#endif
 		if( ! ( volatile_b || lookahead_b ) )
+			{
+			_token = token ;
 			token_HasValue = false ;
+			}
 		else
 		if( t <= 0 )
 			{
+			if( token_HasValue )
+				_token = new Tokenset.Token( '\u0000', "", false, 0 ) ;
 			t = -rule ;
 			b.yy = xo_t[t] ;
 			if( goto_v || (t = gotoset_s( b.yy )) == __default )
@@ -88,10 +93,13 @@ partial class Automaton
 			}
 		do	{
 			xyzzy = new planet( (ulong)t ) ;
+			xyzzy.auto._token = _token ;
 			if( (t = xyzzy.auto.deploy( ref xyzzy )) >= 0 )
 				b.yy = xyzzy.yy ;
 			else
 				{
+				//auto.item[backup] = _token
+				_token.point = backup ;
 				if( --backup > 0 )
 					return (int)t ;
 				b.yy = xo_t[-t] ;

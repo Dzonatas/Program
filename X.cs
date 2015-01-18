@@ -466,6 +466,7 @@ class Xo_t
 				}
 			else
 				X.Auto["rhs"] = "{}" ;
+			X.Auto["argc"] = Rule.Set[i].rhs.Length.ToString() ;
 			f.Write( put("A335-Xo_t-Build-iDNA-5") ) ;
 			f.WriteLine( ) ;
 			}

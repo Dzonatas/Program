@@ -47,9 +47,9 @@ public partial class  &signal;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = &rhs; ;
-	public &signal;( Tokenset.Token t )
+	&branch;.Auto[]          argv = new &branch;.Auto[&argc;] ;
+	public &signal;()
 		{
-		log(" &signal;"+t) ;
 		}
 	}
 }
@@ -81,7 +81,7 @@ partial class Automaton {
 	static int _&point;()
 		{
 		backup = &argc; ;
-		new &namespace;.&signal;(token) ;
+		auto = new &namespace;.&signal;() ;
 		return &i; ;
 		}
 </A335-Xo_t-_io-_1>
