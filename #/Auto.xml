@@ -38,9 +38,9 @@ public partial class  &signal;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = &rhs; ;
-	&branch;.Auto[]          argv = new &branch;.Auto[&argc;] ;
 	public &signal;()
 		{
+		argv = new Tokenset.Token[ arg_i = &argc; ] ;
 		}
 	}
 }

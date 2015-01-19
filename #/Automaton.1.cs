@@ -98,8 +98,7 @@ partial class Automaton
 				b.yy = xyzzy.yy ;
 			else
 				{
-				//auto.item[backup] = _token
-				_token.point = backup ;
+				(auto as bis.Auto).Argv = _token ;
 				if( --backup > 0 )
 					return (int)t ;
 				b.yy = xo_t[-t] ;
