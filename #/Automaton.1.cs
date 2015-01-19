@@ -102,6 +102,7 @@ partial class Automaton
 				if( --backup > 0 )
 					return (int)t ;
 				b.yy = xo_t[-t] ;
+				(auto as bis.Auto).Splice() ;
 				}
 			} while( (! goto_v) && (t = gotoset_s( b.yy )) != __default ) ;
 		if( token.c != 0 )
