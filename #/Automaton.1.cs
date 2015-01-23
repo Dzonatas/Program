@@ -85,7 +85,7 @@ partial class Automaton
 		if( t <= 0 )
 			{
 			if( token_HasValue )
-				_token = new Tokenset.Token( '\u0000', "", false, 0 ) ;
+				_token = Tokenset.Empty ;
 			t = -rule ;
 			b.yy = xo_t[t] ;
 			if( goto_v || (t = gotoset_s( b.yy )) == __default )

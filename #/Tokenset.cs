@@ -1,6 +1,7 @@
 public static partial class Tokenset
 	{
 	static int index = 0 ;
+	public static readonly Token Empty = new Tokenset.Token( '\u0000', "", false, 0 ) ;
 	public static Token Input
 		{
 		get {
