@@ -249,6 +249,7 @@ class Xo_t
 			}
 		list = "" ;
 		string gotoset = "" ;
+		string gotoset_nv = "a.gotoset_"+i+"_0" ;
 		if( stateset[i].Gotoset.GetLength(0) > 3 )
 			{
 			int zi ;
@@ -291,11 +292,7 @@ class Xo_t
 				list += "if( yy == "+x+" ) return "+v3+" ;"+q+"\n\t\t" ;
 				}
 			if( list.Length != 0 )
-				{
-				X.Auto["i"] = "0" ;
-				X.Auto["list"] = list + "return __default ;" ;
-				gotoset = put("A335-Xo_t-_io-1-gotoset") ;
-				}
+				gotoset_nv = "(yy) =>\n\t\t{\n\t\t"+list+"return __default ;\n\t\t}" ;
 			}
 		list = "" ;
 		string b = "" ;
@@ -314,7 +311,7 @@ class Xo_t
 				list += "a.reductionset_s  = reductionset_"+i+" ;\n\t" ;
 			}
 		if( ! gotoset_volatile )
-			list += "a.gotoset_s     = a.gotoset_"+i+"_0 ;\n\t" ;
+			list += "a.gotoset_s     = "+gotoset_nv+" ;\n\t" ;
 		if( ! volatile_b )
 			list += list_v ;
 		list += "return "+_rule+" ;" ;
