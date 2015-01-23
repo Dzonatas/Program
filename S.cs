@@ -288,6 +288,7 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 			itemset           = new Itemset[0] ;
 			reductionset      = new Reduction[0] ;
 			lookaheadset      = new int[0] ;
+			from_states       = new int[0] ;
 			default_item      = null ;
 			default_reduction = null ;
 			}
@@ -300,6 +301,7 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 	public Reduction []         Reductionset          { get { return reductionset ; } }
 	public Nullable<int>        Default_item          { get { return default_item ; } set { default_item = value ; } }
 	public Nullable<int>        Default_reduction     { get { return default_reduction ; } set { default_reduction = value ; } }
+	public int[]                FromStates            { get { return from_states ; } }
 	Number               debit ;
 	Itemset []           itemset ;
 	Transition []        transitionset ;
@@ -309,6 +311,13 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 	Reduction []         reductionset ;
 	Nullable<int>        default_item ;
 	Nullable<int>        default_reduction ;
+	int []               from_states ;
+
+	public void Append( int i )
+		{
+		System.Array.Resize(ref from_states, from_states.Length + 1 ) ;
+		from_states[ from_states.Length - 1 ] = i ;
+		}
 
 	public void Append( Itemset i )
 		{

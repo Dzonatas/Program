@@ -9,6 +9,7 @@ partial class Automaton
 	bool         goto_v        ;
 	System.Func<int,long> reductionset_s ;
 	System.Func<int,long> gotoset_s ;
+	static System.Func<Automaton,long> edge_case ;
 	Tokenset.Token                _token ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
