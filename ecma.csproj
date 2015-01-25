@@ -179,5 +179,6 @@
     <None Include="~\test3\hello.world.cs" />
     <None Include="~\X.Y.cs" />
     <None Include="#\Auto.xml" />
+    <None Include="README.md" />
   </ItemGroup>
 </Project>
