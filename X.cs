@@ -249,12 +249,7 @@ class Xo_t
 				tabs++ ;
 				list += "if( token.point == "+x+" )"+tab ;
 				list += "{"+tab ;
-				tabs++ ;
-				list += "edge_case = (aa) =>"+tab ;
-				list += "{ "+tab ;
-				list += _io(vs,true)+tab ;
-				tabs-- ;
-				list += "} ;"+tab ;
+				list += "edge_case = "+_io(vs,true)+tab ;
 				list += "return "+v3+" ;"+q+tab ;
 				tabs-- ;
 				list += "}"+tab ;
@@ -316,14 +311,7 @@ class Xo_t
 				if( zb )
 					list += "gotoset_s = "+zf+" ; " ;
 				if( ToStateVolatile( vs ) )
-					{
-					tabs++ ;
-					list += "edge_case = (aa) =>"+tab ;
-					list += "{"+tab ;
-					list += _io(vs,true)+tab ;
-					tabs-- ;
-					list += "} ;"+tab ;
-					}
+					list += "edge_case = "+_io(vs,true)+tab ;
 				list += "return "+v3+" ;"+q+tab ;
 				tabs-- ;
 				list += "}"+tab ;
@@ -363,12 +351,7 @@ class Xo_t
 					tabs+=2 ;
 					list += "if( yy == "+x+" )"+tab ;
 					list += "{"+tab ;
-					tabs++ ;
-					list += "edge_case = (aa) =>"+tab ;
-					list +=  "{"+tab ;
-					list +=  ""+_io(vs,true)+tab ;
-					tabs-- ;
-					list +=  "} ;"+tab ;
+					list += "edge_case = "+_io(vs,true)+tab ;
 					list += "return "+v3+" ;"+q+tab ;
 					tabs-- ;
 					list += "}"+tab ;
@@ -389,6 +372,12 @@ class Xo_t
 			tabs = _tabs ;
 			}
 		list = "" ;
+		if( edge )
+			{
+			tabs++ ;
+			list += "("+_a+") =>"+tab ;
+			list += "{"+tab ;
+			}
 		if( io_volatile )
 			list += "log( \""+i+"(v)\" ) ;"+tab ;
 		string b = "" ;
@@ -412,7 +401,12 @@ class Xo_t
 			list += list_v ;
 		list += "return "+_rule+" ;" ;
 		if( edge )
+			{
+			list += tab ;
+			tabs-- ;
+			list += "} ;" ;
 			return list ;
+			}
 		X.Auto["list"] = list ;
 		string sets = lookahead + shiftset + reductionset + gotoset ;
 		if( i == 0 || i >= xo_t.Length )
