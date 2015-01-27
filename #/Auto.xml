@@ -92,21 +92,21 @@ partial class Automaton {
 </A335-Xo_t-_io-1>
 <A335-Xo_t-_io-1-lookaheadset>
 	static bool lookahead&point;()
-		{
-		&list;
-		}
+	{
+	&list;
+	}
 </A335-Xo_t-_io-1-lookaheadset>
 <A335-Xo_t-_io-1-reductionset>
 	static long reductionset&point;( int yy )
-		{
-		&list;
-		}
+	{
+	&list;
+	}
 </A335-Xo_t-_io-1-reductionset>
 <A335-Xo_t-_io-1-gotoset>
 	long gotoset&point;_&i;( int yy )
-		{
-		&list;
-		}
+	{
+	&list;
+	}
 </A335-Xo_t-_io-1-gotoset>
 <A335-Xo_t-_io-2>
 }
