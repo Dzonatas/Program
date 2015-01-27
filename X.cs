@@ -214,7 +214,12 @@ class Xo_t
 			}
 		string list = "" ;
 		if( stateset[i].Lookaheadset.Length == 1 )
-			list += "if( token.point == "+stateset[i].Lookaheadset[0]+" ) return true ;"+tab ;
+			{
+			tabs++ ;
+			list += "if( token.point == "+stateset[i].Lookaheadset[0]+" )"+tab ;
+			tabs-- ;
+			list += "return true ;"+tab ;
+			}
 		else
 		if( stateset[i].Lookaheadset.Length > 0 )
 			{
@@ -223,7 +228,10 @@ class Xo_t
 			for( z = 0 ; z < stateset[i].Lookaheadset.Length-1 ; z++ )
 				list += "token.point == "+stateset[i].Lookaheadset[z]
 				+ ( z%3 == 2 ? tab : "" ) +" || " ;
-			list += "token.point == "+stateset[i].Lookaheadset[z]+" ) return true ;"+tab ;
+			tabs++ ;
+			list += "token.point == "+stateset[i].Lookaheadset[z]+" )"+tab ;
+			tabs-- ;
+			list += "return true ;"+tab ;
 			}
 		string list_v = "" ;
 		string lookahead = "" ;
@@ -231,7 +239,10 @@ class Xo_t
 			{
 			X.Auto["list"] = list + "return false ;" ;
 			lookahead = put("A335-Xo_t-_io-1-lookaheadset") ;
-			list_v += "if( ("+_a+".lookahead_b = lookahead_"+i+"()) ) return "+_rule+" ;"+tab ;
+			tabs++ ;
+			list_v += "if( ("+_a+".lookahead_b = lookahead_"+i+"()) )"+tab ;
+			tabs-- ;
+			list_v += "return "+_rule+" ;"+tab ;
 			}
 		list = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
@@ -254,7 +265,12 @@ class Xo_t
 				list += "}"+tab ;
 				}
 			else
-				list += "if( token.point == "+x+" ) return "+v3+" ;"+q+tab ;
+				{
+				tabs++ ;
+				list += "if( token.point == "+x+" )"+tab ;
+				tabs-- ;
+				list += "return "+v3+" ;"+q+tab ;
+				}
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else"+tab ;
 			}
@@ -358,7 +374,9 @@ class Xo_t
 				else
 					{
 					tabs++ ;
-					list += "if( yy == "+x+" ) return "+v3+" ;"+q+tab ;
+					list += "if( yy == "+x+" )"+tab ;
+					tabs-- ;
+					list += "return "+v3+" ;"+q+tab ;
 					}
 				}
 			tabs = _tabs ;
