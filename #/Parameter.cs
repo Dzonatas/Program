@@ -30,6 +30,7 @@ namespace Cluster
 			parameter.Add( "shell",    "/bin/sh"  ) ;
 			parameter.Add( "build",    (Program.Proxy && Current.Path.Existed) ? "false" : "true"  ) ;
 			parameter.Add( "headless", "false" ) ;	//https://code.google.com/p/dpkg-scripts/wiki/HOWTO#Creating_a_Simple_Package
+			parameter.Add( "reflection", "false" ) ;
 			#if PRIMED
 			parameter.Add( "primer",    "xinit -- :0 -layout \"Default\""  ) ;
 			#endif

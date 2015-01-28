@@ -137,6 +137,9 @@ static int    b_v      ;//view:locution[,view:orbit]
 
 static void Begin()
 	{
+	if( Cluster.Parameter.Value("reflection") == "false" )
+		if( Current.Path.Exists( "main.c" ) )
+			return ;
 	Cluster.Cli.Start( Cluster.Parameter.Value("shell"), Tokenset.Assimulation ) ;
 	var types =
 		from  type in Assembly.GetExecutingAssembly().GetTypes()

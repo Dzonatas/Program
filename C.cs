@@ -462,6 +462,10 @@ static class Path
 		{
 		return path + "/" + name ;
 		}
+	static public bool Exists( string name )
+		{
+		return System.IO.File.Exists( Entry( name ) ) ;
+		}
 	static public bool Existed
 		{
 		get { return directory != null && directory.Exists ; }
