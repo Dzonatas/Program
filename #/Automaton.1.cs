@@ -6,7 +6,6 @@ partial class Automaton
 	bool         lookahead_b   ;
 	bool         volatile_b    ;
 	bool         goto_v        ;
-	System.Func<int,long> reductionset_s ;
 	System.Func<int,long> gotoset_s ;
 	static System.Func<Automaton,long> edge_case ;
 	Tokenset.Token                _token ;

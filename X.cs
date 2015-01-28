@@ -213,38 +213,71 @@ class Xo_t
 			break ;
 			}
 		string list = "" ;
-		if( stateset[i].Lookaheadset.Length == 1 )
+		if( tab_b )
 			{
 			tabs++ ;
-			list += "if( token.point == "+stateset[i].Lookaheadset[0]+" )"+tab ;
-			tabs-- ;
-			list += "return true ;"+tab ;
+			list += "("+_a+") =>"+tab ;
+			list += "{"+tab ;
+			}
+		if( io_volatile )
+			list += "log(\""+i+"\") ;"+tab ;
+		if( volatile_b || gotoset_volatile )
+			list += ( volatile_b ? _a+".volatile_b = " : "" )
+				+ ( gotoset_volatile ? _a+".goto_v = " : "" )
+				+ "true ;"+tab ;
+		list += _a+".rule           = "+rule+" ;"+tab ;
+		string gotoset = "" ;
+		if( stateset[i].Gotoset.GetLength(0) > 3 )
+			{
+			list += _a+".gotoset_s = "+_a+".gotoset_"+i+"_0 ;"+tab ;
+			gotoset = gotoset_list( i ) ;
 			}
 		else
+		if( ! gotoset_volatile )
+			{
+			tabs++ ;
+			list += _a+".gotoset_s = (yy) =>"+tab ;
+			list += "{"+tab ;
+			list += gotoset_nv_list( i ) ;
+			list += "return __default ;"+tab ;
+			tabs-- ;
+			list += "} ;"+tab ;
+			}
 		if( stateset[i].Lookaheadset.Length > 0 )
 			{
-			list += "if( " ;
+			tabs++ ;
+			list += "if( ("+_a+".lookahead_b = " ;
 			int z ;
 			for( z = 0 ; z < stateset[i].Lookaheadset.Length-1 ; z++ )
 				list += "token.point == "+stateset[i].Lookaheadset[z]
-				+ ( z%3 == 2 ? tab : "" ) +" || " ;
-			tabs++ ;
-			list += "token.point == "+stateset[i].Lookaheadset[z]+" )"+tab ;
+				+ " ? true"+( z%3 == 2 ? tab : "" ) +" : " ;
+			list += "token.point == "+stateset[i].Lookaheadset[z]+" ? true : false ) )"+tab ;
 			tabs-- ;
-			list += "return true ;"+tab ;
+			list += "return "+_rule+" ; "+tab ;
 			}
-		string list_v = "" ;
-		string lookahead = "" ;
-		if( list.Length != 0 )
+		list += shiftset_list( i ) ;
+		list += "return "+_rule+" ;" ;
+		if( tab_b )
 			{
-			X.Auto["list"] = list + "return false ;" ;
-			lookahead = put("A335-Xo_t-_io-1-lookaheadset") ;
-			tabs++ ;
-			list_v += "if( ("+_a+".lookahead_b = lookahead_"+i+"()) )"+tab ;
+			list += tab ;
 			tabs-- ;
-			list_v += "return "+_rule+" ;"+tab ;
+			list += "} ;" ;
+			return list ;
 			}
-		list = "" ;
+		string reductionset = reduction_volatile ? "" : reductionset_list( i, rule ) ;
+		X.Auto["list"] = list ;
+		string sets = reductionset + gotoset ;
+		if( i == 0 || i >= xo_t.Length )
+			return (io_volatile ? "" : put("A335-Xo_t-_io-1"))+sets ;
+		X.Auto["namespace"] = xo_t[i].lhs.s + "._" + xo_t[i].lhs.X ;
+		X.Auto["signal"]    = X.Auto[ "_"+xo_t[i].lhs.X ] ;
+		X.Auto["argc"]      = xo_t[i].rhs.Length.ToString() ;
+		X.Auto["i"]         = '-'+i.ToString() ;
+		return put("A335-Xo_t-_io-_1")+(io_volatile ? "" : put("A335-Xo_t-_io-1"))+sets ;
+		}
+	static string shiftset_list( int i )
+		{
+		string list = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
 			{
 			Transition  t = stateset[i].Transitionset[ stateset[i].Shiftset[z,1] ] ;
@@ -267,148 +300,93 @@ class Xo_t
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else"+tab ;
 			}
-		string shiftset = "" ;
+		return list ;
+		}
+	static string reductionset_list( int i, string rule )
+		{
+		string list = "" ;
+		tabs++ ;
+		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
+			{
+			Reduction r = stateset[i].Reductionset[z] ;
+			if( ! r.enabled )
+				continue ;
+			if( r.symbol == _default )
+				continue ;
+			list += "if( yy == "+r.symbol+" ) return -"+stateset[i].Reductionset[z].rule+" ;"+tab ;
+			}
 		if( list.Length != 0 )
 			{
-			list_v += list ;
+			X.Auto["list"] = list + "return "+rule+" ;" ;
+			list = put("A335-Xo_t-_io-1-reductionset") ;
 			}
-		list = "" ;
-		string reductionset = "" ;
-		if( ! reduction_volatile )
+		tabs-- ;
+		return list ;
+		}
+	static string gotoset_nv_list( int i )
+		{
+		int _tabs = tabs ;
+		string list = "" ;
+		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
 			{
+			tabs = _tabs ;
+			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
+			string      q = "\t/* +"+(string)t+" */" ;
 			tabs++ ;
-			for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
+			list += "if( yy == "+stateset[i].Gotoset[z,0]+" )"+tab ;
+			if( ToStateVolatile( t.state ) )
 				{
-				Reduction r = stateset[i].Reductionset[z] ;
-				if( ! r.enabled )
-					continue ;
-				if( r.symbol == _default )
-					continue ;
-				list += "if( yy == "+r.symbol+" ) return -"+stateset[i].Reductionset[z].rule+" ;"+tab ;
-				}
-			if( list.Length != 0 )
-				{
-				X.Auto["list"] = list + "return "+rule+" ;" ;
-				reductionset = put("A335-Xo_t-_io-1-reductionset") ;
-				}
-			tabs-- ;
-			}
-		list = "" ;
-		string gotoset = "" ;
-		string gotoset_nv = _a+".gotoset_"+i+"_0" ;
-		if( stateset[i].Gotoset.GetLength(0) > 3 )
-			{
-			int zi ;
-			int _tabs = tabs ;
-			for( zi = 0 ; zi < stateset[i].Gotoset.GetLength(0) ; zi++ )
-				{
-				tabs = _tabs ;
-				Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
-				string      q = "\t/* +"+(string)t+" */" ;
-				bool       zb = zi != stateset[i].Gotoset.GetLength(0)-1 ;
-				string     zf = "gotoset_"+i+"_"+(zi+1) ;
-				tabs++ ;
-				list  = "if( yy == "+stateset[i].Gotoset[zi,0]+" )"+tab ;
 				list += "{"+tab ;
-				if( zb )
-					list += "gotoset_s = "+zf+" ;"+tab ;
-				if( ToStateVolatile( t.state ) )
-					list += "edge_case = "+_io(t.state)+tab ;
+				list += "edge_case = "+_io(t.state)+tab ;
 				list += "return "+(ulong)t+" ;"+q+tab ;
 				tabs-- ;
 				list += "}"+tab ;
-				if( zb )
-					X.Auto["list"] = list + "return "+zf+"( yy ) ;" ;
-				else
-					{
-					list += "if( gotoset_s == gotoset_"+i+"_0 ) return __default ;"+tab ;
-					list += "gotoset_s = gotoset_"+i+"_0 ;"+tab ;
-					X.Auto["list"] = list + "return gotoset_"+i+"_0( yy ) ;" ;
-					}
-				X.Auto["i"] = zi.ToString() ;
-				gotoset += put("A335-Xo_t-_io-1-gotoset") ;
 				}
-			tabs = _tabs ;
-			}
-		else
-			{
-			if( ! gotoset_volatile )
+			else
 				{
-				tabs++ ;
-				gotoset_nv  = "(yy) =>"+tab ;
-				gotoset_nv += "{"+tab ;
-				}
-			int _tabs = tabs ;
-			for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
-				{
-				tabs = _tabs ;
-				Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
-				string      q = "\t/* +"+(string)t+" */" ;
-				tabs++ ;
-				list += "if( yy == "+stateset[i].Gotoset[z,0]+" )"+tab ;
-				if( ToStateVolatile( t.state ) )
-					{
-					list += "{"+tab ;
-					list += "edge_case = "+_io(t.state)+tab ;
-					list += "return "+(ulong)t+" ;"+q+tab ;
-					tabs-- ;
-					list += "}"+tab ;
-					}
-				else
-					{
-					tabs-- ;
-					list += "return "+(ulong)t+" ;"+q+tab ;
-					}
-				}
-			tabs = _tabs ;
-			if( ! gotoset_volatile )
-				{
-				gotoset_nv += list ;
-				gotoset_nv += "return __default ;"+tab ;
-				gotoset_nv += "}" ;
 				tabs-- ;
+				list += "return "+(ulong)t+" ;"+q+tab ;
 				}
 			}
-		list = "" ;
-		if( tab_b )
+		tabs = _tabs ;
+		return list ;
+		}
+	static string gotoset_list( int i )
+		{
+		int zi ;
+		int _tabs = tabs ;
+		string list ;
+		string gotoset = "" ;
+		for( zi = 0 ; zi < stateset[i].Gotoset.GetLength(0) ; zi++ )
 			{
+			tabs = _tabs ;
+			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
+			string      q = "\t/* +"+(string)t+" */" ;
+			bool       zb = zi != stateset[i].Gotoset.GetLength(0)-1 ;
+			string     zf = "gotoset_"+i+"_"+(zi+1) ;
 			tabs++ ;
-			list += "("+_a+") =>"+tab ;
+			list  = "if( yy == "+stateset[i].Gotoset[zi,0]+" )"+tab ;
 			list += "{"+tab ;
-			}
-		if( io_volatile )
-			list += "log(\""+i+"\") ;"+tab ;
-		if( volatile_b || gotoset_volatile )
-			list += ( volatile_b ? _a+".volatile_b = " : "" )
-				+ ( gotoset_volatile ? _a+".goto_v = " : "" )
-				+ "true ;"+tab ;
-		list += _a+".rule           = "+rule+" ;"+tab ;
-		if( ! reduction_volatile )
-			{
-			if( reductionset.Length != 0 )
-				list += _a+".reductionset_s  = reductionset_"+i+" ;"+tab ;
-			}
-		if( ! gotoset_volatile )
-			list += _a+".gotoset_s     = "+gotoset_nv+" ;"+tab ;
-		if( ! volatile_b )
-			list += list_v ;
-		list += "return "+_rule+" ;" ;
-		if( tab_b )
-			{
-			list += tab ;
+			if( zb )
+				list += "gotoset_s = "+zf+" ;"+tab ;
+			if( ToStateVolatile( t.state ) )
+				list += "edge_case = "+_io(t.state)+tab ;
+			list += "return "+(ulong)t+" ;"+q+tab ;
 			tabs-- ;
-			list += "} ;" ;
-			return list ;
+			list += "}"+tab ;
+			if( zb )
+				X.Auto["list"] = list + "return "+zf+"( yy ) ;" ;
+			else
+				{
+				list += "if( gotoset_s == gotoset_"+i+"_0 ) return __default ;"+tab ;
+				list += "gotoset_s = gotoset_"+i+"_0 ;"+tab ;
+				X.Auto["list"] = list + "return gotoset_"+i+"_0( yy ) ;" ;
+				}
+			X.Auto["i"] = zi.ToString() ;
+			gotoset += put("A335-Xo_t-_io-1-gotoset") ;
 			}
-		X.Auto["list"] = list ;
-		string sets = lookahead + shiftset + reductionset + gotoset ;
-		if( i == 0 || i >= xo_t.Length )
-			return (io_volatile ? "" : put("A335-Xo_t-_io-1"))+sets ;
-		X.Auto["namespace"] = xo_t[i].lhs.s + "._" + xo_t[i].lhs.X ;
-		X.Auto["signal"]    = X.Auto[ "_"+xo_t[i].lhs.X ] ;
-		X.Auto["argc"]      = xo_t[i].rhs.Length.ToString() ;
-		X.Auto["i"]         = '-'+i.ToString() ;
-		return put("A335-Xo_t-_io-_1")+(io_volatile ? "" : put("A335-Xo_t-_io-1"))+sets ;
+		tabs = _tabs ;
+		return gotoset ;
 		}
 	public static string put( string s )
 		{
