@@ -19,10 +19,22 @@ public struct Transition
 		{
 		return t.symbol ;
 		}
+	static public implicit operator ulong( Transition t )
+		{
+		ulong v1 = (ulong)t.item.rule ;
+		ulong v2 = (ulong)t.item.point ;
+		int   vs = t.state ;
+		ulong v3 = (v1 << 32) | (v2 << 16) | (ulong)vs ;
+		return v3 ;
+		}
+	static public explicit operator string( Transition t )
+		{
+		return string.Format( "{0}, {1}, {2}", t.item.rule, t.item.point, t.state ) ;
+		}
 	public override string ToString()
-			{
-			return string.Format( "({0},{1},{2},{3})", type, symbol, state,item ) ;
-			}
+		{
+		return string.Format( "({0},{1},{2},{3})", type, symbol, state,item ) ;
+		}
 	}
 	
 static bool transition( int i, out Transition tr )

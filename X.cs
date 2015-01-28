@@ -247,29 +247,22 @@ class Xo_t
 		list = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
 			{
-			int x = stateset[i].Shiftset[z,0] ;
-			int y = stateset[i].Shiftset[z,1] ;
-			ulong v1 = (ulong)stateset[i].Transitionset[y].item.rule ;
-			ulong v2 = (ulong)stateset[i].Transitionset[y].item.point ;
-			int   vs = stateset[i].Transitionset[y].state ;
-			ulong v3 = (v1 << 32) | (v2 << 16) | (ulong)vs ;
-			string q = string.Format( "\t/* {0}, {1}, {2},  {3} */", v1, v2, (ulong)stateset[i].Transitionset[y].state, ToStateVolatile( vs ) ) ;
-			if( ToStateVolatile( vs ) )
+			Transition  t = stateset[i].Transitionset[ stateset[i].Shiftset[z,1] ] ;
+			string      q = "\t/* +"+(string)t+" */" ;
+			tabs++ ;
+			list += "if( token.point == "+stateset[i].Shiftset[z,0]+" )"+tab ;
+			if( ToStateVolatile( t.state ) )
 				{
-				tabs++ ;
-				list += "if( token.point == "+x+" )"+tab ;
 				list += "{"+tab ;
-				list += "edge_case = "+_io(vs)+tab ;
-				list += "return "+v3+" ;"+q+tab ;
+				list += "edge_case = "+_io(t.state)+tab ;
+				list += "return "+(ulong)t+" ;"+q+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
 			else
 				{
-				tabs++ ;
-				list += "if( token.point == "+x+" )"+tab ;
 				tabs-- ;
-				list += "return "+v3+" ;"+q+tab ;
+				list += "return "+(ulong)t+" ;"+q+tab ;
 				}
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else"+tab ;
@@ -310,24 +303,18 @@ class Xo_t
 			for( zi = 0 ; zi < stateset[i].Gotoset.GetLength(0) ; zi++ )
 				{
 				tabs = _tabs ;
-				X.Auto["i"] = zi.ToString() ;
-				int x = stateset[i].Gotoset[zi,0] ;
-				int y = stateset[i].Gotoset[zi,1] ;
-				ulong v1 = (ulong)stateset[i].Transitionset[y].item.rule ;
-				ulong v2 = (ulong)stateset[i].Transitionset[y].item.point ;
-				int   vs = stateset[i].Transitionset[y].state ;
-				ulong v3 = (v1 << 32) | (v2 << 16) | (ulong)vs ;
-				string q = string.Format( "\t/* {0}, {1}, {2} */", v1, v2, (ulong)stateset[i].Transitionset[y].state ) ;
-				bool zb = zi != stateset[i].Gotoset.GetLength(0)-1 ;
-				string zf = "gotoset_"+i+"_"+(zi+1) ;
-				tabs++ ; ;
-				list  = "if( yy == "+x+" )"+tab ;
+				Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
+				string      q = "\t/* +"+(string)t+" */" ;
+				bool       zb = zi != stateset[i].Gotoset.GetLength(0)-1 ;
+				string     zf = "gotoset_"+i+"_"+(zi+1) ;
+				tabs++ ;
+				list  = "if( yy == "+stateset[i].Gotoset[zi,0]+" )"+tab ;
 				list += "{"+tab ;
 				if( zb )
 					list += "gotoset_s = "+zf+" ;"+tab ;
-				if( ToStateVolatile( vs ) )
-					list += "edge_case = "+_io(vs)+tab ;
-				list += "return "+v3+" ;"+q+tab ;
+				if( ToStateVolatile( t.state ) )
+					list += "edge_case = "+_io(t.state)+tab ;
+				list += "return "+(ulong)t+" ;"+q+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				if( zb )
@@ -338,6 +325,7 @@ class Xo_t
 					list += "gotoset_s = gotoset_"+i+"_0 ;"+tab ;
 					X.Auto["list"] = list + "return gotoset_"+i+"_0( yy ) ;" ;
 					}
+				X.Auto["i"] = zi.ToString() ;
 				gotoset += put("A335-Xo_t-_io-1-gotoset") ;
 				}
 			tabs = _tabs ;
@@ -354,29 +342,22 @@ class Xo_t
 			for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
 				{
 				tabs = _tabs ;
-				int x = stateset[i].Gotoset[z,0] ;
-				int y = stateset[i].Gotoset[z,1] ;
-				ulong v1 = (ulong)stateset[i].Transitionset[y].item.rule ;
-				ulong v2 = (ulong)stateset[i].Transitionset[y].item.point ;
-				int   vs = stateset[i].Transitionset[y].state ;
-				ulong v3 = (v1 << 32) | (v2 << 16) | (ulong)vs ;
-				string q = string.Format( "\t/* {0}, {1}, {2} */", v1, v2, (ulong)stateset[i].Transitionset[y].state ) ;
-				if( ToStateVolatile( vs ) )
+				Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
+				string      q = "\t/* +"+(string)t+" */" ;
+				tabs++ ;
+				list += "if( yy == "+stateset[i].Gotoset[z,0]+" )"+tab ;
+				if( ToStateVolatile( t.state ) )
 					{
-					tabs++ ;
-					list += "if( yy == "+x+" )"+tab ;
 					list += "{"+tab ;
-					list += "edge_case = "+_io(vs)+tab ;
-					list += "return "+v3+" ;"+q+tab ;
+					list += "edge_case = "+_io(t.state)+tab ;
+					list += "return "+(ulong)t+" ;"+q+tab ;
 					tabs-- ;
 					list += "}"+tab ;
 					}
 				else
 					{
-					tabs++ ;
-					list += "if( yy == "+x+" )"+tab ;
 					tabs-- ;
-					list += "return "+v3+" ;"+q+tab ;
+					list += "return "+(ulong)t+" ;"+q+tab ;
 					}
 				}
 			tabs = _tabs ;
