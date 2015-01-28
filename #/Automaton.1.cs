@@ -5,7 +5,6 @@ partial class Automaton
 	long         shiftset_i    ;
 	bool         lookahead_b   ;
 	bool         volatile_b    ;
-	bool         reduction_v   ;
 	bool         goto_v        ;
 	System.Func<int,long> reductionset_s ;
 	System.Func<int,long> gotoset_s ;

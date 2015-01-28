@@ -377,16 +377,11 @@ class Xo_t
 			list += "{"+tab ;
 			}
 		if( io_volatile )
-			list += "log( \""+i+"(v)\" ) ;"+tab ;
-		string b = "" ;
-		if( volatile_b )
-			b += _a+".volatile_b = " ;
-		if( reduction_volatile || reductionset.Length == 0 )
-			b += _a+".reduction_v = " ;
-		if( gotoset_volatile )
-			b += _a+".goto_v = " ;
-		if( b.Length != 0 )
-			list += b+"true ;"+tab ;
+			list += "log(\""+i+"\") ;"+tab ;
+		if( volatile_b || gotoset_volatile )
+			list += ( volatile_b ? _a+".volatile_b = " : "" )
+				+ ( gotoset_volatile ? _a+".goto_v = " : "" )
+				+ "true ;"+tab ;
 		list += _a+".rule           = "+rule+" ;"+tab ;
 		if( ! reduction_volatile )
 			{
