@@ -200,7 +200,9 @@ class Xo_t
 		string _a = tabs_i == 1 ? "a" : "aa" ;
 		if( stateset[i].Default_reduction.HasValue )
 			rule = '-'+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
-		string _rule = _a+".rule" ;
+		string _rule = rule ;
+		if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
+			_rule = "__"+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+"()" ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
 			{
 			Reduction r = stateset[i].Reductionset[z] ;
@@ -209,7 +211,7 @@ class Xo_t
 			if( r.symbol == _default )
 				continue ;
 			if( ! volatile_b )
-				_rule = _a+".rule = reductionset_"+i+"( token.point )" ;
+				_rule = "reductionset_"+i+"( token.point )" ;
 			break ;
 			}
 		string list = "" ;
@@ -225,7 +227,6 @@ class Xo_t
 			list += ( volatile_b ? _a+".volatile_b = " : "" )
 				+ ( gotoset_volatile ? _a+".goto_v = " : "" )
 				+ "true ;"+tab ;
-		list += _a+".rule           = "+rule+" ;"+tab ;
 		string gotoset = "" ;
 		if( stateset[i].Gotoset.GetLength(0) > 3 )
 			{
@@ -256,7 +257,7 @@ class Xo_t
 			list += "return "+_rule+" ; "+tab ;
 			}
 		list += shiftset_list( i ) ;
-		list += "return "+_rule+" ;" ;
+			list += "return "+_rule+" ;" ;
 		if( tab_b )
 			{
 			list += tab ;
@@ -264,7 +265,7 @@ class Xo_t
 			list += "} ;" ;
 			return list ;
 			}
-		string reductionset = reduction_volatile ? "" : reductionset_list( i, rule ) ;
+		string reductionset = reduction_volatile ? "" : reductionset_list( i ) ;
 		X.Auto["list"] = list ;
 		string sets = reductionset + gotoset ;
 		if( i == 0 || i >= xo_t.Length )
@@ -302,10 +303,9 @@ class Xo_t
 			}
 		return list ;
 		}
-	static string reductionset_list( int i, string rule )
+	static string reductionset_list( int i )
 		{
 		string list = "" ;
-		tabs++ ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
 			{
 			Reduction r = stateset[i].Reductionset[z] ;
@@ -313,14 +313,17 @@ class Xo_t
 				continue ;
 			if( r.symbol == _default )
 				continue ;
-			list += "if( yy == "+r.symbol+" ) return -"+stateset[i].Reductionset[z].rule+" ;"+tab ;
+			tabs++ ;
+			list += "if( yy == "+r.symbol+" )"+tab ;
+			tabs-- ;
+			list += "return __"+stateset[i].Reductionset[z].rule+"() ;"+tab ;
 			}
 		if( list.Length != 0 )
 			{
-			X.Auto["list"] = list + "return "+rule+" ;" ;
+			X.Auto["list"] = list + "return __"
+				+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+"() ;" ;
 			list = put("A335-Xo_t-_io-1-reductionset") ;
 			}
-		tabs-- ;
 		return list ;
 		}
 	static string gotoset_nv_list( int i )

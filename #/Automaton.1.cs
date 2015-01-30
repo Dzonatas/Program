@@ -1,12 +1,11 @@
 using Debug = System.Console ;
 partial class Automaton
 	{
-	long         rule          ;
-	long         shiftset_i    ;
+	long         transit_i    ;
 	bool         lookahead_b   ;
 	bool         volatile_b    ;
 	bool         goto_v        ;
-	System.Func<int,long> gotoset_s ;
+	System.Func<int,ulong> gotoset_s ;
 	static System.Func<Automaton,long> edge_case ;
 	Tokenset.Token                _token ;
 	static Tokenset.Token         token ;
@@ -15,7 +14,7 @@ partial class Automaton
 	static global::Item auto ;
 	public Automaton( System.Func<Automaton,long> _set )
 		{
-		shiftset_i = _set( this ) ;
+		transit_i = _set( this ) ;
 		}
 	static void log( string point )
 		{
@@ -72,35 +71,39 @@ partial class Automaton
 	int deploy( ref planet b )
 		{
 		planet     xyzzy ;
-		long t = shiftset_i ;
-		if( t > 0 && t <= __default )
-			log( "("+t+")" ) ;
+		ulong t ;
+		if( transit_i > 0 && transit_i <= __default )
+			log( "("+transit_i+")" ) ;
 		if( ! ( volatile_b || lookahead_b ) )
 			{
 			_token = token ;
 			token_HasValue = false ;
+			t = (ulong)transit_i ;
 			}
 		else
-		if( t <= 0 )
+		if( transit_i <= 0 )
 			{
 			if( token_HasValue )
 				_token = Tokenset.Empty ;
-			t = -rule ;
-			b.yy = xo_t[t] ;
-			if( goto_v || (t = gotoset_s( b.yy )) == __default )
-				return xo_r[-rule]() ;
+			if( goto_v )
+				return (int)transit_i ;
+			if( (t = gotoset_s( xo_t[-transit_i] )) == __default )
+				return xo_r[-transit_i]() ;
 			}
+		else
+			t = (ulong)transit_i ;
 		do	{
-			xyzzy = new planet( (ulong)t ) ;
+			xyzzy = new planet( t ) ;
 			xyzzy.auto._token = _token ;
-			if( (t = xyzzy.auto.deploy( ref xyzzy )) >= 0 )
+			int i ;
+			if( (i = xyzzy.auto.deploy( ref xyzzy )) >= 0 )
 				b.yy = xyzzy.yy ;
 			else
 				{
 				(auto as bis.Auto).Argv = _token ;
 				if( --backup > 0 )
-					return (int)t ;
-				b.yy = xo_t[-t] ;
+					return (int)i ;
+				b.yy = xo_t[-i] ;
 				(auto as bis.Auto).Splice() ;
 				}
 			} while( (! goto_v) && (t = gotoset_s( b.yy )) != __default ) ;
