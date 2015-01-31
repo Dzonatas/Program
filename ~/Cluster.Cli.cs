@@ -97,5 +97,9 @@ public static class Cli
 		{
 		Shell.system( "for file in "+arg2+" ; do ln -fs "+arg1+" $file ; done" ) ;
 		}
+	static public void Time( string arg1 )
+		{
+		Shell.system( "for i in 1 2 3 4 5 6 7 8 9 ; do time -f %E "+arg1+" >dev>null ; done" ) ;
+		}
 	}
 }
