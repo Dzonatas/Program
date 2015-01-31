@@ -607,13 +607,19 @@ class Xo_t
 
 static System.IO.StreamWriter items_cs ;
 static string transitions = string.Empty ;
+static bool items_cs_b ;
 
 static void xml_load_grammar()
 	{
-	items_cs = Current.Path.CreateText( "Automaton.items.cs" ) ;
-	items_cs.Write("partial class Automaton\n\t{\n\t") ;
 	if( xml_loaded )
 		return ;
+	items_cs_b = /*Cluster.Parameter.Value("reflection") == "true"
+		||*/ ! Current.Path.Exists( "Automaton.items.cs" ) ;
+	if( items_cs_b )
+		{
+		items_cs = Current.Path.CreateText( "Automaton.items.cs" ) ;
+		items_cs.Write("partial class Automaton\n\t{\n\t") ;
+		}
 	xml = new XmlTextReader( new StreamReader( "../../~/understand/grammar.xml" ) ) ;
 	while( xml.Read() )
 		if( xml.NodeType == XmlNodeType.Element && xml.Name == "bison-xml-report" )
@@ -638,9 +644,12 @@ static void xml_load_grammar()
 	foreach( State s in stateset )
 		foreach( Transition t in s.Transitionset )
 			stateset[t.state].Append( s.Number ) ;
-	items_cs.WriteLine("}") ;
-	items_cs.Close() ;
-	transitions = string.Empty ;
+	if( items_cs_b )
+		{
+		items_cs.WriteLine("}") ;
+		items_cs.Close() ;
+		transitions = string.Empty ;
+		}
 	}
 
 partial class X //_: YY
@@ -930,7 +939,7 @@ static void xml_get_transition()
 		x_state.Shiftset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
 	else
 		x_state.Gotoset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
-	if( ! transitions.Contains( (string)t ) )
+	if( items_cs_b && ! transitions.Contains( (string)t ) )
 		{
 		items_cs.Write( "const long "+(string)t+"\t= "+(ulong)t+" ;\n\t" ) ;
 		transitions += (string)t+"," ;
