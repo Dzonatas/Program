@@ -282,21 +282,20 @@ class Xo_t
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
 			{
 			Transition  t = stateset[i].Transitionset[ stateset[i].Shiftset[z,1] ] ;
-			string      q = "\t/* +"+(string)t+" */" ;
 			tabs++ ;
 			list += "if( token.point == "+stateset[i].Shiftset[z,0]+" )"+tab ;
 			if( ToStateVolatile( t.state ) )
 				{
 				list += "{"+tab ;
 				list += "edge_case = "+_io(t.state)+tab ;
-				list += "return "+(ulong)t+" ;"+q+tab ;
+				list += "return "+(string)t+" ;"+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
 			else
 				{
 				tabs-- ;
-				list += "return "+(ulong)t+" ;"+q+tab ;
+				list += "return "+(string)t+" ;"+tab ;
 				}
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else"+tab ;
@@ -334,21 +333,20 @@ class Xo_t
 			{
 			tabs = _tabs ;
 			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
-			string      q = "\t/* +"+(string)t+" */" ;
 			tabs++ ;
 			list += "if( yy == "+stateset[i].Gotoset[z,0]+" )"+tab ;
 			if( ToStateVolatile( t.state ) )
 				{
 				list += "{"+tab ;
 				list += "edge_case = "+_io(t.state)+tab ;
-				list += "return "+(ulong)t+" ;"+q+tab ;
+				list += "return "+(string)t+" ;"+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
 			else
 				{
 				tabs-- ;
-				list += "return "+(ulong)t+" ;"+q+tab ;
+				list += "return "+(string)t+" ;"+tab ;
 				}
 			}
 		tabs = _tabs ;
@@ -364,7 +362,6 @@ class Xo_t
 			{
 			tabs = _tabs ;
 			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
-			string      q = "\t/* +"+(string)t+" */" ;
 			bool       zb = zi != stateset[i].Gotoset.GetLength(0)-1 ;
 			string     zf = "gotoset_"+i+"_"+(zi+1) ;
 			tabs++ ;
@@ -374,7 +371,7 @@ class Xo_t
 				list += "gotoset_s = "+zf+" ;"+tab ;
 			if( ToStateVolatile( t.state ) )
 				list += "edge_case = "+_io(t.state)+tab ;
-			list += "return "+(ulong)t+" ;"+q+tab ;
+			list += "return "+(string)t+" ;"+tab ;
 			tabs-- ;
 			list += "}"+tab ;
 			if( zb )
@@ -608,8 +605,13 @@ class Xo_t
 //static Dictionary<string,Symbol> x_lhs_s = new Dictionary<string, Symbol>() ;
 //static Dictionary<string,Symbol> x_rhs_s = new Dictionary<string, Symbol>() ;
 
+static System.IO.StreamWriter items_cs ;
+static string transitions = string.Empty ;
+
 static void xml_load_grammar()
 	{
+	items_cs = Current.Path.CreateText( "Automaton.items.cs" ) ;
+	items_cs.Write("partial class Automaton\n\t{\n\t") ;
 	if( xml_loaded )
 		return ;
 	xml = new XmlTextReader( new StreamReader( "../../~/understand/grammar.xml" ) ) ;
@@ -636,6 +638,9 @@ static void xml_load_grammar()
 	foreach( State s in stateset )
 		foreach( Transition t in s.Transitionset )
 			stateset[t.state].Append( s.Number ) ;
+	items_cs.WriteLine("}") ;
+	items_cs.Close() ;
+	transitions = string.Empty ;
 	}
 
 partial class X //_: YY
@@ -925,6 +930,11 @@ static void xml_get_transition()
 		x_state.Shiftset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
 	else
 		x_state.Gotoset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
+	if( ! transitions.Contains( (string)t ) )
+		{
+		items_cs.Write( "const long "+(string)t+"\t= "+(ulong)t+" ;\n\t" ) ;
+		transitions += (string)t+"," ;
+		}
 	}
 
 static void xml_get_reduction()

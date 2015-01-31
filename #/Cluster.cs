@@ -103,6 +103,7 @@ public static partial class Shell
 			+ " "+Current.Path.Entry("Automaton.2.cs")
 			+ " "+Current.Path.Entry("Automaton.3.cs")
 			+ " "+Current.Path.Entry("Automaton.4.cs")
+			+ " "+Current.Path.Entry("Automaton.items.cs")
 			+ " "
 			+ "-out:" + infrastruct
 			) ;
