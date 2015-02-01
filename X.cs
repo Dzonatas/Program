@@ -366,7 +366,7 @@ class Xo_t
 			bool       zb = zi != stateset[i].Gotoset.GetLength(0)-1 ;
 			string     zf = "gotoset_"+i+"_"+(zi+1) ;
 			tabs++ ;
-			list  = "if( yy == "+stateset[i].Gotoset[zi,0]+" )"+tab ;
+			list  = "if( yy == "+(string)t.item+" )"+tab ;
 			list += "{"+tab ;
 			if( zb )
 				list += "gotoset_s = "+zf+" ;"+tab ;
