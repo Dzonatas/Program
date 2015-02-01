@@ -741,9 +741,13 @@ public struct xml_s
 		{
 		get
 			{
-			if( s[0] == '\'' )
-				return "__"+((int)s[1])+"_" ;
-			return "_"+System.Text.RegularExpressions.Regex.Replace( s, "[^A-Za-z_0-9]", "_" ) ;
+			string i = "_" ;
+			foreach( char c in s )
+				if( char.IsLetter(c) )
+					i += c ;
+				else
+					i += string.Format( "{0:X2}", (int)c ) ;
+			return i ;
 			}
 		}
 	}
