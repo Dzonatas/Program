@@ -63,6 +63,12 @@ public static class Cli
 		reset() ;
 		start( clicmd, put ) ;
 		}
+	static public void Idle()
+		{
+		if( ! p.HasExited )
+			p.WaitForExit() ;
+		reset() ;
+		}
 	static public void Refine()
 		{
 		p.WaitForExit() ;

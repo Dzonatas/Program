@@ -39,6 +39,7 @@ public struct Itemset
 	{
 	public int   rule ;
 	public int   point ;
+	public bool  empty ;
 	static public explicit operator int( Itemset i )
 		{
 		return (int)xo_t[i.rule][i.point] ;
@@ -46,6 +47,21 @@ public struct Itemset
 	static public implicit operator Xo( Itemset i )
 		{
 		return xo_t[i.rule][i.point] ;
+		}
+	static public explicit operator string( Itemset i )
+		{
+		string s1 = "_"+
+			( ( i.rule < 10 ) ? "__"
+			: ( i.rule < 100 ) ? "_"
+			: ""
+			) ;
+		if( ! i.empty )
+			{
+			string s2 = "_"+
+				( i.point < 10 ? "_" : "" ) ;
+			return s1+i.rule+s2+i.point ;
+			}
+		return s1+i.rule+"___" ;
 		}
 	public override string ToString()
 		{

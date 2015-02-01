@@ -121,6 +121,7 @@ TOS
 		throw new _.exception() ;
 		}
 #else
+	Cluster.Cli.Idle() ;
 	Cluster.Cli.Time( Current.Path.Entry("infrastructure.exe") ) ;
 	Cluster.Cli.NoOperation() ;
 #endif

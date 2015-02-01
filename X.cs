@@ -283,7 +283,8 @@ class Xo_t
 			{
 			Transition  t = stateset[i].Transitionset[ stateset[i].Shiftset[z,1] ] ;
 			tabs++ ;
-			list += "if( token.point == "+stateset[i].Shiftset[z,0]+" )"+tab ;
+			//list += "if( token.point == "+stateset[i].Shiftset[z,0]+" )"+tab ;
+			list += "if( token.point == "+(string)t.item+" )"+tab ;
 			if( ToStateVolatile( t.state ) )
 				{
 				list += "{"+tab ;
@@ -334,7 +335,7 @@ class Xo_t
 			tabs = _tabs ;
 			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
 			tabs++ ;
-			list += "if( yy == "+stateset[i].Gotoset[z,0]+" )"+tab ;
+			list += "if( yy == "+(string)t.item+" )"+tab ;
 			if( ToStateVolatile( t.state ) )
 				{
 				list += "{"+tab ;
@@ -606,15 +607,24 @@ class Xo_t
 //static Dictionary<string,Symbol> x_rhs_s = new Dictionary<string, Symbol>() ;
 
 static System.IO.StreamWriter items_cs ;
+static System.IO.StreamWriter symbols_cs ;
 static string transitions = string.Empty ;
+static bool symbols_cs_b ;
 static bool items_cs_b ;
 
 static void xml_load_grammar()
 	{
 	if( xml_loaded )
 		return ;
-	items_cs_b = /*Cluster.Parameter.Value("reflection") == "true"
-		||*/ ! Current.Path.Exists( "Automaton.items.cs" ) ;
+	symbols_cs_b = true /*Cluster.Parameter.Value("reflection") == "true"*/
+		|| ! Current.Path.Exists( "Automaton.symbols.cs" ) ;
+	items_cs_b = true /*Cluster.Parameter.Value("reflection") == "true"*/
+		|| ! Current.Path.Exists( "Automaton.items.cs" ) ;
+	if( symbols_cs_b )
+		{
+		symbols_cs = Current.Path.CreateText( "Automaton.symbols.cs" ) ;
+		symbols_cs.Write("partial class Automaton\n\t{\n\t") ;
+		}
 	if( items_cs_b )
 		{
 		items_cs = Current.Path.CreateText( "Automaton.items.cs" ) ;
@@ -644,6 +654,11 @@ static void xml_load_grammar()
 	foreach( State s in stateset )
 		foreach( Transition t in s.Transitionset )
 			stateset[t.state].Append( s.Number ) ;
+	if( symbols_cs_b )
+		{
+		symbols_cs.WriteLine("}") ;
+		symbols_cs.Close() ;
+		}
 	if( items_cs_b )
 		{
 		items_cs.WriteLine("}") ;
@@ -693,7 +708,7 @@ partial class X //_: YY
 		{ "lhs",          xml_get_lhs  },
 		{ "rhs",          () => {} },
 		{ "symbol",       () => { xml_get_symbol(rules_b) ; } },
-		{ "empty",        () => { System.Array.Resize( ref x_empty_ruleset, x_empty_ruleset.Length+1 ) ; x_empty_ruleset[x_empty_ruleset.Length-1] = x_rule.number ; } },
+		{ "empty",        xml_get_empty },
 		{ "terminals",    () => { rules_b = false ; } },
 		{ "terminal",     xml_get_terminal },
 		{ "nonterminals", () => {} },
@@ -721,6 +736,15 @@ public struct xml_s
 	public xml_s( string s )
 		{
 		this.s = s ;
+		}
+	public string _s
+		{
+		get
+			{
+			if( s[0] == '\'' )
+				return "__"+((int)s[1])+"_" ;
+			return "_"+System.Text.RegularExpressions.Regex.Replace( s, "[^A-Za-z_0-9]", "_" ) ;
+			}
 		}
 	}
 
@@ -799,12 +823,45 @@ static void xml_get_symbol( bool _rule )
 		{
 		System.Array.Resize( ref x_rule.rhs, x_rule.rhs.Length+1 ) ;
 		x_rule.rhs[x_rule.rhs.Length-1] = new xml_s( xml.Value ) ;
+		if( symbols_cs_b )
+			{
+			string s1 = "_"+
+				( ( (int)x_rule.number < 10 ) ? "__"
+				: ( (int)x_rule.number < 100 ) ? "_"
+				: ""
+				) ;
+			string s2 = "_"+
+				( (x_rule.rhs.Length-1) < 10 ? "_" : "" ) ;
+			symbols_cs.Write(
+				"const int "+s1+(int)x_rule.number+s2+(x_rule.rhs.Length-1)
+				+"\t= "+x_rule.rhs[x_rule.rhs.Length-1]._s
+				+ " ;\n\t" ) ;
+			}
 		}
 	else
 		{
 		x_state.Lookaheadset_Add ( (int)xml_tokenset[xml.Value] ) ;
 		}
 	xml.Read() ;
+	}
+
+static void xml_get_empty()
+	{
+	System.Array.Resize( ref x_empty_ruleset, x_empty_ruleset.Length+1 ) ;
+	x_empty_ruleset[x_empty_ruleset.Length-1] = x_rule.number ;
+	if( symbols_cs_b )
+		{
+		string s1 = "_"+
+			( ( (int)x_rule.number < 10 ) ? "__"
+			: ( (int)x_rule.number < 100 ) ? "_"
+			: ""
+			) ;
+		string s2 = "___" ;
+		symbols_cs.Write(
+			"const int "+s1+(int)x_rule.number+s2
+			+"\t= "+x_rule.lhs._s
+			+ " ;\n\t" ) ;
+		}
 	}
 
 struct xml_token
@@ -884,6 +941,10 @@ static void xml_get_terminal()
 	for( int x = 0 ; x < 603 ; x ++ )
 		for( int y = 0 ; y < xo_t[x].rhs.Length ; y++ )
 			xo_t[x][y].set_if( t.name, o ) ;
+	if( symbols_cs_b )
+		{
+		symbols_cs.Write( "const int {0,30}\t= "+(int)t.symbol+" ;\n\t", t.name._s ) ;
+		}
 	}
 	
 static void xml_get_nonterminal()
@@ -896,6 +957,10 @@ static void xml_get_nonterminal()
 		xo_t[x].lhs.set_if( nt.name, o ) ;
 		for( int y = 0 ; y < xo_t[x].rhs.Length ; y++ )
 			xo_t[x][y].set_if( nt.name, o ) ;
+		}
+	if( symbols_cs_b )
+		{
+		symbols_cs.Write( "const int {0,30}\t= "+(int)nt.symbol+" ;\n\t", nt.name._s ) ;
 		}
 	}
 
@@ -913,6 +978,9 @@ static void xml_get_item()
 	i.rule = Number.Parse( xml.Value ) ;
 	xml.MoveToNextAttribute() ;
 	i.point = Number.Parse( xml.Value ) ;
+	foreach( Number n in x_empty_ruleset )
+		if( n == i.rule )
+			i.empty = true ;
 	x_state.Append( i ) ;
 	}
 
