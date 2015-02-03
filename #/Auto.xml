@@ -56,7 +56,7 @@ partial class Automaton {
 	const int __default = &rule; ;
 	public Automaton()
 		{
-		planet b = new planet(0,0,0) ;
+		planet b = new planet(0) ;
 		b.auto.deploy( ref b ) ;
 		//shift( _0 ) ;
 		log_end() ;

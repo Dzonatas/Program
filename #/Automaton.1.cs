@@ -31,22 +31,6 @@ partial class Automaton
 		internal int        zz ;
 		internal int        yy ;
 		internal Automaton  auto ;
-		internal planet( int x, int y, int z )
-			{
-			this.x  = x ;
-			this.y  = y ;
-			this.zz = z ;
-			if( ! token_HasValue )
-				{
-				token = Tokenset.Input ;
-				token_HasValue = true ;
-				}
-			auto = new Automaton( xo_a[z] ) ;
-			if( auto.volatile_b )
-				this.yy = (int)__default ;
-			else
-				this.yy = token.point ;
-			}
 		internal planet( ulong rps )
 			{
 			this.x  = (int) ((rps & (((ulong)ushort.MaxValue)<<32)) >> 32) ;
