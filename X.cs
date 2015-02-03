@@ -230,8 +230,11 @@ class Xo_t
 		string gotoset = "" ;
 		if( stateset[i].Gotoset.GetLength(0) > 3 )
 			{
+			#if !SWITCH_b
 			list += _a+".gotoset_s = "+_a+".gotoset_"+i+"__ ;"+tab ;
-			//list += _a+".gotoset_s = "+_a+".gotoset_"+i+"_0 ;"+tab ;
+			#else
+			list += _a+".gotoset_s = "+_a+".gotoset_"+i+"_0 ;"+tab ;
+			#endif
 			gotoset = gotoset_list( i ) ;
 			}
 		else
@@ -284,7 +287,6 @@ class Xo_t
 			{
 			Transition  t = stateset[i].Transitionset[ stateset[i].Shiftset[z,1] ] ;
 			tabs++ ;
-			//list += "if( token.point == "+stateset[i].Shiftset[z,0]+" )"+tab ;
 			list += "if( token.point == "+(string)t.item+" )"+tab ;
 			if( ToStateVolatile( t.state ) )
 				{
@@ -366,6 +368,71 @@ class Xo_t
 			this.valued = true ;
 			}
 		}
+#if !SWITCH_b
+	static string gotoset_list( int i )
+		{
+		string list = "" ;
+		string gotoset = "" ;
+		int size = stateset[i].Gotoset.GetLength(0) ;
+		list += "// size="+size+tab ;
+		int min = int.MaxValue;
+		int max = int.MinValue;
+		for( int j = 0 ; j < size ; j++ )
+			{
+			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[j,1] ] ;
+			if( t.symbol > max ) max = t.symbol ;
+			if( t.symbol < min ) min = t.symbol ;
+			}
+		list += "// min="+min+"  max="+max+tab ;
+		int length = 1+max-min ;
+		list += "// length="+(length)+tab ;
+		transtruct[] ary = new transtruct[1+max-min] ;
+		for( int j = 0 ; j < size ; j++ )
+			{
+			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[j,1] ] ;
+			ary[t.symbol-min] = new transtruct( t, j ) ;
+			}
+		tabs++ ;
+		list += "switch(yy)"+tab ;
+		list += "{"+tab ;
+		for( int j = 0 ; j < ary.Length ; j++ )
+			{
+			if( ary[j].valued )
+				{
+				tabs++ ;
+				list += "case "+(string)ary[j].t.item+" :" ;
+				list += gotoset_list( i, ary[j].index ) ;
+				tabs-- ;
+				list += tab ;
+				}
+			}
+		tabs-- ;
+		list += "}"+tab ;
+		list += "return __default ;"+tab ;
+		list += "//" ;
+		X.Auto["list"] = list ;
+		X.Auto["i"] = "_" ;
+		gotoset = put("A335-Xo_t-_io-1-gotoset") ;
+		return gotoset ;
+		}
+
+
+	static string gotoset_list( int i, int zi )
+		{
+		string list = string.Empty ;
+		Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
+		bool v = ToStateVolatile( t.state ) ;
+		if( ToStateVolatile( t.state ) )
+			{
+			list += tab ;
+			list += "edge_case = "+_io(t.state)+tab ;
+			list += "return "+(string)t+" ;" ;
+			}
+		else
+			list += " return "+(string)t+" ;" ;
+		return list ;
+		}
+#elif LAMBDASWITCH
 	static string gotoset_list( int i )
 		{
 		string list = "" ;
@@ -455,31 +522,30 @@ class Xo_t
 			list += "() => { return "+(string)t+" ; }" ;
 		return list ;
 		}
-#if OPT_INLINE
+#elif OPT_INLINE
 	static string gotoset_list( int i )
 		{
 		int zi ;
 		int _tabs = tabs ;
 		string list ;
-		string gotoset = gotoset_io( i ) ;
+		string gotoset = "" ;
 		for( zi = 0 ; zi < stateset[i].Gotoset.GetLength(0) ; zi++ )
 			{
 			tabs = _tabs ;
 			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
-			//bool       zb = zi != stateset[i].Gotoset.GetLength(0)-1 ;
-			//string     zf = "gotoset_"+i+"_"+(zi+1) ;
+			bool       zb = zi != stateset[i].Gotoset.GetLength(0)-1 ;
+			string     zf = "gotoset_"+i+"_"+(zi+1) ;
 			tabs++ ;
 			list = "" ;
-			//list  = "if( yy == "+(string)t.item+" )"+tab ;
-			//list += "{"+tab ;
-			//if( zb )
-			//	list += "gotoset_s = "+zf+" ;"+tab ;
+			list  = "if( yy == "+(string)t.item+" )"+tab ;
+			list += "{"+tab ;
+			if( zb )
+				list += "gotoset_s = "+zf+" ;"+tab ;
 			if( ToStateVolatile( t.state ) )
 				list += "edge_case = "+_io(t.state)+tab ;
 			list += "return "+(string)t+" ;"+tab ;
 			tabs-- ;
-			//list += "}"+tab ;
-			/*
+			list += "}"+tab ;
 			if( zb )
 				X.Auto["list"] = list + "return "+zf+"( yy ) ;" ;
 			else
@@ -488,10 +554,8 @@ class Xo_t
 				list += "gotoset_s = gotoset_"+i+"_0 ;"+tab ;
 				X.Auto["list"] = list + "return gotoset_"+i+"_0( yy ) ;" ;
 				}
-			*/
-			X.Auto["list"] = list ;
 			X.Auto["i"] = zi.ToString() ;
-			gotoset += put("A335-Xo_t-_io-1-gotoset-1") ;
+			gotoset += put("A335-Xo_t-_io-1-gotoset") ;
 			}
 		tabs = _tabs ;
 		return gotoset ;

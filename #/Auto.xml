@@ -54,10 +54,6 @@ public partial class  &signal;
 <A335-Xo_t-_io-0>
 partial class Automaton {
 	const int __default = &rule; ;
-	static Automaton()
-		{
-		gotoset_a = new System.Func&lt;ulong&gt;[1124][] ;
-		}
 	public Automaton()
 		{
 		planet b = new planet(0,0,0) ;
@@ -78,7 +74,7 @@ partial class Automaton {
 		edge_case = null ;
 		return r ;
 		}
-	static ulong nil()
+	static ulong nil(	)
 		{
 		return __default ;
 		}
