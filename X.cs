@@ -366,7 +366,7 @@ class Xo_t
 			this.valued = true ;
 			}
 		}
-	static string gotoset_io( int i )
+	static string gotoset_list( int i )
 		{
 		string list = "" ;
 		string gotoset = "" ;
@@ -391,7 +391,21 @@ class Xo_t
 			}
 		int l = 0 ;
 		tabs++ ;
-		list += "gotoset_a["+i+"] = new System.Func<ulong>["+length+"]"+tab ;
+		list += "if( yy < "+min+" || yy > "+max+" )"+tab ;
+		tabs-- ;
+		list += "return __default ;"+tab ;
+		tabs++ ;
+		list += "gotoset_s = (yy1) =>"+tab ;
+		list += "{"+tab ;
+		tabs++ ;
+		list += "if( yy1 >= "+min+" && yy1 <= "+max+" )"+tab ;
+		tabs-- ;
+		list += "return gotoset_a["+i+"][yy1-"+min+"]() ;"+tab ;
+		list += "return __default ;"+tab ;
+		tabs-- ;
+		list += "} ;"+tab ;
+		tabs++ ;
+		list += "return (gotoset_a["+i+"] = new System.Func<ulong>["+length+"]"+tab ;
 		list += "{"+tab ;
 		for( int j = 0 ; j < ary.Length ; j++ )
 			{
@@ -408,34 +422,40 @@ class Xo_t
 				{
 				if( l != 0 )
 					list += tab ;
-				list += "gotoset_"+i+"_"+ary[j].index+","+tab ;
+				list += gotoset_list( i, ary[j].index )+","+tab ;
 				l = 0 ;
 				}
 			}
 		tabs-- ;
-		list += "} ;"+tab ;
-		list += "gotoset_s = gotoset_"+i+"___ ;" ;
-		tabs++ ;
-		list += "if( yy >= "+min+" && yy <= "+max+" )"+tab ;
-		tabs-- ;
-		list += "return gotoset_a["+i+"][yy-"+min+"]() ;"+tab ;
-		list += "return __default ;" ;
-		//list += "//\n" ;
+		list += "} )[yy-"+min+"]() ;"+tab ;
+		list += "//" ;
 		X.Auto["list"] = list ;
 		X.Auto["i"] = "_" ;
 		gotoset = put("A335-Xo_t-_io-1-gotoset") ;
-		tabs++ ;
-		list =  "if( yy >= "+min+" && yy <= "+max+" )"+tab ;
-		tabs-- ;
-		list += "return gotoset_a["+i+"][yy-"+min+"]() ;"+tab ;
-		list += "return __default ;" ;
-		X.Auto["list"] = list ;
-		X.Auto["i"] = "__" ;
-		gotoset += put("A335-Xo_t-_io-1-gotoset") ;
 		return gotoset ;
 		}
 
 
+	static string gotoset_list( int i, int zi )
+		{
+		string list = string.Empty ;
+		Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
+		bool v = ToStateVolatile( t.state ) ;
+		if( ToStateVolatile( t.state ) )
+			{
+			tabs++ ;
+			list += "() =>"+tab ;
+			list += "{"+tab ;
+			list += "edge_case = "+_io(t.state)+tab ;
+			list += "return "+(string)t+" ;"+tab ;
+			tabs--;
+			list += "}" ;
+			}
+		else
+			list += "() => { return "+(string)t+" ; }" ;
+		return list ;
+		}
+#if OPT_INLINE
 	static string gotoset_list( int i )
 		{
 		int zi ;
@@ -476,6 +496,7 @@ class Xo_t
 		tabs = _tabs ;
 		return gotoset ;
 		}
+#endif
 	public static string put( string s )
 		{
 		var sxml = "<text>"+X.Auto[s]+"</text>" ;
