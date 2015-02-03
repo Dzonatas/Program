@@ -6,6 +6,7 @@ partial class Automaton
 	bool         volatile_b    ;
 	bool         goto_v        ;
 	System.Func<int,ulong> gotoset_s ;
+	static System.Func<ulong>[][] gotoset_a ;
 	static System.Func<Automaton,long> edge_case ;
 	Tokenset.Token                _token ;
 	static Tokenset.Token         token ;
