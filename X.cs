@@ -253,11 +253,32 @@ class Xo_t
 				list += "token.point == "+stateset[i].Lookaheadset[z]
 				+ " ? true"+( z%3 == 2 ? tab : "" ) +" : " ;
 			list += "token.point == "+stateset[i].Lookaheadset[z]+" ? true : false ) )"+tab ;
-			tabs-- ;
+			list += "{"+tab ;
+			if( rule != "__default" )
+				{
+				tabs++ ;
+				list += "if( token_HasValue )"+tab ;
+				tabs-- ;
+				list += _a+"._token = Tokenset.Empty ;"+tab ;
+				}
 			list += "return "+_rule+" ; "+tab ;
+			tabs-- ;
+			list += "}"+tab ;
+			}
+		if( ! volatile_b )
+			{
+			list += _a+"._token = token ;"+tab ;
+			list += "token_HasValue = false ;"+tab ;
 			}
 		list += shiftset_list( i ) ;
-			list += "return "+_rule+" ;" ;
+		if( rule != "__default" )
+			{
+			tabs++ ;
+			list += "if( token_HasValue )"+tab ;
+			tabs-- ;
+			list += _a+"._token = Tokenset.Empty ;"+tab ;
+			}
+		list += "return "+_rule+" ;" ;
 		if( tab_b )
 			{
 			list += tab ;

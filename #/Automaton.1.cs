@@ -60,17 +60,8 @@ partial class Automaton
 		ulong t ;
 		if( transit_i > 0 && transit_i <= __default )
 			log( "("+transit_i+")" ) ;
-		if( ! ( volatile_b || lookahead_b ) )
-			{
-			_token = token ;
-			token_HasValue = false ;
-			t = (ulong)transit_i ;
-			}
-		else
 		if( transit_i <= 0 )
 			{
-			if( token_HasValue )
-				_token = Tokenset.Empty ;
 			if( goto_v )
 				return (int)transit_i ;
 			if( (t = gotoset_s( xo_t[-transit_i] )) == __default )
