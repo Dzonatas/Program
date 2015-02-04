@@ -271,7 +271,7 @@ class Xo_t
 			list += "token_HasValue = false ;"+tab ;
 			}
 		list += shiftset_list( i ) ;
-		if( rule != "__default" )
+		if( rule != "__default" && volatile_b )
 			{
 			tabs++ ;
 			list += "if( token_HasValue )"+tab ;
