@@ -36,21 +36,23 @@ partial class Automaton
 			this.x  = (int) ((rps & (((ulong)ushort.MaxValue)<<32)) >> 32) ;
 			this.y  = (int) ((rps &   (((ulong)byte.MaxValue)<<16)) >> 16) ;
 			this.zz = (int) ((rps &  ((ulong)ushort.MaxValue))) ;
+			this.yy = (int) __default ;
 			if( ! token_HasValue )
 				{
 				token = Tokenset.Input ;
 				token_HasValue = true ;
 				}
 			auto = new Automaton( xo_a[this.zz] ) ;
-			if( auto.volatile_b )
-				this.yy = (int)__default ;
-			else
-				this.yy = token.point ;
 			}
 		public override string ToString()
 				{
 				return string.Format("_{0}_{1}_{2}_{3}",x,y,zz,yy) ;
 				}
+		}
+	static void planet_0()
+		{
+		planet b = new planet(0) ;
+		b.auto.deploy( ref b ) ;
 		}
 	int deploy( ref planet b )
 		{

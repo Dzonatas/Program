@@ -7,10 +7,6 @@ public partial class A335 {
 static A335() {}
 #if EMBED
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
-public static void Main( string[] args )
-	{
-	new Automaton() ;
-	}
 #endif
 }
 struct iDNA {
@@ -54,13 +50,6 @@ public partial class  &signal;
 <A335-Xo_t-_io-0>
 partial class Automaton {
 	const int __default = &rule; ;
-	public Automaton()
-		{
-		planet b = new planet(0) ;
-		b.auto.deploy( ref b ) ;
-		//shift( _0 ) ;
-		log_end() ;
-		}
 	static int __0()
 		{
 		backup = &argc; ;

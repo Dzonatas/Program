@@ -25,3 +25,14 @@ public abstract class Auto
 		}
 	}
 }
+
+partial class Automaton
+	{
+	#if EMBED
+	public static void Main( string[] args )
+		{
+		planet_0() ;
+		log_end() ;
+		}
+	#endif
+	}
