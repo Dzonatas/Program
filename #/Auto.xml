@@ -96,13 +96,13 @@ partial class Automaton {
 	}
 </A335-Xo_t-_io-1-reductionset>
 <A335-Xo_t-_io-1-gotoset>
-	ulong gotoset&point;_&i;( int yy )
+	long gotoset&point;_&i;( int yy )
 	{
 	&list;
 	}
 </A335-Xo_t-_io-1-gotoset>
 <A335-Xo_t-_io-1-gotoset-1>
-	ulong gotoset&point;_&i;()
+	long gotoset&point;_&i;()
 	{
 	&list;
 	}

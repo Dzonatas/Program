@@ -222,11 +222,9 @@ class Xo_t
 			list += "{"+tab ;
 			}
 		if( io_volatile )
-			list += "log(\""+i+"\") ;"+tab ;
-		if( volatile_b || gotoset_volatile )
-			list += ( volatile_b ? _a+".volatile_b = " : "" )
-				+ ( gotoset_volatile ? _a+".goto_v = " : "" )
-				+ "true ;"+tab ;
+			list += "log(\""+i+"\") ; /*"+( volatile_b ? "volatile_b" : "" )+"*/"+tab ;
+		if( gotoset_volatile )
+			list += _a+".goto_v = true ;"+tab ;
 		string gotoset = "" ;
 		if( stateset[i].Gotoset.GetLength(0) > 3 )
 			{
@@ -247,12 +245,12 @@ class Xo_t
 		if( stateset[i].Lookaheadset.Length > 0 )
 			{
 			tabs++ ;
-			list += "if( ("+_a+".lookahead_b = " ;
+			list += "if( " ;
 			int z ;
 			for( z = 0 ; z < stateset[i].Lookaheadset.Length-1 ; z++ )
 				list += "token.point == "+stateset[i].Lookaheadset[z]
 				+ " ? true"+( z%3 == 2 ? tab : "" ) +" : " ;
-			list += "token.point == "+stateset[i].Lookaheadset[z]+" ? true : false ) )"+tab ;
+			list += "token.point == "+stateset[i].Lookaheadset[z]+" ? true : false )"+tab ;
 			list += "{"+tab ;
 			if( rule != "__default" )
 				{
