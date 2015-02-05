@@ -6,7 +6,13 @@ public abstract class Auto
 	public abstract string[] RHS { get; }
 	protected Tokenset.Token[] argv ;
 	protected int arg_i ;
-	public void Splice() {}
+	public void Splice()
+		{
+		log( "["+LHS+" " ) ;
+		for( int i = 0 ; i < argv.Length ; i++ )
+			log( argv[i]._+"," ) ;
+		log( "]" ) ;
+		}
 	public Tokenset.Token   Argv
 		{
 		set { argv[--arg_i] = value ; }
