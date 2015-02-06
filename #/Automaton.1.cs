@@ -38,7 +38,10 @@ partial class Automaton
 			{
 			if( goto_v )
 				return (int)rps ;
-			if( (t = gotoset_s( /* yy= */ xo_t[-rps] )) == __default )
+			log( "\n{"+rps ) ;
+			t = gotoset_s( /* yy= */ xo_t[-rps] ) ;
+			log( ","+t+"}" ) ;
+			if( t == __default )
 				return xo_r[-rps]() ;
 			}
 		else

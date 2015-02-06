@@ -201,8 +201,12 @@ class Xo_t
 		if( stateset[i].Default_reduction.HasValue )
 			rule = '-'+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
 		string _rule = rule ;
+		bool _rule_b = true ;
 		if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
+			{
 			_rule = "__"+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+"()" ;
+			_rule_b = false ;
+			}
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
 			{
 			Reduction r = stateset[i].Reductionset[z] ;
@@ -211,7 +215,10 @@ class Xo_t
 			if( r.symbol == _default )
 				continue ;
 			if( ! volatile_b )
-				_rule = "reductionset_"+i+"( token.point )" ;
+				{
+				_rule   = "reductionset_"+i+"( token.point )" ;
+				_rule_b = false ;
+				}
 			break ;
 			}
 		string list = "" ;
@@ -252,14 +259,17 @@ class Xo_t
 				+ " ? true"+( z%3 == 2 ? tab : "" ) +" : " ;
 			list += "token.point == "+stateset[i].Lookaheadset[z]+" ? true : false )"+tab ;
 			list += "{"+tab ;
-			if( rule != "__default" )
+			if( rule == "__default" )
+				list += "return "+_rule+" ; "+tab ;
+			else
 				{
 				tabs++ ;
 				list += "if( token_HasValue )"+tab ;
 				tabs-- ;
 				list += _a+"._token = Tokenset.Empty ;"+tab ;
+				if( _rule_b == false || ! return_rule( i, rule, ref list ) )
+					list += "return "+_rule+" ;"+tab ;
 				}
-			list += "return "+_rule+" ; "+tab ;
 			tabs-- ;
 			list += "}"+tab ;
 			}
@@ -275,8 +285,17 @@ class Xo_t
 			list += "if( token_HasValue )"+tab ;
 			tabs-- ;
 			list += _a+"._token = Tokenset.Empty ;"+tab ;
+			if( _rule_b == false || ! return_rule( i, rule, ref list ) )
+				list += "return "+_rule+" ;"+tab ;
 			}
-		list += "return "+_rule+" ;" ;
+		else
+		if( rule != "__default" )
+			{
+			if( _rule_b == false || ! return_rule( i, rule, ref list ) )
+				list += "return "+_rule+" ;"+tab ;
+			}
+		else
+			list += "return "+_rule+" ;" ;
 		if( tab_b )
 			{
 			list += tab ;
@@ -294,6 +313,32 @@ class Xo_t
 		X.Auto["argc"]      = xo_t[i].rhs.Length.ToString() ;
 		X.Auto["i"]         = '-'+i.ToString() ;
 		return put("A335-Xo_t-_io-_1")+(io_volatile ? "" : put("A335-Xo_t-_io-1"))+sets ;
+		}
+	static bool return_rule( int i, string rule, ref string list )
+		{
+		int l = stateset[i].Gotoset.GetLength(0) ;
+		int r = -int.Parse(rule) ;
+		if( l != 0 )
+			{
+			int x = (int)xo_t[r] ;
+			list += "//xo_t="+x+tab ;
+			for( int z = 0 ; z < l ; z++ )
+				{
+				Transition t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
+				if( t.symbol == x )
+					{
+					tabs++ ;
+					if( ToStateVolatile( t.state ) )
+						{
+						list += "edge_case = "+_io(t.state) +"/*yyy*/"+tab ;
+						}
+					tabs--;
+					list += "return "+(string)t+" ;"+tab ;
+					return true ;
+					}
+				}
+			}
+		return false ;
 		}
 	static string shiftset_list( int i )
 		{
