@@ -33,27 +33,27 @@ partial class Automaton
 		}
 	int deploy( long rps, ref int yy )
 		{
-		long t ;
-		if( rps <= 0 )
-			{
-			if( goto_v )
-				return (int)rps ;
-			log( "\n{"+rps ) ;
-			t = gotoset_s( /* yy= */ xo_t[-rps] ) ;
-			log( ","+t+"}" ) ;
-			if( t == __default )
-				return xo_r[-rps]() ;
-			}
-		else
-			t = rps ;
 		do	{
 			int i ;
-			int y = (int)__default ;
+			yy = (int)__default ;
 			Automaton a = new Automaton() ;
-			//a._token = _token ;
-			if( (i = a.deploy( xo_a[ (t &  ((long)ushort.MaxValue)) ](a), ref y )) >= 0 )
-				yy = y ;
+			rps = xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
+			if( rps > 0 )
+				i = a.deploy( rps, ref yy ) ;
 			else
+			if( a.goto_v )
+				i = (int)rps ;
+			else
+				{
+				log( "\n{"+rps ) ;
+				long t = a.gotoset_s(  /*yy=*/  xo_t[-rps] ) ;
+				log( ","+t+"}" ) ;
+				if( t == __default )
+					i = xo_r[-rps]() ;
+				else
+					i = a.deploy( t, ref yy ) ;
+				}
+			if( i < 0 )
 				{
 				(auto as bis.Auto).Argv = _token ;
 				if( --backup > 0 )
@@ -61,7 +61,7 @@ partial class Automaton
 				yy = xo_t[-i] ;
 				(auto as bis.Auto).Splice() ;
 				}
-			} while( (! goto_v) && (t = gotoset_s( yy )) != __default ) ;
+			} while( (! goto_v) && (rps = gotoset_s( yy )) != __default ) ;
 		if( token.c != 0 )
 			throw new System.NotImplementedException( "token != $end" ) ;
 		return 0 ;
