@@ -337,6 +337,7 @@ class Xo_t
 					return true ;
 					}
 				}
+			list += "//xx"+tab ;
 			}
 		return false ;
 		}

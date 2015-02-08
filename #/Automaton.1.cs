@@ -27,19 +27,18 @@ partial class Automaton
 		}
 	static void planet_0()
 		{
-		int   yy  = (int)__default ;
 		Automaton a = new Automaton() ;
-		a.deploy( xo_a[0](a), ref yy ) ;
+		a.deploy( xo_a[0](a) ) ;
 		}
-	int deploy( long rps, ref int yy )
+	static int yy ;
+	int deploy( long rps )
 		{
 		do	{
 			int i ;
-			yy = (int)__default ;
 			Automaton a = new Automaton() ;
 			rps = xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
 			if( rps > 0 )
-				i = a.deploy( rps, ref yy ) ;
+				i = a.deploy( rps ) ;
 			else
 			if( a.goto_v )
 				i = (int)rps ;
@@ -51,7 +50,7 @@ partial class Automaton
 				if( t == __default )
 					i = xo_r[-rps]() ;
 				else
-					i = a.deploy( t, ref yy ) ;
+					i = a.deploy( t ) ;
 				}
 			if( i < 0 )
 				{
@@ -61,6 +60,8 @@ partial class Automaton
 				yy = xo_t[-i] ;
 				(auto as bis.Auto).Splice() ;
 				}
+			else
+				yy = (int)__default ;
 			} while( (! goto_v) && (rps = gotoset_s( yy )) != __default ) ;
 		if( token.c != 0 )
 			throw new System.NotImplementedException( "token != $end" ) ;
