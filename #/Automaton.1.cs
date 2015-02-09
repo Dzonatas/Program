@@ -38,21 +38,24 @@ partial class Automaton
 		do	{
 			int i ;
 			Automaton a = new Automaton() ;
-			a.rps = xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
+			i = (int) xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
 			if( a.rps > 0 )
 				i = a.deploy() ;
 			else
 			if( a.goto_v )
 				i = (int)a.rps ;
 			else
+			if( i == __default )
+				{
+				log("\ni=") ;
+				i = (int)a.rps ;
+				}
+			else
 				{
 				log( "\n{"+a.rps ) ;
 				long r = a.rps ;
 				long t = a.gotoset_s(  /*yy=*/  xo_t[-a.rps] ) ;
 				log( ","+t+"}" ) ;
-				if( t == __default )
-					i = xo_r[-r]() ;
-				else
 					{
 					a.rps = t ;
 					i = a.deploy() ;

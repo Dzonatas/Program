@@ -198,11 +198,15 @@ class Xo_t
 			&& volatile_b && default_volatile && gotoset_volatile ;
 		bool tab_b = tabs_i != 1 ;
 		string _a = tabs_i == 1 ? "a" : "aa" ;
-		if( stateset[i].Default_reduction.HasValue )
-			rule = '-'+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
 		string _rule = rule ;
+		if( stateset[i].Default_reduction.HasValue )
+			{
+			string r = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
+			rule = '-'+r ;
+			_rule = "__"+r+"()" ;
+			}
 		bool _rule_b = true ;
-		string reductionset = "return "+_a+".rps="+_rule+" ;";
+		string reductionset = _a+".rps="+_rule+" ; return __default ;";
 		if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
 			{
 			_rule = "__"+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+"()" ;
@@ -252,7 +256,7 @@ class Xo_t
 			list += _a+".gotoset_s = (yy) =>"+tab ;
 			list += "{"+tab ;
 			list += gotoset_nv_list( i, _a ) ;
-			list += "return "+_a+".rps=__default ;"+tab ;
+			list += reductionset+tab ;
 			tabs-- ;
 			list += "} ;"+tab ;
 			}
@@ -267,7 +271,7 @@ class Xo_t
 			list += "token.point == "+stateset[i].Lookaheadset[z]+" ? true : false )"+tab ;
 			list += "{"+tab ;
 			if( rule == "__default" )
-				list += "return "+_a+".rps="+_rule+" ; "+tab ;
+				list += "return "+_a+".rps="+_rule+" ;"+tab ;
 			else
 				{
 				tabs++ ;
