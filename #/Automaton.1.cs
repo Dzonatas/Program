@@ -28,29 +28,35 @@ partial class Automaton
 	static void planet_0()
 		{
 		Automaton a = new Automaton() ;
-		a.deploy( xo_a[0](a) ) ;
+		a.rps = xo_a[0](a) ;
+		a.deploy() ;
 		}
 	static int yy ;
-	int deploy( long rps )
+	long rps ;
+	int deploy()
 		{
 		do	{
 			int i ;
 			Automaton a = new Automaton() ;
-			rps = xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
-			if( rps > 0 )
-				i = a.deploy( rps ) ;
+			a.rps = xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
+			if( a.rps > 0 )
+				i = a.deploy() ;
 			else
 			if( a.goto_v )
-				i = (int)rps ;
+				i = (int)a.rps ;
 			else
 				{
-				log( "\n{"+rps ) ;
-				long t = a.gotoset_s(  /*yy=*/  xo_t[-rps] ) ;
+				log( "\n{"+a.rps ) ;
+				long r = a.rps ;
+				long t = a.gotoset_s(  /*yy=*/  xo_t[-a.rps] ) ;
 				log( ","+t+"}" ) ;
 				if( t == __default )
-					i = xo_r[-rps]() ;
+					i = xo_r[-r]() ;
 				else
-					i = a.deploy( t ) ;
+					{
+					a.rps = t ;
+					i = a.deploy() ;
+					}
 				}
 			if( i < 0 )
 				{
