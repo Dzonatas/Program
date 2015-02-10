@@ -56,13 +56,6 @@ partial class Automaton {
 		//Target: xyzzyy tail or mantissa.
 		return &i; ;
 		}
-	static long _edge_case( Automaton a )
-		{
-		log( "(V)" ) ;
-		a.rps =  edge_case( a ) ;
-		edge_case = null ;
-		return a.rps ;
-		}
 </A335-Xo_t-_io-0>
 <A335-Xo_t-_io-_1>
 	static int _&point;()

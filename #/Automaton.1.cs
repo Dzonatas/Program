@@ -33,6 +33,13 @@ partial class Automaton
 		}
 	static int yy ;
 	long rps ;
+	static long _edge_case( Automaton a )
+		{
+		log( "(V)" ) ;
+		int i = (int) edge_case( a ) ;
+		edge_case = null ;
+		return i ;
+		}
 	int deploy()
 		{
 		do	{
