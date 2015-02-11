@@ -46,26 +46,29 @@ partial class Automaton
 			int i ;
 			Automaton a = new Automaton() ;
 			i = (int) xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
-			if( a.rps > 0 )
-				i = a.deploy() ;
-			else
-			if( a.goto_v )
-				i = (int)a.rps ;
-			else
-			if( i == __default )
+			if( i > 0 )
 				{
-				log("\ni=") ;
-				i = (int)a.rps ;
-				}
-			else
-				{
-				log( "\n{"+a.rps ) ;
-				long r = a.rps ;
-				long t = a.gotoset_s(  /*yy=*/  xo_t[-a.rps] ) ;
-				log( ","+t+"}" ) ;
-					{
-					a.rps = t ;
+				if( a.rps > 0 )
 					i = a.deploy() ;
+				else
+				if( a.goto_v )
+					i = (int)a.rps ;
+				else
+				if( i == __default )
+					{
+					log("\ni=") ;
+					i = (int)a.rps ;
+					}
+				else
+					{
+					log( "\n{"+a.rps ) ;
+					long r = a.rps ;
+					long t = a.gotoset_s(  /*yy=*/  xo_t[-a.rps] ) ;
+					log( ","+t+"}" ) ;
+						{
+						a.rps = t ;
+						i = a.deploy() ;
+						}
 					}
 				}
 			if( i < 0 )

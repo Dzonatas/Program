@@ -213,6 +213,7 @@ class Xo_t
 			reductionset = "return "+_a+".rps="+_rule+" ;" ;
 			_rule_b = false ;
 			}
+		bool _rule_bbb = false ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
 			{
 			Reduction r = stateset[i].Reductionset[z] ;
@@ -225,6 +226,7 @@ class Xo_t
 				reductionset = reductionset_list( i, _a ) ;
 				_rule   = "reductionset_"+i+"( token.point )" ;
 				_rule_b = false ;
+				_rule_bbb = true ;
 				}
 			break ;
 			}
@@ -256,7 +258,7 @@ class Xo_t
 			list += _a+".gotoset_s = (yy) =>"+tab ;
 			list += "{"+tab ;
 			list += gotoset_nv_list( i, _a ) ;
-			list += reductionset+tab ;
+			list += _a+".rps="+_rule+" ; return __default ;"+tab ;
 			tabs-- ;
 			list += "} ;"+tab ;
 			}
@@ -278,8 +280,13 @@ class Xo_t
 				list += "if( token_HasValue )"+tab ;
 				tabs-- ;
 				list += _a+"._token = Tokenset.Empty ;"+tab ;
-				if( _rule_b == false || ! return_rule( i, rule, ref list, _a ) )
-					list += reductionset+tab ;
+				bool _rule_bb = true ;
+				if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
+					_rule_bb = false ;
+				if( _rule_bbb )
+					_rule_bb = false ;
+				if( _rule_bb == false || ! return_rule( i, rule, ref list, _a ) )
+					list += reductionset_list(i,_a) ;
 				}
 			tabs-- ;
 			list += "}"+tab ;
@@ -296,14 +303,19 @@ class Xo_t
 			list += "if( token_HasValue )"+tab ;
 			tabs-- ;
 			list += _a+"._token = Tokenset.Empty ;"+tab ;
-			if( _rule_b == false || ! return_rule( i, rule, ref list, _a ) )
-				list += reductionset+tab ;
+			if( /*_rule_b == false ||*/ ! return_rule( i, rule, ref list, _a ) )
+				list += reductionset_list(i,_a)+"//bb"+tab ;
 			}
 		else
 		if( rule != "__default" )
 			{
-			if( _rule_b == false || ! return_rule( i, rule, ref list, _a ) )
-				list += reductionset+tab ;
+			bool _rule_bb = true ;
+			if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
+				_rule_bb = false ;
+			if( _rule_bbb )
+				_rule_bb = false ;
+			if( _rule_bb == false || ! return_rule( i, rule, ref list, _a ) )
+				list += reductionset_list(i,_a) ;
 			}
 		else
 			list += "return "+_a+".rps="+_rule+" ;" ;
@@ -313,9 +325,6 @@ class Xo_t
 			tabs-- ;
 			list += "} ;" ;
 			return list ;
-			}
-		if( ! reduction_volatile )
-			{
 			}
 		X.Auto["list"] = list ;
 		if( i == 0 || i >= xo_t.Length )
@@ -350,8 +359,11 @@ class Xo_t
 					}
 				}
 			list += "//xx"+tab ;
+			list += _a+".rps=__"+r+"() ; return __default ;"+tab ;
+			return true ;
 			}
-		return false ;
+		list += "return "+_a+".rps=__"+r+"() ;"+tab ;
+		return true ;
 		}
 	static string shiftset_list( int i, string _a )
 		{
@@ -391,13 +403,41 @@ class Xo_t
 				continue ;
 			tabs++ ;
 			list += "if( token.point == "+r.symbol+" )"+tab ;
-			tabs-- ;
-			list += "return "+_a+".rps=__"+stateset[i].Reductionset[z].rule+"() ;"+tab ;
+			int rule = stateset[i].Reductionset[z].rule ;
+			string _rule = "__"+rule+"()" ;
+			if( stateset[i].Gotoset.GetLength(0) == 0 )
+				{
+				tabs-- ;
+				list += "return "+_a+".rps="+_rule+" ;"+tab ;
+				}
+			else
+				{
+				list += "{"+tab ;
+				list += _a+".rps="+_a+".gotoset_s(  /*yy=*/  xo_t[-"+_rule+"] ) ;"+tab ;
+				list += "return "+_a+".deploy() ;"+tab ;
+				tabs-- ;
+				list += "}"+tab ;
+				}
 			}
 		if( list.Length != 0 )
 			{
-			list += "return "+_a+".rps=__"
-				+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+"() ;" ;
+			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
+			string _rule = "__"+rule+"()" ;
+			if( stateset[i].Gotoset.GetLength(0) == 0 )
+				{
+				list += "return "+_a+".rps="+_rule+" ;"+tab ;
+				}
+			else
+				{
+				list += _a+".rps="+_a+".gotoset_s(  /*yy=*/  xo_t[-"+_rule+"] ) ;"+tab ;
+				list += "return "+_a+".deploy() ;"+tab ;
+				}
+			}
+		else
+			{
+			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
+			string _rule = "__"+rule+"()" ;
+			list += "return "+_a+".rps="+_rule+" ;"+tab ;
 			}
 		return list ;
 		}
