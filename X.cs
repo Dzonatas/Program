@@ -630,6 +630,7 @@ class Xo_t
 		st.WriteLine( "}" ) ;
 		st.Close() ;
 		X.Auto["branch"] = branch ;
+		/*
 		var sr = Current.Path.CreateText( "Automaton.3.cs" ) ;
 		sr.Write("partial class Automaton {\nstatic System.Func<int>[] xo_r =\n\t{\n\t") ;
 		for( int z = 0 ; z < xo_t.Length ; z++ )
@@ -641,6 +642,7 @@ class Xo_t
 		sr.WriteLine( "} ;" ) ;
 		sr.WriteLine( "}" ) ;
 		sr.Close() ;
+		*/
 		var ss = Current.Path.CreateText( "Automaton.4.cs" ) ;
 		ss.Write("partial class Automaton {\nstatic System.Func<Automaton,long>[] xo_a =\n\t{\n\t") ;
 		for( int z = 0 ; z < stateset.Length ; z++ )
