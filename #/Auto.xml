@@ -54,6 +54,7 @@ partial class Automaton {
 		{
 		backup = &argc; ;
 		//Target: xyzzyy tail or mantissa.
+		yy = &I; ;
 		return &i; ;
 		}
 </A335-Xo_t-_io-0>
@@ -62,6 +63,7 @@ partial class Automaton {
 		{
 		backup = &argc; ;
 		auto = new &namespace;.&signal;() ;
+		yy = &I; ;
 		return &i; ;
 		}
 </A335-Xo_t-_io-_1>

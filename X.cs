@@ -333,6 +333,7 @@ class Xo_t
 		X.Auto["signal"]    = X.Auto[ "_"+xo_t[i].lhs.X ] ;
 		X.Auto["argc"]      = xo_t[i].rhs.Length.ToString() ;
 		X.Auto["i"]         = '-'+i.ToString() ;
+		X.Auto["I"]         = ((int)xo_t[i]).ToString() ;
 		return put("A335-Xo_t-_io-_1")+(io_volatile ? "" : put("A335-Xo_t-_io-1")) ;
 		}
 	static bool return_rule( int i, string rule, ref string list, string _a )
@@ -644,37 +645,13 @@ class Xo_t
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
 		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
 		Cluster.Cli.NoOperation() ;
-		var st = Current.Path.CreateText( "Automaton.2.cs" ) ;
-		st.Write("partial class Automaton {\nstatic int[] xo_t =\n\t{\n\t") ;
-		for( int z = 0 ; z < xo_t.Length ; z++ )
-			{
-			st.Write( "{0}\t, ", (int)xo_t[z] ) ;
-			if( z%10 == 9 )
-				st.Write( "\n\t" ) ;
-			}
-		st.WriteLine( "} ;" ) ;
-		st.WriteLine( "}" ) ;
-		st.Close() ;
 		X.Auto["branch"] = branch ;
-		/*
-		var sr = Current.Path.CreateText( "Automaton.3.cs" ) ;
-		sr.Write("partial class Automaton {\nstatic System.Func<int>[] xo_r =\n\t{\n\t") ;
-		for( int z = 0 ; z < xo_t.Length ; z++ )
-			{
-			sr.Write( "__{0}\t, ", z ) ;
-			if( z%10 == 9 )
-				sr.Write( "\n\t" ) ;
-			}
-		sr.WriteLine( "} ;" ) ;
-		sr.WriteLine( "}" ) ;
-		sr.Close() ;
-		*/
-		var ss = Current.Path.CreateText( "Automaton.4.cs" ) ;
+		var ss = Current.Path.CreateText( "Automaton.2.cs" ) ;
 		ss.Write("partial class Automaton {\nstatic System.Func<Automaton,long>[] xo_a =\n\t{\n\t") ;
 		for( int z = 0 ; z < stateset.Length ; z++ )
 			{
 			if( ToStateVolatile( z ) )
-				ss.Write( "_edge_case\t, ", z ) ;
+				ss.Write( "_edge\t, ", z ) ;
 			else
 				ss.Write( "_{0}\t, ", z ) ;
 			if( z%10 == 9 )
@@ -697,6 +674,7 @@ class Xo_t
 		X.Auto["rule"] = ((int)_default).ToString() ;
 		X.Auto["argc"] = xo_t[0].rhs.Length.ToString() ;
 		X.Auto["i"]    = "0" ;
+		X.Auto["I"]    = ((int)xo_t[0]).ToString() ;
 		f.Write( put("A335-Xo_t-_io-0") ) ;
 		for( int i = 0 ; i < stateset.Length ; i++ )
 			{
@@ -714,6 +692,7 @@ class Xo_t
 				f = Current.Path.CreateText( compile[i] ) ;
 				X.Auto["interface"] = xo.lhs.s ;
 				X.Auto["i"] = "" ;
+				X.Auto["I"] = "" ;
 				f.Write( put("A335-Xo_t-Build-iDNA-5i") ) ;
 				}
 			X.Auto["interface"] = "global::Item, basic."+xo.lhs.s ;

@@ -33,7 +33,7 @@ partial class Automaton
 		}
 	static int yy ;
 	long rps ;
-	static long _edge_case( Automaton a )
+	static long _edge( Automaton a )
 		{
 		log( "(V)" ) ;
 		int i = (int) edge_case( a ) ;
@@ -67,7 +67,7 @@ partial class Automaton
 				(auto as bis.Auto).Argv = _token ;
 				if( --backup > 0 )
 					return (int)i ;
-				yy = xo_t[-i] ;
+				//yy = xo_t[-i] ;
 				(auto as bis.Auto).Splice() ;
 				}
 			else
