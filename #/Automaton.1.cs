@@ -60,16 +60,7 @@ partial class Automaton
 					i = (int)a.rps ;
 					}
 				else
-					{
-					log( "\n{"+a.rps ) ;
-					long r = a.rps ;
-					long t = a.gotoset_s(  /*yy=*/  xo_t[-a.rps] ) ;
-					log( ","+t+"}" ) ;
-						{
-						a.rps = t ;
-						i = a.deploy() ;
-						}
-					}
+					throw new System.NotImplementedException( "-range/+index condition" ) ;
 				}
 			if( i < 0 )
 				{
