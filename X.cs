@@ -413,8 +413,9 @@ class Xo_t
 			else
 				{
 				list += "{"+tab ;
-				list += _a+".rps="+_a+".gotoset_s(  /*yy=*/  xo_t[-"+_rule+"] ) ;"+tab ;
-				list += "return "+_a+".deploy() ;"+tab ;
+				list += "/* "+xo_t[rule].rhs.Length.ToString()+"= */ " ;
+				list += _rule+" ;"+tab ;
+				list += gotoset_s( i, (int)xo_t[rule], _a ) ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
@@ -429,8 +430,9 @@ class Xo_t
 				}
 			else
 				{
-				list += _a+".rps="+_a+".gotoset_s(  /*yy=*/  xo_t[-"+_rule+"] ) ;"+tab ;
-				list += "return "+_a+".deploy() ;"+tab ;
+				list += "/* "+xo_t[rule].rhs.Length.ToString()+"= */ " ;
+				list += _rule+" ;"+tab ;
+				list += gotoset_s( i, (int)xo_t[rule], _a ) ;
 				}
 			}
 		else
@@ -537,6 +539,30 @@ class Xo_t
 			}
 		else
 			list += " return "+_a+".rps="+(string)t+" ;" ;
+		return list ;
+		}
+	static string gotoset_s( int i, int symbol, string _a )
+		{
+		string list = string.Empty ;
+		for( int zi = 0 ; zi < stateset[i].Gotoset.GetLength(0) ; zi++ )
+			{
+			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
+			if( t.symbol != symbol )
+				continue ;
+			if( ToStateVolatile( t.state ) )
+				{
+				list += "edge_case = "+_io(t.state)+tab ;
+				list += _a+".rps="+(string)t+" ;"+tab ;
+				list += "return "+_a+".deploy() ; //oo"+tab ;
+				}
+			else
+				{
+				list += _a+".rps="+(string)t+" ;"+tab ;
+				list += "return "+_a+".deploy() ;"+tab ;
+				}
+			return list ;
+			}
+		list += "return "+_a+".rps=__default ; //oo"+tab ;
 		return list ;
 		}
 	public static string put( string s )
