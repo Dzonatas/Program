@@ -199,14 +199,16 @@ class Xo_t
 		bool tab_b = tabs_i != 1 ;
 		string _a = tabs_i == 1 ? "a" : "aa" ;
 		string _rule = rule ;
+		bool _rule_b = true ;
+		string reductionset = _a+".rps="+_rule+" ; return __default ;" ;
 		if( stateset[i].Default_reduction.HasValue )
 			{
 			string r = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
 			rule = '-'+r ;
 			_rule = "__"+r+"()" ;
+			reductionset = "return "+_rule+" ;" ;
+			_rule_b = false ;
 			}
-		bool _rule_b = true ;
-		string reductionset = _a+".rps="+_rule+" ; return __default ;";
 		if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
 			{
 			_rule = "__"+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+"()" ;
@@ -273,7 +275,7 @@ class Xo_t
 			list += "token.point == "+stateset[i].Lookaheadset[z]+" ? true : false )"+tab ;
 			list += "{"+tab ;
 			if( rule == "__default" )
-				list += "return "+_a+".rps="+_rule+" ;"+tab ;
+				throw new System.NotImplementedException("Default condition on lookahead") ;
 			else
 				{
 				tabs++ ;
@@ -318,7 +320,9 @@ class Xo_t
 				list += reductionset_list(i,_a) ;
 			}
 		else
+			{
 			list += "return "+_a+".rps="+_rule+" ;" ;
+			}
 		if( tab_b )
 			{
 			list += tab ;
