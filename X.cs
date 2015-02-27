@@ -321,7 +321,8 @@ class Xo_t
 			}
 		else
 			{
-			list += "return "+_a+".rps="+_rule+" ;" ;
+			list += "throw new System.NotImplementedException() ;" ;
+			//list += "return "+_a+".rps="+_rule+" ;" ;
 			}
 		if( tab_b )
 			{
