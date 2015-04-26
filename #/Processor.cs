@@ -42,7 +42,8 @@ namespace Cluster
 		[System.Diagnostics.Conditional("DEBUG")]
 		static void debug()
 			{
-			thread.Join() ;
+			if( thread.IsAlive )
+				thread.Join() ;
 			}
 			
 		~Processor()

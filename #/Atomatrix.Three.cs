@@ -100,6 +100,7 @@ namespace Contributor.Asset  //DOTTEDNAME-space
 		contribution( string url, string sqstring_, string _0, string _1, string _2 )
 			{
 			this.uri = "xs:"+url+':'+sqstring_+','+_0+','+_1+','+_2 ;
+			literalized = System.Guid.Empty ;
 			}
 		void CLASS()
 			{
