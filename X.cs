@@ -207,11 +207,6 @@ class Xo_t
 			_rule = "__"+r+"()" ;
 			_rule_b = false ;
 			}
-		if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
-			{
-			_rule = "__"+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+"()" ;
-			_rule_b = false ;
-			}
 		bool _rule_bbb = false ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
 			{
@@ -243,7 +238,7 @@ class Xo_t
 		if( stateset[i].Gotoset.GetLength(0) > 3 )
 			{
 			tabs++ ;
-			list += _a+".gotoset_s = (yy) =>"+tab ;
+			list += _a+".gotoset_s = (_yy) =>"+tab ;
 			list += "{"+tab ;
 			list += gotoset_list( i, _a )+tab ;
 			tabs-- ;
@@ -253,10 +248,14 @@ class Xo_t
 		if( ! gotoset_volatile )
 			{
 			tabs++ ;
-			list += _a+".gotoset_s = (yy) =>"+tab ;
+			list += _a+".gotoset_s = (_yy) =>"+tab ;
 			list += "{"+tab ;
 			list += gotoset_nv_list( i, _a ) ;
-			list += _a+".rps="+_rule+" ; return __default ;"+tab ;
+			if( _rule_bbb || _rule == "__default" )
+				list += _a+".rps="+_rule+" ;" ;
+			else
+				list += __point( _a, rule ) ;
+			list += "return __default ;"+tab ;
 			tabs-- ;
 			list += "} ;"+tab ;
 			}
@@ -278,11 +277,8 @@ class Xo_t
 				list += "if( token_HasValue )"+tab ;
 				tabs-- ;
 				list += _a+"._token = Tokenset.Empty ;"+tab ;
-				bool _rule_bb = true ;
-				if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
-					_rule_bb = false ;
-				if( _rule_bbb )
-					_rule_bb = false ;
+				bool _rule_bb = ! ( _rule_bbb ||
+					( gotoset_volatile && stateset[i].Default_reduction.HasValue ) ) ;
 				if( _rule_bb == false || ! return_rule( i, rule, ref list, _a ) )
 					list += reductionset_list(i,_a) ;
 				}
@@ -318,7 +314,6 @@ class Xo_t
 		else
 			{
 			list += "throw new System.NotImplementedException() ;" ;
-			//list += "return "+_a+".rps="+_rule+" ;" ;
 			}
 		if( tab_b )
 			{
@@ -327,27 +322,28 @@ class Xo_t
 			list += "} ;" ;
 			return list ;
 			}
-		return (i < xo_t.Length ? __point(i) : string.Empty ) + ( io_volatile ? string.Empty :
-			  "static long _" + i.ToString() + "( Automaton a )"+tab
+		return
+			( io_volatile ? string.Empty
+			: "static long _" + i.ToString() + "( Automaton a )"+tab
 			+ "{" + tab
-			+ "log(\"" + i.ToString() + "\") ;" + tab
+			+ "log(\"_" + i.ToString() + "\") ;" + tab
 			+ list + tab
 			+ "}\n"
 			) ;
 		}
-	static string __point( int i )
+	static string __point( string _a, string rule )
 		{
+		if( rule == "__default" )
+			throw new System.NotImplementedException("default rule index") ;
+		int i = -int.Parse(rule) ;
 		string list = "" ;
-		list += "static int __" + i.ToString() + "()"+tab ;
-		list += "{" + tab ;
 		list += "backup = " + xo_t[i].rhs.Length.ToString() + " ;" + tab ;
 		if( i > 0 ) //Target0: xyzzyy tail or mantissa.
 			list += "auto = new "
 				+ xo_t[i].lhs.s + "._" + xo_t[i].lhs.X
 				+ "." + X.Auto[ "_"+xo_t[i].lhs.X ] + "() ;" + tab ;
 		list += "yy = " + ((int)xo_t[i]).ToString() + " ;" + tab ;
-		list += "return -" + i.ToString() + " ;" + tab ;
-		list += "}\n" ;
+		list += _a+".rps = -" + i + " ;" + tab ;
 		return list ;
 		}
 	static bool return_rule( int i, string rule, ref string list, string _a )
@@ -374,10 +370,12 @@ class Xo_t
 					}
 				}
 			list += "//xx"+tab ;
-			list += _a+".rps=__"+r+"() ; return __default ;"+tab ;
+			list += __point( _a, rule ) ;
+			list += "return __default ;"+tab ;
 			return true ;
 			}
-		list += "return "+_a+".rps=__"+r+"() ;"+tab ;
+		list += __point( _a, rule ) ;
+		list += "return "+_a+".rps ;"+tab ;
 		return true ;
 		}
 	static string shiftset_list( int i, string _a )
@@ -419,17 +417,18 @@ class Xo_t
 			tabs++ ;
 			list += "if( token.point == "+r.symbol+" )"+tab ;
 			int rule = stateset[i].Reductionset[z].rule ;
-			string _rule = "__"+rule+"()" ;
 			if( stateset[i].Gotoset.GetLength(0) == 0 )
 				{
+				list += "{" + tab ;
+				list += __point( _a, '-'+rule.ToString() ) + tab ;
+				list += "return "+_a+".rps ;"+tab ;
 				tabs-- ;
-				list += "return "+_a+".rps="+_rule+" ;"+tab ;
+				list += "}" + tab ;
 				}
 			else
 				{
 				list += "{"+tab ;
-				list += "/* "+xo_t[rule].rhs.Length.ToString()+"= */ " ;
-				list += _rule+" ;"+tab ;
+				list += __point( _a, '-'+rule.ToString() ) + tab ;
 				list += gotoset_s( i, (int)xo_t[rule], _a ) ;
 				tabs-- ;
 				list += "}"+tab ;
@@ -438,23 +437,22 @@ class Xo_t
 		if( list.Length != 0 )
 			{
 			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
-			string _rule = "__"+rule+"()" ;
 			if( stateset[i].Gotoset.GetLength(0) == 0 )
 				{
-				list += "return "+_a+".rps="+_rule+" ;"+tab ;
+				list += __point( _a, '-'+rule.ToString() ) + tab ;
+				list += "return "+_a+".rps ;"+tab ;
 				}
 			else
 				{
-				list += "/* "+xo_t[rule].rhs.Length.ToString()+"= */ " ;
-				list += _rule+" ;"+tab ;
+				list += __point( _a, '-'+rule.ToString() ) + tab ;
 				list += gotoset_s( i, (int)xo_t[rule], _a ) ;
 				}
 			}
 		else
 			{
 			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
-			string _rule = "__"+rule+"()" ;
-			list += "return "+_a+".rps="+_rule+" ;"+tab ;
+			list += __point( _a, '-'+rule.ToString() ) + tab ;
+			list += "return "+_a+".rps ;" + tab ;
 			}
 		return list ;
 		}
@@ -467,7 +465,7 @@ class Xo_t
 			tabs = _tabs ;
 			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
 			tabs++ ;
-			list += "if( yy == "+(string)t.item+" )"+tab ;
+			list += "if( _yy == "+(string)t.item+" )"+tab ;
 			if( ToStateVolatile( t.state ) )
 				{
 				list += "{"+tab ;
@@ -521,7 +519,7 @@ class Xo_t
 			ary[t.symbol-min] = new transtruct( t, j ) ;
 			}
 		tabs++ ;
-		list += "switch(yy)"+tab ;
+		list += "switch(_yy)"+tab ;
 		list += "{"+tab ;
 		for( int j = 0 ; j < ary.Length ; j++ )
 			{
