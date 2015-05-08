@@ -200,19 +200,16 @@ class Xo_t
 		string _a = tabs_i == 1 ? "a" : "aa" ;
 		string _rule = rule ;
 		bool _rule_b = true ;
-		string reductionset = _a+".rps="+_rule+" ; return __default ;" ;
 		if( stateset[i].Default_reduction.HasValue )
 			{
 			string r = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
 			rule = '-'+r ;
 			_rule = "__"+r+"()" ;
-			reductionset = "return "+_rule+" ;" ;
 			_rule_b = false ;
 			}
 		if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
 			{
 			_rule = "__"+stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule+"()" ;
-			reductionset = "return "+_a+".rps="+_rule+" ;" ;
 			_rule_b = false ;
 			}
 		bool _rule_bbb = false ;
@@ -225,7 +222,6 @@ class Xo_t
 				continue ;
 			if( ! volatile_b )
 				{
-				reductionset = reductionset_list( i, _a ) ;
 				_rule   = "reductionset_"+i+"( token.point )" ;
 				_rule_b = false ;
 				_rule_bbb = true ;
