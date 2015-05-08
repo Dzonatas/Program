@@ -58,15 +58,6 @@ partial class Automaton {
 		return &i; ;
 		}
 </A335-Xo_t-_io-0>
-<A335-Xo_t-_io-_1>
-	static int _&point;()
-		{
-		backup = &argc; ;
-		auto = new &namespace;.&signal;() ;
-		yy = &I; ;
-		return &i; ;
-		}
-</A335-Xo_t-_io-_1>
 <A335-Xo_t-_io-1>
 	static long &point;( Automaton a )
 	{
