@@ -58,13 +58,6 @@ partial class Automaton {
 		return &i; ;
 		}
 </A335-Xo_t-_io-0>
-<A335-Xo_t-_io-1>
-	static long &point;( Automaton a )
-	{
-	log("&point;") ;
-	&list;
-	}
-</A335-Xo_t-_io-1>
 <A335-Xo_t-_io-2>
 }
 </A335-Xo_t-_io-2>

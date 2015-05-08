@@ -331,10 +331,14 @@ class Xo_t
 			list += "} ;" ;
 			return list ;
 			}
-		X.Auto["list"] = list ;
+		list = "static long _" + i.ToString() + "( Automaton a )"+tab
+			+ "{" + tab
+			+ "log(\"" + i.ToString() + "\") ;" + tab
+			+ list + tab
+			+ "}" + tab ;
 		if( i == 0 || i >= xo_t.Length )
-			return (io_volatile ? "" : put("A335-Xo_t-_io-1")) ;
-		string _list = tab ;
+			return (io_volatile ? "" : list ) ;
+		string _list = "" ;
 		_list += "static int __" + i.ToString() + "()"+tab ;
 		_list += "{" + tab ;
 		_list += "backup = " + xo_t[i].rhs.Length.ToString() + " ;" + tab ;
@@ -344,12 +348,7 @@ class Xo_t
 		_list += "yy = " + ((int)xo_t[i]).ToString() + " ;" + tab ;
 		_list += "return -" + i.ToString() + " ;" + tab ;
 		_list += "}" + tab ;
-		X.Auto["namespace"] = xo_t[i].lhs.s + "._" + xo_t[i].lhs.X ;
-		X.Auto["signal"]    = X.Auto[ "_"+xo_t[i].lhs.X ] ;
-		X.Auto["argc"]      = xo_t[i].rhs.Length.ToString() ;
-		X.Auto["i"]         = '-'+i.ToString() ;
-		X.Auto["I"]         = ((int)xo_t[i]).ToString() ;
-		return _list+(io_volatile ? "" : put("A335-Xo_t-_io-1")) ;
+		return _list+(io_volatile ? "" : list ) ;
 		}
 	static bool return_rule( int i, string rule, ref string list, string _a )
 		{
