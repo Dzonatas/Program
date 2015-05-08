@@ -47,20 +47,6 @@ public partial class  &signal;
 <A335-Xo_t-list>
 	public static readonly char     &rule;_&point; = &global; ;
 </A335-Xo_t-list>
-<A335-Xo_t-_io-0>
-partial class Automaton {
-	const int __default = &rule; ;
-	static int __0()
-		{
-		backup = &argc; ;
-		//Target: xyzzyy tail or mantissa.
-		yy = &I; ;
-		return &i; ;
-		}
-</A335-Xo_t-_io-0>
-<A335-Xo_t-_io-2>
-}
-</A335-Xo_t-_io-2>
 <main_c>
 #include &lt;stdlib.h>
 #include &lt;sys/types.h>

@@ -331,24 +331,28 @@ class Xo_t
 			list += "} ;" ;
 			return list ;
 			}
-		list = "static long _" + i.ToString() + "( Automaton a )"+tab
+		return (i < xo_t.Length ? __point(i) : string.Empty ) + ( io_volatile ? string.Empty :
+			  "static long _" + i.ToString() + "( Automaton a )"+tab
 			+ "{" + tab
 			+ "log(\"" + i.ToString() + "\") ;" + tab
 			+ list + tab
-			+ "}" + tab ;
-		if( i == 0 || i >= xo_t.Length )
-			return (io_volatile ? "" : list ) ;
-		string _list = "" ;
-		_list += "static int __" + i.ToString() + "()"+tab ;
-		_list += "{" + tab ;
-		_list += "backup = " + xo_t[i].rhs.Length.ToString() + " ;" + tab ;
-		_list += "auto = new "
-			+ xo_t[i].lhs.s + "._" + xo_t[i].lhs.X
-			+ "." + X.Auto[ "_"+xo_t[i].lhs.X ] + "() ;" + tab ;
-		_list += "yy = " + ((int)xo_t[i]).ToString() + " ;" + tab ;
-		_list += "return -" + i.ToString() + " ;" + tab ;
-		_list += "}" + tab ;
-		return _list+(io_volatile ? "" : list ) ;
+			+ "}\n"
+			) ;
+		}
+	static string __point( int i )
+		{
+		string list = "" ;
+		list += "static int __" + i.ToString() + "()"+tab ;
+		list += "{" + tab ;
+		list += "backup = " + xo_t[i].rhs.Length.ToString() + " ;" + tab ;
+		if( i > 0 ) //Target0: xyzzyy tail or mantissa.
+			list += "auto = new "
+				+ xo_t[i].lhs.s + "._" + xo_t[i].lhs.X
+				+ "." + X.Auto[ "_"+xo_t[i].lhs.X ] + "() ;" + tab ;
+		list += "yy = " + ((int)xo_t[i]).ToString() + " ;" + tab ;
+		list += "return -" + i.ToString() + " ;" + tab ;
+		list += "}\n" ;
+		return list ;
 		}
 	static bool return_rule( int i, string rule, ref string list, string _a )
 		{
@@ -689,14 +693,15 @@ class Xo_t
 		X.Auto["argc"] = xo_t[0].rhs.Length.ToString() ;
 		X.Auto["i"]    = "0" ;
 		X.Auto["I"]    = ((int)xo_t[0]).ToString() ;
-		f.Write( put("A335-Xo_t-_io-0") ) ;
+		f.WriteLine( "partial class Automaton {" ) ;
+		f.WriteLine( "const int __default = " + ((int)_default).ToString() + " ;" ) ;
 		for( int i = 0 ; i < stateset.Length ; i++ )
 			{
 			X.Auto["point"] = "_"+i.ToString() ;
 			tabs = 1 ;
 			f.Write( _io( i ) ) ;
 			}
-		f.Write( put("A335-Xo_t-_io-2") ) ;
+		f.WriteLine( "}" ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
