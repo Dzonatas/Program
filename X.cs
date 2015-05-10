@@ -350,7 +350,8 @@ class Xo_t
 			list += "auto = new "
 				+ xo_t[i].lhs.s + "._" + xo_t[i].lhs.X
 				+ "." + X.Auto[ "_"+xo_t[i].lhs.X ] + "() ;" + tab ;
-		list += "yy = " + ((int)xo_t[i]).ToString() + " ;" + tab ;
+		if( xo_t[i].rhs.Length > 0 )
+			list += "yy = " + ((int)xo_t[i]).ToString() + " ;" + tab ;
 		return list ;
 		}
 	static bool return_rule( int i, string rule, ref string list, string _a )
