@@ -46,18 +46,8 @@ partial class Automaton
 			Automaton a = new Automaton() ;
 			i = (int) xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
 			if( i > 0 )
-				{
-				if( a.goto_v )
-					i = (int)a.rps ;
-				else
-				if( i == __default )
-					{
-					log("\ni=") ;
-					i = (int)a.rps ;
-					}
-				else
-					throw new System.NotImplementedException( "-range/+index condition" ) ;
-				}
+				throw new System.NotImplementedException( "-range/+index condition" ) ;
+			else
 			if( i < 0 )
 				{
 				(auto as bis.Auto).Argv = _token ;

@@ -371,9 +371,6 @@ class Xo_t
 					}
 				}
 			list += "//xx"+tab ;
-			list += __point( _a, rule ) ;
-			list += "return __default ;"+tab ;
-			return true ;
 			}
 		list += __point( _a, rule ) ;
 		list += "return "+_a+".rps ;"+tab ;
