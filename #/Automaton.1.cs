@@ -3,7 +3,7 @@ partial class Automaton
 	{
 	bool         goto_v        ;
 	System.Func<int,long> gotoset_s ;
-	static System.Func<Automaton,long> edge_case ;
+	static System.Func<long> edge_case ;
 	Tokenset.Token                _token ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
@@ -25,17 +25,12 @@ partial class Automaton
 		{
 		System.Console.WriteLine() ;
 		}
-	static void planet_0()
-		{
-		Automaton a = new Automaton() ;
-		a.rps = xo_a[0](a) ;
-		}
 	static int yy ;
 	long rps ;
-	static long _edge( Automaton a )
+	static long _edge()
 		{
 		log( "(V)" ) ;
-		int i = (int) edge_case( a ) ;
+		int i = (int) edge_case() ;
 		edge_case = null ;
 		return i ;
 		}
@@ -43,8 +38,7 @@ partial class Automaton
 		{
 		do	{
 			int i ;
-			Automaton a = new Automaton() ;
-			i = (int) xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
+			i = (int) xo_a[ (rps &  ((long)ushort.MaxValue)) ]() ;
 			if( i > 0 )
 				throw new System.NotImplementedException( "-range/+index condition" ) ;
 			else

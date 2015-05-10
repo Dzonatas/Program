@@ -37,7 +37,7 @@ partial class Automaton
 	#if EMBED
 	public static void Main( string[] args )
 		{
-		planet_0() ;
+		_0() ;
 		log_end() ;
 		}
 	#endif

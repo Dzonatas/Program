@@ -227,9 +227,10 @@ class Xo_t
 		if( tab_b )
 			{
 			tabs++ ;
-			list += "("+_a+") =>"+tab ;
+			list += "() =>"+tab ;
 			list += "{"+tab ;
 			}
+		list += "Automaton "+_a+" = new Automaton() ;" + tab ;
 		if( io_volatile )
 			list += "log(\""+i+"\") ; /*"+( volatile_b ? "volatile_b" : "" )+"*/"+tab ;
 		if( gotoset_volatile )
@@ -324,7 +325,7 @@ class Xo_t
 			}
 		return
 			( io_volatile ? string.Empty
-			: "static long _" + i.ToString() + "( Automaton a )"+tab
+			: "static long _" + i.ToString() + "()"+tab
 			+ "{" + tab
 			+ "log(\"_" + i.ToString() + "\") ;" + tab
 			+ list + tab
@@ -661,7 +662,7 @@ class Xo_t
 		Cluster.Cli.NoOperation() ;
 		X.Auto["branch"] = branch ;
 		var ss = Current.Path.CreateText( "Automaton.2.cs" ) ;
-		ss.Write("partial class Automaton {\nstatic System.Func<Automaton,long>[] xo_a =\n\t{\n\t") ;
+		ss.Write("partial class Automaton {\nstatic readonly System.Func<long>[] xo_a =\n\t{\n\t") ;
 		for( int z = 0 ; z < stateset.Length ; z++ )
 			{
 			if( ToStateVolatile( z ) )
