@@ -343,16 +343,16 @@ class Xo_t
 		{
 		if( rule == "__default" )
 			throw new System.NotImplementedException("default rule index") ;
-		int i = -int.Parse(rule) ;
+		int r = -int.Parse(rule) ;
 		string list = "" ;
-		if( i > 0 ) //Target0: xyzzyy tail or mantissa.
+		if( r > 0 ) //Target0: xyzzyy tail or mantissa.
 			list += "auto = new "
-				+ xo_t[i].lhs.s + "._" + xo_t[i].lhs.X
-				+ "." + X.Auto[ "_"+xo_t[i].lhs.X ] + "() ;" + tab ;
-		if( xo_t[i].rhs.Length > 0 )
+				+ xo_t[r].lhs.s + "._" + xo_t[r].lhs.X
+				+ "." + X.Auto[ "_"+xo_t[r].lhs.X ] + "() ;" + tab ;
+		if( xo_t[r].rhs.Length > 0 )
 			{
-			list += "backup = " + xo_t[i].rhs.Length.ToString() + " ;" + tab ;
-			list += "yy = " + ((int)xo_t[i]).ToString() + " ;" + tab ;
+			list += "backup = " + xo_t[r].rhs.Length.ToString() + " ;" + tab ;
+			list += "yy = " + ((int)xo_t[r]).ToString() + " ;" + tab ;
 			}
 		return list  ;
 		}
