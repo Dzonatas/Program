@@ -29,7 +29,6 @@ partial class Automaton
 		{
 		Automaton a = new Automaton() ;
 		a.rps = xo_a[0](a) ;
-		a.deploy() ;
 		}
 	static int yy ;
 	long rps ;
@@ -48,9 +47,6 @@ partial class Automaton
 			i = (int) xo_a[ (rps &  ((long)ushort.MaxValue)) ](a) ;
 			if( i > 0 )
 				{
-				if( a.rps > 0 )
-					i = a.deploy() ;
-				else
 				if( a.goto_v )
 					i = (int)a.rps ;
 				else

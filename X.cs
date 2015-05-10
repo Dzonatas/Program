@@ -365,7 +365,8 @@ class Xo_t
 						list += "edge_case = "+_io(t.state) +"/*yyy*/"+tab ;
 						}
 					tabs--;
-					list += "return "+_a+".rps="+(string)t+" ;"+tab ;
+					list += _a+".rps="+(string)t+" ;"+tab ;
+					list += "return "+_a+".deploy() ;"+tab ;
 					return true ;
 					}
 				}
@@ -390,14 +391,18 @@ class Xo_t
 				{
 				list += "{"+tab ;
 				list += "edge_case = "+_io(t.state)+tab ;
-				list += "return "+_a+".rps="+(string)t+" ;"+tab ;
+				list += _a+".rps="+(string)t+" ;"+tab ;
+				list += "return "+_a+".deploy() ;"+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
 			else
 				{
+				list += "{"+tab ;
+				list += _a+".rps="+(string)t+" ;"+tab ;
+				list += "return "+_a+".deploy() ;"+tab ;
 				tabs-- ;
-				list += "return "+_a+".rps="+(string)t+" ;"+tab ;
+				list += "}"+tab ;
 				}
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
 				list += "else"+tab ;
