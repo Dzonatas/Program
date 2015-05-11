@@ -339,20 +339,24 @@ class Xo_t
 			+ "}\n"
 			) ;
 		}
+	static int backup ;
+	static int yy ;
 	static string __point( string _a, string rule )
 		{
 		if( rule == "__default" )
 			throw new System.NotImplementedException("default rule index") ;
 		int r = -int.Parse(rule) ;
+		backup = xo_t[r].rhs.Length ;
+		yy = xo_t[r] ;
 		string list = "" ;
 		if( r > 0 ) //Target0: xyzzyy tail or mantissa.
 			list += "auto = new "
 				+ xo_t[r].lhs.s + "._" + xo_t[r].lhs.X
 				+ "." + X.Auto[ "_"+xo_t[r].lhs.X ] + "() ;" + tab ;
-		if( xo_t[r].rhs.Length > 0 )
+		if( backup > 0 )
 			{
-			list += "backup = " + xo_t[r].rhs.Length.ToString() + " ;" + tab ;
-			list += "yy = " + ((int)xo_t[r]).ToString() + " ;" + tab ;
+			list += "backup = " + backup + " ;" + tab ;
+			list += "yy = " + yy + " ;" + tab ;
 			}
 		return list  ;
 		}
@@ -369,14 +373,30 @@ class Xo_t
 				Transition t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
 				if( t.symbol == x )
 					{
-					tabs++ ;
 					if( ToStateVolatile( t.state ) )
 						{
-						list += "edge_case = "+_io(t.state) +"/*yyy*/"+tab ;
+						tabs++ ;
+						list += "edge_case = "+_io(t.state) +"/*yyy*/" ;
+						tabs-- ;
+						list += tab ;
+						list += _a+".rps=edge_case() ;" + tab ;
+						if( backup > 0 )
+							{
+							list += "(auto as bis.Auto).Argv = "+_a+"._token ;" + tab ;
+							backup-- ;
+							list += "backup = "+backup+" ;" + tab ;
+							if( backup == 0 )
+								list += "(auto as bis.Auto).Splice() ;" + tab ;
+							}
+						if( backup > 0 )
+							list += "return "+_a+".rps ; //mmm"+tab ;
+						else
+							list += "return -0 ; //mmmm"+tab ;
 						}
-					tabs--;
-					list += _a+".rps="+(string)t+" ;"+tab ;
-					list += "return "+_a+".deploy() ;"+tab ;
+					else {
+						list += _a+".rps="+(string)t+" ;"+tab ;
+						list += "return "+_a+".deploy() ;"+tab ;
+						}
 					return true ;
 					}
 				}
