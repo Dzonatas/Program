@@ -237,27 +237,12 @@ class Xo_t
 		if( gotoset_volatile && ! io_volatile )
 			list += _a+".goto_v = true ;"+tab ;
 		string gotoset = "" ;
-		if( stateset[i].Gotoset.GetLength(0) > 3 )
-			{
-			tabs++ ;
-			list += _a+".gotoset_s = (_yy) =>"+tab ;
-			list += "{"+tab ;
-			list += gotoset_list( i, _a )+tab ;
-			tabs-- ;
-			list += "} ;"+tab ;
-			}
-		else
 		if( ! gotoset_volatile )
 			{
 			tabs++ ;
 			list += _a+".gotoset_s = (_yy) =>"+tab ;
 			list += "{"+tab ;
-			list += gotoset_nv_list( i, _a ) ;
-			if( _rule_bbb || _rule == "__default" )
-				list += _a+".rps="+_rule+" ;" ;
-			else
-				list += __point( _a, rule ) ;
-			list += "return __default ;"+tab ;
+			list += gotoset_list( i, _a )+tab ;
 			tabs-- ;
 			list += "} ;"+tab ;
 			}
@@ -486,33 +471,6 @@ class Xo_t
 			}
 		return list ;
 		}
-	static string gotoset_nv_list( int i, string _a )
-		{
-		int _tabs = tabs ;
-		string list = "" ;
-		for( int z = 0 ; z < stateset[i].Gotoset.GetLength(0) ; z++ )
-			{
-			tabs = _tabs ;
-			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
-			tabs++ ;
-			list += "if( _yy == "+(string)t.item+" )"+tab ;
-			if( ToStateVolatile( t.state ) )
-				{
-				list += "{"+tab ;
-				list += "edge_case = "+_io(t.state)+tab ;
-				list += "return edge_case() ;"+tab ;
-				tabs-- ;
-				list += "}"+tab ;
-				}
-			else
-				{
-				tabs-- ;
-				list += "return _"+t.state+"() ;"+tab ;
-				}
-			}
-		tabs = _tabs ;
-		return list ;
-		}
 	struct transtruct
 		{
 		public Transition t ;
@@ -530,7 +488,6 @@ class Xo_t
 		string list = "" ;
 		string gotoset = "" ;
 		int size = stateset[i].Gotoset.GetLength(0) ;
-		list += "// size="+size+tab ;
 		int min = int.MaxValue;
 		int max = int.MinValue;
 		for( int j = 0 ; j < size ; j++ )
@@ -539,9 +496,7 @@ class Xo_t
 			if( t.symbol > max ) max = t.symbol ;
 			if( t.symbol < min ) min = t.symbol ;
 			}
-		list += "// min="+min+"  max="+max+tab ;
 		int length = 1+max-min ;
-		list += "// length="+(length)+tab ;
 		transtruct[] ary = new transtruct[1+max-min] ;
 		for( int j = 0 ; j < size ; j++ )
 			{
@@ -549,7 +504,7 @@ class Xo_t
 			ary[t.symbol-min] = new transtruct( t, j ) ;
 			}
 		tabs++ ;
-		list += "switch(_yy)"+tab ;
+		list += "switch(_yy) // size="+size+" min="+min+" max="+max+" length="+(1+max-min).ToString()+tab ;
 		list += "{"+tab ;
 		for( int j = 0 ; j < ary.Length ; j++ )
 			{
@@ -562,12 +517,9 @@ class Xo_t
 				list += tab ;
 				}
 			}
+		list += "default: return __default ;"+tab ;
 		tabs-- ;
-		list += "}"+tab ;
-		list += "return __default ;"+tab ;
-		list += "//" ;
-		X.Auto["list"] = list ;
-		X.Auto["i"] = "_" ;
+		list += "}" ;
 		return list ;
 		}
 	static string gotoset_list( int i, int zi, string _a )
