@@ -332,7 +332,7 @@ class Xo_t
 			}
 		return
 			( io_volatile ? string.Empty
-			: "static long _" + i.ToString() + "()"+tab
+			: "static int _" + i.ToString() + "()"+tab
 			+ "{" + tab
 			+ "log(\"_" + i.ToString() + "\") ;" + tab
 			+ list + tab
@@ -379,7 +379,7 @@ class Xo_t
 						list += "edge_case = "+_io(t.state) +"/*yyy*/" ;
 						tabs-- ;
 						list += tab ;
-						list += _a+".rps=edge_case() ;" + tab ;
+						list += _a+".rps =edge_case() ;" + tab ;
 						if( backup > 0 )
 							{
 							list += "(auto as bis.Auto).Argv = "+_a+"._token ;" + tab ;
@@ -389,13 +389,13 @@ class Xo_t
 								list += "(auto as bis.Auto).Splice() ;" + tab ;
 							}
 						if( backup > 0 )
-							list += "return "+_a+".rps ; //mmm"+tab ;
+							list += "return "+_a+".rps ;"+tab ;
 						else
-							list += "return -0 ; //mmmm"+tab ;
+							list += "return __default ;"+tab ;
 						}
-					else {
-						list += _a+".rps="+(string)t+" ;"+tab ;
-						list += "return "+_a+".deploy() ;"+tab ;
+					else
+						{
+						list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
 						}
 					return true ;
 					}
@@ -418,16 +418,14 @@ class Xo_t
 				{
 				list += "{"+tab ;
 				list += "edge_case = "+_io(t.state)+tab ;
-				list += _a+".rps="+(string)t+" ;"+tab ;
-				list += "return "+_a+".deploy() ;"+tab ;
+				list += "return "+_a+".deploy( edge_case() ) ;"+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
 			else
 				{
 				list += "{"+tab ;
-				list += _a+".rps="+(string)t+" ;"+tab ;
-				list += "return "+_a+".deploy() ;"+tab ;
+				list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
@@ -502,14 +500,14 @@ class Xo_t
 				{
 				list += "{"+tab ;
 				list += "edge_case = "+_io(t.state)+tab ;
-				list += "return "+_a+".rps="+(string)t+" ;"+tab ;
+				list += "return edge_case() ;"+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
 			else
 				{
 				tabs-- ;
-				list += "return "+_a+".rps="+(string)t+" ;"+tab ;
+				list += "return _"+t.state+"() ;"+tab ;
 				}
 			}
 		tabs = _tabs ;
@@ -566,7 +564,7 @@ class Xo_t
 			}
 		tabs-- ;
 		list += "}"+tab ;
-		list += "return "+_a+".rps=__default ;"+tab ;
+		list += "return __default ;"+tab ;
 		list += "//" ;
 		X.Auto["list"] = list ;
 		X.Auto["i"] = "_" ;
@@ -580,10 +578,10 @@ class Xo_t
 			{
 			list += tab ;
 			list += "edge_case = "+_io(t.state)+tab ;
-			list += "return "+_a+".rps="+(string)t+" ;" ;
+			list += "return edge_case() ;" ;
 			}
 		else
-			list += " return "+_a+".rps="+(string)t+" ;" ;
+			list += " return _"+t.state+"() ;" ;
 		return list ;
 		}
 	static string gotoset_s( int i, int symbol, string _a )
@@ -597,17 +595,15 @@ class Xo_t
 			if( ToStateVolatile( t.state ) )
 				{
 				list += "edge_case = "+_io(t.state)+tab ;
-				list += _a+".rps="+(string)t+" ;"+tab ;
-				list += "return "+_a+".deploy() ; //oo"+tab ;
+				list += "return "+_a+".deploy( edge_case() ) ; //oo"+tab ;
 				}
 			else
 				{
-				list += _a+".rps="+(string)t+" ;"+tab ;
-				list += "return "+_a+".deploy() ;"+tab ;
+				list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
 				}
 			return list ;
 			}
-		list += "return "+_a+".rps=__default ; //oo"+tab ;
+		list += "return __default ; //oo"+tab ;
 		return list ;
 		}
 	public static string put( string s )
@@ -690,20 +686,6 @@ class Xo_t
 		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
 		Cluster.Cli.NoOperation() ;
 		X.Auto["branch"] = branch ;
-		var ss = Current.Path.CreateText( "Automaton.2.cs" ) ;
-		ss.Write("partial class Automaton {\nstatic readonly System.Func<long>[] xo_a =\n\t{\n\t") ;
-		for( int z = 0 ; z < stateset.Length ; z++ )
-			{
-			if( ToStateVolatile( z ) )
-				ss.Write( "_edge\t, ", z ) ;
-			else
-				ss.Write( "_{0}\t, ", z ) ;
-			if( z%10 == 9 )
-				ss.Write( "\n\t" ) ;
-			}
-		ss.WriteLine( "} ;" ) ;
-		ss.WriteLine( "}" ) ;
-		ss.Close() ;
 		X.Auto["list"] = list( 0 ) ;
 		var f = Current.Path.CreateText( compile[0] ) ;
 		string filename = "" ;
@@ -805,14 +787,9 @@ class Xo_t
 			}
 	}
 
-//static Dictionary<string,Symbol> x_lhs_s = new Dictionary<string, Symbol>() ;
-//static Dictionary<string,Symbol> x_rhs_s = new Dictionary<string, Symbol>() ;
-
-static System.IO.StreamWriter items_cs ;
 static System.IO.StreamWriter symbols_cs ;
 static string transitions = string.Empty ;
 static bool symbols_cs_b ;
-static bool items_cs_b ;
 
 static void xml_load_grammar()
 	{
@@ -820,17 +797,10 @@ static void xml_load_grammar()
 		return ;
 	symbols_cs_b = true /*Cluster.Parameter.Value("reflection") == "true"*/
 		|| ! Current.Path.Exists( "Automaton.symbols.cs" ) ;
-	items_cs_b = true /*Cluster.Parameter.Value("reflection") == "true"*/
-		|| ! Current.Path.Exists( "Automaton.items.cs" ) ;
 	if( symbols_cs_b )
 		{
 		symbols_cs = Current.Path.CreateText( "Automaton.symbols.cs" ) ;
 		symbols_cs.Write("partial class Automaton\n\t{\n\t") ;
-		}
-	if( items_cs_b )
-		{
-		items_cs = Current.Path.CreateText( "Automaton.items.cs" ) ;
-		items_cs.Write("partial class Automaton\n\t{\n\t") ;
 		}
 	xml = new XmlTextReader( new StreamReader( "../../~/understand/grammar.xml" ) ) ;
 	while( xml.Read() )
@@ -860,12 +830,6 @@ static void xml_load_grammar()
 		{
 		symbols_cs.WriteLine("}") ;
 		symbols_cs.Close() ;
-		}
-	if( items_cs_b )
-		{
-		items_cs.WriteLine("}") ;
-		items_cs.Close() ;
-		transitions = string.Empty ;
 		}
 	}
 
@@ -1213,11 +1177,6 @@ static void xml_get_transition()
 		x_state.Shiftset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
 	else
 		x_state.Gotoset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
-	if( items_cs_b && ! transitions.Contains( (string)t ) )
-		{
-		items_cs.Write( "const long "+(string)t+"\t= "+(ulong)t+" ;\n\t" ) ;
-		transitions += (string)t+"," ;
-		}
 	}
 
 static void xml_get_reduction()

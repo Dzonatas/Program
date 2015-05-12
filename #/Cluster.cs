@@ -100,8 +100,6 @@ public static partial class Shell
 			#endif
 			+ files
 			+ " "+Current.Path.Entry("tokenset.cs")
-			+ " "+Current.Path.Entry("Automaton.2.cs")
-			+ " "+Current.Path.Entry("Automaton.items.cs")
 			+ " "+Current.Path.Entry("Automaton.symbols.cs")
 			+ " "
 			+ "-out:" + infrastruct

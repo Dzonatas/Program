@@ -2,8 +2,8 @@ using Debug = System.Console ;
 partial class Automaton
 	{
 	bool         goto_v        ;
-	System.Func<int,long> gotoset_s ;
-	static System.Func<long> edge_case ;
+	System.Func<int,int> gotoset_s ;
+	static System.Func<int> edge_case ;
 	Tokenset.Token                _token ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;
@@ -26,19 +26,10 @@ partial class Automaton
 		System.Console.WriteLine() ;
 		}
 	static int yy ;
-	long rps ;
-	static long _edge()
-		{
-		log( "(V)" ) ;
-		int i = (int) edge_case() ;
-		edge_case = null ;
-		return i ;
-		}
-	int deploy()
+	int rps ;
+	int deploy( int i )
 		{
 		do	{
-			int i ;
-			i = (int) xo_a[ (rps &  ((long)ushort.MaxValue)) ]() ;
 			if( i > 0 )
 				throw new System.NotImplementedException( "-range/+index condition" ) ;
 			else
@@ -52,7 +43,7 @@ partial class Automaton
 				}
 			else
 				yy = (int)__default ;
-			} while( (! goto_v) && (rps = gotoset_s( yy )) != __default ) ;
+			} while( (! goto_v) && (i = (int) gotoset_s( yy )) != __default ) ;
 		if( token.c != 0 )
 			throw new System.NotImplementedException( "token != $end" ) ;
 		return 0 ;
