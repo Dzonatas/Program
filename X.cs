@@ -249,8 +249,9 @@ class Xo_t
 		if( ! lookahead_volatile )
 			{
 			tabs++ ;
-			list += lookahead_list( i ) + tab ;
+			list += "switch( token.point ) //look"+tab ;
 			list += "{"+tab ;
+			list += lookahead_list( i ) + tab ;
 			if( rule == "__default" )
 				throw new System.NotImplementedException("Default condition on lookahead") ;
 			else
@@ -263,14 +264,12 @@ class Xo_t
 					list += _a+"._token = Tokenset.Empty ;"+tab ;
 					}
 				}
-			tabs-- ;
-			list += "}"+tab ;
 			if( volatile_b == false || shiftset_volatile == false )
 				{
-				tabs++ ;
-				list += "else"+tab ;
-				list += "{"+tab ;
+				list += "goto _"+i+"_default ;" + tab ;
 				}
+			tabs-- ;
+			list += "}"+tab ;
 			}
 		if( ! volatile_b )
 			{
@@ -281,8 +280,7 @@ class Xo_t
 			list += shiftset_list( i, _a ) + tab ;
 		if( lookahead_volatile == false && ( volatile_b == false || shiftset_volatile == false ) )
 			{
-			tabs-- ;
-			list += "}"+tab ;
+			list += " _"+i+"_default:" + tab ;
 			}
 		if( rule != "__default" && volatile_b )
 			{
@@ -305,7 +303,7 @@ class Xo_t
 			if( _rule_bbb )
 				_rule_bb = false ;
 			if( _rule_bb == false || ! return_rule( i, rule, ref list, _a ) )
-				list += reductionset_list(i,_a) ;
+				list += reductionset_list(i,_a)+"//rr" ;
 			}
 		else
 			{
@@ -396,59 +394,12 @@ class Xo_t
 		}
 	static string lookahead_list( int i )
 		{
-		int z = 0 ;
-		string list = "//look " ;
-		for( z = 0 ; z < stateset[i].Lookaheadset.Length ; z++ )
-			list += stateset[i].Lookaheadset[z] + " " ;
-		list += tab+"if( " ;
-		if( stateset[i].Lookaheadset.Length == 1 )
+		string list = "" ;
+		for( int z = 0 ; z < stateset[i].Lookaheadset.Length ; z++ )
 			{
-			list += "token.point == "+stateset[i].Lookaheadset[0]+" ? true : false )" ;
-			return list ;
+			string t = ( ( z%8 == 7 && z != stateset[i].Lookaheadset.Length-1 ) ? tab : " " ) ;
+			list += "case "+stateset[i].Lookaheadset[z]+":" + t ;
 			}
-		if( stateset[i].Lookaheadset.Length == 2 )
-			{
-			list += "token.point == "+stateset[i].Lookaheadset[0]+" ? true : " ;
-			list += "token.point == "+stateset[i].Lookaheadset[1]+" ? true : false )" ;
-			return list ;
-			}
-		int min = stateset[0].Lookaheadset.Length ;
-		bool compress = false ;
-		int compress_z = 0 ;
-		int j = 0 ;
-		string compare_s = "== " ;
-		for( z = 0 ; z < stateset[i].Lookaheadset.Length ; z++ )
-			{
-			if( z < stateset[i].Lookaheadset.Length-1
-				&& stateset[i].Lookaheadset[z] == stateset[i].Lookaheadset[z+1] - 1 )
-				{
-				if( compress )
-					continue ;
-				else
-					{
-					compress = true ;
-					compress_z = z ;
-					compare_s = ">= " ;
-					}
-				}
-			else
-			if( compress )
-				{
-				compare_s = "<= " ;
-				compress = false ;
-				}
-			else
-				compare_s = "== " ;
-			string t = ( ( j%3 == 2 && j != stateset[i].Lookaheadset.Length-1 ) ? tab : "" ) ;
-			j++ ;
-			if( compare_s == ">= " ) list += "( " ;
-			list += "token.point "+compare_s+stateset[i].Lookaheadset[z] ;
-			if( compare_s == ">= " ) list += t+" && " ;
-			if( compare_s == "<= " ) list += ") " ;
-			if( ! compress )
-				list += " ? true"+t+" : " ;
-			}
-		list += "false )" ;
 		return list ;
 		}
 	static string shiftset_list( int i, string _a )
@@ -497,7 +448,7 @@ class Xo_t
 		}
 	static string reductionset_list( int i, string _a )
 		{
-		string list = "" ;
+		string list = "//vv"+tab ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
 			{
 			Reduction r = stateset[i].Reductionset[z] ;
