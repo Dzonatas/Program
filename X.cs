@@ -246,7 +246,7 @@ class Xo_t
 			tabs-- ;
 			list += "} ;"+tab ;
 			}
-		if( stateset[i].Lookaheadset.Length > 0 )
+		if( ! lookahead_volatile )
 			{
 			tabs++ ;
 			list += "if( " ;
@@ -267,20 +267,28 @@ class Xo_t
 					tabs-- ;
 					list += _a+"._token = Tokenset.Empty ;"+tab ;
 					}
-				bool _rule_bb = ! ( _rule_bbb ||
-					( gotoset_volatile && stateset[i].Default_reduction.HasValue ) ) ;
-				if( _rule_bb == false || ! return_rule( i, rule, ref list, _a ) )
-					list += reductionset_list(i,_a) ;
 				}
 			tabs-- ;
 			list += "}"+tab ;
+			if( volatile_b == false || shiftset_volatile == false )
+				{
+				tabs++ ;
+				list += "else"+tab ;
+				list += "{"+tab ;
+				}
 			}
 		if( ! volatile_b )
 			{
 			list += _a+"._token = token ;"+tab ;
 			list += "token_HasValue = false ;"+tab ;
 			}
-		list += shiftset_list( i, _a ) ;
+		if( ! shiftset_volatile )
+			list += shiftset_list( i, _a ) + tab ;
+		if( lookahead_volatile == false && ( volatile_b == false || shiftset_volatile == false ) )
+			{
+			tabs-- ;
+			list += "}"+tab ;
+			}
 		if( rule != "__default" && volatile_b )
 			{
 			if( ! io_volatile )
@@ -393,29 +401,45 @@ class Xo_t
 		}
 	static string shiftset_list( int i, string _a )
 		{
+		bool switch_b = stateset[i].Shiftset.GetLength(0) > 2 ;
 		string list = "" ;
+		if( switch_b )
+			{
+			tabs++ ;
+			list += "switch( token.point )"+tab ;
+			list += "{"+tab ;
+			}
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
 			{
 			Transition  t = stateset[i].Transitionset[ stateset[i].Shiftset[z,1] ] ;
-			tabs++ ;
-			list += "if( token.point == "+(string)t.item+" )"+tab ;
+			if( switch_b )
+				list += "case "+(string)t.item+":" ;
+			else
+				list += "if( token.point == "+(string)t.item+" )" ;
 			if( ToStateVolatile( t.state ) )
 				{
+				tabs++ ;
+				list += tab ;
 				list += "{"+tab ;
 				list += "edge_case = "+_io(t.state)+tab ;
 				list += "return "+_a+".deploy( edge_case() ) ;"+tab ;
 				tabs-- ;
-				list += "}"+tab ;
+				list += "}" ;
 				}
 			else
 				{
-				list += "{"+tab ;
-				list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
-				tabs-- ;
-				list += "}"+tab ;
+				list += " return "+_a+".deploy( _"+t.state+"() ) ;" ;
 				}
+			if( switch_b )
+				list += tab ;
+			else
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
-				list += "else"+tab ;
+				list += tab+"else"+tab ;
+			}
+		if( switch_b )
+			{
+			list += "}" ;
+			tabs-- ;
 			}
 		return list ;
 		}
