@@ -679,6 +679,7 @@ class Xo_t
 		X.Auto["I"]    = ((int)xo_t[0]).ToString() ;
 		f.WriteLine( "partial class Automaton {" ) ;
 		f.WriteLine( "const int __default = " + ((int)_default).ToString() + " ;" ) ;
+		f.WriteLine( put("Automaton-deploy") ) ;
 		for( int i = 0 ; i < stateset.Length ; i++ )
 			{
 			X.Auto["point"] = "_"+i.ToString() ;
