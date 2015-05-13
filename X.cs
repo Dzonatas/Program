@@ -375,11 +375,11 @@ class Xo_t
 						list += _a+".rps =edge_case() ;" + tab ;
 						if( backup > 0 )
 							{
-							list += "(auto as bis.Auto).Argv = "+_a+"._token ;" + tab ;
+							list += "(auto as "+branch+".Auto).Argv = "+_a+"._token ;" + tab ;
 							backup-- ;
 							list += "backup = "+backup+" ;" + tab ;
 							if( backup == 0 )
-								list += "(auto as bis.Auto).Splice() ;" + tab ;
+								list += "(auto as "+branch+".Auto).Splice() ;" + tab ;
 							}
 						if( backup > 0 )
 							list += "return "+_a+".rps ;"+tab ;
