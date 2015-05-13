@@ -249,12 +249,7 @@ class Xo_t
 		if( ! lookahead_volatile )
 			{
 			tabs++ ;
-			list += "if( " ;
-			int z ;
-			for( z = 0 ; z < stateset[i].Lookaheadset.Length-1 ; z++ )
-				list += "token.point == "+stateset[i].Lookaheadset[z]
-				+ " ? true"+( z%3 == 2 ? tab : "" ) +" : " ;
-			list += "token.point == "+stateset[i].Lookaheadset[z]+" ? true : false )"+tab ;
+			list += lookahead_list( i ) + tab ;
 			list += "{"+tab ;
 			if( rule == "__default" )
 				throw new System.NotImplementedException("Default condition on lookahead") ;
@@ -398,6 +393,63 @@ class Xo_t
 		list += __point( _a, rule ) ;
 		list += "return "+rule+" ;"+tab ;
 		return true ;
+		}
+	static string lookahead_list( int i )
+		{
+		int z = 0 ;
+		string list = "//look " ;
+		for( z = 0 ; z < stateset[i].Lookaheadset.Length ; z++ )
+			list += stateset[i].Lookaheadset[z] + " " ;
+		list += tab+"if( " ;
+		if( stateset[i].Lookaheadset.Length == 1 )
+			{
+			list += "token.point == "+stateset[i].Lookaheadset[0]+" ? true : false )" ;
+			return list ;
+			}
+		if( stateset[i].Lookaheadset.Length == 2 )
+			{
+			list += "token.point == "+stateset[i].Lookaheadset[0]+" ? true : " ;
+			list += "token.point == "+stateset[i].Lookaheadset[1]+" ? true : false )" ;
+			return list ;
+			}
+		int min = stateset[0].Lookaheadset.Length ;
+		bool compress = false ;
+		int compress_z = 0 ;
+		int j = 0 ;
+		string compare_s = "== " ;
+		for( z = 0 ; z < stateset[i].Lookaheadset.Length ; z++ )
+			{
+			if( z < stateset[i].Lookaheadset.Length-1
+				&& stateset[i].Lookaheadset[z] == stateset[i].Lookaheadset[z+1] - 1 )
+				{
+				if( compress )
+					continue ;
+				else
+					{
+					compress = true ;
+					compress_z = z ;
+					compare_s = ">= " ;
+					}
+				}
+			else
+			if( compress )
+				{
+				compare_s = "<= " ;
+				compress = false ;
+				}
+			else
+				compare_s = "== " ;
+			string t = ( ( j%3 == 2 && j != stateset[i].Lookaheadset.Length-1 ) ? tab : "" ) ;
+			j++ ;
+			if( compare_s == ">= " ) list += "( " ;
+			list += "token.point "+compare_s+stateset[i].Lookaheadset[z] ;
+			if( compare_s == ">= " ) list += t+" && " ;
+			if( compare_s == "<= " ) list += ") " ;
+			if( ! compress )
+				list += " ? true"+t+" : " ;
+			}
+		list += "false )" ;
+		return list ;
 		}
 	static string shiftset_list( int i, string _a )
 		{
