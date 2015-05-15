@@ -273,14 +273,13 @@ class Xo_t
 			}
 		if( ! volatile_b )
 			{
-			list += _a+"._token = token ;"+tab ;
-			list += "token_HasValue = false ;"+tab ;
+			list += _a+".shift() ;"+tab ;
 			}
 		if( ! shiftset_volatile )
 			list += shiftset_list( i, _a ) + tab ;
 		if( lookahead_volatile == false && ( volatile_b == false || shiftset_volatile == false ) )
 			{
-			list += " _"+i+"_default:" + tab ;
+			list += "_"+i+"_default:" + tab ;
 			}
 		if( rule != "__default" && volatile_b )
 			{

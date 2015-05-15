@@ -48,6 +48,11 @@ public partial class  &signal;
 	public static readonly char     &rule;_&point; = &global; ;
 </A335-Xo_t-list>
 <Automaton-deploy>
+void shift()
+	{
+	_token = token ;
+	token_HasValue = false ;
+	}
 int deploy( int i )
 	{
 	do	{
