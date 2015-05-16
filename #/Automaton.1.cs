@@ -3,7 +3,6 @@ partial class Automaton
 	{
 	bool         goto_v        ;
 	System.Func<int,int> gotoset_s ;
-	static System.Func<int> edge_case ;
 	Tokenset.Token                _token ;
 	static Tokenset.Token         token ;
 	static bool  token_HasValue   = false ;

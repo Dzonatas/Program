@@ -166,16 +166,6 @@ class Xo_t
 			}
 		return sb.ToString() ;
 		}
-	static bool ToStateVolatile( int i )
-		{
-		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
-		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
-		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
-		bool gotoset_volatile   = stateset[i].Gotoset.GetLength(0) == 0 ;
-		bool default_volatile   = stateset[i].Default_reduction.HasValue == false
-			|| stateset[i].Reductionset.GetLength(0) == 1 ;
-		return volatile_b && default_volatile && gotoset_volatile && stateset[i].FromStates.Length == 1 ;
-		}
 	static int tabs_i ;
 	static int tabs
 		{
@@ -196,7 +186,7 @@ class Xo_t
 			|| stateset[i].Reductionset.GetLength(0) == 1 ;
 		bool io_volatile = stateset[i].FromStates.Length == 1
 			&& volatile_b && default_volatile && gotoset_volatile ;
-		bool tab_b = tabs_i != 1 ;
+		//bool tab_b = tabs_i != 1 ;
 		string _a = tabs_i == 1 ? "a" : "aa" ;
 		string _rule = rule ;
 		bool _rule_b = true ;
@@ -224,12 +214,14 @@ class Xo_t
 			break ;
 			}
 		string list = "" ;
+		/*
 		if( tab_b )
 			{
 			tabs++ ;
 			list += "() =>"+tab ;
 			list += "{"+tab ;
 			}
+		*/
 		if( ! io_volatile )
 			list += "Automaton "+_a+" = new Automaton() ;" + tab ;
 		if( io_volatile )
@@ -308,6 +300,7 @@ class Xo_t
 			{
 			list += "throw new System.NotImplementedException() ;" ;
 			}
+		/*
 		if( tab_b )
 			{
 			list += tab ;
@@ -315,9 +308,9 @@ class Xo_t
 			list += "} ;" ;
 			return list ;
 			}
+		*/
 		return
-			( io_volatile ? string.Empty
-			: "static int _" + i.ToString() + "()"+tab
+			( "static int _" + i.ToString() + "()"+tab
 			+ "{" + tab
 			+ "log(\"_" + i.ToString() + "\") ;" + tab
 			+ list + tab
@@ -352,40 +345,15 @@ class Xo_t
 		if( l != 0 )
 			{
 			int x = (int)xo_t[r] ;
-			list += "//xo_t="+x+tab ;
 			for( int z = 0 ; z < l ; z++ )
 				{
 				Transition t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
 				if( t.symbol == x )
 					{
-					if( ToStateVolatile( t.state ) )
-						{
-						tabs++ ;
-						list += "edge_case = "+_io(t.state) +"/*yyy*/" ;
-						tabs-- ;
-						list += tab ;
-						list += _a+".rps =edge_case() ;" + tab ;
-						if( backup > 0 )
-							{
-							list += "(auto as "+branch+".Auto).Argv = "+_a+"._token ;" + tab ;
-							backup-- ;
-							list += "backup = "+backup+" ;" + tab ;
-							if( backup == 0 )
-								list += "(auto as "+branch+".Auto).Splice() ;" + tab ;
-							}
-						if( backup > 0 )
-							list += "return "+_a+".rps ;"+tab ;
-						else
-							list += "return __default ;"+tab ;
-						}
-					else
-						{
-						list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
-						}
+					list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
 					return true ;
 					}
 				}
-			list += "//xx"+tab ;
 			}
 		list += __point( _a, rule ) ;
 		list += "return "+rule+" ;"+tab ;
@@ -418,20 +386,7 @@ class Xo_t
 				list += "case "+(string)t.item+":" ;
 			else
 				list += "if( token.point == "+(string)t.item+" )" ;
-			if( ToStateVolatile( t.state ) )
-				{
-				tabs++ ;
-				list += tab ;
-				list += "{"+tab ;
-				list += "edge_case = "+_io(t.state)+tab ;
-				list += "return "+_a+".deploy( edge_case() ) ;"+tab ;
-				tabs-- ;
-				list += "}" ;
-				}
-			else
-				{
-				list += " return "+_a+".deploy( _"+t.state+"() ) ;" ;
-				}
+			list += " return "+_a+".deploy( _"+t.state+"() ) ;" ;
 			if( switch_b )
 				list += tab ;
 			else
@@ -552,14 +507,7 @@ class Xo_t
 		{
 		string list = string.Empty ;
 		Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
-		if( ToStateVolatile( t.state ) )
-			{
-			list += tab ;
-			list += "edge_case = "+_io(t.state)+tab ;
-			list += "return edge_case() ;" ;
-			}
-		else
-			list += " return _"+t.state+"() ;" ;
+		list += " return _"+t.state+"() ;" ;
 		return list ;
 		}
 	static string gotoset_s( int i, int symbol, string _a )
@@ -570,15 +518,7 @@ class Xo_t
 			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
 			if( t.symbol != symbol )
 				continue ;
-			if( ToStateVolatile( t.state ) )
-				{
-				list += "edge_case = "+_io(t.state)+tab ;
-				list += "return "+_a+".deploy( edge_case() ) ; //oo"+tab ;
-				}
-			else
-				{
-				list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
-				}
+			list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
 			return list ;
 			}
 		list += "return __default ; //oo"+tab ;
