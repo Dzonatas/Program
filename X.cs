@@ -224,8 +224,6 @@ class Xo_t
 		*/
 		if( ! io_volatile )
 			list += "Automaton "+_a+" = new Automaton() ;" + tab ;
-		if( io_volatile )
-			list += "log(\"+"+i+"\") ; /*"+( volatile_b ? "volatile_b" : "" )+"*/"+tab ;
 		if( gotoset_volatile && ! io_volatile )
 			list += _a+".goto_v = true ;"+tab ;
 		string gotoset = "" ;
