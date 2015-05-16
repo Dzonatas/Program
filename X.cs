@@ -428,19 +428,11 @@ class Xo_t
 				list += "}"+tab ;
 				}
 			}
-		if( list.Length != 0 )
+		if( stateset[i].Gotoset.GetLength(0) != 0 )
 			{
 			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
-			if( stateset[i].Gotoset.GetLength(0) == 0 )
-				{
-				list += __point( _a, '-'+rule.ToString() ) ;
-				list += "return -"+rule+" ;"+tab ;
-				}
-			else
-				{
-				list += __point( _a, '-'+rule.ToString() ) ;
-				list += gotoset_s( i, (int)xo_t[rule], _a ) ;
-				}
+			list += __point( _a, '-'+rule.ToString() ) ;
+			list += gotoset_s( i, (int)xo_t[rule], _a ) ;
 			}
 		else
 			{
