@@ -258,6 +258,7 @@ class Xo_t
 				{
 				list += "goto _"+i+"_default ;" + tab ;
 				}
+			list += reductionset_case( i, _a ) ;
 			tabs-- ;
 			list += "}"+tab ;
 			}
@@ -362,8 +363,21 @@ class Xo_t
 		string list = "" ;
 		for( int z = 0 ; z < stateset[i].Lookaheadset.Length ; z++ )
 			{
+			bool reduction = false ;
+			foreach( Reduction r in stateset[i].Reductionset )
+				{
+				if( ! r.enabled )
+					continue ;
+				if( r.symbol != stateset[i].Lookaheadset[z] )
+					continue ;
+				reduction = true ;
+				break ;
+				}
 			string t = ( ( z%8 == 7 && z != stateset[i].Lookaheadset.Length-1 ) ? tab : " " ) ;
-			list += "case "+stateset[i].Lookaheadset[z]+":" + t ;
+			if( reduction )
+				list += "/* case "+stateset[i].Lookaheadset[z]+": */" + t ;
+			else
+				list += "case "+stateset[i].Lookaheadset[z]+":" + t ;
 			}
 		return list ;
 		}
@@ -401,6 +415,23 @@ class Xo_t
 	static string reductionset_list( int i, string _a )
 		{
 		string list = "//vv"+tab ;
+		if( stateset[i].Gotoset.GetLength(0) != 0 )
+			{
+			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
+			list += __point( _a, '-'+rule.ToString() ) ;
+			list += gotoset_s( i, (int)xo_t[rule], _a ) ;
+			}
+		else
+			{
+			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
+			list += __point( _a, '-'+rule.ToString() ) ;
+			list += "return -"+rule+" ;" + tab ;
+			}
+		return list ;
+		}
+	static string reductionset_case( int i, string _a )
+		{
+		string list = "" ;
 		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
 			{
 			Reduction r = stateset[i].Reductionset[z] ;
@@ -409,7 +440,7 @@ class Xo_t
 			if( r.symbol == _default )
 				continue ;
 			tabs++ ;
-			list += "if( token.point == "+r.symbol+" )"+tab ;
+			list += "case "+r.symbol+": "+tab ;
 			int rule = stateset[i].Reductionset[z].rule ;
 			if( stateset[i].Gotoset.GetLength(0) == 0 )
 				{
@@ -427,18 +458,6 @@ class Xo_t
 				tabs-- ;
 				list += "}"+tab ;
 				}
-			}
-		if( stateset[i].Gotoset.GetLength(0) != 0 )
-			{
-			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
-			list += __point( _a, '-'+rule.ToString() ) ;
-			list += gotoset_s( i, (int)xo_t[rule], _a ) ;
-			}
-		else
-			{
-			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
-			list += __point( _a, '-'+rule.ToString() ) ;
-			list += "return -"+rule+" ;" + tab ;
 			}
 		return list ;
 		}
