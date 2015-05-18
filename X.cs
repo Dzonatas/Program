@@ -198,20 +198,11 @@ class Xo_t
 			_rule_b = false ;
 			}
 		bool _rule_bbb = false ;
-		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
+		if( reduction_rule( i ) )
 			{
-			Reduction r = stateset[i].Reductionset[z] ;
-			if( ! r.enabled )
-				continue ;
-			if( r.symbol == _default )
-				continue ;
-			if( ! volatile_b )
-				{
-				_rule   = "reductionset_"+i+"( token.point )" ;
-				_rule_b = false ;
-				_rule_bbb = true ;
-				}
-			break ;
+			_rule   = "reductionset_"+i+"( token.point )" ;
+			_rule_b = false ;
+			_rule_bbb = true ;
 			}
 		string list = "" ;
 		/*
@@ -283,19 +274,12 @@ class Xo_t
 				tabs-- ;
 				list += _a+"._token = Tokenset.Empty ;"+tab ;
 				}
-			if( /*_rule_b == false ||*/ ! return_rule( i, rule, ref list, _a ) )
-				list += reductionset_list(i,_a)+"//bb"+tab ;
+			return_rule( i, rule, ref list, _a ) ;
 			}
 		else
 		if( rule != "__default" )
 			{
-			bool _rule_bb = true ;
-			if( gotoset_volatile && stateset[i].Default_reduction.HasValue )
-				_rule_bb = false ;
-			if( _rule_bbb )
-				_rule_bb = false ;
-			if( _rule_bb == false || ! return_rule( i, rule, ref list, _a ) )
-				list += reductionset_list(i,_a)+"//rr" ;
+			return_rule( i, rule, ref list, _a ) ;
 			}
 		else
 			{
@@ -339,10 +323,41 @@ class Xo_t
 			}
 		return list  ;
 		}
+	static bool reduction_rule( int i )
+		{
+		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
+		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
+		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
+		if( volatile_b )
+			return false ;
+		for( int z = 0 ; z < stateset[i].Reductionset.Length ; z++ )
+			{
+			Reduction r = stateset[i].Reductionset[z] ;
+			if( ! r.enabled )
+				continue ;
+			if( r.symbol == _default )
+				continue ;
+			if( ! volatile_b )
+				return true ;
+			break ;
+			}
+		return false ;
+		}
 	static bool return_rule( int i, string rule, ref string list, string _a )
 		{
+		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
+		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
+		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
+		bool gotoset_volatile   = stateset[i].Gotoset.GetLength(0) == 0 ;
 		int l = stateset[i].Gotoset.GetLength(0) ;
 		int r = -int.Parse(rule) ;
+		if( ( gotoset_volatile && stateset[i].Default_reduction.HasValue )
+			|| reduction_rule( i ) )
+			{
+			list += reductionset_list(i,_a) ;
+			return true ;
+			}
+		else
 		if( l != 0 )
 			{
 			int x = (int)xo_t[r] ;
@@ -351,13 +366,13 @@ class Xo_t
 				Transition t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
 				if( t.symbol == x )
 					{
-					list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
+					list += "return "+_a+".deploy( _"+t.state+"() ) ;" ;
 					return true ;
 					}
 				}
 			}
 		list += __point( _a, rule ) ;
-		list += "return "+rule+" ;"+tab ;
+		list += "return "+rule+" ;" ;
 		return true ;
 		}
 	static string lookahead_list( int i )
@@ -419,7 +434,7 @@ class Xo_t
 		}
 	static string reductionset_list( int i, string _a )
 		{
-		string list = "//vv"+tab ;
+		string list = string.Empty ;
 		if( stateset[i].Gotoset.GetLength(0) != 0 )
 			{
 			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
@@ -430,7 +445,7 @@ class Xo_t
 			{
 			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
 			list += __point( _a, '-'+rule.ToString() ) ;
-			list += "return -"+rule+" ;" + tab ;
+			list += "return -"+rule+" ;" ;
 			}
 		return list ;
 		}
@@ -459,7 +474,7 @@ class Xo_t
 				{
 				list += "{"+tab ;
 				list += __point( _a, '-'+rule.ToString() ) ;
-				list += gotoset_s( i, (int)xo_t[rule], _a ) ;
+				list += gotoset_s( i, (int)xo_t[rule], _a )+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
@@ -532,10 +547,10 @@ class Xo_t
 			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[zi,1] ] ;
 			if( t.symbol != symbol )
 				continue ;
-			list += "return "+_a+".deploy( _"+t.state+"() ) ;"+tab ;
+			list += "return "+_a+".deploy( _"+t.state+"() ) ;" ;
 			return list ;
 			}
-		list += "return __default ; //oo"+tab ;
+		list += "return __default ; //oo" ;
 		return list ;
 		}
 	public static string put( string s )
