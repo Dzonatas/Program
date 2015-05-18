@@ -227,11 +227,14 @@ class Xo_t
 			tabs-- ;
 			list += "} ;"+tab ;
 			}
-		if( ! lookahead_volatile )
+		if( lookahead_volatile == false || stateset[i].Shiftset.GetLength(0) > 2 )
 			{
 			tabs++ ;
-			list += "switch( token.point ) //look"+tab ;
+			list += "switch( token.point )"+tab ;
 			list += "{"+tab ;
+			}
+		if( ! lookahead_volatile )
+			{
 			list += lookahead_list( i ) + tab ;
 			if( rule == "__default" )
 				throw new System.NotImplementedException("Default condition on lookahead") ;
@@ -250,17 +253,14 @@ class Xo_t
 				list += "goto _"+i+"_default ;" + tab ;
 				}
 			list += reductionset_case( i, _a ) ;
+			}
+		if( ! shiftset_volatile )
+			list += shiftset_list( i, _a ) ;
+		if( lookahead_volatile == false || stateset[i].Shiftset.GetLength(0) > 2 )
+			{
 			tabs-- ;
 			list += "}"+tab ;
 			}
-		/*
-		if( ! volatile_b )
-			{
-			list += _a+".shift() ;"+tab ;
-			}
-		*/
-		if( ! shiftset_volatile )
-			list += shiftset_list( i, _a ) + tab ;
 		if( lookahead_volatile == false && ( volatile_b == false || shiftset_volatile == false ) )
 			{
 			list += "_"+i+"_default:" + tab ;
@@ -383,8 +383,8 @@ class Xo_t
 			bool reduction = false ;
 			foreach( Reduction r in stateset[i].Reductionset )
 				{
-				if( ! r.enabled )
-					continue ;
+				//if( ! r.enabled )
+				//	continue ;
 				if( r.symbol != stateset[i].Lookaheadset[z] )
 					continue ;
 				reduction = true ;
@@ -400,14 +400,9 @@ class Xo_t
 		}
 	static string shiftset_list( int i, string _a )
 		{
-		bool switch_b = stateset[i].Shiftset.GetLength(0) > 2 ;
+		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
+		bool switch_b = stateset[i].Shiftset.GetLength(0) > 2 || ! lookahead_volatile ;
 		string list = "" ;
-		if( switch_b )
-			{
-			tabs++ ;
-			list += "switch( token.point )"+tab ;
-			list += "{"+tab ;
-			}
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
 			{
 			Transition  t = stateset[i].Transitionset[ stateset[i].Shiftset[z,1] ] ;
@@ -424,11 +419,6 @@ class Xo_t
 				list += " }"+tab+"else"+tab ;
 			else
 				list += " }"+tab ;
-			}
-		if( switch_b )
-			{
-			list += "}" ;
-			tabs-- ;
 			}
 		return list ;
 		}
