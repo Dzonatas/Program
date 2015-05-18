@@ -262,10 +262,12 @@ class Xo_t
 			tabs-- ;
 			list += "}"+tab ;
 			}
+		/*
 		if( ! volatile_b )
 			{
 			list += _a+".shift() ;"+tab ;
 			}
+		*/
 		if( ! shiftset_volatile )
 			list += shiftset_list( i, _a ) + tab ;
 		if( lookahead_volatile == false && ( volatile_b == false || shiftset_volatile == false ) )
@@ -395,15 +397,18 @@ class Xo_t
 			{
 			Transition  t = stateset[i].Transitionset[ stateset[i].Shiftset[z,1] ] ;
 			if( switch_b )
-				list += "case "+(string)t.item+":" ;
+				list += "case "+(string)t.item+": " ;
 			else
-				list += "if( token.point == "+(string)t.item+" )" ;
-			list += " return "+_a+".deploy( _"+t.state+"() ) ;" ;
+				list += "if( token.point == "+(string)t.item+" ) { " ;
+			list += _a+".shift() ; " ;
+			list += "return "+_a+".deploy( _"+t.state+"() ) ;" ;
 			if( switch_b )
 				list += tab ;
 			else
 			if( z < (stateset[i].Shiftset.GetLength(0)-1) )
-				list += tab+"else"+tab ;
+				list += " }"+tab+"else"+tab ;
+			else
+				list += " }"+tab ;
 			}
 		if( switch_b )
 			{
