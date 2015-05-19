@@ -184,8 +184,8 @@ class Xo_t
 		bool transit_volatile   = stateset[i].Transitionset.Length == 0 ;
 		bool default_volatile   = stateset[i].Default_reduction.HasValue == false
 			|| stateset[i].Reductionset.GetLength(0) == 1 ;
-		bool io_volatile = stateset[i].FromStates.Length == 1
-			&& volatile_b && default_volatile && gotoset_volatile ;
+		bool empty_token = volatile_b && default_volatile && gotoset_volatile ;
+		bool io_volatile = stateset[i].FromStates.Length == 1 && empty_token ;
 		//bool tab_b = tabs_i != 1 ;
 		string _a = tabs_i == 1 ? "a" : "aa" ;
 		string _rule = rule ;
@@ -213,9 +213,9 @@ class Xo_t
 			list += "{"+tab ;
 			}
 		*/
-		if( ! io_volatile )
+		if( ! empty_token )
 			list += "Automaton "+_a+" = new Automaton() ;" + tab ;
-		if( gotoset_volatile && ! io_volatile )
+		if( gotoset_volatile && ! empty_token )
 			list += _a+".goto_v = true ;"+tab ;
 		string gotoset = "" ;
 		if( ! gotoset_volatile )
@@ -267,7 +267,7 @@ class Xo_t
 			}
 		if( rule != "__default" && volatile_b )
 			{
-			if( ! io_volatile )
+			if( ! empty_token )
 				{
 				tabs++ ;
 				list += "if( token_HasValue )"+tab ;
