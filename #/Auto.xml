@@ -69,7 +69,7 @@ int deploy( int i )
 			}
 		else
 			yy = (int)__default ;
-		} while( (! goto_v) &amp;&amp; (i = (int) gotoset_s( yy )) != __default ) ;
+		} while( (i = (int) gotoset_s( yy )) != __default ) ;
 	if( token.c != 0 )
 		throw new System.NotImplementedException( "token != $end" ) ;
 	return 0 ;

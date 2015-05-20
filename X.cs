@@ -215,9 +215,6 @@ class Xo_t
 		*/
 		if( ! empty_token )
 			list += "Automaton "+_a+" = new Automaton() ;" + tab ;
-		if( gotoset_volatile && ! empty_token )
-			list += _a+".goto_v = true ;"+tab ;
-		string gotoset = "" ;
 		if( ! gotoset_volatile )
 			{
 			tabs++ ;

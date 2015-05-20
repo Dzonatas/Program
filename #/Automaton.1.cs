@@ -1,7 +1,6 @@
 using Debug = System.Console ;
 partial class Automaton
 	{
-	bool         goto_v        ;
 	System.Func<int,int> gotoset_s ;
 	Tokenset.Token                _token ;
 	static Tokenset.Token         token ;
