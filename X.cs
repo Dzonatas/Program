@@ -366,7 +366,10 @@ class Xo_t
 				Transition t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
 				if( t.symbol == x )
 					{
-					list += "return "+_a+".deploy( _"+t.state+"() ) ;" ;
+					if( gotoset_volatile )
+						list += "return "+_a+".split( _"+t.state+"() ) ;" ;
+					else
+						list += "return "+_a+".deploy( _"+t.state+"() ) ;" ;
 					return true ;
 					}
 				}
@@ -401,6 +404,7 @@ class Xo_t
 	static string shiftset_list( int i, string _a )
 		{
 		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
+		bool gotoset_volatile   = stateset[i].Gotoset.GetLength(0) == 0 ;
 		bool switch_b = stateset[i].Shiftset.GetLength(0) > 2 || ! lookahead_volatile ;
 		string list = "" ;
 		for( int z = 0 ; z < stateset[i].Shiftset.GetLength(0) ; z++ )
@@ -411,7 +415,10 @@ class Xo_t
 			else
 				list += "if( token.point == "+(string)t.item+" ) { " ;
 			list += _a+".shift() ; " ;
-			list += "return "+_a+".deploy( _"+t.state+"() ) ;" ;
+			if( gotoset_volatile )
+				list += "return "+_a+".split( _"+t.state+"() ) ;" ;
+			else
+				list += "return "+_a+".deploy( _"+t.state+"() ) ;" ;
 			if( switch_b )
 				list += tab ;
 			else

@@ -74,6 +74,22 @@ int deploy( int i )
 		throw new System.NotImplementedException( "token != $end" ) ;
 	return 0 ;
 	}
+int split( int i )
+	{
+	if( i &gt; 0 )
+		throw new System.NotImplementedException( "-range/+index condition" ) ;
+	else
+	if( i &lt; 0 )
+		{
+		(auto as &branch;.Auto).Argv = _token ;
+		if( --backup > 0 )
+			return (int)i ;
+		(auto as &branch;.Auto).Splice() ;
+		}
+	if( token.c != 0 )
+		throw new System.NotImplementedException( "token != $end" ) ;
+	return 0 ;
+	}
 </Automaton-deploy>
 <main_c>
 #include &lt;stdlib.h>
