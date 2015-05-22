@@ -67,45 +67,6 @@ public static partial class Shell
 		p.WaitForExit() ;
 		return sb.ToString() ;
 		}
-	static readonly string[,] file =
-		{
-		{ "#/", "" },
-		{ "~/", "X.Y.cs" },
-		{ "#/", "X.Predefined.cs" },
-		{ "#/", "Tokenset.cs" },
-		{ "#/", "Automaton.1.cs" },
-		{ "",   "Z.cs" },
-		{ "~/", "C699.cs" },
-		{ "~/", "C699.free.cs" }
-		} ;
-	static public string Embed( string[] compile )
-		{
-		string files = "" ;
-		file[0,1] = "Auto."+A335.Branch+".cs" ;
-		for( int i = 0 ; i < file.GetLength(0) ; i++ )
-			{
-			var f = "../../"+file[i,0]+file[i,1] ;
-			files += " "+file[i,1] ;
-			Cli.Copy( f, Current.Path.Entry( file[i,1] ) ) ;
-			}
-		foreach( string filename in compile )
-			if( ! files.Contains( filename ) )
-				files += " "+Current.Path.Entry( filename ) ;
-		string infrastruct = Current.Path.Entry( "infrastructure.exe" ) ;
-		Cli.AutoStart(
-			#if LEAN_AND_MEAN
-			"gmcs -define:EMBED -nostdlib" //-main:_accept.A335
-			#else
-			"gmcs -define:EMBED -nowarn:0169,219,414,649"
-			#endif
-			+ files
-			+ " "+Current.Path.Entry("tokenset.cs")
-			+ " "+Current.Path.Entry("Automaton.symbols.cs")
-			+ " "
-			+ "-out:" + infrastruct
-			) ;
-		return infrastruct ;
-		}
 	}
 }
 

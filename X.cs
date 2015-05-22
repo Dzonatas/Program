@@ -698,7 +698,7 @@ class Xo_t
 		}
 	static public void Build()
 		{
-		string infrastruct = Cluster.Shell.Embed( compile ) ;
+		string infrastruct = Embed( compile ) ;
 		string linkset = "" ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
@@ -727,6 +727,43 @@ class Xo_t
 			///www.stenyak.com/archives/1208/trick-of-the-day-rendering-graphics-in-your-terminal/
 			///usr/share/doc/plotutils/tek2plot/dmerc.tek.gz
 			}
+	static readonly string[,] file =
+		{
+		{ "#/", "" },
+		{ "~/", "X.Y.cs" },
+		{ "#/", "X.Predefined.cs" },
+		{ "#/", "Tokenset.cs" },
+		{ "#/", "Automaton.1.cs" },
+		{ "",   "Z.cs" },
+		{ "~/", "C699.cs" },
+		{ "~/", "C699.free.cs" }
+		} ;
+	static public string Embed( string[] compile )
+		{
+		string tab = "\n\t" ;
+		string list = "\t" ;
+		file[0,1] = "Auto."+A335.Branch+".cs" ;
+		for( int i = 0 ; i < file.GetLength(0) ; i++ )
+			{
+			var f = "../../"+file[i,0]+file[i,1] ;
+			list += "<Compile Include=\""+file[i,1]+"\" />"+tab ;
+			Cluster.Cli.Copy( f, Current.Path.Entry( file[i,1] ) ) ;
+			}
+		foreach( string filename in compile )
+			if( ! list.Contains( '"'+filename+'"' ) )
+				list += "<Compile Include=\""+filename+"\" />"+tab ;
+		list += "<Compile Include=\"tokenset.cs\" />"+tab ;
+		list += "<Compile Include=\"Automaton.symbols.cs\" />" ;
+		var csproj = Current.Path.CreateText( "infrastructure.csproj" ) ;
+		X.Auto["list"] = list ;
+		csproj.WriteLine( put("ProjectFile") ) ;
+		csproj.Close() ;
+		Cluster.Cli.AutoStart( "xbuild infrastructure.csproj" ) ;
+		//"gmcs -define:EMBED -nowarn:0169,219,414,649"
+		string infrastruct = Current.Path.Entry( "infrastructure.exe" ) ;
+		Cluster.Cli.Copy( Current.Path.Entry("bin/Debug/infrastructure.exe"), infrastruct ) ;
+		return infrastruct ;
+		}
 	}
 
 static System.IO.StreamWriter symbols_cs ;
