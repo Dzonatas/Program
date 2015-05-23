@@ -9,9 +9,6 @@ static A335() {}
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
 #endif
 }
-struct iDNA {
-&list;
-}
 }
 </A335-Xo_t-Build-0>
 <A335-Xo_t-Build-iDNA-5i>
@@ -23,10 +20,6 @@ interface &interface; {
 </A335-Xo_t-Build-iDNA-5i>
 <A335-Xo_t-Build-iDNA-5>
 namespace &namespace; {
-public struct iDNA {
-	public static readonly char[]   Entity  = &Entity; ;
-&list;
-}
 public partial class  &signal;
 	: &branch;.Auto, &interface;
 	{
@@ -41,12 +34,6 @@ public partial class  &signal;
 	}
 }
 </A335-Xo_t-Build-iDNA-5>
-<A335-Xo_t-list-top>
-	public const           char     C       = '&glyph;' ;
-</A335-Xo_t-list-top>
-<A335-Xo_t-list>
-	public static readonly char     &rule;_&point; = &global; ;
-</A335-Xo_t-list>
 <Automaton-deploy>
 void shift()
 	{

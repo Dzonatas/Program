@@ -127,45 +127,6 @@ class Xo_t
 			{
 			return string.Format("[Xo_t:{0}[{1}]]", lhs, rhs.Length);
 			}
-	static string list( int i )
-		{
-		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
-		X.Auto["glyph"] = string.Format( "\\u{0:X4}", System.Convert.ToInt16( (char)xo_t[i] ) ) ;
-		sb.Append( put("A335-Xo_t-list-top") ) ;
-		foreach( Itemset item in stateset[i].Itemset )
-			{
-			if( item.rule == i || item.rule == 0 )
-				continue ;
-			string rule = item.rule == 0 ? "_accept" : xo_t[item.rule].lhs.s ;
-			string point ;
-			if( item.rule == 0 )
-				{
-				rule = "_accept" ;
-				}
-			else
-				{
-				rule = xo_t[item.rule].lhs.s ;
-				}
-			if( xo_t[item.rule].rhs.Length != item.point )
-				{
-				point = xo_t[item.rule][item.point].X.ToString() ;
-				point += "_" ;
-				point += xo_t[item.rule][item.point].Y.ToString() ;
-				X.Auto["global"] = "global::" + rule +"._"
-					+ xo_t[item.rule][item.point].X.ToString()
-					+ ".iDNA.C" ;
-				}
-			else
-				{
-				point = xo_t[item.rule][item.point].X.ToString() ;
-				X.Auto["global"] = "global::"+rule+"._"+point+".iDNA.C" ;
-				}
-			X.Auto["rule"] = rule ;
-			X.Auto["point"] = point ;
-			sb.Append( put("A335-Xo_t-list") ) ;
-			}
-		return sb.ToString() ;
-		}
 	static int tabs_i ;
 	static int tabs
 		{
@@ -627,9 +588,7 @@ class Xo_t
 		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
 		Cluster.Cli.NoOperation() ;
 		X.Auto["branch"] = branch ;
-		X.Auto["list"] = list( 0 ) ;
 		var f = Current.Path.CreateText( compile[0] ) ;
-		string filename = "" ;
 		f.Write( put("A335-Xo_t-Build-0") ) ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
@@ -666,14 +625,7 @@ class Xo_t
 				}
 			X.Auto["interface"] = "global::Item, basic."+xo.lhs.s ;
 			string reduction = put("_"+xo.lhs.X ) ;
-			string entity = "&0." + xo.lhs.X + ";" ;
-			string prototype = reduction.Substring( xo.lhs.s.Length ) ;
 			X.Auto["namespace"] = xo.lhs.s + "._" + xo.lhs.X ;
-			X.Auto["Entity"] = "{ " ;
-			foreach( char c in entity.TrimEnd( entity_trim ) )
-				X.Auto["Entity"] += "'"+c+"', " ;
-			X.Auto["Entity"] += "'" + entity[entity.Length-1] + "' }" ;
-			X.Auto["list"] = list( i ) ;
 			X.Auto["signal"] = reduction ;
 			X.Auto["lhs"] = "{ " ;
 			foreach( char c in Rule.Set[i].lhs.s )
@@ -708,7 +660,7 @@ class Xo_t
 				continue ;
 			linkset += Current.Path.Entry( "." + i + ".exe" ) + " " ;
 			}
-		Cluster.Cli.Relink( infrastruct, linkset ) ;
+		//Cluster.Cli.Relink( infrastruct, linkset ) ;
 		#if POSTBACK
 		//[((v8)|v16)[f32|.]v64]|v8sidv64
 		var c = Current.Path.CreateText( "entset.csv" ) ;
