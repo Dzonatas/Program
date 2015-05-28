@@ -710,8 +710,7 @@ class Xo_t
 		X.Auto["list"] = list ;
 		csproj.WriteLine( put("ProjectFile") ) ;
 		csproj.Close() ;
-		Cluster.Cli.AutoStart( "xbuild infrastructure.csproj" ) ;
-		//"gmcs -define:EMBED -nowarn:0169,219,414,649"
+		Cluster.Cli.Build( "infrastructure.csproj" ) ;
 		string infrastruct = Current.Path.Entry( "infrastructure.exe" ) ;
 		Cluster.Cli.Copy( Current.Path.Entry("bin/Debug/infrastructure.exe"), infrastruct ) ;
 		return infrastruct ;

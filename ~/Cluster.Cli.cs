@@ -107,5 +107,9 @@ public static class Cli
 		{
 		Shell.system( "for i in 1 2 3 4 5 6 7 8 9 ; do time -f %E "+arg1+" >dev>null ; done" ) ;
 		}
+	static public void Build( string arg1 )
+		{
+		Shell.system( "cd "+0.1.GUID()+" && xbuild /nologo /verbosity:quiet "+arg1 ) ;
+		}
 	}
 }

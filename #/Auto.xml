@@ -131,6 +131,7 @@ fasm( (char*[]) &A;&argv; ) ;
     &lt;DebugSymbols&gt;true&lt;/DebugSymbols&gt;
     &lt;Commandlineparameters&gt;--shell="sh ../../~/compile.sh ../../~/hello.mono.world.il.text" --build=rebuild --lease="using System ;"&lt;/Commandlineparameters&gt;
     &lt;ConsolePause&gt;false&lt;/ConsolePause&gt;
+    &lt;NoWarn&gt;169,219,414,649&lt;/NoWarn&gt;
   &lt;/PropertyGroup&gt;
   &lt;PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' "&gt;
     &lt;DebugType&gt;none&lt;/DebugType&gt;
