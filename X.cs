@@ -600,7 +600,8 @@ class Xo_t
 		X.Auto["i"]    = "0" ;
 		X.Auto["I"]    = ((int)xo_t[0]).ToString() ;
 		f.WriteLine( "partial class Automaton {" ) ;
-		f.WriteLine( "const int __default = " + ((int)_default).ToString() + " ;" ) ;
+		f.WriteLine( "\tconst int __default = " + ((int)_default).ToString() + " ;" ) ;
+		f.WriteLine( "\t"+symbols_cs ) ;
 		f.WriteLine( put("Automaton-deploy") ) ;
 		for( int i = 0 ; i < stateset.Length ; i++ )
 			{
@@ -703,7 +704,6 @@ class Xo_t
 			if( ! list.Contains( '"'+filename+'"' ) )
 				list += "<Compile Include=\""+filename+"\" />"+tab ;
 		list += "<Compile Include=\"tokenset.cs\" />"+tab ;
-		list += "<Compile Include=\"Automaton.symbols.cs\" />" ;
 		var csproj = Current.Path.CreateText( "infrastructure.csproj" ) ;
 		X.Auto["list"] = list ;
 		csproj.WriteLine( put("ProjectFile") ) ;
@@ -715,21 +715,13 @@ class Xo_t
 		}
 	}
 
-static System.IO.StreamWriter symbols_cs ;
+static System.Text.StringBuilder symbols_cs = new System.Text.StringBuilder() ;
 static string transitions = string.Empty ;
-static bool symbols_cs_b ;
 
 static void xml_load_grammar()
 	{
 	if( xml_loaded )
 		return ;
-	symbols_cs_b = true /*Cluster.Parameter.Value("reflection") == "true"*/
-		|| ! Current.Path.Exists( "Automaton.symbols.cs" ) ;
-	if( symbols_cs_b )
-		{
-		symbols_cs = Current.Path.CreateText( "Automaton.symbols.cs" ) ;
-		symbols_cs.Write("partial class Automaton\n\t{\n\t") ;
-		}
 	xml = new XmlTextReader( new StreamReader( "../../~/understand/grammar.xml" ) ) ;
 	while( xml.Read() )
 		if( xml.NodeType == XmlNodeType.Element && xml.Name == "bison-xml-report" )
@@ -754,11 +746,6 @@ static void xml_load_grammar()
 	foreach( State s in stateset )
 		foreach( Transition t in s.Transitionset )
 			stateset[t.state].Append( s.Number ) ;
-	if( symbols_cs_b )
-		{
-		symbols_cs.WriteLine("}") ;
-		symbols_cs.Close() ;
-		}
 	}
 
 partial class X //_: YY
@@ -921,17 +908,14 @@ static void xml_get_symbol( bool _rule )
 		{
 		System.Array.Resize( ref x_rule.rhs, x_rule.rhs.Length+1 ) ;
 		x_rule.rhs[x_rule.rhs.Length-1] = new xml_s( xml.Value ) ;
-		if( symbols_cs_b )
-			{
-			string s1 = "_"+
-				( ( (int)x_rule.number < 10 ) ? "__"
-				: ( (int)x_rule.number < 100 ) ? "_"
-				: ""
-				) ;
-			string s2 = "_"+
-				( (x_rule.rhs.Length-1) < 10 ? "_" : "" ) ;
-			X.Auto[s1+(int)x_rule.number+s2+(x_rule.rhs.Length-1)] = x_rule.rhs[x_rule.rhs.Length-1]._s ;
-			}
+		string s1 = "_"+
+			( ( (int)x_rule.number < 10 ) ? "__"
+			: ( (int)x_rule.number < 100 ) ? "_"
+			: ""
+			) ;
+		string s2 = "_"+
+			( (x_rule.rhs.Length-1) < 10 ? "_" : "" ) ;
+		X.Auto[s1+(int)x_rule.number+s2+(x_rule.rhs.Length-1)] = x_rule.rhs[x_rule.rhs.Length-1]._s ;
 		}
 	else
 		{
@@ -944,16 +928,13 @@ static void xml_get_empty()
 	{
 	System.Array.Resize( ref x_empty_ruleset, x_empty_ruleset.Length+1 ) ;
 	x_empty_ruleset[x_empty_ruleset.Length-1] = x_rule.number ;
-	if( symbols_cs_b )
-		{
-		string s1 = "_"+
-			( ( (int)x_rule.number < 10 ) ? "__"
-			: ( (int)x_rule.number < 100 ) ? "_"
-			: ""
-			) ;
-		string s2 = "___" ;
-		X.Auto[s1+(int)x_rule.number+s2] = x_rule.lhs._s ;
-		}
+	string s1 = "_"+
+		( ( (int)x_rule.number < 10 ) ? "__"
+		: ( (int)x_rule.number < 100 ) ? "_"
+		: ""
+		) ;
+	string s2 = "___" ;
+	X.Auto[s1+(int)x_rule.number+s2] = x_rule.lhs._s ;
 	}
 
 struct xml_token
@@ -1033,10 +1014,7 @@ static void xml_get_terminal()
 	for( int x = 0 ; x < 603 ; x ++ )
 		for( int y = 0 ; y < xo_t[x].rhs.Length ; y++ )
 			xo_t[x][y].set_if( t.name, o ) ;
-	if( symbols_cs_b )
-		{
-		symbols_cs.Write( "const int {0,30}\t= "+(int)t.symbol+" ;\n\t", t.name._s ) ;
-		}
+	symbols_cs.Append( string.Format("const int {0,30}\t= "+(int)t.symbol+" ;\n\t", t.name._s) ) ;
 	}
 	
 static void xml_get_nonterminal()
@@ -1050,10 +1028,7 @@ static void xml_get_nonterminal()
 		for( int y = 0 ; y < xo_t[x].rhs.Length ; y++ )
 			xo_t[x][y].set_if( nt.name, o ) ;
 		}
-	if( symbols_cs_b )
-		{
-		symbols_cs.Write( "const int {0,30}\t= "+(int)nt.symbol+" ;\n\t", nt.name._s ) ;
-		}
+	symbols_cs.Append( string.Format( "const int {0,30}\t= "+(int)nt.symbol+" ;\n\t", nt.name._s ) ) ;
 	}
 
 static State x_state ;
