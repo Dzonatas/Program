@@ -7,14 +7,20 @@ string rune___; /*C`__ -volume:0.00 (+"rc:") */
 
 public struct Rule
 	{
-	public static Rule [] Set = new Rule[606] ;
+	public static Rule [] Set = new Rule[0] ;
 	public Number        number ;
 	public xml_s         lhs ;
 	public xml_s[]       rhs ;
 	public bool          useful ;
-	public Rule( Rule r )
+	public Rule( Number _number, xml_s _lhs, xml_s[] _rhs, bool _useful )
 		{
-		this = r ;
+		number  = _number ;
+		lhs     = _lhs ;
+		rhs     = _rhs ;
+		useful  = _useful ;
+		if( number+1 > Set.Length )
+			System.Array.Resize( ref Set, number+1 ) ;
+		Set[number] = this ;
 		}
 	public static implicit operator int( Rule r )
 		{

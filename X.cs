@@ -267,13 +267,13 @@ class Xo_t
 		if( rule == "__default" )
 			throw new System.NotImplementedException("default rule index") ;
 		int r = -int.Parse(rule) ;
-		backup = xo_t[r].rhs.Length ;
+		backup = Rule.Set[r].rhs.Length ;
 		yy = xo_t[r] ;
 		string list = "" ;
 		if( r > 0 ) //Target0: xyzzyy tail or mantissa.
 			list += "auto = new "
-				+ xo_t[r].lhs.s + "._" + xo_t[r].lhs.X
-				+ "." + X.Auto[ "_"+xo_t[r].lhs.X ] + "() ;" + tab ;
+				+ Rule.Set[r].lhs.s + "._" + r
+				+ "." + Rule.Set[r].Signal + "() ;" + tab ;
 		if( backup > 0 )
 			{
 			list += "backup = " + backup + " ;" + tab ;
@@ -582,17 +582,11 @@ class Xo_t
 		{
 		if( Cluster.Parameter.Value("build") == "false" )
 			return ;
-		Xo_t xo ;
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
 		Cluster.Cli.NoOperation() ;
 		X.Auto["branch"] = branch ;
 		var f = Current.Path.CreateText( compile[0] ) ;
 		f.Write( put("A335-Xo_t-Build-0") ) ;
-		for( int i = 1 ; i < xo_t.Length ; i++ )
-			{
-			xo = xo_t[i] ;
-			X.Auto["_"+xo.lhs.X] = Rule.Set[i].Signal ;
-			}
 		f.WriteLine( ) ;
 		X.Auto["rule"] = ((int)_default).ToString() ;
 		X.Auto["argc"] = xo_t[0].rhs.Length.ToString() ;
@@ -610,21 +604,19 @@ class Xo_t
 			}
 		f.WriteLine( "}" ) ;
 		string previous_interface = string.Empty ;
-		for( int i = 1 ; i < xo_t.Length ; i++ )
+		for( int i = 1 ; i < Rule.Set.Length ; i++ )
 			{
-			xo = xo_t[i] ;
-			if( previous_interface != xo.lhs.s )
+			if( previous_interface != Rule.Set[i].lhs.s )
 				{
-				previous_interface = xo.lhs.s ;
-				X.Auto["interface"] = xo.lhs.s ;
+				previous_interface = Rule.Set[i].lhs.s ;
+				X.Auto["interface"] = Rule.Set[i].lhs.s ;
 				X.Auto["i"] = "" ;
 				X.Auto["I"] = "" ;
 				f.Write( put("A335-Xo_t-Build-iDNA-5i") ) ;
 				}
-			X.Auto["interface"] = "global::Item, basic."+xo.lhs.s ;
-			string reduction = put("_"+xo.lhs.X ) ;
-			X.Auto["namespace"] = xo.lhs.s + "._" + xo.lhs.X ;
-			X.Auto["signal"] = reduction ;
+			X.Auto["interface"] = "global::Item, basic."+Rule.Set[i].lhs.s ;
+			X.Auto["namespace"] = Rule.Set[i].lhs.s + "._" + i ;
+			X.Auto["signal"] = Rule.Set[i].Signal ;
 			X.Auto["lhs"] = "{ " ;
 			foreach( char c in Rule.Set[i].lhs.s )
 				X.Auto["lhs"] += "'"+c+"', " ;
@@ -879,18 +871,7 @@ public class xml_rule
 	public xml_s        usefulness ;
 	internal void post()
 		{
-		Rule r = new Rule() ;
-		r.lhs = lhs ;
-		r.number = number ;
-		r.rhs = rhs ;
-		r.useful = usefulness.s == "useful" ;
-		Xo_t.Add( r ) ;
-		Rule.Set[number] = r ;
-		//if( ! x_lhs.ContainsKey( lhs.s ) )
-		//	x_lhs.Add( lhs.s, null ) ;
-		//foreach( xml_s s in rhs ) 
-		//	if( ! x_rhs.ContainsKey( s.s ) )
-		//		x_rhs.Add( s.s, null ) ;
+		Xo_t.Add( new Rule( number, lhs, rhs, usefulness.s == "useful" ) ) ;
 		}
 	public xml_rule()
 		{
