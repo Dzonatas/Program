@@ -24,6 +24,15 @@ public struct Rule
 		{
 		return r.number ;
 		}
+	public string Signal
+		{
+		get {
+			string i = lhs.s ;
+			for( int x = 0 ; x < rhs.Length ; x++ )
+					i += rhs[x]._s ;
+			return i ;
+			}
+		}
 	public override string ToString()
 		{
 		if( useful )

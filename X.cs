@@ -584,7 +584,6 @@ class Xo_t
 			return ;
 		Xo_t xo ;
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
-		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
 		Cluster.Cli.NoOperation() ;
 		X.Auto["branch"] = branch ;
 		var f = Current.Path.CreateText( compile[0] ) ;
@@ -592,7 +591,7 @@ class Xo_t
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
-			X.Auto["_"+xo.lhs.X] = X.Auto["_"+xo.lhs.X].TrimEnd() ;
+			X.Auto["_"+xo.lhs.X] = Rule.Set[i].Signal ;
 			}
 		f.WriteLine( ) ;
 		X.Auto["rule"] = ((int)_default).ToString() ;
