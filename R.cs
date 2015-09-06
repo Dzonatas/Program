@@ -39,6 +39,15 @@ public struct Rule
 			return i ;
 			}
 		}
+	public string AlphaSignal
+		{
+		get {
+			string i = lhs.s ;
+			for( int x = 0 ; x < rhs.Length ; x++ )
+				i += "_" + rhs[x].s ;
+			return System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_" ) ;
+			}
+		}
 	public override string ToString()
 		{
 		if( useful )

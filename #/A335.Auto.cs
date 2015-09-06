@@ -6,10 +6,9 @@ using System ;
 public partial class A335 {
 public static void Auto( Number n )
 	{
-	string method = ((int)n).ToString() ;
-	if( method == "0" )
+	if( n == 0 )
 		return ;
-	Stack.Push( (Automatrix) _auto(X.Auto["_"+method]) ) ;
+	Stack.Push( (Automatrix) _auto( Rule.Set[n].AlphaSignal ) ) ;
 	return ;
 	}
 
