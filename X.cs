@@ -930,10 +930,7 @@ static void xml_get_symbol( bool _rule )
 				) ;
 			string s2 = "_"+
 				( (x_rule.rhs.Length-1) < 10 ? "_" : "" ) ;
-			symbols_cs.Write(
-				"const int "+s1+(int)x_rule.number+s2+(x_rule.rhs.Length-1)
-				+"\t= "+x_rule.rhs[x_rule.rhs.Length-1]._s
-				+ " ;\n\t" ) ;
+			X.Auto[s1+(int)x_rule.number+s2+(x_rule.rhs.Length-1)] = x_rule.rhs[x_rule.rhs.Length-1]._s ;
 			}
 		}
 	else
@@ -955,10 +952,7 @@ static void xml_get_empty()
 			: ""
 			) ;
 		string s2 = "___" ;
-		symbols_cs.Write(
-			"const int "+s1+(int)x_rule.number+s2
-			+"\t= "+x_rule.lhs._s
-			+ " ;\n\t" ) ;
+		X.Auto[s1+(int)x_rule.number+s2] = x_rule.lhs._s ;
 		}
 	}
 

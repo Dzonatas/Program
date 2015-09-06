@@ -59,9 +59,9 @@ public struct Itemset
 			{
 			string s2 = "_"+
 				( i.point < 10 ? "_" : "" ) ;
-			return s1+i.rule+s2+i.point ;
+			return X.Auto[s1+i.rule+s2+i.point] ;
 			}
-		return s1+i.rule+"___" ;
+		return X.Auto[s1+i.rule+"___"] ;
 		}
 	public override string ToString()
 		{
