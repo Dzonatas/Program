@@ -577,12 +577,11 @@ class Xo_t
 		resolve = true ;
 		}
 	static readonly char[] entity_trim =  { ';' };
-	static string[] compile = new string[xo_t.Length] ;
+	static string[] compile = new string[] { "auto.cs" } ;
 	static public void Compile()
 		{
 		if( Cluster.Parameter.Value("build") == "false" )
 			return ;
-		compile[0] = "auto.cs" ;
 		Xo_t xo ;
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
 		read( new StreamReader( "../../#/Addendum.xml" ) ) ;
@@ -594,7 +593,6 @@ class Xo_t
 			{
 			xo = xo_t[i] ;
 			X.Auto["_"+xo.lhs.X] = X.Auto["_"+xo.lhs.X].TrimEnd() ;
-			compile[i] = xo.lhs.s +".cs" ;
 			}
 		f.WriteLine( ) ;
 		X.Auto["rule"] = ((int)_default).ToString() ;
@@ -611,13 +609,13 @@ class Xo_t
 			f.Write( _io( i ) ) ;
 			}
 		f.WriteLine( "}" ) ;
+		string previous_interface = string.Empty ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
 			xo = xo_t[i] ;
-			if( compile[i-1] != compile[i] )
+			if( previous_interface != xo.lhs.s )
 				{
-				f.Close() ;
-				f = Current.Path.CreateText( compile[i] ) ;
+				previous_interface = xo.lhs.s ;
 				X.Auto["interface"] = xo.lhs.s ;
 				X.Auto["i"] = "" ;
 				X.Auto["I"] = "" ;
