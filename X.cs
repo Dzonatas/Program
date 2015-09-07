@@ -35,21 +35,9 @@ public class Xo
 		this.o     = null ;
 		this.left  = false ;
 		}
-	internal int X
-		{
-		get { return x ; }
-		}
-	internal int Y
-		{
-		get { return y ; }
-		}
 	public Rule Rule
 		{
 		get { return Rule.Set[x] ; }
-		}
-	internal bool Left
-		{
-		get { return left ; }
 		}
 	static public implicit operator int( Xo x )
 		{
