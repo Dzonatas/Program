@@ -271,9 +271,7 @@ class Xo_t
 		yy = xo_t[r] ;
 		string list = "" ;
 		if( r > 0 ) //Target0: xyzzyy tail or mantissa.
-			list += "auto = new "
-				+ Rule.Set[r].lhs.s + "._" + r
-				+ "." + Rule.Set[r].Signal + "() ;" + tab ;
+			list += "auto = new " + Rule.Set[r].Signal + "() ;" + tab ;
 		if( backup > 0 )
 			{
 			list += "backup = " + backup + " ;" + tab ;
@@ -612,9 +610,8 @@ class Xo_t
 				X.Auto["interface"] = Rule.Set[i].lhs.s ;
 				X.Auto["i"] = "" ;
 				X.Auto["I"] = "" ;
-				f.Write( put("A335-Xo_t-Build-iDNA-5i") ) ;
 				}
-			X.Auto["interface"] = "global::Item, basic."+Rule.Set[i].lhs.s ;
+			X.Auto["interface"] = "global::Item" ;
 			X.Auto["namespace"] = Rule.Set[i].lhs.s + "._" + i ;
 			X.Auto["signal"] = Rule.Set[i].Signal ;
 			X.Auto["lhs"] = "{ " ;

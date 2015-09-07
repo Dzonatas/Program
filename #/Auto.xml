@@ -19,7 +19,6 @@ interface &interface; {
 }
 </A335-Xo_t-Build-iDNA-5i>
 <A335-Xo_t-Build-iDNA-5>
-namespace &namespace; {
 public partial class  &signal;
 	: &branch;.Auto, &interface;
 	{
@@ -32,7 +31,6 @@ public partial class  &signal;
 		argv = new Tokenset.Token[ arg_i = &argc; ] ;
 		}
 	}
-}
 </A335-Xo_t-Build-iDNA-5>
 <Automaton-deploy>
 void shift()
