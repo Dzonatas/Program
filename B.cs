@@ -61,7 +61,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			#if DEBUG_REDUCTIONSET
 			Debug.WriteLine( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 			#endif
-			b.yy = xo_t[rr.rule] ;
+			b.yy = Rule.Set[rr.rule].Symbol ;
 			rule = rr.rule ; // 9.9.Post([rule]) ;
 			for( int i = 0 ; i < state.Gotoset.GetLength(0) ; i++ )
 				if( state.Gotoset[i,0] == b.yy )
@@ -73,7 +73,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	if( state.Default_reduction.HasValue )
 		{
 		rule = state.Reductionset[state.Default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
-		b.yy = xo_t[rule] ;
+		b.yy = Rule.Set[rule].Symbol ;
 		}
 	transit:
 	for( int i = 0 ; i < state.Gotoset.GetLength(0) ; i++ )
@@ -100,7 +100,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	#if DEBUG_REDUCE
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
 	#endif
-	Auto( this_xo_t ) ;
+	Auto( rule ) ;
 	throw new ReducedAcception( rule ) ;
 
 	new_state :
@@ -112,7 +112,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		{
 		if( --bb.backup > 0 )
 			throw bb ;
-		b.yy = xo_t[bb.rule] ;
+		b.yy = Rule.Set[bb.rule].Symbol ;
 		}
 	for( int i = 0 ; i < state.Gotoset.GetLength(0) ; i++ )
 		if( state.Gotoset[i,0] == b.yy )

@@ -12,19 +12,31 @@ public struct Rule
 	public xml_s         lhs ;
 	public xml_s[]       rhs ;
 	public bool          useful ;
+	int                  symbol ;
 	public Rule( Number _number, xml_s _lhs, xml_s[] _rhs, bool _useful )
 		{
 		number  = _number ;
 		lhs     = _lhs ;
 		rhs     = _rhs ;
 		useful  = _useful ;
+		symbol  = -1 ;
 		if( number+1 > Set.Length )
 			System.Array.Resize( ref Set, number+1 ) ;
 		Set[number] = this ;
 		}
+	public static void SetSymbol( string name, int _symbol )
+		{
+		for( int i = 0 ; i < Set.Length ; i++ )
+			if( Set[i].lhs.s == name )
+				Set[i].symbol = _symbol ;
+		}
+	public int Symbol
+		{
+		get { return symbol; }
+		}
 	public static implicit operator int( Rule r )
 		{
-		return xo_t[r.number] ; // symbol_from_name[ r.lhs.s ];
+		return Rule.Set[r].Symbol ;
 		}
 	public static implicit operator Number( Rule r )
 		{

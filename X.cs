@@ -18,7 +18,6 @@ public class Xo
 	xml_s    text ;
 	bool     left ;
 	object   o ;
-	//Nullable<Symbol> sym ;
 	internal Xo( int x, xml_s text ) 
 		{
 		this.x     = x ;
@@ -86,17 +85,9 @@ class Xo_t
 		foreach( xml_s s in r.rhs )
 			xo_t[x].rhs[--y] = new Xo(x, y, r.rhs[y] ) ;
 		}
-	static public implicit operator int( Xo_t x )
-		{
-		return x.lhs ;
-		}
 	static public implicit operator Xo( Xo_t x )
 		{
 		return x.lhs ;
-		}
-	static public implicit operator Number( Xo_t x )
-		{
-		return x.lhs.Rule ;
 		}
 	public int Length
 		{
@@ -256,7 +247,7 @@ class Xo_t
 			throw new System.NotImplementedException("default rule index") ;
 		int r = -int.Parse(rule) ;
 		backup = Rule.Set[r].rhs.Length ;
-		yy = xo_t[r] ;
+		yy = Rule.Set[r].Symbol ;
 		string list = "" ;
 		if( r > 0 ) //Target0: xyzzyy tail or mantissa.
 			list += "auto = new " + Rule.Set[r].Signal + "() ;" + tab ;
@@ -304,7 +295,7 @@ class Xo_t
 		else
 		if( l != 0 )
 			{
-			int x = (int)xo_t[r] ;
+			int x = Rule.Set[r].Symbol ;
 			for( int z = 0 ; z < l ; z++ )
 				{
 				Transition t = stateset[i].Transitionset[ stateset[i].Gotoset[z,1] ] ;
@@ -380,7 +371,7 @@ class Xo_t
 			{
 			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
 			list += __point( _a, '-'+rule.ToString() ) ;
-			list += gotoset_s( i, (int)xo_t[rule], _a ) ;
+			list += gotoset_s( i, Rule.Set[rule].Symbol, _a ) ;
 			}
 		else
 			{
@@ -415,7 +406,7 @@ class Xo_t
 				{
 				list += "{"+tab ;
 				list += __point( _a, '-'+rule.ToString() ) ;
-				list += gotoset_s( i, (int)xo_t[rule], _a )+tab ;
+				list += gotoset_s( i, Rule.Set[rule].Symbol, _a )+tab ;
 				tabs-- ;
 				list += "}"+tab ;
 				}
@@ -577,7 +568,7 @@ class Xo_t
 		X.Auto["rule"] = ((int)_default).ToString() ;
 		X.Auto["argc"] = xo_t[0].rhs.Length.ToString() ;
 		X.Auto["i"]    = "0" ;
-		X.Auto["I"]    = ((int)xo_t[0]).ToString() ;
+		X.Auto["I"]    = Rule.Set[0].Symbol.ToString() ;
 		f.WriteLine( "partial class Automaton {" ) ;
 		f.WriteLine( "\tconst int __default = " + ((int)_default).ToString() + " ;" ) ;
 		f.WriteLine( "\t"+symbols_cs ) ;
@@ -987,6 +978,7 @@ static void xml_get_nonterminal()
 	xml_nt nt = new xml_nt() ;
 	//Symbol s = new Symbol(nt.symbol,nt) ;
 	object o = new xml_symbol( nt.symbol, nt.name ) ;
+	Rule.SetSymbol( nt.name.s, nt.symbol ) ;
 	for( int x = 0 ; x < 603 ; x ++ )
 		{
 		xo_t[x].lhs.set_if( nt.name, o ) ;
