@@ -137,7 +137,7 @@ public class ReducedAcception : System.Exception
 	public ReducedAcception( int rule )
 		{
 		this.rule = rule  ;
-		this.backup = xo_t[rule].rhs.Length ;
+		this.backup = Rule.Set[rule].rhs.Length ;
 		}
 	public override string ToString()
 			{

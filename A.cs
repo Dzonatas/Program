@@ -169,7 +169,7 @@ class Automatrix : Object
 		{
 		get { if( cc != null ) return cc.Language ; else return new Program( this ) ; }
 		}
-	public Automatrix() : base( this_xo_t.rhs.Length ) 
+	public Automatrix() : base( this_rule.rhs.Length )
 		{
 		main() ;
 		}

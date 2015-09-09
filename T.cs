@@ -2,7 +2,7 @@ public partial class A335
 {
 static System.Nullable<Tokenset.Token>  /*t_##*/token ; ///lowercased.Any(_atomatrix:IP)
 static State              this_state ;
-static Xo_t               this_xo_t ;
+static Rule               this_rule ;
 static string             this_string ;
 
 public struct Transition

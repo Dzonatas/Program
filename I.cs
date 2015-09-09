@@ -85,9 +85,9 @@ public struct Itemset
 		}
 	public override string ToString()
 		{
-		if( xo_t[rule].rhs.Length == point )
+		if( Rule.Set[rule].rhs.Length == point )
 			return xo_t[rule].ToString() +'.'+ point.ToString() ;
-		return xo_t[rule][point].ToString() ;
+		return Rule.Set[rule].rhs[point].ToString() ;
 		}
 	/*
 	public static implicit operator Xo( Itemset i )

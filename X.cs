@@ -12,96 +12,8 @@ static Number[]        x_empty_ruleset = new Number[0] ;
 static Xo_t[]          xo_t   = new Xo_t[603] ;  //_overflow(>ASCII(7-bit))_FIX:_common_cause:_unicode_precedence,_entity_not_implemented
 //static xml_s           _empty = new xml_s( "" ) ;
 
-public class Xo
-	{
-	int      x, y ;
-	xml_s    text ;
-	bool     left ;
-	object   o ;
-	internal Xo( int x, xml_s text ) 
-		{
-		this.x     = x ;
-		this.y     = 0 ;
-		this.text  = text ;
-		this.o     = null ;
-		this.left  = true ;
-		}
-	internal Xo( int x, int y, xml_s text ) 
-		{
-		this.x     = x ;
-		this.y     = y ;
-		this.text  = text ;
-		this.o     = null ;
-		this.left  = false ;
-		}
-	public Rule Rule
-		{
-		get { return Rule.Set[x] ; }
-		}
-	static public implicit operator int( Xo x )
-		{
-		if( x.o is xml_token ) return (int)(xml_token)x.o ;
-		if( x.o is xml_symbol ) return (int)(xml_symbol)x.o ;
-		throw new System.Exception( "<int>" ) ;
-		}
-	static public explicit operator char( Xo x )
-		{
-		if( x.o is xml_token ) return (char)(xml_token)x.o ;
-		if( x.o is xml_symbol ) return (char)(xml_symbol)x.o ;
-		throw new System.Exception( "<char>" ) ;
-		}
-	internal void set_if( xml_s name, object o )
-		{
-		if( name.s == text.s )
-			{
-			text = name ;
-			this.o = o ;
-			}
-		}
-	public string s
-		{
-		get { return text.s ; }
-		}
-	public override string ToString()
-			{
-			if( left ) 
-				return string.Format("[Xo:{0}:{1}]",x, text.s);
-			else
-				return string.Format("[Xo:{0}.{1}: s={2} o={3}]",x,y, s, o);
-			}
-	}
-
 class Xo_t
 	{
-	internal Xo     lhs ;
-	internal Xo[]   rhs ;
-	static public void Add( Rule r )
-		{
-		int x = r.number ;
-		int y = r.rhs.Length ;
-		xo_t[x]     = new Xo_t() ;
-		xo_t[x].lhs = new Xo( x, r.lhs ) ;
-		xo_t[x].rhs = new Xo[y] ;
-		foreach( xml_s s in r.rhs )
-			xo_t[x].rhs[--y] = new Xo(x, y, r.rhs[y] ) ;
-		}
-	public int Length
-		{
-		get { return this.rhs.Length ; }
-		}
-	public Xo this[ int n ]
-		{
-		get {
-			if( n == rhs.Length )
-				return lhs ;
-			return rhs[n] ;
-			}
-		set { rhs[n] = value ; }
-		}
-	public override string ToString()
-			{
-			return string.Format("[Xo_t:{0}[{1}]]", lhs, rhs.Length);
-			}
 	static int tabs_i ;
 	static int tabs
 		{
@@ -562,7 +474,7 @@ class Xo_t
 		f.Write( put("A335-Xo_t-Build-0") ) ;
 		f.WriteLine( ) ;
 		X.Auto["rule"] = ((int)_default).ToString() ;
-		X.Auto["argc"] = xo_t[0].rhs.Length.ToString() ;
+		X.Auto["argc"] = Rule.Set[0].rhs.Length.ToString() ;
 		X.Auto["i"]    = "0" ;
 		X.Auto["I"]    = Rule.Set[0].Symbol.ToString() ;
 		f.WriteLine( "partial class Automaton {" ) ;
@@ -616,9 +528,9 @@ class Xo_t
 		string linkset = "" ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
-			if( xo_t[i].rhs.Length == 0 )
+			if( Rule.Set[i].rhs.Length == 0 )
 				continue ;
-			if( xo_t[i].rhs[0].s[0] != '"' || xo_t[i].rhs[0].s[1] != '.' || xo_t[i].rhs[0].s[2] == '.' )
+			if( Rule.Set[i].rhs[0].s[0] != '"' || Rule.Set[i].rhs[0].s[1] != '.' || Rule.Set[i].rhs[0].s[2] == '.' )
 				continue ;
 			linkset += Current.Path.Entry( "." + i + ".exe" ) + " " ;
 			}
@@ -843,7 +755,7 @@ public class xml_rule
 	public xml_s        usefulness ;
 	internal void post()
 		{
-		Xo_t.Add( new Rule( number, lhs, rhs, usefulness.s == "useful" ) ) ;
+		new Rule( number, lhs, rhs, usefulness.s == "useful" ) ;
 		}
 	public xml_rule()
 		{
@@ -960,10 +872,7 @@ static xml_token _default ;
 static void xml_get_terminal()
 	{
 	xml_t t = new xml_t() ;
-	object o = new xml_token( t.token, t.symbol, t.name ) ;
-	for( int x = 0 ; x < 603 ; x ++ )
-		for( int y = 0 ; y < xo_t[x].rhs.Length ; y++ )
-			xo_t[x][y].set_if( t.name, o ) ;
+	new xml_token( t.token, t.symbol, t.name ) ;
 	symbols_cs.Append( string.Format("const int {0,30}\t= "+(int)t.symbol+" ;\n\t", t.name._s) ) ;
 	}
 	
@@ -972,12 +881,6 @@ static void xml_get_nonterminal()
 	xml_nt nt = new xml_nt() ;
 	object o = new xml_symbol( nt.symbol, nt.name ) ;
 	Rule.SetSymbol( nt.name.s, nt.symbol ) ;
-	for( int x = 0 ; x < 603 ; x ++ )
-		{
-		xo_t[x].lhs.set_if( nt.name, o ) ;
-		for( int y = 0 ; y < xo_t[x].rhs.Length ; y++ )
-			xo_t[x][y].set_if( nt.name, o ) ;
-		}
 	symbols_cs.Append( string.Format( "const int {0,30}\t= "+(int)nt.symbol+" ;\n\t", nt.name._s ) ) ;
 	}
 

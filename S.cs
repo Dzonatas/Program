@@ -30,10 +30,10 @@ class Stack
 	static global::Item[] stack = new global::Item[0] ;
 	public class Item : global::Item
 		{
-		public Xo_t Rule ;
+		public Rule Rule ;
 		public Item()
 			{
-			Rule = this_xo_t ;
+			this.Rule = this_rule ;
 			}
 		public class Token : Item
 			{
@@ -209,7 +209,7 @@ class Stack
 			if( peakIsItemToken )
 				{
 				Item.Token t = peak as Item.Token ;
-				string rhs = this_xo_t.rhs[i-1].s ;
+				string rhs = this_rule.rhs[i-1].s ;
 				if( rhs[0] == '\'' )
 					{
 					if(	rhs[1] == t._Token._[0] )
@@ -245,8 +245,8 @@ class Stack
 			if( peakIsObject )
 				{
 				Object p = peak as Object ;
-				string lhs = ((Xo_t)(p.Rule)).lhs.s ;
-				string rhs = this_xo_t.rhs[i-1].s ;
+				string lhs = ((Rule)(p.Rule)).lhs.s ;
+				string rhs = this_rule.rhs[i-1].s ;
 				if( lhs == rhs )
 					o[i] = stack_pop() as Object ;
 				else
@@ -259,8 +259,8 @@ class Stack
 			if( peakIsArray )
 				{
 				object[] p = peak as object[] ;
-				string lhs = ((Xo_t)(p[0])).lhs.s ;
-				string rhs = this_xo_t.rhs[i-1].s ;
+				string lhs = ((Rule)(p[0])).lhs.s ;
+				string rhs = this_rule.rhs[i-1].s ;
 				if( lhs == rhs )
 					o[i] = new Object( stack_pop() as object[] ) ;
 				else

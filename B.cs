@@ -67,7 +67,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 				if( state.Gotoset[i,0] == b.yy )
 			//if( state.Gotoset.ContainsKey( b.yy ) )
 				goto transit ;
-			this_xo_t = xo_t[rr.rule] ;
+			this_rule = Rule.Set[rr.rule] ;
 			goto jump ;
 			}
 	if( state.Default_reduction.HasValue )
@@ -95,7 +95,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Debug.WriteLine( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
 		throw new System.NotImplementedException( "Missed token?" ) ;
 		}
-	this_xo_t = xo_t[rule] ;
+	this_rule = Rule.Set[rule] ;
 	jump :
 	#if DEBUG_REDUCE
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
