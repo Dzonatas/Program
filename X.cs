@@ -964,8 +964,6 @@ static xml_token _default ;
 static void xml_get_terminal()
 	{
 	xml_t t = new xml_t() ;
-	//Symbol s = new Symbol(t.symbol,t) ;
-	//symbol_from_token.Add(t.token, s) ;
 	object o = new xml_token( t.token, t.symbol, t.name ) ;
 	for( int x = 0 ; x < 603 ; x ++ )
 		for( int y = 0 ; y < xo_t[x].rhs.Length ; y++ )
@@ -976,7 +974,6 @@ static void xml_get_terminal()
 static void xml_get_nonterminal()
 	{
 	xml_nt nt = new xml_nt() ;
-	//Symbol s = new Symbol(nt.symbol,nt) ;
 	object o = new xml_symbol( nt.symbol, nt.name ) ;
 	Rule.SetSymbol( nt.name.s, nt.symbol ) ;
 	for( int x = 0 ; x < 603 ; x ++ )
@@ -1018,14 +1015,9 @@ static void xml_get_transition()
 		t.symbol = xml_symbolset[xml.Value] ;
 	else
 		t.symbol = xml_tokenset[xml.Value] ;
+	t.item = Itemset.Find( x_state.Itemset, xml.Value ) ;
 	xml.MoveToNextAttribute() ;
 	t.state = Number.Parse( xml.Value );
-	foreach( Itemset i in x_state.Itemset )
-		if( t.symbol == (int)i )
-			{
-			t.item = i ;
-			break ;
-			}
 	x_state.Append( t ) ;
 	if( t.type == "shift" )
 		x_state.Shiftset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
@@ -1038,17 +1030,13 @@ static void xml_get_reduction()
 	Reduction r = new Reduction() ;
 	xml.MoveToFirstAttribute() ;
 	r.symbol = xml_tokenset[ xml.Value ] ;
+	if( r.symbol != _default && -1 == System.Array.IndexOf( x_state.Lookaheadset, r.symbol ) )
+		r.item = Itemset.Find( x_state.Itemset, xml.Value ) ;
 	xml.MoveToNextAttribute() ;
 	if( xml.Value != "accept" )
 		r.rule = Number.Parse( xml.Value ) ;
 	xml.MoveToNextAttribute() ;
 	r.enabled = bool.Parse( xml.Value ) ;
-	foreach( Itemset i in x_state.Itemset )
-		if( r.symbol == (int)i )
-			{
-			r.item = i ;
-			break ;
-			}
 	if( r.symbol == _default )
 		{
 		x_state.Default_reduction = x_state.Reductionset.Length ;
