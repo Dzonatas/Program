@@ -84,10 +84,6 @@ public struct Reduction
 			return true ;
 		return false ;
 		}
-	static public implicit operator Xo( Reduction r )
-		{
-		return (Xo)xo_t[r.rule] ;
-		}
 	public override string ToString()
 		{
 		if( enabled )

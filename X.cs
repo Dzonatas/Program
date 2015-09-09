@@ -85,10 +85,6 @@ class Xo_t
 		foreach( xml_s s in r.rhs )
 			xo_t[x].rhs[--y] = new Xo(x, y, r.rhs[y] ) ;
 		}
-	static public implicit operator Xo( Xo_t x )
-		{
-		return x.lhs ;
-		}
 	public int Length
 		{
 		get { return this.rhs.Length ; }
@@ -1040,13 +1036,9 @@ static void xml_get_reduction()
 	if( r.symbol == _default )
 		{
 		x_state.Default_reduction = x_state.Reductionset.Length ;
-		for( int x = 0 ; x < x_state.Itemset.Length ; x++ )
-			if( (Xo)x_state.Itemset[x] == (Xo)r )
-				{
-				r.item = x_state.Itemset[x] ;
-				x_state.Default_item = x ;
-				break ;
-				}
+		int i = Itemset.FindDefault( x_state.Itemset, r.rule ) ;
+		r.item = x_state.Itemset[i] ;
+		x_state.Default_item = i ;
 		}
 	x_state.Append( r ) ;
 	}

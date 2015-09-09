@@ -40,10 +40,6 @@ public struct Itemset
 	public int   rule ;
 	public int   point ;
 	public bool  empty ;
-	static public implicit operator Xo( Itemset i )
-		{
-		return xo_t[i.rule][i.point] ;
-		}
 	static public Itemset Find( Itemset [] items, string symbol )
 		{
 		foreach( Itemset i in items )
@@ -58,6 +54,19 @@ public struct Itemset
 				return i ;
 			}
 		throw new System.IndexOutOfRangeException(symbol) ;
+		}
+	static public int FindDefault( Itemset [] items, int rule )
+		{
+		for( int i = 0 ; i < items.Length ; i++ )
+			{
+			if( Rule.Set[items[i].rule].rhs.Length == items[i].point )
+				{
+				if( items[i].rule == rule )
+					return i ;
+				continue ;
+				}
+			}
+		throw new System.DataMisalignedException() ;
 		}
 	static public explicit operator string( Itemset i )
 		{
