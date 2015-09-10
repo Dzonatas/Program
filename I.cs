@@ -37,29 +37,29 @@ const  char []    i_undefined = null ; //{0xCA,0xFF} ;
 
 public struct Itemset
 	{
-	public int   rule ;
-	public int   point ;
-	public bool  empty ;
+	public System.Decimal   rule ;
+	public int              point ;
+	public bool             empty ;
 	static public Itemset Find( Itemset [] items, string symbol )
 		{
 		foreach( Itemset i in items )
 			{
-			if( Rule.Set[i.rule].rhs.Length == i.point )
+			if( Rule.Set[(int)i.rule].rhs.Length == i.point )
 				{
-				if( Rule.Set[i.rule].lhs.s == symbol )
+				if( Rule.Set[(int)i.rule].lhs.s == symbol )
 					return i ;
 				continue ;
 				}
-			if( Rule.Set[i.rule].rhs[i.point].s == symbol )
+			if( Rule.Set[(int)i.rule].rhs[i.point].s == symbol )
 				return i ;
 			}
 		throw new System.IndexOutOfRangeException(symbol) ;
 		}
-	static public int FindDefault( Itemset [] items, int rule )
+	static public int FindDefault( Itemset [] items, System.Decimal rule )
 		{
 		for( int i = 0 ; i < items.Length ; i++ )
 			{
-			if( Rule.Set[items[i].rule].rhs.Length == items[i].point )
+			if( Rule.Set[(int)items[i].rule].rhs.Length == items[i].point )
 				{
 				if( items[i].rule == rule )
 					return i ;
@@ -85,18 +85,10 @@ public struct Itemset
 		}
 	public override string ToString()
 		{
-		if( Rule.Set[rule].rhs.Length == point )
-			return xo_t[rule].ToString() +'.'+ point.ToString() ;
-		return Rule.Set[rule].rhs[point].ToString() ;
+		if( Rule.Set[(int)rule].rhs.Length == point )
+			return xo_t[(int)rule].ToString() +'.'+ point.ToString() ;
+		return Rule.Set[(int)rule].rhs[point].ToString() ;
 		}
-	/*
-	public static implicit operator Xo( Itemset i )
-		{
-		if( i.point < xo_t[i.rule].Length )
-			return xo_t[i.rule][i.point] ;
-		return new Xo( i.rule, i.point, _empty ) ;
-		}
-	*/
 	}
 
 class Instr : Automatrix

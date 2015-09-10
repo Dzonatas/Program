@@ -1,10 +1,6 @@
 public partial class A335
 {
 
-static State           yystate ;
-static Rule            yyrule ;
-static Symbol          yytoken ;
-
 public class Yellow : global::A.YELLOW
 	{
 	//class Box {}

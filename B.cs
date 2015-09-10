@@ -41,7 +41,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Stack.Push( new Stack.Item.Token( b, token.Value ) ) ;
 		token = null ;
 		Transition t = state.Transitionset[ state.Shiftset[i,1] ] ;
-		xyzzy = new planet( t.item.rule, t.item.point, t.state, _default ) ;
+		xyzzy = new planet( (int)t.item.rule, t.item.point, t.state, _default ) ;
 		#if DEBUG_SHIFT
 		Debug.WriteLine( "[Shift] " + t ) ;
 		#endif
@@ -61,18 +61,18 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			#if DEBUG_REDUCTIONSET
 			Debug.WriteLine( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 			#endif
-			b.yy = Rule.Set[rr.rule].Symbol ;
-			rule = rr.rule ; // 9.9.Post([rule]) ;
+			b.yy = Rule.Set[(int)rr.rule].Symbol ;
+			rule = (int)rr.rule ; // 9.9.Post([rule]) ;
 			for( int i = 0 ; i < state.Gotoset.GetLength(0) ; i++ )
 				if( state.Gotoset[i,0] == b.yy )
 			//if( state.Gotoset.ContainsKey( b.yy ) )
 				goto transit ;
-			this_rule = Rule.Set[rr.rule] ;
+			this_rule = Rule.Set[(int)rr.rule] ;
 			goto jump ;
 			}
 	if( state.Default_reduction.HasValue )
 		{
-		rule = state.Reductionset[state.Default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
+		rule = (int)state.Reductionset[state.Default_reduction.Value].rule ; // 9.9.Post([rule]) ; ...
 		b.yy = Rule.Set[rule].Symbol ;
 		}
 	transit:
@@ -81,7 +81,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	//if( state.Gotoset.ContainsKey( b.yy ) )
 		{
 		Transition t = state.Transitionset[ state.Gotoset[i,1] ] ;
-		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
+		xyzzy = new planet( (int)t.item.rule, t.item.point, t.state, (int)_default ) ;
 		#if DEBUG_GOTO
 		Debug.WriteLine( "[Goto] " + t ) ;
 		#endif
@@ -119,7 +119,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	//if( state.Gotoset.ContainsKey( b.yy ) )
 		{
 		Transition t = state.Transitionset[ state.Gotoset[i,1] ] ;
-		xyzzy = new planet( t.item.rule, t.item.point, t.state, (int)_default ) ;
+		xyzzy = new planet( (int)t.item.rule, t.item.point, t.state, (int)_default ) ;
 		goto new_state ;
 		}
 	if( token.Value.c != 0 )

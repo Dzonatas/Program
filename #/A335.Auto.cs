@@ -4,7 +4,7 @@ using System.Reflection ;
 using System.Linq ;
 using System ;
 public partial class A335 {
-public static void Auto( Number n )
+public static void Auto( int n )
 	{
 	if( n == 0 )
 		return ;

@@ -8,7 +8,7 @@ public partial class A335
 static XmlTextReader   xml ;
 static string          xml_text ;
 static bool            xml_loaded ;
-static Number[]        x_empty_ruleset = new Number[0] ;
+static int[]           x_empty_ruleset = new int[0] ;
 static Xo_t[]          xo_t   = new Xo_t[603] ;  //_overflow(>ASCII(7-bit))_FIX:_common_cause:_unicode_precedence,_entity_not_implemented
 //static xml_s           _empty = new xml_s( "" ) ;
 
@@ -277,13 +277,13 @@ class Xo_t
 		string list = string.Empty ;
 		if( stateset[i].Gotoset.GetLength(0) != 0 )
 			{
-			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
+			int rule = (int)stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
 			list += __point( _a, '-'+rule.ToString() ) ;
 			list += gotoset_s( i, Rule.Set[rule].Symbol, _a ) ;
 			}
 		else
 			{
-			int rule = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
+			int rule = (int)stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule ;
 			list += __point( _a, '-'+rule.ToString() ) ;
 			list += "return -"+rule+" ;" ;
 			}
@@ -301,7 +301,7 @@ class Xo_t
 				continue ;
 			tabs++ ;
 			list += "case "+r.symbol+": "+tab ;
-			int rule = stateset[i].Reductionset[z].rule ;
+			int rule = (int)stateset[i].Reductionset[z].rule ;
 			if( stateset[i].Gotoset.GetLength(0) == 0 )
 				{
 				list += "{" + tab ;
@@ -620,7 +620,7 @@ static void xml_load_grammar()
 	xml_loaded = true ;
 	foreach( State s in stateset )
 		foreach( Transition t in s.Transitionset )
-			stateset[t.state].Append( s.Number ) ;
+			stateset[t.state].Append( (int)s.Number ) ;
 	}
 
 partial class X //_: YY
@@ -710,14 +710,14 @@ public struct xml_s
 
 public class xml_t
 	{
-	public Number  symbol ;
+	public int     symbol ;
 	public char    token ;
 	public xml_s   name ;
 	public xml_s   usefulness ;
 	internal xml_t()
 		{
 		xml.MoveToFirstAttribute() ;
-		symbol = Number.Parse( xml.Value ) ;
+		symbol = int.Parse( xml.Value ) ;
 		xml.MoveToNextAttribute() ;
 		token =  (char)int.Parse( xml.Value ) ;  //_FIX:_new_Symbol(d,i);_new_Token(i,d);
 		xml.MoveToNextAttribute() ;
@@ -735,7 +735,7 @@ public class xml_nt
 	internal xml_nt()
 		{
 		xml.MoveToFirstAttribute() ;
-		symbol = Number.Parse( xml.Value ) ;
+		symbol = int.Parse( xml.Value ) ;
 		xml.MoveToNextAttribute() ;
 		name  =  new xml_s( xml.Value ) ;
 		xml.MoveToNextAttribute() ;
@@ -749,10 +749,10 @@ public class xml_nt
 	
 public class xml_rule
 	{
-	public Number       number ;
-	public xml_s        lhs ;
-	public xml_s[]      rhs ;
-	public xml_s        usefulness ;
+	public System.Decimal number ;
+	public xml_s          lhs ;
+	public xml_s[]        rhs ;
+	public xml_s          usefulness ;
 	internal void post()
 		{
 		new Rule( number, lhs, rhs, usefulness.s == "useful" ) ;
@@ -760,7 +760,7 @@ public class xml_rule
 	public xml_rule()
 		{
 		xml.MoveToFirstAttribute() ;
-		number = Number.Parse( xml.Value ) ;
+		number = int.Parse( xml.Value ) ;
 		rhs = new xml_s[0] ;
 		}
 	}
@@ -791,7 +791,7 @@ static void xml_get_symbol( bool _rule )
 static void xml_get_empty()
 	{
 	System.Array.Resize( ref x_empty_ruleset, x_empty_ruleset.Length+1 ) ;
-	x_empty_ruleset[x_empty_ruleset.Length-1] = x_rule.number ;
+	x_empty_ruleset[x_empty_ruleset.Length-1] = (int)x_rule.number ;
 	string s1 = "_"+
 		( ( (int)x_rule.number < 10 ) ? "__"
 		: ( (int)x_rule.number < 100 ) ? "_"
@@ -888,17 +888,17 @@ static State x_state ;
 static void xml_get_state()
 	{
 	xml.MoveToFirstAttribute() ;
-	x_state.Number = Number.Parse( xml.Value ) ;
+	x_state.Number = System.Decimal.Parse( xml.Value ) ;
 	}
 
 static void xml_get_item()
 	{
 	Itemset i = new Itemset() ;
 	xml.MoveToFirstAttribute() ;
-	i.rule = Number.Parse( xml.Value ) ;
+	i.rule = System.Decimal.Parse( xml.Value ) ;
 	xml.MoveToNextAttribute() ;
-	i.point = Number.Parse( xml.Value ) ;
-	foreach( Number n in x_empty_ruleset )
+	i.point = int.Parse( xml.Value ) ;
+	foreach( System.Decimal n in x_empty_ruleset )
 		if( n == i.rule )
 			i.empty = true ;
 	x_state.Append( i ) ;
@@ -916,7 +916,7 @@ static void xml_get_transition()
 		t.symbol = xml_tokenset[xml.Value] ;
 	t.item = Itemset.Find( x_state.Itemset, xml.Value ) ;
 	xml.MoveToNextAttribute() ;
-	t.state = Number.Parse( xml.Value );
+	t.state = int.Parse( xml.Value );
 	x_state.Append( t ) ;
 	if( t.type == "shift" )
 		x_state.Shiftset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
@@ -933,7 +933,7 @@ static void xml_get_reduction()
 		r.item = Itemset.Find( x_state.Itemset, xml.Value ) ;
 	xml.MoveToNextAttribute() ;
 	if( xml.Value != "accept" )
-		r.rule = Number.Parse( xml.Value ) ;
+		r.rule = System.Decimal.Parse( xml.Value ) ;
 	xml.MoveToNextAttribute() ;
 	r.enabled = bool.Parse( xml.Value ) ;
 	if( r.symbol == _default )

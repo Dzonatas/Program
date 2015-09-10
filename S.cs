@@ -277,11 +277,11 @@ class Stack
 
 public struct State                //_FIX:$State,_State,_State:=$State,$State!=_State
 	{
-	public Number               Number
+	public System.Decimal     Number
 		{
-		get { return debit ; }
+		get { return number ; }
 		set {
-			debit             = value ;
+			number            = value ;
 			transitionset     = new Transition[0] ;
 			shiftset          = new int[0,0] ;
 			gotoset           = new int[0,0] ;
@@ -302,7 +302,7 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 	public Nullable<int>        Default_item          { get { return default_item ; } set { default_item = value ; } }
 	public Nullable<int>        Default_reduction     { get { return default_reduction ; } set { default_reduction = value ; } }
 	public int[]                FromStates            { get { return from_states ; } }
-	Number               debit ;
+	System.Decimal       number ;
 	Itemset []           itemset ;
 	Transition []        transitionset ;
 	int [,]              shiftset ;
@@ -371,20 +371,20 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 
 	public void Set()
 		{
-		stateset[(int)debit] = x_state ;
+		stateset[(int)number] = x_state ;
 		}
 
 	static public implicit operator Decimal( State s )
 		{
-		return s.debit ;
+		return s.number ;
 		}
 	static public explicit operator int( State s )
 		{
-		return (int)s.debit ;
+		return (int)s.number ;
 		}
 	public override string ToString()
 		{
-		return debit.ToString() ;
+		return number.ToString() ;
 		}
 	}
 
@@ -489,171 +489,6 @@ class SigArg : Automatrix
 	[Automaton] public class   sigArgs1_sigArg
 		: Automatrix	{}
 	}
-
-partial class Program
-	{
-	static C_Type[] stack = new C_Type[0] ;
-	static int stack_offset ;
-	static int stack_down ;
-	//static uint effective_symbolic_objective_credit ;
-	static void stack_add( C_Type type )
-		{
-		Array.Resize( ref stack, stack.Length+1 ) ;
-		stack[stack.Length-1] = type ;
-		}
-	public int StackOffset
-		{
-		get { return stack_offset - stack_down ; }
-		}
-	#if MICRODATA
-	public void Push( Microdata stack_item_data )
-		{
-		stack[stack_offset] = stack_item_data ;
-		stack_offset++ ;
-		}
-	public void Push1( C_Type string_line_x )
-		{
-		Push( new Microdata( true, string_line_x ) ) ;
-		}
-	public void Push( C_Type string_line )
-		{
-		Push( new Microdata( false, string_line ) ) ;
-		}
-	#else
-	public void Push1( C_Type string_line_x )
-		{
-		stack[stack_offset] = string_line_x ;
-		stack_offset++ ;
-		}
-	public void Push( C_Type string_line )
-		{
-		if( string_line == null )
-			string_line = null ;
-		stack[stack_offset] = string_line ;
-		stack_offset++ ;
-		}
-	#endif
-	public void Push( string type )
-		{
-		Push( C_Type.Acquire( type ) ) ;
-		}
-	public object Pop()
-		{
-		stack_offset-- ;
-		return stack[stack_offset] ;
-		}
-	#if MICRODATA
-	public List<Microdata> Hangup( int iargs )
-		{
-		var list = new List<Microdata>() ;
-		stack_offset -= iargs ;
-		for( int i = 0 ; i < iargs ; i++ )
-			list.Add( stack[stack_offset+i] ) ;
-		return list ;
-		}
-	#else
-	public C_Type[] Hangup( int iargs )
-		{
-		if( iargs < 1 )
-			return new C_Type[] {} ;
-		var list = new C_Type[iargs] ;
-		stack_offset -= iargs ;
-		for( int i = 0 ; i < iargs ; i++ )
-			list[i] = stack[stack_offset+i] == null ? C_Type.Undefined : stack[stack_offset+i] ;
-		return list ;
-		}
-	#endif
-	public void Hangdown()
-		{
-		stack_down = stack_offset ;
-		}
-	public int MaxStack
-		{
-		set {
-			if( stack_offset + value > stack.Length )
-				{
-				//stack.Capacity += value ;
-				for( int i = 0 ; i < value ; i++ )
-					stack_add( null ) ;
-				}
-			}
-		}
-	}
-
-public struct Symbol                //_FIX:$Symbol,_Symbol,.ibid
-	{
-	public Number  credit ;
-	object         oo ;
-
-	public override string ToString()
-		{
-		return "$"+credit.ToString()+oo.ToString()+"$" ;
-		}
-	static public implicit operator char( Symbol s )
-		{
-		return (char)s.oo ;
-		}
-	static public implicit operator Symbol( string s )
-		{
-		return symbol_from_name[s] ;
-		}
-	static public bool operator !=( Symbol s, string ss )
-		{
-		return true ;
-		}
-	static public bool operator ==( Symbol s, string ss )
-		{
-		if( s.oo is string ) return s.oo.Equals(ss) ;
-		if( s.oo is object [] )
-			{
-			object [] ooa = (object [])s.oo ;
-			if( ooa[1] is string ) return ooa[1].Equals(ss) ;
-			}
-		return s.Equals( (object)ss ) ;
-		}
-	public string Name
-		{
-		get {
-			if( oo == null ) return null ;
-			if( oo is xml_t ) return ((xml_t)oo).name.s ;
-			if( oo is xml_nt ) return ((xml_nt)oo).name.s ;
-			//if( oo is object [] ) return (string)((object[])oo)[1] == null ;
-			throw new NotImplementedException( "Obvious." ) ;
-			}
-		}
-	public bool StringIsNull
-		{
-		get {
-			if( oo == null ) return true ;
-			if( oo is xml_t ) return ((xml_t)oo).name.s == null ;
-			if( oo is xml_nt ) return ((xml_nt)oo).name.s == null ;
-			//if( oo is object [] ) return (string)((object[])oo)[1] == null ;
-			if( oo is int )
-				return false ;
-			throw new NotImplementedException( "Obvious." ) ;
-			}
-		}
-	private Symbol( Number credit, object o )
-		{
-		this.credit   = credit ;
-		this.oo       = o ;
-		//symbol_from_number.Add( credit , this ) ;
-		}
-		/*
-	public Symbol( Number credit, Number token, string name, bool terminal )
-		: this( credit, new object [] {token, name}, terminal )
-		{
-		symbol_from_number.Add( credit , this ) ;
-		symbol_from_name.Add( name , this ) ;
-		symbol_from_token.Add( token , this ) ;
-		}*/
-	}
-
-//static Dictionary<Number,Symbol>    symbol_from_number = new Dictionary<Number, Symbol>() ;
-static System.Collections.Generic.Dictionary<Number,Symbol>    symbol_from_token = new System.Collections.Generic.Dictionary<Number, Symbol>() ;
-//static Dictionary<Number,Symbol>    symbol_from_null_token = new Dictionary<Number, Symbol>() ;
-static System.Collections.Generic.Dictionary<string,Symbol>    symbol_from_name = new System.Collections.Generic.Dictionary<string, Symbol>() ;
-
 }
 
 	

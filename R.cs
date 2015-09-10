@@ -8,12 +8,12 @@ string rune___; /*C`__ -volume:0.00 (+"rc:") */
 public struct Rule
 	{
 	public static Rule [] Set = new Rule[0] ;
-	public Number        number ;
-	public xml_s         lhs ;
-	public xml_s[]       rhs ;
-	public bool          useful ;
-	int                  symbol ;
-	public Rule( Number _number, xml_s _lhs, xml_s[] _rhs, bool _useful )
+	public System.Decimal number ;
+	public xml_s          lhs ;
+	public xml_s[]        rhs ;
+	public bool           useful ;
+	int                   symbol ;
+	public Rule( System.Decimal _number, xml_s _lhs, xml_s[] _rhs, bool _useful )
 		{
 		number  = _number ;
 		lhs     = _lhs ;
@@ -21,8 +21,8 @@ public struct Rule
 		useful  = _useful ;
 		symbol  = -1 ;
 		if( number+1 > Set.Length )
-			System.Array.Resize( ref Set, number+1 ) ;
-		Set[number] = this ;
+			System.Array.Resize( ref Set, (int)number+1 ) ;
+		Set[(int)number] = this ;
 		}
 	public static void SetSymbol( string name, int _symbol )
 		{
@@ -38,7 +38,7 @@ public struct Rule
 		{
 		return Rule.Set[r].Symbol ;
 		}
-	public static implicit operator Number( Rule r )
+	public static implicit operator System.Decimal( Rule r )
 		{
 		return r.number ;
 		}
@@ -74,10 +74,10 @@ public struct Rule
 
 public struct Reduction
 	{
-	public int     symbol  ;
-	public int     rule    ;
-	public bool    enabled ;
-	public Itemset item    ;
+	public int            symbol  ;
+	public System.Decimal rule    ;
+	public bool           enabled ;
+	public Itemset        item    ;
 	public bool   Default( int rule )
 		{
 		if( symbol == _default && rule == this.rule )
@@ -87,7 +87,7 @@ public struct Reduction
 	public override string ToString()
 		{
 		if( enabled )
-			return symbol.ToString() +"->"+ xo_t[rule] ;
+			return symbol.ToString() +"->"+ xo_t[(int)rule] ;
 		return string.Format("[Reduction]({0},{1})", symbol, rule );
 		}
 	static public implicit operator int( Reduction r )
