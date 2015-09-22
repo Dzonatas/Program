@@ -246,9 +246,10 @@ public class C_Type
 					return capitol + "_type" ;
 				throw new System.NotSupportedException() ;
 				}
-			throw new System.NotImplementedException( "Undefined type." ) ; //_ID_ID_ID_...
+			throw new UndefinedTypeException() ; //_ID_ID_ID_...
 			}
 		}
+	public class UndefinedTypeException : System.Exception		{}
 	}
 
 static C_Type C_I4_0 = C_Type.Acquire( "C_I4_0" ) ;

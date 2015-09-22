@@ -46,7 +46,7 @@ partial class A335
 								}
 							} ) ;
 						}
-					catch( System.Exception e )
+					catch( C_Type.UndefinedTypeException e )
 						{
 						/*
 								this_program += "static struct _object obj = { 0 } ;" ;
