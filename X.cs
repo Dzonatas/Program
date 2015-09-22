@@ -918,10 +918,6 @@ static void xml_get_transition()
 	xml.MoveToNextAttribute() ;
 	t.state = int.Parse( xml.Value );
 	x_state.Append( t ) ;
-	if( t.type == "shift" )
-		x_state.Shiftset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
-	else
-		x_state.Gotoset_Add( t.symbol, x_state.Transitionset.Length - 1 ) ;
 	}
 
 static void xml_get_reduction()

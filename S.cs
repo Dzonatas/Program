@@ -329,6 +329,10 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		{
 		System.Array.Resize(ref transitionset,  transitionset.Length + 1 ) ;
 		transitionset[  transitionset.Length - 1 ] = t ;
+		if( t.type == "shift" )
+			addToShiftset( t.symbol, Transitionset.Length - 1 ) ;
+		else
+			addToGotoset( t.symbol, Transitionset.Length - 1 ) ;
 		}
 
 	public void Append( Reduction r )
@@ -337,7 +341,7 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		reductionset[  reductionset.Length - 1 ] = r ;
 		}
 
-	public void Shiftset_Add( int _0, int _1  )
+	void addToShiftset( int _0, int _1  )
 		{
 		int[,] a = new int[shiftset.GetLength(0)+1,2] ;
 		for( int i = 0 ; i < shiftset.GetLength(0) ; i++ )
@@ -350,7 +354,7 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		shiftset = a ;
 		}
 
-	public void Gotoset_Add( int _0, int _1  )
+	void addToGotoset( int _0, int _1  )
 		{
 		int[,] a = new int[gotoset.GetLength(0)+1,2] ;
 		for( int i = 0 ; i < gotoset.GetLength(0) ; i++ )
