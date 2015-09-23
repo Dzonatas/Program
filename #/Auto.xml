@@ -1,7 +1,9 @@
 <?xml version="1.0" ?>
 <auto>
 <A335-Xo_t-Build-0>
+#if EMBED
 interface Item { }
+#endif
 namespace &branch; {
 public partial class A335 {
 static A335() {}
@@ -26,6 +28,9 @@ public partial class  &signal;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = &rhs; ;
+	#if !EMBED
+	protected override void splice_f() { A335.Auto( &i; ) ; }
+	#endif
 	public &signal;()
 		{
 		argv = new Tokenset.Token[ arg_i = &argc; ] ;
@@ -37,6 +42,9 @@ void shift()
 	{
 	_token = token ;
 	token_HasValue = false ;
+	#if !EMBED
+	global::A335.Stack.Push( new global::A335.Stack.Item.Token( token ) ) ;
+	#endif
 	}
 int deploy( int i )
 	{

@@ -495,9 +495,9 @@ class Xo_t
 				{
 				previous_interface = Rule.Set[i].lhs.s ;
 				X.Auto["interface"] = Rule.Set[i].lhs.s ;
-				X.Auto["i"] = "" ;
 				X.Auto["I"] = "" ;
 				}
+			X.Auto["i"] = i.ToString() ;
 			X.Auto["interface"] = "global::Item" ;
 			X.Auto["namespace"] = Rule.Set[i].lhs.s + "._" + i ;
 			X.Auto["signal"] = Rule.Set[i].Signal ;
@@ -705,6 +705,10 @@ public struct xml_s
 					i += string.Format( "{0:X2}", (int)c ) ;
 			return i ;
 			}
+		}
+	public override string ToString()
+		{
+		return s;
 		}
 	}
 

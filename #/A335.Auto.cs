@@ -6,6 +6,7 @@ using System ;
 public partial class A335 {
 public static void Auto( int n )
 	{
+	this_rule = Rule.Set[n] ;
 	if( n == 0 )
 		return ;
 	Stack.Push( (Automatrix) _auto( Rule.Set[n].AlphaSignal ) ) ;

@@ -2,7 +2,7 @@ public partial class A335
 {
 //System.Decimal π = 3.333… ;
 
-partial class Program
+public partial class Program
 	{
 	static C_Type[] stack = new C_Type[0] ;
 	static int stack_offset ;

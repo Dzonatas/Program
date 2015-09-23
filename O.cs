@@ -6,7 +6,7 @@ public partial class A335
 {
 static object[] freeset = new object[0] ;
 
-class Object : Stack.Item
+public class Object : Stack.Item
 	{
 	protected object[] o ;
 	public Object( object[] _ ) : base()

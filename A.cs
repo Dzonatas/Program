@@ -162,7 +162,7 @@ namespace A.org.com.edu.mil.net
 
 partial class A335
 {
-class Automatrix : Object
+public class Automatrix : Object
 	{
 	Program cc = null ;
 	public Program C

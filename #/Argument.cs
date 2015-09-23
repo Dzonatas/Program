@@ -3,7 +3,7 @@ using System.Diagnostics ;
 
 public partial class A335
 {
-class Argument
+public class Argument
 	{
 	object arg ;
 	public Argument( ref object o )

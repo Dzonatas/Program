@@ -38,7 +38,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 	//if( state.Shiftset.ContainsKey( xml_translate[token.Value.c] ) )
 		{
 		b.yy  = xml_translate[token.Value.c] ;
-		Stack.Push( new Stack.Item.Token( b, token.Value ) ) ;
+		Stack.Push( new Stack.Item.Token( /*b,*/ token.Value ) ) ;
 		token = null ;
 		Transition t = state.Transitionset[ state.Shiftset[i,1] ] ;
 		xyzzy = new planet( (int)t.item.rule, t.item.point, t.state, _default ) ;
@@ -61,13 +61,12 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 			#if DEBUG_REDUCTIONSET
 			Debug.WriteLine( "[Reductionset] " + rr + " ( " + b.yy + " -> " + xo_t[rr.rule] + " ) " ) ;
 			#endif
-			b.yy = Rule.Set[(int)rr.rule].Symbol ;
 			rule = (int)rr.rule ; // 9.9.Post([rule]) ;
+			b.yy = Rule.Set[rule].Symbol ;
 			for( int i = 0 ; i < state.Gotoset.GetLength(0) ; i++ )
 				if( state.Gotoset[i,0] == b.yy )
 			//if( state.Gotoset.ContainsKey( b.yy ) )
 				goto transit ;
-			this_rule = Rule.Set[(int)rr.rule] ;
 			goto jump ;
 			}
 	if( state.Default_reduction.HasValue )
@@ -95,7 +94,6 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		Debug.WriteLine( "[OOP!] Expected default, and this state has no default. Token = " + token ) ;
 		throw new System.NotImplementedException( "Missed token?" ) ;
 		}
-	this_rule = Rule.Set[rule] ;
 	jump :
 	#if DEBUG_REDUCE
 	Debug.WriteLine( "[reduce] " + this_xo_t.ReductionMethod ) ;
@@ -192,9 +190,13 @@ static void Begin()
 	_.screen.DrawCode() ;
 	#endif
 	Program.Begin() ;
-	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	Cluster.Cli.Refine() ;
+	#if !BEGINNING
+	global::Automaton.Begin() ;
+	#else
+	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	beginning( ref b ) ;
+	#endif
 	var main_c = Current.Path.CreateText( "main.c" ) ;
 	X.Auto["list"] = b_list ;
 	main_c.WriteLine( Xo_t.put("main_c") ) ;

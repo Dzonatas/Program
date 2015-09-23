@@ -25,7 +25,7 @@ static        /* used */  Item    system = new Item() ; // auto-registry, File s
 static internal      IPAddress system_ip = IPAddress.Any ;
 static State []                 stateset = new State[1125] ;
 
-class Stack
+public class Stack
 	{
 	static global::Item[] stack = new global::Item[0] ;
 	public class Item : global::Item
@@ -37,11 +37,11 @@ class Stack
 			}
 		public class Token : Item
 			{
-			public planet  State ;
+			//public planet  State ;
 			public Tokenset.Token _Token ;
-			public Token( planet _0, Tokenset.Token _1 ) : base()
+			public Token( /*planet _0,*/ Tokenset.Token _1 ) : base()
 				{
-				State = _0 ;
+				//State = _0 ;
 				_Token = _1 ;
 				}
 			static public explicit operator string( Token t )
@@ -58,6 +58,7 @@ class Stack
 			public string Assertive ;
 			public Empty( string assertive ) : base()
 				{
+				log( "[empty] " + assertive ) ;
 				Assertive = assertive ;
 				}
 			public override string ToString()
@@ -210,6 +211,11 @@ class Stack
 				{
 				Item.Token t = peak as Item.Token ;
 				string rhs = this_rule.rhs[i-1].s ;
+				/*
+				if( t._Token.c == 0 )
+					o[i] = new Item.Empty( "rhs==" + rhs + "  stack==" + t._Token._ ) ;
+				else
+				*/
 				if( rhs[0] == '\'' )
 					{
 					if(	rhs[1] == t._Token._[0] )

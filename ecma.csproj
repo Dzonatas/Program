@@ -136,6 +136,7 @@
     <Compile Include="#\Automaton.1.cs" />
     <Compile Include="#\Automaton.2.cs" />
     <Compile Include="#\Auto.bis.cs" />
+    <Compile Include="~\auto.bis.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

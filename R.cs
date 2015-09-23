@@ -67,7 +67,7 @@ public struct Rule
 				+ number 
 				+'['+ rhs.Length.ToString() +']' ;
 			
-		return string.Format("({0}{1},{2})", lhs, number, rhs.Length );
+		return string.Format("({0} #{1},{2})", lhs, number, rhs.Length );
 		//return string.Format("({0}{1},{2})", lhs, number, rhs.Count );
 		}
 	}
