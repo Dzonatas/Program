@@ -197,6 +197,8 @@ static void Begin()
 	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	beginning( ref b ) ;
 	#endif
+	Stack.Dump() ;
+	#if DEBUG_ASM
 	var main_c = Current.Path.CreateText( "main.c" ) ;
 	X.Auto["list"] = b_list ;
 	main_c.WriteLine( Xo_t.put("main_c") ) ;
@@ -204,10 +206,10 @@ static void Begin()
 	Cluster.Cli.AutoStart( "cc main.c -o main" ) ;
 	main_c = Current.Path.CreateText( "dmain.c" ) ;
 	b_list = "" ;
-	Stack.Dump() ;
 	X.Auto["list"] = b_list ;
 	main_c.WriteLine( Xo_t.put("main_c") ) ;
 	main_c.Close() ;
+	#endif
 	Program.Write() ;
 	if( log_output != null )
 		{
