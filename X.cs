@@ -497,7 +497,9 @@ class Xo_t
 				X.Auto["interface"] = Rule.Set[i].lhs.s ;
 				X.Auto["I"] = "" ;
 				}
-			X.Auto["i"] = i.ToString() ;
+			X.Auto["rule"] = i.ToString() ;
+			X.Auto["lhs_X"] = "Automaton." + Rule.Set[i].lhs._s ;
+			X.Auto["point"] = Rule.Set[i].useful ? "true" : "false" ;
 			X.Auto["interface"] = "global::Item" ;
 			X.Auto["namespace"] = Rule.Set[i].lhs.s + "._" + i ;
 			X.Auto["signal"] = Rule.Set[i].Signal ;
@@ -765,6 +767,8 @@ public class xml_rule
 		{
 		xml.MoveToFirstAttribute() ;
 		number = int.Parse( xml.Value ) ;
+		xml.MoveToNextAttribute() ;
+		usefulness  =  new xml_s( xml.Value ) ;
 		rhs = new xml_s[0] ;
 		}
 	}
@@ -877,7 +881,7 @@ static void xml_get_terminal()
 	{
 	xml_t t = new xml_t() ;
 	new xml_token( t.token, t.symbol, t.name ) ;
-	symbols_cs.Append( string.Format("const int {0,30}\t= "+(int)t.symbol+" ;\n\t", t.name._s) ) ;
+	symbols_cs.Append( string.Format("internal const int {0,30}\t= "+(int)t.symbol+" ;\n\t", t.name._s) ) ;
 	}
 	
 static void xml_get_nonterminal()
@@ -885,7 +889,7 @@ static void xml_get_nonterminal()
 	xml_nt nt = new xml_nt() ;
 	object o = new xml_symbol( nt.symbol, nt.name ) ;
 	Rule.SetSymbol( nt.name.s, nt.symbol ) ;
-	symbols_cs.Append( string.Format( "const int {0,30}\t= "+(int)nt.symbol+" ;\n\t", nt.name._s ) ) ;
+	symbols_cs.Append( string.Format( "internal const int {0,30}\t= "+(int)nt.symbol+" ;\n\t", nt.name._s ) ) ;
 	}
 
 static State x_state ;

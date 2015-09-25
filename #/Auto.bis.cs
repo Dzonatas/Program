@@ -2,10 +2,13 @@ namespace bis
 {
 public abstract class Auto
 	{
-	public abstract string LHS { get; }
-	public abstract string[] RHS { get; }
+	public abstract System.Decimal   RuleNumber  { get; }
+	public abstract string           LHS         { get; }
+	public abstract string[]         RHS         { get; }
+	public abstract int              Symbol      { get; }
+	public abstract bool             Useful      { get; }
 	#if !EMBED
-	protected abstract void splice_f() ;
+	protected virtual void splice_f() { global::A335.Auto( (int) RuleNumber ) ; }
 	#endif
 	protected Tokenset.Token[] argv ;
 	protected int arg_i ;

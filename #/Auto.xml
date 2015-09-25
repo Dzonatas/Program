@@ -28,9 +28,9 @@ public partial class  &signal;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = &rhs; ;
-	#if !EMBED
-	protected override void splice_f() { A335.Auto( &i; ) ; }
-	#endif
+	public override System.Decimal RuleNumber { get { return &rule; ; } }
+	public override int Symbol { get { return &lhs_X; ; } }
+	public override bool Useful { get { return &point; ; } }
 	public &signal;()
 		{
 		argv = new Tokenset.Token[ arg_i = &argc; ] ;
