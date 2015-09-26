@@ -30,7 +30,7 @@ public class Stack
 	static global::Item[] stack = new global::Item[0] ;
 	public class Item : global::Item
 		{
-		public Rule Rule ;
+		public IRule Rule ;
 		public Item()
 			{
 			this.Rule = this_rule ;
@@ -251,7 +251,7 @@ public class Stack
 			if( peakIsObject )
 				{
 				Object p = peak as Object ;
-				string lhs = ((Rule)(p.Rule)).LHS ;
+				string lhs = p.Rule.LHS ;
 				string rhs = this_rule.RHS[i-1] ;
 				if( lhs == rhs )
 					o[i] = stack_pop() as Object ;
@@ -265,7 +265,7 @@ public class Stack
 			if( peakIsArray )
 				{
 				object[] p = peak as object[] ;
-				string lhs = ((Rule)(p[0])).LHS ;
+				string lhs = ((IRule)p[0]).LHS ;
 				string rhs = this_rule.RHS[i-1] ;
 				if( lhs == rhs )
 					o[i] = new Object( stack_pop() as object[] ) ;
