@@ -9,7 +9,17 @@ public static void Auto( int n )
 	this_rule = Rule.Set[n] ;
 	if( n == 0 )
 		return ;
-	Stack.Push( (Automatrix) _auto( Rule.Set[n].AlphaSignal ) ) ;
+	Stack.Push( (Automatrix) _auto( Rule.AlphaSignal( Rule.Set[n] ) ) ) ;
+	return ;
+	}
+
+public static void Auto( IRule r )
+	{
+	int n = (int) r.RuleNumber ;
+	this_rule = Rule.Set[n] ;
+	if( n == 0 )
+		return ;
+	Stack.Push( (Automatrix) _auto( Rule.AlphaSignal( Rule.Set[n] ) ) ) ;
 	return ;
 	}
 

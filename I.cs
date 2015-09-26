@@ -44,13 +44,13 @@ public struct Itemset
 		{
 		foreach( Itemset i in items )
 			{
-			if( Rule.Set[(int)i.rule].rhs.Length == i.point )
+			if( Rule.Set[(int)i.rule].RHS.Length == i.point )
 				{
-				if( Rule.Set[(int)i.rule].lhs.s == symbol )
+				if( Rule.Set[(int)i.rule].LHS == symbol )
 					return i ;
 				continue ;
 				}
-			if( Rule.Set[(int)i.rule].rhs[i.point].s == symbol )
+			if( Rule.Set[(int)i.rule].RHS[i.point] == symbol )
 				return i ;
 			}
 		throw new System.IndexOutOfRangeException(symbol) ;
@@ -59,7 +59,7 @@ public struct Itemset
 		{
 		for( int i = 0 ; i < items.Length ; i++ )
 			{
-			if( Rule.Set[(int)items[i].rule].rhs.Length == items[i].point )
+			if( Rule.Set[(int)items[i].rule].RHS.Length == items[i].point )
 				{
 				if( items[i].rule == rule )
 					return i ;
@@ -85,9 +85,9 @@ public struct Itemset
 		}
 	public override string ToString()
 		{
-		if( Rule.Set[(int)rule].rhs.Length == point )
+		if( Rule.Set[(int)rule].RHS.Length == point )
 			return xo_t[(int)rule].ToString() +'.'+ point.ToString() ;
-		return Rule.Set[(int)rule].rhs[point].ToString() ;
+		return Rule.Set[(int)rule].RHS[point].ToString() ;
 		}
 	}
 

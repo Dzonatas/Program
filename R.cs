@@ -5,19 +5,26 @@ static int root_n ; //<KNOWN> | root: <NOUN default="FILE:" refinery-technique-p
 string rune___; /*C`__ -volume:0.00 (+"rc:") */
 //const int __swp_regex_d ; /* lexical-skew: 'vim was always in re-lexicate screen-mode, vi was not.' */
 
-public struct Rule
+public struct Rule : IRule
 	{
+	public System.Decimal   RuleNumber  { get { return number ; } }
+	public string           LHS         { get { return lhs ; } }
+	public string[]         RHS         { get { return rhs ; } }
+	public int              Symbol      { get { return symbol ; } }
+	public bool             Useful      { get { return useful ; } }
 	public static Rule [] Set = new Rule[0] ;
-	public System.Decimal number ;
-	public xml_s          lhs ;
-	public xml_s[]        rhs ;
-	public bool           useful ;
-	int                   symbol ;
+	System.Decimal number ;
+	string         lhs ;
+	string[]       rhs ;
+	bool           useful ;
+	int            symbol ;
 	public Rule( System.Decimal _number, xml_s _lhs, xml_s[] _rhs, bool _useful )
 		{
 		number  = _number ;
-		lhs     = _lhs ;
-		rhs     = _rhs ;
+		lhs     = _lhs.s ;
+		rhs     = new string[_rhs.Length] ;
+		for( int i = 0 ; i < _rhs.Length ; i ++ )
+			rhs[i] = _rhs[i].s ;
 		useful  = _useful ;
 		symbol  = -1 ;
 		if( number+1 > Set.Length )
@@ -27,12 +34,8 @@ public struct Rule
 	public static void SetSymbol( string name, int _symbol )
 		{
 		for( int i = 0 ; i < Set.Length ; i++ )
-			if( Set[i].lhs.s == name )
+			if( Set[i].lhs == name )
 				Set[i].symbol = _symbol ;
-		}
-	public int Symbol
-		{
-		get { return symbol; }
 		}
 	public static implicit operator int( Rule r )
 		{
@@ -42,28 +45,38 @@ public struct Rule
 		{
 		return r.number ;
 		}
-	public string Signal
+	static string _s( string s )
 		{
-		get {
-			string i = lhs.s ;
-			for( int x = 0 ; x < rhs.Length ; x++ )
-					i += rhs[x]._s ;
-			return i ;
-			}
+		string i = "_" ;
+		foreach( char c in s )
+			if( char.IsLetter(c) )
+				i += c ;
+			else
+				i += string.Format( "{0:X2}", (int)c ) ;
+		return i ;
 		}
-	public string AlphaSignal
+	public static string EnumSymbol( IRule r )
 		{
-		get {
-			string i = lhs.s ;
-			for( int x = 0 ; x < rhs.Length ; x++ )
-				i += "_" + rhs[x].s ;
-			return System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_" ) ;
-			}
+		return _s( r.LHS ) ;
+		}
+	public static string Signal( IRule r )
+		{
+		string i = r.LHS ;
+		for( int x = 0 ; x < r.RHS.Length ; x++ )
+				i += _s( r.RHS[x] ) ;
+		return i ;
+		}
+	public static string AlphaSignal( IRule r )
+		{
+		string i = r.LHS ;
+		for( int x = 0 ; x < r.RHS.Length ; x++ )
+			i += "_" + r.RHS[x] ;
+		return System.Text.RegularExpressions.Regex.Replace( i, "[^A-Za-z_0-9]", "_" ) ;
 		}
 	public override string ToString()
 		{
 		if( useful )
-			return +'('+lhs.s+')'
+			return +'('+lhs+')'
 				+ number 
 				+'['+ rhs.Length.ToString() +']' ;
 			
@@ -137,7 +150,7 @@ public class ReducedAcception : System.Exception
 	public ReducedAcception( int rule )
 		{
 		this.rule = rule  ;
-		this.backup = Rule.Set[rule].rhs.Length ;
+		this.backup = Rule.Set[rule].RHS.Length ;
 		}
 	public override string ToString()
 			{

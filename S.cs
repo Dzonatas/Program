@@ -210,7 +210,7 @@ public class Stack
 			if( peakIsItemToken )
 				{
 				Item.Token t = peak as Item.Token ;
-				string rhs = this_rule.rhs[i-1].s ;
+				string rhs = this_rule.RHS[i-1] ;
 				/*
 				if( t._Token.c == 0 )
 					o[i] = new Item.Empty( "rhs==" + rhs + "  stack==" + t._Token._ ) ;
@@ -251,8 +251,8 @@ public class Stack
 			if( peakIsObject )
 				{
 				Object p = peak as Object ;
-				string lhs = ((Rule)(p.Rule)).lhs.s ;
-				string rhs = this_rule.rhs[i-1].s ;
+				string lhs = ((Rule)(p.Rule)).LHS ;
+				string rhs = this_rule.RHS[i-1] ;
 				if( lhs == rhs )
 					o[i] = stack_pop() as Object ;
 				else
@@ -265,8 +265,8 @@ public class Stack
 			if( peakIsArray )
 				{
 				object[] p = peak as object[] ;
-				string lhs = ((Rule)(p[0])).lhs.s ;
-				string rhs = this_rule.rhs[i-1].s ;
+				string lhs = ((Rule)(p[0])).LHS ;
+				string rhs = this_rule.RHS[i-1] ;
 				if( lhs == rhs )
 					o[i] = new Object( stack_pop() as object[] ) ;
 				else

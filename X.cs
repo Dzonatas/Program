@@ -154,11 +154,11 @@ class Xo_t
 		if( rule == "__default" )
 			throw new System.NotImplementedException("default rule index") ;
 		int r = -int.Parse(rule) ;
-		backup = Rule.Set[r].rhs.Length ;
+		backup = Rule.Set[r].RHS.Length ;
 		yy = Rule.Set[r].Symbol ;
 		string list = "" ;
 		if( r > 0 ) //Target0: xyzzyy tail or mantissa.
-			list += "auto = new " + Rule.Set[r].Signal + "() ;" + tab ;
+			list += "auto = new " + Rule.Signal( Rule.Set[r] ) + "() ;" + tab ;
 		if( backup > 0 )
 			{
 			list += "backup = " + backup + " ;" + tab ;
@@ -474,7 +474,7 @@ class Xo_t
 		f.Write( put("A335-Xo_t-Build-0") ) ;
 		f.WriteLine( ) ;
 		X.Auto["rule"] = ((int)_default).ToString() ;
-		X.Auto["argc"] = Rule.Set[0].rhs.Length.ToString() ;
+		X.Auto["argc"] = Rule.Set[0].RHS.Length.ToString() ;
 		X.Auto["i"]    = "0" ;
 		X.Auto["I"]    = Rule.Set[0].Symbol.ToString() ;
 		f.WriteLine( "partial class Automaton {" ) ;
@@ -491,34 +491,34 @@ class Xo_t
 		string previous_interface = string.Empty ;
 		for( int i = 1 ; i < Rule.Set.Length ; i++ )
 			{
-			if( previous_interface != Rule.Set[i].lhs.s )
+			if( previous_interface != Rule.Set[i].LHS )
 				{
-				previous_interface = Rule.Set[i].lhs.s ;
-				X.Auto["interface"] = Rule.Set[i].lhs.s ;
+				previous_interface = Rule.Set[i].LHS ;
+				X.Auto["interface"] = Rule.Set[i].LHS ;
 				X.Auto["I"] = "" ;
 				}
 			X.Auto["rule"] = i.ToString() ;
-			X.Auto["lhs_X"] = "Automaton." + Rule.Set[i].lhs._s ;
-			X.Auto["point"] = Rule.Set[i].useful ? "true" : "false" ;
+			X.Auto["lhs_X"] = "Automaton." + Rule.EnumSymbol( Rule.Set[i] ) ;
+			X.Auto["point"] = Rule.Set[i].Useful ? "true" : "false" ;
 			X.Auto["interface"] = "global::Item" ;
-			X.Auto["namespace"] = Rule.Set[i].lhs.s + "._" + i ;
-			X.Auto["signal"] = Rule.Set[i].Signal ;
+			X.Auto["namespace"] = Rule.Set[i].LHS + "._" + i ;
+			X.Auto["signal"] = Rule.Signal( Rule.Set[i] ) ;
 			X.Auto["lhs"] = "{ " ;
-			foreach( char c in Rule.Set[i].lhs.s )
+			foreach( char c in Rule.Set[i].LHS )
 				X.Auto["lhs"] += "'"+c+"', " ;
 			X.Auto["lhs"] += " }" ;
 			X.Auto["synopsis"] = "; }" ;
-			if( Rule.Set[i].rhs.Length > 0 )
+			if( Rule.Set[i].RHS.Length > 0 )
 				{
 				var sb = new System.Text.StringBuilder() ;
-				foreach( var rhs in Rule.Set[i].rhs )
-					sb.Append("\"" + rhs.s.Replace("\"","\\\"") + "\", " ) ;
+				foreach( var rhs in Rule.Set[i].RHS )
+					sb.Append("\"" + rhs.Replace("\"","\\\"") + "\", " ) ;
 				sb.Remove( sb.Length-2, 2 ) ;
 				X.Auto["rhs"] = "{ " + sb.ToString() + " }" ;
 				}
 			else
 				X.Auto["rhs"] = "{}" ;
-			X.Auto["argc"] = Rule.Set[i].rhs.Length.ToString() ;
+			X.Auto["argc"] = Rule.Set[i].RHS.Length.ToString() ;
 			f.Write( put("A335-Xo_t-Build-iDNA-5") ) ;
 			f.WriteLine( ) ;
 			}
@@ -530,9 +530,9 @@ class Xo_t
 		string linkset = "" ;
 		for( int i = 1 ; i < xo_t.Length ; i++ )
 			{
-			if( Rule.Set[i].rhs.Length == 0 )
+			if( Rule.Set[i].RHS.Length == 0 )
 				continue ;
-			if( Rule.Set[i].rhs[0].s[0] != '"' || Rule.Set[i].rhs[0].s[1] != '.' || Rule.Set[i].rhs[0].s[2] == '.' )
+			if( Rule.Set[i].RHS[0][0] != '"' || Rule.Set[i].RHS[0][1] != '.' || Rule.Set[i].RHS[0][2] == '.' )
 				continue ;
 			linkset += Current.Path.Entry( "." + i + ".exe" ) + " " ;
 			}

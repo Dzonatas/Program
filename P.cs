@@ -119,8 +119,8 @@ struct planet
 		}
 	public override string ToString()
 			{
-			if( y < Rule.Set[x].rhs.Length )
-				return string.Format("[{0},{1};{2},{3}]",xo_t[x],Rule.Set[x].rhs[y],zz,yy) ;
+			if( y < Rule.Set[x].RHS.Length )
+				return string.Format("[{0},{1};{2},{3}]",xo_t[x],Rule.Set[x].RHS[y],zz,yy) ;
 			return string.Format("[{0},{1};{2},{3}]",xo_t[x],y,zz,yy) ;
 			}
 	}

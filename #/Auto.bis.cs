@@ -1,6 +1,15 @@
+public interface IRule
+	{
+	System.Decimal   RuleNumber  { get; }
+	string           LHS         { get; }
+	string[]         RHS         { get; }
+	int              Symbol      { get; }
+	bool             Useful      { get; }
+	}
+
 namespace bis
 {
-public abstract class Auto
+public abstract class Auto : global::IRule
 	{
 	public abstract System.Decimal   RuleNumber  { get; }
 	public abstract string           LHS         { get; }
@@ -8,7 +17,7 @@ public abstract class Auto
 	public abstract int              Symbol      { get; }
 	public abstract bool             Useful      { get; }
 	#if !EMBED
-	protected virtual void splice_f() { global::A335.Auto( (int) RuleNumber ) ; }
+	protected virtual void splice_f() { global::A335.Auto( this ) ; }
 	#endif
 	protected Tokenset.Token[] argv ;
 	protected int arg_i ;
