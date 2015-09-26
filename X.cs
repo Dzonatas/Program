@@ -1,8 +1,6 @@
 using System.Xml ;
 using System.IO ;
 using System.Extensions ;
-using System.Reflection ;
-using System.Linq ;
 
 public partial class A335
 {
@@ -471,13 +469,18 @@ class Xo_t
 			new System.Collections.Generic.Dictionary<string,System.Type>() ;
 		if( Cluster.Parameter.Value("build") == "false" )
 			return ;
-		var types =
-			from  type in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
-			from  atrb in System.Attribute.GetCustomAttributes( type )
-			where atrb is AutomatonAttribute
-			select type ;
-		foreach( System.Type t in types  )
-			automatrix.Add( t.Name , t ) ;
+		foreach( System.Type t in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()  )
+			{
+			System.Attribute[] attributes = System.Attribute.GetCustomAttributes( t ) ;
+			foreach( System.Attribute a in attributes )
+				if( a is AutomatonAttribute )
+					{
+					if( string.IsNullOrEmpty( ((AutomatonAttribute)a).Signal ) )
+						automatrix.Add( t.Name , t ) ;
+					else
+						automatrix.Add( ((AutomatonAttribute)a).Signal , t ) ;
+					}
+			}
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
 		Cluster.Cli.NoOperation() ;
 		X.Auto["branch"] = branch ;
@@ -518,16 +521,19 @@ class Xo_t
 			foreach( char c in Rule.Set[i].LHS )
 				X.Auto["lhs"] += "'"+c+"', " ;
 			X.Auto["lhs"] += " }" ;
+			string name = string.Empty ;
 			if( automatrix.ContainsKey( Rule.AlphaSignal( Rule.Set[i] ) ) )
-				{
-				string name = automatrix[ Rule.AlphaSignal( Rule.Set[i] ) ].FullName.Replace( '+', '.' ) ;
+				name = automatrix[ Rule.AlphaSignal( Rule.Set[i] ) ].FullName.Replace( '+', '.' ) ;
+			else
+			if( automatrix.ContainsKey( Rule.Signal( Rule.Set[i] ) ) )
+				name = automatrix[ Rule.Signal( Rule.Set[i] ) ].FullName.Replace( '+', '.' ) ;
+			if( name == string.Empty )
+				X.Auto["synopsis"] = string.Empty ;
+			else
 				X.Auto["synopsis"] =
 					"\n\t#if !EMBED"
 					+ "\n\tprotected override global::A335.Automatrix splice_f() { return new global::"+name+"() ; }"
 					+ "\n\t#endif" ;
-				}
-			else
-				X.Auto["synopsis"] = "" ;
 			if( Rule.Set[i].RHS.Length > 0 )
 				{
 				var sb = new System.Text.StringBuilder() ;

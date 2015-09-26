@@ -206,4 +206,10 @@ public class AutomatonAttribute : System.Attribute
 
 [Automaton] public class   START_decls
 	: _START {}
+
+[Automaton("type_type_272A27")] public class   type_type_asterisk
+	: Automatrix {}
+
+[Automaton("type_type_272627")] public class   type_type_ampersand
+	: Automatrix {}
 }

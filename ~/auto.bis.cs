@@ -24063,6 +24063,9 @@ public partial class  type_type_275B27_bounds31_275D27
 public partial class  type_type_272627
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_ampersand() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24079,6 +24082,9 @@ public partial class  type_type_272627
 public partial class  type_type_272A27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_asterisk() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
