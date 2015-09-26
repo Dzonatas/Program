@@ -13,17 +13,6 @@ public static void Auto( int n )
 	return ;
 	}
 
-public static void Auto( IRule r )
-	{
-	int n = (int) r.RuleNumber ;
-	this_rule = Rule.Set[n] ;
-	if( n == 0 )
-		return ;
-	Stack.Push( (Automatrix) _auto( Rule.AlphaSignal( Rule.Set[n] ) ) ) ;
-	return ;
-	}
-
-
 public static global::Item _auto( string method ) {
 switch( method ) {
 case "sigArgs0_sigArgs1" : return new SigArgs0.sigArgs0_sigArgs1() ;

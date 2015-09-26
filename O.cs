@@ -30,7 +30,7 @@ public class Object : Stack.Item
 	}
 
 
-[Automaton] class   classHead___class__classAttr_id_extendsClause_implClause
+[Automaton] public class   classHead___class__classAttr_id_extendsClause_implClause
 	: Class.Head	{
 	protected override void main()
 		{
@@ -38,7 +38,7 @@ public class Object : Stack.Item
 		}
 	}
 
-class CallConv : Automatrix
+public class CallConv : Automatrix
 	{
 	static CallConv current = null ;
 	CallConv next ;
@@ -67,7 +67,7 @@ class CallConv : Automatrix
 		: CallConv {}
 	}
 
-[Automaton] class   classDecl_methodHead_methodDecls____
+[Automaton] public class   classDecl_methodHead_methodDecls____
 	: Class.Decl	{
 	protected override void main()
 		{
@@ -79,7 +79,7 @@ class CallConv : Automatrix
 		}
 	}
 
-[Automaton] class   compQstring_QSTRING
+[Automaton] public class   compQstring_QSTRING
 	: Automatrix	{
 	protected override void main()
 		{
@@ -87,7 +87,7 @@ class CallConv : Automatrix
 		}
 	}
 
-[Automaton] class   decl_classHead_____classDecls____
+[Automaton] public class   decl_classHead_____classDecls____
 	: Automatrix	{
 	protected override void main()
 		{
@@ -95,7 +95,7 @@ class CallConv : Automatrix
 		}
 	}
 
-[Automaton] class   _accept_START__end
+[Automaton] public class   _accept_START__end
 	: Automatrix	{
 	protected override void main()
 		{
@@ -105,7 +105,7 @@ class CallConv : Automatrix
 		}
 	}
 
-[Automaton] class   classDecl_classHead_____classDecls____
+[Automaton] public class   classDecl_classHead_____classDecls____
 	: Class.Decl	{
 	protected override void main()
 		{
@@ -113,7 +113,7 @@ class CallConv : Automatrix
 		}
 	}
 
-[Automaton] class   customType_callConv_type_typeSpec________ctor______sigArgs0____
+[Automaton] public class   customType_callConv_type_typeSpec________ctor______sigArgs0____
 	: Automatrix {}
 
 }

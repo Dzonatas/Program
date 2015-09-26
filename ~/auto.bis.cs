@@ -16431,6 +16431,9 @@ static int _1124()
 public partial class  START_decls
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.START_decls() ; }
+	#endif
 	static readonly char[]   lhs = { 'S', 'T', 'A', 'R', 'T',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -16447,6 +16450,9 @@ public partial class  START_decls
 public partial class  decls
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.decls() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'e', 'c', 'l', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -16463,6 +16469,9 @@ public partial class  decls
 public partial class  decls_decls_decl
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.decls_decls_decl() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'e', 'c', 'l', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -16479,6 +16488,9 @@ public partial class  decls_decls_decl
 public partial class  decl_classHead_277B27_classDecls_277D27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_classHead_____classDecls____() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -16623,6 +16635,9 @@ public partial class  decl_fileDecl
 public partial class  decl_assemblyHead_277B27_assemblyDecls_277D27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_assemblyHead_____assemblyDecls____() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -16639,6 +16654,9 @@ public partial class  decl_assemblyHead_277B27_assemblyDecls_277D27
 public partial class  decl_assemblyRefHead_277B27_assemblyRefDecls_277D27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_assemblyRefHead_____assemblyRefDecls____() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -16687,6 +16705,9 @@ public partial class  decl_manifestResHead_277B27_manifestResDecls_277D27
 public partial class  decl_moduleHead
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_moduleHead() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -16815,6 +16836,9 @@ public partial class  decl_languageDecl
 public partial class  compQstring_QSTRING
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.compQstring_QSTRING() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'o', 'm', 'p', 'Q', 's', 't', 'r', 'i', 'n', 'g',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -16927,6 +16951,9 @@ public partial class  customAttrDecl_222Ecustom22_customType_273D27_compQstring
 public partial class  customAttrDecl_customHead_bytes_272927
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.customAttrDecl_customHead_bytes____() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'A', 't', 't', 'r', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17007,6 +17034,9 @@ public partial class  moduleHead_222Emodule22
 public partial class  moduleHead_222Emodule22_name31
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.moduleHead___module__name1() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'o', 'd', 'u', 'l', 'e', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17183,6 +17213,9 @@ public partial class  nameSpaceHead_222Enamespace22_name31
 public partial class  classHead_222Eclass22_classAttr_id_extendsClause_implClause
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classHead___class__classAttr_id_extendsClause_implClause() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17215,6 +17248,9 @@ public partial class  classAttr
 public partial class  classAttr_classAttr_22public22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__public_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17231,6 +17267,9 @@ public partial class  classAttr_classAttr_22public22
 public partial class  classAttr_classAttr_22private22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__private_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17327,6 +17366,9 @@ public partial class  classAttr_classAttr_22abstract22
 public partial class  classAttr_classAttr_22auto22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__auto_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17375,6 +17417,9 @@ public partial class  classAttr_classAttr_22explicit22
 public partial class  classAttr_classAttr_22ansi22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__ansi_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17471,6 +17516,9 @@ public partial class  classAttr_classAttr_22nested22_22public22
 public partial class  classAttr_classAttr_22nested22_22private22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__nested___private_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17551,6 +17599,9 @@ public partial class  classAttr_classAttr_22nested22_22famorassem22
 public partial class  classAttr_classAttr_22beforefieldinit22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__beforefieldinit_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17615,6 +17666,9 @@ public partial class  extendsClause
 public partial class  extendsClause_22extends22_className
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.extendsClause__extends__className() ; }
+	#endif
 	static readonly char[]   lhs = { 'e', 'x', 't', 'e', 'n', 'd', 's', 'C', 'l', 'a', 'u', 's', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17711,6 +17765,9 @@ public partial class  classDecls
 public partial class  classDecls_classDecls_classDecl
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecls_classDecls_classDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17727,6 +17784,9 @@ public partial class  classDecls_classDecls_classDecl
 public partial class  classDecl_methodHead_methodDecls_277D27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_methodHead_methodDecls____() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17743,6 +17803,9 @@ public partial class  classDecl_methodHead_methodDecls_277D27
 public partial class  classDecl_classHead_277B27_classDecls_277D27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_classHead_____classDecls____() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17791,6 +17854,9 @@ public partial class  classDecl_propHead_277B27_propDecls_277D27
 public partial class  classDecl_fieldDecl
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_fieldDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17951,6 +18017,9 @@ public partial class  classDecl_languageDecl
 public partial class  fieldDecl_222Efield22_repeatOpt_fieldAttr_type_id_atOpt_initOpt
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt() ; }
+	#endif
 	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18063,6 +18132,9 @@ public partial class  repeatOpt_275B27_int3332_275D27
 public partial class  customHead_222Ecustom22_customType_273D27_272827
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.customHead___custom__customType________() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18159,6 +18231,9 @@ public partial class  memberRef_22field22_type_id
 public partial class  customType_callConv_type_typeSpec_223A3A22_222Ector22_272827_sigArgs30_272927
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.customType_callConv_type_typeSpec________ctor______sigArgs0____() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'T', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18751,6 +18826,9 @@ public partial class  propDecl_languageDecl
 public partial class  methodHeadPart1_222Emethod22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodHeadPart1___method_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'H', 'e', 'a', 'd', 'P', 'a', 'r', 't', '1',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18767,6 +18845,9 @@ public partial class  methodHeadPart1_222Emethod22
 public partial class  methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_methodName_272827_sigArgs30_272927_implAttr_277B27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18815,6 +18896,9 @@ public partial class  methAttr
 public partial class  methAttr_methAttr_22static22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__static_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18831,6 +18915,9 @@ public partial class  methAttr_methAttr_22static22
 public partial class  methAttr_methAttr_22public22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__public_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18847,6 +18934,9 @@ public partial class  methAttr_methAttr_22public22
 public partial class  methAttr_methAttr_22private22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__private_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18895,6 +18985,9 @@ public partial class  methAttr_methAttr_22final22
 public partial class  methAttr_methAttr_22specialname22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__specialname_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18911,6 +19004,9 @@ public partial class  methAttr_methAttr_22specialname22
 public partial class  methAttr_methAttr_22virtual22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__virtual_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19007,6 +19103,9 @@ public partial class  methAttr_methAttr_22privatescope22
 public partial class  methAttr_methAttr_22hidebysig22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__hidebysig_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19039,6 +19138,9 @@ public partial class  methAttr_methAttr_22newslot22
 public partial class  methAttr_methAttr_22rtspecialname22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__rtspecialname_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19311,6 +19413,9 @@ public partial class  pinvAttr_pinvAttr_22fastcall22
 public partial class  methodName_222Ector22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodName___ctor_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'N', 'a', 'm', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19327,6 +19432,9 @@ public partial class  methodName_222Ector22
 public partial class  methodName_222Ecctor22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodName___cctor_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'N', 'a', 'm', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19343,6 +19451,9 @@ public partial class  methodName_222Ecctor22
 public partial class  methodName_name31
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodName_name1() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'N', 'a', 'm', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19455,6 +19566,9 @@ public partial class  fieldAttr
 public partial class  fieldAttr_fieldAttr_22static22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__static_() ; }
+	#endif
 	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19487,6 +19601,9 @@ public partial class  fieldAttr_fieldAttr_22public22
 public partial class  fieldAttr_fieldAttr_22private22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__private_() ; }
+	#endif
 	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19711,6 +19828,9 @@ public partial class  implAttr_implAttr_22native22
 public partial class  implAttr_implAttr_22cil22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.implAttr_implAttr__cil_() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19743,6 +19863,9 @@ public partial class  implAttr_implAttr_22optil22
 public partial class  implAttr_implAttr_22managed22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.implAttr_implAttr__managed_() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19871,6 +19994,9 @@ public partial class  implAttr_implAttr_22noinlining22
 public partial class  localsHead_222Elocals22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.localsHead___locals_() ; }
+	#endif
 	static readonly char[]   lhs = { 'l', 'o', 'c', 'a', 'l', 's', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19919,6 +20045,9 @@ public partial class  methodDecl_sehBlock
 public partial class  methodDecl_222Emaxstack22_int3332
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl___maxstack__int32() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19951,6 +20080,9 @@ public partial class  methodDecl_localsHead_272827_sigArgs30_272927
 public partial class  methodDecl_localsHead_22init22_272827_sigArgs30_272927
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl_localsHead__init______sigArgs0____() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19967,6 +20099,9 @@ public partial class  methodDecl_localsHead_22init22_272827_sigArgs30_272927
 public partial class  methodDecl_222Eentrypoint22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl___entrypoint_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20015,6 +20150,9 @@ public partial class  methodDecl_dataDecl
 public partial class  methodDecl_instr
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl_instr() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20031,6 +20169,9 @@ public partial class  methodDecl_instr
 public partial class  methodDecl_id_273A27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl_id____() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20591,6 +20732,9 @@ public partial class  methodDecls
 public partial class  methodDecls_methodDecls_methodDecl
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecls_methodDecls_methodDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21263,6 +21407,9 @@ public partial class  bytes
 public partial class  bytes_hexbytes
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.bytes_hexbytes() ; }
+	#endif
 	static readonly char[]   lhs = { 'b', 'y', 't', 'e', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21279,6 +21426,9 @@ public partial class  bytes_hexbytes
 public partial class  hexbytes_HEXBYTE
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.hexbytes_HEXBYTE() ; }
+	#endif
 	static readonly char[]   lhs = { 'h', 'e', 'x', 'b', 'y', 't', 'e', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21295,6 +21445,9 @@ public partial class  hexbytes_HEXBYTE
 public partial class  hexbytes_hexbytes_HEXBYTE
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.hexbytes_hexbytes_HEXBYTE() ; }
+	#endif
 	static readonly char[]   lhs = { 'h', 'e', 'x', 'b', 'y', 't', 'e', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21359,6 +21512,9 @@ public partial class  methodSpec_22method22
 public partial class  instr_INSTR5FNONE
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_NONE() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21503,6 +21659,9 @@ public partial class  instr_INSTR5FBRTARGET_int3332
 public partial class  instr_INSTR5FBRTARGET_id
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_BRTARGET_id() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21519,6 +21678,9 @@ public partial class  instr_INSTR5FBRTARGET_id
 public partial class  instr_INSTR5FMETHOD_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21551,6 +21713,9 @@ public partial class  instr_INSTR5FMETHOD_callConv_type_methodName_272827_sigArg
 public partial class  instr_INSTR5FFIELD_type_typeSpec_223A3A22_id
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_FIELD_type_typeSpec______id() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21567,6 +21732,9 @@ public partial class  instr_INSTR5FFIELD_type_typeSpec_223A3A22_id
 public partial class  instr_INSTR5FFIELD_type_id
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_FIELD_type_id() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21583,6 +21751,9 @@ public partial class  instr_INSTR5FFIELD_type_id
 public partial class  instr_INSTR5FTYPE_typeSpec
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_TYPE_typeSpec() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21599,6 +21770,9 @@ public partial class  instr_INSTR5FTYPE_typeSpec
 public partial class  instr_INSTR5FSTRING_compQstring
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_STRING_compQstring() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21695,6 +21869,9 @@ public partial class  instr_instr5Ftok5Fhead_ownerType
 public partial class  instr_INSTR5FSWITCH_272827_labels_272927
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_SWITCH_____labels____() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21743,6 +21920,9 @@ public partial class  sigArgs0
 public partial class  sigArgs0_sigArgs31
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArgs0.sigArgs0_sigArgs1() ; }
+	#endif
 	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g', 's', '0',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21759,6 +21939,9 @@ public partial class  sigArgs0_sigArgs31
 public partial class  sigArgs1_sigArg
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArg.sigArgs1_sigArg() ; }
+	#endif
 	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g', 's', '1',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21775,6 +21958,9 @@ public partial class  sigArgs1_sigArg
 public partial class  sigArgs1_sigArgs31_272C27_sigArg
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArg.sigArgs1_sigArgs1_____sigArg() ; }
+	#endif
 	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g', 's', '1',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21807,6 +21993,9 @@ public partial class  sigArg_222E2E2E22
 public partial class  sigArg_paramAttr_type
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArg.sigArg_paramAttr_type() ; }
+	#endif
 	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21823,6 +22012,9 @@ public partial class  sigArg_paramAttr_type
 public partial class  sigArg_paramAttr_type_id
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArg.sigArg_paramAttr_type_id() ; }
+	#endif
 	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21871,6 +22063,9 @@ public partial class  sigArg_paramAttr_type_22marshal22_272827_nativeType_272927
 public partial class  name1_id
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.name1_id() ; }
+	#endif
 	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', '1',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21887,6 +22082,9 @@ public partial class  name1_id
 public partial class  name1_DOTTEDNAME
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.name1_DOTTEDNAME() ; }
+	#endif
 	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', '1',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21919,6 +22117,9 @@ public partial class  name1_name31_272E27_name31
 public partial class  className_275B27_name31_275D27_slashedName
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.className_____name1_____slashedName() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'N', 'a', 'm', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21951,6 +22152,9 @@ public partial class  className_275B27_222Emodule22_name31_275D27_slashedName
 public partial class  className_slashedName
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.className_slashedName() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'N', 'a', 'm', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21967,6 +22171,9 @@ public partial class  className_slashedName
 public partial class  slashedName_name31
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.slashedName_name1() ; }
+	#endif
 	static readonly char[]   lhs = { 's', 'l', 'a', 's', 'h', 'e', 'd', 'N', 'a', 'm', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21983,6 +22190,9 @@ public partial class  slashedName_name31
 public partial class  slashedName_slashedName_272F27_name31
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.slashedName_slashedName_____name1() ; }
+	#endif
 	static readonly char[]   lhs = { 's', 'l', 'a', 's', 'h', 'e', 'd', 'N', 'a', 'm', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21999,6 +22209,9 @@ public partial class  slashedName_slashedName_272F27_name31
 public partial class  typeSpec_className
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.typeSpec_className() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e', 'S', 'p', 'e', 'c',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -22047,6 +22260,9 @@ public partial class  typeSpec_275B27_222Emodule22_name31_275D27
 public partial class  typeSpec_type
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.typeSpec_type() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e', 'S', 'p', 'e', 'c',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -22063,6 +22279,9 @@ public partial class  typeSpec_type
 public partial class  callConv_22instance22_callConv
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.CallConv.callConv__instance__callConv() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'C', 'o', 'n', 'v',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -22095,6 +22314,9 @@ public partial class  callConv_22explicit22_callConv
 public partial class  callConv_callKind
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.CallConv.callConv_callKind() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'C', 'o', 'n', 'v',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -22127,6 +22349,9 @@ public partial class  callKind
 public partial class  callKind_22default22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.callKind__default_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'K', 'i', 'n', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -23711,6 +23936,9 @@ public partial class  variantType_22clsid22
 public partial class  type_22class22_className
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__class__className() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -23727,6 +23955,9 @@ public partial class  type_22class22_className
 public partial class  type_22object22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__object_() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -23743,6 +23974,9 @@ public partial class  type_22object22
 public partial class  type_22string22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__string_() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -23775,6 +24009,9 @@ public partial class  type_22value22_22class22_className
 public partial class  type_22valuetype22_className
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__valuetype__className() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -23807,6 +24044,9 @@ public partial class  type_type_275B27_275D27
 public partial class  type_type_275B27_bounds31_275D27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_____bounds1____() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -23967,6 +24207,9 @@ public partial class  type_22char22
 public partial class  type_22void22
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__void_() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24031,6 +24274,9 @@ public partial class  type_22int313622
 public partial class  type_22int333222
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__int32_() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24207,6 +24453,9 @@ public partial class  type_22native22_22float22
 public partial class  bounds1_bound
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.bounds1_bound() ; }
+	#endif
 	static readonly char[]   lhs = { 'b', 'o', 'u', 'n', 'd', 's', '1',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24335,6 +24584,9 @@ public partial class  labels
 public partial class  labels_id_272C27_labels
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.labels_id_____labels() ; }
+	#endif
 	static readonly char[]   lhs = { 'l', 'a', 'b', 'e', 'l', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24367,6 +24619,9 @@ public partial class  labels_int3332_272C27_labels
 public partial class  labels_id
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.labels_id() ; }
+	#endif
 	static readonly char[]   lhs = { 'l', 'a', 'b', 'e', 'l', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24399,6 +24654,9 @@ public partial class  labels_int3332
 public partial class  id_ID
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.id_ID() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24415,6 +24673,9 @@ public partial class  id_ID
 public partial class  id_SQSTRING
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.id_SQSTRING() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24463,6 +24724,9 @@ public partial class  int16s_int3136s_int3332
 public partial class  int32_INT3634
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.int32_INT64() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 't', '3', '2',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25247,6 +25511,9 @@ public partial class  hashHead_222Ehash22_273D27_272827
 public partial class  assemblyHead_222Eassembly22_asmAttr_name31
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyHead___assembly__asmAttr_name1() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25343,6 +25610,9 @@ public partial class  assemblyDecls
 public partial class  assemblyDecls_assemblyDecls_assemblyDecl
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyDecls_assemblyDecls_assemblyDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'D', 'e', 'c', 'l', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25359,6 +25629,9 @@ public partial class  assemblyDecls_assemblyDecls_assemblyDecl
 public partial class  assemblyDecl_222Ehash22_22algorithm22_int3332
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyDecl___hash___algorithm__int32() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25391,6 +25664,9 @@ public partial class  assemblyDecl_secDecl
 public partial class  assemblyDecl_asmOrRefDecl
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyDecl_asmOrRefDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25423,6 +25699,9 @@ public partial class  asmOrRefDecl_publicKeyHead_bytes_272927
 public partial class  asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int3332_273A27_int3332
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.asmOrRefDecl___ver__int32_____int32_____int32_____int32() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 'm', 'O', 'r', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25471,6 +25750,9 @@ public partial class  asmOrRefDecl_localeHead_bytes_272927
 public partial class  asmOrRefDecl_customAttrDecl
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.asmOrRefDecl_customAttrDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 'm', 'O', 'r', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25503,6 +25785,9 @@ public partial class  publicKeyHead_222Epublickey22_273D27_272827
 public partial class  publicKeyTokenHead_222Epublickeytoken22_273D27_272827
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.publicKeyTokenHead___publickeytoken_________() ; }
+	#endif
 	static readonly char[]   lhs = { 'p', 'u', 'b', 'l', 'i', 'c', 'K', 'e', 'y', 'T', 'o', 'k', 'e', 'n', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25535,6 +25820,9 @@ public partial class  localeHead_222Elocale22_273D27_272827
 public partial class  assemblyRefHead_222Eassembly22_22extern22_name31
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyRefHead___assembly___extern__name1() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25583,6 +25871,9 @@ public partial class  assemblyRefDecls
 public partial class  assemblyRefDecls_assemblyRefDecls_assemblyRefDecl
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyRefDecls_assemblyRefDecls_assemblyRefDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'D', 'e', 'c', 'l', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25615,6 +25906,9 @@ public partial class  assemblyRefDecl_hashHead_bytes_272927
 public partial class  assemblyRefDecl_asmOrRefDecl
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyRefDecl_asmOrRefDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -25631,6 +25925,9 @@ public partial class  assemblyRefDecl_asmOrRefDecl
 public partial class  assemblyRefDecl_publicKeyTokenHead_bytes_272927
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyRefDecl_publicKeyTokenHead_bytes____() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }

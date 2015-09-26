@@ -1,6 +1,8 @@
 using System.Xml ;
 using System.IO ;
 using System.Extensions ;
+using System.Reflection ;
+using System.Linq ;
 
 public partial class A335
 {
@@ -465,8 +467,17 @@ class Xo_t
 	static string[] compile = new string[] { "auto.cs" } ;
 	static public void Compile()
 		{
+		System.Collections.Generic.Dictionary<string,System.Type> automatrix =
+			new System.Collections.Generic.Dictionary<string,System.Type>() ;
 		if( Cluster.Parameter.Value("build") == "false" )
 			return ;
+		var types =
+			from  type in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+			from  atrb in System.Attribute.GetCustomAttributes( type )
+			where atrb is AutomatonAttribute
+			select type ;
+		foreach( System.Type t in types  )
+			automatrix.Add( t.Name , t ) ;
 		read( new StreamReader( "../../#/Auto.xml" ) ) ;
 		Cluster.Cli.NoOperation() ;
 		X.Auto["branch"] = branch ;
@@ -507,7 +518,16 @@ class Xo_t
 			foreach( char c in Rule.Set[i].LHS )
 				X.Auto["lhs"] += "'"+c+"', " ;
 			X.Auto["lhs"] += " }" ;
-			X.Auto["synopsis"] = "; }" ;
+			if( automatrix.ContainsKey( Rule.AlphaSignal( Rule.Set[i] ) ) )
+				{
+				string name = automatrix[ Rule.AlphaSignal( Rule.Set[i] ) ].FullName.Replace( '+', '.' ) ;
+				X.Auto["synopsis"] =
+					"\n\t#if !EMBED"
+					+ "\n\tprotected override global::A335.Automatrix splice_f() { return new global::"+name+"() ; }"
+					+ "\n\t#endif" ;
+				}
+			else
+				X.Auto["synopsis"] = "" ;
 			if( Rule.Set[i].RHS.Length > 0 )
 				{
 				var sb = new System.Text.StringBuilder() ;

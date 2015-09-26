@@ -258,7 +258,7 @@ static C_Type C_I4_2 = C_Type.Acquire( "C_I4_2" ) ;
 static C_Type C_I4_3 = C_Type.Acquire( "C_I4_3" ) ;
 static C_Type _C_ARY = C_Type.Acquire( "_C_ARY" ) ;
 
-class C_Label
+public class C_Label
 	{
 	C_Symbol  label ;
 	bool      required ;
@@ -305,7 +305,7 @@ class C_Label
 		}
 	}
 
-class Class
+public class Class
 	{
 	static C_Symbol[] idset = new C_Symbol[0] ;
 	static void idset_add( string id )

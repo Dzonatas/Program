@@ -8,7 +8,7 @@ static object sphere_nt_ ;
 
 static object s_cl__t ; //__FIXT:(E1..:)abend:(__)swp,"...": "(swp) -> ./#/.urn" ;
 
-class _START : Automatrix {}
+public class _START : Automatrix {}
 
 struct StringTheory
 	{
@@ -398,7 +398,7 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 		}
 	}
 
-class SigArgs0 : Automatrix
+public class SigArgs0 : Automatrix
 	{
 	SigArg list ;
 	[Automaton] public class   sigArgs0_sigArgs1
@@ -432,7 +432,7 @@ class SigArgs0 : Automatrix
 		}
 	}
 
-class SigArg : Automatrix
+public class SigArg : Automatrix
 	{
 	static SigArg current = null ;
 	SigArg previous ;

@@ -139,15 +139,6 @@ static void Begin()
 		if( Current.Path.Exists( "main.c" ) )
 			return ;
 	Cluster.Cli.Start( Cluster.Parameter.Value("shell"), Tokenset.Assimulation ) ;
-	var types =
-		from  type in Assembly.GetExecutingAssembly().GetTypes()
-		from  atrb in Attribute.GetCustomAttributes( type )
-		where atrb is AutomatonAttribute
-		select type ;
-	foreach( Type t in types  )
-		{
-		automatrix.Add( t.Name , t ) ;
-		}
 	//Console.WriteLine( "symbolset={0} tokenset={1}", xml_symbolset.Count, xml_tokenset.Count ) ;
 	/*
 	foreach( State s in stateset )

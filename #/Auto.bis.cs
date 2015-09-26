@@ -17,7 +17,7 @@ public abstract class Auto : global::IRule
 	public abstract int              Symbol      { get; }
 	public abstract bool             Useful      { get; }
 	#if !EMBED
-	protected virtual void splice_f() { global::A335.Auto( this ) ; }
+	protected virtual global::A335.Automatrix splice_f() { throw new System.NotImplementedException( this.GetType().FullName ) ; }
 	#endif
 	protected Tokenset.Token[] argv ;
 	protected int arg_i ;
@@ -29,7 +29,8 @@ public abstract class Auto : global::IRule
 			log( argv[i]._+"," ) ;
 		log( "]" ) ;
 		#else
-		splice_f() ;
+		global::A335.this_rule = this ;
+		global::A335.Stack.Push( (global::A335.Automatrix) splice_f() ) ;
 		#endif
 		}
 	public Tokenset.Token   Argv

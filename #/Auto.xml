@@ -23,7 +23,7 @@ interface &interface; {
 <A335-Xo_t-Build-iDNA-5>
 public partial class  &signal;
 	: &branch;.Auto, &interface;
-	{
+	{&synopsis;
 	static readonly char[]   lhs = &lhs; ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }

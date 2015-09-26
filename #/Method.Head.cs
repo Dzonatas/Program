@@ -1,9 +1,9 @@
 partial class A335
 {
-[Automaton] class   methodHeadPart1___method_
+[Automaton] public class   methodHeadPart1___method_
 	: Method.Head.Part1   {}
 
-[Automaton] class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____
+[Automaton] public class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____
 	: Method.Head   {
 	protected override void methodHead()
 		{

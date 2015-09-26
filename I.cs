@@ -91,7 +91,7 @@ public struct Itemset
 		}
 	}
 
-class Instr : Automatrix
+public class Instr : Automatrix
 	{
 	Instr next ;
 	string code ;

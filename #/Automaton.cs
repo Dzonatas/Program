@@ -1,202 +1,209 @@
 public partial class A335
 {
-class Automaton {} ;
+public class Automaton {} ;
 
 [System.AttributeUsage(System.AttributeTargets.Class)]
-public class AutomatonAttribute : System.Attribute {}
+public class AutomatonAttribute : System.Attribute
+	{
+	public readonly string Signal ;
+	public AutomatonAttribute()
+		{
+		}
+	public AutomatonAttribute( string signal )
+		{
+		Signal = signal ;
+		}
+	}
 
-static System.Collections.Generic.Dictionary<string,System.Type> automatrix =
-	new System.Collections.Generic.Dictionary<string,System.Type>() ;
-
-[Automaton] class   id_ID
+[Automaton] public class   id_ID
 	: Automatrix	{}
 
-[Automaton] class   name1_id
+[Automaton] public class   name1_id
 	: Automatrix {}
 
-[Automaton] class   assemblyRefHead___assembly___extern__name1
+[Automaton] public class   assemblyRefHead___assembly___extern__name1
 	: Automatrix {}
 
-[Automaton] class   int32_INT64
+[Automaton] public class   int32_INT64
 	: Automatrix {}
 
-[Automaton] class   asmOrRefDecl___ver__int32_____int32_____int32_____int32
+[Automaton] public class   asmOrRefDecl___ver__int32_____int32_____int32_____int32
 	: Automatrix {}
 
-[Automaton] class   assemblyRefDecl_asmOrRefDecl
+[Automaton] public class   assemblyRefDecl_asmOrRefDecl
 	: Automatrix {}
 
-[Automaton] class   assemblyRefDecls_assemblyRefDecls_assemblyRefDecl
+[Automaton] public class   assemblyRefDecls_assemblyRefDecls_assemblyRefDecl
 	: Automatrix {}
 
-[Automaton] class   decl_assemblyRefHead_____assemblyRefDecls____
+[Automaton] public class   decl_assemblyRefHead_____assemblyRefDecls____
 	: Automatrix {}
 
-[Automaton] class   decls_decls_decl
+[Automaton] public class   decls_decls_decl
 	: Automatrix {}
 
-[Automaton] class   id_SQSTRING
+[Automaton] public class   id_SQSTRING
 	: Automatrix {}
 
-[Automaton] class   assemblyHead___assembly__asmAttr_name1
+[Automaton] public class   assemblyHead___assembly__asmAttr_name1
 	: Automatrix {}
 
-[Automaton] class   assemblyDecl___hash___algorithm__int32
+[Automaton] public class   assemblyDecl___hash___algorithm__int32
 	: Automatrix {}
 
-[Automaton] class   assemblyDecls_assemblyDecls_assemblyDecl
+[Automaton] public class   assemblyDecls_assemblyDecls_assemblyDecl
 	: Automatrix {}
 
-[Automaton] class   assemblyDecl_asmOrRefDecl
+[Automaton] public class   assemblyDecl_asmOrRefDecl
 	: Automatrix {}
 
-[Automaton] class   decl_assemblyHead_____assemblyDecls____
+[Automaton] public class   decl_assemblyHead_____assemblyDecls____
 	: Automatrix {}
 
-[Automaton] class   classAttr_classAttr__private_
+[Automaton] public class   classAttr_classAttr__private_
 	: Automatrix {}
 
-[Automaton] class   classAttr_classAttr__auto_
+[Automaton] public class   classAttr_classAttr__auto_
 	: Automatrix {}
 
-[Automaton] class   classAttr_classAttr__ansi_
+[Automaton] public class   classAttr_classAttr__ansi_
 	: Automatrix {}
 
-[Automaton] class   classAttr_classAttr__beforefieldinit_
+[Automaton] public class   classAttr_classAttr__beforefieldinit_
 	: Automatrix {}
 
-[Automaton] class   fieldAttr_fieldAttr__private_
+[Automaton] public class   fieldAttr_fieldAttr__private_
 	: Automatrix {}
 
-[Automaton] class   fieldAttr_fieldAttr__static_
+[Automaton] public class   fieldAttr_fieldAttr__static_
 	: Automatrix {}
 
-[Automaton] class   name1_DOTTEDNAME
+[Automaton] public class   name1_DOTTEDNAME
 	: Automatrix {}
 
-[Automaton] class   slashedName_name1
+[Automaton] public class   slashedName_name1
 	: Automatrix {}
 
-[Automaton] class   className_____name1_____slashedName
+[Automaton] public class   className_____name1_____slashedName
 	: Automatrix {}
 
-[Automaton] class   extendsClause__extends__className
+[Automaton] public class   extendsClause__extends__className
 	: Automatrix {}
 
-[Automaton] class   callKind__default_
+[Automaton] public class   callKind__default_
 	: Automatrix {}
 
-[Automaton] class   type__void_
+[Automaton] public class   type__void_
 	: Automatrix {}
 
-[Automaton] class   methodName___ctor_
+[Automaton] public class   methodName___ctor_
 	: Automatrix {}
 
-[Automaton] class   methodName___cctor_
+[Automaton] public class   methodName___cctor_
 	: Automatrix {}
 
-[Automaton] class   implAttr_implAttr__cil_
+[Automaton] public class   implAttr_implAttr__cil_
 	: Automatrix {}
 
-[Automaton] class   implAttr_implAttr__managed_
+[Automaton] public class   implAttr_implAttr__managed_
 	: Automatrix {}
 
-[Automaton] class   methodDecls_methodDecls_methodDecl
+[Automaton] public class   methodDecls_methodDecls_methodDecl
 	: Automatrix {}
 
-[Automaton] class   type__valuetype__className
+[Automaton] public class   type__valuetype__className
 	: Automatrix {}
 
-[Automaton] class   typeSpec_type
+[Automaton] public class   typeSpec_type
 	: Automatrix {}
 
-[Automaton] class   classDecls_classDecls_classDecl
+[Automaton] public class   classDecls_classDecls_classDecl
 	: Automatrix {}
 
-[Automaton] class   methodName_name1
+[Automaton] public class   methodName_name1
 	: Automatrix {}
 
-[Automaton] class   type__class__className
+[Automaton] public class   type__class__className
 	: Automatrix {}
 
-[Automaton] class   type__string_
+[Automaton] public class   type__string_
 	: Automatrix {}
 
-[Automaton] class   publicKeyTokenHead___publickeytoken_________
+[Automaton] public class   publicKeyTokenHead___publickeytoken_________
 	: Automatrix {}
 
-[Automaton] class   hexbytes_HEXBYTE
+[Automaton] public class   hexbytes_HEXBYTE
 	: Automatrix {}
 
-[Automaton] class   hexbytes_hexbytes_HEXBYTE
+[Automaton] public class   hexbytes_hexbytes_HEXBYTE
 	: Automatrix {}
 
-[Automaton] class   bytes_hexbytes
+[Automaton] public class   bytes_hexbytes
 	: Automatrix {}
 
-[Automaton] class   assemblyRefDecl_publicKeyTokenHead_bytes____
+[Automaton] public class   assemblyRefDecl_publicKeyTokenHead_bytes____
 	: Automatrix {}
 
-[Automaton] class   customHead___custom__customType________
+[Automaton] public class   customHead___custom__customType________
 	: Automatrix {}
 
-[Automaton] class   customAttrDecl_customHead_bytes____
+[Automaton] public class   customAttrDecl_customHead_bytes____
 	: Automatrix {}
 
-[Automaton] class   asmOrRefDecl_customAttrDecl
+[Automaton] public class   asmOrRefDecl_customAttrDecl
 	: Automatrix {}
 
-[Automaton] class   moduleHead___module__name1
+[Automaton] public class   moduleHead___module__name1
 	: Automatrix {}
 
-[Automaton] class   classAttr_classAttr__public_
+[Automaton] public class   classAttr_classAttr__public_
 	: Automatrix {}
 
-[Automaton] class   type__object_
+[Automaton] public class   type__object_
 	: Automatrix {}
 
-[Automaton] class   slashedName_slashedName_____name1
+[Automaton] public class   slashedName_slashedName_____name1
 	: Automatrix {}
 
-[Automaton] class   className_slashedName
+[Automaton] public class   className_slashedName
 	: Automatrix {}
 
-[Automaton] class   classAttr_classAttr__nested___private_
+[Automaton] public class   classAttr_classAttr__nested___private_
 	: Automatrix {}
 
-[Automaton] class   decl_moduleHead
+[Automaton] public class   decl_moduleHead
 	: Automatrix {}
 
-[Automaton] class   bounds1_bound
+[Automaton] public class   bounds1_bound
 	: Automatrix {}
 
-[Automaton] class   type_type_____bounds1____
+[Automaton] public class   type_type_____bounds1____
 	: Automatrix {}
 
-[Automaton] class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt
+[Automaton] public class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt
 	: Automatrix {}
 
-[Automaton] class   classDecl_fieldDecl
+[Automaton] public class   classDecl_fieldDecl
 	: Automatrix {}
 
-[Automaton] class   typeSpec_className
+[Automaton] public class   typeSpec_className
 	: Automatrix {}
 
-[Automaton] class   decls
+[Automaton] public class   decls
 	: Automatrix {}
 
-[Automaton] class   localsHead___locals_
+[Automaton] public class   localsHead___locals_
 	: Automatrix {}
 
-[Automaton] class   type__int32_
+[Automaton] public class   type__int32_
 	: Automatrix {}
 
-[Automaton] class   labels_id
+[Automaton] public class   labels_id
 	: Automatrix {}
 
-[Automaton] class   labels_id_____labels
+[Automaton] public class   labels_id_____labels
 	: Automatrix {}
 
-[Automaton] class   START_decls
+[Automaton] public class   START_decls
 	: _START {}
 }

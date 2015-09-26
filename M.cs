@@ -186,7 +186,7 @@ class Microdata : C_Type //,IOprand
 
 #endif //MICRODATA
 
-class Method
+public class Method
 	{
 	static Head head ;
 	static Head begin ;
