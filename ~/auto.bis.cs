@@ -24028,6 +24028,9 @@ public partial class  type_22valuetype22_className
 public partial class  type_type_275B27_275D27
 	: bis.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_square_brackets() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }

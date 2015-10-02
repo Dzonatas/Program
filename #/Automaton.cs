@@ -212,4 +212,7 @@ public class AutomatonAttribute : System.Attribute
 
 [Automaton("type_type_272627")] public class   type_type_ampersand
 	: Automatrix {}
+
+[Automaton("type_type_275B27_275D27")] public class   type_type_square_brackets
+	: Automatrix {}
 }
