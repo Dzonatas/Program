@@ -175,15 +175,15 @@ public struct c
 		}
 	public c If( string expression )
 		{
-		s += KeyedWord.If+'('+expression+')' + ' '  ; Bits &= Bit.If ; return this ;
+		s += KeyedWord.If+'('+expression+')' + ' '  ; Bits |= Bit.If ; return this ;
 		}
 	public c If( string expression, c then )
 		{
-		s += KeyedWord.If+'('+expression+')'+' '+then + ' '  ; Bits &= Bit.If & then.Bits ; return this ;
+		s += KeyedWord.If+'('+expression+')'+' '+then + ' '  ; Bits |= Bit.If | then.Bits ; return this ;
 		}
 	public c Else
 		{
-		get { s += KeyedWord.Else + ' '  ; Bits &= Bit.Else ; return this ; }
+		get { s += KeyedWord.Else + ' '  ; Bits |= Bit.Else ; return this ; }
 		}
 	public c Inline
 		{
@@ -235,7 +235,7 @@ public struct c
 		}
 	public c Equate(string text)
 		{
-		s += '='+text+' ' ; return this ;
+		return new c( s+'='+text+' ' ) ;
 		}
 	public c Equate(string symbol, string embracement)
 		{

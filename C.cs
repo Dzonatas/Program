@@ -98,6 +98,10 @@ partial class Program
 		public C_Function  Function ;
 		public C699.c      Type ;
 		public C699.c      Name ;
+		static public implicit operator string( C_Literal l )
+			{
+			return l.Name ;
+			}
 		}
 	public C_Literal this[int n]
 		{

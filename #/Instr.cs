@@ -209,7 +209,7 @@ partial class A335
 				foreach( object z in freeset )
 					{
 					if( z is int )
-						d.Statement( C699.Free('('+'('+C699.String+'*'+')'+C699.Stack.Index((int)z)+')'+"->"+field ) ) ;
+						d.Statement( C699.Free("("+'('+C699.String+'*'+')'+C699.Stack.Index((int)z)+')'+"->"+field ) ) ;
 					}
 				freeset = new object[0] ;
 				break ;

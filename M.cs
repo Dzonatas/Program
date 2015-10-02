@@ -302,7 +302,7 @@ public class Method
 				if( ( _Virtual = value ) )
 					{
 					var c = Program.C_Struct.FromSymbol( classType ) ;
-					c.Assign( name + _SigArgs0.Types() ) ;
+					c.Assign( name + ( _SigArgs0 != null ? _SigArgs0.Types() : string.Empty ) ) ;
 					}
 				}
 			get { return _Virtual ; }
