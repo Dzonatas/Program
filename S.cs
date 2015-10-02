@@ -107,14 +107,14 @@ public class Stack
 			if( a.Argv[i] is Stack.Item.Token )
 				{
 				string t = (string) (Stack.Item.Token)a.Argv[i] ;
-				if( t[0] == '.' && t != ".ctor" && t != ".cctor" )
+				if( t.Length > 0 && t[0] == '.' && t != ".ctor" && t != ".cctor" )
 					{
 					writeline() ;
 					if( args.Length == 0 )
 						X.Auto["A"] = "{"+a.Arg0.Token ;
 					}
 				write( t ) ;
-				if( t[0] == '{' )
+				if( t.Length > 0 && t[0] == '{' )
 					writeline() ;
 				}
 			else

@@ -1,6 +1,6 @@
 
-\".+\" { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(QSTRING,text); }
-\'.+\' { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(SQSTRING,text); }
+\".+\"|\"\" { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(QSTRING,text); }
+\'.+\'|\'\' { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(SQSTRING,text); }
 
 "0x"{H}+     { text=strndup(yytext,yyleng) ; return TERMINAL(INT64,text); }
 {H}{H}       { text=strndup(yytext,yyleng) ; return TERMINAL(HEXBYTE,text); }

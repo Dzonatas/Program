@@ -88,10 +88,12 @@ public static partial class Tokenset
 		Lift() ;
 		#endif
 		}
+	static bool xml_read = false ;
 	public static Token input()
 		{
-		if( xml.Read() )
+		if( xml_read || xml.Read() )
 			{
+			xml_read = false ;
 			switch( xml.NodeType )
 				{
 				case System.Xml.XmlNodeType.Element:
@@ -105,7 +107,12 @@ public static partial class Tokenset
 					{
 					string [] s = xml.Name.Split("_".ToCharArray()) ;
 					xml.Read() ;
-					string text = xml.Value ;
+					string text = string.Empty ;
+					if( xml.NodeType == System.Xml.XmlNodeType.Text
+					  || xml.NodeType == System.Xml.XmlNodeType.Whitespace )
+						text = xml.Value ;
+					else
+						xml_read = true ;
 					return new Token( (char)int.Parse( s[1] ), text, false, 0 /*int.Parse( s[^1] )*/ ) ; //s[^1]_estate
 					}
 				}
