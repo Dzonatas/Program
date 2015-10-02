@@ -11,8 +11,13 @@ help:
 	@echo "make test4"
 	@echo "make clean"
 
-project:
+project: ./~/understand.exe ./bin/Debug/ecma.exe
+
+./bin/Debug/ecma.exe:
 	xbuild ecma.csproj
+
+./~/understand.exe:
+	( cd ./~/understand && make )
 
 clean: 
 	rm -rf /tmp/.$(ID).d
@@ -20,15 +25,16 @@ clean:
 	rm -f /tmp/$(ID).hello.world.exe
 	rm -rf bin
 	rm -rf obj
+	( cd ./~/understand && make clean )
 
-test1:
+test1: project
 	./~/test.sh
 
-test2:
+test2: project
 	./~/test2/test.sh
 
-test3:
+test3: project
 	./~/test3/test.sh
 
-test4:
+test4: project
 	./~/test4/test.sh

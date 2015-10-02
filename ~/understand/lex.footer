@@ -35,9 +35,9 @@ int TERMINAL_( int n, char *str, YYSTYPE * yylval_param )
 int TERMINAL( int n, char *str, YYSTYPE* yylval_param )
 	{
 	#ifndef MMAP
-		printf("&_%d_%d_%d;%s", (unsigned long)yylval_param, n, strlen(str), str);
+		printf("&_%lu_%d_%d;%s", (unsigned long)yylval_param, n, strlen(str), str);
 	#else
-		printf("&_%d_%d;%s", (unsigned long)yylval_param, n, str);
+		printf("&_%lu_%d;%s", (unsigned long)yylval_param, n, str);
 	#endif
 		/*
 	switch( n )
@@ -78,8 +78,8 @@ int INSTRUCTION_( char *inst, int n, char *str, YYSTYPE* yylval_param )
 		{
 		if( strcmp( opcodes[i].cn, str ) == 0 )
 			{
-			//printf("<%s-%d/>%s", inst, (long)yylval_param, opcodes[i].sn ) ;
-			printf("<_%d-%d/>%s", n, (long)yylval_param, opcodes[i].sn ) ;
+			//printf("<%s-%d/>%s", inst, (unsigned long)yylval_param, opcodes[i].sn ) ;
+			printf("<_%d-%lu/>%s", n, (unsigned long)yylval_param, opcodes[i].sn ) ;
 			/*
 			printf("<i state=\"%d\" n=\"%d\" cn=\"%s\" sn=\"%s\" sb1=\"%s\" sb2=\"%s\" op=\"%s\" ok=\"%s\" h=\"%s\" bb=\"%s\" b=\"%s\" cf=\"%s\" />",
 					(int)yylval_param,
@@ -104,7 +104,7 @@ int INSTRUCTION_( char *inst, int n, char *str, YYSTYPE* yylval_param )
 
 int PUNCTUATION( int n, YYSTYPE* yylval_param )
 	{
-	printf("<_%d-%d/>%c", n, (unsigned long)yylval_param, n);
+	printf("<_%d-%lu/>%c", n, (unsigned long)yylval_param, n);
 	return n ;
 	}
 int PUNCTUATION2( int n, int m )

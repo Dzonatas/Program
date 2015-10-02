@@ -1,7 +1,7 @@
 %{
 #define YYLEX_PARAM yystate
 %}
-%token_table
+%token-table
 
 %token ID
 %token QSTRING
