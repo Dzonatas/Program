@@ -9,14 +9,22 @@ partial class A335
 			case "BR" :
 				oprand.C.Statement( C699.Goto.Label(Id) ) ;
 				return ;
+			case "BRFALSE" :
+				C.Pop() ;
+				oprand.C.Statement( C699.Goto.Label(Id) ) ;
+				return ;
 			case "BGE" :
 				C.Pop() ;
 				C.Pop() ;
 				oprand.C.Statement( C699.Goto.Label(Id) ) ;
 				return ;
-			default :
-				log( "[INSTR_BRTARGET] Defaulted on " + Op ) ;
+			case "BEQ" :
+				C.Pop() ;
+				C.Pop() ;
+				oprand.C.Statement( C699.Goto.Label(Id) ) ;
 				return ;
+			default :
+				throw new System.NotImplementedException( Op ) ;
 			}
 		}
 	}
