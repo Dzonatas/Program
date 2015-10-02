@@ -1,43 +1,43 @@
 
-\".+\" { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(QSTRING,text, yylval_param ); }
-\'.+\' { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(SQSTRING,text, yylval_param ); }
+\".+\" { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(QSTRING,text); }
+\'.+\' { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(SQSTRING,text); }
 
-"0x"{H}+     { text=strndup(yytext,yyleng) ; return TERMINAL(INT64,text, yylval_param ); }
-{H}{H}       { text=strndup(yytext,yyleng) ; return TERMINAL(HEXBYTE,text,yylval_param ); }
-{D}+\.{D}+   { text=strndup(yytext,yyleng) ; return TERMINAL(FLOAT64,text, yylval_param ); }
-{D}+         { text=strndup(yytext,yyleng) ; return TERMINAL(INT64,text, yylval_param ); }
+"0x"{H}+     { text=strndup(yytext,yyleng) ; return TERMINAL(INT64,text); }
+{H}{H}       { text=strndup(yytext,yyleng) ; return TERMINAL(HEXBYTE,text); }
+{D}+\.{D}+   { text=strndup(yytext,yyleng) ; return TERMINAL(FLOAT64,text); }
+{D}+         { text=strndup(yytext,yyleng) ; return TERMINAL(INT64,text); }
 {F}{C}*\.	 { buf=alloca(yyleng+1) ; strncpy(buf,yytext,yyleng) ; dottedname = 1 ; }
 {F}{C}*		 { if( ! dottedname )
-				{ text=strndup(yytext,yyleng) ; return TERMINAL(ID,text, yylval_param ); }
+				{ text=strndup(yytext,yyleng) ; return TERMINAL(ID,text); }
 				else {
 					 dottedname = 0 ;
 					 int l = strlen(buf)+yyleng ;
 					 text=malloc(l+1) ;
 					 text=strcpy(text,buf) ;
 					 strncat(text,yytext,yyleng) ;
-					 return TERMINAL(DOTTEDNAME,text, yylval_param );
+					 return TERMINAL(DOTTEDNAME,text);
 					 }
 			 }
 
-{P}          { return PUNCTUATION(yytext[0], yylval_param) ; }
+{P}          { return PUNCTUATION(yytext[0]) ; }
 {WS}
 %%
 
-int TERMINAL_( int n, char *str, YYSTYPE * yylval_param )
+int TERMINAL_( int n, char *str )
 	{
 	//if( str[0] != '.' )
-		return TERMINAL( n, str, yylval_param ) ;
+		return TERMINAL( n, str ) ;
 	//printf("<%s state=\"%d\"/>", &str[1], (int)yylval_param);
 	//return n ;
 	}
 
 
-int TERMINAL( int n, char *str, YYSTYPE* yylval_param )
+int TERMINAL( int n, char *str )
 	{
-	#ifndef MMAP
-		printf("&_%lu_%d_%d;%s", (unsigned long)yylval_param, n, strlen(str), str);
+	#ifdef MMAP
+		printf("&_%d_%d;%s",  n, strlen(str), str);
 	#else
-		printf("&_%lu_%d;%s", (unsigned long)yylval_param, n, str);
+		printf("&_%d;%s", n, str);
 	#endif
 		/*
 	switch( n )
@@ -71,15 +71,14 @@ int TERMINAL( int n, char *str, YYSTYPE* yylval_param )
 	return n ;
 	}
 
-int INSTRUCTION_( char *inst, int n, char *str, YYSTYPE* yylval_param )
+int INSTRUCTION_( char *inst, int n, char *str )
 	{
 	int i;
 	for( i = 0 ; i < ( sizeof( opcodes ) / sizeof( struct _opcodes ) ) ; i++ )
 		{
 		if( strcmp( opcodes[i].cn, str ) == 0 )
 			{
-			//printf("<%s-%d/>%s", inst, (unsigned long)yylval_param, opcodes[i].sn ) ;
-			printf("<_%d-%lu/>%s", n, (unsigned long)yylval_param, opcodes[i].sn ) ;
+			printf("<_%d/>%s", n, opcodes[i].sn ) ;
 			/*
 			printf("<i state=\"%d\" n=\"%d\" cn=\"%s\" sn=\"%s\" sb1=\"%s\" sb2=\"%s\" op=\"%s\" ok=\"%s\" h=\"%s\" bb=\"%s\" b=\"%s\" cf=\"%s\" />",
 					(int)yylval_param,
@@ -102,13 +101,8 @@ int INSTRUCTION_( char *inst, int n, char *str, YYSTYPE* yylval_param )
 	return n ;
 	}
 
-int PUNCTUATION( int n, YYSTYPE* yylval_param )
+int PUNCTUATION( int n )
 	{
-	printf("<_%d-%lu/>%c", n, (unsigned long)yylval_param, n);
-	return n ;
-	}
-int PUNCTUATION2( int n, int m )
-	{
-  	//printf("<p>%c%c</p>", n, m);
+	printf("<_%d/>%c", n, n);
 	return n ;
 	}

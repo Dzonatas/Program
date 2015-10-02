@@ -7,7 +7,7 @@
         <xsl:value-of select="@name"/>
 	<xsl:text> ; return TERMINAL_( </xsl:text>
 	<xsl:value-of select="@token-number"/>
-	<xsl:text>, text, yylval_param ) ; }
+	<xsl:text>, text ) ; }
 </xsl:text>
       </xsl:for-each>
 </xsl:template>

@@ -106,7 +106,7 @@ public static partial class Tokenset
 					string [] s = xml.Name.Split("_".ToCharArray()) ;
 					xml.Read() ;
 					string text = xml.Value ;
-					return new Token( (char)int.Parse( s[2] ), text, false, 0 /*int.Parse( s[1] )*/ ) ; //s[1]_estate
+					return new Token( (char)int.Parse( s[1] ), text, false, 0 /*int.Parse( s[^1] )*/ ) ; //s[^1]_estate
 					}
 				}
 			}

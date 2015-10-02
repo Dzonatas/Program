@@ -13,8 +13,6 @@ int dottedname = 0 ;
 char *text ;
 char *buf ;
 
-//#define PRINT() printf("<_%d/>%s",(int)(long)yylval_param,text) ;
-
 #define INSTRUCTION(_1,_2,_3) INSTRUCTION_(#_1,_1,_2,_3)
 
 #define OPDEF(_0,_1,_2,_3,_4,_5,_6,_7,_8,_9) { #_0, _1, #_2, #_3, #_4, #_5, #_6, #_7, #_8, #_9 },
