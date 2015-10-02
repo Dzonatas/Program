@@ -2,6 +2,7 @@
 # Run test from top directory of repository
 # Example: sh ./~/test2/test.sh
 ID="5a7160ed-13d5-4923-a1f9-3e32a47d558a"
+export TERM="XHTML"
 
 [ ! -d "/tmp/.$ID.d" ] && mkdir /tmp/.$ID.d
 gmcs ./~/test2/hello.world.cs -out:/tmp/.$ID.d/hello.world.exe
