@@ -11,55 +11,55 @@
 	<xsl:text>" ;</xsl:text>
 	<xsl:choose>
 	  <xsl:when test="@type='InlineBrTarget'">
-		<xsl:text> return INSTRUCTION( INSTR_BRTARGET, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_BRTARGET, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineField'">
-		<xsl:text> return INSTRUCTION( INSTR_FIELD, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_FIELD, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineI'">
-		<xsl:text> return INSTRUCTION( INSTR_I, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_I, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineI8'">
-		<xsl:text> return INSTRUCTION( INSTR_I8, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_I8, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineMethod'">
-		<xsl:text> return INSTRUCTION( INSTR_METHOD, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_METHOD, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineNone'">
-		<xsl:text> return INSTRUCTION( INSTR_NONE, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_NONE, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineR'">
-		<xsl:text> return INSTRUCTION( INSTR_R, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_R, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineSig'">
-		<xsl:text> return INSTRUCTION( INSTR_SIG, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_SIG, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineString'">
-		<xsl:text> return INSTRUCTION( INSTR_STRING, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_STRING, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineSwitch'">
-		<xsl:text> return INSTRUCTION( INSTR_SWITCH, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_SWITCH, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineTok'">
-		<xsl:text> return INSTRUCTION( INSTR_TOK, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_TOK, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineType'">
-		<xsl:text> return INSTRUCTION( INSTR_TYPE, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_TYPE, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='InlineVar'">
-		<xsl:text> return INSTRUCTION( INSTR_VAR, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_VAR, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='ShortInlineBrTarget'">
-		<xsl:text> return INSTRUCTION( INSTR_BRTARGET, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_BRTARGET, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='ShortInlineI'">
-		<xsl:text> return INSTRUCTION( INSTR_BRTARGET, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_BRTARGET, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='ShortInlineR'">
-		<xsl:text> return INSTRUCTION( INSTR_R, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_R, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='ShortInlineVar'">
-		<xsl:text> return INSTRUCTION( INSTR_VAR, text, yylval_param ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_VAR, text ) ; } </xsl:text>
 	  </xsl:when>
 	</xsl:choose>
 	<xsl:text>
