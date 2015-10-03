@@ -223,19 +223,19 @@ public partial class   instr_INSTR_NONE
 				break ;
 				}
 			case "LDC_I4_0" :
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("0") ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("(void*)0") ) ;
 				C.Push( C_I4_0 ) ;
 				break ;
 			case "LDC_I4_1" :
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("1") ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("(void*)1") ) ;
 				C.Push( C_I4_1 ) ;
 				break ;
 			case "LDC_I4_2" :
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("2") ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("(void*)2") ) ;
 				C.Push( C_I4_2 ) ;
 				break ;
 			case "LDC_I4_3" :
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("3") ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate("(void*)3") ) ;
 				C.Push( C_I4_3 ) ;
 				break ;
 			case "DUP" :
