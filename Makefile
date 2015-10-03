@@ -1,6 +1,11 @@
-ID=5a7160ed-13d5-4923-a1f9-3e32a47d558a
+ID              =5a7160ed-13d5-4923-a1f9-3e32a47d558a
+XBUILD          =xbuild /p:NoWarn=169,649,414,219 /verbosity:quiet /nologo
 
-.PHONY: help clean project test1 test2 test3 test4 driver parser
+auto_bis_cs     =$(abspath ./~/auto.bis.cs)
+understand_exe  =$(abspath ./~/understand.exe)
+grammar_xml     =$(abspath ./~/understand/grammar.xml)
+
+.PHONY: help clean test1 test2 test3 test4 project driver parser
 
 help:
 	@echo "Options:"
@@ -13,21 +18,28 @@ help:
 	@echo "make test4"
 	@echo "make clean"
 
-project: driver ./bin/Debug/ecma.exe
+project: bin/Debug/ecma.exe
+driver: bin/Debug/driver.exe
+parser: $(understand_exe)
 
-driver: parser ./bin/Debug/driver.exe
+bin/Debug/ecma.exe: $(auto_bis_cs)
+	@echo "build ecma.csproj"
+	$(XBUILD) ecma.csproj
+
+
+$(auto_bis_cs): /tmp/.$(ID).d/auto.cs
+	cp /tmp/.$(ID).d/auto.cs $(auto_bis_cs)
+
+/tmp/.$(ID).d/auto.cs: bin/Debug/driver.exe
 	( cd ./bin/Debug && ./driver.exe )
-	cp /tmp/.$(ID).d/auto.cs ./~/auto.bis.cs
 
-parser: ./~/understand.exe
+bin/Debug/driver.exe: $(grammar_xml)
+	@echo "build driver.csproj"
+	$(XBUILD)  driver.csproj
 
-./bin/Debug/driver.exe:
-	xbuild driver.csproj
+$(understand_exe): $(grammar_xml)
 
-./bin/Debug/ecma.exe:
-	xbuild ecma.csproj
-
-./~/understand.exe:
+$(grammar_xml):
 	( cd ./~/understand && make )
 
 clean: 
