@@ -192,7 +192,7 @@ partial class Program
 		{
 	    foreach( string class_symbol in virtualset.Keys )
 			{
-			System.IO.StreamWriter sw = System.IO.File.CreateText( Current.Working.Directory.FullName + "/" + class_symbol + ".c" ) ;
+			var sw = Current.Path.CreateText( class_symbol + ".c" ) ;
 			var c = ((C_Struct) virtualset[class_symbol]) ;
 			c.WriteTo( sw ) ;
 			sw.Close() ;
@@ -357,6 +357,8 @@ partial class Program
 			c.HasArgs = HasArgs ;
 			switch( Instruction )
 				{
+				case "BEQ" :
+				case "BRFALSE" :
 				case "BGE" :
 					c.Statement( C699.C.Return("1") ) ;
 					break ;
