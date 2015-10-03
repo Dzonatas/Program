@@ -4,6 +4,7 @@ using System.Reflection ;
 using System.Linq ;
 using System ;
 public partial class A335 {
+#if BEGINNING
 public static void Auto( int n )
 	{
 	this_rule = Rule.Set[n] ;
@@ -118,4 +119,5 @@ case "instr_INSTR_STRING_compQstring" : return new instr_INSTR_STRING_compQstrin
 default: throw new System.DuplicateWaitObjectException() ;
 }
 }
+#endif
 }

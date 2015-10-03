@@ -133,6 +133,7 @@ class A //: X[A]ML
 //#include "semantic.s[0]" //<#?s[0]>
 #endif
 
+#if DEBUG_ANCHOR
 namespace Anchor
 	{
 	/*-*/public/*- class -*/struct/*-*/Lock
@@ -154,6 +155,7 @@ namespace Anchor
 		/*---*/
 		}
 	}
+#endif
 
 namespace A.org.com.edu.mil.net
 	{
@@ -162,7 +164,7 @@ namespace A.org.com.edu.mil.net
 
 partial class A335
 {
-public class Automatrix : Object
+public partial class Automatrix : Object
 	{
 	Program cc = null ;
 	public Program C

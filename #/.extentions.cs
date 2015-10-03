@@ -126,18 +126,6 @@ namespace System.Extensions
 			#endif
 			}
 
-		public static A335.C_Type UnsignedInt(this System.Guid d)
-			{
-			string id = "_" + System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
-			id += "_unsigned_int" ;
-			return A335.C_Type.Acquire( id ) ;
-			}
-		public static A335.C_Type Char_(this System.Guid d)
-			{
-			string id = "_" + System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
-			id += "_char_p" ;
-			return A335.C_Type.Acquire( id ) ;
-			}
 		public static string ToID(this System.Guid d)
 			{
 			return Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
@@ -552,7 +540,7 @@ namespace System.Extensions
 			
 		public static void Draw(this IntPtr display, Drawable w)
 			{
-			A335.Channel vblit = new A335.Channel() ;
+			//A335.Channel vblit = new A335.Channel() ;
 			//ops=vblist_ht(https://developers.google.com/maps/documentation/javascript/overlays)
 			//_compile_ops_to_script_xml_with_context_endpoint
 			//_store_folded_exec_on_DOTTEDNAME(s)

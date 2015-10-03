@@ -150,6 +150,16 @@
     <Compile Include="#\Automaton.2.cs" />
     <Compile Include="#\Auto.bis.cs" />
     <Compile Include="~\auto.bis.cs" />
+    <Compile Include="#\A335.cs" />
+    <Compile Include="#\Item.cs" />
+    <Compile Include="#\IRule.cs" />
+    <Compile Include="#\A335.Program.cs" />
+    <Compile Include="#\A335.Stack.cs" />
+    <Compile Include="#\A335.Object.cs" />
+    <Compile Include="#\Current.cs" />
+    <Compile Include="#\A335.Branch.cs" />
+    <Compile Include="#\A335.Zone.cs" />
+    <Compile Include="#\A335.log.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

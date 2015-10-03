@@ -92,7 +92,7 @@ public partial class Program
 		}
 	}
 
-
+#if BEGINNING
 struct planet
 	{
 	internal int    x ;
@@ -124,6 +124,7 @@ struct planet
 			return string.Format("[{0},{1};{2},{3}]",xo_t[x],y,zz,yy) ;
 			}
 	}
+#endif
 
 #if A
 [OAuth] Token _proxy_known ; //_oauth:A:__:_:lexical
@@ -155,6 +156,6 @@ namespace Production
 	{
 	struct produced_release
 		{
-		A335.State [] array ;
+		//A335.State [] array ;
 		}
 	}

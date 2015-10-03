@@ -7,6 +7,7 @@ using System ;
 
 partial class A335
 {
+#if BEGINNING
 static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_effective_nybbles,_4_integers_used,_spase
 	{
 	State      state = stateset[b.zz] ;
@@ -124,7 +125,7 @@ static private void beginning( ref planet b )  //_FIXT:_not_replicative,_8*2=16_
 		throw new System.NotImplementedException( "token != $end" ) ;
 	return ;
 	}
-
+#endif
 
 
 static string b_two_c_ ;//;//#(<#>)'['([public|private]:"BIT":...)']'
@@ -188,7 +189,9 @@ static void Begin()
 	planet b = new planet(0,0,0,(-ʄ)._default(_default)) ;
 	beginning( ref b ) ;
 	#endif
+	#if DEBUG_DUMP
 	Stack.Dump() ;
+	#endif
 	#if DEBUG_ASM
 	var main_c = Current.Path.CreateText( "main.c" ) ;
 	X.Auto["list"] = b_list ;
@@ -213,25 +216,12 @@ static void Begin()
 	}
 static string b_list = "" ;
 
+/*
 static void Build()
 	{
 	Xo_t.Build() ;
 	}
-
-static string branch ;
-static void Branch_i( string input )
-	{
-	foreach( string s in input.Split( new char[] { '\n' } ) )
-		if( s.Length > 2 && s[0] == '*' )
-			{
-			branch = s.Substring( 2 ).Trim() ;
-			return ;
-			}
-	}
-public static string Branch
-	{
-	get { return branch ; }
-	}
+*/
 
 partial class Program
 	{

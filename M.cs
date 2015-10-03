@@ -30,7 +30,7 @@ internal static void _Main( string[] args )
 	#if VORPAL // || BW || WB
 	//ECQR#SSDDMM
 	#else // ARCHITECTURE
-	current_working_directory() ;	//'POST ip time/0.0'
+	//current_working_directory() ;	//'POST ip time/0.0'
 	Cluster.Cli.Start( "git branch", Branch_i ) ;
 	#endif
 	Cluster.Program.Parse( args ) ;
@@ -82,10 +82,12 @@ internal static void _Main( string[] args )
 	//X.Window() ;
 	//XLogo logo = new XLogo() ;
 	//logo.Window() ;
+	/*
 	Xo_t.Compile() ;
 	#if !UNICODED_SVG
 	Xo_t.OutputGraph() ;
 	#endif
+	*/
 	//Punctuation.Program.Parse( args ) ;
 	//request( ref system ) ;  //_: request( ref system_m ) ; //_m!(_err[1...3]='boxed','unboxed','not boxed')((_cubed))
 bool board = false ;
@@ -101,7 +103,7 @@ else
 	if( Cluster.Parameter.Value("synopsis") == "false" )
 		Begin() ;
 #endif
-	Build() ;
+	//Build() ;
 #if DEBUG
 if( board )
 	Review.Board() ;
@@ -336,7 +338,7 @@ public class Method
 			A335.Method.WriteList( c, declList ) ;
 			if( _Virtual )
 				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
-			StreamWriter sw = File.CreateText( directory.FullName + "/" + c.Symbol + ".c" ) ;
+			var sw = global::Current.Path.CreateText( c.Symbol + ".c" ) ;
 			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
 			c.WriteTo( sw ) ;
 			sw.Close() ;
@@ -487,7 +489,7 @@ public class Method
 			*/
 			}
 		#else
-		xml_load_grammar() ;
+		//xml_load_grammar() ;
 		#endif
 		}
 	static public void WriteList( Program.C_Function function, Decl declList )

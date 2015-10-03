@@ -2,40 +2,6 @@
 
 public partial class A335
 {
-static string                         log_file ;
-static public System.IO.StreamWriter  log_output ;
-
-static public void log_ready()
-	{
-	log_file = directory.FullName + "/log.text" ;
-	/*
-		(
-		(System.Runtime.InteropServices.GuidAttribute)
-		//System.AppDomain.CurrentDomain.DomainManager.EntryAssembly.GetCustomAttributes(
-		(typeof(A335).Assembly.GetCustomAttributes(
-			typeof(System.Runtime.InteropServices.GuidAttribute), true
-			)[0])
-		).Value	+ ".txt" ;
-	*/
-	log_output = System.IO.File.CreateText( log_file ) ;
-	log_output.AutoFlush = true ;
-	}
-
-static public void log( string s )
-	{
-	if( log_output == null )
-		log_ready() ;
-	log_output.WriteLine( s ) ;
-	log_output.Flush() ;
-	}
-	
-static private void log_o( object[] o )
-	{
-	string s = "["+o.ToString()+"]" ;
-	foreach( object i in o )
-		s += " " + i.ToString() ;
-	log( s ) ;		
-	}
 
 class log_enter
 	{
@@ -43,7 +9,9 @@ class log_enter
 	System.Guid UUID ;
 	System.DateTime dt ; //_linked[,_linq]
 	#endregion OPT
+	#if DEBUG_ANCHOR
 	Anchor.Lock ʄ ;
+	#endif
 	#if WINDOWS
 	bool     RT = _.Windows.RT ;
 	public override string ToString()
@@ -56,6 +24,7 @@ class log_enter
 			return string.Format("[log_enter] {0}",dt);
 			}
 	#endif
+	#if DEBUG_ANCHOR
 	public log_enter()
 		{
 		#if CONSISTENT
@@ -66,6 +35,7 @@ class log_enter
 		#endif
 		dt = System.DateTime.Now ;
 		}
+	#endif
 	}
 /*
 #region micro

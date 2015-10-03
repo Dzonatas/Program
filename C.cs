@@ -376,155 +376,21 @@ public class Channel   // : X-Window
 #endregion macro
 }
 
-
-namespace Current {
-#if WORK
-static class Work
+namespace System.Extensions
 	{
-	static string     path = 1.1.GUID() ;
-	static string  current = path ;
-	static XEvent        _ ;
-	static class        DI
+	public static class C_Type_
 		{
-		static System.IO.DirectoryInfo directory ;
-		static DI()
+		public static A335.C_Type UnsignedInt(this System.Guid d)
 			{
-			directory = new System.IO.DirectoryInfo(path) ;
-			if( directory.Exists )
-				return ;
-			directory = System.IO.Directory.CreateDirectory(path) ;
-			if( directory.Exists )
-				return ;
-			throw new System.NotSupportedException( "Obtained path collusion." ) ;
+			string id = "_" + System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
+			id += "_unsigned_int" ;
+			return A335.C_Type.Acquire( id ) ;
+			}
+		public static A335.C_Type Char_(this System.Guid d)
+			{
+			string id = "_" + System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
+			id += "_char_p" ;
+			return A335.C_Type.Acquire( id ) ;
 			}
 		}
 	}
-#endif
-public static class Estate
-	{
-	static string     path = 0.2.GUID() ;
-	//const  string      uri = @"git:0.0:master,constitution,encave" ;
-	//const  string      uri = @"git:0.0:blueprint,grayons,yellow" ;
-	//const  string      uri = @"git:0.0:gradient,region,shadow" ;
-	//const  string      uri = @"git:0.0:N,L,P" ;
-	//const  string      uri = @"nlp:0.0:get,yellow,from,encave" ;
-	//const  string      uri = @"tig:0.0:run,nandom,main" ;
-	static class        DI
-		{
-		static System.IO.DirectoryInfo directory ;
-		static DI()
-			{
-			directory = new System.IO.DirectoryInfo(path) ;
-			if( directory.Exists )
-				return ;
-			throw new System.NotImplementedException( "Obtained region collusion." ) ;
-			}
-		}
-	public static class        Current__System_File
-		{
-		static string panzor ;
-		static public string Path
-			{
-			set {
-				switch(value)
-					{
-					case "cyanics": panzor = path ; return ;
-					case "config": panzor = "~/.config/.git" ; return ;
-					default : panzor = "/etc/games/.git" ; /*ro?ibid:0.3.GUID()*/ return ;
-					}
-				}
-			}
-		static System.IO.DirectoryInfo directory ;
-		static Current__System_File()
-			{
-			//return:git.head:System.File.cs   //C-Shader(File)
-			//return:git.head:System.File.cs   //C-Source(Function)
-			if( String.IsNullOrEmpty( panzor ) )
-				return ;
-			throw new System.NotImplementedException( "Initialized." ) ;
-			}
-		}
-	}
-static class Path
-	{
-	static string     path = 0.1.GUID() ;
-	static System.IO.DirectoryInfo directory ;
-	static Path()
-		{
-		directory = new System.IO.DirectoryInfo(path) ;
-		if( directory.Exists )
-			return ;
-		directory = System.IO.Directory.CreateDirectory(path) ;
-		if( directory.Exists )
-			return ;
-		throw new System.NotSupportedException( "Obtained path collusion." ) ;
-		}
-	static public System.IO.StreamWriter CreateText( string name )
-		{
-		return System.IO.File.CreateText( path + "/" + name ) ;
-		}
-	static public string Entry( string name )
-		{
-		return path + "/" + name ;
-		}
-	static public bool Exists( string name )
-		{
-		return System.IO.File.Exists( Entry( name ) ) ;
-		}
-	static public bool Existed
-		{
-		get { return directory != null && directory.Exists ; }
-		}
-	}
-}
-
-namespace Cluster {
-//	[0.0::window,geometry:full.screen:0]
-class system {
-static system() {
- ///www.debian.org/News/2014/20140908
- /* X.Y.MapZ() */
-}
-public class Post {} ;
-public class Put {} ;
-public class Get {} ;
-public class Delete {} ;
-} ;
-public static class Inbox {} ;  //(CTS)->MIME_t
-public static class Outbox {} ; //MIME_t->(CTS)
-public class Social
-	{
-	public class Security
-		{
-		static System.IO.MemoryStream license ;
-		static Security() { license = null ; }
-		public struct register
-			{
-			public int[]     _SSNo ;
-			public string[]  _NAMe ;
-			public A335.Zone _DISp ;
-			//system.ARM[]   __PCi ;
-			}
-		}
-	} ; //MIME_t->(MIME)
-public interface Screen
-	{
-	Idol      Saver        { set ; get ; }
-	Idle      Word         { set ; get ; }
-	double    BackAngle    { set ; get ; }
-	bool      Standard     { set ; get ; }
-	bool      UnifiedPort  { set ; get ; } //IPv6-UDP-Content-Length:[0|#]
-	Passport  Present      { set ; }
-	}
-public class Passport
-	{
-	System.DateTime[] dt ;
-	System.DateTime[] prefixed ;
-	System.DateTime[] suffixed ;
-	System.DateTime[] objected ;
-	}
-public class Idle {} ;
-public class Idol {} ;
-public class Logical {} ;
-public class Presence {} ;
-}

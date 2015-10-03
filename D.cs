@@ -13,28 +13,6 @@ static bool debug ; //_passive((_d))_##IPVI
 //_FIX:_stackless-C[,_hyper-|_math__][,_embedded]
 //static int d_linear_d    ; //_simulate:intranet[,_override_lineage_and_raise_hexed_flag]
 
-static DirectoryInfo directory ;
-
-static void current_working_directory()
-	{
-	string path = @"/tmp/."+0.0.GUID()+".d" ;
-	directory = new DirectoryInfo(path) ;
-	if( directory.Exists )
-		return ;
-	directory = System.IO.Directory.CreateDirectory(path) ;
-	if( directory.Exists )
-		return ;
-	throw new System.NotSupportedException( "Obtained path collusion." ) ;
-	/*
-		(
-		(System.Runtime.InteropServices.GuidAttribute)
-		//System.AppDomain.CurrentDomain.DomainManager.EntryAssembly.GetCustomAttributes(
-		(typeof(A335).Assembly.GetCustomAttributes(
-			typeof(System.Runtime.InteropServices.GuidAttribute), true
-			)[0])
-		).Value	+ ".c" ;
-	*/
-	}
 
 public class Delete : global::A.DELETE
 	{

@@ -1,17 +1,28 @@
 ID=5a7160ed-13d5-4923-a1f9-3e32a47d558a
 
-.PHONY: help clean project test1 test2 test3 test4
+.PHONY: help clean project test1 test2 test3 test4 driver parser
 
 help:
 	@echo "Options:"
 	@echo "make project"
+	@echo "make driver"
+	@echo "make parser"
 	@echo "make test1"
 	@echo "make test2"
 	@echo "make test3"
 	@echo "make test4"
 	@echo "make clean"
 
-project: ./~/understand.exe ./bin/Debug/ecma.exe
+project: driver ./bin/Debug/ecma.exe
+
+driver: parser ./bin/Debug/driver.exe
+	( cd ./bin/Debug && ./driver.exe )
+	cp /tmp/.$(ID).d/auto.cs ./~/auto.bis.cs
+
+parser: ./~/understand.exe
+
+./bin/Debug/driver.exe:
+	xbuild driver.csproj
 
 ./bin/Debug/ecma.exe:
 	xbuild ecma.csproj
