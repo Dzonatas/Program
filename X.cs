@@ -12,7 +12,7 @@ static string          xml_text ;
 
 static string transitions = string.Empty ;
 
-public static System.Collections.Generic.Dictionary<char,int> xml_translate          = new System.Collections.Generic.Dictionary<char,int>() ;
+//public static System.Collections.Generic.Dictionary<char,int> xml_translate          = new System.Collections.Generic.Dictionary<char,int>() ;
 
 
 }

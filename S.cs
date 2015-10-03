@@ -58,7 +58,7 @@ public partial class SigArgs0 : Automatrix
 		}
 	}
 
-public class SigArg : Automatrix
+public partial class SigArg : Automatrix
 	{
 	static SigArg current = null ;
 	SigArg previous ;
@@ -103,7 +103,7 @@ public class SigArg : Automatrix
 		{
 		get { return previous ; }
 		}
-	[Automaton] public class   sigArg_paramAttr_type
+	public partial class   sigArg_paramAttr_type
 		: SigArg	{
 		protected override void main()
 			{
@@ -111,7 +111,7 @@ public class SigArg : Automatrix
 			Enlist() ;
 			}
 		}
-	[Automaton] public class   sigArg_paramAttr_type_id
+	public partial class   sigArg_paramAttr_type_id
 		: SigArg {
 		protected override void main()
 			{
@@ -120,9 +120,9 @@ public class SigArg : Automatrix
 			Enlist() ;
 			}
 		}
-	[Automaton] public class   sigArgs1_sigArgs1_____sigArg
+	public partial class   sigArgs1_sigArgs1_____sigArg
 		: Automatrix	{}
-	[Automaton] public class   sigArgs1_sigArg
+	public partial class   sigArgs1_sigArg
 		: Automatrix	{}
 	}
 }

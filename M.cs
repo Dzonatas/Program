@@ -188,11 +188,11 @@ class Microdata : C_Type //,IOprand
 
 #endif //MICRODATA
 
-public class Method
+public partial class Method
 	{
 	static Head head ;
 	static Head begin ;
-	public class Head : Automatrix
+	public partial class Head : Automatrix
 		{
 		Head    previous ;
 		Head    next ;
@@ -206,7 +206,7 @@ public class Method
 		SigArgs0 _SigArgs0 ;
 		bool    _Virtual ;
 		bool    __cctor = false ;
-		public class Part1 : Automatrix
+		public partial class Part1 : Automatrix
 			{
 			protected override void main()
 				{
@@ -358,7 +358,7 @@ public class Method
 		for( Head i = Head.Begin ; i is Head ; i = i.Next )
 			i.Write() ;
 		}
-	public class Decl : Automatrix
+	public partial class Decl : Automatrix
 		{
 		static Decl current = null ;
 		Head _head ;
@@ -443,7 +443,7 @@ public class Method
 		{
 		get { return _EntryPoint ; }
 		}
-	public class Attr : Automatrix
+	public partial class Attr : Automatrix
 		{
 		static Attr current = null ;
 		Attr next ;

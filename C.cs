@@ -309,7 +309,7 @@ public class C_Label
 		}
 	}
 
-public class Class
+public partial class Class
 	{
 	static C_Symbol[] idset = new C_Symbol[0] ;
 	static void idset_add( string id )
@@ -318,14 +318,14 @@ public class Class
 		idset[idset.Length - 1] = C_Symbol.Acquire( id ) ;
 		return ;
 		}
-	public class Head : Automatrix
+	public partial class Head : Automatrix
 		{
 		static public string ID
 			{
 			set { idset_add( value ) ;  }
 			}
 		}
-	public class Decl : Automatrix
+	public partial class Decl : Automatrix
 		{
 		public void Declared()
 			{

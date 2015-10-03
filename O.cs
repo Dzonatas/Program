@@ -8,7 +8,7 @@ static object[] freeset = new object[0] ;
 
 
 
-[Automaton] public class   classHead___class__classAttr_id_extendsClause_implClause
+public partial class   classHead___class__classAttr_id_extendsClause_implClause
 	: Class.Head	{
 	protected override void main()
 		{
@@ -16,7 +16,7 @@ static object[] freeset = new object[0] ;
 		}
 	}
 
-public class CallConv : Automatrix
+public partial class CallConv : Automatrix
 	{
 	static CallConv current = null ;
 	CallConv next ;
@@ -38,14 +38,14 @@ public class CallConv : Automatrix
 			return false ;
 			}
 		}
-	[Automaton] public class   callConv__instance__callConv
+	public partial class   callConv__instance__callConv
 		: CallConv	{}
 
-	[Automaton] public class   callConv_callKind
+	public partial class   callConv_callKind
 		: CallConv {}
 	}
 
-[Automaton] public class   classDecl_methodHead_methodDecls____
+public partial class   classDecl_methodHead_methodDecls____
 	: Class.Decl	{
 	protected override void main()
 		{
@@ -57,7 +57,7 @@ public class CallConv : Automatrix
 		}
 	}
 
-[Automaton] public class   compQstring_QSTRING
+public partial class   compQstring_QSTRING
 	: Automatrix	{
 	protected override void main()
 		{
@@ -65,7 +65,7 @@ public class CallConv : Automatrix
 		}
 	}
 
-[Automaton] public class   decl_classHead_____classDecls____
+public partial class   decl_classHead_____classDecls____
 	: Automatrix	{
 	protected override void main()
 		{
@@ -73,7 +73,7 @@ public class CallConv : Automatrix
 		}
 	}
 
-[Automaton] public class   _accept_START__end
+public partial class   _accept_START__end
 	: Automatrix	{
 	protected override void main()
 		{
@@ -83,7 +83,7 @@ public class CallConv : Automatrix
 		}
 	}
 
-[Automaton] public class   classDecl_classHead_____classDecls____
+public partial class   classDecl_classHead_____classDecls____
 	: Class.Decl	{
 	protected override void main()
 		{
@@ -91,7 +91,7 @@ public class CallConv : Automatrix
 		}
 	}
 
-[Automaton] public class   customType_callConv_type_typeSpec________ctor______sigArgs0____
+public partial class   customType_callConv_type_typeSpec________ctor______sigArgs0____
 	: Automatrix {}
 
 }

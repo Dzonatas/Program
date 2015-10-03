@@ -1,6 +1,6 @@
 partial class A335
 {
-[Automaton] public class   instr_INSTR_BRTARGET_id
+public partial class   instr_INSTR_BRTARGET_id
 	: Instr.BrTarget {
 	protected override void BRTARGET()
 		{
@@ -29,7 +29,7 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
+public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
 	: Instr.Method	{
 	protected override void METHOD()
 		{
@@ -112,7 +112,7 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   instr_INSTR_TYPE_typeSpec
+public partial class   instr_INSTR_TYPE_typeSpec
 	: Instr.Type    {
 	protected override void TYPE( Argument typeSpec )
 		{
@@ -129,7 +129,7 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   instr_INSTR_FIELD_type_id
+public partial class   instr_INSTR_FIELD_type_id
 	: Instr.Field   {
 	protected override void main()
 		{
@@ -147,7 +147,7 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   instr_INSTR_FIELD_type_typeSpec______id
+public partial class   instr_INSTR_FIELD_type_typeSpec______id
 	: Instr.Field   {
 	protected override void main()
 		{
@@ -171,7 +171,7 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   instr_INSTR_SWITCH_____labels____
+public partial class   instr_INSTR_SWITCH_____labels____
 	: Instr.Switch  {
 	protected override void main()
 		{
@@ -192,10 +192,10 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   instr_INSTR_NONE
+public partial class   instr_INSTR_NONE
 	: Instr.None    {
 	protected override void NONE()
-		{
+			{
 		var d = oprand.C ;
 		switch( Op )
 			{
@@ -289,7 +289,7 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   instr_INSTR_STRING_compQstring
+public partial class   instr_INSTR_STRING_compQstring
 	: Instr.String {
 	protected override void STRING( Argument compQstring )
 		{

@@ -1,6 +1,6 @@
 partial class A335
 {
-[Automaton] public class   methodDecl___entrypoint_
+public partial class   methodDecl___entrypoint_
 	: Method.Decl   {
 	protected override void main()
 		{
@@ -8,7 +8,7 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   methodDecl___maxstack__int32
+public partial class   methodDecl___maxstack__int32
 	: Method.Decl   {
 	protected override void main()
 		{
@@ -16,10 +16,10 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   methodDecl_localsHead__init______sigArgs0____
+public partial class   methodDecl_localsHead__init______sigArgs0____
 	: Method.Decl   {}
 
-[Automaton] public class   methodDecl_id____
+public partial class   methodDecl_id____
 	: Method.Decl   {
 	protected override void main()
 		{
@@ -28,7 +28,7 @@ partial class A335
 		}
 	}
 
-[Automaton] public class   methodDecl_instr
+public partial class   methodDecl_instr
 	: Method.Decl	{
 	protected override void main()
 		{

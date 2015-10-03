@@ -34,7 +34,7 @@ const  char []    i_undefined = null ; //{0xCA,0xFF} ;
 //[_od]
 
 
-public class Instr : Automatrix
+public partial class Instr : Automatrix
 	{
 	Instr next ;
 	string code ;
@@ -106,7 +106,7 @@ public class Instr : Automatrix
 		Oprand.Declared() ;
 		previous = current ;
 		}
-	public class Method : Instr
+	public partial class Method : Instr
 		{
 		protected C_Type _Type ;
 		protected C_Type _TypeSpec ;
@@ -176,7 +176,7 @@ public class Instr : Automatrix
 			set { CallConvInstance = value is CallConv ? value.Instance : false ; }
 			}
 		}
-	public class BrTarget : Instr
+	public partial class BrTarget : Instr
 		{
 		protected C_Label Id ;
 		protected override void main()
@@ -188,7 +188,7 @@ public class Instr : Automatrix
 			}
 		protected virtual void BRTARGET() {}
 		}
-	public class Type : Instr
+	public partial class Type : Instr
 		{
 		protected override void main()
 			{
@@ -197,13 +197,13 @@ public class Instr : Automatrix
 			}
 		protected virtual void TYPE( Argument typeSpec ) {}
 		}
-	public class Field : Instr
+	public partial class Field : Instr
 		{
 		}
-	public class Switch : Instr
+	public partial class Switch : Instr
 		{
 		}
-	public class None : Instr
+	public partial class None : Instr
 		{
 		protected override void main()
 			{
@@ -212,7 +212,7 @@ public class Instr : Automatrix
 			}
 		protected virtual void NONE() {}
 		}
-	public class String : Instr
+	public partial class String : Instr
 		{
 		protected override void main()
 			{
