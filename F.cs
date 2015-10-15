@@ -133,7 +133,7 @@ partial class Program
 			}
 		public C_Function Statement( C699.c line )
 			{
-			bool eos = false ; //( line.Bits & (C699.Bit.If|C699.Bit.Else) ) != 0 && (line.Bits & C699.Bit.Goto) == 0 ;
+			bool eos = ( line.Bits & (C699.Bit.If|C699.Bit.Else) ) != 0 && (line.Bits & C699.Bit.Goto) == 0 ;
 			list_add( "\t" + line + ( eos ? "" : " ;" ) ) ;
 			return this ;
 			}

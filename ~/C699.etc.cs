@@ -10,12 +10,6 @@ static public c Pointer(int i)
 	return new c("stack"+'+'+i+' ') ;
 	}
 }
-public struct Goto {
-static public c Label(string id)
-	{
-	return new c(KeyedWord.Goto+' '+id) ;
-	}
-}
 static readonly c _string = C.Struct(new c("_string")) ;
 static public   c String {
 	get { return _string ; }

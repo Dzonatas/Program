@@ -72,6 +72,10 @@ public struct C
 		{
 		get { return (new c()).Else ; }
 		}
+	static public c Goto( string label )
+		{
+		return (new c()).Goto( label ) ;
+		}
 	static public c Inline
 		{
 		get { return (new c()).Inline ; }
@@ -103,12 +107,6 @@ public struct C
 	static public c/**/ Restricted( string expression ) //($(X)RSH)|$futex_unknown
 		{
 		System.Console.WriteLine(expression) ;
-		if( expression.StartsWith(C699.KeyedWord.Goto) )
-			{
-			var c = new c(expression+' ') ;
-			c.Bits = C699.Bit.Goto ;
-			return c ; //c.Goto(#|Label|IntPtr)
-			}
 		return (new c(expression+' ')) ;
 		}
 	static public c/**/ Literal( string value )
@@ -184,6 +182,10 @@ public struct c
 	public c Else
 		{
 		get { s += KeyedWord.Else + ' '  ; Bits |= Bit.Else ; return this ; }
+		}
+	public c Goto( string label )
+		{
+		s += KeyedWord.Goto + ' ' + label  ; Bits |= Bit.Goto ; return this ;
 		}
 	public c Inline
 		{
