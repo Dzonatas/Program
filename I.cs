@@ -93,9 +93,9 @@ public partial class Instr : Automatrix
 		get { return op ; }
 		}
 	protected Oprand oprand ;
-	public Program.C_Oprand _C_Oprand
+	static public implicit operator C699.c( Instr i )
 		{
-		get { return oprand.C ; }
+		return i.oprand.C ;
 		}
 	public bool C_OprandHasArgs
 		{
@@ -229,7 +229,7 @@ public partial class Instr : Automatrix
 		{
 		var sw = Current.Path.CreateText( symbol + ".hpp" ) ;
 		for( Instr i = instr ; i is Instr ; i = i.Next )
-			i._C_Oprand.WriteTo( sw ) ;
+			i.oprand.C.WriteTo( sw ) ;
 		sw.Close() ;
 		}
 	}

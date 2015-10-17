@@ -500,7 +500,7 @@ public partial class Method
 				function.Label( d.Label ) ;
 			else
 			if( d.Instr != null )
-				function.Statement( d.Instr._C_Oprand ) ;
+				function.Statement( d.Instr ) ;
 			}
 		}
 	}
