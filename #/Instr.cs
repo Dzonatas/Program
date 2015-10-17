@@ -7,21 +7,24 @@ public partial class   instr_INSTR_BRTARGET_id
 		switch( Op )
 			{
 			case "BR" :
-				oprand.C.Statement( C699.C.Goto(Id) ) ;
+				oprand.C.GotoStatement( Id ) ;
 				return ;
 			case "BRFALSE" :
 				C.Pop() ;
-				oprand.C.Statement( C699.C.Goto(Id) ) ;
+				oprand.C.IfGotoStatement( Id ) ;
+				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				return ;
 			case "BGE" :
 				C.Pop() ;
 				C.Pop() ;
-				oprand.C.Statement( C699.C.Goto(Id) ) ;
+				oprand.C.IfGotoStatement( Id ) ;
+				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				return ;
 			case "BEQ" :
 				C.Pop() ;
 				C.Pop() ;
-				oprand.C.Statement( C699.C.Goto(Id) ) ;
+				oprand.C.IfGotoStatement( Id ) ;
+				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				return ;
 			default :
 				throw new System.NotImplementedException( Op ) ;

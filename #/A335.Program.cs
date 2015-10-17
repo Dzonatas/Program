@@ -312,6 +312,7 @@ partial class Program
 		public bool HasArgs ;
 		public bool BrTarget ;
 		List<C699.c> list = new List<C699.c>() ;
+		public System.Action<C_Function> Evaluate = (c) => {} ;
 		public C_Label Label
 			{
 			set { label = value ; }
@@ -326,19 +327,32 @@ partial class Program
 			this.function = function ;
 			ID = System.Guid.NewGuid().ToID() ;
 			Instruction = System.Text.RegularExpressions.Regex.Replace( instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
+			Evaluate = (c) => { foreach( C699.c s in list )	c.Statement( s ) ; } ;
 			}
 		static public implicit operator C699.c( C_Oprand d )
 			{
-			if( d.BrTarget && d.Instruction == "BR" )
-				return d.list[0] ;
-			var f = C699.C.Function( d.Instruction, d.ID,"stack " + ( d.HasArgs ? ", args" : "" ) ) ;
 			if( d.BrTarget )
-				return C699.C.If( f, d.list[0] ) ;
-			return f ;
+				return d.list[0] ;
+			return C699.C.Function( d.Instruction, d.ID,"stack " + ( d.HasArgs ? ", args" : "" ) ) ;
 			}
 		static public explicit operator string( C_Oprand d )
 			{
 			return ((C699.c)d) ;
+			}
+		public C_Oprand GotoStatement( string label )
+			{
+			if( ! BrTarget )
+				throw new System.NotImplementedException() ;
+			list.Add( C699.C.Goto( label ) ) ;
+			return this ;
+			}
+		public C_Oprand IfGotoStatement( string label )
+			{
+			if( ! BrTarget )
+				throw new System.NotImplementedException() ;
+			var f = C699.C.Function( Instruction, ID,"stack " + ( HasArgs ? ", args" : "" ) ) ;
+			list.Add( C699.C.If( f, C699.C.Goto( label ) ) ) ;
+			return this ;
 			}
 		public C_Oprand Statement( C699.c c )
 			{
@@ -347,7 +361,7 @@ partial class Program
 			}
 		public void WriteTo( System.IO.StreamWriter sw )
 			{
-			if( BrTarget && Instruction == "BR" )
+			if( list.Count == 1 && list[0].Bits == C699.Bit.Goto )
 				return ;
 			var c = C_Function.FromSymbol( Instruction + "$" + ID ) ;
 			if( BrTarget )
@@ -355,18 +369,7 @@ partial class Program
 			c.Static = true ;
 			c.Inline = true ;
 			c.HasArgs = HasArgs ;
-			switch( Instruction )
-				{
-				case "BEQ" :
-				case "BRFALSE" :
-				case "BGE" :
-					c.Statement( C699.C.Return("1") ) ;
-					break ;
-				default:
-					foreach( C699.c s in list )
-						c.Statement( s ) ;
-					break ;
-				}
+			Evaluate(c) ;
 			c.WriteTo( sw ) ;
 			}
 		}
