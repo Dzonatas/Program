@@ -255,6 +255,9 @@ partial class Program
 			.Return( C.StringConcat( C[0], C[1], C[2] ) )
 			;
 		jiffy( "string string::Concat(string,string)" )
+			.ConstLocalArg( 0 )
+			.ConstLocalArg( 1 )
+			.Return( C.StringConcatLocal0Local1() )
 			;
 		//jiffy( pet( "fetch::", cube, sphere ) )
 		//	;

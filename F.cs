@@ -71,6 +71,12 @@ partial class Program
 				return Statement( C699.C.Const.Struct(arg0.Type.p,symbol).Equate("*args") ) ;
 				}
 			}
+		public C_Function ConstLocalArg( int argn )
+			{
+			var arg1 = new C_Struct(Method.Args[argn]) ;
+			var symbol = C_Symbol.Acquire( "_local"+argn ) ;
+			return Statement( C699.C.Const.Struct(arg1.Type.p,symbol).Equate("args["+argn+"]") ) ;
+			}
 		public C_Function StandardOutputWriteLocal( string _string, string _length )
 			{
 			var symbol = C_Symbol.Acquire( "_local" ) ;

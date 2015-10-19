@@ -71,6 +71,25 @@ partial class Program
 			;
 		return C_Symbol.Acquire( "s" ) ;
 		}
+	public C_Symbol StringConcatLocal0Local1()
+		{
+		C_TypeDef typedef = typedefset["string"] ;
+		string _length = typedef.Struct[0] ;
+		string _string = typedef.Struct[1] ;
+		var    s_length = C699.C.Literal( "s."   + _length) ;
+		var    s_string = C699.C.Literal( "s."   + _string) ;
+		var    a_length = C699.C.Literal("_local0->" + _length) ;
+		var    a_string = C699.C.Literal("_local0->" + _string) ;
+		var    b_length = C699.C.Literal("_local1->" + _length) ;
+		var    b_string = C699.C.Literal("_local1->" + _string) ;
+		This.Statement( C699.C.Static(C699.String,"s") )
+			.Statement( s_length.Equate(a_length+" + "+b_length) )
+			.Statement( s_string.Equate("malloc( "+a_length+" + "+b_length+" )" ) )
+			.Statement( C699.Strncpy(s_string,a_string,a_length) )
+			.Statement( C699.Strncpy('&'+s_string+'['+a_length+']',b_string,b_length) )
+			;
+		return C_Symbol.Acquire( "s" ) ;
+		}
 	public C_Function This ;
 	C_Literal[] register ;
 	public C_Function Register( C_Function f, C699.c type, string name )
