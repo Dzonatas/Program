@@ -4,7 +4,7 @@
 #if EMBED
 interface Item { }
 #endif
-namespace &branch; {
+namespace Driver {
 public partial class A335 {
 static A335() {}
 #if EMBED
@@ -22,7 +22,7 @@ interface &interface; {
 </A335-Xo_t-Build-iDNA-5i>
 <A335-Xo_t-Build-iDNA-5>
 public partial class  &signal;
-	: &branch;.Auto, &interface;
+	: Driver.Auto, &interface;
 	{&synopsis;
 	static readonly char[]   lhs = &lhs; ;
 	public override string   LHS { get { return new string(lhs) ; } }
@@ -54,11 +54,11 @@ int deploy( int i )
 		else
 		if( i &lt; 0 )
 			{
-			(auto as &branch;.Auto).Argv = _token ;
+			(auto as Driver.Auto).Argv = _token ;
 			if( --backup > 0 )
 				return (int)i ;
 			//yy = xo_t[-i] ;
-			(auto as &branch;.Auto).Splice() ;
+			(auto as Driver.Auto).Splice() ;
 			}
 		else
 			yy = (int)__default ;
@@ -74,10 +74,10 @@ int split( int i )
 	else
 	if( i &lt; 0 )
 		{
-		(auto as &branch;.Auto).Argv = _token ;
+		(auto as Driver.Auto).Argv = _token ;
 		if( --backup > 0 )
 			return (int)i ;
-		(auto as &branch;.Auto).Splice() ;
+		(auto as Driver.Auto).Splice() ;
 		}
 	if( token.c != 0 )
 		throw new System.NotImplementedException( "token != $end" ) ;

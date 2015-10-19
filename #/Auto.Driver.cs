@@ -1,4 +1,4 @@
-namespace bis
+namespace Driver
 {
 public abstract class Auto : global::IRule
 	{

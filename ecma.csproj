@@ -148,8 +148,6 @@
     <Compile Include="#\Tokenset.1.cs" />
     <Compile Include="#\Automaton.1.cs" />
     <Compile Include="#\Automaton.2.cs" />
-    <Compile Include="#\Auto.bis.cs" />
-    <Compile Include="~\auto.bis.cs" />
     <Compile Include="#\A335.cs" />
     <Compile Include="#\Item.cs" />
     <Compile Include="#\IRule.cs" />
@@ -160,6 +158,8 @@
     <Compile Include="#\A335.Branch.cs" />
     <Compile Include="#\A335.Zone.cs" />
     <Compile Include="#\A335.log.cs" />
+    <Compile Include="~\auto.driver.cs" />
+    <Compile Include="#\Auto.Driver.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
