@@ -206,6 +206,7 @@ public partial class Method
 		SigArgs0 _SigArgs0 ;
 		bool    _Virtual ;
 		bool    __cctor = false ;
+		Locals  locals ;
 		public partial class Part1 : Automatrix
 			{
 			protected override void main()
@@ -267,6 +268,11 @@ public partial class Method
 			{
 			set { _SigArgs0 = value ; }
 			get { return _SigArgs0 ; }
+			}
+		public Locals Locals
+			{
+			set { locals = value ; }
+			get { return locals ; }
 			}
 		protected void    CreateFunction()
 			{
@@ -348,6 +354,47 @@ public partial class Method
 			return new Program.C_Oprand( c_method.Function, instr ) ;
 			}
 		}
+	public class Locals
+		{
+		public struct Local
+			{
+			public C_Symbol Symbol ;
+			public C_Type   Type ;
+			public string   ID ;
+			}
+		SigArgs0 args ;
+		Local[] local ;
+		public Locals( SigArgs0 args )
+			{
+			this.args = args ;
+			local = new Local[args.Count()] ;
+			int i = 0 ;
+			this.args.ForEach( (a) =>
+					{
+					local[i] = new Local() ;
+					local[i].Symbol = C_Symbol.Acquire( "_local"+i ) ;
+					local[i].Type   = a._Type ;
+					local[i].ID     = a._ID ;
+					i++ ;
+					}
+				);
+			}
+		public Local this[ int index ]
+			{
+			get { return local[index] ; }
+			}
+		public Local this[ string name ]
+			{
+			get {
+				for( int i = 0 ; i < local.Length ; i++ )
+					{
+					if( local[i].ID == name )
+						return local[i] ;
+					}
+				throw new System.ArgumentException() ;
+				}
+			}
+		}
 	static public void WriteIncludesTo( StreamWriter sw )
 		{
 		for( Head i = Head.Begin ; i is Head ; i = i.Next )
@@ -400,6 +447,10 @@ public partial class Method
 		protected int     MaxStack
 			{
 			set { head.MaxStack = value ; C.MaxStack = value ; }
+			}
+		protected SigArgs0     Locals
+			{
+			set { head.Locals = new Method.Locals( value ) ; }
 			}
 		protected int Args
 			{

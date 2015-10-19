@@ -52,6 +52,10 @@ public struct C
 		{
 		return (new c()).Struct(c,symbol) ;
 		}
+	static public c Local(C699.c c,string symbol)
+		{
+		return (new c()).Local(c,symbol) ;
+		}
 	static public c Const
 		{
 		get { return (new c()).Const ; }
@@ -196,6 +200,10 @@ public struct c
 		s += KeyedWord.Struct+' '+c.s + ' '  ; return this ;
 		}
 	public c Struct(C699.c c,string symbol)
+		{
+		s += c.s+' '+symbol + ' '  ; return this ;
+		}
+	public c Local(C699.c c,string symbol)
 		{
 		s += c.s+' '+symbol + ' '  ; return this ;
 		}

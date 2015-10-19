@@ -17,7 +17,18 @@ public partial class   methodDecl___maxstack__int32
 	}
 
 public partial class   methodDecl_localsHead__init______sigArgs0____
-	: Method.Decl   {}
+	: Method.Decl   {
+	protected override void main()
+		{
+		Locals = Arg4 ;
+		}
+	protected new Argument Locals
+		{
+		set {
+			base.Locals = (SigArgs0) (Automatrix) value ;
+			}
+		}
+	}
 
 public partial class   methodDecl_id____
 	: Method.Decl   {

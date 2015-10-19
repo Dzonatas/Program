@@ -9,6 +9,10 @@ static public c Pointer(int i)
 	{
 	return new c("stack"+'+'+i+' ') ;
 	}
+static public c Deref(int i, string _struct)
+	{
+	return new c("*("+_struct+" *)stack["+i+']') ;
+	}
 }
 static readonly c _string = C.Struct(new c("_string")) ;
 static public   c String {
