@@ -11,20 +11,32 @@ public partial class   instr_INSTR_BRTARGET_id
 				return ;
 			case "BRFALSE" :
 				C.Pop() ;
+				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
+				#else
+				oprand.C.GotoStatement( Id ) ;
+				#endif
 				return ;
 			case "BGE" :
 				C.Pop() ;
 				C.Pop() ;
+				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
+				#else
+				oprand.C.GotoStatement( Id ) ;
+				#endif
 				return ;
 			case "BEQ" :
 				C.Pop() ;
 				C.Pop() ;
+				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
+				#else
+				oprand.C.GotoStatement( Id ) ;
+				#endif
 				return ;
 			default :
 				throw new System.NotImplementedException( Op ) ;
