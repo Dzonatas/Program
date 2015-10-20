@@ -51,8 +51,12 @@ public partial class   classDecl_methodHead_methodDecls____
 		{
 		var methodHead = (Argv[1] as Method.Head) ;
 		methodHead.DeclList = Method.Decl.List ;
+		#if HPP
 		string symbol = Class.Type + methodHead.Name ;
 		Instr.WriteList( symbol, Instr.List ) ;
+		#else
+		Instr hpp = Instr.List ;
+		#endif
 		C.Hangdown() ;
 		}
 	}

@@ -95,7 +95,13 @@ public partial class Instr : Automatrix
 	protected Oprand oprand ;
 	static public implicit operator C699.c( Instr i )
 		{
+		#if HPP
 		return i.oprand.C ;
+		#else
+		var s = new System.IO.StringWriter() ;
+		i.oprand.C.WriteTo( s ) ;
+		return new C699.c( s.ToString() ) ;
+		#endif
 		}
 	public bool C_OprandHasArgs
 		{

@@ -359,7 +359,7 @@ partial class Program
 			list.Add( c ) ;
 			return this ;
 			}
-		public void WriteTo( System.IO.StreamWriter sw )
+		public void WriteTo( System.IO.TextWriter tw )
 			{
 			if( list.Count == 1 && list[0].Bits == C699.Bit.Goto )
 				return ;
@@ -370,7 +370,7 @@ partial class Program
 			c.Inline = true ;
 			c.HasArgs = HasArgs ;
 			Evaluate(c) ;
-			c.WriteTo( sw ) ;
+			c.WriteTo( tw ) ;
 			}
 		}
 	}

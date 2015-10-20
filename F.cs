@@ -151,28 +151,55 @@ partial class Program
 			{
 			list_add( "\t" + label + " :" ) ;
 			}
-		public void WriteTo( StreamWriter sw )
+		public void WriteTo( TextWriter sw )
 			{
-			string line = "" ;
-			if( Inline )
-				line += C699.C.Inline + " " ;
-			if( Static )
-				line += C699.C.Static(Type) ;
+			#if !HPP
+			if( sw is StreamWriter )
+				{
+			#endif
+				string line = "" ;
+				if( Inline )
+					line += C699.C.Inline + " " ;
+				if( Static )
+					line += C699.C.Static(Type) ;
+				else
+					line += Type ;
+				line += " " + Symbol ;
+				if( Args == null )
+					line += '('+C699.C.Const.Voidpp+"stack"
+					+ ( HasArgs ? ','+C699.C.Const.Voidpp.ArgV : "" )
+					+ ')' ;
+				else
+					line += Args ;
+				sw.WriteLine( line ) ;
+				sw.WriteLine( "\t{" ) ;
+			#if !HPP
+				foreach( string s in list )
+					sw.WriteLine( s ) ;
+				}
 			else
-				line += Type ;
-			line += " " + Symbol ;
-			if( Args == null )
-				line += '('+C699.C.Const.Voidpp+"stack"
-				+ ( HasArgs ? ','+C699.C.Const.Voidpp.ArgV : "" )
-				+ ')' ;
-			else
-				line += Args ;
-			sw.WriteLine( line ) ;
-			sw.WriteLine( "\t{" ) ;
+				{
+				sw.WriteLine( "{// "+Symbol.Split('$')[0] ) ;
+				foreach( string s in list )
+					sw.WriteLine( "\t"+s ) ;
+				}
+			#else
 			foreach( string s in list )
-				sw.WriteLine( s ) ;
+				sw.WriteLine( "\t"+s ) ;
 			sw.WriteLine( "\t}" ) ;
 			sw.WriteLine() ;
+			#endif
+			#if !HPP
+			if( sw is StreamWriter )
+				{
+				sw.WriteLine( "\t}" ) ;
+				sw.WriteLine() ;
+				}
+			else
+				{
+				sw.Write( "\t}" ) ;
+				}
+			#endif
 			Written = true ;
 			}
 		}

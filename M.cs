@@ -345,7 +345,9 @@ public partial class Method
 			if( _Virtual )
 				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
 			var sw = global::Current.Path.CreateText( c.Symbol + ".c" ) ;
+			#if HPP
 			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
+			#endif
 			c.WriteTo( sw ) ;
 			sw.Close() ;
 			}
