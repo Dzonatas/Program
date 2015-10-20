@@ -341,6 +341,9 @@ public partial class Method
 			else
 				c.Args = '('+C699.C.Const.Voidpp.ArgV+')' ;
 			c.Statement( C699.C.Const.Voidpp.Equate("stack",C699.Alloca(maxstack + " * sizeof(void*)") ) ) ;
+			A335.Method.Head head = A335.Method.Head.Current ;
+			if( locals != null )
+				locals.WriteTo( c ) ;
 			A335.Method.WriteList( c, declList ) ;
 			if( _Virtual )
 				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
@@ -394,6 +397,26 @@ public partial class Method
 						return local[i] ;
 					}
 				throw new System.ArgumentException() ;
+				}
+			}
+		public void WriteTo( Program.C_Function f )
+			{
+			foreach( Local l in local )
+				{
+				C699.c c = new C699.c() ;
+				C699.c type ;
+				switch( (C_Symbol) l.Type )
+					{
+					case "int32": c = c.Local( type = C699.C.Int, l.Symbol ) ;
+						break ;
+					case "struct _string ":
+						c = c.Struct( type = C699.String, l.Symbol ) ;
+						break ;
+					default:
+						throw new System.NotImplementedException() ;
+					}
+				//d.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
+				f.Statement( c ) ;
 				}
 			}
 		}
