@@ -68,9 +68,13 @@ public struct C
 		{
 		return (new c()).If(expression) ;
 		}
-	static public c If( string expression, C699.c then )
+	static public c If( string expression, c then )
 		{
 		return (new c()).If(expression,then) ;
+		}
+	static public c If( c expr1, string op, c expr2, c then )
+		{
+		return (new c()).If(expr1,op,expr2,then) ;
 		}
 	static public c Else
 		{
@@ -183,6 +187,11 @@ public struct c
 		{
 		s += KeyedWord.If+'('+expression+')'+' '+then + ' '  ; Bits |= Bit.If | then.Bits ; return this ;
 		}
+	public c If( c expr1, string op, c expr2, c then )
+		{
+		s += KeyedWord.If+'('+expr1+' '+op+' '+expr2+')'+' '+then + ' '  ; Bits |= Bit.If | then.Bits ;
+		return this ;
+		}
 	public c Else
 		{
 		get { s += KeyedWord.Else + ' '  ; Bits |= Bit.Else ; return this ; }
@@ -242,6 +251,26 @@ public struct c
 	public c Function( string fn, C699.c arg0 )
 		{
 		s += fn +'('+arg0+')'+' ' ; return this ;
+		}
+	public c EqualTo
+		{
+		get { s += "== " ; return this ; }
+		}
+	public c Zero
+		{
+		get { s += "0 " ; return this ; }
+		}
+	public c One
+		{
+		get { s += "1 " ; return this ; }
+		}
+	public c Two
+		{
+		get { s += "2 " ; return this ; }
+		}
+	public c Three
+		{
+		get { s += "3 " ; return this ; }
 		}
 	public c Equate(string text)
 		{

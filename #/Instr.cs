@@ -10,33 +10,44 @@ public partial class   instr_INSTR_BRTARGET_id
 				oprand.C.GotoStatement( Id ) ;
 				return ;
 			case "BRFALSE" :
+				{
 				C.Pop() ;
+				var a = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
 				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				#else
-				oprand.C.GotoStatement( Id ) ;
+				oprand.C.Statement( C699.C.If( a.EqualTo.Zero, C699.C.Goto( Id ) ) ) ;
 				#endif
+				}
 				return ;
 			case "BGE" :
+				{
 				C.Pop() ;
+				var a = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
 				C.Pop() ;
+				var b = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
 				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				#else
-				oprand.C.GotoStatement( Id ) ;
+				oprand.C.Statement( C699.C.If( a, ">=", b , C699.C.Goto( Id ) ) ) ;
 				#endif
+				}
 				return ;
 			case "BEQ" :
+				{
 				C.Pop() ;
+				var a = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
 				C.Pop() ;
+				var b = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
 				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				#else
-				oprand.C.GotoStatement( Id ) ;
+				oprand.C.Statement( C699.C.If( a, "==", b , C699.C.Goto( Id ) ) ) ;
 				#endif
+				}
 				return ;
 			default :
 				throw new System.NotImplementedException( Op ) ;

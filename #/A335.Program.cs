@@ -361,8 +361,10 @@ partial class Program
 			}
 		public void WriteTo( System.IO.TextWriter tw )
 			{
+			#if HPP
 			if( list.Count == 1 && list[0].Bits == C699.Bit.Goto )
 				return ;
+			#endif
 			var c = C_Function.FromSymbol( Instruction + "$" + ID ) ;
 			if( BrTarget )
 				c.Bool = true ;
