@@ -296,16 +296,16 @@ public partial class   instr_INSTR_NONE
 				stloc( 3 ) ;
 				break ;
 			case "LDLOC_0" :
-				C.Push( C_Type.Acquire( "_C_LDLOC_0" ) ) ;
+				C.Push( ldloc( 0 ) ) ;
 				break ;
 			case "LDLOC_1" :
-				C.Push( C_Type.Acquire( "_C_LDLOC_1" ) ) ;
+				C.Push( ldloc( 1 ) ) ;
 				break ;
 			case "LDLOC_2" :
-				C.Push( C_Type.Acquire( "_C_LDLOC_2" ) ) ;
+				C.Push( ldloc( 2 ) ) ;
 				break ;
 			case "LDLOC_3" :
-				C.Push( C_Type.Acquire( "_C_LDLOC_3" ) ) ;
+				C.Push( ldloc( 3 ) ) ;
 				break ;
 			case "ADD" :
 				C.Pop() ;
@@ -339,6 +339,29 @@ public partial class   instr_INSTR_NONE
 		#else
 		oprand.C.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
 		#endif
+		}
+	C_Type ldloc( int i )
+		{
+		var loc = A335.Method.Head.Current.Locals[i] ;
+		#if HPP
+		throw new System.NoteImplementedException() ;
+		//C699.c c = C699.Stack.Index(C.StackOffset) ;
+		#else
+		C699.c c = C699.Stack.Index(C.StackOffset) ;
+		#endif
+		switch( (C_Symbol) loc.Type )
+			{
+			case "int32":
+				c = c.Equate( "(void*)"+loc.Symbol ) ;
+				break ;
+			case "struct _string ":
+				c = c.Equate( "&"+loc.Symbol ) ;
+				break ;
+			default:
+				throw new System.NotImplementedException() ;
+			}
+		oprand.C.Statement( c ) ;
+		return loc.Type ;
 		}
 	}
 
