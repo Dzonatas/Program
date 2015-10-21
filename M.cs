@@ -341,7 +341,6 @@ public partial class Method
 			else
 				c.Args = '('+C699.C.Const.Voidpp.ArgV+')' ;
 			c.Statement( C699.C.Const.Voidpp.Equate("stack",C699.Alloca(maxstack + " * sizeof(void*)") ) ) ;
-			A335.Method.Head head = A335.Method.Head.Current ;
 			if( locals != null )
 				locals.WriteTo( c ) ;
 			A335.Method.WriteList( c, declList ) ;

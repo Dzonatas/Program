@@ -334,7 +334,8 @@ public partial class   instr_INSTR_NONE
 				throw new System.NotImplementedException() ;
 			}
 		#if HPP
-		oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
+		//oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
+		throw new System.NoteImplementedException() ;
 		#else
 		oprand.C.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
 		#endif
