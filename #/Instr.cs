@@ -281,83 +281,19 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "STLOC_0" :
 				C.Pop() ;
-				{
-				var loc = A335.Method.Head.Current.Locals[0] ;
-				var l = C699.C.Literal( loc.Symbol ) ;
-				C699.c c = new C699.c() ;
-				C699.c type ;
-				switch( (C_Symbol) loc.Type )
-					{
-					case "int32": c = c.Local( type = C699.C.Int, l ) ;
-						break ;
-					case "struct _string ":
-						c = c.Struct( type = C699.String, l ) ;
-						break ;
-					default:
-						throw new System.NotImplementedException() ;
-					}
-				d.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
-				}
+				stloc( 0 ) ;
 				break ;
 			case "STLOC_1" :
 				C.Pop() ;
-				{
-				var loc = A335.Method.Head.Current.Locals[1] ;
-				var l = C699.C.Literal( loc.Symbol ) ;
-				C699.c c = new C699.c() ;
-				C699.c type ;
-				switch( (C_Symbol) loc.Type )
-					{
-					case "int32": c = c.Local( type = C699.C.Int, l ) ;
-						break ;
-					case "struct _string ":
-						c = c.Struct( type = C699.String, l ) ;
-						break ;
-					default:
-						throw new System.NotImplementedException() ;
-					}
-				d.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
-				}
+				stloc( 1 ) ;
 				break ;
 			case "STLOC_2" :
 				C.Pop() ;
-				{
-				var loc = A335.Method.Head.Current.Locals[2] ;
-				var l = C699.C.Literal( loc.Symbol ) ;
-				C699.c c = new C699.c() ;
-				C699.c type ;
-				switch( (C_Symbol) loc.Type )
-					{
-					case "int32": c = c.Local( type = C699.C.Int, l ) ;
-						break ;
-					case "struct _string ":
-						c = c.Struct( type = C699.String, l ) ;
-						break ;
-					default:
-						throw new System.NotImplementedException() ;
-					}
-				d.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
-				}
+				stloc( 2 ) ;
 				break ;
 			case "STLOC_3" :
 				C.Pop() ;
-				{
-				var loc = A335.Method.Head.Current.Locals[3] ;
-				var l = C699.C.Literal( loc.Symbol ) ;
-				C699.c c = new C699.c() ;
-				C699.c type ;
-				switch( (C_Symbol) loc.Type )
-					{
-					case "int32": c = c.Local( type = C699.C.Int, l ) ;
-						break ;
-					case "struct _string ":
-						c = c.Struct( type = C699.String, l ) ;
-						break ;
-					default:
-						throw new System.NotImplementedException() ;
-					}
-				d.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
-				}
+				stloc( 3 ) ;
 				break ;
 			case "LDLOC_0" :
 				C.Push( C_Type.Acquire( "_C_LDLOC_0" ) ) ;
@@ -380,6 +316,28 @@ public partial class   instr_INSTR_NONE
 				log( "[INSTR_NONE] Defaulted on " + Op ) ;
 				return ;
 			}
+		}
+	void stloc( int i )
+		{
+		var loc = A335.Method.Head.Current.Locals[i] ;
+		var l = C699.C.Literal( loc.Symbol ) ;
+		C699.c c = new C699.c() ;
+		C699.c type ;
+		switch( (C_Symbol) loc.Type )
+			{
+			case "int32": c = c.Local( type = C699.C.Int, l ) ;
+				break ;
+			case "struct _string ":
+				c = c.Struct( type = C699.String, l ) ;
+				break ;
+			default:
+				throw new System.NotImplementedException() ;
+			}
+		#if HPP
+		oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
+		#else
+		oprand.C.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
+		#endif
 		}
 	}
 
