@@ -11,6 +11,9 @@ static public c Pointer(int i)
 	}
 static public c Deref(int i, string _struct)
 	{
+	//if( _struct == KeyedWord.Int )
+	if( _struct == KeyedWord.Long+' ' )
+		return new c("("+_struct+")stack["+i+']') ;
 	return new c("*("+_struct+" *)stack["+i+']') ;
 	}
 }
