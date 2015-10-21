@@ -24,9 +24,9 @@ public partial class   instr_INSTR_BRTARGET_id
 			case "BGE" :
 				{
 				C.Pop() ;
-				var a = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
-				C.Pop() ;
 				var b = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
+				C.Pop() ;
+				var a = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
 				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
@@ -38,9 +38,9 @@ public partial class   instr_INSTR_BRTARGET_id
 			case "BEQ" :
 				{
 				C.Pop() ;
-				var a = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
-				C.Pop() ;
 				var b = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
+				C.Pop() ;
+				var a = C699.Stack.Deref( C.StackOffset, C699.C.Int ) ;
 				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
@@ -265,9 +265,13 @@ public partial class   instr_INSTR_NONE
 				C.Push( C_I4_3 ) ;
 				break ;
 			case "DUP" :
+				{
 				var t = C.Pop() as C_Type ;
+				C699.c c = C699.Stack.Index(C.StackOffset) ;
 				C.Push( t ) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate(c) ) ;
 				C.Push( t ) ;
+				}
 				break ;
 			case "LDELEM_REF" :
 				C.Pop() ;
