@@ -312,9 +312,14 @@ public partial class   instr_INSTR_NONE
 				C.Push( ldloc( 3 ) ) ;
 				break ;
 			case "ADD" :
+				{
+				var t = C.Pop() as C_Type ;
+				C699.c b = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
 				C.Pop() ;
-				C.Pop() ;
-				C.Push( C_Type.Acquire( "_C_" + Op ) ) ;
+				C699.c a = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
+				d.Statement( C699.Stack.Index(C.StackOffset).Equate( "(void*)("+a+"+"+b+")" ) ) ;
+				C.Push( t ) ;
+				}
 				break ;
 			default :
 				log( "[INSTR_NONE] Defaulted on " + Op ) ;
