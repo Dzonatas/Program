@@ -21,6 +21,10 @@ static readonly c _string = C.Struct(new c("_string")) ;
 static public   c String {
 	get { return _string ; }
 }
+static public c SizeOf( C699.c type, C699.c items )
+	{
+	return new c( "sizeof("+type+")*"+items ) ;
+	}
 /* "actions" and "functions"
 public struct _str {...}
 */

@@ -156,6 +156,7 @@ public partial class   instr_INSTR_TYPE_typeSpec
 						c = c.Equate( "(void*)"+s ) ;
 						break ;
 					case "[$mscorlib$]$System$String":
+						c = C699.SizeOf( C699.String, c ) ;
 						oprand.C.Statement(
 							C699.Stack.Index(C.StackOffset).Equate( C699.C.Function( "malloc",c ) )
 							);
