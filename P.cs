@@ -49,12 +49,17 @@ public partial class Program
 		{
 		Push( C_Type.Acquire( type ) ) ;
 		}
-	public object Pop()
+	public C_Type Pop()
 		{
 		stack_offset-- ;
 		return stack[stack_offset] ;
 		}
 	#if MICRODATA
+	public object Pop()
+		{
+		stack_offset-- ;
+		return stack[stack_offset] ;
+		}
 	public List<Microdata> Hangup( int iargs )
 		{
 		var list = new List<Microdata>() ;

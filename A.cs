@@ -222,6 +222,18 @@ public partial class Automatrix : Object
 					}
 				}
 			else
+			if( Argv[i] is Stack.Item.Empty )
+				{
+				System.Array.Resize( ref s, s.Length +1 ) ;
+				s[s.Length-1] = "$EMPTY$" ;
+				}
+			else
+			if( Argv[i] == null )
+				{
+				System.Array.Resize( ref s, s.Length +1 ) ;
+				s[s.Length-1] = "$NULL$" ;
+				}
+			else
 			if( Argv[i] is Automatrix )
 				{
 				string[] ts = ( Argv[i] as Automatrix ).ResolveType() ;
@@ -235,7 +247,7 @@ public partial class Automatrix : Object
 		}
 	public override string ToString()
 		{
-		return "[Automatrix] " + Rule ;
+		return "[Automatrix] " + string.Join( " ", ResolveType() ) ;
 		}
 	}
 }

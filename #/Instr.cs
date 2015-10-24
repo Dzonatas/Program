@@ -145,8 +145,26 @@ public partial class   instr_INSTR_TYPE_typeSpec
 		switch( Op )
 			{
 			case "NEWARR" :
-				object o = C.Pop() ;
+				{
+				var t = C.Pop() ;
+				C699.c c = C699.Stack.Deref(C.StackOffset,C699.C.Int) ;
+				C_Symbol s = t ;
+				string token = string.Join( "$", ((Automatrix)typeSpec).ResolveType() ) ;
+				switch( token )
+					{
+					case "int32":
+						c = c.Equate( "(void*)"+s ) ;
+						break ;
+					case "[$mscorlib$]$System$String":
+						oprand.C.Statement(
+							C699.Stack.Index(C.StackOffset).Equate( C699.C.Function( "malloc",c ) )
+							);
+						break ;
+					default:
+						throw new System.NotImplementedException() ;
+					}
 				C.Push( _C_ARY ) ;
+				}
 				break ;
 			default :
 				log( "[INSTR_TYPE] Defaulted on " + Op ) ;
@@ -266,7 +284,7 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "DUP" :
 				{
-				var t = C.Pop() as C_Type ;
+				var t = C.Pop() ;
 				C699.c c = C699.Stack.Index(C.StackOffset) ;
 				C.Push( t ) ;
 				d.Statement( C699.Stack.Index(C.StackOffset).Equate(c) ) ;
@@ -313,7 +331,7 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "ADD" :
 				{
-				var t = C.Pop() as C_Type ;
+				var t = C.Pop() ;
 				C699.c b = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
 				C.Pop() ;
 				C699.c a = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;

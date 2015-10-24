@@ -87,6 +87,9 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   className_____name1_____slashedName
 	: Automatrix {}
 
+[Automaton] public class   className_slashedName
+	: Automatrix {}
+
 [Automaton] public class   extendsClause__extends__className
 	: Automatrix {}
 
@@ -112,9 +115,6 @@ public class AutomatonAttribute : System.Attribute
 	: Automatrix {}
 
 [Automaton] public class   type__valuetype__className
-	: Automatrix {}
-
-[Automaton] public class   typeSpec_type
 	: Automatrix {}
 
 [Automaton] public class   classDecls_classDecls_classDecl
@@ -165,9 +165,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   slashedName_slashedName_____name1
 	: Automatrix {}
 
-[Automaton] public class   className_slashedName
-	: Automatrix {}
-
 [Automaton] public class   classAttr_classAttr__nested___private_
 	: Automatrix {}
 
@@ -184,6 +181,9 @@ public class AutomatonAttribute : System.Attribute
 	: Automatrix {}
 
 [Automaton] public class   classDecl_fieldDecl
+	: Automatrix {}
+
+[Automaton] public class   typeSpec_type
 	: Automatrix {}
 
 [Automaton] public class   typeSpec_className
