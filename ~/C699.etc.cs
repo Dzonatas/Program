@@ -16,6 +16,14 @@ static public c Deref(int i, string _struct)
 		return new c("("+_struct+")stack["+i+']') ;
 	return new c("*("+_struct+" *)stack["+i+']') ;
 	}
+static public c CastIndex(int i, string _struct)
+	{
+	return new c("("+_struct+" *)stack["+i+']') ;
+	}
+static public c Array(int i, string _i, string _struct)
+	{
+	return new c("(("+_struct+" **)stack["+i+"])["+_i+"]") ;
+	}
 }
 static readonly c _string = C.Struct(new c("_string")) ;
 static public   c String {
@@ -23,7 +31,7 @@ static public   c String {
 }
 static public c SizeOf( C699.c type, C699.c items )
 	{
-	return new c( "sizeof("+type+")*"+items ) ;
+	return new c( "sizeof("+type+" *)*"+items ) ;
 	}
 /* "actions" and "functions"
 public struct _str {...}

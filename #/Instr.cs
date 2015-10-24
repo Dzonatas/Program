@@ -298,9 +298,15 @@ public partial class   instr_INSTR_NONE
 				C.Push( C_Type.Acquire( "_C_" + Op ) ) ;
 				break ;
 			case "STELEM_REF" :
+				{
 				C.Pop() ;
+				var r = C699.Stack.CastIndex(C.StackOffset, C699.String) ;
 				C.Pop() ;
+				var e = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
 				C.Pop() ;
+				var a = C699.Stack.Array(C.StackOffset, e, C699.String) ;
+				d.Statement( a.Equate( r ) ) ;
+				}
 				break ;
 			case "STLOC_0" :
 				C.Pop() ;
