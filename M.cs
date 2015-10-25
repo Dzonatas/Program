@@ -216,7 +216,7 @@ public partial class Method
 		protected C_Symbol _ctor          = C_Type.Acquire( Nameset[0] ) ;
 		protected C_Symbol _cctor
 			{
-			get { __cctor = true ; ; return C_Type.Acquire( Nameset[1] ) ; }
+			get { Class.Cctor = __cctor = true ; return C_Type.Acquire( Nameset[1] ) ; }
 			}
 		public bool Cctor
 			{

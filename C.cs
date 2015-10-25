@@ -333,6 +333,7 @@ public partial class Class
 	static C_Symbol[] idset = new C_Symbol[0] ;
 	static string[] field = new string[0] ;
 	static string[] type = new string[0] ;
+	static string[] cctor = new string[0] ;
 	static void idset_add( string id )
 		{
 		Array.Resize( ref idset, idset.Length +1 ) ;
@@ -349,6 +350,12 @@ public partial class Class
 		{
 		Array.Resize( ref type, type.Length +1 ) ;
 		type[type.Length - 1] = id ;
+		return ;
+		}
+	static void cctor_add( string id )
+		{
+		Array.Resize( ref cctor, cctor.Length +1 ) ;
+		cctor[cctor.Length - 1] = id ;
 		return ;
 		}
 	public partial class Head : Automatrix
@@ -385,6 +392,14 @@ public partial class Class
 	static public string[] Types
 		{
 		get { return type ; }
+		}
+	static public bool Cctor
+		{
+		set { cctor_add( Symbol ) ; }
+		}
+	static public string[] Cctors
+		{
+		get { return cctor ; }
 		}
 	static public void Declared()
 		{
