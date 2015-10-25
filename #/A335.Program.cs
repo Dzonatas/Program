@@ -183,6 +183,8 @@ partial class Program
 				f.WriteTo( sw ) ;
 				}
 			}
+		foreach( string i in Class.Types )
+			sw.WriteLine( "#include \""+i+".h\"" ) ;
 		A335.Method.WriteIncludesTo( sw ) ;
 	    foreach( string class_symbol in virtualset.Keys )
 			C_Struct.FromSymbol( class_symbol ).WriteInclude( sw ) ;

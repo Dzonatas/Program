@@ -177,11 +177,41 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   type_type_____bounds1____
 	: Automatrix {}
 
+public class FieldDecl : Automatrix
+	{
+	protected string field ;
+	public string Field
+		{
+		get { return field ; }
+		set { field = value ; }
+		}
+	}
+
 [Automaton] public class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt
-	: Automatrix {}
+	: FieldDecl {
+	protected override void main()
+			{
+			field = string.Empty ;
+			string type = string.Join( "$", Arg4.ResolveType() ) ;
+			switch( type )
+				{
+				case "string$[$]":
+					field += C699.C.Struct( C699.String.p, Class.Symbol + "$" + Arg5.Token ) ;
+					break ;
+				default:
+					throw new System.NotImplementedException() ;
+				}
+			field += " ;" ;
+			}
+	}
 
 [Automaton] public class   classDecl_fieldDecl
-	: Automatrix {}
+	: Class.Decl {
+	protected override void main()
+			{
+			Field = (Argv[1] as FieldDecl).Field ;
+			}
+	}
 
 [Automaton] public class   typeSpec_type
 	: Automatrix {}

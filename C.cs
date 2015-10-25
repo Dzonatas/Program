@@ -331,10 +331,24 @@ public class C_Label
 public partial class Class
 	{
 	static C_Symbol[] idset = new C_Symbol[0] ;
+	static string[] field = new string[0] ;
+	static string[] type = new string[0] ;
 	static void idset_add( string id )
 		{
 		Array.Resize( ref idset, idset.Length +1 ) ;
 		idset[idset.Length - 1] = C_Symbol.Acquire( id ) ;
+		return ;
+		}
+	static void field_add( string id )
+		{
+		Array.Resize( ref field, field.Length +1 ) ;
+		field[field.Length - 1] = id ;
+		return ;
+		}
+	static void type_add( string id )
+		{
+		Array.Resize( ref type, type.Length +1 ) ;
+		type[type.Length - 1] = id ;
 		return ;
 		}
 	public partial class Head : Automatrix
@@ -346,6 +360,10 @@ public partial class Class
 		}
 	public partial class Decl : Automatrix
 		{
+		static public string Field
+			{
+			set { field_add( value ) ;  }
+			}
 		public void Declared()
 			{
 			Array.Resize( ref idset, idset.Length -1 ) ;
@@ -364,8 +382,18 @@ public partial class Class
 		{
 		get { return C_Type.Acquire( idset ) ; }
 		}
+	static public string[] Types
+		{
+		get { return type ; }
+		}
 	static public void Declared()
 		{
+		type_add( Symbol ) ;
+		var sw = Current.Path.CreateText( Symbol + ".h" ) ;
+		foreach( string s in field )
+			sw.WriteLine( s ) ;
+		sw.Close() ;
+		field = new string[0] ;
 		Array.Resize( ref idset, String.Empty.Length ) ;
 		}
 	}
