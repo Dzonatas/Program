@@ -37,6 +37,10 @@ static public c SizeOf( C699.c type, C699.c items )
 	{
 	return new c( "sizeof("+type+" *)*"+items ) ;
 	}
+static public c Array(C699.c c, string _i, string _struct)
+	{
+	return new c("(("+_struct+" **)"+c+")["+_i+"]") ;
+	}
 /* "actions" and "functions"
 public struct _str {...}
 */

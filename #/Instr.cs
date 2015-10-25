@@ -305,9 +305,16 @@ public partial class   instr_INSTR_NONE
 				}
 				break ;
 			case "LDELEM_REF" :
+				{
 				C.Pop() ;
+				var e = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
 				C.Pop() ;
+				var r = C699.Stack.CastIndex(C.StackOffset, C699.String) ;
+				oprand.C.Statement(
+					C699.Stack.Assign(C.StackOffset, C699.Array( r, e, C699.String ) )
+					) ;
 				C.Push( C_Type.Acquire( "_C_" + Op ) ) ;
+				}
 				break ;
 			case "STELEM_REF" :
 				{
