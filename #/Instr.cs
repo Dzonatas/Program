@@ -201,16 +201,24 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 		}
 	protected void FIELD( Argument type, Argument typeSpec, Argument id )
 		{
+		C699.c t = new C699.c() ;
+		switch( string.Join( " ", ((Automatrix)type).ResolveType() ) )
+			{
+			case "string [ ]":	t = C699.String ; break ;
+			default: throw new System.NotImplementedException() ;
+			}
+		string typeSpec_s = string.Join( "$", ((Automatrix)typeSpec).ResolveType() ) ;
+		C699.c symbol = new C699.c( typeSpec_s + "$" + id.Token ) ;
 		switch( Op )
 			{
 			case "LDSFLD" :
-				C.Push( C_Type.Acquire( "_C_LDSFLD" ) ) ;
+				oprand.C.Statement( C699.Stack.Assign(C.StackOffset, symbol) ) ;
+				C.Push( C_Type.Acquire( t ) ) ;
 				break ;
 			case "STSFLD" :
 				C.Pop() ;
 				oprand.C.Statement(
-					new C699.c( Class.Symbol + "$" + id.Token )
-						.Equate( C699.Stack.CastIndex(C.StackOffset, C699.String ) )
+					symbol.Equate( C699.Stack.CastIndex(C.StackOffset, C699.String ) )
 					) ;
 				break ;
 			default :

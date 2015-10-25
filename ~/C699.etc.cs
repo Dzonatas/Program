@@ -5,6 +5,10 @@ static public c Index(int i)
 	{
 	return new c("stack"+'['+i+']') ;
 	}
+static public c Assign(int i, C699.c value)
+	{
+	return Index(i).Equate("(void*) "+value) ;
+	}
 static public c Pointer(int i)
 	{
 	return new c("stack"+'+'+i+' ') ;
