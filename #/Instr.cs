@@ -208,6 +208,10 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 				break ;
 			case "STSFLD" :
 				C.Pop() ;
+				oprand.C.Statement(
+					new C699.c( Class.Symbol + "$" + id.Token )
+						.Equate( C699.Stack.CastIndex(C.StackOffset, C699.String ) )
+					) ;
 				break ;
 			default :
 				log( "[INSTR_FIELD-3] Defaulted on " + Op ) ;
