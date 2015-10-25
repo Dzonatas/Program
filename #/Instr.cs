@@ -97,10 +97,11 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					d.Statement( C699.C.Static(C699.String,symbol) ) ;
 					System.Array.Resize( ref freeset, freeset.Length+1 ) ;
 					freeset[freeset.Length-1] = C.StackOffset ;
+					C699.c s = new C699.c( symbol ) ;
 					if( iargs == 0 )
-						d.Statement( C699.C.Restricted(symbol).Equate(C699.C.Function(_Call)) ) ;
+						d.Statement( s.Equate(C699.C.Function(_Call)) ) ;
 					else
-						d.Statement( C699.C.Restricted(symbol).Equate(C699.C.Function(_Call,C699.Stack.Pointer(C.StackOffset))) ) ;
+						d.Statement( s.Equate(C699.C.Function(_Call,C699.Stack.Pointer(C.StackOffset))) ) ;
 					d.Statement( C699.Stack.Index(C.StackOffset).Equate("&"+symbol) ) ;
 					}
 				else

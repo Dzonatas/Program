@@ -118,7 +118,9 @@ public struct C
 		}
 	static public c/**/ Restricted( string expression ) //($(X)RSH)|$futex_unknown
 		{
+		#if DEBUG_RESTRICTED
 		System.Console.WriteLine(expression) ;
+		#endif
 		return (new c(expression+' ')) ;
 		}
 	static public c/**/ Literal( string value )
