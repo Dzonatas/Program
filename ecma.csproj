@@ -121,9 +121,6 @@
     <Compile Include="#\Atomatrix.Four.cs" />
     <Compile Include="#\Argument.cs" />
     <Compile Include="#\Automaton.cs" />
-    <Compile Include="#\Method.Head.cs" />
-    <Compile Include="#\Method.Decl.cs" />
-    <Compile Include="#\Method.Attr.cs" />
     <Compile Include="#\Post.cs" />
     <Compile Include="#\Put.cs" />
     <Compile Include="#\Delete.cs" />
@@ -167,6 +164,10 @@
     <Compile Include="#\Instr\Instr.Type.cs" />
     <Compile Include="#\Instr\Instr.Method.cs" />
     <Compile Include="#\Instr\Instr.cs" />
+    <Compile Include="#\Method\Method.Attr.cs" />
+    <Compile Include="#\Method\Method.Decl.cs" />
+    <Compile Include="#\Method\Method.Head.cs" />
+    <Compile Include="#\Method\Method.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -178,6 +179,7 @@
     <Folder Include="ref\" />
     <Folder Include="~\test3\" />
     <Folder Include="#\Instr\" />
+    <Folder Include="#\Method\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="~\test.sh" />
