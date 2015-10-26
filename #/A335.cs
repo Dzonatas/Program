@@ -34,24 +34,38 @@ public partial class Class
 	}
 [Automaton] public partial class   classHead___class__classAttr_id_extendsClause_implClause
 	: Class.Head	{}
+[Automaton] public partial class   classDecl_fieldDecl
+	: Class.Decl	{}
+[Automaton] public partial class   classDecl_methodHead_methodDecls____
+	: Class.Decl	{}
+[Automaton] public partial class   classDecl_classHead_____classDecls____
+	: Class.Decl	{}
+[Automaton] public partial class   classAttr_classAttr__private_
+	: Automatrix {}
+[Automaton] public partial class   classAttr_classAttr__auto_
+	: Automatrix {}
+[Automaton] public partial class   classAttr_classAttr__ansi_
+	: Automatrix {}
+[Automaton] public partial class   classAttr_classAttr__beforefieldinit_
+	: Automatrix {}
+[Automaton] public partial class   classAttr_classAttr__nested___private_
+	: Automatrix {}
+[Automaton] public partial class   classAttr_classAttr__public_
+	: Automatrix {}
 public partial class CallConv : Automatrix
 	{
 	[Automaton] public partial class   callConv__instance__callConv
 		: CallConv	{}
 
 	[Automaton] public partial class   callConv_callKind
-		: CallConv {}
+		: CallConv	{}
 	}
-[Automaton] public partial class   classDecl_methodHead_methodDecls____
-	: Class.Decl	{}
 [Automaton] public partial class   _accept_START__end
 	: Automatrix	{}
 [Automaton] public partial class   decl_classHead_____classDecls____
 	: Automatrix	{}
 [Automaton] public partial class   compQstring_QSTRING
 	: Automatrix	{}
-[Automaton] public partial class   classDecl_classHead_____classDecls____
-	: Class.Decl	{}
 [Automaton] public partial class   customType_callConv_type_typeSpec________ctor______sigArgs0____
 	: Automatrix	{}
 public partial class Method

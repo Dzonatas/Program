@@ -6,16 +6,6 @@ public partial class A335
 {
 static object[] freeset = new object[0] ;
 
-
-
-public partial class   classHead___class__classAttr_id_extendsClause_implClause
-	: Class.Head	{
-	protected override void main()
-		{
-		ID = Arg3.Token ;
-		}
-	}
-
 public partial class CallConv : Automatrix
 	{
 	static CallConv current = null ;
@@ -45,22 +35,6 @@ public partial class CallConv : Automatrix
 		: CallConv {}
 	}
 
-public partial class   classDecl_methodHead_methodDecls____
-	: Class.Decl	{
-	protected override void main()
-		{
-		var methodHead = (Argv[1] as Method.Head) ;
-		methodHead.DeclList = Method.Decl.List ;
-		#if HPP
-		string symbol = Class.Type + methodHead.Name ;
-		Instr.WriteList( symbol, Instr.List ) ;
-		#else
-		Instr hpp = Instr.List ;
-		#endif
-		C.Hangdown() ;
-		}
-	}
-
 public partial class   compQstring_QSTRING
 	: Automatrix	{
 	protected override void main()
@@ -84,14 +58,6 @@ public partial class   _accept_START__end
 		if( o[1] != null && o[2] != null )
 			return ;
 		log( "[OOP!] _accept_START__end != {START,.end}" ) ;
-		}
-	}
-
-public partial class   classDecl_classHead_____classDecls____
-	: Class.Decl	{
-	protected override void main()
-		{
-		Declared() ;
 		}
 	}
 

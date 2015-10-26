@@ -168,6 +168,10 @@
     <Compile Include="#\Method\Method.Decl.cs" />
     <Compile Include="#\Method\Method.Head.cs" />
     <Compile Include="#\Method\Method.cs" />
+    <Compile Include="#\Class\Class.cs" />
+    <Compile Include="#\Class\Class.Decl.cs" />
+    <Compile Include="#\Class\Class.Head.cs" />
+    <Compile Include="#\Class\Class.Attr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -180,6 +184,7 @@
     <Folder Include="~\test3\" />
     <Folder Include="#\Instr\" />
     <Folder Include="#\Method\" />
+    <Folder Include="#\Class\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="~\test.sh" />

@@ -60,18 +60,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   decl_assemblyHead_____assemblyDecls____
 	: Automatrix {}
 
-[Automaton] public class   classAttr_classAttr__private_
-	: Automatrix {}
-
-[Automaton] public class   classAttr_classAttr__auto_
-	: Automatrix {}
-
-[Automaton] public class   classAttr_classAttr__ansi_
-	: Automatrix {}
-
-[Automaton] public class   classAttr_classAttr__beforefieldinit_
-	: Automatrix {}
-
 [Automaton] public class   fieldAttr_fieldAttr__private_
 	: Automatrix {}
 
@@ -156,16 +144,10 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   moduleHead___module__name1
 	: Automatrix {}
 
-[Automaton] public class   classAttr_classAttr__public_
-	: Automatrix {}
-
 [Automaton] public class   type__object_
 	: Automatrix {}
 
 [Automaton] public class   slashedName_slashedName_____name1
-	: Automatrix {}
-
-[Automaton] public class   classAttr_classAttr__nested___private_
 	: Automatrix {}
 
 [Automaton] public class   decl_moduleHead
@@ -202,14 +184,6 @@ public class FieldDecl : Automatrix
 					throw new System.NotImplementedException() ;
 				}
 			field += " ;" ;
-			}
-	}
-
-[Automaton] public class   classDecl_fieldDecl
-	: Class.Decl {
-	protected override void main()
-			{
-			Field = (Argv[1] as FieldDecl).Field ;
 			}
 	}
 
