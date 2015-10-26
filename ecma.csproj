@@ -124,7 +124,6 @@
     <Compile Include="#\Method.Head.cs" />
     <Compile Include="#\Method.Decl.cs" />
     <Compile Include="#\Method.Attr.cs" />
-    <Compile Include="#\Instr.cs" />
     <Compile Include="#\Post.cs" />
     <Compile Include="#\Put.cs" />
     <Compile Include="#\Delete.cs" />
@@ -160,6 +159,14 @@
     <Compile Include="#\A335.log.cs" />
     <Compile Include="~\auto.driver.cs" />
     <Compile Include="#\Auto.Driver.cs" />
+    <Compile Include="#\Instr\Instr.BrTarget.cs" />
+    <Compile Include="#\Instr\Instr.String.cs" />
+    <Compile Include="#\Instr\Instr.None.cs" />
+    <Compile Include="#\Instr\Instr.Switch.cs" />
+    <Compile Include="#\Instr\Instr.Field.cs" />
+    <Compile Include="#\Instr\Instr.Type.cs" />
+    <Compile Include="#\Instr\Instr.Method.cs" />
+    <Compile Include="#\Instr\Instr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -170,6 +177,7 @@
     <Folder Include="~\test2\" />
     <Folder Include="ref\" />
     <Folder Include="~\test3\" />
+    <Folder Include="#\Instr\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="~\test.sh" />
