@@ -4,7 +4,7 @@ public partial class Class
 	{
 	public partial class Decl : Automatrix
 		{
-		static public string Field
+		static protected Field.Decl Field
 			{
 			set { field_add( value ) ;  }
 			}
@@ -43,10 +43,12 @@ public partial class   classDecl_fieldDecl
 	: Class.Decl	{
 	protected override void main()
 		{
-		Field = (Argv[1] as FieldDecl).Field ;
+		Field = Argv[1] as Field.Decl ;
 		}
 	}
 
+public partial class   classDecls_classDecls_classDecl
+	: Automatrix	{}
 }
 
 

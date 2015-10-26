@@ -68,6 +68,19 @@ public partial class CallConv : Automatrix
 	: Automatrix	{}
 [Automaton] public partial class   customType_callConv_type_typeSpec________ctor______sigArgs0____
 	: Automatrix	{}
+
+public partial class Field
+	{
+	public partial class Decl :Automatrix {}
+	public partial class Attr :Automatrix {}
+	}
+[Automaton] public partial class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt
+	: Field.Decl	{}
+[Automaton] public partial class   fieldAttr_fieldAttr__private_
+	: Field.Attr	{}
+[Automaton] public partial class   fieldAttr_fieldAttr__static_
+	: Field.Attr	{}
+
 public partial class Method
 	{
 	public partial class Head : Automatrix
@@ -77,7 +90,6 @@ public partial class Method
 	public partial class Decl : Automatrix {}
 	public partial class Attr : Automatrix {}
 	}
-
 [Automaton] public partial class   methodHeadPart1___method_
 	: Method.Head.Part1   {}
 [Automaton] public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____

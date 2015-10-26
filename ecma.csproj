@@ -172,6 +172,8 @@
     <Compile Include="#\Class\Class.Decl.cs" />
     <Compile Include="#\Class\Class.Head.cs" />
     <Compile Include="#\Class\Class.Attr.cs" />
+    <Compile Include="#\Field\Field.Decl.cs" />
+    <Compile Include="#\Field\Field.Attr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -185,6 +187,7 @@
     <Folder Include="#\Instr\" />
     <Folder Include="#\Method\" />
     <Folder Include="#\Class\" />
+    <Folder Include="#\Field\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="~\test.sh" />

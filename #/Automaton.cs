@@ -60,12 +60,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   decl_assemblyHead_____assemblyDecls____
 	: Automatrix {}
 
-[Automaton] public class   fieldAttr_fieldAttr__private_
-	: Automatrix {}
-
-[Automaton] public class   fieldAttr_fieldAttr__static_
-	: Automatrix {}
-
 [Automaton] public class   name1_DOTTEDNAME
 	: Automatrix {}
 
@@ -103,9 +97,6 @@ public class AutomatonAttribute : System.Attribute
 	: Automatrix {}
 
 [Automaton] public class   type__valuetype__className
-	: Automatrix {}
-
-[Automaton] public class   classDecls_classDecls_classDecl
 	: Automatrix {}
 
 [Automaton] public class   methodName_name1
@@ -158,34 +149,6 @@ public class AutomatonAttribute : System.Attribute
 
 [Automaton] public class   type_type_____bounds1____
 	: Automatrix {}
-
-public class FieldDecl : Automatrix
-	{
-	protected string field ;
-	public string Field
-		{
-		get { return field ; }
-		set { field = value ; }
-		}
-	}
-
-[Automaton] public class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt
-	: FieldDecl {
-	protected override void main()
-			{
-			field = string.Empty ;
-			string type = string.Join( "$", Arg4.ResolveType() ) ;
-			switch( type )
-				{
-				case "string$[$]":
-					field += C699.C.Struct( C699.String.p, Class.Symbol + "$" + Arg5.Token ) ;
-					break ;
-				default:
-					throw new System.NotImplementedException() ;
-				}
-			field += " ;" ;
-			}
-	}
 
 [Automaton] public class   typeSpec_type
 	: Automatrix {}
