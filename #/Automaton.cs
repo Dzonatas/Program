@@ -66,12 +66,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   slashedName_name1
 	: Automatrix {}
 
-[Automaton] public class   className_____name1_____slashedName
-	: Automatrix {}
-
-[Automaton] public class   className_slashedName
-	: Automatrix {}
-
 [Automaton] public class   extendsClause__extends__className
 	: Automatrix {}
 

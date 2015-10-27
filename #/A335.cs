@@ -31,6 +31,7 @@ public partial class Class
 	{
 	public partial class Head : Automatrix {}
 	public partial class Decl : Automatrix {}
+	public partial class Name : Automatrix {}
 	}
 [Automaton] public partial class   classHead___class__classAttr_id_extendsClause_implClause
 	: Class.Head	{}
@@ -54,6 +55,11 @@ public partial class Class
 	: Automatrix {}
 [Automaton] public partial class   classAttr_classAttr__public_
 	: Automatrix {}
+[Automaton] public partial class   className_____name1_____slashedName
+	: Class.Name {}
+[Automaton] public partial class   className_slashedName
+	: Class.Name {}
+
 public partial class CallConv : Automatrix
 	{
 	[Automaton] public partial class   callConv__instance__callConv
