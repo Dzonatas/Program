@@ -176,6 +176,8 @@
     <Compile Include="#\Field\Field.Attr.cs" />
     <Compile Include="#\Class\Class.Name.cs" />
     <Compile Include="#\Method\Method.Name.cs" />
+    <Compile Include="#\Type\Type.cs" />
+    <Compile Include="#\Type\Type.Spec.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -190,6 +192,7 @@
     <Folder Include="#\Method\" />
     <Folder Include="#\Class\" />
     <Folder Include="#\Field\" />
+    <Folder Include="#\Type\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="~\test.sh" />

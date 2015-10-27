@@ -162,6 +162,36 @@ public partial class Instr : Automatrix
 [Automaton] public partial class   instr_INSTR_STRING_compQstring
 	: Instr.String {}
 
-
+public partial class Type : Automatrix
+	{
+	public partial class Spec : Type {}
+	}
+[Automaton] public partial class   type_type_____bounds1____
+	: Type {}
+[Automaton] public partial class   type__int32_
+	: Type {}
+[Automaton] public partial class   type__object_
+	: Type {}
+[Automaton] public partial class   type__valuetype__className
+	: Type {}
+[Automaton] public partial class   type__class__className
+	: Type {}
+[Automaton] public partial class   type__string_
+	: Type {}
+[Automaton] public partial class   type__void_
+	: Type {}
+[Automaton("type_type_272A27")]
+	public partial class   type_type_asterisk
+	: Type {}
+[Automaton("type_type_272627")]
+	public partial class   type_type_ampersand
+	: Type {}
+[Automaton("type_type_275B27_275D27")]
+	public partial class   type_type_square_brackets
+	: Type {}
+[Automaton] public partial class   typeSpec_type
+	: Type.Spec {}
+[Automaton] public partial class   typeSpec_className
+	: Type.Spec {}
 }
 

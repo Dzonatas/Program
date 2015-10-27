@@ -72,9 +72,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   callKind__default_
 	: Automatrix {}
 
-[Automaton] public class   type__void_
-	: Automatrix {}
-
 [Automaton] public class   implAttr_implAttr__cil_
 	: Automatrix {}
 
@@ -82,15 +79,6 @@ public class AutomatonAttribute : System.Attribute
 	: Automatrix {}
 
 [Automaton] public class   methodDecls_methodDecls_methodDecl
-	: Automatrix {}
-
-[Automaton] public class   type__valuetype__className
-	: Automatrix {}
-
-[Automaton] public class   type__class__className
-	: Automatrix {}
-
-[Automaton] public class   type__string_
 	: Automatrix {}
 
 [Automaton] public class   publicKeyTokenHead___publickeytoken_________
@@ -120,9 +108,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   moduleHead___module__name1
 	: Automatrix {}
 
-[Automaton] public class   type__object_
-	: Automatrix {}
-
 [Automaton] public class   slashedName_slashedName_____name1
 	: Automatrix {}
 
@@ -132,22 +117,10 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   bounds1_bound
 	: Automatrix {}
 
-[Automaton] public class   type_type_____bounds1____
-	: Automatrix {}
-
-[Automaton] public class   typeSpec_type
-	: Automatrix {}
-
-[Automaton] public class   typeSpec_className
-	: Automatrix {}
-
 [Automaton] public class   decls
 	: Automatrix {}
 
 [Automaton] public class   localsHead___locals_
-	: Automatrix {}
-
-[Automaton] public class   type__int32_
 	: Automatrix {}
 
 [Automaton] public class   labels_id
@@ -159,12 +132,4 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   START_decls
 	: _START {}
 
-[Automaton("type_type_272A27")] public class   type_type_asterisk
-	: Automatrix {}
-
-[Automaton("type_type_272627")] public class   type_type_ampersand
-	: Automatrix {}
-
-[Automaton("type_type_275B27_275D27")] public class   type_type_square_brackets
-	: Automatrix {}
 }
