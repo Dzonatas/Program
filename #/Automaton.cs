@@ -75,12 +75,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   type__void_
 	: Automatrix {}
 
-[Automaton] public class   methodName___ctor_
-	: Automatrix {}
-
-[Automaton] public class   methodName___cctor_
-	: Automatrix {}
-
 [Automaton] public class   implAttr_implAttr__cil_
 	: Automatrix {}
 
@@ -91,9 +85,6 @@ public class AutomatonAttribute : System.Attribute
 	: Automatrix {}
 
 [Automaton] public class   type__valuetype__className
-	: Automatrix {}
-
-[Automaton] public class   methodName_name1
 	: Automatrix {}
 
 [Automaton] public class   type__class__className

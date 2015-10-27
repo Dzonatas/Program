@@ -175,6 +175,7 @@
     <Compile Include="#\Field\Field.Decl.cs" />
     <Compile Include="#\Field\Field.Attr.cs" />
     <Compile Include="#\Class\Class.Name.cs" />
+    <Compile Include="#\Method\Method.Name.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -98,6 +98,7 @@ public partial class Method
 		}
 	public partial class Decl : Automatrix {}
 	public partial class Attr : Automatrix {}
+	public partial class Name : Automatrix {}
 	}
 [Automaton] public partial class   methodHeadPart1___method_
 	: Method.Head.Part1   {}
@@ -115,24 +116,25 @@ public partial class Method
 	: Method.Decl	{}
 [Automaton] public partial class   methAttr_methAttr__static_
 	: Method.Attr   {}
-
 [Automaton] public partial class   methAttr_methAttr__specialname_
 	: Method.Attr   {}
-
 [Automaton] public partial class   methAttr_methAttr__public_
-	: Method.Attr {}
-
+	: Method.Attr	{}
 [Automaton] public partial class   methAttr_methAttr__hidebysig_
-	: Method.Attr {}
-
+	: Method.Attr	{}
 [Automaton] public partial class   methAttr_methAttr__rtspecialname_
-	: Method.Attr {}
-
+	: Method.Attr	{}
 [Automaton] public partial class   methAttr_methAttr__private_
-	: Method.Attr {}
-
+	: Method.Attr	{}
 [Automaton] public partial class   methAttr_methAttr__virtual_
-	: Method.Attr {}
+	: Method.Attr	{}
+[Automaton] public partial class   methodName___ctor_
+	: Method.Name	{}
+[Automaton] public partial class   methodName___cctor_
+	: Method.Name	{}
+[Automaton] public partial class   methodName_name1
+	: Method.Name	{}
+
 public partial class Instr : Automatrix
 	{
 	public partial class BrTarget : Instr {}

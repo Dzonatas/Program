@@ -46,18 +46,11 @@ public partial class Instr : Automatrix
 			}
 		string methodname( Argument arg )
 			{
-			return        (Automatrix) arg is methodName___ctor_
-				? _ctor
-				: Nameset[2] + arg.Token
-				;
+			return ((Automatrix)arg) as A335.Method.Name ;
 			}
 		protected int Args
 			{
 			get { return ( _SigArgs0 == null ? 0 : _SigArgs0.Count() ) + ( CallConvInstance ? 1 : 0 ) ; }
-			}
-		protected C_Symbol _ctor
-			{
-			get { return C_Type.Acquire( Nameset[0] ) ; }
 			}
 		protected new A335.Argument   Type
 			{

@@ -8,14 +8,13 @@ public partial class Method
 		Head    next ;
 		Program.C_Method c_method ;
 		C_Type  classType ;
-		C_Symbol name ;
+		Name    name ;
 		Decl    declList ;
 		int     maxstack ;
 		bool    _static ;
 		bool    _CallConvInstance ;
 		SigArgs0 _SigArgs0 ;
 		bool    _Virtual ;
-		bool    __cctor = false ;
 		Locals  locals ;
 		public partial class Part1 : Automatrix
 			{
@@ -23,14 +22,9 @@ public partial class Method
 				{
 				}
 			}
-		protected C_Symbol _ctor          = C_Type.Acquire( Nameset[0] ) ;
-		protected C_Symbol _cctor
-			{
-			get { __cctor = true ; return C_Type.Acquire( Nameset[1] ) ; }
-			}
 		public bool Cctor
 			{
-			get { return __cctor ; }
+			get { return name is methodName___cctor_ ; }
 			}
 		protected override void main()
 			{
@@ -69,9 +63,9 @@ public partial class Method
 			{
 			get { return classType ; }
 			}
-		public C_Symbol  Name
+		public Name  Name
 			{
-			set { c_method.Name = name = value ; }
+			set { c_method.Name = C_Symbol.Acquire( name = value ) ; }
 			get { return name ; }
 			}
 		public SigArgs0 SigArgs0
@@ -178,18 +172,10 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 	protected override void methodHead()
 		{
 		Type              = Arg5 ;
-		Name              = arg6_methodname() ;
+		Name              = Argv[6] as Method.Name ;
 		SigArgs0          = Arg8 ;
 		CallConv          = Arg3 ;
 		AttrList          = Method.Attr.List ;
-		}
-	C_Symbol arg6_methodname()
-		{
-		return        Argv[6] is methodName___ctor_
-			? _ctor : Argv[6] is methodName___cctor_
-			? _cctor
-			: C_Symbol.Acquire( Nameset[2] + Arg6.Token )
-			;
 		}
 	protected new Argument SigArgs0
 		{
