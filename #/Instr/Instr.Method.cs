@@ -59,7 +59,7 @@ public partial class Instr : Automatrix
 			{
 			get { return C_Type.Acquire( Nameset[0] ) ; }
 			}
-		protected A335.Argument   Type
+		protected new A335.Argument   Type
 			{
 			set { _Type = C_Type.Acquire( value.ResolveType() ) ; }
 			}
@@ -99,7 +99,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 								}
 							} ) ;
 						}
-					catch( C_Type.UndefinedTypeException e )
+					catch( C_Type.UndefinedTypeException )
 						{
 						/*
 								this_program += "static struct _object obj = { 0 } ;" ;
