@@ -27,12 +27,12 @@ public partial class SigArg : Automatrix
 	[Automaton] public partial class   sigArgs1_sigArg
 		: Automatrix	{}
 	}
-public partial class Class
+public partial class Class : Automatrix
 	{
-	public partial class Head : Automatrix {}
-	public partial class Decl : Automatrix {}
-	public partial class Name : Automatrix {}
-	public partial class Attr : Automatrix {}
+	public partial class Head : Class {}
+	public partial class Decl : Class {}
+	public partial class Name : Class {}
+	public partial class Attr : Class {}
 	}
 [Automaton] public partial class   classHead___class__classAttr_id_extendsClause_implClause
 	: Class.Head	{}

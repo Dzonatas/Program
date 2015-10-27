@@ -1,8 +1,8 @@
 public partial class A335
 {
-public partial class Class
+public partial class Class : Automatrix
 	{
-	public partial class Attr : Automatrix {}
+	public partial class Attr : Class {}
 	}
 
 public partial class   classAttr_classAttr__private_

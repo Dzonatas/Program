@@ -1,8 +1,8 @@
 public partial class A335
 {
-public partial class Class
+public partial class Class : Automatrix
 	{
-	public partial class Decl : Automatrix
+	public partial class Decl : Class
 		{
 		static protected Field.Decl Field
 			{
@@ -11,10 +11,6 @@ public partial class Class
 		static protected bool Cctor
 			{
 			set { cctor_add( Class.Symbol ) ; }
-			}
-		public void Declared()
-			{
-			System.Array.Resize( ref idset, idset.Length -1 ) ;
 			}
 		}
 	}
@@ -41,6 +37,7 @@ public partial class   classDecl_classHead_____classDecls____
 	: Class.Decl	{
 	protected override void main()
 		{
+		classHead = (Argv[1] as Class.Head).Outer ;
 		Declared() ;
 		}
 	}
