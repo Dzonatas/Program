@@ -1,20 +1,25 @@
 public partial class A335
 {
+public partial class Class
+	{
+	public partial class Attr : Automatrix {}
+	}
+
 public partial class   classAttr_classAttr__private_
-	: Automatrix {}
+	: Class.Attr {}
 
 public partial class   classAttr_classAttr__auto_
-	: Automatrix {}
+	: Class.Attr {}
 
 public partial class   classAttr_classAttr__ansi_
-	: Automatrix {}
+	: Class.Attr {}
 
 public partial class   classAttr_classAttr__beforefieldinit_
-	: Automatrix {}
+	: Class.Attr {}
 
 public partial class   classAttr_classAttr__nested___private_
-	: Automatrix {}
+	: Class.Attr {}
 
 public partial class   classAttr_classAttr__public_
-	: Automatrix {}
+	: Class.Attr {}
 }

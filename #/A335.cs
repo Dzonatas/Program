@@ -32,6 +32,7 @@ public partial class Class
 	public partial class Head : Automatrix {}
 	public partial class Decl : Automatrix {}
 	public partial class Name : Automatrix {}
+	public partial class Attr : Automatrix {}
 	}
 [Automaton] public partial class   classHead___class__classAttr_id_extendsClause_implClause
 	: Class.Head	{}
@@ -44,17 +45,17 @@ public partial class Class
 [Automaton] public partial class   classDecls_classDecls_classDecl
 	: Automatrix	{}
 [Automaton] public partial class   classAttr_classAttr__private_
-	: Automatrix {}
+	: Class.Attr {}
 [Automaton] public partial class   classAttr_classAttr__auto_
-	: Automatrix {}
+	: Class.Attr {}
 [Automaton] public partial class   classAttr_classAttr__ansi_
-	: Automatrix {}
+	: Class.Attr {}
 [Automaton] public partial class   classAttr_classAttr__beforefieldinit_
-	: Automatrix {}
+	: Class.Attr {}
 [Automaton] public partial class   classAttr_classAttr__nested___private_
-	: Automatrix {}
+	: Class.Attr {}
 [Automaton] public partial class   classAttr_classAttr__public_
-	: Automatrix {}
+	: Class.Attr {}
 [Automaton] public partial class   className_____name1_____slashedName
 	: Class.Name {}
 [Automaton] public partial class   className_slashedName
