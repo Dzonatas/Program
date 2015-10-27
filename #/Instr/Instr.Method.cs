@@ -147,7 +147,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				if( iargs == 0 )
 					d.Statement( C699.C.Function(_Call) ) ;
 				else
-					d.Statement( C699.C.Function(_Call,C699.C.Restricted("stack+"+C.StackOffset)) ) ;
+					d.Statement( C699.C.Function(_Call,C699.Stack.Pointer(C.StackOffset)) ) ;
 				C.Push( "object" ) ;
 				break ;
 				}
