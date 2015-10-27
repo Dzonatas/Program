@@ -47,10 +47,6 @@ public partial class Class
 		{
 		get { return type ; }
 		}
-	static public bool Cctor
-		{
-		set { cctor_add( Symbol ) ; }
-		}
 	static public string[] Cctors
 		{
 		get { return cctor ; }

@@ -8,6 +8,10 @@ public partial class Class
 			{
 			set { field_add( value ) ;  }
 			}
+		static protected bool Cctor
+			{
+			set { cctor_add( Class.Symbol ) ; }
+			}
 		public void Declared()
 			{
 			System.Array.Resize( ref idset, idset.Length -1 ) ;
@@ -21,6 +25,8 @@ public partial class   classDecl_methodHead_methodDecls____
 		{
 		var methodHead = (Argv[1] as Method.Head) ;
 		methodHead.DeclList = Method.Decl.List ;
+		if( methodHead.Cctor )
+			Cctor = true ;
 		#if HPP
 		string symbol = Class.Type + methodHead.Name ;
 		Instr.WriteList( symbol, Instr.List ) ;

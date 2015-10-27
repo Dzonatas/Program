@@ -40,6 +40,8 @@ public partial class Class
 	: Class.Decl	{}
 [Automaton] public partial class   classDecl_classHead_____classDecls____
 	: Class.Decl	{}
+[Automaton] public partial class   classDecls_classDecls_classDecl
+	: Automatrix	{}
 [Automaton] public partial class   classAttr_classAttr__private_
 	: Automatrix {}
 [Automaton] public partial class   classAttr_classAttr__auto_
