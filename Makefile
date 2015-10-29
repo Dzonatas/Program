@@ -9,14 +9,19 @@ grammar_xml     =$(abspath ./~/understand/grammar.xml)
 
 help:
 	@echo "Options:"
+	@echo "make tests"
 	@echo "make project"
 	@echo "make driver"
 	@echo "make parser"
+	@echo "make clean"
+	@echo
+	@echo "Tests:
 	@echo "make test1"
 	@echo "make test2"
 	@echo "make test3"
+	@echo
+	@echo "Agenda:"
 	@echo "make test4"
-	@echo "make clean"
 
 project: bin/Debug/ecma.exe
 driver: bin/Debug/driver.exe
@@ -61,3 +66,6 @@ test3: project
 
 test4: project
 	./~/test4/test.sh
+
+.PHONY: tests
+tests: test1 test2 test3
