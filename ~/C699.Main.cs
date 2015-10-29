@@ -55,6 +55,7 @@ partial class Program
 		{
 		var c = C_Function.FromSymbol( A335.Main.Symbol ) ;
 		c.Args = C699.Main.Args ;
+		c.Type = C699.C.Int ;
 		var e = A335.Method.EntryPoint.Head ;
 		if( string.Join( "!", Class.Cctors).Contains( e.ClassType ) )
 		//if( e.Cctor )
@@ -64,6 +65,7 @@ partial class Program
 			}
 		c.Statement( C699.C.Extern.Void.Function(e.ClassType,  "Main") ) ;
 		c.Statement( C699.C.Function(e.ClassType, "Main") ) ;
+		c.Statement( C699.C.Return("0") ) ;
 		c.WriteTo( C699.Main.FileStructure ) ;
 		return C699.Main.FileStructure ;
 		}
