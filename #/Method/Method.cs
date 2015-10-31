@@ -11,6 +11,7 @@ public partial class Method
 			public C_Symbol Symbol ;
 			public C_Type   Type ;
 			public string   ID ;
+			public Type     _Type ;
 			}
 		SigArgs0 args ;
 		Local[] local ;
@@ -25,6 +26,7 @@ public partial class Method
 					local[i].Symbol = C_Symbol.Acquire( "_local"+i ) ;
 					local[i].Type   = a.Type ;
 					local[i].ID     = a._ID ;
+					local[i]._Type  = a._Type ;
 					i++ ;
 					}
 				);
@@ -47,22 +49,7 @@ public partial class Method
 		public void WriteTo( Program.C_Function f )
 			{
 			foreach( Local l in local )
-				{
-				C699.c c = new C699.c() ;
-				C699.c type ;
-				switch( (C_Symbol) l.Type )
-					{
-					case "int32": c = c.Local( type = C699.C.Int, l.Symbol ) ;
-						break ;
-					case "struct _string ":
-						c = c.Struct( type = C699.String, l.Symbol ) ;
-						break ;
-					default:
-						throw new System.NotImplementedException() ;
-					}
-				//d.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
-				f.Statement( c ) ;
-				}
+				f.Statement( C699.C.Local( l._Type, l.Symbol ) ) ;
 			}
 		}
 	static public void WriteIncludesTo( System.IO.StreamWriter sw )

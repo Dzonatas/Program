@@ -13,7 +13,7 @@ static public c Pointer(int i)
 	{
 	return new c("stack"+'+'+i+' ') ;
 	}
-static public c Deref(int i, string _struct)
+static public c Deref(int i, C699.c _struct)
 	{
 	//if( _struct == KeyedWord.Int )
 	if( _struct == KeyedWord.Long+' ' )

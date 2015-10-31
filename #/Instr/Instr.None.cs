@@ -138,23 +138,12 @@ public partial class   instr_INSTR_NONE
 		{
 		var loc = A335.Method.Head.Current.Locals[i] ;
 		var l = C699.C.Literal( loc.Symbol ) ;
-		C699.c c = new C699.c() ;
-		C699.c type ;
-		switch( (C_Symbol) loc.Type )
-			{
-			case "int32": c = c.Local( type = C699.C.Int, l ) ;
-				break ;
-			case "struct _string ":
-				c = c.Struct( type = C699.String, l ) ;
-				break ;
-			default:
-				throw new System.NotImplementedException() ;
-			}
 		#if HPP
+		C699.c c = c.Local( loc._Type, l ) ;
 		//oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
 		throw new System.NoteImplementedException() ;
 		#else
-		oprand.C.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
+		oprand.C.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,loc._Type) ) ) ;
 		#endif
 		}
 	C_Type ldloc( int i )
@@ -166,17 +155,10 @@ public partial class   instr_INSTR_NONE
 		#else
 		C699.c c = C699.Stack.Index(C.StackOffset) ;
 		#endif
-		switch( (C_Symbol) loc.Type )
-			{
-			case "int32":
-				c = c.Equate( "(void*)"+loc.Symbol ) ;
-				break ;
-			case "struct _string ":
-				c = c.Equate( "&"+loc.Symbol ) ;
-				break ;
-			default:
-				throw new System.NotImplementedException() ;
-			}
+		if( ((string)(C699.c)loc._Type).StartsWith("struct ") )
+			c = c.Equate( "&"+loc.Symbol ) ;
+		else
+			c = c.Equate( "(void*)"+loc.Symbol ) ;
 		oprand.C.Statement( c ) ;
 		return loc.Type ;
 		}
