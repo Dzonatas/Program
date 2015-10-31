@@ -63,11 +63,11 @@ public partial class SigArg : Automatrix
 	static SigArg current = null ;
 	SigArg previous ;
 	SigArg next ;
-	internal protected C_Type _Type ;
+	internal protected Type _Type ;
 	internal protected string _ID ;
-	protected Argument Type
+	public C_Type Type
 		{
-		set { _Type = C_Type.Acquire( value.ResolveType() ) ; }
+		get { return C_Type.Acquire( _Type ) ;  }
 		}
 	protected Argument ID
 		{
@@ -107,7 +107,7 @@ public partial class SigArg : Automatrix
 		: SigArg	{
 		protected override void main()
 			{
-			Type = Arg2 ;
+			_Type = Argv[2] as Type ;
 			Enlist() ;
 			}
 		}
@@ -115,7 +115,7 @@ public partial class SigArg : Automatrix
 		: SigArg {
 		protected override void main()
 			{
-			Type = Arg2 ;
+			_Type = Argv[2] as Type ;
 			ID   = Arg3 ;
 			Enlist() ;
 			}

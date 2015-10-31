@@ -23,7 +23,7 @@ public partial class Method
 					{
 					local[i] = new Local() ;
 					local[i].Symbol = C_Symbol.Acquire( "_local"+i ) ;
-					local[i].Type   = a._Type ;
+					local[i].Type   = a.Type ;
 					local[i].ID     = a._ID ;
 					i++ ;
 					}
