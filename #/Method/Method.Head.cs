@@ -83,7 +83,7 @@ public partial class Method
 			string symbol = classType + name ;
 			if( _SigArgs0 != null )
 				{
-				_SigArgs0.ForEach( (a) => c_method.Args.Add( a.Type ) ) ;
+				_SigArgs0.ForEach( (a) => c_method.Args.Add( (Type)a ) ) ;
 				symbol += _SigArgs0.Types() ;
 				}
 			c_method.Function = Program.C_Function.FromSymbol( symbol ) ;

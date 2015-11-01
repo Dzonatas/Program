@@ -160,7 +160,7 @@ public partial class   instr_INSTR_NONE
 		else
 			c = c.Equate( "(void*)"+loc.Symbol ) ;
 		oprand.C.Statement( c ) ;
-		return loc.Type ;
+		return loc._Type ;
 		}
 	}
 }

@@ -9,7 +9,6 @@ public partial class Method
 		public struct Local
 			{
 			public C_Symbol Symbol ;
-			public C_Type   Type ;
 			public string   ID ;
 			public Type     _Type ;
 			}
@@ -24,9 +23,8 @@ public partial class Method
 					{
 					local[i] = new Local() ;
 					local[i].Symbol = C_Symbol.Acquire( "_local"+i ) ;
-					local[i].Type   = a.Type ;
-					local[i].ID     = a._ID ;
-					local[i]._Type  = a._Type ;
+					local[i].ID     = a ;
+					local[i]._Type  = a ;
 					i++ ;
 					}
 				);

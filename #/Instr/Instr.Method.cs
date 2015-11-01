@@ -86,7 +86,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						int i = CallConvInstance ? 1 : 0 ;
 						_SigArgs0.ForEach( (a) =>
 							{
-							if( a.Type != data[i].Type )
+							if( a != data[i].Type )
 								{
 								//type=pet( "nexus:CTS:get0,sphere,cube,square,point", a, data );
 								}

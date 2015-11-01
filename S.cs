@@ -47,7 +47,7 @@ public partial class SigArgs0 : Automatrix
 		string i = null ;
 		for( SigArg s = list ; s is SigArg ; s = s.Next )
 			{
-			i += "$" + s._Type ;
+			i += "$" + (Type)s ;
 			}
 		return i ;
 		}
@@ -63,12 +63,10 @@ public partial class SigArg : Automatrix
 	static SigArg current = null ;
 	SigArg previous ;
 	SigArg next ;
-	internal protected Type _Type ;
-	internal protected string _ID ;
-	public C_Type Type
-		{
-		get { return C_Type.Acquire( _Type ) ;  }
-		}
+	Type   type ;
+	string _ID ;
+	static public implicit operator Type( SigArg a ) { return a.type ; }
+	static public implicit operator string( SigArg a ) { return a._ID ; }
 	protected Argument ID
 		{
 		set { _ID = value.Token ; }
@@ -107,7 +105,7 @@ public partial class SigArg : Automatrix
 		: SigArg	{
 		protected override void main()
 			{
-			_Type = Argv[2] as Type ;
+			type = Argv[2] as Type ;
 			Enlist() ;
 			}
 		}
@@ -115,7 +113,7 @@ public partial class SigArg : Automatrix
 		: SigArg {
 		protected override void main()
 			{
-			_Type = Argv[2] as Type ;
+			type = Argv[2] as Type ;
 			ID   = Arg3 ;
 			Enlist() ;
 			}
