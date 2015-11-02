@@ -1,8 +1,4 @@
-//|#(!)using System;
-using System.Text.RegularExpressions ;
-using System.Diagnostics ;
-
-public partial class A335
+partial class A335
 {
 static object[] freeset = new object[0] ;
 

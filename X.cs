@@ -1,8 +1,4 @@
-using System.Xml ;
-using System.IO ;
-using System.Extensions ;
-
-public partial class A335
+partial class A335
 {
 
 static string          xml_text ;

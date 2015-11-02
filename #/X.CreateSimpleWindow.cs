@@ -2,7 +2,7 @@ using System.Extensions ;
 using System ;
 using X.Predefined ;
 
-public partial class A335
+partial class A335
 {
 
 partial class X

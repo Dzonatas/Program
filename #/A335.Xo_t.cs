@@ -1,4 +1,4 @@
-public partial class A335
+partial class A335
 {
 public static void Main( string[] args )
 	{
@@ -557,7 +557,7 @@ class Xo_t
 			f.Write( put("A335-Xo_t-Build-iDNA-5") ) ;
 			f.WriteLine( ) ;
 			}
-		f.WriteLine( "public partial class A335 {" ) ;
+		f.WriteLine( "partial class A335 {" ) ;
 		f.WriteLine( "public static readonly"
 			+ " System.Collections.Generic.Dictionary<char,int> xml_translate"
 			+ " = new System.Collections.Generic.Dictionary<char,int>() {"

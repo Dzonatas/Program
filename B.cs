@@ -1,10 +1,3 @@
-using System.Diagnostics ;
-using System.Extensions ;
-using System.Reflection ;
-using System.Linq ;
-using System ;
-//using System.Runtime ;//[br_ide:(('target'![branch:.]))
-
 partial class A335
 {
 #if BEGINNING
@@ -226,10 +219,23 @@ static void Build()
 partial class Program
 	{
 	static Program C = new Program() ;
+	static string c_guid()
+		{
+		return "_" + System.Text.RegularExpressions.Regex.Replace
+			( System.Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_" ).ToLower() ;
+		}
+	static C_Type _UnsignedInt()
+		{
+		return C_Type.Acquire( c_guid() + "_unsigned_int" ) ;
+		}
+	static C_Type _Char_()
+		{
+		return C_Type.Acquire( c_guid() + "_char_p" ) ;
+		}
 	static public void Begin()
 		{
-		C_Type _length = Guid.NewGuid().UnsignedInt() ;
-		C_Type _string = Guid.NewGuid().Char_() ;
+		C_Type _length = _UnsignedInt() ;
+		C_Type _string = _Char_() ;
 		C.TypeDef.String
 			.Parameter( _length )
 			.Parameter( _string )
@@ -373,7 +379,7 @@ C ()
 
 namespace B
 	{
-	public class BRandomColor : Random
+	public class BRandomColor : System.Random
 		{
 		D2 random ;
 		D2 color ;
@@ -382,6 +388,6 @@ namespace B
 			get { return random ; }
 			set { random = value ; }
 			}
-		public new Func<D2> Next ;
+		public new System.Func<D2> Next ;
 		};
 	}

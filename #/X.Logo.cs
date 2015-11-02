@@ -5,7 +5,7 @@ using X.String ;
 
 using Fixture = System.IntPtr ;
 
-public partial class A335
+partial class A335
 {
 
 

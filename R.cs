@@ -1,4 +1,4 @@
-public partial class A335
+partial class A335
 {
 string rune__ ; /*C`_ -rc:"BRANCH" +volume:0.00*/
 static int root_n ; //<KNOWN> | root: <NOUN default="FILE:" refinery-technique-profile=""/>//

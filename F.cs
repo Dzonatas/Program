@@ -1,10 +1,4 @@
-using System.Text.RegularExpressions ;
-using System.Diagnostics ;
-using System.Reflection ;
-using System.IO ;
-using System ;
-
-public partial class A335
+partial class A335
 {
 int f_rune_sharp ; //#`s (-> ./#/...)
 //int f_rune__   ; //# (-> ./#/__.(./#/__...])//
@@ -51,7 +45,7 @@ partial class Program
 		string[]      list = new string[0] ;
 		void list_add( string s )
 			{
-			Array.Resize( ref list, list.Length+1 ) ;
+			System.Array.Resize( ref list, list.Length+1 ) ;
 			list[list.Length-1] = s ;
 			}
 		public C_Function Let( C_Literal literal )
@@ -151,10 +145,10 @@ partial class Program
 			{
 			list_add( "\t" + label + " :" ) ;
 			}
-		public void WriteTo( TextWriter sw )
+		public void WriteTo( System.IO.TextWriter sw )
 			{
 			#if !HPP
-			if( sw is StreamWriter )
+			if( sw is System.IO.StreamWriter )
 				{
 			#endif
 				string line = "" ;
@@ -190,7 +184,7 @@ partial class Program
 			sw.WriteLine() ;
 			#endif
 			#if !HPP
-			if( sw is StreamWriter )
+			if( sw is System.IO.StreamWriter )
 				{
 				sw.WriteLine( "\t}" ) ;
 				sw.WriteLine() ;

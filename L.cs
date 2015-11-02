@@ -1,10 +1,9 @@
-//using System;//<NOUN L/>
-
-public partial class A335
+partial class A335
 {
 
 class log_enter
 	{
+	//using System;//<NOUN L/>
 	#region OPT:UNION
 	System.Guid UUID ;
 	System.DateTime dt ; //_linked[,_linq]

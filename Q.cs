@@ -1,4 +1,4 @@
-public partial class A335
+partial class A335
 {
 /*#*/static/*#*/ string [,] qubit_ildex_nt ; //_nexus: Allow entry of server idle events for -dex bits, so it avoids stack over-head. (BCL)
 static string qouted_bit ;   //""

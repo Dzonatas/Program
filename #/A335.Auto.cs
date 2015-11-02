@@ -3,7 +3,7 @@ using System.Extensions ;
 using System.Reflection ;
 using System.Linq ;
 using System ;
-public partial class A335 {
+partial class A335 {
 #if BEGINNING
 public static void Auto( int n )
 	{

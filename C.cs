@@ -1,9 +1,4 @@
-//using System.C.IDE.MonoDevelop;//C.I.S.("ecma.cproj")
-using System.Extensions ;
-using System.Text.RegularExpressions ;
-using System ;
-
-public partial class A335
+partial class A335
 {
 
 partial class Program
@@ -28,7 +23,7 @@ partial class Program
 		}
 	static internal C_Type C_Type_Acquire( string[] symbolset )
 		{
-		var symbol = C_Symbol_Acquire( String.Join( ",", symbolset ) ) ;
+		var symbol = C_Symbol_Acquire( string.Join( ",", symbolset ) ) ;
 		C_Type c ;
 		if( ! typeset.ContainsKey( symbol ) )
 			typeset.Add( symbol, c = new C_Type( symbolset ) ) ;
@@ -40,7 +35,7 @@ partial class Program
 		{
 		string _symbol = null ;
 		foreach( string i in symbolset )
-			_symbol += ( _symbol == null ? String.Empty : "," ) + i ;
+			_symbol += ( _symbol == null ? string.Empty : "," ) + i ;
 		var symbol = C_Symbol_Acquire( _symbol ) ;
 		C_Type c ;
 		if( ! typeset.ContainsKey( symbol ) )
@@ -102,7 +97,7 @@ partial class Program
 			}
 		else
 			{
-			Array.Resize( ref register, register.Length + 1 ) ;
+			System.Array.Resize( ref register, register.Length + 1 ) ;
 			literal = register[ register.Length - 1 ] ;
 			}
 		literal.Function  = f ;
@@ -134,7 +129,7 @@ partial class Program
 			foreach( C_Literal literal in register )
 				if( name == literal.Name )
 					return literal ;
-			throw new FieldAccessException( name ) ;
+			throw new System.FieldAccessException( name ) ;
 			}
 		}
 	}
@@ -142,13 +137,25 @@ partial class Program
 public class C_Symbol
 	{
 	string symbol ;
+	public static string ToStemString(string d)
+		{
+		string a = d ;
+		a = System.Text.RegularExpressions.Regex.Replace( a, "[^A-Za-z_0-9]", "_") ;
+		a = a.ToUpper() ;
+		return "_" + a ;
+		//return "_" + Regex.Replace( d, "[^A-Za-z_0-9]", "_").ToUpper() ;
+		}
+	public static string ToID(System.Guid d)
+		{
+		return System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
+		}
 	public string By_p()
 		{
-		string pid = Guid.NewGuid().ToString().ToStemString() ;
+		string pid = ToStemString( System.Guid.NewGuid().ToString() ) ;
 		if( this.symbol[0] == '_' )  //Logical+ID,^'_'[<IDc>]+,(P==NP)=>>(P!=NP)
 			return pid + this.symbol + "_p" ;
 		string symbol ;
-		symbol = "_" + this.symbol.ToStemString() ;
+		symbol = "_" + ToStemString( this.symbol ) ;
 		return pid + symbol + "_p" ;
 		}
 	internal C_Symbol( string symbol )
@@ -157,7 +164,7 @@ public class C_Symbol
 		}
 	public C_Symbol()
 		{
-		symbol = "_" + Guid.NewGuid().ToID() ;
+		symbol = "_" + ToID( System.Guid.NewGuid() ) ;
 		}
 	static public C_Symbol Acquire( string symbol )
 		{
@@ -172,7 +179,7 @@ public class C_Symbol
 public class C_Undefined : C_Symbol
 	{
 	public C_Undefined()
-		: base( Regex.Replace( Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_").ToUpper() )
+		: base( System.Text.RegularExpressions.Regex.Replace( System.Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_").ToUpper() )
 		{}
 	}
 
@@ -227,7 +234,7 @@ public class C_Type
 			{
 			if( symbol is C_Undefined && s == null )
 				continue ;
-			s += ( s == null ? String.Empty : "$" ) + symbol ;
+			s += ( s == null ? string.Empty : "$" ) + symbol ;
 			}
 		return s ;
 		}
@@ -304,7 +311,7 @@ public class C_Label
 			if( labelset[i].label == symbol )
 				return labelset[i] ;
 			}
-		Array.Resize( ref labelset, labelset.Length +1 ) ;
+		System.Array.Resize( ref labelset, labelset.Length +1 ) ;
 		return labelset[labelset.Length-1] = new C_Label( symbol ) ;
 		}
 	static public C_Label Acquire( string symbol )
@@ -358,17 +365,5 @@ namespace System.Extensions
 	{
 	public static class C_Type_
 		{
-		public static A335.C_Type UnsignedInt(this System.Guid d)
-			{
-			string id = "_" + System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
-			id += "_unsigned_int" ;
-			return A335.C_Type.Acquire( id ) ;
-			}
-		public static A335.C_Type Char_(this System.Guid d)
-			{
-			string id = "_" + System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
-			id += "_char_p" ;
-			return A335.C_Type.Acquire( id ) ;
-			}
 		}
 	}

@@ -1,4 +1,4 @@
-partial class A335
+sealed public partial class A335
 {
 public partial class Stack
 	{

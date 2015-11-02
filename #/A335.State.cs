@@ -1,4 +1,4 @@
-public partial class A335
+partial class A335
 {
 static State []                 stateset = new State[1125] ;
 

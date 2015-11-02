@@ -1,4 +1,4 @@
-public partial class A335
+partial class A335
 {
 public static int nexus_n ; //_scalar_lexical
 static int automatic_n ; //_scalar_lexical:<NEXUS> | <'automatic'> specific_n || 'voxel' //<VOXEL/>//

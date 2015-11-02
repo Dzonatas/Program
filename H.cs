@@ -1,4 +1,4 @@
-public partial class A335
+partial class A335
 {
 static string h_dna_ ;//_bit.switch{ alpha: ; beta: ; gamma: }_;//
 static int    h_v    ;//_hexed,_unknown_size,_cubed[,_debug:voxel]

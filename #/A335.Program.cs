@@ -2,7 +2,7 @@ using System.Collections.Generic ;
 using System.Text.RegularExpressions ;
 using System.Extensions ;
 
-public partial class A335
+partial class A335
 {
 partial class Program
 	{

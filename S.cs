@@ -1,7 +1,4 @@
-using System.Net ;
-using System ;
-
-public partial class A335
+partial class A335
 {
 static object sphere_nt_ ;
 //[static] sphere_t ; //_FIXT:_nt[(|^)_t] (-> reverse(d).errOR) (<system/d=...>_err[]</d>) /*err:#((auto-)contract(<NOUN>,'-ion') ""*/
@@ -20,7 +17,7 @@ struct StringTheory
 #if SYSTEM_GUID
 static        /* used */  Item    system = new Item() ; // auto-registry, File system_file_x...
 #endif
-static internal      IPAddress system_ip = IPAddress.Any ;
+static internal      System.Net.IPAddress system_ip = System.Net.IPAddress.Any ;
 }
 
 	
@@ -30,7 +27,7 @@ namespace Spatial.Mesh
 		{
 		public atomics()
 			{
-			throw new NotSupportedException("Try arithmetic types with icons as nodes.") ;
+			throw new System.NotSupportedException("Try arithmetic types with icons as nodes.") ;
 			}
 		}
 	}
@@ -39,7 +36,7 @@ namespace Spherical.Mesh //:(∅°<<π²)  //∅°:~="tilde zero"  //(πr²)!=(a
 	{
 	static class generator
 		{
-		static readonly Decimal []      N = new Decimal[64] ;
+		static readonly System.Decimal []      N = new System.Decimal[64] ;
 		static readonly object          shaped ;
 		static System.IO.MemoryStream   mesh ;
 		static string cartesian
@@ -73,8 +70,8 @@ namespace Spherical.Mesh //:(∅°<<π²)  //∅°:~="tilde zero"  //(πr²)!=(a
 		public static class environment
 			{
 			static public readonly bool     spin ;
-			static public readonly Decimal  X, Y, Z, U, V ;
-			static public readonly DateTime dated ;
+			static public readonly System.Decimal  X, Y, Z, U, V ;
+			static public readonly System.DateTime dated ;
 			static environment()
 				{
 				spin = false ;
@@ -110,11 +107,11 @@ namespace Scuplted.Object
 		{
 		internal struct node
 			{
-			internal Decimal color ;
+			internal System.Decimal color ;
 			internal object  item  ;
 			}
 		static node    [] colors = new node[0] ;
-		static Decimal [] color  = new decimal[0] ;
+		static System.Decimal [] color  = new decimal[0] ;
 		static object  [] items ;  //idols,reflections,wait-states-on-RT,ray-casted(concaves)
 		}
 	static class Objects
@@ -131,13 +128,13 @@ namespace Scuplted.Object
 	public class Build
 		{
 		//materials
-		Int16       i13_3 ;    //_integral_fixed
+		System.Int16       i13_3 ;    //_integral_fixed
 		static bool busy ;
 		public bool ing
 			{
 			get { return busy ; }   //_readonly_maybe_fixt
 			}
-		public Decimal Integer
+		public System.Decimal Integer
 			{
 			#if PI_IS_IRRATIONAL
 			#if ATM || EightyTwentyRule
@@ -159,7 +156,7 @@ namespace Scuplted.Object
 			get { Int32 i = i13_3 ; i <<= 3 ; return (Decimal)(i) >> 3m ; }  //_GNUs,implicit_(new)_content_unless_CPP'd
 			#endif
 			#else
-			get { Int32 i = i13_3 ; i <<= 3 ; return (Decimal)(i)*.001m ; }  //_GNUs,implicit_(new)_content_unless_CPP'd
+			get { System.Int32 i = i13_3 ; i <<= 3 ; return (System.Decimal)(i)*.001m ; }  //_GNUs,implicit_(new)_content_unless_CPP'd
 			#endif
 			}
 		}

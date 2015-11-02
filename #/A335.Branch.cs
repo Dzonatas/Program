@@ -1,4 +1,4 @@
-public partial class A335
+partial class A335
 {
 static string branch ;
 static void Branch_i( string input )

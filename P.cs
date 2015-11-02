@@ -1,4 +1,4 @@
-public partial class A335
+partial class A335
 {
 //System.Decimal π = 3.333… ;
 

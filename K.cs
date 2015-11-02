@@ -1,6 +1,4 @@
-using System;
-
-public partial class A335
+partial class A335
 		{
 		}
 

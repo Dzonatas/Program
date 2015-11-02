@@ -1,4 +1,4 @@
-public partial class A335
+partial class A335
 {
 static System.Nullable<Tokenset.Token>  /*t_##*/token ; ///lowercased.Any(_atomatrix:IP)
 #if BEGINNING

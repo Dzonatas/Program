@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions ;
 using System.Diagnostics ;
 
-public partial class A335
+partial class A335
 {
 public class Argument
 	{

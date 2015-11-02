@@ -1,7 +1,7 @@
 using System.Xml ;
 using System.Extensions ;
 
-public partial class A335
+partial class A335
 {
 static State x_state ;
 static XmlTextReader   xml ;

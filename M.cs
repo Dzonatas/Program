@@ -1,14 +1,9 @@
-//#define START Blogic#<NOUN L="START">#
-
-//using System;
-//using System.Xml ;
-using System.IO ;
 using System.Extensions ;
-using System ;
-using X.Predefined ;
 
+#if !DEFAULT_ACCEPT
 namespace _accept {
-public partial class A335
+//#define START Blogic#<NOUN L="START">#
+partial class A335
 	{
 	public static void Main( string[] args )
 		{
@@ -16,8 +11,9 @@ public partial class A335
 		}
 	}
 }
+#endif
 
-public partial class A335
+partial class A335
 {
 //static global::START._1.START_decls alpha ;
 public readonly static char[] MSB = new char[] { ' ', '.' } ;

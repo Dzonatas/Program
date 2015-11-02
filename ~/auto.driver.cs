@@ -26366,7 +26366,7 @@ public partial class  manifestResDecl_customAttrDecl
 		}
 	}
 
-public partial class A335 {
+partial class A335 {
 public static readonly System.Collections.Generic.Dictionary<char,int> xml_translate = new System.Collections.Generic.Dictionary<char,int>() {
 	{ '\u0000', 0 },
 	{ '\u0021', 216 },
