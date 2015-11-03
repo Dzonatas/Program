@@ -22,115 +22,9 @@ public static class KeyedWord
 	public const string Main   = "main"   ;
 	//public const string U3n   = "u3n"   ;
 	}
-public struct C
+static public c C
 	{
-	static public c Charpp
-		{
-		get { return (new c()).Charpp ; }
-		}
-	static public c Extern
-		{
-		get { return (new c()).Extern ; }
-		}
-	static public c Int
-		{
-		get { return (new c()).Int ; }
-		}
-	static public c Static(C699.c c)
-		{
-		return (new c()).Static(c) ;
-		}
-	static public c Static(C699.c c,string symbol)
-		{
-		return (new c()).Static(c,new c(symbol)) ;
-		}
-	static public c Struct(C699.c c)
-		{
-		return (new c()).Struct(c) ;
-		}
-	static public c Struct(C699.c c,string symbol)
-		{
-		return (new c()).Struct(c,symbol) ;
-		}
-	static public c Local(C699.c c,string symbol)
-		{
-		return (new c()).Local(c,symbol) ;
-		}
-	static public c Global(C699.c c,string symbol)
-		{
-		return (new c()).Global(c,symbol) ;
-		}
-	static public c Const
-		{
-		get { return (new c()).Const ; }
-		}
-	static public c Return(string symbol)
-		{
-		return (new c()).Return(symbol) ;
-		}
-	static public c If( string expression )
-		{
-		return (new c()).If(expression) ;
-		}
-	static public c If( string expression, c then )
-		{
-		return (new c()).If(expression,then) ;
-		}
-	static public c If( c expr1, string op, c expr2, c then )
-		{
-		return (new c()).If(expr1,op,expr2,then) ;
-		}
-	static public c Else
-		{
-		get { return (new c()).Else ; }
-		}
-	static public c Goto( string label )
-		{
-		return (new c()).Goto( label ) ;
-		}
-	static public c Inline
-		{
-		get { return (new c()).Inline ; }
-		}
-	static public c Void
-		{
-		get { return (new c()).Void ; }
-		}
-	static public c Cctor( string classtype )
-		{
-		return (new c(classtype)).Cctor() ;
-		}
-	static public c Function( string classtype, string fn )
-		{
-		return (new c()).Function(classtype, fn) ;
-		}
-	static public c Function( string classtype, string fn, string args )
-		{
-		return (new c()).Function(classtype, fn, args) ;
-		}
-	static public c Function( string fn )
-		{
-		return (new c()).Function(fn) ;
-		}
-	static public c Function( string fn, C699.c arg0 )
-		{
-		return (new c()).Function(fn, arg0) ;
-		}
-	static public c/**/ Restricted( string expression ) //($(X)RSH)|$futex_unknown
-		{
-		#if DEBUG_RESTRICTED
-		System.Console.WriteLine(expression) ;
-		#endif
-		return (new c(expression+' ')) ;
-		}
-	static public c/**/ Literal( string value )
-		{
-		return (new c(value+' ')) ;
-		}
-	static public cso Array
-		{
-		get { return (new cso(new c())) ; }
-		}
+	get { return new c() ; }
 	}
 public enum Bit
 	{
@@ -298,6 +192,21 @@ public struct c
 	public static implicit operator string( c c )
 		{
 		return c.s ;
+		}
+	public c/**/ Restricted( string expression ) //($(X)RSH)|$futex_unknown
+		{
+		#if DEBUG_RESTRICTED
+		System.Console.WriteLine(expression) ;
+		#endif
+		return (new c(expression+' ')) ;
+		}
+	public c/**/ Literal( string value )
+		{
+		return (new c(value+' ')) ;
+		}
+	public c Static(C699.c c,string symbol)
+		{
+		return (new c()).Static(c,new c(symbol)) ;
 		}
 	public c( string text )
 		{
