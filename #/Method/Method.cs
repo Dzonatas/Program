@@ -10,7 +10,7 @@ public partial class Method
 			{
 			public C_Symbol Symbol ;
 			public string   ID ;
-			public Type     _Type ;
+			public Type     Type ;
 			}
 		SigArgs0 args ;
 		Local[] local ;
@@ -24,7 +24,7 @@ public partial class Method
 					local[i] = new Local() ;
 					local[i].Symbol = C_Symbol.Acquire( "_local"+i ) ;
 					local[i].ID     = a ;
-					local[i]._Type  = a ;
+					local[i].Type  = a ;
 					i++ ;
 					}
 				);
@@ -47,7 +47,7 @@ public partial class Method
 		public void WriteTo( Program.C_Function f )
 			{
 			foreach( Local l in local )
-				f.Statement( C699.C.Local( l._Type, l.Symbol ) ) ;
+				f.Statement( C699.C.Local( l.Type, l.Symbol ) ) ;
 			}
 		}
 	static public void WriteIncludesTo( System.IO.StreamWriter sw )

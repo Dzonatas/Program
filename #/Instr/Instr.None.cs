@@ -143,7 +143,7 @@ public partial class   instr_INSTR_NONE
 		//oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
 		throw new System.NoteImplementedException() ;
 		#else
-		oprand.C.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,loc._Type) ) ) ;
+		oprand.C.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,loc.Type) ) ) ;
 		#endif
 		}
 	C_Type ldloc( int i )
@@ -155,12 +155,12 @@ public partial class   instr_INSTR_NONE
 		#else
 		C699.c c = C699.Stack.Index(C.StackOffset) ;
 		#endif
-		if( ((string)(C699.c)loc._Type).StartsWith("struct ") )
+		if( ((string)(C699.c)loc.Type).StartsWith("struct ") )
 			c = c.Equate( "&"+loc.Symbol ) ;
 		else
 			c = c.Equate( "(void*)"+loc.Symbol ) ;
 		oprand.C.Statement( c ) ;
-		return loc._Type ;
+		return loc.Type ;
 		}
 	}
 }
