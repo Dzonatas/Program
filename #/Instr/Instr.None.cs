@@ -27,7 +27,7 @@ public partial class   instr_INSTR_NONE
 					type = d.Method.ThisType ;
 				else
 					type = d.Method.Args[0] ;
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("args[0]") ) ;
+				d.Statement( C699.Stack.Assign(C.StackOffset, new C699.c("args[0]") ) ) ;
 				C.Push1( type ) ;
 				break ;
 				}
@@ -44,19 +44,19 @@ public partial class   instr_INSTR_NONE
 				break ;
 				}
 			case "LDC_I4_0" :
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("(void*)0") ) ;
+				d.Statement( C699.Stack.Assign(C.StackOffset, C699.C.Zero) ) ;
 				C.Push( C_I4_0 ) ;
 				break ;
 			case "LDC_I4_1" :
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("(void*)1") ) ;
+				d.Statement( C699.Stack.Assign(C.StackOffset, C699.C.One) ) ;
 				C.Push( C_I4_1 ) ;
 				break ;
 			case "LDC_I4_2" :
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("(void*)2") ) ;
+				d.Statement( C699.Stack.Assign(C.StackOffset, C699.C.Two) ) ;
 				C.Push( C_I4_2 ) ;
 				break ;
 			case "LDC_I4_3" :
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("(void*)3") ) ;
+				d.Statement( C699.Stack.Assign(C.StackOffset, C699.C.Three) ) ;
 				C.Push( C_I4_3 ) ;
 				break ;
 			case "DUP" :
@@ -64,7 +64,7 @@ public partial class   instr_INSTR_NONE
 				var t = C.Pop() ;
 				C699.c c = C699.Stack.Index(C.StackOffset) ;
 				C.Push( t ) ;
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate(c) ) ;
+				d.Statement( C699.Stack.Assign(C.StackOffset, c) ) ;
 				C.Push( t ) ;
 				}
 				break ;
@@ -125,7 +125,7 @@ public partial class   instr_INSTR_NONE
 				C699.c b = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
 				C.Pop() ;
 				C699.c a = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate( "(void*)("+a+"+"+b+")" ) ) ;
+				d.Statement( C699.Stack.Assign(C.StackOffset, a.plus(b) ) ) ;
 				C.Push( t ) ;
 				}
 				break ;
@@ -151,15 +151,13 @@ public partial class   instr_INSTR_NONE
 		var loc = A335.Method.Head.Current.Locals[i] ;
 		#if HPP
 		throw new System.NoteImplementedException() ;
-		//C699.c c = C699.Stack.Index(C.StackOffset) ;
-		#else
-		C699.c c = C699.Stack.Index(C.StackOffset) ;
 		#endif
+		C699.c c = C699.C ;
 		if( ((string)(C699.c)loc.Type).StartsWith("struct ") )
-			c = c.Equate( "&"+loc.Symbol ) ;
+			c = new C699.c( "&"+loc.Symbol ) ;
 		else
-			c = c.Equate( "(void*)"+loc.Symbol ) ;
-		oprand.C.Statement( c ) ;
+			c = new C699.c( loc.Symbol ) ;
+		oprand.C.Statement( C699.Stack.Assign(C.StackOffset, c) ) ;
 		return loc.Type ;
 		}
 	}

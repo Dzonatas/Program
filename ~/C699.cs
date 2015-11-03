@@ -189,6 +189,10 @@ public struct c
 		{
 		get { s += '*' ; return this ; }
 		}
+	public c plus( C699.c c )
+		{
+		s += '+' + c ; return this ;
+		}
 	public static implicit operator string( c c )
 		{
 		return c.s ;

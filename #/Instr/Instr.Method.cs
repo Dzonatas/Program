@@ -114,7 +114,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						d.Statement( s.Equate(C699.C.Function(_Call)) ) ;
 					else
 						d.Statement( s.Equate(C699.C.Function(_Call,C699.Stack.Pointer(C.StackOffset))) ) ;
-					d.Statement( C699.Stack.Index(C.StackOffset).Equate("&"+symbol) ) ;
+					d.Statement( C699.Stack.Assign(C.StackOffset, new C699.c("&"+symbol) ) ) ;
 					}
 				else
 					{
@@ -136,7 +136,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
 				d.Statement( C699.C.Extern.Struct(C699.Object(0),_class) ) ;
 				d.Statement( C699.C.Const.Static(C699.Object(0)).Equate(symbol,"&"+_class) ) ;
-				d.Statement( C699.Stack.Index(C.StackOffset).Equate("&"+symbol) ) ;
+				d.Statement( C699.Stack.Assign(C.StackOffset, new C699.c("&"+symbol) ) ) ;
 				if( iargs == 0 )
 					d.Statement( C699.C.Function(_Call) ) ;
 				else
