@@ -33,7 +33,7 @@ public partial class   instr_INSTR_TYPE_typeSpec
 					case "[$mscorlib$]$System$String":
 						c = C699.SizeOf( C699.String, c ) ;
 						oprand.C.Statement(
-							C699.Stack.Assign(C.StackOffset, C699.C.Function( "malloc",c ) )
+							C699.Stack.Assign(C.StackOffset, C699.Malloc(c))
 							);
 						break ;
 					default:

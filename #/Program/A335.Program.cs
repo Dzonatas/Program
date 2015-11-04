@@ -171,7 +171,7 @@ public partial class Program
 		var    c_string = C699.C.Literal(c + "." + _string) ;
 		This.Statement( C699.C.Static(C699.String,"s") )
 			.Statement( s_length.Equate(a_length+" + "+b_length+" + "+c_length) )
-			.Statement( s_string.Equate("malloc( "+a_length+" + "+b_length+" + "+c_length+" )" ) )
+			.Statement( s_string.Equate( C699.Malloc( a_length.plus(b_length).plus(c_length) ) ) )
 			.Statement( C699.Strncpy(s_string,a_string,a_length) )
 			.Statement( C699.Strncpy('&'+s_string+'['+a_length+']',b_string,b_length) )
 			.Statement( C699.Strncpy('&'+s_string+'['+a_length+'+'+b_length+']',c_string,c_length) )
@@ -191,7 +191,7 @@ public partial class Program
 		var    b_string = C699.C.Literal("_local1->" + _string) ;
 		This.Statement( C699.C.Static(C699.String,"s") )
 			.Statement( s_length.Equate(a_length+" + "+b_length) )
-			.Statement( s_string.Equate("malloc( "+a_length+" + "+b_length+" )" ) )
+			.Statement( s_string.Equate( C699.Malloc( a_length.plus(b_length) ) ) )
 			.Statement( C699.Strncpy(s_string,a_string,a_length) )
 			.Statement( C699.Strncpy('&'+s_string+'['+a_length+']',b_string,b_length) )
 			;

@@ -12,4 +12,8 @@ public         static c                             Alloca( string expr )
 	{
 	return C.Function("alloca",new c(expr)) ;
 	}
+public         static c                             Malloc( C699.c value )
+	{
+	return C.Function("malloc",value) ;
+	}
 }

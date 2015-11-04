@@ -170,7 +170,7 @@ public struct c
 		}
 	public c plus( C699.c c )
 		{
-		s += '+' + c ; return this ;
+		return new c(s + '+' + c) ;
 		}
 	public static implicit operator string( c c )
 		{
