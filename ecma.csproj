@@ -132,11 +132,6 @@
     <Compile Include="#\Cluster.cs" />
     <Compile Include="#\Cyborg.Power.State.cs" />
     <Compile Include="#\System.Extensions.Fan.cs" />
-    <Compile Include="~\C699.cs" />
-    <Compile Include="~\C699.free.cs" />
-    <Compile Include="~\C699.Main.cs" />
-    <Compile Include="~\C699.EMBED.cs" />
-    <Compile Include="~\C699.etc.cs" />
     <Compile Include="#\Review.cs" />
     <Compile Include="~\Cluster.Cli.cs" />
     <Compile Include="#\A335.Auto.cs" />
@@ -185,6 +180,15 @@
     <Compile Include="#\Program\A335.Program.C_Oprand.cs" />
     <Compile Include="#\Program\A335.Program.C_Function.cs" />
     <Compile Include="#\Program\A335.Program.C_Literal.cs" />
+    <Compile Include="#\C699\C699.cs" />
+    <Compile Include="#\C699\C699.EMBED.cs" />
+    <Compile Include="#\C699\C699.etc.cs" />
+    <Compile Include="#\C699\C699.free.cs" />
+    <Compile Include="#\C699\C699.Main.cs" />
+    <Compile Include="#\C699\C699.KeyedWord.cs" />
+    <Compile Include="#\C699\C699.Stack.cs" />
+    <Compile Include="#\C699\C699.LibC.cs" />
+    <Compile Include="#\C699\C699.File.Structure.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -201,6 +205,7 @@
     <Folder Include="#\Field\" />
     <Folder Include="#\Type\" />
     <Folder Include="#\Program\" />
+    <Folder Include="#\C699\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="~\test.sh" />

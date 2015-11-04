@@ -1,27 +1,6 @@
 //namespace C {
-public partial class C699 {
-public static class KeyedWord
-	{
-	public const string For    = "for"    ;
-	public const string If     = "if"     ;
-	public const string Else   = "else"   ;
-	public const string Goto   = "goto"   ;
-	public const string Do     = "do"     ;
-	public const string While  = "while"  ;
-	public const string Return = "return" ;
-	public const string Void   = "void"   ;
-	public const string Char   = "char"   ;
-	public const string Long   = "long"   ;
-	public const string Short  = "short"  ;
-	public const string Int    = "int"    ;
-	public const string Struct = "struct" ;
-	public const string Extern = "extern" ;
-	public const string Const  = "const"  ;
-	public const string Static = "static" ;
-	public const string Inline = "inline" ;
-	public const string Main   = "main"   ;
-	//public const string U3n   = "u3n"   ;
-	}
+public partial class C699
+{
 static public c C
 	{
 	get { return new c() ; }
@@ -217,34 +196,5 @@ public struct c
 		s = text ;
 		Bits = 0 ;
 		}
-	}
-public struct cso
-	{
-	c _c ;
-	string s ;
-	public cso(c cc)
-		{
-		_c = cc ;
-		s = "" ;
-		}
-	#if DEBUG
-	public cso assembly
-		{
-		get { s += "\""+System.Extensions.var_.GUID(0.1)+"/.assembly.exe\"" ; return this ; }
-		}
-	public cso argv(string[] args)
-		{
-		s += ", "+string.Join(", ", args)+", 0 " ;
-		return this ;
-		}
-	public c asm
-		{
-		get { return _c.Function( "fasm", C.Restricted( "(char*[]) {"+s+"}" ) ) ; }
-		}
-	#endif
-	}
-public struct cil
-	{
-	//https://github.com/CosmosOS/Cosmos/tree/c591a7ff1b7d8e37871b3cc75999df4fa6817e9f/source/Cosmos.IL2CPU
 	}
 }//}
