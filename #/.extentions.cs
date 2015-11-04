@@ -126,10 +126,6 @@ namespace System.Extensions
 			#endif
 			}
 
-		public static string ToID(this System.Guid d)
-			{
-			return Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
-			}
 		public static string ToStemString(this string d)
 			{
 			string a = d ;

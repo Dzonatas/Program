@@ -28,7 +28,7 @@ partial class Program
 		public C_Oprand( C_Function function, string instr )
 			{
 			this.function = function ;
-			ID = System.Guid.NewGuid().ToID() ;
+			ID = A335.Guid.NewGuid().ToID() ;
 			Instruction = System.Text.RegularExpressions.Regex.Replace( instr, "[^A-Za-z_0-9]", "_").ToUpper() ;
 			Evaluate = (c) => { foreach( C699.c s in list )	c.Statement( s ) ; } ;
 			}

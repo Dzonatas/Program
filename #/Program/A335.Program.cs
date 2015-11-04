@@ -69,7 +69,7 @@ public partial class Program
 	static string c_guid()
 		{
 		return "_" + System.Text.RegularExpressions.Regex.Replace
-			( System.Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_" ).ToLower() ;
+			( A335.Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_" ).ToLower() ;
 		}
 	static C_Type _UnsignedInt()
 		{

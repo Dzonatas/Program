@@ -13,13 +13,9 @@ public class C_Symbol
 		return "_" + a ;
 		//return "_" + Regex.Replace( d, "[^A-Za-z_0-9]", "_").ToUpper() ;
 		}
-	public static string ToID(System.Guid d)
-		{
-		return System.Text.RegularExpressions.Regex.Replace( d.ToString(), "[^A-Za-z_0-9]", "_").ToLower() ;
-		}
 	public string By_p()
 		{
-		string pid = ToStemString( System.Guid.NewGuid().ToString() ) ;
+		string pid = ToStemString( A335.Guid.NewGuid().ToString() ) ;
 		if( this.symbol[0] == '_' )  //Logical+ID,^'_'[<IDc>]+,(P==NP)=>>(P!=NP)
 			return pid + this.symbol + "_p" ;
 		string symbol ;
@@ -32,7 +28,7 @@ public class C_Symbol
 		}
 	public C_Symbol()
 		{
-		symbol = "_" + ToID( System.Guid.NewGuid() ) ;
+		symbol = "_" + A335.Guid.NewGuid().ToID() ;
 		}
 	static public C_Symbol Acquire( string symbol )
 		{
@@ -47,7 +43,7 @@ public class C_Symbol
 public class C_Undefined : C_Symbol
 	{
 	public C_Undefined()
-		: base( System.Text.RegularExpressions.Regex.Replace( System.Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_").ToUpper() )
+		: base( System.Text.RegularExpressions.Regex.Replace( A335.Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_").ToUpper() )
 		{}
 	}
 

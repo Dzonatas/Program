@@ -189,6 +189,7 @@
     <Compile Include="#\C699\C699.Stack.cs" />
     <Compile Include="#\C699\C699.LibC.cs" />
     <Compile Include="#\C699\C699.File.Structure.cs" />
+    <Compile Include="#\A335.Guid.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
