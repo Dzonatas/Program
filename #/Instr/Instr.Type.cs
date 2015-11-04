@@ -22,7 +22,7 @@ public partial class   instr_INSTR_TYPE_typeSpec
 			case "NEWARR" :
 				{
 				var t = C.Pop() ;
-				C699.c c = C699.Stack.Deref(C.StackOffset,C699.C.Int) ;
+				C699.c c = C699.Stack.Deref(C699.C.Int) ;
 				C_Symbol s = t ;
 				string token = string.Join( "$", ((Automatrix)typeSpec).ResolveType() ) ;
 				switch( token )
@@ -33,7 +33,7 @@ public partial class   instr_INSTR_TYPE_typeSpec
 					case "[$mscorlib$]$System$String":
 						c = C699.SizeOf( C699.String, c ) ;
 						oprand.C.Statement(
-							C699.Stack.Assign(C.StackOffset, C699.Malloc(c))
+							C699.Stack.Assign( C699.Malloc(c) )
 							);
 						break ;
 					default:

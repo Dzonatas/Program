@@ -4,7 +4,7 @@ using System.Extensions ;
 
 partial class A335
 {
-partial class Program
+partial class Program : C699
 	{
 	public class C_Oprand
 		{

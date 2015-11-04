@@ -45,13 +45,13 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 		switch( Op )
 			{
 			case "LDSFLD" :
-				oprand.C.Statement( C699.Stack.Assign(C.StackOffset, symbol) ) ;
+				oprand.C.Statement( C699.Stack.Assign(symbol) ) ;
 				C.Push( C_Type.Acquire( t ) ) ;
 				break ;
 			case "STSFLD" :
 				C.Pop() ;
 				oprand.C.Statement(
-					symbol.Equate( C699.Stack.CastIndex(C.StackOffset, C699.String ) )
+					symbol.Equate( C699.Stack.CastIndex(C699.String) )
 					) ;
 				break ;
 			default :

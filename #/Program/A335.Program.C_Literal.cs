@@ -1,6 +1,6 @@
 partial class A335
 {
-partial class Program
+partial class Program : C699
 	{
 	C_Literal[] register ;
 	public struct C_Literal

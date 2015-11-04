@@ -27,7 +27,7 @@ public partial class   instr_INSTR_NONE
 					type = d.Method.ThisType ;
 				else
 					type = d.Method.Args[0] ;
-				d.Statement( C699.Stack.Assign(C.StackOffset, new C699.c("args[0]") ) ) ;
+				d.Statement( C699.Stack.Assign( new C699.c("args[0]") ) ) ;
 				C.Push( type ) ;
 				break ;
 				}
@@ -44,38 +44,38 @@ public partial class   instr_INSTR_NONE
 				break ;
 				}
 			case "LDC_I4_0" :
-				d.Statement( C699.Stack.Assign(C.StackOffset, C699.C.Zero) ) ;
+				d.Statement( C699.Stack.Assign(C699.C.Zero) ) ;
 				C.Push( C_I4_0 ) ;
 				break ;
 			case "LDC_I4_1" :
-				d.Statement( C699.Stack.Assign(C.StackOffset, C699.C.One) ) ;
+				d.Statement( C699.Stack.Assign(C699.C.One) ) ;
 				C.Push( C_I4_1 ) ;
 				break ;
 			case "LDC_I4_2" :
-				d.Statement( C699.Stack.Assign(C.StackOffset, C699.C.Two) ) ;
+				d.Statement( C699.Stack.Assign(C699.C.Two) ) ;
 				C.Push( C_I4_2 ) ;
 				break ;
 			case "LDC_I4_3" :
-				d.Statement( C699.Stack.Assign(C.StackOffset, C699.C.Three) ) ;
+				d.Statement( C699.Stack.Assign(C699.C.Three) ) ;
 				C.Push( C_I4_3 ) ;
 				break ;
 			case "DUP" :
 				{
 				var t = C.Pop() ;
-				C699.c c = C699.Stack.Index(C.StackOffset) ;
+				C699.c c = C699.Stack.Element ;
 				C.Push( t ) ;
-				d.Statement( C699.Stack.Assign(C.StackOffset, c) ) ;
+				d.Statement( C699.Stack.Assign(c) ) ;
 				C.Push( t ) ;
 				}
 				break ;
 			case "LDELEM_REF" :
 				{
 				C.Pop() ;
-				var e = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
+				var e = C699.Stack.Deref(C699.C.Int) ;
 				C.Pop() ;
-				var r = C699.Stack.CastIndex(C.StackOffset, C699.String) ;
+				var r = C699.Stack.CastIndex(C699.String) ;
 				oprand.C.Statement(
-					C699.Stack.Assign(C.StackOffset, C699.Array( r, e, C699.String ) )
+					C699.Stack.Assign(  C699.Array( r, e, C699.String )  )
 					) ;
 				C.Push( C_Type.Acquire( "_C_" + Op ) ) ;
 				}
@@ -83,11 +83,11 @@ public partial class   instr_INSTR_NONE
 			case "STELEM_REF" :
 				{
 				C.Pop() ;
-				var r = C699.Stack.CastIndex(C.StackOffset, C699.String) ;
+				var r = C699.Stack.CastIndex(C699.String) ;
 				C.Pop() ;
-				var e = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
+				var e = C699.Stack.Deref(C699.C.Int) ;
 				C.Pop() ;
-				var a = C699.Stack.Array(C.StackOffset, e, C699.String) ;
+				var a = C699.Stack.Array(e, C699.String) ;
 				d.Statement( a.Equate( r ) ) ;
 				}
 				break ;
@@ -122,10 +122,10 @@ public partial class   instr_INSTR_NONE
 			case "ADD" :
 				{
 				var t = C.Pop() ;
-				C699.c b = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
+				C699.c b = C699.Stack.Deref(C699.C.Int) ;
 				C.Pop() ;
-				C699.c a = C699.Stack.Deref(C.StackOffset, C699.C.Int) ;
-				d.Statement( C699.Stack.Assign(C.StackOffset, a.plus(b) ) ) ;
+				C699.c a = C699.Stack.Deref(C699.C.Int) ;
+				d.Statement( C699.Stack.Assign(a.plus(b)) ) ;
 				C.Push( t ) ;
 				}
 				break ;
@@ -143,7 +143,7 @@ public partial class   instr_INSTR_NONE
 		//oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
 		throw new System.NoteImplementedException() ;
 		#else
-		oprand.C.Statement( l.Equate( C699.Stack.Deref(C.StackOffset,loc.Type) ) ) ;
+		oprand.C.Statement( l.Equate( C699.Stack.Deref(loc.Type) ) ) ;
 		#endif
 		}
 	C_Type ldloc( int i )
@@ -157,7 +157,7 @@ public partial class   instr_INSTR_NONE
 			c = new C699.c( "&"+loc.Symbol ) ;
 		else
 			c = new C699.c( loc.Symbol ) ;
-		oprand.C.Statement( C699.Stack.Assign(C.StackOffset, c) ) ;
+		oprand.C.Statement( C699.Stack.Assign(c) ) ;
 		return loc.Type ;
 		}
 	}

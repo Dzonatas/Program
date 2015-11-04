@@ -108,20 +108,20 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					symbol = new C_Symbol() ;
 					d.Statement( C699.C.Static(C699.String,symbol) ) ;
 					System.Array.Resize( ref freeset, freeset.Length+1 ) ;
-					freeset[freeset.Length-1] = C.StackOffset ;
+					freeset[freeset.Length-1] = C699.Stack.Offset ;
 					C699.c s = new C699.c( symbol ) ;
 					if( iargs == 0 )
 						d.Statement( s.Equate(C699.C.Function(_Call)) ) ;
 					else
-						d.Statement( s.Equate(C699.C.Function(_Call,C699.Stack.Pointer(C.StackOffset))) ) ;
-					d.Statement( C699.Stack.Assign(C.StackOffset, new C699.c("&"+symbol) ) ) ;
+						d.Statement( s.Equate(C699.C.Function(_Call,C699.Stack.Pointer)) ) ;
+					d.Statement( C699.Stack.Assign( new C699.c("&"+symbol) ) ) ;
 					}
 				else
 					{
 					if( iargs == 0 )
 						d.Statement( C699.C.Function(_Call) ) ;
 					else
-						d.Statement( C699.C.Function(_Call,C699.Stack.Pointer(C.StackOffset)) ) ;
+						d.Statement( C699.C.Function(_Call,C699.Stack.Pointer) ) ;
 					}
 				if( _Type != "void" )
 					C.Push( _Type ) ;
@@ -136,11 +136,11 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
 				d.Statement( C699.C.Extern.Struct(C699.Object(0),_class) ) ;
 				d.Statement( C699.C.Const.Static(C699.Object(0)).Equate(symbol,"&"+_class) ) ;
-				d.Statement( C699.Stack.Assign(C.StackOffset, new C699.c("&"+symbol) ) ) ;
+				d.Statement( C699.Stack.Assign( new C699.c("&"+symbol) ) ) ;
 				if( iargs == 0 )
 					d.Statement( C699.C.Function(_Call) ) ;
 				else
-					d.Statement( C699.C.Function(_Call,C699.Stack.Pointer(C.StackOffset)) ) ;
+					d.Statement( C699.C.Function(_Call,C699.Stack.Pointer) ) ;
 				C.Push( "object" ) ;
 				break ;
 				}

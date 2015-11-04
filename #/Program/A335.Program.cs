@@ -4,7 +4,7 @@ using System.Extensions ;
 
 partial class A335
 {
-public partial class Program
+public partial class Program : C699
 	{
 	static Dictionary<string,object>      virtualset    = new Dictionary<string,object>() ;
 	static Dictionary<string,C_Function>  c_functionset = new Dictionary<string, C_Function>() ;
@@ -13,8 +13,6 @@ public partial class Program
 	static Dictionary<string,C_TypeDef>   typedefset    = new Dictionary<string, C_TypeDef>() ;
 	static Program C = new Program() ;
 	static C_Type[] stack = new C_Type[0] ;
-	static int stack_offset ;
-	static int stack_down ;
 	//static uint effective_symbolic_objective_credit ;
 	public C_Function This ;
 	Program()
@@ -221,10 +219,6 @@ public partial class Program
 		{
 		System.Array.Resize( ref stack, stack.Length+1 ) ;
 		stack[stack.Length-1] = type ;
-		}
-	public int StackOffset
-		{
-		get { return stack_offset - stack_down ; }
 		}
 	public void Push( C_Type t )
 		{

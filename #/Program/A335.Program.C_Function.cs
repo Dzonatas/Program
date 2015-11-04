@@ -3,7 +3,7 @@ using System.Text.RegularExpressions ;
 
 partial class A335
 {
-partial class Program
+partial class Program : C699
 	{
 	public class C_Function
 		{
