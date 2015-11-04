@@ -216,59 +216,6 @@ static void Build()
 	}
 */
 
-partial class Program
-	{
-	static Program C = new Program() ;
-	static string c_guid()
-		{
-		return "_" + System.Text.RegularExpressions.Regex.Replace
-			( System.Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_" ).ToLower() ;
-		}
-	static C_Type _UnsignedInt()
-		{
-		return C_Type.Acquire( c_guid() + "_unsigned_int" ) ;
-		}
-	static C_Type _Char_()
-		{
-		return C_Type.Acquire( c_guid() + "_char_p" ) ;
-		}
-	static public void Begin()
-		{
-		C_Type _length = _UnsignedInt() ;
-		C_Type _string = _Char_() ;
-		C.TypeDef.String
-			.Parameter( _length )
-			.Parameter( _string )
-			;
-		C.TypeDef.Object
-			.Parameter( C699.Object(1) , "this" )
-			.Parameter( C699.String, C699.C.Restricted("(*$ToString)").Tut(C699.C.Const.Voidpp) )
-			;
-		jiffy( "object::.ctor" )
-			;
-		jiffy( "console::WriteLine(string)" )
-			.ConstLocalArg0
-			.StandardOutputWriteLocal( _string , _length )
-			.StandardOutputWriteLine()
-			;
-		jiffy( "string string::Concat(object,object,object)" )
-			.Register( C699.String )
-			.Register( C699.String )
-			.Register( C699.String )
-			.Let( C[0] ).Equal.ManagedArgument( 0 )
-			.Let( C[1] ).Equal.ManagedArgument( 1 )
-			.Let( C[2] ).Equal.ManagedArgument( 2 )
-			.Return( C.StringConcat( C[0], C[1], C[2] ) )
-			;
-		jiffy( "string string::Concat(string,string)" )
-			.ConstLocalArg( 0 )
-			.ConstLocalArg( 1 )
-			.Return( C.StringConcatLocal0Local1() )
-			;
-		//jiffy( pet( "fetch::", cube, sphere ) )
-		//	;
-		}
-	}
 
 static int b_muon_css     ;                          //_FIXT:_second,_hexed,<s>tainted</>,'/\_.css'
 static char b_custom_map  ;                          //sd['map'] = '.custom "map":.ctor(binary) = (...)'

@@ -147,7 +147,6 @@
     <Compile Include="#\A335.cs" />
     <Compile Include="#\Item.cs" />
     <Compile Include="#\IRule.cs" />
-    <Compile Include="#\A335.Program.cs" />
     <Compile Include="#\A335.Stack.cs" />
     <Compile Include="#\A335.Object.cs" />
     <Compile Include="#\Current.cs" />
@@ -179,6 +178,13 @@
     <Compile Include="#\Type\Type.cs" />
     <Compile Include="#\Type\Type.Spec.cs" />
     <Compile Include="#\SigArg.cs" />
+    <Compile Include="#\Program\A335.Program.cs" />
+    <Compile Include="#\Program\A335.Program.C_Method.cs" />
+    <Compile Include="#\Program\A335.Program.C_TypeDef.cs" />
+    <Compile Include="#\Program\A335.Program.C_Struct.cs" />
+    <Compile Include="#\Program\A335.Program.C_Oprand.cs" />
+    <Compile Include="#\Program\A335.Program.C_Function.cs" />
+    <Compile Include="#\Program\A335.Program.C_Literal.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -194,6 +200,7 @@
     <Folder Include="#\Class\" />
     <Folder Include="#\Field\" />
     <Folder Include="#\Type\" />
+    <Folder Include="#\Program\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="~\test.sh" />
