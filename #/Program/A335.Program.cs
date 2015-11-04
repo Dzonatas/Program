@@ -29,17 +29,13 @@ public partial class Program
 		}
 	static public void Write()
 		{
-		Program.WriteC_Main() ;
+		WriteC_Main() ;
 		A335.Method.Write() ;
-		Program.WriteC_Objects() ;
+		WriteC_Objects() ;
 		}
 	static public C_Function jiffy( string description )
 		{
 		return C.This = C_Method.CreateFunction( description ) ;
-		}
-	static public System.Type Function
-		{
-		get { return typeof(C_Function) ; }
 		}
 	static public void WriteC_Main()
 		{
@@ -230,34 +226,11 @@ public partial class Program
 		{
 		get { return stack_offset - stack_down ; }
 		}
-	#if MICRODATA
-	public void Push( Microdata stack_item_data )
+	public void Push( C_Type t )
 		{
-		stack[stack_offset] = stack_item_data ;
+		stack[stack_offset] = t ;
 		stack_offset++ ;
 		}
-	public void Push1( C_Type string_line_x )
-		{
-		Push( new Microdata( true, string_line_x ) ) ;
-		}
-	public void Push( C_Type string_line )
-		{
-		Push( new Microdata( false, string_line ) ) ;
-		}
-	#else
-	public void Push1( C_Type string_line_x )
-		{
-		stack[stack_offset] = string_line_x ;
-		stack_offset++ ;
-		}
-	public void Push( C_Type string_line )
-		{
-		if( string_line == null )
-			string_line = null ;
-		stack[stack_offset] = string_line ;
-		stack_offset++ ;
-		}
-	#endif
 	public void Push( string type )
 		{
 		Push( C_Type.Acquire( type ) ) ;
@@ -267,21 +240,6 @@ public partial class Program
 		stack_offset-- ;
 		return stack[stack_offset] ;
 		}
-	#if MICRODATA
-	public object Pop()
-		{
-		stack_offset-- ;
-		return stack[stack_offset] ;
-		}
-	public List<Microdata> Hangup( int iargs )
-		{
-		var list = new List<Microdata>() ;
-		stack_offset -= iargs ;
-		for( int i = 0 ; i < iargs ; i++ )
-			list.Add( stack[stack_offset+i] ) ;
-		return list ;
-		}
-	#else
 	public C_Type[] Hangup( int iargs )
 		{
 		if( iargs < 1 )
@@ -292,7 +250,6 @@ public partial class Program
 			list[i] = stack[stack_offset+i] == null ? C_Type.Undefined : stack[stack_offset+i] ;
 		return list ;
 		}
-	#endif
 	public void Hangdown()
 		{
 		stack_down = stack_offset ;

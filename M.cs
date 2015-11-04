@@ -17,7 +17,10 @@ partial class A335
 {
 //static global::START._1.START_decls alpha ;
 public readonly static char[] MSB = new char[] { ' ', '.' } ;
-
+public class Main
+	{
+	public readonly static C_Symbol     Symbol = C_Symbol.Acquire( C699.KeyedWord.Main ) ;
+	}
 internal static void _Main( string[] args )
 	{
 	#if PROXY

@@ -42,11 +42,3 @@ public partial class C699 {
 			}
 		}
 }//}
-
-public partial class A335
-{
-public class Main
-	{
-	public readonly static C_Symbol     Symbol = C_Symbol.Acquire( C699.KeyedWord.Main ) ;
-	}
-}

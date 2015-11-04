@@ -28,7 +28,7 @@ public partial class   instr_INSTR_NONE
 				else
 					type = d.Method.Args[0] ;
 				d.Statement( C699.Stack.Assign(C.StackOffset, new C699.c("args[0]") ) ) ;
-				C.Push1( type ) ;
+				C.Push( type ) ;
 				break ;
 				}
 			case "RET":
