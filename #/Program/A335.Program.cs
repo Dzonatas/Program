@@ -10,7 +10,6 @@ public partial class Program : C699
 	static Dictionary<string,C_Symbol>    symbolset     = new Dictionary<string, C_Symbol>() ;
 	static Dictionary<C_Symbol,C_Type>    typeset       = new Dictionary<C_Symbol, C_Type>() ;
 	static Dictionary<string,C_TypeDef>   typedefset    = new Dictionary<string, C_TypeDef>() ;
-	static Program C = new Program() ;
 	static C_Type[] stack = new C_Type[0] ;
 	//static uint effective_symbolic_objective_credit ;
 	public C_Function This ;
@@ -29,10 +28,6 @@ public partial class Program : C699
 		WriteC_Main() ;
 		A335.Method.Write() ;
 		WriteC_Objects() ;
-		}
-	static public C_Function jiffy( string description )
-		{
-		return C.This = C_Method.CreateFunction( description ) ;
 		}
 	static public void WriteC_Main()
 		{
@@ -75,38 +70,44 @@ public partial class Program : C699
 		{
 		return C_Type.Acquire( c_guid() + "_char_p" ) ;
 		}
+	static public C_Function jiffy( Program c, string description )
+		{
+		return c.This = C_Method.CreateFunction( description ) ;
+		}
 	static public void Begin()
 		{
+		var c = new Program() ;
 		C_Type _length = _UnsignedInt() ;
 		C_Type _string = _Char_() ;
-		C.TypeDef.String
+		c.TypeDef.String
 			.Parameter( _length )
 			.Parameter( _string )
 			;
-		C.TypeDef.Object
+		c.TypeDef.Object
 			.Parameter( C699.Object(1) , "this" )
 			.Parameter( C699.String, C699.C.Restricted("(*$ToString)").Tut(C699.C.Const.Voidpp) )
 			;
-		jiffy( "object::.ctor" )
+		jiffy( c, "object::.ctor" )
 			;
-		jiffy( "console::WriteLine(string)" )
+		jiffy( c, "console::WriteLine(string)" )
 			.ConstLocalArg0
 			.StandardOutputWriteLocal( _string , _length )
 			.StandardOutputWriteLine()
 			;
-		jiffy( "string string::Concat(object,object,object)" )
-			.Register( C699.String )
-			.Register( C699.String )
-			.Register( C699.String )
-			.Let( C[0] ).Equal.ManagedArgument( 0 )
-			.Let( C[1] ).Equal.ManagedArgument( 1 )
-			.Let( C[2] ).Equal.ManagedArgument( 2 )
-			.Return( C.StringConcat( C[0], C[1], C[2] ) )
+		var l = new C_Literal[3] ;
+		jiffy( c, "string string::Concat(object,object,object)" )
+			.Register(ref l[0], C699.String)
+			.Register(ref l[1], C699.String)
+			.Register(ref l[2], C699.String)
+			.Let( l[0] ).Equal.ManagedArgument( 0 )
+			.Let( l[1] ).Equal.ManagedArgument( 1 )
+			.Let( l[2] ).Equal.ManagedArgument( 2 )
+			.Return( c.StringConcat( l[0], l[1], l[2] ) )
 			;
-		jiffy( "string string::Concat(string,string)" )
+		jiffy( c, "string string::Concat(string,string)" )
 			.ConstLocalArg( 0 )
 			.ConstLocalArg( 1 )
-			.Return( C.StringConcatLocal0Local1() )
+			.Return( c.StringConcatLocal0Local1() )
 			;
 		//jiffy( pet( "fetch::", cube, sphere ) )
 		//	;
@@ -192,26 +193,6 @@ public partial class Program : C699
 			.Statement( C699.Strncpy('&'+s_string+'['+a_length+']',b_string,b_length) )
 			;
 		return C_Symbol.Acquire( "s" ) ;
-		}
-	public C_Function Register( C_Function f, C699.c type, string name )
-		{
-		C_Literal literal ;
-		if( register == null )
-			{
-			register = new C_Literal[1] ;
-			literal = register[0] ;
-			}
-		else
-			{
-			System.Array.Resize( ref register, register.Length + 1 ) ;
-			literal = register[ register.Length - 1 ] ;
-			}
-		literal.Function  = f ;
-		literal.Type      = type ;
-		literal.Name      = C699.C.Literal(name) ;
-		register[ register.Length - 1 ] = literal ;
-		This.Statement( C699.C.Struct(type,name) ) ;
-		return f ;
 		}
 	static void stack_add( C_Type type )
 		{

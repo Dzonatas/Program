@@ -74,13 +74,18 @@ partial class Program : C699
 			{
 			return Statement( C699.C.Return(symbol) ) ;
 			}
-		public C_Function Register( C699.c type, string name )
+		public C_Function Register( ref C_Literal l, C699.c type, string name )
 			{
-			return C.Register( this, type, C_Symbol.Acquire(name) ) ;
+			l.Function  = this ;
+			l.Type      = type ;
+			l.Name      = C699.C.Literal(C_Symbol.Acquire(name)) ;
+			Statement( C699.C.Struct(type,l.Name) ) ;
+			return this ;
 			}
-		public C_Function Register( C699.c type )
+		public C_Function Register( ref C_Literal l, C699.c type )
 			{
-			return Register( type, C_Symbol.Acquire(type).By_p() ) ;
+			l = new C_Literal() ;
+			return Register( ref l, type, C_Symbol.Acquire(type).By_p() ) ;
 			}
 		public C_Function ManagedArgument( int i )
 			{
