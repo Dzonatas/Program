@@ -1,5 +1,4 @@
 using System.Collections.Generic ;
-using System.Text.RegularExpressions ;
 using System.Extensions ;
 
 partial class A335
@@ -66,8 +65,7 @@ public partial class Program : C699
 		}
 	static string c_guid()
 		{
-		return "_" + System.Text.RegularExpressions.Regex.Replace
-			( A335.Guid.NewGuid().ToString(), "[^A-Za-z_0-9]", "_" ).ToLower() ;
+		return "_" + Guid.NewGuid().ToID() ;
 		}
 	static C_Type _UnsignedInt()
 		{

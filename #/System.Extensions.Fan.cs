@@ -1,5 +1,4 @@
 namespace System.Extensions {
-using System.Text.RegularExpressions ;
 using System.Runtime.InteropServices ;
 using System.Drawing ;
 using X.Predefined ;

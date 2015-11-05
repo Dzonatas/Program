@@ -1,5 +1,4 @@
 using System.Collections.Generic ;
-using System.Text.RegularExpressions ;
 
 partial class A335
 {
@@ -57,10 +56,10 @@ partial class Program : C699
 			m = new C_Method( C_Type.Acquire( context ) ) ;
 			//m.NameSpace.Add( C_Symbol.Acquire( "BCL" ) ) ;
 			//m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
-			Match y = Regex.Match( typedef, @"^(?<type>\S+)\s" ) ;
+			var y = System.Text.RegularExpressions.Regex.Match( typedef, @"^(?<type>\S+)\s" ) ;
 			if( y.Success )
 				m.Type = C_Type.Acquire( y.Groups[ "type" ].Value ) ;
-			Match x = Regex.Match( typedef, @"^(\S+\s|)(?<classname>\S+)::(?<methodname>[^\(]+)(\((?<args>\S+)\)|)" ) ;
+			var x = System.Text.RegularExpressions.Regex.Match( typedef, @"^(\S+\s|)(?<classname>\S+)::(?<methodname>[^\(]+)(\((?<args>\S+)\)|)" ) ;
 			if( ! x.Success )
 				throw new System.NotImplementedException( typedef ) ;
 			switch( x.Groups[ "classname" ].Value )

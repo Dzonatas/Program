@@ -1,6 +1,5 @@
 namespace System.Extensions
 	{
-	using System.Text.RegularExpressions ;
 	using System.Runtime.InteropServices ;
 	using System.Drawing ;
 	using X.Predefined ;
@@ -129,7 +128,7 @@ namespace System.Extensions
 		public static string ToStemString(this string d)
 			{
 			string a = d ;
-			a = Regex.Replace( a, "[^A-Za-z_0-9]", "_") ;
+			a = System.Text.RegularExpressions.Regex.Replace( a, "[^A-Za-z_0-9]", "_") ;
 			a = a.ToUpper() ;
 			return "_" + a ;
 			//return "_" + Regex.Replace( d, "[^A-Za-z_0-9]", "_").ToUpper() ;

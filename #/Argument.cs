@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions ;
 using System.Diagnostics ;
 
 partial class A335
@@ -49,7 +48,7 @@ public class Argument
 		if( arg is Stack.Item.Token )
 			{
 			string t = (string) (Stack.Item.Token)arg ;
-			t = Regex.Replace( t, "[^A-Za-z_0-9/.]", "_" ) ;
+			t = System.Text.RegularExpressions.Regex.Replace( t, "[^A-Za-z_0-9/.]", "_" ) ;
 			return t.Split( separators ) ;
 			}
 		if( arg is Automatrix )
@@ -63,7 +62,7 @@ public class Argument
 				{
 				string t = (string) (Stack.Item.Token)Args[i] ;
 				if( t != "[" && t != "]" )
-					t = Regex.Replace( t, "[^A-Za-z_0-9/.]", "_" ) ;
+					t = System.Text.RegularExpressions.Regex.Replace( t, "[^A-Za-z_0-9/.]", "_" ) ;
 				foreach( string z in t.Split(separators) )
 					{
 					if( System.String.IsNullOrEmpty( z ) )

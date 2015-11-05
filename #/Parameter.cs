@@ -1,5 +1,4 @@
 using System.Collections.Specialized ;
-using System.Text.RegularExpressions ;
 using System.Diagnostics ;
 using System.Collections ;
 using System;
@@ -80,15 +79,15 @@ namespace Cluster
 			{
 			foreach( string s in args )
 				{
-				Match m = Regex.Match( s, @"^(-{1,2}|/)((?<key>\S+)=(?<value>.+)$|(?<option>\S+)[^=]\s*$)" ) ;
+				var m = System.Text.RegularExpressions.Regex.Match( s, @"^(-{1,2}|/)((?<key>\S+)=(?<value>.+)$|(?<option>\S+)[^=]\s*$)" ) ;
 	        	if( ! m.Success )
 	        		{
 	        		Debug.WriteLine( "Invalid Parameter: {0}", s ) ;
 	        		continue ;
 	        		}
-				Group o = m.Groups[ "option" ] ;
-				Group k = m.Groups[ "key"    ] ;
-				Group v = m.Groups[ "value"  ] ;
+				var o = m.Groups[ "option" ] ;
+				var k = m.Groups[ "key"    ] ;
+				var v = m.Groups[ "value"  ] ;
 				if( ! String.IsNullOrEmpty( o.Value ) )
 					parameter[ o.Value ] = "true" ;
 				else
