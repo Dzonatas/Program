@@ -82,7 +82,7 @@ partial class Program : C699
 			c = m.CreateFunction() ;
 			c.Static = true ;
 			c.Inline = true ;
-			c.Args = '('+C699.C.Const.Voidpp.ArgV+')' ;
+			c.Args = '('+C.Const.Voidpp.ArgV+')' ;
 			return c ;
 			}
 		public C_Function CreateFunction()
@@ -120,7 +120,7 @@ partial class Program : C699
 				if( Type == C_Type.Acquire("string") )
 					Function.Type = C699.String ;
 				else
-					Function.Type = C699.C.Restricted(Type) ;
+					Function.Type = C.Restricted(Type) ;
 				}
 			return Function ;
 			}

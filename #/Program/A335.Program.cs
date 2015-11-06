@@ -85,7 +85,7 @@ public partial class Program : C699
 			;
 		c.TypeDef.Object
 			.Parameter( C699.Object(1) , "this" )
-			.Parameter( C699.String, C699.C.Restricted("(*$ToString)").Tut(C699.C.Const.Voidpp) )
+			.Parameter( C699.String, C.Restricted("(*$ToString)").Tut(C.Const.Voidpp) )
 			;
 		jiffy( c, "object::.ctor" )
 			;
@@ -158,15 +158,15 @@ public partial class Program : C699
 		C_TypeDef typedef = typedefset["string"] ;
 		string _length = typedef.Struct[0] ;
 		string _string = typedef.Struct[1] ;
-		var    s_length = C699.C.Literal( "s."   + _length) ;
-		var    s_string = C699.C.Literal( "s."   + _string) ;
-		var    a_length = C699.C.Literal(a + "." + _length) ;
-		var    a_string = C699.C.Literal(a + "." + _string) ;
-		var    b_length = C699.C.Literal(b + "." + _length) ;
-		var    b_string = C699.C.Literal(b + "." + _string) ;
-		var    c_length = C699.C.Literal(c + "." + _length) ;
-		var    c_string = C699.C.Literal(c + "." + _string) ;
-		This.Statement( C699.C.Static(C699.String,"s") )
+		var    s_length = C.Literal( "s."   + _length) ;
+		var    s_string = C.Literal( "s."   + _string) ;
+		var    a_length = C.Literal(a + "." + _length) ;
+		var    a_string = C.Literal(a + "." + _string) ;
+		var    b_length = C.Literal(b + "." + _length) ;
+		var    b_string = C.Literal(b + "." + _string) ;
+		var    c_length = C.Literal(c + "." + _length) ;
+		var    c_string = C.Literal(c + "." + _string) ;
+		This.Statement( C.Static(C699.String,"s") )
 			.Statement( s_length.Equate(a_length+" + "+b_length+" + "+c_length) )
 			.Statement( s_string.Equate( C699.Malloc( a_length.plus(b_length).plus(c_length) ) ) )
 			.Statement( C699.Strncpy(s_string,a_string,a_length) )
@@ -180,13 +180,13 @@ public partial class Program : C699
 		C_TypeDef typedef = typedefset["string"] ;
 		string _length = typedef.Struct[0] ;
 		string _string = typedef.Struct[1] ;
-		var    s_length = C699.C.Literal( "s."   + _length) ;
-		var    s_string = C699.C.Literal( "s."   + _string) ;
-		var    a_length = C699.C.Literal("_local0->" + _length) ;
-		var    a_string = C699.C.Literal("_local0->" + _string) ;
-		var    b_length = C699.C.Literal("_local1->" + _length) ;
-		var    b_string = C699.C.Literal("_local1->" + _string) ;
-		This.Statement( C699.C.Static(C699.String,"s") )
+		var    s_length = C.Literal( "s."   + _length) ;
+		var    s_string = C.Literal( "s."   + _string) ;
+		var    a_length = C.Literal("_local0->" + _length) ;
+		var    a_string = C.Literal("_local0->" + _string) ;
+		var    b_length = C.Literal("_local1->" + _length) ;
+		var    b_string = C.Literal("_local1->" + _string) ;
+		This.Statement( C.Static(C699.String,"s") )
 			.Statement( s_length.Equate(a_length+" + "+b_length) )
 			.Statement( s_string.Equate( C699.Malloc( a_length.plus(b_length) ) ) )
 			.Statement( C699.Strncpy(s_string,a_string,a_length) )
@@ -242,17 +242,17 @@ public partial class Program : C699
 		{
 		var c = C_Function.FromSymbol( A335.Main.Symbol ) ;
 		c.Args = C699.Main.Args ;
-		c.Type = C699.C.Int ;
+		c.Type = C.Int ;
 		var e = A335.Method.EntryPoint.Head ;
 		if( string.Join( "!", Class.Cctors).Contains( e.ClassType ) )
 		//if( e.Cctor )
 			{
-			c.Statement( C699.C.Extern.Void.Cctor(e.ClassType) ) ;
-			c.Statement( C699.C.Cctor(e.ClassType) ) ;
+			c.Statement( C.Extern.Void.Cctor(e.ClassType) ) ;
+			c.Statement( C.Cctor(e.ClassType) ) ;
 			}
-		c.Statement( C699.C.Extern.Void.Function(e.ClassType,  "Main") ) ;
-		c.Statement( C699.C.Function(e.ClassType, "Main") ) ;
-		c.Statement( C699.C.Return("0") ) ;
+		c.Statement( C.Extern.Void.Function(e.ClassType,  "Main") ) ;
+		c.Statement( C.Function(e.ClassType, "Main") ) ;
+		c.Statement( C.Return(C.Zero) ) ;
 		c.WriteTo( C699.Main.FileStructure ) ;
 		return C699.Main.FileStructure ;
 		}

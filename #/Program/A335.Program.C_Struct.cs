@@ -20,7 +20,7 @@ partial class Program : C699
 				{
 				case "string": Type = C699.String ; return ;
 				case "object": Type = C699.Object(0) ; return ;
-				default      : Type = C699.C.Restricted("_" + type) ; return ;
+				default      : Type = C.Restricted("_" + type) ; return ;
 				}
 			}
 		public C_Struct()

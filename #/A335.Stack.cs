@@ -51,7 +51,7 @@ public partial class Stack
 			{
 			#if DEBUG
 			case "{.assembly":
-				b_list += C699.C.Array.assembly.argv(args).asm + "; \n" ;
+				b_list += C.Array.assembly.argv(args).asm + "; \n" ;
 				break ;
 			#endif
 			default:

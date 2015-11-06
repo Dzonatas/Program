@@ -35,7 +35,7 @@ partial class Program : C699
 			{
 			if( d.BrTarget )
 				return d.list[0] ;
-			return C699.C.Function( d.Instruction, d.ID,"stack " + ( d.HasArgs ? ", args" : "" ) ) ;
+			return C.Function( d.Instruction, d.ID,"stack " + ( d.HasArgs ? ", args" : "" ) ) ;
 			}
 		static public explicit operator string( C_Oprand d )
 			{
@@ -45,15 +45,15 @@ partial class Program : C699
 			{
 			if( ! BrTarget )
 				throw new System.NotImplementedException() ;
-			list.Add( C699.C.Goto( label ) ) ;
+			list.Add( C.Goto( label ) ) ;
 			return this ;
 			}
 		public C_Oprand IfGotoStatement( string label )
 			{
 			if( ! BrTarget )
 				throw new System.NotImplementedException() ;
-			var f = C699.C.Function( Instruction, ID,"stack " + ( HasArgs ? ", args" : "" ) ) ;
-			list.Add( C699.C.If( f, C699.C.Goto( label ) ) ) ;
+			var f = C.Function( Instruction, ID,"stack " + ( HasArgs ? ", args" : "" ) ) ;
+			list.Add( C.If( f, C.Goto( label ) ) ) ;
 			return this ;
 			}
 		public C_Oprand Statement( C699.c c )

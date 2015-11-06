@@ -14,14 +14,14 @@ partial class Program : C699
 			{
 			set {
 				if( value )
-					Type = C699.C.Void ;
+					Type = C.Void ;
 				}
 			}
 		public bool Bool
 			{
 			set {
 				if( value )
-					Type = C699.C.Int ;
+					Type = C.Int ;
 				}
 			}
 		public C699.c Type ;
@@ -52,14 +52,14 @@ partial class Program : C699
 			get {
 				var arg0 = new C_Struct(Method.Args[0]) ;
 				var symbol = C_Symbol.Acquire( "_local" ) ;
-				return Statement( C699.C.Const.Struct(arg0.Type.p,symbol).Equate("*args") ) ;
+				return Statement( C.Const.Struct(arg0.Type.p,symbol).Equate("*args") ) ;
 				}
 			}
 		public C_Function ConstLocalArg( int argn )
 			{
 			var arg1 = new C_Struct(Method.Args[argn]) ;
 			var symbol = C_Symbol.Acquire( "_local"+argn ) ;
-			return Statement( C699.C.Const.Struct(arg1.Type.p,symbol).Equate("args["+argn+"]") ) ;
+			return Statement( C.Const.Struct(arg1.Type.p,symbol).Equate("args["+argn+"]") ) ;
 			}
 		public C_Function StandardOutputWriteLocal( string _string, string _length )
 			{
@@ -72,14 +72,14 @@ partial class Program : C699
 			}
 		public C_Function Return( string symbol )
 			{
-			return Statement( C699.C.Return(symbol) ) ;
+			return Statement( C.Return(symbol) ) ;
 			}
 		public C_Function Register( ref C_Literal l, C699.c type, string name )
 			{
 			l.Function  = this ;
 			l.Type      = type ;
-			l.Name      = C699.C.Literal(C_Symbol.Acquire(name)) ;
-			Statement( C699.C.Struct(type,l.Name) ) ;
+			l.Name      = C.Literal(C_Symbol.Acquire(name)) ;
+			Statement( C.Struct(type,l.Name) ) ;
 			return this ;
 			}
 		public C_Function Register( ref C_Literal l, C699.c type )
@@ -90,9 +90,9 @@ partial class Program : C699
 		public C_Function ManagedArgument( int i )
 			{
 			if( (let.Type.Bits & C699.Bit.Object) != 0 || let.Type == C699.String )
-					return Statement( C699.C.If("((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer") )
+					return Statement( C.If("((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer") )
 					      .Statement( let.Name.Equate("*(("+C699.String+" *)args["+i+"])") )
-					      .Statement( C699.C.Else )
+					      .Statement( C.Else )
 					      .Statement( let.Name.Equate("(("+C699.Object(0)+" *)args["+i+"])->this->$ToString( args+"+i+" )") ) ;
 			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;
 			}
@@ -134,7 +134,7 @@ partial class Program : C699
 			}
 		public C_Function Statement( string line )
 			{
-			return Statement( C699.C.Restricted(line) ) ;
+			return Statement( C.Restricted(line) ) ;
 			}
 		public void Label( C_Label label )
 			{
@@ -148,15 +148,15 @@ partial class Program : C699
 			#endif
 				string line = "" ;
 				if( Inline )
-					line += C699.C.Inline + " " ;
+					line += C.Inline + " " ;
 				if( Static )
-					line += C699.C.Static(Type) ;
+					line += C.Static(Type) ;
 				else
 					line += Type ;
 				line += " " + Symbol ;
 				if( Args == null )
-					line += '('+C699.C.Const.Voidpp+"stack"
-					+ ( HasArgs ? ','+C699.C.Const.Voidpp.ArgV : "" )
+					line += '('+C.Const.Voidpp+"stack"
+					+ ( HasArgs ? ','+C.Const.Voidpp.ArgV : "" )
 					+ ')' ;
 				else
 					line += Args ;
