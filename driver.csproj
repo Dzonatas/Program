@@ -45,16 +45,17 @@
     <Compile Include="#\Item.cs" />
     <Compile Include="#\A335.Itemset.cs" />
     <Compile Include="#\A335.Xml.cs" />
-    <Compile Include="#\Parameter.cs" />
-    <Compile Include="#\Program.cs" />
     <Compile Include="#\Automaton.cs" />
     <Compile Include="#\A335.Xo_t.cs" />
-    <Compile Include="~\Cluster.Cli.cs" />
     <Compile Include="#\A335.Branch.cs" />
     <Compile Include="#\Current.cs" />
     <Compile Include="#\A335.log.cs" />
-    <Compile Include="#\Cluster.cs" />
     <Compile Include="#\A335.Zone.cs" />
+    <Compile Include="#\Cluster\Cluster.Program.cs" />
+    <Compile Include="#\Cluster\Cluster.Cli.cs" />
+    <Compile Include="#\Cluster\Cluster.Parameter.cs" />
+    <Compile Include="#\Cluster\Cluster.cs" />
+    <Compile Include="#\Cluster\Cluster.Shell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Xml" />
@@ -64,5 +65,6 @@
   <ItemGroup>
     <Folder Include="#\" />
     <Folder Include="~\" />
+    <Folder Include="#\Cluster\" />
   </ItemGroup>
 </Project>

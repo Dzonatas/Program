@@ -103,18 +103,8 @@
     <Compile Include="#\AssemblyInfo.cs" />
     <Compile Include="#\_URN.cs" />
     <Compile Include="#\.extentions.cs" />
-    <Compile Include="#\Application.cs" />
     <Compile Include="#\Atomatrix.cs" />
-    <Compile Include="#\Example.cs" />
     <Compile Include="#\Orbs.cs" />
-    <Compile Include="#\Parameter.cs" />
-    <Compile Include="#\Processor.cs" />
-    <Compile Include="#\Program.cs" />
-    <Compile Include="#\Resource.cs" />
-    <Compile Include="#\Singletons.cs" />
-    <Compile Include="#\StatusIcon.cs" />
-    <Compile Include="#\Task.cs" />
-    <Compile Include="#\TaskIterator.cs" />
     <Compile Include="#\Atomatrix.One.cs" />
     <Compile Include="#\Atomatrix.Two.cs" />
     <Compile Include="#\Atomatrix.Three.cs" />
@@ -129,11 +119,8 @@
     <Compile Include="#\X.Predefined.cs" />
     <Compile Include="#\X.Logo.cs" />
     <Compile Include="#\X.String.IPv6.cs" />
-    <Compile Include="#\Cluster.cs" />
-    <Compile Include="#\Cyborg.Power.State.cs" />
     <Compile Include="#\System.Extensions.Fan.cs" />
     <Compile Include="#\Review.cs" />
-    <Compile Include="~\Cluster.Cli.cs" />
     <Compile Include="#\A335.Auto.cs" />
     <Compile Include="#\Tokenset.cs" />
     <Compile Include="#\Tokenset.1.cs" />
@@ -190,6 +177,19 @@
     <Compile Include="#\C699\C699.LibC.cs" />
     <Compile Include="#\C699\C699.File.Structure.cs" />
     <Compile Include="#\A335.Guid.cs" />
+    <Compile Include="#\Cluster\Cluster.cs" />
+    <Compile Include="#\Cluster\Cluster.Cli.cs" />
+    <Compile Include="#\Cluster\Cluster.Shell.cs" />
+    <Compile Include="#\Cluster\Cluster.Example.cs" />
+    <Compile Include="#\Cluster\Cluster.Parameter.cs" />
+    <Compile Include="#\Cluster\Cluster.Processor.cs" />
+    <Compile Include="#\Cluster\Cluster.Program.cs" />
+    <Compile Include="#\Cluster\Cluster.Resource.cs" />
+    <Compile Include="#\Cluster\Cluster.Singletons.cs" />
+    <Compile Include="#\Cluster\Cluster.StatusIcon.cs" />
+    <Compile Include="#\Cluster\Cluster.Task.cs" />
+    <Compile Include="#\Cluster\Cluster.TaskIterator.cs" />
+    <Compile Include="#\Cluster\Cluster.Application.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -207,6 +207,7 @@
     <Folder Include="#\Type\" />
     <Folder Include="#\Program\" />
     <Folder Include="#\C699\" />
+    <Folder Include="#\Cluster\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="~\test.sh" />
