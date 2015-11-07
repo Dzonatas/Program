@@ -8,7 +8,6 @@ public partial class Method
 		Head _head ;
 		Decl previous ;
 		Decl next ;
-		C_Label   label ;
 		Instr     _Instr ;
 		Decls node ;
 		public Decls Node
@@ -60,14 +59,18 @@ public partial class Method
 			}
 		public C_Label Label
 			{
-			set { label = value ; }
-			get { return label != null ? label : C_Label.Empty ; }
+			get {
+				if( this is methodDecl_id____ )
+					return (this as methodDecl_id____).Label ;
+				else
+					return C_Label.Empty ;
+				}
 			}
 		static public C_Label Find( C_Symbol id )
 			{
 			for( Decl i = current ; i is Decl ; i = i.next )
-				if( i.label != null && id == i.label )
-					return i.label ;
+				if( i.Label != null && id == i.Label )
+					return i.Label ;
 			return null ;
 			}
 		protected Decl    EntryPoint
@@ -125,10 +128,14 @@ public partial class   methodDecl_localsHead__init______sigArgs0____
 
 public partial class   methodDecl_id____
 	: Method.Decl   {
+	C_Label label ;
 	protected override void main()
 		{
-		Enlist() ;
-		Label = C_Label.Acquire( Arg1.Token ) ;
+		label = C_Label.Acquire( Arg1.Token ) ;
+		}
+	public C_Label Label
+		{
+		get { return label ; }
 		}
 	}
 
