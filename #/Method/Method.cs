@@ -82,9 +82,9 @@ public partial class Method
 		//xml_load_grammar() ;
 		#endif
 		}
-	static public void WriteList( Program.C_Function function, Decl declList )
+	static public void WriteList( Program.C_Function function, Decls decls )
 		{
-		for( A335.Method.Decl d = declList ; d is A335.Method.Decl ; d = d.Next )
+		foreach( Decl d in decls )
 			{
 			if( d.Label != null && d.Label.Required )
 				function.Label( d.Label ) ;
@@ -92,6 +92,7 @@ public partial class Method
 			if( d.Instr != null )
 				function.Statement( d.Instr ) ;
 			}
+		return ;
 		}
 	}
 }

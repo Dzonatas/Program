@@ -9,7 +9,7 @@ public partial class Method
 		Program.C_Method c_method ;
 		C_Type  classType ;
 		Name    name ;
-		Decl    declList ;
+		Decls   decls ;
 		int     maxstack ;
 		bool    _static ;
 		bool    _CallConvInstance ;
@@ -39,10 +39,10 @@ public partial class Method
 			CreateFunction() ;
 			}
 		virtual protected void methodHead() {}
-		public Decl    DeclList
+		public Decls   Decls
 			{
-			set { declList = value ; }
-			get { return declList ; }
+			set { decls = value.First() ; }
+			get { return decls ; }
 			}
 		protected Attr    AttrList
 			{
@@ -147,7 +147,7 @@ public partial class Method
 			c.Statement( C699.C.Const.Voidpp.Equate("stack",C699.Alloca(maxstack + " * sizeof(void*)") ) ) ;
 			if( locals != null )
 				locals.WriteTo( c ) ;
-			A335.Method.WriteList( c, declList ) ;
+			A335.Method.WriteList( c, decls ) ;
 			if( _Virtual )
 				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
 			var sw = global::Current.Path.CreateText( c.Symbol + ".c" ) ;

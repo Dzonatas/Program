@@ -10,6 +10,11 @@ public partial class Method
 		Decl next ;
 		C_Label   label ;
 		Instr     _Instr ;
+		Decls node ;
+		public Decls Node
+			{
+			set { node = value ; }
+			}
 		public Decl Next
 			{
 			get { return next ; }

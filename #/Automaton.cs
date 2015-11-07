@@ -78,9 +78,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   implAttr_implAttr__managed_
 	: Automatrix {}
 
-[Automaton] public class   methodDecls_methodDecls_methodDecl
-	: Automatrix {}
-
 [Automaton] public class   publicKeyTokenHead___publickeytoken_________
 	: Automatrix {}
 

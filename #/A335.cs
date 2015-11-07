@@ -96,9 +96,10 @@ public partial class Method
 		{
 		public partial class Part1 : Automatrix {}
 		}
-	public partial class Decl : Automatrix {}
-	public partial class Attr : Automatrix {}
-	public partial class Name : Automatrix {}
+	public partial class Decl  : Automatrix {}
+	public partial class Attr  : Automatrix {}
+	public partial class Name  : Automatrix {}
+	public partial class Decls : Automatrix {}
 	}
 [Automaton] public partial class   methodHeadPart1___method_
 	: Method.Head.Part1   {}
@@ -134,6 +135,8 @@ public partial class Method
 	: Method.Name	{}
 [Automaton] public partial class   methodName_name1
 	: Method.Name	{}
+[Automaton] public partial class   methodDecls_methodDecls_methodDecl
+	: Method.Decls	{}
 
 public partial class Instr : Automatrix
 	{

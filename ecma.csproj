@@ -190,6 +190,7 @@
     <Compile Include="#\Cluster\Cluster.Task.cs" />
     <Compile Include="#\Cluster\Cluster.TaskIterator.cs" />
     <Compile Include="#\Cluster\Cluster.Application.cs" />
+    <Compile Include="#\Method\Method.Decls.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
