@@ -4,12 +4,17 @@ public partial class Method
 	{
 	public partial class Decls : Automatrix, System.Collections.Generic.IEnumerable<Decl>
 		{
+		static protected Decls thread ;
 		protected Decls previous ;
 		protected Decls next ;
 		protected Decl  decl ;
 		static public implicit operator Decl( Decls d )
 			{
 			return d.decl ;
+			}
+		static public Decls Thread
+			{
+			get { return thread ; }
 			}
 		public Decls First()
 			{
@@ -41,6 +46,8 @@ public partial class   methodDecls_methodDecls_methodDecl
 		decl     = Argv[2] as Method.Decl ;
 		if( previous != null )
 			(previous as methodDecls_methodDecls_methodDecl).next = this ;
+		else
+			thread = this ;
 		decl.Node = this ;
 		}
 	}

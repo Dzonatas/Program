@@ -4,46 +4,17 @@ public partial class Method
 	{
 	public partial class Decl : Automatrix
 		{
-		static Decl current = null ;
 		Head _head ;
-		Decl previous ;
-		Decl next ;
 		Instr     _Instr ;
 		Decls node ;
 		public Decls Node
 			{
 			set { node = value ; }
 			}
-		public Decl Next
-			{
-			get { return next ; }
-			}
 		public Instr     Instr
 			{
 			set { _Instr = value ; }
 			get { return _Instr ; }
-			}
-		static public Decl List
-			{
-			get {
-				Decl i ;
-				for( i = current ; i is Decl ; i = i.previous )
-					{
-					if( i.previous == null )
-						{
-						current = null ;
-						return i ;
-						}
-					else
-						i.previous.next = i ;
-					}
-				return i ;
-				}
-			}
-		protected void Enlist()
-			{
-			previous = current ;
-			current = this ;
 			}
 		protected int     MaxStack
 			{
@@ -68,7 +39,7 @@ public partial class Method
 			}
 		static public C_Label Find( C_Symbol id )
 			{
-			for( Decl i = current ; i is Decl ; i = i.next )
+			foreach( Decl i in Decls.Thread )
 				if( i.Label != null && id == i.Label )
 					return i.Label ;
 			return null ;
@@ -143,7 +114,6 @@ public partial class   methodDecl_instr
 	: Method.Decl	{
 	protected override void main()
 		{
-		Enlist() ;
 		Instr = Argv[1] as Instr ;
 		Instr.C_OprandHasArgs = ( 0 < Args ) ;
 		Instr.Defined() ;
