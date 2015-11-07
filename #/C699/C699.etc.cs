@@ -35,7 +35,7 @@ static public c Object(int i)
 	return c ;
 	}
 #if DEBUG_ASM
-public static string[,] _IDE = null ;
+public static string[,] _IDE = null ; //http://www.bidnessetc.com/56528-pc-gamers-better-off-playing-batman-arkham-knight-on-a-console/
 //	[System.Runtime.InteropServices.DllImport( LIBC_so )]
 //public extern  static int                          write( int fd, string, string.Length ) ;
 public struct cso
