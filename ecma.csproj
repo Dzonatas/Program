@@ -191,6 +191,8 @@
     <Compile Include="#\Cluster\Cluster.TaskIterator.cs" />
     <Compile Include="#\Cluster\Cluster.Application.cs" />
     <Compile Include="#\Method\Method.Decls.cs" />
+    <Compile Include="#\Decl\Decls.cs" />
+    <Compile Include="#\Decl\Decl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -209,6 +211,7 @@
     <Folder Include="#\Program\" />
     <Folder Include="#\C699\" />
     <Folder Include="#\Cluster\" />
+    <Folder Include="#\Decl\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="~\test.sh" />

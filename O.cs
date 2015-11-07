@@ -39,14 +39,6 @@ public partial class   compQstring_QSTRING
 		}
 	}
 
-public partial class   decl_classHead_____classDecls____
-	: Automatrix	{
-	protected override void main()
-		{
-		Class.Declared() ;
-		}
-	}
-
 public partial class   _accept_START__end
 	: Automatrix	{
 	protected override void main()

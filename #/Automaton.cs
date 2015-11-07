@@ -36,12 +36,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   assemblyRefDecls_assemblyRefDecls_assemblyRefDecl
 	: Automatrix {}
 
-[Automaton] public class   decl_assemblyRefHead_____assemblyRefDecls____
-	: Automatrix {}
-
-[Automaton] public class   decls_decls_decl
-	: Automatrix {}
-
 [Automaton] public class   id_SQSTRING
 	: Automatrix {}
 
@@ -55,9 +49,6 @@ public class AutomatonAttribute : System.Attribute
 	: Automatrix {}
 
 [Automaton] public class   assemblyDecl_asmOrRefDecl
-	: Automatrix {}
-
-[Automaton] public class   decl_assemblyHead_____assemblyDecls____
 	: Automatrix {}
 
 [Automaton] public class   name1_DOTTEDNAME
@@ -108,13 +99,7 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   slashedName_slashedName_____name1
 	: Automatrix {}
 
-[Automaton] public class   decl_moduleHead
-	: Automatrix {}
-
 [Automaton] public class   bounds1_bound
-	: Automatrix {}
-
-[Automaton] public class   decls
 	: Automatrix {}
 
 [Automaton] public class   localsHead___locals_

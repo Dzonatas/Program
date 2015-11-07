@@ -11,6 +11,22 @@ public partial class Stack
 public partial class Object : Stack.Item {}
 public partial class Automatrix : Object {}
 public class _START : Automatrix {}
+public partial class Decls : Automatrix {}
+[Automaton] public partial class   decls
+	: Decls	{}
+[Automaton] public partial class   decls_decls_decl
+	: Decls {}
+
+public partial class Decl : Automatrix {}
+[Automaton] public partial class   decl_assemblyHead_____assemblyDecls____
+	: Decl	{}
+[Automaton] public partial class   decl_assemblyRefHead_____assemblyRefDecls____
+	: Decl	{}
+[Automaton] public partial class   decl_classHead_____classDecls____
+	: Decl	{}
+[Automaton] public partial class   decl_moduleHead
+	: Decl	{}
+
 public partial class SigArgs0 : Automatrix
 	{
 	[Automaton] public partial class   sigArgs0_sigArgs1
@@ -70,8 +86,6 @@ public partial class CallConv : Automatrix
 		: CallConv	{}
 	}
 [Automaton] public partial class   _accept_START__end
-	: Automatrix	{}
-[Automaton] public partial class   decl_classHead_____classDecls____
 	: Automatrix	{}
 [Automaton] public partial class   compQstring_QSTRING
 	: Automatrix	{}
