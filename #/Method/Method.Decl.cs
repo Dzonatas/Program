@@ -9,6 +9,7 @@ public partial class Method
 		public Decls Node
 			{
 			set { node = value ; }
+			get { return node ; }
 			}
 		protected int     MaxStack
 			{

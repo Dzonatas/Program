@@ -21,8 +21,7 @@ public partial class   classDecl_methodHead_methodDecls____
 	: Class.Decl	{
 	protected override void main()
 		{
-		var methodHead   = (Argv[1] as Method.Head) ;
-		methodHead.Decls = (Argv[2] as Method.Decls) ;
+		var methodHead = Method.Declared( Argv[1] as Method.Head, Argv[2] as Method.Decls ) ;
 		if( methodHead.Cctor )
 			Cctor = true ;
 		#if HPP

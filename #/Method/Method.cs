@@ -82,6 +82,12 @@ public partial class Method
 		//xml_load_grammar() ;
 		#endif
 		}
+	static public Head Declared( Head h, Decls d )
+		{
+		d.Head  = h ;
+		h.Decls = d ;
+		return h ;
+		}
 	static public void WriteList( Program.C_Function function, Decls decls )
 		{
 		foreach( Decl d in decls )

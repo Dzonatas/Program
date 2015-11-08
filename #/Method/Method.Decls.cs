@@ -5,6 +5,7 @@ public partial class Method
 	public partial class Decls : Automatrix, System.Collections.Generic.IEnumerable<Decl>
 		{
 		static protected Decls thread ;
+		protected Head  head ;
 		protected Decls previous ;
 		protected Decls next ;
 		protected Decl  decl ;
@@ -15,6 +16,14 @@ public partial class Method
 		static public Decls Thread
 			{
 			get { return thread ; }
+			}
+		public Head Head
+			{
+			set	{
+				foreach( Decl d in this )
+					d.Node.head = value ;
+				}
+			get { return head ; }
 			}
 		public Decls First()
 			{
