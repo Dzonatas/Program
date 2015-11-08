@@ -11,7 +11,7 @@ public partial class Class : Automatrix
 		public new virtual string   Symbol { get { return string.Empty ; } }
 		public Head                 Outer  { get { return outer ; } }
 		public new C_Type           Type   { get { return type ; } }
-		public Decls Decls
+		public new Decls Decls
 			{
 			set { decls = value ; }
 			get { return decls  ; }

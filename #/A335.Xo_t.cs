@@ -439,7 +439,7 @@ class Xo_t
 				{
 				bool nul = false ;
 				try { nul = X.Auto[xml.Name] == null ; }
-				catch( System.Collections.Generic.KeyNotFoundException eh )
+				catch( System.Collections.Generic.KeyNotFoundException )
 					{
 					if( Cluster.Parameter.Value( xml.Name ) == "false" )
 						System.Console.WriteLine( "Program: eh( &"+xml.Name+"; )" ) ;

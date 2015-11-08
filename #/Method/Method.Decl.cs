@@ -98,7 +98,7 @@ public partial class   methodDecl_id____
 		{
 		label = C_Label.Acquire( Arg1.Token ) ;
 		}
-	public C_Label Label
+	public new C_Label Label
 		{
 		get { return label ; }
 		}

@@ -23,7 +23,7 @@ public partial class Class : Automatrix
 			while( current.previous != null ) current = current.previous ;
 			return current ;
 			}
-		public Head Head
+		public new Head Head
 			{
 			set	{
 				foreach( Decl d in this )
