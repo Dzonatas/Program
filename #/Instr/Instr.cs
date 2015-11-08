@@ -2,18 +2,11 @@ partial class A335
 {
 public partial class Instr : Automatrix
 	{
-	Instr next ;
+	protected A335.Method.Decl decl ;
 	string code ;
-	static Instr list ;
-	static Instr previous ;
-	static Instr current ;
-	static public Instr List
+	public A335.Method.Decl Decl
 		{
-		get { Instr l = list ; list = previous = current = null ; return l ; }
-		}
-	public Instr Next
-		{
-		get { return next ; }
+		set { decl = value ; }
 		}
 	public class Oprand
 		{
@@ -49,9 +42,6 @@ public partial class Instr : Automatrix
 	protected string Op
 		{
 		set {
-			current = this ;
-			if( previous != null ) previous.next = current ;
-			if( list == null ) list = this ;
 			op = value ;
 			op = (oprand = new Oprand(this)).C.Instruction ;
 			code = op ;
@@ -76,12 +66,12 @@ public partial class Instr : Automatrix
 	public void Defined()
 		{
 		Oprand.Declared() ;
-		previous = current ;
 		}
 	public override string ToString()
 			{
 			return "[Instr] " + code ;
 			}
+	#if HPP
 	static public void WriteList( string symbol, Instr instr )
 		{
 		var sw = Current.Path.CreateText( symbol + ".hpp" ) ;
@@ -89,5 +79,6 @@ public partial class Instr : Automatrix
 			i.oprand.C.WriteTo( sw ) ;
 		sw.Close() ;
 		}
+	#endif
 	}
 }

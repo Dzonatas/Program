@@ -29,7 +29,7 @@ public partial class   classDecl_methodHead_methodDecls____
 		string symbol = Class.Type + methodHead.Name ;
 		Instr.WriteList( symbol, Instr.List ) ;
 		#else
-		Instr hpp = Instr.List ;
+		//Instr hpp = Instr.List ;
 		#endif
 		C.Hangdown() ;
 		}

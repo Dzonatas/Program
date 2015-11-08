@@ -109,6 +109,7 @@ public partial class   methodDecl_instr
 	protected override void main()
 		{
 		var i = Argv[1] as A335.Instr ;
+		i.Decl = this ;
 		i.C_OprandHasArgs = ( 0 < Args ) ;
 		i.Defined() ;
 		//Debug.WriteLine( "[methodDecl_instr] stack={0}", C.StackOffset ) ;
