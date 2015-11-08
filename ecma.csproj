@@ -193,6 +193,7 @@
     <Compile Include="#\Method\Method.Decls.cs" />
     <Compile Include="#\Decl\Decls.cs" />
     <Compile Include="#\Decl\Decl.cs" />
+    <Compile Include="#\Class\Class.Decls.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -45,10 +45,11 @@ public partial class SigArg : Automatrix
 	}
 public partial class Class : Automatrix
 	{
-	public partial class Head : Class {}
-	public partial class Decl : Class {}
-	public partial class Name : Class {}
-	public partial class Attr : Class {}
+	public partial class Head  : Class {}
+	public partial class Decl  : Class {}
+	public partial class Decls : Class {}
+	public partial class Name  : Class {}
+	public partial class Attr  : Class {}
 	}
 [Automaton] public partial class   classHead___class__classAttr_id_extendsClause_implClause
 	: Class.Head	{}
@@ -59,7 +60,7 @@ public partial class Class : Automatrix
 [Automaton] public partial class   classDecl_classHead_____classDecls____
 	: Class.Decl	{}
 [Automaton] public partial class   classDecls_classDecls_classDecl
-	: Automatrix	{}
+	: Class.Decls	{}
 [Automaton] public partial class   classAttr_classAttr__private_
 	: Class.Attr {}
 [Automaton] public partial class   classAttr_classAttr__auto_

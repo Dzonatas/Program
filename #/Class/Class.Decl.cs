@@ -4,6 +4,11 @@ public partial class Class : Automatrix
 	{
 	public partial class Decl : Class
 		{
+		Decls node ;
+		public Decls Node
+			{
+			set { node = value ; }
+			}
 		static protected Field.Decl Field
 			{
 			set { field_add( value ) ;  }
@@ -49,9 +54,6 @@ public partial class   classDecl_fieldDecl
 		Field = Argv[1] as Field.Decl ;
 		}
 	}
-
-public partial class   classDecls_classDecls_classDecl
-	: Automatrix	{}
 }
 
 
