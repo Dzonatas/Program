@@ -5,16 +5,10 @@ public partial class Method
 	public partial class Decl : Automatrix
 		{
 		Head _head ;
-		Instr     _Instr ;
 		Decls node ;
 		public Decls Node
 			{
 			set { node = value ; }
-			}
-		public Instr     Instr
-			{
-			set { _Instr = value ; }
-			get { return _Instr ; }
 			}
 		protected int     MaxStack
 			{
@@ -114,10 +108,14 @@ public partial class   methodDecl_instr
 	: Method.Decl	{
 	protected override void main()
 		{
-		Instr = Argv[1] as Instr ;
-		Instr.C_OprandHasArgs = ( 0 < Args ) ;
-		Instr.Defined() ;
+		var i = Argv[1] as A335.Instr ;
+		i.C_OprandHasArgs = ( 0 < Args ) ;
+		i.Defined() ;
 		//Debug.WriteLine( "[methodDecl_instr] stack={0}", C.StackOffset ) ;
+		}
+	static public implicit operator C699.c(methodDecl_instr mdi)
+		{
+		return mdi.Argv[1] as Instr ;
 		}
 	}
 }

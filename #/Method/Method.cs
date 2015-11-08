@@ -89,8 +89,8 @@ public partial class Method
 			if( d.Label != null && d.Label.Required )
 				function.Label( d.Label ) ;
 			else
-			if( d.Instr != null )
-				function.Statement( d.Instr ) ;
+			if( d is methodDecl_instr )
+				function.Statement( (methodDecl_instr)d ) ;
 			}
 		return ;
 		}
