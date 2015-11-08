@@ -5,6 +5,7 @@ public partial class Class : Automatrix
 	public partial class Decls : Class, System.Collections.Generic.IEnumerable<Decl>
 		{
 		static protected Decls thread ;
+		protected Head  head ;
 		protected Decls previous ;
 		protected Decls next ;
 		protected Decl  decl ;
@@ -21,6 +22,14 @@ public partial class Class : Automatrix
 			Decls current = this ;
 			while( current.previous != null ) current = current.previous ;
 			return current ;
+			}
+		public Head Head
+			{
+			set	{
+				foreach( Decl d in this )
+					d.Node.head = value ;
+				}
+			get { return head ; }
 			}
 		public System.Collections.Generic.IEnumerator<Decl> GetEnumerator()
 			{

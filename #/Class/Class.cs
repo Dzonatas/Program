@@ -2,15 +2,8 @@ partial class A335
 {
 public partial class Class : Automatrix
 	{
-	static string[] field = new string[0] ;
 	static string[] type = new string[0] ;
 	static string[] cctor = new string[0] ;
-	static void field_add( string id )
-		{
-		System.Array.Resize( ref field, field.Length +1 ) ;
-		field[field.Length - 1] = id ;
-		return ;
-		}
 	static void type_add( string id )
 		{
 		System.Array.Resize( ref type, type.Length +1 ) ;
@@ -39,14 +32,17 @@ public partial class Class : Automatrix
 		{
 		get { return cctor ; }
 		}
-	static public void Declared()
+	static public void Declared( Head h, Decls d )
 		{
+		d.Head  = h ;
+		h.Decls = d ;
 		type_add( Symbol ) ;
 		var sw = Current.Path.CreateText( Symbol + ".h" ) ;
-		foreach( string s in field )
-			sw.WriteLine( s ) ;
+		foreach( Decl decl in d )
+			if( decl is classDecl_fieldDecl )
+				sw.WriteLine( decl as classDecl_fieldDecl ) ;
 		sw.Close() ;
-		field = new string[0] ;
+		classHead = h.Outer ;
 		}
 	}
 }

@@ -13,7 +13,7 @@ public partial class   decl_classHead_____classDecls____
 	: Decl	{
 	protected override void main()
 		{
-		Class.Declared() ;
+		Class.Declared( Argv[1] as Class.Head, Argv[3] as Class.Decls ) ;
 		}
 	}
 

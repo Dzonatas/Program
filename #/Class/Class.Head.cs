@@ -5,11 +5,17 @@ public partial class Class : Automatrix
 	static protected Head classHead ;
 	public partial class Head : Class
 		{
+		Decls decls ;
 		protected Head              outer ;
 		protected C_Type            type ;
 		public new virtual string   Symbol { get { return string.Empty ; } }
 		public Head                 Outer  { get { return outer ; } }
 		public new C_Type           Type   { get { return type ; } }
+		public Decls Decls
+			{
+			set { decls = value ; }
+			get { return decls  ; }
+			}
 		}
 	}
 

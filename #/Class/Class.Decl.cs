@@ -4,14 +4,11 @@ public partial class Class : Automatrix
 	{
 	public partial class Decl : Class
 		{
-		Decls node ;
+		protected Decls node ;
 		public Decls Node
 			{
 			set { node = value ; }
-			}
-		static protected Field.Decl Field
-			{
-			set { field_add( value ) ;  }
+			get { return node ; }
 			}
 		static protected bool Cctor
 			{
@@ -42,16 +39,15 @@ public partial class   classDecl_classHead_____classDecls____
 	: Class.Decl	{
 	protected override void main()
 		{
-		classHead = (Argv[1] as Class.Head).Outer ;
-		Declared() ;
+		Declared( Argv[1] as Head, Argv[3] as Decls ) ;
 		}
 	}
 
 public partial class   classDecl_fieldDecl
 	: Class.Decl	{
-	protected override void main()
+	public static implicit operator string( classDecl_fieldDecl decl )
 		{
-		Field = Argv[1] as Field.Decl ;
+		return decl.Argv[1] as Field.Decl ;
 		}
 	}
 }
