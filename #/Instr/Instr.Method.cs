@@ -11,7 +11,6 @@ public partial class Instr : Automatrix
 		protected bool     CallConvInstance ;
 		protected override void main()
 			{
-			Op            = Arg1.Token ;
 			CallConv      = Arg2 ;
 			Type          = Arg3 ;
 			TypeSpec      = Arg4 ;
@@ -21,9 +20,7 @@ public partial class Instr : Automatrix
 			SigArgs0      = Arg8 ;
 			// ')'
 			MethodName    = Arg6 ;
-			METHOD() ;
 			}
-		protected virtual void METHOD() {}
 		protected Argument SigArgs0
 			{
 			set { if ( value is Argument )
@@ -69,7 +66,7 @@ public partial class Instr : Automatrix
 
 public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____
 	: Instr.Method	{
-	protected override void METHOD()
+	protected override void render()
 		{
 		var d = oprand.C ;
 		d.HasArgs = ( 0 < Args ) ;

@@ -107,16 +107,23 @@ public partial class   methodDecl_id____
 
 public partial class   methodDecl_instr
 	: Method.Decl	{
+	int _Args ;
 	protected override void main()
 		{
-		var i = Argv[1] as A335.Instr ;
-		i.Decl = this ;
-		i.C_OprandHasArgs = ( 0 < Args ) ;
-		i.Defined() ;
+		_Args = Args ;
 		//Debug.WriteLine( "[methodDecl_instr] stack={0}", C.StackOffset ) ;
 		}
+	bool defined ;
 	static public implicit operator C699.c(methodDecl_instr mdi)
 		{
+		if( ! mdi.defined )
+			{
+			var i = mdi.Argv[1] as A335.Instr ;
+			i.Decl = mdi ;
+			i.C_OprandHasArgs = ( 0 < mdi._Args ) ;
+			i.Defined() ;
+			mdi.defined = true ;
+			}
 		return mdi.Argv[1] as Instr ;
 		}
 	}

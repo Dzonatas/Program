@@ -9,9 +9,8 @@ public partial class Instr : Automatrix
 
 public partial class   instr_INSTR_SWITCH_____labels____
 	: Instr.Switch  {
-	protected override void main()
+	protected override void render()
 		{
-		Op = Arg1.Token ;
 		SWITCH( Arg3 ) ;
 		}
 	protected void SWITCH( Argument labels )

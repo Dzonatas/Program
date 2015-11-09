@@ -7,9 +7,11 @@ public partial class Instr : Automatrix
 		protected C_Label Id ;
 		protected override void main()
 			{
-			Op = Arg1.Token ;
-			oprand.BrTarget = true ;
 			Id = C_Label.Require( Arg2.Token ) ;
+			}
+		protected override void render()
+			{
+			oprand.BrTarget = true ;
 			BRTARGET() ;
 			}
 		protected virtual void BRTARGET() {}

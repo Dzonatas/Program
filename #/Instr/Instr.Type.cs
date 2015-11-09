@@ -4,9 +4,8 @@ public partial class Instr : Automatrix
 	{
 	public partial class Type : Instr
 		{
-		protected override void main()
+		protected override void render()
 			{
-			Op = Arg1.Token ;
 			TYPE( Arg2 ) ;
 			}
 		protected virtual void TYPE( Argument typeSpec ) {}

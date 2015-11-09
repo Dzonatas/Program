@@ -4,9 +4,8 @@ public partial class Instr : Automatrix
 	{
 	public partial class None : Instr
 		{
-		protected override void main()
+		protected override void render()
 			{
-			Op = Arg1.Token ;
 			NONE() ;
 			}
 		protected virtual void NONE() {}
@@ -23,7 +22,7 @@ public partial class   instr_INSTR_NONE
 			case "LDARG_0":
 				{
 				C_Type type ;
-				if( A335.Method.Head.Current.CallConvInstance )
+				if( decl.Node.Head.CallConvInstance )
 					type = d.Method.ThisType ;
 				else
 					type = d.Method.Args[0] ;
@@ -136,7 +135,7 @@ public partial class   instr_INSTR_NONE
 		}
 	void stloc( int i )
 		{
-		var loc = A335.Method.Head.Current.Locals[i] ;
+		var loc = decl.Node.Head.Locals[i] ;
 		var l = C699.C.Literal( loc.Symbol ) ;
 		#if HPP
 		C699.c c = c.Local( loc._Type, l ) ;
@@ -148,7 +147,7 @@ public partial class   instr_INSTR_NONE
 		}
 	C_Type ldloc( int i )
 		{
-		var loc = A335.Method.Head.Current.Locals[i] ;
+		var loc = decl.Node.Head.Locals[i] ;
 		#if HPP
 		throw new System.NoteImplementedException() ;
 		#endif

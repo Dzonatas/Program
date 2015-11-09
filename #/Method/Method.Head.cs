@@ -104,10 +104,6 @@ public partial class Method
 			set { _CallConvInstance = value ; }
 			get { return _CallConvInstance ; }
 			}
-		static public Method.Head Current
-			{
-			get { return head ; }
-			}
 		public bool    Virtual
 			{
 			set {

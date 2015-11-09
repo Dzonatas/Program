@@ -25,8 +25,8 @@ public partial class Program : C699
 		}
 	static public void Write()
 		{
-		WriteC_Main() ;
 		A335.Method.Write() ;
+		WriteC_Main() ;
 		WriteC_Objects() ;
 		}
 	static public void WriteC_Main()

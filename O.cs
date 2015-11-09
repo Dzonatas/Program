@@ -33,9 +33,9 @@ public partial class CallConv : Automatrix
 
 public partial class   compQstring_QSTRING
 	: Automatrix	{
-	protected override void main()
+	static public explicit operator string(compQstring_QSTRING qs )
 		{
-		this_string = Arg1.Token ;
+		return qs.Arg1.Token ;
 		}
 	}
 

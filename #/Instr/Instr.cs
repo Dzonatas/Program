@@ -3,20 +3,21 @@ partial class A335
 public partial class Instr : Automatrix
 	{
 	protected A335.Method.Decl decl ;
-	string code ;
 	public A335.Method.Decl Decl
 		{
-		set { decl = value ; }
+		set { decl = value ; oprand = new Oprand(this,Arg1.Token) ; }
 		}
 	public class Oprand
 		{
 		Instr _instr ;
 		Program.C_Oprand c_oprand ;
+		/*
 		static Oprand current ;
 		static public A335.Program.C_Oprand Current
 			{
 			get { return current.c_oprand ; }
 			}
+		*/
 		public A335.Program.C_Oprand C
 			{
 			get { return c_oprand ; }
@@ -25,32 +26,33 @@ public partial class Instr : Automatrix
 			{
 			set { c_oprand.BrTarget = value ; }
 			}
-		public Oprand( Instr instr )
+		public Oprand( Instr instr, string op )
 			{
-			c_oprand = A335.Method.Head.Current.NewOprand( op ) ;
+			c_oprand = instr.decl.Node.Head.NewOprand( op ) ;
 			op = c_oprand.Instruction ;
 			log( "[Instr.Oprand] "+ op ) ;
-			current = this ;
+			//current = this ;
 			_instr = instr ;
 			}
 		static public void Declared()
 			{
-			current = null ;
+			//current = null ;
 			}
 		}
-	static string op ;
 	protected string Op
 		{
-		set {
-			op = value ;
-			op = (oprand = new Oprand(this)).C.Instruction ;
-			code = op ;
-			}
-		get { return op ; }
+		get { return oprand.C.Instruction ; }
 		}
 	protected Oprand oprand ;
+	virtual protected void render() {}
+	bool rendered ;
 	static public implicit operator C699.c( Instr i )
 		{
+		if( ! i.rendered )
+			{
+			i.render() ;
+			i.rendered = true ;
+			}
 		#if HPP
 		return i.oprand.C ;
 		#else
@@ -69,7 +71,7 @@ public partial class Instr : Automatrix
 		}
 	public override string ToString()
 			{
-			return "[Instr] " + code ;
+			return "[Instr] " + (oprand != null ?  oprand.C.Instruction : "" ) ;
 			}
 	#if HPP
 	static public void WriteList( string symbol, Instr instr )

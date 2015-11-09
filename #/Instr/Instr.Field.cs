@@ -9,9 +9,8 @@ public partial class Instr : Automatrix
 
 public partial class   instr_INSTR_FIELD_type_id
 	: Instr.Field   {
-	protected override void main()
+	protected override void render()
 		{
-		Op = Arg1.Token ;
 		FIELD( Arg2, Arg3 ) ;
 		}
 	protected void FIELD( Argument type, Argument id )
@@ -27,9 +26,8 @@ public partial class   instr_INSTR_FIELD_type_id
 
 public partial class   instr_INSTR_FIELD_type_typeSpec______id
 	: Instr.Field   {
-	protected override void main()
+	protected override void render()
 		{
-		Op = Arg1.Token ;
 		FIELD( Arg2, Arg3, Arg5 ) ;
 		}
 	protected void FIELD( Argument type, Argument typeSpec, Argument id )

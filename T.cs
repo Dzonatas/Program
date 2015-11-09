@@ -5,7 +5,6 @@ static System.Nullable<Tokenset.Token>  /*t_##*/token ; ///lowercased.Any(_atoma
 static State              this_state ;
 #endif
 public static IRule       this_rule ;
-static string             this_string ;
 
 /*	
 static bool transition( int i, out Transition tr )

@@ -98,6 +98,7 @@ public partial class Method
 			if( d is methodDecl_instr )
 				function.Statement( (methodDecl_instr)d ) ;
 			}
+		decls.C.Hangdown() ;
 		return ;
 		}
 	}

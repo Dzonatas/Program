@@ -30,7 +30,7 @@ public partial class   classDecl_methodHead_methodDecls____
 		#else
 		//Instr hpp = Instr.List ;
 		#endif
-		C.Hangdown() ;
+		//C.Hangdown() ;
 		}
 	}
 
