@@ -243,9 +243,9 @@ public partial class Program : C699
 		var c = C_Function.FromSymbol( A335.Main.Symbol ) ;
 		c.Args = C699.Main.Args ;
 		c.Type = C.Int ;
-		var e = A335.Method.EntryPoint.Head ;
-		if( string.Join( "!", Class.Cctors).Contains( e.ClassType ) )
-		//if( e.Cctor )
+		var e = A335.Method.EntryPoint.Node.Head ;
+		var cctor = e.ClassDecl.Node.Head.Cctor ;
+		if( cctor != null && cctor.Cctor )
 			{
 			c.Statement( C.Extern.Void.Cctor(e.ClassType) ) ;
 			c.Statement( C.Cctor(e.ClassType) ) ;

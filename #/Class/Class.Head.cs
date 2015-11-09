@@ -6,6 +6,7 @@ public partial class Class : Automatrix
 	public partial class Head : Class
 		{
 		Decls decls ;
+		Method.Head                 cctor ;
 		protected Head              outer ;
 		protected C_Type            type ;
 		public new virtual string   Symbol { get { return string.Empty ; } }
@@ -15,6 +16,11 @@ public partial class Class : Automatrix
 			{
 			set { decls = value ; }
 			get { return decls  ; }
+			}
+		public Method.Head Cctor
+			{
+			get { return cctor ; }
+			set { cctor = value ; }
 			}
 		}
 	}

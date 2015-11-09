@@ -24,6 +24,7 @@ public partial class   classDecl_methodHead_methodDecls____
 		var methodHead = Method.Declared( Argv[1] as Method.Head, Argv[2] as Method.Decls ) ;
 		if( methodHead.Cctor )
 			Cctor = true ;
+		methodHead.ClassDecl = this ;
 		#if HPP
 		string symbol = Class.Type + methodHead.Name ;
 		Instr.WriteList( symbol, Instr.List ) ;

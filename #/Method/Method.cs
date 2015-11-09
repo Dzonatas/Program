@@ -4,6 +4,7 @@ public partial class Method
 	{
 	static Head head ;
 	static Head begin ;
+	static Decl entryPoint ;
 	public class Locals
 		{
 		public struct Local
@@ -60,10 +61,10 @@ public partial class Method
 		for( Head i = Head.Begin ; i is Head ; i = i.Next )
 			i.Write() ;
 		}
-	static Decl _EntryPoint ;
 	static public Decl EntryPoint
 		{
-		get { return _EntryPoint ; }
+		get { return entryPoint ; }
+		set { entryPoint = value ; }
 		}
 	static public void Start()
 		{

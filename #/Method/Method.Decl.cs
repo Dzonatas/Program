@@ -4,7 +4,6 @@ public partial class Method
 	{
 	public partial class Decl : Automatrix
 		{
-		Head _head ;
 		Decls node ;
 		public Decls Node
 			{
@@ -35,25 +34,9 @@ public partial class Method
 					return i.Label ;
 			return null ;
 			}
-		protected Decl    EntryPoint
-			{
-			set {
-				_EntryPoint = value ;
-				_head = head ;
-				if( System.String.IsNullOrEmpty(Class.Symbol) )
-					throw new System.NotImplementedException( "entrypoint outside class" ) ;
-				}
-			get {
-				return _EntryPoint ;
-				}
-			}
 		protected Program.C_Oprand NewOprand( string instr )
 			{
 			return head.NewOprand( instr ) ;
-			}
-		public Head Head
-			{
-			get { return _head ; }
 			}
 		}
 	}
@@ -62,7 +45,7 @@ public partial class   methodDecl___entrypoint_
 	: Method.Decl   {
 	protected override void main()
 		{
-		EntryPoint = this ;
+		Method.EntryPoint = this ;
 		}
 	}
 

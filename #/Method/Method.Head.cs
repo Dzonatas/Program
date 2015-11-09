@@ -4,6 +4,7 @@ public partial class Method
 	{
 	public partial class Head : Automatrix
 		{
+		Class.Decl classDecl ;
 		Head    previous ;
 		Head    next ;
 		Program.C_Method c_method ;
@@ -43,6 +44,11 @@ public partial class Method
 			{
 			set { decls = value.First() ; }
 			get { return decls ; }
+			}
+		public Class.Decl ClassDecl
+			{
+			get { return classDecl ; }
+			set { classDecl = value ; }
 			}
 		protected Attr    AttrList
 			{
@@ -169,6 +175,7 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 		{
 		Type              = Arg5 ;
 		Name              = Argv[6] as Method.Name ;
+		Name.MethodHead   = this ;
 		SigArgs0          = Arg8 ;
 		CallConv          = Arg3 ;
 		AttrList          = Method.Attr.List ;
