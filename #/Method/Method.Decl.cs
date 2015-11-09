@@ -19,10 +19,6 @@ public partial class Method
 			{
 			set { head.Locals = new Method.Locals( value ) ; }
 			}
-		protected int Args
-			{
-			get { return ( head.SigArgs0 == null ? 0 : head.SigArgs0.Count() ) + ( head.CallConvInstance ? 1 : 0 ) ; }
-			}
 		public C_Label Label
 			{
 			get {
@@ -107,23 +103,12 @@ public partial class   methodDecl_id____
 
 public partial class   methodDecl_instr
 	: Method.Decl	{
-	int _Args ;
 	protected override void main()
 		{
-		_Args = Args ;
-		//Debug.WriteLine( "[methodDecl_instr] stack={0}", C.StackOffset ) ;
+		(Argv[1] as A335.Instr).Decl = this ;
 		}
-	bool defined ;
 	static public implicit operator C699.c(methodDecl_instr mdi)
 		{
-		if( ! mdi.defined )
-			{
-			var i = mdi.Argv[1] as A335.Instr ;
-			i.Decl = mdi ;
-			i.C_OprandHasArgs = ( 0 < mdi._Args ) ;
-			i.Defined() ;
-			mdi.defined = true ;
-			}
 		return mdi.Argv[1] as Instr ;
 		}
 	}

@@ -197,6 +197,8 @@ static void Begin()
 	main_c.WriteLine( Xo_t.put("main_c") ) ;
 	main_c.Close() ;
 	#endif
+	Automatrix.Prerender( _START.Auto ) ;
+	Automatrix.Render( _START.Auto ) ;
 	Program.Write() ;
 	if( log_output != null )
 		{

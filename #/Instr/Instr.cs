@@ -5,7 +5,7 @@ public partial class Instr : Automatrix
 	protected A335.Method.Decl decl ;
 	public A335.Method.Decl Decl
 		{
-		set { decl = value ; oprand = new Oprand(this,Arg1.Token) ; }
+		set { decl = value ; }
 		}
 	public class Oprand
 		{
@@ -44,15 +44,8 @@ public partial class Instr : Automatrix
 		get { return oprand.C.Instruction ; }
 		}
 	protected Oprand oprand ;
-	virtual protected void render() {}
-	bool rendered ;
 	static public implicit operator C699.c( Instr i )
 		{
-		if( ! i.rendered )
-			{
-			i.render() ;
-			i.rendered = true ;
-			}
 		#if HPP
 		return i.oprand.C ;
 		#else
@@ -61,12 +54,13 @@ public partial class Instr : Automatrix
 		return new C699.c( s.ToString() ) ;
 		#endif
 		}
-	public bool C_OprandHasArgs
+	protected override void prerender()
 		{
-		set { oprand.C.HasArgs = value ; }
-		}
-	public void Defined()
-		{
+		var head = decl.Node.Head ;
+		oprand = new Oprand(this,Arg1.Token) ;
+		oprand.C.HasArgs = 0 < (
+			( head.SigArgs0 == null ? 0	: head.SigArgs0.Count() )
+			+ ( head.CallConvInstance ? 1 : 0 ) ) ;
 		Oprand.Declared() ;
 		}
 	public override string ToString()

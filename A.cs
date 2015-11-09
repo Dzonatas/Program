@@ -164,7 +164,7 @@ namespace A.org.com.edu.mil.net
 
 partial class A335
 {
-public partial class Automatrix : Object
+public partial class Automatrix : Object, System.Collections.Generic.IEnumerable<Automatrix>
 	{
 	Program cc = null ;
 	public Program C
@@ -249,7 +249,73 @@ public partial class Automatrix : Object
 		{
 		return "[Automatrix] " + string.Join( " ", ResolveType() ) ;
 		}
+	virtual protected void render() {}
+	static public void Render( Automatrix start )
+		{
+		foreach( Automatrix a in start )
+			a.render() ;
+		}
+	virtual protected void prerender() {}
+	static public void Prerender( Automatrix start )
+		{
+		foreach( Automatrix a in start )
+			a.prerender() ;
+		}
+	struct item
+		{
+		public Automatrix automatrix ;
+		public int        index ;
+		}
+	public System.Collections.Generic.IEnumerator<Automatrix> GetEnumerator()
+		{
+		var stack = new System.Collections.Generic.Stack<item>() ;
+		item i = new item() { automatrix = this , index = 0 } ;
+		while( i.automatrix != null )
+			{
+			for( ++i.index ; i.index < i.automatrix.Argv.Length ; i.index++ )
+				{
+				if( i.automatrix.Argv[i.index] is Stack.Item.Token )
+					{
+					}
+				else
+				if( i.automatrix.Argv[i.index] is Stack.Item.Empty )
+					{
+					}
+				else
+				if( i.automatrix.Argv[i.index] == null )
+					{
+					}
+				else
+				if( i.automatrix.Argv[i.index] is Automatrix )
+					{
+					stack.Push(i) ;
+					i.automatrix = i.automatrix.Argv[i.index] as Automatrix ;
+					i.index = 0 ;
+					//yield return i.automatrix ;
+					}
+				else
+					throw new System.NotImplementedException( "Unresolved type." ) ;
+				}
+			yield return i.automatrix.Argv[0] as Automatrix ;
+			if( stack.Count == 0 )
+				yield break ;
+			i = stack.Pop() ;
+			}
+		}
+	System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+		{
+		return GetEnumerator() ;
+		}
 	}
+public partial class _START : Automatrix
+	{
+	public static Automatrix Auto ;
+	protected override void main()
+		{
+		Auto = this ;
+		}
+	}
+
 }
 
 namespace A {

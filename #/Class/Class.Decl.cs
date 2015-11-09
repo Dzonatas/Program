@@ -32,6 +32,10 @@ public partial class   classDecl_methodHead_methodDecls____
 		#endif
 		//C.Hangdown() ;
 		}
+	protected override void render()
+		{
+		C.Hangdown() ;
+		}
 	}
 
 public partial class   classDecl_classHead_____classDecls____
