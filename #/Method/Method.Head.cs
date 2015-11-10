@@ -50,7 +50,7 @@ public partial class Method
 			get { return classDecl ; }
 			set { classDecl = value ; }
 			}
-		protected Attr    AttrList
+		protected Attr    MethAttr
 			{
 			set {
 				  Static  = value is Attr ? value.Static : false ;
@@ -178,7 +178,7 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 		Name.MethodHead   = this ;
 		SigArgs0          = Arg8 ;
 		CallConv          = Arg3 ;
-		AttrList          = Method.Attr.List ;
+		MethAttr          = Argv[2] as Method.Attr ;
 		}
 	protected new Argument SigArgs0
 		{

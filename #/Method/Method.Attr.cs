@@ -4,21 +4,10 @@ public partial class Method
 	{
 	public partial class Attr : Automatrix
 		{
-		static Attr current = null ;
-		Attr next ;
-		protected override void main()
-			{
-			next = current ;
-			current = this ;
-			}
-		static public Attr List
-			{
-			get { Attr l = current ; current = null ; return l ; }
-			}
 		public bool Static
 			{
 			get {
-				for( Attr i = this ; i is Attr ; i = i.next )
+				for( Attr i = this ; i is Attr ; i = i.Argv[1] as Attr )
 					if( i is methAttr_methAttr__static_ )
 						return true ;
 				return false ;
@@ -27,7 +16,7 @@ public partial class Method
 		public bool Virtual
 			{
 			get {
-				for( Attr i = this ; i is Attr ; i = i.next )
+				for( Attr i = this ; i is Attr ; i = i.Argv[1] as Attr )
 					if( i is methAttr_methAttr__virtual_ )
 						return true ;
 				return false ;
