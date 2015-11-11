@@ -20,7 +20,7 @@ public partial class Decls : Automatrix, System.Collections.Generic.IEnumerable<
 		while( current.previous != null ) current = current.previous ;
 		return current ;
 		}
-	public System.Collections.Generic.IEnumerator<Decl> GetEnumerator()
+	public new System.Collections.Generic.IEnumerator<Decl> GetEnumerator()
 		{
 		Decls current = First() ;
 		while( current != null )

@@ -31,7 +31,7 @@ public partial class Class : Automatrix
 				}
 			get { return head ; }
 			}
-		public System.Collections.Generic.IEnumerator<Decl> GetEnumerator()
+		public new System.Collections.Generic.IEnumerator<Decl> GetEnumerator()
 			{
 			Decls current = First() ;
 			while( current != null )

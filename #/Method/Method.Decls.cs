@@ -31,7 +31,7 @@ public partial class Method
 			while( current.previous != null ) current = current.previous ;
 			return current ;
 			}
-		public System.Collections.Generic.IEnumerator<Decl> GetEnumerator()
+		public new System.Collections.Generic.IEnumerator<Decl> GetEnumerator()
 			{
 			Decls current = First() ;
 			while( current != null )
