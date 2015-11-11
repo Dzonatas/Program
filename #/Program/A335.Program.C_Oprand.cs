@@ -7,7 +7,6 @@ partial class Program : C699
 	{
 	public class C_Oprand
 		{
-		C_Label label ;
 		C_Function function ;
 		public string Instruction ;
 		public string ID ;
@@ -15,11 +14,6 @@ partial class Program : C699
 		public bool BrTarget ;
 		List<C699.c> list = new List<C699.c>() ;
 		public System.Action<C_Function> Evaluate = (c) => {} ;
-		public C_Label Label
-			{
-			set { label = value ; }
-			get { return label ; }
-			}
 		public C_Method Method
 			{
 			get { return function.Method ; }

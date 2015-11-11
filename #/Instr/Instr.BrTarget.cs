@@ -4,28 +4,35 @@ public partial class Instr : Automatrix
 	{
 	public partial class BrTarget : Instr
 		{
-		protected C_Label Id ;
-		protected override void main()
-			{
-			Id = C_Label.Require( Arg2.Token ) ;
-			}
-		protected override void render()
-			{
-			oprand.BrTarget = true ;
-			BRTARGET() ;
-			}
-		protected virtual void BRTARGET() {}
+		protected A335.Method.Decl target ;
+		}
+	public class LabelNotFoundException : System.Exception
+		{
+		public LabelNotFoundException(string label) : base(label) {}
 		}
 	}
 
 public partial class   instr_INSTR_BRTARGET_id
 	: Instr.BrTarget {
-	protected override void BRTARGET()
+	protected override void _prerender()
 		{
+		foreach( A335.Method.Decl d in decl.Node )
+			if( d is methodDecl_id____ && (d as methodDecl_id____).Arg1.Token == Arg2.Token )
+				{
+				(d as methodDecl_id____).Required = true ;
+				target = d ;
+				return ;
+				}
+		throw new LabelNotFoundException( Arg2.Token ) ;
+		}
+	protected override void render()
+		{
+		oprand.BrTarget = true ;
+		string id = target as methodDecl_id____ ;
 		switch( Op )
 			{
 			case "BR" :
-				oprand.C.GotoStatement( Id ) ;
+				oprand.C.GotoStatement( id ) ;
 				return ;
 			case "BRFALSE" :
 				{
@@ -35,7 +42,7 @@ public partial class   instr_INSTR_BRTARGET_id
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				#else
-				oprand.C.Statement( C699.C.If( a.EqualTo.Zero, C699.C.Goto( Id ) ) ) ;
+				oprand.C.Statement( C699.C.If( a.EqualTo.Zero, C699.C.Goto( id ) ) ) ;
 				#endif
 				}
 				return ;
@@ -49,7 +56,7 @@ public partial class   instr_INSTR_BRTARGET_id
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				#else
-				oprand.C.Statement( C699.C.If( a, ">=", b , C699.C.Goto( Id ) ) ) ;
+				oprand.C.Statement( C699.C.If( a, ">=", b , C699.C.Goto( id ) ) ) ;
 				#endif
 				}
 				return ;
@@ -63,7 +70,7 @@ public partial class   instr_INSTR_BRTARGET_id
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				#else
-				oprand.C.Statement( C699.C.If( a, "==", b , C699.C.Goto( Id ) ) ) ;
+				oprand.C.Statement( C699.C.If( a, "==", b , C699.C.Goto( id ) ) ) ;
 				#endif
 				}
 				return ;

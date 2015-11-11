@@ -93,8 +93,8 @@ public partial class Method
 		{
 		foreach( Decl d in decls )
 			{
-			if( d.Label != null && d.Label.Required )
-				function.Label( d.Label ) ;
+			if( d is methodDecl_id____ && (d as methodDecl_id____).Required )
+				function.Label( (d as methodDecl_id____) ) ;
 			else
 			if( d is methodDecl_instr )
 				function.Statement( (methodDecl_instr)d ) ;

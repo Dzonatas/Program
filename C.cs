@@ -152,54 +152,6 @@ static C_Type C_I4_2 = C_Type.Acquire( "C_I4_2" ) ;
 static C_Type C_I4_3 = C_Type.Acquire( "C_I4_3" ) ;
 static C_Type _C_ARY = C_Type.Acquire( "_C_ARY" ) ;
 
-public class C_Label
-	{
-	C_Symbol  label ;
-	bool      required ;
-	static C_Label[] labelset = new C_Label[0] ;
-	C_Label( string label )
-		{
-		this.label = C_Symbol.Acquire( label ) ;
-		}
-	C_Label( C_Symbol symbol )
-		{
-		label = symbol ;
-		}
-	static public C_Label Acquire( C_Symbol symbol )
-		{
-		C_Label label = A335.Method.Decl.Find( symbol ) ;
-		if( label != null )
-			return label ;
-		for( int i = 0 ; i < labelset.Length ; i++ )
-			{
-			if( labelset[i].label == symbol )
-				return labelset[i] ;
-			}
-		System.Array.Resize( ref labelset, labelset.Length +1 ) ;
-		return labelset[labelset.Length-1] = new C_Label( symbol ) ;
-		}
-	static public C_Label Acquire( string symbol )
-		{
-		return Acquire( C_Symbol.Acquire( symbol ) ) ;
-		}
-	static public C_Label Require( string symbol )
-		{
-		C_Label label = Acquire( symbol ) ;
-		label.required = true ;
-		return label ;
-		}
-	static public C_Label Empty = new C_Label( System.String.Empty ) ;
-	public bool Required
-		{
-		get { return required ; }
-		}
-	static public implicit operator string( C_Label label )
-		{
-		return label.label ;
-		}
-	}
-
-
 public class Channel   // : X-Window
 	{
 	//VisualType:StaticGray|StaticColor|GrayScale

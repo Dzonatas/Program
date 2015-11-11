@@ -18,22 +18,6 @@ public partial class Method
 			{
 			set { head.Locals = new Method.Locals( value ) ; }
 			}
-		public C_Label Label
-			{
-			get {
-				if( this is methodDecl_id____ )
-					return (this as methodDecl_id____).Label ;
-				else
-					return C_Label.Empty ;
-				}
-			}
-		static public C_Label Find( C_Symbol id )
-			{
-			foreach( Decl i in Decls.Thread )
-				if( i.Label != null && id == i.Label )
-					return i.Label ;
-			return null ;
-			}
 		protected Program.C_Oprand NewOprand( string instr )
 			{
 			return head.NewOprand( instr ) ;
@@ -73,14 +57,15 @@ public partial class   methodDecl_localsHead__init______sigArgs0____
 
 public partial class   methodDecl_id____
 	: Method.Decl   {
-	C_Label label ;
-	protected override void main()
+	bool required ;
+	public bool Required
 		{
-		label = C_Label.Acquire( Arg1.Token ) ;
+		set { required = value ; }
+		get { return required ; }
 		}
-	public new C_Label Label
+	static public implicit operator string(methodDecl_id____ mdi)
 		{
-		get { return label ; }
+		return mdi.Arg1.Token ;
 		}
 	}
 

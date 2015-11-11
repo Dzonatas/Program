@@ -54,6 +54,7 @@ public partial class Instr : Automatrix
 		return new C699.c( s.ToString() ) ;
 		#endif
 		}
+	virtual protected void _prerender() {}
 	protected override void prerender()
 		{
 		var head = decl.Node.Head ;
@@ -62,6 +63,7 @@ public partial class Instr : Automatrix
 			( head.SigArgs0 == null ? 0	: head.SigArgs0.Count() )
 			+ ( head.CallConvInstance ? 1 : 0 ) ) ;
 		Oprand.Declared() ;
+		_prerender() ;
 		}
 	public override string ToString()
 			{

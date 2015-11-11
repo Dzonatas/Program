@@ -136,7 +136,7 @@ partial class Program : C699
 			{
 			return Statement( C.Restricted(line) ) ;
 			}
-		public void Label( C_Label label )
+		public void Label( string label )
 			{
 			list_add( "\t" + label + " :" ) ;
 			}
