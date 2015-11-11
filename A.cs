@@ -250,15 +250,15 @@ public partial class Automatrix : Object, System.Collections.Generic.IEnumerable
 		return "[Automatrix] " + string.Join( " ", ResolveType() ) ;
 		}
 	virtual protected void render() {}
-	static public void Render( Automatrix start )
+	static public void Render( Stack.IStart start )
 		{
-		foreach( Automatrix a in start )
+		foreach( Automatrix a in (Automatrix)start )
 			a.render() ;
 		}
 	virtual protected void prerender() {}
-	static public void Prerender( Automatrix start )
+	static public void Prerender( Stack.IStart start )
 		{
-		foreach( Automatrix a in start )
+		foreach( Automatrix a in (Automatrix)start )
 			a.prerender() ;
 		}
 	struct item
@@ -307,15 +307,6 @@ public partial class Automatrix : Object, System.Collections.Generic.IEnumerable
 		return GetEnumerator() ;
 		}
 	}
-public partial class _START : Automatrix
-	{
-	public static Automatrix Auto ;
-	protected override void main()
-		{
-		Auto = this ;
-		}
-	}
-
 }
 
 namespace A {

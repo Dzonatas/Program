@@ -164,7 +164,7 @@ static void Begin()
 		if( s.transitionset.Length == 0 && s.itemset.Length <= s.reductionset.Length && s.reductionset[s.reductionset.Length-1] != _default )
 			throw new NotImplementedException() ;
 		if( s.transitionset.Length == 0 && s.reductionset[s.reductionset.Length-1] != _default )
-			throw new NotImplementedException() ;
+				throw new NotImplementedException() ;
 		x++ ;
 		}
 	if( y != (zz + yy) )
@@ -197,8 +197,9 @@ static void Begin()
 	main_c.WriteLine( Xo_t.put("main_c") ) ;
 	main_c.Close() ;
 	#endif
-	Automatrix.Prerender( _START.Auto ) ;
-	Automatrix.Render( _START.Auto ) ;
+	Stack.IStart start = Stack.FindIStart() ;
+	Automatrix.Prerender( start ) ;
+	Automatrix.Render( start ) ;
 	Program.Write() ;
 	if( log_output != null )
 		{

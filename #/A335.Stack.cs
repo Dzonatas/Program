@@ -42,6 +42,14 @@ public partial class Stack
 				}
 			}
 		}
+	static public IStart FindIStart()
+		{
+		for( int i = stack.Length ; i-- > 0 ; )
+			foreach( System.Type t in stack[i].GetType().GetInterfaces() )
+				if( t == typeof(IStart) )
+					return (IStart)stack[i] ;
+		return null ;
+		}
 	#if DEBUG_DUMP
 	static void writeline()
 		{

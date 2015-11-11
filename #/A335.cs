@@ -2,6 +2,7 @@ sealed public partial class A335
 {
 public partial class Stack
 	{
+	public interface IStart {}
 	public partial class Item : global::Item
 		{
 		public partial class Token : Item {}
@@ -10,7 +11,7 @@ public partial class Stack
 	}
 public partial class Object : Stack.Item {}
 public partial class Automatrix : Object {}
-public partial class _START : Automatrix {}
+public partial class _START : Automatrix, Stack.IStart {}
 public partial class Decls : Automatrix {}
 [Automaton] public partial class   decls
 	: Decls	{}
