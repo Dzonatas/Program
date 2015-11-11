@@ -194,6 +194,7 @@
     <Compile Include="#\Decl\Decls.cs" />
     <Compile Include="#\Decl\Decl.cs" />
     <Compile Include="#\Class\Class.Decls.cs" />
+    <Compile Include="#\A335.Automatrix.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
