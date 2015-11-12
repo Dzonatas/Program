@@ -193,7 +193,7 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 		}
 	protected Argument CallConv
 		{
-		set { CallConvList = (((Automatrix) value) as CallConv).List ; }
+		set { CallConvList = ((Automatrix) value) as CallConv ; }
 		}
 	}
 }

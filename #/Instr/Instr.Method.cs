@@ -35,7 +35,7 @@ public partial class Instr : Automatrix
 			}
 		protected Argument CallConv
 			{
-			set { CallConvList = (((Automatrix) value) as CallConv).List ; }
+			set { CallConvList = ((Automatrix) value) as CallConv ; }
 			}
 		protected Argument MethodName
 			{
