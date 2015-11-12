@@ -7,7 +7,7 @@ public partial class Automatrix : Object, System.Collections.Generic.IEnumerable
 		{
 		get { if( cc != null ) return cc.Language ; else return new Program( this ) ; }
 		}
-	public Automatrix() : base( this_rule.RHS.Length )
+	public Automatrix() : base( Stack.this_rule.RHS.Length )
 		{
 		main() ;
 		}

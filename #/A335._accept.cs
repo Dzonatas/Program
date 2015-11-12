@@ -74,6 +74,7 @@ internal static void _Main( string[] args )
 	#if OEM || System_Collections
 	QED
 	#endif
+	#if X11
 	#if !CPU_FAN && !QM //EntryPoint=AmigaEmulatorNOP
 	X.Simple.Map( Cluster.Shell.Guru.Rectangle() ) ;
 	#elif !STABLE
@@ -95,6 +96,7 @@ internal static void _Main( string[] args )
 	//X.Window() ;
 	//XLogo logo = new XLogo() ;
 	//logo.Window() ;
+	#endif
 	/*
 	Xo_t.Compile() ;
 	#if !UNICODED_SVG

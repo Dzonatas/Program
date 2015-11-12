@@ -1,5 +1,7 @@
-	partial class A335
+partial class A335
 {
+static object[] freeset = new object[0] ;
+
 public partial class Instr : Automatrix
 	{
 	public partial class Method : Instr

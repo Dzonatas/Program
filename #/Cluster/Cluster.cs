@@ -22,7 +22,9 @@ public class Social
 			{
 			public int[]     _SSNo ;
 			public string[]  _NAMe ;
+			#if X11
 			public A335.Zone _DISp ;
+			#endif
 			//system.ARM[]   __PCi ;
 			}
 		}

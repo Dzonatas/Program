@@ -2,9 +2,11 @@ namespace System.Extensions
 	{
 	using System.Runtime.InteropServices ;
 	using System.Drawing ;
+	#if X11
 	using X.Predefined ;
 	using Drawable  = System.IntPtr ;         //_window,_pixmap
 	using Rectangle = System.IntPtr ;         //X-defined-default:[x,y]:=upper-left
+	#endif
 	#if SCREEN
 	using Screen    = _.screen ;
 	#endif
@@ -134,6 +136,7 @@ namespace System.Extensions
 			//return "_" + Regex.Replace( d, "[^A-Za-z_0-9]", "_").ToUpper() ;
 			}
 
+		#if X11
 		//[Oprand({'B', 'l'})]
 		[DllImport("libX11", EntryPoint = "XOpenDisplay")]
 			extern static IntPtr display_open([MarshalAs(UnmanagedType.LPStr)] string display ) ;
@@ -576,7 +579,7 @@ namespace System.Extensions
 			{
 			return get_geometry(display,d, out root, out x, out y, out width, out height, out border, out depth) ;
 			}
-
+		#endif
 		}
 
 	}

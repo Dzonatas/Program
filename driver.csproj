@@ -33,7 +33,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Compile Include="#\.extentions.cs" />
-    <Compile Include="#\X.Predefined.cs" />
     <Compile Include="#\A335.cs" />
     <Compile Include="#\A335.Transition.cs" />
     <Compile Include="#\IRule.cs" />
@@ -50,7 +49,6 @@
     <Compile Include="#\A335.Branch.cs" />
     <Compile Include="#\Current.cs" />
     <Compile Include="#\A335.log.cs" />
-    <Compile Include="#\A335.Zone.cs" />
     <Compile Include="#\Cluster\Cluster.Program.cs" />
     <Compile Include="#\Cluster\Cluster.Cli.cs" />
     <Compile Include="#\Cluster\Cluster.Parameter.cs" />

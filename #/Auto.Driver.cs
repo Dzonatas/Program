@@ -20,7 +20,7 @@ public abstract class Auto : global::IRule
 			log( argv[i]._+"," ) ;
 		log( "]" ) ;
 		#else
-		global::A335.this_rule = this ;
+		global::A335.Stack.this_rule = this ;
 		global::A335.Stack.Push( (global::A335.Automatrix) splice_f() ) ;
 		#endif
 		}

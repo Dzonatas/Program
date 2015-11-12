@@ -66,6 +66,7 @@ public partial class Method
 		get { return entryPoint ; }
 		set { entryPoint = value ; }
 		}
+	#if BEGINNING
 	static public void Start()
 		{
 		#if SYSTEM_GUID
@@ -83,6 +84,7 @@ public partial class Method
 		//xml_load_grammar() ;
 		#endif
 		}
+	#endif
 	static public Head Declared( Head h, Decls d )
 		{
 		d.Head  = h ;

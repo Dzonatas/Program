@@ -2,6 +2,7 @@ partial class A335
 {
 public partial class Stack
 	{
+	static public IRule this_rule ;
 	static global::Item[] stack = new global::Item[0] ;
 	public partial class Item : global::Item
 		{

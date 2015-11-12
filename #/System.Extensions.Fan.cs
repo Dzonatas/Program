@@ -1,9 +1,11 @@
 namespace System.Extensions {
 using System.Runtime.InteropServices ;
 using System.Drawing ;
+#if X11
 using X.Predefined ;
 using Drawable  = System.IntPtr ;         //_window,_pixmap
 using Rectangle = System.IntPtr ;         //X-defined-default:[x,y]:=upper-left
+#endif
 public static class Solution
 	{
 	static int bubbles ;
