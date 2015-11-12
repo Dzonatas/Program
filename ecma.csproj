@@ -195,6 +195,8 @@
     <Compile Include="#\Decl\Decl.cs" />
     <Compile Include="#\Class\Class.Decls.cs" />
     <Compile Include="#\A335.Automatrix.cs" />
+    <Compile Include="#\A335.C_Symbol.cs" />
+    <Compile Include="#\A335.C_Type.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
