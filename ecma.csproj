@@ -71,9 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="#\%24.cs" />
     <Compile Include="#\AssemblyInfo.cs" />
-    <Compile Include="#\_URN.cs" />
     <Compile Include="#\.extentions.cs" />
     <Compile Include="#\Argument.cs" />
     <Compile Include="#\Automaton.cs" />
@@ -161,7 +159,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="#\" />
-    <Folder Include="#\.Second\" />
     <Folder Include="~\" />
     <Folder Include="~\understand\" />
     <Folder Include="~\test2\" />

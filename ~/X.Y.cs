@@ -1,3 +1,4 @@
+#if X11
 using X.Predefined ;
 using XIP = System.IntPtr ;
 
@@ -175,6 +176,7 @@ static public partial class Y
 	[DllImport( libxcb_so )] extern static XIP              xcb_image_text_8( XIP connection, byte length, uint drawable, uint gc, ushort x, ushort y, string text ) ;
 	}
 }
+#endif
 
 namespace Current {
 public static class Interval
@@ -193,7 +195,9 @@ public static class Interval
 		var p = System.Diagnostics.Process.Start(psi) ;
 		p.WaitForExit() ;
 		p.Close() ;
+		#if X11
 		X.Y.Sync() ;
+		#endif
 		}
 	internal static System.Diagnostics.ProcessStartInfo psi ;
 	}
