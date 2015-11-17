@@ -6,7 +6,7 @@ public partial class Instr : Automatrix
 	{
 	public partial class Method : Instr
 		{
-		protected C_Type _Type ;
+		protected A335.Type type ;
 		protected C_Type _TypeSpec ;
 		protected C_Symbol _Call ;
 		protected SigArgs0 _SigArgs0 ;
@@ -14,7 +14,7 @@ public partial class Instr : Automatrix
 		protected override void main()
 			{
 			CallConv      = Arg2 ;
-			Type          = Arg3 ;
+			type          = Argv[3] as A335.Type ;
 			TypeSpec      = Arg4 ;
 			// '::'
 			//MethodName    = Arg6 ;
@@ -50,10 +50,6 @@ public partial class Instr : Automatrix
 		protected int Args
 			{
 			get { return ( _SigArgs0 == null ? 0 : _SigArgs0.Count() ) + ( CallConvInstance ? 1 : 0 ) ; }
-			}
-		protected new A335.Argument   Type
-			{
-			set { _Type = C_Type.Acquire( value.ResolveType() ) ; }
 			}
 		protected A335.Argument   TypeSpec
 			{
@@ -102,7 +98,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					}
 				C_Symbol symbol = null ;
 				Program.C_Function.Require( _Call ) ;
-				if( _Type == "string" )
+				if( type is type__string_ )
 					{
 					symbol = new C_Symbol() ;
 					d.Statement( C699.C.Static(C699.String,symbol) ) ;
@@ -122,8 +118,8 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					else
 						d.Statement( C699.C.Function(_Call,C699.Stack.Pointer) ) ;
 					}
-				if( _Type != "void" )
-					C.Push( _Type ) ;
+				if( ! (type is type__void_) )
+					C.Push( type ) ;
 				break ;
 				}
 			case "NEWOBJ":
