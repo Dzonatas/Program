@@ -42,7 +42,6 @@ public class Argument
 			throw new System.NotImplementedException( "Unresolved casts to dotted names." ) ;
 			}
 		}
-	static char[] separators = new char[] { '/', '.' } ;
 	static public explicit operator Automatrix( Argument a )
 		{
 		return a.arg as Automatrix ;
