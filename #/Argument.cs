@@ -83,28 +83,6 @@ public class Argument
 			}
 		return s ;
 		}
-	public string[] ResolveTypeSpec()
-		{
-		string[] s = ResolveType() ;
-		int i = 0 ;
-		if( s[i] == "class" )
-			i++ ;
-		else
-		if( s[i] == "valuetype" )
-			i++ ;
-		if( s[i] == "[" )
-			i += 3 ;
-		if( i == s.Length-1 )
-			switch( s[i] )
-				{
-				case "object" : return new string[] { "System", "Object" } ;
-				case "string" : return new string[] { "System", "String" } ;
-				}
-		string[] r = new string[s.Length-i] ;
-		for( int x = 0 ; x < r.Length ; x++ )
-			r[x] = s[x+i] ;
-		return r ;
-		}
 	static public explicit operator Automatrix( Argument a )
 		{
 		return a.arg as Automatrix ;

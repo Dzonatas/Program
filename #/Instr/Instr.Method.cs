@@ -7,7 +7,7 @@ public partial class Instr : Automatrix
 	public partial class Method : Instr
 		{
 		protected A335.Type type ;
-		protected C_Type _TypeSpec ;
+		protected A335.Type.Spec typeSpec ;
 		protected C_Symbol _Call ;
 		protected SigArgs0 _SigArgs0 ;
 		protected bool     CallConvInstance ;
@@ -15,7 +15,7 @@ public partial class Instr : Automatrix
 			{
 			CallConv      = Arg2 ;
 			type          = Argv[3] as A335.Type ;
-			TypeSpec      = Arg4 ;
+			typeSpec      = Argv[4] as A335.Type.Spec ;
 			// '::'
 			//MethodName    = Arg6 ;
 			// '('
@@ -41,7 +41,7 @@ public partial class Instr : Automatrix
 			}
 		protected Argument MethodName
 			{
-			set { _Call = C_Symbol.Acquire( _TypeSpec + methodname( value ) + ( _SigArgs0 == null ? "" : _SigArgs0.Types() ) ) ; }
+			set { _Call = C_Symbol.Acquire( (C_Type)typeSpec + methodname( value ) + ( _SigArgs0 == null ? "" : _SigArgs0.Types() ) ) ; }
 			}
 		string methodname( Argument arg )
 			{
@@ -50,10 +50,6 @@ public partial class Instr : Automatrix
 		protected int Args
 			{
 			get { return ( _SigArgs0 == null ? 0 : _SigArgs0.Count() ) + ( CallConvInstance ? 1 : 0 ) ; }
-			}
-		protected A335.Argument   TypeSpec
-			{
-			set { _TypeSpec = C_Type.Acquire( value.ResolveTypeSpec() ) ; }
 			}
 		public CallConv CallConvList
 			{
@@ -125,7 +121,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 			case "NEWOBJ":
 				{
 				var symbol = new C_Symbol() ;
-				var _class = _TypeSpec ;
+				C_Type _class = typeSpec ;
 				int iargs  = Args ;
 				C.Hangup( iargs - 1 ) ;
 				d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
