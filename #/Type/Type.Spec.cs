@@ -27,6 +27,7 @@ public partial class Type : Automatrix
 				r[x] = s[x+i] ;
 			return r ;
 			}
+		public virtual C699.c newarr(C699.c length) { throw new System.NotImplementedException() ; }
 		}
 	}
 
@@ -34,6 +35,17 @@ public partial class   typeSpec_type
 	: Type.Spec {}
 
 public partial class   typeSpec_className
-	: Type.Spec {}
+	: Type.Spec {
+	public override C699.c newarr(C699.c length)
+		{
+		var className = Argv[1] as Class.Name ;
+		switch( className )
+			{
+			case "[mscorlib]System.String":
+				return C699.Malloc( C699.SizeOf( C699.String, length ) ) ;
+			}
+		throw new System.NotImplementedException() ;
+		}
+	}
 }
 

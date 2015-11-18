@@ -2,19 +2,12 @@ partial class A335
 {
 public partial class Instr : Automatrix
 	{
-	public partial class Type : Instr
-		{
-		protected override void render()
-			{
-			TYPE( Arg2 ) ;
-			}
-		protected virtual void TYPE( Argument typeSpec ) {}
-		}
+	public partial class Type : Instr {}
 	}
 
 public partial class   instr_INSTR_TYPE_typeSpec
 	: Instr.Type    {
-	protected override void TYPE( Argument typeSpec )
+	protected override void render()
 		{
 		switch( Op )
 			{
@@ -22,22 +15,8 @@ public partial class   instr_INSTR_TYPE_typeSpec
 				{
 				var t = C.Pop() ;
 				C699.c c = C699.Stack.Deref(C699.C.Int) ;
-				C_Symbol s = t ;
-				string token = string.Join( "$", ((Automatrix)typeSpec).ResolveType() ) ;
-				switch( token )
-					{
-					case "int32":
-						c = c.Equate( "(void*)"+s ) ;
-						break ;
-					case "[$mscorlib$]$System$String":
-						c = C699.SizeOf( C699.String, c ) ;
-						oprand.C.Statement(
-							C699.Stack.Assign( C699.Malloc(c) )
-							);
-						break ;
-					default:
-						throw new System.NotImplementedException() ;
-					}
+				var typeSpec = Argv[2] as A335.Type.Spec ;
+				oprand.C.Statement( C699.Stack.Assign( typeSpec.newarr(c) ) ) ;
 				C.Push( _C_ARY ) ;
 				}
 				break ;
