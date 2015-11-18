@@ -61,9 +61,9 @@ public partial class Method
 			{
 			set { _CallConvInstance = value is CallConv ? value.Instance : false ; }
 			}
-		protected A335.Argument  Type
+		protected Type  Type
 			{
-			set { c_method.Type = C_Type.Acquire( value.ResolveType() ) ; }
+			set { c_method.Type = value ; }
 			}
 		public C_Type  ClassType
 			{
@@ -173,7 +173,7 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 	: Method.Head   {
 	protected override void methodHead()
 		{
-		Type              = Arg5 ;
+		Type              = Argv[5] as Type ;
 		Name              = Argv[6] as Method.Name ;
 		Name.MethodHead   = this ;
 		SigArgs0          = Arg8 ;

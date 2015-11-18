@@ -17,10 +17,10 @@ public partial class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_init
 	protected override void main()
 			{
 			field = string.Empty ;
-			string type = string.Join( "$", Arg4.ResolveType() ) ;
-			switch( type )
+			A335.Type type = Argv[4] as A335.Type ;
+			switch( Argv[4] as A335.Type )
 				{
-				case "string$[$]":
+				case "string_sqbr":
 					field += C699.C.Struct( C699.String.p, Class.Symbol + "$" + Arg5.Token ) ;
 					break ;
 				default:
