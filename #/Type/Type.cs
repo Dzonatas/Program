@@ -28,13 +28,13 @@ public partial class   type__object_
 
 public partial class   type__valuetype__className
 	: Type {
-	protected override string symbol { get { return Arg1.Token + " " + Arg2.ResolveType() ; } }
+	protected override string symbol { get { return Arg1.Token + " " + (Argv[2] as Class.Name) ; } }
 	protected override C699.c c { get { throw new System.NotImplementedException() ; } }
 	}
 
 public partial class   type__class__className
 	: Type {
-	protected override string symbol { get { return Arg1.Token + " " + Arg2.ResolveType() ; } }
+	protected override string symbol { get { return Arg1.Token + " " + (Argv[2] as Class.Name) ; } }
 	protected override C699.c c { get { throw new System.NotImplementedException() ; } }
 	}
 

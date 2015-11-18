@@ -12,6 +12,7 @@ public partial class Stack
 public partial class Object : Stack.Item {}
 public partial class Automatrix : Object {}
 public partial class _START : Automatrix, Stack.IStart {}
+
 public partial class Decls : Automatrix {}
 [Automaton] public partial class   decls
 	: Decls	{}
@@ -33,6 +34,7 @@ public partial class SigArgs0 : Automatrix
 	[Automaton] public partial class   sigArgs0_sigArgs1
 		: SigArgs0 {}
 	}
+
 public partial class SigArg : Automatrix
 	{
 	[Automaton] public partial class   sigArg_paramAttr_type
@@ -44,6 +46,7 @@ public partial class SigArg : Automatrix
 	[Automaton] public partial class   sigArgs1_sigArg
 		: Automatrix	{}
 	}
+
 public partial class Class : Automatrix
 	{
 	public partial class Head  : Class {}
@@ -83,7 +86,6 @@ public partial class CallConv : Automatrix
 	{
 	[Automaton] public partial class   callConv__instance__callConv
 		: CallConv	{}
-
 	[Automaton] public partial class   callConv_callKind
 		: CallConv	{}
 	}
@@ -212,5 +214,11 @@ public partial class Type : Automatrix
 	: Type.Spec {}
 [Automaton] public partial class   typeSpec_className
 	: Type.Spec {}
+
+public partial class SlashedName : Automatrix {}
+[Automaton] public partial class   slashedName_name1
+	: SlashedName {}
+[Automaton] public partial class   slashedName_slashedName_____name1
+	: SlashedName {}
 }
 

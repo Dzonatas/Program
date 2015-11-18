@@ -54,9 +54,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   name1_DOTTEDNAME
 	: Automatrix {}
 
-[Automaton] public class   slashedName_name1
-	: Automatrix {}
-
 [Automaton] public class   extendsClause__extends__className
 	: Automatrix {}
 
@@ -94,9 +91,6 @@ public class AutomatonAttribute : System.Attribute
 	: Automatrix {}
 
 [Automaton] public class   moduleHead___module__name1
-	: Automatrix {}
-
-[Automaton] public class   slashedName_slashedName_____name1
 	: Automatrix {}
 
 [Automaton] public class   bounds1_bound

@@ -13,7 +13,7 @@ public partial class   className_____name1_____slashedName
 	: Class.Name {
 	protected override string fullName
 		{
-		get { return "["+Arg2.Token+"]"+string.Join( ".", Arg4.ResolveType() ) ; }
+		get { return "["+Arg2.Token+"]"+(Argv[4] as SlashedName) ; }
 		}
 	}
 
@@ -21,7 +21,7 @@ public partial class   className_slashedName
 	: Class.Name {
 	protected override string fullName
 		{
-		get { return ""+string.Join( ".", Arg1.ResolveType() ) ; }
+		get { return Argv[1] as SlashedName ; }
 		}
 	}
 }

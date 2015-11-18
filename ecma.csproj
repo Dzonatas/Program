@@ -155,6 +155,7 @@
     <Compile Include="#\A335._accept.cs" />
     <Compile Include="#\A335.CallConv.cs" />
     <Compile Include="#\A335.Begin.cs" />
+    <Compile Include="#\SlashedName.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
