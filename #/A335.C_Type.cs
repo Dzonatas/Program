@@ -54,12 +54,6 @@ public class C_Type
 			}
 		return s ;
 		}
-	static public implicit operator C_Symbol( C_Type c )
-		{
-		if( (string) c == "string" )
-			return C_Symbol.Acquire( C699.String ) ;
-		return c.idset[c.idset.Length-1] ;
-		}
 	static public explicit operator string[]( C_Type c )
 		{
 		string[] s = new string[c.idset.Length] ;
