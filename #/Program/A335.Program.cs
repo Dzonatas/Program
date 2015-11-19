@@ -10,8 +10,17 @@ public partial class Program : C699
 	static Dictionary<string,C_Symbol>    symbolset     = new Dictionary<string, C_Symbol>() ;
 	static Dictionary<C_Symbol,C_Type>    typeset       = new Dictionary<C_Symbol, C_Type>() ;
 	static Dictionary<string,C_TypeDef>   typedefset    = new Dictionary<string, C_TypeDef>() ;
-	static C_Type[] stack = new C_Type[0] ;
-	//static uint effective_symbolic_objective_credit ;
+	static C_ValueType[] stack = new C_ValueType[0] ;
+	public struct C_ValueType
+		{
+		public int     Offset ;
+		public c       Value  ;
+		public C_Type  Type   ;
+		public c       StackElement
+			{
+			get { return Stack.Index(Offset) ; }
+			}
+		}
 	public C_Function This ;
 	Program()
 		{
@@ -197,17 +206,25 @@ public partial class Program : C699
 	static void stack_add( C_Type type )
 		{
 		System.Array.Resize( ref stack, stack.Length+1 ) ;
-		stack[stack.Length-1] = type ;
+		stack[stack.Length-1] = new C_ValueType() { Type = type } ;
 		}
-	public void Push( C_Type t )
+	public void Push( C_Type type )
 		{
-		stack[stack_offset] = t ;
+		stack[stack_offset] = new C_ValueType() { Type = type } ;
 		stack_offset++ ;
 		}
-	public C_Type Pop()
+	public C_ValueType Peak()
+		{
+		var vt = stack[stack_offset-1] ;
+		vt.Offset = stack_offset-1 ;
+		return vt ;
+		}
+	public C_ValueType Pop()
 		{
 		stack_offset-- ;
-		return stack[stack_offset] ;
+		var vt = stack[stack_offset] ;
+		vt.Offset = stack_offset ;
+		return vt ;
 		}
 	public C_Type[] Hangup( int iargs )
 		{
@@ -216,7 +233,7 @@ public partial class Program : C699
 		var list = new C_Type[iargs] ;
 		stack_offset -= iargs ;
 		for( int i = 0 ; i < iargs ; i++ )
-			list[i] = stack[stack_offset+i] == null ? C_Type.Undefined : stack[stack_offset+i] ;
+			list[i] = stack[stack_offset+i].Type == null ? C_Type.Undefined : stack[stack_offset+i].Type ;
 		return list ;
 		}
 	public void Hangdown()

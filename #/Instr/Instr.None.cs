@@ -60,11 +60,8 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "DUP" :
 				{
-				var t = C.Pop() ;
-				C699.c c = C699.Stack.Element ;
-				C.Push( t ) ;
-				d.Statement( C699.Stack.Assign(c) ) ;
-				C.Push( t ) ;
+				var t = C.Peak() ;
+				d.Push( t.StackElement, t.Type ) ;
 				}
 				break ;
 			case "LDELEM_REF" :
@@ -124,8 +121,7 @@ public partial class   instr_INSTR_NONE
 				C699.c b = C699.Stack.Deref(C699.C.Int) ;
 				C.Pop() ;
 				C699.c a = C699.Stack.Deref(C699.C.Int) ;
-				d.Statement( C699.Stack.Assign(a.plus(b)) ) ;
-				C.Push( t ) ;
+				d.Push( a.plus(b), t.Type ) ;
 				}
 				break ;
 			default :
