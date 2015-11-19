@@ -5,7 +5,7 @@ partial class A335
 {
 partial class Program : C699
 	{
-	public class C_Oprand
+	public class C_Oprand : Program
 		{
 		C_Function function ;
 		public string Instruction ;
@@ -54,6 +54,11 @@ partial class Program : C699
 			{
 			list.Add( c ) ;
 			return this ;
+			}
+		public void Push( C699.c value, string type )
+			{
+			Statement( Stack.Assign( value ) ) ;
+			Push( C_Type.Acquire(type) ) ;
 			}
 		public void WriteTo( System.IO.TextWriter tw )
 			{

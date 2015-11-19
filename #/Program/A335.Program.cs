@@ -204,10 +204,6 @@ public partial class Program : C699
 		stack[stack_offset] = t ;
 		stack_offset++ ;
 		}
-	public void Push( string type )
-		{
-		Push( C_Type.Acquire( type ) ) ;
-		}
 	public C_Type Pop()
 		{
 		stack_offset-- ;
