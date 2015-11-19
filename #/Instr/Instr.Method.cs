@@ -68,7 +68,6 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 			{
 			case "CALL":
 				{
-				//Debug.WriteLine( "[---] sigArgs={0} ", this_instr_sigArgs ) ;
 				int iargs = Args ;
 				var data = C.Hangup( iargs ) ;
 				if( _SigArgs0 != null )
@@ -105,17 +104,18 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						d.Statement( s.Equate(C699.C.Function(_Call)) ) ;
 					else
 						d.Statement( s.Equate(C699.C.Function(_Call,C699.Stack.Pointer)) ) ;
-					d.Statement( C699.Stack.Assign( new C699.c("&"+symbol) ) ) ;
+					d.Push( new C699.c("&"+symbol), type ) ;
 					}
 				else
+				if( type is type__void_ )
 					{
 					if( iargs == 0 )
 						d.Statement( C699.C.Function(_Call) ) ;
 					else
 						d.Statement( C699.C.Function(_Call,C699.Stack.Pointer) ) ;
 					}
-				if( ! (type is type__void_) )
-					C.Push( type ) ;
+				else
+						throw new System.NotImplementedException() ;
 				break ;
 				}
 			case "NEWOBJ":

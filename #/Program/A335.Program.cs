@@ -208,7 +208,7 @@ public partial class Program : C699
 		System.Array.Resize( ref stack, stack.Length+1 ) ;
 		stack[stack.Length-1] = new C_ValueType() { Type = type } ;
 		}
-	public void Push( C_Type type )
+	void Push( C_Type type )
 		{
 		stack[stack_offset] = new C_ValueType() { Type = type } ;
 		stack_offset++ ;

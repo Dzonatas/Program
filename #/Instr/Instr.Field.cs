@@ -43,8 +43,7 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 		switch( Op )
 			{
 			case "LDSFLD" :
-				oprand.C.Statement( C699.Stack.Assign(symbol) ) ;
-				C.Push( C_Type.Acquire( t ) ) ;
+				oprand.C.Push( symbol, t ) ;
 				break ;
 			case "STSFLD" :
 				C.Pop() ;

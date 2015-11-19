@@ -26,8 +26,7 @@ public partial class   instr_INSTR_NONE
 					type = d.Method.ThisType ;
 				else
 					type = d.Method.Args[0] ;
-				d.Statement( C699.Stack.Assign( new C699.c("args[0]") ) ) ;
-				C.Push( type ) ;
+				d.Push( new C699.c("args[0]"), type ) ;
 				break ;
 				}
 			case "RET":
@@ -43,20 +42,16 @@ public partial class   instr_INSTR_NONE
 				break ;
 				}
 			case "LDC_I4_0" :
-				d.Statement( C699.Stack.Assign(C699.C.Zero) ) ;
-				C.Push( C_I4_0 ) ;
+				d.Push( C699.C.Zero, C_I4_0 ) ;
 				break ;
 			case "LDC_I4_1" :
-				d.Statement( C699.Stack.Assign(C699.C.One) ) ;
-				C.Push( C_I4_1 ) ;
+				d.Push( C699.C.One, C_I4_1 ) ;
 				break ;
 			case "LDC_I4_2" :
-				d.Statement( C699.Stack.Assign(C699.C.Two) ) ;
-				C.Push( C_I4_2 ) ;
+				d.Push( C699.C.Two, C_I4_2 ) ;
 				break ;
 			case "LDC_I4_3" :
-				d.Statement( C699.Stack.Assign(C699.C.Three) ) ;
-				C.Push( C_I4_3 ) ;
+				d.Push( C699.C.Three, C_I4_3 ) ;
 				break ;
 			case "DUP" :
 				{
@@ -66,14 +61,12 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "LDELEM_REF" :
 				{
-				C.Pop() ;
+				var i = C.Pop() ;
 				var e = C699.Stack.Deref(C699.C.Int) ;
-				C.Pop() ;
-				var r = C699.Stack.CastIndex(C699.String) ;
-				oprand.C.Statement(
-					C699.Stack.Assign(  C699.Array( r, e, C699.String )  )
-					) ;
-				C.Push( C_Type.Acquire( "_C_" + Op ) ) ;
+				var s = C.Pop() ;
+				string stype = (string)s.Type ;
+				var r = C699.Stack.CastIndex(stype) ;
+				d.Push( C699.Array( r, e, stype ), stype  ) ;
 				}
 				break ;
 			case "STELEM_REF" :
@@ -104,16 +97,16 @@ public partial class   instr_INSTR_NONE
 				stloc( 3 ) ;
 				break ;
 			case "LDLOC_0" :
-				C.Push( ldloc( 0 ) ) ;
+				ldloc( 0 ) ;
 				break ;
 			case "LDLOC_1" :
-				C.Push( ldloc( 1 ) ) ;
+				ldloc( 1 ) ;
 				break ;
 			case "LDLOC_2" :
-				C.Push( ldloc( 2 ) ) ;
+				ldloc( 2 ) ;
 				break ;
 			case "LDLOC_3" :
-				C.Push( ldloc( 3 ) ) ;
+				ldloc( 3 ) ;
 				break ;
 			case "ADD" :
 				{
@@ -141,7 +134,7 @@ public partial class   instr_INSTR_NONE
 		oprand.C.Statement( l.Equate( C699.Stack.Deref(loc.Type) ) ) ;
 		#endif
 		}
-	C_Type ldloc( int i )
+	void ldloc( int i )
 		{
 		var loc = decl.Node.Head.Locals[i] ;
 		#if HPP
@@ -152,8 +145,7 @@ public partial class   instr_INSTR_NONE
 			c = new C699.c( "&"+loc.Symbol ) ;
 		else
 			c = new C699.c( loc.Symbol ) ;
-		oprand.C.Statement( C699.Stack.Assign(c) ) ;
-		return loc.Type ;
+		oprand.C.Push( c, loc.Type ) ;
 		}
 	}
 }
