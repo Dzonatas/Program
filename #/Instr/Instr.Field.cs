@@ -28,28 +28,19 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 	: Instr.Field   {
 	protected override void render()
 		{
-		FIELD( Arg2, Arg3, Arg5 ) ;
+		FIELD( Argv[2] as A335.Type, Arg3, Arg5 ) ;
 		}
-	protected void FIELD( Argument type, Argument typeSpec, Argument id )
+	protected void FIELD( A335.Type type, Argument typeSpec, Argument id )
 		{
-		C699.c t = new C699.c() ;
-		switch( string.Join( " ", ((Automatrix)type).ResolveType() ) )
-			{
-			case "string [ ]":	t = C699.String ; break ;
-			default: throw new System.NotImplementedException() ;
-			}
 		string typeSpec_s = string.Join( "$", ((Automatrix)typeSpec).ResolveType() ) ;
 		C699.c symbol = new C699.c( typeSpec_s + "$" + id.Token ) ;
 		switch( Op )
 			{
 			case "LDSFLD" :
-				oprand.C.Push( symbol, t ) ;
+				oprand.C.Push( symbol, type ) ;
 				break ;
 			case "STSFLD" :
-				C.Pop() ;
-				oprand.C.Statement(
-					symbol.Equate( C699.Stack.CastIndex(C699.String) )
-					) ;
+				oprand.C.Statement(	symbol.Equate( C.Pop().StackCast ) ) ;
 				break ;
 			default :
 				log( "[INSTR_FIELD-3] Defaulted on " + Op ) ;

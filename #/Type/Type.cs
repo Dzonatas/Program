@@ -72,6 +72,8 @@ public partial class   type_type_ampersand
 public partial class   type_type_square_brackets
 	: Type {
 	protected override string symbol { get { return (Argv[1] as Type) + "_sqbr" ; } }
+	protected override C699.c c { get { return ((C699.c)(Argv[1] as Type)) /*.p*/ ; } }
+	protected override C_Type c_type { get { return C_Type.Acquire(c) ; } }
 	}
 
 }

@@ -55,11 +55,6 @@ partial class Program : C699
 			list.Add( c ) ;
 			return this ;
 			}
-		public void Push( C699.c value, string type )
-			{
-			Statement( Stack.Assign( value ) ) ;
-			Push( C_Type.Acquire( type) ) ;
-			}
 		public void Push( C699.c value, C_Type type )
 			{
 			Statement( Stack.Assign( value ) ) ;
