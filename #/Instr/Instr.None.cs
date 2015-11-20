@@ -61,36 +61,30 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "LDELEM_REF" :
 				{
-				C.Pop() ;
-				var e = C699.Stack.Deref(C699.C.Int) ;
+				var index = C.Pop() ;
 				var value = C.Pop() ;
-				d.Push( C699.Array( value.StackCast, e, value.Type.Spec ), value.Type  ) ;
+				d.Push( C699.Array( value.StackElement, index.StackDeref, value.Type.Spec ), value.Type  ) ;
 				}
 				break ;
 			case "STELEM_REF" :
 				{
 				var value = C.Pop() ;
+				var index = C.Pop() ;
 				C.Pop() ;
-				var e = C699.Stack.Deref(C699.C.Int) ;
-				C.Pop() ;
-				var a = C699.Stack.Array(e, value.Type.Spec) ;
+				var a = C699.Stack.Array(index.StackDeref, value.Type.Spec) ;
 				d.Statement( a.Equate( value.StackCast ) ) ;
 				}
 				break ;
 			case "STLOC_0" :
-				C.Pop() ;
 				stloc( 0 ) ;
 				break ;
 			case "STLOC_1" :
-				C.Pop() ;
 				stloc( 1 ) ;
 				break ;
 			case "STLOC_2" :
-				C.Pop() ;
 				stloc( 2 ) ;
 				break ;
 			case "STLOC_3" :
-				C.Pop() ;
 				stloc( 3 ) ;
 				break ;
 			case "LDLOC_0" :
@@ -108,9 +102,8 @@ public partial class   instr_INSTR_NONE
 			case "ADD" :
 				{
 				var t = C.Pop() ;
-				C699.c b = C699.Stack.Deref(C699.C.Int) ;
-				C.Pop() ;
-				C699.c a = C699.Stack.Deref(C699.C.Int) ;
+				var b = t.StackDeref ;
+				var a = C.Pop().StackDeref ;
 				d.Push( a.plus(b), t.Type ) ;
 				}
 				break ;
@@ -128,7 +121,7 @@ public partial class   instr_INSTR_NONE
 		//oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
 		throw new System.NoteImplementedException() ;
 		#else
-		oprand.C.Statement( l.Equate( C699.Stack.Deref(loc.Type) ) ) ;
+		oprand.C.Statement( l.Equate( C.Pop().StackDeref ) ) ;
 		#endif
 		}
 	void ldloc( int i )

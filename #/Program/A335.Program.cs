@@ -24,6 +24,15 @@ public partial class Program : C699
 			{
 			get { return new c("("+Type.Spec+" *)"+StackElement) ; }
 			}
+		public c       StackDeref
+			{
+			get {
+				var _cast = ((string)Type.Spec).Trim() ;
+				if( _cast == KeyedWord.Long )
+					return new c("("+_cast+")"+StackElement) ;
+				return new c("*("+_cast+" *)"+StackElement) ;
+				}
+			}
 		}
 	public C_Function This ;
 	Program()
