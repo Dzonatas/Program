@@ -36,8 +36,7 @@ public partial class   instr_INSTR_BRTARGET_id
 				return ;
 			case "BRFALSE" :
 				{
-				C.Pop() ;
-				var a = C699.Stack.Deref(C699.C.Int) ;
+				var a = C.Pop().StackDeref ;
 				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
@@ -48,10 +47,8 @@ public partial class   instr_INSTR_BRTARGET_id
 				return ;
 			case "BGE" :
 				{
-				C.Pop() ;
-				var b = C699.Stack.Deref(C699.C.Int) ;
-				C.Pop() ;
-				var a = C699.Stack.Deref(C699.C.Int) ;
+				var b = C.Pop().StackDeref ;
+				var a = C.Pop().StackDeref ;
 				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
@@ -62,10 +59,8 @@ public partial class   instr_INSTR_BRTARGET_id
 				return ;
 			case "BEQ" :
 				{
-				C.Pop() ;
-				var b = C699.Stack.Deref(C699.C.Int) ;
-				C.Pop() ;
-				var a = C699.Stack.Deref(C699.C.Int) ;
+				var b = C.Pop().StackDeref ;
+				var a = C.Pop().StackDeref ;
 				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;

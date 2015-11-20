@@ -33,6 +33,10 @@ public partial class Program : C699
 				return new c("*("+_cast+" *)"+StackElement) ;
 				}
 			}
+		public c       StackArray(string i)
+			{
+			return new c("(("+Type.Spec+" **)"+StackElement+")["+i+"]") ;
+			}
 		}
 	public C_Function This ;
 	Program()

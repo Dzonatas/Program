@@ -69,10 +69,9 @@ public partial class   instr_INSTR_NONE
 			case "STELEM_REF" :
 				{
 				var value = C.Pop() ;
-				var index = C.Pop() ;
-				C.Pop() ;
-				var a = C699.Stack.Array(index.StackDeref, value.Type.Spec) ;
-				d.Statement( a.Equate( value.StackCast ) ) ;
+				var index = C.Pop().StackDeref ;
+				var array = C.Pop().StackArray(index) ;
+				d.Statement( array.Equate( value.StackCast ) ) ;
 				}
 				break ;
 			case "STLOC_0" :

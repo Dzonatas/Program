@@ -36,6 +36,18 @@ public partial class   typeSpec_type
 
 public partial class   typeSpec_className
 	: Type.Spec {
+	protected override C_Type c_type
+		{
+		get {
+			var className = Argv[1] as Class.Name ;
+			switch( className )
+				{
+				case "[mscorlib]System.String":
+					return C_Type.Acquire( C699.String ) ;
+				}
+			throw new System.NotImplementedException() ;
+			}
+		}
 	public override C699.c newarr(C699.c length)
 		{
 		var className = Argv[1] as Class.Name ;

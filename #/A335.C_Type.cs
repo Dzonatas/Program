@@ -118,6 +118,4 @@ static C_Type C_I4_0 = C_Type.Const( C699.C.Int ) ;
 static C_Type C_I4_1 = C_Type.Const( C699.C.Int ) ;
 static C_Type C_I4_2 = C_Type.Const( C699.C.Int ) ;
 static C_Type C_I4_3 = C_Type.Const( C699.C.Int ) ;
-static C_Type _C_ARY = C_Type.Acquire( "_C_ARY" ) ;
-
 }
