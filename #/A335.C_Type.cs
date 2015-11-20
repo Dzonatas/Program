@@ -70,6 +70,21 @@ public class C_Type
 		{
 		get { return idset[n] ; }
 		}
+	static public C_Type ConstStatic( C699.c typeSpec )
+		{
+		var s = new C_Symbol[2] ;
+		s[0] = C_Symbol.Acquire( C699.KeyedWord.Const+' '+C699.KeyedWord.Static ) ;
+		s[1] = C_Symbol.Acquire( ((string)typeSpec).Trim() ) ;
+		return Program.C_Type_Acquire( s ) ;
+		}
+	public C699.c Spec
+		{
+		get { return new C699.c(idset[idset.Length-1]+' ') ; }
+		}
+	public C699.c TypeSpec
+		{
+		get { return new C699.c(string.Join(" ", (string[])this)+' ') ; }
+		}
 	public string Type
 		{
 		get
@@ -97,4 +112,5 @@ static C_Type C_I4_1 = C_Type.Acquire( "C_I4_1" ) ;
 static C_Type C_I4_2 = C_Type.Acquire( "C_I4_2" ) ;
 static C_Type C_I4_3 = C_Type.Acquire( "C_I4_3" ) ;
 static C_Type _C_ARY = C_Type.Acquire( "_C_ARY" ) ;
+
 }
