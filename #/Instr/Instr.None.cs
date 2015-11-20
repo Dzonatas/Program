@@ -61,23 +61,20 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "LDELEM_REF" :
 				{
-				var i = C.Pop() ;
+				C.Pop() ;
 				var e = C699.Stack.Deref(C699.C.Int) ;
-				var s = C.Pop() ;
-				string stype = (string)s.Type ;
-				var r = C699.Stack.CastIndex(stype) ;
-				d.Push( C699.Array( r, e, stype ), stype  ) ;
+				var value = C.Pop() ;
+				d.Push( C699.Array( value.StackCast, e, value.Type.Spec ), value.Type  ) ;
 				}
 				break ;
 			case "STELEM_REF" :
 				{
-				C.Pop() ;
-				var r = C699.Stack.CastIndex(C699.String) ;
+				var value = C.Pop() ;
 				C.Pop() ;
 				var e = C699.Stack.Deref(C699.C.Int) ;
 				C.Pop() ;
-				var a = C699.Stack.Array(e, C699.String) ;
-				d.Statement( a.Equate( r ) ) ;
+				var a = C699.Stack.Array(e, value.Type.Spec) ;
+				d.Statement( a.Equate( value.StackCast ) ) ;
 				}
 				break ;
 			case "STLOC_0" :

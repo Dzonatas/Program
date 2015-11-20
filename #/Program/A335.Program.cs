@@ -20,6 +20,10 @@ public partial class Program : C699
 			{
 			get { return Stack.Index(Offset) ; }
 			}
+		public c       StackCast
+			{
+			get { return new c("("+Type.Spec+" *)"+StackElement) ; }
+			}
 		}
 	public C_Function This ;
 	Program()

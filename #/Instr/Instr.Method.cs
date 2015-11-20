@@ -120,14 +120,15 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				}
 			case "NEWOBJ":
 				{
+				var t = C_Type.ConstStatic(C699.Object(0)) ;
 				var symbol = new C_Symbol() ;
 				C_Type _class = typeSpec ;
 				int iargs  = Args ;
 				C.Hangup( iargs - 1 ) ;
 				d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
 				d.Statement( C699.C.Extern.Struct(C699.Object(0),_class) ) ;
-				d.Statement( C699.C.Const.Static(C699.Object(0)).Equate(symbol,"&"+_class) ) ;
-				d.Push( new C699.c("&"+symbol), "object" ) ;
+				d.Statement( t.TypeSpec.Equate(symbol,"&"+_class) ) ;
+				d.Push( new C699.c("&"+symbol), t ) ;
 				if( iargs == 0 )
 					d.Statement( C699.C.Function(_Call) ) ;
 				else

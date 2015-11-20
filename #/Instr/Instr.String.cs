@@ -22,11 +22,11 @@ public partial class   instr_INSTR_STRING_compQstring
 			{
 			case "LDSTR":
 				{
-				var c = C699.C.Const.Static(C699.String) ;
+				var c = C_Type.ConstStatic(C699.String) ;
 				var s = new C_Symbol() ;
 				var args = compQstring.Length.ToString()+','+'"'+compQstring+'"' ;
-				d.Statement( c.Equate(s,args) ) ;
-				d.Push( new C699.c("&"+s), "string" ) ;
+				d.Statement( c.TypeSpec.Equate(s,args) ) ;
+				d.Push( new C699.c("&"+s), c ) ;
 				break ;
 				}
 			default :
