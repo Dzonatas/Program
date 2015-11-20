@@ -21,7 +21,7 @@ public partial class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_init
 			switch( Argv[4] as A335.Type )
 				{
 				case "string_sqbr":
-					field += C699.C.Struct( C699.String.p, Class.Symbol + "$" + Arg5.Token ) ;
+					field += C699.C.Struct( type, Class.Symbol + "$" + Arg5.Token ) ;
 					break ;
 				default:
 					throw new System.NotImplementedException() ;

@@ -92,6 +92,16 @@ public class C_Type
 		{
 		get { return new C699.c(string.Join(" ", (string[])this)+' ') ; }
 		}
+	public C_Type Deref
+		{
+		get {
+			var ids = (string[]) this ;
+			var s = ids[ids.Length-1] ;
+			var i = s.LastIndexOf('*') ;
+			var t = ids[ids.Length-1] = s.Substring(0,i) + s.Substring(i+1) ;
+			return C_Type.Acquire( ids ) ;
+			}
+		}
 	public string Type
 		{
 		get

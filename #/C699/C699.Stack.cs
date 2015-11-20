@@ -16,9 +16,9 @@ public struct Stack
 		{
 		return new c("stack"+'['+i+']') ;
 		}
-	static public c Assign(c value)
+	static public c Assign(c value, c type)
 		{
-		return Element.Equate("(void*) ("+value+")" ) ;
+		return Element.Equate("(void*) /* ("+type+") */ ("+value+")" ) ;
 		}
 	static public c Pointer
 		{

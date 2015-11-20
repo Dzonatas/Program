@@ -31,6 +31,7 @@ public partial class   instr_INSTR_NONE
 				}
 			case "RET":
 				{
+				/*
 				var typedef = Program.C_TypeDef.Acquire("string") ;
 				string field = typedef.Struct[1] ;
 				foreach( object z in freeset )
@@ -39,6 +40,7 @@ public partial class   instr_INSTR_NONE
 						d.Statement( C699.Free("("+'('+C699.String+'*'+')'+C699.Stack.Index((int)z)+')'+"->"+field ) ) ;
 					}
 				freeset = new object[0] ;
+				*/
 				break ;
 				}
 			case "LDC_I4_0" :
@@ -63,7 +65,7 @@ public partial class   instr_INSTR_NONE
 				{
 				var index = C.Pop() ;
 				var value = C.Pop() ;
-				d.Push( C699.Array( value.StackElement, index.StackDeref, value.Type.Spec ), value.Type  ) ;
+				d.Push( C699.Array( value.Type.Spec, value.StackElement, index.StackDeref  ), value.Type.Deref  ) ;
 				}
 				break ;
 			case "STELEM_REF" :
@@ -120,7 +122,7 @@ public partial class   instr_INSTR_NONE
 		//oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
 		throw new System.NoteImplementedException() ;
 		#else
-		oprand.C.Statement( l.Equate( C.Pop().StackDeref ) ) ;
+		oprand.C.Statement( l.Equate( C.Pop().StackCast ) ) ;
 		#endif
 		}
 	void ldloc( int i )
@@ -129,12 +131,7 @@ public partial class   instr_INSTR_NONE
 		#if HPP
 		throw new System.NoteImplementedException() ;
 		#endif
-		C699.c c = C699.C ;
-		if( ((string)(C699.c)loc.Type).StartsWith("struct ") )
-			c = new C699.c( "&"+loc.Symbol ) ;
-		else
-			c = new C699.c( loc.Symbol ) ;
-		oprand.C.Push( c, loc.Type ) ;
+		oprand.C.Push( new C699.c(loc.Symbol), loc.Type ) ;
 		}
 	}
 }

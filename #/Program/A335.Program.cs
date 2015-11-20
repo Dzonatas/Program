@@ -22,7 +22,7 @@ public partial class Program : C699
 			}
 		public c       StackCast
 			{
-			get { return new c("("+Type.Spec+" *)"+StackElement) ; }
+			get { return new c("("+Type.Spec+")"+StackElement) ; }
 			}
 		public c       StackDeref
 			{
@@ -30,12 +30,12 @@ public partial class Program : C699
 				var _cast = ((string)Type.Spec).Trim() ;
 				if( _cast == KeyedWord.Long )
 					return new c("("+_cast+")"+StackElement) ;
-				return new c("*("+_cast+" *)"+StackElement) ;
+				return new c("*("+_cast+")"+StackElement) ;
 				}
 			}
 		public c       StackArray(string i)
 			{
-			return new c("(("+Type.Spec+" **)"+StackElement+")["+i+"]") ;
+			return new c("(("+Type.Spec+")"+StackElement+")["+i+"]") ;
 			}
 		}
 	public C_Function This ;

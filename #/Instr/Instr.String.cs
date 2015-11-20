@@ -26,7 +26,7 @@ public partial class   instr_INSTR_STRING_compQstring
 				var s = new C_Symbol() ;
 				var args = compQstring.Length.ToString()+','+'"'+compQstring+'"' ;
 				d.Statement( c.TypeSpec.Equate(s,args) ) ;
-				d.Push( new C699.c("&"+s), c ) ;
+				d.Push( new C699.c("&"+s), C_Type.Acquire(C699.String.p) ) ;
 				break ;
 				}
 			default :

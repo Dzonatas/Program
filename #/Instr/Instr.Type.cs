@@ -13,9 +13,10 @@ public partial class   instr_INSTR_TYPE_typeSpec
 			{
 			case "NEWARR" :
 				{
-				var c = C.Pop().StackDeref ;
-				var typeSpec = Argv[2] as A335.Type.Spec ;
-				oprand.C.Push( typeSpec.newarr(c), typeSpec ) ;
+				var length    = C.Pop().StackDeref ;
+				var typeSpec  = Argv[2] as A335.Type.Spec ;
+				var array     = C699.Malloc( C699.SizeOf( typeSpec, length ) ) ;
+				oprand.C.Push( array, C_Type.Acquire( ((C699.c)typeSpec).p ) ) ;
 				}
 				break ;
 			default :

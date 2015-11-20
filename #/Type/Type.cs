@@ -40,9 +40,9 @@ public partial class   type__class__className
 
 public partial class   type__string_
 	: Type {
-	static C_Type _c_type = C_Type.Acquire( C699.String ) ;
+	static C_Type _c_type = C_Type.Acquire( C699.String.p ) ;
 	protected override string symbol { get { return Arg1.Token ; } }
-	protected override C699.c c { get { return C699.String ; } }
+	protected override C699.c c { get { return C699.String.p ; } }
 	protected override C_Type c_type { get { return _c_type ; } }
 	}
 
@@ -72,7 +72,7 @@ public partial class   type_type_ampersand
 public partial class   type_type_square_brackets
 	: Type {
 	protected override string symbol { get { return (Argv[1] as Type) + "_sqbr" ; } }
-	protected override C699.c c { get { return ((C699.c)(Argv[1] as Type)) /*.p*/ ; } }
+	protected override C699.c c { get { return ((C699.c)(Argv[1] as Type)).p ; } }
 	protected override C_Type c_type { get { return C_Type.Acquire(c) ; } }
 	}
 

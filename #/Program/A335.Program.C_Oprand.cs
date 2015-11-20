@@ -57,7 +57,7 @@ partial class Program : C699
 			}
 		public void Push( C699.c value, C_Type type )
 			{
-			Statement( Stack.Assign( value ) ) ;
+			Statement( Stack.Assign( value, type.Spec ) ) ;
 			Push( type ) ;
 			}
 		public void WriteTo( System.IO.TextWriter tw )
