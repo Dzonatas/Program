@@ -31,16 +31,7 @@ public partial class   instr_INSTR_NONE
 				}
 			case "RET":
 				{
-				/*
-				var typedef = Program.C_TypeDef.Acquire("string") ;
-				string field = typedef.Struct[1] ;
-				foreach( object z in freeset )
-					{
-					if( z is int )
-						d.Statement( C699.Free("("+'('+C699.String+'*'+')'+C699.Stack.Index((int)z)+')'+"->"+field ) ) ;
-					}
-				freeset = new object[0] ;
-				*/
+				//d.Statement( C699.C.Return("") ) ;
 				break ;
 				}
 			case "LDC_I4_0" :

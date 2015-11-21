@@ -10,12 +10,13 @@ public partial class Program : C699
 	static Dictionary<string,C_Symbol>    symbolset     = new Dictionary<string, C_Symbol>() ;
 	static Dictionary<C_Symbol,C_Type>    typeset       = new Dictionary<C_Symbol, C_Type>() ;
 	static Dictionary<string,C_TypeDef>   typedefset    = new Dictionary<string, C_TypeDef>() ;
-	static C_ValueType[] stack = new C_ValueType[0] ;
+	static C_ValueType[] stack    = new C_ValueType[0] ;
+	static C_ValueType[] freeset  = new C_ValueType[0] ;
 	public struct C_ValueType
 		{
-		public int     Offset ;
-		public c       Value  ;
-		public C_Type  Type   ;
+		public C_Symbol  Symbol ;
+		public int       Offset ;
+		public C_Type    Type   ;
 		public c       StackElement
 			{
 			get { return Stack.Index(Offset) ; }

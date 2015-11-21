@@ -206,6 +206,7 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 	protected override void render()
 		{
 		_render() ;
+		Function.GarbageCollect() ;
 		}
 	}
 }

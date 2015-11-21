@@ -61,7 +61,7 @@ public partial class   methodDecls_methodDecls_methodDecl
 		}
 	protected override void render()
 		{
-		//head.Function.GarbageCollect() ;
+		head.Function.GarbageCollect() ;
 		}
 	}
 }

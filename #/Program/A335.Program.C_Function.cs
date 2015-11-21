@@ -140,6 +140,22 @@ partial class Program : C699
 			{
 			list_add( "\t" + label + " :" ) ;
 			}
+		public void GarbageCollect()
+			{
+			var typedef = C_TypeDef.Acquire("string") ;
+			string field = typedef.Struct[1] ;
+			for( int x = 0 ; x < freeset.Length ; x++ )
+				{
+				for( int y = C699.Stack.Offset ; y < stack.Length ; y++ )
+					{
+					if( freeset[x].Symbol == stack[y].Symbol )
+						{
+						Statement( new c("//"+C699.Free( "("+stack[y].StackDeref+")."+field )) ) ;
+						stack[y].Symbol = null ;
+						}
+					}
+				}
+			}
 		public void WriteTo( System.IO.TextWriter sw )
 			{
 			#if !HPP

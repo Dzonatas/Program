@@ -1,7 +1,5 @@
 partial class A335
 {
-static object[] freeset = new object[0] ;
-
 public partial class Instr : Automatrix
 	{
 	public partial class Method : Instr
@@ -95,16 +93,13 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				Program.C_Function.Require( _Call ) ;
 				if( type is type__string_ )
 					{
-					symbol = new C_Symbol() ;
-					d.Statement( C699.C.Static(C699.String,symbol) ) ;
-					System.Array.Resize( ref freeset, freeset.Length+1 ) ;
-					freeset[freeset.Length-1] = C699.Stack.Offset ;
-					C699.c s = new C699.c( symbol ) ;
+					var vt = d.Allocate(type) ;
+					C699.c s = new C699.c( vt.Symbol ) ;
 					if( iargs == 0 )
 						d.Statement( s.Equate(C699.C.Function(_Call)) ) ;
 					else
 						d.Statement( s.Equate(C699.C.Function(_Call,C699.Stack.Pointer)) ) ;
-					d.Push( new C699.c("&"+symbol), type ) ;
+					d.PushRef( vt ) ;
 					}
 				else
 				if( type is type__void_ )

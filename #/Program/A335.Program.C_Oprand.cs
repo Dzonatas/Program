@@ -60,6 +60,42 @@ partial class Program : C699
 			Statement( Stack.Assign( value, type.Spec ) ) ;
 			Push( type ) ;
 			}
+		public void PushRef( C_ValueType vt )
+			{
+			for( int i = 0 ; i < freeset.Length ; i++ )
+				if( freeset[i].Symbol == vt.Symbol )
+					freeset[i].Offset++ ;
+			vt.Type = vt.Type.Ref ;
+			Statement( Stack.Assign( new c("&"+vt.Symbol), vt.Type.Spec ) ) ;
+			stack[stack_offset] = vt ;
+			stack_offset++ ;
+			}
+		public C_ValueType Allocate(C_Type type)
+			{
+			var vt = new C_ValueType()
+				{
+				Symbol = new C_Symbol(),
+				Type   = C_Type.Static( type.Deref.Spec )
+				} ;
+			Statement( C699.C.Struct(vt.Type.TypeSpec, vt.Symbol) ) ;
+			System.Array.Resize( ref freeset, freeset.Length+1 ) ;
+			freeset[freeset.Length-1] = vt ;
+			return vt ;
+			}
+		/*
+		public C_ValueType ConstStatic(C699.c ctype, )
+			{
+			var vt = new C_ValueType()
+				{
+				Symbol = new C_Symbol(),
+				Type   = C_Type.Static( type.Deref.Spec )
+				} ;
+			Statement( C699.C.Struct(vt.Type.TypeSpec, vt.Symbol) ) ;
+			System.Array.Resize( ref freeset, freeset.Length+1 ) ;
+			freeset[freeset.Length-1] = vt ;
+			return vt ;
+			}
+		*/
 		public void WriteTo( System.IO.TextWriter tw )
 			{
 			#if HPP

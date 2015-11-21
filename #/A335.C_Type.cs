@@ -84,6 +84,13 @@ public class C_Type
 		s[1] = C_Symbol.Acquire( ((string)typeSpec).Trim() ) ;
 		return Program.C_Type_Acquire( s ) ;
 		}
+	static public C_Type Static( C699.c typeSpec )
+		{
+		var s = new C_Symbol[2] ;
+		s[0] = C_Symbol.Acquire( C699.KeyedWord.Static ) ;
+		s[1] = C_Symbol.Acquire( ((string)typeSpec).Trim() ) ;
+		return Program.C_Type_Acquire( s ) ;
+		}
 	public C699.c Spec
 		{
 		get { return new C699.c(idset[idset.Length-1]+' ') ; }
@@ -99,6 +106,21 @@ public class C_Type
 			var s = ids[ids.Length-1] ;
 			var i = s.LastIndexOf('*') ;
 			var t = ids[ids.Length-1] = s.Substring(0,i) + s.Substring(i+1) ;
+			if( s == t )
+				throw new System.NotImplementedException() ;
+			return C_Type.Acquire( ids ) ;
+			}
+		}
+	public C_Type Ref
+		{
+		get {
+			var ids = (string[]) this ;
+			var s = ids[ids.Length-1] ;
+			var i = s.LastIndexOf('*') ;
+			if( i == -1 )
+				s += " " ;
+			s += "*" ;
+			ids[ids.Length-1] = s ;
 			return C_Type.Acquire( ids ) ;
 			}
 		}
