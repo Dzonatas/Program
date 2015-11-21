@@ -63,9 +63,14 @@ public partial class   methodDecl_id____
 		set { required = value ; }
 		get { return required ; }
 		}
-	static public implicit operator string(methodDecl_id____ mdi)
+	static public implicit operator string( methodDecl_id____ mdi )
 		{
 		return mdi.Arg1.Token ;
+		}
+	protected override void render()
+		{
+		if( required )
+			Node.Head.Function.Label( Arg1.Token ) ;
 		}
 	}
 
@@ -75,9 +80,9 @@ public partial class   methodDecl_instr
 		{
 		(Argv[1] as A335.Instr).Decl = this ;
 		}
-	static public implicit operator C699.c(methodDecl_instr mdi)
+	protected override void render()
 		{
-		return mdi.Argv[1] as Instr ;
+		Node.Head.Function.Statement( Argv[1] as Instr ) ;
 		}
 	}
 }

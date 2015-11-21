@@ -136,7 +136,7 @@ public partial class Method
 			{
 			get { return next ; }
 			}
-		public void Write()
+		protected void _render()
 			{
 			var c = c_method.Function ;
 			int args = ( _SigArgs0 == null ? 0 :_SigArgs0.Count() ) + ( _CallConvInstance ? 1 : 0 ) ;
@@ -149,7 +149,11 @@ public partial class Method
 			c.Statement( C699.C.Const.Voidpp.Equate("stack",C699.Alloca(maxstack + " * sizeof(void*)") ) ) ;
 			if( locals != null )
 				locals.WriteTo( c ) ;
-			A335.Method.WriteList( c, decls ) ;
+			//A335.Method.WriteList( c, decls ) ;
+			}
+		public void Write()
+			{
+			var c = c_method.Function ;
 			if( _Virtual )
 				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
 			var sw = global::Current.Path.CreateText( c.Symbol + ".c" ) ;
@@ -162,6 +166,10 @@ public partial class Method
 		public Program.C_Oprand NewOprand( string instr )
 			{
 			return new Program.C_Oprand( c_method.Function, instr ) ;
+			}
+		public Program.C_Function Function
+			{
+			get { return c_method.Function ; }
 			}
 		}
 	}
@@ -194,6 +202,10 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 	protected Argument CallConv
 		{
 		set { CallConvList = ((Automatrix) value) as CallConv ; }
+		}
+	protected override void render()
+		{
+		_render() ;
 		}
 	}
 }

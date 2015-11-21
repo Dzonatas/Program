@@ -59,5 +59,9 @@ public partial class   methodDecls_methodDecls_methodDecl
 			thread = this ;
 		decl.Node = this ;
 		}
+	protected override void render()
+		{
+		//head.Function.GarbageCollect() ;
+		}
 	}
 }
