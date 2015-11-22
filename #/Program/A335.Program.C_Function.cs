@@ -32,7 +32,8 @@ partial class Program : C699
 		public bool   Written ;
 		public bool   Required ;
 		C_Literal let ;
-		string[]      list = new string[0] ;
+		string[]      list        = new string[0] ;
+		public C_ValueType[] ManagedPointers = new C_ValueType[0] ;
 		void list_add( string s )
 			{
 			System.Array.Resize( ref list, list.Length+1 ) ;
@@ -155,6 +156,18 @@ partial class Program : C699
 						}
 					}
 				}
+			}
+		public C699.c Allocate(Method.Local local)
+			{
+			var mp = new C_ValueType()
+				{
+				Symbol = local.Symbol ,
+				//Offset = stack_offset ,
+				Type   = local.Type
+				} ;
+			System.Array.Resize( ref ManagedPointers, ManagedPointers.Length+1 ) ;
+			ManagedPointers[ManagedPointers.Length-1] = mp ;
+			return C699.C.Struct( new c("struct _mp "), mp.Symbol+"_mp"  ).Equate( "{0,(void*)0}" ) ;
 			}
 		public void WriteTo( System.IO.TextWriter sw )
 			{

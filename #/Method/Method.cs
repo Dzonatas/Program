@@ -5,14 +5,14 @@ public partial class Method
 	static Head head ;
 	static Head begin ;
 	static Decl entryPoint ;
+	public struct Local
+		{
+		public C_Symbol Symbol ;
+		public string   ID ;
+		public Type     Type ;
+		}
 	public class Locals
 		{
-		public struct Local
-			{
-			public C_Symbol Symbol ;
-			public string   ID ;
-			public Type     Type ;
-			}
 		SigArgs0 args ;
 		Local[] local ;
 		public Locals( SigArgs0 args )
@@ -47,8 +47,15 @@ public partial class Method
 			}
 		public void WriteTo( Program.C_Function f )
 			{
+			//f.Statement( new C699.c( "struct _mp _null = {0,(void*)0}" ) ) ;
 			foreach( Local l in local )
+				{
 				f.Statement( C699.C.Local( l.Type, l.Symbol ) ) ;
+				var ct1 = ((string)C699.String.p).Trim() ;
+				var ct2 = ((string)((C_Type)l.Type).Spec).Trim() ;
+				if( ct1 == ct2 )
+					f.Statement( f.Allocate( l ) ) ;
+				}
 			}
 		}
 	static public void WriteIncludesTo( System.IO.StreamWriter sw )

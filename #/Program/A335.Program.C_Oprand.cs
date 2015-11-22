@@ -12,7 +12,9 @@ partial class Program : C699
 		public string ID ;
 		public bool HasArgs ;
 		public bool BrTarget ;
-		List<C699.c> list = new List<C699.c>() ;
+		public List<C699.c> GCBefore  = new List<C699.c>() ;
+		List<C699.c> list       = new List<C699.c>() ;
+		public List<C699.c> GCAfter   = new List<C699.c>() ;
 		public System.Action<C_Function> Evaluate = (c) => {} ;
 		public C_Method Method
 			{
@@ -74,28 +76,56 @@ partial class Program : C699
 			{
 			var vt = new C_ValueType()
 				{
-				Symbol = new C_Symbol(),
+				Symbol = new C_Symbol() ,
+				Offset = stack_offset ,
 				Type   = C_Type.Static( type.Deref.Spec )
 				} ;
+			var mp = new C_ValueType()
+				{
+				Symbol = vt.Symbol ,
+				Offset = stack_offset ,
+				Type   = C_Type.Static( type.Spec )
+				} ;
+			System.Array.Resize( ref function.ManagedPointers, function.ManagedPointers.Length+1 ) ;
+			function.ManagedPointers[function.ManagedPointers.Length-1] = mp ;
+			C_TypeDef typedef = typedefset["string"] ;
+			string _string = typedef.Struct[1] ;
+			GCAfter.Add( C699.C.Struct( new c("_mp") )
+				.Equate( mp.Symbol+"_mp", "1,(void*) ("+mp.StackDeref+")."+_string ) );
 			Statement( C699.C.Struct(vt.Type.TypeSpec, vt.Symbol) ) ;
 			System.Array.Resize( ref freeset, freeset.Length+1 ) ;
 			freeset[freeset.Length-1] = vt ;
 			return vt ;
 			}
-		/*
-		public C_ValueType ConstStatic(C699.c ctype, )
+		public C_ValueType Allocate(C699.c type, string args)
+			{
+			return Allocate(C_Type.ConstStatic(type), args) ;
+			}
+		public C_ValueType Allocate(C_Type type, string args)
 			{
 			var vt = new C_ValueType()
 				{
-				Symbol = new C_Symbol(),
-				Type   = C_Type.Static( type.Deref.Spec )
+				Symbol = new C_Symbol() ,
+				Offset = stack_offset ,
+				Type   = C_Type.ConstStatic( type.Deref.Spec )
 				} ;
-			Statement( C699.C.Struct(vt.Type.TypeSpec, vt.Symbol) ) ;
+			var mp = new C_ValueType()
+				{
+				Symbol = vt.Symbol ,
+				Offset = stack_offset ,
+				Type   = C_Type.ConstStatic( type.Spec )
+				} ;
+			System.Array.Resize( ref function.ManagedPointers, function.ManagedPointers.Length+1 ) ;
+			function.ManagedPointers[function.ManagedPointers.Length-1] = mp ;
+			C_TypeDef typedef = typedefset["string"] ;
+			string _string = typedef.Struct[1] ;
+			GCAfter.Add( C699.C.Struct( new c("_mp") )
+				.Equate( mp.Symbol+"_mp", "0,(void*) ("+mp.StackDeref+")."+_string ) );
+			Statement( vt.Type.TypeSpec.Equate(vt.Symbol,args) ) ;
 			System.Array.Resize( ref freeset, freeset.Length+1 ) ;
 			freeset[freeset.Length-1] = vt ;
 			return vt ;
 			}
-		*/
 		public void WriteTo( System.IO.TextWriter tw )
 			{
 			#if HPP

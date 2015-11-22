@@ -2,31 +2,21 @@ partial class A335
 {
 public partial class Instr : Automatrix
 	{
-	public partial class String : Instr
-		{
-		protected override void render()
-			{
-			string s = (string) (compQstring_QSTRING)Argv[2] ;
-			STRING( s ) ;
-			}
-		protected virtual void STRING( string compQstring ) {}
-		}
+	public partial class String : Instr {}
 	}
 
 public partial class   instr_INSTR_STRING_compQstring
 	: Instr.String {
-	protected override void STRING( string compQstring )
+	protected override void render()
 		{
-		var d = oprand.C ;
+		var compQstring = (string) (Argv[2] as compQstring_QSTRING) ;
 		switch( Op )
 			{
 			case "LDSTR":
 				{
-				var c = C_Type.ConstStatic(C699.String) ;
-				var s = new C_Symbol() ;
 				var args = compQstring.Length.ToString()+','+'"'+compQstring+'"' ;
-				d.Statement( c.TypeSpec.Equate(s,args) ) ;
-				d.Push( new C699.c("&"+s), C_Type.Acquire(C699.String.p) ) ;
+				var vt   = oprand.C.Allocate(C699.String.p, args) ;
+				oprand.C.PushRef( vt ) ;
 				break ;
 				}
 			default :

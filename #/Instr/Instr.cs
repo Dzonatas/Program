@@ -50,7 +50,11 @@ public partial class Instr : Automatrix
 		return i.oprand.C ;
 		#else
 		var s = new System.IO.StringWriter() ;
+		foreach( C699.c l in i.oprand.C.GCBefore )
+			s.WriteLine( l ) ;
 		i.oprand.C.WriteTo( s ) ;
+		foreach( C699.c l in i.oprand.C.GCAfter )
+			s.Write( " ;\n\t"+l ) ;
 		return new C699.c( s.ToString() ) ;
 		#endif
 		}

@@ -113,7 +113,24 @@ public partial class   instr_INSTR_NONE
 		//oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
 		throw new System.NoteImplementedException() ;
 		#else
-		oprand.C.Statement( l.Equate( C.Pop().StackCast ) ) ;
+		var vt = C.Pop() ;
+		oprand.C.Statement( l.Equate( vt.StackCast ) ) ;
+		var ct1 = ((string)C699.String.p).Trim() ;
+		var ct2 = ((string)((C_Type)loc.Type).Spec).Trim() ;
+		if( ct1 == ct2 )
+			{
+			if( vt.Symbol == null )
+				{
+				oprand.C.GCAfter.Add( new C699.c( "// nop.gc" ) ) ;
+				}
+			else
+				{
+				oprand.C.GCAfter.Add(
+					C699.C.If( ""+loc.Symbol+"_mp.managed && ! --"+loc.Symbol+"_mp.managed",
+						C699.Free( ""+loc.Symbol+"_mp.pointer" )) ) ;
+				oprand.C.GCAfter.Add( new C699.c( ""+loc.Symbol+"_mp = "+vt.Symbol+"_mp" ) ) ;
+				}
+			}
 		#endif
 		}
 	void ldloc( int i )
