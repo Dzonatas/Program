@@ -10,9 +10,10 @@ union _  //regression: string (void*) -> managed pointer (void**) -> atomic matr
 		void* managed ;
 		void* pointer ;
 		} base;
+	//...
 	} ;
 
-struct _mp
+struct _mp  //regression: managed pointer -> string -> blob
 	{
 	int managed ;
 	void* pointer ;
