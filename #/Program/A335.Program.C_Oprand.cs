@@ -13,7 +13,7 @@ partial class Program : C699
 		public bool HasArgs ;
 		public bool BrTarget ;
 		public List<C699.c> GCBefore  = new List<C699.c>() ;
-		List<C699.c> list       = new List<C699.c>() ;
+		List<C699.c> list             = new List<C699.c>() ;
 		public List<C699.c> GCAfter   = new List<C699.c>() ;
 		public System.Action<C_Function> Evaluate = (c) => {} ;
 		public C_Method Method

@@ -151,7 +151,9 @@ partial class Program : C699
 					{
 					if( freeset[x].Symbol == stack[y].Symbol )
 						{
+						#if DEBUG
 						Statement( new c("//"+C699.Free( "("+stack[y].StackDeref+")."+field )) ) ;
+						#endif
 						stack[y].Symbol = null ;
 						}
 					}

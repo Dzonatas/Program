@@ -121,7 +121,9 @@ public partial class   instr_INSTR_NONE
 			{
 			if( vt.Symbol == null )
 				{
+				#if DEBUG
 				oprand.C.GCAfter.Add( new C699.c( "// nop.gc" ) ) ;
+				#endif
 				}
 			else
 				{

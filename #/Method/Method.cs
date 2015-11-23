@@ -47,7 +47,6 @@ public partial class Method
 			}
 		public void WriteTo( Program.C_Function f )
 			{
-			//f.Statement( new C699.c( "struct _mp _null = {0,(void*)0}" ) ) ;
 			foreach( Local l in local )
 				{
 				f.Statement( C699.C.Local( l.Type, l.Symbol ) ) ;
