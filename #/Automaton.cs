@@ -104,8 +104,4 @@ public class AutomatonAttribute : System.Attribute
 
 [Automaton] public class   labels_id_____labels
 	: Automatrix {}
-
-[Automaton] public class   START_decls
-	: _START {}
-
 }

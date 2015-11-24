@@ -7,7 +7,9 @@ public class Argument
 	object arg ;
 	public Argument( ref object o )
 		{
+		#if DEBUG_ARG
 		Debug.WriteLine( "<A Arg/> " + o.ToString() ) ;
+		#endif
 		arg = o ;
 		}
 	public object this[int n]
