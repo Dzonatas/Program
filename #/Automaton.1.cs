@@ -12,7 +12,6 @@ partial class Automaton
 	static int   backup ;
 	static global::Item auto ;
 	static int yy ;
-	int rps ;
 	Automaton()
 		{
 		if( ! token_HasValue )
