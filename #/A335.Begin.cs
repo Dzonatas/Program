@@ -5,7 +5,13 @@ static void Begin()
 	if( Cluster.Parameter.Value("reflection") == "false" )
 		if( Current.Path.Exists( "main.c" ) )
 			return ;
-	Cluster.Cli.Start( Cluster.Parameter.Value("shell"), Tokenset.Assimulation ) ;
+	if( Cluster.Parameter.Value("input") != "false" )
+		{
+		string text = System.IO.File.ReadAllText( Cluster.Parameter.Value("input") ) ;
+		Tokenset.Assimulation( text ) ;
+		}
+	else
+		Cluster.Cli.Start( Cluster.Parameter.Value("shell"), Tokenset.Assimulation ) ;
 	//Console.WriteLine( "symbolset={0} tokenset={1}", xml_symbolset.Count, xml_tokenset.Count ) ;
 	/*
 	foreach( State s in stateset )

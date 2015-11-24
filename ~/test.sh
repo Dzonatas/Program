@@ -6,7 +6,8 @@ export TERM="XHTML"
 
 [ ! -d "/tmp/.$ID.d" ] && mkdir /tmp/.$ID.d
 cd ./bin/Debug \
-  && ./ecma.exe --shell="sh ../../~/compile.sh ../../~/hello.mono.world.il.text" \
+  && ../../~/understand.exe <../../~/hello.mono.world.il.text >/tmp/.$ID.d/il.xml \
+  && ./ecma.exe --input=/tmp/.$ID.d/il.xml \
   && gcc -std=c99 -O3 -S -I ../../# /tmp/.$ID.d/program.c -o /tmp/.$ID.d/native.assembly.s \
   && gcc -std=c99 -S -I ../../# /tmp/.$ID.d/program.c -o /tmp/.$ID.d/unoptimized.s \
   && gcc -std=c99 -O3 /tmp/.$ID.d/native.assembly.s -o /tmp/$ID.hello.world.exe \
