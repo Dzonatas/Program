@@ -49,8 +49,6 @@ $(grammar_xml):
 
 clean: 
 	rm -rf /tmp/.$(ID).d
-	rm -f /tmp/$(ID).il.xml
-	rm -f /tmp/$(ID).hello.world.exe
 	rm -rf bin
 	rm -rf obj
 	( cd ./~/understand && make clean )
