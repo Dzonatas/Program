@@ -20,7 +20,7 @@ partial class Automaton
 			token = Tokenset.Input ;
 			token_HasValue = true ;
 			#if !EMBED
-			#if !DEBUG_TOKEN
+			#if DEBUG_TOKEN
 			Debug.WriteLine( "[Token] " + token ) ;
 			#endif
 			token.point = global::A335.xml_translate[token.c] ;

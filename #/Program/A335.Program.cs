@@ -50,13 +50,13 @@ public partial class Program : C699
 		{
 		get { return this ; }
 		}
-	static public void Write()
+	static public void Write( A335.Stack.IStart start )
 		{
-		WriteC_Main() ;
+		WriteC_Main( start ) ;
 		A335.Method.Write() ;
 		WriteC_Objects() ;
 		}
-	static public void WriteC_Main()
+	static public void WriteC_Main( A335.Stack.IStart start )
 		{
 		var sw = C699_Main_Function___WriteTo__C699_Main_FileStructure__() ;
 		foreach( C_TypeDef t in typedefset.Values )
@@ -70,7 +70,7 @@ public partial class Program : C699
 			}
 		foreach( string i in Class.Types )
 			sw.WriteLine( "#include \""+i+".h\"" ) ;
-		A335.Method.WriteIncludesTo( sw ) ;
+		Decl.WriteIncludesTo( start, sw ) ;
 	    foreach( string class_symbol in virtualset.Keys )
 			C_Struct.FromSymbol( class_symbol ).WriteInclude( sw ) ;
 		sw.Close() ;

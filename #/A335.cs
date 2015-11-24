@@ -11,7 +11,9 @@ public partial class Stack
 	}
 public partial class Object : Stack.Item {}
 public partial class Automatrix : Object {}
-public partial class _START : Automatrix, Stack.IStart {}
+public partial class _START : Automatrix {}
+[Automaton] public partial class   START_decls
+	: _START, Stack.IStart {}
 
 public partial class Decls : Automatrix {}
 [Automaton] public partial class   decls

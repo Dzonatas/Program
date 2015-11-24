@@ -57,6 +57,7 @@ public partial class Method
 				}
 			}
 		}
+
 	static public void WriteIncludesTo( System.IO.StreamWriter sw )
 		{
 		for( Head i = Head.Begin ; i is Head ; i = i.Next )
@@ -72,25 +73,6 @@ public partial class Method
 		get { return entryPoint ; }
 		set { entryPoint = value ; }
 		}
-	#if BEGINNING
-	static public void Start()
-		{
-		#if SYSTEM_GUID
-		if( system.guid == null )
-			{
-			xml_load_grammar() ;
-			byte []    b = system_ip.GetAddressBytes() ;
-			Array.Reverse( b ) ;
-			/*
-			system       = b_enter( b[3], b[2], b[1], b[0] ) ;
-			system.guid  = Guid.Empty ;
-			*/
-			}
-		#else
-		//xml_load_grammar() ;
-		#endif
-		}
-	#endif
 	static public Head Declared( Head h, Decls d )
 		{
 		d.Head  = h ;

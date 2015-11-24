@@ -73,7 +73,7 @@ static void Begin()
 	Stack.IStart start = Stack.FindIStart() ;
 	Automatrix.Prerender( start ) ;
 	Automatrix.Render( start ) ;
-	Program.Write() ;
+	Program.Write( start ) ;
 	if( log_output != null )
 		{
 		log_output.Close() ;
