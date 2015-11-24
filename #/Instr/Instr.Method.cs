@@ -19,7 +19,7 @@ public partial class Instr : Automatrix
 			// '('
 			SigArgs0      = Arg8 ;
 			// ')'
-			MethodName    = Arg6 ;
+			MethodName    = Argv[6] as A335.Method.Name ;
 			}
 		protected Argument SigArgs0
 			{
@@ -37,13 +37,13 @@ public partial class Instr : Automatrix
 			{
 			set { CallConvList = ((Automatrix) value) as CallConv ; }
 			}
-		protected Argument MethodName
+		protected A335.Method.Name MethodName
 			{
 			set { _Call = C_Symbol.Acquire( (C_Type)typeSpec + methodname( value ) + ( _SigArgs0 == null ? "" : _SigArgs0.Types() ) ) ; }
 			}
-		string methodname( Argument arg )
+		string methodname( A335.Method.Name value )
 			{
-			return ((Automatrix)arg) as A335.Method.Name ;
+			return (string) (C_Symbol) value ;
 			}
 		protected int Args
 			{

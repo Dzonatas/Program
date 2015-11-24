@@ -4,23 +4,11 @@ public partial class Method
 	{
 	public partial class Decl : Automatrix
 		{
-		Decls node ;
+		protected Decls node ;
 		public Decls Node
 			{
 			set { node = value ; }
 			get { return node ; }
-			}
-		protected int     MaxStack
-			{
-			set { head.MaxStack = value ; C.MaxStack = value ; }
-			}
-		protected SigArgs0     Locals
-			{
-			set { head.Locals = new Method.Locals( value ) ; }
-			}
-		protected Program.C_Oprand NewOprand( string instr )
-			{
-			return head.NewOprand( instr ) ;
 			}
 		}
 	}
@@ -35,23 +23,17 @@ public partial class   methodDecl___entrypoint_
 
 public partial class   methodDecl___maxstack__int32
 	: Method.Decl   {
-	protected override void main()
+	protected override void prerender()
 		{
-		MaxStack = int.Parse( Arg2.Token ) ;
+		node.Head.MaxStack = C.MaxStack = int.Parse( Arg2.Token ) ;
 		}
 	}
 
 public partial class   methodDecl_localsHead__init______sigArgs0____
 	: Method.Decl   {
-	protected override void main()
+	protected override void prerender()
 		{
-		Locals = Arg4 ;
-		}
-	protected new Argument Locals
-		{
-		set {
-			base.Locals = (SigArgs0) (Automatrix) value ;
-			}
+		node.Head.Locals = new Method.Locals( Argv[4] as SigArgs0 ) ;
 		}
 	}
 
@@ -82,7 +64,7 @@ public partial class   methodDecl_instr
 		}
 	protected override void render()
 		{
-		Node.Head.Function.Statement( Argv[1] as Instr ) ;
+		node.Head.Function.Statement( Argv[1] as Instr ) ;
 		}
 	}
 }

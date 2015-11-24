@@ -4,25 +4,21 @@ public partial class Method
 	{
 	public partial class Head : Automatrix
 		{
-		Class.Decl classDecl ;
-		Head    previous ;
-		Head    next ;
-		Program.C_Method c_method ;
-		C_Type  classType ;
-		Name    name ;
-		Decls   decls ;
-		int     maxstack ;
-		bool    _static ;
-		bool    _CallConvInstance ;
-		SigArgs0 _SigArgs0 ;
-		bool    _Virtual ;
-		Locals  locals ;
-		public partial class Part1 : Automatrix
-			{
-			protected override void main()
-				{
-				}
-			}
+		Class.Decl                  classDecl ;
+		Head                        previous  ;
+		Head                        next      ;
+		Decls                       decls     ;
+		C_Type                      classType ;
+		int                         maxstack  ;
+		bool                        _static   ;
+		bool                        _virtual  ;
+		Locals                      locals    ;
+		protected CallConv          callConv  ;
+		protected Name              name      ;
+		protected SigArgs0          sigArgs0  ;
+		protected Program.C_Method  c_method  ;
+		virtual protected void methodHead() {}
+		public partial class Part1 : Automatrix {}
 		public bool Cctor
 			{
 			get { return name is methodName___cctor_ ; }
@@ -39,7 +35,6 @@ public partial class Method
 			methodHead() ;
 			CreateFunction() ;
 			}
-		virtual protected void methodHead() {}
 		public Decls   Decls
 			{
 			set { decls = value.First() ; }
@@ -57,27 +52,17 @@ public partial class Method
 				  Virtual = value is Attr ? value.Virtual : false ;
 				}
 			}
-		protected CallConv CallConvList
-			{
-			set { _CallConvInstance = value is CallConv ? value.Instance : false ; }
-			}
-		protected Type  Type
-			{
-			set { c_method.Type = value ; }
-			}
 		public C_Type  ClassType
 			{
 			get { return classType ; }
 			}
 		public Name  Name
 			{
-			set { c_method.Name = C_Symbol.Acquire( name = value ) ; }
 			get { return name ; }
 			}
 		public SigArgs0 SigArgs0
 			{
-			set { _SigArgs0 = value ; }
-			get { return _SigArgs0 ; }
+			get { return sigArgs0 ; }
 			}
 		public Locals Locals
 			{
@@ -87,10 +72,10 @@ public partial class Method
 		protected void    CreateFunction()
 			{
 			string symbol = classType + name ;
-			if( _SigArgs0 != null )
+			if( sigArgs0 != null )
 				{
-				_SigArgs0.ForEach( (a) => c_method.Args.Add( (Type)a ) ) ;
-				symbol += _SigArgs0.Types() ;
+				sigArgs0.ForEach( (a) => c_method.Args.Add( (Type)a ) ) ;
+				symbol += sigArgs0.Types() ;
 				}
 			c_method.Function = Program.C_Function.FromSymbol( symbol ) ;
 			c_method.Function.Method = c_method ;
@@ -107,26 +92,25 @@ public partial class Method
 			}
 		public bool CallConvInstance
 			{
-			set { _CallConvInstance = value ; }
-			get { return _CallConvInstance ; }
+			get { return callConv is CallConv ? callConv.Instance : false ; }
 			}
 		public bool    Virtual
 			{
 			set {
-				if( ( _Virtual = value ) )
+				if( ( _virtual = value ) )
 					{
 					var c = Program.C_Struct.FromSymbol( classType ) ;
-					c.Assign( name + ( _SigArgs0 != null ? _SigArgs0.Types() : string.Empty ) ) ;
+					c.Assign( name + ( sigArgs0 != null ? sigArgs0.Types() : string.Empty ) ) ;
 					}
 				}
-			get { return _Virtual ; }
+			get { return _virtual ; }
 			}
 		public void WriteInclude( System.IO.StreamWriter sw )
 			{
-			if( _SigArgs0 == null )
+			if( sigArgs0 == null )
 				sw.WriteLine( "#include \"" + classType + name + ".c\"" ) ;
 			else
-				sw.WriteLine( "#include \"" + classType + name + _SigArgs0.Types() + ".c\"" ) ;
+				sw.WriteLine( "#include \"" + classType + name + sigArgs0.Types() + ".c\"" ) ;
 			}
 		static public Head Begin
 			{
@@ -139,8 +123,8 @@ public partial class Method
 		protected void _render()
 			{
 			var c = c_method.Function ;
-			int args = ( _SigArgs0 == null ? 0 :_SigArgs0.Count() ) + ( _CallConvInstance ? 1 : 0 ) ;
-			if( _Virtual )
+			int args = ( sigArgs0 == null ? 0 : sigArgs0.Count() ) + ( CallConvInstance ? 1 : 0 ) ;
+			if( _virtual )
 				c.Type = C699.String ;
 			if( args == 0 )
 				c.Args = "()" ;
@@ -149,12 +133,11 @@ public partial class Method
 			c.Statement( C699.C.Const.Voidpp.Equate("stack",C699.Alloca(maxstack + " * sizeof(void*)") ) ) ;
 			if( locals != null )
 				locals.WriteTo( c ) ;
-			//A335.Method.WriteList( c, decls ) ;
 			}
 		public void Write()
 			{
 			var c = c_method.Function ;
-			if( _Virtual )
+			if( _virtual )
 				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
 			var sw = global::Current.Path.CreateText( c.Symbol + ".c" ) ;
 			#if HPP
@@ -181,27 +164,13 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 	: Method.Head   {
 	protected override void methodHead()
 		{
-		Type              = Argv[5] as Type ;
-		Name              = Argv[6] as Method.Name ;
-		Name.MethodHead   = this ;
-		SigArgs0          = Arg8 ;
-		CallConv          = Arg3 ;
+		c_method.Type     = Argv[5] as Type ;
+		name              = Argv[6] as Method.Name ;
+		c_method.Name     = name ;
+		name.MethodHead   = this ;
+		sigArgs0          = Argv[8] as SigArgs0 ;
+		callConv          = Argv[3] as CallConv ;
 		MethAttr          = Argv[2] as Method.Attr ;
-		}
-	protected new Argument SigArgs0
-		{
-		set {
-			if ( value is Argument )
-				{
-				var a = (Automatrix) value ;
-				if( a is Automatrix )
-					base.SigArgs0 = a as SigArgs0 ;
-				}
-			}
-		}
-	protected Argument CallConv
-		{
-		set { CallConvList = ((Automatrix) value) as CallConv ; }
 		}
 	protected override void render()
 		{
