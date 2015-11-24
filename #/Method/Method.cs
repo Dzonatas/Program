@@ -2,8 +2,6 @@ partial class A335
 {
 public partial class Method
 	{
-	static Head head ;
-	static Head begin ;
 	static Decl entryPoint ;
 	public struct Local
 		{
@@ -56,17 +54,6 @@ public partial class Method
 					f.Statement( f.Allocate( l ) ) ;
 				}
 			}
-		}
-
-	static public void WriteIncludesTo( System.IO.StreamWriter sw )
-		{
-		for( Head i = Head.Begin ; i is Head ; i = i.Next )
-			i.WriteInclude( sw ) ;
-		}
-	static public void Write()
-		{
-		for( Head i = Head.Begin ; i is Head ; i = i.Next )
-			i.Write() ;
 		}
 	static public Decl EntryPoint
 		{

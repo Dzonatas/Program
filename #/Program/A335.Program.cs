@@ -53,7 +53,7 @@ public partial class Program : C699
 	static public void Write( A335.Stack.IStart start )
 		{
 		WriteC_Main( start ) ;
-		A335.Method.Write() ;
+		Decl.WriteMethods( start ) ;
 		WriteC_Objects() ;
 		}
 	static public void WriteC_Main( A335.Stack.IStart start )

@@ -5,8 +5,6 @@ public partial class Method
 	public partial class Head : Automatrix
 		{
 		Class.Decl                  classDecl ;
-		Head                        previous  ;
-		Head                        next      ;
 		Decls                       decls     ;
 		C_Type                      classType ;
 		int                         maxstack  ;
@@ -25,11 +23,6 @@ public partial class Method
 			}
 		protected override void main()
 			{
-			if( null != ( previous = head ) )
-				previous.next = this ;
-			else
-				begin = this ;
-			head = this ;
 			c_method = new Program.C_Method( Class.Type ) ;
 			classType = Class.Type ;
 			methodHead() ;
@@ -112,14 +105,6 @@ public partial class Method
 			else
 				sw.WriteLine( "#include \"" + classType + name + sigArgs0.Types() + ".c\"" ) ;
 			}
-		static public Head Begin
-			{
-			get { return begin ; }
-			}
-		public Head Next
-			{
-			get { return next ; }
-			}
 		protected void _render()
 			{
 			var c = c_method.Function ;
@@ -134,7 +119,7 @@ public partial class Method
 			if( locals != null )
 				locals.WriteTo( c ) ;
 			}
-		public void Write()
+		public void WriteMethod()
 			{
 			var c = c_method.Function ;
 			if( _virtual )
