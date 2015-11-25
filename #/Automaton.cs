@@ -54,9 +54,6 @@ public class AutomatonAttribute : System.Attribute
 [Automaton] public class   name1_DOTTEDNAME
 	: Automatrix {}
 
-[Automaton] public class   extendsClause__extends__className
-	: Automatrix {}
-
 [Automaton] public class   callKind__default_
 	: Automatrix {}
 

@@ -42,6 +42,22 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 			case "STSFLD" :
 				oprand.C.Statement(	symbol.Equate( C.Pop().StackCast ) ) ;
 				break ;
+			case "LDSFLDA" :
+				oprand.C.Push( new C699.c("&"+symbol), ((C_Type)type).Ref ) ;
+				break ;
+			case "LDFLD" :
+				{
+				var vt = C.Pop() ;
+				oprand.C.Push( new C699.c("("+vt.StackDeref+")->"+id.Token), type ) ;
+				}
+				break ;
+			case "STFLD" :
+				{
+				var value = C.Pop() ;
+				var obj   = C.Pop() ;
+				oprand.C.Statement( new C699.c("("+obj.StackDeref+")->"+id.Token).Equate( value.StackCast ) ) ;
+				}
+				break ;
 			default :
 				log( "[INSTR_FIELD-3] Defaulted on " + Op ) ;
 				return ;

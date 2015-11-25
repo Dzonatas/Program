@@ -34,7 +34,9 @@ public partial class Stack
 			public string Assertive ;
 			public Empty( string assertive ) : base()
 				{
+				#if DEBUG_TOKEN
 				log( "[empty] " + assertive ) ;
+				#endif
 				Assertive = assertive ;
 				}
 			public override string ToString()
@@ -159,7 +161,9 @@ public partial class Stack
 			}
 		else
 			s = o.ToString() ;
+		#if DEBUG_TOKEN
 		log( "[pop] " + s ) ;
+		#endif
 		return o ;
 		}
 	static private object peak
@@ -243,7 +247,9 @@ public partial class Stack
 					o[i] = stack_pop() as Object ;
 				else
 					{
+					#if DEBUG_TOKEN
 					log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
+					#endif
 					o[i] = new Item.Empty( "lhs="+lhs+"   rhs="+rhs ) ;
 					}
 				}
@@ -257,7 +263,9 @@ public partial class Stack
 					o[i] = new Object( stack_pop() as object[] ) ;
 				else
 					{
+					#if DEBUG_TOKEN
 					log( "[Stack.Pop] lhs="+lhs+"   rhs="+rhs ) ;
+					#endif
 					o[i] = new Item.Empty( "lhs="+lhs+"   rhs="+rhs ) ;
 					}
 				}

@@ -30,6 +30,12 @@
     <ConsolePause>false</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test4|x86' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Test4</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Compile Include="#\.extentions.cs" />

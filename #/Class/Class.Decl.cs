@@ -69,6 +69,10 @@ public partial class   classDecl_fieldDecl
 		{
 		return decl.Argv[1] as Field.Decl ;
 		}
+	public string ToStructField()
+		{
+		return (Argv[1] as Field.Decl).ToStructField() ;
+		}
 	}
 }
 

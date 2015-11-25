@@ -121,6 +121,10 @@ public partial class Program : C699
 			.StandardOutputWriteLocal( _string , _length )
 			.StandardOutputWriteLine()
 			;
+		jiffy( c, "console::Write(string)" )
+			.ConstLocalArg0
+			.StandardOutputWriteLocal( _string , _length )
+			;
 		var l = new C_Literal[3] ;
 		jiffy( c, "string string::Concat(object,object,object)" )
 			.Register(ref l[0], C699.String)
@@ -281,8 +285,10 @@ public partial class Program : C699
 			c.Statement( C.Extern.Void.Cctor(e.ClassType) ) ;
 			c.Statement( C.Cctor(e.ClassType) ) ;
 			}
-		c.Statement( C.Extern.Void.Function(e.ClassType,  "Main") ) ;
-		c.Statement( C.Function(e.ClassType, "Main") ) ;
+		string a = e.Function.Args == null ? string.Empty : e.Function.Args.Replace("(","").Replace(")","") ;
+		string b = e.Function.Args == null ? string.Empty : "(const void**)args" ;
+		c.Statement( C.Extern.Void.Function(e.Function.Symbol, new c(a)) ) ;
+		c.Statement( C.Function(e.Function.Symbol, new c(b)) ) ;
 		c.Statement( C.Return(C.Zero) ) ;
 		c.WriteTo( C699.Main.FileStructure ) ;
 		return C699.Main.FileStructure ;

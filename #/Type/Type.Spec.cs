@@ -47,8 +47,9 @@ public partial class   typeSpec_className
 				{
 				case "[mscorlib]System.String":
 					return C699.String.p ;
+				default:
+					return C699.C.Struct( new C699.c(className) ) ;
 				}
-			throw new System.NotImplementedException() ;
 			}
 		}
 	}

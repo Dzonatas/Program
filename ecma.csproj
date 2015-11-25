@@ -60,6 +60,18 @@
     <ConsolePause>false</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test4|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG; QM; UX;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Commandlineparameters>--input=/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d/test4.il.xml</Commandlineparameters>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -109,7 +121,6 @@
     <Compile Include="#\Instr\Instr.None.cs" />
     <Compile Include="#\Instr\Instr.Switch.cs" />
     <Compile Include="#\Instr\Instr.Field.cs" />
-    <Compile Include="#\Instr\Instr.Type.cs" />
     <Compile Include="#\Instr\Instr.Method.cs" />
     <Compile Include="#\Instr\Instr.cs" />
     <Compile Include="#\Method\Method.Attr.cs" />
@@ -169,6 +180,9 @@
     <Compile Include="#\A335.Begin.cs" />
     <Compile Include="#\SlashedName.cs" />
     <Compile Include="#\Decl\Start.cs" />
+    <Compile Include="#\Instr\Instr.Var.cs" />
+    <Compile Include="#\Instr\Instr.Type.cs" />
+    <Compile Include="#\ExtendsClause.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

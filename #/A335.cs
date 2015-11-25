@@ -79,6 +79,10 @@ public partial class Class : Automatrix
 	: Class.Attr {}
 [Automaton] public partial class   classAttr_classAttr__public_
 	: Class.Attr {}
+[Automaton] public partial class   classAttr_classAttr__sequential_
+	: Class.Attr {}
+[Automaton] public partial class   classAttr_classAttr__sealed_
+	: Class.Attr {}
 [Automaton] public partial class   className_____name1_____slashedName
 	: Class.Name {}
 [Automaton] public partial class   className_slashedName
@@ -98,6 +102,10 @@ public partial class CallConv : Automatrix
 [Automaton] public partial class   customType_callConv_type_typeSpec________ctor______sigArgs0____
 	: Automatrix	{}
 
+public partial class ExtendsClause : Automatrix {}
+[Automaton] public partial class   extendsClause__extends__className
+	: ExtendsClause {}
+
 public partial class Field
 	{
 	public partial class Decl :Automatrix {}
@@ -108,6 +116,8 @@ public partial class Field
 [Automaton] public partial class   fieldAttr_fieldAttr__private_
 	: Field.Attr	{}
 [Automaton] public partial class   fieldAttr_fieldAttr__static_
+	: Field.Attr	{}
+[Automaton] public partial class   fieldAttr_fieldAttr__public_
 	: Field.Attr	{}
 
 public partial class Method
@@ -161,12 +171,13 @@ public partial class Method
 public partial class Instr : Automatrix
 	{
 	public partial class BrTarget : Instr {}
-	public partial class Method : Instr {}
-	public partial class Type : Instr {}
-	public partial class Field : Instr {}
-	public partial class Switch : Instr {}
-	public partial class None : Instr {}
-	public partial class String : Instr {}
+	public partial class Method   : Instr {}
+	public partial class Type     : Instr {}
+	public partial class Field    : Instr {}
+	public partial class Switch   : Instr {}
+	public partial class None     : Instr {}
+	public partial class String   : Instr {}
+	public partial class Var      : Instr {}
 	}
 [Automaton] public partial class   instr_INSTR_BRTARGET_id
 	: Instr.BrTarget {}
@@ -183,7 +194,9 @@ public partial class Instr : Automatrix
 [Automaton] public partial class   instr_INSTR_NONE
 	: Instr.None    {}
 [Automaton] public partial class   instr_INSTR_STRING_compQstring
-	: Instr.String {}
+	: Instr.String  {}
+[Automaton] public partial class   instr_INSTR_VAR_int32
+	: Instr.Var     {}
 
 public partial class Type : Automatrix
 	{

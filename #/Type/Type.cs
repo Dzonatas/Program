@@ -3,7 +3,7 @@ partial class A335
 public partial class Type : Automatrix
 	{
 	static public implicit operator string( Type n ) { return n.symbol ; }
-	protected virtual string symbol { get { return null ; } }
+	protected virtual string symbol { get { throw new System.NotImplementedException() ; } }
 	static public implicit operator C699.c( Type n ) { return n.c ; }
 	protected virtual C699.c c { get { throw new System.NotImplementedException() ; } }
 	static public implicit operator C_Type( Type n ) { return n.c_type ; }
@@ -28,8 +28,8 @@ public partial class   type__object_
 
 public partial class   type__valuetype__className
 	: Type {
-	protected override string symbol { get { return Arg1.Token + " " + (Argv[2] as Class.Name) ; } }
-	protected override C699.c c { get { throw new System.NotImplementedException() ; } }
+	protected override C699.c c { get { return new C699.c(C699.KeyedWord.Struct+" "+(Argv[2] as Class.Name)+" ").p ; } }
+	protected override C_Type c_type { get { return C_Type.Acquire(c) ; } }
 	}
 
 public partial class   type__class__className

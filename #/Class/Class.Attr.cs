@@ -22,4 +22,10 @@ public partial class   classAttr_classAttr__nested___private_
 
 public partial class   classAttr_classAttr__public_
 	: Class.Attr {}
+
+public partial class   classAttr_classAttr__sequential_
+	: Class.Attr {}
+
+public partial class   classAttr_classAttr__sealed_
+	: Class.Attr {}
 }

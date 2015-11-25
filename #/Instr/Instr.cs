@@ -30,7 +30,9 @@ public partial class Instr : Automatrix
 			{
 			c_oprand = instr.decl.Node.Head.NewOprand( op ) ;
 			op = c_oprand.Instruction ;
+			#if DEBUG_TOKEN
 			log( "[Instr.Oprand] "+ op ) ;
+			#endif
 			//current = this ;
 			_instr = instr ;
 			}

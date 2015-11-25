@@ -38,9 +38,18 @@ public partial class Class : Automatrix
 		h.Decls = d ;
 		type_add( Symbol ) ;
 		var sw = Current.Path.CreateText( Symbol + ".h" ) ;
-		foreach( Decl decl in d )
-			if( decl is classDecl_fieldDecl )
-				sw.WriteLine( decl as classDecl_fieldDecl ) ;
+		if( h.ValueType )
+			{
+			sw.WriteLine( "struct "+h.Symbol+" {" ) ;
+			foreach( Decl decl in d )
+				if( decl is classDecl_fieldDecl )
+					sw.WriteLine( (decl as classDecl_fieldDecl).ToStructField() ) ;
+			sw.WriteLine( "} ;" ) ;
+			}
+		else
+			foreach( Decl decl in d )
+				if( decl is classDecl_fieldDecl )
+					sw.WriteLine( decl as classDecl_fieldDecl ) ;
 		sw.Close() ;
 		classHead = h.Outer ;
 		}

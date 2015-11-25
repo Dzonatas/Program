@@ -10,4 +10,7 @@ public partial class   fieldAttr_fieldAttr__private_
 
 public partial class   fieldAttr_fieldAttr__static_
 	: Field.Attr {}
+
+public partial class   fieldAttr_fieldAttr__public_
+	: Field.Attr	{}
 }

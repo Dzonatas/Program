@@ -9,6 +9,7 @@ public partial class Field
 			{
 			return decl.field ;
 			}
+		public virtual string ToStructField() { throw new System.NotImplementedException() ; }
 		}
 	}
 
@@ -18,18 +19,16 @@ public partial class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_init
 			{
 			field = string.Empty ;
 			A335.Type type = Argv[4] as A335.Type ;
-			switch( Argv[4] as A335.Type )
-				{
-				case "string_sqbr":
-					field += C699.C.Struct( type, Class.Symbol + "$" + Arg5.Token ) ;
-					break ;
-				default:
-					throw new System.NotImplementedException() ;
-				}
+			field += C699.C.Struct( type, Class.Symbol + "$" + Arg5.Token ) ;
 			field += " ;" ;
 			}
+	public override string ToStructField()
+			{
+			string field = string.Empty ;
+			A335.Type type = Argv[4] as A335.Type ;
+			field += C699.C.Struct( type, Arg5.Token ) ;
+			field += " ;" ;
+			return field ;
+			}
 	}
-
-
-
 }
