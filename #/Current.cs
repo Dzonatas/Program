@@ -87,7 +87,6 @@ public static class Estate
 					}
 				}
 			}
-		static System.IO.DirectoryInfo directory ;
 		static Current__System_File()
 			{
 			//return:git.head:System.File.cs   //C-Shader(File)
@@ -100,7 +99,6 @@ public static class Estate
 	}
 public static class Path
 	{
-	static string     path = 0.1.GUID() ;
 	static System.IO.DirectoryInfo directory ;
 	static Path()
 		{

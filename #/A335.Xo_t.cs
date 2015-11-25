@@ -345,7 +345,6 @@ class Xo_t
 	static string gotoset_list( int i, string _a )
 		{
 		string list = "" ;
-		string gotoset = "" ;
 		int size = stateset[i].Gotoset.GetLength(0) ;
 		int min = int.MaxValue;
 		int max = int.MinValue;
@@ -356,14 +355,14 @@ class Xo_t
 			if( t.symbol < min ) min = t.symbol ;
 			}
 		int length = 1+max-min ;
-		transtruct[] ary = new transtruct[1+max-min] ;
+		transtruct[] ary = new transtruct[length] ;
 		for( int j = 0 ; j < size ; j++ )
 			{
 			Transition  t = stateset[i].Transitionset[ stateset[i].Gotoset[j,1] ] ;
 			ary[t.symbol-min] = new transtruct( t, j ) ;
 			}
 		tabs++ ;
-		list += "switch(_yy) // size="+size+" min="+min+" max="+max+" length="+(1+max-min).ToString()+tab ;
+		list += "switch(_yy) // size="+size+" min="+min+" max="+max+" length="+(length).ToString()+tab ;
 		list += "{"+tab ;
 		for( int j = 0 ; j < ary.Length ; j++ )
 			{

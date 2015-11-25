@@ -89,7 +89,6 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						*/
 						}
 					}
-				C_Symbol symbol = null ;
 				Program.C_Function.Require( _Call ) ;
 				if( type is type__string_ )
 					{

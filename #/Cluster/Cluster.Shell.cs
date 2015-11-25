@@ -150,7 +150,7 @@ public static partial class Shell
 		psi.RedirectStandardInput    = false ;
 		psi.CreateNoWindow           = true ;
 		//var f = System.IO.File.OpenText( hello ) ;
-		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
+		//System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 		System.Diagnostics.Process p ;
 		//try {
 			p= System.Diagnostics.Process.Start(psi) ;
@@ -188,7 +188,7 @@ public static partial class Shell
 		psi.RedirectStandardInput    = false ;
 		psi.CreateNoWindow           = true ;
 		//var f = System.IO.File.OpenText( hello ) ;
-		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
+		//System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 		System.Diagnostics.Process p ;
 		//try {
 			p= System.Diagnostics.Process.Start(psi) ;
@@ -222,7 +222,6 @@ public static partial class Shell
 		psi.RedirectStandardOutput   = false ;
 		psi.RedirectStandardInput    = false ;
 		psi.CreateNoWindow           = true ;
-		System.Text.StringBuilder sb = new System.Text.StringBuilder() ;
 		System.Diagnostics.Process p ;
 			p= System.Diagnostics.Process.Start(psi) ;
 		return (p_temp = p) ;

@@ -87,8 +87,8 @@ partial class Program : C699
 			}
 		public C_Function CreateFunction()
 			{
-			string ns = "" ;
 			/*
+			string ns = "" ;
 			foreach( C_Symbol e in NameSpace )
 				{
 				if( ns != "" )
