@@ -20,7 +20,7 @@ help:
 	@echo "make test3"
 	@echo
 	@echo "Agenda:"
-	@echo "make test4"
+	@echo "make cdriver"
 
 project: bin/Debug/ecma.exe bin/Debug/ilxml.exe bin/Debug/driver.exe
 driver: bin/Debug/driver.exe
@@ -63,8 +63,8 @@ test2: project
 test3: project
 	./~/test3/test.sh
 
-test4: project
-	./~/test4/test.sh
+cdriver: project
+	./~/cdriver/test.sh
 
 .PHONY: tests
-tests: test1 test2 test3
+tests: test1 test2 test3 cdriver
