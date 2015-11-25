@@ -75,7 +75,7 @@ static void xml_load_grammar()
 	{
 	if( xml_loaded )
 		return ;
-	xml = new XmlTextReader( new System.IO.StreamReader( "../../~/understand/grammar.xml" ) ) ;
+	xml = new XmlTextReader( new System.IO.StreamReader( "../../~/ilxml/grammar.xml" ) ) ;
 	while( xml.Read() )
 		if( xml.NodeType == XmlNodeType.Element && xml.Name == "bison-xml-report" )
 			break ;

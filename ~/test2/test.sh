@@ -9,7 +9,7 @@ gmcs ./~/test2/hello.world.cs -out:/tmp/.$ID.d/dis.test2.hello.world.exe
 monodis /tmp/.$ID.d/dis.test2.hello.world.exe --output=/tmp/.$ID.d/test2.il.text
 
 cd ./bin/Debug \
-  && ../../~/understand.exe </tmp/.$ID.d/test2.il.text >/tmp/.$ID.d/test2.il.xml \
+  && ./ilxml.exe </tmp/.$ID.d/test2.il.text >/tmp/.$ID.d/test2.il.xml \
   && ./ecma.exe --input=/tmp/.$ID.d/test2.il.xml \
   && gcc -std=c99 -O3 -S -I ../../# /tmp/.$ID.d/program.c -o /tmp/.$ID.d/native.assembly.s \
   && gcc -std=c99 -S -I ../../# /tmp/.$ID.d/program.c -o /tmp/.$ID.d/unoptimized.s \

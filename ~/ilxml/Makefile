@@ -1,12 +1,12 @@
-all: ../understand.exe
+all: ilxml.exe
 
 .PHONY: clean
 
-../understand.exe : make.sh lex.footer lex.head
+ilxml.exe : make.sh lex.footer lex.head
 	sh make.sh
 
 clean:
-	rm -f ../understand.exe
+	rm -f ilxml.exe
 	rm -f opcode.xml
 	rm -f opcode.xml
 	rm -f opcode.t.y

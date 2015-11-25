@@ -21,4 +21,4 @@ bison -r all -dx grammar.y &&
   #xsltproc template.xslt.xml "ecma335 grammar.xml" | grep "^\"" >>lex.y &&
   cat lex.footer >>lex.y &&
   lex -v --bison-bridge lex.y &&
-  cc -DYYDEBUG=1 main.c grammar.tab.c lex.yy.c -lfl -o ../understand.exe
+  cc -DYYDEBUG=1 main.c grammar.tab.c lex.yy.c -lfl -o ilxml.exe

@@ -1,9 +1,8 @@
 ID              =5a7160ed-13d5-4923-a1f9-3e32a47d558a
 XBUILD          =xbuild /p:NoWarn=169,649,414,219 /verbosity:quiet /nologo
 
-auto_driver_cs     =$(abspath ./~/auto.driver.cs)
-understand_exe  =$(abspath ./~/understand.exe)
-grammar_xml     =$(abspath ./~/understand/grammar.xml)
+auto_driver_cs  =$(abspath ./~/auto.driver.cs)
+grammar_xml     =$(abspath ./~/ilxml/grammar.xml)
 
 .PHONY: help clean test1 test2 test3 test4 project driver parser
 
@@ -23,9 +22,9 @@ help:
 	@echo "Agenda:"
 	@echo "make test4"
 
-project: bin/Debug/ecma.exe
+project: bin/Debug/ecma.exe bin/Debug/ilxml.exe bin/Debug/driver.exe
 driver: bin/Debug/driver.exe
-parser: $(understand_exe)
+parser: bin/Debug/ilxml.exe
 
 bin/Debug/ecma.exe: $(auto_driver_cs)
 	@echo "build ecma.csproj"
@@ -42,16 +41,18 @@ bin/Debug/driver.exe: $(grammar_xml)
 	@echo "build driver.csproj"
 	$(XBUILD)  driver.csproj
 
-$(understand_exe): $(grammar_xml)
+bin/Debug/ilxml.exe: $(grammar_xml)
+	( ( [ -d "./bin/Debug" ] && true ) || mkdir -p ./bin/Debug )
+	cp "./~/ilxml/ilxml.exe" bin/Debug
 
 $(grammar_xml):
-	( cd ./~/understand && make )
+	( cd ./~/ilxml && make )
 
 clean: 
 	rm -rf /tmp/.$(ID).d
 	rm -rf bin
 	rm -rf obj
-	( cd ./~/understand && make clean )
+	( cd ./~/ilxml && make clean )
 
 test1: project
 	./~/test.sh
