@@ -10,10 +10,6 @@ public partial class Class : Automatrix
 			set { node = value ; }
 			get { return node ; }
 			}
-		static protected bool Cctor
-			{
-			set { cctor_add( Class.Symbol ) ; }
-			}
 		}
 	}
 
@@ -22,8 +18,6 @@ public partial class   classDecl_methodHead_methodDecls____
 	protected override void main()
 		{
 		var methodHead = Method.Declared( Argv[1] as Method.Head, Argv[2] as Method.Decls ) ;
-		if( methodHead.Cctor )
-			Cctor = true ;
 		methodHead.ClassDecl = this ;
 		#if HPP
 		string symbol = Class.Type + methodHead.Name ;
