@@ -44,28 +44,6 @@ public partial class Class : Automatrix
 			{
 			return GetEnumerator() ;
 			}
-		public void WriteIncludesTo( System.IO.StreamWriter sw )
-			{
-			foreach( Decl d in this )
-				{
-				if( d is classDecl_methodHead_methodDecls____ )
-					(d as classDecl_methodHead_methodDecls____).WriteIncludesTo( sw ) ;
-				else
-				if( d is classDecl_classHead_____classDecls____)
-					(d as classDecl_classHead_____classDecls____).WriteIncludesTo( sw ) ;
-				}
-			}
-		public void WriteMethods()
-			{
-			foreach( Decl d in this )
-				{
-				if( d is classDecl_methodHead_methodDecls____ )
-					(d as classDecl_methodHead_methodDecls____).WriteMethod() ;
-				else
-				if( d is classDecl_classHead_____classDecls____)
-					(d as classDecl_classHead_____classDecls____).WriteMethods() ;
-				}
-			}
 		}
 	}
 

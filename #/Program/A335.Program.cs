@@ -53,7 +53,9 @@ public partial class Program : C699
 	static public void Write( A335.Stack.IStart start )
 		{
 		WriteC_Main( start ) ;
-		Decl.WriteMethods( start ) ;
+		foreach( Automatrix a in (Automatrix)start )
+			if( a is Method.Head )
+				(a as Method.Head).WriteMethod() ;
 		WriteC_Objects() ;
 		}
 	static public void WriteC_Main( A335.Stack.IStart start )
@@ -71,7 +73,9 @@ public partial class Program : C699
 		foreach( Automatrix a in (Automatrix)start )
 			if( a is Class.Head )
 				sw.WriteLine( "#include \"{0}.h\"", (a as Class.Head).Symbol ) ;
-		Decl.WriteIncludesTo( start, sw ) ;
+		foreach( Automatrix a in (Automatrix)start )
+			if( a is Method.Head )
+				(a as Method.Head).WriteInclude(sw) ;
 	    foreach( string class_symbol in virtualset.Keys )
 			C_Struct.FromSymbol( class_symbol ).WriteInclude( sw ) ;
 		sw.Close() ;

@@ -31,14 +31,6 @@ public partial class   classDecl_methodHead_methodDecls____
 		{
 		C.Hangdown() ;
 		}
-	public void WriteIncludesTo( System.IO.StreamWriter sw )
-		{
-		(Argv[1] as Method.Head).WriteInclude( sw ) ;
-		}
-	public void WriteMethod()
-		{
-		(Argv[1] as Method.Head).WriteMethod() ;
-		}
 	}
 
 public partial class   classDecl_classHead_____classDecls____
@@ -46,14 +38,6 @@ public partial class   classDecl_classHead_____classDecls____
 	protected override void main()
 		{
 		Declared( Argv[1] as Head, Argv[3] as Decls ) ;
-		}
-	public void WriteIncludesTo( System.IO.StreamWriter sw )
-		{
-		(Argv[3] as Class.Decls).WriteIncludesTo( sw ) ;
-		}
-	public void WriteMethods()
-		{
-		(Argv[3] as Class.Decls).WriteMethods() ;
 		}
 	}
 
