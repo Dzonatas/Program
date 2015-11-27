@@ -68,8 +68,9 @@ public partial class Program : C699
 				f.WriteTo( sw ) ;
 				}
 			}
-		foreach( string i in Class.Types )
-			sw.WriteLine( "#include \""+i+".h\"" ) ;
+		foreach( Automatrix a in (Automatrix)start )
+			if( a is Class.Head )
+				sw.WriteLine( "#include \"{0}.h\"", (a as Class.Head).Symbol ) ;
 		Decl.WriteIncludesTo( start, sw ) ;
 	    foreach( string class_symbol in virtualset.Keys )
 			C_Struct.FromSymbol( class_symbol ).WriteInclude( sw ) ;
