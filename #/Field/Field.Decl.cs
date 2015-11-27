@@ -9,24 +9,23 @@ public partial class Field
 			{
 			return decl.field ;
 			}
-		public virtual string ToStructField() { throw new System.NotImplementedException() ; }
+		public virtual string ToStructField( Class.Head h )
+			{
+			throw new System.NotImplementedException() ;
+			}
 		}
 	}
 
 public partial class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt
 	: Field.Decl	{
-	protected override void main()
-			{
-			field = string.Empty ;
-			A335.Type type = Argv[4] as A335.Type ;
-			field += C699.C.Struct( type, Class.Symbol + "$" + Arg5.Token ) ;
-			field += " ;" ;
-			}
-	public override string ToStructField()
+	public override string ToStructField( Class.Head h )
 			{
 			string field = string.Empty ;
 			A335.Type type = Argv[4] as A335.Type ;
-			field += C699.C.Struct( type, Arg5.Token ) ;
+			if( h.ValueType )
+				field += C699.C.Struct( type, Arg5.Token ) ;
+			else
+				field += C699.C.Struct( type, h.Symbol + "$" + Arg5.Token ) ;
 			field += " ;" ;
 			return field ;
 			}

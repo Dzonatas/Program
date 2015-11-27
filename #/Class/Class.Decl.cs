@@ -43,13 +43,9 @@ public partial class   classDecl_classHead_____classDecls____
 
 public partial class   classDecl_fieldDecl
 	: Class.Decl	{
-	public static implicit operator string( classDecl_fieldDecl decl )
+	public Field.Decl FieldDecl
 		{
-		return decl.Argv[1] as Field.Decl ;
-		}
-	public string ToStructField()
-		{
-		return (Argv[1] as Field.Decl).ToStructField() ;
+		get { return (Argv[1] as Field.Decl) ; }
 		}
 	}
 }
