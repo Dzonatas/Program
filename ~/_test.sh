@@ -19,15 +19,21 @@ cd ./bin/Debug
 echo "--- Stats with .NET-VM: ---" \
   && ilasm $INPUT /out:$PREFIX.ilasm.hello.world.exe >/dev/null \
   && chmod +x $PREFIX.ilasm.hello.world.exe \
-  && time $PREFIX.ilasm.hello.world.exe
+  && time ( $PREFIX.ilasm.hello.world.exe ) 2>$PREFIX.a.time.txt
 
 echo "--- Stats with (native) .NET-AOT: ---" \
- && ( cd /tmp/.$ID.d && mono --aot=full -O=all $PREFIX.ilasm.hello.world.exe >/dev/null && time $PREFIX.ilasm.hello.world.exe )
+  && ( cd /tmp/.$ID.d \
+     && mono --aot=full -O=all $PREFIX.ilasm.hello.world.exe >/dev/null \
+     && time ( $PREFIX.ilasm.hello.world.exe ) 2>$PREFIX.b.time.txt \
+     )
 
-echo "--- Stats for fully native compiled .exe by this program ---" \
+echo "--- Stats for fully compiled native .exe by this program ---" \
   && ./ilxml.exe <$INPUT >$PREFIX.il.xml \
   && ./ecma.exe --input=$PREFIX.il.xml --output=$MODULE \
   && gcc -std=c99 -O3 -S -I ../../# $PREFIX.c -o $PREFIX.native.assembly.s \
   && gcc -std=c99 -S -I ../../# $PREFIX.c -o $PREFIX.unoptimized.s \
   && gcc -std=c99 -O3 $PREFIX.native.assembly.s -o $PREFIX.hello.world.exe \
-  && time $PREFIX.hello.world.exe
+  && time ( $PREFIX.hello.world.exe ) 2>$PREFIX.c.time.txt
+
+echo "        VM      AOT      this"
+join $PREFIX.a.time.txt $PREFIX.b.time.txt | join - $PREFIX.c.time.txt | sed 's/sys/ sys/' | sed 1d
