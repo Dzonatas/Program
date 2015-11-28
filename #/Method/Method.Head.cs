@@ -7,9 +7,8 @@ public partial class Method
 		Class.Decl                  classDecl ;
 		Decls                       decls     ;
 		int                         maxstack  ;
-		bool                        _static   ;
-		bool                        _virtual  ;
 		Locals                      locals    ;
+		protected Attr              attr      ;
 		protected CallConv          callConv  ;
 		protected Name              name      ;
 		protected SigArgs0          sigArgs0  ;
@@ -24,6 +23,11 @@ public partial class Method
 			{
 			c_method = new Program.C_Method( classDecl.Node.Head.Type ) ;
 			_prerender() ;
+			if( Virtual )
+				{
+				var c = Program.C_Struct.FromSymbol( classType ) ;
+				c.Assign( name + ( sigArgs0 != null ? sigArgs0.Types() : string.Empty ) ) ;
+				}
 			CreateFunction() ;
 			}
 		public Decls   Decls
@@ -35,13 +39,6 @@ public partial class Method
 			{
 			get { return classDecl ; }
 			set { classDecl = value ; }
-			}
-		protected Attr    MethAttr
-			{
-			set {
-				  Static  = value is Attr ? value.Static : false ;
-				  Virtual = value is Attr ? value.Virtual : false ;
-				}
 			}
 		C_Type  classType
 			{
@@ -78,8 +75,7 @@ public partial class Method
 			}
 		public bool Static
 			{
-			set { _static = value ; }
-			get { return _static ; }
+			get { return attr == null ? false : attr.Static ; }
 			}
 		public bool CallConvInstance
 			{
@@ -87,14 +83,7 @@ public partial class Method
 			}
 		public bool    Virtual
 			{
-			set {
-				if( ( _virtual = value ) )
-					{
-					var c = Program.C_Struct.FromSymbol( classType ) ;
-					c.Assign( name + ( sigArgs0 != null ? sigArgs0.Types() : string.Empty ) ) ;
-					}
-				}
-			get { return _virtual ; }
+			get { return attr == null ? false : attr.Virtual ; }
 			}
 		public void WriteInclude( System.IO.StreamWriter sw )
 			{
@@ -107,7 +96,7 @@ public partial class Method
 			{
 			var c = c_method.Function ;
 			int args = ( sigArgs0 == null ? 0 : sigArgs0.Count() ) + ( CallConvInstance ? 1 : 0 ) ;
-			if( _virtual )
+			if( Virtual )
 				c.Type = C699.String ;
 			if( args == 0 )
 				c.Args = "()" ;
@@ -120,7 +109,7 @@ public partial class Method
 		public void WriteMethod()
 			{
 			var c = c_method.Function ;
-			if( _virtual )
+			if( Virtual )
 				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
 			var sw = global::Current.Path.CreateText( c.Symbol + ".c" ) ;
 			#if HPP
@@ -147,6 +136,7 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 	: Method.Head   {
 	protected override void main()
 		{
+		attr              = Argv[2] as Method.Attr ;
 		name              = Argv[6] as Method.Name ;
 		name.MethodHead   = this ;
 		sigArgs0          = Argv[8] as SigArgs0 ;
@@ -156,7 +146,6 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 		{
 		c_method.Type     = Argv[5] as Type ;
 		c_method.Name     = name ;
-		MethAttr          = Argv[2] as Method.Attr ;
 		}
 	protected override void render()
 		{
