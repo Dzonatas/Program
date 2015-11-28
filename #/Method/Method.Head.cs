@@ -6,7 +6,6 @@ public partial class Method
 		{
 		Class.Decl                  classDecl ;
 		Decls                       decls     ;
-		C_Type                      classType ;
 		int                         maxstack  ;
 		bool                        _static   ;
 		bool                        _virtual  ;
@@ -15,17 +14,16 @@ public partial class Method
 		protected Name              name      ;
 		protected SigArgs0          sigArgs0  ;
 		protected Program.C_Method  c_method  ;
-		virtual protected void methodHead() {}
+		virtual protected void _prerender() {}
 		public partial class Part1 : Automatrix {}
 		public bool Cctor
 			{
 			get { return name is methodName___cctor_ ; }
 			}
-		protected override void main()
+		protected override void prerender()
 			{
-			c_method = new Program.C_Method( Class.Type ) ;
-			classType = Class.Type ;
-			methodHead() ;
+			c_method = new Program.C_Method( classDecl.Node.Head.Type ) ;
+			_prerender() ;
 			CreateFunction() ;
 			}
 		public Decls   Decls
@@ -45,9 +43,9 @@ public partial class Method
 				  Virtual = value is Attr ? value.Virtual : false ;
 				}
 			}
-		public C_Type  ClassType
+		C_Type  classType
 			{
-			get { return classType ; }
+			get { return classDecl.Node.Head.Type ; }
 			}
 		public Name  Name
 			{
@@ -147,14 +145,17 @@ public partial class   methodHeadPart1___method_
 
 public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____
 	: Method.Head   {
-	protected override void methodHead()
+	protected override void main()
 		{
-		c_method.Type     = Argv[5] as Type ;
 		name              = Argv[6] as Method.Name ;
-		c_method.Name     = name ;
 		name.MethodHead   = this ;
 		sigArgs0          = Argv[8] as SigArgs0 ;
 		callConv          = Argv[3] as CallConv ;
+		}
+	protected override void _prerender()
+		{
+		c_method.Type     = Argv[5] as Type ;
+		c_method.Name     = name ;
 		MethAttr          = Argv[2] as Method.Attr ;
 		}
 	protected override void render()

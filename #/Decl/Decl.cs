@@ -6,6 +6,7 @@ public partial class Decl : Automatrix
 	public Decls Node
 		{
 		set { node = value ; }
+		get { return node  ; }
 		}
 	}
 
@@ -13,7 +14,7 @@ public partial class   decl_classHead_____classDecls____
 	: Decl	{
 	protected override void main()
 		{
-		Class.Declared( Argv[1] as Class.Head, Argv[3] as Class.Decls ) ;
+		(Argv[1] as Class.Head).Declared( Argv[3] as Class.Decls, null ) ;
 		}
 	}
 

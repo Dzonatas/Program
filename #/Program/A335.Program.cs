@@ -287,8 +287,8 @@ public partial class Program : C699
 		var cctor = e.ClassDecl.Node.Head.Cctor ;
 		if( cctor != null && cctor.Cctor )
 			{
-			c.Statement( C.Extern.Void.Cctor(e.ClassType) ) ;
-			c.Statement( C.Cctor(e.ClassType) ) ;
+			c.Statement( C.Extern.Void.Cctor(e.ClassDecl.Node.Head.Type) ) ;
+			c.Statement( C.Cctor(e.ClassDecl.Node.Head.Type) ) ;
 			}
 		string a = e.Function.Args == null ? string.Empty : e.Function.Args.Replace("(","").Replace(")","") ;
 		string b = e.Function.Args == null ? string.Empty : "(const void**)args" ;

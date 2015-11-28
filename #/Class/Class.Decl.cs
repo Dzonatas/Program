@@ -37,7 +37,7 @@ public partial class   classDecl_classHead_____classDecls____
 	: Class.Decl	{
 	protected override void main()
 		{
-		Declared( Argv[1] as Head, Argv[3] as Decls ) ;
+		(Argv[1] as Head).Declared( Argv[3] as Decls, this ) ;
 		}
 	}
 
