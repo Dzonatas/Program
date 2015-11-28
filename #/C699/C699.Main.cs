@@ -6,7 +6,10 @@ public static class Main
 	const string entry = "program" ;
 	static Main()
 		{
-		FileStructure = File.C( entry ) ;
+		if( Cluster.Parameter.Value("output") == "false" )
+			FileStructure = File.C( entry ) ;
+		else
+			FileStructure = File.C( Cluster.Parameter.Value("output") ) ;
 		FileStructure.WriteLine( "#include <BCL.HPP>" ) ;
 		}
 	public static readonly string Args = '('+C.Int.ArgC+','+C.Charpp.ArgV+','+C.Charpp.Env+')' ;
