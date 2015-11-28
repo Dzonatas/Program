@@ -8,10 +8,4 @@ export TERM="XHTML"
 gmcs ./~/test3/hello.world.cs -out:/tmp/.$ID.d/dis.test3.hello.world.exe
 monodis /tmp/.$ID.d/dis.test3.hello.world.exe --output=/tmp/.$ID.d/test3.il.text
 
-cd ./bin/Debug \
-  && ./ilxml.exe </tmp/.$ID.d/test3.il.text >/tmp/.$ID.d/test3.il.xml \
-  && ./ecma.exe --input=/tmp/.$ID.d/test3.il.xml \
-  && gcc -std=c99 -O3 -S -I ../../# /tmp/.$ID.d/program.c -o /tmp/.$ID.d/native.assembly.s \
-  && gcc -std=c99 -S -I ../../# /tmp/.$ID.d/program.c -o /tmp/.$ID.d/unoptimized.s \
-  && gcc -std=c99 -O3 /tmp/.$ID.d/native.assembly.s -o /tmp/.$ID.d/test3.hello.world.exe \
-  && time /tmp/.$ID.d/test3.hello.world.exe
+exec ./~/_test.sh /tmp/.$ID.d/test3.il.text test3
