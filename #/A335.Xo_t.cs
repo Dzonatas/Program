@@ -11,7 +11,8 @@ public static void Main( string[] args )
 	#if !UNICODED_SVG
 	Xo_t.OutputGraph() ;
 	#endif
-	//Xo_t.Build() ;
+	if( Cluster.Parameter.Value("build") == "true" )
+		Xo_t.Build() ;
 	if( log_output != null )
 		{
 		log_output.Close() ;
@@ -605,20 +606,21 @@ class Xo_t
 			}
 	static readonly string[,] file =
 		{
-		{ "#/", "" },
-		{ "~/", "X.Y.cs" },
-		{ "#/", "X.Predefined.cs" },
+		{ "#/", "Auto.Driver.cs" },
+		//{ "~/", "X.Y.cs" },
+		//{ "#/", "X.Predefined.cs" },
 		{ "#/", "Tokenset.cs" },
 		{ "#/", "Automaton.1.cs" },
-		{ "",   "Z.cs" },
-		{ "~/", "C699.cs" },
-		{ "~/", "C699.free.cs" }
+		//{ "",   "Z.cs" },
+		//{ "#/C699/", "C699.cs" },
+		//{ "#/C699/", "C699.free.cs" },
+		{ "#/", "IRule.cs" }
 		} ;
 	static public string Embed( string[] compile )
 		{
 		string tab = "\n\t" ;
 		string list = "\t" ;
-		file[0,1] = "Auto."+A335.Branch+".cs" ;
+		//file[0,1] = "Auto."+A335.Branch+".cs" ;
 		for( int i = 0 ; i < file.GetLength(0) ; i++ )
 			{
 			var f = "../../"+file[i,0]+file[i,1] ;
