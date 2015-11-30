@@ -48,14 +48,17 @@ int main( int ARGc, char** ARGv, char**ENVi )
   #else
 	printf( "<?xml version=%s ?>\n<xml>", what ) ;
   #endif
-  yyparse() ;
+  int status = yyparse() ;
   printf( "</xml>\n" ) ;
-  return 0 ;
+  return status ;
   }
 
 yyerror( const char* s )
   {
   printf( "<yyerror>%s</yyerror>" , s ) ;
+  #ifndef MMAP
+  fprintf( stderr, "ilxml: %s\n", s ) ;
+  #endif
   return ;
   }
 

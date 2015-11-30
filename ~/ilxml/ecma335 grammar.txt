@@ -674,6 +674,7 @@ type
  */
  | type '&' 
  | type '*' 
+ | type '<' genArgs '>'
  | type "pinned" 
  | type "modreq" '(' className ')'
  | type "modopt" '(' className ')' 
@@ -697,6 +698,10 @@ type
  | "native" "unsigned" "int" 
  | "native" "float" 
  ; 
+genArgs
+ : type
+ | genArgs ',' type
+ ;
 bounds1
  : bound 
  | bounds1 ',' bound 

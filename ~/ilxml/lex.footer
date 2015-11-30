@@ -1,34 +1,53 @@
 
-\".+\"|\"\" { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(QSTRING,text); }
-\'.+\'|\'\' { text=strndup(yytext+1,yyleng-2) ; return TERMINAL(SQSTRING,text); }
+\"                 { length=0 ; text=malloc(length+1) ; BEGIN(qs) ; }
+<qs>\\\"           { length+=2 ; text=realloc( text, length+1 ) ; text[length-2]='\\' ; text[length-1]='"' ; }
+<qs>&              { ENTITY(5,"&amp;") ; }
+<qs><              { ENTITY(4,"&lt;") ; }
+<qs>>              { ENTITY(4,"&gt;") ; }
+<qs>\\.            { length+=2 ; text=realloc( text, length+1 ) ; text[length-2]='\\' ; text[length-1]=yytext[1] ; }
+<qs>[^\\\"\n&<>]+  { length+=yyleng ; text=realloc( text, length+1 ) ; strncpy(&text[length-yyleng],yytext,yyleng) ; }
+<qs>\"             { BEGIN(0) ; text[length]='\0' ; return TERMINAL(QSTRING,text) ; }
 
-"0x"{H}+     { text=strndup(yytext,yyleng) ; return TERMINAL(INT64,text); }
-{H}{H}       { text=strndup(yytext,yyleng) ; return TERMINAL(HEXBYTE,text); }
-{D}+\.{D}+   { text=strndup(yytext,yyleng) ; return TERMINAL(FLOAT64,text); }
-{D}+         { text=strndup(yytext,yyleng) ; return TERMINAL(INT64,text); }
-{F}{C}*\.	 { buf=alloca(yyleng+1) ; strncpy(buf,yytext,yyleng) ; dottedname = 1 ; }
-{F}{C}*		 { if( ! dottedname )
-				{ text=strndup(yytext,yyleng) ; return TERMINAL(ID,text); }
-				else {
-					 dottedname = 0 ;
-					 int l = strlen(buf)+yyleng ;
-					 text=malloc(l+1) ;
-					 text=strcpy(text,buf) ;
-					 strncat(text,yytext,yyleng) ;
-					 return TERMINAL(DOTTEDNAME,text);
-					 }
-			 }
+\'                 { length=0 ; text=malloc(length+1) ; BEGIN(sq) ; }
+<sq>\\\'           { length+=2 ; text=realloc( text, length+1 ) ; text[length-2]='\\' ; text[length-1]='"' ; }
+<sq>&              { ENTITY(5,"&amp;") ; }
+<sq><              { ENTITY(4,"&lt;") ; }
+<sq>>              { ENTITY(4,"&gt;") ; }
+<sq>\\.            { length+=2 ; text=realloc( text, length+1 ) ; text[length-2]='\\' ; text[length-1]=yytext[1] ; }
+<sq>[^\\\'\n&<>]+  { length+=yyleng ; text=realloc( text, length+1 ) ; strncpy(&text[length-yyleng],yytext,yyleng) ; }
+<sq>\'             { BEGIN(0) ; text[length]='\0' ; return TERMINAL(SQSTRING,text) ; }
 
-{P}          { return PUNCTUATION(yytext[0]) ; }
+"0x"{H}+           { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(INT64,text); }
+<p>{H}{H}          { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(HEXBYTE,text); }
+{D}+\.{D}+         { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(FLOAT64,text); }
+{D}+               { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(INT64,text); }
+
+{F}{C}*\.          {
+                   if( ! dottedname ) { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; dottedname = 1 ; }
+                   else { int l0 = strlen(text) ; text=realloc(text,l0+yyleng+1) ; strncpy(&text[l0],yytext,yyleng) ; text[l0+yyleng]='\0' ; }
+                   }
+{F}{C}*            {
+                   if( ! dottedname ) { text=strndup(yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(ID,text); }
+                   else { int l0 = strlen(text) ; text=realloc(text,l0+yyleng+1) ; strncpy(&text[l0],yytext,yyleng) ; text[l0+yyleng]='\0' ; }
+                   dottedname = 0 ;
+                   return TERMINAL(DOTTEDNAME,text);
+                   }
+
+\(                 { if(!ps++) BEGIN(p) ; return PUNCTUATION(yytext[0]) ; }
+\)                 { if(!--ps) BEGIN(0) ; return PUNCTUATION(yytext[0]) ; }
+
+{P}                { return PUNCTUATION(yytext[0]) ; }
 {WS}
 %%
 
 int TERMINAL_( int n, char *str )
 	{
-	//if( str[0] != '.' )
-		return TERMINAL( n, str ) ;
-	//printf("<%s state=\"%d\"/>", &str[1], (int)yylval_param);
-	//return n ;
+	#ifdef MMAP
+		printf("&_%d_%d;%s",  n, strlen(str), str);
+	#else
+		printf("&_%d;%s", n, str);
+	#endif
+	return n ;
 	}
 
 
@@ -39,35 +58,7 @@ int TERMINAL( int n, char *str )
 	#else
 		printf("&_%d;%s", n, str);
 	#endif
-		/*
-	switch( n )
-		{
-		case ID:
-			printf("<ID-%d/>%s", (long)yylval_param, str);
-			break ;
-		case INT64:
-			printf("<INT64-%d/>%s", (long)yylval_param, str);
-			break ;
-		case HEXBYTE:
-			printf("<HEXBYTE-%d/>%s", (long)yylval_param, str);
-			break ;
-		case FLOAT64:
-			printf("<FLOAT64-%d/>%s", (long)yylval_param, str);
-			break ;
-		case QSTRING:
-			printf("<QSTRING-%d/>%s", (long)yylval_param, str);
-			break ;
-		case SQSTRING:
-			printf("<SQSTRING-%d/>%s", (long)yylval_param, str);
-			break ;
-		case DOTTEDNAME:
-			printf("<DOTTEDNAME-%d/>%s", (long)yylval_param, str);
-			break ;
-		default:
-			printf("<_%d-%d/>%s", n, (int)yylval_param, str);
-			break ;
-		}
-	*/
+	free(str) ;
 	return n ;
 	}
 
@@ -103,6 +94,17 @@ int INSTRUCTION_( char *inst, int n, char *str )
 
 int PUNCTUATION( int n )
 	{
-	printf("<_%d/>%c", n, n);
+#ifndef MMAP
+	if( n == (int) '&' )
+		printf("<_%d/>&amp;", n);
+	else
+	if( n == (int) '>' )
+		printf("<_%d/>&gt;", n);
+	else
+	if( n == (int) '<' )
+		printf("<_%d/>&lt;", n);
+	else
+#endif
+		printf("<_%d/>%c", n, n);
 	return n ;
 	}

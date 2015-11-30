@@ -291,7 +291,7 @@ OPDEF(CEE_UNALIGNED, "unaligned.", Pop0, Push0, ShortInlineI, IPrefix, 2, 0xFE, 
 OPDEF(CEE_VOLATILE, "volatile.", Pop0, Push0, InlineNone, IPrefix, 2, 0xFE, 0x13, META)
 OPDEF(CEE_TAILCALL, "tail.", Pop0, Push0, InlineNone, IPrefix, 2, 0xFE, 0x14, META)
 OPDEF(CEE_INITOBJ, "initobj", PopI, Push0, InlineType, IObjModel, 2, 0xFE, 0x15, NEXT)
-OPDEF(CEE_UNUSED68, "unused", Pop0, Push0, InlineNone, IPrimitive, 2, 0xFE, 0x16, NEXT)
+OPDEF(CEE_CONSTRAINED, "constrained.", Pop0, Push0, InlineType, IPrefix, 2, 0xFE, 0x16, META)
 OPDEF(CEE_CPBLK, "cpblk", PopI+PopI+PopI, Push0, InlineNone, IPrimitive, 2, 0xFE, 0x17, NEXT)
 OPDEF(CEE_INITBLK, "initblk", PopI+PopI+PopI, Push0, InlineNone, IPrimitive, 2, 0xFE, 0x18, NEXT)
 OPDEF(CEE_UNUSED69, "unused", Pop0, Push0, InlineNone, IPrimitive, 2, 0xFE, 0x19, NEXT)
