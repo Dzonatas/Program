@@ -11,9 +11,9 @@ public readonly static char[] MSB = new char[] { ' ', '.' } ;
 }
 
 partial class Automaton {
-	const int __default = 251 ;
+	const int __default = 253 ;
 	internal const int                         _24end	= 0 ;
-	internal const int                        _272127	= 216 ;
+	internal const int                        _272127	= 218 ;
 	internal const int                        _272627	= 153 ;
 	internal const int                        _272827	= 40 ;
 	internal const int                        _272927	= 39 ;
@@ -23,7 +23,9 @@ partial class Automaton {
 	internal const int                        _272E27	= 163 ;
 	internal const int                        _272F27	= 164 ;
 	internal const int                        _273A27	= 138 ;
+	internal const int                        _273C27	= 213 ;
 	internal const int                        _273D27	= 38 ;
+	internal const int                        _273E27	= 214 ;
 	internal const int                        _275B27	= 44 ;
 	internal const int                        _275D27	= 45 ;
 	internal const int                        _277B27	= 27 ;
@@ -225,171 +227,172 @@ partial class Automaton {
 	internal const int                    _22object22	= 210 ;
 	internal const int                    _22string22	= 211 ;
 	internal const int                 _22valuetype22	= 212 ;
-	internal const int                    _22pinned22	= 213 ;
-	internal const int                    _22modreq22	= 214 ;
-	internal const int                    _22modopt22	= 215 ;
-	internal const int                  _22typedref22	= 217 ;
-	internal const int                     _22float22	= 218 ;
-	internal const int              _222Epermission22	= 219 ;
-	internal const int           _222Epermissionset22	= 220 ;
-	internal const int                      _22true22	= 221 ;
-	internal const int                     _22false22	= 222 ;
-	internal const int                   _22request22	= 223 ;
-	internal const int                    _22demand22	= 224 ;
-	internal const int                    _22assert22	= 225 ;
-	internal const int                      _22deny22	= 226 ;
-	internal const int                _22permitonly22	= 227 ;
-	internal const int                 _22linkcheck22	= 228 ;
-	internal const int              _22inheritcheck22	= 229 ;
-	internal const int                    _22reqmin22	= 230 ;
-	internal const int                    _22reqopt22	= 231 ;
-	internal const int                 _22reqrefuse22	= 232 ;
-	internal const int               _22prejitgrant22	= 233 ;
-	internal const int                _22prejitdeny22	= 234 ;
-	internal const int              _22noncasdemand22	= 235 ;
-	internal const int          _22noncaslinkdemand22	= 236 ;
-	internal const int         _22noncasinheritance22	= 237 ;
-	internal const int                    _222Eline22	= 238 ;
-	internal const int                _22nometadata22	= 239 ;
-	internal const int                    _222Ehash22	= 240 ;
-	internal const int                _222Eassembly22	= 241 ;
-	internal const int               _22noappdomain22	= 242 ;
-	internal const int                 _22noprocess22	= 243 ;
-	internal const int                 _22nomachine22	= 244 ;
-	internal const int                 _22algorithm22	= 245 ;
-	internal const int                     _222Ever22	= 246 ;
-	internal const int                  _222Elocale22	= 247 ;
-	internal const int               _222Epublickey22	= 248 ;
-	internal const int          _222Epublickeytoken22	= 249 ;
-	internal const int               _222Emresource22	= 250 ;
-	internal const int                      _24accept	= 251 ;
-	internal const int                         _START	= 252 ;
-	internal const int                         _decls	= 253 ;
-	internal const int                          _decl	= 254 ;
-	internal const int                   _compQstring	= 255 ;
-	internal const int                  _languageDecl	= 256 ;
-	internal const int                _customAttrDecl	= 257 ;
-	internal const int                    _moduleHead	= 258 ;
-	internal const int                   _vtfixupDecl	= 259 ;
-	internal const int                   _vtfixupAttr	= 260 ;
-	internal const int                    _vtableDecl	= 261 ;
-	internal const int                    _vtableHead	= 262 ;
-	internal const int                 _nameSpaceHead	= 263 ;
-	internal const int                     _classHead	= 264 ;
-	internal const int                     _classAttr	= 265 ;
-	internal const int                 _extendsClause	= 266 ;
-	internal const int                    _implClause	= 267 ;
-	internal const int                    _classNames	= 268 ;
-	internal const int                    _classDecls	= 269 ;
-	internal const int                     _classDecl	= 270 ;
-	internal const int                     _fieldDecl	= 271 ;
-	internal const int                         _atOpt	= 272 ;
-	internal const int                       _initOpt	= 273 ;
-	internal const int                     _repeatOpt	= 274 ;
-	internal const int                    _customHead	= 275 ;
-	internal const int           _customHeadWithOwner	= 276 ;
-	internal const int                     _memberRef	= 277 ;
-	internal const int                    _customType	= 278 ;
-	internal const int                     _ownerType	= 279 ;
-	internal const int                     _eventHead	= 280 ;
-	internal const int                     _eventAttr	= 281 ;
-	internal const int                    _eventDecls	= 282 ;
-	internal const int                     _eventDecl	= 283 ;
-	internal const int                      _propHead	= 284 ;
-	internal const int                      _propAttr	= 285 ;
-	internal const int                     _propDecls	= 286 ;
-	internal const int                      _propDecl	= 287 ;
-	internal const int              _methodHeadPart31	= 288 ;
-	internal const int                    _methodHead	= 289 ;
-	internal const int                      _methAttr	= 290 ;
-	internal const int                      _pinvAttr	= 291 ;
-	internal const int                    _methodName	= 292 ;
-	internal const int                     _paramAttr	= 293 ;
-	internal const int                     _fieldAttr	= 294 ;
-	internal const int                      _implAttr	= 295 ;
-	internal const int                    _localsHead	= 296 ;
-	internal const int                    _methodDecl	= 297 ;
-	internal const int                    _scopeBlock	= 298 ;
-	internal const int                     _scopeOpen	= 299 ;
-	internal const int                      _sehBlock	= 300 ;
-	internal const int                    _sehClauses	= 301 ;
-	internal const int                      _tryBlock	= 302 ;
-	internal const int                       _tryHead	= 303 ;
-	internal const int                     _sehClause	= 304 ;
-	internal const int                  _filterClause	= 305 ;
-	internal const int                    _filterHead	= 306 ;
-	internal const int                   _catchClause	= 307 ;
-	internal const int                 _finallyClause	= 308 ;
-	internal const int                   _faultClause	= 309 ;
-	internal const int                  _handlerBlock	= 310 ;
-	internal const int                   _methodDecls	= 311 ;
-	internal const int                      _dataDecl	= 312 ;
-	internal const int                        _ddHead	= 313 ;
-	internal const int                           _tls	= 314 ;
-	internal const int                        _ddBody	= 315 ;
-	internal const int                    _ddItemList	= 316 ;
-	internal const int                   _ddItemCount	= 317 ;
-	internal const int                        _ddItem	= 318 ;
-	internal const int                     _fieldInit	= 319 ;
-	internal const int                 _bytearrayhead	= 320 ;
-	internal const int                         _bytes	= 321 ;
-	internal const int                      _hexbytes	= 322 ;
-	internal const int                _instr5Fr5Fhead	= 323 ;
-	internal const int              _instr5Ftok5Fhead	= 324 ;
-	internal const int                    _methodSpec	= 325 ;
-	internal const int                         _instr	= 326 ;
-	internal const int                     _sigArgs30	= 327 ;
-	internal const int                     _sigArgs31	= 328 ;
-	internal const int                        _sigArg	= 329 ;
-	internal const int                        _name31	= 330 ;
-	internal const int                     _className	= 331 ;
-	internal const int                   _slashedName	= 332 ;
-	internal const int                      _typeSpec	= 333 ;
-	internal const int                      _callConv	= 334 ;
-	internal const int                      _callKind	= 335 ;
-	internal const int                    _nativeType	= 336 ;
-	internal const int                   _variantType	= 337 ;
-	internal const int                          _type	= 338 ;
-	internal const int                      _bounds31	= 339 ;
-	internal const int                         _bound	= 340 ;
-	internal const int                        _labels	= 341 ;
-	internal const int                            _id	= 342 ;
-	internal const int                      _int3136s	= 343 ;
-	internal const int                       _int3332	= 344 ;
-	internal const int                       _int3634	= 345 ;
-	internal const int                     _float3634	= 346 ;
-	internal const int                       _secDecl	= 347 ;
-	internal const int                      _psetHead	= 348 ;
-	internal const int                  _nameValPairs	= 349 ;
-	internal const int                   _nameValPair	= 350 ;
-	internal const int                     _truefalse	= 351 ;
-	internal const int                       _caValue	= 352 ;
-	internal const int                     _secAction	= 353 ;
-	internal const int                 _extSourceSpec	= 354 ;
-	internal const int                      _fileDecl	= 355 ;
-	internal const int                      _fileAttr	= 356 ;
-	internal const int                     _fileEntry	= 357 ;
-	internal const int                      _hashHead	= 358 ;
-	internal const int                  _assemblyHead	= 359 ;
-	internal const int                       _asmAttr	= 360 ;
-	internal const int                 _assemblyDecls	= 361 ;
-	internal const int                  _assemblyDecl	= 362 ;
-	internal const int                  _asmOrRefDecl	= 363 ;
-	internal const int                 _publicKeyHead	= 364 ;
-	internal const int            _publicKeyTokenHead	= 365 ;
-	internal const int                    _localeHead	= 366 ;
-	internal const int               _assemblyRefHead	= 367 ;
-	internal const int              _assemblyRefDecls	= 368 ;
-	internal const int               _assemblyRefDecl	= 369 ;
-	internal const int                   _comtypeHead	= 370 ;
-	internal const int                    _exportHead	= 371 ;
-	internal const int                      _comtAttr	= 372 ;
-	internal const int                  _comtypeDecls	= 373 ;
-	internal const int                   _comtypeDecl	= 374 ;
-	internal const int               _manifestResHead	= 375 ;
-	internal const int                    _manresAttr	= 376 ;
-	internal const int              _manifestResDecls	= 377 ;
-	internal const int               _manifestResDecl	= 378 ;
+	internal const int                    _22pinned22	= 215 ;
+	internal const int                    _22modreq22	= 216 ;
+	internal const int                    _22modopt22	= 217 ;
+	internal const int                  _22typedref22	= 219 ;
+	internal const int                     _22float22	= 220 ;
+	internal const int              _222Epermission22	= 221 ;
+	internal const int           _222Epermissionset22	= 222 ;
+	internal const int                      _22true22	= 223 ;
+	internal const int                     _22false22	= 224 ;
+	internal const int                   _22request22	= 225 ;
+	internal const int                    _22demand22	= 226 ;
+	internal const int                    _22assert22	= 227 ;
+	internal const int                      _22deny22	= 228 ;
+	internal const int                _22permitonly22	= 229 ;
+	internal const int                 _22linkcheck22	= 230 ;
+	internal const int              _22inheritcheck22	= 231 ;
+	internal const int                    _22reqmin22	= 232 ;
+	internal const int                    _22reqopt22	= 233 ;
+	internal const int                 _22reqrefuse22	= 234 ;
+	internal const int               _22prejitgrant22	= 235 ;
+	internal const int                _22prejitdeny22	= 236 ;
+	internal const int              _22noncasdemand22	= 237 ;
+	internal const int          _22noncaslinkdemand22	= 238 ;
+	internal const int         _22noncasinheritance22	= 239 ;
+	internal const int                    _222Eline22	= 240 ;
+	internal const int                _22nometadata22	= 241 ;
+	internal const int                    _222Ehash22	= 242 ;
+	internal const int                _222Eassembly22	= 243 ;
+	internal const int               _22noappdomain22	= 244 ;
+	internal const int                 _22noprocess22	= 245 ;
+	internal const int                 _22nomachine22	= 246 ;
+	internal const int                 _22algorithm22	= 247 ;
+	internal const int                     _222Ever22	= 248 ;
+	internal const int                  _222Elocale22	= 249 ;
+	internal const int               _222Epublickey22	= 250 ;
+	internal const int          _222Epublickeytoken22	= 251 ;
+	internal const int               _222Emresource22	= 252 ;
+	internal const int                      _24accept	= 253 ;
+	internal const int                         _START	= 254 ;
+	internal const int                         _decls	= 255 ;
+	internal const int                          _decl	= 256 ;
+	internal const int                   _compQstring	= 257 ;
+	internal const int                  _languageDecl	= 258 ;
+	internal const int                _customAttrDecl	= 259 ;
+	internal const int                    _moduleHead	= 260 ;
+	internal const int                   _vtfixupDecl	= 261 ;
+	internal const int                   _vtfixupAttr	= 262 ;
+	internal const int                    _vtableDecl	= 263 ;
+	internal const int                    _vtableHead	= 264 ;
+	internal const int                 _nameSpaceHead	= 265 ;
+	internal const int                     _classHead	= 266 ;
+	internal const int                     _classAttr	= 267 ;
+	internal const int                 _extendsClause	= 268 ;
+	internal const int                    _implClause	= 269 ;
+	internal const int                    _classNames	= 270 ;
+	internal const int                    _classDecls	= 271 ;
+	internal const int                     _classDecl	= 272 ;
+	internal const int                     _fieldDecl	= 273 ;
+	internal const int                         _atOpt	= 274 ;
+	internal const int                       _initOpt	= 275 ;
+	internal const int                     _repeatOpt	= 276 ;
+	internal const int                    _customHead	= 277 ;
+	internal const int           _customHeadWithOwner	= 278 ;
+	internal const int                     _memberRef	= 279 ;
+	internal const int                    _customType	= 280 ;
+	internal const int                     _ownerType	= 281 ;
+	internal const int                     _eventHead	= 282 ;
+	internal const int                     _eventAttr	= 283 ;
+	internal const int                    _eventDecls	= 284 ;
+	internal const int                     _eventDecl	= 285 ;
+	internal const int                      _propHead	= 286 ;
+	internal const int                      _propAttr	= 287 ;
+	internal const int                     _propDecls	= 288 ;
+	internal const int                      _propDecl	= 289 ;
+	internal const int              _methodHeadPart31	= 290 ;
+	internal const int                    _methodHead	= 291 ;
+	internal const int                      _methAttr	= 292 ;
+	internal const int                      _pinvAttr	= 293 ;
+	internal const int                    _methodName	= 294 ;
+	internal const int                     _paramAttr	= 295 ;
+	internal const int                     _fieldAttr	= 296 ;
+	internal const int                      _implAttr	= 297 ;
+	internal const int                    _localsHead	= 298 ;
+	internal const int                    _methodDecl	= 299 ;
+	internal const int                    _scopeBlock	= 300 ;
+	internal const int                     _scopeOpen	= 301 ;
+	internal const int                      _sehBlock	= 302 ;
+	internal const int                    _sehClauses	= 303 ;
+	internal const int                      _tryBlock	= 304 ;
+	internal const int                       _tryHead	= 305 ;
+	internal const int                     _sehClause	= 306 ;
+	internal const int                  _filterClause	= 307 ;
+	internal const int                    _filterHead	= 308 ;
+	internal const int                   _catchClause	= 309 ;
+	internal const int                 _finallyClause	= 310 ;
+	internal const int                   _faultClause	= 311 ;
+	internal const int                  _handlerBlock	= 312 ;
+	internal const int                   _methodDecls	= 313 ;
+	internal const int                      _dataDecl	= 314 ;
+	internal const int                        _ddHead	= 315 ;
+	internal const int                           _tls	= 316 ;
+	internal const int                        _ddBody	= 317 ;
+	internal const int                    _ddItemList	= 318 ;
+	internal const int                   _ddItemCount	= 319 ;
+	internal const int                        _ddItem	= 320 ;
+	internal const int                     _fieldInit	= 321 ;
+	internal const int                 _bytearrayhead	= 322 ;
+	internal const int                         _bytes	= 323 ;
+	internal const int                      _hexbytes	= 324 ;
+	internal const int                _instr5Fr5Fhead	= 325 ;
+	internal const int              _instr5Ftok5Fhead	= 326 ;
+	internal const int                    _methodSpec	= 327 ;
+	internal const int                         _instr	= 328 ;
+	internal const int                     _sigArgs30	= 329 ;
+	internal const int                     _sigArgs31	= 330 ;
+	internal const int                        _sigArg	= 331 ;
+	internal const int                        _name31	= 332 ;
+	internal const int                     _className	= 333 ;
+	internal const int                   _slashedName	= 334 ;
+	internal const int                      _typeSpec	= 335 ;
+	internal const int                      _callConv	= 336 ;
+	internal const int                      _callKind	= 337 ;
+	internal const int                    _nativeType	= 338 ;
+	internal const int                   _variantType	= 339 ;
+	internal const int                          _type	= 340 ;
+	internal const int                       _genArgs	= 341 ;
+	internal const int                      _bounds31	= 342 ;
+	internal const int                         _bound	= 343 ;
+	internal const int                        _labels	= 344 ;
+	internal const int                            _id	= 345 ;
+	internal const int                      _int3136s	= 346 ;
+	internal const int                       _int3332	= 347 ;
+	internal const int                       _int3634	= 348 ;
+	internal const int                     _float3634	= 349 ;
+	internal const int                       _secDecl	= 350 ;
+	internal const int                      _psetHead	= 351 ;
+	internal const int                  _nameValPairs	= 352 ;
+	internal const int                   _nameValPair	= 353 ;
+	internal const int                     _truefalse	= 354 ;
+	internal const int                       _caValue	= 355 ;
+	internal const int                     _secAction	= 356 ;
+	internal const int                 _extSourceSpec	= 357 ;
+	internal const int                      _fileDecl	= 358 ;
+	internal const int                      _fileAttr	= 359 ;
+	internal const int                     _fileEntry	= 360 ;
+	internal const int                      _hashHead	= 361 ;
+	internal const int                  _assemblyHead	= 362 ;
+	internal const int                       _asmAttr	= 363 ;
+	internal const int                 _assemblyDecls	= 364 ;
+	internal const int                  _assemblyDecl	= 365 ;
+	internal const int                  _asmOrRefDecl	= 366 ;
+	internal const int                 _publicKeyHead	= 367 ;
+	internal const int            _publicKeyTokenHead	= 368 ;
+	internal const int                    _localeHead	= 369 ;
+	internal const int               _assemblyRefHead	= 370 ;
+	internal const int              _assemblyRefDecls	= 371 ;
+	internal const int               _assemblyRefDecl	= 372 ;
+	internal const int                   _comtypeHead	= 373 ;
+	internal const int                    _exportHead	= 374 ;
+	internal const int                      _comtAttr	= 375 ;
+	internal const int                  _comtypeDecls	= 376 ;
+	internal const int                   _comtypeDecl	= 377 ;
+	internal const int               _manifestResHead	= 378 ;
+	internal const int                    _manresAttr	= 379 ;
+	internal const int              _manifestResDecls	= 380 ;
+	internal const int               _manifestResDecl	= 381 ;
 	
 void shift()
 	{
@@ -443,7 +446,7 @@ static int _0()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=252 max=253 length=2
+		switch(_yy) // size=2 min=254 max=255 length=2
 			{
 			case _START : return _1() ;
 			case _decls : return _2() ;
@@ -467,7 +470,7 @@ static int _2()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=24 min=254 max=375 length=122
+		switch(_yy) // size=24 min=256 max=378 length=123
 			{
 			case _decl : return _24() ;
 			case _languageDecl : return _25() ;
@@ -526,14 +529,14 @@ static int _2()
 	_2_default:
 	auto = new START_decls() ;
 	backup = 1 ;
-	yy = 252 ;
+	yy = 254 ;
 	return -1 ;
 	}
 static int _3()
 	{
 	log("_3") ;
 	backup = 2 ;
-	yy = 251 ;
+	yy = 253 ;
 	return -0 ;
 	}
 static int _4()
@@ -542,7 +545,7 @@ static int _4()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
 			case _int3332 : return _49() ;
 			default: return __default ;
@@ -557,7 +560,7 @@ static int _5()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
 			case _int3332 : return _50() ;
 			default: return __default ;
@@ -572,7 +575,7 @@ static int _6()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
 			case _int3332 : return _51() ;
 			default: return __default ;
@@ -587,7 +590,7 @@ static int _7()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=356 max=356 length=1
+		switch(_yy) // size=1 min=359 max=359 length=1
 			{
 			case _fileAttr : return _53() ;
 			default: return __default ;
@@ -595,7 +598,7 @@ static int _7()
 		} ;
 	switch( token.point )
 		{
-		case 3: case 5: case 9: case 239: 
+		case 3: case 5: case 9: case 241: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _7_default ;
@@ -610,7 +613,7 @@ static int _8()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=345 max=345 length=1
+		switch(_yy) // size=1 min=348 max=348 length=1
 			{
 			case _int3634 : return _55() ;
 			default: return __default ;
@@ -632,7 +635,7 @@ static int _10()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=278 max=335 length=58
+		switch(_yy) // size=3 min=280 max=337 length=58
 			{
 			case _customType : return _63() ;
 			case _callConv : return _64() ;
@@ -644,7 +647,7 @@ static int _10()
 		{
 		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
+		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _10_default ;
@@ -664,7 +667,7 @@ static int _11()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
 			case _name31 : return _70() ;
 			case _id : return _71() ;
@@ -675,7 +678,7 @@ static int _11()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _11_default ;
@@ -687,7 +690,7 @@ static int _11()
 	_11_default:
 	auto = new moduleHead_222Emodule22() ;
 	backup = 1 ;
-	yy = 258 ;
+	yy = 260 ;
 	return -36 ;
 	}
 static int _12()
@@ -710,7 +713,7 @@ static int _14()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
 			case _name31 : return _74() ;
 			case _id : return _71() ;
@@ -731,7 +734,7 @@ static int _15()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=265 max=265 length=1
+		switch(_yy) // size=1 min=267 max=267 length=1
 			{
 			case _classAttr : return _76() ;
 			default: return __default ;
@@ -756,7 +759,7 @@ static int _16()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=274 max=274 length=1
+		switch(_yy) // size=1 min=276 max=276 length=1
 			{
 			case _repeatOpt : return _78() ;
 			default: return __default ;
@@ -767,8 +770,8 @@ static int _16()
 		case 47: case 48: case 54: case 55: case 56: case 70: case 71: case 72:
 		case 73: case 75: case 76: case 96: case 97: case 100: case 118: case 119:
 		case 120: case 121: case 151: case 154: case 155: case 156: case 157: case 158:
-		case 161: case 175: case 177: case 209: case 210: case 211: case 212: case 216:
-		case 217: 
+		case 161: case 175: case 177: case 209: case 210: case 211: case 212: case 218:
+		case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _16_default ;
@@ -782,7 +785,7 @@ static int _17()
 	log("_17") ;
 	auto = new methodHeadPart1_222Emethod22() ;
 	backup = 1 ;
-	yy = 288 ;
+	yy = 290 ;
 	return -146 ;
 	}
 static int _18()
@@ -791,7 +794,7 @@ static int _18()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=314 max=314 length=1
+		switch(_yy) // size=1 min=316 max=316 length=1
 			{
 			case _tls : return _80() ;
 			default: return __default ;
@@ -815,7 +818,7 @@ static int _19()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=353 max=353 length=1
+		switch(_yy) // size=1 min=356 max=356 length=1
 			{
 			case _secAction : return _96() ;
 			default: return __default ;
@@ -847,7 +850,7 @@ static int _20()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=353 max=353 length=1
+		switch(_yy) // size=1 min=356 max=356 length=1
 			{
 			case _secAction : return _97() ;
 			default: return __default ;
@@ -879,7 +882,7 @@ static int _21()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
 			case _int3332 : return _98() ;
 			default: return __default ;
@@ -894,7 +897,7 @@ static int _22()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=360 max=360 length=1
+		switch(_yy) // size=1 min=363 max=363 length=1
 			{
 			case _asmAttr : return _100() ;
 			default: return __default ;
@@ -902,7 +905,7 @@ static int _22()
 		} ;
 	switch( token.point )
 		{
-		case 3: case 5: case 9: case 242: case 243: case 244: 
+		case 3: case 5: case 9: case 244: case 245: case 246: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _22_default ;
@@ -917,7 +920,7 @@ static int _23()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=376 max=376 length=1
+		switch(_yy) // size=1 min=379 max=379 length=1
 			{
 			case _manresAttr : return _101() ;
 			default: return __default ;
@@ -932,7 +935,7 @@ static int _24()
 	log("_24") ;
 	auto = new decls_decls_decl() ;
 	backup = 2 ;
-	yy = 253 ;
+	yy = 255 ;
 	return -3 ;
 	}
 static int _25()
@@ -940,7 +943,7 @@ static int _25()
 	log("_25") ;
 	auto = new decl_languageDecl() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -24 ;
 	}
 static int _26()
@@ -948,7 +951,7 @@ static int _26()
 	log("_26") ;
 	auto = new decl_customAttrDecl() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -19 ;
 	}
 static int _27()
@@ -956,7 +959,7 @@ static int _27()
 	log("_27") ;
 	auto = new decl_moduleHead() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -17 ;
 	}
 static int _28()
@@ -964,7 +967,7 @@ static int _28()
 	log("_28") ;
 	auto = new decl_vtfixupDecl() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -10 ;
 	}
 static int _29()
@@ -972,7 +975,7 @@ static int _29()
 	log("_29") ;
 	auto = new decl_vtableDecl() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -9 ;
 	}
 static int _30()
@@ -981,7 +984,7 @@ static int _30()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
 			case _bytes : return _103() ;
 			case _hexbytes : return _104() ;
@@ -1018,7 +1021,7 @@ static int _33()
 	log("_33") ;
 	auto = new decl_fieldDecl() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -7 ;
 	}
 static int _34()
@@ -1027,7 +1030,7 @@ static int _34()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
 			case _bytes : return _107() ;
 			case _hexbytes : return _104() ;
@@ -1051,7 +1054,7 @@ static int _35()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
 			case _bytes : return _108() ;
 			case _hexbytes : return _104() ;
@@ -1075,7 +1078,7 @@ static int _36()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=290 max=290 length=1
+		switch(_yy) // size=1 min=292 max=292 length=1
 			{
 			case _methAttr : return _109() ;
 			default: return __default ;
@@ -1091,7 +1094,7 @@ static int _37()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=311 max=311 length=1
+		switch(_yy) // size=1 min=313 max=313 length=1
 			{
 			case _methodDecls : return _110() ;
 			default: return __default ;
@@ -1106,7 +1109,7 @@ static int _38()
 	log("_38") ;
 	auto = new decl_dataDecl() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -8 ;
 	}
 static int _39()
@@ -1115,7 +1118,7 @@ static int _39()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=315 max=320 length=6
+		switch(_yy) // size=3 min=317 max=322 length=6
 			{
 			case _ddBody : return _121() ;
 			case _ddItem : return _122() ;
@@ -1143,7 +1146,7 @@ static int _40()
 	log("_40") ;
 	auto = new decl_secDecl() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -18 ;
 	}
 static int _41()
@@ -1152,7 +1155,7 @@ static int _41()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
 			case _bytes : return _124() ;
 			case _hexbytes : return _104() ;
@@ -1175,7 +1178,7 @@ static int _42()
 	log("_42") ;
 	auto = new decl_extSourceSpec() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -11 ;
 	}
 static int _43()
@@ -1183,7 +1186,7 @@ static int _43()
 	log("_43") ;
 	auto = new decl_fileDecl() ;
 	backup = 1 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -12 ;
 	}
 static int _44()
@@ -1219,8 +1222,8 @@ static int _48()
 	log("_48") ;
 	auto = new int32_INT3634() ;
 	backup = 1 ;
-	yy = 344 ;
-	return -503 ;
+	yy = 347 ;
+	return -506 ;
 	}
 static int _49()
 	{
@@ -1234,7 +1237,7 @@ static int _50()
 	log("_50") ;
 	auto = new decl_222Esubsystem22_int3332() ;
 	backup = 2 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -20 ;
 	}
 static int _51()
@@ -1242,7 +1245,7 @@ static int _51()
 	log("_51") ;
 	auto = new decl_222Ecorflags22_int3332() ;
 	backup = 2 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -21 ;
 	}
 static int _52()
@@ -1251,7 +1254,7 @@ static int _52()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
 			case _int3332 : return _130() ;
 			default: return __default ;
@@ -1266,7 +1269,7 @@ static int _53()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
 			case _name31 : return _132() ;
 			case _id : return _71() ;
@@ -1287,15 +1290,15 @@ static int _54()
 	log("_54") ;
 	auto = new int64_INT3634() ;
 	backup = 1 ;
-	yy = 345 ;
-	return -504 ;
+	yy = 348 ;
+	return -507 ;
 	}
 static int _55()
 	{
 	log("_55") ;
 	auto = new decl_222Eimagebase22_int3634() ;
 	backup = 2 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -23 ;
 	}
 static int _56()
@@ -1310,8 +1313,8 @@ static int _56()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 219:
-		case 220: case 238: case 241: case 250: 
+		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _56_default ;
@@ -1320,7 +1323,7 @@ static int _56()
 	_56_default:
 	auto = new languageDecl_222Elanguage22_SQSTRING() ;
 	backup = 2 ;
-	yy = 256 ;
+	yy = 258 ;
 	return -27 ;
 	}
 static int _57()
@@ -1329,7 +1332,7 @@ static int _57()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=9 min=277 max=342 length=66
+		switch(_yy) // size=9 min=279 max=345 length=67
 			{
 			case _memberRef : return _155() ;
 			case _ownerType : return _156() ;
@@ -1378,7 +1381,7 @@ static int _58()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
 			case _callConv : return _163() ;
 			case _callKind : return _65() ;
@@ -1389,7 +1392,7 @@ static int _58()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: 
+		case 211: case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _58_default ;
@@ -1421,7 +1424,7 @@ static int _60()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
 			case _callConv : return _168() ;
 			case _callKind : return _65() ;
@@ -1432,7 +1435,7 @@ static int _60()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: 
+		case 211: case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _60_default ;
@@ -1450,7 +1453,7 @@ static int _61()
 	log("_61") ;
 	auto = new callKind_22default22() ;
 	backup = 1 ;
-	yy = 335 ;
+	yy = 337 ;
 	return -357 ;
 	}
 static int _62()
@@ -1458,7 +1461,7 @@ static int _62()
 	log("_62") ;
 	auto = new callKind_22vararg22() ;
 	backup = 1 ;
-	yy = 335 ;
+	yy = 337 ;
 	return -358 ;
 	}
 static int _63()
@@ -1473,9 +1476,9 @@ static int _63()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 219:
-		case 220: case 238: case 240: case 241: case 246: case 247: case 248: case 249:
-		case 250: 
+		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 251:
+		case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _63_default ;
@@ -1484,7 +1487,7 @@ static int _63()
 	_63_default:
 	auto = new customAttrDecl_222Ecustom22_customType() ;
 	backup = 2 ;
-	yy = 257 ;
+	yy = 259 ;
 	return -30 ;
 	}
 static int _64()
@@ -1493,7 +1496,7 @@ static int _64()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
 			case _type : return _171() ;
@@ -1529,7 +1532,7 @@ static int _65()
 	log("_65") ;
 	auto = new callConv_callKind() ;
 	backup = 1 ;
-	yy = 334 ;
+	yy = 336 ;
 	return -355 ;
 	}
 static int _66()
@@ -1537,23 +1540,23 @@ static int _66()
 	log("_66") ;
 	auto = new id_ID() ;
 	backup = 1 ;
-	yy = 342 ;
-	return -499 ;
+	yy = 345 ;
+	return -502 ;
 	}
 static int _67()
 	{
 	log("_67") ;
 	auto = new id_SQSTRING() ;
 	backup = 1 ;
-	yy = 342 ;
-	return -500 ;
+	yy = 345 ;
+	return -503 ;
 	}
 static int _68()
 	{
 	log("_68") ;
 	auto = new name1_DOTTEDNAME() ;
 	backup = 1 ;
-	yy = 330 ;
+	yy = 332 ;
 	return -342 ;
 	}
 static int _69()
@@ -1562,7 +1565,7 @@ static int _69()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
 			case _name31 : return _172() ;
 			case _id : return _71() ;
@@ -1585,7 +1588,7 @@ static int _70()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _70_default ;
@@ -1594,7 +1597,7 @@ static int _70()
 	_70_default:
 	auto = new moduleHead_222Emodule22_name31() ;
 	backup = 2 ;
-	yy = 258 ;
+	yy = 260 ;
 	return -37 ;
 	}
 static int _71()
@@ -1602,7 +1605,7 @@ static int _71()
 	log("_71") ;
 	auto = new name1_id() ;
 	backup = 1 ;
-	yy = 330 ;
+	yy = 332 ;
 	return -341 ;
 	}
 static int _72()
@@ -1611,7 +1614,7 @@ static int _72()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
 			case _int3332 : return _174() ;
 			default: return __default ;
@@ -1642,7 +1645,7 @@ static int _74()
 	_74_default:
 	auto = new nameSpaceHead_222Enamespace22_name31() ;
 	backup = 2 ;
-	yy = 263 ;
+	yy = 265 ;
 	return -47 ;
 	}
 static int _75()
@@ -1651,7 +1654,7 @@ static int _75()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=372 max=372 length=1
+		switch(_yy) // size=1 min=375 max=375 length=1
 			{
 			case _comtAttr : return _176() ;
 			default: return __default ;
@@ -1667,7 +1670,7 @@ static int _76()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
 			case _id : return _196() ;
 			default: return __default ;
@@ -1705,7 +1708,7 @@ static int _77()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
 			case _int3332 : return _197() ;
 			default: return __default ;
@@ -1720,7 +1723,7 @@ static int _78()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=294 max=294 length=1
+		switch(_yy) // size=1 min=296 max=296 length=1
 			{
 			case _fieldAttr : return _198() ;
 			default: return __default ;
@@ -1735,7 +1738,7 @@ static int _79()
 	log("_79") ;
 	auto = new tls_22tls22() ;
 	backup = 1 ;
-	yy = 314 ;
+	yy = 316 ;
 	return -266 ;
 	}
 static int _80()
@@ -1744,7 +1747,7 @@ static int _80()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
 			case _id : return _199() ;
 			default: return __default ;
@@ -1763,7 +1766,7 @@ static int _80()
 	_80_default:
 	auto = new ddHead_222Edata22_tls() ;
 	backup = 2 ;
-	yy = 313 ;
+	yy = 315 ;
 	return -264 ;
 	}
 static int _81()
@@ -1771,120 +1774,120 @@ static int _81()
 	log("_81") ;
 	auto = new secAction_22request22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -525 ;
+	yy = 356 ;
+	return -528 ;
 	}
 static int _82()
 	{
 	log("_82") ;
 	auto = new secAction_22demand22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -526 ;
+	yy = 356 ;
+	return -529 ;
 	}
 static int _83()
 	{
 	log("_83") ;
 	auto = new secAction_22assert22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -527 ;
+	yy = 356 ;
+	return -530 ;
 	}
 static int _84()
 	{
 	log("_84") ;
 	auto = new secAction_22deny22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -528 ;
+	yy = 356 ;
+	return -531 ;
 	}
 static int _85()
 	{
 	log("_85") ;
 	auto = new secAction_22permitonly22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -529 ;
+	yy = 356 ;
+	return -532 ;
 	}
 static int _86()
 	{
 	log("_86") ;
 	auto = new secAction_22linkcheck22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -530 ;
+	yy = 356 ;
+	return -533 ;
 	}
 static int _87()
 	{
 	log("_87") ;
 	auto = new secAction_22inheritcheck22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -531 ;
+	yy = 356 ;
+	return -534 ;
 	}
 static int _88()
 	{
 	log("_88") ;
 	auto = new secAction_22reqmin22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -532 ;
+	yy = 356 ;
+	return -535 ;
 	}
 static int _89()
 	{
 	log("_89") ;
 	auto = new secAction_22reqopt22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -533 ;
+	yy = 356 ;
+	return -536 ;
 	}
 static int _90()
 	{
 	log("_90") ;
 	auto = new secAction_22reqrefuse22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -534 ;
+	yy = 356 ;
+	return -537 ;
 	}
 static int _91()
 	{
 	log("_91") ;
 	auto = new secAction_22prejitgrant22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -535 ;
+	yy = 356 ;
+	return -538 ;
 	}
 static int _92()
 	{
 	log("_92") ;
 	auto = new secAction_22prejitdeny22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -536 ;
+	yy = 356 ;
+	return -539 ;
 	}
 static int _93()
 	{
 	log("_93") ;
 	auto = new secAction_22noncasdemand22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -537 ;
+	yy = 356 ;
+	return -540 ;
 	}
 static int _94()
 	{
 	log("_94") ;
 	auto = new secAction_22noncaslinkdemand22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -538 ;
+	yy = 356 ;
+	return -541 ;
 	}
 static int _95()
 	{
 	log("_95") ;
 	auto = new secAction_22noncasinheritance22() ;
 	backup = 1 ;
-	yy = 353 ;
-	return -539 ;
+	yy = 356 ;
+	return -542 ;
 	}
 static int _96()
 	{
@@ -1892,7 +1895,7 @@ static int _96()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=325 max=342 length=18
+		switch(_yy) // size=7 min=327 max=345 length=19
 			{
 			case _methodSpec : return _170() ;
 			case _name31 : return _158() ;
@@ -1951,8 +1954,8 @@ static int _98()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 219:
-		case 220: case 238: case 241: case 250: 
+		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _98_default ;
@@ -1962,8 +1965,8 @@ static int _98()
 	_98_default:
 	auto = new extSourceSpec_222Eline22_int3332() ;
 	backup = 2 ;
-	yy = 354 ;
-	return -541 ;
+	yy = 357 ;
+	return -544 ;
 	}
 static int _99()
 	{
@@ -1971,7 +1974,7 @@ static int _99()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
 			case _name31 : return _204() ;
 			case _id : return _71() ;
@@ -1992,7 +1995,7 @@ static int _100()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
 			case _name31 : return _208() ;
 			case _id : return _71() ;
@@ -2016,7 +2019,7 @@ static int _101()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
 			case _name31 : return _211() ;
 			case _id : return _71() ;
@@ -2038,7 +2041,7 @@ static int _102()
 	log("_102") ;
 	auto = new hexbytes_HEXBYTE() ;
 	backup = 1 ;
-	yy = 322 ;
+	yy = 324 ;
 	return -304 ;
 	}
 static int _103()
@@ -2063,7 +2066,7 @@ static int _104()
 	_104_default:
 	auto = new bytes_hexbytes() ;
 	backup = 1 ;
-	yy = 321 ;
+	yy = 323 ;
 	return -303 ;
 	}
 static int _105()
@@ -2072,7 +2075,7 @@ static int _105()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=253 max=253 length=1
+		switch(_yy) // size=1 min=255 max=255 length=1
 			{
 			case _decls : return _214() ;
 			default: return __default ;
@@ -2088,7 +2091,7 @@ static int _106()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=269 max=269 length=1
+		switch(_yy) // size=1 min=271 max=271 length=1
 			{
 			case _classDecls : return _215() ;
 			default: return __default ;
@@ -2118,7 +2121,7 @@ static int _109()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
 			case _callConv : return _236() ;
 			case _callKind : return _65() ;
@@ -2129,7 +2132,7 @@ static int _109()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: 
+		case 211: case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _109_default ;
@@ -2166,7 +2169,7 @@ static int _110()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=20 min=256 max=354 length=99
+		switch(_yy) // size=20 min=258 max=357 length=100
 			{
 			case _languageDecl : return _264() ;
 			case _customAttrDecl : return _265() ;
@@ -2238,7 +2241,7 @@ static int _111()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=316 max=320 length=5
+		switch(_yy) // size=3 min=318 max=322 length=5
 			{
 			case _ddItemList : return _280() ;
 			case _ddItem : return _281() ;
@@ -2266,7 +2269,7 @@ static int _112()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=317 max=317 length=1
+		switch(_yy) // size=1 min=319 max=319 length=1
 			{
 			case _ddItemCount : return _284() ;
 			default: return __default ;
@@ -2280,7 +2283,7 @@ static int _112()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _112_default ;
@@ -2296,7 +2299,7 @@ static int _113()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=317 max=317 length=1
+		switch(_yy) // size=1 min=319 max=319 length=1
 			{
 			case _ddItemCount : return _286() ;
 			default: return __default ;
@@ -2310,7 +2313,7 @@ static int _113()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _113_default ;
@@ -2340,7 +2343,7 @@ static int _116()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=317 max=317 length=1
+		switch(_yy) // size=1 min=319 max=319 length=1
 			{
 			case _ddItemCount : return _290() ;
 			default: return __default ;
@@ -2354,7 +2357,7 @@ static int _116()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _116_default ;
@@ -2370,7 +2373,7 @@ static int _117()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=317 max=317 length=1
+		switch(_yy) // size=1 min=319 max=319 length=1
 			{
 			case _ddItemCount : return _292() ;
 			default: return __default ;
@@ -2384,7 +2387,7 @@ static int _117()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _117_default ;
@@ -2400,7 +2403,7 @@ static int _118()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=317 max=317 length=1
+		switch(_yy) // size=1 min=319 max=319 length=1
 			{
 			case _ddItemCount : return _294() ;
 			default: return __default ;
@@ -2414,7 +2417,7 @@ static int _118()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _118_default ;
@@ -2430,7 +2433,7 @@ static int _119()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=317 max=317 length=1
+		switch(_yy) // size=1 min=319 max=319 length=1
 			{
 			case _ddItemCount : return _296() ;
 			default: return __default ;
@@ -2444,7 +2447,7 @@ static int _119()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _119_default ;
@@ -2466,7 +2469,7 @@ static int _121()
 	log("_121") ;
 	auto = new dataDecl_ddHead_ddBody() ;
 	backup = 2 ;
-	yy = 312 ;
+	yy = 314 ;
 	return -262 ;
 	}
 static int _122()
@@ -2474,7 +2477,7 @@ static int _122()
 	log("_122") ;
 	auto = new ddBody_ddItem() ;
 	backup = 1 ;
-	yy = 315 ;
+	yy = 317 ;
 	return -268 ;
 	}
 static int _123()
@@ -2483,7 +2486,7 @@ static int _123()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
 			case _bytes : return _298() ;
 			case _hexbytes : return _104() ;
@@ -2514,7 +2517,7 @@ static int _125()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=361 max=361 length=1
+		switch(_yy) // size=1 min=364 max=364 length=1
 			{
 			case _assemblyDecls : return _300() ;
 			default: return __default ;
@@ -2530,7 +2533,7 @@ static int _126()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=368 max=368 length=1
+		switch(_yy) // size=1 min=371 max=371 length=1
 			{
 			case _assemblyRefDecls : return _301() ;
 			default: return __default ;
@@ -2546,7 +2549,7 @@ static int _127()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=373 max=373 length=1
+		switch(_yy) // size=1 min=376 max=376 length=1
 			{
 			case _comtypeDecls : return _302() ;
 			default: return __default ;
@@ -2562,7 +2565,7 @@ static int _128()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=377 max=377 length=1
+		switch(_yy) // size=1 min=380 max=380 length=1
 			{
 			case _manifestResDecls : return _303() ;
 			default: return __default ;
@@ -2577,15 +2580,15 @@ static int _129()
 	log("_129") ;
 	auto = new extSourceSpec_P5FLINE_int3332_QSTRING() ;
 	backup = 3 ;
-	yy = 354 ;
-	return -544 ;
+	yy = 357 ;
+	return -547 ;
 	}
 static int _130()
 	{
 	log("_130") ;
 	auto = new decl_222Efile22_22alignment22_int3332() ;
 	backup = 3 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -22 ;
 	}
 static int _131()
@@ -2593,8 +2596,8 @@ static int _131()
 	log("_131") ;
 	auto = new fileAttr_fileAttr_22nometadata22() ;
 	backup = 2 ;
-	yy = 356 ;
-	return -548 ;
+	yy = 359 ;
+	return -551 ;
 	}
 static int _132()
 	{
@@ -2602,7 +2605,7 @@ static int _132()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=357 max=357 length=1
+		switch(_yy) // size=1 min=360 max=360 length=1
 			{
 			case _fileEntry : return _305() ;
 			default: return __default ;
@@ -2612,7 +2615,7 @@ static int _132()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 219: case 220: case 238: case 240: case 241: case 250: 
+		case 149: case 221: case 222: case 240: case 242: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _132_default ;
@@ -2635,7 +2638,7 @@ static int _134()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
 			case _name31 : return _308() ;
 			case _id : return _71() ;
@@ -2656,16 +2659,16 @@ static int _135()
 	log("_135") ;
 	auto = new type_22int333222() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -476 ;
+	yy = 340 ;
+	return -477 ;
 	}
 static int _136()
 	{
 	log("_136") ;
 	auto = new type_22int363422() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -477 ;
+	yy = 340 ;
+	return -478 ;
 	}
 static int _137()
 	{
@@ -2680,7 +2683,7 @@ static int _138()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
 			case _type : return _310() ;
@@ -2728,55 +2731,55 @@ static int _140()
 	log("_140") ;
 	auto = new type_22char22() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -471 ;
+	yy = 340 ;
+	return -472 ;
 	}
 static int _141()
 	{
 	log("_141") ;
 	auto = new type_22float333222() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -478 ;
+	yy = 340 ;
+	return -479 ;
 	}
 static int _142()
 	{
 	log("_142") ;
 	auto = new type_22float363422() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -479 ;
+	yy = 340 ;
+	return -480 ;
 	}
 static int _143()
 	{
 	log("_143") ;
 	auto = new type_22int313622() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -475 ;
+	yy = 340 ;
+	return -476 ;
 	}
 static int _144()
 	{
 	log("_144") ;
 	auto = new type_22int3822() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -474 ;
+	yy = 340 ;
+	return -475 ;
 	}
 static int _145()
 	{
 	log("_145") ;
 	auto = new type_22bool22() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -473 ;
+	yy = 340 ;
+	return -474 ;
 	}
 static int _146()
 	{
 	log("_146") ;
 	auto = new methodSpec_22method22() ;
 	backup = 1 ;
-	yy = 325 ;
+	yy = 327 ;
 	return -308 ;
 	}
 static int _147()
@@ -2784,8 +2787,8 @@ static int _147()
 	log("_147") ;
 	auto = new type_22void22() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -472 ;
+	yy = 340 ;
+	return -473 ;
 	}
 static int _148()
 	{
@@ -2806,7 +2809,7 @@ static int _149()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=330 max=342 length=13
+		switch(_yy) // size=4 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
 			case _className : return _319() ;
@@ -2829,7 +2832,7 @@ static int _150()
 	log("_150") ;
 	auto = new type_22object22() ;
 	backup = 1 ;
-	yy = 338 ;
+	yy = 340 ;
 	return -457 ;
 	}
 static int _151()
@@ -2837,7 +2840,7 @@ static int _151()
 	log("_151") ;
 	auto = new type_22string22() ;
 	backup = 1 ;
-	yy = 338 ;
+	yy = 340 ;
 	return -458 ;
 	}
 static int _152()
@@ -2846,7 +2849,7 @@ static int _152()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=330 max=342 length=13
+		switch(_yy) // size=4 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
 			case _className : return _320() ;
@@ -2870,7 +2873,7 @@ static int _153()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
 			case _int3332 : return _321() ;
 			default: return __default ;
@@ -2884,15 +2887,15 @@ static int _154()
 	log("_154") ;
 	auto = new type_22typedref22() ;
 	backup = 1 ;
-	yy = 338 ;
-	return -470 ;
+	yy = 340 ;
+	return -471 ;
 	}
 static int _155()
 	{
 	log("_155") ;
 	auto = new ownerType_memberRef() ;
 	backup = 1 ;
-	yy = 279 ;
+	yy = 281 ;
 	return -112 ;
 	}
 static int _156()
@@ -2908,7 +2911,7 @@ static int _157()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
 			case _callConv : return _323() ;
 			case _callKind : return _65() ;
@@ -2919,7 +2922,7 @@ static int _157()
 		{
 		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
+		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _157_default ;
@@ -2948,8 +2951,8 @@ static int _158()
 		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
 		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
 		case 161: case 164: case 175: case 177: case 209: case 210: case 211: case 212:
-		case 213: case 214: case 215: case 216: case 217: case 219: case 220: case 238:
-		case 240: case 241: case 246: case 247: case 248: case 250: 
+		case 213: case 214: case 215: case 216: case 217: case 218: case 219: case 221:
+		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _158_default ;
@@ -2958,7 +2961,7 @@ static int _158()
 	_158_default:
 	auto = new slashedName_name31() ;
 	backup = 1 ;
-	yy = 332 ;
+	yy = 334 ;
 	return -347 ;
 	}
 static int _159()
@@ -2966,7 +2969,7 @@ static int _159()
 	log("_159") ;
 	auto = new typeSpec_className() ;
 	backup = 1 ;
-	yy = 333 ;
+	yy = 335 ;
 	return -349 ;
 	}
 static int _160()
@@ -2985,8 +2988,8 @@ static int _160()
 		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
 		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
 		case 161: case 175: case 177: case 209: case 210: case 211: case 212: case 213:
-		case 214: case 215: case 216: case 217: case 219: case 220: case 238: case 240:
-		case 241: case 246: case 247: case 248: case 250: 
+		case 214: case 215: case 216: case 217: case 218: case 219: case 221: case 222:
+		case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _160_default ;
@@ -2995,7 +2998,7 @@ static int _160()
 	_160_default:
 	auto = new className_slashedName() ;
 	backup = 1 ;
-	yy = 331 ;
+	yy = 333 ;
 	return -346 ;
 	}
 static int _161()
@@ -3003,7 +3006,7 @@ static int _161()
 	log("_161") ;
 	auto = new ownerType_typeSpec() ;
 	backup = 1 ;
-	yy = 279 ;
+	yy = 281 ;
 	return -111 ;
 	}
 static int _162()
@@ -3018,22 +3021,23 @@ static int _162()
 		case 33: case 35: case 37: case 39: case 40: case 41: case 43: case 51:
 		case 52: case 53: case 79: case 80: case 81: case 82: case 84: case 87:
 		case 92: case 95: case 132: case 133: case 134: case 136: case 137: case 139:
-		case 140: case 141: case 143: case 149: case 219: case 220: case 238: case 240:
-		case 241: case 246: case 247: case 248: case 250: 
+		case 140: case 141: case 143: case 149: case 221: case 222: case 240: case 242:
+		case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _162_default ;
 		case _275B27: a.shift() ; return a.split( _325() ) ;
 		case _272A27: a.shift() ; return a.split( _326() ) ;
 		case _272627: a.shift() ; return a.split( _327() ) ;
-		case _22pinned22: a.shift() ; return a.split( _328() ) ;
-		case _22modreq22: a.shift() ; return a.split( _329() ) ;
-		case _22modopt22: a.shift() ; return a.split( _330() ) ;
+		case _273C27: a.shift() ; return a.split( _328() ) ;
+		case _22pinned22: a.shift() ; return a.split( _329() ) ;
+		case _22modreq22: a.shift() ; return a.split( _330() ) ;
+		case _22modopt22: a.shift() ; return a.split( _331() ) ;
 		}
 	_162_default:
 	auto = new typeSpec_type() ;
 	backup = 1 ;
-	yy = 333 ;
+	yy = 335 ;
 	return -352 ;
 	}
 static int _163()
@@ -3041,7 +3045,7 @@ static int _163()
 	log("_163") ;
 	auto = new callConv_22explicit22_callConv() ;
 	backup = 2 ;
-	yy = 334 ;
+	yy = 336 ;
 	return -354 ;
 	}
 static int _164()
@@ -3049,7 +3053,7 @@ static int _164()
 	log("_164") ;
 	auto = new callKind_22unmanaged22_22cdecl22() ;
 	backup = 2 ;
-	yy = 335 ;
+	yy = 337 ;
 	return -359 ;
 	}
 static int _165()
@@ -3057,7 +3061,7 @@ static int _165()
 	log("_165") ;
 	auto = new callKind_22unmanaged22_22stdcall22() ;
 	backup = 2 ;
-	yy = 335 ;
+	yy = 337 ;
 	return -360 ;
 	}
 static int _166()
@@ -3065,7 +3069,7 @@ static int _166()
 	log("_166") ;
 	auto = new callKind_22unmanaged22_22thiscall22() ;
 	backup = 2 ;
-	yy = 335 ;
+	yy = 337 ;
 	return -361 ;
 	}
 static int _167()
@@ -3073,7 +3077,7 @@ static int _167()
 	log("_167") ;
 	auto = new callKind_22unmanaged22_22fastcall22() ;
 	backup = 2 ;
-	yy = 335 ;
+	yy = 337 ;
 	return -362 ;
 	}
 static int _168()
@@ -3081,7 +3085,7 @@ static int _168()
 	log("_168") ;
 	auto = new callConv_22instance22_callConv() ;
 	backup = 2 ;
-	yy = 334 ;
+	yy = 336 ;
 	return -353 ;
 	}
 static int _169()
@@ -3090,15 +3094,15 @@ static int _169()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=255 max=255 length=1
+		switch(_yy) // size=1 min=257 max=257 length=1
 			{
-			case _compQstring : return _333() ;
+			case _compQstring : return _334() ;
 			default: return __default ;
 			}
 		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	else
-	if( token.point == _272827 ) { a.shift() ; return a.deploy( _332() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.deploy( _333() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _170()
@@ -3107,9 +3111,9 @@ static int _170()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
-			case _callConv : return _334() ;
+			case _callConv : return _335() ;
 			case _callKind : return _65() ;
 			default: return __default ;
 			}
@@ -3118,7 +3122,7 @@ static int _170()
 		{
 		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
+		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _170_default ;
@@ -3137,13 +3141,13 @@ static int _171()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=325 max=342 length=18
+		switch(_yy) // size=7 min=327 max=345 length=19
 			{
 			case _methodSpec : return _170() ;
 			case _name31 : return _158() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _337() ;
+			case _typeSpec : return _338() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -3154,11 +3158,11 @@ static int _171()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _336() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _337() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
 		case _22char22: a.shift() ; return a.deploy( _140() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
@@ -3175,9 +3179,10 @@ static int _171()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
@@ -3191,7 +3196,7 @@ static int _172()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _172_default ;
@@ -3200,7 +3205,7 @@ static int _172()
 	_172_default:
 	auto = new moduleHead_222Emodule22_22extern22_name31() ;
 	backup = 3 ;
-	yy = 258 ;
+	yy = 260 ;
 	return -38 ;
 	}
 static int _173()
@@ -3209,9 +3214,9 @@ static int _173()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _338() ;
+			case _name31 : return _339() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -3228,7 +3233,7 @@ static int _174()
 	{
 	log("_174") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _339() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _340() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _175()
@@ -3236,7 +3241,7 @@ static int _175()
 	log("_175") ;
 	auto = new vtableHead_222Evtable22_273D27_272827() ;
 	backup = 3 ;
-	yy = 262 ;
+	yy = 264 ;
 	return -46 ;
 	}
 static int _176()
@@ -3245,9 +3250,9 @@ static int _176()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _343() ;
+			case _name31 : return _344() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -3257,9 +3262,9 @@ static int _176()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _22public22: a.shift() ; return a.deploy( _340() ) ;
-		case _22private22: a.shift() ; return a.deploy( _341() ) ;
-		case _22nested22: a.shift() ; return a.deploy( _342() ) ;
+		case _22public22: a.shift() ; return a.deploy( _341() ) ;
+		case _22private22: a.shift() ; return a.deploy( _342() ) ;
+		case _22nested22: a.shift() ; return a.deploy( _343() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -3268,7 +3273,7 @@ static int _177()
 	log("_177") ;
 	auto = new classAttr_classAttr_22public22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -50 ;
 	}
 static int _178()
@@ -3276,7 +3281,7 @@ static int _178()
 	log("_178") ;
 	auto = new classAttr_classAttr_22private22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -51 ;
 	}
 static int _179()
@@ -3284,7 +3289,7 @@ static int _179()
 	log("_179") ;
 	auto = new classAttr_classAttr_22value22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -52 ;
 	}
 static int _180()
@@ -3292,7 +3297,7 @@ static int _180()
 	log("_180") ;
 	auto = new classAttr_classAttr_22enum22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -53 ;
 	}
 static int _181()
@@ -3300,7 +3305,7 @@ static int _181()
 	log("_181") ;
 	auto = new classAttr_classAttr_22interface22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -54 ;
 	}
 static int _182()
@@ -3308,7 +3313,7 @@ static int _182()
 	log("_182") ;
 	auto = new classAttr_classAttr_22sealed22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -55 ;
 	}
 static int _183()
@@ -3316,7 +3321,7 @@ static int _183()
 	log("_183") ;
 	auto = new classAttr_classAttr_22abstract22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -56 ;
 	}
 static int _184()
@@ -3324,7 +3329,7 @@ static int _184()
 	log("_184") ;
 	auto = new classAttr_classAttr_22auto22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -57 ;
 	}
 static int _185()
@@ -3332,7 +3337,7 @@ static int _185()
 	log("_185") ;
 	auto = new classAttr_classAttr_22sequential22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -58 ;
 	}
 static int _186()
@@ -3340,7 +3345,7 @@ static int _186()
 	log("_186") ;
 	auto = new classAttr_classAttr_22explicit22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -59 ;
 	}
 static int _187()
@@ -3348,7 +3353,7 @@ static int _187()
 	log("_187") ;
 	auto = new classAttr_classAttr_22ansi22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -60 ;
 	}
 static int _188()
@@ -3356,7 +3361,7 @@ static int _188()
 	log("_188") ;
 	auto = new classAttr_classAttr_22unicode22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -61 ;
 	}
 static int _189()
@@ -3364,7 +3369,7 @@ static int _189()
 	log("_189") ;
 	auto = new classAttr_classAttr_22autochar22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -62 ;
 	}
 static int _190()
@@ -3372,7 +3377,7 @@ static int _190()
 	log("_190") ;
 	auto = new classAttr_classAttr_22import22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -63 ;
 	}
 static int _191()
@@ -3380,7 +3385,7 @@ static int _191()
 	log("_191") ;
 	auto = new classAttr_classAttr_22serializable22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -64 ;
 	}
 static int _192()
@@ -3389,12 +3394,12 @@ static int _192()
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case _22public22: a.shift() ; return a.split( _344() ) ;
-		case _22private22: a.shift() ; return a.split( _345() ) ;
-		case _22family22: a.shift() ; return a.split( _346() ) ;
-		case _22assembly22: a.shift() ; return a.split( _347() ) ;
-		case _22famandassem22: a.shift() ; return a.split( _348() ) ;
-		case _22famorassem22: a.shift() ; return a.split( _349() ) ;
+		case _22public22: a.shift() ; return a.split( _345() ) ;
+		case _22private22: a.shift() ; return a.split( _346() ) ;
+		case _22family22: a.shift() ; return a.split( _347() ) ;
+		case _22assembly22: a.shift() ; return a.split( _348() ) ;
+		case _22famandassem22: a.shift() ; return a.split( _349() ) ;
+		case _22famorassem22: a.shift() ; return a.split( _350() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -3403,7 +3408,7 @@ static int _193()
 	log("_193") ;
 	auto = new classAttr_classAttr_22beforefieldinit22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -71 ;
 	}
 static int _194()
@@ -3411,7 +3416,7 @@ static int _194()
 	log("_194") ;
 	auto = new classAttr_classAttr_22specialname22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -72 ;
 	}
 static int _195()
@@ -3419,7 +3424,7 @@ static int _195()
 	log("_195") ;
 	auto = new classAttr_classAttr_22rtspecialname22() ;
 	backup = 2 ;
-	yy = 265 ;
+	yy = 267 ;
 	return -73 ;
 	}
 static int _196()
@@ -3428,9 +3433,9 @@ static int _196()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=266 max=266 length=1
+		switch(_yy) // size=1 min=268 max=268 length=1
 			{
-			case _extendsClause : return _351() ;
+			case _extendsClause : return _352() ;
 			default: return __default ;
 			}
 		} ;
@@ -3440,16 +3445,16 @@ static int _196()
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _196_default ;
-		case _22extends22: a.shift() ; return a.deploy( _350() ) ;
+		case _22extends22: a.shift() ; return a.deploy( _351() ) ;
 		}
 	_196_default:
-	return a.deploy( _351() ) ;
+	return a.deploy( _352() ) ;
 	}
 static int _197()
 	{
 	log("_197") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _352() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _353() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _198()
@@ -3458,10 +3463,10 @@ static int _198()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _367() ;
+			case _type : return _368() ;
 			default: return __default ;
 			}
 		} ;
@@ -3469,21 +3474,21 @@ static int _198()
 		{
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22public22: a.shift() ; return a.deploy( _353() ) ;
-		case _22private22: a.shift() ; return a.deploy( _354() ) ;
+		case _22public22: a.shift() ; return a.deploy( _354() ) ;
+		case _22private22: a.shift() ; return a.deploy( _355() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22family22: a.shift() ; return a.deploy( _355() ) ;
-		case _22assembly22: a.shift() ; return a.deploy( _356() ) ;
-		case _22famandassem22: a.shift() ; return a.deploy( _357() ) ;
-		case _22famorassem22: a.shift() ; return a.deploy( _358() ) ;
-		case _22specialname22: a.shift() ; return a.deploy( _359() ) ;
-		case _22rtspecialname22: a.shift() ; return a.deploy( _360() ) ;
-		case _22marshal22: a.shift() ; return a.deploy( _361() ) ;
-		case _22static22: a.shift() ; return a.deploy( _362() ) ;
-		case _22privatescope22: a.shift() ; return a.deploy( _363() ) ;
-		case _22initonly22: a.shift() ; return a.deploy( _364() ) ;
-		case _22literal22: a.shift() ; return a.deploy( _365() ) ;
-		case _22notserialized22: a.shift() ; return a.deploy( _366() ) ;
+		case _22family22: a.shift() ; return a.deploy( _356() ) ;
+		case _22assembly22: a.shift() ; return a.deploy( _357() ) ;
+		case _22famandassem22: a.shift() ; return a.deploy( _358() ) ;
+		case _22famorassem22: a.shift() ; return a.deploy( _359() ) ;
+		case _22specialname22: a.shift() ; return a.deploy( _360() ) ;
+		case _22rtspecialname22: a.shift() ; return a.deploy( _361() ) ;
+		case _22marshal22: a.shift() ; return a.deploy( _362() ) ;
+		case _22static22: a.shift() ; return a.deploy( _363() ) ;
+		case _22privatescope22: a.shift() ; return a.deploy( _364() ) ;
+		case _22initonly22: a.shift() ; return a.deploy( _365() ) ;
+		case _22literal22: a.shift() ; return a.deploy( _366() ) ;
+		case _22notserialized22: a.shift() ; return a.deploy( _367() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
 		case _22char22: a.shift() ; return a.deploy( _140() ) ;
 		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
@@ -3507,7 +3512,7 @@ static int _199()
 	{
 	log("_199") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273D27 ) { a.shift() ; return a.split( _368() ) ; }
+	if( token.point == _273D27 ) { a.shift() ; return a.split( _369() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _200()
@@ -3522,24 +3527,24 @@ static int _200()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 92: case 95: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 219: case 220: case 238: case 240: case 241: case 246: case 247:
-		case 248: case 250: 
+		case 149: case 221: case 222: case 240: case 242: case 243: case 248: case 249:
+		case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _200_default ;
-		case _272827: a.shift() ; return a.split( _369() ) ;
+		case _272827: a.shift() ; return a.split( _370() ) ;
 		}
 	_200_default:
 	auto = new secDecl_222Epermission22_secAction_typeSpec() ;
 	backup = 3 ;
-	yy = 347 ;
-	return -509 ;
+	yy = 350 ;
+	return -512 ;
 	}
 static int _201()
 	{
 	log("_201") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _370() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _371() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _202()
@@ -3547,8 +3552,8 @@ static int _202()
 	log("_202") ;
 	auto = new extSourceSpec_222Eline22_int3332_SQSTRING() ;
 	backup = 3 ;
-	yy = 354 ;
-	return -540 ;
+	yy = 357 ;
+	return -543 ;
 	}
 static int _203()
 	{
@@ -3556,9 +3561,9 @@ static int _203()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _371() ;
+			case _int3332 : return _372() ;
 			default: return __default ;
 			}
 		} ;
@@ -3575,38 +3580,38 @@ static int _204()
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _204_default ;
-		case _22as22: a.shift() ; return a.split( _372() ) ;
+		case _22as22: a.shift() ; return a.split( _373() ) ;
 		case _272E27: a.shift() ; return a.split( _173() ) ;
 		}
 	_204_default:
 	auto = new assemblyRefHead_222Eassembly22_22extern22_name31() ;
 	backup = 3 ;
-	yy = 367 ;
-	return -570 ;
+	yy = 370 ;
+	return -573 ;
 	}
 static int _205()
 	{
 	log("_205") ;
 	auto = new asmAttr_asmAttr_22noappdomain22() ;
 	backup = 2 ;
-	yy = 360 ;
-	return -554 ;
+	yy = 363 ;
+	return -557 ;
 	}
 static int _206()
 	{
 	log("_206") ;
 	auto = new asmAttr_asmAttr_22noprocess22() ;
 	backup = 2 ;
-	yy = 360 ;
-	return -555 ;
+	yy = 363 ;
+	return -558 ;
 	}
 static int _207()
 	{
 	log("_207") ;
 	auto = new asmAttr_asmAttr_22nomachine22() ;
 	backup = 2 ;
-	yy = 360 ;
-	return -556 ;
+	yy = 363 ;
+	return -559 ;
 	}
 static int _208()
 	{
@@ -3623,24 +3628,24 @@ static int _208()
 	_208_default:
 	auto = new assemblyHead_222Eassembly22_asmAttr_name31() ;
 	backup = 3 ;
-	yy = 359 ;
-	return -552 ;
+	yy = 362 ;
+	return -555 ;
 	}
 static int _209()
 	{
 	log("_209") ;
 	auto = new manresAttr_manresAttr_22public22() ;
 	backup = 2 ;
-	yy = 376 ;
-	return -596 ;
+	yy = 379 ;
+	return -599 ;
 	}
 static int _210()
 	{
 	log("_210") ;
 	auto = new manresAttr_manresAttr_22private22() ;
 	backup = 2 ;
-	yy = 376 ;
-	return -597 ;
+	yy = 379 ;
+	return -600 ;
 	}
 static int _211()
 	{
@@ -3657,15 +3662,15 @@ static int _211()
 	_211_default:
 	auto = new manifestResHead_222Emresource22_manresAttr_name31() ;
 	backup = 3 ;
-	yy = 375 ;
-	return -594 ;
+	yy = 378 ;
+	return -597 ;
 	}
 static int _212()
 	{
 	log("_212") ;
 	auto = new vtableDecl_vtableHead_bytes_272927() ;
 	backup = 3 ;
-	yy = 261 ;
+	yy = 263 ;
 	return -45 ;
 	}
 static int _213()
@@ -3673,7 +3678,7 @@ static int _213()
 	log("_213") ;
 	auto = new hexbytes_hexbytes_HEXBYTE() ;
 	backup = 2 ;
-	yy = 322 ;
+	yy = 324 ;
 	return -305 ;
 	}
 static int _214()
@@ -3682,7 +3687,7 @@ static int _214()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=24 min=254 max=375 length=122
+		switch(_yy) // size=24 min=256 max=378 length=123
 			{
 			case _decl : return _24() ;
 			case _languageDecl : return _25() ;
@@ -3714,7 +3719,7 @@ static int _214()
 	switch( token.point )
 		{
 		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
-		case _277D27: a.shift() ; return a.deploy( _373() ) ;
+		case _277D27: a.shift() ; return a.deploy( _374() ) ;
 		case _222Esubsystem22: a.shift() ; return a.deploy( _5() ) ;
 		case _222Ecorflags22: a.shift() ; return a.deploy( _6() ) ;
 		case _222Efile22: a.shift() ; return a.deploy( _7() ) ;
@@ -3743,43 +3748,43 @@ static int _215()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=17 min=256 max=371 length=116
+		switch(_yy) // size=17 min=258 max=374 length=117
 			{
-			case _languageDecl : return _382() ;
-			case _customAttrDecl : return _383() ;
-			case _classHead : return _384() ;
-			case _classDecl : return _385() ;
-			case _fieldDecl : return _386() ;
+			case _languageDecl : return _383() ;
+			case _customAttrDecl : return _384() ;
+			case _classHead : return _385() ;
+			case _classDecl : return _386() ;
+			case _fieldDecl : return _387() ;
 			case _customHead : return _34() ;
 			case _customHeadWithOwner : return _35() ;
-			case _eventHead : return _387() ;
-			case _propHead : return _388() ;
+			case _eventHead : return _388() ;
+			case _propHead : return _389() ;
 			case _methodHeadPart31 : return _36() ;
-			case _methodHead : return _389() ;
-			case _dataDecl : return _390() ;
+			case _methodHead : return _390() ;
+			case _dataDecl : return _391() ;
 			case _ddHead : return _39() ;
-			case _secDecl : return _391() ;
+			case _secDecl : return _392() ;
 			case _psetHead : return _41() ;
-			case _extSourceSpec : return _392() ;
-			case _exportHead : return _393() ;
+			case _extSourceSpec : return _393() ;
+			case _exportHead : return _394() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
 		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
-		case _277D27: a.shift() ; return a.deploy( _374() ) ;
+		case _277D27: a.shift() ; return a.deploy( _375() ) ;
 		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Eclass22: a.shift() ; return a.deploy( _375() ) ;
-		case _222Esize22: a.shift() ; return a.deploy( _376() ) ;
-		case _222Epack22: a.shift() ; return a.deploy( _377() ) ;
-		case _222Eoverride22: a.shift() ; return a.deploy( _378() ) ;
+		case _222Eclass22: a.shift() ; return a.deploy( _376() ) ;
+		case _222Esize22: a.shift() ; return a.deploy( _377() ) ;
+		case _222Epack22: a.shift() ; return a.deploy( _378() ) ;
+		case _222Eoverride22: a.shift() ; return a.deploy( _379() ) ;
 		case _222Efield22: a.shift() ; return a.deploy( _16() ) ;
-		case _222Eevent22: a.shift() ; return a.deploy( _379() ) ;
-		case _222Eproperty22: a.shift() ; return a.deploy( _380() ) ;
+		case _222Eevent22: a.shift() ; return a.deploy( _380() ) ;
+		case _222Eproperty22: a.shift() ; return a.deploy( _381() ) ;
 		case _222Emethod22: a.shift() ; return a.deploy( _17() ) ;
-		case _222Eexport22: a.shift() ; return a.deploy( _381() ) ;
+		case _222Eexport22: a.shift() ; return a.deploy( _382() ) ;
 		case _222Edata22: a.shift() ; return a.deploy( _18() ) ;
 		case _222Epermission22: a.shift() ; return a.deploy( _19() ) ;
 		case _222Epermissionset22: a.shift() ; return a.deploy( _20() ) ;
@@ -3792,7 +3797,7 @@ static int _216()
 	log("_216") ;
 	auto = new customAttrDecl_customHead_bytes_272927() ;
 	backup = 3 ;
-	yy = 257 ;
+	yy = 259 ;
 	return -32 ;
 	}
 static int _217()
@@ -3800,7 +3805,7 @@ static int _217()
 	log("_217") ;
 	auto = new customAttrDecl_customHeadWithOwner_bytes_272927() ;
 	backup = 3 ;
-	yy = 257 ;
+	yy = 259 ;
 	return -35 ;
 	}
 static int _218()
@@ -3808,7 +3813,7 @@ static int _218()
 	log("_218") ;
 	auto = new methAttr_methAttr_22public22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -151 ;
 	}
 static int _219()
@@ -3816,7 +3821,7 @@ static int _219()
 	log("_219") ;
 	auto = new methAttr_methAttr_22private22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -152 ;
 	}
 static int _220()
@@ -3824,7 +3829,7 @@ static int _220()
 	log("_220") ;
 	auto = new methAttr_methAttr_22abstract22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -157 ;
 	}
 static int _221()
@@ -3832,7 +3837,7 @@ static int _221()
 	log("_221") ;
 	auto = new methAttr_methAttr_22family22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -153 ;
 	}
 static int _222()
@@ -3840,7 +3845,7 @@ static int _222()
 	log("_222") ;
 	auto = new methAttr_methAttr_22assembly22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -158 ;
 	}
 static int _223()
@@ -3848,7 +3853,7 @@ static int _223()
 	log("_223") ;
 	auto = new methAttr_methAttr_22famandassem22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -159 ;
 	}
 static int _224()
@@ -3856,7 +3861,7 @@ static int _224()
 	log("_224") ;
 	auto = new methAttr_methAttr_22famorassem22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -160 ;
 	}
 static int _225()
@@ -3864,7 +3869,7 @@ static int _225()
 	log("_225") ;
 	auto = new methAttr_methAttr_22specialname22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -155 ;
 	}
 static int _226()
@@ -3872,7 +3877,7 @@ static int _226()
 	log("_226") ;
 	auto = new methAttr_methAttr_22rtspecialname22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -164 ;
 	}
 static int _227()
@@ -3880,7 +3885,7 @@ static int _227()
 	log("_227") ;
 	auto = new methAttr_methAttr_22static22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -150 ;
 	}
 static int _228()
@@ -3888,7 +3893,7 @@ static int _228()
 	log("_228") ;
 	auto = new methAttr_methAttr_22final22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -154 ;
 	}
 static int _229()
@@ -3896,7 +3901,7 @@ static int _229()
 	log("_229") ;
 	auto = new methAttr_methAttr_22virtual22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -156 ;
 	}
 static int _230()
@@ -3904,7 +3909,7 @@ static int _230()
 	log("_230") ;
 	auto = new methAttr_methAttr_22privatescope22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -161 ;
 	}
 static int _231()
@@ -3912,7 +3917,7 @@ static int _231()
 	log("_231") ;
 	auto = new methAttr_methAttr_22hidebysig22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -162 ;
 	}
 static int _232()
@@ -3920,7 +3925,7 @@ static int _232()
 	log("_232") ;
 	auto = new methAttr_methAttr_22newslot22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -163 ;
 	}
 static int _233()
@@ -3928,7 +3933,7 @@ static int _233()
 	log("_233") ;
 	auto = new methAttr_methAttr_22unmanagedexp22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -165 ;
 	}
 static int _234()
@@ -3936,14 +3941,14 @@ static int _234()
 	log("_234") ;
 	auto = new methAttr_methAttr_22reqsecobj22() ;
 	backup = 2 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -166 ;
 	}
 static int _235()
 	{
 	log("_235") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _394() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _395() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _236()
@@ -3952,25 +3957,9 @@ static int _236()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=293 max=293 length=1
+		switch(_yy) // size=1 min=295 max=295 length=1
 			{
-			case _paramAttr : return _395() ;
-			default: return __default ;
-			}
-		} ;
-	if( token_HasValue )
-		a._token = Tokenset.Empty ;
-	return a.deploy( _395() ) ;
-	}
-static int _237()
-	{
-	log("_237") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=343 max=343 length=1
-			{
-			case _int3136s : return _396() ;
+			case _paramAttr : return _396() ;
 			default: return __default ;
 			}
 		} ;
@@ -3978,16 +3967,32 @@ static int _237()
 		a._token = Tokenset.Empty ;
 	return a.deploy( _396() ) ;
 	}
+static int _237()
+	{
+	log("_237") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=346 max=346 length=1
+			{
+			case _int3136s : return _397() ;
+			default: return __default ;
+			}
+		} ;
+	if( token_HasValue )
+		a._token = Tokenset.Empty ;
+	return a.deploy( _397() ) ;
+	}
 static int _238()
 	{
 	log("_238") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=342 max=344 length=3
+		switch(_yy) // size=2 min=345 max=347 length=3
 			{
-			case _id : return _397() ;
-			case _int3332 : return _398() ;
+			case _id : return _398() ;
+			case _int3332 : return _399() ;
 			default: return __default ;
 			}
 		} ;
@@ -4005,10 +4010,10 @@ static int _239()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=342 max=344 length=3
+		switch(_yy) // size=2 min=345 max=347 length=3
 			{
-			case _id : return _399() ;
-			case _int3332 : return _400() ;
+			case _id : return _400() ;
+			case _int3332 : return _401() ;
 			default: return __default ;
 			}
 		} ;
@@ -4026,10 +4031,10 @@ static int _240()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _401() ;
+			case _type : return _402() ;
 			default: return __default ;
 			}
 		} ;
@@ -4063,9 +4068,9 @@ static int _241()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _402() ;
+			case _int3332 : return _403() ;
 			default: return __default ;
 			}
 		} ;
@@ -4078,9 +4083,9 @@ static int _242()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=345 max=345 length=1
+		switch(_yy) // size=1 min=348 max=348 length=1
 			{
-			case _int3634 : return _403() ;
+			case _int3634 : return _404() ;
 			default: return __default ;
 			}
 		} ;
@@ -4093,9 +4098,9 @@ static int _243()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
-			case _callConv : return _404() ;
+			case _callConv : return _405() ;
 			case _callKind : return _65() ;
 			default: return __default ;
 			}
@@ -4104,7 +4109,7 @@ static int _243()
 		{
 		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
+		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _243_default ;
@@ -4122,7 +4127,7 @@ static int _244()
 	log("_244") ;
 	auto = new instr_INSTR5FNONE() ;
 	backup = 1 ;
-	yy = 326 ;
+	yy = 328 ;
 	return -309 ;
 	}
 static int _245()
@@ -4131,20 +4136,20 @@ static int _245()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=345 max=346 length=2
+		switch(_yy) // size=2 min=348 max=349 length=2
 			{
-			case _int3634 : return _409() ;
-			case _float3634 : return _410() ;
+			case _int3634 : return _410() ;
+			case _float3634 : return _411() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
 		case _INT3634: a.shift() ; return a.deploy( _54() ) ;
-		case _FLOAT3634: a.shift() ; return a.deploy( _405() ) ;
-		case _272827: a.shift() ; return a.deploy( _406() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _407() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _408() ) ;
+		case _FLOAT3634: a.shift() ; return a.deploy( _406() ) ;
+		case _272827: a.shift() ; return a.deploy( _407() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -4154,9 +4159,9 @@ static int _246()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
-			case _callConv : return _411() ;
+			case _callConv : return _412() ;
 			case _callKind : return _65() ;
 			default: return __default ;
 			}
@@ -4165,7 +4170,7 @@ static int _246()
 		{
 		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
+		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _246_default ;
@@ -4184,14 +4189,14 @@ static int _247()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=255 max=320 length=66
+		switch(_yy) // size=2 min=257 max=322 length=66
 			{
-			case _compQstring : return _412() ;
-			case _bytearrayhead : return _413() ;
+			case _compQstring : return _413() ;
+			case _bytearrayhead : return _414() ;
 			default: return __default ;
 			}
 		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	else
 	if( token.point == _22bytearray22 ) { a.shift() ; return a.deploy( _120() ) ; }
 	throw new System.NotImplementedException() ;
@@ -4200,7 +4205,7 @@ static int _248()
 	{
 	log("_248") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _414() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _415() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _249()
@@ -4208,7 +4213,7 @@ static int _249()
 	log("_249") ;
 	auto = new instr_tok_head_INSTR5FTOK() ;
 	backup = 1 ;
-	yy = 324 ;
+	yy = 326 ;
 	return -307 ;
 	}
 static int _250()
@@ -4217,13 +4222,13 @@ static int _250()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=325 max=342 length=18
+		switch(_yy) // size=7 min=327 max=345 length=19
 			{
 			case _methodSpec : return _170() ;
 			case _name31 : return _158() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _415() ;
+			case _typeSpec : return _416() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -4263,10 +4268,10 @@ static int _251()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=342 max=344 length=3
+		switch(_yy) // size=2 min=345 max=347 length=3
 			{
-			case _id : return _416() ;
-			case _int3332 : return _417() ;
+			case _id : return _417() ;
+			case _int3332 : return _418() ;
 			default: return __default ;
 			}
 		} ;
@@ -4283,7 +4288,7 @@ static int _252()
 	log("_252") ;
 	auto = new scopeOpen_277B27() ;
 	backup = 1 ;
-	yy = 299 ;
+	yy = 301 ;
 	return -238 ;
 	}
 static int _253()
@@ -4291,7 +4296,7 @@ static int _253()
 	log("_253") ;
 	auto = new decl_methodHead_methodDecls_277D27() ;
 	backup = 3 ;
-	yy = 254 ;
+	yy = 256 ;
 	return -6 ;
 	}
 static int _254()
@@ -4300,13 +4305,13 @@ static int _254()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=325 max=342 length=18
+		switch(_yy) // size=7 min=327 max=345 length=19
 			{
 			case _methodSpec : return _170() ;
 			case _name31 : return _158() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _418() ;
+			case _typeSpec : return _419() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -4345,7 +4350,7 @@ static int _255()
 	log("_255") ;
 	auto = new localsHead_222Elocals22() ;
 	backup = 1 ;
-	yy = 296 ;
+	yy = 298 ;
 	return -216 ;
 	}
 static int _256()
@@ -4354,9 +4359,9 @@ static int _256()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _419() ;
+			case _int3332 : return _420() ;
 			default: return __default ;
 			}
 		} ;
@@ -4369,9 +4374,9 @@ static int _257()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _420() ;
+			case _int3332 : return _421() ;
 			default: return __default ;
 			}
 		} ;
@@ -4383,7 +4388,7 @@ static int _258()
 	log("_258") ;
 	auto = new methodDecl_222Eentrypoint22() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -222 ;
 	}
 static int _259()
@@ -4391,14 +4396,14 @@ static int _259()
 	log("_259") ;
 	auto = new methodDecl_222Ezeroinit22() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -223 ;
 	}
 static int _260()
 	{
 	log("_260") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275B27 ) { a.shift() ; return a.split( _421() ) ; }
+	if( token.point == _275B27 ) { a.shift() ; return a.split( _422() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _261()
@@ -4407,9 +4412,9 @@ static int _261()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _422() ;
+			case _int3332 : return _423() ;
 			default: return __default ;
 			}
 		} ;
@@ -4420,7 +4425,7 @@ static int _262()
 	{
 	log("_262") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275B27 ) { a.shift() ; return a.split( _423() ) ; }
+	if( token.point == _275B27 ) { a.shift() ; return a.split( _424() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _263()
@@ -4428,7 +4433,7 @@ static int _263()
 	log("_263") ;
 	auto = new tryHead_222Etry22() ;
 	backup = 1 ;
-	yy = 303 ;
+	yy = 305 ;
 	return -245 ;
 	}
 static int _264()
@@ -4436,7 +4441,7 @@ static int _264()
 	log("_264") ;
 	auto = new methodDecl_languageDecl() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -229 ;
 	}
 static int _265()
@@ -4444,16 +4449,16 @@ static int _265()
 	log("_265") ;
 	auto = new methodDecl_customAttrDecl() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -230 ;
 	}
 static int _266()
 	{
 	log("_266") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _424() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _425() ) ; }
 	else
-	if( token.point == _22init22 ) { a.shift() ; return a.split( _425() ) ; }
+	if( token.point == _22init22 ) { a.shift() ; return a.split( _426() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _267()
@@ -4461,7 +4466,7 @@ static int _267()
 	log("_267") ;
 	auto = new methodDecls_methodDecls_methodDecl() ;
 	backup = 2 ;
-	yy = 311 ;
+	yy = 313 ;
 	return -261 ;
 	}
 static int _268()
@@ -4469,7 +4474,7 @@ static int _268()
 	log("_268") ;
 	auto = new methodDecl_scopeBlock() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -235 ;
 	}
 static int _269()
@@ -4478,22 +4483,22 @@ static int _269()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=311 max=311 length=1
+		switch(_yy) // size=1 min=313 max=313 length=1
 			{
-			case _methodDecls : return _426() ;
+			case _methodDecls : return _427() ;
 			default: return __default ;
 			}
 		} ;
 	if( token_HasValue )
 		a._token = Tokenset.Empty ;
-	return a.deploy( _426() ) ;
+	return a.deploy( _427() ) ;
 	}
 static int _270()
 	{
 	log("_270") ;
 	auto = new methodDecl_sehBlock() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -218 ;
 	}
 static int _271()
@@ -4502,24 +4507,24 @@ static int _271()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=301 max=309 length=9
+		switch(_yy) // size=7 min=303 max=311 length=9
 			{
-			case _sehClauses : return _431() ;
-			case _sehClause : return _432() ;
-			case _filterClause : return _433() ;
-			case _filterHead : return _434() ;
-			case _catchClause : return _435() ;
-			case _finallyClause : return _436() ;
-			case _faultClause : return _437() ;
+			case _sehClauses : return _432() ;
+			case _sehClause : return _433() ;
+			case _filterClause : return _434() ;
+			case _filterHead : return _435() ;
+			case _catchClause : return _436() ;
+			case _finallyClause : return _437() ;
+			case _faultClause : return _438() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _22filter22: a.shift() ; return a.deploy( _427() ) ;
-		case _22catch22: a.shift() ; return a.deploy( _428() ) ;
-		case _22finally22: a.shift() ; return a.deploy( _429() ) ;
-		case _22fault22: a.shift() ; return a.deploy( _430() ) ;
+		case _22filter22: a.shift() ; return a.deploy( _428() ) ;
+		case _22catch22: a.shift() ; return a.deploy( _429() ) ;
+		case _22finally22: a.shift() ; return a.deploy( _430() ) ;
+		case _22fault22: a.shift() ; return a.deploy( _431() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -4529,12 +4534,12 @@ static int _272()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=298 max=344 length=47
+		switch(_yy) // size=4 min=300 max=347 length=48
 			{
-			case _scopeBlock : return _438() ;
+			case _scopeBlock : return _439() ;
 			case _scopeOpen : return _269() ;
-			case _id : return _439() ;
-			case _int3332 : return _440() ;
+			case _id : return _440() ;
+			case _int3332 : return _441() ;
 			default: return __default ;
 			}
 		} ;
@@ -4552,7 +4557,7 @@ static int _273()
 	log("_273") ;
 	auto = new methodDecl_dataDecl() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -224 ;
 	}
 static int _274()
@@ -4561,9 +4566,9 @@ static int _274()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
-			case _bytes : return _441() ;
+			case _bytes : return _442() ;
 			case _hexbytes : return _104() ;
 			default: return __default ;
 			}
@@ -4577,7 +4582,7 @@ static int _274()
 		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
 		}
 	_274_default:
-	return a.deploy( _441() ) ;
+	return a.deploy( _442() ) ;
 	}
 static int _275()
 	{
@@ -4585,10 +4590,10 @@ static int _275()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=9 min=277 max=342 length=66
+		switch(_yy) // size=9 min=279 max=345 length=67
 			{
 			case _memberRef : return _155() ;
-			case _ownerType : return _442() ;
+			case _ownerType : return _443() ;
 			case _methodSpec : return _157() ;
 			case _name31 : return _158() ;
 			case _className : return _159() ;
@@ -4633,14 +4638,14 @@ static int _276()
 	log("_276") ;
 	auto = new methodDecl_instr() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -225 ;
 	}
 static int _277()
 	{
 	log("_277") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _443() ) ; }
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _444() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _278()
@@ -4648,7 +4653,7 @@ static int _278()
 	log("_278") ;
 	auto = new methodDecl_secDecl() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -227 ;
 	}
 static int _279()
@@ -4656,14 +4661,14 @@ static int _279()
 	log("_279") ;
 	auto = new methodDecl_extSourceSpec() ;
 	backup = 1 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -228 ;
 	}
 static int _280()
 	{
 	log("_280") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _277D27 ) { a.shift() ; return a.split( _444() ) ; }
+	if( token.point == _277D27 ) { a.shift() ; return a.split( _445() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _281()
@@ -4676,12 +4681,12 @@ static int _281()
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _281_default ;
-		case _272C27: a.shift() ; return a.split( _445() ) ;
+		case _272C27: a.shift() ; return a.split( _446() ) ;
 		}
 	_281_default:
 	auto = new ddItemList_ddItem() ;
 	backup = 1 ;
-	yy = 316 ;
+	yy = 318 ;
 	return -270 ;
 	}
 static int _282()
@@ -4690,9 +4695,9 @@ static int _282()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _446() ;
+			case _int3332 : return _447() ;
 			default: return __default ;
 			}
 		} ;
@@ -4705,9 +4710,9 @@ static int _283()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _447() ;
+			case _int3332 : return _448() ;
 			default: return __default ;
 			}
 		} ;
@@ -4719,7 +4724,7 @@ static int _284()
 	log("_284") ;
 	auto = new ddItem_22int333222_ddItemCount() ;
 	backup = 2 ;
-	yy = 318 ;
+	yy = 320 ;
 	return -285 ;
 	}
 static int _285()
@@ -4728,9 +4733,9 @@ static int _285()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=345 max=345 length=1
+		switch(_yy) // size=1 min=348 max=348 length=1
 			{
-			case _int3634 : return _448() ;
+			case _int3634 : return _449() ;
 			default: return __default ;
 			}
 		} ;
@@ -4742,14 +4747,14 @@ static int _286()
 	log("_286") ;
 	auto = new ddItem_22int363422_ddItemCount() ;
 	backup = 2 ;
-	yy = 318 ;
+	yy = 320 ;
 	return -284 ;
 	}
 static int _287()
 	{
 	log("_287") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _449() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _450() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _288()
@@ -4758,9 +4763,9 @@ static int _288()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _450() ;
+			case _id : return _451() ;
 			default: return __default ;
 			}
 		} ;
@@ -4775,17 +4780,17 @@ static int _289()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=346 max=346 length=1
+		switch(_yy) // size=1 min=349 max=349 length=1
 			{
-			case _float3634 : return _451() ;
+			case _float3634 : return _452() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _FLOAT3634: a.shift() ; return a.deploy( _405() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _407() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _408() ) ;
+		case _FLOAT3634: a.shift() ; return a.deploy( _406() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -4794,7 +4799,7 @@ static int _290()
 	log("_290") ;
 	auto = new ddItem_22float333222_ddItemCount() ;
 	backup = 2 ;
-	yy = 318 ;
+	yy = 320 ;
 	return -282 ;
 	}
 static int _291()
@@ -4803,17 +4808,17 @@ static int _291()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=346 max=346 length=1
+		switch(_yy) // size=1 min=349 max=349 length=1
 			{
-			case _float3634 : return _452() ;
+			case _float3634 : return _453() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _FLOAT3634: a.shift() ; return a.deploy( _405() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _407() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _408() ) ;
+		case _FLOAT3634: a.shift() ; return a.deploy( _406() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -4822,7 +4827,7 @@ static int _292()
 	log("_292") ;
 	auto = new ddItem_22float363422_ddItemCount() ;
 	backup = 2 ;
-	yy = 318 ;
+	yy = 320 ;
 	return -283 ;
 	}
 static int _293()
@@ -4831,9 +4836,9 @@ static int _293()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _453() ;
+			case _int3332 : return _454() ;
 			default: return __default ;
 			}
 		} ;
@@ -4845,7 +4850,7 @@ static int _294()
 	log("_294") ;
 	auto = new ddItem_22int313622_ddItemCount() ;
 	backup = 2 ;
-	yy = 318 ;
+	yy = 320 ;
 	return -286 ;
 	}
 static int _295()
@@ -4854,9 +4859,9 @@ static int _295()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _454() ;
+			case _int3332 : return _455() ;
 			default: return __default ;
 			}
 		} ;
@@ -4868,7 +4873,7 @@ static int _296()
 	log("_296") ;
 	auto = new ddItem_22int3822_ddItemCount() ;
 	backup = 2 ;
-	yy = 318 ;
+	yy = 320 ;
 	return -287 ;
 	}
 static int _297()
@@ -4876,14 +4881,14 @@ static int _297()
 	log("_297") ;
 	auto = new bytearrayhead_22bytearray22_272827() ;
 	backup = 2 ;
-	yy = 320 ;
+	yy = 322 ;
 	return -301 ;
 	}
 static int _298()
 	{
 	log("_298") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _455() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _456() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _299()
@@ -4891,8 +4896,8 @@ static int _299()
 	log("_299") ;
 	auto = new secDecl_psetHead_bytes_272927() ;
 	backup = 3 ;
-	yy = 347 ;
-	return -510 ;
+	yy = 350 ;
+	return -513 ;
 	}
 static int _300()
 	{
@@ -4900,30 +4905,30 @@ static int _300()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=9 min=257 max=366 length=110
+		switch(_yy) // size=9 min=259 max=369 length=111
 			{
-			case _customAttrDecl : return _461() ;
+			case _customAttrDecl : return _462() ;
 			case _customHead : return _34() ;
 			case _customHeadWithOwner : return _35() ;
-			case _secDecl : return _462() ;
+			case _secDecl : return _463() ;
 			case _psetHead : return _41() ;
-			case _assemblyDecl : return _463() ;
-			case _asmOrRefDecl : return _464() ;
-			case _publicKeyHead : return _465() ;
-			case _localeHead : return _466() ;
+			case _assemblyDecl : return _464() ;
+			case _asmOrRefDecl : return _465() ;
+			case _publicKeyHead : return _466() ;
+			case _localeHead : return _467() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _277D27: a.shift() ; return a.deploy( _456() ) ;
+		case _277D27: a.shift() ; return a.deploy( _457() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
 		case _222Epermission22: a.shift() ; return a.deploy( _19() ) ;
 		case _222Epermissionset22: a.shift() ; return a.deploy( _20() ) ;
-		case _222Ehash22: a.shift() ; return a.deploy( _457() ) ;
-		case _222Ever22: a.shift() ; return a.deploy( _458() ) ;
-		case _222Elocale22: a.shift() ; return a.deploy( _459() ) ;
-		case _222Epublickey22: a.shift() ; return a.deploy( _460() ) ;
+		case _222Ehash22: a.shift() ; return a.deploy( _458() ) ;
+		case _222Ever22: a.shift() ; return a.deploy( _459() ) ;
+		case _222Elocale22: a.shift() ; return a.deploy( _460() ) ;
+		case _222Epublickey22: a.shift() ; return a.deploy( _461() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -4933,29 +4938,29 @@ static int _301()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=9 min=257 max=369 length=113
+		switch(_yy) // size=9 min=259 max=372 length=114
 			{
-			case _customAttrDecl : return _461() ;
+			case _customAttrDecl : return _462() ;
 			case _customHead : return _34() ;
 			case _customHeadWithOwner : return _35() ;
-			case _hashHead : return _470() ;
-			case _asmOrRefDecl : return _471() ;
-			case _publicKeyHead : return _465() ;
-			case _publicKeyTokenHead : return _472() ;
-			case _localeHead : return _466() ;
-			case _assemblyRefDecl : return _473() ;
+			case _hashHead : return _471() ;
+			case _asmOrRefDecl : return _472() ;
+			case _publicKeyHead : return _466() ;
+			case _publicKeyTokenHead : return _473() ;
+			case _localeHead : return _467() ;
+			case _assemblyRefDecl : return _474() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _277D27: a.shift() ; return a.deploy( _467() ) ;
+		case _277D27: a.shift() ; return a.deploy( _468() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Ehash22: a.shift() ; return a.deploy( _468() ) ;
-		case _222Ever22: a.shift() ; return a.deploy( _458() ) ;
-		case _222Elocale22: a.shift() ; return a.deploy( _459() ) ;
-		case _222Epublickey22: a.shift() ; return a.deploy( _460() ) ;
-		case _222Epublickeytoken22: a.shift() ; return a.deploy( _469() ) ;
+		case _222Ehash22: a.shift() ; return a.deploy( _469() ) ;
+		case _222Ever22: a.shift() ; return a.deploy( _459() ) ;
+		case _222Elocale22: a.shift() ; return a.deploy( _460() ) ;
+		case _222Epublickey22: a.shift() ; return a.deploy( _461() ) ;
+		case _222Epublickeytoken22: a.shift() ; return a.deploy( _470() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -4965,21 +4970,21 @@ static int _302()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=257 max=374 length=118
+		switch(_yy) // size=4 min=259 max=377 length=119
 			{
-			case _customAttrDecl : return _477() ;
+			case _customAttrDecl : return _478() ;
 			case _customHead : return _34() ;
 			case _customHeadWithOwner : return _35() ;
-			case _comtypeDecl : return _478() ;
+			case _comtypeDecl : return _479() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _277D27: a.shift() ; return a.deploy( _474() ) ;
-		case _222Efile22: a.shift() ; return a.deploy( _475() ) ;
+		case _277D27: a.shift() ; return a.deploy( _475() ) ;
+		case _222Efile22: a.shift() ; return a.deploy( _476() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Eclass22: a.shift() ; return a.deploy( _476() ) ;
+		case _222Eclass22: a.shift() ; return a.deploy( _477() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -4989,21 +4994,21 @@ static int _303()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=257 max=378 length=122
+		switch(_yy) // size=4 min=259 max=381 length=123
 			{
-			case _customAttrDecl : return _482() ;
+			case _customAttrDecl : return _483() ;
 			case _customHead : return _34() ;
 			case _customHeadWithOwner : return _35() ;
-			case _manifestResDecl : return _483() ;
+			case _manifestResDecl : return _484() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _277D27: a.shift() ; return a.deploy( _479() ) ;
-		case _222Efile22: a.shift() ; return a.deploy( _480() ) ;
+		case _277D27: a.shift() ; return a.deploy( _480() ) ;
+		case _222Efile22: a.shift() ; return a.deploy( _481() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Eassembly22: a.shift() ; return a.deploy( _481() ) ;
+		case _222Eassembly22: a.shift() ; return a.deploy( _482() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -5012,8 +5017,8 @@ static int _304()
 	log("_304") ;
 	auto = new fileEntry_222Eentrypoint22() ;
 	backup = 1 ;
-	yy = 357 ;
-	return -550 ;
+	yy = 360 ;
+	return -553 ;
 	}
 static int _305()
 	{
@@ -5021,9 +5026,9 @@ static int _305()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=358 max=358 length=1
+		switch(_yy) // size=1 min=361 max=361 length=1
 			{
-			case _hashHead : return _484() ;
+			case _hashHead : return _485() ;
 			default: return __default ;
 			}
 		} ;
@@ -5031,17 +5036,17 @@ static int _305()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _305_default ;
-		case _222Ehash22: a.shift() ; return a.deploy( _468() ) ;
+		case _222Ehash22: a.shift() ; return a.deploy( _469() ) ;
 		}
 	_305_default:
 	auto = new fileDecl_222Efile22_fileAttr_name31_fileEntry() ;
 	backup = 4 ;
-	yy = 355 ;
-	return -546 ;
+	yy = 358 ;
+	return -549 ;
 	}
 static int _306()
 	{
@@ -5055,17 +5060,17 @@ static int _306()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 219:
-		case 220: case 238: case 241: case 250: 
+		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _306_default ;
-		case _272C27: a.shift() ; return a.split( _485() ) ;
+		case _272C27: a.shift() ; return a.split( _486() ) ;
 		}
 	_306_default:
 	auto = new languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING() ;
 	backup = 4 ;
-	yy = 256 ;
+	yy = 258 ;
 	return -28 ;
 	}
 static int _307()
@@ -5074,9 +5079,9 @@ static int _307()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _486() ;
+			case _name31 : return _487() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -5093,7 +5098,7 @@ static int _308()
 	{
 	log("_308") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _487() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _488() ) ; }
 	else
 	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
 	throw new System.NotImplementedException() ;
@@ -5104,10 +5109,10 @@ static int _309()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=330 max=342 length=13
+		switch(_yy) // size=4 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _className : return _488() ;
+			case _className : return _489() ;
 			case _slashedName : return _160() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -5128,15 +5133,15 @@ static int _310()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=325 max=342 length=18
+		switch(_yy) // size=7 min=327 max=345 length=19
 			{
 			case _methodSpec : return _170() ;
 			case _name31 : return _158() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _489() ;
+			case _typeSpec : return _490() ;
 			case _type : return _162() ;
-			case _id : return _490() ;
+			case _id : return _491() ;
 			default: return __default ;
 			}
 		} ;
@@ -5145,7 +5150,7 @@ static int _310()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
@@ -5165,9 +5170,10 @@ static int _310()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
@@ -5177,7 +5183,7 @@ static int _311()
 	{
 	log("_311") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _22int22 ) { a.shift() ; return a.split( _491() ) ; }
+	if( token.point == _22int22 ) { a.shift() ; return a.split( _492() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _312()
@@ -5185,48 +5191,48 @@ static int _312()
 	log("_312") ;
 	auto = new type_22native22_22int22() ;
 	backup = 2 ;
-	yy = 338 ;
-	return -484 ;
+	yy = 340 ;
+	return -485 ;
 	}
 static int _313()
 	{
 	log("_313") ;
 	auto = new type_22native22_22float22() ;
 	backup = 2 ;
-	yy = 338 ;
-	return -486 ;
+	yy = 340 ;
+	return -487 ;
 	}
 static int _314()
 	{
 	log("_314") ;
 	auto = new type_22unsigned22_22int333222() ;
 	backup = 2 ;
-	yy = 338 ;
-	return -482 ;
+	yy = 340 ;
+	return -483 ;
 	}
 static int _315()
 	{
 	log("_315") ;
 	auto = new type_22unsigned22_22int363422() ;
 	backup = 2 ;
-	yy = 338 ;
-	return -483 ;
+	yy = 340 ;
+	return -484 ;
 	}
 static int _316()
 	{
 	log("_316") ;
 	auto = new type_22unsigned22_22int313622() ;
 	backup = 2 ;
-	yy = 338 ;
-	return -481 ;
+	yy = 340 ;
+	return -482 ;
 	}
 static int _317()
 	{
 	log("_317") ;
 	auto = new type_22unsigned22_22int3822() ;
 	backup = 2 ;
-	yy = 338 ;
-	return -480 ;
+	yy = 340 ;
+	return -481 ;
 	}
 static int _318()
 	{
@@ -5234,9 +5240,9 @@ static int _318()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _493() ;
+			case _name31 : return _494() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -5246,7 +5252,7 @@ static int _318()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Emodule22: a.shift() ; return a.deploy( _492() ) ;
+		case _222Emodule22: a.shift() ; return a.deploy( _493() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -5255,7 +5261,7 @@ static int _319()
 	log("_319") ;
 	auto = new type_22class22_className() ;
 	backup = 2 ;
-	yy = 338 ;
+	yy = 340 ;
 	return -456 ;
 	}
 static int _320()
@@ -5263,7 +5269,7 @@ static int _320()
 	log("_320") ;
 	auto = new type_22valuetype22_className() ;
 	backup = 2 ;
-	yy = 338 ;
+	yy = 340 ;
 	return -460 ;
 	}
 static int _321()
@@ -5271,8 +5277,8 @@ static int _321()
 	log("_321") ;
 	auto = new type_272127_int3332() ;
 	backup = 2 ;
-	yy = 338 ;
-	return -468 ;
+	yy = 340 ;
+	return -469 ;
 	}
 static int _322()
 	{
@@ -5280,9 +5286,9 @@ static int _322()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=278 max=335 length=58
+		switch(_yy) // size=3 min=280 max=337 length=58
 			{
-			case _customType : return _494() ;
+			case _customType : return _495() ;
 			case _callConv : return _64() ;
 			case _callKind : return _65() ;
 			default: return __default ;
@@ -5292,7 +5298,7 @@ static int _322()
 		{
 		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
+		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _322_default ;
@@ -5311,10 +5317,10 @@ static int _323()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _495() ;
+			case _type : return _496() ;
 			default: return __default ;
 			}
 		} ;
@@ -5348,9 +5354,9 @@ static int _324()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _496() ;
+			case _name31 : return _497() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -5369,11 +5375,11 @@ static int _325()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=339 max=344 length=6
+		switch(_yy) // size=3 min=342 max=347 length=6
 			{
-			case _bounds31 : return _499() ;
-			case _bound : return _500() ;
-			case _int3332 : return _501() ;
+			case _bounds31 : return _500() ;
+			case _bound : return _501() ;
+			case _int3332 : return _502() ;
 			default: return __default ;
 			}
 		} ;
@@ -5384,18 +5390,18 @@ static int _325()
 			a._token = Tokenset.Empty ;
 		goto _325_default ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		case _275D27: a.shift() ; return a.deploy( _497() ) ;
-		case _222E2E2E22: a.shift() ; return a.deploy( _498() ) ;
+		case _275D27: a.shift() ; return a.deploy( _498() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _499() ) ;
 		}
 	_325_default:
-	return a.deploy( _500() ) ;
+	return a.deploy( _501() ) ;
 	}
 static int _326()
 	{
 	log("_326") ;
 	auto = new type_type_272A27() ;
 	backup = 2 ;
-	yy = 338 ;
+	yy = 340 ;
 	return -464 ;
 	}
 static int _327()
@@ -5403,83 +5409,20 @@ static int _327()
 	log("_327") ;
 	auto = new type_type_272627() ;
 	backup = 2 ;
-	yy = 338 ;
+	yy = 340 ;
 	return -463 ;
 	}
 static int _328()
 	{
 	log("_328") ;
-	auto = new type_type_22pinned22() ;
-	backup = 2 ;
-	yy = 338 ;
-	return -465 ;
-	}
-static int _329()
-	{
-	log("_329") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _502() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _330()
-	{
-	log("_330") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _503() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _331()
-	{
-	log("_331") ;
-	auto = new compQstring_QSTRING() ;
-	backup = 1 ;
-	yy = 255 ;
-	return -25 ;
-	}
-static int _332()
-	{
-	log("_332") ;
-	auto = new customHead_222Ecustom22_customType_273D27_272827() ;
-	backup = 4 ;
-	yy = 275 ;
-	return -103 ;
-	}
-static int _333()
-	{
-	log("_333") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
-		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
-		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
-		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
-		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
-		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 219:
-		case 220: case 238: case 240: case 241: case 246: case 247: case 248: case 249:
-		case 250: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _333_default ;
-		case _272B27: a.shift() ; return a.split( _504() ) ;
-		}
-	_333_default:
-	auto = new customAttrDecl_222Ecustom22_customType_273D27_compQstring() ;
-	backup = 4 ;
-	yy = 257 ;
-	return -31 ;
-	}
-static int _334()
-	{
-	log("_334") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=3 min=327 max=341 length=15
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _505() ;
+			case _type : return _503() ;
+			case _genArgs : return _504() ;
 			default: return __default ;
 			}
 		} ;
@@ -5507,19 +5450,120 @@ static int _334()
 		}
 	throw new System.NotImplementedException() ;
 	}
+static int _329()
+	{
+	log("_329") ;
+	auto = new type_type_22pinned22() ;
+	backup = 2 ;
+	yy = 340 ;
+	return -466 ;
+	}
+static int _330()
+	{
+	log("_330") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _505() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _331()
+	{
+	log("_331") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _506() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _332()
+	{
+	log("_332") ;
+	auto = new compQstring_QSTRING() ;
+	backup = 1 ;
+	yy = 257 ;
+	return -25 ;
+	}
+static int _333()
+	{
+	log("_333") ;
+	auto = new customHead_222Ecustom22_customType_273D27_272827() ;
+	backup = 4 ;
+	yy = 277 ;
+	return -103 ;
+	}
+static int _334()
+	{
+	log("_334") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
+		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
+		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
+		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
+		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
+		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 251:
+		case 252: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _334_default ;
+		case _272B27: a.shift() ; return a.split( _507() ) ;
+		}
+	_334_default:
+	auto = new customAttrDecl_222Ecustom22_customType_273D27_compQstring() ;
+	backup = 4 ;
+	yy = 259 ;
+	return -31 ;
+	}
 static int _335()
 	{
 	log("_335") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=5 min=330 max=344 length=15
+		switch(_yy) // size=2 min=327 max=340 length=14
+			{
+			case _methodSpec : return _170() ;
+			case _type : return _508() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _336()
+	{
+	log("_336") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=5 min=332 max=347 length=16
 			{
 			case _name31 : return _308() ;
-			case _bounds31 : return _499() ;
-			case _bound : return _500() ;
+			case _bounds31 : return _500() ;
+			case _bound : return _501() ;
 			case _id : return _71() ;
-			case _int3332 : return _501() ;
+			case _int3332 : return _502() ;
 			default: return __default ;
 			}
 		} ;
@@ -5528,35 +5572,35 @@ static int _335()
 		case 36: /* case 45: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _335_default ;
+		goto _336_default ;
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _222Emodule22: a.shift() ; return a.deploy( _307() ) ;
-		case _275D27: a.shift() ; return a.deploy( _497() ) ;
-		case _222E2E2E22: a.shift() ; return a.deploy( _498() ) ;
+		case _275D27: a.shift() ; return a.deploy( _498() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _499() ) ;
 		}
-	_335_default:
-	return a.deploy( _500() ) ;
-	}
-static int _336()
-	{
-	log("_336") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _506() ) ; }
-	throw new System.NotImplementedException() ;
+	_336_default:
+	return a.deploy( _501() ) ;
 	}
 static int _337()
 	{
 	log("_337") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _507() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _509() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _338()
 	{
 	log("_338") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _510() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _339()
+	{
+	log("_339") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -5571,65 +5615,50 @@ static int _338()
 		case 141: case 143: case 148: case 149: case 151: case 152: case 153: case 154:
 		case 155: case 156: case 157: case 158: case 161: /* case 163: */ case 164: case 175:
 		case 177: case 209: case 210: case 211: case 212: case 213: case 214: case 215:
-		case 216: case 217: case 219: case 220: case 238: case 240: case 241: case 246:
-		case 247: case 248: case 250: 
+		case 216: case 217: case 218: case 219: case 221: case 222: case 240: case 242:
+		case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _338_default ;
+		goto _339_default ;
 		case _272E27: a.shift() ; return a.split( _173() ) ;
 		}
-	_338_default:
+	_339_default:
 	auto = new name1_name31_272E27_name31() ;
 	backup = 3 ;
-	yy = 330 ;
+	yy = 332 ;
 	return -343 ;
 	}
-static int _339()
+static int _340()
 	{
-	log("_339") ;
+	log("_340") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=260 max=260 length=1
+		switch(_yy) // size=1 min=262 max=262 length=1
 			{
-			case _vtfixupAttr : return _508() ;
+			case _vtfixupAttr : return _511() ;
 			default: return __default ;
 			}
 		} ;
 	if( token_HasValue )
 		a._token = Tokenset.Empty ;
-	return a.deploy( _508() ) ;
-	}
-static int _340()
-	{
-	log("_340") ;
-	auto = new comtAttr_comtAttr_22public22() ;
-	backup = 2 ;
-	yy = 372 ;
-	return -581 ;
+	return a.deploy( _511() ) ;
 	}
 static int _341()
 	{
 	log("_341") ;
-	auto = new comtAttr_comtAttr_22private22() ;
+	auto = new comtAttr_comtAttr_22public22() ;
 	backup = 2 ;
-	yy = 372 ;
-	return -580 ;
+	yy = 375 ;
+	return -584 ;
 	}
 static int _342()
 	{
 	log("_342") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _22public22: a.shift() ; return a.split( _509() ) ;
-		case _22private22: a.shift() ; return a.split( _510() ) ;
-		case _22family22: a.shift() ; return a.split( _511() ) ;
-		case _22assembly22: a.shift() ; return a.split( _512() ) ;
-		case _22famandassem22: a.shift() ; return a.split( _513() ) ;
-		case _22famorassem22: a.shift() ; return a.split( _514() ) ;
-		}
-	throw new System.NotImplementedException() ;
+	auto = new comtAttr_comtAttr_22private22() ;
+	backup = 2 ;
+	yy = 375 ;
+	return -583 ;
 	}
 static int _343()
 	{
@@ -5637,76 +5666,91 @@ static int _343()
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case 27: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _343_default ;
-		case _272E27: a.shift() ; return a.split( _173() ) ;
+		case _22public22: a.shift() ; return a.split( _512() ) ;
+		case _22private22: a.shift() ; return a.split( _513() ) ;
+		case _22family22: a.shift() ; return a.split( _514() ) ;
+		case _22assembly22: a.shift() ; return a.split( _515() ) ;
+		case _22famandassem22: a.shift() ; return a.split( _516() ) ;
+		case _22famorassem22: a.shift() ; return a.split( _517() ) ;
 		}
-	_343_default:
-	auto = new comtypeHead_222Eclass22_22extern22_comtAttr_name31() ;
-	backup = 4 ;
-	yy = 370 ;
-	return -577 ;
+	throw new System.NotImplementedException() ;
 	}
 static int _344()
 	{
 	log("_344") ;
-	auto = new classAttr_classAttr_22nested22_22public22() ;
-	backup = 3 ;
-	yy = 265 ;
-	return -65 ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case 27: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _344_default ;
+		case _272E27: a.shift() ; return a.split( _173() ) ;
+		}
+	_344_default:
+	auto = new comtypeHead_222Eclass22_22extern22_comtAttr_name31() ;
+	backup = 4 ;
+	yy = 373 ;
+	return -580 ;
 	}
 static int _345()
 	{
 	log("_345") ;
-	auto = new classAttr_classAttr_22nested22_22private22() ;
+	auto = new classAttr_classAttr_22nested22_22public22() ;
 	backup = 3 ;
-	yy = 265 ;
-	return -66 ;
+	yy = 267 ;
+	return -65 ;
 	}
 static int _346()
 	{
 	log("_346") ;
-	auto = new classAttr_classAttr_22nested22_22family22() ;
+	auto = new classAttr_classAttr_22nested22_22private22() ;
 	backup = 3 ;
-	yy = 265 ;
-	return -67 ;
+	yy = 267 ;
+	return -66 ;
 	}
 static int _347()
 	{
 	log("_347") ;
-	auto = new classAttr_classAttr_22nested22_22assembly22() ;
+	auto = new classAttr_classAttr_22nested22_22family22() ;
 	backup = 3 ;
-	yy = 265 ;
-	return -68 ;
+	yy = 267 ;
+	return -67 ;
 	}
 static int _348()
 	{
 	log("_348") ;
-	auto = new classAttr_classAttr_22nested22_22famandassem22() ;
+	auto = new classAttr_classAttr_22nested22_22assembly22() ;
 	backup = 3 ;
-	yy = 265 ;
-	return -69 ;
+	yy = 267 ;
+	return -68 ;
 	}
 static int _349()
 	{
 	log("_349") ;
-	auto = new classAttr_classAttr_22nested22_22famorassem22() ;
+	auto = new classAttr_classAttr_22nested22_22famandassem22() ;
 	backup = 3 ;
-	yy = 265 ;
-	return -70 ;
+	yy = 267 ;
+	return -69 ;
 	}
 static int _350()
 	{
 	log("_350") ;
+	auto = new classAttr_classAttr_22nested22_22famorassem22() ;
+	backup = 3 ;
+	yy = 267 ;
+	return -70 ;
+	}
+static int _351()
+	{
+	log("_351") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=330 max=342 length=13
+		switch(_yy) // size=4 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _className : return _515() ;
+			case _className : return _518() ;
 			case _slashedName : return _160() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -5721,15 +5765,15 @@ static int _350()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _351()
+static int _352()
 	{
-	log("_351") ;
+	log("_352") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=267 max=267 length=1
+		switch(_yy) // size=1 min=269 max=269 length=1
 			{
-			case _implClause : return _517() ;
+			case _implClause : return _520() ;
 			default: return __default ;
 			}
 		} ;
@@ -5738,140 +5782,140 @@ static int _351()
 		case 27: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _351_default ;
-		case _22implements22: a.shift() ; return a.deploy( _516() ) ;
+		goto _352_default ;
+		case _22implements22: a.shift() ; return a.deploy( _519() ) ;
 		}
-	_351_default:
-	return a.deploy( _517() ) ;
-	}
-static int _352()
-	{
-	log("_352") ;
-	auto = new repeatOpt_275B27_int3332_275D27() ;
-	backup = 3 ;
-	yy = 274 ;
-	return -102 ;
+	_352_default:
+	return a.deploy( _520() ) ;
 	}
 static int _353()
 	{
 	log("_353") ;
-	auto = new fieldAttr_fieldAttr_22public22() ;
-	backup = 2 ;
-	yy = 294 ;
-	return -191 ;
+	auto = new repeatOpt_275B27_int3332_275D27() ;
+	backup = 3 ;
+	yy = 276 ;
+	return -102 ;
 	}
 static int _354()
 	{
 	log("_354") ;
-	auto = new fieldAttr_fieldAttr_22private22() ;
+	auto = new fieldAttr_fieldAttr_22public22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -192 ;
+	yy = 296 ;
+	return -191 ;
 	}
 static int _355()
 	{
 	log("_355") ;
-	auto = new fieldAttr_fieldAttr_22family22() ;
+	auto = new fieldAttr_fieldAttr_22private22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -193 ;
+	yy = 296 ;
+	return -192 ;
 	}
 static int _356()
 	{
 	log("_356") ;
-	auto = new fieldAttr_fieldAttr_22assembly22() ;
+	auto = new fieldAttr_fieldAttr_22family22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -198 ;
+	yy = 296 ;
+	return -193 ;
 	}
 static int _357()
 	{
 	log("_357") ;
-	auto = new fieldAttr_fieldAttr_22famandassem22() ;
+	auto = new fieldAttr_fieldAttr_22assembly22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -199 ;
+	yy = 296 ;
+	return -198 ;
 	}
 static int _358()
 	{
 	log("_358") ;
-	auto = new fieldAttr_fieldAttr_22famorassem22() ;
+	auto = new fieldAttr_fieldAttr_22famandassem22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -200 ;
+	yy = 296 ;
+	return -199 ;
 	}
 static int _359()
 	{
 	log("_359") ;
-	auto = new fieldAttr_fieldAttr_22specialname22() ;
+	auto = new fieldAttr_fieldAttr_22famorassem22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -196 ;
+	yy = 296 ;
+	return -200 ;
 	}
 static int _360()
 	{
 	log("_360") ;
-	auto = new fieldAttr_fieldAttr_22rtspecialname22() ;
+	auto = new fieldAttr_fieldAttr_22specialname22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -195 ;
+	yy = 296 ;
+	return -196 ;
 	}
 static int _361()
 	{
 	log("_361") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _518() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new fieldAttr_fieldAttr_22rtspecialname22() ;
+	backup = 2 ;
+	yy = 296 ;
+	return -195 ;
 	}
 static int _362()
 	{
 	log("_362") ;
-	auto = new fieldAttr_fieldAttr_22static22() ;
-	backup = 2 ;
-	yy = 294 ;
-	return -190 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _521() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _363()
 	{
 	log("_363") ;
-	auto = new fieldAttr_fieldAttr_22privatescope22() ;
+	auto = new fieldAttr_fieldAttr_22static22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -201 ;
+	yy = 296 ;
+	return -190 ;
 	}
 static int _364()
 	{
 	log("_364") ;
-	auto = new fieldAttr_fieldAttr_22initonly22() ;
+	auto = new fieldAttr_fieldAttr_22privatescope22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -194 ;
+	yy = 296 ;
+	return -201 ;
 	}
 static int _365()
 	{
 	log("_365") ;
-	auto = new fieldAttr_fieldAttr_22literal22() ;
+	auto = new fieldAttr_fieldAttr_22initonly22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -202 ;
+	yy = 296 ;
+	return -194 ;
 	}
 static int _366()
 	{
 	log("_366") ;
-	auto = new fieldAttr_fieldAttr_22notserialized22() ;
+	auto = new fieldAttr_fieldAttr_22literal22() ;
 	backup = 2 ;
-	yy = 294 ;
-	return -203 ;
+	yy = 296 ;
+	return -202 ;
 	}
 static int _367()
 	{
 	log("_367") ;
+	auto = new fieldAttr_fieldAttr_22notserialized22() ;
+	backup = 2 ;
+	yy = 296 ;
+	return -203 ;
+	}
+static int _368()
+	{
+	log("_368") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _519() ;
+			case _id : return _522() ;
 			default: return __default ;
 			}
 		} ;
@@ -5882,48 +5926,49 @@ static int _367()
 		case _275B27: a.shift() ; return a.deploy( _325() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		}
 	throw new System.NotImplementedException() ;
-	}
-static int _368()
-	{
-	log("_368") ;
-	auto = new ddHead_222Edata22_tls_id_273D27() ;
-	backup = 4 ;
-	yy = 313 ;
-	return -263 ;
 	}
 static int _369()
 	{
 	log("_369") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=255 max=350 length=96
-			{
-			case _compQstring : return _520() ;
-			case _nameValPairs : return _521() ;
-			case _nameValPair : return _522() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new ddHead_222Edata22_tls_id_273D27() ;
+	backup = 4 ;
+	yy = 315 ;
+	return -263 ;
 	}
 static int _370()
 	{
 	log("_370") ;
-	auto = new psetHead_222Epermissionset22_secAction_273D27_272827() ;
-	backup = 4 ;
-	yy = 348 ;
-	return -511 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=257 max=353 length=97
+			{
+			case _compQstring : return _523() ;
+			case _nameValPairs : return _524() ;
+			case _nameValPair : return _525() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _371()
 	{
 	log("_371") ;
+	auto = new psetHead_222Epermissionset22_secAction_273D27_272827() ;
+	backup = 4 ;
+	yy = 351 ;
+	return -514 ;
+	}
+static int _372()
+	{
+	log("_372") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -5933,28 +5978,28 @@ static int _371()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 219:
-		case 220: case 238: case 241: case 250: 
+		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _371_default ;
-		case _SQSTRING: a.shift() ; return a.split( _523() ) ;
+		goto _372_default ;
+		case _SQSTRING: a.shift() ; return a.split( _526() ) ;
 		}
-	_371_default:
+	_372_default:
 	auto = new extSourceSpec_222Eline22_int3332_273A27_int3332() ;
 	backup = 4 ;
-	yy = 354 ;
-	return -543 ;
+	yy = 357 ;
+	return -546 ;
 	}
-static int _372()
+static int _373()
 	{
-	log("_372") ;
+	log("_373") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _524() ;
+			case _name31 : return _527() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -5967,29 +6012,29 @@ static int _372()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _373()
-	{
-	log("_373") ;
-	auto = new decl_nameSpaceHead_277B27_decls_277D27() ;
-	backup = 4 ;
-	yy = 254 ;
-	return -5 ;
-	}
 static int _374()
 	{
 	log("_374") ;
-	auto = new decl_classHead_277B27_classDecls_277D27() ;
+	auto = new decl_nameSpaceHead_277B27_decls_277D27() ;
 	backup = 4 ;
-	yy = 254 ;
-	return -4 ;
+	yy = 256 ;
+	return -5 ;
 	}
 static int _375()
 	{
 	log("_375") ;
+	auto = new decl_classHead_277B27_classDecls_277D27() ;
+	backup = 4 ;
+	yy = 256 ;
+	return -4 ;
+	}
+static int _376()
+	{
+	log("_376") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=265 max=265 length=1
+		switch(_yy) // size=1 min=267 max=267 length=1
 			{
 			case _classAttr : return _76() ;
 			default: return __default ;
@@ -5999,30 +6044,15 @@ static int _375()
 		a._token = Tokenset.Empty ;
 	return a.deploy( _76() ) ;
 	}
-static int _376()
-	{
-	log("_376") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _525() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
-	}
 static int _377()
 	{
 	log("_377") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _526() ;
+			case _int3332 : return _528() ;
 			default: return __default ;
 			}
 		} ;
@@ -6035,13 +6065,28 @@ static int _378()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=325 max=342 length=18
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _529() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _379()
+	{
+	log("_379") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=7 min=327 max=345 length=19
 			{
 			case _methodSpec : return _170() ;
 			case _name31 : return _158() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _527() ;
+			case _typeSpec : return _530() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -6075,37 +6120,21 @@ static int _378()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _379()
-	{
-	log("_379") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=281 max=281 length=1
-			{
-			case _eventAttr : return _528() ;
-			default: return __default ;
-			}
-		} ;
-	if( token_HasValue )
-		a._token = Tokenset.Empty ;
-	return a.deploy( _528() ) ;
-	}
 static int _380()
 	{
 	log("_380") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=285 max=285 length=1
+		switch(_yy) // size=1 min=283 max=283 length=1
 			{
-			case _propAttr : return _529() ;
+			case _eventAttr : return _531() ;
 			default: return __default ;
 			}
 		} ;
 	if( token_HasValue )
 		a._token = Tokenset.Empty ;
-	return a.deploy( _529() ) ;
+	return a.deploy( _531() ) ;
 	}
 static int _381()
 	{
@@ -6113,126 +6142,142 @@ static int _381()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=372 max=372 length=1
+		switch(_yy) // size=1 min=287 max=287 length=1
 			{
-			case _comtAttr : return _530() ;
+			case _propAttr : return _532() ;
 			default: return __default ;
 			}
 		} ;
 	if( token_HasValue )
 		a._token = Tokenset.Empty ;
-	return a.deploy( _530() ) ;
+	return a.deploy( _532() ) ;
 	}
 static int _382()
 	{
 	log("_382") ;
-	auto = new classDecl_languageDecl() ;
-	backup = 1 ;
-	yy = 270 ;
-	return -95 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=375 max=375 length=1
+			{
+			case _comtAttr : return _533() ;
+			default: return __default ;
+			}
+		} ;
+	if( token_HasValue )
+		a._token = Tokenset.Empty ;
+	return a.deploy( _533() ) ;
 	}
 static int _383()
 	{
 	log("_383") ;
-	auto = new classDecl_customAttrDecl() ;
+	auto = new classDecl_languageDecl() ;
 	backup = 1 ;
-	yy = 270 ;
-	return -90 ;
+	yy = 272 ;
+	return -95 ;
 	}
 static int _384()
 	{
 	log("_384") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _277B27 ) { a.shift() ; return a.split( _531() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new classDecl_customAttrDecl() ;
+	backup = 1 ;
+	yy = 272 ;
+	return -90 ;
 	}
 static int _385()
 	{
 	log("_385") ;
-	auto = new classDecls_classDecls_classDecl() ;
-	backup = 2 ;
-	yy = 269 ;
-	return -81 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _277B27 ) { a.shift() ; return a.split( _534() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _386()
 	{
 	log("_386") ;
-	auto = new classDecl_fieldDecl() ;
-	backup = 1 ;
-	yy = 270 ;
-	return -86 ;
+	auto = new classDecls_classDecls_classDecl() ;
+	backup = 2 ;
+	yy = 271 ;
+	return -81 ;
 	}
 static int _387()
 	{
 	log("_387") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _277B27 ) { a.shift() ; return a.split( _532() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new classDecl_fieldDecl() ;
+	backup = 1 ;
+	yy = 272 ;
+	return -86 ;
 	}
 static int _388()
 	{
 	log("_388") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _277B27 ) { a.shift() ; return a.split( _533() ) ; }
+	if( token.point == _277B27 ) { a.shift() ; return a.split( _535() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _389()
 	{
 	log("_389") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _277B27 ) { a.shift() ; return a.split( _536() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _390()
+	{
+	log("_390") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=311 max=311 length=1
+		switch(_yy) // size=1 min=313 max=313 length=1
 			{
-			case _methodDecls : return _534() ;
+			case _methodDecls : return _537() ;
 			default: return __default ;
 			}
 		} ;
 	if( token_HasValue )
 		a._token = Tokenset.Empty ;
-	return a.deploy( _534() ) ;
-	}
-static int _390()
-	{
-	log("_390") ;
-	auto = new classDecl_dataDecl() ;
-	backup = 1 ;
-	yy = 270 ;
-	return -87 ;
+	return a.deploy( _537() ) ;
 	}
 static int _391()
 	{
 	log("_391") ;
-	auto = new classDecl_secDecl() ;
+	auto = new classDecl_dataDecl() ;
 	backup = 1 ;
-	yy = 270 ;
-	return -88 ;
+	yy = 272 ;
+	return -87 ;
 	}
 static int _392()
 	{
 	log("_392") ;
-	auto = new classDecl_extSourceSpec() ;
+	auto = new classDecl_secDecl() ;
 	backup = 1 ;
-	yy = 270 ;
-	return -89 ;
+	yy = 272 ;
+	return -88 ;
 	}
 static int _393()
 	{
 	log("_393") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _277B27 ) { a.shift() ; return a.split( _535() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new classDecl_extSourceSpec() ;
+	backup = 1 ;
+	yy = 272 ;
+	return -89 ;
 	}
 static int _394()
 	{
 	log("_394") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _277B27 ) { a.shift() ; return a.split( _538() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _395()
+	{
+	log("_395") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=255 max=291 length=37
+		switch(_yy) // size=2 min=257 max=293 length=37
 			{
-			case _compQstring : return _536() ;
-			case _pinvAttr : return _537() ;
+			case _compQstring : return _539() ;
+			case _pinvAttr : return _540() ;
 			default: return __default ;
 			}
 		} ;
@@ -6242,28 +6287,28 @@ static int _394()
 		case 111: case 112: case 113: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _394_default ;
-		case _QSTRING: a.shift() ; return a.deploy( _331() ) ;
+		goto _395_default ;
+		case _QSTRING: a.shift() ; return a.deploy( _332() ) ;
 		}
-	_394_default:
-	return a.deploy( _537() ) ;
+	_395_default:
+	return a.deploy( _540() ) ;
 	}
-static int _395()
+static int _396()
 	{
-	log("_395") ;
+	log("_396") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _539() ;
+			case _type : return _542() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _275B27: a.shift() ; return a.deploy( _538() ) ;
+		case _275B27: a.shift() ; return a.deploy( _541() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
@@ -6286,15 +6331,15 @@ static int _395()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _396()
+static int _397()
 	{
-	log("_396") ;
+	log("_397") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _540() ;
+			case _int3332 : return _543() ;
 			default: return __default ;
 			}
 		} ;
@@ -6304,65 +6349,65 @@ static int _396()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 219: case 220: case 238: 
+		case 149: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _396_default ;
+		goto _397_default ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		}
-	_396_default:
+	_397_default:
 	auto = new instr_INSTR5FPHI_int3136s() ;
 	backup = 2 ;
-	yy = 326 ;
+	yy = 328 ;
 	return -331 ;
-	}
-static int _397()
-	{
-	log("_397") ;
-	auto = new instr_INSTR5FRVA_id() ;
-	backup = 2 ;
-	yy = 326 ;
-	return -327 ;
 	}
 static int _398()
 	{
 	log("_398") ;
-	auto = new instr_INSTR5FRVA_int3332() ;
+	auto = new instr_INSTR5FRVA_id() ;
 	backup = 2 ;
-	yy = 326 ;
-	return -328 ;
+	yy = 328 ;
+	return -327 ;
 	}
 static int _399()
 	{
 	log("_399") ;
-	auto = new instr_INSTR5FBRTARGET_id() ;
+	auto = new instr_INSTR5FRVA_int3332() ;
 	backup = 2 ;
-	yy = 326 ;
-	return -318 ;
+	yy = 328 ;
+	return -328 ;
 	}
 static int _400()
 	{
 	log("_400") ;
-	auto = new instr_INSTR5FBRTARGET_int3332() ;
+	auto = new instr_INSTR5FBRTARGET_id() ;
 	backup = 2 ;
-	yy = 326 ;
-	return -317 ;
+	yy = 328 ;
+	return -318 ;
 	}
 static int _401()
 	{
 	log("_401") ;
+	auto = new instr_INSTR5FBRTARGET_int3332() ;
+	backup = 2 ;
+	yy = 328 ;
+	return -317 ;
+	}
+static int _402()
+	{
+	log("_402") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=325 max=342 length=18
+		switch(_yy) // size=7 min=327 max=345 length=19
 			{
 			case _methodSpec : return _170() ;
 			case _name31 : return _158() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _541() ;
+			case _typeSpec : return _544() ;
 			case _type : return _162() ;
-			case _id : return _542() ;
+			case _id : return _545() ;
 			default: return __default ;
 			}
 		} ;
@@ -6371,7 +6416,7 @@ static int _401()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
@@ -6391,120 +6436,38 @@ static int _401()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
 	throw new System.NotImplementedException() ;
-	}
-static int _402()
-	{
-	log("_402") ;
-	auto = new instr_INSTR5FI_int3332() ;
-	backup = 2 ;
-	yy = 326 ;
-	return -312 ;
 	}
 static int _403()
 	{
 	log("_403") ;
-	auto = new instr_INSTR5FI38_int3634() ;
+	auto = new instr_INSTR5FI_int3332() ;
 	backup = 2 ;
-	yy = 326 ;
-	return -313 ;
+	yy = 328 ;
+	return -312 ;
 	}
 static int _404()
 	{
 	log("_404") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=325 max=338 length=14
-			{
-			case _methodSpec : return _170() ;
-			case _type : return _543() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
-	throw new System.NotImplementedException() ;
+	auto = new instr_INSTR5FI38_int3634() ;
+	backup = 2 ;
+	yy = 328 ;
+	return -313 ;
 	}
 static int _405()
 	{
 	log("_405") ;
-	auto = new float64_FLOAT3634() ;
-	backup = 1 ;
-	yy = 346 ;
-	return -505 ;
-	}
-static int _406()
-	{
-	log("_406") ;
-	auto = new instr_r_head_INSTR5FR_272827() ;
-	backup = 2 ;
-	yy = 323 ;
-	return -306 ;
-	}
-static int _407()
-	{
-	log("_407") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _544() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _408()
-	{
-	log("_408") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _545() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _409()
-	{
-	log("_409") ;
-	auto = new instr_INSTR5FR_int3634() ;
-	backup = 2 ;
-	yy = 326 ;
-	return -315 ;
-	}
-static int _410()
-	{
-	log("_410") ;
-	auto = new instr_INSTR5FR_float3634() ;
-	backup = 2 ;
-	yy = 326 ;
-	return -314 ;
-	}
-static int _411()
-	{
-	log("_411") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
 			case _type : return _546() ;
@@ -6535,9 +6498,92 @@ static int _411()
 		}
 	throw new System.NotImplementedException() ;
 	}
+static int _406()
+	{
+	log("_406") ;
+	auto = new float64_FLOAT3634() ;
+	backup = 1 ;
+	yy = 349 ;
+	return -508 ;
+	}
+static int _407()
+	{
+	log("_407") ;
+	auto = new instr_r_head_INSTR5FR_272827() ;
+	backup = 2 ;
+	yy = 325 ;
+	return -306 ;
+	}
+static int _408()
+	{
+	log("_408") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _547() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _409()
+	{
+	log("_409") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _548() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _410()
+	{
+	log("_410") ;
+	auto = new instr_INSTR5FR_int3634() ;
+	backup = 2 ;
+	yy = 328 ;
+	return -315 ;
+	}
+static int _411()
+	{
+	log("_411") ;
+	auto = new instr_INSTR5FR_float3634() ;
+	backup = 2 ;
+	yy = 328 ;
+	return -314 ;
+	}
 static int _412()
 	{
 	log("_412") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=340 length=14
+			{
+			case _methodSpec : return _170() ;
+			case _type : return _549() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _413()
+	{
+	log("_413") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -6545,27 +6591,27 @@ static int _412()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 219: case 220: case 238: 
+		case 149: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _412_default ;
-		case _272B27: a.shift() ; return a.split( _504() ) ;
+		goto _413_default ;
+		case _272B27: a.shift() ; return a.split( _507() ) ;
 		}
-	_412_default:
+	_413_default:
 	auto = new instr_INSTR5FSTRING_compQstring() ;
 	backup = 2 ;
-	yy = 326 ;
+	yy = 328 ;
 	return -324 ;
 	}
-static int _413()
+static int _414()
 	{
-	log("_413") ;
+	log("_414") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
-			case _bytes : return _547() ;
+			case _bytes : return _550() ;
 			case _hexbytes : return _104() ;
 			default: return __default ;
 			}
@@ -6575,23 +6621,23 @@ static int _413()
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _413_default ;
+		goto _414_default ;
 		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
 		}
-	_413_default:
-	return a.deploy( _547() ) ;
+	_414_default:
+	return a.deploy( _550() ) ;
 	}
-static int _414()
+static int _415()
 	{
-	log("_414") ;
+	log("_415") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=341 max=344 length=4
+		switch(_yy) // size=3 min=344 max=347 length=4
 			{
-			case _labels : return _548() ;
-			case _id : return _549() ;
-			case _int3332 : return _550() ;
+			case _labels : return _551() ;
+			case _id : return _552() ;
+			case _int3332 : return _553() ;
 			default: return __default ;
 			}
 		} ;
@@ -6600,96 +6646,81 @@ static int _414()
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _414_default ;
+		goto _415_default ;
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		}
-	_414_default:
-	return a.deploy( _548() ) ;
-	}
-static int _415()
-	{
-	log("_415") ;
-	auto = new instr_INSTR5FTYPE_typeSpec() ;
-	backup = 2 ;
-	yy = 326 ;
-	return -323 ;
+	_415_default:
+	return a.deploy( _551() ) ;
 	}
 static int _416()
 	{
 	log("_416") ;
-	auto = new instr_INSTR5FVAR_id() ;
+	auto = new instr_INSTR5FTYPE_typeSpec() ;
 	backup = 2 ;
-	yy = 326 ;
-	return -311 ;
+	yy = 328 ;
+	return -323 ;
 	}
 static int _417()
 	{
 	log("_417") ;
-	auto = new instr_INSTR5FVAR_int3332() ;
+	auto = new instr_INSTR5FVAR_id() ;
 	backup = 2 ;
-	yy = 326 ;
-	return -310 ;
+	yy = 328 ;
+	return -311 ;
 	}
 static int _418()
 	{
 	log("_418") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _551() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new instr_INSTR5FVAR_int3332() ;
+	backup = 2 ;
+	yy = 328 ;
+	return -310 ;
 	}
 static int _419()
 	{
 	log("_419") ;
-	auto = new methodDecl_222Eemitbyte22_int3332() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -217 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _554() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _420()
 	{
 	log("_420") ;
-	auto = new methodDecl_222Emaxstack22_int3332() ;
+	auto = new methodDecl_222Eemitbyte22_int3332() ;
 	backup = 2 ;
-	yy = 297 ;
-	return -219 ;
+	yy = 299 ;
+	return -217 ;
 	}
 static int _421()
 	{
 	log("_421") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _552() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new methodDecl_222Emaxstack22_int3332() ;
+	backup = 2 ;
+	yy = 299 ;
+	return -219 ;
 	}
 static int _422()
 	{
 	log("_422") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _553() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _555() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _423()
 	{
 	log("_423") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _554() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _556() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _424()
@@ -6698,12 +6729,27 @@ static int _424()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _557() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _int3332 : return _557() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _425()
+	{
+	log("_425") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _560() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -6711,35 +6757,35 @@ static int _424()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _424_default ;
+		goto _425_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _557() ) ;
+			return a.deploy( _560() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_424_default:
+	_425_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
-	}
-static int _425()
-	{
-	log("_425") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _560() ) ; }
-	throw new System.NotImplementedException() ;
+	return a.deploy( _559() ) ;
 	}
 static int _426()
 	{
 	log("_426") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _563() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _427()
+	{
+	log("_427") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=20 min=256 max=354 length=99
+		switch(_yy) // size=20 min=258 max=357 length=100
 			{
 			case _languageDecl : return _264() ;
 			case _customAttrDecl : return _265() ;
@@ -6785,7 +6831,7 @@ static int _426()
 		case _INSTR5FTYPE: a.shift() ; return a.deploy( _250() ) ;
 		case _INSTR5FVAR: a.shift() ; return a.deploy( _251() ) ;
 		case _277B27: a.shift() ; return a.deploy( _252() ) ;
-		case _277D27: a.shift() ; return a.deploy( _561() ) ;
+		case _277D27: a.shift() ; return a.deploy( _564() ) ;
 		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
 		case _222Eoverride22: a.shift() ; return a.deploy( _254() ) ;
@@ -6805,24 +6851,24 @@ static int _426()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _427()
-	{
-	log("_427") ;
-	auto = new filterHead_22filter22() ;
-	backup = 1 ;
-	yy = 306 ;
-	return -253 ;
-	}
 static int _428()
 	{
 	log("_428") ;
+	auto = new filterHead_22filter22() ;
+	backup = 1 ;
+	yy = 308 ;
+	return -253 ;
+	}
+static int _429()
+	{
+	log("_429") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=330 max=342 length=13
+		switch(_yy) // size=4 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _className : return _562() ;
+			case _className : return _565() ;
 			case _slashedName : return _160() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -6837,45 +6883,45 @@ static int _428()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _429()
-	{
-	log("_429") ;
-	auto = new finallyClause_22finally22() ;
-	backup = 1 ;
-	yy = 308 ;
-	return -255 ;
-	}
 static int _430()
 	{
 	log("_430") ;
-	auto = new faultClause_22fault22() ;
+	auto = new finallyClause_22finally22() ;
 	backup = 1 ;
-	yy = 309 ;
-	return -256 ;
+	yy = 310 ;
+	return -255 ;
 	}
 static int _431()
 	{
 	log("_431") ;
-	auto = new sehBlock_tryBlock_sehClauses() ;
-	backup = 2 ;
-	yy = 300 ;
-	return -239 ;
+	auto = new faultClause_22fault22() ;
+	backup = 1 ;
+	yy = 311 ;
+	return -256 ;
 	}
 static int _432()
 	{
 	log("_432") ;
+	auto = new sehBlock_tryBlock_sehClauses() ;
+	backup = 2 ;
+	yy = 302 ;
+	return -239 ;
+	}
+static int _433()
+	{
+	log("_433") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=301 max=309 length=9
+		switch(_yy) // size=7 min=303 max=311 length=9
 			{
-			case _sehClauses : return _563() ;
-			case _sehClause : return _432() ;
-			case _filterClause : return _433() ;
-			case _filterHead : return _434() ;
-			case _catchClause : return _435() ;
-			case _finallyClause : return _436() ;
-			case _faultClause : return _437() ;
+			case _sehClauses : return _566() ;
+			case _sehClause : return _433() ;
+			case _filterClause : return _434() ;
+			case _filterHead : return _435() ;
+			case _catchClause : return _436() ;
+			case _finallyClause : return _437() ;
+			case _faultClause : return _438() ;
 			default: return __default ;
 			}
 		} ;
@@ -6885,36 +6931,17 @@ static int _432()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 219: case 220: case 238: 
+		case 149: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _432_default ;
-		case _22filter22: a.shift() ; return a.deploy( _427() ) ;
-		case _22catch22: a.shift() ; return a.deploy( _428() ) ;
-		case _22finally22: a.shift() ; return a.deploy( _429() ) ;
-		case _22fault22: a.shift() ; return a.deploy( _430() ) ;
+		goto _433_default ;
+		case _22filter22: a.shift() ; return a.deploy( _428() ) ;
+		case _22catch22: a.shift() ; return a.deploy( _429() ) ;
+		case _22finally22: a.shift() ; return a.deploy( _430() ) ;
+		case _22fault22: a.shift() ; return a.deploy( _431() ) ;
 		}
-	_432_default:
-	return a.deploy( _563() ) ;
-	}
-static int _433()
-	{
-	log("_433") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=298 max=310 length=13
-			{
-			case _scopeBlock : return _565() ;
-			case _scopeOpen : return _269() ;
-			case _handlerBlock : return _566() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
-	else
-	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _564() ) ; }
-	throw new System.NotImplementedException() ;
+	_433_default:
+	return a.deploy( _566() ) ;
 	}
 static int _434()
 	{
@@ -6922,12 +6949,31 @@ static int _434()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=298 max=344 length=47
+		switch(_yy) // size=3 min=300 max=312 length=13
 			{
-			case _scopeBlock : return _567() ;
+			case _scopeBlock : return _568() ;
 			case _scopeOpen : return _269() ;
-			case _id : return _568() ;
-			case _int3332 : return _569() ;
+			case _handlerBlock : return _569() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
+	else
+	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _567() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _435()
+	{
+	log("_435") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=300 max=347 length=48
+			{
+			case _scopeBlock : return _570() ;
+			case _scopeOpen : return _269() ;
+			case _id : return _571() ;
+			case _int3332 : return _572() ;
 			default: return __default ;
 			}
 		} ;
@@ -6940,42 +6986,23 @@ static int _434()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _435()
-	{
-	log("_435") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=298 max=310 length=13
-			{
-			case _scopeBlock : return _565() ;
-			case _scopeOpen : return _269() ;
-			case _handlerBlock : return _570() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
-	else
-	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _564() ) ; }
-	throw new System.NotImplementedException() ;
-	}
 static int _436()
 	{
 	log("_436") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=298 max=310 length=13
+		switch(_yy) // size=3 min=300 max=312 length=13
 			{
-			case _scopeBlock : return _565() ;
+			case _scopeBlock : return _568() ;
 			case _scopeOpen : return _269() ;
-			case _handlerBlock : return _571() ;
+			case _handlerBlock : return _573() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
 	else
-	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _564() ) ; }
+	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _567() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _437()
@@ -6984,81 +7011,100 @@ static int _437()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=298 max=310 length=13
+		switch(_yy) // size=3 min=300 max=312 length=13
 			{
-			case _scopeBlock : return _565() ;
+			case _scopeBlock : return _568() ;
 			case _scopeOpen : return _269() ;
-			case _handlerBlock : return _572() ;
+			case _handlerBlock : return _574() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
 	else
-	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _564() ) ; }
+	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _567() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _438()
 	{
 	log("_438") ;
-	auto = new tryBlock_tryHead_scopeBlock() ;
-	backup = 2 ;
-	yy = 302 ;
-	return -242 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=300 max=312 length=13
+			{
+			case _scopeBlock : return _568() ;
+			case _scopeOpen : return _269() ;
+			case _handlerBlock : return _575() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
+	else
+	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _567() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _439()
 	{
 	log("_439") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22to22 ) { a.shift() ; return a.split( _573() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new tryBlock_tryHead_scopeBlock() ;
+	backup = 2 ;
+	yy = 304 ;
+	return -242 ;
 	}
 static int _440()
 	{
 	log("_440") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _22to22 ) { a.shift() ; return a.split( _574() ) ; }
+	if( token.point == _22to22 ) { a.shift() ; return a.split( _576() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _441()
 	{
 	log("_441") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _575() ) ; }
+	if( token.point == _22to22 ) { a.shift() ; return a.split( _577() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _442()
 	{
 	log("_442") ;
-	auto = new instr_instr5Ftok5Fhead_ownerType() ;
-	backup = 2 ;
-	yy = 326 ;
-	return -329 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _578() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _443()
 	{
 	log("_443") ;
-	auto = new methodDecl_id_273A27() ;
+	auto = new instr_instr5Ftok5Fhead_ownerType() ;
 	backup = 2 ;
-	yy = 297 ;
-	return -226 ;
+	yy = 328 ;
+	return -329 ;
 	}
 static int _444()
 	{
 	log("_444") ;
-	auto = new ddBody_277B27_ddItemList_277D27() ;
-	backup = 3 ;
-	yy = 315 ;
-	return -267 ;
+	auto = new methodDecl_id_273A27() ;
+	backup = 2 ;
+	yy = 299 ;
+	return -226 ;
 	}
 static int _445()
 	{
 	log("_445") ;
+	auto = new ddBody_277B27_ddItemList_277D27() ;
+	backup = 3 ;
+	yy = 317 ;
+	return -267 ;
+	}
+static int _446()
+	{
+	log("_446") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=316 max=320 length=5
+		switch(_yy) // size=3 min=318 max=322 length=5
 			{
-			case _ddItemList : return _576() ;
+			case _ddItemList : return _579() ;
 			case _ddItem : return _281() ;
 			case _bytearrayhead : return _123() ;
 			default: return __default ;
@@ -7078,113 +7124,98 @@ static int _445()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _446()
-	{
-	log("_446") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _577() ) ; }
-	throw new System.NotImplementedException() ;
-	}
 static int _447()
 	{
 	log("_447") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _578() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _580() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _448()
 	{
 	log("_448") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _579() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _581() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _449()
 	{
 	log("_449") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=255 max=255 length=1
-			{
-			case _compQstring : return _580() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _582() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _450()
 	{
 	log("_450") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _581() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _583() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _451()
 	{
 	log("_451") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _582() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _584() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _452()
 	{
 	log("_452") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _583() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _585() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _453()
 	{
 	log("_453") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _584() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _586() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _454()
 	{
 	log("_454") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _585() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _587() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _455()
 	{
 	log("_455") ;
-	auto = new ddItem_bytearrayhead_bytes_272927() ;
-	backup = 3 ;
-	yy = 318 ;
-	return -275 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _588() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _456()
 	{
 	log("_456") ;
-	auto = new decl_assemblyHead_277B27_assemblyDecls_277D27() ;
-	backup = 4 ;
-	yy = 254 ;
-	return -13 ;
+	auto = new ddItem_bytearrayhead_bytes_272927() ;
+	backup = 3 ;
+	yy = 320 ;
+	return -275 ;
 	}
 static int _457()
 	{
 	log("_457") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22algorithm22 ) { a.shift() ; return a.split( _586() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new decl_assemblyHead_277B27_assemblyDecls_277D27() ;
+	backup = 4 ;
+	yy = 256 ;
+	return -13 ;
 	}
 static int _458()
 	{
 	log("_458") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _587() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	if( token.point == _22algorithm22 ) { a.shift() ; return a.split( _589() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _459()
@@ -7193,79 +7224,70 @@ static int _459()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=255 max=255 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _compQstring : return _589() ;
+			case _int3332 : return _590() ;
 			default: return __default ;
 			}
 		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
-	else
-	if( token.point == _273D27 ) { a.shift() ; return a.deploy( _588() ) ; }
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _460()
 	{
 	log("_460") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273D27 ) { a.shift() ; return a.split( _590() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _592() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	else
+	if( token.point == _273D27 ) { a.shift() ; return a.deploy( _591() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _461()
 	{
 	log("_461") ;
-	auto = new asmOrRefDecl_customAttrDecl() ;
-	backup = 1 ;
-	yy = 363 ;
-	return -566 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _273D27 ) { a.shift() ; return a.split( _593() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _462()
 	{
 	log("_462") ;
-	auto = new assemblyDecl_secDecl() ;
+	auto = new asmOrRefDecl_customAttrDecl() ;
 	backup = 1 ;
-	yy = 362 ;
-	return -560 ;
+	yy = 366 ;
+	return -569 ;
 	}
 static int _463()
 	{
 	log("_463") ;
-	auto = new assemblyDecls_assemblyDecls_assemblyDecl() ;
-	backup = 2 ;
-	yy = 361 ;
-	return -558 ;
+	auto = new assemblyDecl_secDecl() ;
+	backup = 1 ;
+	yy = 365 ;
+	return -563 ;
 	}
 static int _464()
 	{
 	log("_464") ;
-	auto = new assemblyDecl_asmOrRefDecl() ;
-	backup = 1 ;
-	yy = 362 ;
+	auto = new assemblyDecls_assemblyDecls_assemblyDecl() ;
+	backup = 2 ;
+	yy = 364 ;
 	return -561 ;
 	}
 static int _465()
 	{
 	log("_465") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=321 max=322 length=2
-			{
-			case _bytes : return _591() ;
-			case _hexbytes : return _104() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 39: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _465_default ;
-		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
-		}
-	_465_default:
-	return a.deploy( _591() ) ;
+	auto = new assemblyDecl_asmOrRefDecl() ;
+	backup = 1 ;
+	yy = 365 ;
+	return -564 ;
 	}
 static int _466()
 	{
@@ -7273,9 +7295,9 @@ static int _466()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
-			case _bytes : return _592() ;
+			case _bytes : return _594() ;
 			case _hexbytes : return _104() ;
 			default: return __default ;
 			}
@@ -7289,37 +7311,15 @@ static int _466()
 		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
 		}
 	_466_default:
-	return a.deploy( _592() ) ;
+	return a.deploy( _594() ) ;
 	}
 static int _467()
 	{
 	log("_467") ;
-	auto = new decl_assemblyRefHead_277B27_assemblyRefDecls_277D27() ;
-	backup = 4 ;
-	yy = 254 ;
-	return -14 ;
-	}
-static int _468()
-	{
-	log("_468") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _273D27 ) { a.shift() ; return a.split( _593() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _469()
-	{
-	log("_469") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _273D27 ) { a.shift() ; return a.split( _594() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _470()
-	{
-	log("_470") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
 			case _bytes : return _595() ;
 			case _hexbytes : return _104() ;
@@ -7331,29 +7331,43 @@ static int _470()
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _470_default ;
+		goto _467_default ;
 		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
 		}
-	_470_default:
+	_467_default:
 	return a.deploy( _595() ) ;
+	}
+static int _468()
+	{
+	log("_468") ;
+	auto = new decl_assemblyRefHead_277B27_assemblyRefDecls_277D27() ;
+	backup = 4 ;
+	yy = 256 ;
+	return -14 ;
+	}
+static int _469()
+	{
+	log("_469") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _273D27 ) { a.shift() ; return a.split( _596() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _470()
+	{
+	log("_470") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _273D27 ) { a.shift() ; return a.split( _597() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _471()
 	{
 	log("_471") ;
-	auto = new assemblyRefDecl_asmOrRefDecl() ;
-	backup = 1 ;
-	yy = 369 ;
-	return -575 ;
-	}
-static int _472()
-	{
-	log("_472") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
-			case _bytes : return _596() ;
+			case _bytes : return _598() ;
 			case _hexbytes : return _104() ;
 			default: return __default ;
 			}
@@ -7363,48 +7377,59 @@ static int _472()
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _472_default ;
+		goto _471_default ;
 		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
 		}
-	_472_default:
-	return a.deploy( _596() ) ;
+	_471_default:
+	return a.deploy( _598() ) ;
+	}
+static int _472()
+	{
+	log("_472") ;
+	auto = new assemblyRefDecl_asmOrRefDecl() ;
+	backup = 1 ;
+	yy = 372 ;
+	return -578 ;
 	}
 static int _473()
 	{
 	log("_473") ;
-	auto = new assemblyRefDecls_assemblyRefDecls_assemblyRefDecl() ;
-	backup = 2 ;
-	yy = 368 ;
-	return -573 ;
-	}
-static int _474()
-	{
-	log("_474") ;
-	auto = new decl_comtypeHead_277B27_comtypeDecls_277D27() ;
-	backup = 4 ;
-	yy = 254 ;
-	return -15 ;
-	}
-static int _475()
-	{
-	log("_475") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
-			case _name31 : return _597() ;
-			case _id : return _71() ;
+			case _bytes : return _599() ;
+			case _hexbytes : return _104() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case 39: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _473_default ;
+		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	_473_default:
+	return a.deploy( _599() ) ;
+	}
+static int _474()
+	{
+	log("_474") ;
+	auto = new assemblyRefDecls_assemblyRefDecls_assemblyRefDecl() ;
+	backup = 2 ;
+	yy = 371 ;
+	return -576 ;
+	}
+static int _475()
+	{
+	log("_475") ;
+	auto = new decl_comtypeHead_277B27_comtypeDecls_277D27() ;
+	backup = 4 ;
+	yy = 256 ;
+	return -15 ;
 	}
 static int _476()
 	{
@@ -7412,48 +7437,7 @@ static int _476()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _599() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	else
-	if( token.point == _22extern22 ) { a.shift() ; return a.deploy( _598() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _477()
-	{
-	log("_477") ;
-	auto = new comtypeDecl_customAttrDecl() ;
-	backup = 1 ;
-	yy = 374 ;
-	return -593 ;
-	}
-static int _478()
-	{
-	log("_478") ;
-	auto = new comtypeDecls_comtypeDecls_comtypeDecl() ;
-	backup = 2 ;
-	yy = 373 ;
-	return -589 ;
-	}
-static int _479()
-	{
-	log("_479") ;
-	auto = new decl_manifestResHead_277B27_manifestResDecls_277D27() ;
-	backup = 4 ;
-	yy = 254 ;
-	return -16 ;
-	}
-static int _480()
-	{
-	log("_480") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
 			case _name31 : return _600() ;
 			case _id : return _71() ;
@@ -7468,38 +7452,100 @@ static int _480()
 		}
 	throw new System.NotImplementedException() ;
 	}
+static int _477()
+	{
+	log("_477") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _602() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	else
+	if( token.point == _22extern22 ) { a.shift() ; return a.deploy( _601() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _478()
+	{
+	log("_478") ;
+	auto = new comtypeDecl_customAttrDecl() ;
+	backup = 1 ;
+	yy = 377 ;
+	return -596 ;
+	}
+static int _479()
+	{
+	log("_479") ;
+	auto = new comtypeDecls_comtypeDecls_comtypeDecl() ;
+	backup = 2 ;
+	yy = 376 ;
+	return -592 ;
+	}
+static int _480()
+	{
+	log("_480") ;
+	auto = new decl_manifestResHead_277B27_manifestResDecls_277D27() ;
+	backup = 4 ;
+	yy = 256 ;
+	return -16 ;
+	}
 static int _481()
 	{
 	log("_481") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _22extern22 ) { a.shift() ; return a.split( _601() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=332 max=345 length=14
+			{
+			case _name31 : return _603() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		}
 	throw new System.NotImplementedException() ;
 	}
 static int _482()
 	{
 	log("_482") ;
-	auto = new manifestResDecl_customAttrDecl() ;
-	backup = 1 ;
-	yy = 378 ;
-	return -602 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22extern22 ) { a.shift() ; return a.split( _604() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _483()
 	{
 	log("_483") ;
-	auto = new manifestResDecls_manifestResDecls_manifestResDecl() ;
-	backup = 2 ;
-	yy = 377 ;
-	return -599 ;
+	auto = new manifestResDecl_customAttrDecl() ;
+	backup = 1 ;
+	yy = 381 ;
+	return -605 ;
 	}
 static int _484()
 	{
 	log("_484") ;
+	auto = new manifestResDecls_manifestResDecls_manifestResDecl() ;
+	backup = 2 ;
+	yy = 380 ;
+	return -602 ;
+	}
+static int _485()
+	{
+	log("_485") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
-			case _bytes : return _602() ;
+			case _bytes : return _605() ;
 			case _hexbytes : return _104() ;
 			default: return __default ;
 			}
@@ -7509,38 +7555,38 @@ static int _484()
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _484_default ;
+		goto _485_default ;
 		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
 		}
-	_484_default:
-	return a.deploy( _602() ) ;
-	}
-static int _485()
-	{
-	log("_485") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _SQSTRING ) { a.shift() ; return a.split( _603() ) ; }
-	throw new System.NotImplementedException() ;
+	_485_default:
+	return a.deploy( _605() ) ;
 	}
 static int _486()
 	{
 	log("_486") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _604() ) ; }
-	else
-	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
+	if( token.point == _SQSTRING ) { a.shift() ; return a.split( _606() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _487()
 	{
 	log("_487") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _607() ) ; }
+	else
+	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _488()
+	{
+	log("_488") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=330 max=342 length=13
+		switch(_yy) // size=3 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _slashedName : return _605() ;
+			case _slashedName : return _608() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -7553,39 +7599,39 @@ static int _487()
 		case 33: case 35: case 37: case 39: case 40: case 41: case 43: case 51:
 		case 52: case 53: case 79: case 80: case 81: case 82: case 84: case 87:
 		case 92: case 95: case 132: case 133: case 134: case 136: case 137: case 139:
-		case 140: case 141: case 143: case 149: case 219: case 220: case 238: case 240:
-		case 241: case 246: case 247: case 248: case 250: 
+		case 140: case 141: case 143: case 149: case 221: case 222: case 240: case 242:
+		case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _487_default ;
+		goto _488_default ;
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	_487_default:
+	_488_default:
 	auto = new typeSpec_275B27_name31_275D27() ;
 	backup = 3 ;
-	yy = 333 ;
+	yy = 335 ;
 	return -350 ;
-	}
-static int _488()
-	{
-	log("_488") ;
-	auto = new type_22value22_22class22_className() ;
-	backup = 3 ;
-	yy = 338 ;
-	return -459 ;
 	}
 static int _489()
 	{
 	log("_489") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _606() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new type_22value22_22class22_className() ;
+	backup = 3 ;
+	yy = 340 ;
+	return -459 ;
 	}
 static int _490()
 	{
 	log("_490") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _609() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _491()
+	{
+	log("_491") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -7593,55 +7639,55 @@ static int _490()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 39: case 81:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: /* case 82: */ /* case 163: */ /* case 164: */ 
+		case 143: case 149: case 221: case 222: case 240: /* case 82: */ /* case 163: */ /* case 164: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _490_default ;
+		goto _491_default ;
 		case 82: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
-			yy = 330 ;
+			yy = 332 ;
 			return -341 ;
 			}
 		case 163: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
-			yy = 330 ;
+			yy = 332 ;
 			return -341 ;
 			}
 		case 164: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
-			yy = 330 ;
+			yy = 332 ;
 			return -341 ;
 			}
 		}
-	_490_default:
+	_491_default:
 	auto = new memberRef_22field22_type_id() ;
 	backup = 3 ;
-	yy = 277 ;
+	yy = 279 ;
 	return -108 ;
-	}
-static int _491()
-	{
-	log("_491") ;
-	auto = new type_22native22_22unsigned22_22int22() ;
-	backup = 3 ;
-	yy = 338 ;
-	return -485 ;
 	}
 static int _492()
 	{
 	log("_492") ;
+	auto = new type_22native22_22unsigned22_22int22() ;
+	backup = 3 ;
+	yy = 340 ;
+	return -486 ;
+	}
+static int _493()
+	{
+	log("_493") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _607() ;
+			case _name31 : return _610() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -7654,18 +7700,18 @@ static int _492()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _493()
+static int _494()
 	{
-	log("_493") ;
+	log("_494") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _608() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _611() ) ; }
 	else
 	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _494()
+static int _495()
 	{
-	log("_494") ;
+	log("_495") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -7675,34 +7721,34 @@ static int _494()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 219:
-		case 220: case 238: case 240: case 241: case 246: case 247: case 248: case 249:
-		case 250: 
+		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 251:
+		case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _494_default ;
-		case _273D27: a.shift() ; return a.split( _609() ) ;
+		goto _495_default ;
+		case _273D27: a.shift() ; return a.split( _612() ) ;
 		}
-	_494_default:
+	_495_default:
 	auto = new customAttrDecl_222Ecustom22_272827_ownerType_272927_customType() ;
 	backup = 5 ;
-	yy = 257 ;
+	yy = 259 ;
 	return -33 ;
 	}
-static int _495()
+static int _496()
 	{
-	log("_495") ;
+	log("_496") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=8 min=292 max=342 length=51
+		switch(_yy) // size=8 min=294 max=345 length=52
 			{
-			case _methodName : return _613() ;
+			case _methodName : return _616() ;
 			case _methodSpec : return _170() ;
-			case _name31 : return _614() ;
+			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _615() ;
+			case _typeSpec : return _618() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -7713,15 +7759,15 @@ static int _495()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
 		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _272A27: a.shift() ; return a.deploy( _612() ) ;
+		case _272A27: a.shift() ; return a.deploy( _615() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
 		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
 		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
@@ -7735,17 +7781,18 @@ static int _495()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _496()
+static int _497()
 	{
-	log("_496") ;
+	log("_497") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -7759,137 +7806,124 @@ static int _496()
 		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
 		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
 		case 161: case 164: case 175: case 177: case 209: case 210: case 211: case 212:
-		case 213: case 214: case 215: case 216: case 217: case 219: case 220: case 238:
-		case 240: case 241: case 246: case 247: case 248: case 250: 
+		case 213: case 214: case 215: case 216: case 217: case 218: case 219: case 221:
+		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _496_default ;
+		goto _497_default ;
 		case _272E27: a.shift() ; return a.split( _173() ) ;
 		}
-	_496_default:
+	_497_default:
 	auto = new slashedName_slashedName_272F27_name31() ;
 	backup = 3 ;
-	yy = 332 ;
+	yy = 334 ;
 	return -348 ;
-	}
-static int _497()
-	{
-	log("_497") ;
-	auto = new type_type_275B27_275D27() ;
-	backup = 3 ;
-	yy = 338 ;
-	return -461 ;
 	}
 static int _498()
 	{
 	log("_498") ;
-	auto = new bound_222E2E2E22() ;
-	backup = 1 ;
+	auto = new type_type_275B27_275D27() ;
+	backup = 3 ;
 	yy = 340 ;
-	return -490 ;
+	return -461 ;
 	}
 static int _499()
 	{
 	log("_499") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272C27 ) { a.shift() ; return a.split( _616() ) ; }
-	else
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _617() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new bound_222E2E2E22() ;
+	backup = 1 ;
+	yy = 343 ;
+	return -493 ;
 	}
 static int _500()
 	{
 	log("_500") ;
-	auto = new bounds1_bound() ;
-	backup = 1 ;
-	yy = 339 ;
-	return -487 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272C27 ) { a.shift() ; return a.split( _619() ) ; }
+	else
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _620() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _501()
 	{
 	log("_501") ;
+	auto = new bounds1_bound() ;
+	backup = 1 ;
+	yy = 342 ;
+	return -490 ;
+	}
+static int _502()
+	{
+	log("_502") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 36: case 45: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _501_default ;
-		case _222E2E2E22: a.shift() ; return a.split( _618() ) ;
+		goto _502_default ;
+		case _222E2E2E22: a.shift() ; return a.split( _621() ) ;
 		}
-	_501_default:
+	_502_default:
 	auto = new bound_int3332() ;
 	backup = 1 ;
-	yy = 340 ;
-	return -491 ;
-	}
-static int _502()
-	{
-	log("_502") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=330 max=342 length=13
-			{
-			case _name31 : return _158() ;
-			case _className : return _619() ;
-			case _slashedName : return _160() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
-		}
-	throw new System.NotImplementedException() ;
+	yy = 343 ;
+	return -494 ;
 	}
 static int _503()
 	{
 	log("_503") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=330 max=342 length=13
-			{
-			case _name31 : return _158() ;
-			case _className : return _620() ;
-			case _slashedName : return _160() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case 36: case 214: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _503_default ;
+		case _275B27: a.shift() ; return a.split( _325() ) ;
+		case _272A27: a.shift() ; return a.split( _326() ) ;
+		case _272627: a.shift() ; return a.split( _327() ) ;
+		case _273C27: a.shift() ; return a.split( _328() ) ;
+		case _22pinned22: a.shift() ; return a.split( _329() ) ;
+		case _22modreq22: a.shift() ; return a.split( _330() ) ;
+		case _22modopt22: a.shift() ; return a.split( _331() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	_503_default:
+	auto = new genArgs_type() ;
+	backup = 1 ;
+	yy = 341 ;
+	return -488 ;
 	}
 static int _504()
 	{
 	log("_504") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.split( _621() ) ; }
+	if( token.point == _272C27 ) { a.shift() ; return a.split( _622() ) ; }
+	else
+	if( token.point == _273E27 ) { a.shift() ; return a.split( _623() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _505()
 	{
 	log("_505") ;
 	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=332 max=345 length=14
+			{
+			case _name31 : return _158() ;
+			case _className : return _624() ;
+			case _slashedName : return _160() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
 	switch( token.point )
 		{
-		case _275B27: a.shift() ; return a.split( _325() ) ;
-		case _272A27: a.shift() ; return a.split( _612() ) ;
-		case _272627: a.shift() ; return a.split( _327() ) ;
-		case _22pinned22: a.shift() ; return a.split( _328() ) ;
-		case _22modreq22: a.shift() ; return a.split( _329() ) ;
-		case _22modopt22: a.shift() ; return a.split( _330() ) ;
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -7899,122 +7933,10 @@ static int _506()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=332 max=345 length=14
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _622() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _506_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _622() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
-		}
-	_506_default:
-	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
-	}
-static int _507()
-	{
-	log("_507") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _222Ector22 ) { a.shift() ; return a.split( _623() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _508()
-	{
-	log("_508") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _22at22: a.shift() ; return a.split( _624() ) ;
-		case _22int333222: a.shift() ; return a.split( _625() ) ;
-		case _22int363422: a.shift() ; return a.split( _626() ) ;
-		case _22fromunmanaged22: a.shift() ; return a.split( _627() ) ;
-		case _22callmostderived22: a.shift() ; return a.split( _628() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _509()
-	{
-	log("_509") ;
-	auto = new comtAttr_comtAttr_22nested22_22public22() ;
-	backup = 3 ;
-	yy = 372 ;
-	return -582 ;
-	}
-static int _510()
-	{
-	log("_510") ;
-	auto = new comtAttr_comtAttr_22nested22_22private22() ;
-	backup = 3 ;
-	yy = 372 ;
-	return -583 ;
-	}
-static int _511()
-	{
-	log("_511") ;
-	auto = new comtAttr_comtAttr_22nested22_22family22() ;
-	backup = 3 ;
-	yy = 372 ;
-	return -584 ;
-	}
-static int _512()
-	{
-	log("_512") ;
-	auto = new comtAttr_comtAttr_22nested22_22assembly22() ;
-	backup = 3 ;
-	yy = 372 ;
-	return -585 ;
-	}
-static int _513()
-	{
-	log("_513") ;
-	auto = new comtAttr_comtAttr_22nested22_22famandassem22() ;
-	backup = 3 ;
-	yy = 372 ;
-	return -586 ;
-	}
-static int _514()
-	{
-	log("_514") ;
-	auto = new comtAttr_comtAttr_22nested22_22famorassem22() ;
-	backup = 3 ;
-	yy = 372 ;
-	return -587 ;
-	}
-static int _515()
-	{
-	log("_515") ;
-	auto = new extendsClause_22extends22_className() ;
-	backup = 2 ;
-	yy = 266 ;
-	return -75 ;
-	}
-static int _516()
-	{
-	log("_516") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=5 min=268 max=342 length=75
-			{
-			case _classNames : return _629() ;
 			case _name31 : return _158() ;
-			case _className : return _630() ;
+			case _className : return _625() ;
 			case _slashedName : return _160() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -8029,24 +7951,183 @@ static int _516()
 		}
 	throw new System.NotImplementedException() ;
 	}
+static int _507()
+	{
+	log("_507") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.split( _626() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _508()
+	{
+	log("_508") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _275B27: a.shift() ; return a.split( _325() ) ;
+		case _272A27: a.shift() ; return a.split( _615() ) ;
+		case _272627: a.shift() ; return a.split( _327() ) ;
+		case _273C27: a.shift() ; return a.split( _328() ) ;
+		case _22pinned22: a.shift() ; return a.split( _329() ) ;
+		case _22modreq22: a.shift() ; return a.split( _330() ) ;
+		case _22modopt22: a.shift() ; return a.split( _331() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _509()
+	{
+	log("_509") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _627() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
+		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _509_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _627() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_509_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
+	}
+static int _510()
+	{
+	log("_510") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _222Ector22 ) { a.shift() ; return a.split( _628() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _511()
+	{
+	log("_511") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _22at22: a.shift() ; return a.split( _629() ) ;
+		case _22int333222: a.shift() ; return a.split( _630() ) ;
+		case _22int363422: a.shift() ; return a.split( _631() ) ;
+		case _22fromunmanaged22: a.shift() ; return a.split( _632() ) ;
+		case _22callmostderived22: a.shift() ; return a.split( _633() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _512()
+	{
+	log("_512") ;
+	auto = new comtAttr_comtAttr_22nested22_22public22() ;
+	backup = 3 ;
+	yy = 375 ;
+	return -585 ;
+	}
+static int _513()
+	{
+	log("_513") ;
+	auto = new comtAttr_comtAttr_22nested22_22private22() ;
+	backup = 3 ;
+	yy = 375 ;
+	return -586 ;
+	}
+static int _514()
+	{
+	log("_514") ;
+	auto = new comtAttr_comtAttr_22nested22_22family22() ;
+	backup = 3 ;
+	yy = 375 ;
+	return -587 ;
+	}
+static int _515()
+	{
+	log("_515") ;
+	auto = new comtAttr_comtAttr_22nested22_22assembly22() ;
+	backup = 3 ;
+	yy = 375 ;
+	return -588 ;
+	}
+static int _516()
+	{
+	log("_516") ;
+	auto = new comtAttr_comtAttr_22nested22_22famandassem22() ;
+	backup = 3 ;
+	yy = 375 ;
+	return -589 ;
+	}
 static int _517()
 	{
 	log("_517") ;
-	auto = new classHead_222Eclass22_classAttr_id_extendsClause_implClause() ;
-	backup = 5 ;
-	yy = 264 ;
-	return -48 ;
+	auto = new comtAttr_comtAttr_22nested22_22famorassem22() ;
+	backup = 3 ;
+	yy = 375 ;
+	return -590 ;
 	}
 static int _518()
 	{
 	log("_518") ;
+	auto = new extendsClause_22extends22_className() ;
+	backup = 2 ;
+	yy = 268 ;
+	return -75 ;
+	}
+static int _519()
+	{
+	log("_519") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=336 length=12
+		switch(_yy) // size=5 min=270 max=345 length=76
 			{
-			case _methodSpec : return _665() ;
-			case _nativeType : return _666() ;
+			case _classNames : return _634() ;
+			case _name31 : return _158() ;
+			case _className : return _635() ;
+			case _slashedName : return _160() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _520()
+	{
+	log("_520") ;
+	auto = new classHead_222Eclass22_classAttr_id_extendsClause_implClause() ;
+	backup = 5 ;
+	yy = 266 ;
+	return -48 ;
+	}
+static int _521()
+	{
+	log("_521") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=338 length=12
+			{
+			case _methodSpec : return _670() ;
+			case _nativeType : return _671() ;
 			default: return __default ;
 			}
 		} ;
@@ -8055,55 +8136,55 @@ static int _518()
 		case 39: case 44: case 152: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _518_default ;
-		case _22int333222: a.shift() ; return a.deploy( _631() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _632() ) ;
-		case _22interface22: a.shift() ; return a.deploy( _633() ) ;
-		case _22ansi22: a.shift() ; return a.deploy( _634() ) ;
-		case _22nested22: a.shift() ; return a.deploy( _635() ) ;
-		case _22as22: a.shift() ; return a.deploy( _636() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _637() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _638() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _639() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _640() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _641() ) ;
+		goto _521_default ;
+		case _22int333222: a.shift() ; return a.deploy( _636() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _637() ) ;
+		case _22interface22: a.shift() ; return a.deploy( _638() ) ;
+		case _22ansi22: a.shift() ; return a.deploy( _639() ) ;
+		case _22nested22: a.shift() ; return a.deploy( _640() ) ;
+		case _22as22: a.shift() ; return a.deploy( _641() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _642() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _643() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _644() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _645() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _646() ) ;
 		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22custom22: a.shift() ; return a.deploy( _642() ) ;
-		case _22fixed22: a.shift() ; return a.deploy( _643() ) ;
-		case _22variant22: a.shift() ; return a.deploy( _644() ) ;
-		case _22currency22: a.shift() ; return a.deploy( _645() ) ;
-		case _22syschar22: a.shift() ; return a.deploy( _646() ) ;
-		case _22void22: a.shift() ; return a.deploy( _647() ) ;
-		case _22error22: a.shift() ; return a.deploy( _648() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _649() ) ;
-		case _22decimal22: a.shift() ; return a.deploy( _650() ) ;
-		case _22date22: a.shift() ; return a.deploy( _651() ) ;
-		case _22bstr22: a.shift() ; return a.deploy( _652() ) ;
-		case _22lpstr22: a.shift() ; return a.deploy( _653() ) ;
-		case _22lpwstr22: a.shift() ; return a.deploy( _654() ) ;
-		case _22lptstr22: a.shift() ; return a.deploy( _655() ) ;
-		case _22objectref22: a.shift() ; return a.deploy( _656() ) ;
-		case _22iunknown22: a.shift() ; return a.deploy( _657() ) ;
-		case _22idispatch22: a.shift() ; return a.deploy( _658() ) ;
-		case _22struct22: a.shift() ; return a.deploy( _659() ) ;
-		case _22safearray22: a.shift() ; return a.deploy( _660() ) ;
-		case _22int22: a.shift() ; return a.deploy( _661() ) ;
-		case _22byvalstr22: a.shift() ; return a.deploy( _662() ) ;
-		case _22tbstr22: a.shift() ; return a.deploy( _663() ) ;
-		case _22lpstruct22: a.shift() ; return a.deploy( _664() ) ;
+		case _22custom22: a.shift() ; return a.deploy( _647() ) ;
+		case _22fixed22: a.shift() ; return a.deploy( _648() ) ;
+		case _22variant22: a.shift() ; return a.deploy( _649() ) ;
+		case _22currency22: a.shift() ; return a.deploy( _650() ) ;
+		case _22syschar22: a.shift() ; return a.deploy( _651() ) ;
+		case _22void22: a.shift() ; return a.deploy( _652() ) ;
+		case _22error22: a.shift() ; return a.deploy( _653() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _654() ) ;
+		case _22decimal22: a.shift() ; return a.deploy( _655() ) ;
+		case _22date22: a.shift() ; return a.deploy( _656() ) ;
+		case _22bstr22: a.shift() ; return a.deploy( _657() ) ;
+		case _22lpstr22: a.shift() ; return a.deploy( _658() ) ;
+		case _22lpwstr22: a.shift() ; return a.deploy( _659() ) ;
+		case _22lptstr22: a.shift() ; return a.deploy( _660() ) ;
+		case _22objectref22: a.shift() ; return a.deploy( _661() ) ;
+		case _22iunknown22: a.shift() ; return a.deploy( _662() ) ;
+		case _22idispatch22: a.shift() ; return a.deploy( _663() ) ;
+		case _22struct22: a.shift() ; return a.deploy( _664() ) ;
+		case _22safearray22: a.shift() ; return a.deploy( _665() ) ;
+		case _22int22: a.shift() ; return a.deploy( _666() ) ;
+		case _22byvalstr22: a.shift() ; return a.deploy( _667() ) ;
+		case _22tbstr22: a.shift() ; return a.deploy( _668() ) ;
+		case _22lpstruct22: a.shift() ; return a.deploy( _669() ) ;
 		}
-	_518_default:
-	return a.deploy( _666() ) ;
+	_521_default:
+	return a.deploy( _671() ) ;
 	}
-static int _519()
+static int _522()
 	{
-	log("_519") ;
+	log("_522") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=272 max=272 length=1
+		switch(_yy) // size=1 min=274 max=274 length=1
 			{
-			case _atOpt : return _668() ;
+			case _atOpt : return _673() ;
 			default: return __default ;
 			}
 		} ;
@@ -8112,113 +8193,113 @@ static int _519()
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 38: case 41: case 43: case 51: case 52: case 53: case 79:
 		case 80: case 81: case 84: case 87: case 92: case 95: case 139: case 149:
-		case 219: case 220: case 238: case 241: case 250: 
+		case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _519_default ;
-		case _22at22: a.shift() ; return a.deploy( _667() ) ;
+		goto _522_default ;
+		case _22at22: a.shift() ; return a.deploy( _672() ) ;
 		}
-	_519_default:
-	return a.deploy( _668() ) ;
+	_522_default:
+	return a.deploy( _673() ) ;
 	}
-static int _520()
+static int _523()
 	{
-	log("_520") ;
+	log("_523") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _504() ) ; }
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
 	else
-	if( token.point == _273D27 ) { a.shift() ; return a.split( _669() ) ; }
+	if( token.point == _273D27 ) { a.shift() ; return a.split( _674() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _521()
+static int _524()
 	{
-	log("_521") ;
+	log("_524") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _670() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _675() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _522()
+static int _525()
 	{
-	log("_522") ;
+	log("_525") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _522_default ;
-		case _272C27: a.shift() ; return a.split( _671() ) ;
+		goto _525_default ;
+		case _272C27: a.shift() ; return a.split( _676() ) ;
 		}
-	_522_default:
+	_525_default:
 	auto = new nameValPairs_nameValPair() ;
 	backup = 1 ;
-	yy = 349 ;
-	return -512 ;
+	yy = 352 ;
+	return -515 ;
 	}
-static int _523()
+static int _526()
 	{
-	log("_523") ;
+	log("_526") ;
 	auto = new extSourceSpec_222Eline22_int3332_273A27_int3332_SQSTRING() ;
 	backup = 5 ;
-	yy = 354 ;
-	return -542 ;
+	yy = 357 ;
+	return -545 ;
 	}
-static int _524()
+static int _527()
 	{
-	log("_524") ;
+	log("_527") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 27: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _524_default ;
+		goto _527_default ;
 		case _272E27: a.shift() ; return a.split( _173() ) ;
 		}
-	_524_default:
+	_527_default:
 	auto = new assemblyRefHead_222Eassembly22_22extern22_name31_22as22_name31() ;
 	backup = 5 ;
-	yy = 367 ;
-	return -571 ;
-	}
-static int _525()
-	{
-	log("_525") ;
-	auto = new classDecl_222Esize22_int3332() ;
-	backup = 2 ;
-	yy = 270 ;
-	return -91 ;
-	}
-static int _526()
-	{
-	log("_526") ;
-	auto = new classDecl_222Epack22_int3332() ;
-	backup = 2 ;
-	yy = 270 ;
-	return -92 ;
-	}
-static int _527()
-	{
-	log("_527") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _672() ) ; }
-	throw new System.NotImplementedException() ;
+	yy = 370 ;
+	return -574 ;
 	}
 static int _528()
 	{
 	log("_528") ;
+	auto = new classDecl_222Esize22_int3332() ;
+	backup = 2 ;
+	yy = 272 ;
+	return -91 ;
+	}
+static int _529()
+	{
+	log("_529") ;
+	auto = new classDecl_222Epack22_int3332() ;
+	backup = 2 ;
+	yy = 272 ;
+	return -92 ;
+	}
+static int _530()
+	{
+	log("_530") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _677() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _531()
+	{
+	log("_531") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=325 max=342 length=18
+		switch(_yy) // size=7 min=327 max=345 length=19
 			{
 			case _methodSpec : return _170() ;
 			case _name31 : return _158() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _675() ;
+			case _typeSpec : return _680() ;
 			case _type : return _162() ;
-			case _id : return _676() ;
+			case _id : return _681() ;
 			default: return __default ;
 			}
 		} ;
@@ -8231,8 +8312,8 @@ static int _528()
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22specialname22: a.shift() ; return a.deploy( _673() ) ;
-		case _22rtspecialname22: a.shift() ; return a.deploy( _674() ) ;
+		case _22specialname22: a.shift() ; return a.deploy( _678() ) ;
+		case _22rtspecialname22: a.shift() ; return a.deploy( _679() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
 		case _22char22: a.shift() ; return a.deploy( _140() ) ;
 		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
@@ -8252,15 +8333,15 @@ static int _528()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _529()
+static int _532()
 	{
-	log("_529") ;
+	log("_532") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
-			case _callConv : return _679() ;
+			case _callConv : return _684() ;
 			case _callKind : return _65() ;
 			default: return __default ;
 			}
@@ -8269,30 +8350,30 @@ static int _529()
 		{
 		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
+		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _529_default ;
+		goto _532_default ;
 		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
-		case _22specialname22: a.shift() ; return a.deploy( _677() ) ;
-		case _22rtspecialname22: a.shift() ; return a.deploy( _678() ) ;
+		case _22specialname22: a.shift() ; return a.deploy( _682() ) ;
+		case _22rtspecialname22: a.shift() ; return a.deploy( _683() ) ;
 		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
 		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
 		case _22default22: a.shift() ; return a.deploy( _61() ) ;
 		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
 		}
-	_529_default:
+	_532_default:
 	return a.deploy( _65() ) ;
 	}
-static int _530()
+static int _533()
 	{
-	log("_530") ;
+	log("_533") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _680() ;
+			case _name31 : return _685() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -8302,59 +8383,11 @@ static int _530()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _22public22: a.shift() ; return a.deploy( _340() ) ;
-		case _22private22: a.shift() ; return a.deploy( _341() ) ;
-		case _22nested22: a.shift() ; return a.deploy( _342() ) ;
+		case _22public22: a.shift() ; return a.deploy( _341() ) ;
+		case _22private22: a.shift() ; return a.deploy( _342() ) ;
+		case _22nested22: a.shift() ; return a.deploy( _343() ) ;
 		}
 	throw new System.NotImplementedException() ;
-	}
-static int _531()
-	{
-	log("_531") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=269 max=269 length=1
-			{
-			case _classDecls : return _681() ;
-			default: return __default ;
-			}
-		} ;
-	if( token_HasValue )
-		a._token = Tokenset.Empty ;
-	return a.deploy( _681() ) ;
-	}
-static int _532()
-	{
-	log("_532") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=282 max=282 length=1
-			{
-			case _eventDecls : return _682() ;
-			default: return __default ;
-			}
-		} ;
-	if( token_HasValue )
-		a._token = Tokenset.Empty ;
-	return a.deploy( _682() ) ;
-	}
-static int _533()
-	{
-	log("_533") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=286 max=286 length=1
-			{
-			case _propDecls : return _683() ;
-			default: return __default ;
-			}
-		} ;
-	if( token_HasValue )
-		a._token = Tokenset.Empty ;
-	return a.deploy( _683() ) ;
 	}
 static int _534()
 	{
@@ -8362,7 +8395,55 @@ static int _534()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=20 min=256 max=354 length=99
+		switch(_yy) // size=1 min=271 max=271 length=1
+			{
+			case _classDecls : return _686() ;
+			default: return __default ;
+			}
+		} ;
+	if( token_HasValue )
+		a._token = Tokenset.Empty ;
+	return a.deploy( _686() ) ;
+	}
+static int _535()
+	{
+	log("_535") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=284 max=284 length=1
+			{
+			case _eventDecls : return _687() ;
+			default: return __default ;
+			}
+		} ;
+	if( token_HasValue )
+		a._token = Tokenset.Empty ;
+	return a.deploy( _687() ) ;
+	}
+static int _536()
+	{
+	log("_536") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=288 max=288 length=1
+			{
+			case _propDecls : return _688() ;
+			default: return __default ;
+			}
+		} ;
+	if( token_HasValue )
+		a._token = Tokenset.Empty ;
+	return a.deploy( _688() ) ;
+	}
+static int _537()
+	{
+	log("_537") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=20 min=258 max=357 length=100
 			{
 			case _languageDecl : return _264() ;
 			case _customAttrDecl : return _265() ;
@@ -8408,7 +8489,7 @@ static int _534()
 		case _INSTR5FTYPE: a.shift() ; return a.deploy( _250() ) ;
 		case _INSTR5FVAR: a.shift() ; return a.deploy( _251() ) ;
 		case _277B27: a.shift() ; return a.deploy( _252() ) ;
-		case _277D27: a.shift() ; return a.deploy( _684() ) ;
+		case _277D27: a.shift() ; return a.deploy( _689() ) ;
 		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
 		case _222Eoverride22: a.shift() ; return a.deploy( _254() ) ;
@@ -8428,31 +8509,31 @@ static int _534()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _535()
+static int _538()
 	{
-	log("_535") ;
+	log("_538") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=373 max=373 length=1
+		switch(_yy) // size=1 min=376 max=376 length=1
 			{
-			case _comtypeDecls : return _685() ;
+			case _comtypeDecls : return _690() ;
 			default: return __default ;
 			}
 		} ;
 	if( token_HasValue )
 		a._token = Tokenset.Empty ;
-	return a.deploy( _685() ) ;
+	return a.deploy( _690() ) ;
 	}
-static int _536()
+static int _539()
 	{
-	log("_536") ;
+	log("_539") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=291 max=291 length=1
+		switch(_yy) // size=1 min=293 max=293 length=1
 			{
-			case _pinvAttr : return _687() ;
+			case _pinvAttr : return _692() ;
 			default: return __default ;
 			}
 		} ;
@@ -8462,64 +8543,64 @@ static int _536()
 		case 111: case 112: case 113: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _536_default ;
-		case _272B27: a.shift() ; return a.deploy( _504() ) ;
-		case _22as22: a.shift() ; return a.deploy( _686() ) ;
+		goto _539_default ;
+		case _272B27: a.shift() ; return a.deploy( _507() ) ;
+		case _22as22: a.shift() ; return a.deploy( _691() ) ;
 		}
-	_536_default:
-	return a.deploy( _687() ) ;
+	_539_default:
+	return a.deploy( _692() ) ;
 	}
-static int _537()
+static int _540()
 	{
-	log("_537") ;
+	log("_540") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case _272927: a.shift() ; return a.split( _688() ) ;
-		case _22ansi22: a.shift() ; return a.split( _689() ) ;
-		case _22unicode22: a.shift() ; return a.split( _690() ) ;
-		case _22autochar22: a.shift() ; return a.split( _691() ) ;
-		case _22nomangle22: a.shift() ; return a.split( _692() ) ;
-		case _22lasterr22: a.shift() ; return a.split( _693() ) ;
-		case _22winapi22: a.shift() ; return a.split( _694() ) ;
-		case _22cdecl22: a.shift() ; return a.split( _695() ) ;
-		case _22stdcall22: a.shift() ; return a.split( _696() ) ;
-		case _22thiscall22: a.shift() ; return a.split( _697() ) ;
-		case _22fastcall22: a.shift() ; return a.split( _698() ) ;
+		case _272927: a.shift() ; return a.split( _693() ) ;
+		case _22ansi22: a.shift() ; return a.split( _694() ) ;
+		case _22unicode22: a.shift() ; return a.split( _695() ) ;
+		case _22autochar22: a.shift() ; return a.split( _696() ) ;
+		case _22nomangle22: a.shift() ; return a.split( _697() ) ;
+		case _22lasterr22: a.shift() ; return a.split( _698() ) ;
+		case _22winapi22: a.shift() ; return a.split( _699() ) ;
+		case _22cdecl22: a.shift() ; return a.split( _700() ) ;
+		case _22stdcall22: a.shift() ; return a.split( _701() ) ;
+		case _22thiscall22: a.shift() ; return a.split( _702() ) ;
+		case _22fastcall22: a.shift() ; return a.split( _703() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _538()
+static int _541()
 	{
-	log("_538") ;
+	log("_541") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _702() ;
+			case _int3332 : return _707() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		case _22in22: a.shift() ; return a.deploy( _699() ) ;
-		case _22out22: a.shift() ; return a.deploy( _700() ) ;
-		case _22opt22: a.shift() ; return a.deploy( _701() ) ;
+		case _22in22: a.shift() ; return a.deploy( _704() ) ;
+		case _22out22: a.shift() ; return a.deploy( _705() ) ;
+		case _22opt22: a.shift() ; return a.deploy( _706() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _539()
+static int _542()
 	{
-	log("_539") ;
+	log("_542") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _704() ;
-			case _name31 : return _705() ;
+			case _methodName : return _709() ;
+			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -8530,35 +8611,36 @@ static int _539()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _325() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _22marshal22: a.shift() ; return a.deploy( _703() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _22marshal22: a.shift() ; return a.deploy( _708() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _540()
+static int _543()
 	{
-	log("_540") ;
+	log("_543") ;
 	auto = new int16s_int3136s_int3332() ;
 	backup = 2 ;
-	yy = 343 ;
-	return -502 ;
+	yy = 346 ;
+	return -505 ;
 	}
-static int _541()
+static int _544()
 	{
-	log("_541") ;
+	log("_544") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _706() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _711() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _542()
+static int _545()
 	{
-	log("_542") ;
+	log("_545") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -8566,52 +8648,52 @@ static int _542()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 219: case 220: case 238: /* case 82: */ /* case 163: */ /* case 164: */ 
+		case 149: case 221: case 222: case 240: /* case 82: */ /* case 163: */ /* case 164: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _542_default ;
+		goto _545_default ;
 		case 82: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
-			yy = 330 ;
+			yy = 332 ;
 			return -341 ;
 			}
 		case 163: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
-			yy = 330 ;
+			yy = 332 ;
 			return -341 ;
 			}
 		case 164: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
-			yy = 330 ;
+			yy = 332 ;
 			return -341 ;
 			}
 		}
-	_542_default:
+	_545_default:
 	auto = new instr_INSTR5FFIELD_type_id() ;
 	backup = 3 ;
-	yy = 326 ;
+	yy = 328 ;
 	return -322 ;
 	}
-static int _543()
+static int _546()
 	{
-	log("_543") ;
+	log("_546") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=8 min=292 max=342 length=51
+		switch(_yy) // size=8 min=294 max=345 length=52
 			{
-			case _methodName : return _707() ;
+			case _methodName : return _712() ;
 			case _methodSpec : return _170() ;
-			case _name31 : return _614() ;
+			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _708() ;
+			case _typeSpec : return _713() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -8622,12 +8704,12 @@ static int _543()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
 		case _22char22: a.shift() ; return a.deploy( _140() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
@@ -8644,57 +8726,12 @@ static int _543()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _544()
-	{
-	log("_544") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _709() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _545()
-	{
-	log("_545") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=345 max=345 length=1
-			{
-			case _int3634 : return _710() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _546()
-	{
-	log("_546") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _272827: a.shift() ; return a.split( _711() ) ;
-		case _275B27: a.shift() ; return a.split( _325() ) ;
-		case _272A27: a.shift() ; return a.split( _326() ) ;
-		case _272627: a.shift() ; return a.split( _327() ) ;
-		case _22pinned22: a.shift() ; return a.split( _328() ) ;
-		case _22modreq22: a.shift() ; return a.split( _329() ) ;
-		case _22modopt22: a.shift() ; return a.split( _330() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -8702,14 +8739,30 @@ static int _547()
 	{
 	log("_547") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _712() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _714() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _548()
 	{
 	log("_548") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _713() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=348 max=348 length=1
+			{
+			case _int3634 : return _715() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _549()
@@ -8718,46 +8771,77 @@ static int _549()
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case 39: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _549_default ;
-		case _272C27: a.shift() ; return a.split( _714() ) ;
+		case _272827: a.shift() ; return a.split( _716() ) ;
+		case _275B27: a.shift() ; return a.split( _325() ) ;
+		case _272A27: a.shift() ; return a.split( _326() ) ;
+		case _272627: a.shift() ; return a.split( _327() ) ;
+		case _273C27: a.shift() ; return a.split( _328() ) ;
+		case _22pinned22: a.shift() ; return a.split( _329() ) ;
+		case _22modreq22: a.shift() ; return a.split( _330() ) ;
+		case _22modopt22: a.shift() ; return a.split( _331() ) ;
 		}
-	_549_default:
-	auto = new labels_id() ;
-	backup = 1 ;
-	yy = 341 ;
-	return -497 ;
+	throw new System.NotImplementedException() ;
 	}
 static int _550()
 	{
 	log("_550") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _717() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _551()
+	{
+	log("_551") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _718() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _552()
+	{
+	log("_552") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _550_default ;
-		case _272C27: a.shift() ; return a.split( _715() ) ;
+		goto _552_default ;
+		case _272C27: a.shift() ; return a.split( _719() ) ;
 		}
-	_550_default:
+	_552_default:
+	auto = new labels_id() ;
+	backup = 1 ;
+	yy = 344 ;
+	return -500 ;
+	}
+static int _553()
+	{
+	log("_553") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case 39: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _553_default ;
+		case _272C27: a.shift() ; return a.split( _720() ) ;
+		}
+	_553_default:
 	auto = new labels_int3332() ;
 	backup = 1 ;
-	yy = 341 ;
-	return -498 ;
+	yy = 344 ;
+	return -501 ;
 	}
-static int _551()
+static int _554()
 	{
-	log("_551") ;
+	log("_554") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _716() ;
-			case _name31 : return _705() ;
+			case _methodName : return _721() ;
+			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -8767,47 +8851,17 @@ static int _551()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
-	}
-static int _552()
-	{
-	log("_552") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _717() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _553()
-	{
-	log("_553") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _718() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _554()
-	{
-	log("_554") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _719() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _555()
 	{
 	log("_555") ;
-	auto = new sigArg_222E2E2E22() ;
-	backup = 1 ;
-	yy = 329 ;
-	return -336 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _722() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _556()
 	{
@@ -8815,16 +8869,46 @@ static int _556()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _723() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _557()
+	{
+	log("_557") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _724() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _558()
+	{
+	log("_558") ;
+	auto = new sigArg_222E2E2E22() ;
+	backup = 1 ;
+	yy = 331 ;
+	return -336 ;
+	}
+static int _559()
+	{
+	log("_559") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _720() ;
+			case _type : return _725() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _275B27: a.shift() ; return a.deploy( _538() ) ;
+		case _275B27: a.shift() ; return a.deploy( _541() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
@@ -8847,51 +8931,51 @@ static int _556()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _557()
+static int _560()
 	{
-	log("_557") ;
+	log("_560") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _721() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _726() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _558()
+static int _561()
 	{
-	log("_558") ;
+	log("_561") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _558_default ;
-		case _272C27: a.shift() ; return a.split( _722() ) ;
+		goto _561_default ;
+		case _272C27: a.shift() ; return a.split( _727() ) ;
 		}
-	_558_default:
+	_561_default:
 	auto = new sigArgs0_sigArgs31() ;
 	backup = 1 ;
-	yy = 327 ;
+	yy = 329 ;
 	return -333 ;
 	}
-static int _559()
+static int _562()
 	{
-	log("_559") ;
+	log("_562") ;
 	auto = new sigArgs1_sigArg() ;
 	backup = 1 ;
-	yy = 328 ;
+	yy = 330 ;
 	return -334 ;
 	}
-static int _560()
+static int _563()
 	{
-	log("_560") ;
+	log("_563") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _723() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _728() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -8899,55 +8983,55 @@ static int _560()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _560_default ;
+		goto _563_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _723() ) ;
+			return a.deploy( _728() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_560_default:
+	_563_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
-	}
-static int _561()
-	{
-	log("_561") ;
-	auto = new scopeBlock_scopeOpen_methodDecls_277D27() ;
-	backup = 3 ;
-	yy = 298 ;
-	return -237 ;
-	}
-static int _562()
-	{
-	log("_562") ;
-	auto = new catchClause_22catch22_className() ;
-	backup = 2 ;
-	yy = 307 ;
-	return -254 ;
-	}
-static int _563()
-	{
-	log("_563") ;
-	auto = new sehClauses_sehClause_sehClauses() ;
-	backup = 2 ;
-	yy = 301 ;
-	return -240 ;
+	return a.deploy( _559() ) ;
 	}
 static int _564()
 	{
 	log("_564") ;
+	auto = new scopeBlock_scopeOpen_methodDecls_277D27() ;
+	backup = 3 ;
+	yy = 300 ;
+	return -237 ;
+	}
+static int _565()
+	{
+	log("_565") ;
+	auto = new catchClause_22catch22_className() ;
+	backup = 2 ;
+	yy = 309 ;
+	return -254 ;
+	}
+static int _566()
+	{
+	log("_566") ;
+	auto = new sehClauses_sehClause_sehClauses() ;
+	backup = 2 ;
+	yy = 303 ;
+	return -240 ;
+	}
+static int _567()
+	{
+	log("_567") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=342 max=344 length=3
+		switch(_yy) // size=2 min=345 max=347 length=3
 			{
-			case _id : return _724() ;
-			case _int3332 : return _725() ;
+			case _id : return _729() ;
+			case _int3332 : return _730() ;
 			default: return __default ;
 			}
 		} ;
@@ -8959,79 +9043,79 @@ static int _564()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _565()
-	{
-	log("_565") ;
-	auto = new handlerBlock_scopeBlock() ;
-	backup = 1 ;
-	yy = 310 ;
-	return -257 ;
-	}
-static int _566()
-	{
-	log("_566") ;
-	auto = new sehClause_filterClause_handlerBlock() ;
-	backup = 2 ;
-	yy = 304 ;
-	return -247 ;
-	}
-static int _567()
-	{
-	log("_567") ;
-	auto = new filterClause_filterHead_scopeBlock() ;
-	backup = 2 ;
-	yy = 305 ;
-	return -250 ;
-	}
 static int _568()
 	{
 	log("_568") ;
-	auto = new filterClause_filterHead_id() ;
-	backup = 2 ;
-	yy = 305 ;
-	return -251 ;
+	auto = new handlerBlock_scopeBlock() ;
+	backup = 1 ;
+	yy = 312 ;
+	return -257 ;
 	}
 static int _569()
 	{
 	log("_569") ;
-	auto = new filterClause_filterHead_int3332() ;
+	auto = new sehClause_filterClause_handlerBlock() ;
 	backup = 2 ;
-	yy = 305 ;
-	return -252 ;
+	yy = 306 ;
+	return -247 ;
 	}
 static int _570()
 	{
 	log("_570") ;
-	auto = new sehClause_catchClause_handlerBlock() ;
+	auto = new filterClause_filterHead_scopeBlock() ;
 	backup = 2 ;
-	yy = 304 ;
-	return -246 ;
+	yy = 307 ;
+	return -250 ;
 	}
 static int _571()
 	{
 	log("_571") ;
-	auto = new sehClause_finallyClause_handlerBlock() ;
+	auto = new filterClause_filterHead_id() ;
 	backup = 2 ;
-	yy = 304 ;
-	return -248 ;
+	yy = 307 ;
+	return -251 ;
 	}
 static int _572()
 	{
 	log("_572") ;
-	auto = new sehClause_faultClause_handlerBlock() ;
+	auto = new filterClause_filterHead_int3332() ;
 	backup = 2 ;
-	yy = 304 ;
-	return -249 ;
+	yy = 307 ;
+	return -252 ;
 	}
 static int _573()
 	{
 	log("_573") ;
+	auto = new sehClause_catchClause_handlerBlock() ;
+	backup = 2 ;
+	yy = 306 ;
+	return -246 ;
+	}
+static int _574()
+	{
+	log("_574") ;
+	auto = new sehClause_finallyClause_handlerBlock() ;
+	backup = 2 ;
+	yy = 306 ;
+	return -248 ;
+	}
+static int _575()
+	{
+	log("_575") ;
+	auto = new sehClause_faultClause_handlerBlock() ;
+	backup = 2 ;
+	yy = 306 ;
+	return -249 ;
+	}
+static int _576()
+	{
+	log("_576") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _726() ;
+			case _id : return _731() ;
 			default: return __default ;
 			}
 		} ;
@@ -9040,185 +9124,44 @@ static int _573()
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _574()
-	{
-	log("_574") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _727() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _575()
-	{
-	log("_575") ;
-	auto = new instr_instr5Fr5Fhead_bytes_272927() ;
-	backup = 3 ;
-	yy = 326 ;
-	return -316 ;
-	}
-static int _576()
-	{
-	log("_576") ;
-	auto = new ddItemList_ddItem_272C27_ddItemList() ;
-	backup = 3 ;
-	yy = 316 ;
-	return -269 ;
-	}
 static int _577()
 	{
 	log("_577") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=317 max=317 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _ddItemCount : return _728() ;
+			case _int3332 : return _732() ;
 			default: return __default ;
 			}
 		} ;
-	switch( token.point )
-		{
-		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
-		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
-		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
-		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
-		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
-		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _577_default ;
-		case _275B27: a.shift() ; return a.deploy( _283() ) ;
-		}
-	_577_default:
-	return a.deploy( _728() ) ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _578()
 	{
 	log("_578") ;
-	auto = new ddItemCount_275B27_int3332_275D27() ;
+	auto = new instr_instr5Fr5Fhead_bytes_272927() ;
 	backup = 3 ;
-	yy = 317 ;
-	return -272 ;
+	yy = 328 ;
+	return -316 ;
 	}
 static int _579()
 	{
 	log("_579") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=317 max=317 length=1
-			{
-			case _ddItemCount : return _729() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
-		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
-		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
-		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
-		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
-		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _579_default ;
-		case _275B27: a.shift() ; return a.deploy( _283() ) ;
-		}
-	_579_default:
-	return a.deploy( _729() ) ;
+	auto = new ddItemList_ddItem_272C27_ddItemList() ;
+	backup = 3 ;
+	yy = 318 ;
+	return -269 ;
 	}
 static int _580()
 	{
 	log("_580") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _504() ) ; }
-	else
-	if( token.point == _272927 ) { a.shift() ; return a.split( _730() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _581()
-	{
-	log("_581") ;
-	auto = new ddItem_272627_272827_id_272927() ;
-	backup = 4 ;
-	yy = 318 ;
-	return -274 ;
-	}
-static int _582()
-	{
-	log("_582") ;
-	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=317 max=317 length=1
-			{
-			case _ddItemCount : return _731() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
-		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
-		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
-		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
-		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
-		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _582_default ;
-		case _275B27: a.shift() ; return a.deploy( _283() ) ;
-		}
-	_582_default:
-	return a.deploy( _731() ) ;
-	}
-static int _583()
-	{
-	log("_583") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=317 max=317 length=1
-			{
-			case _ddItemCount : return _732() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
-		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
-		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
-		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
-		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
-		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _583_default ;
-		case _275B27: a.shift() ; return a.deploy( _283() ) ;
-		}
-	_583_default:
-	return a.deploy( _732() ) ;
-	}
-static int _584()
-	{
-	log("_584") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=317 max=317 length=1
+		switch(_yy) // size=1 min=319 max=319 length=1
 			{
 			case _ddItemCount : return _733() ;
 			default: return __default ;
@@ -9232,22 +9175,30 @@ static int _584()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _584_default ;
+		goto _580_default ;
 		case _275B27: a.shift() ; return a.deploy( _283() ) ;
 		}
-	_584_default:
+	_580_default:
 	return a.deploy( _733() ) ;
 	}
-static int _585()
+static int _581()
 	{
-	log("_585") ;
+	log("_581") ;
+	auto = new ddItemCount_275B27_int3332_275D27() ;
+	backup = 3 ;
+	yy = 319 ;
+	return -272 ;
+	}
+static int _582()
+	{
+	log("_582") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=317 max=317 length=1
+		switch(_yy) // size=1 min=319 max=319 length=1
 			{
 			case _ddItemCount : return _734() ;
 			default: return __default ;
@@ -9261,14 +9212,60 @@ static int _585()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _582_default ;
+		case _275B27: a.shift() ; return a.deploy( _283() ) ;
+		}
+	_582_default:
+	return a.deploy( _734() ) ;
+	}
+static int _583()
+	{
+	log("_583") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
+	else
+	if( token.point == _272927 ) { a.shift() ; return a.split( _735() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _584()
+	{
+	log("_584") ;
+	auto = new ddItem_272627_272827_id_272927() ;
+	backup = 4 ;
+	yy = 320 ;
+	return -274 ;
+	}
+static int _585()
+	{
+	log("_585") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=319 max=319 length=1
+			{
+			case _ddItemCount : return _736() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
+		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
+		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
+		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
+		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
+		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _585_default ;
 		case _275B27: a.shift() ; return a.deploy( _283() ) ;
 		}
 	_585_default:
-	return a.deploy( _734() ) ;
+	return a.deploy( _736() ) ;
 	}
 static int _586()
 	{
@@ -9276,152 +9273,201 @@ static int _586()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=319 max=319 length=1
 			{
-			case _int3332 : return _735() ;
+			case _ddItemCount : return _737() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
+		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
+		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
+		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
+		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
+		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _586_default ;
+		case _275B27: a.shift() ; return a.deploy( _283() ) ;
+		}
+	_586_default:
+	return a.deploy( _737() ) ;
+	}
+static int _587()
+	{
+	log("_587") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=319 max=319 length=1
+			{
+			case _ddItemCount : return _738() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
+		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
+		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
+		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
+		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
+		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _587_default ;
+		case _275B27: a.shift() ; return a.deploy( _283() ) ;
+		}
+	_587_default:
+	return a.deploy( _738() ) ;
+	}
+static int _588()
+	{
+	log("_588") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=319 max=319 length=1
+			{
+			case _ddItemCount : return _739() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
+		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
+		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
+		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
+		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
+		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
+		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _588_default ;
+		case _275B27: a.shift() ; return a.deploy( _283() ) ;
+		}
+	_588_default:
+	return a.deploy( _739() ) ;
+	}
+static int _589()
+	{
+	log("_589") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _740() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _587()
-	{
-	log("_587") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _736() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _588()
-	{
-	log("_588") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _737() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _589()
-	{
-	log("_589") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case 28: case 37: case 219: case 220: case 240: case 246: case 247: case 248:
-		case 249: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _589_default ;
-		case _272B27: a.shift() ; return a.split( _504() ) ;
-		}
-	_589_default:
-	auto = new asmOrRefDecl_222Elocale22_compQstring() ;
-	backup = 2 ;
-	yy = 363 ;
-	return -564 ;
-	}
 static int _590()
 	{
 	log("_590") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _738() ) ; }
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _741() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _591()
 	{
 	log("_591") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _739() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _742() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _592()
 	{
 	log("_592") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _740() ) ; }
-	throw new System.NotImplementedException() ;
+	switch( token.point )
+		{
+		case 28: case 37: case 221: case 222: case 242: case 248: case 249: case 250:
+		case 251: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _592_default ;
+		case _272B27: a.shift() ; return a.split( _507() ) ;
+		}
+	_592_default:
+	auto = new asmOrRefDecl_222Elocale22_compQstring() ;
+	backup = 2 ;
+	yy = 366 ;
+	return -567 ;
 	}
 static int _593()
 	{
 	log("_593") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _741() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _743() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _594()
 	{
 	log("_594") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _742() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _744() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _595()
 	{
 	log("_595") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _743() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _745() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _596()
 	{
 	log("_596") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _744() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _746() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _597()
 	{
 	log("_597") ;
 	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case 28: case 31: case 37: case 53: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _597_default ;
-		case _272E27: a.shift() ; return a.split( _173() ) ;
-		}
-	_597_default:
-	auto = new comtypeDecl_222Efile22_name31() ;
-	backup = 2 ;
-	yy = 374 ;
-	return -590 ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _747() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _598()
 	{
 	log("_598") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=330 max=342 length=13
-			{
-			case _name31 : return _745() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		}
+	if( token.point == _272927 ) { a.shift() ; return a.split( _748() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _599()
 	{
 	log("_599") ;
-	auto = new comtypeDecl_222Eclass22_int3332() ;
-	backup = 2 ;
-	yy = 374 ;
-	return -592 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _749() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _600()
 	{
 	log("_600") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _22at22 ) { a.shift() ; return a.split( _746() ) ; }
-	else
-	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
-	throw new System.NotImplementedException() ;
+	switch( token.point )
+		{
+		case 28: case 31: case 37: case 53: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _600_default ;
+		case _272E27: a.shift() ; return a.split( _173() ) ;
+		}
+	_600_default:
+	auto = new comtypeDecl_222Efile22_name31() ;
+	backup = 2 ;
+	yy = 377 ;
+	return -593 ;
 	}
 static int _601()
 	{
@@ -9429,9 +9475,9 @@ static int _601()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _747() ;
+			case _name31 : return _750() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -9447,17 +9493,19 @@ static int _601()
 static int _602()
 	{
 	log("_602") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _748() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new comtypeDecl_222Eclass22_int3332() ;
+	backup = 2 ;
+	yy = 377 ;
+	return -595 ;
 	}
 static int _603()
 	{
 	log("_603") ;
-	auto = new languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING_272C27_SQSTRING() ;
-	backup = 6 ;
-	yy = 256 ;
-	return -29 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22at22 ) { a.shift() ; return a.split( _751() ) ; }
+	else
+	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _604()
 	{
@@ -9465,10 +9513,46 @@ static int _604()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=330 max=342 length=13
+		switch(_yy) // size=2 min=332 max=345 length=14
+			{
+			case _name31 : return _752() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _605()
+	{
+	log("_605") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _753() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _606()
+	{
+	log("_606") ;
+	auto = new languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING_272C27_SQSTRING() ;
+	backup = 6 ;
+	yy = 258 ;
+	return -29 ;
+	}
+static int _607()
+	{
+	log("_607") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _slashedName : return _749() ;
+			case _slashedName : return _754() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -9481,24 +9565,24 @@ static int _604()
 		case 33: case 35: case 37: case 39: case 40: case 41: case 43: case 51:
 		case 52: case 53: case 79: case 80: case 81: case 82: case 84: case 87:
 		case 92: case 95: case 132: case 133: case 134: case 136: case 137: case 139:
-		case 140: case 141: case 143: case 149: case 219: case 220: case 238: case 240:
-		case 241: case 246: case 247: case 248: case 250: 
+		case 140: case 141: case 143: case 149: case 221: case 222: case 240: case 242:
+		case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _604_default ;
+		goto _607_default ;
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	_604_default:
+	_607_default:
 	auto = new typeSpec_275B27_222Emodule22_name31_275D27() ;
 	backup = 4 ;
-	yy = 333 ;
+	yy = 335 ;
 	return -351 ;
 	}
-static int _605()
+static int _608()
 	{
-	log("_605") ;
+	log("_608") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -9512,66 +9596,18 @@ static int _605()
 		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
 		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
 		case 161: case 175: case 177: case 209: case 210: case 211: case 212: case 213:
-		case 214: case 215: case 216: case 217: case 219: case 220: case 238: case 240:
-		case 241: case 246: case 247: case 248: case 250: 
+		case 214: case 215: case 216: case 217: case 218: case 219: case 221: case 222:
+		case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _605_default ;
+		goto _608_default ;
 		case _272F27: a.shift() ; return a.split( _324() ) ;
 		}
-	_605_default:
+	_608_default:
 	auto = new className_275B27_name31_275D27_slashedName() ;
 	backup = 4 ;
-	yy = 331 ;
+	yy = 333 ;
 	return -344 ;
-	}
-static int _606()
-	{
-	log("_606") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=342 max=342 length=1
-			{
-			case _id : return _750() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
-	else
-	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _607()
-	{
-	log("_607") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _751() ) ; }
-	else
-	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _608()
-	{
-	log("_608") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=330 max=342 length=13
-			{
-			case _name31 : return _158() ;
-			case _slashedName : return _605() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		}
-	throw new System.NotImplementedException() ;
 	}
 static int _609()
 	{
@@ -9579,135 +9615,151 @@ static int _609()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=255 max=255 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _compQstring : return _753() ;
+			case _id : return _755() ;
 			default: return __default ;
 			}
 		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
+	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
-	if( token.point == _272827 ) { a.shift() ; return a.deploy( _752() ) ; }
+	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _610()
 	{
 	log("_610") ;
-	auto = new methodName_222Ector22() ;
-	backup = 1 ;
-	yy = 292 ;
-	return -181 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _756() ) ; }
+	else
+	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _611()
 	{
 	log("_611") ;
-	auto = new methodName_222Ecctor22() ;
-	backup = 1 ;
-	yy = 292 ;
-	return -182 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=332 max=345 length=14
+			{
+			case _name31 : return _158() ;
+			case _slashedName : return _608() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		}
+	throw new System.NotImplementedException() ;
 	}
 static int _612()
 	{
 	log("_612") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _758() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	else
+	if( token.point == _272827 ) { a.shift() ; return a.deploy( _757() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _613()
+	{
+	log("_613") ;
+	auto = new methodName_222Ector22() ;
+	backup = 1 ;
+	yy = 294 ;
+	return -181 ;
+	}
+static int _614()
+	{
+	log("_614") ;
+	auto = new methodName_222Ecctor22() ;
+	backup = 1 ;
+	yy = 294 ;
+	return -182 ;
+	}
+static int _615()
+	{
+	log("_615") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 3: case 5: case 9: case 44: case 47: case 48: case 56: case 86:
 		case 114: case 121: case 151: case 152: case 153: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 213: case 214: case 215: case 216: case 217: 
+		case 212: case 213: case 215: case 216: case 217: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _612_default ;
-		case _272827: a.shift() ; return a.split( _754() ) ;
+		goto _615_default ;
+		case _272827: a.shift() ; return a.split( _759() ) ;
 		}
-	_612_default:
+	_615_default:
 	auto = new type_type_272A27() ;
 	backup = 2 ;
-	yy = 338 ;
+	yy = 340 ;
 	return -464 ;
 	}
-static int _613()
+static int _616()
 	{
-	log("_613") ;
+	log("_616") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _755() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _760() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _614()
+static int _617()
 	{
-	log("_614") ;
+	log("_617") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		/* case 40: */ case 82: case 164: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _614_default ;
+		goto _617_default ;
 		case 40: 
 			{
 			auto = new methodName_name31() ;
 			backup = 1 ;
-			yy = 292 ;
+			yy = 294 ;
 			return -183 ;
 			}
 		case _272E27: a.shift() ; return a.split( _173() ) ;
 		}
-	_614_default:
+	_617_default:
 	auto = new slashedName_name31() ;
 	backup = 1 ;
-	yy = 332 ;
+	yy = 334 ;
 	return -347 ;
-	}
-static int _615()
-	{
-	log("_615") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _756() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _616()
-	{
-	log("_616") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=340 max=344 length=5
-			{
-			case _bound : return _757() ;
-			case _int3332 : return _501() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 36: case 45: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _616_default ;
-		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		case _222E2E2E22: a.shift() ; return a.deploy( _498() ) ;
-		}
-	_616_default:
-	return a.deploy( _757() ) ;
-	}
-static int _617()
-	{
-	log("_617") ;
-	auto = new type_type_275B27_bounds31_275D27() ;
-	backup = 4 ;
-	yy = 338 ;
-	return -462 ;
 	}
 static int _618()
 	{
 	log("_618") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _761() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _619()
+	{
+	log("_619") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=2 min=343 max=347 length=5
 			{
-			case _int3332 : return _758() ;
+			case _bound : return _762() ;
+			case _int3332 : return _502() ;
 			default: return __default ;
 			}
 		} ;
@@ -9716,689 +9768,57 @@ static int _618()
 		case 36: case 45: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _618_default ;
+		goto _619_default ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _499() ) ;
 		}
-	_618_default:
-	auto = new bound_int3332_222E2E2E22() ;
-	backup = 2 ;
-	yy = 340 ;
-	return -493 ;
-	}
-static int _619()
-	{
-	log("_619") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _759() ) ; }
-	throw new System.NotImplementedException() ;
+	_619_default:
+	return a.deploy( _762() ) ;
 	}
 static int _620()
 	{
 	log("_620") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _760() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new type_type_275B27_bounds31_275D27() ;
+	backup = 4 ;
+	yy = 340 ;
+	return -462 ;
 	}
 static int _621()
 	{
 	log("_621") ;
-	auto = new compQstring_compQstring_272B27_QSTRING() ;
-	backup = 3 ;
-	yy = 255 ;
-	return -26 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _763() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 36: case 45: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _621_default ;
+		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
+		}
+	_621_default:
+	auto = new bound_int3332_222E2E2E22() ;
+	backup = 2 ;
+	yy = 343 ;
+	return -496 ;
 	}
 static int _622()
 	{
 	log("_622") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _761() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _623()
-	{
-	log("_623") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _762() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _624()
-	{
-	log("_624") ;
-	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
-			{
-			case _id : return _763() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
-	else
-	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _625()
-	{
-	log("_625") ;
-	auto = new vtfixupAttr_vtfixupAttr_22int333222() ;
-	backup = 2 ;
-	yy = 260 ;
-	return -41 ;
-	}
-static int _626()
-	{
-	log("_626") ;
-	auto = new vtfixupAttr_vtfixupAttr_22int363422() ;
-	backup = 2 ;
-	yy = 260 ;
-	return -42 ;
-	}
-static int _627()
-	{
-	log("_627") ;
-	auto = new vtfixupAttr_vtfixupAttr_22fromunmanaged22() ;
-	backup = 2 ;
-	yy = 260 ;
-	return -43 ;
-	}
-static int _628()
-	{
-	log("_628") ;
-	auto = new vtfixupAttr_vtfixupAttr_22callmostderived22() ;
-	backup = 2 ;
-	yy = 260 ;
-	return -44 ;
-	}
-static int _629()
-	{
-	log("_629") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case 27: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _629_default ;
-		case _272C27: a.shift() ; return a.split( _764() ) ;
-		}
-	_629_default:
-	auto = new implClause_22implements22_classNames() ;
-	backup = 2 ;
-	yy = 267 ;
-	return -77 ;
-	}
-static int _630()
-	{
-	log("_630") ;
-	auto = new classNames_className() ;
-	backup = 1 ;
-	yy = 268 ;
-	return -79 ;
-	}
-static int _631()
-	{
-	log("_631") ;
-	auto = new nativeType_22int333222() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -375 ;
-	}
-static int _632()
-	{
-	log("_632") ;
-	auto = new nativeType_22int363422() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -376 ;
-	}
-static int _633()
-	{
-	log("_633") ;
-	auto = new nativeType_22interface22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -399 ;
-	}
-static int _634()
-	{
-	log("_634") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22bstr22 ) { a.shift() ; return a.split( _765() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _635()
-	{
-	log("_635") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22struct22 ) { a.shift() ; return a.split( _766() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _636()
-	{
-	log("_636") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22any22 ) { a.shift() ; return a.split( _767() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _637()
-	{
-	log("_637") ;
-	auto = new nativeType_22float333222() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -377 ;
-	}
-static int _638()
-	{
-	log("_638") ;
-	auto = new nativeType_22float363422() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -378 ;
-	}
-static int _639()
-	{
-	log("_639") ;
-	auto = new nativeType_22int313622() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -374 ;
-	}
-static int _640()
-	{
-	log("_640") ;
-	auto = new nativeType_22int3822() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -373 ;
-	}
-static int _641()
-	{
-	log("_641") ;
-	auto = new nativeType_22bool22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -372 ;
-	}
-static int _642()
-	{
-	log("_642") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _768() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _643()
-	{
-	log("_643") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22sysstring22 ) { a.shift() ; return a.split( _769() ) ; }
-	else
-	if( token.point == _22array22 ) { a.shift() ; return a.split( _770() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _644()
-	{
-	log("_644") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case 39: case 44: case 152: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _644_default ;
-		case _22bool22: a.shift() ; return a.split( _771() ) ;
-		}
-	_644_default:
-	auto = new nativeType_22variant22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -368 ;
-	}
-static int _645()
-	{
-	log("_645") ;
-	auto = new nativeType_22currency22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -369 ;
-	}
-static int _646()
-	{
-	log("_646") ;
-	auto = new nativeType_22syschar22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -370 ;
-	}
-static int _647()
-	{
-	log("_647") ;
-	auto = new nativeType_22void22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -371 ;
-	}
-static int _648()
-	{
-	log("_648") ;
-	auto = new nativeType_22error22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -379 ;
-	}
-static int _649()
-	{
-	log("_649") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.split( _772() ) ;
-		case _22int363422: a.shift() ; return a.split( _773() ) ;
-		case _22int313622: a.shift() ; return a.split( _774() ) ;
-		case _22int3822: a.shift() ; return a.split( _775() ) ;
-		case _22int22: a.shift() ; return a.split( _776() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _650()
-	{
-	log("_650") ;
-	auto = new nativeType_22decimal22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -389 ;
-	}
-static int _651()
-	{
-	log("_651") ;
-	auto = new nativeType_22date22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -390 ;
-	}
-static int _652()
-	{
-	log("_652") ;
-	auto = new nativeType_22bstr22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -391 ;
-	}
-static int _653()
-	{
-	log("_653") ;
-	auto = new nativeType_22lpstr22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -392 ;
-	}
-static int _654()
-	{
-	log("_654") ;
-	auto = new nativeType_22lpwstr22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -393 ;
-	}
-static int _655()
-	{
-	log("_655") ;
-	auto = new nativeType_22lptstr22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -394 ;
-	}
-static int _656()
-	{
-	log("_656") ;
-	auto = new nativeType_22objectref22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -395 ;
-	}
-static int _657()
-	{
-	log("_657") ;
-	auto = new nativeType_22iunknown22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -396 ;
-	}
-static int _658()
-	{
-	log("_658") ;
-	auto = new nativeType_22idispatch22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -397 ;
-	}
-static int _659()
-	{
-	log("_659") ;
-	auto = new nativeType_22struct22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -398 ;
-	}
-static int _660()
-	{
-	log("_660") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=337 max=337 length=1
-			{
-			case _variantType : return _813() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 36: case 39: case 44: /* case 152: */ case 153: case 195: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _660_default ;
-		case _22int333222: a.shift() ; return a.deploy( _777() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _778() ) ;
-		case _272A27: a.shift() ; return a.deploy( _779() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _780() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _781() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _782() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _783() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _784() ) ;
-		case _22variant22: a.shift() ; return a.deploy( _785() ) ;
-		case _22currency22: a.shift() ; return a.deploy( _786() ) ;
-		case _22void22: a.shift() ; return a.deploy( _787() ) ;
-		case _22error22: a.shift() ; return a.deploy( _788() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _789() ) ;
-		case _22decimal22: a.shift() ; return a.deploy( _790() ) ;
-		case _22date22: a.shift() ; return a.deploy( _791() ) ;
-		case _22bstr22: a.shift() ; return a.deploy( _792() ) ;
-		case _22lpstr22: a.shift() ; return a.deploy( _793() ) ;
-		case _22lpwstr22: a.shift() ; return a.deploy( _794() ) ;
-		case _22iunknown22: a.shift() ; return a.deploy( _795() ) ;
-		case _22idispatch22: a.shift() ; return a.deploy( _796() ) ;
-		case _22safearray22: a.shift() ; return a.deploy( _797() ) ;
-		case _22int22: a.shift() ; return a.deploy( _798() ) ;
-		case _22null22: a.shift() ; return a.deploy( _799() ) ;
-		case _22hresult22: a.shift() ; return a.deploy( _800() ) ;
-		case _22carray22: a.shift() ; return a.deploy( _801() ) ;
-		case _22userdefined22: a.shift() ; return a.deploy( _802() ) ;
-		case _22record22: a.shift() ; return a.deploy( _803() ) ;
-		case _22filetime22: a.shift() ; return a.deploy( _804() ) ;
-		case _22blob22: a.shift() ; return a.deploy( _805() ) ;
-		case _22stream22: a.shift() ; return a.deploy( _806() ) ;
-		case _22storage22: a.shift() ; return a.deploy( _807() ) ;
-		case _22streamed5Fobject22: a.shift() ; return a.deploy( _808() ) ;
-		case _22stored5Fobject22: a.shift() ; return a.deploy( _809() ) ;
-		case _22blob5Fobject22: a.shift() ; return a.deploy( _810() ) ;
-		case _22cf22: a.shift() ; return a.deploy( _811() ) ;
-		case _22clsid22: a.shift() ; return a.deploy( _812() ) ;
-		}
-	_660_default:
-	return a.deploy( _813() ) ;
-	}
-static int _661()
-	{
-	log("_661") ;
-	auto = new nativeType_22int22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -402 ;
-	}
-static int _662()
-	{
-	log("_662") ;
-	auto = new nativeType_22byvalstr22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -405 ;
-	}
-static int _663()
-	{
-	log("_663") ;
-	auto = new nativeType_22tbstr22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -407 ;
-	}
-static int _664()
-	{
-	log("_664") ;
-	auto = new nativeType_22lpstruct22() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -411 ;
-	}
-static int _665()
-	{
-	log("_665") ;
-	auto = new nativeType_methodSpec() ;
-	backup = 1 ;
-	yy = 336 ;
-	return -409 ;
-	}
-static int _666()
-	{
-	log("_666") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _272927: a.shift() ; return a.split( _814() ) ;
-		case _275B27: a.shift() ; return a.split( _815() ) ;
-		case _272A27: a.shift() ; return a.split( _816() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _667()
-	{
-	log("_667") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=342 max=342 length=1
-			{
-			case _id : return _817() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
-	else
-	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _668()
-	{
-	log("_668") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=273 max=273 length=1
-			{
-			case _initOpt : return _819() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
-		case 37: case 41: case 43: case 51: case 52: case 53: case 79: case 80:
-		case 81: case 84: case 87: case 92: case 95: case 139: case 149: case 219:
-		case 220: case 238: case 241: case 250: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _668_default ;
-		case _273D27: a.shift() ; return a.deploy( _818() ) ;
-		}
-	_668_default:
-	return a.deploy( _819() ) ;
-	}
-static int _669()
-	{
-	log("_669") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=8 min=255 max=352 length=98
-			{
-			case _compQstring : return _823() ;
-			case _name31 : return _158() ;
-			case _className : return _824() ;
-			case _slashedName : return _160() ;
-			case _id : return _71() ;
-			case _int3332 : return _825() ;
-			case _truefalse : return _826() ;
-			case _caValue : return _827() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _QSTRING: a.shift() ; return a.deploy( _331() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _820() ) ;
-		case _22true22: a.shift() ; return a.deploy( _821() ) ;
-		case _22false22: a.shift() ; return a.deploy( _822() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _670()
-	{
-	log("_670") ;
-	auto = new secDecl_222Epermission22_secAction_typeSpec_272827_nameValPairs_272927() ;
-	backup = 6 ;
-	yy = 347 ;
-	return -508 ;
-	}
-static int _671()
-	{
-	log("_671") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=255 max=350 length=96
-			{
-			case _compQstring : return _520() ;
-			case _nameValPairs : return _828() ;
-			case _nameValPair : return _522() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _672()
-	{
-	log("_672") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=292 max=342 length=51
-			{
-			case _methodName : return _829() ;
-			case _name31 : return _705() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _673()
-	{
-	log("_673") ;
-	auto = new eventAttr_eventAttr_22specialname22() ;
-	backup = 2 ;
-	yy = 281 ;
-	return -117 ;
-	}
-static int _674()
-	{
-	log("_674") ;
-	auto = new eventAttr_eventAttr_22rtspecialname22() ;
-	backup = 2 ;
-	yy = 281 ;
-	return -116 ;
-	}
-static int _675()
-	{
-	log("_675") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=342 max=342 length=1
-			{
-			case _id : return _830() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
-	else
-	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _676()
-	{
-	log("_676") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		/* case 27: */ case 3: case 5: case 163: case 164: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _676_default ;
-		case 27: 
-			{
-			auto = new eventHead_222Eevent22_eventAttr_id() ;
-			backup = 3 ;
-			yy = 280 ;
-			return -114 ;
-			}
-		}
-	_676_default:
-	auto = new name1_id() ;
-	backup = 1 ;
-	yy = 330 ;
-	return -341 ;
-	}
-static int _677()
-	{
-	log("_677") ;
-	auto = new propAttr_propAttr_22specialname22() ;
-	backup = 2 ;
-	yy = 285 ;
-	return -134 ;
-	}
-static int _678()
-	{
-	log("_678") ;
-	auto = new propAttr_propAttr_22rtspecialname22() ;
-	backup = 2 ;
-	yy = 285 ;
-	return -133 ;
-	}
-static int _679()
-	{
-	log("_679") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _831() ;
+			case _type : return _764() ;
 			default: return __default ;
 			}
 		} ;
@@ -10426,363 +9846,59 @@ static int _679()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _680()
+static int _623()
 	{
-	log("_680") ;
+	log("_623") ;
+	auto = new type_type_273C27_genArgs_273E27() ;
+	backup = 4 ;
+	yy = 340 ;
+	return -465 ;
+	}
+static int _624()
+	{
+	log("_624") ;
 	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case 27: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _680_default ;
-		case _272E27: a.shift() ; return a.split( _173() ) ;
-		}
-	_680_default:
-	auto = new exportHead_222Eexport22_comtAttr_name31() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _765() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _625()
+	{
+	log("_625") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _766() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _626()
+	{
+	log("_626") ;
+	auto = new compQstring_compQstring_272B27_QSTRING() ;
 	backup = 3 ;
-	yy = 371 ;
-	return -578 ;
+	yy = 257 ;
+	return -26 ;
 	}
-static int _681()
+static int _627()
 	{
-	log("_681") ;
+	log("_627") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _767() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _628()
+	{
+	log("_628") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _768() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _629()
+	{
+	log("_629") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=17 min=256 max=371 length=116
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _languageDecl : return _382() ;
-			case _customAttrDecl : return _383() ;
-			case _classHead : return _384() ;
-			case _classDecl : return _385() ;
-			case _fieldDecl : return _386() ;
-			case _customHead : return _34() ;
-			case _customHeadWithOwner : return _35() ;
-			case _eventHead : return _387() ;
-			case _propHead : return _388() ;
-			case _methodHeadPart31 : return _36() ;
-			case _methodHead : return _389() ;
-			case _dataDecl : return _390() ;
-			case _ddHead : return _39() ;
-			case _secDecl : return _391() ;
-			case _psetHead : return _41() ;
-			case _extSourceSpec : return _392() ;
-			case _exportHead : return _393() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
-		case _277D27: a.shift() ; return a.deploy( _832() ) ;
-		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
-		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Eclass22: a.shift() ; return a.deploy( _375() ) ;
-		case _222Esize22: a.shift() ; return a.deploy( _376() ) ;
-		case _222Epack22: a.shift() ; return a.deploy( _377() ) ;
-		case _222Eoverride22: a.shift() ; return a.deploy( _378() ) ;
-		case _222Efield22: a.shift() ; return a.deploy( _16() ) ;
-		case _222Eevent22: a.shift() ; return a.deploy( _379() ) ;
-		case _222Eproperty22: a.shift() ; return a.deploy( _380() ) ;
-		case _222Emethod22: a.shift() ; return a.deploy( _17() ) ;
-		case _222Eexport22: a.shift() ; return a.deploy( _381() ) ;
-		case _222Edata22: a.shift() ; return a.deploy( _18() ) ;
-		case _222Epermission22: a.shift() ; return a.deploy( _19() ) ;
-		case _222Epermissionset22: a.shift() ; return a.deploy( _20() ) ;
-		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _682()
-	{
-	log("_682") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=6 min=256 max=354 length=99
-			{
-			case _languageDecl : return _838() ;
-			case _customAttrDecl : return _839() ;
-			case _customHead : return _34() ;
-			case _customHeadWithOwner : return _35() ;
-			case _eventDecl : return _840() ;
-			case _extSourceSpec : return _841() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
-		case _277D27: a.shift() ; return a.deploy( _833() ) ;
-		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
-		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Eaddon22: a.shift() ; return a.deploy( _834() ) ;
-		case _222Eremoveon22: a.shift() ; return a.deploy( _835() ) ;
-		case _222Efire22: a.shift() ; return a.deploy( _836() ) ;
-		case _222Eother22: a.shift() ; return a.deploy( _837() ) ;
-		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _683()
-	{
-	log("_683") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=6 min=256 max=354 length=99
-			{
-			case _languageDecl : return _846() ;
-			case _customAttrDecl : return _847() ;
-			case _customHead : return _34() ;
-			case _customHeadWithOwner : return _35() ;
-			case _propDecl : return _848() ;
-			case _extSourceSpec : return _849() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
-		case _277D27: a.shift() ; return a.deploy( _842() ) ;
-		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
-		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Eother22: a.shift() ; return a.deploy( _843() ) ;
-		case _222Eset22: a.shift() ; return a.deploy( _844() ) ;
-		case _222Eget22: a.shift() ; return a.deploy( _845() ) ;
-		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _684()
-	{
-	log("_684") ;
-	auto = new classDecl_methodHead_methodDecls_277D27() ;
-	backup = 3 ;
-	yy = 270 ;
-	return -82 ;
-	}
-static int _685()
-	{
-	log("_685") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=257 max=374 length=118
-			{
-			case _customAttrDecl : return _477() ;
-			case _customHead : return _34() ;
-			case _customHeadWithOwner : return _35() ;
-			case _comtypeDecl : return _478() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _277D27: a.shift() ; return a.deploy( _850() ) ;
-		case _222Efile22: a.shift() ; return a.deploy( _475() ) ;
-		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Eclass22: a.shift() ; return a.deploy( _476() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _686()
-	{
-	log("_686") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=255 max=255 length=1
-			{
-			case _compQstring : return _851() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _687()
-	{
-	log("_687") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _272927: a.shift() ; return a.split( _852() ) ;
-		case _22ansi22: a.shift() ; return a.split( _689() ) ;
-		case _22unicode22: a.shift() ; return a.split( _690() ) ;
-		case _22autochar22: a.shift() ; return a.split( _691() ) ;
-		case _22nomangle22: a.shift() ; return a.split( _692() ) ;
-		case _22lasterr22: a.shift() ; return a.split( _693() ) ;
-		case _22winapi22: a.shift() ; return a.split( _694() ) ;
-		case _22cdecl22: a.shift() ; return a.split( _695() ) ;
-		case _22stdcall22: a.shift() ; return a.split( _696() ) ;
-		case _22thiscall22: a.shift() ; return a.split( _697() ) ;
-		case _22fastcall22: a.shift() ; return a.split( _698() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _688()
-	{
-	log("_688") ;
-	auto = new methAttr_methAttr_22pinvokeimpl22_272827_pinvAttr_272927() ;
-	backup = 5 ;
-	yy = 290 ;
-	return -169 ;
-	}
-static int _689()
-	{
-	log("_689") ;
-	auto = new pinvAttr_pinvAttr_22ansi22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -172 ;
-	}
-static int _690()
-	{
-	log("_690") ;
-	auto = new pinvAttr_pinvAttr_22unicode22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -173 ;
-	}
-static int _691()
-	{
-	log("_691") ;
-	auto = new pinvAttr_pinvAttr_22autochar22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -174 ;
-	}
-static int _692()
-	{
-	log("_692") ;
-	auto = new pinvAttr_pinvAttr_22nomangle22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -171 ;
-	}
-static int _693()
-	{
-	log("_693") ;
-	auto = new pinvAttr_pinvAttr_22lasterr22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -175 ;
-	}
-static int _694()
-	{
-	log("_694") ;
-	auto = new pinvAttr_pinvAttr_22winapi22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -176 ;
-	}
-static int _695()
-	{
-	log("_695") ;
-	auto = new pinvAttr_pinvAttr_22cdecl22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -177 ;
-	}
-static int _696()
-	{
-	log("_696") ;
-	auto = new pinvAttr_pinvAttr_22stdcall22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -178 ;
-	}
-static int _697()
-	{
-	log("_697") ;
-	auto = new pinvAttr_pinvAttr_22thiscall22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -179 ;
-	}
-static int _698()
-	{
-	log("_698") ;
-	auto = new pinvAttr_pinvAttr_22fastcall22() ;
-	backup = 2 ;
-	yy = 291 ;
-	return -180 ;
-	}
-static int _699()
-	{
-	log("_699") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _853() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _700()
-	{
-	log("_700") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _854() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _701()
-	{
-	log("_701") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _855() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _702()
-	{
-	log("_702") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _856() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _703()
-	{
-	log("_703") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _857() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _704()
-	{
-	log("_704") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _858() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _705()
-	{
-	log("_705") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case 3: case 5: case 11: case 12: case 13: case 14: case 15: case 16:
-		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
-		case 25: case 26: case 27: case 28: case 35: case 37: case 40: case 81:
-		case 83: case 132: case 133: case 134: case 136: case 137: case 139: case 140:
-		case 141: case 143: case 149: case 219: case 220: case 238: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _705_default ;
-		case _272E27: a.shift() ; return a.split( _173() ) ;
-		}
-	_705_default:
-	auto = new methodName_name31() ;
-	backup = 1 ;
-	yy = 292 ;
-	return -183 ;
-	}
-static int _706()
-	{
-	log("_706") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=342 max=342 length=1
-			{
-			case _id : return _859() ;
+			case _id : return _769() ;
 			default: return __default ;
 			}
 		} ;
@@ -10791,33 +9907,1001 @@ static int _706()
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
 	throw new System.NotImplementedException() ;
 	}
+static int _630()
+	{
+	log("_630") ;
+	auto = new vtfixupAttr_vtfixupAttr_22int333222() ;
+	backup = 2 ;
+	yy = 262 ;
+	return -41 ;
+	}
+static int _631()
+	{
+	log("_631") ;
+	auto = new vtfixupAttr_vtfixupAttr_22int363422() ;
+	backup = 2 ;
+	yy = 262 ;
+	return -42 ;
+	}
+static int _632()
+	{
+	log("_632") ;
+	auto = new vtfixupAttr_vtfixupAttr_22fromunmanaged22() ;
+	backup = 2 ;
+	yy = 262 ;
+	return -43 ;
+	}
+static int _633()
+	{
+	log("_633") ;
+	auto = new vtfixupAttr_vtfixupAttr_22callmostderived22() ;
+	backup = 2 ;
+	yy = 262 ;
+	return -44 ;
+	}
+static int _634()
+	{
+	log("_634") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case 27: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _634_default ;
+		case _272C27: a.shift() ; return a.split( _770() ) ;
+		}
+	_634_default:
+	auto = new implClause_22implements22_classNames() ;
+	backup = 2 ;
+	yy = 269 ;
+	return -77 ;
+	}
+static int _635()
+	{
+	log("_635") ;
+	auto = new classNames_className() ;
+	backup = 1 ;
+	yy = 270 ;
+	return -79 ;
+	}
+static int _636()
+	{
+	log("_636") ;
+	auto = new nativeType_22int333222() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -375 ;
+	}
+static int _637()
+	{
+	log("_637") ;
+	auto = new nativeType_22int363422() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -376 ;
+	}
+static int _638()
+	{
+	log("_638") ;
+	auto = new nativeType_22interface22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -399 ;
+	}
+static int _639()
+	{
+	log("_639") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22bstr22 ) { a.shift() ; return a.split( _771() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _640()
+	{
+	log("_640") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22struct22 ) { a.shift() ; return a.split( _772() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _641()
+	{
+	log("_641") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22any22 ) { a.shift() ; return a.split( _773() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _642()
+	{
+	log("_642") ;
+	auto = new nativeType_22float333222() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -377 ;
+	}
+static int _643()
+	{
+	log("_643") ;
+	auto = new nativeType_22float363422() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -378 ;
+	}
+static int _644()
+	{
+	log("_644") ;
+	auto = new nativeType_22int313622() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -374 ;
+	}
+static int _645()
+	{
+	log("_645") ;
+	auto = new nativeType_22int3822() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -373 ;
+	}
+static int _646()
+	{
+	log("_646") ;
+	auto = new nativeType_22bool22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -372 ;
+	}
+static int _647()
+	{
+	log("_647") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _774() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _648()
+	{
+	log("_648") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22sysstring22 ) { a.shift() ; return a.split( _775() ) ; }
+	else
+	if( token.point == _22array22 ) { a.shift() ; return a.split( _776() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _649()
+	{
+	log("_649") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case 39: case 44: case 152: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _649_default ;
+		case _22bool22: a.shift() ; return a.split( _777() ) ;
+		}
+	_649_default:
+	auto = new nativeType_22variant22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -368 ;
+	}
+static int _650()
+	{
+	log("_650") ;
+	auto = new nativeType_22currency22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -369 ;
+	}
+static int _651()
+	{
+	log("_651") ;
+	auto = new nativeType_22syschar22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -370 ;
+	}
+static int _652()
+	{
+	log("_652") ;
+	auto = new nativeType_22void22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -371 ;
+	}
+static int _653()
+	{
+	log("_653") ;
+	auto = new nativeType_22error22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -379 ;
+	}
+static int _654()
+	{
+	log("_654") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.split( _778() ) ;
+		case _22int363422: a.shift() ; return a.split( _779() ) ;
+		case _22int313622: a.shift() ; return a.split( _780() ) ;
+		case _22int3822: a.shift() ; return a.split( _781() ) ;
+		case _22int22: a.shift() ; return a.split( _782() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _655()
+	{
+	log("_655") ;
+	auto = new nativeType_22decimal22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -389 ;
+	}
+static int _656()
+	{
+	log("_656") ;
+	auto = new nativeType_22date22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -390 ;
+	}
+static int _657()
+	{
+	log("_657") ;
+	auto = new nativeType_22bstr22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -391 ;
+	}
+static int _658()
+	{
+	log("_658") ;
+	auto = new nativeType_22lpstr22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -392 ;
+	}
+static int _659()
+	{
+	log("_659") ;
+	auto = new nativeType_22lpwstr22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -393 ;
+	}
+static int _660()
+	{
+	log("_660") ;
+	auto = new nativeType_22lptstr22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -394 ;
+	}
+static int _661()
+	{
+	log("_661") ;
+	auto = new nativeType_22objectref22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -395 ;
+	}
+static int _662()
+	{
+	log("_662") ;
+	auto = new nativeType_22iunknown22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -396 ;
+	}
+static int _663()
+	{
+	log("_663") ;
+	auto = new nativeType_22idispatch22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -397 ;
+	}
+static int _664()
+	{
+	log("_664") ;
+	auto = new nativeType_22struct22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -398 ;
+	}
+static int _665()
+	{
+	log("_665") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=339 max=339 length=1
+			{
+			case _variantType : return _819() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 36: case 39: case 44: /* case 152: */ case 153: case 195: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _665_default ;
+		case _22int333222: a.shift() ; return a.deploy( _783() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _784() ) ;
+		case _272A27: a.shift() ; return a.deploy( _785() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _786() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _787() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _788() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _789() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _790() ) ;
+		case _22variant22: a.shift() ; return a.deploy( _791() ) ;
+		case _22currency22: a.shift() ; return a.deploy( _792() ) ;
+		case _22void22: a.shift() ; return a.deploy( _793() ) ;
+		case _22error22: a.shift() ; return a.deploy( _794() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _795() ) ;
+		case _22decimal22: a.shift() ; return a.deploy( _796() ) ;
+		case _22date22: a.shift() ; return a.deploy( _797() ) ;
+		case _22bstr22: a.shift() ; return a.deploy( _798() ) ;
+		case _22lpstr22: a.shift() ; return a.deploy( _799() ) ;
+		case _22lpwstr22: a.shift() ; return a.deploy( _800() ) ;
+		case _22iunknown22: a.shift() ; return a.deploy( _801() ) ;
+		case _22idispatch22: a.shift() ; return a.deploy( _802() ) ;
+		case _22safearray22: a.shift() ; return a.deploy( _803() ) ;
+		case _22int22: a.shift() ; return a.deploy( _804() ) ;
+		case _22null22: a.shift() ; return a.deploy( _805() ) ;
+		case _22hresult22: a.shift() ; return a.deploy( _806() ) ;
+		case _22carray22: a.shift() ; return a.deploy( _807() ) ;
+		case _22userdefined22: a.shift() ; return a.deploy( _808() ) ;
+		case _22record22: a.shift() ; return a.deploy( _809() ) ;
+		case _22filetime22: a.shift() ; return a.deploy( _810() ) ;
+		case _22blob22: a.shift() ; return a.deploy( _811() ) ;
+		case _22stream22: a.shift() ; return a.deploy( _812() ) ;
+		case _22storage22: a.shift() ; return a.deploy( _813() ) ;
+		case _22streamed5Fobject22: a.shift() ; return a.deploy( _814() ) ;
+		case _22stored5Fobject22: a.shift() ; return a.deploy( _815() ) ;
+		case _22blob5Fobject22: a.shift() ; return a.deploy( _816() ) ;
+		case _22cf22: a.shift() ; return a.deploy( _817() ) ;
+		case _22clsid22: a.shift() ; return a.deploy( _818() ) ;
+		}
+	_665_default:
+	return a.deploy( _819() ) ;
+	}
+static int _666()
+	{
+	log("_666") ;
+	auto = new nativeType_22int22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -402 ;
+	}
+static int _667()
+	{
+	log("_667") ;
+	auto = new nativeType_22byvalstr22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -405 ;
+	}
+static int _668()
+	{
+	log("_668") ;
+	auto = new nativeType_22tbstr22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -407 ;
+	}
+static int _669()
+	{
+	log("_669") ;
+	auto = new nativeType_22lpstruct22() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -411 ;
+	}
+static int _670()
+	{
+	log("_670") ;
+	auto = new nativeType_methodSpec() ;
+	backup = 1 ;
+	yy = 338 ;
+	return -409 ;
+	}
+static int _671()
+	{
+	log("_671") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _272927: a.shift() ; return a.split( _820() ) ;
+		case _275B27: a.shift() ; return a.split( _821() ) ;
+		case _272A27: a.shift() ; return a.split( _822() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _672()
+	{
+	log("_672") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=345 max=345 length=1
+			{
+			case _id : return _823() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
+	else
+	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _673()
+	{
+	log("_673") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=275 max=275 length=1
+			{
+			case _initOpt : return _825() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
+		case 37: case 41: case 43: case 51: case 52: case 53: case 79: case 80:
+		case 81: case 84: case 87: case 92: case 95: case 139: case 149: case 221:
+		case 222: case 240: case 243: case 252: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _673_default ;
+		case _273D27: a.shift() ; return a.deploy( _824() ) ;
+		}
+	_673_default:
+	return a.deploy( _825() ) ;
+	}
+static int _674()
+	{
+	log("_674") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=8 min=257 max=355 length=99
+			{
+			case _compQstring : return _829() ;
+			case _name31 : return _158() ;
+			case _className : return _830() ;
+			case _slashedName : return _160() ;
+			case _id : return _71() ;
+			case _int3332 : return _831() ;
+			case _truefalse : return _832() ;
+			case _caValue : return _833() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _QSTRING: a.shift() ; return a.deploy( _332() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _826() ) ;
+		case _22true22: a.shift() ; return a.deploy( _827() ) ;
+		case _22false22: a.shift() ; return a.deploy( _828() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _675()
+	{
+	log("_675") ;
+	auto = new secDecl_222Epermission22_secAction_typeSpec_272827_nameValPairs_272927() ;
+	backup = 6 ;
+	yy = 350 ;
+	return -511 ;
+	}
+static int _676()
+	{
+	log("_676") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=257 max=353 length=97
+			{
+			case _compQstring : return _523() ;
+			case _nameValPairs : return _834() ;
+			case _nameValPair : return _525() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _677()
+	{
+	log("_677") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=294 max=345 length=52
+			{
+			case _methodName : return _835() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _678()
+	{
+	log("_678") ;
+	auto = new eventAttr_eventAttr_22specialname22() ;
+	backup = 2 ;
+	yy = 283 ;
+	return -117 ;
+	}
+static int _679()
+	{
+	log("_679") ;
+	auto = new eventAttr_eventAttr_22rtspecialname22() ;
+	backup = 2 ;
+	yy = 283 ;
+	return -116 ;
+	}
+static int _680()
+	{
+	log("_680") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=345 max=345 length=1
+			{
+			case _id : return _836() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
+	else
+	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _681()
+	{
+	log("_681") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		/* case 27: */ case 3: case 5: case 163: case 164: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _681_default ;
+		case 27: 
+			{
+			auto = new eventHead_222Eevent22_eventAttr_id() ;
+			backup = 3 ;
+			yy = 282 ;
+			return -114 ;
+			}
+		}
+	_681_default:
+	auto = new name1_id() ;
+	backup = 1 ;
+	yy = 332 ;
+	return -341 ;
+	}
+static int _682()
+	{
+	log("_682") ;
+	auto = new propAttr_propAttr_22specialname22() ;
+	backup = 2 ;
+	yy = 287 ;
+	return -134 ;
+	}
+static int _683()
+	{
+	log("_683") ;
+	auto = new propAttr_propAttr_22rtspecialname22() ;
+	backup = 2 ;
+	yy = 287 ;
+	return -133 ;
+	}
+static int _684()
+	{
+	log("_684") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=340 length=14
+			{
+			case _methodSpec : return _170() ;
+			case _type : return _837() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _685()
+	{
+	log("_685") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case 27: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _685_default ;
+		case _272E27: a.shift() ; return a.split( _173() ) ;
+		}
+	_685_default:
+	auto = new exportHead_222Eexport22_comtAttr_name31() ;
+	backup = 3 ;
+	yy = 374 ;
+	return -581 ;
+	}
+static int _686()
+	{
+	log("_686") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=17 min=258 max=374 length=117
+			{
+			case _languageDecl : return _383() ;
+			case _customAttrDecl : return _384() ;
+			case _classHead : return _385() ;
+			case _classDecl : return _386() ;
+			case _fieldDecl : return _387() ;
+			case _customHead : return _34() ;
+			case _customHeadWithOwner : return _35() ;
+			case _eventHead : return _388() ;
+			case _propHead : return _389() ;
+			case _methodHeadPart31 : return _36() ;
+			case _methodHead : return _390() ;
+			case _dataDecl : return _391() ;
+			case _ddHead : return _39() ;
+			case _secDecl : return _392() ;
+			case _psetHead : return _41() ;
+			case _extSourceSpec : return _393() ;
+			case _exportHead : return _394() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
+		case _277D27: a.shift() ; return a.deploy( _838() ) ;
+		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
+		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
+		case _222Eclass22: a.shift() ; return a.deploy( _376() ) ;
+		case _222Esize22: a.shift() ; return a.deploy( _377() ) ;
+		case _222Epack22: a.shift() ; return a.deploy( _378() ) ;
+		case _222Eoverride22: a.shift() ; return a.deploy( _379() ) ;
+		case _222Efield22: a.shift() ; return a.deploy( _16() ) ;
+		case _222Eevent22: a.shift() ; return a.deploy( _380() ) ;
+		case _222Eproperty22: a.shift() ; return a.deploy( _381() ) ;
+		case _222Emethod22: a.shift() ; return a.deploy( _17() ) ;
+		case _222Eexport22: a.shift() ; return a.deploy( _382() ) ;
+		case _222Edata22: a.shift() ; return a.deploy( _18() ) ;
+		case _222Epermission22: a.shift() ; return a.deploy( _19() ) ;
+		case _222Epermissionset22: a.shift() ; return a.deploy( _20() ) ;
+		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _687()
+	{
+	log("_687") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=6 min=258 max=357 length=100
+			{
+			case _languageDecl : return _844() ;
+			case _customAttrDecl : return _845() ;
+			case _customHead : return _34() ;
+			case _customHeadWithOwner : return _35() ;
+			case _eventDecl : return _846() ;
+			case _extSourceSpec : return _847() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
+		case _277D27: a.shift() ; return a.deploy( _839() ) ;
+		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
+		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
+		case _222Eaddon22: a.shift() ; return a.deploy( _840() ) ;
+		case _222Eremoveon22: a.shift() ; return a.deploy( _841() ) ;
+		case _222Efire22: a.shift() ; return a.deploy( _842() ) ;
+		case _222Eother22: a.shift() ; return a.deploy( _843() ) ;
+		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _688()
+	{
+	log("_688") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=6 min=258 max=357 length=100
+			{
+			case _languageDecl : return _852() ;
+			case _customAttrDecl : return _853() ;
+			case _customHead : return _34() ;
+			case _customHeadWithOwner : return _35() ;
+			case _propDecl : return _854() ;
+			case _extSourceSpec : return _855() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
+		case _277D27: a.shift() ; return a.deploy( _848() ) ;
+		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
+		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
+		case _222Eother22: a.shift() ; return a.deploy( _849() ) ;
+		case _222Eset22: a.shift() ; return a.deploy( _850() ) ;
+		case _222Eget22: a.shift() ; return a.deploy( _851() ) ;
+		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _689()
+	{
+	log("_689") ;
+	auto = new classDecl_methodHead_methodDecls_277D27() ;
+	backup = 3 ;
+	yy = 272 ;
+	return -82 ;
+	}
+static int _690()
+	{
+	log("_690") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=259 max=377 length=119
+			{
+			case _customAttrDecl : return _478() ;
+			case _customHead : return _34() ;
+			case _customHeadWithOwner : return _35() ;
+			case _comtypeDecl : return _479() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _277D27: a.shift() ; return a.deploy( _856() ) ;
+		case _222Efile22: a.shift() ; return a.deploy( _476() ) ;
+		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
+		case _222Eclass22: a.shift() ; return a.deploy( _477() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _691()
+	{
+	log("_691") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _857() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _692()
+	{
+	log("_692") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _272927: a.shift() ; return a.split( _858() ) ;
+		case _22ansi22: a.shift() ; return a.split( _694() ) ;
+		case _22unicode22: a.shift() ; return a.split( _695() ) ;
+		case _22autochar22: a.shift() ; return a.split( _696() ) ;
+		case _22nomangle22: a.shift() ; return a.split( _697() ) ;
+		case _22lasterr22: a.shift() ; return a.split( _698() ) ;
+		case _22winapi22: a.shift() ; return a.split( _699() ) ;
+		case _22cdecl22: a.shift() ; return a.split( _700() ) ;
+		case _22stdcall22: a.shift() ; return a.split( _701() ) ;
+		case _22thiscall22: a.shift() ; return a.split( _702() ) ;
+		case _22fastcall22: a.shift() ; return a.split( _703() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _693()
+	{
+	log("_693") ;
+	auto = new methAttr_methAttr_22pinvokeimpl22_272827_pinvAttr_272927() ;
+	backup = 5 ;
+	yy = 292 ;
+	return -169 ;
+	}
+static int _694()
+	{
+	log("_694") ;
+	auto = new pinvAttr_pinvAttr_22ansi22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -172 ;
+	}
+static int _695()
+	{
+	log("_695") ;
+	auto = new pinvAttr_pinvAttr_22unicode22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -173 ;
+	}
+static int _696()
+	{
+	log("_696") ;
+	auto = new pinvAttr_pinvAttr_22autochar22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -174 ;
+	}
+static int _697()
+	{
+	log("_697") ;
+	auto = new pinvAttr_pinvAttr_22nomangle22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -171 ;
+	}
+static int _698()
+	{
+	log("_698") ;
+	auto = new pinvAttr_pinvAttr_22lasterr22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -175 ;
+	}
+static int _699()
+	{
+	log("_699") ;
+	auto = new pinvAttr_pinvAttr_22winapi22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -176 ;
+	}
+static int _700()
+	{
+	log("_700") ;
+	auto = new pinvAttr_pinvAttr_22cdecl22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -177 ;
+	}
+static int _701()
+	{
+	log("_701") ;
+	auto = new pinvAttr_pinvAttr_22stdcall22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -178 ;
+	}
+static int _702()
+	{
+	log("_702") ;
+	auto = new pinvAttr_pinvAttr_22thiscall22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -179 ;
+	}
+static int _703()
+	{
+	log("_703") ;
+	auto = new pinvAttr_pinvAttr_22fastcall22() ;
+	backup = 2 ;
+	yy = 293 ;
+	return -180 ;
+	}
+static int _704()
+	{
+	log("_704") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _859() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _705()
+	{
+	log("_705") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _860() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _706()
+	{
+	log("_706") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _861() ) ; }
+	throw new System.NotImplementedException() ;
+	}
 static int _707()
 	{
 	log("_707") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _860() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _862() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _708()
 	{
 	log("_708") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _861() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _863() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _709()
 	{
 	log("_709") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _862() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _864() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _710()
 	{
 	log("_710") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _863() ) ; }
-	throw new System.NotImplementedException() ;
+	switch( token.point )
+		{
+		case 3: case 5: case 11: case 12: case 13: case 14: case 15: case 16:
+		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
+		case 25: case 26: case 27: case 28: case 35: case 37: case 40: case 81:
+		case 83: case 132: case 133: case 134: case 136: case 137: case 139: case 140:
+		case 141: case 143: case 149: case 221: case 222: case 240: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _710_default ;
+		case _272E27: a.shift() ; return a.split( _173() ) ;
+		}
+	_710_default:
+	auto = new methodName_name31() ;
+	backup = 1 ;
+	yy = 294 ;
+	return -183 ;
 	}
 static int _711()
 	{
@@ -10825,12 +10909,57 @@ static int _711()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _864() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _id : return _865() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
+	else
+	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _712()
+	{
+	log("_712") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _866() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _713()
+	{
+	log("_713") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _867() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _714()
+	{
+	log("_714") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _868() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _715()
+	{
+	log("_715") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _869() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _716()
+	{
+	log("_716") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _870() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -10838,128 +10967,36 @@ static int _711()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _711_default ;
+		goto _716_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _864() ) ;
+			return a.deploy( _870() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_711_default:
+	_716_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
-	}
-static int _712()
-	{
-	log("_712") ;
-	auto = new instr_INSTR5FSTRING_bytearrayhead_bytes_272927() ;
-	backup = 4 ;
-	yy = 326 ;
-	return -325 ;
-	}
-static int _713()
-	{
-	log("_713") ;
-	auto = new instr_INSTR5FSWITCH_272827_labels_272927() ;
-	backup = 4 ;
-	yy = 326 ;
-	return -330 ;
-	}
-static int _714()
-	{
-	log("_714") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=341 max=344 length=4
-			{
-			case _labels : return _865() ;
-			case _id : return _549() ;
-			case _int3332 : return _550() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 39: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _714_default ;
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		}
-	_714_default:
-	return a.deploy( _865() ) ;
-	}
-static int _715()
-	{
-	log("_715") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=341 max=344 length=4
-			{
-			case _labels : return _866() ;
-			case _id : return _549() ;
-			case _int3332 : return _550() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 39: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _715_default ;
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		}
-	_715_default:
-	return a.deploy( _866() ) ;
-	}
-static int _716()
-	{
-	log("_716") ;
-	auto = new methodDecl_222Eoverride22_typeSpec_223A3A22_methodName() ;
-	backup = 4 ;
-	yy = 297 ;
-	return -234 ;
+	return a.deploy( _559() ) ;
 	}
 static int _717()
 	{
 	log("_717") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case 3: case 5: case 11: case 12: case 13: case 14: case 15: case 16:
-		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
-		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
-		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 219: case 220: case 238: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _717_default ;
-		case _22as22: a.shift() ; return a.split( _867() ) ;
-		}
-	_717_default:
-	auto = new methodDecl_222Eexport22_275B27_int3332_275D27() ;
+	auto = new instr_INSTR5FSTRING_bytearrayhead_bytes_272927() ;
 	backup = 4 ;
-	yy = 297 ;
-	return -231 ;
+	yy = 328 ;
+	return -325 ;
 	}
 static int _718()
 	{
 	log("_718") ;
-	auto = new methodDecl_222Evtentry22_int3332_273A27_int3332() ;
+	auto = new instr_INSTR5FSWITCH_272827_labels_272927() ;
 	backup = 4 ;
-	yy = 297 ;
-	return -233 ;
+	yy = 328 ;
+	return -330 ;
 	}
 static int _719()
 	{
@@ -10967,9 +11004,101 @@ static int _719()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=273 max=273 length=1
+		switch(_yy) // size=3 min=344 max=347 length=4
 			{
-			case _initOpt : return _868() ;
+			case _labels : return _871() ;
+			case _id : return _552() ;
+			case _int3332 : return _553() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 39: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _719_default ;
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
+		}
+	_719_default:
+	return a.deploy( _871() ) ;
+	}
+static int _720()
+	{
+	log("_720") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=344 max=347 length=4
+			{
+			case _labels : return _872() ;
+			case _id : return _552() ;
+			case _int3332 : return _553() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 39: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _720_default ;
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
+		}
+	_720_default:
+	return a.deploy( _872() ) ;
+	}
+static int _721()
+	{
+	log("_721") ;
+	auto = new methodDecl_222Eoverride22_typeSpec_223A3A22_methodName() ;
+	backup = 4 ;
+	yy = 299 ;
+	return -234 ;
+	}
+static int _722()
+	{
+	log("_722") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case 3: case 5: case 11: case 12: case 13: case 14: case 15: case 16:
+		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
+		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
+		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
+		case 149: case 221: case 222: case 240: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _722_default ;
+		case _22as22: a.shift() ; return a.split( _873() ) ;
+		}
+	_722_default:
+	auto = new methodDecl_222Eexport22_275B27_int3332_275D27() ;
+	backup = 4 ;
+	yy = 299 ;
+	return -231 ;
+	}
+static int _723()
+	{
+	log("_723") ;
+	auto = new methodDecl_222Evtentry22_int3332_273A27_int3332() ;
+	backup = 4 ;
+	yy = 299 ;
+	return -233 ;
+	}
+static int _724()
+	{
+	log("_724") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=275 max=275 length=1
+			{
+			case _initOpt : return _874() ;
 			default: return __default ;
 			}
 		} ;
@@ -10979,24 +11108,24 @@ static int _719()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 219: case 220: case 238: 
+		case 149: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _719_default ;
-		case _273D27: a.shift() ; return a.deploy( _818() ) ;
+		goto _724_default ;
+		case _273D27: a.shift() ; return a.deploy( _824() ) ;
 		}
-	_719_default:
-	return a.deploy( _868() ) ;
+	_724_default:
+	return a.deploy( _874() ) ;
 	}
-static int _720()
+static int _725()
 	{
-	log("_720") ;
+	log("_725") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _870() ;
+			case _id : return _876() ;
 			default: return __default ;
 			}
 		} ;
@@ -11005,41 +11134,42 @@ static int _720()
 		case 36: case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _720_default ;
+		goto _725_default ;
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _275B27: a.shift() ; return a.deploy( _325() ) ;
-		case _22marshal22: a.shift() ; return a.deploy( _869() ) ;
+		case _22marshal22: a.shift() ; return a.deploy( _875() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		}
-	_720_default:
+	_725_default:
 	auto = new sigArg_paramAttr_type() ;
 	backup = 2 ;
-	yy = 329 ;
+	yy = 331 ;
 	return -337 ;
 	}
-static int _721()
+static int _726()
 	{
-	log("_721") ;
+	log("_726") ;
 	auto = new methodDecl_localsHead_272827_sigArgs30_272927() ;
 	backup = 4 ;
-	yy = 297 ;
+	yy = 299 ;
 	return -220 ;
 	}
-static int _722()
+static int _727()
 	{
-	log("_722") ;
+	log("_727") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=293 max=329 length=37
+		switch(_yy) // size=2 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArg : return _871() ;
+			case _paramAttr : return _559() ;
+			case _sigArg : return _877() ;
 			default: return __default ;
 			}
 		} ;
@@ -11047,255 +11177,255 @@ static int _722()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: 
+		case 211: case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _722_default ;
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		goto _727_default ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_722_default:
-	return a.deploy( _556() ) ;
-	}
-static int _723()
-	{
-	log("_723") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _872() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _724()
-	{
-	log("_724") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22to22 ) { a.shift() ; return a.split( _873() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _725()
-	{
-	log("_725") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22to22 ) { a.shift() ; return a.split( _874() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _726()
-	{
-	log("_726") ;
-	auto = new tryBlock_tryHead_id_22to22_id() ;
-	backup = 4 ;
-	yy = 302 ;
-	return -243 ;
-	}
-static int _727()
-	{
-	log("_727") ;
-	auto = new tryBlock_tryHead_int3332_22to22_int3332() ;
-	backup = 4 ;
-	yy = 302 ;
-	return -244 ;
+	_727_default:
+	return a.deploy( _559() ) ;
 	}
 static int _728()
 	{
 	log("_728") ;
-	auto = new ddItem_22int333222_272827_int3332_272927_ddItemCount() ;
-	backup = 5 ;
-	yy = 318 ;
-	return -279 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _878() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _729()
 	{
 	log("_729") ;
-	auto = new ddItem_22int363422_272827_int3634_272927_ddItemCount() ;
-	backup = 5 ;
-	yy = 318 ;
-	return -278 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22to22 ) { a.shift() ; return a.split( _879() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _730()
 	{
 	log("_730") ;
-	auto = new ddItem_22char22_272A27_272827_compQstring_272927() ;
-	backup = 5 ;
-	yy = 318 ;
-	return -273 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22to22 ) { a.shift() ; return a.split( _880() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _731()
 	{
 	log("_731") ;
-	auto = new ddItem_22float333222_272827_float3634_272927_ddItemCount() ;
-	backup = 5 ;
-	yy = 318 ;
-	return -276 ;
+	auto = new tryBlock_tryHead_id_22to22_id() ;
+	backup = 4 ;
+	yy = 304 ;
+	return -243 ;
 	}
 static int _732()
 	{
 	log("_732") ;
-	auto = new ddItem_22float363422_272827_float3634_272927_ddItemCount() ;
-	backup = 5 ;
-	yy = 318 ;
-	return -277 ;
+	auto = new tryBlock_tryHead_int3332_22to22_int3332() ;
+	backup = 4 ;
+	yy = 304 ;
+	return -244 ;
 	}
 static int _733()
 	{
 	log("_733") ;
-	auto = new ddItem_22int313622_272827_int3332_272927_ddItemCount() ;
+	auto = new ddItem_22int333222_272827_int3332_272927_ddItemCount() ;
 	backup = 5 ;
-	yy = 318 ;
-	return -280 ;
+	yy = 320 ;
+	return -279 ;
 	}
 static int _734()
 	{
 	log("_734") ;
-	auto = new ddItem_22int3822_272827_int3332_272927_ddItemCount() ;
+	auto = new ddItem_22int363422_272827_int3634_272927_ddItemCount() ;
 	backup = 5 ;
-	yy = 318 ;
-	return -281 ;
+	yy = 320 ;
+	return -278 ;
 	}
 static int _735()
 	{
 	log("_735") ;
-	auto = new assemblyDecl_222Ehash22_22algorithm22_int3332() ;
-	backup = 3 ;
-	yy = 362 ;
-	return -559 ;
+	auto = new ddItem_22char22_272A27_272827_compQstring_272927() ;
+	backup = 5 ;
+	yy = 320 ;
+	return -273 ;
 	}
 static int _736()
 	{
 	log("_736") ;
+	auto = new ddItem_22float333222_272827_float3634_272927_ddItemCount() ;
+	backup = 5 ;
+	yy = 320 ;
+	return -276 ;
+	}
+static int _737()
+	{
+	log("_737") ;
+	auto = new ddItem_22float363422_272827_float3634_272927_ddItemCount() ;
+	backup = 5 ;
+	yy = 320 ;
+	return -277 ;
+	}
+static int _738()
+	{
+	log("_738") ;
+	auto = new ddItem_22int313622_272827_int3332_272927_ddItemCount() ;
+	backup = 5 ;
+	yy = 320 ;
+	return -280 ;
+	}
+static int _739()
+	{
+	log("_739") ;
+	auto = new ddItem_22int3822_272827_int3332_272927_ddItemCount() ;
+	backup = 5 ;
+	yy = 320 ;
+	return -281 ;
+	}
+static int _740()
+	{
+	log("_740") ;
+	auto = new assemblyDecl_222Ehash22_22algorithm22_int3332() ;
+	backup = 3 ;
+	yy = 365 ;
+	return -562 ;
+	}
+static int _741()
+	{
+	log("_741") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _875() ;
+			case _int3332 : return _881() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _737()
-	{
-	log("_737") ;
-	auto = new localeHead_222Elocale22_273D27_272827() ;
-	backup = 3 ;
-	yy = 366 ;
-	return -569 ;
-	}
-static int _738()
-	{
-	log("_738") ;
-	auto = new publicKeyHead_222Epublickey22_273D27_272827() ;
-	backup = 3 ;
-	yy = 364 ;
-	return -567 ;
-	}
-static int _739()
-	{
-	log("_739") ;
-	auto = new asmOrRefDecl_publicKeyHead_bytes_272927() ;
-	backup = 3 ;
-	yy = 363 ;
-	return -562 ;
-	}
-static int _740()
-	{
-	log("_740") ;
-	auto = new asmOrRefDecl_localeHead_bytes_272927() ;
-	backup = 3 ;
-	yy = 363 ;
-	return -565 ;
-	}
-static int _741()
-	{
-	log("_741") ;
-	auto = new hashHead_222Ehash22_273D27_272827() ;
-	backup = 3 ;
-	yy = 358 ;
-	return -551 ;
-	}
 static int _742()
 	{
 	log("_742") ;
-	auto = new publicKeyTokenHead_222Epublickeytoken22_273D27_272827() ;
+	auto = new localeHead_222Elocale22_273D27_272827() ;
 	backup = 3 ;
-	yy = 365 ;
-	return -568 ;
+	yy = 369 ;
+	return -572 ;
 	}
 static int _743()
 	{
 	log("_743") ;
-	auto = new assemblyRefDecl_hashHead_bytes_272927() ;
+	auto = new publicKeyHead_222Epublickey22_273D27_272827() ;
 	backup = 3 ;
-	yy = 369 ;
-	return -574 ;
+	yy = 367 ;
+	return -570 ;
 	}
 static int _744()
 	{
 	log("_744") ;
-	auto = new assemblyRefDecl_publicKeyTokenHead_bytes_272927() ;
+	auto = new asmOrRefDecl_publicKeyHead_bytes_272927() ;
 	backup = 3 ;
-	yy = 369 ;
-	return -576 ;
+	yy = 366 ;
+	return -565 ;
 	}
 static int _745()
 	{
 	log("_745") ;
+	auto = new asmOrRefDecl_localeHead_bytes_272927() ;
+	backup = 3 ;
+	yy = 366 ;
+	return -568 ;
+	}
+static int _746()
+	{
+	log("_746") ;
+	auto = new hashHead_222Ehash22_273D27_272827() ;
+	backup = 3 ;
+	yy = 361 ;
+	return -554 ;
+	}
+static int _747()
+	{
+	log("_747") ;
+	auto = new publicKeyTokenHead_222Epublickeytoken22_273D27_272827() ;
+	backup = 3 ;
+	yy = 368 ;
+	return -571 ;
+	}
+static int _748()
+	{
+	log("_748") ;
+	auto = new assemblyRefDecl_hashHead_bytes_272927() ;
+	backup = 3 ;
+	yy = 372 ;
+	return -577 ;
+	}
+static int _749()
+	{
+	log("_749") ;
+	auto = new assemblyRefDecl_publicKeyTokenHead_bytes_272927() ;
+	backup = 3 ;
+	yy = 372 ;
+	return -579 ;
+	}
+static int _750()
+	{
+	log("_750") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 28: case 31: case 37: case 53: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _745_default ;
+		goto _750_default ;
 		case _272E27: a.shift() ; return a.split( _173() ) ;
 		}
-	_745_default:
+	_750_default:
 	auto = new comtypeDecl_222Eclass22_22extern22_name31() ;
 	backup = 3 ;
-	yy = 374 ;
-	return -591 ;
+	yy = 377 ;
+	return -594 ;
 	}
-static int _746()
+static int _751()
 	{
-	log("_746") ;
+	log("_751") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _876() ;
+			case _int3332 : return _882() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _747()
+static int _752()
 	{
-	log("_747") ;
+	log("_752") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case 28: case 31: case 37: case 241: 
+		case 28: case 31: case 37: case 243: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _747_default ;
+		goto _752_default ;
 		case _272E27: a.shift() ; return a.split( _173() ) ;
 		}
-	_747_default:
+	_752_default:
 	auto = new manifestResDecl_222Eassembly22_22extern22_name31() ;
 	backup = 3 ;
-	yy = 378 ;
-	return -601 ;
+	yy = 381 ;
+	return -604 ;
 	}
-static int _748()
+static int _753()
 	{
-	log("_748") ;
+	log("_753") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=357 max=357 length=1
+		switch(_yy) // size=1 min=360 max=360 length=1
 			{
-			case _fileEntry : return _877() ;
+			case _fileEntry : return _883() ;
 			default: return __default ;
 			}
 		} ;
@@ -11303,18 +11433,18 @@ static int _748()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _748_default ;
+		goto _753_default ;
 		case _222Eentrypoint22: a.shift() ; return a.deploy( _304() ) ;
 		}
-	_748_default:
-	return a.deploy( _877() ) ;
+	_753_default:
+	return a.deploy( _883() ) ;
 	}
-static int _749()
+static int _754()
 	{
-	log("_749") ;
+	log("_754") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -11328,37 +11458,37 @@ static int _749()
 		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
 		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
 		case 161: case 175: case 177: case 209: case 210: case 211: case 212: case 213:
-		case 214: case 215: case 216: case 217: case 219: case 220: case 238: case 240:
-		case 241: case 246: case 247: case 248: case 250: 
+		case 214: case 215: case 216: case 217: case 218: case 219: case 221: case 222:
+		case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _749_default ;
+		goto _754_default ;
 		case _272F27: a.shift() ; return a.split( _324() ) ;
 		}
-	_749_default:
+	_754_default:
 	auto = new className_275B27_222Emodule22_name31_275D27_slashedName() ;
 	backup = 5 ;
-	yy = 331 ;
+	yy = 333 ;
 	return -345 ;
 	}
-static int _750()
+static int _755()
 	{
-	log("_750") ;
+	log("_755") ;
 	auto = new memberRef_22field22_type_typeSpec_223A3A22_id() ;
 	backup = 5 ;
-	yy = 277 ;
+	yy = 279 ;
 	return -107 ;
 	}
-static int _751()
+static int _756()
 	{
-	log("_751") ;
+	log("_756") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=330 max=342 length=13
+		switch(_yy) // size=3 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _slashedName : return _749() ;
+			case _slashedName : return _754() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -11371,17 +11501,17 @@ static int _751()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _752()
+static int _757()
 	{
-	log("_752") ;
+	log("_757") ;
 	auto = new customHeadWithOwner_222Ecustom22_272827_ownerType_272927_customType_273D27_272827() ;
 	backup = 7 ;
-	yy = 276 ;
+	yy = 278 ;
 	return -104 ;
 	}
-static int _753()
+static int _758()
 	{
-	log("_753") ;
+	log("_758") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -11391,32 +11521,32 @@ static int _753()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 219:
-		case 220: case 238: case 240: case 241: case 246: case 247: case 248: case 249:
-		case 250: 
+		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 251:
+		case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _753_default ;
-		case _272B27: a.shift() ; return a.split( _504() ) ;
+		goto _758_default ;
+		case _272B27: a.shift() ; return a.split( _507() ) ;
 		}
-	_753_default:
+	_758_default:
 	auto = new customAttrDecl_222Ecustom22_272827_ownerType_272927_customType_273D27_compQstring() ;
 	backup = 7 ;
-	yy = 257 ;
+	yy = 259 ;
 	return -34 ;
 	}
-static int _754()
+static int _759()
 	{
-	log("_754") ;
+	log("_759") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _878() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _884() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -11424,33 +11554,33 @@ static int _754()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _754_default ;
+		goto _759_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _878() ) ;
+			return a.deploy( _884() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_754_default:
+	_759_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
-static int _755()
+static int _760()
 	{
-	log("_755") ;
+	log("_760") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _879() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _885() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -11458,31 +11588,31 @@ static int _755()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _755_default ;
+		goto _760_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _879() ) ;
+			return a.deploy( _885() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_755_default:
+	_760_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
-static int _756()
+static int _761()
 	{
-	log("_756") ;
+	log("_761") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _880() ;
-			case _name31 : return _705() ;
+			case _methodName : return _886() ;
+			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -11492,63 +11622,87 @@ static int _756()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
 	throw new System.NotImplementedException() ;
-	}
-static int _757()
-	{
-	log("_757") ;
-	auto = new bounds1_bounds31_272C27_bound() ;
-	backup = 3 ;
-	yy = 339 ;
-	return -488 ;
-	}
-static int _758()
-	{
-	log("_758") ;
-	auto = new bound_int3332_222E2E2E22_int3332() ;
-	backup = 3 ;
-	yy = 340 ;
-	return -492 ;
-	}
-static int _759()
-	{
-	log("_759") ;
-	auto = new type_type_22modreq22_272827_className_272927() ;
-	backup = 5 ;
-	yy = 338 ;
-	return -466 ;
-	}
-static int _760()
-	{
-	log("_760") ;
-	auto = new type_type_22modopt22_272827_className_272927() ;
-	backup = 5 ;
-	yy = 338 ;
-	return -467 ;
-	}
-static int _761()
-	{
-	log("_761") ;
-	auto = new customType_callConv_type_222Ector22_272827_sigArgs30_272927() ;
-	backup = 6 ;
-	yy = 278 ;
-	return -110 ;
 	}
 static int _762()
 	{
 	log("_762") ;
+	auto = new bounds1_bounds31_272C27_bound() ;
+	backup = 3 ;
+	yy = 342 ;
+	return -491 ;
+	}
+static int _763()
+	{
+	log("_763") ;
+	auto = new bound_int3332_222E2E2E22_int3332() ;
+	backup = 3 ;
+	yy = 343 ;
+	return -495 ;
+	}
+static int _764()
+	{
+	log("_764") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case 36: case 214: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _764_default ;
+		case _275B27: a.shift() ; return a.split( _325() ) ;
+		case _272A27: a.shift() ; return a.split( _326() ) ;
+		case _272627: a.shift() ; return a.split( _327() ) ;
+		case _273C27: a.shift() ; return a.split( _328() ) ;
+		case _22pinned22: a.shift() ; return a.split( _329() ) ;
+		case _22modreq22: a.shift() ; return a.split( _330() ) ;
+		case _22modopt22: a.shift() ; return a.split( _331() ) ;
+		}
+	_764_default:
+	auto = new genArgs_genArgs_272C27_type() ;
+	backup = 3 ;
+	yy = 341 ;
+	return -489 ;
+	}
+static int _765()
+	{
+	log("_765") ;
+	auto = new type_type_22modreq22_272827_className_272927() ;
+	backup = 5 ;
+	yy = 340 ;
+	return -467 ;
+	}
+static int _766()
+	{
+	log("_766") ;
+	auto = new type_type_22modopt22_272827_className_272927() ;
+	backup = 5 ;
+	yy = 340 ;
+	return -468 ;
+	}
+static int _767()
+	{
+	log("_767") ;
+	auto = new customType_callConv_type_222Ector22_272827_sigArgs30_272927() ;
+	backup = 6 ;
+	yy = 280 ;
+	return -110 ;
+	}
+static int _768()
+	{
+	log("_768") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _881() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _887() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -11556,39 +11710,39 @@ static int _762()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _762_default ;
+		goto _768_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _881() ) ;
+			return a.deploy( _887() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_762_default:
+	_768_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
-static int _763()
+static int _769()
 	{
-	log("_763") ;
+	log("_769") ;
 	auto = new vtfixupDecl_222Evtfixup22_275B27_int3332_275D27_vtfixupAttr_22at22_id() ;
 	backup = 7 ;
-	yy = 259 ;
+	yy = 261 ;
 	return -39 ;
 	}
-static int _764()
+static int _770()
 	{
-	log("_764") ;
+	log("_770") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=330 max=342 length=13
+		switch(_yy) // size=4 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _className : return _882() ;
+			case _className : return _888() ;
 			case _slashedName : return _160() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -11603,608 +11757,608 @@ static int _764()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _765()
-	{
-	log("_765") ;
-	auto = new nativeType_22ansi22_22bstr22() ;
-	backup = 2 ;
-	yy = 336 ;
-	return -406 ;
-	}
-static int _766()
-	{
-	log("_766") ;
-	auto = new nativeType_22nested22_22struct22() ;
-	backup = 2 ;
-	yy = 336 ;
-	return -404 ;
-	}
-static int _767()
-	{
-	log("_767") ;
-	auto = new nativeType_22as22_22any22() ;
-	backup = 2 ;
-	yy = 336 ;
-	return -410 ;
-	}
-static int _768()
-	{
-	log("_768") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=255 max=255 length=1
-			{
-			case _compQstring : return _883() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _769()
-	{
-	log("_769") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275B27 ) { a.shift() ; return a.split( _884() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _770()
-	{
-	log("_770") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275B27 ) { a.shift() ; return a.split( _885() ) ; }
-	throw new System.NotImplementedException() ;
-	}
 static int _771()
 	{
 	log("_771") ;
-	auto = new nativeType_22variant22_22bool22() ;
+	auto = new nativeType_22ansi22_22bstr22() ;
 	backup = 2 ;
-	yy = 336 ;
-	return -408 ;
+	yy = 338 ;
+	return -406 ;
 	}
 static int _772()
 	{
 	log("_772") ;
-	auto = new nativeType_22unsigned22_22int333222() ;
+	auto = new nativeType_22nested22_22struct22() ;
 	backup = 2 ;
-	yy = 336 ;
-	return -382 ;
+	yy = 338 ;
+	return -404 ;
 	}
 static int _773()
 	{
 	log("_773") ;
-	auto = new nativeType_22unsigned22_22int363422() ;
+	auto = new nativeType_22as22_22any22() ;
 	backup = 2 ;
-	yy = 336 ;
-	return -383 ;
+	yy = 338 ;
+	return -410 ;
 	}
 static int _774()
 	{
 	log("_774") ;
-	auto = new nativeType_22unsigned22_22int313622() ;
-	backup = 2 ;
-	yy = 336 ;
-	return -381 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _889() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _775()
 	{
 	log("_775") ;
-	auto = new nativeType_22unsigned22_22int3822() ;
-	backup = 2 ;
-	yy = 336 ;
-	return -380 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275B27 ) { a.shift() ; return a.split( _890() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _776()
 	{
 	log("_776") ;
-	auto = new nativeType_22unsigned22_22int22() ;
-	backup = 2 ;
-	yy = 336 ;
-	return -403 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275B27 ) { a.shift() ; return a.split( _891() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _777()
 	{
 	log("_777") ;
-	auto = new variantType_22int333222() ;
-	backup = 1 ;
-	yy = 337 ;
-	return -420 ;
+	auto = new nativeType_22variant22_22bool22() ;
+	backup = 2 ;
+	yy = 338 ;
+	return -408 ;
 	}
 static int _778()
 	{
 	log("_778") ;
-	auto = new variantType_22int363422() ;
-	backup = 1 ;
-	yy = 337 ;
-	return -421 ;
+	auto = new nativeType_22unsigned22_22int333222() ;
+	backup = 2 ;
+	yy = 338 ;
+	return -382 ;
 	}
 static int _779()
 	{
 	log("_779") ;
-	auto = new variantType_272A27() ;
-	backup = 1 ;
-	yy = 337 ;
-	return -428 ;
+	auto = new nativeType_22unsigned22_22int363422() ;
+	backup = 2 ;
+	yy = 338 ;
+	return -383 ;
 	}
 static int _780()
 	{
 	log("_780") ;
-	auto = new variantType_22float333222() ;
-	backup = 1 ;
-	yy = 337 ;
-	return -422 ;
+	auto = new nativeType_22unsigned22_22int313622() ;
+	backup = 2 ;
+	yy = 338 ;
+	return -381 ;
 	}
 static int _781()
 	{
 	log("_781") ;
-	auto = new variantType_22float363422() ;
-	backup = 1 ;
-	yy = 337 ;
-	return -423 ;
+	auto = new nativeType_22unsigned22_22int3822() ;
+	backup = 2 ;
+	yy = 338 ;
+	return -380 ;
 	}
 static int _782()
 	{
 	log("_782") ;
-	auto = new variantType_22int313622() ;
-	backup = 1 ;
-	yy = 337 ;
-	return -419 ;
+	auto = new nativeType_22unsigned22_22int22() ;
+	backup = 2 ;
+	yy = 338 ;
+	return -403 ;
 	}
 static int _783()
 	{
 	log("_783") ;
-	auto = new variantType_22int3822() ;
+	auto = new variantType_22int333222() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -418 ;
+	yy = 339 ;
+	return -420 ;
 	}
 static int _784()
 	{
 	log("_784") ;
-	auto = new variantType_22bool22() ;
+	auto = new variantType_22int363422() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -417 ;
+	yy = 339 ;
+	return -421 ;
 	}
 static int _785()
 	{
 	log("_785") ;
-	auto = new variantType_22variant22() ;
+	auto = new variantType_272A27() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -414 ;
+	yy = 339 ;
+	return -428 ;
 	}
 static int _786()
 	{
 	log("_786") ;
-	auto = new variantType_22currency22() ;
+	auto = new variantType_22float333222() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -415 ;
+	yy = 339 ;
+	return -422 ;
 	}
 static int _787()
 	{
 	log("_787") ;
-	auto = new variantType_22void22() ;
+	auto = new variantType_22float363422() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -416 ;
+	yy = 339 ;
+	return -423 ;
 	}
 static int _788()
 	{
 	log("_788") ;
-	auto = new variantType_22error22() ;
+	auto = new variantType_22int313622() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -442 ;
+	yy = 339 ;
+	return -419 ;
 	}
 static int _789()
 	{
 	log("_789") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.split( _886() ) ;
-		case _22int363422: a.shift() ; return a.split( _887() ) ;
-		case _22int313622: a.shift() ; return a.split( _888() ) ;
-		case _22int3822: a.shift() ; return a.split( _889() ) ;
-		case _22int22: a.shift() ; return a.split( _890() ) ;
-		}
-	throw new System.NotImplementedException() ;
+	auto = new variantType_22int3822() ;
+	backup = 1 ;
+	yy = 339 ;
+	return -418 ;
 	}
 static int _790()
 	{
 	log("_790") ;
-	auto = new variantType_22decimal22() ;
+	auto = new variantType_22bool22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -432 ;
+	yy = 339 ;
+	return -417 ;
 	}
 static int _791()
 	{
 	log("_791") ;
-	auto = new variantType_22date22() ;
+	auto = new variantType_22variant22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -433 ;
+	yy = 339 ;
+	return -414 ;
 	}
 static int _792()
 	{
 	log("_792") ;
-	auto = new variantType_22bstr22() ;
+	auto = new variantType_22currency22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -434 ;
+	yy = 339 ;
+	return -415 ;
 	}
 static int _793()
 	{
 	log("_793") ;
-	auto = new variantType_22lpstr22() ;
+	auto = new variantType_22void22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -435 ;
+	yy = 339 ;
+	return -416 ;
 	}
 static int _794()
 	{
 	log("_794") ;
-	auto = new variantType_22lpwstr22() ;
+	auto = new variantType_22error22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -436 ;
+	yy = 339 ;
+	return -442 ;
 	}
 static int _795()
 	{
 	log("_795") ;
-	auto = new variantType_22iunknown22() ;
-	backup = 1 ;
-	yy = 337 ;
-	return -437 ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.split( _892() ) ;
+		case _22int363422: a.shift() ; return a.split( _893() ) ;
+		case _22int313622: a.shift() ; return a.split( _894() ) ;
+		case _22int3822: a.shift() ; return a.split( _895() ) ;
+		case _22int22: a.shift() ; return a.split( _896() ) ;
+		}
+	throw new System.NotImplementedException() ;
 	}
 static int _796()
 	{
 	log("_796") ;
-	auto = new variantType_22idispatch22() ;
+	auto = new variantType_22decimal22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -438 ;
+	yy = 339 ;
+	return -432 ;
 	}
 static int _797()
 	{
 	log("_797") ;
-	auto = new variantType_22safearray22() ;
+	auto = new variantType_22date22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -439 ;
+	yy = 339 ;
+	return -433 ;
 	}
 static int _798()
 	{
 	log("_798") ;
-	auto = new variantType_22int22() ;
+	auto = new variantType_22bstr22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -440 ;
+	yy = 339 ;
+	return -434 ;
 	}
 static int _799()
 	{
 	log("_799") ;
-	auto = new variantType_22null22() ;
+	auto = new variantType_22lpstr22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -413 ;
+	yy = 339 ;
+	return -435 ;
 	}
 static int _800()
 	{
 	log("_800") ;
-	auto = new variantType_22hresult22() ;
+	auto = new variantType_22lpwstr22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -443 ;
+	yy = 339 ;
+	return -436 ;
 	}
 static int _801()
 	{
 	log("_801") ;
-	auto = new variantType_22carray22() ;
+	auto = new variantType_22iunknown22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -444 ;
+	yy = 339 ;
+	return -437 ;
 	}
 static int _802()
 	{
 	log("_802") ;
-	auto = new variantType_22userdefined22() ;
+	auto = new variantType_22idispatch22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -445 ;
+	yy = 339 ;
+	return -438 ;
 	}
 static int _803()
 	{
 	log("_803") ;
-	auto = new variantType_22record22() ;
+	auto = new variantType_22safearray22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -446 ;
+	yy = 339 ;
+	return -439 ;
 	}
 static int _804()
 	{
 	log("_804") ;
-	auto = new variantType_22filetime22() ;
+	auto = new variantType_22int22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -447 ;
+	yy = 339 ;
+	return -440 ;
 	}
 static int _805()
 	{
 	log("_805") ;
-	auto = new variantType_22blob22() ;
+	auto = new variantType_22null22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -448 ;
+	yy = 339 ;
+	return -413 ;
 	}
 static int _806()
 	{
 	log("_806") ;
-	auto = new variantType_22stream22() ;
+	auto = new variantType_22hresult22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -449 ;
+	yy = 339 ;
+	return -443 ;
 	}
 static int _807()
 	{
 	log("_807") ;
-	auto = new variantType_22storage22() ;
+	auto = new variantType_22carray22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -450 ;
+	yy = 339 ;
+	return -444 ;
 	}
 static int _808()
 	{
 	log("_808") ;
-	auto = new variantType_22streamed5Fobject22() ;
+	auto = new variantType_22userdefined22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -451 ;
+	yy = 339 ;
+	return -445 ;
 	}
 static int _809()
 	{
 	log("_809") ;
-	auto = new variantType_22stored5Fobject22() ;
+	auto = new variantType_22record22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -452 ;
+	yy = 339 ;
+	return -446 ;
 	}
 static int _810()
 	{
 	log("_810") ;
-	auto = new variantType_22blob5Fobject22() ;
+	auto = new variantType_22filetime22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -453 ;
+	yy = 339 ;
+	return -447 ;
 	}
 static int _811()
 	{
 	log("_811") ;
-	auto = new variantType_22cf22() ;
+	auto = new variantType_22blob22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -454 ;
+	yy = 339 ;
+	return -448 ;
 	}
 static int _812()
 	{
 	log("_812") ;
-	auto = new variantType_22clsid22() ;
+	auto = new variantType_22stream22() ;
 	backup = 1 ;
-	yy = 337 ;
-	return -455 ;
+	yy = 339 ;
+	return -449 ;
 	}
 static int _813()
 	{
 	log("_813") ;
+	auto = new variantType_22storage22() ;
+	backup = 1 ;
+	yy = 339 ;
+	return -450 ;
+	}
+static int _814()
+	{
+	log("_814") ;
+	auto = new variantType_22streamed5Fobject22() ;
+	backup = 1 ;
+	yy = 339 ;
+	return -451 ;
+	}
+static int _815()
+	{
+	log("_815") ;
+	auto = new variantType_22stored5Fobject22() ;
+	backup = 1 ;
+	yy = 339 ;
+	return -452 ;
+	}
+static int _816()
+	{
+	log("_816") ;
+	auto = new variantType_22blob5Fobject22() ;
+	backup = 1 ;
+	yy = 339 ;
+	return -453 ;
+	}
+static int _817()
+	{
+	log("_817") ;
+	auto = new variantType_22cf22() ;
+	backup = 1 ;
+	yy = 339 ;
+	return -454 ;
+	}
+static int _818()
+	{
+	log("_818") ;
+	auto = new variantType_22clsid22() ;
+	backup = 1 ;
+	yy = 339 ;
+	return -455 ;
+	}
+static int _819()
+	{
+	log("_819") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 39: /* case 44: */ case 152: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _813_default ;
-		case _272C27: a.shift() ; return a.split( _891() ) ;
-		case _275B27: a.shift() ; return a.split( _892() ) ;
-		case _272627: a.shift() ; return a.split( _893() ) ;
-		case _22vector22: a.shift() ; return a.split( _894() ) ;
+		goto _819_default ;
+		case _272C27: a.shift() ; return a.split( _897() ) ;
+		case _275B27: a.shift() ; return a.split( _898() ) ;
+		case _272627: a.shift() ; return a.split( _899() ) ;
+		case _22vector22: a.shift() ; return a.split( _900() ) ;
 		}
-	_813_default:
+	_819_default:
 	auto = new nativeType_22safearray22_variantType() ;
 	backup = 2 ;
-	yy = 336 ;
+	yy = 338 ;
 	return -400 ;
 	}
-static int _814()
+static int _820()
 	{
-	log("_814") ;
+	log("_820") ;
 	auto = new fieldAttr_fieldAttr_22marshal22_272827_nativeType_272927() ;
 	backup = 5 ;
-	yy = 294 ;
+	yy = 296 ;
 	return -197 ;
 	}
-static int _815()
+static int _821()
 	{
-	log("_815") ;
+	log("_821") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _897() ;
+			case _int3332 : return _903() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		case _272B27: a.shift() ; return a.deploy( _895() ) ;
-		case _275D27: a.shift() ; return a.deploy( _896() ) ;
+		case _272B27: a.shift() ; return a.deploy( _901() ) ;
+		case _275D27: a.shift() ; return a.deploy( _902() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _816()
+static int _822()
 	{
-	log("_816") ;
+	log("_822") ;
 	auto = new nativeType_nativeType_272A27() ;
 	backup = 2 ;
-	yy = 336 ;
+	yy = 338 ;
 	return -384 ;
 	}
-static int _817()
+static int _823()
 	{
-	log("_817") ;
+	log("_823") ;
 	auto = new atOpt_22at22_id() ;
 	backup = 2 ;
-	yy = 272 ;
+	yy = 274 ;
 	return -98 ;
 	}
-static int _818()
+static int _824()
 	{
-	log("_818") ;
+	log("_824") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=255 max=320 length=66
+		switch(_yy) // size=3 min=257 max=322 length=66
 			{
-			case _compQstring : return _907() ;
-			case _fieldInit : return _908() ;
-			case _bytearrayhead : return _909() ;
+			case _compQstring : return _913() ;
+			case _fieldInit : return _914() ;
+			case _bytearrayhead : return _915() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _QSTRING: a.shift() ; return a.deploy( _331() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _898() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _899() ) ;
-		case _22char22: a.shift() ; return a.deploy( _900() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _901() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _902() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _903() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _904() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _905() ) ;
-		case _22nullref22: a.shift() ; return a.deploy( _906() ) ;
+		case _QSTRING: a.shift() ; return a.deploy( _332() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _904() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _905() ) ;
+		case _22char22: a.shift() ; return a.deploy( _906() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _907() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _908() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _909() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _910() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _911() ) ;
+		case _22nullref22: a.shift() ; return a.deploy( _912() ) ;
 		case _22bytearray22: a.shift() ; return a.deploy( _120() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _819()
+static int _825()
 	{
-	log("_819") ;
+	log("_825") ;
 	auto = new fieldDecl_222Efield22_repeatOpt_fieldAttr_type_id_atOpt_initOpt() ;
 	backup = 7 ;
-	yy = 271 ;
+	yy = 273 ;
 	return -96 ;
 	}
-static int _820()
+static int _826()
 	{
-	log("_820") ;
+	log("_826") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _910() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _916() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _821()
+static int _827()
 	{
-	log("_821") ;
+	log("_827") ;
 	auto = new truefalse_22true22() ;
 	backup = 1 ;
-	yy = 351 ;
-	return -515 ;
+	yy = 354 ;
+	return -518 ;
 	}
-static int _822()
+static int _828()
 	{
-	log("_822") ;
+	log("_828") ;
 	auto = new truefalse_22false22() ;
 	backup = 1 ;
-	yy = 351 ;
-	return -516 ;
+	yy = 354 ;
+	return -519 ;
 	}
-static int _823()
+static int _829()
 	{
-	log("_823") ;
+	log("_829") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 36: case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _823_default ;
-		case _272B27: a.shift() ; return a.split( _504() ) ;
+		goto _829_default ;
+		case _272B27: a.shift() ; return a.split( _507() ) ;
 		}
-	_823_default:
+	_829_default:
 	auto = new caValue_compQstring() ;
 	backup = 1 ;
-	yy = 352 ;
-	return -520 ;
-	}
-static int _824()
-	{
-	log("_824") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _911() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _825()
-	{
-	log("_825") ;
-	auto = new caValue_int3332() ;
-	backup = 1 ;
-	yy = 352 ;
-	return -518 ;
-	}
-static int _826()
-	{
-	log("_826") ;
-	auto = new caValue_truefalse() ;
-	backup = 1 ;
-	yy = 352 ;
-	return -517 ;
-	}
-static int _827()
-	{
-	log("_827") ;
-	auto = new nameValPair_compQstring_273D27_caValue() ;
-	backup = 3 ;
-	yy = 350 ;
-	return -514 ;
-	}
-static int _828()
-	{
-	log("_828") ;
-	auto = new nameValPairs_nameValPair_272C27_nameValPairs() ;
-	backup = 3 ;
-	yy = 349 ;
-	return -513 ;
-	}
-static int _829()
-	{
-	log("_829") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22with22 ) { a.shift() ; return a.split( _912() ) ; }
-	throw new System.NotImplementedException() ;
+	yy = 355 ;
+	return -523 ;
 	}
 static int _830()
 	{
 	log("_830") ;
-	auto = new eventHead_222Eevent22_eventAttr_typeSpec_id() ;
-	backup = 4 ;
-	yy = 280 ;
-	return -113 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _917() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _831()
 	{
 	log("_831") ;
+	auto = new caValue_int3332() ;
+	backup = 1 ;
+	yy = 355 ;
+	return -521 ;
+	}
+static int _832()
+	{
+	log("_832") ;
+	auto = new caValue_truefalse() ;
+	backup = 1 ;
+	yy = 355 ;
+	return -520 ;
+	}
+static int _833()
+	{
+	log("_833") ;
+	auto = new nameValPair_compQstring_273D27_caValue() ;
+	backup = 3 ;
+	yy = 353 ;
+	return -517 ;
+	}
+static int _834()
+	{
+	log("_834") ;
+	auto = new nameValPairs_nameValPair_272C27_nameValPairs() ;
+	backup = 3 ;
+	yy = 352 ;
+	return -516 ;
+	}
+static int _835()
+	{
+	log("_835") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22with22 ) { a.shift() ; return a.split( _918() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _836()
+	{
+	log("_836") ;
+	auto = new eventHead_222Eevent22_eventAttr_typeSpec_id() ;
+	backup = 4 ;
+	yy = 282 ;
+	return -113 ;
+	}
+static int _837()
+	{
+	log("_837") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _913() ;
+			case _id : return _919() ;
 			default: return __default ;
 			}
 		} ;
@@ -12215,187 +12369,118 @@ static int _831()
 		case _275B27: a.shift() ; return a.deploy( _325() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		}
 	throw new System.NotImplementedException() ;
-	}
-static int _832()
-	{
-	log("_832") ;
-	auto = new classDecl_classHead_277B27_classDecls_277D27() ;
-	backup = 4 ;
-	yy = 270 ;
-	return -83 ;
-	}
-static int _833()
-	{
-	log("_833") ;
-	auto = new classDecl_eventHead_277B27_eventDecls_277D27() ;
-	backup = 4 ;
-	yy = 270 ;
-	return -84 ;
-	}
-static int _834()
-	{
-	log("_834") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=334 max=335 length=2
-			{
-			case _callConv : return _914() ;
-			case _callKind : return _65() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _834_default ;
-		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
-		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
-		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
-		case _22default22: a.shift() ; return a.deploy( _61() ) ;
-		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
-		}
-	_834_default:
-	return a.deploy( _65() ) ;
-	}
-static int _835()
-	{
-	log("_835") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=334 max=335 length=2
-			{
-			case _callConv : return _915() ;
-			case _callKind : return _65() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _835_default ;
-		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
-		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
-		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
-		case _22default22: a.shift() ; return a.deploy( _61() ) ;
-		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
-		}
-	_835_default:
-	return a.deploy( _65() ) ;
-	}
-static int _836()
-	{
-	log("_836") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=334 max=335 length=2
-			{
-			case _callConv : return _916() ;
-			case _callKind : return _65() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _836_default ;
-		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
-		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
-		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
-		case _22default22: a.shift() ; return a.deploy( _61() ) ;
-		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
-		}
-	_836_default:
-	return a.deploy( _65() ) ;
-	}
-static int _837()
-	{
-	log("_837") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=334 max=335 length=2
-			{
-			case _callConv : return _917() ;
-			case _callKind : return _65() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _837_default ;
-		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
-		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
-		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
-		case _22default22: a.shift() ; return a.deploy( _61() ) ;
-		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
-		}
-	_837_default:
-	return a.deploy( _65() ) ;
 	}
 static int _838()
 	{
 	log("_838") ;
-	auto = new eventDecl_languageDecl() ;
-	backup = 1 ;
-	yy = 283 ;
-	return -130 ;
+	auto = new classDecl_classHead_277B27_classDecls_277D27() ;
+	backup = 4 ;
+	yy = 272 ;
+	return -83 ;
 	}
 static int _839()
 	{
 	log("_839") ;
-	auto = new eventDecl_customAttrDecl() ;
-	backup = 1 ;
-	yy = 283 ;
-	return -129 ;
+	auto = new classDecl_eventHead_277B27_eventDecls_277D27() ;
+	backup = 4 ;
+	yy = 272 ;
+	return -84 ;
 	}
 static int _840()
 	{
 	log("_840") ;
-	auto = new eventDecls_eventDecls_eventDecl() ;
-	backup = 2 ;
-	yy = 282 ;
-	return -119 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=336 max=337 length=2
+			{
+			case _callConv : return _920() ;
+			case _callKind : return _65() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
+		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 212: case 218: case 219: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _840_default ;
+		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
+		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
+		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
+		case _22default22: a.shift() ; return a.deploy( _61() ) ;
+		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
+		}
+	_840_default:
+	return a.deploy( _65() ) ;
 	}
 static int _841()
 	{
 	log("_841") ;
-	auto = new eventDecl_extSourceSpec() ;
-	backup = 1 ;
-	yy = 283 ;
-	return -128 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=336 max=337 length=2
+			{
+			case _callConv : return _921() ;
+			case _callKind : return _65() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
+		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 212: case 218: case 219: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _841_default ;
+		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
+		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
+		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
+		case _22default22: a.shift() ; return a.deploy( _61() ) ;
+		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
+		}
+	_841_default:
+	return a.deploy( _65() ) ;
 	}
 static int _842()
 	{
 	log("_842") ;
-	auto = new classDecl_propHead_277B27_propDecls_277D27() ;
-	backup = 4 ;
-	yy = 270 ;
-	return -85 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=336 max=337 length=2
+			{
+			case _callConv : return _922() ;
+			case _callKind : return _65() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
+		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 212: case 218: case 219: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _842_default ;
+		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
+		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
+		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
+		case _22default22: a.shift() ; return a.deploy( _61() ) ;
+		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
+		}
+	_842_default:
+	return a.deploy( _65() ) ;
 	}
 static int _843()
 	{
@@ -12403,9 +12488,9 @@ static int _843()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
-			case _callConv : return _918() ;
+			case _callConv : return _923() ;
 			case _callKind : return _65() ;
 			default: return __default ;
 			}
@@ -12414,7 +12499,7 @@ static int _843()
 		{
 		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
+		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _843_default ;
@@ -12430,42 +12515,52 @@ static int _843()
 static int _844()
 	{
 	log("_844") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=334 max=335 length=2
-			{
-			case _callConv : return _919() ;
-			case _callKind : return _65() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _844_default ;
-		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
-		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
-		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
-		case _22default22: a.shift() ; return a.deploy( _61() ) ;
-		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
-		}
-	_844_default:
-	return a.deploy( _65() ) ;
+	auto = new eventDecl_languageDecl() ;
+	backup = 1 ;
+	yy = 285 ;
+	return -130 ;
 	}
 static int _845()
 	{
 	log("_845") ;
+	auto = new eventDecl_customAttrDecl() ;
+	backup = 1 ;
+	yy = 285 ;
+	return -129 ;
+	}
+static int _846()
+	{
+	log("_846") ;
+	auto = new eventDecls_eventDecls_eventDecl() ;
+	backup = 2 ;
+	yy = 284 ;
+	return -119 ;
+	}
+static int _847()
+	{
+	log("_847") ;
+	auto = new eventDecl_extSourceSpec() ;
+	backup = 1 ;
+	yy = 285 ;
+	return -128 ;
+	}
+static int _848()
+	{
+	log("_848") ;
+	auto = new classDecl_propHead_277B27_propDecls_277D27() ;
+	backup = 4 ;
+	yy = 272 ;
+	return -85 ;
+	}
+static int _849()
+	{
+	log("_849") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=334 max=335 length=2
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
-			case _callConv : return _920() ;
+			case _callConv : return _924() ;
 			case _callKind : return _65() ;
 			default: return __default ;
 			}
@@ -12474,58 +12569,48 @@ static int _845()
 		{
 		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
 		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
+		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _845_default ;
+		goto _849_default ;
 		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
 		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
 		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
 		case _22default22: a.shift() ; return a.deploy( _61() ) ;
 		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
 		}
-	_845_default:
+	_849_default:
 	return a.deploy( _65() ) ;
-	}
-static int _846()
-	{
-	log("_846") ;
-	auto = new propDecl_languageDecl() ;
-	backup = 1 ;
-	yy = 287 ;
-	return -145 ;
-	}
-static int _847()
-	{
-	log("_847") ;
-	auto = new propDecl_customAttrDecl() ;
-	backup = 1 ;
-	yy = 287 ;
-	return -143 ;
-	}
-static int _848()
-	{
-	log("_848") ;
-	auto = new propDecls_propDecls_propDecl() ;
-	backup = 2 ;
-	yy = 286 ;
-	return -136 ;
-	}
-static int _849()
-	{
-	log("_849") ;
-	auto = new propDecl_extSourceSpec() ;
-	backup = 1 ;
-	yy = 287 ;
-	return -144 ;
 	}
 static int _850()
 	{
 	log("_850") ;
-	auto = new classDecl_exportHead_277B27_comtypeDecls_277D27() ;
-	backup = 4 ;
-	yy = 270 ;
-	return -93 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=336 max=337 length=2
+			{
+			case _callConv : return _925() ;
+			case _callKind : return _65() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
+		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 212: case 218: case 219: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _850_default ;
+		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
+		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
+		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
+		case _22default22: a.shift() ; return a.deploy( _61() ) ;
+		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
+		}
+	_850_default:
+	return a.deploy( _65() ) ;
 	}
 static int _851()
 	{
@@ -12533,9 +12618,79 @@ static int _851()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=291 max=291 length=1
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
-			case _pinvAttr : return _921() ;
+			case _callConv : return _926() ;
+			case _callKind : return _65() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
+		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 212: case 218: case 219: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _851_default ;
+		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
+		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
+		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
+		case _22default22: a.shift() ; return a.deploy( _61() ) ;
+		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
+		}
+	_851_default:
+	return a.deploy( _65() ) ;
+	}
+static int _852()
+	{
+	log("_852") ;
+	auto = new propDecl_languageDecl() ;
+	backup = 1 ;
+	yy = 289 ;
+	return -145 ;
+	}
+static int _853()
+	{
+	log("_853") ;
+	auto = new propDecl_customAttrDecl() ;
+	backup = 1 ;
+	yy = 289 ;
+	return -143 ;
+	}
+static int _854()
+	{
+	log("_854") ;
+	auto = new propDecls_propDecls_propDecl() ;
+	backup = 2 ;
+	yy = 288 ;
+	return -136 ;
+	}
+static int _855()
+	{
+	log("_855") ;
+	auto = new propDecl_extSourceSpec() ;
+	backup = 1 ;
+	yy = 289 ;
+	return -144 ;
+	}
+static int _856()
+	{
+	log("_856") ;
+	auto = new classDecl_exportHead_277B27_comtypeDecls_277D27() ;
+	backup = 4 ;
+	yy = 272 ;
+	return -93 ;
+	}
+static int _857()
+	{
+	log("_857") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=293 max=293 length=1
+			{
+			case _pinvAttr : return _927() ;
 			default: return __default ;
 			}
 		} ;
@@ -12545,62 +12700,62 @@ static int _851()
 		case 111: case 112: case 113: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _851_default ;
-		case _272B27: a.shift() ; return a.deploy( _504() ) ;
+		goto _857_default ;
+		case _272B27: a.shift() ; return a.deploy( _507() ) ;
 		}
-	_851_default:
-	return a.deploy( _921() ) ;
+	_857_default:
+	return a.deploy( _927() ) ;
 	}
-static int _852()
+static int _858()
 	{
-	log("_852") ;
+	log("_858") ;
 	auto = new methAttr_methAttr_22pinvokeimpl22_272827_compQstring_pinvAttr_272927() ;
 	backup = 6 ;
-	yy = 290 ;
+	yy = 292 ;
 	return -168 ;
 	}
-static int _853()
+static int _859()
 	{
-	log("_853") ;
+	log("_859") ;
 	auto = new paramAttr_paramAttr_275B27_22in22_275D27() ;
 	backup = 4 ;
-	yy = 293 ;
+	yy = 295 ;
 	return -185 ;
 	}
-static int _854()
+static int _860()
 	{
-	log("_854") ;
+	log("_860") ;
 	auto = new paramAttr_paramAttr_275B27_22out22_275D27() ;
 	backup = 4 ;
-	yy = 293 ;
+	yy = 295 ;
 	return -186 ;
 	}
-static int _855()
+static int _861()
 	{
-	log("_855") ;
+	log("_861") ;
 	auto = new paramAttr_paramAttr_275B27_22opt22_275D27() ;
 	backup = 4 ;
-	yy = 293 ;
+	yy = 295 ;
 	return -187 ;
 	}
-static int _856()
+static int _862()
 	{
-	log("_856") ;
+	log("_862") ;
 	auto = new paramAttr_paramAttr_275B27_int3332_275D27() ;
 	backup = 4 ;
-	yy = 293 ;
+	yy = 295 ;
 	return -188 ;
 	}
-static int _857()
+static int _863()
 	{
-	log("_857") ;
+	log("_863") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=336 length=12
+		switch(_yy) // size=2 min=327 max=338 length=12
 			{
-			case _methodSpec : return _665() ;
-			case _nativeType : return _922() ;
+			case _methodSpec : return _670() ;
+			case _nativeType : return _928() ;
 			default: return __default ;
 			}
 		} ;
@@ -12609,58 +12764,58 @@ static int _857()
 		case 39: case 44: case 152: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _857_default ;
-		case _22int333222: a.shift() ; return a.deploy( _631() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _632() ) ;
-		case _22interface22: a.shift() ; return a.deploy( _633() ) ;
-		case _22ansi22: a.shift() ; return a.deploy( _634() ) ;
-		case _22nested22: a.shift() ; return a.deploy( _635() ) ;
-		case _22as22: a.shift() ; return a.deploy( _636() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _637() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _638() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _639() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _640() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _641() ) ;
+		goto _863_default ;
+		case _22int333222: a.shift() ; return a.deploy( _636() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _637() ) ;
+		case _22interface22: a.shift() ; return a.deploy( _638() ) ;
+		case _22ansi22: a.shift() ; return a.deploy( _639() ) ;
+		case _22nested22: a.shift() ; return a.deploy( _640() ) ;
+		case _22as22: a.shift() ; return a.deploy( _641() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _642() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _643() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _644() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _645() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _646() ) ;
 		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22custom22: a.shift() ; return a.deploy( _642() ) ;
-		case _22fixed22: a.shift() ; return a.deploy( _643() ) ;
-		case _22variant22: a.shift() ; return a.deploy( _644() ) ;
-		case _22currency22: a.shift() ; return a.deploy( _645() ) ;
-		case _22syschar22: a.shift() ; return a.deploy( _646() ) ;
-		case _22void22: a.shift() ; return a.deploy( _647() ) ;
-		case _22error22: a.shift() ; return a.deploy( _648() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _649() ) ;
-		case _22decimal22: a.shift() ; return a.deploy( _650() ) ;
-		case _22date22: a.shift() ; return a.deploy( _651() ) ;
-		case _22bstr22: a.shift() ; return a.deploy( _652() ) ;
-		case _22lpstr22: a.shift() ; return a.deploy( _653() ) ;
-		case _22lpwstr22: a.shift() ; return a.deploy( _654() ) ;
-		case _22lptstr22: a.shift() ; return a.deploy( _655() ) ;
-		case _22objectref22: a.shift() ; return a.deploy( _656() ) ;
-		case _22iunknown22: a.shift() ; return a.deploy( _657() ) ;
-		case _22idispatch22: a.shift() ; return a.deploy( _658() ) ;
-		case _22struct22: a.shift() ; return a.deploy( _659() ) ;
-		case _22safearray22: a.shift() ; return a.deploy( _660() ) ;
-		case _22int22: a.shift() ; return a.deploy( _661() ) ;
-		case _22byvalstr22: a.shift() ; return a.deploy( _662() ) ;
-		case _22tbstr22: a.shift() ; return a.deploy( _663() ) ;
-		case _22lpstruct22: a.shift() ; return a.deploy( _664() ) ;
+		case _22custom22: a.shift() ; return a.deploy( _647() ) ;
+		case _22fixed22: a.shift() ; return a.deploy( _648() ) ;
+		case _22variant22: a.shift() ; return a.deploy( _649() ) ;
+		case _22currency22: a.shift() ; return a.deploy( _650() ) ;
+		case _22syschar22: a.shift() ; return a.deploy( _651() ) ;
+		case _22void22: a.shift() ; return a.deploy( _652() ) ;
+		case _22error22: a.shift() ; return a.deploy( _653() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _654() ) ;
+		case _22decimal22: a.shift() ; return a.deploy( _655() ) ;
+		case _22date22: a.shift() ; return a.deploy( _656() ) ;
+		case _22bstr22: a.shift() ; return a.deploy( _657() ) ;
+		case _22lpstr22: a.shift() ; return a.deploy( _658() ) ;
+		case _22lpwstr22: a.shift() ; return a.deploy( _659() ) ;
+		case _22lptstr22: a.shift() ; return a.deploy( _660() ) ;
+		case _22objectref22: a.shift() ; return a.deploy( _661() ) ;
+		case _22iunknown22: a.shift() ; return a.deploy( _662() ) ;
+		case _22idispatch22: a.shift() ; return a.deploy( _663() ) ;
+		case _22struct22: a.shift() ; return a.deploy( _664() ) ;
+		case _22safearray22: a.shift() ; return a.deploy( _665() ) ;
+		case _22int22: a.shift() ; return a.deploy( _666() ) ;
+		case _22byvalstr22: a.shift() ; return a.deploy( _667() ) ;
+		case _22tbstr22: a.shift() ; return a.deploy( _668() ) ;
+		case _22lpstruct22: a.shift() ; return a.deploy( _669() ) ;
 		}
-	_857_default:
-	return a.deploy( _922() ) ;
+	_863_default:
+	return a.deploy( _928() ) ;
 	}
-static int _858()
+static int _864()
 	{
-	log("_858") ;
+	log("_864") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _923() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _929() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -12668,41 +12823,41 @@ static int _858()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _858_default ;
+		goto _864_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _923() ) ;
+			return a.deploy( _929() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_858_default:
+	_864_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
-static int _859()
+static int _865()
 	{
-	log("_859") ;
+	log("_865") ;
 	auto = new instr_INSTR5FFIELD_type_typeSpec_223A3A22_id() ;
 	backup = 5 ;
-	yy = 326 ;
+	yy = 328 ;
 	return -321 ;
 	}
-static int _860()
+static int _866()
 	{
-	log("_860") ;
+	log("_866") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _924() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _930() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -12710,31 +12865,31 @@ static int _860()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _860_default ;
+		goto _866_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _924() ) ;
+			return a.deploy( _930() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_860_default:
+	_866_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
-static int _861()
+static int _867()
 	{
-	log("_861") ;
+	log("_867") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _925() ;
-			case _name31 : return _705() ;
+			case _methodName : return _931() ;
+			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -12744,105 +12899,49 @@ static int _861()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
-	}
-static int _862()
-	{
-	log("_862") ;
-	auto = new float64_22float333222_272827_int3332_272927() ;
-	backup = 4 ;
-	yy = 346 ;
-	return -506 ;
-	}
-static int _863()
-	{
-	log("_863") ;
-	auto = new float64_22float363422_272827_int3634_272927() ;
-	backup = 4 ;
-	yy = 346 ;
-	return -507 ;
-	}
-static int _864()
-	{
-	log("_864") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _926() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _865()
-	{
-	log("_865") ;
-	auto = new labels_id_272C27_labels() ;
-	backup = 3 ;
-	yy = 341 ;
-	return -495 ;
-	}
-static int _866()
-	{
-	log("_866") ;
-	auto = new labels_int3332_272C27_labels() ;
-	backup = 3 ;
-	yy = 341 ;
-	return -496 ;
-	}
-static int _867()
-	{
-	log("_867") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=342 max=342 length=1
-			{
-			case _id : return _927() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
-	else
-	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _868()
 	{
 	log("_868") ;
-	auto = new methodDecl_222Eparam22_275B27_int3332_275D27_initOpt() ;
-	backup = 5 ;
-	yy = 297 ;
-	return -236 ;
+	auto = new float64_22float333222_272827_int3332_272927() ;
+	backup = 4 ;
+	yy = 349 ;
+	return -509 ;
 	}
 static int _869()
 	{
 	log("_869") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _928() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new float64_22float363422_272827_int3634_272927() ;
+	backup = 4 ;
+	yy = 349 ;
+	return -510 ;
 	}
 static int _870()
 	{
 	log("_870") ;
-	auto = new sigArg_paramAttr_type_id() ;
-	backup = 3 ;
-	yy = 329 ;
-	return -338 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _932() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _871()
 	{
 	log("_871") ;
-	auto = new sigArgs1_sigArgs31_272C27_sigArg() ;
+	auto = new labels_id_272C27_labels() ;
 	backup = 3 ;
-	yy = 328 ;
-	return -335 ;
+	yy = 344 ;
+	return -498 ;
 	}
 static int _872()
 	{
 	log("_872") ;
-	auto = new methodDecl_localsHead_22init22_272827_sigArgs30_272927() ;
-	backup = 5 ;
-	yy = 297 ;
-	return -221 ;
+	auto = new labels_int3332_272C27_labels() ;
+	backup = 3 ;
+	yy = 344 ;
+	return -499 ;
 	}
 static int _873()
 	{
@@ -12850,9 +12949,9 @@ static int _873()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _929() ;
+			case _id : return _933() ;
 			default: return __default ;
 			}
 		} ;
@@ -12864,155 +12963,156 @@ static int _873()
 static int _874()
 	{
 	log("_874") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _930() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new methodDecl_222Eparam22_275B27_int3332_275D27_initOpt() ;
+	backup = 5 ;
+	yy = 299 ;
+	return -236 ;
 	}
 static int _875()
 	{
 	log("_875") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _931() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _934() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _876()
 	{
 	log("_876") ;
-	auto = new manifestResDecl_222Efile22_name31_22at22_int3332() ;
-	backup = 4 ;
-	yy = 378 ;
-	return -600 ;
+	auto = new sigArg_paramAttr_type_id() ;
+	backup = 3 ;
+	yy = 331 ;
+	return -338 ;
 	}
 static int _877()
 	{
 	log("_877") ;
-	auto = new fileDecl_222Efile22_fileAttr_name31_fileEntry_hashHead_bytes_272927_fileEntry() ;
-	backup = 8 ;
-	yy = 355 ;
-	return -545 ;
+	auto = new sigArgs1_sigArgs31_272C27_sigArg() ;
+	backup = 3 ;
+	yy = 330 ;
+	return -335 ;
 	}
 static int _878()
 	{
 	log("_878") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _932() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new methodDecl_localsHead_22init22_272827_sigArgs30_272927() ;
+	backup = 5 ;
+	yy = 299 ;
+	return -221 ;
 	}
 static int _879()
 	{
 	log("_879") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _933() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=345 max=345 length=1
+			{
+			case _id : return _935() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
+	else
+	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _880()
 	{
 	log("_880") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _934() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _936() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _881()
 	{
 	log("_881") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _935() ) ; }
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _937() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _882()
 	{
 	log("_882") ;
-	auto = new classNames_classNames_272C27_className() ;
-	backup = 3 ;
-	yy = 268 ;
-	return -78 ;
+	auto = new manifestResDecl_222Efile22_name31_22at22_int3332() ;
+	backup = 4 ;
+	yy = 381 ;
+	return -603 ;
 	}
 static int _883()
 	{
 	log("_883") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _504() ) ; }
-	else
-	if( token.point == _272C27 ) { a.shift() ; return a.split( _936() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new fileDecl_222Efile22_fileAttr_name31_fileEntry_hashHead_bytes_272927_fileEntry() ;
+	backup = 8 ;
+	yy = 358 ;
+	return -548 ;
 	}
 static int _884()
 	{
 	log("_884") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _937() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _938() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _885()
 	{
 	log("_885") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _938() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _939() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _886()
 	{
 	log("_886") ;
-	auto = new variantType_22unsigned22_22int333222() ;
-	backup = 2 ;
-	yy = 337 ;
-	return -426 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _940() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _887()
 	{
 	log("_887") ;
-	auto = new variantType_22unsigned22_22int363422() ;
-	backup = 2 ;
-	yy = 337 ;
-	return -427 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _941() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _888()
 	{
 	log("_888") ;
-	auto = new variantType_22unsigned22_22int313622() ;
-	backup = 2 ;
-	yy = 337 ;
-	return -425 ;
+	auto = new classNames_classNames_272C27_className() ;
+	backup = 3 ;
+	yy = 270 ;
+	return -78 ;
 	}
 static int _889()
 	{
 	log("_889") ;
-	auto = new variantType_22unsigned22_22int3822() ;
-	backup = 2 ;
-	yy = 337 ;
-	return -424 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
+	else
+	if( token.point == _272C27 ) { a.shift() ; return a.split( _942() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _890()
 	{
 	log("_890") ;
-	auto = new variantType_22unsigned22_22int22() ;
-	backup = 2 ;
-	yy = 337 ;
-	return -441 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _943() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _891()
 	{
@@ -13020,110 +13120,123 @@ static int _891()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=255 max=255 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _compQstring : return _939() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _892()
-	{
-	log("_892") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _940() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _893()
-	{
-	log("_893") ;
-	auto = new variantType_variantType_272627() ;
-	backup = 2 ;
-	yy = 337 ;
-	return -431 ;
-	}
-static int _894()
-	{
-	log("_894") ;
-	auto = new variantType_variantType_22vector22() ;
-	backup = 2 ;
-	yy = 337 ;
-	return -430 ;
-	}
-static int _895()
-	{
-	log("_895") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _941() ;
+			case _int3332 : return _944() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
+static int _892()
+	{
+	log("_892") ;
+	auto = new variantType_22unsigned22_22int333222() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -426 ;
+	}
+static int _893()
+	{
+	log("_893") ;
+	auto = new variantType_22unsigned22_22int363422() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -427 ;
+	}
+static int _894()
+	{
+	log("_894") ;
+	auto = new variantType_22unsigned22_22int313622() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -425 ;
+	}
+static int _895()
+	{
+	log("_895") ;
+	auto = new variantType_22unsigned22_22int3822() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -424 ;
+	}
 static int _896()
 	{
 	log("_896") ;
-	auto = new nativeType_nativeType_275B27_275D27() ;
-	backup = 3 ;
-	yy = 336 ;
-	return -385 ;
+	auto = new variantType_22unsigned22_22int22() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -441 ;
 	}
 static int _897()
 	{
 	log("_897") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _942() ) ; }
-	else
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _943() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _945() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _898()
 	{
 	log("_898") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _944() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _946() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _899()
 	{
 	log("_899") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _945() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new variantType_variantType_272627() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -431 ;
 	}
 static int _900()
 	{
 	log("_900") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _946() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new variantType_variantType_22vector22() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -430 ;
 	}
 static int _901()
 	{
 	log("_901") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _947() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _947() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _902()
 	{
 	log("_902") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _948() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new nativeType_nativeType_275B27_275D27() ;
+	backup = 3 ;
+	yy = 338 ;
+	return -385 ;
 	}
 static int _903()
 	{
 	log("_903") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _949() ) ; }
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _948() ) ; }
+	else
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _949() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _904()
@@ -13143,14 +13256,56 @@ static int _905()
 static int _906()
 	{
 	log("_906") ;
-	auto = new fieldInit_22nullref22() ;
-	backup = 1 ;
-	yy = 319 ;
-	return -300 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _952() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _907()
 	{
 	log("_907") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _953() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _908()
+	{
+	log("_908") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _954() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _909()
+	{
+	log("_909") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _955() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _910()
+	{
+	log("_910") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _956() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _911()
+	{
+	log("_911") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _957() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _912()
+	{
+	log("_912") ;
+	auto = new fieldInit_22nullref22() ;
+	backup = 1 ;
+	yy = 321 ;
+	return -300 ;
+	}
+static int _913()
+	{
+	log("_913") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -13160,35 +13315,35 @@ static int _907()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 92: case 95: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 219: case 220: case 238: case 241: case 250: 
+		case 149: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _907_default ;
-		case _272B27: a.shift() ; return a.split( _504() ) ;
+		goto _913_default ;
+		case _272B27: a.shift() ; return a.split( _507() ) ;
 		}
-	_907_default:
+	_913_default:
 	auto = new fieldInit_compQstring() ;
 	backup = 1 ;
-	yy = 319 ;
+	yy = 321 ;
 	return -298 ;
 	}
-static int _908()
+static int _914()
 	{
-	log("_908") ;
+	log("_914") ;
 	auto = new initOpt_273D27_fieldInit() ;
 	backup = 2 ;
-	yy = 273 ;
+	yy = 275 ;
 	return -100 ;
 	}
-static int _909()
+static int _915()
 	{
-	log("_909") ;
+	log("_915") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=321 max=322 length=2
+		switch(_yy) // size=2 min=323 max=324 length=2
 			{
-			case _bytes : return _952() ;
+			case _bytes : return _958() ;
 			case _hexbytes : return _104() ;
 			default: return __default ;
 			}
@@ -13198,158 +13353,11 @@ static int _909()
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _909_default ;
+		goto _915_default ;
 		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
 		}
-	_909_default:
-	return a.deploy( _952() ) ;
-	}
-static int _910()
-	{
-	log("_910") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _953() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _911()
-	{
-	log("_911") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _957() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _954() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _955() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _956() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _912()
-	{
-	log("_912") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=334 max=335 length=2
-			{
-			case _callConv : return _958() ;
-			case _callKind : return _65() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 216: case 217: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _912_default ;
-		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
-		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
-		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
-		case _22default22: a.shift() ; return a.deploy( _61() ) ;
-		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
-		}
-	_912_default:
-	return a.deploy( _65() ) ;
-	}
-static int _913()
-	{
-	log("_913") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _959() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _914()
-	{
-	log("_914") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=325 max=338 length=14
-			{
-			case _methodSpec : return _170() ;
-			case _type : return _960() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _915()
-	{
-	log("_915") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=325 max=338 length=14
-			{
-			case _methodSpec : return _170() ;
-			case _type : return _961() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
-	throw new System.NotImplementedException() ;
+	_915_default:
+	return a.deploy( _958() ) ;
 	}
 static int _916()
 	{
@@ -13357,35 +13365,13 @@ static int _916()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _methodSpec : return _170() ;
-			case _type : return _962() ;
+			case _int3332 : return _959() ;
 			default: return __default ;
 			}
 		} ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _917()
@@ -13394,34 +13380,18 @@ static int _917()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _methodSpec : return _170() ;
-			case _type : return _963() ;
+			case _int3332 : return _963() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _960() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _961() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _962() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -13431,72 +13401,35 @@ static int _918()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=336 max=337 length=2
 			{
-			case _methodSpec : return _170() ;
-			case _type : return _964() ;
+			case _callConv : return _964() ;
+			case _callKind : return _65() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
+		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 212: case 218: case 219: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _918_default ;
+		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
+		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
+		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
+		case _22default22: a.shift() ; return a.deploy( _61() ) ;
+		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	_918_default:
+	return a.deploy( _65() ) ;
 	}
 static int _919()
 	{
 	log("_919") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=325 max=338 length=14
-			{
-			case _methodSpec : return _170() ;
-			case _type : return _965() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
+	if( token.point == _272827 ) { a.shift() ; return a.split( _965() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _920()
@@ -13505,7 +13438,7 @@ static int _920()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
 			case _type : return _966() ;
@@ -13540,19 +13473,36 @@ static int _921()
 	{
 	log("_921") ;
 	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=340 length=14
+			{
+			case _methodSpec : return _170() ;
+			case _type : return _967() ;
+			default: return __default ;
+			}
+		} ;
 	switch( token.point )
 		{
-		case _272927: a.shift() ; return a.split( _967() ) ;
-		case _22ansi22: a.shift() ; return a.split( _689() ) ;
-		case _22unicode22: a.shift() ; return a.split( _690() ) ;
-		case _22autochar22: a.shift() ; return a.split( _691() ) ;
-		case _22nomangle22: a.shift() ; return a.split( _692() ) ;
-		case _22lasterr22: a.shift() ; return a.split( _693() ) ;
-		case _22winapi22: a.shift() ; return a.split( _694() ) ;
-		case _22cdecl22: a.shift() ; return a.split( _695() ) ;
-		case _22stdcall22: a.shift() ; return a.split( _696() ) ;
-		case _22thiscall22: a.shift() ; return a.split( _697() ) ;
-		case _22fastcall22: a.shift() ; return a.split( _698() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -13560,11 +13510,36 @@ static int _922()
 	{
 	log("_922") ;
 	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=340 length=14
+			{
+			case _methodSpec : return _170() ;
+			case _type : return _968() ;
+			default: return __default ;
+			}
+		} ;
 	switch( token.point )
 		{
-		case _272927: a.shift() ; return a.split( _968() ) ;
-		case _275B27: a.shift() ; return a.split( _815() ) ;
-		case _272A27: a.shift() ; return a.split( _816() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -13572,143 +13547,218 @@ static int _923()
 	{
 	log("_923") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _969() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=340 length=14
+			{
+			case _methodSpec : return _170() ;
+			case _type : return _969() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
 	throw new System.NotImplementedException() ;
 	}
 static int _924()
 	{
 	log("_924") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _970() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=340 length=14
+			{
+			case _methodSpec : return _170() ;
+			case _type : return _970() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
 	throw new System.NotImplementedException() ;
 	}
 static int _925()
 	{
 	log("_925") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _971() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _926()
-	{
-	log("_926") ;
-	auto = new instr_INSTR5FSIG_callConv_type_272827_sigArgs30_272927() ;
-	backup = 6 ;
-	yy = 326 ;
-	return -326 ;
-	}
-static int _927()
-	{
-	log("_927") ;
-	auto = new methodDecl_222Eexport22_275B27_int3332_275D27_22as22_id() ;
-	backup = 6 ;
-	yy = 297 ;
-	return -232 ;
-	}
-static int _928()
-	{
-	log("_928") ;
-	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=336 length=12
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
-			case _methodSpec : return _665() ;
-			case _nativeType : return _972() ;
+			case _methodSpec : return _170() ;
+			case _type : return _971() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 39: case 44: case 152: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _928_default ;
-		case _22int333222: a.shift() ; return a.deploy( _631() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _632() ) ;
-		case _22interface22: a.shift() ; return a.deploy( _633() ) ;
-		case _22ansi22: a.shift() ; return a.deploy( _634() ) ;
-		case _22nested22: a.shift() ; return a.deploy( _635() ) ;
-		case _22as22: a.shift() ; return a.deploy( _636() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _637() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _638() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _639() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _640() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _641() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
 		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22custom22: a.shift() ; return a.deploy( _642() ) ;
-		case _22fixed22: a.shift() ; return a.deploy( _643() ) ;
-		case _22variant22: a.shift() ; return a.deploy( _644() ) ;
-		case _22currency22: a.shift() ; return a.deploy( _645() ) ;
-		case _22syschar22: a.shift() ; return a.deploy( _646() ) ;
-		case _22void22: a.shift() ; return a.deploy( _647() ) ;
-		case _22error22: a.shift() ; return a.deploy( _648() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _649() ) ;
-		case _22decimal22: a.shift() ; return a.deploy( _650() ) ;
-		case _22date22: a.shift() ; return a.deploy( _651() ) ;
-		case _22bstr22: a.shift() ; return a.deploy( _652() ) ;
-		case _22lpstr22: a.shift() ; return a.deploy( _653() ) ;
-		case _22lpwstr22: a.shift() ; return a.deploy( _654() ) ;
-		case _22lptstr22: a.shift() ; return a.deploy( _655() ) ;
-		case _22objectref22: a.shift() ; return a.deploy( _656() ) ;
-		case _22iunknown22: a.shift() ; return a.deploy( _657() ) ;
-		case _22idispatch22: a.shift() ; return a.deploy( _658() ) ;
-		case _22struct22: a.shift() ; return a.deploy( _659() ) ;
-		case _22safearray22: a.shift() ; return a.deploy( _660() ) ;
-		case _22int22: a.shift() ; return a.deploy( _661() ) ;
-		case _22byvalstr22: a.shift() ; return a.deploy( _662() ) ;
-		case _22tbstr22: a.shift() ; return a.deploy( _663() ) ;
-		case _22lpstruct22: a.shift() ; return a.deploy( _664() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	_928_default:
-	return a.deploy( _972() ) ;
+	throw new System.NotImplementedException() ;
+	}
+static int _926()
+	{
+	log("_926") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=340 length=14
+			{
+			case _methodSpec : return _170() ;
+			case _type : return _972() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _927()
+	{
+	log("_927") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _272927: a.shift() ; return a.split( _973() ) ;
+		case _22ansi22: a.shift() ; return a.split( _694() ) ;
+		case _22unicode22: a.shift() ; return a.split( _695() ) ;
+		case _22autochar22: a.shift() ; return a.split( _696() ) ;
+		case _22nomangle22: a.shift() ; return a.split( _697() ) ;
+		case _22lasterr22: a.shift() ; return a.split( _698() ) ;
+		case _22winapi22: a.shift() ; return a.split( _699() ) ;
+		case _22cdecl22: a.shift() ; return a.split( _700() ) ;
+		case _22stdcall22: a.shift() ; return a.split( _701() ) ;
+		case _22thiscall22: a.shift() ; return a.split( _702() ) ;
+		case _22fastcall22: a.shift() ; return a.split( _703() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _928()
+	{
+	log("_928") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _272927: a.shift() ; return a.split( _974() ) ;
+		case _275B27: a.shift() ; return a.split( _821() ) ;
+		case _272A27: a.shift() ; return a.split( _822() ) ;
+		}
+	throw new System.NotImplementedException() ;
 	}
 static int _929()
 	{
 	log("_929") ;
-	auto = new handlerBlock_22handler22_id_22to22_id() ;
-	backup = 4 ;
-	yy = 310 ;
-	return -258 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _975() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _930()
 	{
 	log("_930") ;
-	auto = new handlerBlock_22handler22_int3332_22to22_int3332() ;
-	backup = 4 ;
-	yy = 310 ;
-	return -259 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _976() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _931()
 	{
 	log("_931") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _973() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _977() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _932()
 	{
 	log("_932") ;
-	auto = new type_methodSpec_callConv_type_272A27_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 338 ;
-	return -469 ;
+	auto = new instr_INSTR5FSIG_callConv_type_272827_sigArgs30_272927() ;
+	backup = 6 ;
+	yy = 328 ;
+	return -326 ;
 	}
 static int _933()
 	{
 	log("_933") ;
-	auto = new memberRef_methodSpec_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 277 ;
-	return -106 ;
+	auto = new methodDecl_222Eexport22_275B27_int3332_275D27_22as22_id() ;
+	backup = 6 ;
+	yy = 299 ;
+	return -232 ;
 	}
 static int _934()
 	{
@@ -13716,111 +13766,81 @@ static int _934()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=2 min=327 max=338 length=12
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _974() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _methodSpec : return _670() ;
+			case _nativeType : return _978() ;
 			default: return __default ;
 			}
 		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _934_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _974() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
-		}
-	_934_default:
-	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
-	}
-static int _935()
-	{
-	log("_935") ;
-	auto = new customType_callConv_type_typeSpec_223A3A22_222Ector22_272827_sigArgs30_272927() ;
-	backup = 8 ;
-	yy = 278 ;
-	return -109 ;
-	}
-static int _936()
-	{
-	log("_936") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=255 max=255 length=1
-			{
-			case _compQstring : return _975() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _937()
-	{
-	log("_937") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _976() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _938()
-	{
-	log("_938") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _977() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _939()
-	{
-	log("_939") ;
-	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 39: case 44: case 152: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _939_default ;
-		case _272B27: a.shift() ; return a.split( _504() ) ;
+		goto _934_default ;
+		case _22int333222: a.shift() ; return a.deploy( _636() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _637() ) ;
+		case _22interface22: a.shift() ; return a.deploy( _638() ) ;
+		case _22ansi22: a.shift() ; return a.deploy( _639() ) ;
+		case _22nested22: a.shift() ; return a.deploy( _640() ) ;
+		case _22as22: a.shift() ; return a.deploy( _641() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _642() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _643() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _644() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _645() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _646() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22custom22: a.shift() ; return a.deploy( _647() ) ;
+		case _22fixed22: a.shift() ; return a.deploy( _648() ) ;
+		case _22variant22: a.shift() ; return a.deploy( _649() ) ;
+		case _22currency22: a.shift() ; return a.deploy( _650() ) ;
+		case _22syschar22: a.shift() ; return a.deploy( _651() ) ;
+		case _22void22: a.shift() ; return a.deploy( _652() ) ;
+		case _22error22: a.shift() ; return a.deploy( _653() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _654() ) ;
+		case _22decimal22: a.shift() ; return a.deploy( _655() ) ;
+		case _22date22: a.shift() ; return a.deploy( _656() ) ;
+		case _22bstr22: a.shift() ; return a.deploy( _657() ) ;
+		case _22lpstr22: a.shift() ; return a.deploy( _658() ) ;
+		case _22lpwstr22: a.shift() ; return a.deploy( _659() ) ;
+		case _22lptstr22: a.shift() ; return a.deploy( _660() ) ;
+		case _22objectref22: a.shift() ; return a.deploy( _661() ) ;
+		case _22iunknown22: a.shift() ; return a.deploy( _662() ) ;
+		case _22idispatch22: a.shift() ; return a.deploy( _663() ) ;
+		case _22struct22: a.shift() ; return a.deploy( _664() ) ;
+		case _22safearray22: a.shift() ; return a.deploy( _665() ) ;
+		case _22int22: a.shift() ; return a.deploy( _666() ) ;
+		case _22byvalstr22: a.shift() ; return a.deploy( _667() ) ;
+		case _22tbstr22: a.shift() ; return a.deploy( _668() ) ;
+		case _22lpstruct22: a.shift() ; return a.deploy( _669() ) ;
 		}
-	_939_default:
-	auto = new nativeType_22safearray22_variantType_272C27_compQstring() ;
+	_934_default:
+	return a.deploy( _978() ) ;
+	}
+static int _935()
+	{
+	log("_935") ;
+	auto = new handlerBlock_22handler22_id_22to22_id() ;
 	backup = 4 ;
-	yy = 336 ;
-	return -401 ;
+	yy = 312 ;
+	return -258 ;
 	}
-static int _940()
+static int _936()
 	{
-	log("_940") ;
-	auto = new variantType_variantType_275B27_275D27() ;
-	backup = 3 ;
-	yy = 337 ;
-	return -429 ;
+	log("_936") ;
+	auto = new handlerBlock_22handler22_int3332_22to22_int3332() ;
+	backup = 4 ;
+	yy = 312 ;
+	return -259 ;
 	}
-static int _941()
+static int _937()
 	{
-	log("_941") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _978() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _942()
-	{
-	log("_942") ;
+	log("_937") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
 			case _int3332 : return _979() ;
 			default: return __default ;
@@ -13829,79 +13849,124 @@ static int _942()
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
+static int _938()
+	{
+	log("_938") ;
+	auto = new type_methodSpec_callConv_type_272A27_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 340 ;
+	return -470 ;
+	}
+static int _939()
+	{
+	log("_939") ;
+	auto = new memberRef_methodSpec_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 279 ;
+	return -106 ;
+	}
+static int _940()
+	{
+	log("_940") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _980() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
+		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _940_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _980() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_940_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
+	}
+static int _941()
+	{
+	log("_941") ;
+	auto = new customType_callConv_type_typeSpec_223A3A22_222Ector22_272827_sigArgs30_272927() ;
+	backup = 8 ;
+	yy = 280 ;
+	return -109 ;
+	}
+static int _942()
+	{
+	log("_942") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _981() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	throw new System.NotImplementedException() ;
+	}
 static int _943()
 	{
 	log("_943") ;
-	auto = new nativeType_nativeType_275B27_int3332_275D27() ;
-	backup = 4 ;
-	yy = 336 ;
-	return -386 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _982() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _944()
 	{
 	log("_944") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=345 max=345 length=1
-			{
-			case _int3634 : return _980() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _983() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _945()
 	{
 	log("_945") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
+	switch( token.point )
 		{
-		switch(_yy) // size=1 min=345 max=345 length=1
-			{
-			case _int3634 : return _981() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+		case 39: case 44: case 152: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _945_default ;
+		case _272B27: a.shift() ; return a.split( _507() ) ;
+		}
+	_945_default:
+	auto = new nativeType_22safearray22_variantType_272C27_compQstring() ;
+	backup = 4 ;
+	yy = 338 ;
+	return -401 ;
 	}
 static int _946()
 	{
 	log("_946") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=345 max=345 length=1
-			{
-			case _int3634 : return _982() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new variantType_variantType_275B27_275D27() ;
+	backup = 3 ;
+	yy = 339 ;
+	return -429 ;
 	}
 static int _947()
 	{
 	log("_947") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=345 max=346 length=2
-			{
-			case _int3634 : return _983() ;
-			case _float3634 : return _984() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _INT3634: a.shift() ; return a.deploy( _54() ) ;
-		case _FLOAT3634: a.shift() ; return a.deploy( _405() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _407() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _408() ) ;
-		}
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _984() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _948()
@@ -13910,36 +13975,22 @@ static int _948()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=345 max=346 length=2
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3634 : return _985() ;
-			case _float3634 : return _986() ;
+			case _int3332 : return _985() ;
 			default: return __default ;
 			}
 		} ;
-	switch( token.point )
-		{
-		case _INT3634: a.shift() ; return a.deploy( _54() ) ;
-		case _FLOAT3634: a.shift() ; return a.deploy( _405() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _407() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _408() ) ;
-		}
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _949()
 	{
 	log("_949") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=345 max=345 length=1
-			{
-			case _int3634 : return _987() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new nativeType_nativeType_275B27_int3332_275D27() ;
+	backup = 4 ;
+	yy = 338 ;
+	return -386 ;
 	}
 static int _950()
 	{
@@ -13947,9 +13998,9 @@ static int _950()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=345 max=345 length=1
+		switch(_yy) // size=1 min=348 max=348 length=1
 			{
-			case _int3634 : return _988() ;
+			case _int3634 : return _986() ;
 			default: return __default ;
 			}
 		} ;
@@ -13962,69 +14013,173 @@ static int _951()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=351 max=351 length=1
+		switch(_yy) // size=1 min=348 max=348 length=1
 			{
-			case _truefalse : return _989() ;
+			case _int3634 : return _987() ;
 			default: return __default ;
 			}
 		} ;
-	if( token.point == _22true22 ) { a.shift() ; return a.deploy( _821() ) ; }
-	else
-	if( token.point == _22false22 ) { a.shift() ; return a.deploy( _822() ) ; }
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _952()
 	{
 	log("_952") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _990() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=348 max=348 length=1
+			{
+			case _int3634 : return _988() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _953()
 	{
 	log("_953") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _991() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=348 max=349 length=2
+			{
+			case _int3634 : return _989() ;
+			case _float3634 : return _990() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _INT3634: a.shift() ; return a.deploy( _54() ) ;
+		case _FLOAT3634: a.shift() ; return a.deploy( _406() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
+		}
 	throw new System.NotImplementedException() ;
 	}
 static int _954()
 	{
 	log("_954") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _992() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=348 max=349 length=2
+			{
+			case _int3634 : return _991() ;
+			case _float3634 : return _992() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _INT3634: a.shift() ; return a.deploy( _54() ) ;
+		case _FLOAT3634: a.shift() ; return a.deploy( _406() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
+		}
 	throw new System.NotImplementedException() ;
 	}
 static int _955()
 	{
 	log("_955") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _993() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=348 max=348 length=1
+			{
+			case _int3634 : return _993() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _956()
 	{
 	log("_956") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _994() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=348 max=348 length=1
+			{
+			case _int3634 : return _994() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _957()
 	{
 	log("_957") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _995() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=354 max=354 length=1
+			{
+			case _truefalse : return _995() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _22true22 ) { a.shift() ; return a.deploy( _827() ) ; }
+	else
+	if( token.point == _22false22 ) { a.shift() ; return a.deploy( _828() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _958()
 	{
 	log("_958") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _996() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _959()
+	{
+	log("_959") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _997() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _960()
+	{
+	log("_960") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _998() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _961()
+	{
+	log("_961") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _999() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _962()
+	{
+	log("_962") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _1000() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _963()
+	{
+	log("_963") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1001() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _964()
+	{
+	log("_964") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=325 max=338 length=14
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _996() ;
+			case _type : return _1002() ;
 			default: return __default ;
 			}
 		} ;
@@ -14052,18 +14207,18 @@ static int _958()
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _959()
+static int _965()
 	{
-	log("_959") ;
+	log("_965") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _997() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1003() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -14071,194 +14226,32 @@ static int _959()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _959_default ;
+		goto _965_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _997() ) ;
+			return a.deploy( _1003() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_959_default:
+	_965_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
-static int _960()
+static int _966()
 	{
-	log("_960") ;
+	log("_966") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=8 min=292 max=342 length=51
-			{
-			case _methodName : return _998() ;
-			case _methodSpec : return _170() ;
-			case _name31 : return _614() ;
-			case _className : return _159() ;
-			case _slashedName : return _160() ;
-			case _typeSpec : return _999() ;
-			case _type : return _162() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _272A27: a.shift() ; return a.deploy( _326() ) ;
-		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _961()
-	{
-	log("_961") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=8 min=292 max=342 length=51
-			{
-			case _methodName : return _1000() ;
-			case _methodSpec : return _170() ;
-			case _name31 : return _614() ;
-			case _className : return _159() ;
-			case _slashedName : return _160() ;
-			case _typeSpec : return _1001() ;
-			case _type : return _162() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _272A27: a.shift() ; return a.deploy( _326() ) ;
-		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _962()
-	{
-	log("_962") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=8 min=292 max=342 length=51
-			{
-			case _methodName : return _1002() ;
-			case _methodSpec : return _170() ;
-			case _name31 : return _614() ;
-			case _className : return _159() ;
-			case _slashedName : return _160() ;
-			case _typeSpec : return _1003() ;
-			case _type : return _162() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _272A27: a.shift() ; return a.deploy( _326() ) ;
-		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _963()
-	{
-	log("_963") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=8 min=292 max=342 length=51
+		switch(_yy) // size=8 min=294 max=345 length=52
 			{
 			case _methodName : return _1004() ;
 			case _methodSpec : return _170() ;
-			case _name31 : return _614() ;
+			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
 			case _typeSpec : return _1005() ;
@@ -14272,12 +14265,12 @@ static int _963()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
 		case _22char22: a.shift() ; return a.deploy( _140() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
@@ -14294,25 +14287,26 @@ static int _963()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _964()
+static int _967()
 	{
-	log("_964") ;
+	log("_967") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=8 min=292 max=342 length=51
+		switch(_yy) // size=8 min=294 max=345 length=52
 			{
 			case _methodName : return _1006() ;
 			case _methodSpec : return _170() ;
-			case _name31 : return _614() ;
+			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
 			case _typeSpec : return _1007() ;
@@ -14326,12 +14320,12 @@ static int _964()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
 		case _22char22: a.shift() ; return a.deploy( _140() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
@@ -14348,25 +14342,26 @@ static int _964()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _965()
+static int _968()
 	{
-	log("_965") ;
+	log("_968") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=8 min=292 max=342 length=51
+		switch(_yy) // size=8 min=294 max=345 length=52
 			{
 			case _methodName : return _1008() ;
 			case _methodSpec : return _170() ;
-			case _name31 : return _614() ;
+			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
 			case _typeSpec : return _1009() ;
@@ -14380,12 +14375,12 @@ static int _965()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
 		case _22char22: a.shift() ; return a.deploy( _140() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
@@ -14402,25 +14397,26 @@ static int _965()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _966()
+static int _969()
 	{
-	log("_966") ;
+	log("_969") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=8 min=292 max=342 length=51
+		switch(_yy) // size=8 min=294 max=345 length=52
 			{
 			case _methodName : return _1010() ;
 			case _methodSpec : return _170() ;
-			case _name31 : return _614() ;
+			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
 			case _typeSpec : return _1011() ;
@@ -14434,12 +14430,12 @@ static int _966()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
 		case _22char22: a.shift() ; return a.deploy( _140() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
@@ -14456,32 +14452,30 @@ static int _966()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
-static int _967()
+static int _970()
 	{
-	log("_967") ;
-	auto = new methAttr_methAttr_22pinvokeimpl22_272827_compQstring_22as22_compQstring_pinvAttr_272927() ;
-	backup = 8 ;
-	yy = 290 ;
-	return -167 ;
-	}
-static int _968()
-	{
-	log("_968") ;
+	log("_970") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=8 min=294 max=345 length=52
 			{
 			case _methodName : return _1012() ;
-			case _name31 : return _705() ;
+			case _methodSpec : return _170() ;
+			case _name31 : return _617() ;
+			case _className : return _159() ;
+			case _slashedName : return _160() ;
+			case _typeSpec : return _1013() ;
+			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -14491,34 +14485,36 @@ static int _968()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _272A27: a.shift() ; return a.deploy( _326() ) ;
+		case _272627: a.shift() ; return a.deploy( _327() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
 	throw new System.NotImplementedException() ;
-	}
-static int _969()
-	{
-	log("_969") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=295 max=295 length=1
-			{
-			case _implAttr : return _1013() ;
-			default: return __default ;
-			}
-		} ;
-	if( token_HasValue )
-		a._token = Tokenset.Empty ;
-	return a.deploy( _1013() ) ;
-	}
-static int _970()
-	{
-	log("_970") ;
-	auto = new instr_INSTR5FMETHOD_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 326 ;
-	return -320 ;
 	}
 static int _971()
 	{
@@ -14526,12 +14522,178 @@ static int _971()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=8 min=294 max=345 length=52
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1014() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _methodName : return _1014() ;
+			case _methodSpec : return _170() ;
+			case _name31 : return _617() ;
+			case _className : return _159() ;
+			case _slashedName : return _160() ;
+			case _typeSpec : return _1015() ;
+			case _type : return _162() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _272A27: a.shift() ; return a.deploy( _326() ) ;
+		case _272627: a.shift() ; return a.deploy( _327() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _972()
+	{
+	log("_972") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=8 min=294 max=345 length=52
+			{
+			case _methodName : return _1016() ;
+			case _methodSpec : return _170() ;
+			case _name31 : return _617() ;
+			case _className : return _159() ;
+			case _slashedName : return _160() ;
+			case _typeSpec : return _1017() ;
+			case _type : return _162() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _272A27: a.shift() ; return a.deploy( _326() ) ;
+		case _272627: a.shift() ; return a.deploy( _327() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
+		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22void22: a.shift() ; return a.deploy( _147() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
+		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _973()
+	{
+	log("_973") ;
+	auto = new methAttr_methAttr_22pinvokeimpl22_272827_compQstring_22as22_compQstring_pinvAttr_272927() ;
+	backup = 8 ;
+	yy = 292 ;
+	return -167 ;
+	}
+static int _974()
+	{
+	log("_974") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=294 max=345 length=52
+			{
+			case _methodName : return _1018() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _975()
+	{
+	log("_975") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=297 max=297 length=1
+			{
+			case _implAttr : return _1019() ;
+			default: return __default ;
+			}
+		} ;
+	if( token_HasValue )
+		a._token = Tokenset.Empty ;
+	return a.deploy( _1019() ) ;
+	}
+static int _976()
+	{
+	log("_976") ;
+	auto = new instr_INSTR5FMETHOD_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 328 ;
+	return -320 ;
+	}
+static int _977()
+	{
+	log("_977") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1020() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -14539,130 +14701,88 @@ static int _971()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _971_default ;
+		goto _977_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _1014() ) ;
+			return a.deploy( _1020() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_971_default:
+	_977_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
-	}
-static int _972()
-	{
-	log("_972") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _272927: a.shift() ; return a.split( _1015() ) ;
-		case _275B27: a.shift() ; return a.split( _815() ) ;
-		case _272A27: a.shift() ; return a.split( _816() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _973()
-	{
-	log("_973") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _1016() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _974()
-	{
-	log("_974") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1017() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _975()
-	{
-	log("_975") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _272B27: a.shift() ; return a.split( _504() ) ;
-		case _272C27: a.shift() ; return a.split( _1018() ) ;
-		case _272927: a.shift() ; return a.split( _1019() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _976()
-	{
-	log("_976") ;
-	auto = new nativeType_22fixed22_22sysstring22_275B27_int3332_275D27() ;
-	backup = 5 ;
-	yy = 336 ;
-	return -366 ;
-	}
-static int _977()
-	{
-	log("_977") ;
-	auto = new nativeType_22fixed22_22array22_275B27_int3332_275D27() ;
-	backup = 5 ;
-	yy = 336 ;
-	return -367 ;
+	return a.deploy( _559() ) ;
 	}
 static int _978()
 	{
 	log("_978") ;
-	auto = new nativeType_nativeType_275B27_272B27_int3332_275D27() ;
-	backup = 5 ;
-	yy = 336 ;
-	return -388 ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _272927: a.shift() ; return a.split( _1021() ) ;
+		case _275B27: a.shift() ; return a.split( _821() ) ;
+		case _272A27: a.shift() ; return a.split( _822() ) ;
+		}
+	throw new System.NotImplementedException() ;
 	}
 static int _979()
 	{
 	log("_979") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _1020() ) ; }
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _1022() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _980()
 	{
 	log("_980") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1021() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1023() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _981()
 	{
 	log("_981") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1022() ) ; }
+	switch( token.point )
+		{
+		case _272B27: a.shift() ; return a.split( _507() ) ;
+		case _272C27: a.shift() ; return a.split( _1024() ) ;
+		case _272927: a.shift() ; return a.split( _1025() ) ;
+		}
 	throw new System.NotImplementedException() ;
 	}
 static int _982()
 	{
 	log("_982") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1023() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new nativeType_22fixed22_22sysstring22_275B27_int3332_275D27() ;
+	backup = 5 ;
+	yy = 338 ;
+	return -366 ;
 	}
 static int _983()
 	{
 	log("_983") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1024() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new nativeType_22fixed22_22array22_275B27_int3332_275D27() ;
+	backup = 5 ;
+	yy = 338 ;
+	return -367 ;
 	}
 static int _984()
 	{
 	log("_984") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1025() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new nativeType_nativeType_275B27_272B27_int3332_275D27() ;
+	backup = 5 ;
+	yy = 338 ;
+	return -388 ;
 	}
 static int _985()
 	{
 	log("_985") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1026() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _1026() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _986()
@@ -14696,85 +14816,127 @@ static int _989()
 static int _990()
 	{
 	log("_990") ;
-	auto = new fieldInit_bytearrayhead_bytes_272927() ;
-	backup = 3 ;
-	yy = 319 ;
-	return -299 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1031() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _991()
 	{
 	log("_991") ;
-	auto = new caValue_22int333222_272827_int3332_272927() ;
-	backup = 4 ;
-	yy = 352 ;
-	return -519 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1032() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _992()
 	{
 	log("_992") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _1031() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1033() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _993()
 	{
 	log("_993") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=344 max=344 length=1
-			{
-			case _int3332 : return _1032() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1034() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _994()
 	{
 	log("_994") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1035() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _995()
+	{
+	log("_995") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1036() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _996()
+	{
+	log("_996") ;
+	auto = new fieldInit_bytearrayhead_bytes_272927() ;
+	backup = 3 ;
+	yy = 321 ;
+	return -299 ;
+	}
+static int _997()
+	{
+	log("_997") ;
+	auto = new caValue_22int333222_272827_int3332_272927() ;
+	backup = 4 ;
+	yy = 355 ;
+	return -522 ;
+	}
+static int _998()
+	{
+	log("_998") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _1033() ;
+			case _int3332 : return _1037() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _995()
+static int _999()
 	{
-	log("_995") ;
-	auto = new caValue_className_272827_int3332_272927() ;
-	backup = 4 ;
-	yy = 352 ;
-	return -524 ;
-	}
-static int _996()
-	{
-	log("_996") ;
+	log("_999") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=7 min=325 max=342 length=18
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _1038() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1000()
+	{
+	log("_1000") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _1039() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1001()
+	{
+	log("_1001") ;
+	auto = new caValue_className_272827_int3332_272927() ;
+	backup = 4 ;
+	yy = 355 ;
+	return -527 ;
+	}
+static int _1002()
+	{
+	log("_1002") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=7 min=327 max=345 length=19
 			{
 			case _methodSpec : return _170() ;
 			case _name31 : return _158() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _1034() ;
+			case _typeSpec : return _1040() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -14785,7 +14947,7 @@ static int _996()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _335() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
 		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
@@ -14805,61 +14967,20 @@ static int _996()
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _328() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _330() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
-	}
-static int _997()
-	{
-	log("_997") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1035() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _998()
-	{
-	log("_998") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1036() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _999()
-	{
-	log("_999") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1037() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _1000()
-	{
-	log("_1000") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1038() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _1001()
-	{
-	log("_1001") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1039() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _1002()
-	{
-	log("_1002") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1040() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _1003()
 	{
 	log("_1003") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1041() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1041() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _1004()
@@ -14929,39 +15050,81 @@ static int _1013()
 	{
 	log("_1013") ;
 	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _277B27: a.shift() ; return a.split( _1051() ) ;
-		case _22native22: a.shift() ; return a.split( _1052() ) ;
-		case _22cil22: a.shift() ; return a.split( _1053() ) ;
-		case _22optil22: a.shift() ; return a.split( _1054() ) ;
-		case _22managed22: a.shift() ; return a.split( _1055() ) ;
-		case _22unmanaged22: a.shift() ; return a.split( _1056() ) ;
-		case _22forwardref22: a.shift() ; return a.split( _1057() ) ;
-		case _22preservesig22: a.shift() ; return a.split( _1058() ) ;
-		case _22runtime22: a.shift() ; return a.split( _1059() ) ;
-		case _22internalcall22: a.shift() ; return a.split( _1060() ) ;
-		case _22synchronized22: a.shift() ; return a.split( _1061() ) ;
-		case _22noinlining22: a.shift() ; return a.split( _1062() ) ;
-		}
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1051() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _1014()
 	{
 	log("_1014") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1063() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1052() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _1015()
 	{
 	log("_1015") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1053() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1016()
+	{
+	log("_1016") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1054() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1017()
+	{
+	log("_1017") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1055() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1018()
+	{
+	log("_1018") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1056() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1019()
+	{
+	log("_1019") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _277B27: a.shift() ; return a.split( _1057() ) ;
+		case _22native22: a.shift() ; return a.split( _1058() ) ;
+		case _22cil22: a.shift() ; return a.split( _1059() ) ;
+		case _22optil22: a.shift() ; return a.split( _1060() ) ;
+		case _22managed22: a.shift() ; return a.split( _1061() ) ;
+		case _22unmanaged22: a.shift() ; return a.split( _1062() ) ;
+		case _22forwardref22: a.shift() ; return a.split( _1063() ) ;
+		case _22preservesig22: a.shift() ; return a.split( _1064() ) ;
+		case _22runtime22: a.shift() ; return a.split( _1065() ) ;
+		case _22internalcall22: a.shift() ; return a.split( _1066() ) ;
+		case _22synchronized22: a.shift() ; return a.split( _1067() ) ;
+		case _22noinlining22: a.shift() ; return a.split( _1068() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _1020()
+	{
+	log("_1020") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1069() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1021()
+	{
+	log("_1021") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=342 max=342 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _1064() ;
+			case _id : return _1070() ;
 			default: return __default ;
 			}
 		} ;
@@ -14970,187 +15133,187 @@ static int _1015()
 		case 36: case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1015_default ;
+		goto _1021_default ;
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		}
-	_1015_default:
+	_1021_default:
 	auto = new sigArg_paramAttr_type_22marshal22_272827_nativeType_272927() ;
 	backup = 6 ;
-	yy = 329 ;
+	yy = 331 ;
 	return -339 ;
 	}
-static int _1016()
+static int _1022()
 	{
-	log("_1016") ;
+	log("_1022") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=344 max=344 length=1
+		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _1065() ;
+			case _int3332 : return _1071() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new System.NotImplementedException() ;
 	}
-static int _1017()
-	{
-	log("_1017") ;
-	auto = new memberRef_methodSpec_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
-	backup = 9 ;
-	yy = 277 ;
-	return -105 ;
-	}
-static int _1018()
-	{
-	log("_1018") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=255 max=255 length=1
-			{
-			case _compQstring : return _1066() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _1019()
-	{
-	log("_1019") ;
-	auto = new nativeType_22custom22_272827_compQstring_272C27_compQstring_272927() ;
-	backup = 6 ;
-	yy = 336 ;
-	return -365 ;
-	}
-static int _1020()
-	{
-	log("_1020") ;
-	auto = new nativeType_nativeType_275B27_int3332_272B27_int3332_275D27() ;
-	backup = 6 ;
-	yy = 336 ;
-	return -387 ;
-	}
-static int _1021()
-	{
-	log("_1021") ;
-	auto = new fieldInit_22int333222_272827_int3634_272927() ;
-	backup = 4 ;
-	yy = 319 ;
-	return -293 ;
-	}
-static int _1022()
-	{
-	log("_1022") ;
-	auto = new fieldInit_22int363422_272827_int3634_272927() ;
-	backup = 4 ;
-	yy = 319 ;
-	return -292 ;
-	}
 static int _1023()
 	{
 	log("_1023") ;
-	auto = new fieldInit_22char22_272827_int3634_272927() ;
-	backup = 4 ;
-	yy = 319 ;
-	return -295 ;
+	auto = new memberRef_methodSpec_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	backup = 9 ;
+	yy = 279 ;
+	return -105 ;
 	}
 static int _1024()
 	{
 	log("_1024") ;
-	auto = new fieldInit_22float333222_272827_int3634_272927() ;
-	backup = 4 ;
-	yy = 319 ;
-	return -290 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _1072() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1025()
 	{
 	log("_1025") ;
-	auto = new fieldInit_22float333222_272827_float3634_272927() ;
-	backup = 4 ;
-	yy = 319 ;
-	return -288 ;
+	auto = new nativeType_22custom22_272827_compQstring_272C27_compQstring_272927() ;
+	backup = 6 ;
+	yy = 338 ;
+	return -365 ;
 	}
 static int _1026()
 	{
 	log("_1026") ;
-	auto = new fieldInit_22float363422_272827_int3634_272927() ;
-	backup = 4 ;
-	yy = 319 ;
-	return -291 ;
+	auto = new nativeType_nativeType_275B27_int3332_272B27_int3332_275D27() ;
+	backup = 6 ;
+	yy = 338 ;
+	return -387 ;
 	}
 static int _1027()
 	{
 	log("_1027") ;
-	auto = new fieldInit_22float363422_272827_float3634_272927() ;
+	auto = new fieldInit_22int333222_272827_int3634_272927() ;
 	backup = 4 ;
-	yy = 319 ;
-	return -289 ;
+	yy = 321 ;
+	return -293 ;
 	}
 static int _1028()
 	{
 	log("_1028") ;
-	auto = new fieldInit_22int313622_272827_int3634_272927() ;
+	auto = new fieldInit_22int363422_272827_int3634_272927() ;
 	backup = 4 ;
-	yy = 319 ;
-	return -294 ;
+	yy = 321 ;
+	return -292 ;
 	}
 static int _1029()
 	{
 	log("_1029") ;
-	auto = new fieldInit_22int3822_272827_int3634_272927() ;
+	auto = new fieldInit_22char22_272827_int3634_272927() ;
 	backup = 4 ;
-	yy = 319 ;
-	return -296 ;
+	yy = 321 ;
+	return -295 ;
 	}
 static int _1030()
 	{
 	log("_1030") ;
-	auto = new fieldInit_22bool22_272827_truefalse_272927() ;
+	auto = new fieldInit_22float333222_272827_int3634_272927() ;
 	backup = 4 ;
-	yy = 319 ;
-	return -297 ;
+	yy = 321 ;
+	return -290 ;
 	}
 static int _1031()
 	{
 	log("_1031") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1067() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new fieldInit_22float333222_272827_float3634_272927() ;
+	backup = 4 ;
+	yy = 321 ;
+	return -288 ;
 	}
 static int _1032()
 	{
 	log("_1032") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1068() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new fieldInit_22float363422_272827_int3634_272927() ;
+	backup = 4 ;
+	yy = 321 ;
+	return -291 ;
 	}
 static int _1033()
 	{
 	log("_1033") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1069() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new fieldInit_22float363422_272827_float3634_272927() ;
+	backup = 4 ;
+	yy = 321 ;
+	return -289 ;
 	}
 static int _1034()
 	{
 	log("_1034") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1070() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new fieldInit_22int313622_272827_int3634_272927() ;
+	backup = 4 ;
+	yy = 321 ;
+	return -294 ;
 	}
 static int _1035()
 	{
 	log("_1035") ;
+	auto = new fieldInit_22int3822_272827_int3634_272927() ;
+	backup = 4 ;
+	yy = 321 ;
+	return -296 ;
+	}
+static int _1036()
+	{
+	log("_1036") ;
+	auto = new fieldInit_22bool22_272827_truefalse_272927() ;
+	backup = 4 ;
+	yy = 321 ;
+	return -297 ;
+	}
+static int _1037()
+	{
+	log("_1037") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1073() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1038()
+	{
+	log("_1038") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1074() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1039()
+	{
+	log("_1039") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1075() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1040()
+	{
+	log("_1040") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1076() ) ; }
+	throw new System.NotImplementedException() ;
+	}
+static int _1041()
+	{
+	log("_1041") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=273 max=273 length=1
+		switch(_yy) // size=1 min=275 max=275 length=1
 			{
-			case _initOpt : return _1071() ;
+			case _initOpt : return _1077() ;
 			default: return __default ;
 			}
 		} ;
@@ -15159,185 +15322,11 @@ static int _1035()
 		case 27: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1035_default ;
-		case _273D27: a.shift() ; return a.deploy( _818() ) ;
+		goto _1041_default ;
+		case _273D27: a.shift() ; return a.deploy( _824() ) ;
 		}
-	_1035_default:
-	return a.deploy( _1071() ) ;
-	}
-static int _1036()
-	{
-	log("_1036") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=293 max=329 length=37
-			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1072() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1036_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1072() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
-		}
-	_1036_default:
-	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
-	}
-static int _1037()
-	{
-	log("_1037") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=292 max=342 length=51
-			{
-			case _methodName : return _1073() ;
-			case _name31 : return _705() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _1038()
-	{
-	log("_1038") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=293 max=329 length=37
-			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1074() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1038_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1074() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
-		}
-	_1038_default:
-	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
-	}
-static int _1039()
-	{
-	log("_1039") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=292 max=342 length=51
-			{
-			case _methodName : return _1075() ;
-			case _name31 : return _705() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
-		}
-	throw new System.NotImplementedException() ;
-	}
-static int _1040()
-	{
-	log("_1040") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=293 max=329 length=37
-			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1076() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1040_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1076() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
-		}
-	_1040_default:
-	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
-	}
-static int _1041()
-	{
-	log("_1041") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=3 min=292 max=342 length=51
-			{
-			case _methodName : return _1077() ;
-			case _name31 : return _705() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
-		}
-	throw new System.NotImplementedException() ;
+	_1041_default:
+	return a.deploy( _1077() ) ;
 	}
 static int _1042()
 	{
@@ -15345,12 +15334,12 @@ static int _1042()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
+			case _paramAttr : return _559() ;
 			case _sigArgs30 : return _1078() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -15358,7 +15347,7 @@ static int _1042()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _1042_default ;
@@ -15367,11 +15356,11 @@ static int _1042()
 			auto = new sigArgs0() ;
 			return a.deploy( _1078() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
 	_1042_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
 static int _1043()
 	{
@@ -15379,10 +15368,10 @@ static int _1043()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
 			case _methodName : return _1079() ;
-			case _name31 : return _705() ;
+			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -15392,8 +15381,8 @@ static int _1043()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -15403,12 +15392,12 @@ static int _1044()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
+			case _paramAttr : return _559() ;
 			case _sigArgs30 : return _1080() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -15416,7 +15405,7 @@ static int _1044()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _1044_default ;
@@ -15425,11 +15414,11 @@ static int _1044()
 			auto = new sigArgs0() ;
 			return a.deploy( _1080() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
 	_1044_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
 static int _1045()
 	{
@@ -15437,10 +15426,10 @@ static int _1045()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
 			case _methodName : return _1081() ;
-			case _name31 : return _705() ;
+			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -15450,8 +15439,8 @@ static int _1045()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -15461,12 +15450,12 @@ static int _1046()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
+			case _paramAttr : return _559() ;
 			case _sigArgs30 : return _1082() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -15474,7 +15463,7 @@ static int _1046()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _1046_default ;
@@ -15483,11 +15472,11 @@ static int _1046()
 			auto = new sigArgs0() ;
 			return a.deploy( _1082() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
 	_1046_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
 static int _1047()
 	{
@@ -15495,10 +15484,10 @@ static int _1047()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
 			case _methodName : return _1083() ;
-			case _name31 : return _705() ;
+			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -15508,8 +15497,8 @@ static int _1047()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -15519,12 +15508,12 @@ static int _1048()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
+			case _paramAttr : return _559() ;
 			case _sigArgs30 : return _1084() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -15532,7 +15521,7 @@ static int _1048()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _1048_default ;
@@ -15541,11 +15530,11 @@ static int _1048()
 			auto = new sigArgs0() ;
 			return a.deploy( _1084() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
 	_1048_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
 static int _1049()
 	{
@@ -15553,10 +15542,10 @@ static int _1049()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
 			case _methodName : return _1085() ;
-			case _name31 : return _705() ;
+			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -15566,8 +15555,8 @@ static int _1049()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
 	throw new System.NotImplementedException() ;
 	}
@@ -15577,12 +15566,12 @@ static int _1050()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
+			case _paramAttr : return _559() ;
 			case _sigArgs30 : return _1086() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -15590,7 +15579,7 @@ static int _1050()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _1050_default ;
@@ -15599,175 +15588,22 @@ static int _1050()
 			auto = new sigArgs0() ;
 			return a.deploy( _1086() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
 	_1050_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
 static int _1051()
 	{
 	log("_1051") ;
-	auto = new methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_methodName_272827_sigArgs30_272927_implAttr_277B27() ;
-	backup = 11 ;
-	yy = 289 ;
-	return -147 ;
-	}
-static int _1052()
-	{
-	log("_1052") ;
-	auto = new implAttr_implAttr_22native22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -205 ;
-	}
-static int _1053()
-	{
-	log("_1053") ;
-	auto = new implAttr_implAttr_22cil22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -206 ;
-	}
-static int _1054()
-	{
-	log("_1054") ;
-	auto = new implAttr_implAttr_22optil22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -207 ;
-	}
-static int _1055()
-	{
-	log("_1055") ;
-	auto = new implAttr_implAttr_22managed22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -208 ;
-	}
-static int _1056()
-	{
-	log("_1056") ;
-	auto = new implAttr_implAttr_22unmanaged22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -209 ;
-	}
-static int _1057()
-	{
-	log("_1057") ;
-	auto = new implAttr_implAttr_22forwardref22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -210 ;
-	}
-static int _1058()
-	{
-	log("_1058") ;
-	auto = new implAttr_implAttr_22preservesig22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -211 ;
-	}
-static int _1059()
-	{
-	log("_1059") ;
-	auto = new implAttr_implAttr_22runtime22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -212 ;
-	}
-static int _1060()
-	{
-	log("_1060") ;
-	auto = new implAttr_implAttr_22internalcall22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -213 ;
-	}
-static int _1061()
-	{
-	log("_1061") ;
-	auto = new implAttr_implAttr_22synchronized22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -214 ;
-	}
-static int _1062()
-	{
-	log("_1062") ;
-	auto = new implAttr_implAttr_22noinlining22() ;
-	backup = 2 ;
-	yy = 295 ;
-	return -215 ;
-	}
-static int _1063()
-	{
-	log("_1063") ;
-	auto = new instr_INSTR5FMETHOD_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
-	backup = 9 ;
-	yy = 326 ;
-	return -319 ;
-	}
-static int _1064()
-	{
-	log("_1064") ;
-	auto = new sigArg_paramAttr_type_22marshal22_272827_nativeType_272927_id() ;
-	backup = 7 ;
-	yy = 329 ;
-	return -340 ;
-	}
-static int _1065()
-	{
-	log("_1065") ;
-	auto = new asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int3332_273A27_int3332() ;
-	backup = 8 ;
-	yy = 363 ;
-	return -563 ;
-	}
-static int _1066()
-	{
-	log("_1066") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _504() ) ; }
-	else
-	if( token.point == _272C27 ) { a.shift() ; return a.split( _1087() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _1067()
-	{
-	log("_1067") ;
-	auto = new caValue_className_272827_22int333222_273A27_int3332_272927() ;
-	backup = 6 ;
-	yy = 352 ;
-	return -523 ;
-	}
-static int _1068()
-	{
-	log("_1068") ;
-	auto = new caValue_className_272827_22int313622_273A27_int3332_272927() ;
-	backup = 6 ;
-	yy = 352 ;
-	return -522 ;
-	}
-static int _1069()
-	{
-	log("_1069") ;
-	auto = new caValue_className_272827_22int3822_273A27_int3332_272927() ;
-	backup = 6 ;
-	yy = 352 ;
-	return -521 ;
-	}
-static int _1070()
-	{
-	log("_1070") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=292 max=342 length=51
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _1088() ;
-			case _name31 : return _705() ;
+			case _methodName : return _1087() ;
+			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -15777,60 +15613,345 @@ static int _1070()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _610() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _611() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
 	throw new System.NotImplementedException() ;
+	}
+static int _1052()
+	{
+	log("_1052") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1088() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
+		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1052_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1088() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_1052_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
+	}
+static int _1053()
+	{
+	log("_1053") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=294 max=345 length=52
+			{
+			case _methodName : return _1089() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _1054()
+	{
+	log("_1054") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1090() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
+		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1054_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1090() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_1054_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
+	}
+static int _1055()
+	{
+	log("_1055") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=294 max=345 length=52
+			{
+			case _methodName : return _1091() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		}
+	throw new System.NotImplementedException() ;
+	}
+static int _1056()
+	{
+	log("_1056") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1092() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
+		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1056_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1092() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_1056_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
+	}
+static int _1057()
+	{
+	log("_1057") ;
+	auto = new methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_methodName_272827_sigArgs30_272927_implAttr_277B27() ;
+	backup = 11 ;
+	yy = 291 ;
+	return -147 ;
+	}
+static int _1058()
+	{
+	log("_1058") ;
+	auto = new implAttr_implAttr_22native22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -205 ;
+	}
+static int _1059()
+	{
+	log("_1059") ;
+	auto = new implAttr_implAttr_22cil22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -206 ;
+	}
+static int _1060()
+	{
+	log("_1060") ;
+	auto = new implAttr_implAttr_22optil22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -207 ;
+	}
+static int _1061()
+	{
+	log("_1061") ;
+	auto = new implAttr_implAttr_22managed22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -208 ;
+	}
+static int _1062()
+	{
+	log("_1062") ;
+	auto = new implAttr_implAttr_22unmanaged22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -209 ;
+	}
+static int _1063()
+	{
+	log("_1063") ;
+	auto = new implAttr_implAttr_22forwardref22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -210 ;
+	}
+static int _1064()
+	{
+	log("_1064") ;
+	auto = new implAttr_implAttr_22preservesig22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -211 ;
+	}
+static int _1065()
+	{
+	log("_1065") ;
+	auto = new implAttr_implAttr_22runtime22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -212 ;
+	}
+static int _1066()
+	{
+	log("_1066") ;
+	auto = new implAttr_implAttr_22internalcall22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -213 ;
+	}
+static int _1067()
+	{
+	log("_1067") ;
+	auto = new implAttr_implAttr_22synchronized22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -214 ;
+	}
+static int _1068()
+	{
+	log("_1068") ;
+	auto = new implAttr_implAttr_22noinlining22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -215 ;
+	}
+static int _1069()
+	{
+	log("_1069") ;
+	auto = new instr_INSTR5FMETHOD_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	backup = 9 ;
+	yy = 328 ;
+	return -319 ;
+	}
+static int _1070()
+	{
+	log("_1070") ;
+	auto = new sigArg_paramAttr_type_22marshal22_272827_nativeType_272927_id() ;
+	backup = 7 ;
+	yy = 331 ;
+	return -340 ;
 	}
 static int _1071()
 	{
 	log("_1071") ;
-	auto = new propHead_222Eproperty22_propAttr_callConv_type_id_272827_sigArgs30_272927_initOpt() ;
-	backup = 9 ;
-	yy = 284 ;
-	return -131 ;
+	auto = new asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int3332_273A27_int3332() ;
+	backup = 8 ;
+	yy = 366 ;
+	return -566 ;
 	}
 static int _1072()
 	{
 	log("_1072") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1089() ) ; }
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
+	else
+	if( token.point == _272C27 ) { a.shift() ; return a.split( _1093() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _1073()
 	{
 	log("_1073") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1090() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new caValue_className_272827_22int333222_273A27_int3332_272927() ;
+	backup = 6 ;
+	yy = 355 ;
+	return -526 ;
 	}
 static int _1074()
 	{
 	log("_1074") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1091() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new caValue_className_272827_22int313622_273A27_int3332_272927() ;
+	backup = 6 ;
+	yy = 355 ;
+	return -525 ;
 	}
 static int _1075()
 	{
 	log("_1075") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1092() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new caValue_className_272827_22int3822_273A27_int3332_272927() ;
+	backup = 6 ;
+	yy = 355 ;
+	return -524 ;
 	}
 static int _1076()
 	{
 	log("_1076") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1093() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=294 max=345 length=52
+			{
+			case _methodName : return _1094() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		}
 	throw new System.NotImplementedException() ;
 	}
 static int _1077()
 	{
 	log("_1077") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1094() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new propHead_222Eproperty22_propAttr_callConv_type_id_272827_sigArgs30_272927_initOpt() ;
+	backup = 9 ;
+	yy = 286 ;
+	return -131 ;
 	}
 static int _1078()
 	{
@@ -15899,157 +16020,73 @@ static int _1087()
 	{
 	log("_1087") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=255 max=255 length=1
-			{
-			case _compQstring : return _1104() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _331() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1104() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _1088()
 	{
 	log("_1088") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1105() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1105() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _1089()
 	{
 	log("_1089") ;
-	auto = new eventDecl_222Eaddon22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 283 ;
-	return -121 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1106() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1090()
 	{
 	log("_1090") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=293 max=329 length=37
-			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1106() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1090_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1106() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
-		}
-	_1090_default:
-	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1107() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1091()
 	{
 	log("_1091") ;
-	auto = new eventDecl_222Eremoveon22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 283 ;
-	return -123 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1108() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1092()
 	{
 	log("_1092") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=293 max=329 length=37
-			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1107() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1092_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1107() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
-		}
-	_1092_default:
-	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1109() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1093()
 	{
 	log("_1093") ;
-	auto = new eventDecl_222Efire22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 283 ;
-	return -125 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _1110() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1094()
 	{
 	log("_1094") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=293 max=329 length=37
-			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1108() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1094_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1108() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
-		}
-	_1094_default:
-	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1111() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1095()
 	{
 	log("_1095") ;
-	auto = new eventDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	auto = new eventDecl_222Eaddon22_callConv_type_methodName_272827_sigArgs30_272927() ;
 	backup = 7 ;
-	yy = 283 ;
-	return -127 ;
+	yy = 285 ;
+	return -121 ;
 	}
 static int _1096()
 	{
@@ -16057,12 +16094,12 @@ static int _1096()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1109() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1112() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -16070,28 +16107,28 @@ static int _1096()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _1096_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _1109() ) ;
+			return a.deploy( _1112() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
 	_1096_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
 static int _1097()
 	{
 	log("_1097") ;
-	auto = new propDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	auto = new eventDecl_222Eremoveon22_callConv_type_methodName_272827_sigArgs30_272927() ;
 	backup = 7 ;
-	yy = 287 ;
-	return -142 ;
+	yy = 285 ;
+	return -123 ;
 	}
 static int _1098()
 	{
@@ -16099,12 +16136,12 @@ static int _1098()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1110() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1113() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -16112,28 +16149,28 @@ static int _1098()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _1098_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _1110() ) ;
+			return a.deploy( _1113() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
 	_1098_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
 static int _1099()
 	{
 	log("_1099") ;
-	auto = new propDecl_222Eset22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	auto = new eventDecl_222Efire22_callConv_type_methodName_272827_sigArgs30_272927() ;
 	backup = 7 ;
-	yy = 287 ;
-	return -138 ;
+	yy = 285 ;
+	return -125 ;
 	}
 static int _1100()
 	{
@@ -16141,12 +16178,12 @@ static int _1100()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1111() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1114() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -16154,28 +16191,28 @@ static int _1100()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _1100_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _1111() ) ;
+			return a.deploy( _1114() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
 	_1100_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
 static int _1101()
 	{
 	log("_1101") ;
-	auto = new propDecl_222Eget22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	auto = new eventDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927() ;
 	backup = 7 ;
-	yy = 287 ;
-	return -140 ;
+	yy = 285 ;
+	return -127 ;
 	}
 static int _1102()
 	{
@@ -16183,12 +16220,12 @@ static int _1102()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1112() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1115() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -16196,58 +16233,41 @@ static int _1102()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _1102_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _1112() ) ;
+			return a.deploy( _1115() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
 	_1102_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
 	}
 static int _1103()
 	{
 	log("_1103") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=295 max=295 length=1
-			{
-			case _implAttr : return _1113() ;
-			default: return __default ;
-			}
-		} ;
-	if( token_HasValue )
-		a._token = Tokenset.Empty ;
-	return a.deploy( _1113() ) ;
+	auto = new propDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 289 ;
+	return -142 ;
 	}
 static int _1104()
 	{
 	log("_1104") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _504() ) ; }
-	else
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1114() ) ; }
-	throw new System.NotImplementedException() ;
-	}
-static int _1105()
-	{
-	log("_1105") ;
-	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=293 max=329 length=37
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _paramAttr : return _556() ;
-			case _sigArgs30 : return _1115() ;
-			case _sigArgs31 : return _558() ;
-			case _sigArg : return _559() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1116() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
@@ -16255,53 +16275,127 @@ static int _1105()
 		{
 		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
 		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 216: case 217: /* case 39: */ 
+		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1105_default ;
+		goto _1104_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _1115() ) ;
+			return a.deploy( _1116() ) ;
 			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _555() ) ;
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_1105_default:
+	_1104_default:
 	auto = new paramAttr() ;
-	return a.deploy( _556() ) ;
+	return a.deploy( _559() ) ;
+	}
+static int _1105()
+	{
+	log("_1105") ;
+	auto = new propDecl_222Eset22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 289 ;
+	return -138 ;
 	}
 static int _1106()
 	{
 	log("_1106") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1116() ) ; }
-	throw new System.NotImplementedException() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1117() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
+		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1106_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1117() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_1106_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1107()
 	{
 	log("_1107") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1117() ) ; }
-	throw new System.NotImplementedException() ;
+	auto = new propDecl_222Eget22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 289 ;
+	return -140 ;
 	}
 static int _1108()
 	{
 	log("_1108") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1118() ) ; }
-	throw new System.NotImplementedException() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1118() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
+		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1108_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1118() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_1108_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1109()
 	{
 	log("_1109") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1119() ) ; }
-	throw new System.NotImplementedException() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=297 max=297 length=1
+			{
+			case _implAttr : return _1119() ;
+			default: return __default ;
+			}
+		} ;
+	if( token_HasValue )
+		a._token = Tokenset.Empty ;
+	return a.deploy( _1119() ) ;
 	}
 static int _1110()
 	{
 	log("_1110") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
+	else
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1120() ) ; }
 	throw new System.NotImplementedException() ;
 	}
@@ -16309,8 +16403,35 @@ static int _1111()
 	{
 	log("_1111") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1121() ) ; }
-	throw new System.NotImplementedException() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1121() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
+		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1111_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1121() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_1111_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1112()
 	{
@@ -16323,108 +16444,150 @@ static int _1113()
 	{
 	log("_1113") ;
 	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _277B27: a.shift() ; return a.split( _1123() ) ;
-		case _22native22: a.shift() ; return a.split( _1052() ) ;
-		case _22cil22: a.shift() ; return a.split( _1053() ) ;
-		case _22optil22: a.shift() ; return a.split( _1054() ) ;
-		case _22managed22: a.shift() ; return a.split( _1055() ) ;
-		case _22unmanaged22: a.shift() ; return a.split( _1056() ) ;
-		case _22forwardref22: a.shift() ; return a.split( _1057() ) ;
-		case _22preservesig22: a.shift() ; return a.split( _1058() ) ;
-		case _22runtime22: a.shift() ; return a.split( _1059() ) ;
-		case _22internalcall22: a.shift() ; return a.split( _1060() ) ;
-		case _22synchronized22: a.shift() ; return a.split( _1061() ) ;
-		case _22noinlining22: a.shift() ; return a.split( _1062() ) ;
-		}
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1123() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _1114()
 	{
 	log("_1114") ;
-	auto = new nativeType_22custom22_272827_compQstring_272C27_compQstring_272C27_compQstring_272C27_compQstring_272927() ;
-	backup = 10 ;
-	yy = 336 ;
-	return -364 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1124() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1115()
 	{
 	log("_1115") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1124() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1125() ) ; }
 	throw new System.NotImplementedException() ;
 	}
 static int _1116()
 	{
 	log("_1116") ;
-	auto = new eventDecl_222Eaddon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
-	backup = 9 ;
-	yy = 283 ;
-	return -120 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1126() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1117()
 	{
 	log("_1117") ;
-	auto = new eventDecl_222Eremoveon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
-	backup = 9 ;
-	yy = 283 ;
-	return -122 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1127() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1118()
 	{
 	log("_1118") ;
-	auto = new eventDecl_222Efire22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
-	backup = 9 ;
-	yy = 283 ;
-	return -124 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1128() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1119()
 	{
 	log("_1119") ;
-	auto = new eventDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
-	backup = 9 ;
-	yy = 283 ;
-	return -126 ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _277B27: a.shift() ; return a.split( _1129() ) ;
+		case _22native22: a.shift() ; return a.split( _1058() ) ;
+		case _22cil22: a.shift() ; return a.split( _1059() ) ;
+		case _22optil22: a.shift() ; return a.split( _1060() ) ;
+		case _22managed22: a.shift() ; return a.split( _1061() ) ;
+		case _22unmanaged22: a.shift() ; return a.split( _1062() ) ;
+		case _22forwardref22: a.shift() ; return a.split( _1063() ) ;
+		case _22preservesig22: a.shift() ; return a.split( _1064() ) ;
+		case _22runtime22: a.shift() ; return a.split( _1065() ) ;
+		case _22internalcall22: a.shift() ; return a.split( _1066() ) ;
+		case _22synchronized22: a.shift() ; return a.split( _1067() ) ;
+		case _22noinlining22: a.shift() ; return a.split( _1068() ) ;
+		}
+	throw new System.NotImplementedException() ;
 	}
 static int _1120()
 	{
 	log("_1120") ;
-	auto = new propDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
-	backup = 9 ;
-	yy = 287 ;
-	return -141 ;
+	auto = new nativeType_22custom22_272827_compQstring_272C27_compQstring_272C27_compQstring_272C27_compQstring_272927() ;
+	backup = 10 ;
+	yy = 338 ;
+	return -364 ;
 	}
 static int _1121()
 	{
 	log("_1121") ;
-	auto = new propDecl_222Eset22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
-	backup = 9 ;
-	yy = 287 ;
-	return -137 ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1130() ) ; }
+	throw new System.NotImplementedException() ;
 	}
 static int _1122()
 	{
 	log("_1122") ;
-	auto = new propDecl_222Eget22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	auto = new eventDecl_222Eaddon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 9 ;
-	yy = 287 ;
-	return -139 ;
+	yy = 285 ;
+	return -120 ;
 	}
 static int _1123()
 	{
 	log("_1123") ;
-	auto = new methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_22marshal22_272827_nativeType_272927_methodName_272827_sigArgs30_272927_implAttr_277B27() ;
-	backup = 15 ;
-	yy = 289 ;
-	return -148 ;
+	auto = new eventDecl_222Eremoveon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	backup = 9 ;
+	yy = 285 ;
+	return -122 ;
 	}
 static int _1124()
 	{
 	log("_1124") ;
+	auto = new eventDecl_222Efire22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	backup = 9 ;
+	yy = 285 ;
+	return -124 ;
+	}
+static int _1125()
+	{
+	log("_1125") ;
+	auto = new eventDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	backup = 9 ;
+	yy = 285 ;
+	return -126 ;
+	}
+static int _1126()
+	{
+	log("_1126") ;
+	auto = new propDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	backup = 9 ;
+	yy = 289 ;
+	return -141 ;
+	}
+static int _1127()
+	{
+	log("_1127") ;
+	auto = new propDecl_222Eset22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	backup = 9 ;
+	yy = 289 ;
+	return -137 ;
+	}
+static int _1128()
+	{
+	log("_1128") ;
+	auto = new propDecl_222Eget22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	backup = 9 ;
+	yy = 289 ;
+	return -139 ;
+	}
+static int _1129()
+	{
+	log("_1129") ;
+	auto = new methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_22marshal22_272827_nativeType_272927_methodName_272827_sigArgs30_272927_implAttr_277B27() ;
+	backup = 15 ;
+	yy = 291 ;
+	return -148 ;
+	}
+static int _1130()
+	{
+	log("_1130") ;
 	auto = new classDecl_222Eoverride22_typeSpec_223A3A22_methodName_22with22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 13 ;
-	yy = 270 ;
+	yy = 272 ;
 	return -94 ;
 	}
 }
@@ -24113,6 +24276,22 @@ public partial class  type_type_272A27
 		}
 	}
 
+public partial class  type_type_273C27_genArgs_273E27
+	: Driver.Auto, global::Item
+	{
+	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
+	public override string   LHS { get { return new string(lhs) ; } }
+	public override string[] RHS { get { return rhs ; } }
+	static readonly string[] rhs = { "type", "'<'", "genArgs", "'>'" } ;
+	public override System.Decimal RuleNumber { get { return 465 ; } }
+	public override int Symbol { get { return Automaton._type ; } }
+	public override bool Useful { get { return true ; } }
+	public type_type_273C27_genArgs_273E27()
+		{
+		argv = new Tokenset.Token[ arg_i = 4 ] ;
+		}
+	}
+
 public partial class  type_type_22pinned22
 	: Driver.Auto, global::Item
 	{
@@ -24120,7 +24299,7 @@ public partial class  type_type_22pinned22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "\"pinned\"" } ;
-	public override System.Decimal RuleNumber { get { return 465 ; } }
+	public override System.Decimal RuleNumber { get { return 466 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_type_22pinned22()
@@ -24136,7 +24315,7 @@ public partial class  type_type_22modreq22_272827_className_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "\"modreq\"", "'('", "className", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 466 ; } }
+	public override System.Decimal RuleNumber { get { return 467 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_type_22modreq22_272827_className_272927()
@@ -24152,7 +24331,7 @@ public partial class  type_type_22modopt22_272827_className_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "\"modopt\"", "'('", "className", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 467 ; } }
+	public override System.Decimal RuleNumber { get { return 468 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_type_22modopt22_272827_className_272927()
@@ -24168,7 +24347,7 @@ public partial class  type_272127_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'!'", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 468 ; } }
+	public override System.Decimal RuleNumber { get { return 469 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_272127_int3332()
@@ -24184,7 +24363,7 @@ public partial class  type_methodSpec_callConv_type_272A27_272827_sigArgs30_2729
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodSpec", "callConv", "type", "'*'", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 469 ; } }
+	public override System.Decimal RuleNumber { get { return 470 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_methodSpec_callConv_type_272A27_272827_sigArgs30_272927()
@@ -24200,7 +24379,7 @@ public partial class  type_22typedref22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"typedref\"" } ;
-	public override System.Decimal RuleNumber { get { return 470 ; } }
+	public override System.Decimal RuleNumber { get { return 471 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22typedref22()
@@ -24216,7 +24395,7 @@ public partial class  type_22char22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"char\"" } ;
-	public override System.Decimal RuleNumber { get { return 471 ; } }
+	public override System.Decimal RuleNumber { get { return 472 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22char22()
@@ -24235,7 +24414,7 @@ public partial class  type_22void22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"void\"" } ;
-	public override System.Decimal RuleNumber { get { return 472 ; } }
+	public override System.Decimal RuleNumber { get { return 473 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22void22()
@@ -24251,7 +24430,7 @@ public partial class  type_22bool22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bool\"" } ;
-	public override System.Decimal RuleNumber { get { return 473 ; } }
+	public override System.Decimal RuleNumber { get { return 474 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22bool22()
@@ -24267,7 +24446,7 @@ public partial class  type_22int3822
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"" } ;
-	public override System.Decimal RuleNumber { get { return 474 ; } }
+	public override System.Decimal RuleNumber { get { return 475 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22int3822()
@@ -24283,7 +24462,7 @@ public partial class  type_22int313622
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"" } ;
-	public override System.Decimal RuleNumber { get { return 475 ; } }
+	public override System.Decimal RuleNumber { get { return 476 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22int313622()
@@ -24302,7 +24481,7 @@ public partial class  type_22int333222
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"" } ;
-	public override System.Decimal RuleNumber { get { return 476 ; } }
+	public override System.Decimal RuleNumber { get { return 477 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22int333222()
@@ -24318,7 +24497,7 @@ public partial class  type_22int363422
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"" } ;
-	public override System.Decimal RuleNumber { get { return 477 ; } }
+	public override System.Decimal RuleNumber { get { return 478 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22int363422()
@@ -24334,7 +24513,7 @@ public partial class  type_22float333222
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"" } ;
-	public override System.Decimal RuleNumber { get { return 478 ; } }
+	public override System.Decimal RuleNumber { get { return 479 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22float333222()
@@ -24350,7 +24529,7 @@ public partial class  type_22float363422
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"" } ;
-	public override System.Decimal RuleNumber { get { return 479 ; } }
+	public override System.Decimal RuleNumber { get { return 480 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22float363422()
@@ -24366,7 +24545,7 @@ public partial class  type_22unsigned22_22int3822
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int8\"" } ;
-	public override System.Decimal RuleNumber { get { return 480 ; } }
+	public override System.Decimal RuleNumber { get { return 481 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22unsigned22_22int3822()
@@ -24382,7 +24561,7 @@ public partial class  type_22unsigned22_22int313622
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int16\"" } ;
-	public override System.Decimal RuleNumber { get { return 481 ; } }
+	public override System.Decimal RuleNumber { get { return 482 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22unsigned22_22int313622()
@@ -24398,7 +24577,7 @@ public partial class  type_22unsigned22_22int333222
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int32\"" } ;
-	public override System.Decimal RuleNumber { get { return 482 ; } }
+	public override System.Decimal RuleNumber { get { return 483 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22unsigned22_22int333222()
@@ -24414,7 +24593,7 @@ public partial class  type_22unsigned22_22int363422
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int64\"" } ;
-	public override System.Decimal RuleNumber { get { return 483 ; } }
+	public override System.Decimal RuleNumber { get { return 484 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22unsigned22_22int363422()
@@ -24430,7 +24609,7 @@ public partial class  type_22native22_22int22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"native\"", "\"int\"" } ;
-	public override System.Decimal RuleNumber { get { return 484 ; } }
+	public override System.Decimal RuleNumber { get { return 485 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22native22_22int22()
@@ -24446,7 +24625,7 @@ public partial class  type_22native22_22unsigned22_22int22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"native\"", "\"unsigned\"", "\"int\"" } ;
-	public override System.Decimal RuleNumber { get { return 485 ; } }
+	public override System.Decimal RuleNumber { get { return 486 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22native22_22unsigned22_22int22()
@@ -24462,12 +24641,44 @@ public partial class  type_22native22_22float22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"native\"", "\"float\"" } ;
-	public override System.Decimal RuleNumber { get { return 486 ; } }
+	public override System.Decimal RuleNumber { get { return 487 ; } }
 	public override int Symbol { get { return Automaton._type ; } }
 	public override bool Useful { get { return true ; } }
 	public type_22native22_22float22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
+		}
+	}
+
+public partial class  genArgs_type
+	: Driver.Auto, global::Item
+	{
+	static readonly char[]   lhs = { 'g', 'e', 'n', 'A', 'r', 'g', 's',  } ;
+	public override string   LHS { get { return new string(lhs) ; } }
+	public override string[] RHS { get { return rhs ; } }
+	static readonly string[] rhs = { "type" } ;
+	public override System.Decimal RuleNumber { get { return 488 ; } }
+	public override int Symbol { get { return Automaton._genArgs ; } }
+	public override bool Useful { get { return true ; } }
+	public genArgs_type()
+		{
+		argv = new Tokenset.Token[ arg_i = 1 ] ;
+		}
+	}
+
+public partial class  genArgs_genArgs_272C27_type
+	: Driver.Auto, global::Item
+	{
+	static readonly char[]   lhs = { 'g', 'e', 'n', 'A', 'r', 'g', 's',  } ;
+	public override string   LHS { get { return new string(lhs) ; } }
+	public override string[] RHS { get { return rhs ; } }
+	static readonly string[] rhs = { "genArgs", "','", "type" } ;
+	public override System.Decimal RuleNumber { get { return 489 ; } }
+	public override int Symbol { get { return Automaton._genArgs ; } }
+	public override bool Useful { get { return true ; } }
+	public genArgs_genArgs_272C27_type()
+		{
+		argv = new Tokenset.Token[ arg_i = 3 ] ;
 		}
 	}
 
@@ -24481,7 +24692,7 @@ public partial class  bounds1_bound
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bound" } ;
-	public override System.Decimal RuleNumber { get { return 487 ; } }
+	public override System.Decimal RuleNumber { get { return 490 ; } }
 	public override int Symbol { get { return Automaton._bounds31 ; } }
 	public override bool Useful { get { return true ; } }
 	public bounds1_bound()
@@ -24497,7 +24708,7 @@ public partial class  bounds1_bounds31_272C27_bound
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bounds1", "','", "bound" } ;
-	public override System.Decimal RuleNumber { get { return 488 ; } }
+	public override System.Decimal RuleNumber { get { return 491 ; } }
 	public override int Symbol { get { return Automaton._bounds31 ; } }
 	public override bool Useful { get { return true ; } }
 	public bounds1_bounds31_272C27_bound()
@@ -24513,7 +24724,7 @@ public partial class  bound
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 489 ; } }
+	public override System.Decimal RuleNumber { get { return 492 ; } }
 	public override int Symbol { get { return Automaton._bound ; } }
 	public override bool Useful { get { return true ; } }
 	public bound()
@@ -24529,7 +24740,7 @@ public partial class  bound_222E2E2E22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"...\"" } ;
-	public override System.Decimal RuleNumber { get { return 490 ; } }
+	public override System.Decimal RuleNumber { get { return 493 ; } }
 	public override int Symbol { get { return Automaton._bound ; } }
 	public override bool Useful { get { return true ; } }
 	public bound_222E2E2E22()
@@ -24545,7 +24756,7 @@ public partial class  bound_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32" } ;
-	public override System.Decimal RuleNumber { get { return 491 ; } }
+	public override System.Decimal RuleNumber { get { return 494 ; } }
 	public override int Symbol { get { return Automaton._bound ; } }
 	public override bool Useful { get { return true ; } }
 	public bound_int3332()
@@ -24561,7 +24772,7 @@ public partial class  bound_int3332_222E2E2E22_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32", "\"...\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 492 ; } }
+	public override System.Decimal RuleNumber { get { return 495 ; } }
 	public override int Symbol { get { return Automaton._bound ; } }
 	public override bool Useful { get { return true ; } }
 	public bound_int3332_222E2E2E22_int3332()
@@ -24577,7 +24788,7 @@ public partial class  bound_int3332_222E2E2E22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32", "\"...\"" } ;
-	public override System.Decimal RuleNumber { get { return 493 ; } }
+	public override System.Decimal RuleNumber { get { return 496 ; } }
 	public override int Symbol { get { return Automaton._bound ; } }
 	public override bool Useful { get { return true ; } }
 	public bound_int3332_222E2E2E22()
@@ -24593,7 +24804,7 @@ public partial class  labels
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 494 ; } }
+	public override System.Decimal RuleNumber { get { return 497 ; } }
 	public override int Symbol { get { return Automaton._labels ; } }
 	public override bool Useful { get { return true ; } }
 	public labels()
@@ -24612,7 +24823,7 @@ public partial class  labels_id_272C27_labels
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id", "','", "labels" } ;
-	public override System.Decimal RuleNumber { get { return 495 ; } }
+	public override System.Decimal RuleNumber { get { return 498 ; } }
 	public override int Symbol { get { return Automaton._labels ; } }
 	public override bool Useful { get { return true ; } }
 	public labels_id_272C27_labels()
@@ -24628,7 +24839,7 @@ public partial class  labels_int3332_272C27_labels
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32", "','", "labels" } ;
-	public override System.Decimal RuleNumber { get { return 496 ; } }
+	public override System.Decimal RuleNumber { get { return 499 ; } }
 	public override int Symbol { get { return Automaton._labels ; } }
 	public override bool Useful { get { return true ; } }
 	public labels_int3332_272C27_labels()
@@ -24647,7 +24858,7 @@ public partial class  labels_id
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id" } ;
-	public override System.Decimal RuleNumber { get { return 497 ; } }
+	public override System.Decimal RuleNumber { get { return 500 ; } }
 	public override int Symbol { get { return Automaton._labels ; } }
 	public override bool Useful { get { return true ; } }
 	public labels_id()
@@ -24663,7 +24874,7 @@ public partial class  labels_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32" } ;
-	public override System.Decimal RuleNumber { get { return 498 ; } }
+	public override System.Decimal RuleNumber { get { return 501 ; } }
 	public override int Symbol { get { return Automaton._labels ; } }
 	public override bool Useful { get { return true ; } }
 	public labels_int3332()
@@ -24682,7 +24893,7 @@ public partial class  id_ID
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ID" } ;
-	public override System.Decimal RuleNumber { get { return 499 ; } }
+	public override System.Decimal RuleNumber { get { return 502 ; } }
 	public override int Symbol { get { return Automaton._id ; } }
 	public override bool Useful { get { return true ; } }
 	public id_ID()
@@ -24701,7 +24912,7 @@ public partial class  id_SQSTRING
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "SQSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 500 ; } }
+	public override System.Decimal RuleNumber { get { return 503 ; } }
 	public override int Symbol { get { return Automaton._id ; } }
 	public override bool Useful { get { return true ; } }
 	public id_SQSTRING()
@@ -24717,7 +24928,7 @@ public partial class  int16s
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 501 ; } }
+	public override System.Decimal RuleNumber { get { return 504 ; } }
 	public override int Symbol { get { return Automaton._int3136s ; } }
 	public override bool Useful { get { return true ; } }
 	public int16s()
@@ -24733,7 +24944,7 @@ public partial class  int16s_int3136s_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int16s", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 502 ; } }
+	public override System.Decimal RuleNumber { get { return 505 ; } }
 	public override int Symbol { get { return Automaton._int3136s ; } }
 	public override bool Useful { get { return true ; } }
 	public int16s_int3136s_int3332()
@@ -24752,7 +24963,7 @@ public partial class  int32_INT3634
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INT64" } ;
-	public override System.Decimal RuleNumber { get { return 503 ; } }
+	public override System.Decimal RuleNumber { get { return 506 ; } }
 	public override int Symbol { get { return Automaton._int3332 ; } }
 	public override bool Useful { get { return true ; } }
 	public int32_INT3634()
@@ -24768,7 +24979,7 @@ public partial class  int64_INT3634
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INT64" } ;
-	public override System.Decimal RuleNumber { get { return 504 ; } }
+	public override System.Decimal RuleNumber { get { return 507 ; } }
 	public override int Symbol { get { return Automaton._int3634 ; } }
 	public override bool Useful { get { return true ; } }
 	public int64_INT3634()
@@ -24784,7 +24995,7 @@ public partial class  float64_FLOAT3634
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "FLOAT64" } ;
-	public override System.Decimal RuleNumber { get { return 505 ; } }
+	public override System.Decimal RuleNumber { get { return 508 ; } }
 	public override int Symbol { get { return Automaton._float3634 ; } }
 	public override bool Useful { get { return true ; } }
 	public float64_FLOAT3634()
@@ -24800,7 +25011,7 @@ public partial class  float64_22float333222_272827_int3332_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "'('", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 506 ; } }
+	public override System.Decimal RuleNumber { get { return 509 ; } }
 	public override int Symbol { get { return Automaton._float3634 ; } }
 	public override bool Useful { get { return true ; } }
 	public float64_22float333222_272827_int3332_272927()
@@ -24816,7 +25027,7 @@ public partial class  float64_22float363422_272827_int3634_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "'('", "int64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 507 ; } }
+	public override System.Decimal RuleNumber { get { return 510 ; } }
 	public override int Symbol { get { return Automaton._float3634 ; } }
 	public override bool Useful { get { return true ; } }
 	public float64_22float363422_272827_int3634_272927()
@@ -24832,7 +25043,7 @@ public partial class  secDecl_222Epermission22_secAction_typeSpec_272827_nameVal
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".permission\"", "secAction", "typeSpec", "'('", "nameValPairs", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 508 ; } }
+	public override System.Decimal RuleNumber { get { return 511 ; } }
 	public override int Symbol { get { return Automaton._secDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public secDecl_222Epermission22_secAction_typeSpec_272827_nameValPairs_272927()
@@ -24848,7 +25059,7 @@ public partial class  secDecl_222Epermission22_secAction_typeSpec
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".permission\"", "secAction", "typeSpec" } ;
-	public override System.Decimal RuleNumber { get { return 509 ; } }
+	public override System.Decimal RuleNumber { get { return 512 ; } }
 	public override int Symbol { get { return Automaton._secDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public secDecl_222Epermission22_secAction_typeSpec()
@@ -24864,7 +25075,7 @@ public partial class  secDecl_psetHead_bytes_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "psetHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 510 ; } }
+	public override System.Decimal RuleNumber { get { return 513 ; } }
 	public override int Symbol { get { return Automaton._secDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public secDecl_psetHead_bytes_272927()
@@ -24880,7 +25091,7 @@ public partial class  psetHead_222Epermissionset22_secAction_273D27_272827
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".permissionset\"", "secAction", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 511 ; } }
+	public override System.Decimal RuleNumber { get { return 514 ; } }
 	public override int Symbol { get { return Automaton._psetHead ; } }
 	public override bool Useful { get { return true ; } }
 	public psetHead_222Epermissionset22_secAction_273D27_272827()
@@ -24896,7 +25107,7 @@ public partial class  nameValPairs_nameValPair
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nameValPair" } ;
-	public override System.Decimal RuleNumber { get { return 512 ; } }
+	public override System.Decimal RuleNumber { get { return 515 ; } }
 	public override int Symbol { get { return Automaton._nameValPairs ; } }
 	public override bool Useful { get { return true ; } }
 	public nameValPairs_nameValPair()
@@ -24912,7 +25123,7 @@ public partial class  nameValPairs_nameValPair_272C27_nameValPairs
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nameValPair", "','", "nameValPairs" } ;
-	public override System.Decimal RuleNumber { get { return 513 ; } }
+	public override System.Decimal RuleNumber { get { return 516 ; } }
 	public override int Symbol { get { return Automaton._nameValPairs ; } }
 	public override bool Useful { get { return true ; } }
 	public nameValPairs_nameValPair_272C27_nameValPairs()
@@ -24928,7 +25139,7 @@ public partial class  nameValPair_compQstring_273D27_caValue
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring", "'='", "caValue" } ;
-	public override System.Decimal RuleNumber { get { return 514 ; } }
+	public override System.Decimal RuleNumber { get { return 517 ; } }
 	public override int Symbol { get { return Automaton._nameValPair ; } }
 	public override bool Useful { get { return true ; } }
 	public nameValPair_compQstring_273D27_caValue()
@@ -24944,7 +25155,7 @@ public partial class  truefalse_22true22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"true\"" } ;
-	public override System.Decimal RuleNumber { get { return 515 ; } }
+	public override System.Decimal RuleNumber { get { return 518 ; } }
 	public override int Symbol { get { return Automaton._truefalse ; } }
 	public override bool Useful { get { return true ; } }
 	public truefalse_22true22()
@@ -24960,7 +25171,7 @@ public partial class  truefalse_22false22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"false\"" } ;
-	public override System.Decimal RuleNumber { get { return 516 ; } }
+	public override System.Decimal RuleNumber { get { return 519 ; } }
 	public override int Symbol { get { return Automaton._truefalse ; } }
 	public override bool Useful { get { return true ; } }
 	public truefalse_22false22()
@@ -24976,7 +25187,7 @@ public partial class  caValue_truefalse
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "truefalse" } ;
-	public override System.Decimal RuleNumber { get { return 517 ; } }
+	public override System.Decimal RuleNumber { get { return 520 ; } }
 	public override int Symbol { get { return Automaton._caValue ; } }
 	public override bool Useful { get { return true ; } }
 	public caValue_truefalse()
@@ -24992,7 +25203,7 @@ public partial class  caValue_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32" } ;
-	public override System.Decimal RuleNumber { get { return 518 ; } }
+	public override System.Decimal RuleNumber { get { return 521 ; } }
 	public override int Symbol { get { return Automaton._caValue ; } }
 	public override bool Useful { get { return true ; } }
 	public caValue_int3332()
@@ -25008,7 +25219,7 @@ public partial class  caValue_22int333222_272827_int3332_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"", "'('", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 519 ; } }
+	public override System.Decimal RuleNumber { get { return 522 ; } }
 	public override int Symbol { get { return Automaton._caValue ; } }
 	public override bool Useful { get { return true ; } }
 	public caValue_22int333222_272827_int3332_272927()
@@ -25024,7 +25235,7 @@ public partial class  caValue_compQstring
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring" } ;
-	public override System.Decimal RuleNumber { get { return 520 ; } }
+	public override System.Decimal RuleNumber { get { return 523 ; } }
 	public override int Symbol { get { return Automaton._caValue ; } }
 	public override bool Useful { get { return true ; } }
 	public caValue_compQstring()
@@ -25040,7 +25251,7 @@ public partial class  caValue_className_272827_22int3822_273A27_int3332_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "\"int8\"", "':'", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 521 ; } }
+	public override System.Decimal RuleNumber { get { return 524 ; } }
 	public override int Symbol { get { return Automaton._caValue ; } }
 	public override bool Useful { get { return true ; } }
 	public caValue_className_272827_22int3822_273A27_int3332_272927()
@@ -25056,7 +25267,7 @@ public partial class  caValue_className_272827_22int313622_273A27_int3332_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "\"int16\"", "':'", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 522 ; } }
+	public override System.Decimal RuleNumber { get { return 525 ; } }
 	public override int Symbol { get { return Automaton._caValue ; } }
 	public override bool Useful { get { return true ; } }
 	public caValue_className_272827_22int313622_273A27_int3332_272927()
@@ -25072,7 +25283,7 @@ public partial class  caValue_className_272827_22int333222_273A27_int3332_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "\"int32\"", "':'", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 523 ; } }
+	public override System.Decimal RuleNumber { get { return 526 ; } }
 	public override int Symbol { get { return Automaton._caValue ; } }
 	public override bool Useful { get { return true ; } }
 	public caValue_className_272827_22int333222_273A27_int3332_272927()
@@ -25088,7 +25299,7 @@ public partial class  caValue_className_272827_int3332_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 524 ; } }
+	public override System.Decimal RuleNumber { get { return 527 ; } }
 	public override int Symbol { get { return Automaton._caValue ; } }
 	public override bool Useful { get { return true ; } }
 	public caValue_className_272827_int3332_272927()
@@ -25104,7 +25315,7 @@ public partial class  secAction_22request22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"request\"" } ;
-	public override System.Decimal RuleNumber { get { return 525 ; } }
+	public override System.Decimal RuleNumber { get { return 528 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22request22()
@@ -25120,7 +25331,7 @@ public partial class  secAction_22demand22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"demand\"" } ;
-	public override System.Decimal RuleNumber { get { return 526 ; } }
+	public override System.Decimal RuleNumber { get { return 529 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22demand22()
@@ -25136,7 +25347,7 @@ public partial class  secAction_22assert22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"assert\"" } ;
-	public override System.Decimal RuleNumber { get { return 527 ; } }
+	public override System.Decimal RuleNumber { get { return 530 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22assert22()
@@ -25152,7 +25363,7 @@ public partial class  secAction_22deny22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"deny\"" } ;
-	public override System.Decimal RuleNumber { get { return 528 ; } }
+	public override System.Decimal RuleNumber { get { return 531 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22deny22()
@@ -25168,7 +25379,7 @@ public partial class  secAction_22permitonly22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"permitonly\"" } ;
-	public override System.Decimal RuleNumber { get { return 529 ; } }
+	public override System.Decimal RuleNumber { get { return 532 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22permitonly22()
@@ -25184,7 +25395,7 @@ public partial class  secAction_22linkcheck22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"linkcheck\"" } ;
-	public override System.Decimal RuleNumber { get { return 530 ; } }
+	public override System.Decimal RuleNumber { get { return 533 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22linkcheck22()
@@ -25200,7 +25411,7 @@ public partial class  secAction_22inheritcheck22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"inheritcheck\"" } ;
-	public override System.Decimal RuleNumber { get { return 531 ; } }
+	public override System.Decimal RuleNumber { get { return 534 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22inheritcheck22()
@@ -25216,7 +25427,7 @@ public partial class  secAction_22reqmin22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"reqmin\"" } ;
-	public override System.Decimal RuleNumber { get { return 532 ; } }
+	public override System.Decimal RuleNumber { get { return 535 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22reqmin22()
@@ -25232,7 +25443,7 @@ public partial class  secAction_22reqopt22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"reqopt\"" } ;
-	public override System.Decimal RuleNumber { get { return 533 ; } }
+	public override System.Decimal RuleNumber { get { return 536 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22reqopt22()
@@ -25248,7 +25459,7 @@ public partial class  secAction_22reqrefuse22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"reqrefuse\"" } ;
-	public override System.Decimal RuleNumber { get { return 534 ; } }
+	public override System.Decimal RuleNumber { get { return 537 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22reqrefuse22()
@@ -25264,7 +25475,7 @@ public partial class  secAction_22prejitgrant22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"prejitgrant\"" } ;
-	public override System.Decimal RuleNumber { get { return 535 ; } }
+	public override System.Decimal RuleNumber { get { return 538 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22prejitgrant22()
@@ -25280,7 +25491,7 @@ public partial class  secAction_22prejitdeny22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"prejitdeny\"" } ;
-	public override System.Decimal RuleNumber { get { return 536 ; } }
+	public override System.Decimal RuleNumber { get { return 539 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22prejitdeny22()
@@ -25296,7 +25507,7 @@ public partial class  secAction_22noncasdemand22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"noncasdemand\"" } ;
-	public override System.Decimal RuleNumber { get { return 537 ; } }
+	public override System.Decimal RuleNumber { get { return 540 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22noncasdemand22()
@@ -25312,7 +25523,7 @@ public partial class  secAction_22noncaslinkdemand22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"noncaslinkdemand\"" } ;
-	public override System.Decimal RuleNumber { get { return 538 ; } }
+	public override System.Decimal RuleNumber { get { return 541 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22noncaslinkdemand22()
@@ -25328,7 +25539,7 @@ public partial class  secAction_22noncasinheritance22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"noncasinheritance\"" } ;
-	public override System.Decimal RuleNumber { get { return 539 ; } }
+	public override System.Decimal RuleNumber { get { return 542 ; } }
 	public override int Symbol { get { return Automaton._secAction ; } }
 	public override bool Useful { get { return true ; } }
 	public secAction_22noncasinheritance22()
@@ -25344,7 +25555,7 @@ public partial class  extSourceSpec_222Eline22_int3332_SQSTRING
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32", "SQSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 540 ; } }
+	public override System.Decimal RuleNumber { get { return 543 ; } }
 	public override int Symbol { get { return Automaton._extSourceSpec ; } }
 	public override bool Useful { get { return true ; } }
 	public extSourceSpec_222Eline22_int3332_SQSTRING()
@@ -25360,7 +25571,7 @@ public partial class  extSourceSpec_222Eline22_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 541 ; } }
+	public override System.Decimal RuleNumber { get { return 544 ; } }
 	public override int Symbol { get { return Automaton._extSourceSpec ; } }
 	public override bool Useful { get { return true ; } }
 	public extSourceSpec_222Eline22_int3332()
@@ -25376,7 +25587,7 @@ public partial class  extSourceSpec_222Eline22_int3332_273A27_int3332_SQSTRING
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32", "':'", "int32", "SQSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 542 ; } }
+	public override System.Decimal RuleNumber { get { return 545 ; } }
 	public override int Symbol { get { return Automaton._extSourceSpec ; } }
 	public override bool Useful { get { return true ; } }
 	public extSourceSpec_222Eline22_int3332_273A27_int3332_SQSTRING()
@@ -25392,7 +25603,7 @@ public partial class  extSourceSpec_222Eline22_int3332_273A27_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32", "':'", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 543 ; } }
+	public override System.Decimal RuleNumber { get { return 546 ; } }
 	public override int Symbol { get { return Automaton._extSourceSpec ; } }
 	public override bool Useful { get { return true ; } }
 	public extSourceSpec_222Eline22_int3332_273A27_int3332()
@@ -25408,7 +25619,7 @@ public partial class  extSourceSpec_P5FLINE_int3332_QSTRING
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "P_LINE", "int32", "QSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 544 ; } }
+	public override System.Decimal RuleNumber { get { return 547 ; } }
 	public override int Symbol { get { return Automaton._extSourceSpec ; } }
 	public override bool Useful { get { return true ; } }
 	public extSourceSpec_P5FLINE_int3332_QSTRING()
@@ -25424,7 +25635,7 @@ public partial class  fileDecl_222Efile22_fileAttr_name31_fileEntry_hashHead_byt
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "fileAttr", "name1", "fileEntry", "hashHead", "bytes", "')'", "fileEntry" } ;
-	public override System.Decimal RuleNumber { get { return 545 ; } }
+	public override System.Decimal RuleNumber { get { return 548 ; } }
 	public override int Symbol { get { return Automaton._fileDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public fileDecl_222Efile22_fileAttr_name31_fileEntry_hashHead_bytes_272927_fileEntry()
@@ -25440,7 +25651,7 @@ public partial class  fileDecl_222Efile22_fileAttr_name31_fileEntry
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "fileAttr", "name1", "fileEntry" } ;
-	public override System.Decimal RuleNumber { get { return 546 ; } }
+	public override System.Decimal RuleNumber { get { return 549 ; } }
 	public override int Symbol { get { return Automaton._fileDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public fileDecl_222Efile22_fileAttr_name31_fileEntry()
@@ -25456,7 +25667,7 @@ public partial class  fileAttr
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 547 ; } }
+	public override System.Decimal RuleNumber { get { return 550 ; } }
 	public override int Symbol { get { return Automaton._fileAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public fileAttr()
@@ -25472,7 +25683,7 @@ public partial class  fileAttr_fileAttr_22nometadata22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fileAttr", "\"nometadata\"" } ;
-	public override System.Decimal RuleNumber { get { return 548 ; } }
+	public override System.Decimal RuleNumber { get { return 551 ; } }
 	public override int Symbol { get { return Automaton._fileAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public fileAttr_fileAttr_22nometadata22()
@@ -25488,7 +25699,7 @@ public partial class  fileEntry
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 549 ; } }
+	public override System.Decimal RuleNumber { get { return 552 ; } }
 	public override int Symbol { get { return Automaton._fileEntry ; } }
 	public override bool Useful { get { return true ; } }
 	public fileEntry()
@@ -25504,7 +25715,7 @@ public partial class  fileEntry_222Eentrypoint22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".entrypoint\"" } ;
-	public override System.Decimal RuleNumber { get { return 550 ; } }
+	public override System.Decimal RuleNumber { get { return 553 ; } }
 	public override int Symbol { get { return Automaton._fileEntry ; } }
 	public override bool Useful { get { return true ; } }
 	public fileEntry_222Eentrypoint22()
@@ -25520,7 +25731,7 @@ public partial class  hashHead_222Ehash22_273D27_272827
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".hash\"", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 551 ; } }
+	public override System.Decimal RuleNumber { get { return 554 ; } }
 	public override int Symbol { get { return Automaton._hashHead ; } }
 	public override bool Useful { get { return true ; } }
 	public hashHead_222Ehash22_273D27_272827()
@@ -25539,7 +25750,7 @@ public partial class  assemblyHead_222Eassembly22_asmAttr_name31
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "asmAttr", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 552 ; } }
+	public override System.Decimal RuleNumber { get { return 555 ; } }
 	public override int Symbol { get { return Automaton._assemblyHead ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyHead_222Eassembly22_asmAttr_name31()
@@ -25555,7 +25766,7 @@ public partial class  asmAttr
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 553 ; } }
+	public override System.Decimal RuleNumber { get { return 556 ; } }
 	public override int Symbol { get { return Automaton._asmAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public asmAttr()
@@ -25571,7 +25782,7 @@ public partial class  asmAttr_asmAttr_22noappdomain22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmAttr", "\"noappdomain\"" } ;
-	public override System.Decimal RuleNumber { get { return 554 ; } }
+	public override System.Decimal RuleNumber { get { return 557 ; } }
 	public override int Symbol { get { return Automaton._asmAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public asmAttr_asmAttr_22noappdomain22()
@@ -25587,7 +25798,7 @@ public partial class  asmAttr_asmAttr_22noprocess22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmAttr", "\"noprocess\"" } ;
-	public override System.Decimal RuleNumber { get { return 555 ; } }
+	public override System.Decimal RuleNumber { get { return 558 ; } }
 	public override int Symbol { get { return Automaton._asmAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public asmAttr_asmAttr_22noprocess22()
@@ -25603,7 +25814,7 @@ public partial class  asmAttr_asmAttr_22nomachine22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmAttr", "\"nomachine\"" } ;
-	public override System.Decimal RuleNumber { get { return 556 ; } }
+	public override System.Decimal RuleNumber { get { return 559 ; } }
 	public override int Symbol { get { return Automaton._asmAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public asmAttr_asmAttr_22nomachine22()
@@ -25619,7 +25830,7 @@ public partial class  assemblyDecls
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 557 ; } }
+	public override System.Decimal RuleNumber { get { return 560 ; } }
 	public override int Symbol { get { return Automaton._assemblyDecls ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyDecls()
@@ -25638,7 +25849,7 @@ public partial class  assemblyDecls_assemblyDecls_assemblyDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyDecls", "assemblyDecl" } ;
-	public override System.Decimal RuleNumber { get { return 558 ; } }
+	public override System.Decimal RuleNumber { get { return 561 ; } }
 	public override int Symbol { get { return Automaton._assemblyDecls ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyDecls_assemblyDecls_assemblyDecl()
@@ -25657,7 +25868,7 @@ public partial class  assemblyDecl_222Ehash22_22algorithm22_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".hash\"", "\"algorithm\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 559 ; } }
+	public override System.Decimal RuleNumber { get { return 562 ; } }
 	public override int Symbol { get { return Automaton._assemblyDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyDecl_222Ehash22_22algorithm22_int3332()
@@ -25673,7 +25884,7 @@ public partial class  assemblyDecl_secDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "secDecl" } ;
-	public override System.Decimal RuleNumber { get { return 560 ; } }
+	public override System.Decimal RuleNumber { get { return 563 ; } }
 	public override int Symbol { get { return Automaton._assemblyDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyDecl_secDecl()
@@ -25692,7 +25903,7 @@ public partial class  assemblyDecl_asmOrRefDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmOrRefDecl" } ;
-	public override System.Decimal RuleNumber { get { return 561 ; } }
+	public override System.Decimal RuleNumber { get { return 564 ; } }
 	public override int Symbol { get { return Automaton._assemblyDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyDecl_asmOrRefDecl()
@@ -25708,7 +25919,7 @@ public partial class  asmOrRefDecl_publicKeyHead_bytes_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "publicKeyHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 562 ; } }
+	public override System.Decimal RuleNumber { get { return 565 ; } }
 	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public asmOrRefDecl_publicKeyHead_bytes_272927()
@@ -25727,7 +25938,7 @@ public partial class  asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int33
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".ver\"", "int32", "':'", "int32", "':'", "int32", "':'", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 563 ; } }
+	public override System.Decimal RuleNumber { get { return 566 ; } }
 	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int3332_273A27_int3332()
@@ -25743,7 +25954,7 @@ public partial class  asmOrRefDecl_222Elocale22_compQstring
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".locale\"", "compQstring" } ;
-	public override System.Decimal RuleNumber { get { return 564 ; } }
+	public override System.Decimal RuleNumber { get { return 567 ; } }
 	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public asmOrRefDecl_222Elocale22_compQstring()
@@ -25759,7 +25970,7 @@ public partial class  asmOrRefDecl_localeHead_bytes_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "localeHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 565 ; } }
+	public override System.Decimal RuleNumber { get { return 568 ; } }
 	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public asmOrRefDecl_localeHead_bytes_272927()
@@ -25778,7 +25989,7 @@ public partial class  asmOrRefDecl_customAttrDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 566 ; } }
+	public override System.Decimal RuleNumber { get { return 569 ; } }
 	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public asmOrRefDecl_customAttrDecl()
@@ -25794,7 +26005,7 @@ public partial class  publicKeyHead_222Epublickey22_273D27_272827
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".publickey\"", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 567 ; } }
+	public override System.Decimal RuleNumber { get { return 570 ; } }
 	public override int Symbol { get { return Automaton._publicKeyHead ; } }
 	public override bool Useful { get { return true ; } }
 	public publicKeyHead_222Epublickey22_273D27_272827()
@@ -25813,7 +26024,7 @@ public partial class  publicKeyTokenHead_222Epublickeytoken22_273D27_272827
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".publickeytoken\"", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 568 ; } }
+	public override System.Decimal RuleNumber { get { return 571 ; } }
 	public override int Symbol { get { return Automaton._publicKeyTokenHead ; } }
 	public override bool Useful { get { return true ; } }
 	public publicKeyTokenHead_222Epublickeytoken22_273D27_272827()
@@ -25829,7 +26040,7 @@ public partial class  localeHead_222Elocale22_273D27_272827
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".locale\"", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 569 ; } }
+	public override System.Decimal RuleNumber { get { return 572 ; } }
 	public override int Symbol { get { return Automaton._localeHead ; } }
 	public override bool Useful { get { return true ; } }
 	public localeHead_222Elocale22_273D27_272827()
@@ -25848,7 +26059,7 @@ public partial class  assemblyRefHead_222Eassembly22_22extern22_name31
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "\"extern\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 570 ; } }
+	public override System.Decimal RuleNumber { get { return 573 ; } }
 	public override int Symbol { get { return Automaton._assemblyRefHead ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyRefHead_222Eassembly22_22extern22_name31()
@@ -25864,7 +26075,7 @@ public partial class  assemblyRefHead_222Eassembly22_22extern22_name31_22as22_na
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "\"extern\"", "name1", "\"as\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 571 ; } }
+	public override System.Decimal RuleNumber { get { return 574 ; } }
 	public override int Symbol { get { return Automaton._assemblyRefHead ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyRefHead_222Eassembly22_22extern22_name31_22as22_name31()
@@ -25880,7 +26091,7 @@ public partial class  assemblyRefDecls
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 572 ; } }
+	public override System.Decimal RuleNumber { get { return 575 ; } }
 	public override int Symbol { get { return Automaton._assemblyRefDecls ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyRefDecls()
@@ -25899,7 +26110,7 @@ public partial class  assemblyRefDecls_assemblyRefDecls_assemblyRefDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyRefDecls", "assemblyRefDecl" } ;
-	public override System.Decimal RuleNumber { get { return 573 ; } }
+	public override System.Decimal RuleNumber { get { return 576 ; } }
 	public override int Symbol { get { return Automaton._assemblyRefDecls ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyRefDecls_assemblyRefDecls_assemblyRefDecl()
@@ -25915,7 +26126,7 @@ public partial class  assemblyRefDecl_hashHead_bytes_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "hashHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 574 ; } }
+	public override System.Decimal RuleNumber { get { return 577 ; } }
 	public override int Symbol { get { return Automaton._assemblyRefDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyRefDecl_hashHead_bytes_272927()
@@ -25934,7 +26145,7 @@ public partial class  assemblyRefDecl_asmOrRefDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmOrRefDecl" } ;
-	public override System.Decimal RuleNumber { get { return 575 ; } }
+	public override System.Decimal RuleNumber { get { return 578 ; } }
 	public override int Symbol { get { return Automaton._assemblyRefDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyRefDecl_asmOrRefDecl()
@@ -25953,7 +26164,7 @@ public partial class  assemblyRefDecl_publicKeyTokenHead_bytes_272927
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "publicKeyTokenHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 576 ; } }
+	public override System.Decimal RuleNumber { get { return 579 ; } }
 	public override int Symbol { get { return Automaton._assemblyRefDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public assemblyRefDecl_publicKeyTokenHead_bytes_272927()
@@ -25969,7 +26180,7 @@ public partial class  comtypeHead_222Eclass22_22extern22_comtAttr_name31
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "\"extern\"", "comtAttr", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 577 ; } }
+	public override System.Decimal RuleNumber { get { return 580 ; } }
 	public override int Symbol { get { return Automaton._comtypeHead ; } }
 	public override bool Useful { get { return true ; } }
 	public comtypeHead_222Eclass22_22extern22_comtAttr_name31()
@@ -25985,7 +26196,7 @@ public partial class  exportHead_222Eexport22_comtAttr_name31
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".export\"", "comtAttr", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 578 ; } }
+	public override System.Decimal RuleNumber { get { return 581 ; } }
 	public override int Symbol { get { return Automaton._exportHead ; } }
 	public override bool Useful { get { return true ; } }
 	public exportHead_222Eexport22_comtAttr_name31()
@@ -26001,7 +26212,7 @@ public partial class  comtAttr
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 579 ; } }
+	public override System.Decimal RuleNumber { get { return 582 ; } }
 	public override int Symbol { get { return Automaton._comtAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public comtAttr()
@@ -26017,7 +26228,7 @@ public partial class  comtAttr_comtAttr_22private22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 580 ; } }
+	public override System.Decimal RuleNumber { get { return 583 ; } }
 	public override int Symbol { get { return Automaton._comtAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public comtAttr_comtAttr_22private22()
@@ -26033,7 +26244,7 @@ public partial class  comtAttr_comtAttr_22public22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 581 ; } }
+	public override System.Decimal RuleNumber { get { return 584 ; } }
 	public override int Symbol { get { return Automaton._comtAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public comtAttr_comtAttr_22public22()
@@ -26049,7 +26260,7 @@ public partial class  comtAttr_comtAttr_22nested22_22public22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 582 ; } }
+	public override System.Decimal RuleNumber { get { return 585 ; } }
 	public override int Symbol { get { return Automaton._comtAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22public22()
@@ -26065,7 +26276,7 @@ public partial class  comtAttr_comtAttr_22nested22_22private22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 583 ; } }
+	public override System.Decimal RuleNumber { get { return 586 ; } }
 	public override int Symbol { get { return Automaton._comtAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22private22()
@@ -26081,7 +26292,7 @@ public partial class  comtAttr_comtAttr_22nested22_22family22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"family\"" } ;
-	public override System.Decimal RuleNumber { get { return 584 ; } }
+	public override System.Decimal RuleNumber { get { return 587 ; } }
 	public override int Symbol { get { return Automaton._comtAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22family22()
@@ -26097,7 +26308,7 @@ public partial class  comtAttr_comtAttr_22nested22_22assembly22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"assembly\"" } ;
-	public override System.Decimal RuleNumber { get { return 585 ; } }
+	public override System.Decimal RuleNumber { get { return 588 ; } }
 	public override int Symbol { get { return Automaton._comtAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22assembly22()
@@ -26113,7 +26324,7 @@ public partial class  comtAttr_comtAttr_22nested22_22famandassem22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"famandassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 586 ; } }
+	public override System.Decimal RuleNumber { get { return 589 ; } }
 	public override int Symbol { get { return Automaton._comtAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22famandassem22()
@@ -26129,7 +26340,7 @@ public partial class  comtAttr_comtAttr_22nested22_22famorassem22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"famorassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 587 ; } }
+	public override System.Decimal RuleNumber { get { return 590 ; } }
 	public override int Symbol { get { return Automaton._comtAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22famorassem22()
@@ -26145,7 +26356,7 @@ public partial class  comtypeDecls
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 588 ; } }
+	public override System.Decimal RuleNumber { get { return 591 ; } }
 	public override int Symbol { get { return Automaton._comtypeDecls ; } }
 	public override bool Useful { get { return true ; } }
 	public comtypeDecls()
@@ -26161,7 +26372,7 @@ public partial class  comtypeDecls_comtypeDecls_comtypeDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtypeDecls", "comtypeDecl" } ;
-	public override System.Decimal RuleNumber { get { return 589 ; } }
+	public override System.Decimal RuleNumber { get { return 592 ; } }
 	public override int Symbol { get { return Automaton._comtypeDecls ; } }
 	public override bool Useful { get { return true ; } }
 	public comtypeDecls_comtypeDecls_comtypeDecl()
@@ -26177,7 +26388,7 @@ public partial class  comtypeDecl_222Efile22_name31
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 590 ; } }
+	public override System.Decimal RuleNumber { get { return 593 ; } }
 	public override int Symbol { get { return Automaton._comtypeDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public comtypeDecl_222Efile22_name31()
@@ -26193,7 +26404,7 @@ public partial class  comtypeDecl_222Eclass22_22extern22_name31
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "\"extern\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 591 ; } }
+	public override System.Decimal RuleNumber { get { return 594 ; } }
 	public override int Symbol { get { return Automaton._comtypeDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public comtypeDecl_222Eclass22_22extern22_name31()
@@ -26209,7 +26420,7 @@ public partial class  comtypeDecl_222Eclass22_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 592 ; } }
+	public override System.Decimal RuleNumber { get { return 595 ; } }
 	public override int Symbol { get { return Automaton._comtypeDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public comtypeDecl_222Eclass22_int3332()
@@ -26225,7 +26436,7 @@ public partial class  comtypeDecl_customAttrDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 593 ; } }
+	public override System.Decimal RuleNumber { get { return 596 ; } }
 	public override int Symbol { get { return Automaton._comtypeDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public comtypeDecl_customAttrDecl()
@@ -26241,7 +26452,7 @@ public partial class  manifestResHead_222Emresource22_manresAttr_name31
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".mresource\"", "manresAttr", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 594 ; } }
+	public override System.Decimal RuleNumber { get { return 597 ; } }
 	public override int Symbol { get { return Automaton._manifestResHead ; } }
 	public override bool Useful { get { return true ; } }
 	public manifestResHead_222Emresource22_manresAttr_name31()
@@ -26257,7 +26468,7 @@ public partial class  manresAttr
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 595 ; } }
+	public override System.Decimal RuleNumber { get { return 598 ; } }
 	public override int Symbol { get { return Automaton._manresAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public manresAttr()
@@ -26273,7 +26484,7 @@ public partial class  manresAttr_manresAttr_22public22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manresAttr", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 596 ; } }
+	public override System.Decimal RuleNumber { get { return 599 ; } }
 	public override int Symbol { get { return Automaton._manresAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public manresAttr_manresAttr_22public22()
@@ -26289,7 +26500,7 @@ public partial class  manresAttr_manresAttr_22private22
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manresAttr", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 597 ; } }
+	public override System.Decimal RuleNumber { get { return 600 ; } }
 	public override int Symbol { get { return Automaton._manresAttr ; } }
 	public override bool Useful { get { return true ; } }
 	public manresAttr_manresAttr_22private22()
@@ -26305,7 +26516,7 @@ public partial class  manifestResDecls
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 598 ; } }
+	public override System.Decimal RuleNumber { get { return 601 ; } }
 	public override int Symbol { get { return Automaton._manifestResDecls ; } }
 	public override bool Useful { get { return true ; } }
 	public manifestResDecls()
@@ -26321,7 +26532,7 @@ public partial class  manifestResDecls_manifestResDecls_manifestResDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manifestResDecls", "manifestResDecl" } ;
-	public override System.Decimal RuleNumber { get { return 599 ; } }
+	public override System.Decimal RuleNumber { get { return 602 ; } }
 	public override int Symbol { get { return Automaton._manifestResDecls ; } }
 	public override bool Useful { get { return true ; } }
 	public manifestResDecls_manifestResDecls_manifestResDecl()
@@ -26337,7 +26548,7 @@ public partial class  manifestResDecl_222Efile22_name31_22at22_int3332
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "name1", "\"at\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 600 ; } }
+	public override System.Decimal RuleNumber { get { return 603 ; } }
 	public override int Symbol { get { return Automaton._manifestResDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public manifestResDecl_222Efile22_name31_22at22_int3332()
@@ -26353,7 +26564,7 @@ public partial class  manifestResDecl_222Eassembly22_22extern22_name31
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "\"extern\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 601 ; } }
+	public override System.Decimal RuleNumber { get { return 604 ; } }
 	public override int Symbol { get { return Automaton._manifestResDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public manifestResDecl_222Eassembly22_22extern22_name31()
@@ -26369,7 +26580,7 @@ public partial class  manifestResDecl_customAttrDecl
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 602 ; } }
+	public override System.Decimal RuleNumber { get { return 605 ; } }
 	public override int Symbol { get { return Automaton._manifestResDecl ; } }
 	public override bool Useful { get { return true ; } }
 	public manifestResDecl_customAttrDecl()
@@ -26381,7 +26592,7 @@ public partial class  manifestResDecl_customAttrDecl
 partial class A335 {
 public static readonly System.Collections.Generic.Dictionary<char,int> xml_translate = new System.Collections.Generic.Dictionary<char,int>() {
 	{ '\u0000', 0 },
-	{ '\u0021', 216 },
+	{ '\u0021', 218 },
 	{ '\u0026', 153 },
 	{ '\u0028', 40 },
 	{ '\u0029', 39 },
@@ -26391,7 +26602,9 @@ public static readonly System.Collections.Generic.Dictionary<char,int> xml_trans
 	{ '\u002E', 163 },
 	{ '\u002F', 164 },
 	{ '\u003A', 138 },
+	{ '\u003C', 213 },
 	{ '\u003D', 38 },
+	{ '\u003E', 214 },
 	{ '\u005B', 44 },
 	{ '\u005D', 45 },
 	{ '\u007B', 27 },
@@ -26593,43 +26806,43 @@ public static readonly System.Collections.Generic.Dictionary<char,int> xml_trans
 	{ '\u01C3', 210 },
 	{ '\u01C4', 211 },
 	{ '\u01C5', 212 },
-	{ '\u01C6', 213 },
-	{ '\u01C7', 214 },
-	{ '\u01C8', 215 },
-	{ '\u01C9', 217 },
-	{ '\u01CA', 218 },
-	{ '\u01CB', 219 },
-	{ '\u01CC', 220 },
-	{ '\u01CD', 221 },
-	{ '\u01CE', 222 },
-	{ '\u01CF', 223 },
-	{ '\u01D0', 224 },
-	{ '\u01D1', 225 },
-	{ '\u01D2', 226 },
-	{ '\u01D3', 227 },
-	{ '\u01D4', 228 },
-	{ '\u01D5', 229 },
-	{ '\u01D6', 230 },
-	{ '\u01D7', 231 },
-	{ '\u01D8', 232 },
-	{ '\u01D9', 233 },
-	{ '\u01DA', 234 },
-	{ '\u01DB', 235 },
-	{ '\u01DC', 236 },
-	{ '\u01DD', 237 },
-	{ '\u01DE', 238 },
-	{ '\u01DF', 239 },
-	{ '\u01E0', 240 },
-	{ '\u01E1', 241 },
-	{ '\u01E2', 242 },
-	{ '\u01E3', 243 },
-	{ '\u01E4', 244 },
-	{ '\u01E5', 245 },
-	{ '\u01E6', 246 },
-	{ '\u01E7', 247 },
-	{ '\u01E8', 248 },
-	{ '\u01E9', 249 },
-	{ '\u01EA', 250 },
-	{ '\u00FB', 251 },
+	{ '\u01C6', 215 },
+	{ '\u01C7', 216 },
+	{ '\u01C8', 217 },
+	{ '\u01C9', 219 },
+	{ '\u01CA', 220 },
+	{ '\u01CB', 221 },
+	{ '\u01CC', 222 },
+	{ '\u01CD', 223 },
+	{ '\u01CE', 224 },
+	{ '\u01CF', 225 },
+	{ '\u01D0', 226 },
+	{ '\u01D1', 227 },
+	{ '\u01D2', 228 },
+	{ '\u01D3', 229 },
+	{ '\u01D4', 230 },
+	{ '\u01D5', 231 },
+	{ '\u01D6', 232 },
+	{ '\u01D7', 233 },
+	{ '\u01D8', 234 },
+	{ '\u01D9', 235 },
+	{ '\u01DA', 236 },
+	{ '\u01DB', 237 },
+	{ '\u01DC', 238 },
+	{ '\u01DD', 239 },
+	{ '\u01DE', 240 },
+	{ '\u01DF', 241 },
+	{ '\u01E0', 242 },
+	{ '\u01E1', 243 },
+	{ '\u01E2', 244 },
+	{ '\u01E3', 245 },
+	{ '\u01E4', 246 },
+	{ '\u01E5', 247 },
+	{ '\u01E6', 248 },
+	{ '\u01E7', 249 },
+	{ '\u01E8', 250 },
+	{ '\u01E9', 251 },
+	{ '\u01EA', 252 },
+	{ '\u00FD', 253 },
 	} ;
 }

@@ -7,11 +7,22 @@ public static void Main( string[] args )
 	Cluster.Cli.Start( "git branch", Branch_i ) ;
 	Cluster.Program.Parse( args ) ;
 	Current.Estate.Current__System_File.Path = Cluster.Parameter.Value("PANZOR") ;
+	if( Cluster.Parameter.Value("input") != "false" )
+		{
+		string text = System.IO.File.ReadAllText( Cluster.Parameter.Value("input") ) ;
+		Tokenset.Assimulation( text ) ;
+		}
+	else
+	if( Cluster.Parameter.Value("shell") != "false" )
+		{
+		Cluster.Cli.Start( Cluster.Parameter.Value("shell"), Tokenset.Assimulation ) ;
+		Cluster.Cli.Refine() ;
+		}
 	Xo_t.Compile() ;
 	#if !UNICODED_SVG
 	Xo_t.OutputGraph() ;
 	#endif
-	if( Cluster.Parameter.Value("build") == "true" )
+	if( Cluster.Parameter.Value("build") == "infrastructure" )
 		Xo_t.Build() ;
 	if( log_output != null )
 		{
@@ -476,8 +487,9 @@ class Xo_t
 		{
 		System.Collections.Generic.Dictionary<string,System.Type> automatrix =
 			new System.Collections.Generic.Dictionary<string,System.Type>() ;
-		if( Cluster.Parameter.Value("build") == "false" )
-			return ;
+		if( Cluster.Parameter.Value("build") != "infrastructure"
+			&& Cluster.Parameter.Value("build") != "automaton" )
+				return ;
 		foreach( System.Type t in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()  )
 			{
 			System.Attribute[] attributes = System.Attribute.GetCustomAttributes( t ) ;

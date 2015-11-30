@@ -5,12 +5,15 @@ public static partial class Tokenset
 	public static Token Input
 		{
 		get {
-			if( tokenset == null )
+			#if !EMBED
+			//if( tokenset == null )
 				return input() ;
+			#else
 			Token t = tokenset[index] ;
 			if( t._ != "$end")
 				index++ ;
 			return t ;
+			#endif
 		    }
 		}
 	#if EMBED
@@ -78,15 +81,15 @@ public static partial class Tokenset
 				) ;
 			}
 		}
+	#if !EMBED
 	static System.Xml.XmlTextReader   xml ;
 	public static void Assimulation( string input )
 		{
 		//In re: "assimilated" -> icyspherical.blogspot.com/2010/07/why-resthttp-based-client-side.html
 		xml = new System.Xml.XmlTextReader( new System.IO.StringReader( input ) ) ;
 		while( xml.Read() && ! ( xml.NodeType == System.Xml.XmlNodeType.Element && xml.Name == "xml" ) ) ;
-		#if DEBUG
-		Lift() ;
-		#endif
+		if( Cluster.Parameter.Value("build") == "infrastructure" )
+			Lift() ;
 		}
 	static bool xml_read = false ;
 	public static Token input()
@@ -119,4 +122,5 @@ public static partial class Tokenset
 			}
 		return new Token( '\0', "$end" ) ;
 		}
+	#endif
 	}

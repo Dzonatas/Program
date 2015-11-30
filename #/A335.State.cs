@@ -102,6 +102,8 @@ public struct State                //_FIX:$State,_State,_State:=$State,$State!=_
 
 	public void Set()
 		{
+		if( number >= stateset.Length )
+			System.Array.Resize( ref stateset, (int)number+1 ) ;
 		stateset[(int)number] = x_state ;
 		}
 

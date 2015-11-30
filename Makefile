@@ -14,7 +14,7 @@ help:
 	@echo "make parser"
 	@echo "make clean"
 	@echo
-	@echo "Tests:
+	@echo "Tests:"
 	@echo "make test1"
 	@echo "make test2"
 	@echo "make test3"
@@ -36,11 +36,11 @@ $(auto_driver_cs): /tmp/.$(ID).d/auto.cs
 	cp /tmp/.$(ID).d/auto.cs $(auto_driver_cs)
 
 /tmp/.$(ID).d/auto.cs: bin/Debug/driver.exe
-	( cd ./bin/Debug && ./driver.exe )
+	( cd ./bin/Debug && ./driver.exe --build=automaton )
 
 bin/Debug/driver.exe: $(grammar_xml)
 	@echo "build driver.csproj"
-	$(XBUILD)  driver.csproj
+	$(XBUILD) /p:Configuration=Debug  driver.csproj
 
 bin/Debug/ilxml.exe: $(grammar_xml)
 	( ( [ -d "./bin/Debug" ] && true ) || mkdir -p ./bin/Debug )
@@ -68,6 +68,7 @@ test4: project
 	./~/test4/test.sh
 
 cdriver: project
+	( cd ./bin/Debug && ./driver.exe --build=infrastructure --shell="../../~/compile.sh ../../~/hello.mono.world.il.text" )
 	./~/cdriver/test.sh
 
 .PHONY: tests

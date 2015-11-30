@@ -26,10 +26,10 @@ namespace Cluster
 			{
 			parameter.Add( "PANZORK", "cyanics" ) ;
 			parameter.Add( "synopsis", "false" ) ;
-			parameter.Add( "shell",    "/bin/sh"  ) ;
+			parameter.Add( "shell",    "false"  ) ;
 			parameter.Add( "input",    "false"  ) ;
 			parameter.Add( "output",   "false"  ) ;
-			parameter.Add( "build",    (Program.Proxy && Current.Path.Existed) ? "false" : "true"  ) ;
+			parameter.Add( "build",    "false"  ) ;
 			parameter.Add( "headless", "false" ) ;	//https://code.google.com/p/dpkg-scripts/wiki/HOWTO#Creating_a_Simple_Package
 			parameter.Add( "reflection", "false" ) ;
 			#if PRIMED
