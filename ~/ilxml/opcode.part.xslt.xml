@@ -53,7 +53,7 @@
 		<xsl:text> return INSTRUCTION( INSTR_BRTARGET, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='ShortInlineI'">
-		<xsl:text> return INSTRUCTION( INSTR_BRTARGET, text ) ; } </xsl:text>
+		<xsl:text> return INSTRUCTION( INSTR_I, text ) ; } </xsl:text>
 	  </xsl:when>
 	  <xsl:when test="@type='ShortInlineR'">
 		<xsl:text> return INSTRUCTION( INSTR_R, text ) ; } </xsl:text>

@@ -3,7 +3,7 @@ all: ilxml.exe
 .PHONY: clean
 
 ilxml.exe : make.sh lex.footer lex.head
-	sh make.sh
+	./make.sh
 
 clean:
 	rm -f ilxml.exe
