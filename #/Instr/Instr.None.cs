@@ -99,9 +99,11 @@ public partial class   instr_INSTR_NONE
 				d.Push( a.plus(b), t.Type ) ;
 				}
 				break ;
+			case "NOP" :
+				d.Statement( new C699.c( "/* nop */" ) ) ;
+				break ;
 			default :
-				log( "[INSTR_NONE] Defaulted on " + Op ) ;
-				return ;
+				throw new System.NotImplementedException( Op ) ;
 			}
 		}
 	void stloc( int i )
