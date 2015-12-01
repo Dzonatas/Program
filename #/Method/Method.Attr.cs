@@ -25,6 +25,12 @@ public partial class Method
 		}
 	}
 
+public partial class   methAttr_methAttr__abstract_
+	: Method.Attr   {}
+
+public partial class   methAttr_methAttr__family_
+	: Method.Attr   {}
+
 public partial class   methAttr_methAttr__static_
 	: Method.Attr   {}
 
@@ -41,6 +47,9 @@ public partial class   methAttr_methAttr__rtspecialname_
 	: Method.Attr {}
 
 public partial class   methAttr_methAttr__private_
+	: Method.Attr {}
+
+public partial class   methAttr_methAttr__newslot_
 	: Method.Attr {}
 
 public partial class   methAttr_methAttr__virtual_

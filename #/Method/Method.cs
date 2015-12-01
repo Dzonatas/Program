@@ -62,8 +62,11 @@ public partial class Method
 		}
 	static public Head Declared( Head h, Decls d )
 		{
-		d.Head  = h ;
-		h.Decls = d ;
+		if( d != null )
+			{
+			d.Head  = h ;
+			h.Decls = d ;
+			}
 		return h ;
 		}
 	}

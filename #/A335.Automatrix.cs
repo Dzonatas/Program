@@ -83,7 +83,7 @@ public partial class Automatrix : Object, System.Collections.Generic.IEnumerable
 		}
 	public override string ToString()
 		{
-		return "[Automatrix] " + string.Join( " ", ResolveType() ) ;
+		return "[Automatrix] " + this.GetType().FullName ;
 		}
 	virtual protected void render() {}
 	static public void Render( Stack.IStart start )

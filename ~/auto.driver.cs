@@ -16670,6 +16670,9 @@ public partial class  decl_classHead_277B27_classDecls_277D27
 public partial class  decl_nameSpaceHead_277B27_decls_277D27
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_nameSpaceHead_____decls____() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -16718,6 +16721,9 @@ public partial class  decl_fieldDecl
 public partial class  decl_dataDecl
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_dataDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17360,6 +17366,9 @@ public partial class  vtableHead_222Evtable22_273D27_272827
 public partial class  nameSpaceHead_222Enamespace22_name31
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.nameSpaceHead___namespace__name1() ; }
+	#endif
 	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', 'S', 'p', 'a', 'c', 'e', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17481,6 +17490,9 @@ public partial class  classAttr_classAttr_22enum22
 public partial class  classAttr_classAttr_22interface22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__interface_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17516,6 +17528,9 @@ public partial class  classAttr_classAttr_22sealed22
 public partial class  classAttr_classAttr_22abstract22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__abstract_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17669,6 +17684,9 @@ public partial class  classAttr_classAttr_22serializable22
 public partial class  classAttr_classAttr_22nested22_22public22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__nested___public_() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17870,6 +17888,9 @@ public partial class  implClause
 public partial class  implClause_22implements22_classNames
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.implClause__implements__classNames() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'C', 'l', 'a', 'u', 's', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -17902,6 +17923,9 @@ public partial class  classNames_classNames_272C27_className
 public partial class  classNames_className
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classNames_className() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'N', 'a', 'm', 'e', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18007,6 +18031,9 @@ public partial class  classDecl_eventHead_277B27_eventDecls_277D27
 public partial class  classDecl_propHead_277B27_propDecls_277D27
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_propHead_____propDecls____() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18090,6 +18117,9 @@ public partial class  classDecl_extSourceSpec
 public partial class  classDecl_customAttrDecl
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_customAttrDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18106,6 +18136,9 @@ public partial class  classDecl_customAttrDecl
 public partial class  classDecl_222Esize22_int3332
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl___size__int32() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18122,6 +18155,9 @@ public partial class  classDecl_222Esize22_int3332
 public partial class  classDecl_222Epack22_int3332
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl___pack__int32() ; }
+	#endif
 	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18221,6 +18257,9 @@ public partial class  atOpt
 public partial class  atOpt_22at22_id
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.atOpt__at__id() ; }
+	#endif
 	static readonly char[]   lhs = { 'a', 't', 'O', 'p', 't',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18253,6 +18292,9 @@ public partial class  initOpt
 public partial class  initOpt_273D27_fieldInit
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.initOpt_____fieldInit() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 'i', 't', 'O', 'p', 't',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18368,6 +18410,9 @@ public partial class  memberRef_methodSpec_callConv_type_methodName_272827_sigAr
 public partial class  memberRef_22field22_type_typeSpec_223A3A22_id
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.memberRef__field__type_typeSpec______id() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 'm', 'b', 'e', 'r', 'R', 'e', 'f',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18451,6 +18496,9 @@ public partial class  ownerType_typeSpec
 public partial class  ownerType_memberRef
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.ownerType_memberRef() ; }
+	#endif
 	static readonly char[]   lhs = { 'o', 'w', 'n', 'e', 'r', 'T', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18755,6 +18803,9 @@ public partial class  eventDecl_languageDecl
 public partial class  propHead_222Eproperty22_propAttr_callConv_type_id_272827_sigArgs30_272927_initOpt
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.propHead___property__propAttr_callConv_type_id_____sigArgs0_____initOpt() ; }
+	#endif
 	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18835,6 +18886,9 @@ public partial class  propDecls
 public partial class  propDecls_propDecls_propDecl
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.propDecls_propDecls_propDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18851,6 +18905,9 @@ public partial class  propDecls_propDecls_propDecl
 public partial class  propDecl_222Eset22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.propDecl___set__callConv_type_typeSpec______methodName_____sigArgs0____() ; }
+	#endif
 	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -18883,6 +18940,9 @@ public partial class  propDecl_222Eset22_callConv_type_methodName_272827_sigArgs
 public partial class  propDecl_222Eget22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.propDecl___get__callConv_type_typeSpec______methodName_____sigArgs0____() ; }
+	#endif
 	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19122,6 +19182,9 @@ public partial class  methAttr_methAttr_22private22
 public partial class  methAttr_methAttr_22family22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__family_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19192,6 +19255,9 @@ public partial class  methAttr_methAttr_22virtual22
 public partial class  methAttr_methAttr_22abstract22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__abstract_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19208,6 +19274,9 @@ public partial class  methAttr_methAttr_22abstract22
 public partial class  methAttr_methAttr_22assembly22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__assembly_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19291,6 +19360,9 @@ public partial class  methAttr_methAttr_22hidebysig22
 public partial class  methAttr_methAttr_22newslot22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__newslot_() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19792,6 +19864,9 @@ public partial class  fieldAttr_fieldAttr_22private22
 public partial class  fieldAttr_fieldAttr_22family22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__family_() ; }
+	#endif
 	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19808,6 +19883,9 @@ public partial class  fieldAttr_fieldAttr_22family22
 public partial class  fieldAttr_fieldAttr_22initonly22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__initonly_() ; }
+	#endif
 	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19872,6 +19950,9 @@ public partial class  fieldAttr_fieldAttr_22marshal22_272827_nativeType_272927
 public partial class  fieldAttr_fieldAttr_22assembly22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__assembly_() ; }
+	#endif
 	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -19936,6 +20017,9 @@ public partial class  fieldAttr_fieldAttr_22privatescope22
 public partial class  fieldAttr_fieldAttr_22literal22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__literal_() ; }
+	#endif
 	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20408,6 +20492,9 @@ public partial class  methodDecl_languageDecl
 public partial class  methodDecl_customAttrDecl
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl_customAttrDecl() ; }
+	#endif
 	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20923,6 +21010,9 @@ public partial class  methodDecls_methodDecls_methodDecl
 public partial class  dataDecl_ddHead_ddBody
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.dataDecl_ddHead_ddBody() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'a', 't', 'a', 'D', 'e', 'c', 'l',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20939,6 +21029,9 @@ public partial class  dataDecl_ddHead_ddBody
 public partial class  ddHead_222Edata22_tls_id_273D27
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.ddHead___data__tls_id____() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'd', 'H', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21019,6 +21112,9 @@ public partial class  ddBody_277B27_ddItemList_277D27
 public partial class  ddBody_ddItem
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.ddBody_ddItem() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'd', 'B', 'o', 'd', 'y',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21131,6 +21227,9 @@ public partial class  ddItem_272627_272827_id_272927
 public partial class  ddItem_bytearrayhead_bytes_272927
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.ddItem_bytearrayhead_bytes____() ; }
+	#endif
 	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21419,6 +21518,9 @@ public partial class  fieldInit_22int363422_272827_int3634_272927
 public partial class  fieldInit_22int333222_272827_int3634_272927
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldInit__int32______int64____() ; }
+	#endif
 	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21547,6 +21649,9 @@ public partial class  fieldInit_22nullref22
 public partial class  bytearrayhead_22bytearray22_272827
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.bytearrayhead__bytearray_____() ; }
+	#endif
 	static readonly char[]   lhs = { 'b', 'y', 't', 'e', 'a', 'r', 'r', 'a', 'y', 'h', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21652,6 +21757,9 @@ public partial class  instr_r_head_INSTR5FR_272827
 public partial class  instr_tok_head_INSTR5FTOK
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_tok_head_INSTR_TOK() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r', '_', 't', 'o', 'k', '_', 'h', 'e', 'a', 'd',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21738,6 +21846,9 @@ public partial class  instr_INSTR5FVAR_id
 public partial class  instr_INSTR5FI_int3332
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_I_int32() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -21818,6 +21929,9 @@ public partial class  instr_instr5Fr5Fhead_bytes_272927
 public partial class  instr_INSTR5FBRTARGET_int3332
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_BRTARGET_int32() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -22028,6 +22142,9 @@ public partial class  instr_INSTR5FRVA_int3332
 public partial class  instr_instr5Ftok5Fhead_ownerType
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_instr_tok_head_ownerType() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24279,6 +24396,9 @@ public partial class  type_type_272A27
 public partial class  type_type_273C27_genArgs_273E27
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_____genArgs____() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24343,6 +24463,9 @@ public partial class  type_type_22modopt22_272827_className_272927
 public partial class  type_272127_int3332
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type_____int32() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24391,6 +24514,9 @@ public partial class  type_22typedref22
 public partial class  type_22char22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__char_() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24426,6 +24552,9 @@ public partial class  type_22void22
 public partial class  type_22bool22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__bool_() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24458,6 +24587,9 @@ public partial class  type_22int3822
 public partial class  type_22int313622
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__int16_() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24605,6 +24737,9 @@ public partial class  type_22unsigned22_22int363422
 public partial class  type_22native22_22int22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.type__native___int_() ; }
+	#endif
 	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24653,6 +24788,9 @@ public partial class  type_22native22_22float22
 public partial class  genArgs_type
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.genArgs_type() ; }
+	#endif
 	static readonly char[]   lhs = { 'g', 'e', 'n', 'A', 'r', 'g', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24669,6 +24807,9 @@ public partial class  genArgs_type
 public partial class  genArgs_genArgs_272C27_type
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.genArgs_genArgs_____type() ; }
+	#endif
 	static readonly char[]   lhs = { 'g', 'e', 'n', 'A', 'r', 'g', 's',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -24975,6 +25116,9 @@ public partial class  int32_INT3634
 public partial class  int64_INT3634
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.int64_INT64() ; }
+	#endif
 	static readonly char[]   lhs = { 'i', 'n', 't', '6', '4',  } ;
 	public override string   LHS { get { return new string(lhs) ; } }
 	public override string[] RHS { get { return rhs ; } }

@@ -74,4 +74,7 @@ public partial class   instr_INSTR_BRTARGET_id
 			}
 		}
 	}
+
+public partial class   instr_INSTR_BRTARGET_int32
+	: Instr.BrTarget {}
 }

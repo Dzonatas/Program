@@ -22,6 +22,10 @@ public struct c
 		s += '('+c+ ')'  ; return this ;
 		}
 	#endif
+	public c Char
+		{
+		get { s += KeyedWord.Char + ' '  ; return this ; }
+		}
 	public c Charpp
 		{
 		get { s += KeyedWord.Char+'*'+'*' + ' '  ; return this ; }
@@ -37,6 +41,10 @@ public struct c
 	public c Voidpp
 		{
 		get { s += KeyedWord.Void+'*'+'*' + ' '  ; return this ; }
+		}
+	public c Short
+		{
+		get { s += KeyedWord.Short + ' '  ; return this ; }
 		}
 	public c Int
 		{

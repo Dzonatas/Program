@@ -7,6 +7,7 @@ public partial class Class : Automatrix
 		static public implicit operator string( Name n ) { return n.fullName ; }
 		protected virtual string fullName { get { throw new System.NotImplementedException() ; } }
 		}
+	public partial class Names : Class {}
 	}
 
 public partial class   className_____name1_____slashedName
@@ -24,4 +25,7 @@ public partial class   className_slashedName
 		get { return Argv[1] as SlashedName ; }
 		}
 	}
+
+public partial class   classNames_className
+	: Class.Names {}
 }

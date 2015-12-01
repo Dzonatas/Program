@@ -52,8 +52,11 @@ public partial class Class : Automatrix
 			}
 		public void Declared( Decls d, Decl cd )
 			{
-			d.Head  = this ;
-			this.Decls = d ;
+			if( d != null )
+				{
+				d.Head  = this ;
+				decls = d ;
+				}
 			classDecl = cd ;
 			}
 		}

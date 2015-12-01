@@ -5,6 +5,9 @@ public partial class Class : Automatrix
 	public partial class Attr : Class {}
 	}
 
+public partial class   classAttr_classAttr__abstract_
+	: Class.Attr {}
+
 public partial class   classAttr_classAttr__private_
 	: Class.Attr {}
 

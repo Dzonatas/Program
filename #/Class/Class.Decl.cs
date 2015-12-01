@@ -13,6 +13,9 @@ public partial class Class : Automatrix
 		}
 	}
 
+public partial class   classDecl_customAttrDecl
+	: Class.Decl {}
+
 public partial class   classDecl_methodHead_methodDecls____
 	: Class.Decl	{
 	protected override void main()
@@ -48,6 +51,9 @@ public partial class   classDecl_fieldDecl
 		get { return (Argv[1] as Field.Decl) ; }
 		}
 	}
+
+public partial class   classDecl_propHead_____propDecls____
+	: Class.Decl	{}
 }
 
 

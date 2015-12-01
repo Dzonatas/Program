@@ -27,4 +27,6 @@ public partial class   decl_assemblyRefHead_____assemblyRefDecls____
 public partial class   decl_moduleHead
 	: Decl	{}
 
+public partial class   decl_nameSpaceHead_____decls____
+	: Decl	{}
 }
