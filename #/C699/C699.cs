@@ -180,6 +180,10 @@ public struct c
 		{
 		return new c(s + '+' + c) ;
 		}
+	public c sub( C699.c c )
+		{
+		return new c(s + '-' + c) ;
+		}
 	public static implicit operator string( c c )
 		{
 		return c.s ;

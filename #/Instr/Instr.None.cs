@@ -99,6 +99,14 @@ public partial class   instr_INSTR_NONE
 				d.Push( a.plus(b), t.Type ) ;
 				}
 				break ;
+			case "SUB" :
+				{
+				var t = C.Pop() ;
+				var b = t.StackDeref ;
+				var a = C.Pop().StackDeref ;
+				d.Push( a.sub(b), t.Type ) ;
+				}
+				break ;
 			case "NOP" :
 				d.Statement( new C699.c( "/* nop */" ) ) ;
 				break ;
