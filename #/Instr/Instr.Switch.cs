@@ -19,7 +19,8 @@ public partial class   instr_INSTR_SWITCH_____labels____
 			{
 			case "SWITCH" :
 				C.Pop() ;
-				throw new System.NotImplementedException( Op ) ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;
 			}
