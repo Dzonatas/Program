@@ -37,6 +37,13 @@ public partial class   instr_INSTR_NONE
 				}
 			case "RET":
 				{
+				if( C699.Stack.Offset == 1 )
+					{
+					C.Pop() ;
+					}
+				else
+				if( C699.Stack.Offset > 1 )
+					throw new System.NotImplementedException() ;
 				//d.Statement( C699.C.Return("") ) ;
 				break ;
 				}
