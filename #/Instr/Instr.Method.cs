@@ -103,7 +103,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				else
 				if( type is type__int32_ )
 					{
-					d.Push( C699.C.Three, C_I4_3 ) ;
+					d.Push( C699.C.Three, C_I4_3 ) ; //bogus
 					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 					}
 				else
@@ -125,9 +125,16 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 			case "CALLVIRT" :
 				{
 				int iargs = Args ;
-				var data = C.Hangup( iargs ) ;
-				if( ! (type is type__void_ ) )
-					d.PushRef( d.Allocate(type) ) ;
+				C.Hangup( iargs ) ;
+				var typeSpec = Argv[4] as A335.Type.Spec ;
+				var t = type ;
+				if( t is type_____int32 )
+					t = typeSpec.GenericArgument( int.Parse(type.Arg2.Token) ) ;
+				if( t is type__int32_ )
+					d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				else
+				if( ! (t is type__void_ ) )
+					d.PushRef( d.Allocate(t) ) ;
 				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 				}
 				break ;

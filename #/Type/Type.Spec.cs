@@ -27,6 +27,13 @@ public partial class Type : Automatrix
 				r[x] = s[x+i] ;
 			return r ;
 			}
+		public Type GenericArgument(int n)
+			{
+			if( ! ( this is typeSpec_type ) )
+				throw new System.NotImplementedException() ;
+			var t = (type_type_____genArgs____) Argv[1] ;
+			return (t.Argv[3] as GenArgs).Index(n) ;
+			}
 		}
 	}
 

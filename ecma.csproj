@@ -196,6 +196,7 @@
     <Compile Include="#\Instr\Instr.Type.cs" />
     <Compile Include="#\ExtendsClause.cs" />
     <Compile Include="#\Instr\Instr.I.cs" />
+    <Compile Include="#\GenArgs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -298,6 +298,12 @@ public partial class SlashedName : Automatrix {}
 [Automaton] public partial class   slashedName_slashedName_____name1
 	: SlashedName {}
 
+public partial class GenArgs : Automatrix {}
+[Automaton] public partial class genArgs_type
+	: GenArgs {}
+[Automaton] public partial class genArgs_genArgs_____type
+	: GenArgs {}
+
 [Automaton] public partial class nameSpaceHead___namespace__name1
 	: Automatrix {}
 [Automaton] public partial class implClause__implements__classNames
@@ -309,10 +315,6 @@ public partial class SlashedName : Automatrix {}
 [Automaton] public partial class propDecl___set__callConv_type_typeSpec______methodName_____sigArgs0____
 	: Automatrix {}
 [Automaton] public partial class propDecls_propDecls_propDecl
-	: Automatrix {}
-[Automaton] public partial class genArgs_type
-	: Automatrix {}
-[Automaton] public partial class genArgs_genArgs_____type
 	: Automatrix {}
 [Automaton] public partial class int64_INT64
 	: Automatrix {}
