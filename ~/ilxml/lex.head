@@ -19,6 +19,8 @@ const int mmap = 1 ;
 const int mmap = 1 ;
 #endif
 
+#define ERROR_TOKEN 256   /* YYERRCODE */
+
 #define INSTRUCTION(_1,_2) INSTRUCTION_(#_1,_1,_2)
 
 #define OPDEF(_0,_1,_2,_3,_4,_5,_6,_7,_8,_9) { #_0, _1, #_2, #_3, #_4, #_5, #_6, #_7, #_8, #_9 },

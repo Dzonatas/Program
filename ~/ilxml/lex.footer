@@ -37,7 +37,8 @@
 \)                 { if(!--ps) BEGIN(0) ; return PUNCTUATION(yytext[0]) ; }
 
 {P}                { return PUNCTUATION(yytext[0]) ; }
-{WS}
+{WS}+
+.                  { return ERROR_TOKEN ; /* YYERRCODE */ }
 %%
 
 int TERMINAL_( int n, char *str )
