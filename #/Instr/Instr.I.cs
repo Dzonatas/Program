@@ -11,6 +11,7 @@ public partial class   instr_INSTR_I_int32
 		{
 		switch( Op )
 			{
+			case "LDC_I4_S" :
 			case "LDC_I4" :
 				oprand.C.Push( new C699.c( Arg2.Token ), C_Type.Acquire( C699.C.Int ) ) ;
 				break ;
