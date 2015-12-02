@@ -17,7 +17,7 @@ System.Object becomes phantom and exercises itself under compilation (see ECMA33
 Certain recursion and polymorphic code will not be published under free open source. This justifies the inconsistent GUID(C)s produced at each compile.
 
 ## Any simple test run?
-1. `get clone --depth 1 https://gethub.com/Dzonatas/Program.git /tmp/Program`
+1. `get clone --depth 1 https://github.com/Dzonatas/Program.git /tmp/Program`
 2. `cd /tmp/Program`
 3. `make tests`
 4. `make clean`
