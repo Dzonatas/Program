@@ -50,6 +50,13 @@ public partial class   instr_INSTR_TYPE_typeSpec
 				oprand.C.Push( C699.C.Three, C_I4_3 ) ; //bogus
 				}
 				break ;
+			case "ISINST" :
+				{
+				var vt = C.Peak() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				//oprand.C.Push( null, null ) ; //default
+				}
+				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;
 			}

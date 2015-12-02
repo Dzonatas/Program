@@ -16,6 +16,9 @@ public partial class   instr_INSTR_VAR_int32
 				var loc = decl.Node.Head.Locals[i] ;
 				oprand.C.Push( new C699.c("&"+loc.Symbol), ((C_Type)loc.Type).Ref ) ;
 				break ;
+			case "STARG_S":
+				C.Pop() ;
+				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;
 			}
