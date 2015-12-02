@@ -24,12 +24,34 @@ public partial class   instr_INSTR_TYPE_typeSpec
 				var vt = C.Pop() ;
 				var typeSpec  = Argv[2] as A335.Type.Spec ;
 				oprand.C.Statement( vt.StackDeref
-				.Equate( C699.Malloc( C699.SizeOf( typeSpec, C699.C.One ) ) ) ) ;
+					.Equate( C699.Malloc( C699.SizeOf( typeSpec, C699.C.One ) ) ) ) ;
+				}
+				break ;
+			case "LDELEMA" :
+				{
+				var index = C.Pop() ;
+				var array = C.Pop() ;
+				var typeSpec  = Argv[2] as A335.Type.Spec ;
+				oprand.C.Push( array.StackArray(index.StackDeref), C_Type.Acquire( ((C699.c)typeSpec).p ) ) ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				}
+				break ;
+			case "STOBJ" :
+				{
+				C.Pop() ;
+				C.Pop() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				}
+				break ;
+			case "BOX" :
+				{
+				C.Pop() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				oprand.C.Push( C699.C.Three, C_I4_3 ) ; //bogus
 				}
 				break ;
 			default :
-				log( "[INSTR_TYPE] Defaulted on " + Op ) ;
-				return ;
+				throw new System.NotImplementedException( Op ) ;
 			}
 		}
 	}

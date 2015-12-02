@@ -18,8 +18,7 @@ public partial class   instr_INSTR_FIELD_type_id
 		switch( Op )
 			{
 			default :
-				log( "[INSTR_FIELD-2] Defaulted on " + Op ) ;
-				return ;
+				throw new System.NotImplementedException( Op ) ;
 			}
 		}
 	}
@@ -59,8 +58,7 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 				}
 				break ;
 			default :
-				log( "[INSTR_FIELD-3] Defaulted on " + Op ) ;
-				return ;
+				throw new System.NotImplementedException( Op ) ;
 			}
 		}
 	}

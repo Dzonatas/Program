@@ -59,8 +59,9 @@ public partial class   type__valuetype__className
 
 public partial class   type__class__className
 	: Type {
-	protected override string symbol { get { return Arg1.Token + " " + (Argv[2] as Class.Name) ; } }
-	protected override C699.c c { get { throw new System.NotImplementedException() ; } }
+	protected override string symbol { get { return Arg1.Token + "_" + (Argv[2] as Class.Name) ; } }
+	protected override C699.c c { get { return new C699.c(symbol).p ; } }
+	protected override C_Type c_type { get { return C_Type.Acquire(c) ; } }
 	}
 
 public partial class   type__string_
@@ -117,6 +118,9 @@ public partial class   type_type_square_brackets
 
 public partial class   type_type_____genArgs____
 	: Type {
+	protected override string symbol { get { return (Argv[1] as Type) + "_genArgs" ; } }
+	protected override C699.c c { get { return new C699.c(symbol) ; } }
+	protected override C_Type c_type { get { return C_Type.Acquire(c) ; } }
 	}
 
 }

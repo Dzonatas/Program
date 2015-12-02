@@ -148,6 +148,10 @@ public struct c
 		{
 		get { s += "== " ; return this ; }
 		}
+	public c NotEqualTo
+		{
+		get { s += "!= " ; return this ; }
+		}
 	public c Zero
 		{
 		get { s += "0 " ; return this ; }
@@ -163,6 +167,30 @@ public struct c
 	public c Three
 		{
 		get { s += "3 " ; return this ; }
+		}
+	public c Four
+		{
+		get { s += "4 " ; return this ; }
+		}
+	public c Five
+		{
+		get { s += "5 " ; return this ; }
+		}
+	public c Six
+		{
+		get { s += "6 " ; return this ; }
+		}
+	public c Seven
+		{
+		get { s += "7 " ; return this ; }
+		}
+	public c Eight
+		{
+		get { s += "8 " ; return this ; }
+		}
+	public c Nine
+		{
+		get { s += "9 " ; return this ; }
 		}
 	public c Equate(string text)
 		{

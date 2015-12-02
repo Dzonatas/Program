@@ -29,6 +29,12 @@ public partial class   instr_INSTR_NONE
 				d.Push( new C699.c("args[0]"), type ) ;
 				break ;
 				}
+			case "LDARG_1":
+				{
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				break ;
+				}
 			case "RET":
 				{
 				//d.Statement( C699.C.Return("") ) ;
@@ -45,6 +51,24 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "LDC_I4_3" :
 				d.Push( C699.C.Three, C_I4_3 ) ;
+				break ;
+			case "LDC_I4_4" :
+				d.Push( C699.C.Four, C_I4_4 ) ;
+				break ;
+			case "LDC_I4_5" :
+				d.Push( C699.C.Five, C_I4_5 ) ;
+				break ;
+			case "LDC_I4_6" :
+				d.Push( C699.C.Six, C_I4_6 ) ;
+				break ;
+			case "LDC_I4_7" :
+				d.Push( C699.C.Seven, C_I4_7 ) ;
+				break ;
+			case "LDC_I4_8" :
+				d.Push( C699.C.Eight, C_I4_8 ) ;
+				break ;
+			case "LDC_I4_9" :
+				d.Push( C699.C.Nine, C_I4_9 ) ;
 				break ;
 			case "DUP" :
 				{
@@ -109,6 +133,30 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "NOP" :
 				d.Statement( new C699.c( "/* nop */" ) ) ;
+				break ;
+			case "POP" :
+				C.Pop() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				break ;
+			case "LDLEN" :
+				{
+				C.Pop() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				}
+				break ;
+			case "CONV_I4" :
+				{
+				C.Pop() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				}
+				break ;
+			case "THROW" :
+				{
+				C.Pop() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				}
 				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;

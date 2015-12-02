@@ -19,10 +19,9 @@ public partial class   instr_INSTR_SWITCH_____labels____
 			{
 			case "SWITCH" :
 				C.Pop() ;
-				break ;
+				throw new System.NotImplementedException( Op ) ;
 			default :
-				log( "[INSTR_SWITCH] Defaulted on " + Op ) ;
-				return ;
+				throw new System.NotImplementedException( Op ) ;
 			}
 		}
 	}

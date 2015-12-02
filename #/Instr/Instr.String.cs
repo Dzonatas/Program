@@ -20,8 +20,7 @@ public partial class   instr_INSTR_STRING_compQstring
 				break ;
 				}
 			default :
-				log( "[INSTR_STRING] Defaulted on " + Op ) ;
-				return ;
+				throw new System.NotImplementedException( Op ) ;
 			}
 		}
 	}

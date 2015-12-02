@@ -105,6 +105,8 @@ public class C_Type
 			var ids = (string[]) this ;
 			var s = ids[ids.Length-1] ;
 			var i = s.LastIndexOf('*') ;
+			if( i == -1 )
+				throw new System.NotImplementedException() ;
 			var t = ids[ids.Length-1] = s.Substring(0,i) + s.Substring(i+1) ;
 			if( s == t )
 				throw new System.NotImplementedException() ;
@@ -150,4 +152,10 @@ static C_Type C_I4_0 = C_Type.Const( C699.C.Int ) ;
 static C_Type C_I4_1 = C_Type.Const( C699.C.Int ) ;
 static C_Type C_I4_2 = C_Type.Const( C699.C.Int ) ;
 static C_Type C_I4_3 = C_Type.Const( C699.C.Int ) ;
+static C_Type C_I4_4 = C_Type.Const( C699.C.Int ) ;
+static C_Type C_I4_5 = C_Type.Const( C699.C.Int ) ;
+static C_Type C_I4_6 = C_Type.Const( C699.C.Int ) ;
+static C_Type C_I4_7 = C_Type.Const( C699.C.Int ) ;
+static C_Type C_I4_8 = C_Type.Const( C699.C.Int ) ;
+static C_Type C_I4_9 = C_Type.Const( C699.C.Int ) ;
 }

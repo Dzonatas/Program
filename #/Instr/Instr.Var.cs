@@ -17,8 +17,7 @@ public partial class   instr_INSTR_VAR_int32
 				oprand.C.Push( new C699.c("&"+loc.Symbol), ((C_Type)loc.Type).Ref ) ;
 				break ;
 			default :
-				log( "[INSTR_VAR] Defaulted on " + Op ) ;
-				return ;
+				throw new System.NotImplementedException( Op ) ;
 			}
 		}
 	}

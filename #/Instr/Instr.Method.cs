@@ -101,6 +101,12 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					d.PushRef( vt ) ;
 					}
 				else
+				if( type is type__int32_ )
+					{
+					d.Push( C699.C.Three, C_I4_3 ) ;
+					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+					}
+				else
 				if( type is type__void_ )
 					{
 					if( iargs == 0 )
@@ -109,9 +115,22 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						d.Statement( C699.C.Function(_Call,C699.Stack.Pointer) ) ;
 					}
 				else
-						throw new System.NotImplementedException() ;
+					{
+					var vt = d.Allocate(type) ;
+					d.PushRef( vt ) ;
+					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+					}
 				break ;
 				}
+			case "CALLVIRT" :
+				{
+				int iargs = Args ;
+				var data = C.Hangup( iargs ) ;
+				if( ! (type is type__void_ ) )
+					d.PushRef( d.Allocate(type) ) ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				}
+				break ;
 			case "NEWOBJ":
 				{
 				var t = C_Type.ConstStatic(C699.Object(0)) ;
@@ -130,8 +149,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				break ;
 				}
 			default :
-				log( "[INSTR_METHOD] Defaulted on " + Op ) ;
-				return ;
+				throw new System.NotImplementedException( Op ) ;
 			}
 		}
 	}
