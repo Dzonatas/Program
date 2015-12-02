@@ -19,8 +19,8 @@
 
 "0x"{H}+           { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(INT64,text); }
 <p>{H}{H}          { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(HEXBYTE,text); }
-{D}+\.{D}+         { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(FLOAT64,text); }
-{D}+               { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(INT64,text); }
+-?{D}+\.{D}+         { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(FLOAT64,text); }
+-?{D}+               { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; return TERMINAL(INT64,text); }
 
 {F}{C}*\.          {
                    if( ! dottedname ) { text=malloc(yyleng+1) ; strncpy(text,yytext,yyleng) ; text[yyleng]='\0' ; dottedname = 1 ; }
