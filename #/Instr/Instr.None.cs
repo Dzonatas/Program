@@ -158,6 +158,9 @@ public partial class   instr_INSTR_NONE
 				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 				}
 				break ;
+			case "LDNULL" :
+				d.Push( C699.C.Zero, C_Type.Acquire( C699.C.Void.p ) ) ;
+				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;
 			}

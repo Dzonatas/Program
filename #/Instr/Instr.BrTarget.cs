@@ -45,6 +45,7 @@ public partial class   instr_INSTR_BRTARGET_id
 				#endif
 				}
 				return ;
+			case "BRTRUE_S" :
 			case "BRTRUE" :
 				{
 				var a = C.Pop().StackDeref ;
@@ -87,6 +88,13 @@ public partial class   instr_INSTR_BRTARGET_id
 				var b = C.Pop().StackDeref ;
 				var a = C.Pop().StackDeref ;
 				oprand.C.Statement( C699.C.If( a, "<", b , C699.C.Goto( id ) ) ) ;
+				}
+				return ;
+			case "BNE_UN" :
+				{
+				var b = C.Pop().StackDeref ;
+				var a = C.Pop().StackDeref ;
+				oprand.C.Statement( C699.C.If( a, "!=", b , C699.C.Goto( id ) ) ) ;
 				}
 				return ;
 			default :
