@@ -141,11 +141,12 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
 				d.Statement( C699.C.Extern.Struct(C699.Object(0),_class) ) ;
 				d.Statement( t.TypeSpec.Equate(symbol,"&"+_class) ) ;
+				var sp = C699.Stack.Pointer ;
 				d.Push( new C699.c("&"+symbol), t ) ;
 				if( iargs == 0 )
 					d.Statement( C699.C.Function(_Call) ) ;
 				else
-					d.Statement( C699.C.Function(_Call,C699.Stack.Pointer) ) ;
+					d.Statement( C699.C.Function(_Call,sp) ) ;
 				break ;
 				}
 			default :
