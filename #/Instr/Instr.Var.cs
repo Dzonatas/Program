@@ -18,6 +18,7 @@ public partial class   instr_INSTR_VAR_int32
 				break ;
 			case "STARG_S":
 				C.Pop() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;

@@ -156,6 +156,10 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					d.Statement( C699.C.Function(_Call,sp) ) ;
 				break ;
 				}
+			case "LDFTN" :
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				d.Push( C699.C.Zero, C_Type.Acquire( C699.C.Void.p ) ) ; //bogus
+				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;
 			}
