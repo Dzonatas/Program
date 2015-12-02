@@ -148,6 +148,7 @@ public class C_Type
 	public class UndefinedTypeException : System.Exception		{}
 	}
 
+static C_Type C_I4_M1 = C_Type.Const( C699.C.Int ) ;
 static C_Type C_I4_0 = C_Type.Const( C699.C.Int ) ;
 static C_Type C_I4_1 = C_Type.Const( C699.C.Int ) ;
 static C_Type C_I4_2 = C_Type.Const( C699.C.Int ) ;

@@ -156,6 +156,10 @@ public struct c
 		{
 		get { s += "0 " ; return this ; }
 		}
+	public c Minus
+		{
+		get { s += "- " ; return this ; }
+		}
 	public c One
 		{
 		get { s += "1 " ; return this ; }

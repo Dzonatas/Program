@@ -40,6 +40,9 @@ public partial class   instr_INSTR_NONE
 				//d.Statement( C699.C.Return("") ) ;
 				break ;
 				}
+			case "LDC_I4_M1" :
+				d.Push( C699.C.Minus.One, C_I4_M1 ) ;
+				break ;
 			case "LDC_I4_0" :
 				d.Push( C699.C.Zero, C_I4_0 ) ;
 				break ;
