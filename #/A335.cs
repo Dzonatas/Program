@@ -246,7 +246,7 @@ public partial class Instr : Automatrix
 [Automaton] public partial class   instr_instr_tok_head_ownerType
 	: Instr.Tok     {}
 [Automaton] public partial class   instr_tok_head_INSTR_TOK
-	: Automatrix     {}
+	: Automatrix    {}
 
 public partial class Type : Automatrix
 	{
