@@ -77,9 +77,10 @@ public partial class   classHead___class__classAttr_id_extendsClause_implClause
 		var sw = Current.Path.CreateText( Symbol + ".h" ) ;
 		if( ValueType )
 			sw.WriteLine( "struct "+Symbol+" {" ) ;
-		foreach( Decl decl in decls )
-			if( decl is classDecl_fieldDecl )
-				sw.WriteLine( (decl as classDecl_fieldDecl).FieldDecl.ToStructField(this) ) ;
+		if( decls != null )
+			foreach( Decl decl in decls )
+				if( decl is classDecl_fieldDecl )
+					sw.WriteLine( (decl as classDecl_fieldDecl).FieldDecl.ToStructField(this) ) ;
 		if( ValueType )
 			sw.WriteLine( "} ;" ) ;
 		sw.Close() ;

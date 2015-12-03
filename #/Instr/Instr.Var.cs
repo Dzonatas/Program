@@ -20,6 +20,10 @@ public partial class   instr_INSTR_VAR_int32
 				C.Pop() ;
 				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 				break ;
+			case "LDARG_S":
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				oprand.C.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;
 			}

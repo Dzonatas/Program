@@ -107,6 +107,18 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 					}
 				else
+				if( type is type__bool_ )
+					{
+					d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+					}
+				else
+				if( type is type__int16_ )
+					{
+					d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+					}
+				else
 				if( type is type__void_ )
 					{
 					if( iargs == 0 )

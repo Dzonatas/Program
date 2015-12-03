@@ -57,6 +57,16 @@ public partial class   instr_INSTR_TYPE_typeSpec
 				//oprand.C.Push( null, null ) ; //default
 				}
 				break ;
+			case "LDOBJ" :
+				{
+				C.Pop() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				oprand.C.Push( C699.C.Zero, C_Type.Acquire( C699.C.Void.p ) ) ; // bogus
+				}
+				break ;
+			case "CONSTRAINED_" :
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;
 			}

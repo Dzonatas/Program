@@ -57,6 +57,11 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 				oprand.C.Statement( new C699.c("("+obj.StackDeref+")->"+id.Token).Equate( value.StackCast ) ) ;
 				}
 				break ;
+			case "LDFLDA" :
+				C.Pop() ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				oprand.C.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				break ;
 			default :
 				throw new System.NotImplementedException( Op ) ;
 			}

@@ -30,8 +30,9 @@ public partial class   extendsClause__extends__className
 					return new C699.c("struct") ;
 				case "[mscorlib]System.Object":
 					return C699.Object(0) ;
+				default :
+					return new C699.c(className) ;
 				}
-			throw new System.NotImplementedException() ;
 			}
 		}
 	}

@@ -35,6 +35,18 @@ public partial class   instr_INSTR_NONE
 				d.Push( C699.C.Three, C_I4_3 ) ; //bogus
 				break ;
 				}
+			case "LDARG_2":
+				{
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				break ;
+				}
+			case "LDARG_3":
+				{
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+				d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				break ;
+				}
 			case "RET":
 				{
 				if( C699.Stack.Offset == 1 )
@@ -99,6 +111,15 @@ public partial class   instr_INSTR_NONE
 				var index = C.Pop().StackDeref ;
 				var array = C.Pop().StackArray(index) ;
 				d.Statement( array.Equate( value.StackCast ) ) ;
+				}
+				break ;
+			case "STELEM_I2" :
+				{
+				C.Pop() ;
+				C.Pop() ;
+				C.Pop() ;
+				//d.Statement( array.Equate( value.StackCast ) ) ;
+				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 				}
 				break ;
 			case "STLOC_0" :
