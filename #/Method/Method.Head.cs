@@ -87,10 +87,13 @@ public partial class Method
 			}
 		public void WriteInclude( System.IO.StreamWriter sw )
 			{
+			string _name ;
 			if( sigArgs0 == null )
-				sw.WriteLine( "#include \"" + classType + name + ".c\"" ) ;
+				_name = classType + name ;
 			else
-				sw.WriteLine( "#include \"" + classType + name + sigArgs0.Types() + ".c\"" ) ;
+				_name = classType + name + sigArgs0.Types() ;
+			_name = _name.Replace('/','.').Replace('$','.') ;
+			sw.WriteLine( "#include \"" + _name + ".c\"" ) ;
 			}
 		protected void _render()
 			{
@@ -111,7 +114,8 @@ public partial class Method
 			var c = c_method.Function ;
 			if( Virtual )
 				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
-			var sw = global::Current.Path.CreateText( c.Symbol + ".c" ) ;
+			var name = c.Symbol.Replace('/','.').Replace('$','.') ;
+			var sw = global::Current.Path.CreateText( name + ".c" ) ;
 			#if HPP
 			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
 			#endif

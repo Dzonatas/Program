@@ -22,6 +22,9 @@ Certain recursion and polymorphic code will not be published under free open sou
 3. `make tests`
 4. `make clean`
 
+## It runs faster but why does compilation seem slower?
+Supposedly, the built-in virtual filesystem (or compressed mini-ISO image) is specially made for faster compile-time access in Microsoft's and Xamarin's build of .NET/Mono. That requires some kernel emulation for fully portable security attributes, "trust". The load time of that emulated file-system image is the primary tradeoff to the non-cached filesystem. Besides native optimizations and hypertext prefetches, there are hybrid systems that make raw "inventory" access much faster at cost of size, but that hybrid inventory is beyond the interest of this "simply explained" program that currently compiles with Mono.
+
 ## Market Analysis
 Standard, "10 program lines."
 
