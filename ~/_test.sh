@@ -30,7 +30,7 @@ echo "--- Stats with (native) .NET-AOT: ---" \
 echo "--- Stats for fully compiled native .exe by this program ---" \
   && ./ilxml.exe <$INPUT >$PREFIX.il.xml \
   && ./ecma.exe --input=$PREFIX.il.xml --output=$MODULE \
-  && gcc -std=c99 -O3 -S -I ../../# $PREFIX.c -o $PREFIX.native.assembly.s \
+  && gcc -std=c99 -O3 -S -I ../../# $PREFIX.c -o $PREFIX.native.assembly.s -Wfatal-errors \
   && gcc -std=c99 -S -I ../../# $PREFIX.c -o $PREFIX.unoptimized.s \
   && gcc -std=c99 -O3 $PREFIX.native.assembly.s -o $PREFIX.exe \
   && time ( $PREFIX.exe ) 2>$PREFIX.c.time.txt
