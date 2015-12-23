@@ -92,7 +92,9 @@ public partial class Method
 				_name = classType + name ;
 			else
 				_name = classType + name + sigArgs0.Types() ;
-			_name = _name.Replace('/','.').Replace('$','.') ;
+			_name = _name
+				.Replace('/','.').Replace('$','.')
+				.Replace('[','_').Replace(']','_') ;
 			sw.WriteLine( "#include \"" + _name + ".c\"" ) ;
 			}
 		protected void _render()
@@ -114,7 +116,9 @@ public partial class Method
 			var c = c_method.Function ;
 			if( Virtual )
 				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
-			var name = c.Symbol.Replace('/','.').Replace('$','.') ;
+			var name = c.Symbol
+				.Replace('/','.').Replace('$','.')
+				.Replace('[','_').Replace(']','_') ;
 			var sw = global::Current.Path.CreateText( name + ".c" ) ;
 			#if HPP
 			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;

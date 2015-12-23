@@ -184,7 +184,9 @@ partial class Program : C699
 					line += C.Static(Type) ;
 				else
 					line += Type ;
-				line += " " + Symbol ;
+				line += " " + Symbol
+						.Replace('/','_').Replace('.','$')
+						.Replace('[','_').Replace(']','_') ;
 				if( Args == null )
 					line += '('+C.Const.Voidpp+"stack"
 					+ ( HasArgs ? ','+C.Const.Voidpp.ArgV : "" )

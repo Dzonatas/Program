@@ -19,8 +19,20 @@ public class C_Symbol
 		symbol = "_" + ToStemString( this.symbol ) ;
 		return pid + symbol + "_p" ;
 		}
+	static string _s( string s )
+		{
+		string i = string.Empty ;
+		foreach( char c in s )
+			if( char.IsLetter(c) || char.IsDigit(c) || c == '_' || c == '$' || c == ',' || c == ' ' || c == '*' )
+				i += c ;
+			else
+				i += string.Format( "{0:X2}", (int)c ) ;
+		return i ;
+		}
 	internal C_Symbol( string symbol )
 		{
+		if( _s( symbol ) != symbol )
+			throw new System.NotImplementedException() ;
 		this.symbol = symbol ;
 		}
 	public C_Symbol()
