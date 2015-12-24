@@ -25,7 +25,7 @@ public class C_Type
 		{}
 	static public C_Type Acquire( string type )
 		{
-		return Program.C_Type_Acquire( C_Symbol.Acquire( type.Replace('[','_').Replace(']','_') ) ) ;
+		return Program.C_Type_Acquire( C_Symbol.Acquire( type ) ) ;
 		}
 	static public C_Type Acquire( C_Symbol symbol )
 		{

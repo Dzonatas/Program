@@ -55,6 +55,8 @@ public partial class   typeSpec_className
 			switch( className )
 				{
 				case "[mscorlib]System.String":
+					throw new System.NotImplementedException() ;
+				case "_mscorlib_System_String":
 					return C699.String.p ;
 				default:
 					return C699.C.Struct( new C699.c(className) ) ;
