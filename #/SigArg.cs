@@ -20,7 +20,7 @@ public partial class SigArgs0 : Automatrix
 		{
 		string i = null ;
 		ForEach( (s) => i += "$" + (Type)s ) ;
-		return i ;
+		return i.Replace('/','$').Replace('[','_').Replace(']','_').Replace('.','$') ;
 		}
 	}
 

@@ -47,7 +47,9 @@ public partial class   methodName_name1
 	: Method.Name {
 	protected override void main()
 		{
-		name = C_Symbol.Acquire( "$" + Arg1.Token ) ;
+		string _token = Arg1.Token ;
+		_token = _token.Replace("<", "_lt_" ).Replace(">", "_gt_") ;
+		name = C_Symbol.Acquire( "$" + _token ) ;
 		}
 	}
 }
