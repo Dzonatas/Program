@@ -9,21 +9,32 @@ public partial class Class : Automatrix
 		protected Class.Decl        classDecl ;
 		protected Decls             decls     ;
 		protected ExtendsClause     extends   ;
+		protected NameSpaceHead     nameSpaceHead ;
 		public virtual string       Symbol    { get { return string.Empty ; } }
+		public NameSpaceHead        NameSpaceHead
+			{
+			set { nameSpaceHead = value ; }
+			}
 		public C_Type               Type
 			{
 			get	{
 				if( type != null )
 					return type ;
 				C_Symbol[] idset ;
-				if( classDecl == null )
+				if( classDecl == null && nameSpaceHead == null )
 					idset = new C_Symbol[1] { new C_Symbol( Arg3.Token ) } ;
+				else
+				if( classDecl == null && nameSpaceHead != null )
+					idset = new C_Symbol[2] { C_Symbol.Acquire( nameSpaceHead ), new C_Symbol( Arg3.Token ) } ;
 				else
 					{
 					var outer = classDecl.Node.Head ;
-					idset = new C_Symbol[outer.Type.Count+1] ;
-					int i ;
-					for( i = 0 ; i < outer.Type.Count ; i++ )
+					int count = outer.Type.Count + ( nameSpaceHead == null ? 0 : 1 ) ;
+					idset = new C_Symbol[count+1] ;
+					int i = 0 ;
+					if( nameSpaceHead != null )
+						idset[i++] = C_Symbol.Acquire( nameSpaceHead ) ;
+					for( ; i < count ; i++ )
 						idset[i] = outer.Type[i] ;
 					idset[i] = new C_Symbol( Arg3.Token ) ;
 					}
@@ -66,7 +77,11 @@ public partial class   classHead___class__classAttr_id_extendsClause_implClause
 	: Class.Head	{
 	public override string Symbol
 		{
-		get	{ return classDecl == null ? Arg3.Token : classDecl.Node.Head.Symbol + "$" + Arg3.Token ;	}
+		get	{
+			return classDecl == null
+				? ( (nameSpaceHead == null ? "" : nameSpaceHead + "$" ) + Arg3.Token )
+				: classDecl.Node.Head.Symbol + "$" + Arg3.Token ;
+			}
 		}
 	protected override void main()
 		{

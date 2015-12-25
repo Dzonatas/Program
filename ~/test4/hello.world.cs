@@ -4,6 +4,8 @@ struct HelloWorld
 	public string space ;
 	public string world ;
 	}
+namespace Fourth
+{
 public class Test4
 	{
 	static HelloWorld hw = new HelloWorld()
@@ -19,3 +21,4 @@ public class Test4
 		System.Console.WriteLine( hw.world ) ;
 		}
 	}
+}

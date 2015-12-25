@@ -198,6 +198,7 @@
     <Compile Include="#\Instr\Instr.I.cs" />
     <Compile Include="#\GenArgs.cs" />
     <Compile Include="#\Instr\Instr.Tok.cs" />
+    <Compile Include="#\Decl\NameSpaceHead.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -304,8 +304,10 @@ public partial class GenArgs : Automatrix {}
 [Automaton] public partial class genArgs_genArgs_____type
 	: GenArgs {}
 
+public partial class NameSpaceHead : Automatrix {}
 [Automaton] public partial class nameSpaceHead___namespace__name1
-	: Automatrix {}
+	: NameSpaceHead {}
+
 [Automaton] public partial class implClause__implements__classNames
 	: Automatrix {}
 [Automaton] public partial class propHead___property__propAttr_callConv_type_id_____sigArgs0_____initOpt

@@ -60,7 +60,7 @@ public partial class   type__valuetype__className
 public partial class   type__class__className
 	: Type {
 	protected override string symbol { get { return Arg1.Token + "_" + (Argv[2] as Class.Name) ; } }
-	protected override C699.c c { get { return new C699.c(symbol).p ; } }
+	protected override C699.c c { get { return new C699.c(C699.KeyedWord.Struct+" "+(Argv[2] as Class.Name)+" ").p ; } }
 	protected override C_Type c_type { get { return C_Type.Acquire(c) ; } }
 	}
 
