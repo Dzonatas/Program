@@ -40,6 +40,7 @@ public partial class Type : Automatrix
 public partial class   typeSpec_type
 	: Type.Spec {
 	//protected override C_Type c_type { get { return C_Type.Acquire( "typeSpec_"+(Argv[1] as Type) ) ; } }
+	//protected override C_Type c_type { get { return C_Type.Acquire(Argv[1] as Type) ; } }
 	}
 
 public partial class   typeSpec_className

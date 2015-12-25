@@ -4,7 +4,7 @@ XBUILD          =xbuild /p:NoWarn=169,649,414,219 /verbosity:quiet /nologo
 auto_driver_cs  =$(abspath ./~/auto.driver.cs)
 grammar_xml     =$(abspath ./~/ilxml/grammar.xml)
 
-.PHONY: help clean test1 test2 test3 test4 project driver parser
+.PHONY: help clean test1 test2 test3 test4 test5 project driver parser
 
 help:
 	@echo "Options:"
@@ -19,6 +19,7 @@ help:
 	@echo "make test2"
 	@echo "make test3"
 	@echo "make test4"
+	@echo "make test5"
 	@echo
 	@echo "Agenda:"
 	@echo "make cdriver"
@@ -66,6 +67,9 @@ test3: project
 
 test4: project
 	./~/test4/test.sh
+
+test5: project
+	./~/test5/test.sh
 
 cdriver: project
 	( cd ./bin/Debug && ./driver.exe --build=infrastructure --shell="../../~/compile.sh ../../~/hello.mono.world.il.text" )
