@@ -39,8 +39,31 @@ public partial class Type : Automatrix
 
 public partial class   typeSpec_type
 	: Type.Spec {
-	//protected override C_Type c_type { get { return C_Type.Acquire( "typeSpec_"+(Argv[1] as Type) ) ; } }
-	//protected override C_Type c_type { get { return C_Type.Acquire(Argv[1] as Type) ; } }
+	protected override C699.c c
+		{
+		get	{
+			string s = (string) (Argv[1] as Type) ;
+			#if DEBUG
+			string[] b = base.ResolveTypeSpec() ;
+			#endif
+			switch( s )
+				{
+				case "object":
+				case "valuetype__corlib_System$Object": return new C699.c("System$Object") ;
+				case "class__mscorlib_System$Console":
+				case "class__corlib_System$Console": return new C699.c("System$Console") ;
+				case "string": return new C699.c("System$String") ;
+				}
+			#if DEBUG
+			if( s.IndexOf("corlib") > -1 )
+				b = null ;
+			#endif
+			if( s.StartsWith("class_") ) return new C699.c( s.Substring(6) ) ;
+			if( s.StartsWith("valuetype_") ) return new C699.c( s.Substring(10) ) ;
+			throw new System.NotImplementedException() ;
+			}
+		}
+	protected override C_Type c_type { get { return C_Type.Acquire( c ) ; } }
 	}
 
 public partial class   typeSpec_className
@@ -58,6 +81,7 @@ public partial class   typeSpec_className
 				case "[mscorlib]System.String":
 					throw new System.NotImplementedException() ;
 				case "_mscorlib_System_String":
+				case "_mscorlib_System$String":
 					return C699.String.p ;
 				default:
 					return C699.C.Struct( new C699.c(className) ) ;

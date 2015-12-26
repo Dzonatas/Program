@@ -26,6 +26,7 @@ public partial class   extendsClause__extends__className
 			var className = Argv[2] as Class.Name ;
 			switch( className )
 				{
+				case "_mscorlib_System$ValueType":
 				case "_mscorlib_System_ValueType":
 					return new C699.c("struct") ;
 				case "_mscorlib_System_Object":
