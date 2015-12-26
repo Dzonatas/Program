@@ -18,7 +18,7 @@ public partial class   slashedName_slashedName_____name1
 	: SlashedName {
 	protected override string symbol
 		{
-		get { return (Argv[1] as SlashedName)+'_'+Arg3.Token.Replace('.','$').Replace('`','_') ; }
+		get { return (Argv[1] as SlashedName)+'$'+Arg3.Token.Replace('.','$').Replace('`','_') ; }
 		}
 	}
 }
