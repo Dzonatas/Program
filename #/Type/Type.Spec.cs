@@ -46,21 +46,25 @@ public partial class   typeSpec_type
 			#if DEBUG
 			string[] b = base.ResolveTypeSpec() ;
 			#endif
+			if( s.StartsWith("_mscorlib_") )
+				s = s.Substring(10) ;
+			else
+			if( s.StartsWith("_corlib_") )
+				s = s.Substring(8) ;
+			//else
+			//if( s.StartsWith("_System$Core_") )
+			//	s = s.Substring(13) ;
 			switch( s )
 				{
 				case "object":
-				case "valuetype__corlib_System$Object": return new C699.c("System$Object") ;
-				case "class__mscorlib_System$Console":
-				case "class__corlib_System$Console": return new C699.c("System$Console") ;
-				case "string": return new C699.c("System$String") ;
+					return new C699.c("System$Object") ;
+				case "console":
+					return new C699.c("System$Console") ;
+				case "string":
+					return new C699.c("System$String") ;
 				}
-			#if DEBUG
-			if( s.IndexOf("corlib") > -1 )
-				b = null ;
-			#endif
-			if( s.StartsWith("class_") ) return new C699.c( s.Substring(6) ) ;
-			if( s.StartsWith("valuetype_") ) return new C699.c( s.Substring(10) ) ;
-			throw new System.NotImplementedException() ;
+			return new C699.c(s) ;
+			//throw new System.NotImplementedException() ;
 			}
 		}
 	protected override C_Type c_type { get { return C_Type.Acquire( c ) ; } }
