@@ -1,4 +1,4 @@
-public class Test4
+public class Test5
 	{
 	static System.Func<int,string> text ;
 	static string[] word = new string[] { "Hello", " ", "World" } ;
