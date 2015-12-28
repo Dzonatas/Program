@@ -32,7 +32,8 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 	protected void FIELD( A335.Type type, Argument typeSpec, Argument id )
 		{
 		string typeSpec_s = string.Join( "$", ((Automatrix)typeSpec).ResolveType() ) ;
-		C699.c symbol = new C699.c( typeSpec_s + "$" + id.Token ) ;
+		string _id = id.Token.Replace('<', '_').Replace('>', '_') ;
+		C699.c symbol = new C699.c( typeSpec_s + "$" + _id ) ;
 		switch( Op )
 			{
 			case "LDSFLD" :
@@ -47,14 +48,14 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 			case "LDFLD" :
 				{
 				var vt = C.Pop() ;
-				oprand.C.Push( new C699.c("("+vt.StackDeref+")->"+id.Token), type ) ;
+				oprand.C.Push( new C699.c("("+vt.StackDeref+")->"+_id), type ) ;
 				}
 				break ;
 			case "STFLD" :
 				{
 				var value = C.Pop() ;
 				var obj   = C.Pop() ;
-				oprand.C.Statement( new C699.c("("+obj.StackDeref+")->"+id.Token).Equate( value.StackCast ) ) ;
+				oprand.C.Statement( new C699.c("("+obj.StackDeref+")->"+_id).Equate( value.StackCast ) ) ;
 				}
 				break ;
 			case "LDFLDA" :
