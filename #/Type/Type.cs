@@ -119,7 +119,19 @@ public partial class   type_type_square_brackets
 public partial class   type_type_____genArgs____
 	: Type {
 	protected override string symbol { get { return (Argv[1] as Type) + "_genArgs" ; } }
-	protected override C699.c c { get { return new C699.c(C699.KeyedWord.Struct+" "+symbol+" ").p ; } }
+	protected override C699.c c
+		{
+		get	{
+			if( ! Program.C_TypeDef.Declared(  symbol ) )
+				{
+				var t = C.TypeDef.Type( symbol ) ;
+				//var s = Program.C_Struct.FromSymbol( symbol ) ;
+				t.Parameter( C699.String, "(*$Invoke)()" ) ;
+				}
+			return new C699.c(C699.KeyedWord.Struct+" "+symbol+" ").p ;
+			}
+		}
+	//protected override C699.c c { get { return new C699.c(C699.KeyedWord.Struct+" "+symbol+" ").p ; } }
 	protected override C_Type c_type { get { return C_Type.Acquire(c) ; } }
 	}
 

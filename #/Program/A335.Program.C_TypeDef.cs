@@ -16,6 +16,10 @@ partial class Program : C699
 			{
 			get { return new C_Struct("object") ; }
 			}
+		public C_Struct Type( string type )
+			{
+			return new C_Struct(type) ;
+			}
 		}
 	public class C_TypeDef
 		{
@@ -36,6 +40,10 @@ partial class Program : C699
 			else
 				typedefset.Add( symbol, c = new C_TypeDef( symbol, C_Type.Acquire( string.Empty ) ) ) ;
 			return c ;
+			}
+		static public bool Declared( string S )
+			{
+			return typedefset.ContainsKey( S ) ;
 			}
 		}
 	}

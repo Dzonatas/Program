@@ -20,7 +20,7 @@ partial class Program : C699
 				{
 				case "string": Type = C699.String ; return ;
 				case "object": Type = C699.Object(0) ; return ;
-				default      : Type = C.Restricted("_" + type) ; return ;
+				default      : Type = C.Restricted("struct " + type) ; return ;
 				}
 			}
 		public C_Struct()
@@ -73,6 +73,10 @@ partial class Program : C699
 				sw.WriteLine( "\t} ;" ) ;
 				}
 			sw.WriteLine() ;
+			}
+		static public bool Declared( string S )
+			{
+			return virtualset.ContainsKey( S ) ;
 			}
 		static public C_Struct FromSymbol( string S )
 			{
