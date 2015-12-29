@@ -27,13 +27,10 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 	: Instr.Field   {
 	protected override void render()
 		{
-		FIELD( Argv[2] as A335.Type, Arg3, Arg5 ) ;
-		}
-	protected void FIELD( A335.Type type, Argument typeSpec, Argument id )
-		{
-		string typeSpec_s = string.Join( "$", ((Automatrix)typeSpec).ResolveType() ) ;
-		string _id = id.Token.Replace('<', '_').Replace('>', '_') ;
-		C699.c symbol = new C699.c( typeSpec_s + "$" + _id ) ;
+		var    type       = Argv[2] as A335.Type ;
+		string typeSpec_s = Argv[3] as A335.Type.Spec ;
+		string id         = Arg5.Token.Replace('<', '_').Replace('>', '_') ;
+		C699.c symbol     = new C699.c( typeSpec_s + "$" + id ) ;
 		switch( Op )
 			{
 			case "LDSFLD" :
@@ -48,14 +45,14 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 			case "LDFLD" :
 				{
 				var vt = C.Pop() ;
-				oprand.C.Push( new C699.c("("+vt.StackDeref+")->"+_id), type ) ;
+				oprand.C.Push( new C699.c("("+vt.StackDeref+")->"+id), type ) ;
 				}
 				break ;
 			case "STFLD" :
 				{
 				var value = C.Pop() ;
 				var obj   = C.Pop() ;
-				oprand.C.Statement( new C699.c("("+obj.StackDeref+")->"+_id).Equate( value.StackCast ) ) ;
+				oprand.C.Statement( new C699.c("("+obj.StackDeref+")->"+id).Equate( value.StackCast ) ) ;
 				}
 				break ;
 			case "LDFLDA" :

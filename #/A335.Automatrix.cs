@@ -38,49 +38,6 @@ public partial class Automatrix : Object, System.Collections.Generic.IEnumerable
 		{
 		get { return o.Length ; }
 		}
-	static char[] separators = new char[] { '/', '.' } ;
-	public string[] ResolveType()
-		{
-		string[] s = new string[0] ;
-		for( int i = 1 ; i < Argv.Length ; i++ )
-			{
-			if( Argv[i] is Stack.Item.Token )
-				{
-				string t = (string) (Stack.Item.Token)Argv[i] ;
-				if( t != "[" && t != "]" )
-					t = System.Text.RegularExpressions.Regex.Replace( t, "[^A-Za-z_0-9/.]", "_" ) ;
-				foreach( string z in t.Split(separators) )
-					{
-					if( System.String.IsNullOrEmpty( z ) )
-						continue ;
-					System.Array.Resize( ref s, s.Length +1 ) ;
-					s[s.Length-1] = z ;
-					}
-				}
-			else
-			if( Argv[i] is Stack.Item.Empty )
-				{
-				System.Array.Resize( ref s, s.Length +1 ) ;
-				s[s.Length-1] = "$EMPTY$" ;
-				}
-			else
-			if( Argv[i] == null )
-				{
-				System.Array.Resize( ref s, s.Length +1 ) ;
-				s[s.Length-1] = "$NULL$" ;
-				}
-			else
-			if( Argv[i] is Automatrix )
-				{
-				string[] ts = ( Argv[i] as Automatrix ).ResolveType() ;
-				System.Array.Resize( ref s, s.Length + ts.Length ) ;
-				ts.CopyTo( s, s.Length - ts.Length ) ;
-				}
-			else
-				throw new System.NotImplementedException( "Unresolved type." ) ;
-			}
-		return s ;
-		}
 	public override string ToString()
 		{
 		return "[Automatrix] " + this.GetType().FullName ;
