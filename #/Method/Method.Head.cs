@@ -67,6 +67,7 @@ public partial class Method
 				}
 			c_method.Function = Program.C_Function.FromSymbol( symbol ) ;
 			c_method.Function.Method = c_method ;
+			c_method.Function.Type   = c_method.Type.Spec ;
 			}
 		public int MaxStack
 			{

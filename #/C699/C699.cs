@@ -140,6 +140,10 @@ public struct c
 		{
 		s += fn +'('+')'+' ' ; return this ;
 		}
+	public c Type( string symbol )
+		{
+		s += symbol +' ' ; return this ;
+		}
 	public c Function( string fn, C699.c arg0 )
 		{
 		s += fn +'('+arg0+')'+' ' ; return this ;

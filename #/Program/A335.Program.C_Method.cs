@@ -124,6 +124,10 @@ partial class Program : C699
 				}
 			return Function ;
 			}
+		public override string ToString()
+			{
+			return (Type == null ? "?type?" : Type.Spec)  + " " + (Name == null ? "?name?" : Name) ;
+			}
 		}
 	}
 }
