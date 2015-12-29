@@ -140,7 +140,7 @@ public struct c
 		{
 		s += fn +'('+')'+' ' ; return this ;
 		}
-	public c Type( string symbol )
+	public c Type( C699.c symbol )
 		{
 		s += symbol +' ' ; return this ;
 		}

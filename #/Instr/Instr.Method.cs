@@ -193,8 +193,8 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				{
 				if( type is type__string_ )
 					{
-					d.Statement( C699.C.Extern.Type(C699.String.p).Function(_Call) ) ;
-					d.Push( new C699.c(_Call), C_Type.Acquire( C699.C.Void.p ) ) ; //bogus
+					d.Statement( C699.C.Extern.Type(type).Function(_Call) ) ;
+					d.Push( new C699.c(_Call), C_Type.Acquire( C699.C.Void.p ) ) ;
 					}
 				else
 					throw new System.NotImplementedException() ;
