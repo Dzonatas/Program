@@ -152,13 +152,17 @@ public struct c
 		{
 		get { s += "!= " ; return this ; }
 		}
-	public c Zero
+	public c False
 		{
-		get { s += "0 " ; return this ; }
+		get { s += "(void*)0 " ; return this ; }
 		}
 	public c Minus
 		{
 		get { s += "- " ; return this ; }
+		}
+	public c Zero
+		{
+		get { s += "0 " ; return this ; }
 		}
 	public c One
 		{

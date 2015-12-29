@@ -36,20 +36,26 @@ public partial class   instr_INSTR_BRTARGET_id
 				return ;
 			case "BRFALSE" :
 				{
-				var a = C.Pop().StackDeref ;
+				var a = C.Pop() ;
 				#if HPP
 				oprand.C.IfGotoStatement( Id ) ;
 				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
 				#else
-				oprand.C.Statement( C699.C.If( a.EqualTo.Zero, C699.C.Goto( id ) ) ) ;
+				if( ((string)a.Type.Spec).Contains("struct") )
+					oprand.C.Statement( C699.C.If( a.StackCast.EqualTo.False, C699.C.Goto( id ) ) ) ;
+				else
+					oprand.C.Statement( C699.C.If( a.StackDeref.EqualTo.Zero, C699.C.Goto( id ) ) ) ;
 				#endif
 				}
 				return ;
 			case "BRTRUE_S" :
 			case "BRTRUE" :
 				{
-				var a = C.Pop().StackDeref ;
-				oprand.C.Statement( C699.C.If( a.NotEqualTo.Zero, C699.C.Goto( id ) ) ) ;
+				var a = C.Pop() ;
+				if( ((string)a.Type.Spec).Contains("struct") )
+					oprand.C.Statement( C699.C.If( a.StackCast.NotEqualTo.False, C699.C.Goto( id ) ) ) ;
+				else
+					oprand.C.Statement( C699.C.If( a.StackDeref.NotEqualTo.Zero, C699.C.Goto( id ) ) ) ;
 				}
 				return ;
 			case "BGE" :
