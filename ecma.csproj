@@ -216,7 +216,6 @@
   <ItemGroup>
     <Folder Include="#\" />
     <Folder Include="~\" />
-    <Folder Include="~\understand\" />
     <Folder Include="~\test2\" />
     <Folder Include="ref\" />
     <Folder Include="~\test3\" />
@@ -234,27 +233,6 @@
     <None Include="~\test.sh" />
     <None Include="~\compile.sh" />
     <None Include="~\hello.mono.world.il.text" />
-    <None Include="~\understand\Makefile" />
-    <None Include="~\understand\ecma335 grammar.txt" />
-    <None Include="~\understand\grammar.output" />
-    <None Include="~\understand\grammar.tab.c" />
-    <None Include="~\understand\grammar.tab.h" />
-    <None Include="~\understand\grammar.xml" />
-    <None Include="~\understand\grammar.y" />
-    <None Include="~\understand\lex.footer" />
-    <None Include="~\understand\lex.head" />
-    <None Include="~\understand\lex.y" />
-    <None Include="~\understand\lex.yy.c" />
-    <None Include="~\understand\main.c" />
-    <None Include="~\understand\make.sh" />
-    <None Include="~\understand\opcode.c" />
-    <None Include="~\understand\opcode.def" />
-    <None Include="~\understand\opcode.part.xslt.xml" />
-    <None Include="~\understand\opcode.t.c" />
-    <None Include="~\understand\opcode.t.y" />
-    <None Include="~\understand\opcode.xml" />
-    <None Include="~\understand\opcode.y" />
-    <None Include="~\understand\template.xslt.xml" />
     <None Include="~\test2\test.sh" />
     <None Include="~\test2\hello.world.cs" />
     <None Include="#\BCL.HPP" />

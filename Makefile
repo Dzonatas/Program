@@ -20,6 +20,7 @@ help:
 	@echo "make test3"
 	@echo "make test4"
 	@echo "make test5"
+	@echo "make test6"
 	@echo
 	@echo "Agenda:"
 	@echo "make cdriver"
@@ -70,6 +71,9 @@ test4: project
 
 test5: project
 	./~/test5/test.sh
+
+test6: project
+	./~/test6/test.sh
 
 cdriver: project
 	( cd ./bin/Debug && ./driver.exe --build=infrastructure --shell="../../~/compile.sh ../../~/hello.mono.world.il.text" )
