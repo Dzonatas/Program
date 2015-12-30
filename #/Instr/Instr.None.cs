@@ -52,13 +52,14 @@ public partial class   instr_INSTR_NONE
 				if( C699.Stack.Offset == 1 )
 					{
 					var r = C.Pop() ;
-					if( ((string)d.Method.Function.Type).Contains("*") )
+					if( decl.Node.Head.Virtual )
+						d.Statement( C699.C.Return( r.StackDeref ) ) ;
+					else
 						d.Statement( C699.C.Return( r.StackCast ) ) ;
 					}
 				else
 				if( C699.Stack.Offset > 1 )
 					throw new System.NotImplementedException() ;
-				//d.Statement( C699.C.Return("") ) ;
 				break ;
 				}
 			case "LDC_I4_M1" :

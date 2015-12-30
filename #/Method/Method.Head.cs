@@ -115,8 +115,6 @@ public partial class Method
 		public void WriteMethod()
 			{
 			var c = c_method.Function ;
-			if( Virtual )
-				c.Statement( C699.C.Return("*("+C699.String+" *) *stack") ) ;
 			var name = c.Symbol
 				.Replace('/','.') //.Replace('$','.')
 				.Replace('[','_').Replace(']','_') ;
