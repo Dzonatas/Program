@@ -126,6 +126,7 @@ public partial class   type_type_____genArgs____
 				{
 				var t = C.TypeDef.Type( symbol ) ;
 				//var s = Program.C_Struct.FromSymbol( symbol ) ;
+				t.Parameter( C699.Object(1) , "this" ) ;
 				t.Parameter( C699.String, "(*$Invoke)()" ) ;
 				}
 			return new C699.c(C699.KeyedWord.Struct+" "+symbol+" ").p ;
