@@ -2,19 +2,12 @@ partial class A335
 {
 public partial class Instr : Automatrix
 	{
-	public partial class None : Instr
-		{
-		protected override void render()
-			{
-			NONE() ;
-			}
-		protected virtual void NONE() {}
-		}
+	public partial class None : Instr {}
 	}
 
 public partial class   instr_INSTR_NONE
 	: Instr.None    {
-	protected override void NONE()
+	protected override void render()
 			{
 		var d = oprand.C ;
 		switch( Op )
