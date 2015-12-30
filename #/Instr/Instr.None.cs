@@ -51,7 +51,9 @@ public partial class   instr_INSTR_NONE
 				{
 				if( C699.Stack.Offset == 1 )
 					{
-					C.Pop() ;
+					var r = C.Pop() ;
+					if( ((string)d.Method.Function.Type).Contains("*") )
+						d.Statement( C699.C.Return( r.StackCast ) ) ;
 					}
 				else
 				if( C699.Stack.Offset > 1 )

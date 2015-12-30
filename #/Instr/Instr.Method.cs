@@ -137,17 +137,30 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 			case "CALLVIRT" :
 				{
 				int iargs = Args ;
-				C.Hangup( iargs ) ;
+				C.Hangup( iargs - 1 ) ;
+				var v = C.Pop() ;
+				var call = "*("+v.StackCast+")->"+(Argv[6] as A335.Method.Name) ;//C_Symbol.Acquire( (C_Type)typeSpec + methodname( value ) + ( _SigArgs0 == null ? "" : _SigArgs0.Types() ) ) ;
 				var typeSpec = Argv[4] as A335.Type.Spec ;
 				var t = type ;
 				if( t is type_____int32 )
 					t = typeSpec.GenericArgument( int.Parse(type.Arg2.Token) ) ;
+				if( t is type__string_ )
+					{
+					var vt = d.Allocate(t) ;
+					C699.c s = new C699.c( vt.Symbol ) ;
+					if( iargs == 0 )
+						d.Statement( s.Equate(C699.C.Function(call)) ) ;
+					else
+						d.Statement( s.Equate(C699.C.Function(call,C699.Stack.Pointer)) ) ;
+					d.PushRef( vt ) ;
+					}
+				else
 				if( t is type__int32_ )
-					d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+					throw new System.NotImplementedException() ;
+					//d.Push( C699.C.Three, C_I4_3 ) ; //bogus
 				else
 				if( ! (t is type__void_ ) )
-					d.PushRef( d.Allocate(t) ) ;
-				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+					throw new System.NotImplementedException() ;
 				}
 				break ;
 			case "NEWOBJ":
