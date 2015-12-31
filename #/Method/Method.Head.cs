@@ -102,8 +102,6 @@ public partial class Method
 			{
 			var c = c_method.Function ;
 			int args = ( sigArgs0 == null ? 0 : sigArgs0.Count() ) + ( CallConvInstance ? 1 : 0 ) ;
-			if( Virtual )
-				c.Type = C699.String ;
 			if( args == 0 )
 				c.Args = "()" ;
 			else

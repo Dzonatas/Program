@@ -117,7 +117,7 @@ public partial class Program : C699
 			;
 		c.TypeDef.Object
 			.Parameter( C699.Object(1) , "this" )
-			.Parameter( C699.String, C.Restricted("(*$ToString)()") )
+			.Parameter( C699.String.p , "(*$ToString)()" )
 			;
 		jiffy( c, "object::.ctor" )
 			;
@@ -132,9 +132,9 @@ public partial class Program : C699
 			;
 		var l = new C_Literal[3] ;
 		jiffy( c, "string string::Concat(object,object,object)" )
-			.Register(ref l[0], C699.String)
-			.Register(ref l[1], C699.String)
-			.Register(ref l[2], C699.String)
+			.Register(ref l[0], C699.String.p)
+			.Register(ref l[1], C699.String.p)
+			.Register(ref l[2], C699.String.p)
 			.Let( l[0] ).Equal.ManagedArgument( 0 )
 			.Let( l[1] ).Equal.ManagedArgument( 1 )
 			.Let( l[2] ).Equal.ManagedArgument( 2 )
@@ -196,12 +196,12 @@ public partial class Program : C699
 		string _string = typedef.Struct[1] ;
 		var    s_length = C.Literal( "s."   + _length) ;
 		var    s_string = C.Literal( "s."   + _string) ;
-		var    a_length = C.Literal(a + "." + _length) ;
-		var    a_string = C.Literal(a + "." + _string) ;
-		var    b_length = C.Literal(b + "." + _length) ;
-		var    b_string = C.Literal(b + "." + _string) ;
-		var    c_length = C.Literal(c + "." + _length) ;
-		var    c_string = C.Literal(c + "." + _string) ;
+		var    a_length = C.Literal(a + "->" + _length) ;
+		var    a_string = C.Literal(a + "->" + _string) ;
+		var    b_length = C.Literal(b + "->" + _length) ;
+		var    b_string = C.Literal(b + "->" + _string) ;
+		var    c_length = C.Literal(c + "->" + _length) ;
+		var    c_string = C.Literal(c + "->" + _string) ;
 		This.Statement( C.Static(C699.String,"s") )
 			.Statement( s_length.Equate(a_length+" + "+b_length+" + "+c_length) )
 			.Statement( s_string.Equate( C699.Malloc( a_length.plus(b_length).plus(c_length) ) ) )

@@ -90,9 +90,9 @@ partial class Program : C699
 			}
 		public C_Function ManagedArgument( int i )
 			{
-			if( (let.Type.Bits & C699.Bit.Object) != 0 || let.Type == C699.String )
+			if( (let.Type.Bits & C699.Bit.Object) != 0 || let.Type == C699.String.p )
 					return Statement( C.If("((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer") )
-					      .Statement( let.Name.Equate("*(("+C699.String+" *)args["+i+"])") )
+					      .Statement( let.Name.Equate("(("+C699.String+" *)args["+i+"])") )
 					      .Statement( C.Else )
 					      .Statement( let.Name.Equate("(("+C699.Object(0)+" *)args["+i+"])->this->$ToString( args+"+i+" )") ) ;
 			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;

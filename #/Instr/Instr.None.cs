@@ -45,10 +45,7 @@ public partial class   instr_INSTR_NONE
 				if( C699.Stack.Offset == 1 )
 					{
 					var r = C.Pop() ;
-					if( decl.Node.Head.Virtual )
-						d.Statement( C699.C.Return( r.StackDeref ) ) ;
-					else
-						d.Statement( C699.C.Return( r.StackCast ) ) ;
+					d.Statement( C699.C.Return( r.StackCast ) ) ;
 					}
 				else
 				if( C699.Stack.Offset > 1 )
