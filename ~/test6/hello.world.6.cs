@@ -10,9 +10,9 @@ public abstract class ATest : ITest
 	}
 public class Test6 : ATest
 	{
-	static readonly char[]    lhs = { 'H', 'e', 'l', 'l', 'p'} ;
+	static readonly string    lhs = "Hello" ;
 	static readonly string[]  rhs = { " ", "World" } ;
-	public override string    LHS { get { return new string(lhs) ; } }
+	public override string    LHS { get { return lhs ; } }
 	public override string[]  RHS { get { return rhs ; } }
 	static void Main( string[] args )
 		{
