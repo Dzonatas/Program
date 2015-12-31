@@ -1,3 +1,5 @@
+namespace Sixth
+{
 public interface ITest 
 	{
 	string   LHS     { get; }
@@ -21,3 +23,4 @@ public class Test6 : ATest
 		System.Console.WriteLine( t.RHS[0] + t.RHS[1] ) ;
 		}
 	}
+}

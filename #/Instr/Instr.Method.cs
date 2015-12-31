@@ -155,6 +155,18 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					d.PushRef( vt ) ;
 					}
 				else
+				if( t is type_type_square_brackets )
+					{
+					var vt = d.Allocate(t) ;
+					C699.c s = new C699.c( vt.Symbol ) ;
+					if( iargs == 0 )
+						d.Statement( s.Equate(C699.C.Function(call)) ) ;
+					else
+						d.Statement( s.Equate(C699.C.Function(call,C699.Stack.Pointer)) ) ;
+					d.PushRef( vt ) ; //bogus
+					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+					}
+				else
 				if( t is type__int32_ )
 					throw new System.NotImplementedException() ;
 					//d.Push( C699.C.Three, C_I4_3 ) ; //bogus
