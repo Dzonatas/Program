@@ -117,7 +117,7 @@ public partial class Program : C699
 			;
 		c.TypeDef.Object
 			.Parameter( C699.Object(1) , "this" )
-			.Parameter( C699.String, C.Restricted("(*$ToString)").Tut(C.Const.Voidpp) )
+			.Parameter( C699.String, C.Restricted("(*$ToString)()") )
 			;
 		jiffy( c, "object::.ctor" )
 			;
