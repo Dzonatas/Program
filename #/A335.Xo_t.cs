@@ -538,10 +538,7 @@ class Xo_t
 			X.Auto["interface"] = "global::Item" ;
 			X.Auto["namespace"] = Rule.Set[i].LHS + "._" + i ;
 			X.Auto["signal"] = Rule.Signal( Rule.Set[i] ) ;
-			X.Auto["lhs"] = "{ " ;
-			foreach( char c in Rule.Set[i].LHS )
-				X.Auto["lhs"] += "'"+c+"', " ;
-			X.Auto["lhs"] += " }" ;
+			X.Auto["lhs"] = "\""+Rule.Set[i].LHS+"\"" ;
 			string name = string.Empty ;
 			if( automatrix.ContainsKey( Rule.AlphaSignal( Rule.Set[i] ) ) )
 				name = automatrix[ Rule.AlphaSignal( Rule.Set[i] ) ].FullName.Replace( '+', '.' ) ;

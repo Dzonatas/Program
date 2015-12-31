@@ -24,8 +24,8 @@ interface &interface; {
 public partial class  &signal;
 	: Driver.Auto, &interface;
 	{&synopsis;
-	static readonly char[]   lhs = &lhs; ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = &lhs; ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = &rhs; ;
 	public override System.Decimal RuleNumber { get { return &rule; ; } }

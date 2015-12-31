@@ -16597,8 +16597,8 @@ public partial class  START_decls
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.START_decls() ; }
 	#endif
-	static readonly char[]   lhs = { 'S', 'T', 'A', 'R', 'T',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "START" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "decls" } ;
 	public override System.Decimal RuleNumber { get { return 1 ; } }
@@ -16616,8 +16616,8 @@ public partial class  decls
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.decls() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 2 ; } }
@@ -16635,8 +16635,8 @@ public partial class  decls_decls_decl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.decls_decls_decl() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "decls", "decl" } ;
 	public override System.Decimal RuleNumber { get { return 3 ; } }
@@ -16654,8 +16654,8 @@ public partial class  decl_classHead_277B27_classDecls_277D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_classHead_____classDecls____() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classHead", "'{'", "classDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 4 ; } }
@@ -16673,8 +16673,8 @@ public partial class  decl_nameSpaceHead_277B27_decls_277D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_nameSpaceHead_____decls____() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nameSpaceHead", "'{'", "decls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 5 ; } }
@@ -16689,8 +16689,8 @@ public partial class  decl_nameSpaceHead_277B27_decls_277D27
 public partial class  decl_methodHead_methodDecls_277D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodHead", "methodDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 6 ; } }
@@ -16705,8 +16705,8 @@ public partial class  decl_methodHead_methodDecls_277D27
 public partial class  decl_fieldDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldDecl" } ;
 	public override System.Decimal RuleNumber { get { return 7 ; } }
@@ -16724,8 +16724,8 @@ public partial class  decl_dataDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_dataDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "dataDecl" } ;
 	public override System.Decimal RuleNumber { get { return 8 ; } }
@@ -16740,8 +16740,8 @@ public partial class  decl_dataDecl
 public partial class  decl_vtableDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtableDecl" } ;
 	public override System.Decimal RuleNumber { get { return 9 ; } }
@@ -16756,8 +16756,8 @@ public partial class  decl_vtableDecl
 public partial class  decl_vtfixupDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupDecl" } ;
 	public override System.Decimal RuleNumber { get { return 10 ; } }
@@ -16772,8 +16772,8 @@ public partial class  decl_vtfixupDecl
 public partial class  decl_extSourceSpec
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
 	public override System.Decimal RuleNumber { get { return 11 ; } }
@@ -16788,8 +16788,8 @@ public partial class  decl_extSourceSpec
 public partial class  decl_fileDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fileDecl" } ;
 	public override System.Decimal RuleNumber { get { return 12 ; } }
@@ -16807,8 +16807,8 @@ public partial class  decl_assemblyHead_277B27_assemblyDecls_277D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_assemblyHead_____assemblyDecls____() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyHead", "'{'", "assemblyDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 13 ; } }
@@ -16826,8 +16826,8 @@ public partial class  decl_assemblyRefHead_277B27_assemblyRefDecls_277D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_assemblyRefHead_____assemblyRefDecls____() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyRefHead", "'{'", "assemblyRefDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 14 ; } }
@@ -16842,8 +16842,8 @@ public partial class  decl_assemblyRefHead_277B27_assemblyRefDecls_277D27
 public partial class  decl_comtypeHead_277B27_comtypeDecls_277D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtypeHead", "'{'", "comtypeDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 15 ; } }
@@ -16858,8 +16858,8 @@ public partial class  decl_comtypeHead_277B27_comtypeDecls_277D27
 public partial class  decl_manifestResHead_277B27_manifestResDecls_277D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manifestResHead", "'{'", "manifestResDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 16 ; } }
@@ -16877,8 +16877,8 @@ public partial class  decl_moduleHead
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.decl_moduleHead() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "moduleHead" } ;
 	public override System.Decimal RuleNumber { get { return 17 ; } }
@@ -16893,8 +16893,8 @@ public partial class  decl_moduleHead
 public partial class  decl_secDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "secDecl" } ;
 	public override System.Decimal RuleNumber { get { return 18 ; } }
@@ -16909,8 +16909,8 @@ public partial class  decl_secDecl
 public partial class  decl_customAttrDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
 	public override System.Decimal RuleNumber { get { return 19 ; } }
@@ -16925,8 +16925,8 @@ public partial class  decl_customAttrDecl
 public partial class  decl_222Esubsystem22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".subsystem\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 20 ; } }
@@ -16941,8 +16941,8 @@ public partial class  decl_222Esubsystem22_int3332
 public partial class  decl_222Ecorflags22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".corflags\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 21 ; } }
@@ -16957,8 +16957,8 @@ public partial class  decl_222Ecorflags22_int3332
 public partial class  decl_222Efile22_22alignment22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "\"alignment\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 22 ; } }
@@ -16973,8 +16973,8 @@ public partial class  decl_222Efile22_22alignment22_int3332
 public partial class  decl_222Eimagebase22_int3634
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".imagebase\"", "int64" } ;
 	public override System.Decimal RuleNumber { get { return 23 ; } }
@@ -16989,8 +16989,8 @@ public partial class  decl_222Eimagebase22_int3634
 public partial class  decl_languageDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "decl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
 	public override System.Decimal RuleNumber { get { return 24 ; } }
@@ -17008,8 +17008,8 @@ public partial class  compQstring_QSTRING
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.compQstring_QSTRING() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'o', 'm', 'p', 'Q', 's', 't', 'r', 'i', 'n', 'g',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "compQstring" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "QSTRING" } ;
 	public override System.Decimal RuleNumber { get { return 25 ; } }
@@ -17024,8 +17024,8 @@ public partial class  compQstring_QSTRING
 public partial class  compQstring_compQstring_272B27_QSTRING
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 'p', 'Q', 's', 't', 'r', 'i', 'n', 'g',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "compQstring" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring", "'+'", "QSTRING" } ;
 	public override System.Decimal RuleNumber { get { return 26 ; } }
@@ -17040,8 +17040,8 @@ public partial class  compQstring_compQstring_272B27_QSTRING
 public partial class  languageDecl_222Elanguage22_SQSTRING
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "languageDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".language\"", "SQSTRING" } ;
 	public override System.Decimal RuleNumber { get { return 27 ; } }
@@ -17056,8 +17056,8 @@ public partial class  languageDecl_222Elanguage22_SQSTRING
 public partial class  languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "languageDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".language\"", "SQSTRING", "','", "SQSTRING" } ;
 	public override System.Decimal RuleNumber { get { return 28 ; } }
@@ -17072,8 +17072,8 @@ public partial class  languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING
 public partial class  languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING_272C27_SQSTRING
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "languageDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".language\"", "SQSTRING", "','", "SQSTRING", "','", "SQSTRING" } ;
 	public override System.Decimal RuleNumber { get { return 29 ; } }
@@ -17088,8 +17088,8 @@ public partial class  languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING_272C2
 public partial class  customAttrDecl_222Ecustom22_customType
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'A', 't', 't', 'r', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customAttrDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "customType" } ;
 	public override System.Decimal RuleNumber { get { return 30 ; } }
@@ -17104,8 +17104,8 @@ public partial class  customAttrDecl_222Ecustom22_customType
 public partial class  customAttrDecl_222Ecustom22_customType_273D27_compQstring
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'A', 't', 't', 'r', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customAttrDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "customType", "'='", "compQstring" } ;
 	public override System.Decimal RuleNumber { get { return 31 ; } }
@@ -17123,8 +17123,8 @@ public partial class  customAttrDecl_customHead_bytes_272927
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.customAttrDecl_customHead_bytes____() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'A', 't', 't', 'r', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customAttrDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customHead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 32 ; } }
@@ -17139,8 +17139,8 @@ public partial class  customAttrDecl_customHead_bytes_272927
 public partial class  customAttrDecl_222Ecustom22_272827_ownerType_272927_customType
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'A', 't', 't', 'r', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customAttrDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "'('", "ownerType", "')'", "customType" } ;
 	public override System.Decimal RuleNumber { get { return 33 ; } }
@@ -17155,8 +17155,8 @@ public partial class  customAttrDecl_222Ecustom22_272827_ownerType_272927_custom
 public partial class  customAttrDecl_222Ecustom22_272827_ownerType_272927_customType_273D27_compQstring
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'A', 't', 't', 'r', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customAttrDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "'('", "ownerType", "')'", "customType", "'='", "compQstring" } ;
 	public override System.Decimal RuleNumber { get { return 34 ; } }
@@ -17171,8 +17171,8 @@ public partial class  customAttrDecl_222Ecustom22_272827_ownerType_272927_custom
 public partial class  customAttrDecl_customHeadWithOwner_bytes_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'A', 't', 't', 'r', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customAttrDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customHeadWithOwner", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 35 ; } }
@@ -17187,8 +17187,8 @@ public partial class  customAttrDecl_customHeadWithOwner_bytes_272927
 public partial class  moduleHead_222Emodule22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'o', 'd', 'u', 'l', 'e', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "moduleHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".module\"" } ;
 	public override System.Decimal RuleNumber { get { return 36 ; } }
@@ -17206,8 +17206,8 @@ public partial class  moduleHead_222Emodule22_name31
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.moduleHead___module__name1() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'o', 'd', 'u', 'l', 'e', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "moduleHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".module\"", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 37 ; } }
@@ -17222,8 +17222,8 @@ public partial class  moduleHead_222Emodule22_name31
 public partial class  moduleHead_222Emodule22_22extern22_name31
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'o', 'd', 'u', 'l', 'e', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "moduleHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".module\"", "\"extern\"", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 38 ; } }
@@ -17238,8 +17238,8 @@ public partial class  moduleHead_222Emodule22_22extern22_name31
 public partial class  vtfixupDecl_222Evtfixup22_275B27_int3332_275D27_vtfixupAttr_22at22_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 't', 'f', 'i', 'x', 'u', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "vtfixupDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".vtfixup\"", "'['", "int32", "']'", "vtfixupAttr", "\"at\"", "id" } ;
 	public override System.Decimal RuleNumber { get { return 39 ; } }
@@ -17254,8 +17254,8 @@ public partial class  vtfixupDecl_222Evtfixup22_275B27_int3332_275D27_vtfixupAtt
 public partial class  vtfixupAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 't', 'f', 'i', 'x', 'u', 'p', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "vtfixupAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 40 ; } }
@@ -17270,8 +17270,8 @@ public partial class  vtfixupAttr
 public partial class  vtfixupAttr_vtfixupAttr_22int333222
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 't', 'f', 'i', 'x', 'u', 'p', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "vtfixupAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupAttr", "\"int32\"" } ;
 	public override System.Decimal RuleNumber { get { return 41 ; } }
@@ -17286,8 +17286,8 @@ public partial class  vtfixupAttr_vtfixupAttr_22int333222
 public partial class  vtfixupAttr_vtfixupAttr_22int363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 't', 'f', 'i', 'x', 'u', 'p', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "vtfixupAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupAttr", "\"int64\"" } ;
 	public override System.Decimal RuleNumber { get { return 42 ; } }
@@ -17302,8 +17302,8 @@ public partial class  vtfixupAttr_vtfixupAttr_22int363422
 public partial class  vtfixupAttr_vtfixupAttr_22fromunmanaged22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 't', 'f', 'i', 'x', 'u', 'p', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "vtfixupAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupAttr", "\"fromunmanaged\"" } ;
 	public override System.Decimal RuleNumber { get { return 43 ; } }
@@ -17318,8 +17318,8 @@ public partial class  vtfixupAttr_vtfixupAttr_22fromunmanaged22
 public partial class  vtfixupAttr_vtfixupAttr_22callmostderived22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 't', 'f', 'i', 'x', 'u', 'p', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "vtfixupAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupAttr", "\"callmostderived\"" } ;
 	public override System.Decimal RuleNumber { get { return 44 ; } }
@@ -17334,8 +17334,8 @@ public partial class  vtfixupAttr_vtfixupAttr_22callmostderived22
 public partial class  vtableDecl_vtableHead_bytes_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 't', 'a', 'b', 'l', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "vtableDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtableHead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 45 ; } }
@@ -17350,8 +17350,8 @@ public partial class  vtableDecl_vtableHead_bytes_272927
 public partial class  vtableHead_222Evtable22_273D27_272827
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 't', 'a', 'b', 'l', 'e', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "vtableHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".vtable\"", "'='", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 46 ; } }
@@ -17369,8 +17369,8 @@ public partial class  nameSpaceHead_222Enamespace22_name31
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.nameSpaceHead___namespace__name1() ; }
 	#endif
-	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', 'S', 'p', 'a', 'c', 'e', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nameSpaceHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".namespace\"", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 47 ; } }
@@ -17388,8 +17388,8 @@ public partial class  classHead_222Eclass22_classAttr_id_extendsClause_implClaus
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classHead___class__classAttr_id_extendsClause_implClause() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "classAttr", "id", "extendsClause", "implClause" } ;
 	public override System.Decimal RuleNumber { get { return 48 ; } }
@@ -17404,8 +17404,8 @@ public partial class  classHead_222Eclass22_classAttr_id_extendsClause_implClaus
 public partial class  classAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 49 ; } }
@@ -17423,8 +17423,8 @@ public partial class  classAttr_classAttr_22public22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__public_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"public\"" } ;
 	public override System.Decimal RuleNumber { get { return 50 ; } }
@@ -17442,8 +17442,8 @@ public partial class  classAttr_classAttr_22private22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__private_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"private\"" } ;
 	public override System.Decimal RuleNumber { get { return 51 ; } }
@@ -17458,8 +17458,8 @@ public partial class  classAttr_classAttr_22private22
 public partial class  classAttr_classAttr_22value22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"value\"" } ;
 	public override System.Decimal RuleNumber { get { return 52 ; } }
@@ -17474,8 +17474,8 @@ public partial class  classAttr_classAttr_22value22
 public partial class  classAttr_classAttr_22enum22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"enum\"" } ;
 	public override System.Decimal RuleNumber { get { return 53 ; } }
@@ -17493,8 +17493,8 @@ public partial class  classAttr_classAttr_22interface22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__interface_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"interface\"" } ;
 	public override System.Decimal RuleNumber { get { return 54 ; } }
@@ -17512,8 +17512,8 @@ public partial class  classAttr_classAttr_22sealed22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__sealed_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"sealed\"" } ;
 	public override System.Decimal RuleNumber { get { return 55 ; } }
@@ -17531,8 +17531,8 @@ public partial class  classAttr_classAttr_22abstract22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__abstract_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"abstract\"" } ;
 	public override System.Decimal RuleNumber { get { return 56 ; } }
@@ -17550,8 +17550,8 @@ public partial class  classAttr_classAttr_22auto22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__auto_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"auto\"" } ;
 	public override System.Decimal RuleNumber { get { return 57 ; } }
@@ -17569,8 +17569,8 @@ public partial class  classAttr_classAttr_22sequential22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__sequential_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"sequential\"" } ;
 	public override System.Decimal RuleNumber { get { return 58 ; } }
@@ -17585,8 +17585,8 @@ public partial class  classAttr_classAttr_22sequential22
 public partial class  classAttr_classAttr_22explicit22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"explicit\"" } ;
 	public override System.Decimal RuleNumber { get { return 59 ; } }
@@ -17604,8 +17604,8 @@ public partial class  classAttr_classAttr_22ansi22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__ansi_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"ansi\"" } ;
 	public override System.Decimal RuleNumber { get { return 60 ; } }
@@ -17620,8 +17620,8 @@ public partial class  classAttr_classAttr_22ansi22
 public partial class  classAttr_classAttr_22unicode22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"unicode\"" } ;
 	public override System.Decimal RuleNumber { get { return 61 ; } }
@@ -17636,8 +17636,8 @@ public partial class  classAttr_classAttr_22unicode22
 public partial class  classAttr_classAttr_22autochar22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"autochar\"" } ;
 	public override System.Decimal RuleNumber { get { return 62 ; } }
@@ -17652,8 +17652,8 @@ public partial class  classAttr_classAttr_22autochar22
 public partial class  classAttr_classAttr_22import22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"import\"" } ;
 	public override System.Decimal RuleNumber { get { return 63 ; } }
@@ -17668,8 +17668,8 @@ public partial class  classAttr_classAttr_22import22
 public partial class  classAttr_classAttr_22serializable22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"serializable\"" } ;
 	public override System.Decimal RuleNumber { get { return 64 ; } }
@@ -17687,8 +17687,8 @@ public partial class  classAttr_classAttr_22nested22_22public22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__nested___public_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"public\"" } ;
 	public override System.Decimal RuleNumber { get { return 65 ; } }
@@ -17706,8 +17706,8 @@ public partial class  classAttr_classAttr_22nested22_22private22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__nested___private_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"private\"" } ;
 	public override System.Decimal RuleNumber { get { return 66 ; } }
@@ -17722,8 +17722,8 @@ public partial class  classAttr_classAttr_22nested22_22private22
 public partial class  classAttr_classAttr_22nested22_22family22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"family\"" } ;
 	public override System.Decimal RuleNumber { get { return 67 ; } }
@@ -17738,8 +17738,8 @@ public partial class  classAttr_classAttr_22nested22_22family22
 public partial class  classAttr_classAttr_22nested22_22assembly22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"assembly\"" } ;
 	public override System.Decimal RuleNumber { get { return 68 ; } }
@@ -17754,8 +17754,8 @@ public partial class  classAttr_classAttr_22nested22_22assembly22
 public partial class  classAttr_classAttr_22nested22_22famandassem22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"famandassem\"" } ;
 	public override System.Decimal RuleNumber { get { return 69 ; } }
@@ -17770,8 +17770,8 @@ public partial class  classAttr_classAttr_22nested22_22famandassem22
 public partial class  classAttr_classAttr_22nested22_22famorassem22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"famorassem\"" } ;
 	public override System.Decimal RuleNumber { get { return 70 ; } }
@@ -17789,8 +17789,8 @@ public partial class  classAttr_classAttr_22beforefieldinit22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classAttr_classAttr__beforefieldinit_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"beforefieldinit\"" } ;
 	public override System.Decimal RuleNumber { get { return 71 ; } }
@@ -17805,8 +17805,8 @@ public partial class  classAttr_classAttr_22beforefieldinit22
 public partial class  classAttr_classAttr_22specialname22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"specialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 72 ; } }
@@ -17821,8 +17821,8 @@ public partial class  classAttr_classAttr_22specialname22
 public partial class  classAttr_classAttr_22rtspecialname22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"rtspecialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 73 ; } }
@@ -17837,8 +17837,8 @@ public partial class  classAttr_classAttr_22rtspecialname22
 public partial class  extendsClause
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'x', 't', 'e', 'n', 'd', 's', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "extendsClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 74 ; } }
@@ -17856,8 +17856,8 @@ public partial class  extendsClause_22extends22_className
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.extendsClause__extends__className() ; }
 	#endif
-	static readonly char[]   lhs = { 'e', 'x', 't', 'e', 'n', 'd', 's', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "extendsClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"extends\"", "className" } ;
 	public override System.Decimal RuleNumber { get { return 75 ; } }
@@ -17872,8 +17872,8 @@ public partial class  extendsClause_22extends22_className
 public partial class  implClause
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 76 ; } }
@@ -17891,8 +17891,8 @@ public partial class  implClause_22implements22_classNames
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.implClause__implements__classNames() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"implements\"", "classNames" } ;
 	public override System.Decimal RuleNumber { get { return 77 ; } }
@@ -17907,8 +17907,8 @@ public partial class  implClause_22implements22_classNames
 public partial class  classNames_classNames_272C27_className
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'N', 'a', 'm', 'e', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classNames" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classNames", "','", "className" } ;
 	public override System.Decimal RuleNumber { get { return 78 ; } }
@@ -17926,8 +17926,8 @@ public partial class  classNames_className
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classNames_className() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'N', 'a', 'm', 'e', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classNames" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className" } ;
 	public override System.Decimal RuleNumber { get { return 79 ; } }
@@ -17942,8 +17942,8 @@ public partial class  classNames_className
 public partial class  classDecls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 80 ; } }
@@ -17961,8 +17961,8 @@ public partial class  classDecls_classDecls_classDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecls_classDecls_classDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classDecls", "classDecl" } ;
 	public override System.Decimal RuleNumber { get { return 81 ; } }
@@ -17980,8 +17980,8 @@ public partial class  classDecl_methodHead_methodDecls_277D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_methodHead_methodDecls____() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodHead", "methodDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 82 ; } }
@@ -17999,8 +17999,8 @@ public partial class  classDecl_classHead_277B27_classDecls_277D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_classHead_____classDecls____() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classHead", "'{'", "classDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 83 ; } }
@@ -18015,8 +18015,8 @@ public partial class  classDecl_classHead_277B27_classDecls_277D27
 public partial class  classDecl_eventHead_277B27_eventDecls_277D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "eventHead", "'{'", "eventDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 84 ; } }
@@ -18034,8 +18034,8 @@ public partial class  classDecl_propHead_277B27_propDecls_277D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_propHead_____propDecls____() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "propHead", "'{'", "propDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 85 ; } }
@@ -18053,8 +18053,8 @@ public partial class  classDecl_fieldDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_fieldDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldDecl" } ;
 	public override System.Decimal RuleNumber { get { return 86 ; } }
@@ -18069,8 +18069,8 @@ public partial class  classDecl_fieldDecl
 public partial class  classDecl_dataDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "dataDecl" } ;
 	public override System.Decimal RuleNumber { get { return 87 ; } }
@@ -18085,8 +18085,8 @@ public partial class  classDecl_dataDecl
 public partial class  classDecl_secDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "secDecl" } ;
 	public override System.Decimal RuleNumber { get { return 88 ; } }
@@ -18101,8 +18101,8 @@ public partial class  classDecl_secDecl
 public partial class  classDecl_extSourceSpec
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
 	public override System.Decimal RuleNumber { get { return 89 ; } }
@@ -18120,8 +18120,8 @@ public partial class  classDecl_customAttrDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl_customAttrDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
 	public override System.Decimal RuleNumber { get { return 90 ; } }
@@ -18139,8 +18139,8 @@ public partial class  classDecl_222Esize22_int3332
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl___size__int32() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".size\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 91 ; } }
@@ -18158,8 +18158,8 @@ public partial class  classDecl_222Epack22_int3332
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.classDecl___pack__int32() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".pack\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 92 ; } }
@@ -18174,8 +18174,8 @@ public partial class  classDecl_222Epack22_int3332
 public partial class  classDecl_exportHead_277B27_comtypeDecls_277D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "exportHead", "'{'", "comtypeDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 93 ; } }
@@ -18190,8 +18190,8 @@ public partial class  classDecl_exportHead_277B27_comtypeDecls_277D27
 public partial class  classDecl_222Eoverride22_typeSpec_223A3A22_methodName_22with22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".override\"", "typeSpec", "\"::\"", "methodName", "\"with\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 94 ; } }
@@ -18206,8 +18206,8 @@ public partial class  classDecl_222Eoverride22_typeSpec_223A3A22_methodName_22wi
 public partial class  classDecl_languageDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "classDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
 	public override System.Decimal RuleNumber { get { return 95 ; } }
@@ -18225,8 +18225,8 @@ public partial class  fieldDecl_222Efield22_repeatOpt_fieldAttr_type_id_atOpt_in
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt() ; }
 	#endif
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".field\"", "repeatOpt", "fieldAttr", "type", "id", "atOpt", "initOpt" } ;
 	public override System.Decimal RuleNumber { get { return 96 ; } }
@@ -18241,8 +18241,8 @@ public partial class  fieldDecl_222Efield22_repeatOpt_fieldAttr_type_id_atOpt_in
 public partial class  atOpt
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 't', 'O', 'p', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "atOpt" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 97 ; } }
@@ -18260,8 +18260,8 @@ public partial class  atOpt_22at22_id
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.atOpt__at__id() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 't', 'O', 'p', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "atOpt" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"at\"", "id" } ;
 	public override System.Decimal RuleNumber { get { return 98 ; } }
@@ -18276,8 +18276,8 @@ public partial class  atOpt_22at22_id
 public partial class  initOpt
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 'i', 't', 'O', 'p', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "initOpt" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 99 ; } }
@@ -18295,8 +18295,8 @@ public partial class  initOpt_273D27_fieldInit
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.initOpt_____fieldInit() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 'i', 't', 'O', 'p', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "initOpt" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'='", "fieldInit" } ;
 	public override System.Decimal RuleNumber { get { return 100 ; } }
@@ -18311,8 +18311,8 @@ public partial class  initOpt_273D27_fieldInit
 public partial class  repeatOpt
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'r', 'e', 'p', 'e', 'a', 't', 'O', 'p', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "repeatOpt" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 101 ; } }
@@ -18327,8 +18327,8 @@ public partial class  repeatOpt
 public partial class  repeatOpt_275B27_int3332_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'r', 'e', 'p', 'e', 'a', 't', 'O', 'p', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "repeatOpt" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "int32", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 102 ; } }
@@ -18346,8 +18346,8 @@ public partial class  customHead_222Ecustom22_customType_273D27_272827
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.customHead___custom__customType________() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "customType", "'='", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 103 ; } }
@@ -18362,8 +18362,8 @@ public partial class  customHead_222Ecustom22_customType_273D27_272827
 public partial class  customHeadWithOwner_222Ecustom22_272827_ownerType_272927_customType_273D27_272827
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'H', 'e', 'a', 'd', 'W', 'i', 't', 'h', 'O', 'w', 'n', 'e', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customHeadWithOwner" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "'('", "ownerType", "')'", "customType", "'='", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 104 ; } }
@@ -18378,8 +18378,8 @@ public partial class  customHeadWithOwner_222Ecustom22_272827_ownerType_272927_c
 public partial class  memberRef_methodSpec_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 'm', 'b', 'e', 'r', 'R', 'e', 'f',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "memberRef" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodSpec", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 105 ; } }
@@ -18394,8 +18394,8 @@ public partial class  memberRef_methodSpec_callConv_type_typeSpec_223A3A22_metho
 public partial class  memberRef_methodSpec_callConv_type_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 'm', 'b', 'e', 'r', 'R', 'e', 'f',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "memberRef" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodSpec", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 106 ; } }
@@ -18413,8 +18413,8 @@ public partial class  memberRef_22field22_type_typeSpec_223A3A22_id
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.memberRef__field__type_typeSpec______id() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 'm', 'b', 'e', 'r', 'R', 'e', 'f',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "memberRef" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"field\"", "type", "typeSpec", "\"::\"", "id" } ;
 	public override System.Decimal RuleNumber { get { return 107 ; } }
@@ -18429,8 +18429,8 @@ public partial class  memberRef_22field22_type_typeSpec_223A3A22_id
 public partial class  memberRef_22field22_type_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 'm', 'b', 'e', 'r', 'R', 'e', 'f',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "memberRef" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"field\"", "type", "id" } ;
 	public override System.Decimal RuleNumber { get { return 108 ; } }
@@ -18448,8 +18448,8 @@ public partial class  customType_callConv_type_typeSpec_223A3A22_222Ector22_2728
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.customType_callConv_type_typeSpec________ctor______sigArgs0____() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "callConv", "type", "typeSpec", "\"::\"", "\".ctor\"", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 109 ; } }
@@ -18464,8 +18464,8 @@ public partial class  customType_callConv_type_typeSpec_223A3A22_222Ector22_2728
 public partial class  customType_callConv_type_222Ector22_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'u', 's', 't', 'o', 'm', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "customType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "callConv", "type", "\".ctor\"", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 110 ; } }
@@ -18480,8 +18480,8 @@ public partial class  customType_callConv_type_222Ector22_272827_sigArgs30_27292
 public partial class  ownerType_typeSpec
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'o', 'w', 'n', 'e', 'r', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ownerType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "typeSpec" } ;
 	public override System.Decimal RuleNumber { get { return 111 ; } }
@@ -18499,8 +18499,8 @@ public partial class  ownerType_memberRef
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.ownerType_memberRef() ; }
 	#endif
-	static readonly char[]   lhs = { 'o', 'w', 'n', 'e', 'r', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ownerType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "memberRef" } ;
 	public override System.Decimal RuleNumber { get { return 112 ; } }
@@ -18515,8 +18515,8 @@ public partial class  ownerType_memberRef
 public partial class  eventHead_222Eevent22_eventAttr_typeSpec_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".event\"", "eventAttr", "typeSpec", "id" } ;
 	public override System.Decimal RuleNumber { get { return 113 ; } }
@@ -18531,8 +18531,8 @@ public partial class  eventHead_222Eevent22_eventAttr_typeSpec_id
 public partial class  eventHead_222Eevent22_eventAttr_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".event\"", "eventAttr", "id" } ;
 	public override System.Decimal RuleNumber { get { return 114 ; } }
@@ -18547,8 +18547,8 @@ public partial class  eventHead_222Eevent22_eventAttr_id
 public partial class  eventAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 115 ; } }
@@ -18563,8 +18563,8 @@ public partial class  eventAttr
 public partial class  eventAttr_eventAttr_22rtspecialname22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "eventAttr", "\"rtspecialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 116 ; } }
@@ -18579,8 +18579,8 @@ public partial class  eventAttr_eventAttr_22rtspecialname22
 public partial class  eventAttr_eventAttr_22specialname22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "eventAttr", "\"specialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 117 ; } }
@@ -18595,8 +18595,8 @@ public partial class  eventAttr_eventAttr_22specialname22
 public partial class  eventDecls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 118 ; } }
@@ -18611,8 +18611,8 @@ public partial class  eventDecls
 public partial class  eventDecls_eventDecls_eventDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "eventDecls", "eventDecl" } ;
 	public override System.Decimal RuleNumber { get { return 119 ; } }
@@ -18627,8 +18627,8 @@ public partial class  eventDecls_eventDecls_eventDecl
 public partial class  eventDecl_222Eaddon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".addon\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 120 ; } }
@@ -18643,8 +18643,8 @@ public partial class  eventDecl_222Eaddon22_callConv_type_typeSpec_223A3A22_meth
 public partial class  eventDecl_222Eaddon22_callConv_type_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".addon\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 121 ; } }
@@ -18659,8 +18659,8 @@ public partial class  eventDecl_222Eaddon22_callConv_type_methodName_272827_sigA
 public partial class  eventDecl_222Eremoveon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".removeon\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 122 ; } }
@@ -18675,8 +18675,8 @@ public partial class  eventDecl_222Eremoveon22_callConv_type_typeSpec_223A3A22_m
 public partial class  eventDecl_222Eremoveon22_callConv_type_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".removeon\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 123 ; } }
@@ -18691,8 +18691,8 @@ public partial class  eventDecl_222Eremoveon22_callConv_type_methodName_272827_s
 public partial class  eventDecl_222Efire22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".fire\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 124 ; } }
@@ -18707,8 +18707,8 @@ public partial class  eventDecl_222Efire22_callConv_type_typeSpec_223A3A22_metho
 public partial class  eventDecl_222Efire22_callConv_type_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".fire\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 125 ; } }
@@ -18723,8 +18723,8 @@ public partial class  eventDecl_222Efire22_callConv_type_methodName_272827_sigAr
 public partial class  eventDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".other\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 126 ; } }
@@ -18739,8 +18739,8 @@ public partial class  eventDecl_222Eother22_callConv_type_typeSpec_223A3A22_meth
 public partial class  eventDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".other\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 127 ; } }
@@ -18755,8 +18755,8 @@ public partial class  eventDecl_222Eother22_callConv_type_methodName_272827_sigA
 public partial class  eventDecl_extSourceSpec
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
 	public override System.Decimal RuleNumber { get { return 128 ; } }
@@ -18771,8 +18771,8 @@ public partial class  eventDecl_extSourceSpec
 public partial class  eventDecl_customAttrDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
 	public override System.Decimal RuleNumber { get { return 129 ; } }
@@ -18787,8 +18787,8 @@ public partial class  eventDecl_customAttrDecl
 public partial class  eventDecl_languageDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'v', 'e', 'n', 't', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "eventDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
 	public override System.Decimal RuleNumber { get { return 130 ; } }
@@ -18806,8 +18806,8 @@ public partial class  propHead_222Eproperty22_propAttr_callConv_type_id_272827_s
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.propHead___property__propAttr_callConv_type_id_____sigArgs0_____initOpt() ; }
 	#endif
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".property\"", "propAttr", "callConv", "type", "id", "'('", "sigArgs0", "')'", "initOpt" } ;
 	public override System.Decimal RuleNumber { get { return 131 ; } }
@@ -18822,8 +18822,8 @@ public partial class  propHead_222Eproperty22_propAttr_callConv_type_id_272827_s
 public partial class  propAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 132 ; } }
@@ -18838,8 +18838,8 @@ public partial class  propAttr
 public partial class  propAttr_propAttr_22rtspecialname22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "propAttr", "\"rtspecialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 133 ; } }
@@ -18854,8 +18854,8 @@ public partial class  propAttr_propAttr_22rtspecialname22
 public partial class  propAttr_propAttr_22specialname22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "propAttr", "\"specialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 134 ; } }
@@ -18870,8 +18870,8 @@ public partial class  propAttr_propAttr_22specialname22
 public partial class  propDecls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 135 ; } }
@@ -18889,8 +18889,8 @@ public partial class  propDecls_propDecls_propDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.propDecls_propDecls_propDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "propDecls", "propDecl" } ;
 	public override System.Decimal RuleNumber { get { return 136 ; } }
@@ -18908,8 +18908,8 @@ public partial class  propDecl_222Eset22_callConv_type_typeSpec_223A3A22_methodN
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.propDecl___set__callConv_type_typeSpec______methodName_____sigArgs0____() ; }
 	#endif
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".set\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 137 ; } }
@@ -18924,8 +18924,8 @@ public partial class  propDecl_222Eset22_callConv_type_typeSpec_223A3A22_methodN
 public partial class  propDecl_222Eset22_callConv_type_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".set\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 138 ; } }
@@ -18943,8 +18943,8 @@ public partial class  propDecl_222Eget22_callConv_type_typeSpec_223A3A22_methodN
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.propDecl___get__callConv_type_typeSpec______methodName_____sigArgs0____() ; }
 	#endif
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".get\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 139 ; } }
@@ -18959,8 +18959,8 @@ public partial class  propDecl_222Eget22_callConv_type_typeSpec_223A3A22_methodN
 public partial class  propDecl_222Eget22_callConv_type_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".get\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 140 ; } }
@@ -18975,8 +18975,8 @@ public partial class  propDecl_222Eget22_callConv_type_methodName_272827_sigArgs
 public partial class  propDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".other\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 141 ; } }
@@ -18991,8 +18991,8 @@ public partial class  propDecl_222Eother22_callConv_type_typeSpec_223A3A22_metho
 public partial class  propDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".other\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 142 ; } }
@@ -19007,8 +19007,8 @@ public partial class  propDecl_222Eother22_callConv_type_methodName_272827_sigAr
 public partial class  propDecl_customAttrDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
 	public override System.Decimal RuleNumber { get { return 143 ; } }
@@ -19023,8 +19023,8 @@ public partial class  propDecl_customAttrDecl
 public partial class  propDecl_extSourceSpec
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
 	public override System.Decimal RuleNumber { get { return 144 ; } }
@@ -19039,8 +19039,8 @@ public partial class  propDecl_extSourceSpec
 public partial class  propDecl_languageDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'r', 'o', 'p', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "propDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
 	public override System.Decimal RuleNumber { get { return 145 ; } }
@@ -19058,8 +19058,8 @@ public partial class  methodHeadPart1_222Emethod22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodHeadPart1___method_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'H', 'e', 'a', 'd', 'P', 'a', 'r', 't', '1',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodHeadPart1" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".method\"" } ;
 	public override System.Decimal RuleNumber { get { return 146 ; } }
@@ -19077,8 +19077,8 @@ public partial class  methodHead_methodHeadPart31_methAttr_callConv_paramAttr_ty
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodHead_methodHeadPart1_methAttr_callConv_paramAttr_type_methodName_____sigArgs0_____implAttr____() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodHeadPart1", "methAttr", "callConv", "paramAttr", "type", "methodName", "'('", "sigArgs0", "')'", "implAttr", "'{'" } ;
 	public override System.Decimal RuleNumber { get { return 147 ; } }
@@ -19093,8 +19093,8 @@ public partial class  methodHead_methodHeadPart31_methAttr_callConv_paramAttr_ty
 public partial class  methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_22marshal22_272827_nativeType_272927_methodName_272827_sigArgs30_272927_implAttr_277B27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodHeadPart1", "methAttr", "callConv", "paramAttr", "type", "\"marshal\"", "'('", "nativeType", "')'", "methodName", "'('", "sigArgs0", "')'", "implAttr", "'{'" } ;
 	public override System.Decimal RuleNumber { get { return 148 ; } }
@@ -19109,8 +19109,8 @@ public partial class  methodHead_methodHeadPart31_methAttr_callConv_paramAttr_ty
 public partial class  methAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 149 ; } }
@@ -19128,8 +19128,8 @@ public partial class  methAttr_methAttr_22static22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__static_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"static\"" } ;
 	public override System.Decimal RuleNumber { get { return 150 ; } }
@@ -19147,8 +19147,8 @@ public partial class  methAttr_methAttr_22public22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__public_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"public\"" } ;
 	public override System.Decimal RuleNumber { get { return 151 ; } }
@@ -19166,8 +19166,8 @@ public partial class  methAttr_methAttr_22private22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__private_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"private\"" } ;
 	public override System.Decimal RuleNumber { get { return 152 ; } }
@@ -19185,8 +19185,8 @@ public partial class  methAttr_methAttr_22family22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__family_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"family\"" } ;
 	public override System.Decimal RuleNumber { get { return 153 ; } }
@@ -19201,8 +19201,8 @@ public partial class  methAttr_methAttr_22family22
 public partial class  methAttr_methAttr_22final22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"final\"" } ;
 	public override System.Decimal RuleNumber { get { return 154 ; } }
@@ -19220,8 +19220,8 @@ public partial class  methAttr_methAttr_22specialname22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__specialname_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"specialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 155 ; } }
@@ -19239,8 +19239,8 @@ public partial class  methAttr_methAttr_22virtual22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__virtual_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"virtual\"" } ;
 	public override System.Decimal RuleNumber { get { return 156 ; } }
@@ -19258,8 +19258,8 @@ public partial class  methAttr_methAttr_22abstract22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__abstract_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"abstract\"" } ;
 	public override System.Decimal RuleNumber { get { return 157 ; } }
@@ -19277,8 +19277,8 @@ public partial class  methAttr_methAttr_22assembly22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__assembly_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"assembly\"" } ;
 	public override System.Decimal RuleNumber { get { return 158 ; } }
@@ -19293,8 +19293,8 @@ public partial class  methAttr_methAttr_22assembly22
 public partial class  methAttr_methAttr_22famandassem22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"famandassem\"" } ;
 	public override System.Decimal RuleNumber { get { return 159 ; } }
@@ -19309,8 +19309,8 @@ public partial class  methAttr_methAttr_22famandassem22
 public partial class  methAttr_methAttr_22famorassem22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"famorassem\"" } ;
 	public override System.Decimal RuleNumber { get { return 160 ; } }
@@ -19325,8 +19325,8 @@ public partial class  methAttr_methAttr_22famorassem22
 public partial class  methAttr_methAttr_22privatescope22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"privatescope\"" } ;
 	public override System.Decimal RuleNumber { get { return 161 ; } }
@@ -19344,8 +19344,8 @@ public partial class  methAttr_methAttr_22hidebysig22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__hidebysig_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"hidebysig\"" } ;
 	public override System.Decimal RuleNumber { get { return 162 ; } }
@@ -19363,8 +19363,8 @@ public partial class  methAttr_methAttr_22newslot22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__newslot_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"newslot\"" } ;
 	public override System.Decimal RuleNumber { get { return 163 ; } }
@@ -19382,8 +19382,8 @@ public partial class  methAttr_methAttr_22rtspecialname22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methAttr_methAttr__rtspecialname_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"rtspecialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 164 ; } }
@@ -19398,8 +19398,8 @@ public partial class  methAttr_methAttr_22rtspecialname22
 public partial class  methAttr_methAttr_22unmanagedexp22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"unmanagedexp\"" } ;
 	public override System.Decimal RuleNumber { get { return 165 ; } }
@@ -19414,8 +19414,8 @@ public partial class  methAttr_methAttr_22unmanagedexp22
 public partial class  methAttr_methAttr_22reqsecobj22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"reqsecobj\"" } ;
 	public override System.Decimal RuleNumber { get { return 166 ; } }
@@ -19430,8 +19430,8 @@ public partial class  methAttr_methAttr_22reqsecobj22
 public partial class  methAttr_methAttr_22pinvokeimpl22_272827_compQstring_22as22_compQstring_pinvAttr_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"pinvokeimpl\"", "'('", "compQstring", "\"as\"", "compQstring", "pinvAttr", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 167 ; } }
@@ -19446,8 +19446,8 @@ public partial class  methAttr_methAttr_22pinvokeimpl22_272827_compQstring_22as2
 public partial class  methAttr_methAttr_22pinvokeimpl22_272827_compQstring_pinvAttr_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"pinvokeimpl\"", "'('", "compQstring", "pinvAttr", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 168 ; } }
@@ -19462,8 +19462,8 @@ public partial class  methAttr_methAttr_22pinvokeimpl22_272827_compQstring_pinvA
 public partial class  methAttr_methAttr_22pinvokeimpl22_272827_pinvAttr_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"pinvokeimpl\"", "'('", "pinvAttr", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 169 ; } }
@@ -19478,8 +19478,8 @@ public partial class  methAttr_methAttr_22pinvokeimpl22_272827_pinvAttr_272927
 public partial class  pinvAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 170 ; } }
@@ -19494,8 +19494,8 @@ public partial class  pinvAttr
 public partial class  pinvAttr_pinvAttr_22nomangle22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"nomangle\"" } ;
 	public override System.Decimal RuleNumber { get { return 171 ; } }
@@ -19510,8 +19510,8 @@ public partial class  pinvAttr_pinvAttr_22nomangle22
 public partial class  pinvAttr_pinvAttr_22ansi22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"ansi\"" } ;
 	public override System.Decimal RuleNumber { get { return 172 ; } }
@@ -19526,8 +19526,8 @@ public partial class  pinvAttr_pinvAttr_22ansi22
 public partial class  pinvAttr_pinvAttr_22unicode22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"unicode\"" } ;
 	public override System.Decimal RuleNumber { get { return 173 ; } }
@@ -19542,8 +19542,8 @@ public partial class  pinvAttr_pinvAttr_22unicode22
 public partial class  pinvAttr_pinvAttr_22autochar22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"autochar\"" } ;
 	public override System.Decimal RuleNumber { get { return 174 ; } }
@@ -19558,8 +19558,8 @@ public partial class  pinvAttr_pinvAttr_22autochar22
 public partial class  pinvAttr_pinvAttr_22lasterr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"lasterr\"" } ;
 	public override System.Decimal RuleNumber { get { return 175 ; } }
@@ -19574,8 +19574,8 @@ public partial class  pinvAttr_pinvAttr_22lasterr22
 public partial class  pinvAttr_pinvAttr_22winapi22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"winapi\"" } ;
 	public override System.Decimal RuleNumber { get { return 176 ; } }
@@ -19590,8 +19590,8 @@ public partial class  pinvAttr_pinvAttr_22winapi22
 public partial class  pinvAttr_pinvAttr_22cdecl22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"cdecl\"" } ;
 	public override System.Decimal RuleNumber { get { return 177 ; } }
@@ -19606,8 +19606,8 @@ public partial class  pinvAttr_pinvAttr_22cdecl22
 public partial class  pinvAttr_pinvAttr_22stdcall22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"stdcall\"" } ;
 	public override System.Decimal RuleNumber { get { return 178 ; } }
@@ -19622,8 +19622,8 @@ public partial class  pinvAttr_pinvAttr_22stdcall22
 public partial class  pinvAttr_pinvAttr_22thiscall22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"thiscall\"" } ;
 	public override System.Decimal RuleNumber { get { return 179 ; } }
@@ -19638,8 +19638,8 @@ public partial class  pinvAttr_pinvAttr_22thiscall22
 public partial class  pinvAttr_pinvAttr_22fastcall22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'i', 'n', 'v', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "pinvAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"fastcall\"" } ;
 	public override System.Decimal RuleNumber { get { return 180 ; } }
@@ -19657,8 +19657,8 @@ public partial class  methodName_222Ector22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodName___ctor_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'N', 'a', 'm', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodName" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".ctor\"" } ;
 	public override System.Decimal RuleNumber { get { return 181 ; } }
@@ -19676,8 +19676,8 @@ public partial class  methodName_222Ecctor22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodName___cctor_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'N', 'a', 'm', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodName" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".cctor\"" } ;
 	public override System.Decimal RuleNumber { get { return 182 ; } }
@@ -19695,8 +19695,8 @@ public partial class  methodName_name31
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodName_name1() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'N', 'a', 'm', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodName" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "name1" } ;
 	public override System.Decimal RuleNumber { get { return 183 ; } }
@@ -19711,8 +19711,8 @@ public partial class  methodName_name31
 public partial class  paramAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'a', 'r', 'a', 'm', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "paramAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 184 ; } }
@@ -19727,8 +19727,8 @@ public partial class  paramAttr
 public partial class  paramAttr_paramAttr_275B27_22in22_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'a', 'r', 'a', 'm', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "paramAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "'['", "\"in\"", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 185 ; } }
@@ -19743,8 +19743,8 @@ public partial class  paramAttr_paramAttr_275B27_22in22_275D27
 public partial class  paramAttr_paramAttr_275B27_22out22_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'a', 'r', 'a', 'm', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "paramAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "'['", "\"out\"", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 186 ; } }
@@ -19759,8 +19759,8 @@ public partial class  paramAttr_paramAttr_275B27_22out22_275D27
 public partial class  paramAttr_paramAttr_275B27_22opt22_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'a', 'r', 'a', 'm', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "paramAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "'['", "\"opt\"", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 187 ; } }
@@ -19775,8 +19775,8 @@ public partial class  paramAttr_paramAttr_275B27_22opt22_275D27
 public partial class  paramAttr_paramAttr_275B27_int3332_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'a', 'r', 'a', 'm', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "paramAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "'['", "int32", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 188 ; } }
@@ -19791,8 +19791,8 @@ public partial class  paramAttr_paramAttr_275B27_int3332_275D27
 public partial class  fieldAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 189 ; } }
@@ -19810,8 +19810,8 @@ public partial class  fieldAttr_fieldAttr_22static22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__static_() ; }
 	#endif
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"static\"" } ;
 	public override System.Decimal RuleNumber { get { return 190 ; } }
@@ -19829,8 +19829,8 @@ public partial class  fieldAttr_fieldAttr_22public22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__public_() ; }
 	#endif
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"public\"" } ;
 	public override System.Decimal RuleNumber { get { return 191 ; } }
@@ -19848,8 +19848,8 @@ public partial class  fieldAttr_fieldAttr_22private22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__private_() ; }
 	#endif
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"private\"" } ;
 	public override System.Decimal RuleNumber { get { return 192 ; } }
@@ -19867,8 +19867,8 @@ public partial class  fieldAttr_fieldAttr_22family22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__family_() ; }
 	#endif
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"family\"" } ;
 	public override System.Decimal RuleNumber { get { return 193 ; } }
@@ -19886,8 +19886,8 @@ public partial class  fieldAttr_fieldAttr_22initonly22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__initonly_() ; }
 	#endif
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"initonly\"" } ;
 	public override System.Decimal RuleNumber { get { return 194 ; } }
@@ -19902,8 +19902,8 @@ public partial class  fieldAttr_fieldAttr_22initonly22
 public partial class  fieldAttr_fieldAttr_22rtspecialname22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"rtspecialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 195 ; } }
@@ -19918,8 +19918,8 @@ public partial class  fieldAttr_fieldAttr_22rtspecialname22
 public partial class  fieldAttr_fieldAttr_22specialname22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"specialname\"" } ;
 	public override System.Decimal RuleNumber { get { return 196 ; } }
@@ -19934,8 +19934,8 @@ public partial class  fieldAttr_fieldAttr_22specialname22
 public partial class  fieldAttr_fieldAttr_22marshal22_272827_nativeType_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"marshal\"", "'('", "nativeType", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 197 ; } }
@@ -19953,8 +19953,8 @@ public partial class  fieldAttr_fieldAttr_22assembly22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__assembly_() ; }
 	#endif
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"assembly\"" } ;
 	public override System.Decimal RuleNumber { get { return 198 ; } }
@@ -19969,8 +19969,8 @@ public partial class  fieldAttr_fieldAttr_22assembly22
 public partial class  fieldAttr_fieldAttr_22famandassem22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"famandassem\"" } ;
 	public override System.Decimal RuleNumber { get { return 199 ; } }
@@ -19985,8 +19985,8 @@ public partial class  fieldAttr_fieldAttr_22famandassem22
 public partial class  fieldAttr_fieldAttr_22famorassem22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"famorassem\"" } ;
 	public override System.Decimal RuleNumber { get { return 200 ; } }
@@ -20001,8 +20001,8 @@ public partial class  fieldAttr_fieldAttr_22famorassem22
 public partial class  fieldAttr_fieldAttr_22privatescope22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"privatescope\"" } ;
 	public override System.Decimal RuleNumber { get { return 201 ; } }
@@ -20020,8 +20020,8 @@ public partial class  fieldAttr_fieldAttr_22literal22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldAttr_fieldAttr__literal_() ; }
 	#endif
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"literal\"" } ;
 	public override System.Decimal RuleNumber { get { return 202 ; } }
@@ -20036,8 +20036,8 @@ public partial class  fieldAttr_fieldAttr_22literal22
 public partial class  fieldAttr_fieldAttr_22notserialized22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"notserialized\"" } ;
 	public override System.Decimal RuleNumber { get { return 203 ; } }
@@ -20052,8 +20052,8 @@ public partial class  fieldAttr_fieldAttr_22notserialized22
 public partial class  implAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 204 ; } }
@@ -20068,8 +20068,8 @@ public partial class  implAttr
 public partial class  implAttr_implAttr_22native22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"native\"" } ;
 	public override System.Decimal RuleNumber { get { return 205 ; } }
@@ -20087,8 +20087,8 @@ public partial class  implAttr_implAttr_22cil22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.implAttr_implAttr__cil_() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"cil\"" } ;
 	public override System.Decimal RuleNumber { get { return 206 ; } }
@@ -20103,8 +20103,8 @@ public partial class  implAttr_implAttr_22cil22
 public partial class  implAttr_implAttr_22optil22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"optil\"" } ;
 	public override System.Decimal RuleNumber { get { return 207 ; } }
@@ -20122,8 +20122,8 @@ public partial class  implAttr_implAttr_22managed22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.implAttr_implAttr__managed_() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"managed\"" } ;
 	public override System.Decimal RuleNumber { get { return 208 ; } }
@@ -20138,8 +20138,8 @@ public partial class  implAttr_implAttr_22managed22
 public partial class  implAttr_implAttr_22unmanaged22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"unmanaged\"" } ;
 	public override System.Decimal RuleNumber { get { return 209 ; } }
@@ -20154,8 +20154,8 @@ public partial class  implAttr_implAttr_22unmanaged22
 public partial class  implAttr_implAttr_22forwardref22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"forwardref\"" } ;
 	public override System.Decimal RuleNumber { get { return 210 ; } }
@@ -20170,8 +20170,8 @@ public partial class  implAttr_implAttr_22forwardref22
 public partial class  implAttr_implAttr_22preservesig22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"preservesig\"" } ;
 	public override System.Decimal RuleNumber { get { return 211 ; } }
@@ -20186,8 +20186,8 @@ public partial class  implAttr_implAttr_22preservesig22
 public partial class  implAttr_implAttr_22runtime22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"runtime\"" } ;
 	public override System.Decimal RuleNumber { get { return 212 ; } }
@@ -20202,8 +20202,8 @@ public partial class  implAttr_implAttr_22runtime22
 public partial class  implAttr_implAttr_22internalcall22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"internalcall\"" } ;
 	public override System.Decimal RuleNumber { get { return 213 ; } }
@@ -20218,8 +20218,8 @@ public partial class  implAttr_implAttr_22internalcall22
 public partial class  implAttr_implAttr_22synchronized22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"synchronized\"" } ;
 	public override System.Decimal RuleNumber { get { return 214 ; } }
@@ -20234,8 +20234,8 @@ public partial class  implAttr_implAttr_22synchronized22
 public partial class  implAttr_implAttr_22noinlining22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'm', 'p', 'l', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "implAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"noinlining\"" } ;
 	public override System.Decimal RuleNumber { get { return 215 ; } }
@@ -20253,8 +20253,8 @@ public partial class  localsHead_222Elocals22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.localsHead___locals_() ; }
 	#endif
-	static readonly char[]   lhs = { 'l', 'o', 'c', 'a', 'l', 's', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "localsHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".locals\"" } ;
 	public override System.Decimal RuleNumber { get { return 216 ; } }
@@ -20269,8 +20269,8 @@ public partial class  localsHead_222Elocals22
 public partial class  methodDecl_222Eemitbyte22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".emitbyte\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 217 ; } }
@@ -20285,8 +20285,8 @@ public partial class  methodDecl_222Eemitbyte22_int3332
 public partial class  methodDecl_sehBlock
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sehBlock" } ;
 	public override System.Decimal RuleNumber { get { return 218 ; } }
@@ -20304,8 +20304,8 @@ public partial class  methodDecl_222Emaxstack22_int3332
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl___maxstack__int32() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".maxstack\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 219 ; } }
@@ -20320,8 +20320,8 @@ public partial class  methodDecl_222Emaxstack22_int3332
 public partial class  methodDecl_localsHead_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "localsHead", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 220 ; } }
@@ -20339,8 +20339,8 @@ public partial class  methodDecl_localsHead_22init22_272827_sigArgs30_272927
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl_localsHead__init______sigArgs0____() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "localsHead", "\"init\"", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 221 ; } }
@@ -20358,8 +20358,8 @@ public partial class  methodDecl_222Eentrypoint22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl___entrypoint_() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".entrypoint\"" } ;
 	public override System.Decimal RuleNumber { get { return 222 ; } }
@@ -20374,8 +20374,8 @@ public partial class  methodDecl_222Eentrypoint22
 public partial class  methodDecl_222Ezeroinit22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".zeroinit\"" } ;
 	public override System.Decimal RuleNumber { get { return 223 ; } }
@@ -20390,8 +20390,8 @@ public partial class  methodDecl_222Ezeroinit22
 public partial class  methodDecl_dataDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "dataDecl" } ;
 	public override System.Decimal RuleNumber { get { return 224 ; } }
@@ -20409,8 +20409,8 @@ public partial class  methodDecl_instr
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl_instr() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "instr" } ;
 	public override System.Decimal RuleNumber { get { return 225 ; } }
@@ -20428,8 +20428,8 @@ public partial class  methodDecl_id_273A27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl_id____() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id", "':'" } ;
 	public override System.Decimal RuleNumber { get { return 226 ; } }
@@ -20444,8 +20444,8 @@ public partial class  methodDecl_id_273A27
 public partial class  methodDecl_secDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "secDecl" } ;
 	public override System.Decimal RuleNumber { get { return 227 ; } }
@@ -20460,8 +20460,8 @@ public partial class  methodDecl_secDecl
 public partial class  methodDecl_extSourceSpec
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
 	public override System.Decimal RuleNumber { get { return 228 ; } }
@@ -20476,8 +20476,8 @@ public partial class  methodDecl_extSourceSpec
 public partial class  methodDecl_languageDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
 	public override System.Decimal RuleNumber { get { return 229 ; } }
@@ -20495,8 +20495,8 @@ public partial class  methodDecl_customAttrDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl_customAttrDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
 	public override System.Decimal RuleNumber { get { return 230 ; } }
@@ -20511,8 +20511,8 @@ public partial class  methodDecl_customAttrDecl
 public partial class  methodDecl_222Eexport22_275B27_int3332_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".export\"", "'['", "int32", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 231 ; } }
@@ -20527,8 +20527,8 @@ public partial class  methodDecl_222Eexport22_275B27_int3332_275D27
 public partial class  methodDecl_222Eexport22_275B27_int3332_275D27_22as22_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".export\"", "'['", "int32", "']'", "\"as\"", "id" } ;
 	public override System.Decimal RuleNumber { get { return 232 ; } }
@@ -20543,8 +20543,8 @@ public partial class  methodDecl_222Eexport22_275B27_int3332_275D27_22as22_id
 public partial class  methodDecl_222Evtentry22_int3332_273A27_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".vtentry\"", "int32", "':'", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 233 ; } }
@@ -20559,8 +20559,8 @@ public partial class  methodDecl_222Evtentry22_int3332_273A27_int3332
 public partial class  methodDecl_222Eoverride22_typeSpec_223A3A22_methodName
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".override\"", "typeSpec", "\"::\"", "methodName" } ;
 	public override System.Decimal RuleNumber { get { return 234 ; } }
@@ -20575,8 +20575,8 @@ public partial class  methodDecl_222Eoverride22_typeSpec_223A3A22_methodName
 public partial class  methodDecl_scopeBlock
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "scopeBlock" } ;
 	public override System.Decimal RuleNumber { get { return 235 ; } }
@@ -20591,8 +20591,8 @@ public partial class  methodDecl_scopeBlock
 public partial class  methodDecl_222Eparam22_275B27_int3332_275D27_initOpt
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".param\"", "'['", "int32", "']'", "initOpt" } ;
 	public override System.Decimal RuleNumber { get { return 236 ; } }
@@ -20607,8 +20607,8 @@ public partial class  methodDecl_222Eparam22_275B27_int3332_275D27_initOpt
 public partial class  scopeBlock_scopeOpen_methodDecls_277D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'c', 'o', 'p', 'e', 'B', 'l', 'o', 'c', 'k',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "scopeBlock" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "scopeOpen", "methodDecls", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 237 ; } }
@@ -20623,8 +20623,8 @@ public partial class  scopeBlock_scopeOpen_methodDecls_277D27
 public partial class  scopeOpen_277B27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'c', 'o', 'p', 'e', 'O', 'p', 'e', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "scopeOpen" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'{'" } ;
 	public override System.Decimal RuleNumber { get { return 238 ; } }
@@ -20639,8 +20639,8 @@ public partial class  scopeOpen_277B27
 public partial class  sehBlock_tryBlock_sehClauses
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'h', 'B', 'l', 'o', 'c', 'k',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sehBlock" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "tryBlock", "sehClauses" } ;
 	public override System.Decimal RuleNumber { get { return 239 ; } }
@@ -20655,8 +20655,8 @@ public partial class  sehBlock_tryBlock_sehClauses
 public partial class  sehClauses_sehClause_sehClauses
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'h', 'C', 'l', 'a', 'u', 's', 'e', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sehClauses" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sehClause", "sehClauses" } ;
 	public override System.Decimal RuleNumber { get { return 240 ; } }
@@ -20671,8 +20671,8 @@ public partial class  sehClauses_sehClause_sehClauses
 public partial class  sehClauses_sehClause
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'h', 'C', 'l', 'a', 'u', 's', 'e', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sehClauses" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sehClause" } ;
 	public override System.Decimal RuleNumber { get { return 241 ; } }
@@ -20687,8 +20687,8 @@ public partial class  sehClauses_sehClause
 public partial class  tryBlock_tryHead_scopeBlock
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'r', 'y', 'B', 'l', 'o', 'c', 'k',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "tryBlock" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "tryHead", "scopeBlock" } ;
 	public override System.Decimal RuleNumber { get { return 242 ; } }
@@ -20703,8 +20703,8 @@ public partial class  tryBlock_tryHead_scopeBlock
 public partial class  tryBlock_tryHead_id_22to22_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'r', 'y', 'B', 'l', 'o', 'c', 'k',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "tryBlock" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "tryHead", "id", "\"to\"", "id" } ;
 	public override System.Decimal RuleNumber { get { return 243 ; } }
@@ -20719,8 +20719,8 @@ public partial class  tryBlock_tryHead_id_22to22_id
 public partial class  tryBlock_tryHead_int3332_22to22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'r', 'y', 'B', 'l', 'o', 'c', 'k',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "tryBlock" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "tryHead", "int32", "\"to\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 244 ; } }
@@ -20735,8 +20735,8 @@ public partial class  tryBlock_tryHead_int3332_22to22_int3332
 public partial class  tryHead_222Etry22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'r', 'y', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "tryHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".try\"" } ;
 	public override System.Decimal RuleNumber { get { return 245 ; } }
@@ -20751,8 +20751,8 @@ public partial class  tryHead_222Etry22
 public partial class  sehClause_catchClause_handlerBlock
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'h', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sehClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "catchClause", "handlerBlock" } ;
 	public override System.Decimal RuleNumber { get { return 246 ; } }
@@ -20767,8 +20767,8 @@ public partial class  sehClause_catchClause_handlerBlock
 public partial class  sehClause_filterClause_handlerBlock
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'h', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sehClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "filterClause", "handlerBlock" } ;
 	public override System.Decimal RuleNumber { get { return 247 ; } }
@@ -20783,8 +20783,8 @@ public partial class  sehClause_filterClause_handlerBlock
 public partial class  sehClause_finallyClause_handlerBlock
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'h', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sehClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "finallyClause", "handlerBlock" } ;
 	public override System.Decimal RuleNumber { get { return 248 ; } }
@@ -20799,8 +20799,8 @@ public partial class  sehClause_finallyClause_handlerBlock
 public partial class  sehClause_faultClause_handlerBlock
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'h', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sehClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "faultClause", "handlerBlock" } ;
 	public override System.Decimal RuleNumber { get { return 249 ; } }
@@ -20815,8 +20815,8 @@ public partial class  sehClause_faultClause_handlerBlock
 public partial class  filterClause_filterHead_scopeBlock
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 't', 'e', 'r', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "filterClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "filterHead", "scopeBlock" } ;
 	public override System.Decimal RuleNumber { get { return 250 ; } }
@@ -20831,8 +20831,8 @@ public partial class  filterClause_filterHead_scopeBlock
 public partial class  filterClause_filterHead_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 't', 'e', 'r', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "filterClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "filterHead", "id" } ;
 	public override System.Decimal RuleNumber { get { return 251 ; } }
@@ -20847,8 +20847,8 @@ public partial class  filterClause_filterHead_id
 public partial class  filterClause_filterHead_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 't', 'e', 'r', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "filterClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "filterHead", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 252 ; } }
@@ -20863,8 +20863,8 @@ public partial class  filterClause_filterHead_int3332
 public partial class  filterHead_22filter22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 't', 'e', 'r', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "filterHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"filter\"" } ;
 	public override System.Decimal RuleNumber { get { return 253 ; } }
@@ -20879,8 +20879,8 @@ public partial class  filterHead_22filter22
 public partial class  catchClause_22catch22_className
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 't', 'c', 'h', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "catchClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"catch\"", "className" } ;
 	public override System.Decimal RuleNumber { get { return 254 ; } }
@@ -20895,8 +20895,8 @@ public partial class  catchClause_22catch22_className
 public partial class  finallyClause_22finally22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'n', 'a', 'l', 'l', 'y', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "finallyClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"finally\"" } ;
 	public override System.Decimal RuleNumber { get { return 255 ; } }
@@ -20911,8 +20911,8 @@ public partial class  finallyClause_22finally22
 public partial class  faultClause_22fault22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'a', 'u', 'l', 't', 'C', 'l', 'a', 'u', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "faultClause" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"fault\"" } ;
 	public override System.Decimal RuleNumber { get { return 256 ; } }
@@ -20927,8 +20927,8 @@ public partial class  faultClause_22fault22
 public partial class  handlerBlock_scopeBlock
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'h', 'a', 'n', 'd', 'l', 'e', 'r', 'B', 'l', 'o', 'c', 'k',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "handlerBlock" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "scopeBlock" } ;
 	public override System.Decimal RuleNumber { get { return 257 ; } }
@@ -20943,8 +20943,8 @@ public partial class  handlerBlock_scopeBlock
 public partial class  handlerBlock_22handler22_id_22to22_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'h', 'a', 'n', 'd', 'l', 'e', 'r', 'B', 'l', 'o', 'c', 'k',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "handlerBlock" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"handler\"", "id", "\"to\"", "id" } ;
 	public override System.Decimal RuleNumber { get { return 258 ; } }
@@ -20959,8 +20959,8 @@ public partial class  handlerBlock_22handler22_id_22to22_id
 public partial class  handlerBlock_22handler22_int3332_22to22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'h', 'a', 'n', 'd', 'l', 'e', 'r', 'B', 'l', 'o', 'c', 'k',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "handlerBlock" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"handler\"", "int32", "\"to\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 259 ; } }
@@ -20975,8 +20975,8 @@ public partial class  handlerBlock_22handler22_int3332_22to22_int3332
 public partial class  methodDecls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 260 ; } }
@@ -20994,8 +20994,8 @@ public partial class  methodDecls_methodDecls_methodDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecls_methodDecls_methodDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodDecls", "methodDecl" } ;
 	public override System.Decimal RuleNumber { get { return 261 ; } }
@@ -21013,8 +21013,8 @@ public partial class  dataDecl_ddHead_ddBody
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.dataDecl_ddHead_ddBody() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'a', 't', 'a', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "dataDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ddHead", "ddBody" } ;
 	public override System.Decimal RuleNumber { get { return 262 ; } }
@@ -21032,8 +21032,8 @@ public partial class  ddHead_222Edata22_tls_id_273D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.ddHead___data__tls_id____() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'd', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".data\"", "tls", "id", "'='" } ;
 	public override System.Decimal RuleNumber { get { return 263 ; } }
@@ -21048,8 +21048,8 @@ public partial class  ddHead_222Edata22_tls_id_273D27
 public partial class  ddHead_222Edata22_tls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".data\"", "tls" } ;
 	public override System.Decimal RuleNumber { get { return 264 ; } }
@@ -21064,8 +21064,8 @@ public partial class  ddHead_222Edata22_tls
 public partial class  tls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "tls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 265 ; } }
@@ -21080,8 +21080,8 @@ public partial class  tls
 public partial class  tls_22tls22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "tls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"tls\"" } ;
 	public override System.Decimal RuleNumber { get { return 266 ; } }
@@ -21096,8 +21096,8 @@ public partial class  tls_22tls22
 public partial class  ddBody_277B27_ddItemList_277D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'B', 'o', 'd', 'y',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddBody" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'{'", "ddItemList", "'}'" } ;
 	public override System.Decimal RuleNumber { get { return 267 ; } }
@@ -21115,8 +21115,8 @@ public partial class  ddBody_ddItem
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.ddBody_ddItem() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'd', 'B', 'o', 'd', 'y',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddBody" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ddItem" } ;
 	public override System.Decimal RuleNumber { get { return 268 ; } }
@@ -21131,8 +21131,8 @@ public partial class  ddBody_ddItem
 public partial class  ddItemList_ddItem_272C27_ddItemList
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm', 'L', 'i', 's', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItemList" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ddItem", "','", "ddItemList" } ;
 	public override System.Decimal RuleNumber { get { return 269 ; } }
@@ -21147,8 +21147,8 @@ public partial class  ddItemList_ddItem_272C27_ddItemList
 public partial class  ddItemList_ddItem
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm', 'L', 'i', 's', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItemList" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ddItem" } ;
 	public override System.Decimal RuleNumber { get { return 270 ; } }
@@ -21163,8 +21163,8 @@ public partial class  ddItemList_ddItem
 public partial class  ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm', 'C', 'o', 'u', 'n', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItemCount" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 271 ; } }
@@ -21179,8 +21179,8 @@ public partial class  ddItemCount
 public partial class  ddItemCount_275B27_int3332_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm', 'C', 'o', 'u', 'n', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItemCount" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "int32", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 272 ; } }
@@ -21195,8 +21195,8 @@ public partial class  ddItemCount_275B27_int3332_275D27
 public partial class  ddItem_22char22_272A27_272827_compQstring_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"char\"", "'*'", "'('", "compQstring", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 273 ; } }
@@ -21211,8 +21211,8 @@ public partial class  ddItem_22char22_272A27_272827_compQstring_272927
 public partial class  ddItem_272627_272827_id_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'&'", "'('", "id", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 274 ; } }
@@ -21230,8 +21230,8 @@ public partial class  ddItem_bytearrayhead_bytes_272927
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.ddItem_bytearrayhead_bytes____() ; }
 	#endif
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bytearrayhead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 275 ; } }
@@ -21246,8 +21246,8 @@ public partial class  ddItem_bytearrayhead_bytes_272927
 public partial class  ddItem_22float333222_272827_float3634_272927_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "'('", "float64", "')'", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 276 ; } }
@@ -21262,8 +21262,8 @@ public partial class  ddItem_22float333222_272827_float3634_272927_ddItemCount
 public partial class  ddItem_22float363422_272827_float3634_272927_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "'('", "float64", "')'", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 277 ; } }
@@ -21278,8 +21278,8 @@ public partial class  ddItem_22float363422_272827_float3634_272927_ddItemCount
 public partial class  ddItem_22int363422_272827_int3634_272927_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"", "'('", "int64", "')'", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 278 ; } }
@@ -21294,8 +21294,8 @@ public partial class  ddItem_22int363422_272827_int3634_272927_ddItemCount
 public partial class  ddItem_22int333222_272827_int3332_272927_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"", "'('", "int32", "')'", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 279 ; } }
@@ -21310,8 +21310,8 @@ public partial class  ddItem_22int333222_272827_int3332_272927_ddItemCount
 public partial class  ddItem_22int313622_272827_int3332_272927_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"", "'('", "int32", "')'", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 280 ; } }
@@ -21326,8 +21326,8 @@ public partial class  ddItem_22int313622_272827_int3332_272927_ddItemCount
 public partial class  ddItem_22int3822_272827_int3332_272927_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"", "'('", "int32", "')'", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 281 ; } }
@@ -21342,8 +21342,8 @@ public partial class  ddItem_22int3822_272827_int3332_272927_ddItemCount
 public partial class  ddItem_22float333222_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 282 ; } }
@@ -21358,8 +21358,8 @@ public partial class  ddItem_22float333222_ddItemCount
 public partial class  ddItem_22float363422_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 283 ; } }
@@ -21374,8 +21374,8 @@ public partial class  ddItem_22float363422_ddItemCount
 public partial class  ddItem_22int363422_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 284 ; } }
@@ -21390,8 +21390,8 @@ public partial class  ddItem_22int363422_ddItemCount
 public partial class  ddItem_22int333222_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 285 ; } }
@@ -21406,8 +21406,8 @@ public partial class  ddItem_22int333222_ddItemCount
 public partial class  ddItem_22int313622_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 286 ; } }
@@ -21422,8 +21422,8 @@ public partial class  ddItem_22int313622_ddItemCount
 public partial class  ddItem_22int3822_ddItemCount
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'd', 'd', 'I', 't', 'e', 'm',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "ddItem" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"", "ddItemCount" } ;
 	public override System.Decimal RuleNumber { get { return 287 ; } }
@@ -21438,8 +21438,8 @@ public partial class  ddItem_22int3822_ddItemCount
 public partial class  fieldInit_22float333222_272827_float3634_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "'('", "float64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 288 ; } }
@@ -21454,8 +21454,8 @@ public partial class  fieldInit_22float333222_272827_float3634_272927
 public partial class  fieldInit_22float363422_272827_float3634_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "'('", "float64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 289 ; } }
@@ -21470,8 +21470,8 @@ public partial class  fieldInit_22float363422_272827_float3634_272927
 public partial class  fieldInit_22float333222_272827_int3634_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "'('", "int64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 290 ; } }
@@ -21486,8 +21486,8 @@ public partial class  fieldInit_22float333222_272827_int3634_272927
 public partial class  fieldInit_22float363422_272827_int3634_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "'('", "int64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 291 ; } }
@@ -21502,8 +21502,8 @@ public partial class  fieldInit_22float363422_272827_int3634_272927
 public partial class  fieldInit_22int363422_272827_int3634_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"", "'('", "int64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 292 ; } }
@@ -21521,8 +21521,8 @@ public partial class  fieldInit_22int333222_272827_int3634_272927
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.fieldInit__int32______int64____() ; }
 	#endif
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"", "'('", "int64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 293 ; } }
@@ -21537,8 +21537,8 @@ public partial class  fieldInit_22int333222_272827_int3634_272927
 public partial class  fieldInit_22int313622_272827_int3634_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"", "'('", "int64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 294 ; } }
@@ -21553,8 +21553,8 @@ public partial class  fieldInit_22int313622_272827_int3634_272927
 public partial class  fieldInit_22char22_272827_int3634_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"char\"", "'('", "int64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 295 ; } }
@@ -21569,8 +21569,8 @@ public partial class  fieldInit_22char22_272827_int3634_272927
 public partial class  fieldInit_22int3822_272827_int3634_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"", "'('", "int64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 296 ; } }
@@ -21585,8 +21585,8 @@ public partial class  fieldInit_22int3822_272827_int3634_272927
 public partial class  fieldInit_22bool22_272827_truefalse_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bool\"", "'('", "truefalse", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 297 ; } }
@@ -21601,8 +21601,8 @@ public partial class  fieldInit_22bool22_272827_truefalse_272927
 public partial class  fieldInit_compQstring
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring" } ;
 	public override System.Decimal RuleNumber { get { return 298 ; } }
@@ -21617,8 +21617,8 @@ public partial class  fieldInit_compQstring
 public partial class  fieldInit_bytearrayhead_bytes_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bytearrayhead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 299 ; } }
@@ -21633,8 +21633,8 @@ public partial class  fieldInit_bytearrayhead_bytes_272927
 public partial class  fieldInit_22nullref22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'e', 'l', 'd', 'I', 'n', 'i', 't',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fieldInit" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"nullref\"" } ;
 	public override System.Decimal RuleNumber { get { return 300 ; } }
@@ -21652,8 +21652,8 @@ public partial class  bytearrayhead_22bytearray22_272827
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.bytearrayhead__bytearray_____() ; }
 	#endif
-	static readonly char[]   lhs = { 'b', 'y', 't', 'e', 'a', 'r', 'r', 'a', 'y', 'h', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bytearrayhead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bytearray\"", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 301 ; } }
@@ -21668,8 +21668,8 @@ public partial class  bytearrayhead_22bytearray22_272827
 public partial class  bytes
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'b', 'y', 't', 'e', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bytes" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 302 ; } }
@@ -21687,8 +21687,8 @@ public partial class  bytes_hexbytes
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.bytes_hexbytes() ; }
 	#endif
-	static readonly char[]   lhs = { 'b', 'y', 't', 'e', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bytes" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "hexbytes" } ;
 	public override System.Decimal RuleNumber { get { return 303 ; } }
@@ -21706,8 +21706,8 @@ public partial class  hexbytes_HEXBYTE
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.hexbytes_HEXBYTE() ; }
 	#endif
-	static readonly char[]   lhs = { 'h', 'e', 'x', 'b', 'y', 't', 'e', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "hexbytes" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "HEXBYTE" } ;
 	public override System.Decimal RuleNumber { get { return 304 ; } }
@@ -21725,8 +21725,8 @@ public partial class  hexbytes_hexbytes_HEXBYTE
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.hexbytes_hexbytes_HEXBYTE() ; }
 	#endif
-	static readonly char[]   lhs = { 'h', 'e', 'x', 'b', 'y', 't', 'e', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "hexbytes" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "hexbytes", "HEXBYTE" } ;
 	public override System.Decimal RuleNumber { get { return 305 ; } }
@@ -21741,8 +21741,8 @@ public partial class  hexbytes_hexbytes_HEXBYTE
 public partial class  instr_r_head_INSTR5FR_272827
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r', '_', 'r', '_', 'h', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr_r_head" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_R", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 306 ; } }
@@ -21760,8 +21760,8 @@ public partial class  instr_tok_head_INSTR5FTOK
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_tok_head_INSTR_TOK() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r', '_', 't', 'o', 'k', '_', 'h', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr_tok_head" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_TOK" } ;
 	public override System.Decimal RuleNumber { get { return 307 ; } }
@@ -21776,8 +21776,8 @@ public partial class  instr_tok_head_INSTR5FTOK
 public partial class  methodSpec_22method22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'e', 't', 'h', 'o', 'd', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "methodSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"method\"" } ;
 	public override System.Decimal RuleNumber { get { return 308 ; } }
@@ -21795,8 +21795,8 @@ public partial class  instr_INSTR5FNONE
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_NONE() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_NONE" } ;
 	public override System.Decimal RuleNumber { get { return 309 ; } }
@@ -21814,8 +21814,8 @@ public partial class  instr_INSTR5FVAR_int3332
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_VAR_int32() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_VAR", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 310 ; } }
@@ -21830,8 +21830,8 @@ public partial class  instr_INSTR5FVAR_int3332
 public partial class  instr_INSTR5FVAR_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_VAR", "id" } ;
 	public override System.Decimal RuleNumber { get { return 311 ; } }
@@ -21849,8 +21849,8 @@ public partial class  instr_INSTR5FI_int3332
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_I_int32() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_I", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 312 ; } }
@@ -21865,8 +21865,8 @@ public partial class  instr_INSTR5FI_int3332
 public partial class  instr_INSTR5FI38_int3634
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_I8", "int64" } ;
 	public override System.Decimal RuleNumber { get { return 313 ; } }
@@ -21881,8 +21881,8 @@ public partial class  instr_INSTR5FI38_int3634
 public partial class  instr_INSTR5FR_float3634
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_R", "float64" } ;
 	public override System.Decimal RuleNumber { get { return 314 ; } }
@@ -21897,8 +21897,8 @@ public partial class  instr_INSTR5FR_float3634
 public partial class  instr_INSTR5FR_int3634
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_R", "int64" } ;
 	public override System.Decimal RuleNumber { get { return 315 ; } }
@@ -21913,8 +21913,8 @@ public partial class  instr_INSTR5FR_int3634
 public partial class  instr_instr5Fr5Fhead_bytes_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "instr_r_head", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 316 ; } }
@@ -21932,8 +21932,8 @@ public partial class  instr_INSTR5FBRTARGET_int3332
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_BRTARGET_int32() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_BRTARGET", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 317 ; } }
@@ -21951,8 +21951,8 @@ public partial class  instr_INSTR5FBRTARGET_id
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_BRTARGET_id() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_BRTARGET", "id" } ;
 	public override System.Decimal RuleNumber { get { return 318 ; } }
@@ -21970,8 +21970,8 @@ public partial class  instr_INSTR5FMETHOD_callConv_type_typeSpec_223A3A22_method
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_METHOD_callConv_type_typeSpec______methodName_____sigArgs0____() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_METHOD", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 319 ; } }
@@ -21986,8 +21986,8 @@ public partial class  instr_INSTR5FMETHOD_callConv_type_typeSpec_223A3A22_method
 public partial class  instr_INSTR5FMETHOD_callConv_type_methodName_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_METHOD", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 320 ; } }
@@ -22005,8 +22005,8 @@ public partial class  instr_INSTR5FFIELD_type_typeSpec_223A3A22_id
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_FIELD_type_typeSpec______id() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_FIELD", "type", "typeSpec", "\"::\"", "id" } ;
 	public override System.Decimal RuleNumber { get { return 321 ; } }
@@ -22024,8 +22024,8 @@ public partial class  instr_INSTR5FFIELD_type_id
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_FIELD_type_id() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_FIELD", "type", "id" } ;
 	public override System.Decimal RuleNumber { get { return 322 ; } }
@@ -22043,8 +22043,8 @@ public partial class  instr_INSTR5FTYPE_typeSpec
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_TYPE_typeSpec() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_TYPE", "typeSpec" } ;
 	public override System.Decimal RuleNumber { get { return 323 ; } }
@@ -22062,8 +22062,8 @@ public partial class  instr_INSTR5FSTRING_compQstring
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_STRING_compQstring() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_STRING", "compQstring" } ;
 	public override System.Decimal RuleNumber { get { return 324 ; } }
@@ -22078,8 +22078,8 @@ public partial class  instr_INSTR5FSTRING_compQstring
 public partial class  instr_INSTR5FSTRING_bytearrayhead_bytes_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_STRING", "bytearrayhead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 325 ; } }
@@ -22094,8 +22094,8 @@ public partial class  instr_INSTR5FSTRING_bytearrayhead_bytes_272927
 public partial class  instr_INSTR5FSIG_callConv_type_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_SIG", "callConv", "type", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 326 ; } }
@@ -22110,8 +22110,8 @@ public partial class  instr_INSTR5FSIG_callConv_type_272827_sigArgs30_272927
 public partial class  instr_INSTR5FRVA_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_RVA", "id" } ;
 	public override System.Decimal RuleNumber { get { return 327 ; } }
@@ -22126,8 +22126,8 @@ public partial class  instr_INSTR5FRVA_id
 public partial class  instr_INSTR5FRVA_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_RVA", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 328 ; } }
@@ -22145,8 +22145,8 @@ public partial class  instr_instr5Ftok5Fhead_ownerType
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_instr_tok_head_ownerType() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "instr_tok_head", "ownerType" } ;
 	public override System.Decimal RuleNumber { get { return 329 ; } }
@@ -22164,8 +22164,8 @@ public partial class  instr_INSTR5FSWITCH_272827_labels_272927
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.instr_INSTR_SWITCH_____labels____() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_SWITCH", "'('", "labels", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 330 ; } }
@@ -22180,8 +22180,8 @@ public partial class  instr_INSTR5FSWITCH_272827_labels_272927
 public partial class  instr_INSTR5FPHI_int3136s
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 's', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "instr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_PHI", "int16s" } ;
 	public override System.Decimal RuleNumber { get { return 331 ; } }
@@ -22196,8 +22196,8 @@ public partial class  instr_INSTR5FPHI_int3136s
 public partial class  sigArgs0
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g', 's', '0',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sigArgs0" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 332 ; } }
@@ -22215,8 +22215,8 @@ public partial class  sigArgs0_sigArgs31
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArgs0.sigArgs0_sigArgs1() ; }
 	#endif
-	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g', 's', '0',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sigArgs0" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sigArgs1" } ;
 	public override System.Decimal RuleNumber { get { return 333 ; } }
@@ -22234,8 +22234,8 @@ public partial class  sigArgs1_sigArg
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArg.sigArgs1_sigArg() ; }
 	#endif
-	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g', 's', '1',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sigArgs1" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sigArg" } ;
 	public override System.Decimal RuleNumber { get { return 334 ; } }
@@ -22253,8 +22253,8 @@ public partial class  sigArgs1_sigArgs31_272C27_sigArg
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArg.sigArgs1_sigArgs1_____sigArg() ; }
 	#endif
-	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g', 's', '1',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sigArgs1" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sigArgs1", "','", "sigArg" } ;
 	public override System.Decimal RuleNumber { get { return 335 ; } }
@@ -22269,8 +22269,8 @@ public partial class  sigArgs1_sigArgs31_272C27_sigArg
 public partial class  sigArg_222E2E2E22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sigArg" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"...\"" } ;
 	public override System.Decimal RuleNumber { get { return 336 ; } }
@@ -22288,8 +22288,8 @@ public partial class  sigArg_paramAttr_type
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArg.sigArg_paramAttr_type() ; }
 	#endif
-	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sigArg" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "type" } ;
 	public override System.Decimal RuleNumber { get { return 337 ; } }
@@ -22307,8 +22307,8 @@ public partial class  sigArg_paramAttr_type_id
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.SigArg.sigArg_paramAttr_type_id() ; }
 	#endif
-	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sigArg" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "type", "id" } ;
 	public override System.Decimal RuleNumber { get { return 338 ; } }
@@ -22323,8 +22323,8 @@ public partial class  sigArg_paramAttr_type_id
 public partial class  sigArg_paramAttr_type_22marshal22_272827_nativeType_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sigArg" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "type", "\"marshal\"", "'('", "nativeType", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 339 ; } }
@@ -22339,8 +22339,8 @@ public partial class  sigArg_paramAttr_type_22marshal22_272827_nativeType_272927
 public partial class  sigArg_paramAttr_type_22marshal22_272827_nativeType_272927_id
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'i', 'g', 'A', 'r', 'g',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "sigArg" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "type", "\"marshal\"", "'('", "nativeType", "')'", "id" } ;
 	public override System.Decimal RuleNumber { get { return 340 ; } }
@@ -22358,8 +22358,8 @@ public partial class  name1_id
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.name1_id() ; }
 	#endif
-	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', '1',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "name1" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id" } ;
 	public override System.Decimal RuleNumber { get { return 341 ; } }
@@ -22377,8 +22377,8 @@ public partial class  name1_DOTTEDNAME
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.name1_DOTTEDNAME() ; }
 	#endif
-	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', '1',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "name1" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "DOTTEDNAME" } ;
 	public override System.Decimal RuleNumber { get { return 342 ; } }
@@ -22393,8 +22393,8 @@ public partial class  name1_DOTTEDNAME
 public partial class  name1_name31_272E27_name31
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', '1',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "name1" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "name1", "'.'", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 343 ; } }
@@ -22412,8 +22412,8 @@ public partial class  className_275B27_name31_275D27_slashedName
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.className_____name1_____slashedName() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'N', 'a', 'm', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "className" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "name1", "']'", "slashedName" } ;
 	public override System.Decimal RuleNumber { get { return 344 ; } }
@@ -22428,8 +22428,8 @@ public partial class  className_275B27_name31_275D27_slashedName
 public partial class  className_275B27_222Emodule22_name31_275D27_slashedName
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'N', 'a', 'm', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "className" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "\".module\"", "name1", "']'", "slashedName" } ;
 	public override System.Decimal RuleNumber { get { return 345 ; } }
@@ -22447,8 +22447,8 @@ public partial class  className_slashedName
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.className_slashedName() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'l', 'a', 's', 's', 'N', 'a', 'm', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "className" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "slashedName" } ;
 	public override System.Decimal RuleNumber { get { return 346 ; } }
@@ -22466,8 +22466,8 @@ public partial class  slashedName_name31
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.slashedName_name1() ; }
 	#endif
-	static readonly char[]   lhs = { 's', 'l', 'a', 's', 'h', 'e', 'd', 'N', 'a', 'm', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "slashedName" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "name1" } ;
 	public override System.Decimal RuleNumber { get { return 347 ; } }
@@ -22485,8 +22485,8 @@ public partial class  slashedName_slashedName_272F27_name31
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.slashedName_slashedName_____name1() ; }
 	#endif
-	static readonly char[]   lhs = { 's', 'l', 'a', 's', 'h', 'e', 'd', 'N', 'a', 'm', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "slashedName" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "slashedName", "'/'", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 348 ; } }
@@ -22504,8 +22504,8 @@ public partial class  typeSpec_className
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.typeSpec_className() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "typeSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className" } ;
 	public override System.Decimal RuleNumber { get { return 349 ; } }
@@ -22520,8 +22520,8 @@ public partial class  typeSpec_className
 public partial class  typeSpec_275B27_name31_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "typeSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "name1", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 350 ; } }
@@ -22536,8 +22536,8 @@ public partial class  typeSpec_275B27_name31_275D27
 public partial class  typeSpec_275B27_222Emodule22_name31_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "typeSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "\".module\"", "name1", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 351 ; } }
@@ -22555,8 +22555,8 @@ public partial class  typeSpec_type
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.typeSpec_type() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "typeSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type" } ;
 	public override System.Decimal RuleNumber { get { return 352 ; } }
@@ -22574,8 +22574,8 @@ public partial class  callConv_22instance22_callConv
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.CallConv.callConv__instance__callConv() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'C', 'o', 'n', 'v',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callConv" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"instance\"", "callConv" } ;
 	public override System.Decimal RuleNumber { get { return 353 ; } }
@@ -22590,8 +22590,8 @@ public partial class  callConv_22instance22_callConv
 public partial class  callConv_22explicit22_callConv
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'C', 'o', 'n', 'v',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callConv" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"explicit\"", "callConv" } ;
 	public override System.Decimal RuleNumber { get { return 354 ; } }
@@ -22609,8 +22609,8 @@ public partial class  callConv_callKind
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.CallConv.callConv_callKind() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'C', 'o', 'n', 'v',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callConv" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "callKind" } ;
 	public override System.Decimal RuleNumber { get { return 355 ; } }
@@ -22625,8 +22625,8 @@ public partial class  callConv_callKind
 public partial class  callKind
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'K', 'i', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callKind" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 356 ; } }
@@ -22644,8 +22644,8 @@ public partial class  callKind_22default22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.callKind__default_() ; }
 	#endif
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'K', 'i', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callKind" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"default\"" } ;
 	public override System.Decimal RuleNumber { get { return 357 ; } }
@@ -22660,8 +22660,8 @@ public partial class  callKind_22default22
 public partial class  callKind_22vararg22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'K', 'i', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callKind" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"vararg\"" } ;
 	public override System.Decimal RuleNumber { get { return 358 ; } }
@@ -22676,8 +22676,8 @@ public partial class  callKind_22vararg22
 public partial class  callKind_22unmanaged22_22cdecl22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'K', 'i', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callKind" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unmanaged\"", "\"cdecl\"" } ;
 	public override System.Decimal RuleNumber { get { return 359 ; } }
@@ -22692,8 +22692,8 @@ public partial class  callKind_22unmanaged22_22cdecl22
 public partial class  callKind_22unmanaged22_22stdcall22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'K', 'i', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callKind" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unmanaged\"", "\"stdcall\"" } ;
 	public override System.Decimal RuleNumber { get { return 360 ; } }
@@ -22708,8 +22708,8 @@ public partial class  callKind_22unmanaged22_22stdcall22
 public partial class  callKind_22unmanaged22_22thiscall22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'K', 'i', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callKind" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unmanaged\"", "\"thiscall\"" } ;
 	public override System.Decimal RuleNumber { get { return 361 ; } }
@@ -22724,8 +22724,8 @@ public partial class  callKind_22unmanaged22_22thiscall22
 public partial class  callKind_22unmanaged22_22fastcall22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'l', 'l', 'K', 'i', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "callKind" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unmanaged\"", "\"fastcall\"" } ;
 	public override System.Decimal RuleNumber { get { return 362 ; } }
@@ -22740,8 +22740,8 @@ public partial class  callKind_22unmanaged22_22fastcall22
 public partial class  nativeType
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 363 ; } }
@@ -22756,8 +22756,8 @@ public partial class  nativeType
 public partial class  nativeType_22custom22_272827_compQstring_272C27_compQstring_272C27_compQstring_272C27_compQstring_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"custom\"", "'('", "compQstring", "','", "compQstring", "','", "compQstring", "','", "compQstring", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 364 ; } }
@@ -22772,8 +22772,8 @@ public partial class  nativeType_22custom22_272827_compQstring_272C27_compQstrin
 public partial class  nativeType_22custom22_272827_compQstring_272C27_compQstring_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"custom\"", "'('", "compQstring", "','", "compQstring", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 365 ; } }
@@ -22788,8 +22788,8 @@ public partial class  nativeType_22custom22_272827_compQstring_272C27_compQstrin
 public partial class  nativeType_22fixed22_22sysstring22_275B27_int3332_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"fixed\"", "\"sysstring\"", "'['", "int32", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 366 ; } }
@@ -22804,8 +22804,8 @@ public partial class  nativeType_22fixed22_22sysstring22_275B27_int3332_275D27
 public partial class  nativeType_22fixed22_22array22_275B27_int3332_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"fixed\"", "\"array\"", "'['", "int32", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 367 ; } }
@@ -22820,8 +22820,8 @@ public partial class  nativeType_22fixed22_22array22_275B27_int3332_275D27
 public partial class  nativeType_22variant22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"variant\"" } ;
 	public override System.Decimal RuleNumber { get { return 368 ; } }
@@ -22836,8 +22836,8 @@ public partial class  nativeType_22variant22
 public partial class  nativeType_22currency22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"currency\"" } ;
 	public override System.Decimal RuleNumber { get { return 369 ; } }
@@ -22852,8 +22852,8 @@ public partial class  nativeType_22currency22
 public partial class  nativeType_22syschar22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"syschar\"" } ;
 	public override System.Decimal RuleNumber { get { return 370 ; } }
@@ -22868,8 +22868,8 @@ public partial class  nativeType_22syschar22
 public partial class  nativeType_22void22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"void\"" } ;
 	public override System.Decimal RuleNumber { get { return 371 ; } }
@@ -22884,8 +22884,8 @@ public partial class  nativeType_22void22
 public partial class  nativeType_22bool22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bool\"" } ;
 	public override System.Decimal RuleNumber { get { return 372 ; } }
@@ -22900,8 +22900,8 @@ public partial class  nativeType_22bool22
 public partial class  nativeType_22int3822
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"" } ;
 	public override System.Decimal RuleNumber { get { return 373 ; } }
@@ -22916,8 +22916,8 @@ public partial class  nativeType_22int3822
 public partial class  nativeType_22int313622
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"" } ;
 	public override System.Decimal RuleNumber { get { return 374 ; } }
@@ -22932,8 +22932,8 @@ public partial class  nativeType_22int313622
 public partial class  nativeType_22int333222
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"" } ;
 	public override System.Decimal RuleNumber { get { return 375 ; } }
@@ -22948,8 +22948,8 @@ public partial class  nativeType_22int333222
 public partial class  nativeType_22int363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"" } ;
 	public override System.Decimal RuleNumber { get { return 376 ; } }
@@ -22964,8 +22964,8 @@ public partial class  nativeType_22int363422
 public partial class  nativeType_22float333222
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"" } ;
 	public override System.Decimal RuleNumber { get { return 377 ; } }
@@ -22980,8 +22980,8 @@ public partial class  nativeType_22float333222
 public partial class  nativeType_22float363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"" } ;
 	public override System.Decimal RuleNumber { get { return 378 ; } }
@@ -22996,8 +22996,8 @@ public partial class  nativeType_22float363422
 public partial class  nativeType_22error22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"error\"" } ;
 	public override System.Decimal RuleNumber { get { return 379 ; } }
@@ -23012,8 +23012,8 @@ public partial class  nativeType_22error22
 public partial class  nativeType_22unsigned22_22int3822
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int8\"" } ;
 	public override System.Decimal RuleNumber { get { return 380 ; } }
@@ -23028,8 +23028,8 @@ public partial class  nativeType_22unsigned22_22int3822
 public partial class  nativeType_22unsigned22_22int313622
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int16\"" } ;
 	public override System.Decimal RuleNumber { get { return 381 ; } }
@@ -23044,8 +23044,8 @@ public partial class  nativeType_22unsigned22_22int313622
 public partial class  nativeType_22unsigned22_22int333222
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int32\"" } ;
 	public override System.Decimal RuleNumber { get { return 382 ; } }
@@ -23060,8 +23060,8 @@ public partial class  nativeType_22unsigned22_22int333222
 public partial class  nativeType_22unsigned22_22int363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int64\"" } ;
 	public override System.Decimal RuleNumber { get { return 383 ; } }
@@ -23076,8 +23076,8 @@ public partial class  nativeType_22unsigned22_22int363422
 public partial class  nativeType_nativeType_272A27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'*'" } ;
 	public override System.Decimal RuleNumber { get { return 384 ; } }
@@ -23092,8 +23092,8 @@ public partial class  nativeType_nativeType_272A27
 public partial class  nativeType_nativeType_275B27_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'['", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 385 ; } }
@@ -23108,8 +23108,8 @@ public partial class  nativeType_nativeType_275B27_275D27
 public partial class  nativeType_nativeType_275B27_int3332_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'['", "int32", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 386 ; } }
@@ -23124,8 +23124,8 @@ public partial class  nativeType_nativeType_275B27_int3332_275D27
 public partial class  nativeType_nativeType_275B27_int3332_272B27_int3332_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'['", "int32", "'+'", "int32", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 387 ; } }
@@ -23140,8 +23140,8 @@ public partial class  nativeType_nativeType_275B27_int3332_272B27_int3332_275D27
 public partial class  nativeType_nativeType_275B27_272B27_int3332_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'['", "'+'", "int32", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 388 ; } }
@@ -23156,8 +23156,8 @@ public partial class  nativeType_nativeType_275B27_272B27_int3332_275D27
 public partial class  nativeType_22decimal22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"decimal\"" } ;
 	public override System.Decimal RuleNumber { get { return 389 ; } }
@@ -23172,8 +23172,8 @@ public partial class  nativeType_22decimal22
 public partial class  nativeType_22date22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"date\"" } ;
 	public override System.Decimal RuleNumber { get { return 390 ; } }
@@ -23188,8 +23188,8 @@ public partial class  nativeType_22date22
 public partial class  nativeType_22bstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 391 ; } }
@@ -23204,8 +23204,8 @@ public partial class  nativeType_22bstr22
 public partial class  nativeType_22lpstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 392 ; } }
@@ -23220,8 +23220,8 @@ public partial class  nativeType_22lpstr22
 public partial class  nativeType_22lpwstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpwstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 393 ; } }
@@ -23236,8 +23236,8 @@ public partial class  nativeType_22lpwstr22
 public partial class  nativeType_22lptstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lptstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 394 ; } }
@@ -23252,8 +23252,8 @@ public partial class  nativeType_22lptstr22
 public partial class  nativeType_22objectref22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"objectref\"" } ;
 	public override System.Decimal RuleNumber { get { return 395 ; } }
@@ -23268,8 +23268,8 @@ public partial class  nativeType_22objectref22
 public partial class  nativeType_22iunknown22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"iunknown\"" } ;
 	public override System.Decimal RuleNumber { get { return 396 ; } }
@@ -23284,8 +23284,8 @@ public partial class  nativeType_22iunknown22
 public partial class  nativeType_22idispatch22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"idispatch\"" } ;
 	public override System.Decimal RuleNumber { get { return 397 ; } }
@@ -23300,8 +23300,8 @@ public partial class  nativeType_22idispatch22
 public partial class  nativeType_22struct22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"struct\"" } ;
 	public override System.Decimal RuleNumber { get { return 398 ; } }
@@ -23316,8 +23316,8 @@ public partial class  nativeType_22struct22
 public partial class  nativeType_22interface22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"interface\"" } ;
 	public override System.Decimal RuleNumber { get { return 399 ; } }
@@ -23332,8 +23332,8 @@ public partial class  nativeType_22interface22
 public partial class  nativeType_22safearray22_variantType
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"safearray\"", "variantType" } ;
 	public override System.Decimal RuleNumber { get { return 400 ; } }
@@ -23348,8 +23348,8 @@ public partial class  nativeType_22safearray22_variantType
 public partial class  nativeType_22safearray22_variantType_272C27_compQstring
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"safearray\"", "variantType", "','", "compQstring" } ;
 	public override System.Decimal RuleNumber { get { return 401 ; } }
@@ -23364,8 +23364,8 @@ public partial class  nativeType_22safearray22_variantType_272C27_compQstring
 public partial class  nativeType_22int22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int\"" } ;
 	public override System.Decimal RuleNumber { get { return 402 ; } }
@@ -23380,8 +23380,8 @@ public partial class  nativeType_22int22
 public partial class  nativeType_22unsigned22_22int22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int\"" } ;
 	public override System.Decimal RuleNumber { get { return 403 ; } }
@@ -23396,8 +23396,8 @@ public partial class  nativeType_22unsigned22_22int22
 public partial class  nativeType_22nested22_22struct22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"nested\"", "\"struct\"" } ;
 	public override System.Decimal RuleNumber { get { return 404 ; } }
@@ -23412,8 +23412,8 @@ public partial class  nativeType_22nested22_22struct22
 public partial class  nativeType_22byvalstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"byvalstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 405 ; } }
@@ -23428,8 +23428,8 @@ public partial class  nativeType_22byvalstr22
 public partial class  nativeType_22ansi22_22bstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"ansi\"", "\"bstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 406 ; } }
@@ -23444,8 +23444,8 @@ public partial class  nativeType_22ansi22_22bstr22
 public partial class  nativeType_22tbstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"tbstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 407 ; } }
@@ -23460,8 +23460,8 @@ public partial class  nativeType_22tbstr22
 public partial class  nativeType_22variant22_22bool22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"variant\"", "\"bool\"" } ;
 	public override System.Decimal RuleNumber { get { return 408 ; } }
@@ -23476,8 +23476,8 @@ public partial class  nativeType_22variant22_22bool22
 public partial class  nativeType_methodSpec
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodSpec" } ;
 	public override System.Decimal RuleNumber { get { return 409 ; } }
@@ -23492,8 +23492,8 @@ public partial class  nativeType_methodSpec
 public partial class  nativeType_22as22_22any22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"as\"", "\"any\"" } ;
 	public override System.Decimal RuleNumber { get { return 410 ; } }
@@ -23508,8 +23508,8 @@ public partial class  nativeType_22as22_22any22
 public partial class  nativeType_22lpstruct22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 't', 'i', 'v', 'e', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nativeType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpstruct\"" } ;
 	public override System.Decimal RuleNumber { get { return 411 ; } }
@@ -23524,8 +23524,8 @@ public partial class  nativeType_22lpstruct22
 public partial class  variantType
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 412 ; } }
@@ -23540,8 +23540,8 @@ public partial class  variantType
 public partial class  variantType_22null22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"null\"" } ;
 	public override System.Decimal RuleNumber { get { return 413 ; } }
@@ -23556,8 +23556,8 @@ public partial class  variantType_22null22
 public partial class  variantType_22variant22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"variant\"" } ;
 	public override System.Decimal RuleNumber { get { return 414 ; } }
@@ -23572,8 +23572,8 @@ public partial class  variantType_22variant22
 public partial class  variantType_22currency22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"currency\"" } ;
 	public override System.Decimal RuleNumber { get { return 415 ; } }
@@ -23588,8 +23588,8 @@ public partial class  variantType_22currency22
 public partial class  variantType_22void22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"void\"" } ;
 	public override System.Decimal RuleNumber { get { return 416 ; } }
@@ -23604,8 +23604,8 @@ public partial class  variantType_22void22
 public partial class  variantType_22bool22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bool\"" } ;
 	public override System.Decimal RuleNumber { get { return 417 ; } }
@@ -23620,8 +23620,8 @@ public partial class  variantType_22bool22
 public partial class  variantType_22int3822
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"" } ;
 	public override System.Decimal RuleNumber { get { return 418 ; } }
@@ -23636,8 +23636,8 @@ public partial class  variantType_22int3822
 public partial class  variantType_22int313622
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"" } ;
 	public override System.Decimal RuleNumber { get { return 419 ; } }
@@ -23652,8 +23652,8 @@ public partial class  variantType_22int313622
 public partial class  variantType_22int333222
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"" } ;
 	public override System.Decimal RuleNumber { get { return 420 ; } }
@@ -23668,8 +23668,8 @@ public partial class  variantType_22int333222
 public partial class  variantType_22int363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"" } ;
 	public override System.Decimal RuleNumber { get { return 421 ; } }
@@ -23684,8 +23684,8 @@ public partial class  variantType_22int363422
 public partial class  variantType_22float333222
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"" } ;
 	public override System.Decimal RuleNumber { get { return 422 ; } }
@@ -23700,8 +23700,8 @@ public partial class  variantType_22float333222
 public partial class  variantType_22float363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"" } ;
 	public override System.Decimal RuleNumber { get { return 423 ; } }
@@ -23716,8 +23716,8 @@ public partial class  variantType_22float363422
 public partial class  variantType_22unsigned22_22int3822
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int8\"" } ;
 	public override System.Decimal RuleNumber { get { return 424 ; } }
@@ -23732,8 +23732,8 @@ public partial class  variantType_22unsigned22_22int3822
 public partial class  variantType_22unsigned22_22int313622
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int16\"" } ;
 	public override System.Decimal RuleNumber { get { return 425 ; } }
@@ -23748,8 +23748,8 @@ public partial class  variantType_22unsigned22_22int313622
 public partial class  variantType_22unsigned22_22int333222
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int32\"" } ;
 	public override System.Decimal RuleNumber { get { return 426 ; } }
@@ -23764,8 +23764,8 @@ public partial class  variantType_22unsigned22_22int333222
 public partial class  variantType_22unsigned22_22int363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int64\"" } ;
 	public override System.Decimal RuleNumber { get { return 427 ; } }
@@ -23780,8 +23780,8 @@ public partial class  variantType_22unsigned22_22int363422
 public partial class  variantType_272A27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'*'" } ;
 	public override System.Decimal RuleNumber { get { return 428 ; } }
@@ -23796,8 +23796,8 @@ public partial class  variantType_272A27
 public partial class  variantType_variantType_275B27_275D27
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "variantType", "'['", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 429 ; } }
@@ -23812,8 +23812,8 @@ public partial class  variantType_variantType_275B27_275D27
 public partial class  variantType_variantType_22vector22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "variantType", "\"vector\"" } ;
 	public override System.Decimal RuleNumber { get { return 430 ; } }
@@ -23828,8 +23828,8 @@ public partial class  variantType_variantType_22vector22
 public partial class  variantType_variantType_272627
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "variantType", "'&'" } ;
 	public override System.Decimal RuleNumber { get { return 431 ; } }
@@ -23844,8 +23844,8 @@ public partial class  variantType_variantType_272627
 public partial class  variantType_22decimal22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"decimal\"" } ;
 	public override System.Decimal RuleNumber { get { return 432 ; } }
@@ -23860,8 +23860,8 @@ public partial class  variantType_22decimal22
 public partial class  variantType_22date22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"date\"" } ;
 	public override System.Decimal RuleNumber { get { return 433 ; } }
@@ -23876,8 +23876,8 @@ public partial class  variantType_22date22
 public partial class  variantType_22bstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 434 ; } }
@@ -23892,8 +23892,8 @@ public partial class  variantType_22bstr22
 public partial class  variantType_22lpstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 435 ; } }
@@ -23908,8 +23908,8 @@ public partial class  variantType_22lpstr22
 public partial class  variantType_22lpwstr22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpwstr\"" } ;
 	public override System.Decimal RuleNumber { get { return 436 ; } }
@@ -23924,8 +23924,8 @@ public partial class  variantType_22lpwstr22
 public partial class  variantType_22iunknown22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"iunknown\"" } ;
 	public override System.Decimal RuleNumber { get { return 437 ; } }
@@ -23940,8 +23940,8 @@ public partial class  variantType_22iunknown22
 public partial class  variantType_22idispatch22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"idispatch\"" } ;
 	public override System.Decimal RuleNumber { get { return 438 ; } }
@@ -23956,8 +23956,8 @@ public partial class  variantType_22idispatch22
 public partial class  variantType_22safearray22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"safearray\"" } ;
 	public override System.Decimal RuleNumber { get { return 439 ; } }
@@ -23972,8 +23972,8 @@ public partial class  variantType_22safearray22
 public partial class  variantType_22int22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int\"" } ;
 	public override System.Decimal RuleNumber { get { return 440 ; } }
@@ -23988,8 +23988,8 @@ public partial class  variantType_22int22
 public partial class  variantType_22unsigned22_22int22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int\"" } ;
 	public override System.Decimal RuleNumber { get { return 441 ; } }
@@ -24004,8 +24004,8 @@ public partial class  variantType_22unsigned22_22int22
 public partial class  variantType_22error22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"error\"" } ;
 	public override System.Decimal RuleNumber { get { return 442 ; } }
@@ -24020,8 +24020,8 @@ public partial class  variantType_22error22
 public partial class  variantType_22hresult22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"hresult\"" } ;
 	public override System.Decimal RuleNumber { get { return 443 ; } }
@@ -24036,8 +24036,8 @@ public partial class  variantType_22hresult22
 public partial class  variantType_22carray22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"carray\"" } ;
 	public override System.Decimal RuleNumber { get { return 444 ; } }
@@ -24052,8 +24052,8 @@ public partial class  variantType_22carray22
 public partial class  variantType_22userdefined22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"userdefined\"" } ;
 	public override System.Decimal RuleNumber { get { return 445 ; } }
@@ -24068,8 +24068,8 @@ public partial class  variantType_22userdefined22
 public partial class  variantType_22record22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"record\"" } ;
 	public override System.Decimal RuleNumber { get { return 446 ; } }
@@ -24084,8 +24084,8 @@ public partial class  variantType_22record22
 public partial class  variantType_22filetime22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"filetime\"" } ;
 	public override System.Decimal RuleNumber { get { return 447 ; } }
@@ -24100,8 +24100,8 @@ public partial class  variantType_22filetime22
 public partial class  variantType_22blob22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"blob\"" } ;
 	public override System.Decimal RuleNumber { get { return 448 ; } }
@@ -24116,8 +24116,8 @@ public partial class  variantType_22blob22
 public partial class  variantType_22stream22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"stream\"" } ;
 	public override System.Decimal RuleNumber { get { return 449 ; } }
@@ -24132,8 +24132,8 @@ public partial class  variantType_22stream22
 public partial class  variantType_22storage22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"storage\"" } ;
 	public override System.Decimal RuleNumber { get { return 450 ; } }
@@ -24148,8 +24148,8 @@ public partial class  variantType_22storage22
 public partial class  variantType_22streamed5Fobject22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"streamed_object\"" } ;
 	public override System.Decimal RuleNumber { get { return 451 ; } }
@@ -24164,8 +24164,8 @@ public partial class  variantType_22streamed5Fobject22
 public partial class  variantType_22stored5Fobject22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"stored_object\"" } ;
 	public override System.Decimal RuleNumber { get { return 452 ; } }
@@ -24180,8 +24180,8 @@ public partial class  variantType_22stored5Fobject22
 public partial class  variantType_22blob5Fobject22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"blob_object\"" } ;
 	public override System.Decimal RuleNumber { get { return 453 ; } }
@@ -24196,8 +24196,8 @@ public partial class  variantType_22blob5Fobject22
 public partial class  variantType_22cf22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"cf\"" } ;
 	public override System.Decimal RuleNumber { get { return 454 ; } }
@@ -24212,8 +24212,8 @@ public partial class  variantType_22cf22
 public partial class  variantType_22clsid22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'v', 'a', 'r', 'i', 'a', 'n', 't', 'T', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "variantType" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"clsid\"" } ;
 	public override System.Decimal RuleNumber { get { return 455 ; } }
@@ -24231,8 +24231,8 @@ public partial class  type_22class22_className
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__class__className() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"class\"", "className" } ;
 	public override System.Decimal RuleNumber { get { return 456 ; } }
@@ -24250,8 +24250,8 @@ public partial class  type_22object22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__object_() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"object\"" } ;
 	public override System.Decimal RuleNumber { get { return 457 ; } }
@@ -24269,8 +24269,8 @@ public partial class  type_22string22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__string_() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"string\"" } ;
 	public override System.Decimal RuleNumber { get { return 458 ; } }
@@ -24285,8 +24285,8 @@ public partial class  type_22string22
 public partial class  type_22value22_22class22_className
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"value\"", "\"class\"", "className" } ;
 	public override System.Decimal RuleNumber { get { return 459 ; } }
@@ -24304,8 +24304,8 @@ public partial class  type_22valuetype22_className
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__valuetype__className() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"valuetype\"", "className" } ;
 	public override System.Decimal RuleNumber { get { return 460 ; } }
@@ -24323,8 +24323,8 @@ public partial class  type_type_275B27_275D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_square_brackets() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'['", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 461 ; } }
@@ -24342,8 +24342,8 @@ public partial class  type_type_275B27_bounds31_275D27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_____bounds1____() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'['", "bounds1", "']'" } ;
 	public override System.Decimal RuleNumber { get { return 462 ; } }
@@ -24361,8 +24361,8 @@ public partial class  type_type_272627
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_ampersand() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'&'" } ;
 	public override System.Decimal RuleNumber { get { return 463 ; } }
@@ -24380,8 +24380,8 @@ public partial class  type_type_272A27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_asterisk() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'*'" } ;
 	public override System.Decimal RuleNumber { get { return 464 ; } }
@@ -24399,8 +24399,8 @@ public partial class  type_type_273C27_genArgs_273E27
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type_type_____genArgs____() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'<'", "genArgs", "'>'" } ;
 	public override System.Decimal RuleNumber { get { return 465 ; } }
@@ -24415,8 +24415,8 @@ public partial class  type_type_273C27_genArgs_273E27
 public partial class  type_type_22pinned22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "\"pinned\"" } ;
 	public override System.Decimal RuleNumber { get { return 466 ; } }
@@ -24431,8 +24431,8 @@ public partial class  type_type_22pinned22
 public partial class  type_type_22modreq22_272827_className_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "\"modreq\"", "'('", "className", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 467 ; } }
@@ -24447,8 +24447,8 @@ public partial class  type_type_22modreq22_272827_className_272927
 public partial class  type_type_22modopt22_272827_className_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "\"modopt\"", "'('", "className", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 468 ; } }
@@ -24466,8 +24466,8 @@ public partial class  type_272127_int3332
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type_____int32() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'!'", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 469 ; } }
@@ -24482,8 +24482,8 @@ public partial class  type_272127_int3332
 public partial class  type_methodSpec_callConv_type_272A27_272827_sigArgs30_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodSpec", "callConv", "type", "'*'", "'('", "sigArgs0", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 470 ; } }
@@ -24498,8 +24498,8 @@ public partial class  type_methodSpec_callConv_type_272A27_272827_sigArgs30_2729
 public partial class  type_22typedref22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"typedref\"" } ;
 	public override System.Decimal RuleNumber { get { return 471 ; } }
@@ -24517,8 +24517,8 @@ public partial class  type_22char22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__char_() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"char\"" } ;
 	public override System.Decimal RuleNumber { get { return 472 ; } }
@@ -24536,8 +24536,8 @@ public partial class  type_22void22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__void_() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"void\"" } ;
 	public override System.Decimal RuleNumber { get { return 473 ; } }
@@ -24555,8 +24555,8 @@ public partial class  type_22bool22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__bool_() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bool\"" } ;
 	public override System.Decimal RuleNumber { get { return 474 ; } }
@@ -24571,8 +24571,8 @@ public partial class  type_22bool22
 public partial class  type_22int3822
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"" } ;
 	public override System.Decimal RuleNumber { get { return 475 ; } }
@@ -24590,8 +24590,8 @@ public partial class  type_22int313622
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__int16_() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"" } ;
 	public override System.Decimal RuleNumber { get { return 476 ; } }
@@ -24609,8 +24609,8 @@ public partial class  type_22int333222
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__int32_() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"" } ;
 	public override System.Decimal RuleNumber { get { return 477 ; } }
@@ -24625,8 +24625,8 @@ public partial class  type_22int333222
 public partial class  type_22int363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"" } ;
 	public override System.Decimal RuleNumber { get { return 478 ; } }
@@ -24641,8 +24641,8 @@ public partial class  type_22int363422
 public partial class  type_22float333222
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"" } ;
 	public override System.Decimal RuleNumber { get { return 479 ; } }
@@ -24657,8 +24657,8 @@ public partial class  type_22float333222
 public partial class  type_22float363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"" } ;
 	public override System.Decimal RuleNumber { get { return 480 ; } }
@@ -24673,8 +24673,8 @@ public partial class  type_22float363422
 public partial class  type_22unsigned22_22int3822
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int8\"" } ;
 	public override System.Decimal RuleNumber { get { return 481 ; } }
@@ -24689,8 +24689,8 @@ public partial class  type_22unsigned22_22int3822
 public partial class  type_22unsigned22_22int313622
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int16\"" } ;
 	public override System.Decimal RuleNumber { get { return 482 ; } }
@@ -24705,8 +24705,8 @@ public partial class  type_22unsigned22_22int313622
 public partial class  type_22unsigned22_22int333222
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int32\"" } ;
 	public override System.Decimal RuleNumber { get { return 483 ; } }
@@ -24721,8 +24721,8 @@ public partial class  type_22unsigned22_22int333222
 public partial class  type_22unsigned22_22int363422
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int64\"" } ;
 	public override System.Decimal RuleNumber { get { return 484 ; } }
@@ -24740,8 +24740,8 @@ public partial class  type_22native22_22int22
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.type__native___int_() ; }
 	#endif
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"native\"", "\"int\"" } ;
 	public override System.Decimal RuleNumber { get { return 485 ; } }
@@ -24756,8 +24756,8 @@ public partial class  type_22native22_22int22
 public partial class  type_22native22_22unsigned22_22int22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"native\"", "\"unsigned\"", "\"int\"" } ;
 	public override System.Decimal RuleNumber { get { return 486 ; } }
@@ -24772,8 +24772,8 @@ public partial class  type_22native22_22unsigned22_22int22
 public partial class  type_22native22_22float22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'y', 'p', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "type" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"native\"", "\"float\"" } ;
 	public override System.Decimal RuleNumber { get { return 487 ; } }
@@ -24791,8 +24791,8 @@ public partial class  genArgs_type
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.genArgs_type() ; }
 	#endif
-	static readonly char[]   lhs = { 'g', 'e', 'n', 'A', 'r', 'g', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "genArgs" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type" } ;
 	public override System.Decimal RuleNumber { get { return 488 ; } }
@@ -24810,8 +24810,8 @@ public partial class  genArgs_genArgs_272C27_type
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.genArgs_genArgs_____type() ; }
 	#endif
-	static readonly char[]   lhs = { 'g', 'e', 'n', 'A', 'r', 'g', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "genArgs" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "genArgs", "','", "type" } ;
 	public override System.Decimal RuleNumber { get { return 489 ; } }
@@ -24829,8 +24829,8 @@ public partial class  bounds1_bound
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.bounds1_bound() ; }
 	#endif
-	static readonly char[]   lhs = { 'b', 'o', 'u', 'n', 'd', 's', '1',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bounds1" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bound" } ;
 	public override System.Decimal RuleNumber { get { return 490 ; } }
@@ -24845,8 +24845,8 @@ public partial class  bounds1_bound
 public partial class  bounds1_bounds31_272C27_bound
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'b', 'o', 'u', 'n', 'd', 's', '1',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bounds1" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bounds1", "','", "bound" } ;
 	public override System.Decimal RuleNumber { get { return 491 ; } }
@@ -24861,8 +24861,8 @@ public partial class  bounds1_bounds31_272C27_bound
 public partial class  bound
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'b', 'o', 'u', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bound" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 492 ; } }
@@ -24877,8 +24877,8 @@ public partial class  bound
 public partial class  bound_222E2E2E22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'b', 'o', 'u', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bound" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"...\"" } ;
 	public override System.Decimal RuleNumber { get { return 493 ; } }
@@ -24893,8 +24893,8 @@ public partial class  bound_222E2E2E22
 public partial class  bound_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'b', 'o', 'u', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bound" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32" } ;
 	public override System.Decimal RuleNumber { get { return 494 ; } }
@@ -24909,8 +24909,8 @@ public partial class  bound_int3332
 public partial class  bound_int3332_222E2E2E22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'b', 'o', 'u', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bound" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32", "\"...\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 495 ; } }
@@ -24925,8 +24925,8 @@ public partial class  bound_int3332_222E2E2E22_int3332
 public partial class  bound_int3332_222E2E2E22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'b', 'o', 'u', 'n', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "bound" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32", "\"...\"" } ;
 	public override System.Decimal RuleNumber { get { return 496 ; } }
@@ -24941,8 +24941,8 @@ public partial class  bound_int3332_222E2E2E22
 public partial class  labels
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'l', 'a', 'b', 'e', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "labels" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 497 ; } }
@@ -24960,8 +24960,8 @@ public partial class  labels_id_272C27_labels
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.labels_id_____labels() ; }
 	#endif
-	static readonly char[]   lhs = { 'l', 'a', 'b', 'e', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "labels" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id", "','", "labels" } ;
 	public override System.Decimal RuleNumber { get { return 498 ; } }
@@ -24976,8 +24976,8 @@ public partial class  labels_id_272C27_labels
 public partial class  labels_int3332_272C27_labels
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'l', 'a', 'b', 'e', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "labels" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32", "','", "labels" } ;
 	public override System.Decimal RuleNumber { get { return 499 ; } }
@@ -24995,8 +24995,8 @@ public partial class  labels_id
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.labels_id() ; }
 	#endif
-	static readonly char[]   lhs = { 'l', 'a', 'b', 'e', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "labels" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id" } ;
 	public override System.Decimal RuleNumber { get { return 500 ; } }
@@ -25011,8 +25011,8 @@ public partial class  labels_id
 public partial class  labels_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'l', 'a', 'b', 'e', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "labels" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32" } ;
 	public override System.Decimal RuleNumber { get { return 501 ; } }
@@ -25030,8 +25030,8 @@ public partial class  id_ID
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.id_ID() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "id" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ID" } ;
 	public override System.Decimal RuleNumber { get { return 502 ; } }
@@ -25049,8 +25049,8 @@ public partial class  id_SQSTRING
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.id_SQSTRING() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "id" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "SQSTRING" } ;
 	public override System.Decimal RuleNumber { get { return 503 ; } }
@@ -25065,8 +25065,8 @@ public partial class  id_SQSTRING
 public partial class  int16s
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 't', '1', '6', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "int16s" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 504 ; } }
@@ -25081,8 +25081,8 @@ public partial class  int16s
 public partial class  int16s_int3136s_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'i', 'n', 't', '1', '6', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "int16s" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int16s", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 505 ; } }
@@ -25100,8 +25100,8 @@ public partial class  int32_INT3634
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.int32_INT64() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 't', '3', '2',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "int32" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INT64" } ;
 	public override System.Decimal RuleNumber { get { return 506 ; } }
@@ -25119,8 +25119,8 @@ public partial class  int64_INT3634
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.int64_INT64() ; }
 	#endif
-	static readonly char[]   lhs = { 'i', 'n', 't', '6', '4',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "int64" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INT64" } ;
 	public override System.Decimal RuleNumber { get { return 507 ; } }
@@ -25135,8 +25135,8 @@ public partial class  int64_INT3634
 public partial class  float64_FLOAT3634
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'l', 'o', 'a', 't', '6', '4',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "float64" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "FLOAT64" } ;
 	public override System.Decimal RuleNumber { get { return 508 ; } }
@@ -25151,8 +25151,8 @@ public partial class  float64_FLOAT3634
 public partial class  float64_22float333222_272827_int3332_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'l', 'o', 'a', 't', '6', '4',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "float64" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "'('", "int32", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 509 ; } }
@@ -25167,8 +25167,8 @@ public partial class  float64_22float333222_272827_int3332_272927
 public partial class  float64_22float363422_272827_int3634_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'l', 'o', 'a', 't', '6', '4',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "float64" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "'('", "int64", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 510 ; } }
@@ -25183,8 +25183,8 @@ public partial class  float64_22float363422_272827_int3634_272927
 public partial class  secDecl_222Epermission22_secAction_typeSpec_272827_nameValPairs_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".permission\"", "secAction", "typeSpec", "'('", "nameValPairs", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 511 ; } }
@@ -25199,8 +25199,8 @@ public partial class  secDecl_222Epermission22_secAction_typeSpec_272827_nameVal
 public partial class  secDecl_222Epermission22_secAction_typeSpec
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".permission\"", "secAction", "typeSpec" } ;
 	public override System.Decimal RuleNumber { get { return 512 ; } }
@@ -25215,8 +25215,8 @@ public partial class  secDecl_222Epermission22_secAction_typeSpec
 public partial class  secDecl_psetHead_bytes_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "psetHead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 513 ; } }
@@ -25231,8 +25231,8 @@ public partial class  secDecl_psetHead_bytes_272927
 public partial class  psetHead_222Epermissionset22_secAction_273D27_272827
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 's', 'e', 't', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "psetHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".permissionset\"", "secAction", "'='", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 514 ; } }
@@ -25247,8 +25247,8 @@ public partial class  psetHead_222Epermissionset22_secAction_273D27_272827
 public partial class  nameValPairs_nameValPair
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', 'V', 'a', 'l', 'P', 'a', 'i', 'r', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nameValPairs" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nameValPair" } ;
 	public override System.Decimal RuleNumber { get { return 515 ; } }
@@ -25263,8 +25263,8 @@ public partial class  nameValPairs_nameValPair
 public partial class  nameValPairs_nameValPair_272C27_nameValPairs
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', 'V', 'a', 'l', 'P', 'a', 'i', 'r', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nameValPairs" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nameValPair", "','", "nameValPairs" } ;
 	public override System.Decimal RuleNumber { get { return 516 ; } }
@@ -25279,8 +25279,8 @@ public partial class  nameValPairs_nameValPair_272C27_nameValPairs
 public partial class  nameValPair_compQstring_273D27_caValue
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'n', 'a', 'm', 'e', 'V', 'a', 'l', 'P', 'a', 'i', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "nameValPair" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring", "'='", "caValue" } ;
 	public override System.Decimal RuleNumber { get { return 517 ; } }
@@ -25295,8 +25295,8 @@ public partial class  nameValPair_compQstring_273D27_caValue
 public partial class  truefalse_22true22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'r', 'u', 'e', 'f', 'a', 'l', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "truefalse" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"true\"" } ;
 	public override System.Decimal RuleNumber { get { return 518 ; } }
@@ -25311,8 +25311,8 @@ public partial class  truefalse_22true22
 public partial class  truefalse_22false22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 't', 'r', 'u', 'e', 'f', 'a', 'l', 's', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "truefalse" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"false\"" } ;
 	public override System.Decimal RuleNumber { get { return 519 ; } }
@@ -25327,8 +25327,8 @@ public partial class  truefalse_22false22
 public partial class  caValue_truefalse
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'V', 'a', 'l', 'u', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "caValue" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "truefalse" } ;
 	public override System.Decimal RuleNumber { get { return 520 ; } }
@@ -25343,8 +25343,8 @@ public partial class  caValue_truefalse
 public partial class  caValue_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'V', 'a', 'l', 'u', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "caValue" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32" } ;
 	public override System.Decimal RuleNumber { get { return 521 ; } }
@@ -25359,8 +25359,8 @@ public partial class  caValue_int3332
 public partial class  caValue_22int333222_272827_int3332_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'V', 'a', 'l', 'u', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "caValue" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"", "'('", "int32", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 522 ; } }
@@ -25375,8 +25375,8 @@ public partial class  caValue_22int333222_272827_int3332_272927
 public partial class  caValue_compQstring
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'V', 'a', 'l', 'u', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "caValue" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring" } ;
 	public override System.Decimal RuleNumber { get { return 523 ; } }
@@ -25391,8 +25391,8 @@ public partial class  caValue_compQstring
 public partial class  caValue_className_272827_22int3822_273A27_int3332_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'V', 'a', 'l', 'u', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "caValue" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "\"int8\"", "':'", "int32", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 524 ; } }
@@ -25407,8 +25407,8 @@ public partial class  caValue_className_272827_22int3822_273A27_int3332_272927
 public partial class  caValue_className_272827_22int313622_273A27_int3332_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'V', 'a', 'l', 'u', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "caValue" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "\"int16\"", "':'", "int32", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 525 ; } }
@@ -25423,8 +25423,8 @@ public partial class  caValue_className_272827_22int313622_273A27_int3332_272927
 public partial class  caValue_className_272827_22int333222_273A27_int3332_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'V', 'a', 'l', 'u', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "caValue" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "\"int32\"", "':'", "int32", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 526 ; } }
@@ -25439,8 +25439,8 @@ public partial class  caValue_className_272827_22int333222_273A27_int3332_272927
 public partial class  caValue_className_272827_int3332_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'a', 'V', 'a', 'l', 'u', 'e',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "caValue" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "int32", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 527 ; } }
@@ -25455,8 +25455,8 @@ public partial class  caValue_className_272827_int3332_272927
 public partial class  secAction_22request22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"request\"" } ;
 	public override System.Decimal RuleNumber { get { return 528 ; } }
@@ -25471,8 +25471,8 @@ public partial class  secAction_22request22
 public partial class  secAction_22demand22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"demand\"" } ;
 	public override System.Decimal RuleNumber { get { return 529 ; } }
@@ -25487,8 +25487,8 @@ public partial class  secAction_22demand22
 public partial class  secAction_22assert22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"assert\"" } ;
 	public override System.Decimal RuleNumber { get { return 530 ; } }
@@ -25503,8 +25503,8 @@ public partial class  secAction_22assert22
 public partial class  secAction_22deny22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"deny\"" } ;
 	public override System.Decimal RuleNumber { get { return 531 ; } }
@@ -25519,8 +25519,8 @@ public partial class  secAction_22deny22
 public partial class  secAction_22permitonly22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"permitonly\"" } ;
 	public override System.Decimal RuleNumber { get { return 532 ; } }
@@ -25535,8 +25535,8 @@ public partial class  secAction_22permitonly22
 public partial class  secAction_22linkcheck22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"linkcheck\"" } ;
 	public override System.Decimal RuleNumber { get { return 533 ; } }
@@ -25551,8 +25551,8 @@ public partial class  secAction_22linkcheck22
 public partial class  secAction_22inheritcheck22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"inheritcheck\"" } ;
 	public override System.Decimal RuleNumber { get { return 534 ; } }
@@ -25567,8 +25567,8 @@ public partial class  secAction_22inheritcheck22
 public partial class  secAction_22reqmin22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"reqmin\"" } ;
 	public override System.Decimal RuleNumber { get { return 535 ; } }
@@ -25583,8 +25583,8 @@ public partial class  secAction_22reqmin22
 public partial class  secAction_22reqopt22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"reqopt\"" } ;
 	public override System.Decimal RuleNumber { get { return 536 ; } }
@@ -25599,8 +25599,8 @@ public partial class  secAction_22reqopt22
 public partial class  secAction_22reqrefuse22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"reqrefuse\"" } ;
 	public override System.Decimal RuleNumber { get { return 537 ; } }
@@ -25615,8 +25615,8 @@ public partial class  secAction_22reqrefuse22
 public partial class  secAction_22prejitgrant22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"prejitgrant\"" } ;
 	public override System.Decimal RuleNumber { get { return 538 ; } }
@@ -25631,8 +25631,8 @@ public partial class  secAction_22prejitgrant22
 public partial class  secAction_22prejitdeny22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"prejitdeny\"" } ;
 	public override System.Decimal RuleNumber { get { return 539 ; } }
@@ -25647,8 +25647,8 @@ public partial class  secAction_22prejitdeny22
 public partial class  secAction_22noncasdemand22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"noncasdemand\"" } ;
 	public override System.Decimal RuleNumber { get { return 540 ; } }
@@ -25663,8 +25663,8 @@ public partial class  secAction_22noncasdemand22
 public partial class  secAction_22noncaslinkdemand22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"noncaslinkdemand\"" } ;
 	public override System.Decimal RuleNumber { get { return 541 ; } }
@@ -25679,8 +25679,8 @@ public partial class  secAction_22noncaslinkdemand22
 public partial class  secAction_22noncasinheritance22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 's', 'e', 'c', 'A', 'c', 't', 'i', 'o', 'n',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "secAction" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"noncasinheritance\"" } ;
 	public override System.Decimal RuleNumber { get { return 542 ; } }
@@ -25695,8 +25695,8 @@ public partial class  secAction_22noncasinheritance22
 public partial class  extSourceSpec_222Eline22_int3332_SQSTRING
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'x', 't', 'S', 'o', 'u', 'r', 'c', 'e', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "extSourceSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32", "SQSTRING" } ;
 	public override System.Decimal RuleNumber { get { return 543 ; } }
@@ -25711,8 +25711,8 @@ public partial class  extSourceSpec_222Eline22_int3332_SQSTRING
 public partial class  extSourceSpec_222Eline22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'x', 't', 'S', 'o', 'u', 'r', 'c', 'e', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "extSourceSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 544 ; } }
@@ -25727,8 +25727,8 @@ public partial class  extSourceSpec_222Eline22_int3332
 public partial class  extSourceSpec_222Eline22_int3332_273A27_int3332_SQSTRING
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'x', 't', 'S', 'o', 'u', 'r', 'c', 'e', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "extSourceSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32", "':'", "int32", "SQSTRING" } ;
 	public override System.Decimal RuleNumber { get { return 545 ; } }
@@ -25743,8 +25743,8 @@ public partial class  extSourceSpec_222Eline22_int3332_273A27_int3332_SQSTRING
 public partial class  extSourceSpec_222Eline22_int3332_273A27_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'x', 't', 'S', 'o', 'u', 'r', 'c', 'e', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "extSourceSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32", "':'", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 546 ; } }
@@ -25759,8 +25759,8 @@ public partial class  extSourceSpec_222Eline22_int3332_273A27_int3332
 public partial class  extSourceSpec_P5FLINE_int3332_QSTRING
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'x', 't', 'S', 'o', 'u', 'r', 'c', 'e', 'S', 'p', 'e', 'c',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "extSourceSpec" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "P_LINE", "int32", "QSTRING" } ;
 	public override System.Decimal RuleNumber { get { return 547 ; } }
@@ -25775,8 +25775,8 @@ public partial class  extSourceSpec_P5FLINE_int3332_QSTRING
 public partial class  fileDecl_222Efile22_fileAttr_name31_fileEntry_hashHead_bytes_272927_fileEntry
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fileDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "fileAttr", "name1", "fileEntry", "hashHead", "bytes", "')'", "fileEntry" } ;
 	public override System.Decimal RuleNumber { get { return 548 ; } }
@@ -25791,8 +25791,8 @@ public partial class  fileDecl_222Efile22_fileAttr_name31_fileEntry_hashHead_byt
 public partial class  fileDecl_222Efile22_fileAttr_name31_fileEntry
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fileDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "fileAttr", "name1", "fileEntry" } ;
 	public override System.Decimal RuleNumber { get { return 549 ; } }
@@ -25807,8 +25807,8 @@ public partial class  fileDecl_222Efile22_fileAttr_name31_fileEntry
 public partial class  fileAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 'e', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fileAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 550 ; } }
@@ -25823,8 +25823,8 @@ public partial class  fileAttr
 public partial class  fileAttr_fileAttr_22nometadata22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 'e', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fileAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fileAttr", "\"nometadata\"" } ;
 	public override System.Decimal RuleNumber { get { return 551 ; } }
@@ -25839,8 +25839,8 @@ public partial class  fileAttr_fileAttr_22nometadata22
 public partial class  fileEntry
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 'e', 'E', 'n', 't', 'r', 'y',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fileEntry" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 552 ; } }
@@ -25855,8 +25855,8 @@ public partial class  fileEntry
 public partial class  fileEntry_222Eentrypoint22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'f', 'i', 'l', 'e', 'E', 'n', 't', 'r', 'y',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "fileEntry" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".entrypoint\"" } ;
 	public override System.Decimal RuleNumber { get { return 553 ; } }
@@ -25871,8 +25871,8 @@ public partial class  fileEntry_222Eentrypoint22
 public partial class  hashHead_222Ehash22_273D27_272827
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'h', 'a', 's', 'h', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "hashHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".hash\"", "'='", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 554 ; } }
@@ -25890,8 +25890,8 @@ public partial class  assemblyHead_222Eassembly22_asmAttr_name31
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyHead___assembly__asmAttr_name1() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "asmAttr", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 555 ; } }
@@ -25906,8 +25906,8 @@ public partial class  assemblyHead_222Eassembly22_asmAttr_name31
 public partial class  asmAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 'm', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "asmAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 556 ; } }
@@ -25922,8 +25922,8 @@ public partial class  asmAttr
 public partial class  asmAttr_asmAttr_22noappdomain22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 'm', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "asmAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmAttr", "\"noappdomain\"" } ;
 	public override System.Decimal RuleNumber { get { return 557 ; } }
@@ -25938,8 +25938,8 @@ public partial class  asmAttr_asmAttr_22noappdomain22
 public partial class  asmAttr_asmAttr_22noprocess22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 'm', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "asmAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmAttr", "\"noprocess\"" } ;
 	public override System.Decimal RuleNumber { get { return 558 ; } }
@@ -25954,8 +25954,8 @@ public partial class  asmAttr_asmAttr_22noprocess22
 public partial class  asmAttr_asmAttr_22nomachine22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 'm', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "asmAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmAttr", "\"nomachine\"" } ;
 	public override System.Decimal RuleNumber { get { return 559 ; } }
@@ -25970,8 +25970,8 @@ public partial class  asmAttr_asmAttr_22nomachine22
 public partial class  assemblyDecls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 560 ; } }
@@ -25989,8 +25989,8 @@ public partial class  assemblyDecls_assemblyDecls_assemblyDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyDecls_assemblyDecls_assemblyDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyDecls", "assemblyDecl" } ;
 	public override System.Decimal RuleNumber { get { return 561 ; } }
@@ -26008,8 +26008,8 @@ public partial class  assemblyDecl_222Ehash22_22algorithm22_int3332
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyDecl___hash___algorithm__int32() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".hash\"", "\"algorithm\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 562 ; } }
@@ -26024,8 +26024,8 @@ public partial class  assemblyDecl_222Ehash22_22algorithm22_int3332
 public partial class  assemblyDecl_secDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "secDecl" } ;
 	public override System.Decimal RuleNumber { get { return 563 ; } }
@@ -26043,8 +26043,8 @@ public partial class  assemblyDecl_asmOrRefDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyDecl_asmOrRefDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmOrRefDecl" } ;
 	public override System.Decimal RuleNumber { get { return 564 ; } }
@@ -26059,8 +26059,8 @@ public partial class  assemblyDecl_asmOrRefDecl
 public partial class  asmOrRefDecl_publicKeyHead_bytes_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 'm', 'O', 'r', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "asmOrRefDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "publicKeyHead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 565 ; } }
@@ -26078,8 +26078,8 @@ public partial class  asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int33
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.asmOrRefDecl___ver__int32_____int32_____int32_____int32() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 'm', 'O', 'r', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "asmOrRefDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".ver\"", "int32", "':'", "int32", "':'", "int32", "':'", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 566 ; } }
@@ -26094,8 +26094,8 @@ public partial class  asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int33
 public partial class  asmOrRefDecl_222Elocale22_compQstring
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 'm', 'O', 'r', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "asmOrRefDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".locale\"", "compQstring" } ;
 	public override System.Decimal RuleNumber { get { return 567 ; } }
@@ -26110,8 +26110,8 @@ public partial class  asmOrRefDecl_222Elocale22_compQstring
 public partial class  asmOrRefDecl_localeHead_bytes_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 'm', 'O', 'r', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "asmOrRefDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "localeHead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 568 ; } }
@@ -26129,8 +26129,8 @@ public partial class  asmOrRefDecl_customAttrDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.asmOrRefDecl_customAttrDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 'm', 'O', 'r', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "asmOrRefDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
 	public override System.Decimal RuleNumber { get { return 569 ; } }
@@ -26145,8 +26145,8 @@ public partial class  asmOrRefDecl_customAttrDecl
 public partial class  publicKeyHead_222Epublickey22_273D27_272827
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'p', 'u', 'b', 'l', 'i', 'c', 'K', 'e', 'y', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "publicKeyHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".publickey\"", "'='", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 570 ; } }
@@ -26164,8 +26164,8 @@ public partial class  publicKeyTokenHead_222Epublickeytoken22_273D27_272827
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.publicKeyTokenHead___publickeytoken_________() ; }
 	#endif
-	static readonly char[]   lhs = { 'p', 'u', 'b', 'l', 'i', 'c', 'K', 'e', 'y', 'T', 'o', 'k', 'e', 'n', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "publicKeyTokenHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".publickeytoken\"", "'='", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 571 ; } }
@@ -26180,8 +26180,8 @@ public partial class  publicKeyTokenHead_222Epublickeytoken22_273D27_272827
 public partial class  localeHead_222Elocale22_273D27_272827
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'l', 'o', 'c', 'a', 'l', 'e', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "localeHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".locale\"", "'='", "'('" } ;
 	public override System.Decimal RuleNumber { get { return 572 ; } }
@@ -26199,8 +26199,8 @@ public partial class  assemblyRefHead_222Eassembly22_22extern22_name31
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyRefHead___assembly___extern__name1() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyRefHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "\"extern\"", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 573 ; } }
@@ -26215,8 +26215,8 @@ public partial class  assemblyRefHead_222Eassembly22_22extern22_name31
 public partial class  assemblyRefHead_222Eassembly22_22extern22_name31_22as22_name31
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyRefHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "\"extern\"", "name1", "\"as\"", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 574 ; } }
@@ -26231,8 +26231,8 @@ public partial class  assemblyRefHead_222Eassembly22_22extern22_name31_22as22_na
 public partial class  assemblyRefDecls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyRefDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 575 ; } }
@@ -26250,8 +26250,8 @@ public partial class  assemblyRefDecls_assemblyRefDecls_assemblyRefDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyRefDecls_assemblyRefDecls_assemblyRefDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyRefDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyRefDecls", "assemblyRefDecl" } ;
 	public override System.Decimal RuleNumber { get { return 576 ; } }
@@ -26266,8 +26266,8 @@ public partial class  assemblyRefDecls_assemblyRefDecls_assemblyRefDecl
 public partial class  assemblyRefDecl_hashHead_bytes_272927
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyRefDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "hashHead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 577 ; } }
@@ -26285,8 +26285,8 @@ public partial class  assemblyRefDecl_asmOrRefDecl
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyRefDecl_asmOrRefDecl() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyRefDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmOrRefDecl" } ;
 	public override System.Decimal RuleNumber { get { return 578 ; } }
@@ -26304,8 +26304,8 @@ public partial class  assemblyRefDecl_publicKeyTokenHead_bytes_272927
 	#if !EMBED
 	protected override global::A335.Automatrix splice_f() { return new global::A335.assemblyRefDecl_publicKeyTokenHead_bytes____() ; }
 	#endif
-	static readonly char[]   lhs = { 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', 'R', 'e', 'f', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "assemblyRefDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "publicKeyTokenHead", "bytes", "')'" } ;
 	public override System.Decimal RuleNumber { get { return 579 ; } }
@@ -26320,8 +26320,8 @@ public partial class  assemblyRefDecl_publicKeyTokenHead_bytes_272927
 public partial class  comtypeHead_222Eclass22_22extern22_comtAttr_name31
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'y', 'p', 'e', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtypeHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "\"extern\"", "comtAttr", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 580 ; } }
@@ -26336,8 +26336,8 @@ public partial class  comtypeHead_222Eclass22_22extern22_comtAttr_name31
 public partial class  exportHead_222Eexport22_comtAttr_name31
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'e', 'x', 'p', 'o', 'r', 't', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "exportHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".export\"", "comtAttr", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 581 ; } }
@@ -26352,8 +26352,8 @@ public partial class  exportHead_222Eexport22_comtAttr_name31
 public partial class  comtAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 582 ; } }
@@ -26368,8 +26368,8 @@ public partial class  comtAttr
 public partial class  comtAttr_comtAttr_22private22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"private\"" } ;
 	public override System.Decimal RuleNumber { get { return 583 ; } }
@@ -26384,8 +26384,8 @@ public partial class  comtAttr_comtAttr_22private22
 public partial class  comtAttr_comtAttr_22public22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"public\"" } ;
 	public override System.Decimal RuleNumber { get { return 584 ; } }
@@ -26400,8 +26400,8 @@ public partial class  comtAttr_comtAttr_22public22
 public partial class  comtAttr_comtAttr_22nested22_22public22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"public\"" } ;
 	public override System.Decimal RuleNumber { get { return 585 ; } }
@@ -26416,8 +26416,8 @@ public partial class  comtAttr_comtAttr_22nested22_22public22
 public partial class  comtAttr_comtAttr_22nested22_22private22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"private\"" } ;
 	public override System.Decimal RuleNumber { get { return 586 ; } }
@@ -26432,8 +26432,8 @@ public partial class  comtAttr_comtAttr_22nested22_22private22
 public partial class  comtAttr_comtAttr_22nested22_22family22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"family\"" } ;
 	public override System.Decimal RuleNumber { get { return 587 ; } }
@@ -26448,8 +26448,8 @@ public partial class  comtAttr_comtAttr_22nested22_22family22
 public partial class  comtAttr_comtAttr_22nested22_22assembly22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"assembly\"" } ;
 	public override System.Decimal RuleNumber { get { return 588 ; } }
@@ -26464,8 +26464,8 @@ public partial class  comtAttr_comtAttr_22nested22_22assembly22
 public partial class  comtAttr_comtAttr_22nested22_22famandassem22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"famandassem\"" } ;
 	public override System.Decimal RuleNumber { get { return 589 ; } }
@@ -26480,8 +26480,8 @@ public partial class  comtAttr_comtAttr_22nested22_22famandassem22
 public partial class  comtAttr_comtAttr_22nested22_22famorassem22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"famorassem\"" } ;
 	public override System.Decimal RuleNumber { get { return 590 ; } }
@@ -26496,8 +26496,8 @@ public partial class  comtAttr_comtAttr_22nested22_22famorassem22
 public partial class  comtypeDecls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'y', 'p', 'e', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtypeDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 591 ; } }
@@ -26512,8 +26512,8 @@ public partial class  comtypeDecls
 public partial class  comtypeDecls_comtypeDecls_comtypeDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'y', 'p', 'e', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtypeDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtypeDecls", "comtypeDecl" } ;
 	public override System.Decimal RuleNumber { get { return 592 ; } }
@@ -26528,8 +26528,8 @@ public partial class  comtypeDecls_comtypeDecls_comtypeDecl
 public partial class  comtypeDecl_222Efile22_name31
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'y', 'p', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtypeDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 593 ; } }
@@ -26544,8 +26544,8 @@ public partial class  comtypeDecl_222Efile22_name31
 public partial class  comtypeDecl_222Eclass22_22extern22_name31
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'y', 'p', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtypeDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "\"extern\"", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 594 ; } }
@@ -26560,8 +26560,8 @@ public partial class  comtypeDecl_222Eclass22_22extern22_name31
 public partial class  comtypeDecl_222Eclass22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'y', 'p', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtypeDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 595 ; } }
@@ -26576,8 +26576,8 @@ public partial class  comtypeDecl_222Eclass22_int3332
 public partial class  comtypeDecl_customAttrDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'c', 'o', 'm', 't', 'y', 'p', 'e', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "comtypeDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
 	public override System.Decimal RuleNumber { get { return 596 ; } }
@@ -26592,8 +26592,8 @@ public partial class  comtypeDecl_customAttrDecl
 public partial class  manifestResHead_222Emresource22_manresAttr_name31
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'a', 'n', 'i', 'f', 'e', 's', 't', 'R', 'e', 's', 'H', 'e', 'a', 'd',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "manifestResHead" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".mresource\"", "manresAttr", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 597 ; } }
@@ -26608,8 +26608,8 @@ public partial class  manifestResHead_222Emresource22_manresAttr_name31
 public partial class  manresAttr
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'a', 'n', 'r', 'e', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "manresAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 598 ; } }
@@ -26624,8 +26624,8 @@ public partial class  manresAttr
 public partial class  manresAttr_manresAttr_22public22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'a', 'n', 'r', 'e', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "manresAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manresAttr", "\"public\"" } ;
 	public override System.Decimal RuleNumber { get { return 599 ; } }
@@ -26640,8 +26640,8 @@ public partial class  manresAttr_manresAttr_22public22
 public partial class  manresAttr_manresAttr_22private22
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'a', 'n', 'r', 'e', 's', 'A', 't', 't', 'r',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "manresAttr" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manresAttr", "\"private\"" } ;
 	public override System.Decimal RuleNumber { get { return 600 ; } }
@@ -26656,8 +26656,8 @@ public partial class  manresAttr_manresAttr_22private22
 public partial class  manifestResDecls
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'a', 'n', 'i', 'f', 'e', 's', 't', 'R', 'e', 's', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "manifestResDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
 	public override System.Decimal RuleNumber { get { return 601 ; } }
@@ -26672,8 +26672,8 @@ public partial class  manifestResDecls
 public partial class  manifestResDecls_manifestResDecls_manifestResDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'a', 'n', 'i', 'f', 'e', 's', 't', 'R', 'e', 's', 'D', 'e', 'c', 'l', 's',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "manifestResDecls" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manifestResDecls", "manifestResDecl" } ;
 	public override System.Decimal RuleNumber { get { return 602 ; } }
@@ -26688,8 +26688,8 @@ public partial class  manifestResDecls_manifestResDecls_manifestResDecl
 public partial class  manifestResDecl_222Efile22_name31_22at22_int3332
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'a', 'n', 'i', 'f', 'e', 's', 't', 'R', 'e', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "manifestResDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "name1", "\"at\"", "int32" } ;
 	public override System.Decimal RuleNumber { get { return 603 ; } }
@@ -26704,8 +26704,8 @@ public partial class  manifestResDecl_222Efile22_name31_22at22_int3332
 public partial class  manifestResDecl_222Eassembly22_22extern22_name31
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'a', 'n', 'i', 'f', 'e', 's', 't', 'R', 'e', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "manifestResDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "\"extern\"", "name1" } ;
 	public override System.Decimal RuleNumber { get { return 604 ; } }
@@ -26720,8 +26720,8 @@ public partial class  manifestResDecl_222Eassembly22_22extern22_name31
 public partial class  manifestResDecl_customAttrDecl
 	: Driver.Auto, global::Item
 	{
-	static readonly char[]   lhs = { 'm', 'a', 'n', 'i', 'f', 'e', 's', 't', 'R', 'e', 's', 'D', 'e', 'c', 'l',  } ;
-	public override string   LHS { get { return new string(lhs) ; } }
+	static readonly string   lhs = "manifestResDecl" ;
+	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
 	public override System.Decimal RuleNumber { get { return 605 ; } }
