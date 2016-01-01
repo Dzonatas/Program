@@ -118,8 +118,12 @@ public partial class Program : C699
 		c.TypeDef.Object
 			.Parameter( C699.Object("object").p , "this" )
 			.Parameter( C699.String.p , "(*$ToString)()" )
+			.Parameter( C699.C.Void.p , "data" )
 			;
 		jiffy( c, "object::.ctor" )
+			;
+		jiffy( c, "string* object::ToString()" )
+			.Statement( "return (struct _string *)((struct _object *)args[0])->data" ) ;
 			;
 		jiffy( c, "console::WriteLine(string)" )
 			.ConstLocalArg0
@@ -135,9 +139,9 @@ public partial class Program : C699
 			.Register(ref l[0], C699.String.p)
 			.Register(ref l[1], C699.String.p)
 			.Register(ref l[2], C699.String.p)
-			.Let( l[0] ).Equal.ManagedArgument( 0 )
-			.Let( l[1] ).Equal.ManagedArgument( 1 )
-			.Let( l[2] ).Equal.ManagedArgument( 2 )
+			.Let( l[0] ).Equal.ManagedToString( 0 )
+			.Let( l[1] ).Equal.ManagedToString( 1 )
+			.Let( l[2] ).Equal.ManagedToString( 2 )
 			.Return( c.StringConcat( l[0], l[1], l[2] ) )
 			;
 		jiffy( c, "string string::Concat(string,string)" )

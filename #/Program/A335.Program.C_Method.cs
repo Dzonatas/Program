@@ -58,7 +58,13 @@ partial class Program : C699
 			//m.NameSpace.Add( C_Symbol.Acquire( "System" ) ) ;
 			var y = System.Text.RegularExpressions.Regex.Match( typedef, @"^(?<type>\S+)\s" ) ;
 			if( y.Success )
-				m.Type = C_Type.Acquire( y.Groups[ "type" ].Value ) ;
+				{
+				string t = y.Groups[ "type" ].Value ;
+				if( t == "string*" )
+					m.Type = C_Type.Acquire( C699.String.p ) ;
+				else
+					m.Type = C_Type.Acquire( t ) ;
+				}
 			var x = System.Text.RegularExpressions.Regex.Match( typedef, @"^(\S+\s|)(?<classname>\S+)::(?<methodname>[^\(]+)(\((?<args>\S+)\)|)" ) ;
 			if( ! x.Success )
 				throw new System.NotImplementedException( typedef ) ;

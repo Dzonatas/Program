@@ -88,13 +88,10 @@ partial class Program : C699
 			l = new C_Literal() ;
 			return Register( ref l, type, C_Symbol.Acquire(type).By_p() ) ;
 			}
-		public C_Function ManagedArgument( int i )
+		public C_Function ManagedToString( int i )
 			{
 			if( (let.Type.Bits & C699.Bit.Object) != 0 || let.Type == C699.String.p )
-					return Statement( C.If("((union _*)args["+i+"])->base.managed && ((union _*)args["+i+"])->base.pointer") )
-					      .Statement( let.Name.Equate("(("+C699.String+" *)args["+i+"])") )
-					      .Statement( C.Else )
-					      .Statement( let.Name.Equate("(("+C699.Object("object")+" *)args["+i+"])->this->$ToString( args+"+i+" )") ) ;
+					return Statement( let.Name.Equate("(("+C699.Object("object")+" *)args["+i+"])->this->$ToString( args+"+i+" )") ) ;
 			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;
 			}
 		C_Function( string symbol )

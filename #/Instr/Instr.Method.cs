@@ -74,10 +74,20 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						int i = CallConvInstance ? 1 : 0 ;
 						_SigArgs0.ForEach( (a) =>
 							{
-							if( a != data[i].Type )
+							var sig = ( (string)(C_Type)((A335.Type)a) ).Trim() ;
+							var vt  = ( (string)(data[i].Type.Spec) ).Trim() ;
+							if( sig != vt )
 								{
+								Program.C_Function.Require( "System$Object$ToString" ) ;
 								//type=pet( "nexus:CTS:get0,sphere,cube,square,point", a, data );
+								string o = "obj"+i ;
+								d.Statement( new C699.c("static struct _object "+o+" = { 0 }")) ;
+								d.Statement( new C699.c(""+o+".this = &"+o) ) ;
+								d.Statement( new C699.c(""+o+".$ToString = System$Object$ToString") ) ;
+								d.Statement( new C699.c(""+o+".data = (void*)"+data[i].StackElement) ) ;
+								d.Statement( new C699.c(""+data[i].StackElement.Equate( "&"+o )) ) ;
 								}
+							i++ ;
 							} ) ;
 						}
 					catch( C_Type.UndefinedTypeException )
