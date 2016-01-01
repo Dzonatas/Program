@@ -78,12 +78,15 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 							var vt  = ( (string)(data[i].Type.Spec) ).Trim() ;
 							if( sig != vt )
 								{
-								Program.C_Function.Require( "System$Object$ToString" ) ;
+								var symbol = new C_Symbol() ;
+								Program.jiffy( C, "string* object::"+symbol+"()" )
+									.Statement( "return (struct _string *)((struct _object *)args[0])->data" ) ;
+								Program.C_Function.Require( "System$Object$"+symbol ) ;
 								//type=pet( "nexus:CTS:get0,sphere,cube,square,point", a, data );
 								string o = "obj"+i ;
 								d.Statement( new C699.c("static struct _object "+o+" = { 0 }")) ;
 								d.Statement( new C699.c(""+o+".this = &"+o) ) ;
-								d.Statement( new C699.c(""+o+".$ToString = System$Object$ToString") ) ;
+								d.Statement( new C699.c(""+o+".$ToString = System$Object$"+symbol) ) ;
 								d.Statement( new C699.c(""+o+".data = (void*)"+data[i].StackElement) ) ;
 								d.Statement( new C699.c(""+data[i].StackElement.Equate( "&"+o )) ) ;
 								}

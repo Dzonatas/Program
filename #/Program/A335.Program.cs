@@ -122,9 +122,6 @@ public partial class Program : C699
 			;
 		jiffy( c, "object::.ctor" )
 			;
-		jiffy( c, "string* object::ToString()" )
-			.Statement( "return (struct _string *)((struct _object *)args[0])->data" ) ;
-			;
 		jiffy( c, "console::WriteLine(string)" )
 			.ConstLocalArg0
 			.StandardOutputWriteLocal( _string , _length )
