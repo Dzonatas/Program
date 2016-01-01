@@ -253,14 +253,13 @@ public partial class Program : C699
 		vt.Offset = stack_offset ;
 		return vt ;
 		}
-	public C_Type[] Hangup( int iargs )
+	public C_ValueType[] Hangup( int iargs )
 		{
 		if( iargs < 1 )
-			return new C_Type[] {} ;
-		var list = new C_Type[iargs] ;
-		stack_offset -= iargs ;
-		for( int i = 0 ; i < iargs ; i++ )
-			list[i] = stack[stack_offset+i].Type == null ? C_Type.Undefined : stack[stack_offset+i].Type ;
+			return new C_ValueType[] {} ;
+		var list = new C_ValueType[iargs] ;
+		for( int i = iargs ; i > 0 ; --i )
+			list[i-1] = Pop() ;
 		return list ;
 		}
 	public void Hangdown()
