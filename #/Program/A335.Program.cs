@@ -10,6 +10,7 @@ public partial class Program : C699
 	static Dictionary<string,C_Symbol>    symbolset     = new Dictionary<string, C_Symbol>() ;
 	static Dictionary<C_Symbol,C_Type>    typeset       = new Dictionary<C_Symbol, C_Type>() ;
 	static Dictionary<string,C_TypeDef>   typedefset    = new Dictionary<string, C_TypeDef>() ;
+	static List<string>                   includeset    = new List<string>() ;
 	static C_ValueType[] stack    = new C_ValueType[0] ;
 	static C_ValueType[] freeset  = new C_ValueType[0] ;
 	public struct C_ValueType
@@ -109,6 +110,14 @@ public partial class Program : C699
 	static public void Begin()
 		{
 		var c = new Program() ;
+		includeset.Add("alloca.h") ;
+		includeset.Add("unistd.h") ;
+		includeset.Add("string.h") ;
+		includeset.Add("malloc.h") ;
+		c.TypeDef.ManagedPointer
+			.Parameter( C699.C.Int    , "managed" )
+			.Parameter( C699.C.Void.p , "pointer" )
+			;
 		C_Type _length = _UnsignedInt() ;
 		C_Type _string = _Char_() ;
 		c.TypeDef.String
@@ -117,8 +126,8 @@ public partial class Program : C699
 			;
 		c.TypeDef.Object
 			.Parameter( C699.Object("object").p , "this" )
-			.Parameter( C699.String.p , "(*$ToString)()" )
-			.Parameter( C699.C.Void.p , "data" )
+			.Parameter( C699.String.p           , "(*$ToString)()" )
+			.Parameter( C699.C.Void.p           , "data" )
 			;
 		jiffy( c, "object::.ctor" )
 			;
@@ -280,6 +289,9 @@ public partial class Program : C699
 		}
 	public static System.IO.StreamWriter C699_Main_Function___WriteTo__C699_Main_FileStructure__()
 		{
+		foreach( string i in includeset )
+			C699.Main.FileStructure.WriteLine( "#include <"+i+">" ) ;
+		C699.Main.FileStructure.WriteLine(string.Empty) ;
 		var c = C_Function.FromSymbol( A335.Main.Symbol ) ;
 		c.Args = C699.Main.Args ;
 		c.Type = C.Int ;

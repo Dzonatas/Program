@@ -10,7 +10,6 @@ public static class Main
 			FileStructure = File.C( entry ) ;
 		else
 			FileStructure = File.C( Cluster.Parameter.Value("output") ) ;
-		FileStructure.WriteLine( "#include <BCL.HPP>" ) ;
 		}
 	public static readonly string Args = '('+C.Int.ArgC+','+C.Charpp.ArgV+','+C.Charpp.Env+')' ;
 	}

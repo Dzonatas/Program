@@ -20,6 +20,7 @@ partial class Program : C699
 				{
 				case "string": Type = C699.String ; return ;
 				case "object": Type = C699.Object("object") ; return ;
+				case "mp":     Type = C699.Object(type) ; return ;
 				default      : Type = C.Restricted("struct " + type) ; return ;
 				}
 			}

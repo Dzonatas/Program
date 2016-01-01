@@ -16,6 +16,10 @@ partial class Program : C699
 			{
 			get { return new C_Struct("object") ; }
 			}
+		public C_Struct ManagedPointer
+			{
+			get { return new C_Struct("mp") ; }
+			}
 		public C_Struct Type( string type )
 			{
 			return new C_Struct(type) ;
