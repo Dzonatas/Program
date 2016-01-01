@@ -1,9 +1,14 @@
 partial class C699
 {
 static readonly c _string = C.Struct(new c("_string")) ;
+static readonly c _object = C.Struct(new c("_object")) ;
 static public   c String
 	{
 	get { return _string ; }
+	}
+static public   c Object
+	{
+	get { return _object ; }
 	}
 static public c SizeOf( C699.c type, C699.c items )
 	{
@@ -12,27 +17,6 @@ static public c SizeOf( C699.c type, C699.c items )
 static public c Array(c _struct, c c, string _i )
 	{
 	return new c("(("+_struct+")"+c+")["+_i+"]") ;
-	}
-/* "actions" and "functions"
-public struct _str {...}
-*/
-private static string[,] _obj =
-	{
-	{ "_object", null },
-	{ null, "*" }
-	} ;
-static public c Object(int i)
-	{
-	c c ;
-	if( i == 1 )
-		{
-		c = C.Struct(new c(_obj[i-1,i-1]+_obj[i,i])) ;
-		c.Bits = Bit.Object ;
-		return c ;
-		}
-	c = C.Struct(new c(_obj[i,i])) ;
-	c.Bits = Bit.Object ;
-	return c ;
 	}
 #if DEBUG_ASM
 public static string[,] _IDE = null ; //http://www.bidnessetc.com/56528-pc-gamers-better-off-playing-batman-arkham-knight-on-a-console/

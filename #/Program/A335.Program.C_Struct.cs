@@ -19,13 +19,13 @@ partial class Program : C699
 			switch( type )
 				{
 				case "string": Type = C699.String ; return ;
-				case "object": Type = C699.Object(0) ; return ;
+				case "object": Type = C699.Object ; return ;
 				default      : Type = C.Restricted("struct " + type) ; return ;
 				}
 			}
 		public C_Struct()
 			{
-			Type = C699.Object(0) ;
+			Type = C699.Object ;
 			}
 		public void Add( string text )
 			{

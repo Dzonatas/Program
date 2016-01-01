@@ -44,9 +44,9 @@ public partial class   type__int32_
 
 public partial class   type__object_
 	: Type {
-	static C_Type _c_type = C_Type.Acquire( C699.Object(0) ) ;
+	static C_Type _c_type = C_Type.Acquire( C699.Object ) ;
 	protected override string symbol { get { return Arg1.Token ; } }
-	protected override C699.c c { get { return C699.Object(0) ; } }
+	protected override C699.c c { get { return C699.Object ; } }
 	protected override C_Type c_type { get { return _c_type ; } }
 	}
 
@@ -126,7 +126,7 @@ public partial class   type_type_____genArgs____
 				{
 				var t = C.TypeDef.Type( symbol ) ;
 				//var s = Program.C_Struct.FromSymbol( symbol ) ;
-				t.Parameter( C699.Object(1) , "this" ) ;
+				t.Parameter( C699.Object.p , "this" ) ;
 				t.Parameter( C699.String.p, "(*$Invoke)()" ) ;
 				}
 			return new C699.c(C699.KeyedWord.Struct+" "+symbol+" ").p ;
