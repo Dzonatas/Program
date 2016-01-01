@@ -30,7 +30,7 @@ public partial class   extendsClause__extends__className
 				case "_mscorlib_System_ValueType":
 					return new C699.c("struct") ;
 				case "_mscorlib_System_Object":
-					return C699.Object ;
+					return C699.Object("object") ;
 				default :
 					return new C699.c(className) ;
 				}

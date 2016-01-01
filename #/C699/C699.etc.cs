@@ -1,14 +1,13 @@
 partial class C699
 {
 static readonly c _string = C.Struct(new c("_string")) ;
-static readonly c _object = C.Struct(new c("_object")) ;
 static public   c String
 	{
 	get { return _string ; }
 	}
-static public   c Object
+static public   c Object(string symbol)
 	{
-	get { return _object ; }
+	return C.Struct(new c("_"+symbol)) ;
 	}
 static public c SizeOf( C699.c type, C699.c items )
 	{

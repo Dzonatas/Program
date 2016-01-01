@@ -195,6 +195,21 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					}
 				else
 					{
+					var t = C_Type.ConstStatic(C699.Object("object")) ;
+					var symbol = new C_Symbol() ;
+					C_Type _class = typeSpec ;
+					int iargs  = Args ;
+					C.Hangup( iargs - 1 ) ;
+					d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
+					d.Statement( C699.C.Extern.Struct(C699.Object("object"),_class) ) ;
+					d.Statement( t.TypeSpec.Equate(symbol,"&"+_class) ) ;
+					var sp = C699.Stack.Pointer ;
+					d.Push( new C699.c("&"+symbol), t ) ;
+					if( iargs == 0 )
+						d.Statement( C699.C.Function(_Call) ) ;
+					else
+						d.Statement( C699.C.Function(_Call,sp) ) ;
+					/*
 					var t = C_Type.ConstStatic(C699.Object) ;
 					var symbol = new C_Symbol() ;
 					C_Type _class = typeSpec ;
@@ -209,6 +224,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						d.Statement( C699.C.Function(_Call) ) ;
 					else
 						d.Statement( C699.C.Function(_Call,sp) ) ;
+					*/
 					}
 				break ;
 				}
