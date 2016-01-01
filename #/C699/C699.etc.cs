@@ -1,6 +1,6 @@
 partial class C699
 {
-static readonly c _string = C.Struct(new c("_string")) ;
+static readonly c _string = Object("string") ;
 static public   c String
 	{
 	get { return _string ; }
