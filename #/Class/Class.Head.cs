@@ -106,6 +106,8 @@ public partial class   classHead___class__classAttr_id_extendsClause_implClause
 						sw.WriteLine( fd.ToStructField(this) ) ;
 					}
 		sw.WriteLine( "} ;" ) ;
+		sw.Close() ;
+		sw = Current.Path.CreateText( Symbol + ".c" ) ;
 		foreach( Decl decl in decls )
 			if( decl is classDecl_fieldDecl )
 				{

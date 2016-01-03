@@ -23,11 +23,6 @@ public partial class Method
 			{
 			c_method = new Program.C_Method( classDecl.Node.Head.Type ) ;
 			_prerender() ;
-			if( Virtual )
-				{
-				var c = Program.C_Struct.FromSymbol( classType ) ;
-				c.Assign( name + ( sigArgs0 != null ? sigArgs0.Types() : string.Empty ) ) ;
-				}
 			CreateFunction() ;
 			}
 		public Decls   Decls
@@ -86,7 +81,7 @@ public partial class Method
 			{
 			get { return attr == null ? false : attr.Virtual ; }
 			}
-		public void WriteInclude( System.IO.StreamWriter sw )
+		public void WriteIncludeTo( System.IO.StreamWriter sw )
 			{
 			string _name ;
 			if( sigArgs0 == null )

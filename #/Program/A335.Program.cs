@@ -5,7 +5,6 @@ partial class A335
 {
 public partial class Program : C699
 	{
-	static Dictionary<string,object>      virtualset    = new Dictionary<string,object>() ;
 	static Dictionary<string,C_Function>  c_functionset = new Dictionary<string, C_Function>() ;
 	static Dictionary<string,C_Symbol>    symbolset     = new Dictionary<string, C_Symbol>() ;
 	static Dictionary<C_Symbol,C_Type>    typeset       = new Dictionary<C_Symbol, C_Type>() ;
@@ -53,11 +52,6 @@ public partial class Program : C699
 		}
 	static public void Write( A335.Stack.IStart start )
 		{
-		WriteC_Main( start ) ;
-		WriteC_Objects() ;
-		}
-	static public void WriteC_Main( A335.Stack.IStart start )
-		{
 		var sw = C699_Main_Function___WriteTo__C699_Main_FileStructure__() ;
 		foreach( C_TypeDef t in typedefset.Values )
 			t.Struct.WriteTo( sw ) ;
@@ -72,24 +66,15 @@ public partial class Program : C699
 			if( a is Class.Head )
 				sw.WriteLine( "#include \"{0}.h\"", (a as Class.Head).Symbol ) ;
 		foreach( Automatrix a in (Automatrix)start )
+			if( a is Class.Head )
+				sw.WriteLine( "#include \"{0}.c\"", (a as Class.Head).Symbol ) ;
+		foreach( Automatrix a in (Automatrix)start )
 			if( a is Method.Head )
 				{
-				(a as Method.Head).WriteInclude(sw) ;
+				(a as Method.Head).WriteIncludeTo(sw) ;
 				(a as Method.Head).WriteMethod() ;
 				}
-	    foreach( string class_symbol in virtualset.Keys )
-			C_Struct.FromSymbol( class_symbol ).WriteInclude( sw ) ;
 		sw.Close() ;
-		}
-	static public void WriteC_Objects()
-		{
-	    foreach( string class_symbol in virtualset.Keys )
-			{
-			var sw = Current.Path.CreateText( class_symbol + ".c" ) ;
-			var c = ((C_Struct) virtualset[class_symbol]) ;
-			c.WriteTo( sw ) ;
-			sw.Close() ;
-			}
 		}
 	static string c_guid()
 		{
