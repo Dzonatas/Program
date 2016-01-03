@@ -206,16 +206,19 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					}
 				else
 					{
+					var head = Class.Head.Find(typeSpec) ;
 					var t = C_Type.Static(C699.Object(ts)) ;
 					var symbol = new C_Symbol() ;
 					C_Type _class = typeSpec ;
 					int iargs  = Args ;
 					C.Hangup( iargs - 1 ) ;
 					d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
-					d.Statement( C699.C.Extern.Type(C699.String.p).Function(ts+"$ToString",C699.C.Const.Voidpp) ) ;
 					d.Statement( C699.C.Struct(t.TypeSpec,symbol) ) ;
-					var s1 = symbol ;
-					d.Statement( C699.C.Literal(symbol+".base.$ToString").Equate(ts+"$ToString") ) ;
+					if( head.Extends == "struct _object " )
+						{
+						d.Statement( C699.C.Extern.Type(C699.String.p).Function(ts+"$ToString",C699.C.Const.Voidpp) ) ;
+						d.Statement( C699.C.Literal(symbol+".base.$ToString").Equate(ts+"$ToString") ) ;
+						}
 					var sp = C699.Stack.Pointer ;
 					d.Push( new C699.c("&"+symbol), C_Type.ConstStatic(C699.Object("object")) ) ;
 					if( iargs == 0 )

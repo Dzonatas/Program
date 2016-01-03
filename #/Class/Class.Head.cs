@@ -4,6 +4,7 @@ public partial class Class : Automatrix
 	{
 	public partial class Head : Class
 		{
+		static private Head[]       classified = new Head[0] ;
 		Method.Head                 cctor     ;
 		C_Type                      type      ;
 		protected Class.Decl        classDecl ;
@@ -41,6 +42,14 @@ public partial class Class : Automatrix
 				return type = new C_Type( idset ) ;
 				}
 			}
+		public string Extends
+			{
+			get	{
+				if( extends == null )
+					return "struct _object" ;
+				return extends ;
+				}
+			}
 		public bool ValueType
 			{
 			get {
@@ -69,6 +78,16 @@ public partial class Class : Automatrix
 				decls = d ;
 				}
 			classDecl = cd ;
+			System.Array.Resize( ref classified, classified.Length+1 ) ;
+			classified[classified.Length-1] = this ;
+			}
+		static public Head Find( Type.Spec typeSpec )
+			{
+			string symbol = (string)((C699.c)typeSpec) ;
+			foreach( Head h in classified )
+				if( symbol == h.Symbol )
+					return h ;
+			throw new System.NotImplementedException() ;
 			}
 		}
 	}
