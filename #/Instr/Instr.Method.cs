@@ -82,10 +82,8 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 								Program.jiffy( C, "string* object::"+symbol+"()" )
 									.Statement( "return (struct _string *)((struct _object *)args[0])->data" ) ;
 								Program.C_Function.Require( "System$Object$"+symbol ) ;
-								//type=pet( "nexus:CTS:get0,sphere,cube,square,point", a, data );
 								string o = "obj"+i ;
 								d.Statement( new C699.c("static struct _object "+o+" = { 0 }")) ;
-								d.Statement( new C699.c(""+o+".this = &"+o) ) ;
 								d.Statement( new C699.c(""+o+".$ToString = System$Object$"+symbol) ) ;
 								d.Statement( new C699.c(""+o+".data = (void*)"+data[i].StackElement) ) ;
 								d.Statement( new C699.c(""+data[i].StackElement.Equate( "&"+o )) ) ;
@@ -208,16 +206,18 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					}
 				else
 					{
-					var t = C_Type.ConstStatic(C699.Object("object")) ;
+					var t = C_Type.Static(C699.Object(ts)) ;
 					var symbol = new C_Symbol() ;
 					C_Type _class = typeSpec ;
 					int iargs  = Args ;
 					C.Hangup( iargs - 1 ) ;
 					d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
-					d.Statement( C699.C.Extern.Struct(C699.Object("object"),_class) ) ;
-					d.Statement( t.TypeSpec.Equate(symbol,"&"+_class) ) ;
+					d.Statement( C699.C.Extern.Type(C699.String.p).Function(ts+"$ToString",C699.C.Const.Voidpp) ) ;
+					d.Statement( C699.C.Struct(t.TypeSpec,symbol) ) ;
+					var s1 = symbol ;
+					d.Statement( C699.C.Literal(symbol+".base.$ToString").Equate(ts+"$ToString") ) ;
 					var sp = C699.Stack.Pointer ;
-					d.Push( new C699.c("&"+symbol), t ) ;
+					d.Push( new C699.c("&"+symbol), C_Type.ConstStatic(C699.Object("object")) ) ;
 					if( iargs == 0 )
 						d.Statement( C699.C.Function(_Call) ) ;
 					else

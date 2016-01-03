@@ -125,7 +125,6 @@ public partial class Program : C699
 			.Parameter( _string )
 			;
 		c.TypeDef.Object
-			.Parameter( C699.Object("object").p , "this" )
 			.Parameter( C699.String.p           , "(*$ToString)()" )
 			.Parameter( C699.C.Void.p           , "data" )
 			;

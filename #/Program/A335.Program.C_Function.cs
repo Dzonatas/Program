@@ -91,7 +91,7 @@ partial class Program : C699
 		public C_Function ManagedToString( int i )
 			{
 			if( (let.Type.Bits & C699.Bit.Object) != 0 || let.Type == C699.String.p )
-					return Statement( let.Name.Equate("(("+C699.Object("object")+" *)args["+i+"])->this->$ToString( args+"+i+" )") ) ;
+					return Statement( let.Name.Equate("(("+C699.Object("object")+" *)args["+i+"])->$ToString( args+"+i+" )") ) ;
 			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;
 			}
 		C_Function( string symbol )

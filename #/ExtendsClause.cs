@@ -29,6 +29,7 @@ public partial class   extendsClause__extends__className
 				case "_mscorlib_System$ValueType":
 				case "_mscorlib_System_ValueType":
 					return new C699.c("struct") ;
+				case "_mscorlib_System$Object":
 				case "_mscorlib_System_Object":
 					return C699.Object("object") ;
 				default :
