@@ -4,6 +4,11 @@ public partial class Field
 	{
 	public partial class Decl : Automatrix
 		{
+		public bool Static
+			{
+			get { return _Static() ; }
+			}
+		protected virtual bool _Static() { throw new System.NotImplementedException() ; }
 		public virtual string ToStructField( Class.Head h )
 			{
 			throw new System.NotImplementedException() ;
@@ -13,6 +18,10 @@ public partial class Field
 
 public partial class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_initOpt
 	: Field.Decl	{
+	protected override bool _Static()
+		{
+		return (Argv[3] as Field.Attr).Static ;
+		}
 	public override string ToStructField( Class.Head h )
 			{
 			string     field ;
