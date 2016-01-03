@@ -33,7 +33,7 @@ public partial class   extendsClause__extends__className
 				case "_mscorlib_System_Object":
 					return C699.Object("object") ;
 				default :
-					return new C699.c(className) ;
+					return C699.Object(className) ;
 				}
 			}
 		}

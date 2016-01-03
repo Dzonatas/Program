@@ -95,7 +95,10 @@ public partial class   classHead___class__classAttr_id_extendsClause_implClause
 		else
 			{
 			sw.WriteLine( "struct _"+Symbol+" {" ) ;
-			sw.WriteLine( "\t"+extends+" base ;" ) ;
+			if( extends != null )
+				sw.WriteLine( "\t"+extends+" base ;" ) ;
+			else
+				sw.WriteLine( "\tstruct _object base ;" ) ;
 			}
 		if( decls != null )
 			foreach( Decl decl in decls )
