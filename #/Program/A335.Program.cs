@@ -70,10 +70,7 @@ public partial class Program : C699
 				sw.WriteLine( "#include \"{0}.c\"", (a as Class.Head).Symbol ) ;
 		foreach( Automatrix a in (Automatrix)start )
 			if( a is Method.Head )
-				{
 				(a as Method.Head).WriteIncludeTo(sw) ;
-				(a as Method.Head).WriteMethod() ;
-				}
 		sw.Close() ;
 		}
 	static string c_guid()

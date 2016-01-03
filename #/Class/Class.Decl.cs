@@ -32,7 +32,9 @@ public partial class   classDecl_methodHead_methodDecls____
 		}
 	protected override void render()
 		{
+		var methodHead = Argv[1] as Method.Head ;
 		C.Hangdown() ;
+		methodHead.WriteMethod() ;
 		}
 	}
 
