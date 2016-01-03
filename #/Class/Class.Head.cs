@@ -46,7 +46,7 @@ public partial class Class : Automatrix
 			{
 			get	{
 				if( extends == null )
-					return "struct _object" ;
+					return "struct object" ;
 				return extends ;
 				}
 			}
@@ -113,11 +113,11 @@ public partial class   classHead___class__classAttr_id_extendsClause_implClause
 			sw.WriteLine( "struct "+Symbol+" {" ) ;
 		else
 			{
-			sw.WriteLine( "struct _"+Symbol+" {" ) ;
+			sw.WriteLine( "struct "+Symbol+" {" ) ;
 			if( extends != null )
 				sw.WriteLine( "\t"+extends+" base ;" ) ;
 			else
-				sw.WriteLine( "\tstruct _object base ;" ) ;
+				sw.WriteLine( "\tstruct object base ;" ) ;
 			}
 		if( decls != null )
 			foreach( Decl decl in decls )

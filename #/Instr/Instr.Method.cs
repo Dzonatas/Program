@@ -80,10 +80,10 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 								{
 								var symbol = new C_Symbol() ;
 								Program.jiffy( C, "string* object::"+symbol+"()" )
-									.Statement( "return (struct _string *)((struct _object *)args[0])->data" ) ;
+									.Statement( "return (struct string *)((struct object *)args[0])->data" ) ;
 								Program.C_Function.Require( "System$Object$"+symbol ) ;
 								string o = "obj"+i ;
-								d.Statement( new C699.c("static struct _object "+o+" = { 0 }")) ;
+								d.Statement( new C699.c("static struct object "+o+" = { 0 }")) ;
 								d.Statement( new C699.c(""+o+".$ToString = System$Object$"+symbol) ) ;
 								d.Statement( new C699.c(""+o+".data = (void*)"+data[i].StackElement) ) ;
 								d.Statement( new C699.c(""+data[i].StackElement.Equate( "&"+o )) ) ;
@@ -214,7 +214,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					C.Hangup( iargs - 1 ) ;
 					d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
 					d.Statement( C699.C.Struct(t.TypeSpec,symbol) ) ;
-					if( head.Extends == "struct _object " )
+					if( head.Extends == "struct object " )
 						{
 						d.Statement( C699.C.Extern.Type(C699.String.p).Function(ts+"$ToString",C699.C.Const.Voidpp) ) ;
 						d.Statement( C699.C.Literal(symbol+".base.$ToString").Equate(ts+"$ToString") ) ;

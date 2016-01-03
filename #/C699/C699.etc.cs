@@ -7,7 +7,7 @@ static public   c String
 	}
 static public   c Object(string symbol)
 	{
-	return C.Struct(new c("_"+symbol)) ;
+	return C.Struct(new c(symbol)) ;
 	}
 static public c SizeOf( C699.c type, C699.c items )
 	{
