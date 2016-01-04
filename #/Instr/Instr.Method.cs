@@ -157,7 +157,6 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				int iargs = Args ;
 				C.Hangup( iargs - 1 ) ;
 				var v = C.Pop() ;
-				var call = "*("+v.StackCast+")->"+(Argv[6] as A335.Method.Name) ;//C_Symbol.Acquire( (C_Type)typeSpec + methodname( value ) + ( _SigArgs0 == null ? "" : _SigArgs0.Types() ) ) ;
 				var typeSpec = Argv[4] as A335.Type.Spec ;
 				var t = type ;
 				if( t is type_____int32 )
@@ -165,6 +164,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				if( t is type__string_ )
 					{
 					var vt = d.Allocate(t) ;
+					var call = "*("+v.StackCast+")->"+(Argv[6] as A335.Method.Name) ;//C_Symbol.Acquire( (C_Type)typeSpec + methodname( value ) + ( _SigArgs0 == null ? "" : _SigArgs0.Types() ) ) ;
 					C699.c s = new C699.c( vt.Symbol ) ;
 					if( iargs == 0 )
 						d.Statement( s.Equate(C699.C.Function(call)) ) ;
@@ -175,13 +175,13 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				else
 				if( t is type_type_square_brackets )
 					{
-					var vt = d.AllocateArray(t) ;
-					C699.c s = new C699.c( vt.Symbol ) ;
+					//var vt = d.AllocateArray(t) ;
+					var call = "("+v.StackCast+")->"+(Argv[6] as A335.Method.Name) ;
+					var sp = C699.Stack.Pointer ;
 					if( iargs == 0 )
-						d.Statement( s.Equate(C699.C.Function(call)) ) ;
+						d.Push( C699.C.Function(call), t ) ;
 					else
-						d.Statement( s.Equate(C699.C.Function(call,C699.Stack.Pointer)) ) ;
-					d.PushRef( vt ) ;
+						d.Push( C699.C.Function(call,sp), t ) ;
 					}
 				else
 				if( t is type__int32_ )

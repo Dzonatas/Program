@@ -4,7 +4,7 @@ XBUILD          =xbuild /p:NoWarn=169,649,414,219 /verbosity:quiet /nologo
 auto_driver_cs  =$(abspath ./~/auto.driver.cs)
 grammar_xml     =$(abspath ./~/ilxml/grammar.xml)
 
-.PHONY: help clean test1 test2 test3 test4 test5 project driver parser
+.PHONY: help clean test1 test2 test3 test4 test5 test6 project driver parser
 
 help:
 	@echo "Options:"
@@ -80,4 +80,4 @@ cdriver: project
 	./~/cdriver/test.sh
 
 .PHONY: tests
-tests: test1 test2 test3 test4 test5
+tests: test1 test2 test3 test4 test5 test6
