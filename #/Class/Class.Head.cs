@@ -42,11 +42,11 @@ public partial class Class : Automatrix
 				return type = new C_Type( idset ) ;
 				}
 			}
-		public string Extends
+		public C699.c Extends
 			{
 			get	{
 				if( extends == null )
-					return "struct object" ;
+					return C699.Object("object") ;
 				return extends ;
 				}
 			}
@@ -114,10 +114,7 @@ public partial class   classHead___class__classAttr_id_extendsClause_implClause
 		else
 			{
 			sw.WriteLine( "struct "+Symbol+" {" ) ;
-			if( extends != null )
-				sw.WriteLine( "\t"+extends+" base ;" ) ;
-			else
-				sw.WriteLine( "\tstruct object base ;" ) ;
+			sw.WriteLine( "\t"+Extends+" base ;" ) ;
 			}
 		if( decls != null )
 			foreach( Decl decl in decls )
