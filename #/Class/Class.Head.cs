@@ -98,6 +98,16 @@ public partial class Class : Automatrix
 					return h ;
 			throw new System.NotImplementedException() ;
 			}
+		public void ForEachVirtualMethod( System.Action<Method.Head> action )
+			{
+			foreach( Decl decl in decls )
+				if( decl is classDecl_methodHead_methodDecls____ )
+					{
+					var mh = (decl.Argv[1] as Method.Head) ;
+					if( mh.Virtual )
+						action( mh ) ;
+					}
+			}
 		}
 	}
 

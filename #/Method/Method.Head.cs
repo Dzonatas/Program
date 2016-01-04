@@ -130,6 +130,10 @@ public partial class Method
 			{
 			throw new System.NotImplementedException() ;
 			}
+		public C699.c ToStructMemberAssign(string symbol, Class.Head h )
+			{
+			return new C699.c(symbol+"."+name+"="+h.Symbol+name+" ") ;
+			}
 		}
 	}
 

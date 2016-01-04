@@ -225,6 +225,10 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						d.Statement( C699.C.Extern.Type(C699.String.p).Function(ts+"$ToString",C699.C.Const.Voidpp) ) ;
 						d.Statement( C699.C.Literal(symbol+".base.$ToString").Equate(ts+"$ToString") ) ;
 						}
+					head.ForEachVirtualMethod( (mh) =>
+						{
+						d.Statement( mh.ToStructMemberAssign(symbol,head) ) ;
+						} ) ;
 					var sp = C699.Stack.Pointer ;
 					d.Push( new C699.c("&"+symbol), t.Ref ) ;
 					if( iargs == 0 )
