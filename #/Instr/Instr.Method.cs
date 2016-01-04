@@ -175,14 +175,13 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				else
 				if( t is type_type_square_brackets )
 					{
-					var vt = d.Allocate(t) ;
+					var vt = d.AllocateArray(t) ;
 					C699.c s = new C699.c( vt.Symbol ) ;
 					if( iargs == 0 )
 						d.Statement( s.Equate(C699.C.Function(call)) ) ;
 					else
 						d.Statement( s.Equate(C699.C.Function(call,C699.Stack.Pointer)) ) ;
-					d.PushRef( vt ) ; //bogus
-					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+					d.PushRef( vt ) ;
 					}
 				else
 				if( t is type__int32_ )

@@ -97,6 +97,35 @@ partial class Program : C699
 			freeset[freeset.Length-1] = vt ;
 			return vt ;
 			}
+		public C_ValueType AllocateArray(C_Type type)
+			{
+			var vt = new C_ValueType()
+				{
+				Symbol = new C_Symbol() ,
+				Offset = stack_offset ,
+				Type   = C_Type.Static( type.Deref.Spec )
+				} ;
+			/*
+			var mp = new C_ValueType()
+				{
+				Symbol = vt.Symbol ,
+				Offset = stack_offset ,
+				Type   = C_Type.Static( type.Spec )
+				} ;
+			System.Array.Resize( ref function.ManagedPointers, function.ManagedPointers.Length+1 ) ;
+			function.ManagedPointers[function.ManagedPointers.Length-1] = mp ;
+			C_TypeDef typedef = typedefset["string"] ;
+			string _string = typedef.Struct[1] ;
+			GCAfter.Add( C699.C.Struct( new c("_mp") )
+				.Equate( mp.Symbol+"_mp", "1,(void*) ("+mp.StackDeref+")."+_string ) );
+			*/
+			Statement( C699.C.Struct(vt.Type.TypeSpec, vt.Symbol) ) ;
+			/*
+			System.Array.Resize( ref freeset, freeset.Length+1 ) ;
+			freeset[freeset.Length-1] = vt ;
+			*/
+			return vt ;
+			}
 		public C_ValueType Allocate(C699.c type, string args)
 			{
 			return Allocate(C_Type.ConstStatic(type), args) ;
