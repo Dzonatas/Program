@@ -8,13 +8,28 @@ public partial class ExtendsClause : Automatrix
 	protected virtual C699.c c { get { throw new System.NotImplementedException() ; } }
 	static public implicit operator C_Type( ExtendsClause n ) { return n.c_type ; }
 	protected virtual C_Type c_type { get { throw new System.NotImplementedException() ; } }
+	public bool ExtendedValueType { get { return extendedValueType ; } }
+	protected virtual bool extendedValueType { get { throw new System.NotImplementedException() ; } }
 	}
 
 public partial class   extendsClause__extends__className
 	: ExtendsClause {
+	protected override bool extendedValueType
+		{
+		get	{
+			var className = Argv[2] as Class.Name ;
+			switch( className )
+				{
+				case "_mscorlib_System$ValueType":
+				case "_mscorlib_System_ValueType":
+					return true ;
+				}
+			return false ;
+			}
+		}
 	protected override string symbol
 		{
-		get { return (string) c ; }
+		get { return (string) (Argv[2] as Class.Name) ; }
 		}
 	protected override C_Type c_type
 		{
@@ -23,8 +38,7 @@ public partial class   extendsClause__extends__className
 	protected override C699.c c
 		{
 		get {
-			var className = Argv[2] as Class.Name ;
-			switch( className )
+			switch( symbol )
 				{
 				case "_mscorlib_System$ValueType":
 				case "_mscorlib_System_ValueType":
@@ -33,7 +47,7 @@ public partial class   extendsClause__extends__className
 				case "_mscorlib_System_Object":
 					return C699.Object("object") ;
 				default :
-					return C699.Object(className) ;
+					return C699.Object(symbol) ;
 				}
 			}
 		}

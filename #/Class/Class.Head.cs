@@ -55,9 +55,7 @@ public partial class Class : Automatrix
 			get {
 				if( extends == null )
 					return false ;
-				if( C699.KeyedWord.Struct == extends )
-					return true ;
-				return false ;
+				return extends.ExtendedValueType ;
 				}
 			}
 		public new Decls Decls
