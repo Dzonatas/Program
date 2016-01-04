@@ -126,6 +126,10 @@ public partial class Method
 			{
 			get { return c_method.Function ; }
 			}
+		public virtual string ToStructMember( Class.Head h )
+			{
+			throw new System.NotImplementedException() ;
+			}
 		}
 	}
 
@@ -151,6 +155,10 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 		{
 		_render() ;
 		Function.GarbageCollect() ;
+		}
+	public override string ToStructMember( Class.Head h )
+		{
+		return ""+c_method.Type+" (*"+name+")("+C699.C.Const.Voidpp+") ;" ;
 		}
 	}
 }

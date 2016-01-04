@@ -127,22 +127,32 @@ public partial class   classHead___class__classAttr_id_extendsClause_implClause
 			}
 		if( decls != null )
 			foreach( Decl decl in decls )
+				{
 				if( decl is classDecl_fieldDecl )
 					{
 					var fd = (decl as classDecl_fieldDecl).FieldDecl ;
 					if( ! fd.Static )
 						sw.WriteLine( fd.ToStructField(this) ) ;
 					}
+				else
+				if( decl is classDecl_methodHead_methodDecls____ )
+					{
+					var mh = (decl.Argv[1] as Method.Head) ;
+					if( mh.Virtual )
+						sw.WriteLine( mh.ToStructMember(this) ) ;
+					}
+				}
 		sw.WriteLine( "} ;" ) ;
 		sw.Close() ;
 		sw = Current.Path.CreateText( Symbol + ".c" ) ;
-		foreach( Decl decl in decls )
-			if( decl is classDecl_fieldDecl )
-				{
-				var fd = (decl as classDecl_fieldDecl).FieldDecl ;
-				if( fd.Static )
-					sw.WriteLine( fd.ToStructField(this) ) ;
-				}
+		if( decls != null )
+			foreach( Decl decl in decls )
+				if( decl is classDecl_fieldDecl )
+					{
+					var fd = (decl as classDecl_fieldDecl).FieldDecl ;
+					if( fd.Static )
+						sw.WriteLine( fd.ToStructField(this) ) ;
+					}
 		sw.Close() ;
 		}
 	}
