@@ -10,6 +10,8 @@ public partial class ExtendsClause : Automatrix
 	protected virtual C_Type c_type { get { throw new System.NotImplementedException() ; } }
 	public bool ExtendedValueType { get { return extendedValueType ; } }
 	protected virtual bool extendedValueType { get { throw new System.NotImplementedException() ; } }
+	public bool ExtendedSystemObject { get { return extendedSystemObject ; } }
+	protected virtual bool extendedSystemObject { get { throw new System.NotImplementedException() ; } }
 	}
 
 public partial class   extendsClause__extends__className
@@ -22,6 +24,19 @@ public partial class   extendsClause__extends__className
 				{
 				case "_mscorlib_System$ValueType":
 				case "_mscorlib_System_ValueType":
+					return true ;
+				}
+			return false ;
+			}
+		}
+	protected override bool extendedSystemObject
+		{
+		get	{
+			var className = Argv[2] as Class.Name ;
+			switch( className )
+				{
+				case "_mscorlib_System$Object":
+				case "_mscorlib_System_Object":
 					return true ;
 				}
 			return false ;

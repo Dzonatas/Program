@@ -58,6 +58,14 @@ public partial class Class : Automatrix
 				return extends.ExtendedValueType ;
 				}
 			}
+		public bool ExtendedSystemObject
+			{
+			get {
+				if( extends == null )
+					return false ;
+				return extends.ExtendedSystemObject ;
+				}
+			}
 		public new Decls Decls
 			{
 			set { decls = value ; }
