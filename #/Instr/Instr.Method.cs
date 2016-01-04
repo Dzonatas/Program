@@ -74,9 +74,16 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						int i = CallConvInstance ? 1 : 0 ;
 						_SigArgs0.ForEach( (a) =>
 							{
+							bool jiffy = false ;
 							var sig = ( (string)(C_Type)((A335.Type)a) ).Trim() ;
 							var vt  = ( (string)(data[i].Type.Spec) ).Trim() ;
+							string v = vt.Replace("struct","").Replace("*","").Trim() ;
+							if( sig == "struct object" && v != "string" && ! Class.Head.Find(v).ValueType )
+								jiffy = false ;
+							else
 							if( sig != vt )
+								jiffy = true ;
+							if( jiffy )
 								{
 								var symbol = new C_Symbol() ;
 								Program.jiffy( C, "string* object::"+symbol+"()" )
@@ -220,7 +227,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 						d.Statement( C699.C.Literal(symbol+".base.$ToString").Equate(ts+"$ToString") ) ;
 						}
 					var sp = C699.Stack.Pointer ;
-					d.Push( new C699.c("&"+symbol), C_Type.ConstStatic(C699.Object("object")) ) ;
+					d.Push( new C699.c("&"+symbol), t.Ref ) ;
 					if( iargs == 0 )
 						d.Statement( C699.C.Function(_Call) ) ;
 					else

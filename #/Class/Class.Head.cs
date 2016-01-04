@@ -89,9 +89,12 @@ public partial class Class : Automatrix
 			}
 		static public Head Find( Type.Spec typeSpec )
 			{
-			string symbol = (string)((C699.c)typeSpec) ;
+			return Find( (string)((C699.c)typeSpec) ) ;
+			}
+		static public Head Find( string typeSpec )
+			{
 			foreach( Head h in classified )
-				if( symbol == h.Symbol )
+				if( typeSpec == h.Symbol )
 					return h ;
 			throw new System.NotImplementedException() ;
 			}
