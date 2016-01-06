@@ -149,7 +149,7 @@ class Xo_t
 			}
 		else
 			{
-			list += "throw new System.NotImplementedException() ;" ;
+			list += "throw new SyntaxException() ;" ;
 			}
 		/*
 		if( tab_b )

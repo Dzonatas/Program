@@ -406,7 +406,7 @@ int deploy( int i )
 	{
 	do	{
 		if( i > 0 )
-			throw new System.NotImplementedException( "-range/+index condition" ) ;
+			throw new SyntaxException( "-range/+index condition" ) ;
 		else
 		if( i < 0 )
 			{
@@ -420,13 +420,13 @@ int deploy( int i )
 			yy = (int)__default ;
 		} while( (i = (int) gotoset_s( yy )) != __default ) ;
 	if( token.c != 0 )
-		throw new System.NotImplementedException( "token != $end" ) ;
+		throw new SyntaxException( "token != $end" ) ;
 	return 0 ;
 	}
 int split( int i )
 	{
 	if( i > 0 )
-		throw new System.NotImplementedException( "-range/+index condition" ) ;
+		throw new SyntaxException( "-range/+index condition" ) ;
 	else
 	if( i < 0 )
 		{
@@ -436,7 +436,7 @@ int split( int i )
 		(auto as Driver.Auto).Splice() ;
 		}
 	if( token.c != 0 )
-		throw new System.NotImplementedException( "token != $end" ) ;
+		throw new SyntaxException( "token != $end" ) ;
 	return 0 ;
 	}
 
@@ -462,7 +462,7 @@ static int _1()
 	log("_1") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _24end ) { a.shift() ; return a.split( _3() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _2()
 	{
@@ -552,7 +552,7 @@ static int _4()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _5()
 	{
@@ -567,7 +567,7 @@ static int _5()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _6()
 	{
@@ -582,7 +582,7 @@ static int _6()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _7()
 	{
@@ -620,14 +620,14 @@ static int _8()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _9()
 	{
 	log("_9") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _SQSTRING ) { a.shift() ; return a.split( _56() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _10()
 	{
@@ -698,14 +698,14 @@ static int _12()
 	log("_12") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275B27 ) { a.shift() ; return a.split( _72() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _13()
 	{
 	log("_13") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273D27 ) { a.shift() ; return a.split( _73() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _14()
 	{
@@ -726,7 +726,7 @@ static int _14()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _15()
 	{
@@ -842,7 +842,7 @@ static int _19()
 		case _22noncaslinkdemand22: a.shift() ; return a.deploy( _94() ) ;
 		case _22noncasinheritance22: a.shift() ; return a.deploy( _95() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _20()
 	{
@@ -874,7 +874,7 @@ static int _20()
 		case _22noncaslinkdemand22: a.shift() ; return a.deploy( _94() ) ;
 		case _22noncasinheritance22: a.shift() ; return a.deploy( _95() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _21()
 	{
@@ -889,7 +889,7 @@ static int _21()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _22()
 	{
@@ -1007,14 +1007,14 @@ static int _31()
 	log("_31") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _105() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _32()
 	{
 	log("_32") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _106() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _33()
 	{
@@ -1139,7 +1139,7 @@ static int _39()
 		case _22int3822: a.shift() ; return a.deploy( _119() ) ;
 		case _22bytearray22: a.shift() ; return a.deploy( _120() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _40()
 	{
@@ -1194,28 +1194,28 @@ static int _44()
 	log("_44") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _125() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _45()
 	{
 	log("_45") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _126() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _46()
 	{
 	log("_46") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _127() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _47()
 	{
 	log("_47") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _128() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _48()
 	{
@@ -1230,7 +1230,7 @@ static int _49()
 	log("_49") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.split( _129() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _50()
 	{
@@ -1261,7 +1261,7 @@ static int _52()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _53()
 	{
@@ -1283,7 +1283,7 @@ static int _53()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _22nometadata22: a.shift() ; return a.deploy( _131() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _54()
 	{
@@ -1373,7 +1373,7 @@ static int _57()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _58()
 	{
@@ -1416,7 +1416,7 @@ static int _59()
 		case _22thiscall22: a.shift() ; return a.split( _166() ) ;
 		case _22fastcall22: a.shift() ; return a.split( _167() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _60()
 	{
@@ -1525,7 +1525,7 @@ static int _64()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _65()
 	{
@@ -1578,7 +1578,7 @@ static int _69()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _70()
 	{
@@ -1621,14 +1621,14 @@ static int _72()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _73()
 	{
 	log("_73") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _175() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _74()
 	{
@@ -1700,7 +1700,7 @@ static int _76()
 		case _22specialname22: a.shift() ; return a.deploy( _194() ) ;
 		case _22rtspecialname22: a.shift() ; return a.deploy( _195() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _77()
 	{
@@ -1715,7 +1715,7 @@ static int _77()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _78()
 	{
@@ -1933,14 +1933,14 @@ static int _96()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _97()
 	{
 	log("_97") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273D27 ) { a.shift() ; return a.split( _201() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _98()
 	{
@@ -1987,7 +1987,7 @@ static int _99()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _100()
 	{
@@ -2011,7 +2011,7 @@ static int _100()
 		case _22noprocess22: a.shift() ; return a.deploy( _206() ) ;
 		case _22nomachine22: a.shift() ; return a.deploy( _207() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _101()
 	{
@@ -2034,7 +2034,7 @@ static int _101()
 		case _22public22: a.shift() ; return a.deploy( _209() ) ;
 		case _22private22: a.shift() ; return a.deploy( _210() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _102()
 	{
@@ -2049,7 +2049,7 @@ static int _103()
 	log("_103") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _212() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _104()
 	{
@@ -2106,14 +2106,14 @@ static int _107()
 	log("_107") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _216() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _108()
 	{
 	log("_108") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _217() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _109()
 	{
@@ -2233,7 +2233,7 @@ static int _110()
 		case _222Epermissionset22: a.shift() ; return a.deploy( _20() ) ;
 		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _111()
 	{
@@ -2261,7 +2261,7 @@ static int _111()
 		case _22int3822: a.shift() ; return a.deploy( _119() ) ;
 		case _22bytearray22: a.shift() ; return a.deploy( _120() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _112()
 	{
@@ -2328,14 +2328,14 @@ static int _114()
 	log("_114") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272A27 ) { a.shift() ; return a.split( _287() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _115()
 	{
 	log("_115") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _288() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _116()
 	{
@@ -2462,7 +2462,7 @@ static int _120()
 	log("_120") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _297() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _121()
 	{
@@ -2509,7 +2509,7 @@ static int _124()
 	log("_124") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _299() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _125()
 	{
@@ -2630,7 +2630,7 @@ static int _133()
 	log("_133") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _SQSTRING ) { a.shift() ; return a.split( _306() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _134()
 	{
@@ -2652,7 +2652,7 @@ static int _134()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _222Emodule22: a.shift() ; return a.deploy( _307() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _135()
 	{
@@ -2675,7 +2675,7 @@ static int _137()
 	log("_137") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22class22 ) { a.shift() ; return a.split( _309() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _138()
 	{
@@ -2712,7 +2712,7 @@ static int _138()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _139()
 	{
@@ -2724,7 +2724,7 @@ static int _139()
 		case _22int22: a.shift() ; return a.split( _312() ) ;
 		case _22float22: a.shift() ; return a.split( _313() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _140()
 	{
@@ -2801,7 +2801,7 @@ static int _148()
 		case _22int313622: a.shift() ; return a.split( _316() ) ;
 		case _22int3822: a.shift() ; return a.split( _317() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _149()
 	{
@@ -2825,7 +2825,7 @@ static int _149()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _150()
 	{
@@ -2865,7 +2865,7 @@ static int _152()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _153()
 	{
@@ -2880,7 +2880,7 @@ static int _153()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _154()
 	{
@@ -2903,7 +2903,7 @@ static int _156()
 	log("_156") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _322() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _157()
 	{
@@ -3103,7 +3103,7 @@ static int _169()
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	else
 	if( token.point == _272827 ) { a.shift() ; return a.deploy( _333() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _170()
 	{
@@ -3186,7 +3186,7 @@ static int _171()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _172()
 	{
@@ -3227,14 +3227,14 @@ static int _173()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _174()
 	{
 	log("_174") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _340() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _175()
 	{
@@ -3266,7 +3266,7 @@ static int _176()
 		case _22private22: a.shift() ; return a.deploy( _342() ) ;
 		case _22nested22: a.shift() ; return a.deploy( _343() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _177()
 	{
@@ -3401,7 +3401,7 @@ static int _192()
 		case _22famandassem22: a.shift() ; return a.split( _349() ) ;
 		case _22famorassem22: a.shift() ; return a.split( _350() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _193()
 	{
@@ -3455,7 +3455,7 @@ static int _197()
 	log("_197") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _353() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _198()
 	{
@@ -3506,14 +3506,14 @@ static int _198()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _199()
 	{
 	log("_199") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273D27 ) { a.shift() ; return a.split( _369() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _200()
 	{
@@ -3545,7 +3545,7 @@ static int _201()
 	log("_201") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _371() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _202()
 	{
@@ -3568,7 +3568,7 @@ static int _203()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _204()
 	{
@@ -3740,7 +3740,7 @@ static int _214()
 		case _222Eassembly22: a.shift() ; return a.deploy( _22() ) ;
 		case _222Emresource22: a.shift() ; return a.deploy( _23() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _215()
 	{
@@ -3790,7 +3790,7 @@ static int _215()
 		case _222Epermissionset22: a.shift() ; return a.deploy( _20() ) ;
 		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _216()
 	{
@@ -3949,7 +3949,7 @@ static int _235()
 	log("_235") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _395() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _236()
 	{
@@ -4002,7 +4002,7 @@ static int _238()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _239()
 	{
@@ -4023,7 +4023,7 @@ static int _239()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _240()
 	{
@@ -4060,7 +4060,7 @@ static int _240()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _241()
 	{
@@ -4075,7 +4075,7 @@ static int _241()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _242()
 	{
@@ -4090,7 +4090,7 @@ static int _242()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _243()
 	{
@@ -4151,7 +4151,7 @@ static int _245()
 		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
 		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _246()
 	{
@@ -4199,14 +4199,14 @@ static int _247()
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	else
 	if( token.point == _22bytearray22 ) { a.shift() ; return a.deploy( _120() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _248()
 	{
 	log("_248") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _415() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _249()
 	{
@@ -4260,7 +4260,7 @@ static int _250()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _251()
 	{
@@ -4281,7 +4281,7 @@ static int _251()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _252()
 	{
@@ -4343,7 +4343,7 @@ static int _254()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _255()
 	{
@@ -4366,7 +4366,7 @@ static int _256()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _257()
 	{
@@ -4381,7 +4381,7 @@ static int _257()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _258()
 	{
@@ -4404,7 +4404,7 @@ static int _260()
 	log("_260") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275B27 ) { a.shift() ; return a.split( _422() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _261()
 	{
@@ -4419,14 +4419,14 @@ static int _261()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _262()
 	{
 	log("_262") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275B27 ) { a.shift() ; return a.split( _424() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _263()
 	{
@@ -4459,7 +4459,7 @@ static int _266()
 	if( token.point == _272827 ) { a.shift() ; return a.split( _425() ) ; }
 	else
 	if( token.point == _22init22 ) { a.shift() ; return a.split( _426() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _267()
 	{
@@ -4526,7 +4526,7 @@ static int _271()
 		case _22finally22: a.shift() ; return a.deploy( _430() ) ;
 		case _22fault22: a.shift() ; return a.deploy( _431() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _272()
 	{
@@ -4550,7 +4550,7 @@ static int _272()
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		case _277B27: a.shift() ; return a.deploy( _252() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _273()
 	{
@@ -4631,7 +4631,7 @@ static int _275()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _276()
 	{
@@ -4646,7 +4646,7 @@ static int _277()
 	log("_277") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273A27 ) { a.shift() ; return a.split( _444() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _278()
 	{
@@ -4669,7 +4669,7 @@ static int _280()
 	log("_280") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277D27 ) { a.shift() ; return a.split( _445() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _281()
 	{
@@ -4702,7 +4702,7 @@ static int _282()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _283()
 	{
@@ -4717,7 +4717,7 @@ static int _283()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _284()
 	{
@@ -4740,7 +4740,7 @@ static int _285()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _286()
 	{
@@ -4755,7 +4755,7 @@ static int _287()
 	log("_287") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _450() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _288()
 	{
@@ -4772,7 +4772,7 @@ static int _288()
 	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _289()
 	{
@@ -4792,7 +4792,7 @@ static int _289()
 		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
 		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _290()
 	{
@@ -4820,7 +4820,7 @@ static int _291()
 		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
 		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _292()
 	{
@@ -4843,7 +4843,7 @@ static int _293()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _294()
 	{
@@ -4866,7 +4866,7 @@ static int _295()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _296()
 	{
@@ -4889,7 +4889,7 @@ static int _298()
 	log("_298") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _456() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _299()
 	{
@@ -4930,7 +4930,7 @@ static int _300()
 		case _222Elocale22: a.shift() ; return a.deploy( _460() ) ;
 		case _222Epublickey22: a.shift() ; return a.deploy( _461() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _301()
 	{
@@ -4962,7 +4962,7 @@ static int _301()
 		case _222Epublickey22: a.shift() ; return a.deploy( _461() ) ;
 		case _222Epublickeytoken22: a.shift() ; return a.deploy( _470() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _302()
 	{
@@ -4986,7 +4986,7 @@ static int _302()
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
 		case _222Eclass22: a.shift() ; return a.deploy( _477() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _303()
 	{
@@ -5010,7 +5010,7 @@ static int _303()
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
 		case _222Eassembly22: a.shift() ; return a.deploy( _482() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _304()
 	{
@@ -5092,7 +5092,7 @@ static int _307()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _308()
 	{
@@ -5101,7 +5101,7 @@ static int _308()
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _488() ) ; }
 	else
 	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _309()
 	{
@@ -5125,7 +5125,7 @@ static int _309()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _310()
 	{
@@ -5177,14 +5177,14 @@ static int _310()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _311()
 	{
 	log("_311") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22int22 ) { a.shift() ; return a.split( _492() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _312()
 	{
@@ -5254,7 +5254,7 @@ static int _318()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _222Emodule22: a.shift() ; return a.deploy( _493() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _319()
 	{
@@ -5346,7 +5346,7 @@ static int _323()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _324()
 	{
@@ -5367,7 +5367,7 @@ static int _324()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _325()
 	{
@@ -5448,7 +5448,7 @@ static int _328()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _329()
 	{
@@ -5463,14 +5463,14 @@ static int _330()
 	log("_330") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _505() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _331()
 	{
 	log("_331") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _506() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _332()
 	{
@@ -5549,7 +5549,7 @@ static int _335()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _336()
 	{
@@ -5589,14 +5589,14 @@ static int _337()
 	log("_337") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _509() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _338()
 	{
 	log("_338") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _510() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _339()
 	{
@@ -5673,7 +5673,7 @@ static int _343()
 		case _22famandassem22: a.shift() ; return a.split( _516() ) ;
 		case _22famorassem22: a.shift() ; return a.split( _517() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _344()
 	{
@@ -5763,7 +5763,7 @@ static int _351()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _352()
 	{
@@ -5865,7 +5865,7 @@ static int _362()
 	log("_362") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _521() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _363()
 	{
@@ -5931,7 +5931,7 @@ static int _368()
 		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
 		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _369()
 	{
@@ -5956,7 +5956,7 @@ static int _370()
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _371()
 	{
@@ -6010,7 +6010,7 @@ static int _373()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _374()
 	{
@@ -6057,7 +6057,7 @@ static int _377()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _378()
 	{
@@ -6072,7 +6072,7 @@ static int _378()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _379()
 	{
@@ -6118,7 +6118,7 @@ static int _379()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _380()
 	{
@@ -6189,7 +6189,7 @@ static int _385()
 	log("_385") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _534() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _386()
 	{
@@ -6212,14 +6212,14 @@ static int _388()
 	log("_388") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _535() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _389()
 	{
 	log("_389") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _536() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _390()
 	{
@@ -6266,7 +6266,7 @@ static int _394()
 	log("_394") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _277B27 ) { a.shift() ; return a.split( _538() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _395()
 	{
@@ -6329,7 +6329,7 @@ static int _396()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _397()
 	{
@@ -6443,7 +6443,7 @@ static int _402()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _403()
 	{
@@ -6496,7 +6496,7 @@ static int _405()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _406()
 	{
@@ -6519,14 +6519,14 @@ static int _408()
 	log("_408") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _547() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _409()
 	{
 	log("_409") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _548() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _410()
 	{
@@ -6579,7 +6579,7 @@ static int _412()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _413()
 	{
@@ -6683,7 +6683,7 @@ static int _419()
 	log("_419") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _554() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _420()
 	{
@@ -6714,14 +6714,14 @@ static int _422()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _423()
 	{
 	log("_423") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273A27 ) { a.shift() ; return a.split( _556() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _424()
 	{
@@ -6736,7 +6736,7 @@ static int _424()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _425()
 	{
@@ -6777,7 +6777,7 @@ static int _426()
 	log("_426") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _563() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _427()
 	{
@@ -6849,7 +6849,7 @@ static int _427()
 		case _222Epermissionset22: a.shift() ; return a.deploy( _20() ) ;
 		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _428()
 	{
@@ -6881,7 +6881,7 @@ static int _429()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _430()
 	{
@@ -6960,7 +6960,7 @@ static int _434()
 	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
 	else
 	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _567() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _435()
 	{
@@ -6984,7 +6984,7 @@ static int _435()
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		case _277B27: a.shift() ; return a.deploy( _252() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _436()
 	{
@@ -7003,7 +7003,7 @@ static int _436()
 	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
 	else
 	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _567() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _437()
 	{
@@ -7022,7 +7022,7 @@ static int _437()
 	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
 	else
 	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _567() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _438()
 	{
@@ -7041,7 +7041,7 @@ static int _438()
 	if( token.point == _277B27 ) { a.shift() ; return a.deploy( _252() ) ; }
 	else
 	if( token.point == _22handler22 ) { a.shift() ; return a.deploy( _567() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _439()
 	{
@@ -7056,21 +7056,21 @@ static int _440()
 	log("_440") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22to22 ) { a.shift() ; return a.split( _576() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _441()
 	{
 	log("_441") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22to22 ) { a.shift() ; return a.split( _577() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _442()
 	{
 	log("_442") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _578() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _443()
 	{
@@ -7122,28 +7122,28 @@ static int _446()
 		case _22int3822: a.shift() ; return a.deploy( _119() ) ;
 		case _22bytearray22: a.shift() ; return a.deploy( _120() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _447()
 	{
 	log("_447") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _580() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _448()
 	{
 	log("_448") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _581() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _449()
 	{
 	log("_449") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _582() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _450()
 	{
@@ -7158,42 +7158,42 @@ static int _450()
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _451()
 	{
 	log("_451") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _584() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _452()
 	{
 	log("_452") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _585() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _453()
 	{
 	log("_453") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _586() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _454()
 	{
 	log("_454") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _587() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _455()
 	{
 	log("_455") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _588() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _456()
 	{
@@ -7216,7 +7216,7 @@ static int _458()
 	log("_458") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22algorithm22 ) { a.shift() ; return a.split( _589() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _459()
 	{
@@ -7231,7 +7231,7 @@ static int _459()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _460()
 	{
@@ -7248,14 +7248,14 @@ static int _460()
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	else
 	if( token.point == _273D27 ) { a.shift() ; return a.deploy( _591() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _461()
 	{
 	log("_461") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273D27 ) { a.shift() ; return a.split( _593() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _462()
 	{
@@ -7350,14 +7350,14 @@ static int _469()
 	log("_469") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273D27 ) { a.shift() ; return a.split( _596() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _470()
 	{
 	log("_470") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273D27 ) { a.shift() ; return a.split( _597() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _471()
 	{
@@ -7450,7 +7450,7 @@ static int _476()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _477()
 	{
@@ -7467,7 +7467,7 @@ static int _477()
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	else
 	if( token.point == _22extern22 ) { a.shift() ; return a.deploy( _601() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _478()
 	{
@@ -7512,14 +7512,14 @@ static int _481()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _482()
 	{
 	log("_482") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22extern22 ) { a.shift() ; return a.split( _604() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _483()
 	{
@@ -7566,7 +7566,7 @@ static int _486()
 	log("_486") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _SQSTRING ) { a.shift() ; return a.split( _606() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _487()
 	{
@@ -7575,7 +7575,7 @@ static int _487()
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _607() ) ; }
 	else
 	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _488()
 	{
@@ -7627,7 +7627,7 @@ static int _490()
 	log("_490") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _609() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _491()
 	{
@@ -7698,7 +7698,7 @@ static int _493()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _494()
 	{
@@ -7707,7 +7707,7 @@ static int _494()
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _611() ) ; }
 	else
 	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _495()
 	{
@@ -7788,7 +7788,7 @@ static int _496()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _497()
 	{
@@ -7842,7 +7842,7 @@ static int _500()
 	if( token.point == _272C27 ) { a.shift() ; return a.split( _619() ) ; }
 	else
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _620() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _501()
 	{
@@ -7901,7 +7901,7 @@ static int _504()
 	if( token.point == _272C27 ) { a.shift() ; return a.split( _622() ) ; }
 	else
 	if( token.point == _273E27 ) { a.shift() ; return a.split( _623() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _505()
 	{
@@ -7925,7 +7925,7 @@ static int _505()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _506()
 	{
@@ -7949,14 +7949,14 @@ static int _506()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _507()
 	{
 	log("_507") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.split( _626() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _508()
 	{
@@ -7972,7 +7972,7 @@ static int _508()
 		case _22modreq22: a.shift() ; return a.split( _330() ) ;
 		case _22modopt22: a.shift() ; return a.split( _331() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _509()
 	{
@@ -8013,7 +8013,7 @@ static int _510()
 	log("_510") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _222Ector22 ) { a.shift() ; return a.split( _628() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _511()
 	{
@@ -8027,7 +8027,7 @@ static int _511()
 		case _22fromunmanaged22: a.shift() ; return a.split( _632() ) ;
 		case _22callmostderived22: a.shift() ; return a.split( _633() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _512()
 	{
@@ -8108,7 +8108,7 @@ static int _519()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _520()
 	{
@@ -8209,14 +8209,14 @@ static int _523()
 	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
 	else
 	if( token.point == _273D27 ) { a.shift() ; return a.split( _674() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _524()
 	{
 	log("_524") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _675() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _525()
 	{
@@ -8283,7 +8283,7 @@ static int _530()
 	log("_530") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _677() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _531()
 	{
@@ -8331,7 +8331,7 @@ static int _531()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _532()
 	{
@@ -8387,7 +8387,7 @@ static int _533()
 		case _22private22: a.shift() ; return a.deploy( _342() ) ;
 		case _22nested22: a.shift() ; return a.deploy( _343() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _534()
 	{
@@ -8507,7 +8507,7 @@ static int _537()
 		case _222Epermissionset22: a.shift() ; return a.deploy( _20() ) ;
 		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _538()
 	{
@@ -8568,7 +8568,7 @@ static int _540()
 		case _22thiscall22: a.shift() ; return a.split( _702() ) ;
 		case _22fastcall22: a.shift() ; return a.split( _703() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _541()
 	{
@@ -8589,7 +8589,7 @@ static int _541()
 		case _22out22: a.shift() ; return a.deploy( _705() ) ;
 		case _22opt22: a.shift() ; return a.deploy( _706() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _542()
 	{
@@ -8621,7 +8621,7 @@ static int _542()
 		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
 		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _543()
 	{
@@ -8636,7 +8636,7 @@ static int _544()
 	log("_544") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _711() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _545()
 	{
@@ -8733,7 +8733,7 @@ static int _546()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _547()
 	{
@@ -8748,7 +8748,7 @@ static int _547()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _548()
 	{
@@ -8763,7 +8763,7 @@ static int _548()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _549()
 	{
@@ -8780,21 +8780,21 @@ static int _549()
 		case _22modreq22: a.shift() ; return a.split( _330() ) ;
 		case _22modopt22: a.shift() ; return a.split( _331() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _550()
 	{
 	log("_550") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _717() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _551()
 	{
 	log("_551") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _718() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _552()
 	{
@@ -8854,14 +8854,14 @@ static int _554()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _555()
 	{
 	log("_555") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _722() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _556()
 	{
@@ -8876,14 +8876,14 @@ static int _556()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _557()
 	{
 	log("_557") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _724() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _558()
 	{
@@ -8929,14 +8929,14 @@ static int _559()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _560()
 	{
 	log("_560") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _726() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _561()
 	{
@@ -9041,7 +9041,7 @@ static int _567()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _568()
 	{
@@ -9122,7 +9122,7 @@ static int _576()
 	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _577()
 	{
@@ -9137,7 +9137,7 @@ static int _577()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _578()
 	{
@@ -9228,7 +9228,7 @@ static int _583()
 	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
 	else
 	if( token.point == _272927 ) { a.shift() ; return a.split( _735() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _584()
 	{
@@ -9367,21 +9367,21 @@ static int _589()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _590()
 	{
 	log("_590") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273A27 ) { a.shift() ; return a.split( _741() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _591()
 	{
 	log("_591") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _742() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _592()
 	{
@@ -9407,49 +9407,49 @@ static int _593()
 	log("_593") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _743() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _594()
 	{
 	log("_594") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _744() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _595()
 	{
 	log("_595") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _745() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _596()
 	{
 	log("_596") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _746() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _597()
 	{
 	log("_597") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _747() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _598()
 	{
 	log("_598") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _748() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _599()
 	{
 	log("_599") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _749() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _600()
 	{
@@ -9488,7 +9488,7 @@ static int _601()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _602()
 	{
@@ -9505,7 +9505,7 @@ static int _603()
 	if( token.point == _22at22 ) { a.shift() ; return a.split( _751() ) ; }
 	else
 	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _604()
 	{
@@ -9526,14 +9526,14 @@ static int _604()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _605()
 	{
 	log("_605") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _753() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _606()
 	{
@@ -9624,7 +9624,7 @@ static int _609()
 	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _610()
 	{
@@ -9633,7 +9633,7 @@ static int _610()
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _756() ) ; }
 	else
 	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _611()
 	{
@@ -9655,7 +9655,7 @@ static int _611()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _612()
 	{
@@ -9672,7 +9672,7 @@ static int _612()
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	else
 	if( token.point == _272827 ) { a.shift() ; return a.deploy( _757() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _613()
 	{
@@ -9716,7 +9716,7 @@ static int _616()
 	log("_616") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _760() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _617()
 	{
@@ -9748,7 +9748,7 @@ static int _618()
 	log("_618") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _761() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _619()
 	{
@@ -9844,7 +9844,7 @@ static int _622()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _623()
 	{
@@ -9859,14 +9859,14 @@ static int _624()
 	log("_624") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _765() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _625()
 	{
 	log("_625") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _766() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _626()
 	{
@@ -9881,14 +9881,14 @@ static int _627()
 	log("_627") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _767() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _628()
 	{
 	log("_628") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _768() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _629()
 	{
@@ -9905,7 +9905,7 @@ static int _629()
 	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _630()
 	{
@@ -9994,21 +9994,21 @@ static int _639()
 	log("_639") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22bstr22 ) { a.shift() ; return a.split( _771() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _640()
 	{
 	log("_640") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22struct22 ) { a.shift() ; return a.split( _772() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _641()
 	{
 	log("_641") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22any22 ) { a.shift() ; return a.split( _773() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _642()
 	{
@@ -10055,7 +10055,7 @@ static int _647()
 	log("_647") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _774() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _648()
 	{
@@ -10064,7 +10064,7 @@ static int _648()
 	if( token.point == _22sysstring22 ) { a.shift() ; return a.split( _775() ) ; }
 	else
 	if( token.point == _22array22 ) { a.shift() ; return a.split( _776() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _649()
 	{
@@ -10128,7 +10128,7 @@ static int _654()
 		case _22int3822: a.shift() ; return a.split( _781() ) ;
 		case _22int22: a.shift() ; return a.split( _782() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _655()
 	{
@@ -10318,7 +10318,7 @@ static int _671()
 		case _275B27: a.shift() ; return a.split( _821() ) ;
 		case _272A27: a.shift() ; return a.split( _822() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _672()
 	{
@@ -10335,7 +10335,7 @@ static int _672()
 	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _673()
 	{
@@ -10394,7 +10394,7 @@ static int _674()
 		case _22true22: a.shift() ; return a.deploy( _827() ) ;
 		case _22false22: a.shift() ; return a.deploy( _828() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _675()
 	{
@@ -10419,7 +10419,7 @@ static int _676()
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _677()
 	{
@@ -10443,7 +10443,7 @@ static int _677()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _678()
 	{
@@ -10476,7 +10476,7 @@ static int _680()
 	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _681()
 	{
@@ -10553,7 +10553,7 @@ static int _684()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _685()
 	{
@@ -10621,7 +10621,7 @@ static int _686()
 		case _222Epermissionset22: a.shift() ; return a.deploy( _20() ) ;
 		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _687()
 	{
@@ -10652,7 +10652,7 @@ static int _687()
 		case _222Eother22: a.shift() ; return a.deploy( _843() ) ;
 		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _688()
 	{
@@ -10682,7 +10682,7 @@ static int _688()
 		case _222Eget22: a.shift() ; return a.deploy( _851() ) ;
 		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _689()
 	{
@@ -10714,7 +10714,7 @@ static int _690()
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
 		case _222Eclass22: a.shift() ; return a.deploy( _477() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _691()
 	{
@@ -10729,7 +10729,7 @@ static int _691()
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _692()
 	{
@@ -10749,7 +10749,7 @@ static int _692()
 		case _22thiscall22: a.shift() ; return a.split( _702() ) ;
 		case _22fastcall22: a.shift() ; return a.split( _703() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _693()
 	{
@@ -10844,42 +10844,42 @@ static int _704()
 	log("_704") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _859() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _705()
 	{
 	log("_705") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _860() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _706()
 	{
 	log("_706") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _861() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _707()
 	{
 	log("_707") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _862() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _708()
 	{
 	log("_708") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _863() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _709()
 	{
 	log("_709") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _864() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _710()
 	{
@@ -10918,35 +10918,35 @@ static int _711()
 	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _712()
 	{
 	log("_712") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _866() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _713()
 	{
 	log("_713") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _867() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _714()
 	{
 	log("_714") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _868() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _715()
 	{
 	log("_715") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _869() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _716()
 	{
@@ -11191,21 +11191,21 @@ static int _728()
 	log("_728") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _878() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _729()
 	{
 	log("_729") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22to22 ) { a.shift() ; return a.split( _879() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _730()
 	{
 	log("_730") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22to22 ) { a.shift() ; return a.split( _880() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _731()
 	{
@@ -11300,7 +11300,7 @@ static int _741()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _742()
 	{
@@ -11397,7 +11397,7 @@ static int _751()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _752()
 	{
@@ -11499,7 +11499,7 @@ static int _756()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _757()
 	{
@@ -11625,7 +11625,7 @@ static int _761()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _762()
 	{
@@ -11755,7 +11755,7 @@ static int _770()
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
 		case _275B27: a.shift() ; return a.deploy( _318() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _771()
 	{
@@ -11794,21 +11794,21 @@ static int _774()
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _775()
 	{
 	log("_775") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275B27 ) { a.shift() ; return a.split( _890() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _776()
 	{
 	log("_776") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275B27 ) { a.shift() ; return a.split( _891() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _777()
 	{
@@ -11966,7 +11966,7 @@ static int _795()
 		case _22int3822: a.shift() ; return a.split( _895() ) ;
 		case _22int22: a.shift() ; return a.split( _896() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _796()
 	{
@@ -12199,7 +12199,7 @@ static int _821()
 		case _272B27: a.shift() ; return a.deploy( _901() ) ;
 		case _275D27: a.shift() ; return a.deploy( _902() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _822()
 	{
@@ -12245,7 +12245,7 @@ static int _824()
 		case _22nullref22: a.shift() ; return a.deploy( _912() ) ;
 		case _22bytearray22: a.shift() ; return a.deploy( _120() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _825()
 	{
@@ -12260,7 +12260,7 @@ static int _826()
 	log("_826") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _916() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _827()
 	{
@@ -12301,7 +12301,7 @@ static int _830()
 	log("_830") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _917() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _831()
 	{
@@ -12340,7 +12340,7 @@ static int _835()
 	log("_835") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _22with22 ) { a.shift() ; return a.split( _918() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _836()
 	{
@@ -12374,7 +12374,7 @@ static int _837()
 		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
 		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _838()
 	{
@@ -12902,7 +12902,7 @@ static int _867()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _868()
 	{
@@ -12925,7 +12925,7 @@ static int _870()
 	log("_870") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _932() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _871()
 	{
@@ -12958,7 +12958,7 @@ static int _873()
 	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _874()
 	{
@@ -12973,7 +12973,7 @@ static int _875()
 	log("_875") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _934() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _876()
 	{
@@ -13014,7 +13014,7 @@ static int _879()
 	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
 	else
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _880()
 	{
@@ -13029,14 +13029,14 @@ static int _880()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _881()
 	{
 	log("_881") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273A27 ) { a.shift() ; return a.split( _937() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _882()
 	{
@@ -13059,28 +13059,28 @@ static int _884()
 	log("_884") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _938() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _885()
 	{
 	log("_885") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _939() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _886()
 	{
 	log("_886") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _940() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _887()
 	{
 	log("_887") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _941() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _888()
 	{
@@ -13097,7 +13097,7 @@ static int _889()
 	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
 	else
 	if( token.point == _272C27 ) { a.shift() ; return a.split( _942() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _890()
 	{
@@ -13112,7 +13112,7 @@ static int _890()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _891()
 	{
@@ -13127,7 +13127,7 @@ static int _891()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _892()
 	{
@@ -13182,14 +13182,14 @@ static int _897()
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _898()
 	{
 	log("_898") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _946() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _899()
 	{
@@ -13220,7 +13220,7 @@ static int _901()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _902()
 	{
@@ -13237,63 +13237,63 @@ static int _903()
 	if( token.point == _272B27 ) { a.shift() ; return a.split( _948() ) ; }
 	else
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _949() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _904()
 	{
 	log("_904") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _950() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _905()
 	{
 	log("_905") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _951() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _906()
 	{
 	log("_906") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _952() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _907()
 	{
 	log("_907") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _953() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _908()
 	{
 	log("_908") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _954() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _909()
 	{
 	log("_909") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _955() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _910()
 	{
 	log("_910") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _956() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _911()
 	{
 	log("_911") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _957() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _912()
 	{
@@ -13372,7 +13372,7 @@ static int _916()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _917()
 	{
@@ -13393,7 +13393,7 @@ static int _917()
 		case _22int313622: a.shift() ; return a.deploy( _961() ) ;
 		case _22int3822: a.shift() ; return a.deploy( _962() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _918()
 	{
@@ -13430,7 +13430,7 @@ static int _919()
 	log("_919") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _965() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _920()
 	{
@@ -13467,7 +13467,7 @@ static int _920()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _921()
 	{
@@ -13504,7 +13504,7 @@ static int _921()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _922()
 	{
@@ -13541,7 +13541,7 @@ static int _922()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _923()
 	{
@@ -13578,7 +13578,7 @@ static int _923()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _924()
 	{
@@ -13615,7 +13615,7 @@ static int _924()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _925()
 	{
@@ -13652,7 +13652,7 @@ static int _925()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _926()
 	{
@@ -13689,7 +13689,7 @@ static int _926()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _927()
 	{
@@ -13709,7 +13709,7 @@ static int _927()
 		case _22thiscall22: a.shift() ; return a.split( _702() ) ;
 		case _22fastcall22: a.shift() ; return a.split( _703() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _928()
 	{
@@ -13721,28 +13721,28 @@ static int _928()
 		case _275B27: a.shift() ; return a.split( _821() ) ;
 		case _272A27: a.shift() ; return a.split( _822() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _929()
 	{
 	log("_929") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _975() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _930()
 	{
 	log("_930") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _976() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _931()
 	{
 	log("_931") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _977() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _932()
 	{
@@ -13847,7 +13847,7 @@ static int _937()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _938()
 	{
@@ -13920,21 +13920,21 @@ static int _942()
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _943()
 	{
 	log("_943") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _982() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _944()
 	{
 	log("_944") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _983() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _945()
 	{
@@ -13967,7 +13967,7 @@ static int _947()
 	log("_947") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _984() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _948()
 	{
@@ -13982,7 +13982,7 @@ static int _948()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _949()
 	{
@@ -14005,7 +14005,7 @@ static int _950()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _951()
 	{
@@ -14020,7 +14020,7 @@ static int _951()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _952()
 	{
@@ -14035,7 +14035,7 @@ static int _952()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _953()
 	{
@@ -14057,7 +14057,7 @@ static int _953()
 		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
 		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _954()
 	{
@@ -14079,7 +14079,7 @@ static int _954()
 		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
 		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _955()
 	{
@@ -14094,7 +14094,7 @@ static int _955()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _956()
 	{
@@ -14109,7 +14109,7 @@ static int _956()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _957()
 	{
@@ -14126,49 +14126,49 @@ static int _957()
 	if( token.point == _22true22 ) { a.shift() ; return a.deploy( _827() ) ; }
 	else
 	if( token.point == _22false22 ) { a.shift() ; return a.deploy( _828() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _958()
 	{
 	log("_958") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _996() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _959()
 	{
 	log("_959") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _997() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _960()
 	{
 	log("_960") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273A27 ) { a.shift() ; return a.split( _998() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _961()
 	{
 	log("_961") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273A27 ) { a.shift() ; return a.split( _999() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _962()
 	{
 	log("_962") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273A27 ) { a.shift() ; return a.split( _1000() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _963()
 	{
 	log("_963") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1001() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _964()
 	{
@@ -14205,7 +14205,7 @@ static int _964()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _965()
 	{
@@ -14294,7 +14294,7 @@ static int _966()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _967()
 	{
@@ -14349,7 +14349,7 @@ static int _967()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _968()
 	{
@@ -14404,7 +14404,7 @@ static int _968()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _969()
 	{
@@ -14459,7 +14459,7 @@ static int _969()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _970()
 	{
@@ -14514,7 +14514,7 @@ static int _970()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _971()
 	{
@@ -14569,7 +14569,7 @@ static int _971()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _972()
 	{
@@ -14624,7 +14624,7 @@ static int _972()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _973()
 	{
@@ -14656,7 +14656,7 @@ static int _974()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _975()
 	{
@@ -14726,21 +14726,21 @@ static int _978()
 		case _275B27: a.shift() ; return a.split( _821() ) ;
 		case _272A27: a.shift() ; return a.split( _822() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _979()
 	{
 	log("_979") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _273A27 ) { a.shift() ; return a.split( _1022() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _980()
 	{
 	log("_980") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1023() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _981()
 	{
@@ -14752,7 +14752,7 @@ static int _981()
 		case _272C27: a.shift() ; return a.split( _1024() ) ;
 		case _272927: a.shift() ; return a.split( _1025() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _982()
 	{
@@ -14783,77 +14783,77 @@ static int _985()
 	log("_985") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _275D27 ) { a.shift() ; return a.split( _1026() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _986()
 	{
 	log("_986") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1027() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _987()
 	{
 	log("_987") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1028() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _988()
 	{
 	log("_988") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1029() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _989()
 	{
 	log("_989") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1030() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _990()
 	{
 	log("_990") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1031() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _991()
 	{
 	log("_991") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1032() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _992()
 	{
 	log("_992") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1033() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _993()
 	{
 	log("_993") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1034() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _994()
 	{
 	log("_994") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1035() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _995()
 	{
 	log("_995") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1036() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _996()
 	{
@@ -14884,7 +14884,7 @@ static int _998()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _999()
 	{
@@ -14899,7 +14899,7 @@ static int _999()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1000()
 	{
@@ -14914,7 +14914,7 @@ static int _1000()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1001()
 	{
@@ -14974,119 +14974,119 @@ static int _1002()
 		case _272127: a.shift() ; return a.deploy( _153() ) ;
 		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1003()
 	{
 	log("_1003") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1041() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1004()
 	{
 	log("_1004") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1042() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1005()
 	{
 	log("_1005") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1043() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1006()
 	{
 	log("_1006") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1044() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1007()
 	{
 	log("_1007") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1045() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1008()
 	{
 	log("_1008") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1046() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1009()
 	{
 	log("_1009") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1047() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1010()
 	{
 	log("_1010") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1048() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1011()
 	{
 	log("_1011") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1049() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1012()
 	{
 	log("_1012") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1050() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1013()
 	{
 	log("_1013") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1051() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1014()
 	{
 	log("_1014") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1052() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1015()
 	{
 	log("_1015") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1053() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1016()
 	{
 	log("_1016") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1054() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1017()
 	{
 	log("_1017") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1055() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1018()
 	{
 	log("_1018") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1056() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1019()
 	{
@@ -15107,14 +15107,14 @@ static int _1019()
 		case _22synchronized22: a.shift() ; return a.split( _1067() ) ;
 		case _22noinlining22: a.shift() ; return a.split( _1068() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1020()
 	{
 	log("_1020") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1069() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1021()
 	{
@@ -15156,7 +15156,7 @@ static int _1022()
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1023()
 	{
@@ -15179,7 +15179,7 @@ static int _1024()
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1025()
 	{
@@ -15282,28 +15282,28 @@ static int _1037()
 	log("_1037") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1073() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1038()
 	{
 	log("_1038") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1074() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1039()
 	{
 	log("_1039") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1075() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1040()
 	{
 	log("_1040") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1076() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1041()
 	{
@@ -15384,7 +15384,7 @@ static int _1043()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1044()
 	{
@@ -15442,7 +15442,7 @@ static int _1045()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1046()
 	{
@@ -15500,7 +15500,7 @@ static int _1047()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1048()
 	{
@@ -15558,7 +15558,7 @@ static int _1049()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1050()
 	{
@@ -15616,7 +15616,7 @@ static int _1051()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1052()
 	{
@@ -15674,7 +15674,7 @@ static int _1053()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1054()
 	{
@@ -15732,7 +15732,7 @@ static int _1055()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1056()
 	{
@@ -15895,7 +15895,7 @@ static int _1072()
 	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
 	else
 	if( token.point == _272C27 ) { a.shift() ; return a.split( _1093() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1073()
 	{
@@ -15943,7 +15943,7 @@ static int _1076()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1077()
 	{
@@ -15958,105 +15958,105 @@ static int _1078()
 	log("_1078") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1095() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1079()
 	{
 	log("_1079") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1096() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1080()
 	{
 	log("_1080") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1097() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1081()
 	{
 	log("_1081") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1098() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1082()
 	{
 	log("_1082") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1099() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1083()
 	{
 	log("_1083") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1100() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1084()
 	{
 	log("_1084") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1101() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1085()
 	{
 	log("_1085") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1102() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1086()
 	{
 	log("_1086") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1103() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1087()
 	{
 	log("_1087") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1104() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1088()
 	{
 	log("_1088") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1105() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1089()
 	{
 	log("_1089") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1106() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1090()
 	{
 	log("_1090") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1107() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1091()
 	{
 	log("_1091") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1108() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1092()
 	{
 	log("_1092") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1109() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1093()
 	{
@@ -16071,14 +16071,14 @@ static int _1093()
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1094()
 	{
 	log("_1094") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272827 ) { a.shift() ; return a.split( _1111() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1095()
 	{
@@ -16397,7 +16397,7 @@ static int _1110()
 	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
 	else
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1120() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1111()
 	{
@@ -16438,49 +16438,49 @@ static int _1112()
 	log("_1112") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1122() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1113()
 	{
 	log("_1113") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1123() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1114()
 	{
 	log("_1114") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1124() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1115()
 	{
 	log("_1115") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1125() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1116()
 	{
 	log("_1116") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1126() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1117()
 	{
 	log("_1117") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1127() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1118()
 	{
 	log("_1118") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1128() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1119()
 	{
@@ -16501,7 +16501,7 @@ static int _1119()
 		case _22synchronized22: a.shift() ; return a.split( _1067() ) ;
 		case _22noinlining22: a.shift() ; return a.split( _1068() ) ;
 		}
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1120()
 	{
@@ -16516,7 +16516,7 @@ static int _1121()
 	log("_1121") ;
 	Automaton a = new Automaton() ;
 	if( token.point == _272927 ) { a.shift() ; return a.split( _1130() ) ; }
-	throw new System.NotImplementedException() ;
+	throw new SyntaxException() ;
 	}
 static int _1122()
 	{

@@ -50,7 +50,7 @@ int deploy( int i )
 	{
 	do	{
 		if( i &gt; 0 )
-			throw new System.NotImplementedException( "-range/+index condition" ) ;
+			throw new SyntaxException( "-range/+index condition" ) ;
 		else
 		if( i &lt; 0 )
 			{
@@ -64,13 +64,13 @@ int deploy( int i )
 			yy = (int)__default ;
 		} while( (i = (int) gotoset_s( yy )) != __default ) ;
 	if( token.c != 0 )
-		throw new System.NotImplementedException( "token != $end" ) ;
+		throw new SyntaxException( "token != $end" ) ;
 	return 0 ;
 	}
 int split( int i )
 	{
 	if( i &gt; 0 )
-		throw new System.NotImplementedException( "-range/+index condition" ) ;
+		throw new SyntaxException( "-range/+index condition" ) ;
 	else
 	if( i &lt; 0 )
 		{
@@ -80,7 +80,7 @@ int split( int i )
 		(auto as Driver.Auto).Splice() ;
 		}
 	if( token.c != 0 )
-		throw new System.NotImplementedException( "token != $end" ) ;
+		throw new SyntaxException( "token != $end" ) ;
 	return 0 ;
 	}
 </Automaton-deploy>
