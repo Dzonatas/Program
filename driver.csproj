@@ -59,7 +59,6 @@
     <Compile Include="#\Cluster\Cluster.Program.cs" />
     <Compile Include="#\Cluster\Cluster.Cli.cs" />
     <Compile Include="#\Cluster\Cluster.Parameter.cs" />
-    <Compile Include="#\Cluster\Cluster.cs" />
     <Compile Include="#\Cluster\Cluster.Shell.cs" />
   </ItemGroup>
   <ItemGroup>

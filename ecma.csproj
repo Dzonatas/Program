@@ -191,7 +191,6 @@
     <Compile Include="#\C699\C699.LibC.cs" />
     <Compile Include="#\C699\C699.File.Structure.cs" />
     <Compile Include="#\A335.Guid.cs" />
-    <Compile Include="#\Cluster\Cluster.cs" />
     <Compile Include="#\Cluster\Cluster.Cli.cs" />
     <Compile Include="#\Cluster\Cluster.Shell.cs" />
     <Compile Include="#\Cluster\Cluster.Parameter.cs" />
