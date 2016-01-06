@@ -185,8 +185,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					}
 				else
 				if( t is type__int32_ )
-					throw new System.NotImplementedException() ;
-					//d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+					d.Push( new C699.c(Arg1.Token), C_Type.Acquire(C699.C.Int) ) ;
 				else
 				if( ! (t is type__void_ ) )
 					throw new System.NotImplementedException() ;
@@ -257,6 +256,12 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 			case "LDFTN" :
 				{
 				if( type is type__string_ )
+					{
+					d.Statement( C699.C.Extern.Type(type).Function(_Call) ) ;
+					d.Push( new C699.c(_Call), C_Type.Acquire( C699.C.Void.p ) ) ;
+					}
+				else
+				if( type is type__int32_ )
 					{
 					d.Statement( C699.C.Extern.Type(type).Function(_Call) ) ;
 					d.Push( new C699.c(_Call), C_Type.Acquire( C699.C.Void.p ) ) ;
