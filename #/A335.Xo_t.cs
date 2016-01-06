@@ -48,30 +48,30 @@ class Xo_t
 		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
 		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
 		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
-		bool reduction_volatile = stateset[i].Reductionset.GetLength(0) == 0 ;
+		//bool reduction_volatile = stateset[i].Reductionset.GetLength(0) == 0 ;
 		bool gotoset_volatile   = stateset[i].Gotoset.GetLength(0) == 0 ;
-		bool transit_volatile   = stateset[i].Transitionset.Length == 0 ;
+		//bool transit_volatile   = stateset[i].Transitionset.Length == 0 ;
 		bool default_volatile   = stateset[i].Default_reduction.HasValue == false
 			|| stateset[i].Reductionset.GetLength(0) == 1 ;
 		bool empty_token = volatile_b && default_volatile && gotoset_volatile ;
 		bool io_volatile = stateset[i].FromStates.Length == 1 && empty_token ;
 		//bool tab_b = tabs_i != 1 ;
 		string _a = tabs_i == 1 ? "a" : "aa" ;
-		string _rule = rule ;
-		bool _rule_b = true ;
+		//string _rule = rule ;
+		//bool _rule_b = true ;
 		if( stateset[i].Default_reduction.HasValue )
 			{
 			string r = stateset[i].Reductionset[stateset[i].Default_reduction.Value].rule.ToString() ;
 			rule = '-'+r ;
-			_rule = "__"+r+"()" ;
-			_rule_b = false ;
+			//_rule = "__"+r+"()" ;
+			//_rule_b = false ;
 			}
-		bool _rule_bbb = false ;
+		//bool _rule_bbb = false ;
 		if( reduction_rule( i ) )
 			{
-			_rule   = "reductionset_"+i+"( token.point )" ;
-			_rule_b = false ;
-			_rule_bbb = true ;
+			//_rule   = "reductionset_"+i+"( token.point )" ;
+			//_rule_b = false ;
+			//_rule_bbb = true ;
 			}
 		string list = "" ;
 		/*
@@ -209,9 +209,9 @@ class Xo_t
 		}
 	static bool return_rule( int i, string rule, ref string list, string _a )
 		{
-		bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
-		bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
-		bool volatile_b         = lookahead_volatile && shiftset_volatile ;
+		//bool lookahead_volatile = stateset[i].Lookaheadset.Length == 0 ;
+		//bool shiftset_volatile  = stateset[i].Shiftset.GetLength(0) == 0 ;
+		//bool volatile_b         = lookahead_volatile && shiftset_volatile ;
 		bool gotoset_volatile   = stateset[i].Gotoset.GetLength(0) == 0 ;
 		int l = stateset[i].Gotoset.GetLength(0) ;
 		int r = -int.Parse(rule) ;
@@ -481,7 +481,6 @@ class Xo_t
 			}
 		resolve = true ;
 		}
-	static readonly char[] entity_trim =  { ';' };
 	static string[] compile = new string[] { "auto.cs" } ;
 	static public void Compile()
 		{
@@ -584,7 +583,7 @@ class Xo_t
 		}
 	static public void Build()
 		{
-		string infrastruct = Embed( compile ) ;
+		/*string infrastruct =*/ Embed( compile ) ;
 		string linkset = "" ;
 		for( int i = 1 ; i < Rule.Set.Length ; i++ )
 			{

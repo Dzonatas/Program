@@ -300,7 +300,7 @@ static void xml_get_terminal()
 static void xml_get_nonterminal()
 	{
 	xml_nt nt = new xml_nt() ;
-	object o = new xml_symbol( nt.symbol, nt.name ) ;
+	new xml_symbol( nt.symbol, nt.name ) ;
 	Rule.SetSymbol( nt.name.s, nt.symbol ) ;
 	symbols_cs.Append( string.Format( "internal const int {0,30}\t= "+(int)nt.symbol+" ;\n\t", nt.name._s ) ) ;
 	}
