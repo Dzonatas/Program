@@ -197,14 +197,22 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				if( ((string)ts).Contains("genArgs") )
 					{
 					var symbol = new C_Symbol() ;
-					if( Args != 3 )
+					if( Args == 3 )
+						{
+						var ftn = C.Pop() ;
+						var obj = C.Pop() ;
+						//d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
+						d.Statement( C699.C.Static(C699.C.Struct(typeSpec),symbol) ) ;
+						d.Statement( new C699.c(symbol+".this").Equate(obj.StackCast) ) ;
+						d.Statement( new C699.c(symbol+".$Invoke").Equate(ftn.StackCast) ) ;
+						}
+					else
+					if( Args == 1 )
+						{
+						d.Statement( C699.C.Static(C699.C.Struct(typeSpec),symbol) ) ;
+						}
+					else
 						throw new System.NotImplementedException() ;
-					var ftn = C.Pop() ;
-					var obj = C.Pop() ;
-					//d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
-					d.Statement( C699.C.Static(C699.C.Struct(typeSpec),symbol) ) ;
-					d.Statement( new C699.c(symbol+".this").Equate(obj.StackCast) ) ;
-					d.Statement( new C699.c(symbol+".$Invoke").Equate(ftn.StackCast) ) ;
 					var sp = C699.Stack.Pointer ;
 					d.Push( new C699.c("&"+symbol), C_Type.Acquire(C699.C.Struct(typeSpec).p) ) ;
 					//d.Statement( C699.C.Function(_Call,sp) ) ;
