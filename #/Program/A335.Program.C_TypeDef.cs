@@ -27,14 +27,14 @@ partial class Program : C699
 		}
 	public class C_TypeDef
 		{
-		C_Symbol symbol ;
-		C_Type   alias ;
+		//C_Symbol symbol ;
+		//C_Type   alias ;
 		public C_Struct Struct ;
 		C_TypeDef( string symbol, C_Type alias )
 			{
 			//ID = Guid.NewGuid() ;
-			this.symbol = C_Symbol.Acquire( symbol ) ;
-			this.alias  = alias ;
+			/*this.symbol =*/ C_Symbol.Acquire( symbol ) ;
+			//this.alias  = alias ;
 			}
 		static public C_TypeDef Acquire( string symbol )
 			{

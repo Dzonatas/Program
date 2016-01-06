@@ -52,7 +52,7 @@ public partial class   instr_INSTR_TYPE_typeSpec
 				break ;
 			case "ISINST" :
 				{
-				var vt = C.Peak() ;
+				//var vt = C.Peak() ;
 				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 				//oprand.C.Push( null, null ) ; //default
 				}

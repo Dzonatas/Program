@@ -25,7 +25,7 @@ partial class Program : C699
 				}
 			}
 		public C699.c Type ;
-		C_Symbol symbol ;
+		//C_Symbol symbol ;
 		public string Symbol ;
 		public bool   HasArgs ;
 		public string Args ;
@@ -97,7 +97,7 @@ partial class Program : C699
 		C_Function( string symbol )
 			{
 			Void = true ;
-			this.symbol = C_Symbol.Acquire( symbol ) ;
+			/*this.symbol =*/ C_Symbol.Acquire( symbol ) ;
 			Symbol = symbol ;
 			//ID = Guid.NewGuid() ;
 			}

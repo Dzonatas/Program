@@ -226,5 +226,9 @@ public static partial class Shell
 			p= System.Diagnostics.Process.Start(psi) ;
 		return (p_temp = p) ;
 		}
+	static private System.Diagnostics.Process _p_temp
+		{
+		get { return p_temp ; }
+		}
 	}
 }

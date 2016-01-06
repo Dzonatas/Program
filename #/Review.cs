@@ -1,10 +1,10 @@
 using System.Runtime.InteropServices ;
 using System.Extensions ;
 static class Review	{
-static bool cloud ;
+//static bool cloud ;
 public static void Cloud()
 	{
-	cloud = true ;
+	//cloud = true ;
 	Board() ;
 	//vi /tmp/*.[cs|c|h|hpp]  //...->(i.i)
 	}
@@ -117,9 +117,9 @@ static public void i3m( string m )
 #endif
 class dirent
 	{
-	string  path ;
+	//string  path ;
 	ulong   inode ;
-	byte    type ;
+	//byte    type ;
 	string  name ;
 	public static dirent[] top( string path, int entries )
 		{
@@ -144,14 +144,14 @@ class dirent
 			if( sp == System.IntPtr.Zero ) break ;
 			var s = (dirent_t) Marshal.PtrToStructure( sp , typeof(dirent_t) ) ;
 			var _dirent   = new dirent() ;
-			_dirent.type  = s.type ;
+			//_dirent.type  = s.type ;
 			_dirent.inode = s.inode ;
 			_dirent.name  = System.Text.Encoding.ASCII.GetString(s.name) ;
 			#if !UTF7
 			var z = _dirent.name.IndexOf((char)0) ; //"safe"
 			_dirent.name  = System.Text.Encoding.ASCII.GetString(s.name,0,z) ; //fixt
 			#endif
-			_dirent.path  = path ;
+			//_dirent.path  = path ;
 			if( _dirent.name.Contains(".") && _dirent.name[0] != '.' )
 				de[i++]         = _dirent ;
 			}

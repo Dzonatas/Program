@@ -48,11 +48,11 @@ partial class Program : C699
 			}
 		public void WriteTo( System.IO.StreamWriter sw )
 			{
-				sw.WriteLine( Type ) ;
-				sw.WriteLine( "\t{" ) ;
-				foreach( string s in list )
-					sw.WriteLine( "\t" + s + " ;" ) ;
-				sw.WriteLine( "\t} ;" ) ;
+			sw.WriteLine( Type ) ;
+			sw.WriteLine( "\t{" ) ;
+			foreach( string s in list )
+				sw.WriteLine( "\t" + s + " ;" ) ;
+			sw.WriteLine( "\t} ;" ) ;
 			sw.WriteLine() ;
 			}
 		}

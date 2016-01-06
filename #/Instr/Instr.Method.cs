@@ -215,7 +215,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					var head = Class.Head.Find(typeSpec) ;
 					var t = C_Type.Static(C699.Object(ts)) ;
 					var symbol = new C_Symbol() ;
-					C_Type _class = typeSpec ;
+					//C_Type _class = typeSpec ;
 					int iargs  = Args ;
 					C.Hangup( iargs - 1 ) ;
 					d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;

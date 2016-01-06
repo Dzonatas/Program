@@ -1,3 +1,4 @@
+#if KJNJS
 namespace Cluster {
 //	[0.0::window,geometry:full.screen:0]
 class system {
@@ -50,6 +51,5 @@ public class Idol {} ;
 public class Logical {} ;
 public class Presence {} ;
 }
-
-
+#endif
 

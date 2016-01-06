@@ -1,6 +1,8 @@
 public static partial class Tokenset
 	{
+	#if EMBED
 	static int index = 0 ;
+	#endif
 	public static readonly Token Empty = new Tokenset.Token( '\u0000', "", false, 0 ) ;
 	public static Token Input
 		{

@@ -9,7 +9,7 @@ public partial class Instr : Automatrix
 		}
 	public class Oprand
 		{
-		Instr _instr ;
+		//Instr _instr ;
 		Program.C_Oprand c_oprand ;
 		/*
 		static Oprand current ;
@@ -34,7 +34,7 @@ public partial class Instr : Automatrix
 			log( "[Instr.Oprand] "+ op ) ;
 			#endif
 			//current = this ;
-			_instr = instr ;
+			//_instr = instr ;
 			}
 		static public void Declared()
 			{
