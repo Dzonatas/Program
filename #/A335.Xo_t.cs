@@ -564,6 +564,7 @@ class Xo_t
 			f.Write( put("A335-Xo_t-Build-iDNA-5") ) ;
 			f.WriteLine( ) ;
 			}
+		f.WriteLine( "#if !EMBED" ) ;
 		f.WriteLine( "partial class A335 {" ) ;
 		f.WriteLine( "public static readonly"
 			+ " System.Collections.Generic.Dictionary<char,int> xml_translate"
@@ -578,6 +579,7 @@ class Xo_t
 			}
 		f.WriteLine( "\t} ;" ) ;
 		f.WriteLine( "}" ) ;
+		f.WriteLine( "#endif" ) ;
 		f.Close() ;
 		}
 	static public void Build()
