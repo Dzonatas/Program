@@ -53,50 +53,6 @@ static class Work
 		}
 	}
 #endif
-public static class Estate
-	{
-	static string     path = 0.2.GUID() ;
-	//const  string      uri = @"git:0.0:master,constitution,encave" ;
-	//const  string      uri = @"git:0.0:blueprint,grayons,yellow" ;
-	//const  string      uri = @"git:0.0:gradient,region,shadow" ;
-	//const  string      uri = @"git:0.0:N,L,P" ;
-	//const  string      uri = @"nlp:0.0:get,yellow,from,encave" ;
-	//const  string      uri = @"tig:0.0:run,nandom,main" ;
-	static class        DI
-		{
-		static System.IO.DirectoryInfo directory ;
-		static DI()
-			{
-			directory = new System.IO.DirectoryInfo(path) ;
-			if( directory.Exists )
-				return ;
-			throw new System.NotImplementedException( "Obtained region collusion." ) ;
-			}
-		}
-	public static class        Current__System_File
-		{
-		static string panzor ;
-		static public string Path
-			{
-			set {
-				switch(value)
-					{
-					case "cyanics": panzor = path ; return ;
-					case "config": panzor = "~/.config/.git" ; return ;
-					default : panzor = "/etc/games/.git" ; /*ro?ibid:0.3.GUID()*/ return ;
-					}
-				}
-			}
-		static Current__System_File()
-			{
-			//return:git.head:System.File.cs   //C-Shader(File)
-			//return:git.head:System.File.cs   //C-Source(Function)
-			if( string.IsNullOrEmpty( panzor ) )
-				return ;
-			throw new System.NotImplementedException( "Initialized." ) ;
-			}
-		}
-	}
 public static class Path
 	{
 	static System.IO.DirectoryInfo directory ;

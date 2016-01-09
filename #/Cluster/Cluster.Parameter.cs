@@ -24,7 +24,6 @@ namespace Cluster
         
 		static Parameter()
 			{
-			parameter.Add( "PANZORK", "cyanics" ) ;
 			parameter.Add( "synopsis", "false" ) ;
 			parameter.Add( "shell",    "false"  ) ;
 			parameter.Add( "input",    "false"  ) ;
@@ -32,48 +31,12 @@ namespace Cluster
 			parameter.Add( "build",    "false"  ) ;
 			parameter.Add( "headless", "false" ) ;	//https://code.google.com/p/dpkg-scripts/wiki/HOWTO#Creating_a_Simple_Package
 			parameter.Add( "reflection", "false" ) ;
-			#if PRIMED
-			parameter.Add( "primer",    "xinit -- :0 -layout \"Default\""  ) ;
-			#endif
-			#if !BIPOLAR
-				parameter.Add( "mouse",    "true"  ) ;
-			#endif
 			#if DEBUG
 				parameter.Add( "debug",    "true"  ) ;
 				parameter.Add( "point",    "0.0"   ) ;
 				parameter.Add( "endpoint", "0.0"   ) ;
 				parameter.Add( "geometry", "false" ) ;
-				parameter.Add( "snake",    "true"  ) ;
-				parameter.Add( "serpent",  "false" ) ;
 				parameter.Add( "fini",     "true"  ) ;
-			#endif
-			#if DEBIAN
-				parameter.Add( "snake",    "false"  ) ;
-				parameter.Add( "shark",    "true"   ) ;
-				parameter.Add( "cgroup",   "elysium") ;
-				parameter.Add( "systemd",  "jessie" ) ;
-				parameter.Add( "wired",    "true"   ) ;
-			#endif
-			#if STATE
-				parameter.Add( "squirrle",  "deaf"  ) ;
-				parameter.Add( "skunk",     "blind"   ) ;
-				parameter.Add( "cane",      "elysium"   ) ;
-				//parameter.Add( "nail",     "curtain"   ) ;
-			#endif
-			#if METH || KNOPPIX
-				parameter.Add( "shark",     "true"   ) ;
-				parameter.Add( "man-o-war", "true"   ) ;
-			#endif
-			#if EXTENTIALISM
-				parameter.Add( "OOXML",     "false"  ) ;
-			#endif
-			#if MAGIC
-				parameter.Add( "magic",     "true"  ) ;
-			#endif
-			#if FED
-				parameter.Add( "toggle",     "URI"  ) ;
-				parameter.Add( "president", "[URN]"  ) ; ///URN:RFC:###-##-###,RFC,(FOIA),$
-				parameter.Add( "doubletters", "url"  ) ;
 			#endif
 			}
 

@@ -6,7 +6,6 @@ public static void Main( string[] args )
 	//Current.Working.Directory() ;
 	Cluster.Cli.Start( "git branch", Branch_i ) ;
 	Cluster.Program.Parse( args ) ;
-	Current.Estate.Current__System_File.Path = Cluster.Parameter.Value("PANZOR") ;
 	if( Cluster.Parameter.Value("input") != "false" )
 		{
 		string text = System.IO.File.ReadAllText( Cluster.Parameter.Value("input") ) ;
