@@ -2,7 +2,7 @@ namespace Driver
 {
 public abstract class Auto : global::IRule
 	{
-	public abstract System.Decimal   RuleNumber  { get; }
+	public abstract int              RuleNumber  { get; }
 	public abstract string           LHS         { get; }
 	public abstract string[]         RHS         { get; }
 	public abstract int              Symbol      { get; }

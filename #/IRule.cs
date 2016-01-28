@@ -1,6 +1,6 @@
 public interface IRule
 	{
-	System.Decimal   RuleNumber  { get; }
+	int              RuleNumber  { get; }
 	string           LHS         { get; }
 	string[]         RHS         { get; }
 	int              Symbol      { get; }

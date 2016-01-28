@@ -16601,9 +16601,9 @@ public partial class  START_decls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "decls" } ;
-	public override System.Decimal RuleNumber { get { return 1 ; } }
-	public override int Symbol { get { return Automaton._START ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 1 ; } }
+	public override int      Symbol { get { return Automaton._START ; } }
+	public override bool     Useful { get { return true ; } }
 	public START_decls()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16620,9 +16620,9 @@ public partial class  decls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 2 ; } }
-	public override int Symbol { get { return Automaton._decls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 2 ; } }
+	public override int      Symbol { get { return Automaton._decls ; } }
+	public override bool     Useful { get { return true ; } }
 	public decls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -16639,9 +16639,9 @@ public partial class  decls_decls_decl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "decls", "decl" } ;
-	public override System.Decimal RuleNumber { get { return 3 ; } }
-	public override int Symbol { get { return Automaton._decls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 3 ; } }
+	public override int      Symbol { get { return Automaton._decls ; } }
+	public override bool     Useful { get { return true ; } }
 	public decls_decls_decl()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -16658,9 +16658,9 @@ public partial class  decl_classHead_277B27_classDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classHead", "'{'", "classDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 4 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 4 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_classHead_277B27_classDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -16677,9 +16677,9 @@ public partial class  decl_nameSpaceHead_277B27_decls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nameSpaceHead", "'{'", "decls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 5 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 5 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_nameSpaceHead_277B27_decls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -16693,9 +16693,9 @@ public partial class  decl_methodHead_methodDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodHead", "methodDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 6 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 6 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_methodHead_methodDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -16709,9 +16709,9 @@ public partial class  decl_fieldDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldDecl" } ;
-	public override System.Decimal RuleNumber { get { return 7 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 7 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_fieldDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16728,9 +16728,9 @@ public partial class  decl_dataDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "dataDecl" } ;
-	public override System.Decimal RuleNumber { get { return 8 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 8 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_dataDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16744,9 +16744,9 @@ public partial class  decl_vtableDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtableDecl" } ;
-	public override System.Decimal RuleNumber { get { return 9 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 9 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_vtableDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16760,9 +16760,9 @@ public partial class  decl_vtfixupDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupDecl" } ;
-	public override System.Decimal RuleNumber { get { return 10 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 10 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_vtfixupDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16776,9 +16776,9 @@ public partial class  decl_extSourceSpec
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
-	public override System.Decimal RuleNumber { get { return 11 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 11 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_extSourceSpec()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16792,9 +16792,9 @@ public partial class  decl_fileDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fileDecl" } ;
-	public override System.Decimal RuleNumber { get { return 12 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 12 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_fileDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16811,9 +16811,9 @@ public partial class  decl_assemblyHead_277B27_assemblyDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyHead", "'{'", "assemblyDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 13 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 13 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_assemblyHead_277B27_assemblyDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -16830,9 +16830,9 @@ public partial class  decl_assemblyRefHead_277B27_assemblyRefDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyRefHead", "'{'", "assemblyRefDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 14 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 14 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_assemblyRefHead_277B27_assemblyRefDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -16846,9 +16846,9 @@ public partial class  decl_comtypeHead_277B27_comtypeDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtypeHead", "'{'", "comtypeDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 15 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 15 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_comtypeHead_277B27_comtypeDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -16862,9 +16862,9 @@ public partial class  decl_manifestResHead_277B27_manifestResDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manifestResHead", "'{'", "manifestResDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 16 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 16 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_manifestResHead_277B27_manifestResDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -16881,9 +16881,9 @@ public partial class  decl_moduleHead
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "moduleHead" } ;
-	public override System.Decimal RuleNumber { get { return 17 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 17 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_moduleHead()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16897,9 +16897,9 @@ public partial class  decl_secDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "secDecl" } ;
-	public override System.Decimal RuleNumber { get { return 18 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 18 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_secDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16913,9 +16913,9 @@ public partial class  decl_customAttrDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 19 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 19 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_customAttrDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -16929,9 +16929,9 @@ public partial class  decl_222Esubsystem22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".subsystem\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 20 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 20 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_222Esubsystem22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -16945,9 +16945,9 @@ public partial class  decl_222Ecorflags22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".corflags\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 21 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 21 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_222Ecorflags22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -16961,9 +16961,9 @@ public partial class  decl_222Efile22_22alignment22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "\"alignment\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 22 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 22 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_222Efile22_22alignment22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -16977,9 +16977,9 @@ public partial class  decl_222Eimagebase22_int3634
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".imagebase\"", "int64" } ;
-	public override System.Decimal RuleNumber { get { return 23 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 23 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_222Eimagebase22_int3634()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -16993,9 +16993,9 @@ public partial class  decl_languageDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
-	public override System.Decimal RuleNumber { get { return 24 ; } }
-	public override int Symbol { get { return Automaton._decl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 24 ; } }
+	public override int      Symbol { get { return Automaton._decl ; } }
+	public override bool     Useful { get { return true ; } }
 	public decl_languageDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -17012,9 +17012,9 @@ public partial class  compQstring_QSTRING
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "QSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 25 ; } }
-	public override int Symbol { get { return Automaton._compQstring ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 25 ; } }
+	public override int      Symbol { get { return Automaton._compQstring ; } }
+	public override bool     Useful { get { return true ; } }
 	public compQstring_QSTRING()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -17028,9 +17028,9 @@ public partial class  compQstring_compQstring_272B27_QSTRING
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring", "'+'", "QSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 26 ; } }
-	public override int Symbol { get { return Automaton._compQstring ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 26 ; } }
+	public override int      Symbol { get { return Automaton._compQstring ; } }
+	public override bool     Useful { get { return true ; } }
 	public compQstring_compQstring_272B27_QSTRING()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17044,9 +17044,9 @@ public partial class  languageDecl_222Elanguage22_SQSTRING
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".language\"", "SQSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 27 ; } }
-	public override int Symbol { get { return Automaton._languageDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 27 ; } }
+	public override int      Symbol { get { return Automaton._languageDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public languageDecl_222Elanguage22_SQSTRING()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17060,9 +17060,9 @@ public partial class  languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".language\"", "SQSTRING", "','", "SQSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 28 ; } }
-	public override int Symbol { get { return Automaton._languageDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 28 ; } }
+	public override int      Symbol { get { return Automaton._languageDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -17076,9 +17076,9 @@ public partial class  languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING_272C2
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".language\"", "SQSTRING", "','", "SQSTRING", "','", "SQSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 29 ; } }
-	public override int Symbol { get { return Automaton._languageDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 29 ; } }
+	public override int      Symbol { get { return Automaton._languageDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public languageDecl_222Elanguage22_SQSTRING_272C27_SQSTRING_272C27_SQSTRING()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -17092,9 +17092,9 @@ public partial class  customAttrDecl_222Ecustom22_customType
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "customType" } ;
-	public override System.Decimal RuleNumber { get { return 30 ; } }
-	public override int Symbol { get { return Automaton._customAttrDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 30 ; } }
+	public override int      Symbol { get { return Automaton._customAttrDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public customAttrDecl_222Ecustom22_customType()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17108,9 +17108,9 @@ public partial class  customAttrDecl_222Ecustom22_customType_273D27_compQstring
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "customType", "'='", "compQstring" } ;
-	public override System.Decimal RuleNumber { get { return 31 ; } }
-	public override int Symbol { get { return Automaton._customAttrDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 31 ; } }
+	public override int      Symbol { get { return Automaton._customAttrDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public customAttrDecl_222Ecustom22_customType_273D27_compQstring()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -17127,9 +17127,9 @@ public partial class  customAttrDecl_customHead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 32 ; } }
-	public override int Symbol { get { return Automaton._customAttrDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 32 ; } }
+	public override int      Symbol { get { return Automaton._customAttrDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public customAttrDecl_customHead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17143,9 +17143,9 @@ public partial class  customAttrDecl_222Ecustom22_272827_ownerType_272927_custom
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "'('", "ownerType", "')'", "customType" } ;
-	public override System.Decimal RuleNumber { get { return 33 ; } }
-	public override int Symbol { get { return Automaton._customAttrDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 33 ; } }
+	public override int      Symbol { get { return Automaton._customAttrDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public customAttrDecl_222Ecustom22_272827_ownerType_272927_customType()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -17159,9 +17159,9 @@ public partial class  customAttrDecl_222Ecustom22_272827_ownerType_272927_custom
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "'('", "ownerType", "')'", "customType", "'='", "compQstring" } ;
-	public override System.Decimal RuleNumber { get { return 34 ; } }
-	public override int Symbol { get { return Automaton._customAttrDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 34 ; } }
+	public override int      Symbol { get { return Automaton._customAttrDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public customAttrDecl_222Ecustom22_272827_ownerType_272927_customType_273D27_compQstring()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -17175,9 +17175,9 @@ public partial class  customAttrDecl_customHeadWithOwner_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customHeadWithOwner", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 35 ; } }
-	public override int Symbol { get { return Automaton._customAttrDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 35 ; } }
+	public override int      Symbol { get { return Automaton._customAttrDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public customAttrDecl_customHeadWithOwner_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17191,9 +17191,9 @@ public partial class  moduleHead_222Emodule22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".module\"" } ;
-	public override System.Decimal RuleNumber { get { return 36 ; } }
-	public override int Symbol { get { return Automaton._moduleHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 36 ; } }
+	public override int      Symbol { get { return Automaton._moduleHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public moduleHead_222Emodule22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -17210,9 +17210,9 @@ public partial class  moduleHead_222Emodule22_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".module\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 37 ; } }
-	public override int Symbol { get { return Automaton._moduleHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 37 ; } }
+	public override int      Symbol { get { return Automaton._moduleHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public moduleHead_222Emodule22_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17226,9 +17226,9 @@ public partial class  moduleHead_222Emodule22_22extern22_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".module\"", "\"extern\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 38 ; } }
-	public override int Symbol { get { return Automaton._moduleHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 38 ; } }
+	public override int      Symbol { get { return Automaton._moduleHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public moduleHead_222Emodule22_22extern22_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17242,9 +17242,9 @@ public partial class  vtfixupDecl_222Evtfixup22_275B27_int3332_275D27_vtfixupAtt
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".vtfixup\"", "'['", "int32", "']'", "vtfixupAttr", "\"at\"", "id" } ;
-	public override System.Decimal RuleNumber { get { return 39 ; } }
-	public override int Symbol { get { return Automaton._vtfixupDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 39 ; } }
+	public override int      Symbol { get { return Automaton._vtfixupDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public vtfixupDecl_222Evtfixup22_275B27_int3332_275D27_vtfixupAttr_22at22_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -17258,9 +17258,9 @@ public partial class  vtfixupAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 40 ; } }
-	public override int Symbol { get { return Automaton._vtfixupAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 40 ; } }
+	public override int      Symbol { get { return Automaton._vtfixupAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public vtfixupAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -17274,9 +17274,9 @@ public partial class  vtfixupAttr_vtfixupAttr_22int333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupAttr", "\"int32\"" } ;
-	public override System.Decimal RuleNumber { get { return 41 ; } }
-	public override int Symbol { get { return Automaton._vtfixupAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 41 ; } }
+	public override int      Symbol { get { return Automaton._vtfixupAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public vtfixupAttr_vtfixupAttr_22int333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17290,9 +17290,9 @@ public partial class  vtfixupAttr_vtfixupAttr_22int363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupAttr", "\"int64\"" } ;
-	public override System.Decimal RuleNumber { get { return 42 ; } }
-	public override int Symbol { get { return Automaton._vtfixupAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 42 ; } }
+	public override int      Symbol { get { return Automaton._vtfixupAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public vtfixupAttr_vtfixupAttr_22int363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17306,9 +17306,9 @@ public partial class  vtfixupAttr_vtfixupAttr_22fromunmanaged22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupAttr", "\"fromunmanaged\"" } ;
-	public override System.Decimal RuleNumber { get { return 43 ; } }
-	public override int Symbol { get { return Automaton._vtfixupAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 43 ; } }
+	public override int      Symbol { get { return Automaton._vtfixupAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public vtfixupAttr_vtfixupAttr_22fromunmanaged22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17322,9 +17322,9 @@ public partial class  vtfixupAttr_vtfixupAttr_22callmostderived22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtfixupAttr", "\"callmostderived\"" } ;
-	public override System.Decimal RuleNumber { get { return 44 ; } }
-	public override int Symbol { get { return Automaton._vtfixupAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 44 ; } }
+	public override int      Symbol { get { return Automaton._vtfixupAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public vtfixupAttr_vtfixupAttr_22callmostderived22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17338,9 +17338,9 @@ public partial class  vtableDecl_vtableHead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "vtableHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 45 ; } }
-	public override int Symbol { get { return Automaton._vtableDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 45 ; } }
+	public override int      Symbol { get { return Automaton._vtableDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public vtableDecl_vtableHead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17354,9 +17354,9 @@ public partial class  vtableHead_222Evtable22_273D27_272827
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".vtable\"", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 46 ; } }
-	public override int Symbol { get { return Automaton._vtableHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 46 ; } }
+	public override int      Symbol { get { return Automaton._vtableHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public vtableHead_222Evtable22_273D27_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17373,9 +17373,9 @@ public partial class  nameSpaceHead_222Enamespace22_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".namespace\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 47 ; } }
-	public override int Symbol { get { return Automaton._nameSpaceHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 47 ; } }
+	public override int      Symbol { get { return Automaton._nameSpaceHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public nameSpaceHead_222Enamespace22_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17392,9 +17392,9 @@ public partial class  classHead_222Eclass22_classAttr_id_extendsClause_implClaus
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "classAttr", "id", "extendsClause", "implClause" } ;
-	public override System.Decimal RuleNumber { get { return 48 ; } }
-	public override int Symbol { get { return Automaton._classHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 48 ; } }
+	public override int      Symbol { get { return Automaton._classHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public classHead_222Eclass22_classAttr_id_extendsClause_implClause()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -17408,9 +17408,9 @@ public partial class  classAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 49 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 49 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -17427,9 +17427,9 @@ public partial class  classAttr_classAttr_22public22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 50 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 50 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22public22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17446,9 +17446,9 @@ public partial class  classAttr_classAttr_22private22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 51 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 51 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22private22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17462,9 +17462,9 @@ public partial class  classAttr_classAttr_22value22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"value\"" } ;
-	public override System.Decimal RuleNumber { get { return 52 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 52 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22value22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17478,9 +17478,9 @@ public partial class  classAttr_classAttr_22enum22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"enum\"" } ;
-	public override System.Decimal RuleNumber { get { return 53 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 53 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22enum22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17497,9 +17497,9 @@ public partial class  classAttr_classAttr_22interface22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"interface\"" } ;
-	public override System.Decimal RuleNumber { get { return 54 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 54 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22interface22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17516,9 +17516,9 @@ public partial class  classAttr_classAttr_22sealed22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"sealed\"" } ;
-	public override System.Decimal RuleNumber { get { return 55 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 55 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22sealed22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17535,9 +17535,9 @@ public partial class  classAttr_classAttr_22abstract22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"abstract\"" } ;
-	public override System.Decimal RuleNumber { get { return 56 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 56 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22abstract22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17554,9 +17554,9 @@ public partial class  classAttr_classAttr_22auto22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"auto\"" } ;
-	public override System.Decimal RuleNumber { get { return 57 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 57 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22auto22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17573,9 +17573,9 @@ public partial class  classAttr_classAttr_22sequential22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"sequential\"" } ;
-	public override System.Decimal RuleNumber { get { return 58 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 58 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22sequential22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17589,9 +17589,9 @@ public partial class  classAttr_classAttr_22explicit22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"explicit\"" } ;
-	public override System.Decimal RuleNumber { get { return 59 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 59 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22explicit22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17608,9 +17608,9 @@ public partial class  classAttr_classAttr_22ansi22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"ansi\"" } ;
-	public override System.Decimal RuleNumber { get { return 60 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 60 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22ansi22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17624,9 +17624,9 @@ public partial class  classAttr_classAttr_22unicode22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"unicode\"" } ;
-	public override System.Decimal RuleNumber { get { return 61 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 61 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22unicode22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17640,9 +17640,9 @@ public partial class  classAttr_classAttr_22autochar22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"autochar\"" } ;
-	public override System.Decimal RuleNumber { get { return 62 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 62 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22autochar22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17656,9 +17656,9 @@ public partial class  classAttr_classAttr_22import22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"import\"" } ;
-	public override System.Decimal RuleNumber { get { return 63 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 63 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22import22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17672,9 +17672,9 @@ public partial class  classAttr_classAttr_22serializable22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"serializable\"" } ;
-	public override System.Decimal RuleNumber { get { return 64 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 64 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22serializable22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17691,9 +17691,9 @@ public partial class  classAttr_classAttr_22nested22_22public22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 65 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 65 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22nested22_22public22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17710,9 +17710,9 @@ public partial class  classAttr_classAttr_22nested22_22private22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 66 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 66 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22nested22_22private22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17726,9 +17726,9 @@ public partial class  classAttr_classAttr_22nested22_22family22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"family\"" } ;
-	public override System.Decimal RuleNumber { get { return 67 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 67 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22nested22_22family22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17742,9 +17742,9 @@ public partial class  classAttr_classAttr_22nested22_22assembly22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"assembly\"" } ;
-	public override System.Decimal RuleNumber { get { return 68 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 68 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22nested22_22assembly22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17758,9 +17758,9 @@ public partial class  classAttr_classAttr_22nested22_22famandassem22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"famandassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 69 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 69 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22nested22_22famandassem22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17774,9 +17774,9 @@ public partial class  classAttr_classAttr_22nested22_22famorassem22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"nested\"", "\"famorassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 70 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 70 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22nested22_22famorassem22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17793,9 +17793,9 @@ public partial class  classAttr_classAttr_22beforefieldinit22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"beforefieldinit\"" } ;
-	public override System.Decimal RuleNumber { get { return 71 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 71 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22beforefieldinit22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17809,9 +17809,9 @@ public partial class  classAttr_classAttr_22specialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"specialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 72 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 72 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22specialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17825,9 +17825,9 @@ public partial class  classAttr_classAttr_22rtspecialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classAttr", "\"rtspecialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 73 ; } }
-	public override int Symbol { get { return Automaton._classAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 73 ; } }
+	public override int      Symbol { get { return Automaton._classAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public classAttr_classAttr_22rtspecialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17841,9 +17841,9 @@ public partial class  extendsClause
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 74 ; } }
-	public override int Symbol { get { return Automaton._extendsClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 74 ; } }
+	public override int      Symbol { get { return Automaton._extendsClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public extendsClause()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -17860,9 +17860,9 @@ public partial class  extendsClause_22extends22_className
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"extends\"", "className" } ;
-	public override System.Decimal RuleNumber { get { return 75 ; } }
-	public override int Symbol { get { return Automaton._extendsClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 75 ; } }
+	public override int      Symbol { get { return Automaton._extendsClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public extendsClause_22extends22_className()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17876,9 +17876,9 @@ public partial class  implClause
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 76 ; } }
-	public override int Symbol { get { return Automaton._implClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 76 ; } }
+	public override int      Symbol { get { return Automaton._implClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public implClause()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -17895,9 +17895,9 @@ public partial class  implClause_22implements22_classNames
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"implements\"", "classNames" } ;
-	public override System.Decimal RuleNumber { get { return 77 ; } }
-	public override int Symbol { get { return Automaton._implClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 77 ; } }
+	public override int      Symbol { get { return Automaton._implClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public implClause_22implements22_classNames()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17911,9 +17911,9 @@ public partial class  classNames_classNames_272C27_className
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classNames", "','", "className" } ;
-	public override System.Decimal RuleNumber { get { return 78 ; } }
-	public override int Symbol { get { return Automaton._classNames ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 78 ; } }
+	public override int      Symbol { get { return Automaton._classNames ; } }
+	public override bool     Useful { get { return true ; } }
 	public classNames_classNames_272C27_className()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -17930,9 +17930,9 @@ public partial class  classNames_className
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className" } ;
-	public override System.Decimal RuleNumber { get { return 79 ; } }
-	public override int Symbol { get { return Automaton._classNames ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 79 ; } }
+	public override int      Symbol { get { return Automaton._classNames ; } }
+	public override bool     Useful { get { return true ; } }
 	public classNames_className()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -17946,9 +17946,9 @@ public partial class  classDecls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 80 ; } }
-	public override int Symbol { get { return Automaton._classDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 80 ; } }
+	public override int      Symbol { get { return Automaton._classDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -17965,9 +17965,9 @@ public partial class  classDecls_classDecls_classDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classDecls", "classDecl" } ;
-	public override System.Decimal RuleNumber { get { return 81 ; } }
-	public override int Symbol { get { return Automaton._classDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 81 ; } }
+	public override int      Symbol { get { return Automaton._classDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecls_classDecls_classDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -17984,9 +17984,9 @@ public partial class  classDecl_methodHead_methodDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodHead", "methodDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 82 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 82 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_methodHead_methodDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -18003,9 +18003,9 @@ public partial class  classDecl_classHead_277B27_classDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "classHead", "'{'", "classDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 83 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 83 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_classHead_277B27_classDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -18019,9 +18019,9 @@ public partial class  classDecl_eventHead_277B27_eventDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "eventHead", "'{'", "eventDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 84 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 84 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_eventHead_277B27_eventDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -18038,9 +18038,9 @@ public partial class  classDecl_propHead_277B27_propDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "propHead", "'{'", "propDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 85 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 85 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_propHead_277B27_propDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -18057,9 +18057,9 @@ public partial class  classDecl_fieldDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldDecl" } ;
-	public override System.Decimal RuleNumber { get { return 86 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 86 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_fieldDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18073,9 +18073,9 @@ public partial class  classDecl_dataDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "dataDecl" } ;
-	public override System.Decimal RuleNumber { get { return 87 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 87 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_dataDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18089,9 +18089,9 @@ public partial class  classDecl_secDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "secDecl" } ;
-	public override System.Decimal RuleNumber { get { return 88 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 88 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_secDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18105,9 +18105,9 @@ public partial class  classDecl_extSourceSpec
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
-	public override System.Decimal RuleNumber { get { return 89 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 89 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_extSourceSpec()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18124,9 +18124,9 @@ public partial class  classDecl_customAttrDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 90 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 90 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_customAttrDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18143,9 +18143,9 @@ public partial class  classDecl_222Esize22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".size\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 91 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 91 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_222Esize22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18162,9 +18162,9 @@ public partial class  classDecl_222Epack22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".pack\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 92 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 92 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_222Epack22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18178,9 +18178,9 @@ public partial class  classDecl_exportHead_277B27_comtypeDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "exportHead", "'{'", "comtypeDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 93 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 93 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_exportHead_277B27_comtypeDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -18194,9 +18194,9 @@ public partial class  classDecl_222Eoverride22_typeSpec_223A3A22_methodName_22wi
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".override\"", "typeSpec", "\"::\"", "methodName", "\"with\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 94 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 94 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_222Eoverride22_typeSpec_223A3A22_methodName_22with22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 13 ] ;
@@ -18210,9 +18210,9 @@ public partial class  classDecl_languageDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
-	public override System.Decimal RuleNumber { get { return 95 ; } }
-	public override int Symbol { get { return Automaton._classDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 95 ; } }
+	public override int      Symbol { get { return Automaton._classDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public classDecl_languageDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18229,9 +18229,9 @@ public partial class  fieldDecl_222Efield22_repeatOpt_fieldAttr_type_id_atOpt_in
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".field\"", "repeatOpt", "fieldAttr", "type", "id", "atOpt", "initOpt" } ;
-	public override System.Decimal RuleNumber { get { return 96 ; } }
-	public override int Symbol { get { return Automaton._fieldDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 96 ; } }
+	public override int      Symbol { get { return Automaton._fieldDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldDecl_222Efield22_repeatOpt_fieldAttr_type_id_atOpt_initOpt()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -18245,9 +18245,9 @@ public partial class  atOpt
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 97 ; } }
-	public override int Symbol { get { return Automaton._atOpt ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 97 ; } }
+	public override int      Symbol { get { return Automaton._atOpt ; } }
+	public override bool     Useful { get { return true ; } }
 	public atOpt()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -18264,9 +18264,9 @@ public partial class  atOpt_22at22_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"at\"", "id" } ;
-	public override System.Decimal RuleNumber { get { return 98 ; } }
-	public override int Symbol { get { return Automaton._atOpt ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 98 ; } }
+	public override int      Symbol { get { return Automaton._atOpt ; } }
+	public override bool     Useful { get { return true ; } }
 	public atOpt_22at22_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18280,9 +18280,9 @@ public partial class  initOpt
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 99 ; } }
-	public override int Symbol { get { return Automaton._initOpt ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 99 ; } }
+	public override int      Symbol { get { return Automaton._initOpt ; } }
+	public override bool     Useful { get { return true ; } }
 	public initOpt()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -18299,9 +18299,9 @@ public partial class  initOpt_273D27_fieldInit
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'='", "fieldInit" } ;
-	public override System.Decimal RuleNumber { get { return 100 ; } }
-	public override int Symbol { get { return Automaton._initOpt ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 100 ; } }
+	public override int      Symbol { get { return Automaton._initOpt ; } }
+	public override bool     Useful { get { return true ; } }
 	public initOpt_273D27_fieldInit()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18315,9 +18315,9 @@ public partial class  repeatOpt
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 101 ; } }
-	public override int Symbol { get { return Automaton._repeatOpt ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 101 ; } }
+	public override int      Symbol { get { return Automaton._repeatOpt ; } }
+	public override bool     Useful { get { return true ; } }
 	public repeatOpt()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -18331,9 +18331,9 @@ public partial class  repeatOpt_275B27_int3332_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "int32", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 102 ; } }
-	public override int Symbol { get { return Automaton._repeatOpt ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 102 ; } }
+	public override int      Symbol { get { return Automaton._repeatOpt ; } }
+	public override bool     Useful { get { return true ; } }
 	public repeatOpt_275B27_int3332_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -18350,9 +18350,9 @@ public partial class  customHead_222Ecustom22_customType_273D27_272827
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "customType", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 103 ; } }
-	public override int Symbol { get { return Automaton._customHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 103 ; } }
+	public override int      Symbol { get { return Automaton._customHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public customHead_222Ecustom22_customType_273D27_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -18366,9 +18366,9 @@ public partial class  customHeadWithOwner_222Ecustom22_272827_ownerType_272927_c
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".custom\"", "'('", "ownerType", "')'", "customType", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 104 ; } }
-	public override int Symbol { get { return Automaton._customHeadWithOwner ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 104 ; } }
+	public override int      Symbol { get { return Automaton._customHeadWithOwner ; } }
+	public override bool     Useful { get { return true ; } }
 	public customHeadWithOwner_222Ecustom22_272827_ownerType_272927_customType_273D27_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -18382,9 +18382,9 @@ public partial class  memberRef_methodSpec_callConv_type_typeSpec_223A3A22_metho
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodSpec", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 105 ; } }
-	public override int Symbol { get { return Automaton._memberRef ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 105 ; } }
+	public override int      Symbol { get { return Automaton._memberRef ; } }
+	public override bool     Useful { get { return true ; } }
 	public memberRef_methodSpec_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -18398,9 +18398,9 @@ public partial class  memberRef_methodSpec_callConv_type_methodName_272827_sigAr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodSpec", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 106 ; } }
-	public override int Symbol { get { return Automaton._memberRef ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 106 ; } }
+	public override int      Symbol { get { return Automaton._memberRef ; } }
+	public override bool     Useful { get { return true ; } }
 	public memberRef_methodSpec_callConv_type_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -18417,9 +18417,9 @@ public partial class  memberRef_22field22_type_typeSpec_223A3A22_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"field\"", "type", "typeSpec", "\"::\"", "id" } ;
-	public override System.Decimal RuleNumber { get { return 107 ; } }
-	public override int Symbol { get { return Automaton._memberRef ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 107 ; } }
+	public override int      Symbol { get { return Automaton._memberRef ; } }
+	public override bool     Useful { get { return true ; } }
 	public memberRef_22field22_type_typeSpec_223A3A22_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -18433,9 +18433,9 @@ public partial class  memberRef_22field22_type_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"field\"", "type", "id" } ;
-	public override System.Decimal RuleNumber { get { return 108 ; } }
-	public override int Symbol { get { return Automaton._memberRef ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 108 ; } }
+	public override int      Symbol { get { return Automaton._memberRef ; } }
+	public override bool     Useful { get { return true ; } }
 	public memberRef_22field22_type_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -18452,9 +18452,9 @@ public partial class  customType_callConv_type_typeSpec_223A3A22_222Ector22_2728
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "callConv", "type", "typeSpec", "\"::\"", "\".ctor\"", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 109 ; } }
-	public override int Symbol { get { return Automaton._customType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 109 ; } }
+	public override int      Symbol { get { return Automaton._customType ; } }
+	public override bool     Useful { get { return true ; } }
 	public customType_callConv_type_typeSpec_223A3A22_222Ector22_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 8 ] ;
@@ -18468,9 +18468,9 @@ public partial class  customType_callConv_type_222Ector22_272827_sigArgs30_27292
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "callConv", "type", "\".ctor\"", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 110 ; } }
-	public override int Symbol { get { return Automaton._customType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 110 ; } }
+	public override int      Symbol { get { return Automaton._customType ; } }
+	public override bool     Useful { get { return true ; } }
 	public customType_callConv_type_222Ector22_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -18484,9 +18484,9 @@ public partial class  ownerType_typeSpec
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "typeSpec" } ;
-	public override System.Decimal RuleNumber { get { return 111 ; } }
-	public override int Symbol { get { return Automaton._ownerType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 111 ; } }
+	public override int      Symbol { get { return Automaton._ownerType ; } }
+	public override bool     Useful { get { return true ; } }
 	public ownerType_typeSpec()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18503,9 +18503,9 @@ public partial class  ownerType_memberRef
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "memberRef" } ;
-	public override System.Decimal RuleNumber { get { return 112 ; } }
-	public override int Symbol { get { return Automaton._ownerType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 112 ; } }
+	public override int      Symbol { get { return Automaton._ownerType ; } }
+	public override bool     Useful { get { return true ; } }
 	public ownerType_memberRef()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18519,9 +18519,9 @@ public partial class  eventHead_222Eevent22_eventAttr_typeSpec_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".event\"", "eventAttr", "typeSpec", "id" } ;
-	public override System.Decimal RuleNumber { get { return 113 ; } }
-	public override int Symbol { get { return Automaton._eventHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 113 ; } }
+	public override int      Symbol { get { return Automaton._eventHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventHead_222Eevent22_eventAttr_typeSpec_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -18535,9 +18535,9 @@ public partial class  eventHead_222Eevent22_eventAttr_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".event\"", "eventAttr", "id" } ;
-	public override System.Decimal RuleNumber { get { return 114 ; } }
-	public override int Symbol { get { return Automaton._eventHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 114 ; } }
+	public override int      Symbol { get { return Automaton._eventHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventHead_222Eevent22_eventAttr_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -18551,9 +18551,9 @@ public partial class  eventAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 115 ; } }
-	public override int Symbol { get { return Automaton._eventAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 115 ; } }
+	public override int      Symbol { get { return Automaton._eventAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -18567,9 +18567,9 @@ public partial class  eventAttr_eventAttr_22rtspecialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "eventAttr", "\"rtspecialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 116 ; } }
-	public override int Symbol { get { return Automaton._eventAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 116 ; } }
+	public override int      Symbol { get { return Automaton._eventAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventAttr_eventAttr_22rtspecialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18583,9 +18583,9 @@ public partial class  eventAttr_eventAttr_22specialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "eventAttr", "\"specialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 117 ; } }
-	public override int Symbol { get { return Automaton._eventAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 117 ; } }
+	public override int      Symbol { get { return Automaton._eventAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventAttr_eventAttr_22specialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18599,9 +18599,9 @@ public partial class  eventDecls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 118 ; } }
-	public override int Symbol { get { return Automaton._eventDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 118 ; } }
+	public override int      Symbol { get { return Automaton._eventDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -18615,9 +18615,9 @@ public partial class  eventDecls_eventDecls_eventDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "eventDecls", "eventDecl" } ;
-	public override System.Decimal RuleNumber { get { return 119 ; } }
-	public override int Symbol { get { return Automaton._eventDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 119 ; } }
+	public override int      Symbol { get { return Automaton._eventDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecls_eventDecls_eventDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18631,9 +18631,9 @@ public partial class  eventDecl_222Eaddon22_callConv_type_typeSpec_223A3A22_meth
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".addon\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 120 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 120 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_222Eaddon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -18647,9 +18647,9 @@ public partial class  eventDecl_222Eaddon22_callConv_type_methodName_272827_sigA
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".addon\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 121 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 121 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_222Eaddon22_callConv_type_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -18663,9 +18663,9 @@ public partial class  eventDecl_222Eremoveon22_callConv_type_typeSpec_223A3A22_m
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".removeon\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 122 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 122 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_222Eremoveon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -18679,9 +18679,9 @@ public partial class  eventDecl_222Eremoveon22_callConv_type_methodName_272827_s
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".removeon\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 123 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 123 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_222Eremoveon22_callConv_type_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -18695,9 +18695,9 @@ public partial class  eventDecl_222Efire22_callConv_type_typeSpec_223A3A22_metho
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".fire\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 124 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 124 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_222Efire22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -18711,9 +18711,9 @@ public partial class  eventDecl_222Efire22_callConv_type_methodName_272827_sigAr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".fire\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 125 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 125 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_222Efire22_callConv_type_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -18727,9 +18727,9 @@ public partial class  eventDecl_222Eother22_callConv_type_typeSpec_223A3A22_meth
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".other\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 126 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 126 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -18743,9 +18743,9 @@ public partial class  eventDecl_222Eother22_callConv_type_methodName_272827_sigA
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".other\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 127 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 127 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -18759,9 +18759,9 @@ public partial class  eventDecl_extSourceSpec
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
-	public override System.Decimal RuleNumber { get { return 128 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 128 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_extSourceSpec()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18775,9 +18775,9 @@ public partial class  eventDecl_customAttrDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 129 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 129 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_customAttrDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18791,9 +18791,9 @@ public partial class  eventDecl_languageDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
-	public override System.Decimal RuleNumber { get { return 130 ; } }
-	public override int Symbol { get { return Automaton._eventDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 130 ; } }
+	public override int      Symbol { get { return Automaton._eventDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public eventDecl_languageDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -18810,9 +18810,9 @@ public partial class  propHead_222Eproperty22_propAttr_callConv_type_id_272827_s
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".property\"", "propAttr", "callConv", "type", "id", "'('", "sigArgs0", "')'", "initOpt" } ;
-	public override System.Decimal RuleNumber { get { return 131 ; } }
-	public override int Symbol { get { return Automaton._propHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 131 ; } }
+	public override int      Symbol { get { return Automaton._propHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public propHead_222Eproperty22_propAttr_callConv_type_id_272827_sigArgs30_272927_initOpt()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -18826,9 +18826,9 @@ public partial class  propAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 132 ; } }
-	public override int Symbol { get { return Automaton._propAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 132 ; } }
+	public override int      Symbol { get { return Automaton._propAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public propAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -18842,9 +18842,9 @@ public partial class  propAttr_propAttr_22rtspecialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "propAttr", "\"rtspecialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 133 ; } }
-	public override int Symbol { get { return Automaton._propAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 133 ; } }
+	public override int      Symbol { get { return Automaton._propAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public propAttr_propAttr_22rtspecialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18858,9 +18858,9 @@ public partial class  propAttr_propAttr_22specialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "propAttr", "\"specialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 134 ; } }
-	public override int Symbol { get { return Automaton._propAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 134 ; } }
+	public override int      Symbol { get { return Automaton._propAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public propAttr_propAttr_22specialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18874,9 +18874,9 @@ public partial class  propDecls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 135 ; } }
-	public override int Symbol { get { return Automaton._propDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 135 ; } }
+	public override int      Symbol { get { return Automaton._propDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -18893,9 +18893,9 @@ public partial class  propDecls_propDecls_propDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "propDecls", "propDecl" } ;
-	public override System.Decimal RuleNumber { get { return 136 ; } }
-	public override int Symbol { get { return Automaton._propDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 136 ; } }
+	public override int      Symbol { get { return Automaton._propDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecls_propDecls_propDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -18912,9 +18912,9 @@ public partial class  propDecl_222Eset22_callConv_type_typeSpec_223A3A22_methodN
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".set\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 137 ; } }
-	public override int Symbol { get { return Automaton._propDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 137 ; } }
+	public override int      Symbol { get { return Automaton._propDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecl_222Eset22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -18928,9 +18928,9 @@ public partial class  propDecl_222Eset22_callConv_type_methodName_272827_sigArgs
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".set\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 138 ; } }
-	public override int Symbol { get { return Automaton._propDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 138 ; } }
+	public override int      Symbol { get { return Automaton._propDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecl_222Eset22_callConv_type_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -18947,9 +18947,9 @@ public partial class  propDecl_222Eget22_callConv_type_typeSpec_223A3A22_methodN
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".get\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 139 ; } }
-	public override int Symbol { get { return Automaton._propDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 139 ; } }
+	public override int      Symbol { get { return Automaton._propDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecl_222Eget22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -18963,9 +18963,9 @@ public partial class  propDecl_222Eget22_callConv_type_methodName_272827_sigArgs
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".get\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 140 ; } }
-	public override int Symbol { get { return Automaton._propDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 140 ; } }
+	public override int      Symbol { get { return Automaton._propDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecl_222Eget22_callConv_type_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -18979,9 +18979,9 @@ public partial class  propDecl_222Eother22_callConv_type_typeSpec_223A3A22_metho
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".other\"", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 141 ; } }
-	public override int Symbol { get { return Automaton._propDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 141 ; } }
+	public override int      Symbol { get { return Automaton._propDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -18995,9 +18995,9 @@ public partial class  propDecl_222Eother22_callConv_type_methodName_272827_sigAr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".other\"", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 142 ; } }
-	public override int Symbol { get { return Automaton._propDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 142 ; } }
+	public override int      Symbol { get { return Automaton._propDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -19011,9 +19011,9 @@ public partial class  propDecl_customAttrDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 143 ; } }
-	public override int Symbol { get { return Automaton._propDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 143 ; } }
+	public override int      Symbol { get { return Automaton._propDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecl_customAttrDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -19027,9 +19027,9 @@ public partial class  propDecl_extSourceSpec
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
-	public override System.Decimal RuleNumber { get { return 144 ; } }
-	public override int Symbol { get { return Automaton._propDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 144 ; } }
+	public override int      Symbol { get { return Automaton._propDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecl_extSourceSpec()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -19043,9 +19043,9 @@ public partial class  propDecl_languageDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
-	public override System.Decimal RuleNumber { get { return 145 ; } }
-	public override int Symbol { get { return Automaton._propDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 145 ; } }
+	public override int      Symbol { get { return Automaton._propDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public propDecl_languageDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -19062,9 +19062,9 @@ public partial class  methodHeadPart1_222Emethod22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".method\"" } ;
-	public override System.Decimal RuleNumber { get { return 146 ; } }
-	public override int Symbol { get { return Automaton._methodHeadPart31 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 146 ; } }
+	public override int      Symbol { get { return Automaton._methodHeadPart31 ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodHeadPart1_222Emethod22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -19081,9 +19081,9 @@ public partial class  methodHead_methodHeadPart31_methAttr_callConv_paramAttr_ty
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodHeadPart1", "methAttr", "callConv", "paramAttr", "type", "methodName", "'('", "sigArgs0", "')'", "implAttr", "'{'" } ;
-	public override System.Decimal RuleNumber { get { return 147 ; } }
-	public override int Symbol { get { return Automaton._methodHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 147 ; } }
+	public override int      Symbol { get { return Automaton._methodHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_methodName_272827_sigArgs30_272927_implAttr_277B27()
 		{
 		argv = new Tokenset.Token[ arg_i = 11 ] ;
@@ -19097,9 +19097,9 @@ public partial class  methodHead_methodHeadPart31_methAttr_callConv_paramAttr_ty
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodHeadPart1", "methAttr", "callConv", "paramAttr", "type", "\"marshal\"", "'('", "nativeType", "')'", "methodName", "'('", "sigArgs0", "')'", "implAttr", "'{'" } ;
-	public override System.Decimal RuleNumber { get { return 148 ; } }
-	public override int Symbol { get { return Automaton._methodHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 148 ; } }
+	public override int      Symbol { get { return Automaton._methodHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_22marshal22_272827_nativeType_272927_methodName_272827_sigArgs30_272927_implAttr_277B27()
 		{
 		argv = new Tokenset.Token[ arg_i = 15 ] ;
@@ -19113,9 +19113,9 @@ public partial class  methAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 149 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 149 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -19132,9 +19132,9 @@ public partial class  methAttr_methAttr_22static22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"static\"" } ;
-	public override System.Decimal RuleNumber { get { return 150 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 150 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22static22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19151,9 +19151,9 @@ public partial class  methAttr_methAttr_22public22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 151 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 151 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22public22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19170,9 +19170,9 @@ public partial class  methAttr_methAttr_22private22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 152 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 152 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22private22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19189,9 +19189,9 @@ public partial class  methAttr_methAttr_22family22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"family\"" } ;
-	public override System.Decimal RuleNumber { get { return 153 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 153 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22family22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19205,9 +19205,9 @@ public partial class  methAttr_methAttr_22final22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"final\"" } ;
-	public override System.Decimal RuleNumber { get { return 154 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 154 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22final22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19224,9 +19224,9 @@ public partial class  methAttr_methAttr_22specialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"specialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 155 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 155 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22specialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19243,9 +19243,9 @@ public partial class  methAttr_methAttr_22virtual22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"virtual\"" } ;
-	public override System.Decimal RuleNumber { get { return 156 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 156 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22virtual22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19262,9 +19262,9 @@ public partial class  methAttr_methAttr_22abstract22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"abstract\"" } ;
-	public override System.Decimal RuleNumber { get { return 157 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 157 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22abstract22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19281,9 +19281,9 @@ public partial class  methAttr_methAttr_22assembly22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"assembly\"" } ;
-	public override System.Decimal RuleNumber { get { return 158 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 158 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22assembly22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19297,9 +19297,9 @@ public partial class  methAttr_methAttr_22famandassem22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"famandassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 159 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 159 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22famandassem22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19313,9 +19313,9 @@ public partial class  methAttr_methAttr_22famorassem22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"famorassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 160 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 160 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22famorassem22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19329,9 +19329,9 @@ public partial class  methAttr_methAttr_22privatescope22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"privatescope\"" } ;
-	public override System.Decimal RuleNumber { get { return 161 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 161 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22privatescope22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19348,9 +19348,9 @@ public partial class  methAttr_methAttr_22hidebysig22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"hidebysig\"" } ;
-	public override System.Decimal RuleNumber { get { return 162 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 162 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22hidebysig22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19367,9 +19367,9 @@ public partial class  methAttr_methAttr_22newslot22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"newslot\"" } ;
-	public override System.Decimal RuleNumber { get { return 163 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 163 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22newslot22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19386,9 +19386,9 @@ public partial class  methAttr_methAttr_22rtspecialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"rtspecialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 164 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 164 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22rtspecialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19402,9 +19402,9 @@ public partial class  methAttr_methAttr_22unmanagedexp22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"unmanagedexp\"" } ;
-	public override System.Decimal RuleNumber { get { return 165 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 165 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22unmanagedexp22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19418,9 +19418,9 @@ public partial class  methAttr_methAttr_22reqsecobj22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"reqsecobj\"" } ;
-	public override System.Decimal RuleNumber { get { return 166 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 166 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22reqsecobj22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19434,9 +19434,9 @@ public partial class  methAttr_methAttr_22pinvokeimpl22_272827_compQstring_22as2
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"pinvokeimpl\"", "'('", "compQstring", "\"as\"", "compQstring", "pinvAttr", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 167 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 167 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22pinvokeimpl22_272827_compQstring_22as22_compQstring_pinvAttr_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 8 ] ;
@@ -19450,9 +19450,9 @@ public partial class  methAttr_methAttr_22pinvokeimpl22_272827_compQstring_pinvA
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"pinvokeimpl\"", "'('", "compQstring", "pinvAttr", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 168 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 168 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22pinvokeimpl22_272827_compQstring_pinvAttr_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -19466,9 +19466,9 @@ public partial class  methAttr_methAttr_22pinvokeimpl22_272827_pinvAttr_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methAttr", "\"pinvokeimpl\"", "'('", "pinvAttr", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 169 ; } }
-	public override int Symbol { get { return Automaton._methAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 169 ; } }
+	public override int      Symbol { get { return Automaton._methAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public methAttr_methAttr_22pinvokeimpl22_272827_pinvAttr_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -19482,9 +19482,9 @@ public partial class  pinvAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 170 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 170 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -19498,9 +19498,9 @@ public partial class  pinvAttr_pinvAttr_22nomangle22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"nomangle\"" } ;
-	public override System.Decimal RuleNumber { get { return 171 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 171 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22nomangle22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19514,9 +19514,9 @@ public partial class  pinvAttr_pinvAttr_22ansi22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"ansi\"" } ;
-	public override System.Decimal RuleNumber { get { return 172 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 172 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22ansi22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19530,9 +19530,9 @@ public partial class  pinvAttr_pinvAttr_22unicode22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"unicode\"" } ;
-	public override System.Decimal RuleNumber { get { return 173 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 173 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22unicode22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19546,9 +19546,9 @@ public partial class  pinvAttr_pinvAttr_22autochar22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"autochar\"" } ;
-	public override System.Decimal RuleNumber { get { return 174 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 174 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22autochar22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19562,9 +19562,9 @@ public partial class  pinvAttr_pinvAttr_22lasterr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"lasterr\"" } ;
-	public override System.Decimal RuleNumber { get { return 175 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 175 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22lasterr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19578,9 +19578,9 @@ public partial class  pinvAttr_pinvAttr_22winapi22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"winapi\"" } ;
-	public override System.Decimal RuleNumber { get { return 176 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 176 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22winapi22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19594,9 +19594,9 @@ public partial class  pinvAttr_pinvAttr_22cdecl22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"cdecl\"" } ;
-	public override System.Decimal RuleNumber { get { return 177 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 177 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22cdecl22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19610,9 +19610,9 @@ public partial class  pinvAttr_pinvAttr_22stdcall22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"stdcall\"" } ;
-	public override System.Decimal RuleNumber { get { return 178 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 178 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22stdcall22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19626,9 +19626,9 @@ public partial class  pinvAttr_pinvAttr_22thiscall22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"thiscall\"" } ;
-	public override System.Decimal RuleNumber { get { return 179 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 179 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22thiscall22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19642,9 +19642,9 @@ public partial class  pinvAttr_pinvAttr_22fastcall22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "pinvAttr", "\"fastcall\"" } ;
-	public override System.Decimal RuleNumber { get { return 180 ; } }
-	public override int Symbol { get { return Automaton._pinvAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 180 ; } }
+	public override int      Symbol { get { return Automaton._pinvAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public pinvAttr_pinvAttr_22fastcall22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19661,9 +19661,9 @@ public partial class  methodName_222Ector22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".ctor\"" } ;
-	public override System.Decimal RuleNumber { get { return 181 ; } }
-	public override int Symbol { get { return Automaton._methodName ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 181 ; } }
+	public override int      Symbol { get { return Automaton._methodName ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodName_222Ector22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -19680,9 +19680,9 @@ public partial class  methodName_222Ecctor22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".cctor\"" } ;
-	public override System.Decimal RuleNumber { get { return 182 ; } }
-	public override int Symbol { get { return Automaton._methodName ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 182 ; } }
+	public override int      Symbol { get { return Automaton._methodName ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodName_222Ecctor22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -19699,9 +19699,9 @@ public partial class  methodName_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "name1" } ;
-	public override System.Decimal RuleNumber { get { return 183 ; } }
-	public override int Symbol { get { return Automaton._methodName ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 183 ; } }
+	public override int      Symbol { get { return Automaton._methodName ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodName_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -19715,9 +19715,9 @@ public partial class  paramAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 184 ; } }
-	public override int Symbol { get { return Automaton._paramAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 184 ; } }
+	public override int      Symbol { get { return Automaton._paramAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public paramAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -19731,9 +19731,9 @@ public partial class  paramAttr_paramAttr_275B27_22in22_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "'['", "\"in\"", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 185 ; } }
-	public override int Symbol { get { return Automaton._paramAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 185 ; } }
+	public override int      Symbol { get { return Automaton._paramAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public paramAttr_paramAttr_275B27_22in22_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -19747,9 +19747,9 @@ public partial class  paramAttr_paramAttr_275B27_22out22_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "'['", "\"out\"", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 186 ; } }
-	public override int Symbol { get { return Automaton._paramAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 186 ; } }
+	public override int      Symbol { get { return Automaton._paramAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public paramAttr_paramAttr_275B27_22out22_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -19763,9 +19763,9 @@ public partial class  paramAttr_paramAttr_275B27_22opt22_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "'['", "\"opt\"", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 187 ; } }
-	public override int Symbol { get { return Automaton._paramAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 187 ; } }
+	public override int      Symbol { get { return Automaton._paramAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public paramAttr_paramAttr_275B27_22opt22_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -19779,9 +19779,9 @@ public partial class  paramAttr_paramAttr_275B27_int3332_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "'['", "int32", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 188 ; } }
-	public override int Symbol { get { return Automaton._paramAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 188 ; } }
+	public override int      Symbol { get { return Automaton._paramAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public paramAttr_paramAttr_275B27_int3332_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -19795,9 +19795,9 @@ public partial class  fieldAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 189 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 189 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -19814,9 +19814,9 @@ public partial class  fieldAttr_fieldAttr_22static22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"static\"" } ;
-	public override System.Decimal RuleNumber { get { return 190 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 190 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22static22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19833,9 +19833,9 @@ public partial class  fieldAttr_fieldAttr_22public22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 191 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 191 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22public22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19852,9 +19852,9 @@ public partial class  fieldAttr_fieldAttr_22private22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 192 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 192 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22private22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19871,9 +19871,9 @@ public partial class  fieldAttr_fieldAttr_22family22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"family\"" } ;
-	public override System.Decimal RuleNumber { get { return 193 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 193 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22family22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19890,9 +19890,9 @@ public partial class  fieldAttr_fieldAttr_22initonly22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"initonly\"" } ;
-	public override System.Decimal RuleNumber { get { return 194 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 194 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22initonly22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19906,9 +19906,9 @@ public partial class  fieldAttr_fieldAttr_22rtspecialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"rtspecialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 195 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 195 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22rtspecialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19922,9 +19922,9 @@ public partial class  fieldAttr_fieldAttr_22specialname22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"specialname\"" } ;
-	public override System.Decimal RuleNumber { get { return 196 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 196 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22specialname22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19938,9 +19938,9 @@ public partial class  fieldAttr_fieldAttr_22marshal22_272827_nativeType_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"marshal\"", "'('", "nativeType", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 197 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 197 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22marshal22_272827_nativeType_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -19957,9 +19957,9 @@ public partial class  fieldAttr_fieldAttr_22assembly22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"assembly\"" } ;
-	public override System.Decimal RuleNumber { get { return 198 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 198 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22assembly22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19973,9 +19973,9 @@ public partial class  fieldAttr_fieldAttr_22famandassem22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"famandassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 199 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 199 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22famandassem22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -19989,9 +19989,9 @@ public partial class  fieldAttr_fieldAttr_22famorassem22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"famorassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 200 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 200 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22famorassem22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20005,9 +20005,9 @@ public partial class  fieldAttr_fieldAttr_22privatescope22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"privatescope\"" } ;
-	public override System.Decimal RuleNumber { get { return 201 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 201 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22privatescope22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20024,9 +20024,9 @@ public partial class  fieldAttr_fieldAttr_22literal22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"literal\"" } ;
-	public override System.Decimal RuleNumber { get { return 202 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 202 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22literal22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20040,9 +20040,9 @@ public partial class  fieldAttr_fieldAttr_22notserialized22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fieldAttr", "\"notserialized\"" } ;
-	public override System.Decimal RuleNumber { get { return 203 ; } }
-	public override int Symbol { get { return Automaton._fieldAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 203 ; } }
+	public override int      Symbol { get { return Automaton._fieldAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldAttr_fieldAttr_22notserialized22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20056,9 +20056,9 @@ public partial class  implAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 204 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 204 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -20072,9 +20072,9 @@ public partial class  implAttr_implAttr_22native22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"native\"" } ;
-	public override System.Decimal RuleNumber { get { return 205 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 205 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22native22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20091,9 +20091,9 @@ public partial class  implAttr_implAttr_22cil22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"cil\"" } ;
-	public override System.Decimal RuleNumber { get { return 206 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 206 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22cil22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20107,9 +20107,9 @@ public partial class  implAttr_implAttr_22optil22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"optil\"" } ;
-	public override System.Decimal RuleNumber { get { return 207 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 207 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22optil22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20126,9 +20126,9 @@ public partial class  implAttr_implAttr_22managed22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"managed\"" } ;
-	public override System.Decimal RuleNumber { get { return 208 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 208 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22managed22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20142,9 +20142,9 @@ public partial class  implAttr_implAttr_22unmanaged22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"unmanaged\"" } ;
-	public override System.Decimal RuleNumber { get { return 209 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 209 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22unmanaged22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20158,9 +20158,9 @@ public partial class  implAttr_implAttr_22forwardref22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"forwardref\"" } ;
-	public override System.Decimal RuleNumber { get { return 210 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 210 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22forwardref22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20174,9 +20174,9 @@ public partial class  implAttr_implAttr_22preservesig22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"preservesig\"" } ;
-	public override System.Decimal RuleNumber { get { return 211 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 211 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22preservesig22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20190,9 +20190,9 @@ public partial class  implAttr_implAttr_22runtime22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"runtime\"" } ;
-	public override System.Decimal RuleNumber { get { return 212 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 212 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22runtime22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20206,9 +20206,9 @@ public partial class  implAttr_implAttr_22internalcall22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"internalcall\"" } ;
-	public override System.Decimal RuleNumber { get { return 213 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 213 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22internalcall22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20222,9 +20222,9 @@ public partial class  implAttr_implAttr_22synchronized22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"synchronized\"" } ;
-	public override System.Decimal RuleNumber { get { return 214 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 214 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22synchronized22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20238,9 +20238,9 @@ public partial class  implAttr_implAttr_22noinlining22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "implAttr", "\"noinlining\"" } ;
-	public override System.Decimal RuleNumber { get { return 215 ; } }
-	public override int Symbol { get { return Automaton._implAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 215 ; } }
+	public override int      Symbol { get { return Automaton._implAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public implAttr_implAttr_22noinlining22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20257,9 +20257,9 @@ public partial class  localsHead_222Elocals22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".locals\"" } ;
-	public override System.Decimal RuleNumber { get { return 216 ; } }
-	public override int Symbol { get { return Automaton._localsHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 216 ; } }
+	public override int      Symbol { get { return Automaton._localsHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public localsHead_222Elocals22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20273,9 +20273,9 @@ public partial class  methodDecl_222Eemitbyte22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".emitbyte\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 217 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 217 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_222Eemitbyte22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20289,9 +20289,9 @@ public partial class  methodDecl_sehBlock
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sehBlock" } ;
-	public override System.Decimal RuleNumber { get { return 218 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 218 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_sehBlock()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20308,9 +20308,9 @@ public partial class  methodDecl_222Emaxstack22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".maxstack\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 219 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 219 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_222Emaxstack22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20324,9 +20324,9 @@ public partial class  methodDecl_localsHead_272827_sigArgs30_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "localsHead", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 220 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 220 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_localsHead_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -20343,9 +20343,9 @@ public partial class  methodDecl_localsHead_22init22_272827_sigArgs30_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "localsHead", "\"init\"", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 221 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 221 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_localsHead_22init22_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -20362,9 +20362,9 @@ public partial class  methodDecl_222Eentrypoint22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".entrypoint\"" } ;
-	public override System.Decimal RuleNumber { get { return 222 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 222 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_222Eentrypoint22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20378,9 +20378,9 @@ public partial class  methodDecl_222Ezeroinit22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".zeroinit\"" } ;
-	public override System.Decimal RuleNumber { get { return 223 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 223 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_222Ezeroinit22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20394,9 +20394,9 @@ public partial class  methodDecl_dataDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "dataDecl" } ;
-	public override System.Decimal RuleNumber { get { return 224 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 224 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_dataDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20413,9 +20413,9 @@ public partial class  methodDecl_instr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "instr" } ;
-	public override System.Decimal RuleNumber { get { return 225 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 225 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_instr()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20432,9 +20432,9 @@ public partial class  methodDecl_id_273A27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id", "':'" } ;
-	public override System.Decimal RuleNumber { get { return 226 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 226 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_id_273A27()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20448,9 +20448,9 @@ public partial class  methodDecl_secDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "secDecl" } ;
-	public override System.Decimal RuleNumber { get { return 227 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 227 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_secDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20464,9 +20464,9 @@ public partial class  methodDecl_extSourceSpec
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "extSourceSpec" } ;
-	public override System.Decimal RuleNumber { get { return 228 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 228 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_extSourceSpec()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20480,9 +20480,9 @@ public partial class  methodDecl_languageDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "languageDecl" } ;
-	public override System.Decimal RuleNumber { get { return 229 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 229 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_languageDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20499,9 +20499,9 @@ public partial class  methodDecl_customAttrDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 230 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 230 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_customAttrDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20515,9 +20515,9 @@ public partial class  methodDecl_222Eexport22_275B27_int3332_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".export\"", "'['", "int32", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 231 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 231 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_222Eexport22_275B27_int3332_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -20531,9 +20531,9 @@ public partial class  methodDecl_222Eexport22_275B27_int3332_275D27_22as22_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".export\"", "'['", "int32", "']'", "\"as\"", "id" } ;
-	public override System.Decimal RuleNumber { get { return 232 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 232 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_222Eexport22_275B27_int3332_275D27_22as22_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -20547,9 +20547,9 @@ public partial class  methodDecl_222Evtentry22_int3332_273A27_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".vtentry\"", "int32", "':'", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 233 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 233 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_222Evtentry22_int3332_273A27_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -20563,9 +20563,9 @@ public partial class  methodDecl_222Eoverride22_typeSpec_223A3A22_methodName
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".override\"", "typeSpec", "\"::\"", "methodName" } ;
-	public override System.Decimal RuleNumber { get { return 234 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 234 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_222Eoverride22_typeSpec_223A3A22_methodName()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -20579,9 +20579,9 @@ public partial class  methodDecl_scopeBlock
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "scopeBlock" } ;
-	public override System.Decimal RuleNumber { get { return 235 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 235 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_scopeBlock()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20595,9 +20595,9 @@ public partial class  methodDecl_222Eparam22_275B27_int3332_275D27_initOpt
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".param\"", "'['", "int32", "']'", "initOpt" } ;
-	public override System.Decimal RuleNumber { get { return 236 ; } }
-	public override int Symbol { get { return Automaton._methodDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 236 ; } }
+	public override int      Symbol { get { return Automaton._methodDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecl_222Eparam22_275B27_int3332_275D27_initOpt()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -20611,9 +20611,9 @@ public partial class  scopeBlock_scopeOpen_methodDecls_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "scopeOpen", "methodDecls", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 237 ; } }
-	public override int Symbol { get { return Automaton._scopeBlock ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 237 ; } }
+	public override int      Symbol { get { return Automaton._scopeBlock ; } }
+	public override bool     Useful { get { return true ; } }
 	public scopeBlock_scopeOpen_methodDecls_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -20627,9 +20627,9 @@ public partial class  scopeOpen_277B27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'{'" } ;
-	public override System.Decimal RuleNumber { get { return 238 ; } }
-	public override int Symbol { get { return Automaton._scopeOpen ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 238 ; } }
+	public override int      Symbol { get { return Automaton._scopeOpen ; } }
+	public override bool     Useful { get { return true ; } }
 	public scopeOpen_277B27()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20643,9 +20643,9 @@ public partial class  sehBlock_tryBlock_sehClauses
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "tryBlock", "sehClauses" } ;
-	public override System.Decimal RuleNumber { get { return 239 ; } }
-	public override int Symbol { get { return Automaton._sehBlock ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 239 ; } }
+	public override int      Symbol { get { return Automaton._sehBlock ; } }
+	public override bool     Useful { get { return true ; } }
 	public sehBlock_tryBlock_sehClauses()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20659,9 +20659,9 @@ public partial class  sehClauses_sehClause_sehClauses
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sehClause", "sehClauses" } ;
-	public override System.Decimal RuleNumber { get { return 240 ; } }
-	public override int Symbol { get { return Automaton._sehClauses ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 240 ; } }
+	public override int      Symbol { get { return Automaton._sehClauses ; } }
+	public override bool     Useful { get { return true ; } }
 	public sehClauses_sehClause_sehClauses()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20675,9 +20675,9 @@ public partial class  sehClauses_sehClause
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sehClause" } ;
-	public override System.Decimal RuleNumber { get { return 241 ; } }
-	public override int Symbol { get { return Automaton._sehClauses ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 241 ; } }
+	public override int      Symbol { get { return Automaton._sehClauses ; } }
+	public override bool     Useful { get { return true ; } }
 	public sehClauses_sehClause()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20691,9 +20691,9 @@ public partial class  tryBlock_tryHead_scopeBlock
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "tryHead", "scopeBlock" } ;
-	public override System.Decimal RuleNumber { get { return 242 ; } }
-	public override int Symbol { get { return Automaton._tryBlock ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 242 ; } }
+	public override int      Symbol { get { return Automaton._tryBlock ; } }
+	public override bool     Useful { get { return true ; } }
 	public tryBlock_tryHead_scopeBlock()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20707,9 +20707,9 @@ public partial class  tryBlock_tryHead_id_22to22_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "tryHead", "id", "\"to\"", "id" } ;
-	public override System.Decimal RuleNumber { get { return 243 ; } }
-	public override int Symbol { get { return Automaton._tryBlock ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 243 ; } }
+	public override int      Symbol { get { return Automaton._tryBlock ; } }
+	public override bool     Useful { get { return true ; } }
 	public tryBlock_tryHead_id_22to22_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -20723,9 +20723,9 @@ public partial class  tryBlock_tryHead_int3332_22to22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "tryHead", "int32", "\"to\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 244 ; } }
-	public override int Symbol { get { return Automaton._tryBlock ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 244 ; } }
+	public override int      Symbol { get { return Automaton._tryBlock ; } }
+	public override bool     Useful { get { return true ; } }
 	public tryBlock_tryHead_int3332_22to22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -20739,9 +20739,9 @@ public partial class  tryHead_222Etry22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".try\"" } ;
-	public override System.Decimal RuleNumber { get { return 245 ; } }
-	public override int Symbol { get { return Automaton._tryHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 245 ; } }
+	public override int      Symbol { get { return Automaton._tryHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public tryHead_222Etry22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20755,9 +20755,9 @@ public partial class  sehClause_catchClause_handlerBlock
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "catchClause", "handlerBlock" } ;
-	public override System.Decimal RuleNumber { get { return 246 ; } }
-	public override int Symbol { get { return Automaton._sehClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 246 ; } }
+	public override int      Symbol { get { return Automaton._sehClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public sehClause_catchClause_handlerBlock()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20771,9 +20771,9 @@ public partial class  sehClause_filterClause_handlerBlock
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "filterClause", "handlerBlock" } ;
-	public override System.Decimal RuleNumber { get { return 247 ; } }
-	public override int Symbol { get { return Automaton._sehClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 247 ; } }
+	public override int      Symbol { get { return Automaton._sehClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public sehClause_filterClause_handlerBlock()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20787,9 +20787,9 @@ public partial class  sehClause_finallyClause_handlerBlock
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "finallyClause", "handlerBlock" } ;
-	public override System.Decimal RuleNumber { get { return 248 ; } }
-	public override int Symbol { get { return Automaton._sehClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 248 ; } }
+	public override int      Symbol { get { return Automaton._sehClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public sehClause_finallyClause_handlerBlock()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20803,9 +20803,9 @@ public partial class  sehClause_faultClause_handlerBlock
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "faultClause", "handlerBlock" } ;
-	public override System.Decimal RuleNumber { get { return 249 ; } }
-	public override int Symbol { get { return Automaton._sehClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 249 ; } }
+	public override int      Symbol { get { return Automaton._sehClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public sehClause_faultClause_handlerBlock()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20819,9 +20819,9 @@ public partial class  filterClause_filterHead_scopeBlock
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "filterHead", "scopeBlock" } ;
-	public override System.Decimal RuleNumber { get { return 250 ; } }
-	public override int Symbol { get { return Automaton._filterClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 250 ; } }
+	public override int      Symbol { get { return Automaton._filterClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public filterClause_filterHead_scopeBlock()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20835,9 +20835,9 @@ public partial class  filterClause_filterHead_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "filterHead", "id" } ;
-	public override System.Decimal RuleNumber { get { return 251 ; } }
-	public override int Symbol { get { return Automaton._filterClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 251 ; } }
+	public override int      Symbol { get { return Automaton._filterClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public filterClause_filterHead_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20851,9 +20851,9 @@ public partial class  filterClause_filterHead_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "filterHead", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 252 ; } }
-	public override int Symbol { get { return Automaton._filterClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 252 ; } }
+	public override int      Symbol { get { return Automaton._filterClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public filterClause_filterHead_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20867,9 +20867,9 @@ public partial class  filterHead_22filter22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"filter\"" } ;
-	public override System.Decimal RuleNumber { get { return 253 ; } }
-	public override int Symbol { get { return Automaton._filterHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 253 ; } }
+	public override int      Symbol { get { return Automaton._filterHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public filterHead_22filter22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20883,9 +20883,9 @@ public partial class  catchClause_22catch22_className
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"catch\"", "className" } ;
-	public override System.Decimal RuleNumber { get { return 254 ; } }
-	public override int Symbol { get { return Automaton._catchClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 254 ; } }
+	public override int      Symbol { get { return Automaton._catchClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public catchClause_22catch22_className()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -20899,9 +20899,9 @@ public partial class  finallyClause_22finally22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"finally\"" } ;
-	public override System.Decimal RuleNumber { get { return 255 ; } }
-	public override int Symbol { get { return Automaton._finallyClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 255 ; } }
+	public override int      Symbol { get { return Automaton._finallyClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public finallyClause_22finally22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20915,9 +20915,9 @@ public partial class  faultClause_22fault22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"fault\"" } ;
-	public override System.Decimal RuleNumber { get { return 256 ; } }
-	public override int Symbol { get { return Automaton._faultClause ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 256 ; } }
+	public override int      Symbol { get { return Automaton._faultClause ; } }
+	public override bool     Useful { get { return true ; } }
 	public faultClause_22fault22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20931,9 +20931,9 @@ public partial class  handlerBlock_scopeBlock
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "scopeBlock" } ;
-	public override System.Decimal RuleNumber { get { return 257 ; } }
-	public override int Symbol { get { return Automaton._handlerBlock ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 257 ; } }
+	public override int      Symbol { get { return Automaton._handlerBlock ; } }
+	public override bool     Useful { get { return true ; } }
 	public handlerBlock_scopeBlock()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -20947,9 +20947,9 @@ public partial class  handlerBlock_22handler22_id_22to22_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"handler\"", "id", "\"to\"", "id" } ;
-	public override System.Decimal RuleNumber { get { return 258 ; } }
-	public override int Symbol { get { return Automaton._handlerBlock ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 258 ; } }
+	public override int      Symbol { get { return Automaton._handlerBlock ; } }
+	public override bool     Useful { get { return true ; } }
 	public handlerBlock_22handler22_id_22to22_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -20963,9 +20963,9 @@ public partial class  handlerBlock_22handler22_int3332_22to22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"handler\"", "int32", "\"to\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 259 ; } }
-	public override int Symbol { get { return Automaton._handlerBlock ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 259 ; } }
+	public override int      Symbol { get { return Automaton._handlerBlock ; } }
+	public override bool     Useful { get { return true ; } }
 	public handlerBlock_22handler22_int3332_22to22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -20979,9 +20979,9 @@ public partial class  methodDecls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 260 ; } }
-	public override int Symbol { get { return Automaton._methodDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 260 ; } }
+	public override int      Symbol { get { return Automaton._methodDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -20998,9 +20998,9 @@ public partial class  methodDecls_methodDecls_methodDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodDecls", "methodDecl" } ;
-	public override System.Decimal RuleNumber { get { return 261 ; } }
-	public override int Symbol { get { return Automaton._methodDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 261 ; } }
+	public override int      Symbol { get { return Automaton._methodDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodDecls_methodDecls_methodDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21017,9 +21017,9 @@ public partial class  dataDecl_ddHead_ddBody
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ddHead", "ddBody" } ;
-	public override System.Decimal RuleNumber { get { return 262 ; } }
-	public override int Symbol { get { return Automaton._dataDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 262 ; } }
+	public override int      Symbol { get { return Automaton._dataDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public dataDecl_ddHead_ddBody()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21036,9 +21036,9 @@ public partial class  ddHead_222Edata22_tls_id_273D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".data\"", "tls", "id", "'='" } ;
-	public override System.Decimal RuleNumber { get { return 263 ; } }
-	public override int Symbol { get { return Automaton._ddHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 263 ; } }
+	public override int      Symbol { get { return Automaton._ddHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddHead_222Edata22_tls_id_273D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21052,9 +21052,9 @@ public partial class  ddHead_222Edata22_tls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".data\"", "tls" } ;
-	public override System.Decimal RuleNumber { get { return 264 ; } }
-	public override int Symbol { get { return Automaton._ddHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 264 ; } }
+	public override int      Symbol { get { return Automaton._ddHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddHead_222Edata22_tls()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21068,9 +21068,9 @@ public partial class  tls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 265 ; } }
-	public override int Symbol { get { return Automaton._tls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 265 ; } }
+	public override int      Symbol { get { return Automaton._tls ; } }
+	public override bool     Useful { get { return true ; } }
 	public tls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -21084,9 +21084,9 @@ public partial class  tls_22tls22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"tls\"" } ;
-	public override System.Decimal RuleNumber { get { return 266 ; } }
-	public override int Symbol { get { return Automaton._tls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 266 ; } }
+	public override int      Symbol { get { return Automaton._tls ; } }
+	public override bool     Useful { get { return true ; } }
 	public tls_22tls22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21100,9 +21100,9 @@ public partial class  ddBody_277B27_ddItemList_277D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'{'", "ddItemList", "'}'" } ;
-	public override System.Decimal RuleNumber { get { return 267 ; } }
-	public override int Symbol { get { return Automaton._ddBody ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 267 ; } }
+	public override int      Symbol { get { return Automaton._ddBody ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddBody_277B27_ddItemList_277D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -21119,9 +21119,9 @@ public partial class  ddBody_ddItem
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ddItem" } ;
-	public override System.Decimal RuleNumber { get { return 268 ; } }
-	public override int Symbol { get { return Automaton._ddBody ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 268 ; } }
+	public override int      Symbol { get { return Automaton._ddBody ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddBody_ddItem()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21135,9 +21135,9 @@ public partial class  ddItemList_ddItem_272C27_ddItemList
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ddItem", "','", "ddItemList" } ;
-	public override System.Decimal RuleNumber { get { return 269 ; } }
-	public override int Symbol { get { return Automaton._ddItemList ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 269 ; } }
+	public override int      Symbol { get { return Automaton._ddItemList ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItemList_ddItem_272C27_ddItemList()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -21151,9 +21151,9 @@ public partial class  ddItemList_ddItem
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ddItem" } ;
-	public override System.Decimal RuleNumber { get { return 270 ; } }
-	public override int Symbol { get { return Automaton._ddItemList ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 270 ; } }
+	public override int      Symbol { get { return Automaton._ddItemList ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItemList_ddItem()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21167,9 +21167,9 @@ public partial class  ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 271 ; } }
-	public override int Symbol { get { return Automaton._ddItemCount ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 271 ; } }
+	public override int      Symbol { get { return Automaton._ddItemCount ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -21183,9 +21183,9 @@ public partial class  ddItemCount_275B27_int3332_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "int32", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 272 ; } }
-	public override int Symbol { get { return Automaton._ddItemCount ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 272 ; } }
+	public override int      Symbol { get { return Automaton._ddItemCount ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItemCount_275B27_int3332_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -21199,9 +21199,9 @@ public partial class  ddItem_22char22_272A27_272827_compQstring_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"char\"", "'*'", "'('", "compQstring", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 273 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 273 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22char22_272A27_272827_compQstring_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -21215,9 +21215,9 @@ public partial class  ddItem_272627_272827_id_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'&'", "'('", "id", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 274 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 274 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_272627_272827_id_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21234,9 +21234,9 @@ public partial class  ddItem_bytearrayhead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bytearrayhead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 275 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 275 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_bytearrayhead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -21250,9 +21250,9 @@ public partial class  ddItem_22float333222_272827_float3634_272927_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "'('", "float64", "')'", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 276 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 276 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22float333222_272827_float3634_272927_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -21266,9 +21266,9 @@ public partial class  ddItem_22float363422_272827_float3634_272927_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "'('", "float64", "')'", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 277 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 277 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22float363422_272827_float3634_272927_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -21282,9 +21282,9 @@ public partial class  ddItem_22int363422_272827_int3634_272927_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"", "'('", "int64", "')'", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 278 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 278 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22int363422_272827_int3634_272927_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -21298,9 +21298,9 @@ public partial class  ddItem_22int333222_272827_int3332_272927_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"", "'('", "int32", "')'", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 279 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 279 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22int333222_272827_int3332_272927_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -21314,9 +21314,9 @@ public partial class  ddItem_22int313622_272827_int3332_272927_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"", "'('", "int32", "')'", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 280 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 280 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22int313622_272827_int3332_272927_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -21330,9 +21330,9 @@ public partial class  ddItem_22int3822_272827_int3332_272927_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"", "'('", "int32", "')'", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 281 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 281 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22int3822_272827_int3332_272927_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -21346,9 +21346,9 @@ public partial class  ddItem_22float333222_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 282 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 282 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22float333222_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21362,9 +21362,9 @@ public partial class  ddItem_22float363422_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 283 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 283 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22float363422_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21378,9 +21378,9 @@ public partial class  ddItem_22int363422_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 284 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 284 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22int363422_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21394,9 +21394,9 @@ public partial class  ddItem_22int333222_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 285 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 285 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22int333222_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21410,9 +21410,9 @@ public partial class  ddItem_22int313622_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 286 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 286 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22int313622_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21426,9 +21426,9 @@ public partial class  ddItem_22int3822_ddItemCount
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"", "ddItemCount" } ;
-	public override System.Decimal RuleNumber { get { return 287 ; } }
-	public override int Symbol { get { return Automaton._ddItem ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 287 ; } }
+	public override int      Symbol { get { return Automaton._ddItem ; } }
+	public override bool     Useful { get { return true ; } }
 	public ddItem_22int3822_ddItemCount()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21442,9 +21442,9 @@ public partial class  fieldInit_22float333222_272827_float3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "'('", "float64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 288 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 288 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22float333222_272827_float3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21458,9 +21458,9 @@ public partial class  fieldInit_22float363422_272827_float3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "'('", "float64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 289 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 289 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22float363422_272827_float3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21474,9 +21474,9 @@ public partial class  fieldInit_22float333222_272827_int3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "'('", "int64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 290 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 290 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22float333222_272827_int3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21490,9 +21490,9 @@ public partial class  fieldInit_22float363422_272827_int3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "'('", "int64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 291 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 291 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22float363422_272827_int3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21506,9 +21506,9 @@ public partial class  fieldInit_22int363422_272827_int3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"", "'('", "int64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 292 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 292 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22int363422_272827_int3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21525,9 +21525,9 @@ public partial class  fieldInit_22int333222_272827_int3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"", "'('", "int64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 293 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 293 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22int333222_272827_int3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21541,9 +21541,9 @@ public partial class  fieldInit_22int313622_272827_int3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"", "'('", "int64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 294 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 294 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22int313622_272827_int3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21557,9 +21557,9 @@ public partial class  fieldInit_22char22_272827_int3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"char\"", "'('", "int64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 295 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 295 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22char22_272827_int3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21573,9 +21573,9 @@ public partial class  fieldInit_22int3822_272827_int3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"", "'('", "int64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 296 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 296 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22int3822_272827_int3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21589,9 +21589,9 @@ public partial class  fieldInit_22bool22_272827_truefalse_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bool\"", "'('", "truefalse", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 297 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 297 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22bool22_272827_truefalse_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -21605,9 +21605,9 @@ public partial class  fieldInit_compQstring
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring" } ;
-	public override System.Decimal RuleNumber { get { return 298 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 298 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_compQstring()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21621,9 +21621,9 @@ public partial class  fieldInit_bytearrayhead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bytearrayhead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 299 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 299 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_bytearrayhead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -21637,9 +21637,9 @@ public partial class  fieldInit_22nullref22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"nullref\"" } ;
-	public override System.Decimal RuleNumber { get { return 300 ; } }
-	public override int Symbol { get { return Automaton._fieldInit ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 300 ; } }
+	public override int      Symbol { get { return Automaton._fieldInit ; } }
+	public override bool     Useful { get { return true ; } }
 	public fieldInit_22nullref22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21656,9 +21656,9 @@ public partial class  bytearrayhead_22bytearray22_272827
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bytearray\"", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 301 ; } }
-	public override int Symbol { get { return Automaton._bytearrayhead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 301 ; } }
+	public override int      Symbol { get { return Automaton._bytearrayhead ; } }
+	public override bool     Useful { get { return true ; } }
 	public bytearrayhead_22bytearray22_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21672,9 +21672,9 @@ public partial class  bytes
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 302 ; } }
-	public override int Symbol { get { return Automaton._bytes ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 302 ; } }
+	public override int      Symbol { get { return Automaton._bytes ; } }
+	public override bool     Useful { get { return true ; } }
 	public bytes()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -21691,9 +21691,9 @@ public partial class  bytes_hexbytes
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "hexbytes" } ;
-	public override System.Decimal RuleNumber { get { return 303 ; } }
-	public override int Symbol { get { return Automaton._bytes ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 303 ; } }
+	public override int      Symbol { get { return Automaton._bytes ; } }
+	public override bool     Useful { get { return true ; } }
 	public bytes_hexbytes()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21710,9 +21710,9 @@ public partial class  hexbytes_HEXBYTE
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "HEXBYTE" } ;
-	public override System.Decimal RuleNumber { get { return 304 ; } }
-	public override int Symbol { get { return Automaton._hexbytes ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 304 ; } }
+	public override int      Symbol { get { return Automaton._hexbytes ; } }
+	public override bool     Useful { get { return true ; } }
 	public hexbytes_HEXBYTE()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21729,9 +21729,9 @@ public partial class  hexbytes_hexbytes_HEXBYTE
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "hexbytes", "HEXBYTE" } ;
-	public override System.Decimal RuleNumber { get { return 305 ; } }
-	public override int Symbol { get { return Automaton._hexbytes ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 305 ; } }
+	public override int      Symbol { get { return Automaton._hexbytes ; } }
+	public override bool     Useful { get { return true ; } }
 	public hexbytes_hexbytes_HEXBYTE()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21745,9 +21745,9 @@ public partial class  instr_r_head_INSTR5FR_272827
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_R", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 306 ; } }
-	public override int Symbol { get { return Automaton._instr5Fr5Fhead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 306 ; } }
+	public override int      Symbol { get { return Automaton._instr5Fr5Fhead ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_r_head_INSTR5FR_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21764,9 +21764,9 @@ public partial class  instr_tok_head_INSTR5FTOK
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_TOK" } ;
-	public override System.Decimal RuleNumber { get { return 307 ; } }
-	public override int Symbol { get { return Automaton._instr5Ftok5Fhead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 307 ; } }
+	public override int      Symbol { get { return Automaton._instr5Ftok5Fhead ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_tok_head_INSTR5FTOK()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21780,9 +21780,9 @@ public partial class  methodSpec_22method22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"method\"" } ;
-	public override System.Decimal RuleNumber { get { return 308 ; } }
-	public override int Symbol { get { return Automaton._methodSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 308 ; } }
+	public override int      Symbol { get { return Automaton._methodSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public methodSpec_22method22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21799,9 +21799,9 @@ public partial class  instr_INSTR5FNONE
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_NONE" } ;
-	public override System.Decimal RuleNumber { get { return 309 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 309 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FNONE()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -21818,9 +21818,9 @@ public partial class  instr_INSTR5FVAR_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_VAR", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 310 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 310 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FVAR_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21834,9 +21834,9 @@ public partial class  instr_INSTR5FVAR_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_VAR", "id" } ;
-	public override System.Decimal RuleNumber { get { return 311 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 311 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FVAR_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21853,9 +21853,9 @@ public partial class  instr_INSTR5FI_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_I", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 312 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 312 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FI_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21869,9 +21869,9 @@ public partial class  instr_INSTR5FI38_int3634
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_I8", "int64" } ;
-	public override System.Decimal RuleNumber { get { return 313 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 313 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FI38_int3634()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21885,9 +21885,9 @@ public partial class  instr_INSTR5FR_float3634
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_R", "float64" } ;
-	public override System.Decimal RuleNumber { get { return 314 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 314 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FR_float3634()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21901,9 +21901,9 @@ public partial class  instr_INSTR5FR_int3634
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_R", "int64" } ;
-	public override System.Decimal RuleNumber { get { return 315 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 315 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FR_int3634()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21917,9 +21917,9 @@ public partial class  instr_instr5Fr5Fhead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "instr_r_head", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 316 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 316 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_instr5Fr5Fhead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -21936,9 +21936,9 @@ public partial class  instr_INSTR5FBRTARGET_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_BRTARGET", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 317 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 317 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FBRTARGET_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21955,9 +21955,9 @@ public partial class  instr_INSTR5FBRTARGET_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_BRTARGET", "id" } ;
-	public override System.Decimal RuleNumber { get { return 318 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 318 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FBRTARGET_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -21974,9 +21974,9 @@ public partial class  instr_INSTR5FMETHOD_callConv_type_typeSpec_223A3A22_method
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_METHOD", "callConv", "type", "typeSpec", "\"::\"", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 319 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 319 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FMETHOD_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 9 ] ;
@@ -21990,9 +21990,9 @@ public partial class  instr_INSTR5FMETHOD_callConv_type_methodName_272827_sigArg
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_METHOD", "callConv", "type", "methodName", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 320 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 320 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FMETHOD_callConv_type_methodName_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -22009,9 +22009,9 @@ public partial class  instr_INSTR5FFIELD_type_typeSpec_223A3A22_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_FIELD", "type", "typeSpec", "\"::\"", "id" } ;
-	public override System.Decimal RuleNumber { get { return 321 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 321 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FFIELD_type_typeSpec_223A3A22_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -22028,9 +22028,9 @@ public partial class  instr_INSTR5FFIELD_type_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_FIELD", "type", "id" } ;
-	public override System.Decimal RuleNumber { get { return 322 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 322 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FFIELD_type_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -22047,9 +22047,9 @@ public partial class  instr_INSTR5FTYPE_typeSpec
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_TYPE", "typeSpec" } ;
-	public override System.Decimal RuleNumber { get { return 323 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 323 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FTYPE_typeSpec()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22066,9 +22066,9 @@ public partial class  instr_INSTR5FSTRING_compQstring
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_STRING", "compQstring" } ;
-	public override System.Decimal RuleNumber { get { return 324 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 324 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FSTRING_compQstring()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22082,9 +22082,9 @@ public partial class  instr_INSTR5FSTRING_bytearrayhead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_STRING", "bytearrayhead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 325 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 325 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FSTRING_bytearrayhead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -22098,9 +22098,9 @@ public partial class  instr_INSTR5FSIG_callConv_type_272827_sigArgs30_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_SIG", "callConv", "type", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 326 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 326 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FSIG_callConv_type_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -22114,9 +22114,9 @@ public partial class  instr_INSTR5FRVA_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_RVA", "id" } ;
-	public override System.Decimal RuleNumber { get { return 327 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 327 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FRVA_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22130,9 +22130,9 @@ public partial class  instr_INSTR5FRVA_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_RVA", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 328 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 328 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FRVA_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22149,9 +22149,9 @@ public partial class  instr_instr5Ftok5Fhead_ownerType
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "instr_tok_head", "ownerType" } ;
-	public override System.Decimal RuleNumber { get { return 329 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 329 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_instr5Ftok5Fhead_ownerType()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22168,9 +22168,9 @@ public partial class  instr_INSTR5FSWITCH_272827_labels_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_SWITCH", "'('", "labels", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 330 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 330 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FSWITCH_272827_labels_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -22184,9 +22184,9 @@ public partial class  instr_INSTR5FPHI_int3136s
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INSTR_PHI", "int16s" } ;
-	public override System.Decimal RuleNumber { get { return 331 ; } }
-	public override int Symbol { get { return Automaton._instr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 331 ; } }
+	public override int      Symbol { get { return Automaton._instr ; } }
+	public override bool     Useful { get { return true ; } }
 	public instr_INSTR5FPHI_int3136s()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22200,9 +22200,9 @@ public partial class  sigArgs0
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 332 ; } }
-	public override int Symbol { get { return Automaton._sigArgs30 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 332 ; } }
+	public override int      Symbol { get { return Automaton._sigArgs30 ; } }
+	public override bool     Useful { get { return true ; } }
 	public sigArgs0()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -22219,9 +22219,9 @@ public partial class  sigArgs0_sigArgs31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sigArgs1" } ;
-	public override System.Decimal RuleNumber { get { return 333 ; } }
-	public override int Symbol { get { return Automaton._sigArgs30 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 333 ; } }
+	public override int      Symbol { get { return Automaton._sigArgs30 ; } }
+	public override bool     Useful { get { return true ; } }
 	public sigArgs0_sigArgs31()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22238,9 +22238,9 @@ public partial class  sigArgs1_sigArg
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sigArg" } ;
-	public override System.Decimal RuleNumber { get { return 334 ; } }
-	public override int Symbol { get { return Automaton._sigArgs31 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 334 ; } }
+	public override int      Symbol { get { return Automaton._sigArgs31 ; } }
+	public override bool     Useful { get { return true ; } }
 	public sigArgs1_sigArg()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22257,9 +22257,9 @@ public partial class  sigArgs1_sigArgs31_272C27_sigArg
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "sigArgs1", "','", "sigArg" } ;
-	public override System.Decimal RuleNumber { get { return 335 ; } }
-	public override int Symbol { get { return Automaton._sigArgs31 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 335 ; } }
+	public override int      Symbol { get { return Automaton._sigArgs31 ; } }
+	public override bool     Useful { get { return true ; } }
 	public sigArgs1_sigArgs31_272C27_sigArg()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -22273,9 +22273,9 @@ public partial class  sigArg_222E2E2E22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"...\"" } ;
-	public override System.Decimal RuleNumber { get { return 336 ; } }
-	public override int Symbol { get { return Automaton._sigArg ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 336 ; } }
+	public override int      Symbol { get { return Automaton._sigArg ; } }
+	public override bool     Useful { get { return true ; } }
 	public sigArg_222E2E2E22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22292,9 +22292,9 @@ public partial class  sigArg_paramAttr_type
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "type" } ;
-	public override System.Decimal RuleNumber { get { return 337 ; } }
-	public override int Symbol { get { return Automaton._sigArg ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 337 ; } }
+	public override int      Symbol { get { return Automaton._sigArg ; } }
+	public override bool     Useful { get { return true ; } }
 	public sigArg_paramAttr_type()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22311,9 +22311,9 @@ public partial class  sigArg_paramAttr_type_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "type", "id" } ;
-	public override System.Decimal RuleNumber { get { return 338 ; } }
-	public override int Symbol { get { return Automaton._sigArg ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 338 ; } }
+	public override int      Symbol { get { return Automaton._sigArg ; } }
+	public override bool     Useful { get { return true ; } }
 	public sigArg_paramAttr_type_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -22327,9 +22327,9 @@ public partial class  sigArg_paramAttr_type_22marshal22_272827_nativeType_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "type", "\"marshal\"", "'('", "nativeType", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 339 ; } }
-	public override int Symbol { get { return Automaton._sigArg ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 339 ; } }
+	public override int      Symbol { get { return Automaton._sigArg ; } }
+	public override bool     Useful { get { return true ; } }
 	public sigArg_paramAttr_type_22marshal22_272827_nativeType_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -22343,9 +22343,9 @@ public partial class  sigArg_paramAttr_type_22marshal22_272827_nativeType_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "paramAttr", "type", "\"marshal\"", "'('", "nativeType", "')'", "id" } ;
-	public override System.Decimal RuleNumber { get { return 340 ; } }
-	public override int Symbol { get { return Automaton._sigArg ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 340 ; } }
+	public override int      Symbol { get { return Automaton._sigArg ; } }
+	public override bool     Useful { get { return true ; } }
 	public sigArg_paramAttr_type_22marshal22_272827_nativeType_272927_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -22362,9 +22362,9 @@ public partial class  name1_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id" } ;
-	public override System.Decimal RuleNumber { get { return 341 ; } }
-	public override int Symbol { get { return Automaton._name31 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 341 ; } }
+	public override int      Symbol { get { return Automaton._name31 ; } }
+	public override bool     Useful { get { return true ; } }
 	public name1_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22381,9 +22381,9 @@ public partial class  name1_DOTTEDNAME
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "DOTTEDNAME" } ;
-	public override System.Decimal RuleNumber { get { return 342 ; } }
-	public override int Symbol { get { return Automaton._name31 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 342 ; } }
+	public override int      Symbol { get { return Automaton._name31 ; } }
+	public override bool     Useful { get { return true ; } }
 	public name1_DOTTEDNAME()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22397,9 +22397,9 @@ public partial class  name1_name31_272E27_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "name1", "'.'", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 343 ; } }
-	public override int Symbol { get { return Automaton._name31 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 343 ; } }
+	public override int      Symbol { get { return Automaton._name31 ; } }
+	public override bool     Useful { get { return true ; } }
 	public name1_name31_272E27_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -22416,9 +22416,9 @@ public partial class  className_275B27_name31_275D27_slashedName
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "name1", "']'", "slashedName" } ;
-	public override System.Decimal RuleNumber { get { return 344 ; } }
-	public override int Symbol { get { return Automaton._className ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 344 ; } }
+	public override int      Symbol { get { return Automaton._className ; } }
+	public override bool     Useful { get { return true ; } }
 	public className_275B27_name31_275D27_slashedName()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -22432,9 +22432,9 @@ public partial class  className_275B27_222Emodule22_name31_275D27_slashedName
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "\".module\"", "name1", "']'", "slashedName" } ;
-	public override System.Decimal RuleNumber { get { return 345 ; } }
-	public override int Symbol { get { return Automaton._className ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 345 ; } }
+	public override int      Symbol { get { return Automaton._className ; } }
+	public override bool     Useful { get { return true ; } }
 	public className_275B27_222Emodule22_name31_275D27_slashedName()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -22451,9 +22451,9 @@ public partial class  className_slashedName
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "slashedName" } ;
-	public override System.Decimal RuleNumber { get { return 346 ; } }
-	public override int Symbol { get { return Automaton._className ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 346 ; } }
+	public override int      Symbol { get { return Automaton._className ; } }
+	public override bool     Useful { get { return true ; } }
 	public className_slashedName()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22470,9 +22470,9 @@ public partial class  slashedName_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "name1" } ;
-	public override System.Decimal RuleNumber { get { return 347 ; } }
-	public override int Symbol { get { return Automaton._slashedName ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 347 ; } }
+	public override int      Symbol { get { return Automaton._slashedName ; } }
+	public override bool     Useful { get { return true ; } }
 	public slashedName_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22489,9 +22489,9 @@ public partial class  slashedName_slashedName_272F27_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "slashedName", "'/'", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 348 ; } }
-	public override int Symbol { get { return Automaton._slashedName ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 348 ; } }
+	public override int      Symbol { get { return Automaton._slashedName ; } }
+	public override bool     Useful { get { return true ; } }
 	public slashedName_slashedName_272F27_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -22508,9 +22508,9 @@ public partial class  typeSpec_className
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className" } ;
-	public override System.Decimal RuleNumber { get { return 349 ; } }
-	public override int Symbol { get { return Automaton._typeSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 349 ; } }
+	public override int      Symbol { get { return Automaton._typeSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public typeSpec_className()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22524,9 +22524,9 @@ public partial class  typeSpec_275B27_name31_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "name1", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 350 ; } }
-	public override int Symbol { get { return Automaton._typeSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 350 ; } }
+	public override int      Symbol { get { return Automaton._typeSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public typeSpec_275B27_name31_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -22540,9 +22540,9 @@ public partial class  typeSpec_275B27_222Emodule22_name31_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'['", "\".module\"", "name1", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 351 ; } }
-	public override int Symbol { get { return Automaton._typeSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 351 ; } }
+	public override int      Symbol { get { return Automaton._typeSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public typeSpec_275B27_222Emodule22_name31_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -22559,9 +22559,9 @@ public partial class  typeSpec_type
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type" } ;
-	public override System.Decimal RuleNumber { get { return 352 ; } }
-	public override int Symbol { get { return Automaton._typeSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 352 ; } }
+	public override int      Symbol { get { return Automaton._typeSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public typeSpec_type()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22578,9 +22578,9 @@ public partial class  callConv_22instance22_callConv
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"instance\"", "callConv" } ;
-	public override System.Decimal RuleNumber { get { return 353 ; } }
-	public override int Symbol { get { return Automaton._callConv ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 353 ; } }
+	public override int      Symbol { get { return Automaton._callConv ; } }
+	public override bool     Useful { get { return true ; } }
 	public callConv_22instance22_callConv()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22594,9 +22594,9 @@ public partial class  callConv_22explicit22_callConv
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"explicit\"", "callConv" } ;
-	public override System.Decimal RuleNumber { get { return 354 ; } }
-	public override int Symbol { get { return Automaton._callConv ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 354 ; } }
+	public override int      Symbol { get { return Automaton._callConv ; } }
+	public override bool     Useful { get { return true ; } }
 	public callConv_22explicit22_callConv()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22613,9 +22613,9 @@ public partial class  callConv_callKind
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "callKind" } ;
-	public override System.Decimal RuleNumber { get { return 355 ; } }
-	public override int Symbol { get { return Automaton._callConv ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 355 ; } }
+	public override int      Symbol { get { return Automaton._callConv ; } }
+	public override bool     Useful { get { return true ; } }
 	public callConv_callKind()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22629,9 +22629,9 @@ public partial class  callKind
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 356 ; } }
-	public override int Symbol { get { return Automaton._callKind ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 356 ; } }
+	public override int      Symbol { get { return Automaton._callKind ; } }
+	public override bool     Useful { get { return true ; } }
 	public callKind()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -22648,9 +22648,9 @@ public partial class  callKind_22default22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"default\"" } ;
-	public override System.Decimal RuleNumber { get { return 357 ; } }
-	public override int Symbol { get { return Automaton._callKind ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 357 ; } }
+	public override int      Symbol { get { return Automaton._callKind ; } }
+	public override bool     Useful { get { return true ; } }
 	public callKind_22default22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22664,9 +22664,9 @@ public partial class  callKind_22vararg22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"vararg\"" } ;
-	public override System.Decimal RuleNumber { get { return 358 ; } }
-	public override int Symbol { get { return Automaton._callKind ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 358 ; } }
+	public override int      Symbol { get { return Automaton._callKind ; } }
+	public override bool     Useful { get { return true ; } }
 	public callKind_22vararg22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22680,9 +22680,9 @@ public partial class  callKind_22unmanaged22_22cdecl22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unmanaged\"", "\"cdecl\"" } ;
-	public override System.Decimal RuleNumber { get { return 359 ; } }
-	public override int Symbol { get { return Automaton._callKind ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 359 ; } }
+	public override int      Symbol { get { return Automaton._callKind ; } }
+	public override bool     Useful { get { return true ; } }
 	public callKind_22unmanaged22_22cdecl22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22696,9 +22696,9 @@ public partial class  callKind_22unmanaged22_22stdcall22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unmanaged\"", "\"stdcall\"" } ;
-	public override System.Decimal RuleNumber { get { return 360 ; } }
-	public override int Symbol { get { return Automaton._callKind ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 360 ; } }
+	public override int      Symbol { get { return Automaton._callKind ; } }
+	public override bool     Useful { get { return true ; } }
 	public callKind_22unmanaged22_22stdcall22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22712,9 +22712,9 @@ public partial class  callKind_22unmanaged22_22thiscall22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unmanaged\"", "\"thiscall\"" } ;
-	public override System.Decimal RuleNumber { get { return 361 ; } }
-	public override int Symbol { get { return Automaton._callKind ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 361 ; } }
+	public override int      Symbol { get { return Automaton._callKind ; } }
+	public override bool     Useful { get { return true ; } }
 	public callKind_22unmanaged22_22thiscall22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22728,9 +22728,9 @@ public partial class  callKind_22unmanaged22_22fastcall22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unmanaged\"", "\"fastcall\"" } ;
-	public override System.Decimal RuleNumber { get { return 362 ; } }
-	public override int Symbol { get { return Automaton._callKind ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 362 ; } }
+	public override int      Symbol { get { return Automaton._callKind ; } }
+	public override bool     Useful { get { return true ; } }
 	public callKind_22unmanaged22_22fastcall22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -22744,9 +22744,9 @@ public partial class  nativeType
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 363 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 363 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -22760,9 +22760,9 @@ public partial class  nativeType_22custom22_272827_compQstring_272C27_compQstrin
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"custom\"", "'('", "compQstring", "','", "compQstring", "','", "compQstring", "','", "compQstring", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 364 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 364 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22custom22_272827_compQstring_272C27_compQstring_272C27_compQstring_272C27_compQstring_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 10 ] ;
@@ -22776,9 +22776,9 @@ public partial class  nativeType_22custom22_272827_compQstring_272C27_compQstrin
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"custom\"", "'('", "compQstring", "','", "compQstring", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 365 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 365 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22custom22_272827_compQstring_272C27_compQstring_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -22792,9 +22792,9 @@ public partial class  nativeType_22fixed22_22sysstring22_275B27_int3332_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"fixed\"", "\"sysstring\"", "'['", "int32", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 366 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 366 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22fixed22_22sysstring22_275B27_int3332_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -22808,9 +22808,9 @@ public partial class  nativeType_22fixed22_22array22_275B27_int3332_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"fixed\"", "\"array\"", "'['", "int32", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 367 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 367 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22fixed22_22array22_275B27_int3332_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -22824,9 +22824,9 @@ public partial class  nativeType_22variant22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"variant\"" } ;
-	public override System.Decimal RuleNumber { get { return 368 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 368 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22variant22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22840,9 +22840,9 @@ public partial class  nativeType_22currency22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"currency\"" } ;
-	public override System.Decimal RuleNumber { get { return 369 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 369 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22currency22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22856,9 +22856,9 @@ public partial class  nativeType_22syschar22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"syschar\"" } ;
-	public override System.Decimal RuleNumber { get { return 370 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 370 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22syschar22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22872,9 +22872,9 @@ public partial class  nativeType_22void22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"void\"" } ;
-	public override System.Decimal RuleNumber { get { return 371 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 371 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22void22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22888,9 +22888,9 @@ public partial class  nativeType_22bool22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bool\"" } ;
-	public override System.Decimal RuleNumber { get { return 372 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 372 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22bool22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22904,9 +22904,9 @@ public partial class  nativeType_22int3822
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"" } ;
-	public override System.Decimal RuleNumber { get { return 373 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 373 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22int3822()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22920,9 +22920,9 @@ public partial class  nativeType_22int313622
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"" } ;
-	public override System.Decimal RuleNumber { get { return 374 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 374 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22int313622()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22936,9 +22936,9 @@ public partial class  nativeType_22int333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"" } ;
-	public override System.Decimal RuleNumber { get { return 375 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 375 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22int333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22952,9 +22952,9 @@ public partial class  nativeType_22int363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"" } ;
-	public override System.Decimal RuleNumber { get { return 376 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 376 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22int363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22968,9 +22968,9 @@ public partial class  nativeType_22float333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"" } ;
-	public override System.Decimal RuleNumber { get { return 377 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 377 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22float333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -22984,9 +22984,9 @@ public partial class  nativeType_22float363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"" } ;
-	public override System.Decimal RuleNumber { get { return 378 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 378 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22float363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23000,9 +23000,9 @@ public partial class  nativeType_22error22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"error\"" } ;
-	public override System.Decimal RuleNumber { get { return 379 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 379 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22error22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23016,9 +23016,9 @@ public partial class  nativeType_22unsigned22_22int3822
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int8\"" } ;
-	public override System.Decimal RuleNumber { get { return 380 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 380 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22unsigned22_22int3822()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23032,9 +23032,9 @@ public partial class  nativeType_22unsigned22_22int313622
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int16\"" } ;
-	public override System.Decimal RuleNumber { get { return 381 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 381 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22unsigned22_22int313622()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23048,9 +23048,9 @@ public partial class  nativeType_22unsigned22_22int333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int32\"" } ;
-	public override System.Decimal RuleNumber { get { return 382 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 382 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22unsigned22_22int333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23064,9 +23064,9 @@ public partial class  nativeType_22unsigned22_22int363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int64\"" } ;
-	public override System.Decimal RuleNumber { get { return 383 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 383 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22unsigned22_22int363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23080,9 +23080,9 @@ public partial class  nativeType_nativeType_272A27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'*'" } ;
-	public override System.Decimal RuleNumber { get { return 384 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 384 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_nativeType_272A27()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23096,9 +23096,9 @@ public partial class  nativeType_nativeType_275B27_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'['", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 385 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 385 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_nativeType_275B27_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -23112,9 +23112,9 @@ public partial class  nativeType_nativeType_275B27_int3332_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'['", "int32", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 386 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 386 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_nativeType_275B27_int3332_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -23128,9 +23128,9 @@ public partial class  nativeType_nativeType_275B27_int3332_272B27_int3332_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'['", "int32", "'+'", "int32", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 387 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 387 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_nativeType_275B27_int3332_272B27_int3332_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -23144,9 +23144,9 @@ public partial class  nativeType_nativeType_275B27_272B27_int3332_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nativeType", "'['", "'+'", "int32", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 388 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 388 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_nativeType_275B27_272B27_int3332_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -23160,9 +23160,9 @@ public partial class  nativeType_22decimal22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"decimal\"" } ;
-	public override System.Decimal RuleNumber { get { return 389 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 389 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22decimal22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23176,9 +23176,9 @@ public partial class  nativeType_22date22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"date\"" } ;
-	public override System.Decimal RuleNumber { get { return 390 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 390 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22date22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23192,9 +23192,9 @@ public partial class  nativeType_22bstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 391 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 391 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22bstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23208,9 +23208,9 @@ public partial class  nativeType_22lpstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 392 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 392 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22lpstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23224,9 +23224,9 @@ public partial class  nativeType_22lpwstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpwstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 393 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 393 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22lpwstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23240,9 +23240,9 @@ public partial class  nativeType_22lptstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lptstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 394 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 394 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22lptstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23256,9 +23256,9 @@ public partial class  nativeType_22objectref22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"objectref\"" } ;
-	public override System.Decimal RuleNumber { get { return 395 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 395 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22objectref22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23272,9 +23272,9 @@ public partial class  nativeType_22iunknown22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"iunknown\"" } ;
-	public override System.Decimal RuleNumber { get { return 396 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 396 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22iunknown22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23288,9 +23288,9 @@ public partial class  nativeType_22idispatch22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"idispatch\"" } ;
-	public override System.Decimal RuleNumber { get { return 397 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 397 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22idispatch22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23304,9 +23304,9 @@ public partial class  nativeType_22struct22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"struct\"" } ;
-	public override System.Decimal RuleNumber { get { return 398 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 398 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22struct22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23320,9 +23320,9 @@ public partial class  nativeType_22interface22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"interface\"" } ;
-	public override System.Decimal RuleNumber { get { return 399 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 399 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22interface22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23336,9 +23336,9 @@ public partial class  nativeType_22safearray22_variantType
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"safearray\"", "variantType" } ;
-	public override System.Decimal RuleNumber { get { return 400 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 400 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22safearray22_variantType()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23352,9 +23352,9 @@ public partial class  nativeType_22safearray22_variantType_272C27_compQstring
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"safearray\"", "variantType", "','", "compQstring" } ;
-	public override System.Decimal RuleNumber { get { return 401 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 401 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22safearray22_variantType_272C27_compQstring()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -23368,9 +23368,9 @@ public partial class  nativeType_22int22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int\"" } ;
-	public override System.Decimal RuleNumber { get { return 402 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 402 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22int22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23384,9 +23384,9 @@ public partial class  nativeType_22unsigned22_22int22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int\"" } ;
-	public override System.Decimal RuleNumber { get { return 403 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 403 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22unsigned22_22int22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23400,9 +23400,9 @@ public partial class  nativeType_22nested22_22struct22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"nested\"", "\"struct\"" } ;
-	public override System.Decimal RuleNumber { get { return 404 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 404 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22nested22_22struct22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23416,9 +23416,9 @@ public partial class  nativeType_22byvalstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"byvalstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 405 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 405 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22byvalstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23432,9 +23432,9 @@ public partial class  nativeType_22ansi22_22bstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"ansi\"", "\"bstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 406 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 406 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22ansi22_22bstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23448,9 +23448,9 @@ public partial class  nativeType_22tbstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"tbstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 407 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 407 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22tbstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23464,9 +23464,9 @@ public partial class  nativeType_22variant22_22bool22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"variant\"", "\"bool\"" } ;
-	public override System.Decimal RuleNumber { get { return 408 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 408 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22variant22_22bool22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23480,9 +23480,9 @@ public partial class  nativeType_methodSpec
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodSpec" } ;
-	public override System.Decimal RuleNumber { get { return 409 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 409 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_methodSpec()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23496,9 +23496,9 @@ public partial class  nativeType_22as22_22any22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"as\"", "\"any\"" } ;
-	public override System.Decimal RuleNumber { get { return 410 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 410 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22as22_22any22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23512,9 +23512,9 @@ public partial class  nativeType_22lpstruct22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpstruct\"" } ;
-	public override System.Decimal RuleNumber { get { return 411 ; } }
-	public override int Symbol { get { return Automaton._nativeType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 411 ; } }
+	public override int      Symbol { get { return Automaton._nativeType ; } }
+	public override bool     Useful { get { return true ; } }
 	public nativeType_22lpstruct22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23528,9 +23528,9 @@ public partial class  variantType
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 412 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 412 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -23544,9 +23544,9 @@ public partial class  variantType_22null22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"null\"" } ;
-	public override System.Decimal RuleNumber { get { return 413 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 413 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22null22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23560,9 +23560,9 @@ public partial class  variantType_22variant22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"variant\"" } ;
-	public override System.Decimal RuleNumber { get { return 414 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 414 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22variant22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23576,9 +23576,9 @@ public partial class  variantType_22currency22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"currency\"" } ;
-	public override System.Decimal RuleNumber { get { return 415 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 415 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22currency22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23592,9 +23592,9 @@ public partial class  variantType_22void22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"void\"" } ;
-	public override System.Decimal RuleNumber { get { return 416 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 416 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22void22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23608,9 +23608,9 @@ public partial class  variantType_22bool22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bool\"" } ;
-	public override System.Decimal RuleNumber { get { return 417 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 417 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22bool22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23624,9 +23624,9 @@ public partial class  variantType_22int3822
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"" } ;
-	public override System.Decimal RuleNumber { get { return 418 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 418 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22int3822()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23640,9 +23640,9 @@ public partial class  variantType_22int313622
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"" } ;
-	public override System.Decimal RuleNumber { get { return 419 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 419 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22int313622()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23656,9 +23656,9 @@ public partial class  variantType_22int333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"" } ;
-	public override System.Decimal RuleNumber { get { return 420 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 420 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22int333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23672,9 +23672,9 @@ public partial class  variantType_22int363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"" } ;
-	public override System.Decimal RuleNumber { get { return 421 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 421 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22int363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23688,9 +23688,9 @@ public partial class  variantType_22float333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"" } ;
-	public override System.Decimal RuleNumber { get { return 422 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 422 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22float333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23704,9 +23704,9 @@ public partial class  variantType_22float363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"" } ;
-	public override System.Decimal RuleNumber { get { return 423 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 423 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22float363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23720,9 +23720,9 @@ public partial class  variantType_22unsigned22_22int3822
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int8\"" } ;
-	public override System.Decimal RuleNumber { get { return 424 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 424 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22unsigned22_22int3822()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23736,9 +23736,9 @@ public partial class  variantType_22unsigned22_22int313622
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int16\"" } ;
-	public override System.Decimal RuleNumber { get { return 425 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 425 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22unsigned22_22int313622()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23752,9 +23752,9 @@ public partial class  variantType_22unsigned22_22int333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int32\"" } ;
-	public override System.Decimal RuleNumber { get { return 426 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 426 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22unsigned22_22int333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23768,9 +23768,9 @@ public partial class  variantType_22unsigned22_22int363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int64\"" } ;
-	public override System.Decimal RuleNumber { get { return 427 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 427 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22unsigned22_22int363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23784,9 +23784,9 @@ public partial class  variantType_272A27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'*'" } ;
-	public override System.Decimal RuleNumber { get { return 428 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 428 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_272A27()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23800,9 +23800,9 @@ public partial class  variantType_variantType_275B27_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "variantType", "'['", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 429 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 429 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_variantType_275B27_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -23816,9 +23816,9 @@ public partial class  variantType_variantType_22vector22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "variantType", "\"vector\"" } ;
-	public override System.Decimal RuleNumber { get { return 430 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 430 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_variantType_22vector22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23832,9 +23832,9 @@ public partial class  variantType_variantType_272627
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "variantType", "'&'" } ;
-	public override System.Decimal RuleNumber { get { return 431 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 431 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_variantType_272627()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -23848,9 +23848,9 @@ public partial class  variantType_22decimal22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"decimal\"" } ;
-	public override System.Decimal RuleNumber { get { return 432 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 432 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22decimal22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23864,9 +23864,9 @@ public partial class  variantType_22date22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"date\"" } ;
-	public override System.Decimal RuleNumber { get { return 433 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 433 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22date22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23880,9 +23880,9 @@ public partial class  variantType_22bstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 434 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 434 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22bstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23896,9 +23896,9 @@ public partial class  variantType_22lpstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 435 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 435 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22lpstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23912,9 +23912,9 @@ public partial class  variantType_22lpwstr22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"lpwstr\"" } ;
-	public override System.Decimal RuleNumber { get { return 436 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 436 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22lpwstr22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23928,9 +23928,9 @@ public partial class  variantType_22iunknown22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"iunknown\"" } ;
-	public override System.Decimal RuleNumber { get { return 437 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 437 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22iunknown22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23944,9 +23944,9 @@ public partial class  variantType_22idispatch22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"idispatch\"" } ;
-	public override System.Decimal RuleNumber { get { return 438 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 438 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22idispatch22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23960,9 +23960,9 @@ public partial class  variantType_22safearray22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"safearray\"" } ;
-	public override System.Decimal RuleNumber { get { return 439 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 439 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22safearray22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23976,9 +23976,9 @@ public partial class  variantType_22int22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int\"" } ;
-	public override System.Decimal RuleNumber { get { return 440 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 440 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22int22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -23992,9 +23992,9 @@ public partial class  variantType_22unsigned22_22int22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int\"" } ;
-	public override System.Decimal RuleNumber { get { return 441 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 441 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22unsigned22_22int22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24008,9 +24008,9 @@ public partial class  variantType_22error22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"error\"" } ;
-	public override System.Decimal RuleNumber { get { return 442 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 442 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22error22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24024,9 +24024,9 @@ public partial class  variantType_22hresult22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"hresult\"" } ;
-	public override System.Decimal RuleNumber { get { return 443 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 443 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22hresult22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24040,9 +24040,9 @@ public partial class  variantType_22carray22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"carray\"" } ;
-	public override System.Decimal RuleNumber { get { return 444 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 444 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22carray22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24056,9 +24056,9 @@ public partial class  variantType_22userdefined22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"userdefined\"" } ;
-	public override System.Decimal RuleNumber { get { return 445 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 445 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22userdefined22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24072,9 +24072,9 @@ public partial class  variantType_22record22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"record\"" } ;
-	public override System.Decimal RuleNumber { get { return 446 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 446 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22record22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24088,9 +24088,9 @@ public partial class  variantType_22filetime22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"filetime\"" } ;
-	public override System.Decimal RuleNumber { get { return 447 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 447 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22filetime22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24104,9 +24104,9 @@ public partial class  variantType_22blob22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"blob\"" } ;
-	public override System.Decimal RuleNumber { get { return 448 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 448 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22blob22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24120,9 +24120,9 @@ public partial class  variantType_22stream22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"stream\"" } ;
-	public override System.Decimal RuleNumber { get { return 449 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 449 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22stream22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24136,9 +24136,9 @@ public partial class  variantType_22storage22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"storage\"" } ;
-	public override System.Decimal RuleNumber { get { return 450 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 450 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22storage22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24152,9 +24152,9 @@ public partial class  variantType_22streamed5Fobject22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"streamed_object\"" } ;
-	public override System.Decimal RuleNumber { get { return 451 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 451 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22streamed5Fobject22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24168,9 +24168,9 @@ public partial class  variantType_22stored5Fobject22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"stored_object\"" } ;
-	public override System.Decimal RuleNumber { get { return 452 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 452 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22stored5Fobject22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24184,9 +24184,9 @@ public partial class  variantType_22blob5Fobject22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"blob_object\"" } ;
-	public override System.Decimal RuleNumber { get { return 453 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 453 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22blob5Fobject22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24200,9 +24200,9 @@ public partial class  variantType_22cf22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"cf\"" } ;
-	public override System.Decimal RuleNumber { get { return 454 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 454 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22cf22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24216,9 +24216,9 @@ public partial class  variantType_22clsid22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"clsid\"" } ;
-	public override System.Decimal RuleNumber { get { return 455 ; } }
-	public override int Symbol { get { return Automaton._variantType ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 455 ; } }
+	public override int      Symbol { get { return Automaton._variantType ; } }
+	public override bool     Useful { get { return true ; } }
 	public variantType_22clsid22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24235,9 +24235,9 @@ public partial class  type_22class22_className
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"class\"", "className" } ;
-	public override System.Decimal RuleNumber { get { return 456 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 456 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22class22_className()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24254,9 +24254,9 @@ public partial class  type_22object22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"object\"" } ;
-	public override System.Decimal RuleNumber { get { return 457 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 457 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22object22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24273,9 +24273,9 @@ public partial class  type_22string22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"string\"" } ;
-	public override System.Decimal RuleNumber { get { return 458 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 458 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22string22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24289,9 +24289,9 @@ public partial class  type_22value22_22class22_className
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"value\"", "\"class\"", "className" } ;
-	public override System.Decimal RuleNumber { get { return 459 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 459 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22value22_22class22_className()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -24308,9 +24308,9 @@ public partial class  type_22valuetype22_className
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"valuetype\"", "className" } ;
-	public override System.Decimal RuleNumber { get { return 460 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 460 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22valuetype22_className()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24327,9 +24327,9 @@ public partial class  type_type_275B27_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'['", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 461 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 461 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_type_275B27_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -24346,9 +24346,9 @@ public partial class  type_type_275B27_bounds31_275D27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'['", "bounds1", "']'" } ;
-	public override System.Decimal RuleNumber { get { return 462 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 462 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_type_275B27_bounds31_275D27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -24365,9 +24365,9 @@ public partial class  type_type_272627
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'&'" } ;
-	public override System.Decimal RuleNumber { get { return 463 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 463 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_type_272627()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24384,9 +24384,9 @@ public partial class  type_type_272A27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'*'" } ;
-	public override System.Decimal RuleNumber { get { return 464 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 464 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_type_272A27()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24403,9 +24403,9 @@ public partial class  type_type_273C27_genArgs_273E27
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "'<'", "genArgs", "'>'" } ;
-	public override System.Decimal RuleNumber { get { return 465 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 465 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_type_273C27_genArgs_273E27()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -24419,9 +24419,9 @@ public partial class  type_type_22pinned22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "\"pinned\"" } ;
-	public override System.Decimal RuleNumber { get { return 466 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 466 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_type_22pinned22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24435,9 +24435,9 @@ public partial class  type_type_22modreq22_272827_className_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "\"modreq\"", "'('", "className", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 467 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 467 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_type_22modreq22_272827_className_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -24451,9 +24451,9 @@ public partial class  type_type_22modopt22_272827_className_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type", "\"modopt\"", "'('", "className", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 468 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 468 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_type_22modopt22_272827_className_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -24470,9 +24470,9 @@ public partial class  type_272127_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "'!'", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 469 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 469 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_272127_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24486,9 +24486,9 @@ public partial class  type_methodSpec_callConv_type_272A27_272827_sigArgs30_2729
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "methodSpec", "callConv", "type", "'*'", "'('", "sigArgs0", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 470 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 470 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_methodSpec_callConv_type_272A27_272827_sigArgs30_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 7 ] ;
@@ -24502,9 +24502,9 @@ public partial class  type_22typedref22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"typedref\"" } ;
-	public override System.Decimal RuleNumber { get { return 471 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 471 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22typedref22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24521,9 +24521,9 @@ public partial class  type_22char22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"char\"" } ;
-	public override System.Decimal RuleNumber { get { return 472 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 472 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22char22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24540,9 +24540,9 @@ public partial class  type_22void22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"void\"" } ;
-	public override System.Decimal RuleNumber { get { return 473 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 473 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22void22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24559,9 +24559,9 @@ public partial class  type_22bool22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"bool\"" } ;
-	public override System.Decimal RuleNumber { get { return 474 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 474 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22bool22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24575,9 +24575,9 @@ public partial class  type_22int3822
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int8\"" } ;
-	public override System.Decimal RuleNumber { get { return 475 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 475 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22int3822()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24594,9 +24594,9 @@ public partial class  type_22int313622
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int16\"" } ;
-	public override System.Decimal RuleNumber { get { return 476 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 476 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22int313622()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24613,9 +24613,9 @@ public partial class  type_22int333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"" } ;
-	public override System.Decimal RuleNumber { get { return 477 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 477 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22int333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24629,9 +24629,9 @@ public partial class  type_22int363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int64\"" } ;
-	public override System.Decimal RuleNumber { get { return 478 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 478 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22int363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24645,9 +24645,9 @@ public partial class  type_22float333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"" } ;
-	public override System.Decimal RuleNumber { get { return 479 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 479 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22float333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24661,9 +24661,9 @@ public partial class  type_22float363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"" } ;
-	public override System.Decimal RuleNumber { get { return 480 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 480 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22float363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24677,9 +24677,9 @@ public partial class  type_22unsigned22_22int3822
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int8\"" } ;
-	public override System.Decimal RuleNumber { get { return 481 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 481 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22unsigned22_22int3822()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24693,9 +24693,9 @@ public partial class  type_22unsigned22_22int313622
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int16\"" } ;
-	public override System.Decimal RuleNumber { get { return 482 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 482 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22unsigned22_22int313622()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24709,9 +24709,9 @@ public partial class  type_22unsigned22_22int333222
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int32\"" } ;
-	public override System.Decimal RuleNumber { get { return 483 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 483 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22unsigned22_22int333222()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24725,9 +24725,9 @@ public partial class  type_22unsigned22_22int363422
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"unsigned\"", "\"int64\"" } ;
-	public override System.Decimal RuleNumber { get { return 484 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 484 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22unsigned22_22int363422()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24744,9 +24744,9 @@ public partial class  type_22native22_22int22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"native\"", "\"int\"" } ;
-	public override System.Decimal RuleNumber { get { return 485 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 485 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22native22_22int22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24760,9 +24760,9 @@ public partial class  type_22native22_22unsigned22_22int22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"native\"", "\"unsigned\"", "\"int\"" } ;
-	public override System.Decimal RuleNumber { get { return 486 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 486 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22native22_22unsigned22_22int22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -24776,9 +24776,9 @@ public partial class  type_22native22_22float22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"native\"", "\"float\"" } ;
-	public override System.Decimal RuleNumber { get { return 487 ; } }
-	public override int Symbol { get { return Automaton._type ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 487 ; } }
+	public override int      Symbol { get { return Automaton._type ; } }
+	public override bool     Useful { get { return true ; } }
 	public type_22native22_22float22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24795,9 +24795,9 @@ public partial class  genArgs_type
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "type" } ;
-	public override System.Decimal RuleNumber { get { return 488 ; } }
-	public override int Symbol { get { return Automaton._genArgs ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 488 ; } }
+	public override int      Symbol { get { return Automaton._genArgs ; } }
+	public override bool     Useful { get { return true ; } }
 	public genArgs_type()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24814,9 +24814,9 @@ public partial class  genArgs_genArgs_272C27_type
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "genArgs", "','", "type" } ;
-	public override System.Decimal RuleNumber { get { return 489 ; } }
-	public override int Symbol { get { return Automaton._genArgs ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 489 ; } }
+	public override int      Symbol { get { return Automaton._genArgs ; } }
+	public override bool     Useful { get { return true ; } }
 	public genArgs_genArgs_272C27_type()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -24833,9 +24833,9 @@ public partial class  bounds1_bound
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bound" } ;
-	public override System.Decimal RuleNumber { get { return 490 ; } }
-	public override int Symbol { get { return Automaton._bounds31 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 490 ; } }
+	public override int      Symbol { get { return Automaton._bounds31 ; } }
+	public override bool     Useful { get { return true ; } }
 	public bounds1_bound()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24849,9 +24849,9 @@ public partial class  bounds1_bounds31_272C27_bound
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "bounds1", "','", "bound" } ;
-	public override System.Decimal RuleNumber { get { return 491 ; } }
-	public override int Symbol { get { return Automaton._bounds31 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 491 ; } }
+	public override int      Symbol { get { return Automaton._bounds31 ; } }
+	public override bool     Useful { get { return true ; } }
 	public bounds1_bounds31_272C27_bound()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -24865,9 +24865,9 @@ public partial class  bound
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 492 ; } }
-	public override int Symbol { get { return Automaton._bound ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 492 ; } }
+	public override int      Symbol { get { return Automaton._bound ; } }
+	public override bool     Useful { get { return true ; } }
 	public bound()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -24881,9 +24881,9 @@ public partial class  bound_222E2E2E22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"...\"" } ;
-	public override System.Decimal RuleNumber { get { return 493 ; } }
-	public override int Symbol { get { return Automaton._bound ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 493 ; } }
+	public override int      Symbol { get { return Automaton._bound ; } }
+	public override bool     Useful { get { return true ; } }
 	public bound_222E2E2E22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24897,9 +24897,9 @@ public partial class  bound_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32" } ;
-	public override System.Decimal RuleNumber { get { return 494 ; } }
-	public override int Symbol { get { return Automaton._bound ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 494 ; } }
+	public override int      Symbol { get { return Automaton._bound ; } }
+	public override bool     Useful { get { return true ; } }
 	public bound_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -24913,9 +24913,9 @@ public partial class  bound_int3332_222E2E2E22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32", "\"...\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 495 ; } }
-	public override int Symbol { get { return Automaton._bound ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 495 ; } }
+	public override int      Symbol { get { return Automaton._bound ; } }
+	public override bool     Useful { get { return true ; } }
 	public bound_int3332_222E2E2E22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -24929,9 +24929,9 @@ public partial class  bound_int3332_222E2E2E22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32", "\"...\"" } ;
-	public override System.Decimal RuleNumber { get { return 496 ; } }
-	public override int Symbol { get { return Automaton._bound ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 496 ; } }
+	public override int      Symbol { get { return Automaton._bound ; } }
+	public override bool     Useful { get { return true ; } }
 	public bound_int3332_222E2E2E22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -24945,9 +24945,9 @@ public partial class  labels
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 497 ; } }
-	public override int Symbol { get { return Automaton._labels ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 497 ; } }
+	public override int      Symbol { get { return Automaton._labels ; } }
+	public override bool     Useful { get { return true ; } }
 	public labels()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -24964,9 +24964,9 @@ public partial class  labels_id_272C27_labels
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id", "','", "labels" } ;
-	public override System.Decimal RuleNumber { get { return 498 ; } }
-	public override int Symbol { get { return Automaton._labels ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 498 ; } }
+	public override int      Symbol { get { return Automaton._labels ; } }
+	public override bool     Useful { get { return true ; } }
 	public labels_id_272C27_labels()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -24980,9 +24980,9 @@ public partial class  labels_int3332_272C27_labels
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32", "','", "labels" } ;
-	public override System.Decimal RuleNumber { get { return 499 ; } }
-	public override int Symbol { get { return Automaton._labels ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 499 ; } }
+	public override int      Symbol { get { return Automaton._labels ; } }
+	public override bool     Useful { get { return true ; } }
 	public labels_int3332_272C27_labels()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -24999,9 +24999,9 @@ public partial class  labels_id
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "id" } ;
-	public override System.Decimal RuleNumber { get { return 500 ; } }
-	public override int Symbol { get { return Automaton._labels ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 500 ; } }
+	public override int      Symbol { get { return Automaton._labels ; } }
+	public override bool     Useful { get { return true ; } }
 	public labels_id()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25015,9 +25015,9 @@ public partial class  labels_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32" } ;
-	public override System.Decimal RuleNumber { get { return 501 ; } }
-	public override int Symbol { get { return Automaton._labels ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 501 ; } }
+	public override int      Symbol { get { return Automaton._labels ; } }
+	public override bool     Useful { get { return true ; } }
 	public labels_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25034,9 +25034,9 @@ public partial class  id_ID
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "ID" } ;
-	public override System.Decimal RuleNumber { get { return 502 ; } }
-	public override int Symbol { get { return Automaton._id ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 502 ; } }
+	public override int      Symbol { get { return Automaton._id ; } }
+	public override bool     Useful { get { return true ; } }
 	public id_ID()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25053,9 +25053,9 @@ public partial class  id_SQSTRING
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "SQSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 503 ; } }
-	public override int Symbol { get { return Automaton._id ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 503 ; } }
+	public override int      Symbol { get { return Automaton._id ; } }
+	public override bool     Useful { get { return true ; } }
 	public id_SQSTRING()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25069,9 +25069,9 @@ public partial class  int16s
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 504 ; } }
-	public override int Symbol { get { return Automaton._int3136s ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 504 ; } }
+	public override int      Symbol { get { return Automaton._int3136s ; } }
+	public override bool     Useful { get { return true ; } }
 	public int16s()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -25085,9 +25085,9 @@ public partial class  int16s_int3136s_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int16s", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 505 ; } }
-	public override int Symbol { get { return Automaton._int3136s ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 505 ; } }
+	public override int      Symbol { get { return Automaton._int3136s ; } }
+	public override bool     Useful { get { return true ; } }
 	public int16s_int3136s_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -25104,9 +25104,9 @@ public partial class  int32_INT3634
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INT64" } ;
-	public override System.Decimal RuleNumber { get { return 506 ; } }
-	public override int Symbol { get { return Automaton._int3332 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 506 ; } }
+	public override int      Symbol { get { return Automaton._int3332 ; } }
+	public override bool     Useful { get { return true ; } }
 	public int32_INT3634()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25123,9 +25123,9 @@ public partial class  int64_INT3634
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "INT64" } ;
-	public override System.Decimal RuleNumber { get { return 507 ; } }
-	public override int Symbol { get { return Automaton._int3634 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 507 ; } }
+	public override int      Symbol { get { return Automaton._int3634 ; } }
+	public override bool     Useful { get { return true ; } }
 	public int64_INT3634()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25139,9 +25139,9 @@ public partial class  float64_FLOAT3634
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "FLOAT64" } ;
-	public override System.Decimal RuleNumber { get { return 508 ; } }
-	public override int Symbol { get { return Automaton._float3634 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 508 ; } }
+	public override int      Symbol { get { return Automaton._float3634 ; } }
+	public override bool     Useful { get { return true ; } }
 	public float64_FLOAT3634()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25155,9 +25155,9 @@ public partial class  float64_22float333222_272827_int3332_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float32\"", "'('", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 509 ; } }
-	public override int Symbol { get { return Automaton._float3634 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 509 ; } }
+	public override int      Symbol { get { return Automaton._float3634 ; } }
+	public override bool     Useful { get { return true ; } }
 	public float64_22float333222_272827_int3332_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -25171,9 +25171,9 @@ public partial class  float64_22float363422_272827_int3634_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"float64\"", "'('", "int64", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 510 ; } }
-	public override int Symbol { get { return Automaton._float3634 ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 510 ; } }
+	public override int      Symbol { get { return Automaton._float3634 ; } }
+	public override bool     Useful { get { return true ; } }
 	public float64_22float363422_272827_int3634_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -25187,9 +25187,9 @@ public partial class  secDecl_222Epermission22_secAction_typeSpec_272827_nameVal
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".permission\"", "secAction", "typeSpec", "'('", "nameValPairs", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 511 ; } }
-	public override int Symbol { get { return Automaton._secDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 511 ; } }
+	public override int      Symbol { get { return Automaton._secDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public secDecl_222Epermission22_secAction_typeSpec_272827_nameValPairs_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -25203,9 +25203,9 @@ public partial class  secDecl_222Epermission22_secAction_typeSpec
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".permission\"", "secAction", "typeSpec" } ;
-	public override System.Decimal RuleNumber { get { return 512 ; } }
-	public override int Symbol { get { return Automaton._secDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 512 ; } }
+	public override int      Symbol { get { return Automaton._secDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public secDecl_222Epermission22_secAction_typeSpec()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -25219,9 +25219,9 @@ public partial class  secDecl_psetHead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "psetHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 513 ; } }
-	public override int Symbol { get { return Automaton._secDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 513 ; } }
+	public override int      Symbol { get { return Automaton._secDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public secDecl_psetHead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -25235,9 +25235,9 @@ public partial class  psetHead_222Epermissionset22_secAction_273D27_272827
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".permissionset\"", "secAction", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 514 ; } }
-	public override int Symbol { get { return Automaton._psetHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 514 ; } }
+	public override int      Symbol { get { return Automaton._psetHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public psetHead_222Epermissionset22_secAction_273D27_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -25251,9 +25251,9 @@ public partial class  nameValPairs_nameValPair
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nameValPair" } ;
-	public override System.Decimal RuleNumber { get { return 515 ; } }
-	public override int Symbol { get { return Automaton._nameValPairs ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 515 ; } }
+	public override int      Symbol { get { return Automaton._nameValPairs ; } }
+	public override bool     Useful { get { return true ; } }
 	public nameValPairs_nameValPair()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25267,9 +25267,9 @@ public partial class  nameValPairs_nameValPair_272C27_nameValPairs
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "nameValPair", "','", "nameValPairs" } ;
-	public override System.Decimal RuleNumber { get { return 516 ; } }
-	public override int Symbol { get { return Automaton._nameValPairs ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 516 ; } }
+	public override int      Symbol { get { return Automaton._nameValPairs ; } }
+	public override bool     Useful { get { return true ; } }
 	public nameValPairs_nameValPair_272C27_nameValPairs()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -25283,9 +25283,9 @@ public partial class  nameValPair_compQstring_273D27_caValue
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring", "'='", "caValue" } ;
-	public override System.Decimal RuleNumber { get { return 517 ; } }
-	public override int Symbol { get { return Automaton._nameValPair ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 517 ; } }
+	public override int      Symbol { get { return Automaton._nameValPair ; } }
+	public override bool     Useful { get { return true ; } }
 	public nameValPair_compQstring_273D27_caValue()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -25299,9 +25299,9 @@ public partial class  truefalse_22true22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"true\"" } ;
-	public override System.Decimal RuleNumber { get { return 518 ; } }
-	public override int Symbol { get { return Automaton._truefalse ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 518 ; } }
+	public override int      Symbol { get { return Automaton._truefalse ; } }
+	public override bool     Useful { get { return true ; } }
 	public truefalse_22true22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25315,9 +25315,9 @@ public partial class  truefalse_22false22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"false\"" } ;
-	public override System.Decimal RuleNumber { get { return 519 ; } }
-	public override int Symbol { get { return Automaton._truefalse ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 519 ; } }
+	public override int      Symbol { get { return Automaton._truefalse ; } }
+	public override bool     Useful { get { return true ; } }
 	public truefalse_22false22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25331,9 +25331,9 @@ public partial class  caValue_truefalse
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "truefalse" } ;
-	public override System.Decimal RuleNumber { get { return 520 ; } }
-	public override int Symbol { get { return Automaton._caValue ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 520 ; } }
+	public override int      Symbol { get { return Automaton._caValue ; } }
+	public override bool     Useful { get { return true ; } }
 	public caValue_truefalse()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25347,9 +25347,9 @@ public partial class  caValue_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "int32" } ;
-	public override System.Decimal RuleNumber { get { return 521 ; } }
-	public override int Symbol { get { return Automaton._caValue ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 521 ; } }
+	public override int      Symbol { get { return Automaton._caValue ; } }
+	public override bool     Useful { get { return true ; } }
 	public caValue_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25363,9 +25363,9 @@ public partial class  caValue_22int333222_272827_int3332_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"int32\"", "'('", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 522 ; } }
-	public override int Symbol { get { return Automaton._caValue ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 522 ; } }
+	public override int      Symbol { get { return Automaton._caValue ; } }
+	public override bool     Useful { get { return true ; } }
 	public caValue_22int333222_272827_int3332_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -25379,9 +25379,9 @@ public partial class  caValue_compQstring
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "compQstring" } ;
-	public override System.Decimal RuleNumber { get { return 523 ; } }
-	public override int Symbol { get { return Automaton._caValue ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 523 ; } }
+	public override int      Symbol { get { return Automaton._caValue ; } }
+	public override bool     Useful { get { return true ; } }
 	public caValue_compQstring()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25395,9 +25395,9 @@ public partial class  caValue_className_272827_22int3822_273A27_int3332_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "\"int8\"", "':'", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 524 ; } }
-	public override int Symbol { get { return Automaton._caValue ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 524 ; } }
+	public override int      Symbol { get { return Automaton._caValue ; } }
+	public override bool     Useful { get { return true ; } }
 	public caValue_className_272827_22int3822_273A27_int3332_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -25411,9 +25411,9 @@ public partial class  caValue_className_272827_22int313622_273A27_int3332_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "\"int16\"", "':'", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 525 ; } }
-	public override int Symbol { get { return Automaton._caValue ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 525 ; } }
+	public override int      Symbol { get { return Automaton._caValue ; } }
+	public override bool     Useful { get { return true ; } }
 	public caValue_className_272827_22int313622_273A27_int3332_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -25427,9 +25427,9 @@ public partial class  caValue_className_272827_22int333222_273A27_int3332_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "\"int32\"", "':'", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 526 ; } }
-	public override int Symbol { get { return Automaton._caValue ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 526 ; } }
+	public override int      Symbol { get { return Automaton._caValue ; } }
+	public override bool     Useful { get { return true ; } }
 	public caValue_className_272827_22int333222_273A27_int3332_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 6 ] ;
@@ -25443,9 +25443,9 @@ public partial class  caValue_className_272827_int3332_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "className", "'('", "int32", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 527 ; } }
-	public override int Symbol { get { return Automaton._caValue ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 527 ; } }
+	public override int      Symbol { get { return Automaton._caValue ; } }
+	public override bool     Useful { get { return true ; } }
 	public caValue_className_272827_int3332_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -25459,9 +25459,9 @@ public partial class  secAction_22request22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"request\"" } ;
-	public override System.Decimal RuleNumber { get { return 528 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 528 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22request22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25475,9 +25475,9 @@ public partial class  secAction_22demand22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"demand\"" } ;
-	public override System.Decimal RuleNumber { get { return 529 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 529 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22demand22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25491,9 +25491,9 @@ public partial class  secAction_22assert22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"assert\"" } ;
-	public override System.Decimal RuleNumber { get { return 530 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 530 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22assert22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25507,9 +25507,9 @@ public partial class  secAction_22deny22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"deny\"" } ;
-	public override System.Decimal RuleNumber { get { return 531 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 531 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22deny22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25523,9 +25523,9 @@ public partial class  secAction_22permitonly22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"permitonly\"" } ;
-	public override System.Decimal RuleNumber { get { return 532 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 532 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22permitonly22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25539,9 +25539,9 @@ public partial class  secAction_22linkcheck22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"linkcheck\"" } ;
-	public override System.Decimal RuleNumber { get { return 533 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 533 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22linkcheck22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25555,9 +25555,9 @@ public partial class  secAction_22inheritcheck22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"inheritcheck\"" } ;
-	public override System.Decimal RuleNumber { get { return 534 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 534 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22inheritcheck22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25571,9 +25571,9 @@ public partial class  secAction_22reqmin22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"reqmin\"" } ;
-	public override System.Decimal RuleNumber { get { return 535 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 535 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22reqmin22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25587,9 +25587,9 @@ public partial class  secAction_22reqopt22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"reqopt\"" } ;
-	public override System.Decimal RuleNumber { get { return 536 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 536 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22reqopt22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25603,9 +25603,9 @@ public partial class  secAction_22reqrefuse22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"reqrefuse\"" } ;
-	public override System.Decimal RuleNumber { get { return 537 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 537 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22reqrefuse22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25619,9 +25619,9 @@ public partial class  secAction_22prejitgrant22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"prejitgrant\"" } ;
-	public override System.Decimal RuleNumber { get { return 538 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 538 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22prejitgrant22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25635,9 +25635,9 @@ public partial class  secAction_22prejitdeny22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"prejitdeny\"" } ;
-	public override System.Decimal RuleNumber { get { return 539 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 539 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22prejitdeny22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25651,9 +25651,9 @@ public partial class  secAction_22noncasdemand22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"noncasdemand\"" } ;
-	public override System.Decimal RuleNumber { get { return 540 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 540 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22noncasdemand22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25667,9 +25667,9 @@ public partial class  secAction_22noncaslinkdemand22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"noncaslinkdemand\"" } ;
-	public override System.Decimal RuleNumber { get { return 541 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 541 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22noncaslinkdemand22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25683,9 +25683,9 @@ public partial class  secAction_22noncasinheritance22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\"noncasinheritance\"" } ;
-	public override System.Decimal RuleNumber { get { return 542 ; } }
-	public override int Symbol { get { return Automaton._secAction ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 542 ; } }
+	public override int      Symbol { get { return Automaton._secAction ; } }
+	public override bool     Useful { get { return true ; } }
 	public secAction_22noncasinheritance22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25699,9 +25699,9 @@ public partial class  extSourceSpec_222Eline22_int3332_SQSTRING
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32", "SQSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 543 ; } }
-	public override int Symbol { get { return Automaton._extSourceSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 543 ; } }
+	public override int      Symbol { get { return Automaton._extSourceSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public extSourceSpec_222Eline22_int3332_SQSTRING()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -25715,9 +25715,9 @@ public partial class  extSourceSpec_222Eline22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 544 ; } }
-	public override int Symbol { get { return Automaton._extSourceSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 544 ; } }
+	public override int      Symbol { get { return Automaton._extSourceSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public extSourceSpec_222Eline22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -25731,9 +25731,9 @@ public partial class  extSourceSpec_222Eline22_int3332_273A27_int3332_SQSTRING
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32", "':'", "int32", "SQSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 545 ; } }
-	public override int Symbol { get { return Automaton._extSourceSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 545 ; } }
+	public override int      Symbol { get { return Automaton._extSourceSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public extSourceSpec_222Eline22_int3332_273A27_int3332_SQSTRING()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -25747,9 +25747,9 @@ public partial class  extSourceSpec_222Eline22_int3332_273A27_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".line\"", "int32", "':'", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 546 ; } }
-	public override int Symbol { get { return Automaton._extSourceSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 546 ; } }
+	public override int      Symbol { get { return Automaton._extSourceSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public extSourceSpec_222Eline22_int3332_273A27_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -25763,9 +25763,9 @@ public partial class  extSourceSpec_P5FLINE_int3332_QSTRING
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "P_LINE", "int32", "QSTRING" } ;
-	public override System.Decimal RuleNumber { get { return 547 ; } }
-	public override int Symbol { get { return Automaton._extSourceSpec ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 547 ; } }
+	public override int      Symbol { get { return Automaton._extSourceSpec ; } }
+	public override bool     Useful { get { return true ; } }
 	public extSourceSpec_P5FLINE_int3332_QSTRING()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -25779,9 +25779,9 @@ public partial class  fileDecl_222Efile22_fileAttr_name31_fileEntry_hashHead_byt
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "fileAttr", "name1", "fileEntry", "hashHead", "bytes", "')'", "fileEntry" } ;
-	public override System.Decimal RuleNumber { get { return 548 ; } }
-	public override int Symbol { get { return Automaton._fileDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 548 ; } }
+	public override int      Symbol { get { return Automaton._fileDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public fileDecl_222Efile22_fileAttr_name31_fileEntry_hashHead_bytes_272927_fileEntry()
 		{
 		argv = new Tokenset.Token[ arg_i = 8 ] ;
@@ -25795,9 +25795,9 @@ public partial class  fileDecl_222Efile22_fileAttr_name31_fileEntry
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "fileAttr", "name1", "fileEntry" } ;
-	public override System.Decimal RuleNumber { get { return 549 ; } }
-	public override int Symbol { get { return Automaton._fileDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 549 ; } }
+	public override int      Symbol { get { return Automaton._fileDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public fileDecl_222Efile22_fileAttr_name31_fileEntry()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -25811,9 +25811,9 @@ public partial class  fileAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 550 ; } }
-	public override int Symbol { get { return Automaton._fileAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 550 ; } }
+	public override int      Symbol { get { return Automaton._fileAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fileAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -25827,9 +25827,9 @@ public partial class  fileAttr_fileAttr_22nometadata22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "fileAttr", "\"nometadata\"" } ;
-	public override System.Decimal RuleNumber { get { return 551 ; } }
-	public override int Symbol { get { return Automaton._fileAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 551 ; } }
+	public override int      Symbol { get { return Automaton._fileAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public fileAttr_fileAttr_22nometadata22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -25843,9 +25843,9 @@ public partial class  fileEntry
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 552 ; } }
-	public override int Symbol { get { return Automaton._fileEntry ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 552 ; } }
+	public override int      Symbol { get { return Automaton._fileEntry ; } }
+	public override bool     Useful { get { return true ; } }
 	public fileEntry()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -25859,9 +25859,9 @@ public partial class  fileEntry_222Eentrypoint22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".entrypoint\"" } ;
-	public override System.Decimal RuleNumber { get { return 553 ; } }
-	public override int Symbol { get { return Automaton._fileEntry ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 553 ; } }
+	public override int      Symbol { get { return Automaton._fileEntry ; } }
+	public override bool     Useful { get { return true ; } }
 	public fileEntry_222Eentrypoint22()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -25875,9 +25875,9 @@ public partial class  hashHead_222Ehash22_273D27_272827
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".hash\"", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 554 ; } }
-	public override int Symbol { get { return Automaton._hashHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 554 ; } }
+	public override int      Symbol { get { return Automaton._hashHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public hashHead_222Ehash22_273D27_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -25894,9 +25894,9 @@ public partial class  assemblyHead_222Eassembly22_asmAttr_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "asmAttr", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 555 ; } }
-	public override int Symbol { get { return Automaton._assemblyHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 555 ; } }
+	public override int      Symbol { get { return Automaton._assemblyHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyHead_222Eassembly22_asmAttr_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -25910,9 +25910,9 @@ public partial class  asmAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 556 ; } }
-	public override int Symbol { get { return Automaton._asmAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 556 ; } }
+	public override int      Symbol { get { return Automaton._asmAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public asmAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -25926,9 +25926,9 @@ public partial class  asmAttr_asmAttr_22noappdomain22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmAttr", "\"noappdomain\"" } ;
-	public override System.Decimal RuleNumber { get { return 557 ; } }
-	public override int Symbol { get { return Automaton._asmAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 557 ; } }
+	public override int      Symbol { get { return Automaton._asmAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public asmAttr_asmAttr_22noappdomain22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -25942,9 +25942,9 @@ public partial class  asmAttr_asmAttr_22noprocess22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmAttr", "\"noprocess\"" } ;
-	public override System.Decimal RuleNumber { get { return 558 ; } }
-	public override int Symbol { get { return Automaton._asmAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 558 ; } }
+	public override int      Symbol { get { return Automaton._asmAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public asmAttr_asmAttr_22noprocess22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -25958,9 +25958,9 @@ public partial class  asmAttr_asmAttr_22nomachine22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmAttr", "\"nomachine\"" } ;
-	public override System.Decimal RuleNumber { get { return 559 ; } }
-	public override int Symbol { get { return Automaton._asmAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 559 ; } }
+	public override int      Symbol { get { return Automaton._asmAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public asmAttr_asmAttr_22nomachine22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -25974,9 +25974,9 @@ public partial class  assemblyDecls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 560 ; } }
-	public override int Symbol { get { return Automaton._assemblyDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 560 ; } }
+	public override int      Symbol { get { return Automaton._assemblyDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyDecls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -25993,9 +25993,9 @@ public partial class  assemblyDecls_assemblyDecls_assemblyDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyDecls", "assemblyDecl" } ;
-	public override System.Decimal RuleNumber { get { return 561 ; } }
-	public override int Symbol { get { return Automaton._assemblyDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 561 ; } }
+	public override int      Symbol { get { return Automaton._assemblyDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyDecls_assemblyDecls_assemblyDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26012,9 +26012,9 @@ public partial class  assemblyDecl_222Ehash22_22algorithm22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".hash\"", "\"algorithm\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 562 ; } }
-	public override int Symbol { get { return Automaton._assemblyDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 562 ; } }
+	public override int      Symbol { get { return Automaton._assemblyDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyDecl_222Ehash22_22algorithm22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26028,9 +26028,9 @@ public partial class  assemblyDecl_secDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "secDecl" } ;
-	public override System.Decimal RuleNumber { get { return 563 ; } }
-	public override int Symbol { get { return Automaton._assemblyDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 563 ; } }
+	public override int      Symbol { get { return Automaton._assemblyDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyDecl_secDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -26047,9 +26047,9 @@ public partial class  assemblyDecl_asmOrRefDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmOrRefDecl" } ;
-	public override System.Decimal RuleNumber { get { return 564 ; } }
-	public override int Symbol { get { return Automaton._assemblyDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 564 ; } }
+	public override int      Symbol { get { return Automaton._assemblyDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyDecl_asmOrRefDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -26063,9 +26063,9 @@ public partial class  asmOrRefDecl_publicKeyHead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "publicKeyHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 565 ; } }
-	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 565 ; } }
+	public override int      Symbol { get { return Automaton._asmOrRefDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public asmOrRefDecl_publicKeyHead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26082,9 +26082,9 @@ public partial class  asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int33
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".ver\"", "int32", "':'", "int32", "':'", "int32", "':'", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 566 ; } }
-	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 566 ; } }
+	public override int      Symbol { get { return Automaton._asmOrRefDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int3332_273A27_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 8 ] ;
@@ -26098,9 +26098,9 @@ public partial class  asmOrRefDecl_222Elocale22_compQstring
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".locale\"", "compQstring" } ;
-	public override System.Decimal RuleNumber { get { return 567 ; } }
-	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 567 ; } }
+	public override int      Symbol { get { return Automaton._asmOrRefDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public asmOrRefDecl_222Elocale22_compQstring()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26114,9 +26114,9 @@ public partial class  asmOrRefDecl_localeHead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "localeHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 568 ; } }
-	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 568 ; } }
+	public override int      Symbol { get { return Automaton._asmOrRefDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public asmOrRefDecl_localeHead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26133,9 +26133,9 @@ public partial class  asmOrRefDecl_customAttrDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 569 ; } }
-	public override int Symbol { get { return Automaton._asmOrRefDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 569 ; } }
+	public override int      Symbol { get { return Automaton._asmOrRefDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public asmOrRefDecl_customAttrDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -26149,9 +26149,9 @@ public partial class  publicKeyHead_222Epublickey22_273D27_272827
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".publickey\"", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 570 ; } }
-	public override int Symbol { get { return Automaton._publicKeyHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 570 ; } }
+	public override int      Symbol { get { return Automaton._publicKeyHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public publicKeyHead_222Epublickey22_273D27_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26168,9 +26168,9 @@ public partial class  publicKeyTokenHead_222Epublickeytoken22_273D27_272827
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".publickeytoken\"", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 571 ; } }
-	public override int Symbol { get { return Automaton._publicKeyTokenHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 571 ; } }
+	public override int      Symbol { get { return Automaton._publicKeyTokenHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public publicKeyTokenHead_222Epublickeytoken22_273D27_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26184,9 +26184,9 @@ public partial class  localeHead_222Elocale22_273D27_272827
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".locale\"", "'='", "'('" } ;
-	public override System.Decimal RuleNumber { get { return 572 ; } }
-	public override int Symbol { get { return Automaton._localeHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 572 ; } }
+	public override int      Symbol { get { return Automaton._localeHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public localeHead_222Elocale22_273D27_272827()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26203,9 +26203,9 @@ public partial class  assemblyRefHead_222Eassembly22_22extern22_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "\"extern\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 573 ; } }
-	public override int Symbol { get { return Automaton._assemblyRefHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 573 ; } }
+	public override int      Symbol { get { return Automaton._assemblyRefHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyRefHead_222Eassembly22_22extern22_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26219,9 +26219,9 @@ public partial class  assemblyRefHead_222Eassembly22_22extern22_name31_22as22_na
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "\"extern\"", "name1", "\"as\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 574 ; } }
-	public override int Symbol { get { return Automaton._assemblyRefHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 574 ; } }
+	public override int      Symbol { get { return Automaton._assemblyRefHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyRefHead_222Eassembly22_22extern22_name31_22as22_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 5 ] ;
@@ -26235,9 +26235,9 @@ public partial class  assemblyRefDecls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 575 ; } }
-	public override int Symbol { get { return Automaton._assemblyRefDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 575 ; } }
+	public override int      Symbol { get { return Automaton._assemblyRefDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyRefDecls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -26254,9 +26254,9 @@ public partial class  assemblyRefDecls_assemblyRefDecls_assemblyRefDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "assemblyRefDecls", "assemblyRefDecl" } ;
-	public override System.Decimal RuleNumber { get { return 576 ; } }
-	public override int Symbol { get { return Automaton._assemblyRefDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 576 ; } }
+	public override int      Symbol { get { return Automaton._assemblyRefDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyRefDecls_assemblyRefDecls_assemblyRefDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26270,9 +26270,9 @@ public partial class  assemblyRefDecl_hashHead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "hashHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 577 ; } }
-	public override int Symbol { get { return Automaton._assemblyRefDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 577 ; } }
+	public override int      Symbol { get { return Automaton._assemblyRefDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyRefDecl_hashHead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26289,9 +26289,9 @@ public partial class  assemblyRefDecl_asmOrRefDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "asmOrRefDecl" } ;
-	public override System.Decimal RuleNumber { get { return 578 ; } }
-	public override int Symbol { get { return Automaton._assemblyRefDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 578 ; } }
+	public override int      Symbol { get { return Automaton._assemblyRefDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyRefDecl_asmOrRefDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -26308,9 +26308,9 @@ public partial class  assemblyRefDecl_publicKeyTokenHead_bytes_272927
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "publicKeyTokenHead", "bytes", "')'" } ;
-	public override System.Decimal RuleNumber { get { return 579 ; } }
-	public override int Symbol { get { return Automaton._assemblyRefDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 579 ; } }
+	public override int      Symbol { get { return Automaton._assemblyRefDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public assemblyRefDecl_publicKeyTokenHead_bytes_272927()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26324,9 +26324,9 @@ public partial class  comtypeHead_222Eclass22_22extern22_comtAttr_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "\"extern\"", "comtAttr", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 580 ; } }
-	public override int Symbol { get { return Automaton._comtypeHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 580 ; } }
+	public override int      Symbol { get { return Automaton._comtypeHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtypeHead_222Eclass22_22extern22_comtAttr_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -26340,9 +26340,9 @@ public partial class  exportHead_222Eexport22_comtAttr_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".export\"", "comtAttr", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 581 ; } }
-	public override int Symbol { get { return Automaton._exportHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 581 ; } }
+	public override int      Symbol { get { return Automaton._exportHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public exportHead_222Eexport22_comtAttr_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26356,9 +26356,9 @@ public partial class  comtAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 582 ; } }
-	public override int Symbol { get { return Automaton._comtAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 582 ; } }
+	public override int      Symbol { get { return Automaton._comtAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -26372,9 +26372,9 @@ public partial class  comtAttr_comtAttr_22private22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 583 ; } }
-	public override int Symbol { get { return Automaton._comtAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 583 ; } }
+	public override int      Symbol { get { return Automaton._comtAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtAttr_comtAttr_22private22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26388,9 +26388,9 @@ public partial class  comtAttr_comtAttr_22public22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 584 ; } }
-	public override int Symbol { get { return Automaton._comtAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 584 ; } }
+	public override int      Symbol { get { return Automaton._comtAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtAttr_comtAttr_22public22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26404,9 +26404,9 @@ public partial class  comtAttr_comtAttr_22nested22_22public22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 585 ; } }
-	public override int Symbol { get { return Automaton._comtAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 585 ; } }
+	public override int      Symbol { get { return Automaton._comtAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22public22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26420,9 +26420,9 @@ public partial class  comtAttr_comtAttr_22nested22_22private22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 586 ; } }
-	public override int Symbol { get { return Automaton._comtAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 586 ; } }
+	public override int      Symbol { get { return Automaton._comtAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22private22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26436,9 +26436,9 @@ public partial class  comtAttr_comtAttr_22nested22_22family22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"family\"" } ;
-	public override System.Decimal RuleNumber { get { return 587 ; } }
-	public override int Symbol { get { return Automaton._comtAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 587 ; } }
+	public override int      Symbol { get { return Automaton._comtAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22family22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26452,9 +26452,9 @@ public partial class  comtAttr_comtAttr_22nested22_22assembly22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"assembly\"" } ;
-	public override System.Decimal RuleNumber { get { return 588 ; } }
-	public override int Symbol { get { return Automaton._comtAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 588 ; } }
+	public override int      Symbol { get { return Automaton._comtAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22assembly22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26468,9 +26468,9 @@ public partial class  comtAttr_comtAttr_22nested22_22famandassem22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"famandassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 589 ; } }
-	public override int Symbol { get { return Automaton._comtAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 589 ; } }
+	public override int      Symbol { get { return Automaton._comtAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22famandassem22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26484,9 +26484,9 @@ public partial class  comtAttr_comtAttr_22nested22_22famorassem22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtAttr", "\"nested\"", "\"famorassem\"" } ;
-	public override System.Decimal RuleNumber { get { return 590 ; } }
-	public override int Symbol { get { return Automaton._comtAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 590 ; } }
+	public override int      Symbol { get { return Automaton._comtAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtAttr_comtAttr_22nested22_22famorassem22()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26500,9 +26500,9 @@ public partial class  comtypeDecls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 591 ; } }
-	public override int Symbol { get { return Automaton._comtypeDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 591 ; } }
+	public override int      Symbol { get { return Automaton._comtypeDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtypeDecls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -26516,9 +26516,9 @@ public partial class  comtypeDecls_comtypeDecls_comtypeDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "comtypeDecls", "comtypeDecl" } ;
-	public override System.Decimal RuleNumber { get { return 592 ; } }
-	public override int Symbol { get { return Automaton._comtypeDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 592 ; } }
+	public override int      Symbol { get { return Automaton._comtypeDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtypeDecls_comtypeDecls_comtypeDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26532,9 +26532,9 @@ public partial class  comtypeDecl_222Efile22_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 593 ; } }
-	public override int Symbol { get { return Automaton._comtypeDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 593 ; } }
+	public override int      Symbol { get { return Automaton._comtypeDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtypeDecl_222Efile22_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26548,9 +26548,9 @@ public partial class  comtypeDecl_222Eclass22_22extern22_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "\"extern\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 594 ; } }
-	public override int Symbol { get { return Automaton._comtypeDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 594 ; } }
+	public override int      Symbol { get { return Automaton._comtypeDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtypeDecl_222Eclass22_22extern22_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26564,9 +26564,9 @@ public partial class  comtypeDecl_222Eclass22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".class\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 595 ; } }
-	public override int Symbol { get { return Automaton._comtypeDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 595 ; } }
+	public override int      Symbol { get { return Automaton._comtypeDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtypeDecl_222Eclass22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26580,9 +26580,9 @@ public partial class  comtypeDecl_customAttrDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 596 ; } }
-	public override int Symbol { get { return Automaton._comtypeDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 596 ; } }
+	public override int      Symbol { get { return Automaton._comtypeDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public comtypeDecl_customAttrDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;
@@ -26596,9 +26596,9 @@ public partial class  manifestResHead_222Emresource22_manresAttr_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".mresource\"", "manresAttr", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 597 ; } }
-	public override int Symbol { get { return Automaton._manifestResHead ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 597 ; } }
+	public override int      Symbol { get { return Automaton._manifestResHead ; } }
+	public override bool     Useful { get { return true ; } }
 	public manifestResHead_222Emresource22_manresAttr_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26612,9 +26612,9 @@ public partial class  manresAttr
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 598 ; } }
-	public override int Symbol { get { return Automaton._manresAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 598 ; } }
+	public override int      Symbol { get { return Automaton._manresAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public manresAttr()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -26628,9 +26628,9 @@ public partial class  manresAttr_manresAttr_22public22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manresAttr", "\"public\"" } ;
-	public override System.Decimal RuleNumber { get { return 599 ; } }
-	public override int Symbol { get { return Automaton._manresAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 599 ; } }
+	public override int      Symbol { get { return Automaton._manresAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public manresAttr_manresAttr_22public22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26644,9 +26644,9 @@ public partial class  manresAttr_manresAttr_22private22
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manresAttr", "\"private\"" } ;
-	public override System.Decimal RuleNumber { get { return 600 ; } }
-	public override int Symbol { get { return Automaton._manresAttr ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 600 ; } }
+	public override int      Symbol { get { return Automaton._manresAttr ; } }
+	public override bool     Useful { get { return true ; } }
 	public manresAttr_manresAttr_22private22()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26660,9 +26660,9 @@ public partial class  manifestResDecls
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = {} ;
-	public override System.Decimal RuleNumber { get { return 601 ; } }
-	public override int Symbol { get { return Automaton._manifestResDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 601 ; } }
+	public override int      Symbol { get { return Automaton._manifestResDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public manifestResDecls()
 		{
 		argv = new Tokenset.Token[ arg_i = 0 ] ;
@@ -26676,9 +26676,9 @@ public partial class  manifestResDecls_manifestResDecls_manifestResDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "manifestResDecls", "manifestResDecl" } ;
-	public override System.Decimal RuleNumber { get { return 602 ; } }
-	public override int Symbol { get { return Automaton._manifestResDecls ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 602 ; } }
+	public override int      Symbol { get { return Automaton._manifestResDecls ; } }
+	public override bool     Useful { get { return true ; } }
 	public manifestResDecls_manifestResDecls_manifestResDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 2 ] ;
@@ -26692,9 +26692,9 @@ public partial class  manifestResDecl_222Efile22_name31_22at22_int3332
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".file\"", "name1", "\"at\"", "int32" } ;
-	public override System.Decimal RuleNumber { get { return 603 ; } }
-	public override int Symbol { get { return Automaton._manifestResDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 603 ; } }
+	public override int      Symbol { get { return Automaton._manifestResDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public manifestResDecl_222Efile22_name31_22at22_int3332()
 		{
 		argv = new Tokenset.Token[ arg_i = 4 ] ;
@@ -26708,9 +26708,9 @@ public partial class  manifestResDecl_222Eassembly22_22extern22_name31
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "\".assembly\"", "\"extern\"", "name1" } ;
-	public override System.Decimal RuleNumber { get { return 604 ; } }
-	public override int Symbol { get { return Automaton._manifestResDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 604 ; } }
+	public override int      Symbol { get { return Automaton._manifestResDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public manifestResDecl_222Eassembly22_22extern22_name31()
 		{
 		argv = new Tokenset.Token[ arg_i = 3 ] ;
@@ -26724,9 +26724,9 @@ public partial class  manifestResDecl_customAttrDecl
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = { "customAttrDecl" } ;
-	public override System.Decimal RuleNumber { get { return 605 ; } }
-	public override int Symbol { get { return Automaton._manifestResDecl ; } }
-	public override bool Useful { get { return true ; } }
+	public override int      RuleNumber { get { return 605 ; } }
+	public override int      Symbol { get { return Automaton._manifestResDecl ; } }
+	public override bool     Useful { get { return true ; } }
 	public manifestResDecl_customAttrDecl()
 		{
 		argv = new Tokenset.Token[ arg_i = 1 ] ;

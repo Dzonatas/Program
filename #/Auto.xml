@@ -28,9 +28,9 @@ public partial class  &signal;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
 	static readonly string[] rhs = &rhs; ;
-	public override System.Decimal RuleNumber { get { return &rule; ; } }
-	public override int Symbol { get { return &lhs_X; ; } }
-	public override bool Useful { get { return &point; ; } }
+	public override int      RuleNumber { get { return &rule; ; } }
+	public override int      Symbol { get { return &lhs_X; ; } }
+	public override bool     Useful { get { return &point; ; } }
 	public &signal;()
 		{
 		argv = new Tokenset.Token[ arg_i = &argc; ] ;

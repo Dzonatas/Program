@@ -2,18 +2,18 @@ partial class A335
 {
 public struct Rule : IRule
 	{
-	public System.Decimal   RuleNumber  { get { return number ; } }
+	public int              RuleNumber  { get { return number ; } }
 	public string           LHS         { get { return lhs ; } }
 	public string[]         RHS         { get { return rhs ; } }
 	public int              Symbol      { get { return symbol ; } }
 	public bool             Useful      { get { return useful ; } }
 	public static Rule [] Set = new Rule[0] ;
-	System.Decimal number ;
+	int            number ;
 	string         lhs ;
 	string[]       rhs ;
 	bool           useful ;
 	int            symbol ;
-	public Rule( System.Decimal _number, xml_s _lhs, xml_s[] _rhs, bool _useful )
+	public Rule( int _number, xml_s _lhs, xml_s[] _rhs, bool _useful )
 		{
 		number  = _number ;
 		lhs     = _lhs.s ;
@@ -32,13 +32,9 @@ public struct Rule : IRule
 			if( Set[i].lhs == name )
 				Set[i].symbol = _symbol ;
 		}
-	public static implicit operator int( Rule r )
+	public static explicit operator int( Rule r )
 		{
-		return Rule.Set[r].Symbol ;
-		}
-	public static implicit operator System.Decimal( Rule r )
-		{
-		return r.number ;
+		return Rule.Set[r.number].Symbol ;
 		}
 	static string _s( string s )
 		{

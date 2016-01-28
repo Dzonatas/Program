@@ -168,7 +168,7 @@ public class xml_nt
 	
 public class xml_rule
 	{
-	public System.Decimal number ;
+	public int            number ;
 	public xml_s          lhs ;
 	public xml_s[]        rhs ;
 	public xml_s          usefulness ;
