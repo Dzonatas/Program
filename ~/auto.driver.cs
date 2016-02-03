@@ -14,14 +14,14 @@ partial class Automaton {
 	const int __default = 253 ;
 	internal const int                         _24end	= 0 ;
 	internal const int                        _272127	= 218 ;
-	internal const int                        _272627	= 153 ;
+	internal const int                        _272627	= 154 ;
 	internal const int                        _272827	= 40 ;
 	internal const int                        _272927	= 39 ;
-	internal const int                        _272A27	= 152 ;
+	internal const int                        _272A27	= 153 ;
 	internal const int                        _272B27	= 34 ;
 	internal const int                        _272C27	= 36 ;
-	internal const int                        _272E27	= 163 ;
-	internal const int                        _272F27	= 164 ;
+	internal const int                        _272E27	= 164 ;
+	internal const int                        _272F27	= 165 ;
 	internal const int                        _273A27	= 138 ;
 	internal const int                        _273C27	= 213 ;
 	internal const int                        _273D27	= 38 ;
@@ -164,66 +164,66 @@ partial class Automaton {
 	internal const int                     _222Etry22	= 143 ;
 	internal const int                    _22filter22	= 144 ;
 	internal const int                     _22catch22	= 145 ;
-	internal const int                   _22finally22	= 146 ;
-	internal const int                     _22fault22	= 147 ;
-	internal const int                   _22handler22	= 148 ;
-	internal const int                    _222Edata22	= 149 ;
-	internal const int                       _22tls22	= 150 ;
-	internal const int                      _22char22	= 151 ;
-	internal const int                 _22float333222	= 154 ;
-	internal const int                 _22float363422	= 155 ;
-	internal const int                   _22int313622	= 156 ;
-	internal const int                     _22int3822	= 157 ;
-	internal const int                      _22bool22	= 158 ;
-	internal const int                   _22nullref22	= 159 ;
-	internal const int                 _22bytearray22	= 160 ;
-	internal const int                    _22method22	= 161 ;
-	internal const int                    _222E2E2E22	= 162 ;
-	internal const int                  _22instance22	= 165 ;
-	internal const int                   _22default22	= 166 ;
-	internal const int                    _22vararg22	= 167 ;
-	internal const int                    _22custom22	= 168 ;
-	internal const int                     _22fixed22	= 169 ;
-	internal const int                 _22sysstring22	= 170 ;
-	internal const int                     _22array22	= 171 ;
-	internal const int                   _22variant22	= 172 ;
-	internal const int                  _22currency22	= 173 ;
-	internal const int                   _22syschar22	= 174 ;
-	internal const int                      _22void22	= 175 ;
-	internal const int                     _22error22	= 176 ;
-	internal const int                  _22unsigned22	= 177 ;
-	internal const int                   _22decimal22	= 178 ;
-	internal const int                      _22date22	= 179 ;
-	internal const int                      _22bstr22	= 180 ;
-	internal const int                     _22lpstr22	= 181 ;
-	internal const int                    _22lpwstr22	= 182 ;
-	internal const int                    _22lptstr22	= 183 ;
-	internal const int                 _22objectref22	= 184 ;
-	internal const int                  _22iunknown22	= 185 ;
-	internal const int                 _22idispatch22	= 186 ;
-	internal const int                    _22struct22	= 187 ;
-	internal const int                 _22safearray22	= 188 ;
-	internal const int                       _22int22	= 189 ;
-	internal const int                  _22byvalstr22	= 190 ;
-	internal const int                     _22tbstr22	= 191 ;
-	internal const int                       _22any22	= 192 ;
-	internal const int                  _22lpstruct22	= 193 ;
-	internal const int                      _22null22	= 194 ;
-	internal const int                    _22vector22	= 195 ;
-	internal const int                   _22hresult22	= 196 ;
-	internal const int                    _22carray22	= 197 ;
-	internal const int               _22userdefined22	= 198 ;
-	internal const int                    _22record22	= 199 ;
-	internal const int                  _22filetime22	= 200 ;
-	internal const int                      _22blob22	= 201 ;
-	internal const int                    _22stream22	= 202 ;
-	internal const int                   _22storage22	= 203 ;
-	internal const int          _22streamed5Fobject22	= 204 ;
-	internal const int            _22stored5Fobject22	= 205 ;
-	internal const int              _22blob5Fobject22	= 206 ;
-	internal const int                        _22cf22	= 207 ;
-	internal const int                     _22clsid22	= 208 ;
-	internal const int                     _22class22	= 209 ;
+	internal const int                     _22class22	= 146 ;
+	internal const int                   _22finally22	= 147 ;
+	internal const int                     _22fault22	= 148 ;
+	internal const int                   _22handler22	= 149 ;
+	internal const int                    _222Edata22	= 150 ;
+	internal const int                       _22tls22	= 151 ;
+	internal const int                      _22char22	= 152 ;
+	internal const int                 _22float333222	= 155 ;
+	internal const int                 _22float363422	= 156 ;
+	internal const int                   _22int313622	= 157 ;
+	internal const int                     _22int3822	= 158 ;
+	internal const int                      _22bool22	= 159 ;
+	internal const int                   _22nullref22	= 160 ;
+	internal const int                 _22bytearray22	= 161 ;
+	internal const int                    _22method22	= 162 ;
+	internal const int                    _222E2E2E22	= 163 ;
+	internal const int                  _22instance22	= 166 ;
+	internal const int                   _22default22	= 167 ;
+	internal const int                    _22vararg22	= 168 ;
+	internal const int                    _22custom22	= 169 ;
+	internal const int                     _22fixed22	= 170 ;
+	internal const int                 _22sysstring22	= 171 ;
+	internal const int                     _22array22	= 172 ;
+	internal const int                   _22variant22	= 173 ;
+	internal const int                  _22currency22	= 174 ;
+	internal const int                   _22syschar22	= 175 ;
+	internal const int                      _22void22	= 176 ;
+	internal const int                     _22error22	= 177 ;
+	internal const int                  _22unsigned22	= 178 ;
+	internal const int                   _22decimal22	= 179 ;
+	internal const int                      _22date22	= 180 ;
+	internal const int                      _22bstr22	= 181 ;
+	internal const int                     _22lpstr22	= 182 ;
+	internal const int                    _22lpwstr22	= 183 ;
+	internal const int                    _22lptstr22	= 184 ;
+	internal const int                 _22objectref22	= 185 ;
+	internal const int                  _22iunknown22	= 186 ;
+	internal const int                 _22idispatch22	= 187 ;
+	internal const int                    _22struct22	= 188 ;
+	internal const int                 _22safearray22	= 189 ;
+	internal const int                       _22int22	= 190 ;
+	internal const int                  _22byvalstr22	= 191 ;
+	internal const int                     _22tbstr22	= 192 ;
+	internal const int                       _22any22	= 193 ;
+	internal const int                  _22lpstruct22	= 194 ;
+	internal const int                      _22null22	= 195 ;
+	internal const int                    _22vector22	= 196 ;
+	internal const int                   _22hresult22	= 197 ;
+	internal const int                    _22carray22	= 198 ;
+	internal const int               _22userdefined22	= 199 ;
+	internal const int                    _22record22	= 200 ;
+	internal const int                  _22filetime22	= 201 ;
+	internal const int                      _22blob22	= 202 ;
+	internal const int                    _22stream22	= 203 ;
+	internal const int                   _22storage22	= 204 ;
+	internal const int          _22streamed5Fobject22	= 205 ;
+	internal const int            _22stored5Fobject22	= 206 ;
+	internal const int              _22blob5Fobject22	= 207 ;
+	internal const int                        _22cf22	= 208 ;
+	internal const int                     _22clsid22	= 209 ;
 	internal const int                    _22object22	= 210 ;
 	internal const int                    _22string22	= 211 ;
 	internal const int                 _22valuetype22	= 212 ;
@@ -645,8 +645,8 @@ static int _10()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -678,7 +678,7 @@ static int _11()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _11_default ;
@@ -769,8 +769,8 @@ static int _16()
 		{
 		case 47: case 48: case 54: case 55: case 56: case 70: case 71: case 72:
 		case 73: case 75: case 76: case 96: case 97: case 100: case 118: case 119:
-		case 120: case 121: case 151: case 154: case 155: case 156: case 157: case 158:
-		case 161: case 175: case 177: case 209: case 210: case 211: case 212: case 218:
+		case 120: case 121: case 146: case 152: case 155: case 156: case 157: case 158:
+		case 159: case 162: case 176: case 178: case 210: case 211: case 212: case 218:
 		case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -802,8 +802,8 @@ static int _18()
 		} ;
 	switch( token.point )
 		{
-		case 3: case 5: case 27: case 47: case 48: case 151: case 153: case 154:
-		case 155: case 156: case 157: case 160: 
+		case 3: case 5: case 27: case 47: case 48: case 152: case 154: case 155:
+		case 156: case 157: case 158: case 161: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _18_default ;
@@ -1313,7 +1313,7 @@ static int _56()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 150: case 221:
 		case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -1357,16 +1357,16 @@ static int _57()
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22field22: a.shift() ; return a.deploy( _138() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -1390,8 +1390,8 @@ static int _58()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -1433,8 +1433,8 @@ static int _60()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -1476,7 +1476,7 @@ static int _63()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 150: case 221:
 		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 251:
 		case 252: 
 		if( token_HasValue )
@@ -1509,16 +1509,16 @@ static int _64()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -1588,7 +1588,7 @@ static int _70()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _70_default ;
@@ -1755,8 +1755,8 @@ static int _80()
 		} ;
 	switch( token.point )
 		{
-		case 27: case 47: case 48: case 151: case 153: case 154: case 155: case 156:
-		case 157: case 160: 
+		case 27: case 47: case 48: case 152: case 154: case 155: case 156: case 157:
+		case 158: case 161: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _80_default ;
@@ -1917,16 +1917,16 @@ static int _96()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -1954,7 +1954,7 @@ static int _98()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 150: case 221:
 		case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -2130,8 +2130,8 @@ static int _109()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -2283,7 +2283,7 @@ static int _112()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _112_default ;
@@ -2313,7 +2313,7 @@ static int _113()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _113_default ;
@@ -2357,7 +2357,7 @@ static int _116()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _116_default ;
@@ -2387,7 +2387,7 @@ static int _117()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _117_default ;
@@ -2417,7 +2417,7 @@ static int _118()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _118_default ;
@@ -2447,7 +2447,7 @@ static int _119()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _119_default ;
@@ -2615,7 +2615,7 @@ static int _132()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 221: case 222: case 240: case 242: case 243: case 252: 
+		case 150: case 221: case 222: case 240: case 242: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _132_default ;
@@ -2696,16 +2696,16 @@ static int _138()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -2729,90 +2729,13 @@ static int _139()
 static int _140()
 	{
 	log("_140") ;
-	auto = new type_22char22() ;
-	backup = 1 ;
-	yy = 340 ;
-	return -472 ;
-	}
-static int _141()
-	{
-	log("_141") ;
-	auto = new type_22float333222() ;
-	backup = 1 ;
-	yy = 340 ;
-	return -479 ;
-	}
-static int _142()
-	{
-	log("_142") ;
-	auto = new type_22float363422() ;
-	backup = 1 ;
-	yy = 340 ;
-	return -480 ;
-	}
-static int _143()
-	{
-	log("_143") ;
-	auto = new type_22int313622() ;
-	backup = 1 ;
-	yy = 340 ;
-	return -476 ;
-	}
-static int _144()
-	{
-	log("_144") ;
-	auto = new type_22int3822() ;
-	backup = 1 ;
-	yy = 340 ;
-	return -475 ;
-	}
-static int _145()
-	{
-	log("_145") ;
-	auto = new type_22bool22() ;
-	backup = 1 ;
-	yy = 340 ;
-	return -474 ;
-	}
-static int _146()
-	{
-	log("_146") ;
-	auto = new methodSpec_22method22() ;
-	backup = 1 ;
-	yy = 327 ;
-	return -308 ;
-	}
-static int _147()
-	{
-	log("_147") ;
-	auto = new type_22void22() ;
-	backup = 1 ;
-	yy = 340 ;
-	return -473 ;
-	}
-static int _148()
-	{
-	log("_148") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.split( _314() ) ;
-		case _22int363422: a.shift() ; return a.split( _315() ) ;
-		case _22int313622: a.shift() ; return a.split( _316() ) ;
-		case _22int3822: a.shift() ; return a.split( _317() ) ;
-		}
-	throw new SyntaxException() ;
-	}
-static int _149()
-	{
-	log("_149") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=4 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _className : return _319() ;
+			case _className : return _315() ;
 			case _slashedName : return _160() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -2823,7 +2746,84 @@ static int _149()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
+		}
+	throw new SyntaxException() ;
+	}
+static int _141()
+	{
+	log("_141") ;
+	auto = new type_22char22() ;
+	backup = 1 ;
+	yy = 340 ;
+	return -472 ;
+	}
+static int _142()
+	{
+	log("_142") ;
+	auto = new type_22float333222() ;
+	backup = 1 ;
+	yy = 340 ;
+	return -479 ;
+	}
+static int _143()
+	{
+	log("_143") ;
+	auto = new type_22float363422() ;
+	backup = 1 ;
+	yy = 340 ;
+	return -480 ;
+	}
+static int _144()
+	{
+	log("_144") ;
+	auto = new type_22int313622() ;
+	backup = 1 ;
+	yy = 340 ;
+	return -476 ;
+	}
+static int _145()
+	{
+	log("_145") ;
+	auto = new type_22int3822() ;
+	backup = 1 ;
+	yy = 340 ;
+	return -475 ;
+	}
+static int _146()
+	{
+	log("_146") ;
+	auto = new type_22bool22() ;
+	backup = 1 ;
+	yy = 340 ;
+	return -474 ;
+	}
+static int _147()
+	{
+	log("_147") ;
+	auto = new methodSpec_22method22() ;
+	backup = 1 ;
+	yy = 327 ;
+	return -308 ;
+	}
+static int _148()
+	{
+	log("_148") ;
+	auto = new type_22void22() ;
+	backup = 1 ;
+	yy = 340 ;
+	return -473 ;
+	}
+static int _149()
+	{
+	log("_149") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.split( _316() ) ;
+		case _22int363422: a.shift() ; return a.split( _317() ) ;
+		case _22int313622: a.shift() ; return a.split( _318() ) ;
+		case _22int3822: a.shift() ; return a.split( _319() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -2863,7 +2863,7 @@ static int _152()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -2920,8 +2920,8 @@ static int _157()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -2948,9 +2948,9 @@ static int _158()
 		case 43: case 44: case 47: case 48: case 51: case 52: case 53: case 56:
 		case 78: case 79: case 80: case 81: case 82: case 84: case 86: case 87:
 		case 92: case 95: case 96: case 114: case 121: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
-		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
-		case 161: case 164: case 175: case 177: case 209: case 210: case 211: case 212:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 146: case 149:
+		case 150: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
+		case 159: case 162: case 165: case 176: case 178: case 210: case 211: case 212:
 		case 213: case 214: case 215: case 216: case 217: case 218: case 219: case 221:
 		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
@@ -2985,9 +2985,9 @@ static int _160()
 		case 43: case 44: case 47: case 48: case 51: case 52: case 53: case 56:
 		case 78: case 79: case 80: case 81: case 82: case 84: case 86: case 87:
 		case 92: case 95: case 96: case 114: case 121: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
-		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
-		case 161: case 175: case 177: case 209: case 210: case 211: case 212: case 213:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 146: case 149:
+		case 150: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
+		case 159: case 162: case 176: case 178: case 210: case 211: case 212: case 213:
 		case 214: case 215: case 216: case 217: case 218: case 219: case 221: case 222:
 		case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
@@ -3021,7 +3021,7 @@ static int _162()
 		case 33: case 35: case 37: case 39: case 40: case 41: case 43: case 51:
 		case 52: case 53: case 79: case 80: case 81: case 82: case 84: case 87:
 		case 92: case 95: case 132: case 133: case 134: case 136: case 137: case 139:
-		case 140: case 141: case 143: case 149: case 221: case 222: case 240: case 242:
+		case 140: case 141: case 143: case 150: case 221: case 222: case 240: case 242:
 		case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -3120,8 +3120,8 @@ static int _170()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -3164,18 +3164,18 @@ static int _171()
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _222Ector22: a.shift() ; return a.deploy( _337() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -3196,7 +3196,7 @@ static int _172()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _172_default ;
@@ -3490,16 +3490,16 @@ static int _198()
 		case _22literal22: a.shift() ; return a.deploy( _366() ) ;
 		case _22notserialized22: a.shift() ; return a.deploy( _367() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -3527,7 +3527,7 @@ static int _200()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 92: case 95: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 221: case 222: case 240: case 242: case 243: case 248: case 249:
+		case 150: case 221: case 222: case 240: case 242: case 243: case 248: case 249:
 		case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -4044,16 +4044,16 @@ static int _240()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -4107,8 +4107,8 @@ static int _243()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -4168,8 +4168,8 @@ static int _246()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -4244,16 +4244,16 @@ static int _250()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -4327,16 +4327,16 @@ static int _254()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -4615,16 +4615,16 @@ static int _275()
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22field22: a.shift() ; return a.deploy( _138() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -5036,7 +5036,7 @@ static int _305()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _305_default ;
@@ -5060,7 +5060,7 @@ static int _306()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 150: case 221:
 		case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -5123,7 +5123,7 @@ static int _309()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -5155,18 +5155,18 @@ static int _310()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -5205,38 +5205,6 @@ static int _313()
 static int _314()
 	{
 	log("_314") ;
-	auto = new type_22unsigned22_22int333222() ;
-	backup = 2 ;
-	yy = 340 ;
-	return -483 ;
-	}
-static int _315()
-	{
-	log("_315") ;
-	auto = new type_22unsigned22_22int363422() ;
-	backup = 2 ;
-	yy = 340 ;
-	return -484 ;
-	}
-static int _316()
-	{
-	log("_316") ;
-	auto = new type_22unsigned22_22int313622() ;
-	backup = 2 ;
-	yy = 340 ;
-	return -482 ;
-	}
-static int _317()
-	{
-	log("_317") ;
-	auto = new type_22unsigned22_22int3822() ;
-	backup = 2 ;
-	yy = 340 ;
-	return -481 ;
-	}
-static int _318()
-	{
-	log("_318") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -5256,13 +5224,45 @@ static int _318()
 		}
 	throw new SyntaxException() ;
 	}
-static int _319()
+static int _315()
 	{
-	log("_319") ;
+	log("_315") ;
 	auto = new type_22class22_className() ;
 	backup = 2 ;
 	yy = 340 ;
 	return -456 ;
+	}
+static int _316()
+	{
+	log("_316") ;
+	auto = new type_22unsigned22_22int333222() ;
+	backup = 2 ;
+	yy = 340 ;
+	return -483 ;
+	}
+static int _317()
+	{
+	log("_317") ;
+	auto = new type_22unsigned22_22int363422() ;
+	backup = 2 ;
+	yy = 340 ;
+	return -484 ;
+	}
+static int _318()
+	{
+	log("_318") ;
+	auto = new type_22unsigned22_22int313622() ;
+	backup = 2 ;
+	yy = 340 ;
+	return -482 ;
+	}
+static int _319()
+	{
+	log("_319") ;
+	auto = new type_22unsigned22_22int3822() ;
+	backup = 2 ;
+	yy = 340 ;
+	return -481 ;
 	}
 static int _320()
 	{
@@ -5296,8 +5296,8 @@ static int _322()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -5330,16 +5330,16 @@ static int _323()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -5432,16 +5432,16 @@ static int _328()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -5500,7 +5500,7 @@ static int _334()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 150: case 221:
 		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 251:
 		case 252: 
 		if( token_HasValue )
@@ -5533,16 +5533,16 @@ static int _335()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -5612,9 +5612,9 @@ static int _339()
 		case 53: case 56: case 78: case 79: case 80: case 81: case 82: case 83:
 		case 84: case 86: case 87: case 92: case 95: case 96: case 106: case 114:
 		case 121: case 132: case 133: case 134: case 136: case 137: case 139: case 140:
-		case 141: case 143: case 148: case 149: case 151: case 152: case 153: case 154:
-		case 155: case 156: case 157: case 158: case 161: /* case 163: */ case 164: case 175:
-		case 177: case 209: case 210: case 211: case 212: case 213: case 214: case 215:
+		case 141: case 143: case 146: case 149: case 150: case 152: case 153: case 154:
+		case 155: case 156: case 157: case 158: case 159: case 162: /* case 164: */ case 165:
+		case 176: case 178: case 210: case 211: case 212: case 213: case 214: case 215:
 		case 216: case 217: case 218: case 219: case 221: case 222: case 240: case 242:
 		case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
@@ -5761,7 +5761,7 @@ static int _351()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -5978,7 +5978,7 @@ static int _372()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 150: case 221:
 		case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -6102,16 +6102,16 @@ static int _379()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -6313,16 +6313,16 @@ static int _396()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -6349,7 +6349,7 @@ static int _397()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 221: case 222: case 240: 
+		case 150: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _397_default ;
@@ -6421,18 +6421,18 @@ static int _402()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -6480,16 +6480,16 @@ static int _405()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -6563,16 +6563,16 @@ static int _412()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -6591,7 +6591,7 @@ static int _413()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 221: case 222: case 240: 
+		case 150: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _413_default ;
@@ -6755,8 +6755,8 @@ static int _425()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -6863,24 +6863,7 @@ static int _429()
 	{
 	log("_429") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=332 max=345 length=14
-			{
-			case _name31 : return _158() ;
-			case _className : return _565() ;
-			case _slashedName : return _160() ;
-			case _id : return _71() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
-		}
+	if( token.point == _22class22 ) { a.shift() ; return a.split( _565() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _430()
@@ -6931,7 +6914,7 @@ static int _433()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 221: case 222: case 240: 
+		case 150: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _433_default ;
@@ -7599,7 +7582,7 @@ static int _488()
 		case 33: case 35: case 37: case 39: case 40: case 41: case 43: case 51:
 		case 52: case 53: case 79: case 80: case 81: case 82: case 84: case 87:
 		case 92: case 95: case 132: case 133: case 134: case 136: case 137: case 139:
-		case 140: case 141: case 143: case 149: case 221: case 222: case 240: case 242:
+		case 140: case 141: case 143: case 150: case 221: case 222: case 240: case 242:
 		case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -7639,7 +7622,7 @@ static int _491()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 39: case 81:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: /* case 82: */ /* case 163: */ /* case 164: */ 
+		case 143: case 150: case 221: case 222: case 240: /* case 82: */ /* case 164: */ /* case 165: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _491_default ;
@@ -7650,14 +7633,14 @@ static int _491()
 			yy = 332 ;
 			return -341 ;
 			}
-		case 163: 
+		case 164: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
 			yy = 332 ;
 			return -341 ;
 			}
-		case 164: 
+		case 165: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
@@ -7721,7 +7704,7 @@ static int _495()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 150: case 221:
 		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 251:
 		case 252: 
 		if( token_HasValue )
@@ -7766,18 +7749,18 @@ static int _496()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _615() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -7803,9 +7786,9 @@ static int _497()
 		case 43: case 44: case 47: case 48: case 51: case 52: case 53: case 56:
 		case 78: case 79: case 80: case 81: case 82: case 84: case 86: case 87:
 		case 92: case 95: case 96: case 114: case 121: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
-		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
-		case 161: case 164: case 175: case 177: case 209: case 210: case 211: case 212:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 146: case 149:
+		case 150: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
+		case 159: case 162: case 165: case 176: case 178: case 210: case 211: case 212:
 		case 213: case 214: case 215: case 216: case 217: case 218: case 219: case 221:
 		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
@@ -7923,7 +7906,7 @@ static int _505()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -7947,7 +7930,7 @@ static int _506()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -7991,8 +7974,8 @@ static int _509()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -8106,7 +8089,7 @@ static int _519()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -8133,7 +8116,7 @@ static int _521()
 		} ;
 	switch( token.point )
 		{
-		case 39: case 44: case 152: 
+		case 39: case 44: case 153: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _521_default ;
@@ -8148,7 +8131,7 @@ static int _521()
 		case _22int313622: a.shift() ; return a.deploy( _644() ) ;
 		case _22int3822: a.shift() ; return a.deploy( _645() ) ;
 		case _22bool22: a.shift() ; return a.deploy( _646() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
 		case _22custom22: a.shift() ; return a.deploy( _647() ) ;
 		case _22fixed22: a.shift() ; return a.deploy( _648() ) ;
 		case _22variant22: a.shift() ; return a.deploy( _649() ) ;
@@ -8192,7 +8175,7 @@ static int _522()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 38: case 41: case 43: case 51: case 52: case 53: case 79:
-		case 80: case 81: case 84: case 87: case 92: case 95: case 139: case 149:
+		case 80: case 81: case 84: case 87: case 92: case 95: case 139: case 150:
 		case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -8315,16 +8298,16 @@ static int _531()
 		case _22specialname22: a.shift() ; return a.deploy( _678() ) ;
 		case _22rtspecialname22: a.shift() ; return a.deploy( _679() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -8348,8 +8331,8 @@ static int _532()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -8648,7 +8631,7 @@ static int _545()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 221: case 222: case 240: /* case 82: */ /* case 163: */ /* case 164: */ 
+		case 150: case 221: case 222: case 240: /* case 82: */ /* case 164: */ /* case 165: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _545_default ;
@@ -8659,14 +8642,14 @@ static int _545()
 			yy = 332 ;
 			return -341 ;
 			}
-		case 163: 
+		case 164: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
 			yy = 332 ;
 			return -341 ;
 			}
-		case 164: 
+		case 165: 
 			{
 			auto = new name1_id() ;
 			backup = 1 ;
@@ -8711,18 +8694,18 @@ static int _546()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -8913,16 +8896,16 @@ static int _559()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -8981,8 +8964,8 @@ static int _563()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -9009,10 +8992,26 @@ static int _564()
 static int _565()
 	{
 	log("_565") ;
-	auto = new catchClause_22catch22_className() ;
-	backup = 2 ;
-	yy = 309 ;
-	return -254 ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=332 max=345 length=14
+			{
+			case _name31 : return _158() ;
+			case _className : return _729() ;
+			case _slashedName : return _160() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
+		}
+	throw new SyntaxException() ;
 	}
 static int _566()
 	{
@@ -9030,8 +9029,8 @@ static int _567()
 		{
 		switch(_yy) // size=2 min=345 max=347 length=3
 			{
-			case _id : return _729() ;
-			case _int3332 : return _730() ;
+			case _id : return _730() ;
+			case _int3332 : return _731() ;
 			default: return __default ;
 			}
 		} ;
@@ -9115,7 +9114,7 @@ static int _576()
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _731() ;
+			case _id : return _732() ;
 			default: return __default ;
 			}
 		} ;
@@ -9132,7 +9131,7 @@ static int _577()
 		{
 		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _732() ;
+			case _int3332 : return _733() ;
 			default: return __default ;
 			}
 		} ;
@@ -9163,7 +9162,7 @@ static int _580()
 		{
 		switch(_yy) // size=1 min=319 max=319 length=1
 			{
-			case _ddItemCount : return _733() ;
+			case _ddItemCount : return _734() ;
 			default: return __default ;
 			}
 		} ;
@@ -9175,14 +9174,14 @@ static int _580()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _580_default ;
 		case _275B27: a.shift() ; return a.deploy( _283() ) ;
 		}
 	_580_default:
-	return a.deploy( _733() ) ;
+	return a.deploy( _734() ) ;
 	}
 static int _581()
 	{
@@ -9200,7 +9199,7 @@ static int _582()
 		{
 		switch(_yy) // size=1 min=319 max=319 length=1
 			{
-			case _ddItemCount : return _734() ;
+			case _ddItemCount : return _735() ;
 			default: return __default ;
 			}
 		} ;
@@ -9212,14 +9211,14 @@ static int _582()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _582_default ;
 		case _275B27: a.shift() ; return a.deploy( _283() ) ;
 		}
 	_582_default:
-	return a.deploy( _734() ) ;
+	return a.deploy( _735() ) ;
 	}
 static int _583()
 	{
@@ -9227,7 +9226,7 @@ static int _583()
 	Automaton a = new Automaton() ;
 	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
 	else
-	if( token.point == _272927 ) { a.shift() ; return a.split( _735() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _736() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _584()
@@ -9246,35 +9245,6 @@ static int _585()
 		{
 		switch(_yy) // size=1 min=319 max=319 length=1
 			{
-			case _ddItemCount : return _736() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
-		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
-		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
-		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
-		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
-		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _585_default ;
-		case _275B27: a.shift() ; return a.deploy( _283() ) ;
-		}
-	_585_default:
-	return a.deploy( _736() ) ;
-	}
-static int _586()
-	{
-	log("_586") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=319 max=319 length=1
-			{
 			case _ddItemCount : return _737() ;
 			default: return __default ;
 			}
@@ -9287,18 +9257,18 @@ static int _586()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _586_default ;
+		goto _585_default ;
 		case _275B27: a.shift() ; return a.deploy( _283() ) ;
 		}
-	_586_default:
+	_585_default:
 	return a.deploy( _737() ) ;
 	}
-static int _587()
+static int _586()
 	{
-	log("_587") ;
+	log("_586") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -9316,18 +9286,18 @@ static int _587()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _587_default ;
+		goto _586_default ;
 		case _275B27: a.shift() ; return a.deploy( _283() ) ;
 		}
-	_587_default:
+	_586_default:
 	return a.deploy( _738() ) ;
 	}
-static int _588()
+static int _587()
 	{
-	log("_588") ;
+	log("_587") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -9345,14 +9315,43 @@ static int _588()
 		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
 		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
 		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
-		case 143: case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _587_default ;
+		case _275B27: a.shift() ; return a.deploy( _283() ) ;
+		}
+	_587_default:
+	return a.deploy( _739() ) ;
+	}
+static int _588()
+	{
+	log("_588") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=319 max=319 length=1
+			{
+			case _ddItemCount : return _740() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 0: case 3: case 5: case 11: case 12: case 13: case 14: case 15:
+		case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23:
+		case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31:
+		case 33: case 35: case 36: case 37: case 41: case 43: case 51: case 52:
+		case 53: case 79: case 80: case 81: case 84: case 87: case 92: case 95:
+		case 132: case 133: case 134: case 136: case 137: case 139: case 140: case 141:
+		case 143: case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _588_default ;
 		case _275B27: a.shift() ; return a.deploy( _283() ) ;
 		}
 	_588_default:
-	return a.deploy( _739() ) ;
+	return a.deploy( _740() ) ;
 	}
 static int _589()
 	{
@@ -9362,7 +9361,7 @@ static int _589()
 		{
 		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _740() ;
+			case _int3332 : return _741() ;
 			default: return __default ;
 			}
 		} ;
@@ -9373,14 +9372,14 @@ static int _590()
 	{
 	log("_590") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _741() ) ; }
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _742() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _591()
 	{
 	log("_591") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _742() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _743() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _592()
@@ -9406,49 +9405,49 @@ static int _593()
 	{
 	log("_593") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _743() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _744() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _594()
 	{
 	log("_594") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _744() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _745() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _595()
 	{
 	log("_595") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _745() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _746() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _596()
 	{
 	log("_596") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _746() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _747() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _597()
 	{
 	log("_597") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _747() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _748() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _598()
 	{
 	log("_598") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _748() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _749() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _599()
 	{
 	log("_599") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _749() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _750() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _600()
@@ -9477,7 +9476,7 @@ static int _601()
 		{
 		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _750() ;
+			case _name31 : return _751() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -9502,7 +9501,7 @@ static int _603()
 	{
 	log("_603") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _22at22 ) { a.shift() ; return a.split( _751() ) ; }
+	if( token.point == _22at22 ) { a.shift() ; return a.split( _752() ) ; }
 	else
 	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
 	throw new SyntaxException() ;
@@ -9515,7 +9514,7 @@ static int _604()
 		{
 		switch(_yy) // size=2 min=332 max=345 length=14
 			{
-			case _name31 : return _752() ;
+			case _name31 : return _753() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -9532,7 +9531,7 @@ static int _605()
 	{
 	log("_605") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _753() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _754() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _606()
@@ -9552,7 +9551,7 @@ static int _607()
 		switch(_yy) // size=3 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _slashedName : return _754() ;
+			case _slashedName : return _755() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -9565,7 +9564,7 @@ static int _607()
 		case 33: case 35: case 37: case 39: case 40: case 41: case 43: case 51:
 		case 52: case 53: case 79: case 80: case 81: case 82: case 84: case 87:
 		case 92: case 95: case 132: case 133: case 134: case 136: case 137: case 139:
-		case 140: case 141: case 143: case 149: case 221: case 222: case 240: case 242:
+		case 140: case 141: case 143: case 150: case 221: case 222: case 240: case 242:
 		case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -9593,9 +9592,9 @@ static int _608()
 		case 43: case 44: case 47: case 48: case 51: case 52: case 53: case 56:
 		case 78: case 79: case 80: case 81: case 82: case 84: case 86: case 87:
 		case 92: case 95: case 96: case 114: case 121: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
-		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
-		case 161: case 175: case 177: case 209: case 210: case 211: case 212: case 213:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 146: case 149:
+		case 150: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
+		case 159: case 162: case 176: case 178: case 210: case 211: case 212: case 213:
 		case 214: case 215: case 216: case 217: case 218: case 219: case 221: case 222:
 		case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
@@ -9617,7 +9616,7 @@ static int _609()
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _755() ;
+			case _id : return _756() ;
 			default: return __default ;
 			}
 		} ;
@@ -9630,7 +9629,7 @@ static int _610()
 	{
 	log("_610") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _756() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _757() ) ; }
 	else
 	if( token.point == _272E27 ) { a.shift() ; return a.split( _173() ) ; }
 	throw new SyntaxException() ;
@@ -9665,13 +9664,13 @@ static int _612()
 		{
 		switch(_yy) // size=1 min=257 max=257 length=1
 			{
-			case _compQstring : return _758() ;
+			case _compQstring : return _759() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	else
-	if( token.point == _272827 ) { a.shift() ; return a.deploy( _757() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.deploy( _758() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _613()
@@ -9697,13 +9696,13 @@ static int _615()
 	switch( token.point )
 		{
 		case 3: case 5: case 9: case 44: case 47: case 48: case 56: case 86:
-		case 114: case 121: case 151: case 152: case 153: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 114: case 121: case 146: case 152: case 153: case 154: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 213: case 215: case 216: case 217: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _615_default ;
-		case _272827: a.shift() ; return a.split( _759() ) ;
+		case _272827: a.shift() ; return a.split( _760() ) ;
 		}
 	_615_default:
 	auto = new type_type_272A27() ;
@@ -9715,7 +9714,7 @@ static int _616()
 	{
 	log("_616") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _760() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _761() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _617()
@@ -9724,7 +9723,7 @@ static int _617()
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		/* case 40: */ case 82: case 164: 
+		/* case 40: */ case 82: case 165: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _617_default ;
@@ -9747,7 +9746,7 @@ static int _618()
 	{
 	log("_618") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _761() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _762() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _619()
@@ -9758,7 +9757,7 @@ static int _619()
 		{
 		switch(_yy) // size=2 min=343 max=347 length=5
 			{
-			case _bound : return _762() ;
+			case _bound : return _763() ;
 			case _int3332 : return _502() ;
 			default: return __default ;
 			}
@@ -9773,7 +9772,7 @@ static int _619()
 		case _222E2E2E22: a.shift() ; return a.deploy( _499() ) ;
 		}
 	_619_default:
-	return a.deploy( _762() ) ;
+	return a.deploy( _763() ) ;
 	}
 static int _620()
 	{
@@ -9791,7 +9790,7 @@ static int _621()
 		{
 		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _763() ;
+			case _int3332 : return _764() ;
 			default: return __default ;
 			}
 		} ;
@@ -9818,7 +9817,7 @@ static int _622()
 		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _764() ;
+			case _type : return _765() ;
 			default: return __default ;
 			}
 		} ;
@@ -9828,16 +9827,16 @@ static int _622()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -9858,14 +9857,14 @@ static int _624()
 	{
 	log("_624") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _765() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _766() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _625()
 	{
 	log("_625") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _766() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _767() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _626()
@@ -9880,14 +9879,14 @@ static int _627()
 	{
 	log("_627") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _767() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _768() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _628()
 	{
 	log("_628") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _768() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _769() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _629()
@@ -9898,7 +9897,7 @@ static int _629()
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _769() ;
+			case _id : return _770() ;
 			default: return __default ;
 			}
 		} ;
@@ -9949,7 +9948,7 @@ static int _634()
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _634_default ;
-		case _272C27: a.shift() ; return a.split( _770() ) ;
+		case _272C27: a.shift() ; return a.split( _771() ) ;
 		}
 	_634_default:
 	auto = new implClause_22implements22_classNames() ;
@@ -9993,21 +9992,21 @@ static int _639()
 	{
 	log("_639") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _22bstr22 ) { a.shift() ; return a.split( _771() ) ; }
+	if( token.point == _22bstr22 ) { a.shift() ; return a.split( _772() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _640()
 	{
 	log("_640") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _22struct22 ) { a.shift() ; return a.split( _772() ) ; }
+	if( token.point == _22struct22 ) { a.shift() ; return a.split( _773() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _641()
 	{
 	log("_641") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _22any22 ) { a.shift() ; return a.split( _773() ) ; }
+	if( token.point == _22any22 ) { a.shift() ; return a.split( _774() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _642()
@@ -10054,16 +10053,16 @@ static int _647()
 	{
 	log("_647") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _774() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _775() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _648()
 	{
 	log("_648") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _22sysstring22 ) { a.shift() ; return a.split( _775() ) ; }
+	if( token.point == _22sysstring22 ) { a.shift() ; return a.split( _776() ) ; }
 	else
-	if( token.point == _22array22 ) { a.shift() ; return a.split( _776() ) ; }
+	if( token.point == _22array22 ) { a.shift() ; return a.split( _777() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _649()
@@ -10072,11 +10071,11 @@ static int _649()
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case 39: case 44: case 152: 
+		case 39: case 44: case 153: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _649_default ;
-		case _22bool22: a.shift() ; return a.split( _777() ) ;
+		case _22bool22: a.shift() ; return a.split( _778() ) ;
 		}
 	_649_default:
 	auto = new nativeType_22variant22() ;
@@ -10122,11 +10121,11 @@ static int _654()
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case _22int333222: a.shift() ; return a.split( _778() ) ;
-		case _22int363422: a.shift() ; return a.split( _779() ) ;
-		case _22int313622: a.shift() ; return a.split( _780() ) ;
-		case _22int3822: a.shift() ; return a.split( _781() ) ;
-		case _22int22: a.shift() ; return a.split( _782() ) ;
+		case _22int333222: a.shift() ; return a.split( _779() ) ;
+		case _22int363422: a.shift() ; return a.split( _780() ) ;
+		case _22int313622: a.shift() ; return a.split( _781() ) ;
+		case _22int3822: a.shift() ; return a.split( _782() ) ;
+		case _22int22: a.shift() ; return a.split( _783() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -10218,55 +10217,55 @@ static int _665()
 		{
 		switch(_yy) // size=1 min=339 max=339 length=1
 			{
-			case _variantType : return _819() ;
+			case _variantType : return _820() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 36: case 39: case 44: /* case 152: */ case 153: case 195: 
+		case 36: case 39: case 44: /* case 153: */ case 154: case 196: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _665_default ;
-		case _22int333222: a.shift() ; return a.deploy( _783() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _784() ) ;
-		case _272A27: a.shift() ; return a.deploy( _785() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _786() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _787() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _788() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _789() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _790() ) ;
-		case _22variant22: a.shift() ; return a.deploy( _791() ) ;
-		case _22currency22: a.shift() ; return a.deploy( _792() ) ;
-		case _22void22: a.shift() ; return a.deploy( _793() ) ;
-		case _22error22: a.shift() ; return a.deploy( _794() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _795() ) ;
-		case _22decimal22: a.shift() ; return a.deploy( _796() ) ;
-		case _22date22: a.shift() ; return a.deploy( _797() ) ;
-		case _22bstr22: a.shift() ; return a.deploy( _798() ) ;
-		case _22lpstr22: a.shift() ; return a.deploy( _799() ) ;
-		case _22lpwstr22: a.shift() ; return a.deploy( _800() ) ;
-		case _22iunknown22: a.shift() ; return a.deploy( _801() ) ;
-		case _22idispatch22: a.shift() ; return a.deploy( _802() ) ;
-		case _22safearray22: a.shift() ; return a.deploy( _803() ) ;
-		case _22int22: a.shift() ; return a.deploy( _804() ) ;
-		case _22null22: a.shift() ; return a.deploy( _805() ) ;
-		case _22hresult22: a.shift() ; return a.deploy( _806() ) ;
-		case _22carray22: a.shift() ; return a.deploy( _807() ) ;
-		case _22userdefined22: a.shift() ; return a.deploy( _808() ) ;
-		case _22record22: a.shift() ; return a.deploy( _809() ) ;
-		case _22filetime22: a.shift() ; return a.deploy( _810() ) ;
-		case _22blob22: a.shift() ; return a.deploy( _811() ) ;
-		case _22stream22: a.shift() ; return a.deploy( _812() ) ;
-		case _22storage22: a.shift() ; return a.deploy( _813() ) ;
-		case _22streamed5Fobject22: a.shift() ; return a.deploy( _814() ) ;
-		case _22stored5Fobject22: a.shift() ; return a.deploy( _815() ) ;
-		case _22blob5Fobject22: a.shift() ; return a.deploy( _816() ) ;
-		case _22cf22: a.shift() ; return a.deploy( _817() ) ;
-		case _22clsid22: a.shift() ; return a.deploy( _818() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _784() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _785() ) ;
+		case _272A27: a.shift() ; return a.deploy( _786() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _787() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _788() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _789() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _790() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _791() ) ;
+		case _22variant22: a.shift() ; return a.deploy( _792() ) ;
+		case _22currency22: a.shift() ; return a.deploy( _793() ) ;
+		case _22void22: a.shift() ; return a.deploy( _794() ) ;
+		case _22error22: a.shift() ; return a.deploy( _795() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _796() ) ;
+		case _22decimal22: a.shift() ; return a.deploy( _797() ) ;
+		case _22date22: a.shift() ; return a.deploy( _798() ) ;
+		case _22bstr22: a.shift() ; return a.deploy( _799() ) ;
+		case _22lpstr22: a.shift() ; return a.deploy( _800() ) ;
+		case _22lpwstr22: a.shift() ; return a.deploy( _801() ) ;
+		case _22iunknown22: a.shift() ; return a.deploy( _802() ) ;
+		case _22idispatch22: a.shift() ; return a.deploy( _803() ) ;
+		case _22safearray22: a.shift() ; return a.deploy( _804() ) ;
+		case _22int22: a.shift() ; return a.deploy( _805() ) ;
+		case _22null22: a.shift() ; return a.deploy( _806() ) ;
+		case _22hresult22: a.shift() ; return a.deploy( _807() ) ;
+		case _22carray22: a.shift() ; return a.deploy( _808() ) ;
+		case _22userdefined22: a.shift() ; return a.deploy( _809() ) ;
+		case _22record22: a.shift() ; return a.deploy( _810() ) ;
+		case _22filetime22: a.shift() ; return a.deploy( _811() ) ;
+		case _22blob22: a.shift() ; return a.deploy( _812() ) ;
+		case _22stream22: a.shift() ; return a.deploy( _813() ) ;
+		case _22storage22: a.shift() ; return a.deploy( _814() ) ;
+		case _22streamed5Fobject22: a.shift() ; return a.deploy( _815() ) ;
+		case _22stored5Fobject22: a.shift() ; return a.deploy( _816() ) ;
+		case _22blob5Fobject22: a.shift() ; return a.deploy( _817() ) ;
+		case _22cf22: a.shift() ; return a.deploy( _818() ) ;
+		case _22clsid22: a.shift() ; return a.deploy( _819() ) ;
 		}
 	_665_default:
-	return a.deploy( _819() ) ;
+	return a.deploy( _820() ) ;
 	}
 static int _666()
 	{
@@ -10314,9 +10313,9 @@ static int _671()
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case _272927: a.shift() ; return a.split( _820() ) ;
-		case _275B27: a.shift() ; return a.split( _821() ) ;
-		case _272A27: a.shift() ; return a.split( _822() ) ;
+		case _272927: a.shift() ; return a.split( _821() ) ;
+		case _275B27: a.shift() ; return a.split( _822() ) ;
+		case _272A27: a.shift() ; return a.split( _823() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -10328,7 +10327,7 @@ static int _672()
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _823() ;
+			case _id : return _824() ;
 			default: return __default ;
 			}
 		} ;
@@ -10345,7 +10344,7 @@ static int _673()
 		{
 		switch(_yy) // size=1 min=275 max=275 length=1
 			{
-			case _initOpt : return _825() ;
+			case _initOpt : return _826() ;
 			default: return __default ;
 			}
 		} ;
@@ -10353,15 +10352,15 @@ static int _673()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 79: case 80:
-		case 81: case 84: case 87: case 92: case 95: case 139: case 149: case 221:
+		case 81: case 84: case 87: case 92: case 95: case 139: case 150: case 221:
 		case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _673_default ;
-		case _273D27: a.shift() ; return a.deploy( _824() ) ;
+		case _273D27: a.shift() ; return a.deploy( _825() ) ;
 		}
 	_673_default:
-	return a.deploy( _825() ) ;
+	return a.deploy( _826() ) ;
 	}
 static int _674()
 	{
@@ -10371,14 +10370,14 @@ static int _674()
 		{
 		switch(_yy) // size=8 min=257 max=355 length=99
 			{
-			case _compQstring : return _829() ;
+			case _compQstring : return _830() ;
 			case _name31 : return _158() ;
-			case _className : return _830() ;
+			case _className : return _831() ;
 			case _slashedName : return _160() ;
 			case _id : return _71() ;
-			case _int3332 : return _831() ;
-			case _truefalse : return _832() ;
-			case _caValue : return _833() ;
+			case _int3332 : return _832() ;
+			case _truefalse : return _833() ;
+			case _caValue : return _834() ;
 			default: return __default ;
 			}
 		} ;
@@ -10389,10 +10388,10 @@ static int _674()
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _826() ) ;
-		case _22true22: a.shift() ; return a.deploy( _827() ) ;
-		case _22false22: a.shift() ; return a.deploy( _828() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _827() ) ;
+		case _22true22: a.shift() ; return a.deploy( _828() ) ;
+		case _22false22: a.shift() ; return a.deploy( _829() ) ;
 		}
 	throw new SyntaxException() ;
 	}
@@ -10413,7 +10412,7 @@ static int _676()
 		switch(_yy) // size=3 min=257 max=353 length=97
 			{
 			case _compQstring : return _523() ;
-			case _nameValPairs : return _834() ;
+			case _nameValPairs : return _835() ;
 			case _nameValPair : return _525() ;
 			default: return __default ;
 			}
@@ -10429,7 +10428,7 @@ static int _677()
 		{
 		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _835() ;
+			case _methodName : return _836() ;
 			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -10469,7 +10468,7 @@ static int _680()
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _836() ;
+			case _id : return _837() ;
 			default: return __default ;
 			}
 		} ;
@@ -10484,7 +10483,7 @@ static int _681()
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		/* case 27: */ case 3: case 5: case 163: case 164: 
+		/* case 27: */ case 3: case 5: case 164: case 165: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _681_default ;
@@ -10527,7 +10526,7 @@ static int _684()
 		switch(_yy) // size=2 min=327 max=340 length=14
 			{
 			case _methodSpec : return _170() ;
-			case _type : return _837() ;
+			case _type : return _838() ;
 			default: return __default ;
 			}
 		} ;
@@ -10537,16 +10536,16 @@ static int _684()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -10604,7 +10603,7 @@ static int _686()
 	switch( token.point )
 		{
 		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
-		case _277D27: a.shift() ; return a.deploy( _838() ) ;
+		case _277D27: a.shift() ; return a.deploy( _839() ) ;
 		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
 		case _222Eclass22: a.shift() ; return a.deploy( _376() ) ;
@@ -10631,25 +10630,25 @@ static int _687()
 		{
 		switch(_yy) // size=6 min=258 max=357 length=100
 			{
-			case _languageDecl : return _844() ;
-			case _customAttrDecl : return _845() ;
+			case _languageDecl : return _845() ;
+			case _customAttrDecl : return _846() ;
 			case _customHead : return _34() ;
 			case _customHeadWithOwner : return _35() ;
-			case _eventDecl : return _846() ;
-			case _extSourceSpec : return _847() ;
+			case _eventDecl : return _847() ;
+			case _extSourceSpec : return _848() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
 		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
-		case _277D27: a.shift() ; return a.deploy( _839() ) ;
+		case _277D27: a.shift() ; return a.deploy( _840() ) ;
 		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Eaddon22: a.shift() ; return a.deploy( _840() ) ;
-		case _222Eremoveon22: a.shift() ; return a.deploy( _841() ) ;
-		case _222Efire22: a.shift() ; return a.deploy( _842() ) ;
-		case _222Eother22: a.shift() ; return a.deploy( _843() ) ;
+		case _222Eaddon22: a.shift() ; return a.deploy( _841() ) ;
+		case _222Eremoveon22: a.shift() ; return a.deploy( _842() ) ;
+		case _222Efire22: a.shift() ; return a.deploy( _843() ) ;
+		case _222Eother22: a.shift() ; return a.deploy( _844() ) ;
 		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
 		}
 	throw new SyntaxException() ;
@@ -10662,24 +10661,24 @@ static int _688()
 		{
 		switch(_yy) // size=6 min=258 max=357 length=100
 			{
-			case _languageDecl : return _852() ;
-			case _customAttrDecl : return _853() ;
+			case _languageDecl : return _853() ;
+			case _customAttrDecl : return _854() ;
 			case _customHead : return _34() ;
 			case _customHeadWithOwner : return _35() ;
-			case _propDecl : return _854() ;
-			case _extSourceSpec : return _855() ;
+			case _propDecl : return _855() ;
+			case _extSourceSpec : return _856() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
 		case _P5FLINE: a.shift() ; return a.deploy( _4() ) ;
-		case _277D27: a.shift() ; return a.deploy( _848() ) ;
+		case _277D27: a.shift() ; return a.deploy( _849() ) ;
 		case _222Elanguage22: a.shift() ; return a.deploy( _9() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
-		case _222Eother22: a.shift() ; return a.deploy( _849() ) ;
-		case _222Eset22: a.shift() ; return a.deploy( _850() ) ;
-		case _222Eget22: a.shift() ; return a.deploy( _851() ) ;
+		case _222Eother22: a.shift() ; return a.deploy( _850() ) ;
+		case _222Eset22: a.shift() ; return a.deploy( _851() ) ;
+		case _222Eget22: a.shift() ; return a.deploy( _852() ) ;
 		case _222Eline22: a.shift() ; return a.deploy( _21() ) ;
 		}
 	throw new SyntaxException() ;
@@ -10709,7 +10708,7 @@ static int _690()
 		} ;
 	switch( token.point )
 		{
-		case _277D27: a.shift() ; return a.deploy( _856() ) ;
+		case _277D27: a.shift() ; return a.deploy( _857() ) ;
 		case _222Efile22: a.shift() ; return a.deploy( _476() ) ;
 		case _222Ecustom22: a.shift() ; return a.deploy( _10() ) ;
 		case _222Eclass22: a.shift() ; return a.deploy( _477() ) ;
@@ -10724,7 +10723,7 @@ static int _691()
 		{
 		switch(_yy) // size=1 min=257 max=257 length=1
 			{
-			case _compQstring : return _857() ;
+			case _compQstring : return _858() ;
 			default: return __default ;
 			}
 		} ;
@@ -10737,7 +10736,7 @@ static int _692()
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case _272927: a.shift() ; return a.split( _858() ) ;
+		case _272927: a.shift() ; return a.split( _859() ) ;
 		case _22ansi22: a.shift() ; return a.split( _694() ) ;
 		case _22unicode22: a.shift() ; return a.split( _695() ) ;
 		case _22autochar22: a.shift() ; return a.split( _696() ) ;
@@ -10843,42 +10842,42 @@ static int _704()
 	{
 	log("_704") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _859() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _860() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _705()
 	{
 	log("_705") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _860() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _861() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _706()
 	{
 	log("_706") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _861() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _862() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _707()
 	{
 	log("_707") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _862() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _863() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _708()
 	{
 	log("_708") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _863() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _864() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _709()
 	{
 	log("_709") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _864() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _865() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _710()
@@ -10891,7 +10890,7 @@ static int _710()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 40: case 81:
 		case 83: case 132: case 133: case 134: case 136: case 137: case 139: case 140:
-		case 141: case 143: case 149: case 221: case 222: case 240: 
+		case 141: case 143: case 150: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _710_default ;
@@ -10911,7 +10910,7 @@ static int _711()
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _865() ;
+			case _id : return _866() ;
 			default: return __default ;
 			}
 		} ;
@@ -10924,28 +10923,28 @@ static int _712()
 	{
 	log("_712") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _866() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _867() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _713()
 	{
 	log("_713") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _867() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _868() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _714()
 	{
 	log("_714") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _868() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _869() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _715()
 	{
 	log("_715") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _869() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _870() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _716()
@@ -10957,7 +10956,7 @@ static int _716()
 		switch(_yy) // size=4 min=295 max=331 length=37
 			{
 			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _870() ;
+			case _sigArgs30 : return _871() ;
 			case _sigArgs31 : return _561() ;
 			case _sigArg : return _562() ;
 			default: return __default ;
@@ -10965,8 +10964,8 @@ static int _716()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -10974,7 +10973,7 @@ static int _716()
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _870() ) ;
+			return a.deploy( _871() ) ;
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
@@ -11006,7 +11005,7 @@ static int _719()
 		{
 		switch(_yy) // size=3 min=344 max=347 length=4
 			{
-			case _labels : return _871() ;
+			case _labels : return _872() ;
 			case _id : return _552() ;
 			case _int3332 : return _553() ;
 			default: return __default ;
@@ -11023,7 +11022,7 @@ static int _719()
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		}
 	_719_default:
-	return a.deploy( _871() ) ;
+	return a.deploy( _872() ) ;
 	}
 static int _720()
 	{
@@ -11033,7 +11032,7 @@ static int _720()
 		{
 		switch(_yy) // size=3 min=344 max=347 length=4
 			{
-			case _labels : return _872() ;
+			case _labels : return _873() ;
 			case _id : return _552() ;
 			case _int3332 : return _553() ;
 			default: return __default ;
@@ -11050,7 +11049,7 @@ static int _720()
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
 		}
 	_720_default:
-	return a.deploy( _872() ) ;
+	return a.deploy( _873() ) ;
 	}
 static int _721()
 	{
@@ -11070,11 +11069,11 @@ static int _722()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 221: case 222: case 240: 
+		case 150: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _722_default ;
-		case _22as22: a.shift() ; return a.split( _873() ) ;
+		case _22as22: a.shift() ; return a.split( _874() ) ;
 		}
 	_722_default:
 	auto = new methodDecl_222Eexport22_275B27_int3332_275D27() ;
@@ -11098,7 +11097,7 @@ static int _724()
 		{
 		switch(_yy) // size=1 min=275 max=275 length=1
 			{
-			case _initOpt : return _874() ;
+			case _initOpt : return _875() ;
 			default: return __default ;
 			}
 		} ;
@@ -11108,14 +11107,14 @@ static int _724()
 		case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24:
 		case 25: case 26: case 27: case 28: case 35: case 37: case 81: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 221: case 222: case 240: 
+		case 150: case 221: case 222: case 240: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
 		goto _724_default ;
-		case _273D27: a.shift() ; return a.deploy( _824() ) ;
+		case _273D27: a.shift() ; return a.deploy( _825() ) ;
 		}
 	_724_default:
-	return a.deploy( _874() ) ;
+	return a.deploy( _875() ) ;
 	}
 static int _725()
 	{
@@ -11125,7 +11124,7 @@ static int _725()
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _876() ;
+			case _id : return _877() ;
 			default: return __default ;
 			}
 		} ;
@@ -11138,7 +11137,7 @@ static int _725()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _275B27: a.shift() ; return a.deploy( _325() ) ;
-		case _22marshal22: a.shift() ; return a.deploy( _875() ) ;
+		case _22marshal22: a.shift() ; return a.deploy( _876() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
 		case _273C27: a.shift() ; return a.deploy( _328() ) ;
@@ -11169,14 +11168,14 @@ static int _727()
 		switch(_yy) // size=2 min=295 max=331 length=37
 			{
 			case _paramAttr : return _559() ;
-			case _sigArg : return _877() ;
+			case _sigArg : return _878() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -11190,15 +11189,16 @@ static int _728()
 	{
 	log("_728") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _878() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _879() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _729()
 	{
 	log("_729") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22to22 ) { a.shift() ; return a.split( _879() ) ; }
-	throw new SyntaxException() ;
+	auto = new catchClause_22catch22_22class22_className() ;
+	backup = 3 ;
+	yy = 309 ;
+	return -254 ;
 	}
 static int _730()
 	{
@@ -11210,183 +11210,93 @@ static int _730()
 static int _731()
 	{
 	log("_731") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22to22 ) { a.shift() ; return a.split( _881() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _732()
+	{
+	log("_732") ;
 	auto = new tryBlock_tryHead_id_22to22_id() ;
 	backup = 4 ;
 	yy = 304 ;
 	return -243 ;
 	}
-static int _732()
+static int _733()
 	{
-	log("_732") ;
+	log("_733") ;
 	auto = new tryBlock_tryHead_int3332_22to22_int3332() ;
 	backup = 4 ;
 	yy = 304 ;
 	return -244 ;
 	}
-static int _733()
+static int _734()
 	{
-	log("_733") ;
+	log("_734") ;
 	auto = new ddItem_22int333222_272827_int3332_272927_ddItemCount() ;
 	backup = 5 ;
 	yy = 320 ;
 	return -279 ;
 	}
-static int _734()
+static int _735()
 	{
-	log("_734") ;
+	log("_735") ;
 	auto = new ddItem_22int363422_272827_int3634_272927_ddItemCount() ;
 	backup = 5 ;
 	yy = 320 ;
 	return -278 ;
 	}
-static int _735()
+static int _736()
 	{
-	log("_735") ;
+	log("_736") ;
 	auto = new ddItem_22char22_272A27_272827_compQstring_272927() ;
 	backup = 5 ;
 	yy = 320 ;
 	return -273 ;
 	}
-static int _736()
+static int _737()
 	{
-	log("_736") ;
+	log("_737") ;
 	auto = new ddItem_22float333222_272827_float3634_272927_ddItemCount() ;
 	backup = 5 ;
 	yy = 320 ;
 	return -276 ;
 	}
-static int _737()
+static int _738()
 	{
-	log("_737") ;
+	log("_738") ;
 	auto = new ddItem_22float363422_272827_float3634_272927_ddItemCount() ;
 	backup = 5 ;
 	yy = 320 ;
 	return -277 ;
 	}
-static int _738()
+static int _739()
 	{
-	log("_738") ;
+	log("_739") ;
 	auto = new ddItem_22int313622_272827_int3332_272927_ddItemCount() ;
 	backup = 5 ;
 	yy = 320 ;
 	return -280 ;
 	}
-static int _739()
+static int _740()
 	{
-	log("_739") ;
+	log("_740") ;
 	auto = new ddItem_22int3822_272827_int3332_272927_ddItemCount() ;
 	backup = 5 ;
 	yy = 320 ;
 	return -281 ;
 	}
-static int _740()
+static int _741()
 	{
-	log("_740") ;
+	log("_741") ;
 	auto = new assemblyDecl_222Ehash22_22algorithm22_int3332() ;
 	backup = 3 ;
 	yy = 365 ;
 	return -562 ;
 	}
-static int _741()
-	{
-	log("_741") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=347 max=347 length=1
-			{
-			case _int3332 : return _881() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _742()
 	{
 	log("_742") ;
-	auto = new localeHead_222Elocale22_273D27_272827() ;
-	backup = 3 ;
-	yy = 369 ;
-	return -572 ;
-	}
-static int _743()
-	{
-	log("_743") ;
-	auto = new publicKeyHead_222Epublickey22_273D27_272827() ;
-	backup = 3 ;
-	yy = 367 ;
-	return -570 ;
-	}
-static int _744()
-	{
-	log("_744") ;
-	auto = new asmOrRefDecl_publicKeyHead_bytes_272927() ;
-	backup = 3 ;
-	yy = 366 ;
-	return -565 ;
-	}
-static int _745()
-	{
-	log("_745") ;
-	auto = new asmOrRefDecl_localeHead_bytes_272927() ;
-	backup = 3 ;
-	yy = 366 ;
-	return -568 ;
-	}
-static int _746()
-	{
-	log("_746") ;
-	auto = new hashHead_222Ehash22_273D27_272827() ;
-	backup = 3 ;
-	yy = 361 ;
-	return -554 ;
-	}
-static int _747()
-	{
-	log("_747") ;
-	auto = new publicKeyTokenHead_222Epublickeytoken22_273D27_272827() ;
-	backup = 3 ;
-	yy = 368 ;
-	return -571 ;
-	}
-static int _748()
-	{
-	log("_748") ;
-	auto = new assemblyRefDecl_hashHead_bytes_272927() ;
-	backup = 3 ;
-	yy = 372 ;
-	return -577 ;
-	}
-static int _749()
-	{
-	log("_749") ;
-	auto = new assemblyRefDecl_publicKeyTokenHead_bytes_272927() ;
-	backup = 3 ;
-	yy = 372 ;
-	return -579 ;
-	}
-static int _750()
-	{
-	log("_750") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case 28: case 31: case 37: case 53: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _750_default ;
-		case _272E27: a.shift() ; return a.split( _173() ) ;
-		}
-	_750_default:
-	auto = new comtypeDecl_222Eclass22_22extern22_name31() ;
-	backup = 3 ;
-	yy = 377 ;
-	return -594 ;
-	}
-static int _751()
-	{
-	log("_751") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -11399,33 +11309,130 @@ static int _751()
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new SyntaxException() ;
 	}
+static int _743()
+	{
+	log("_743") ;
+	auto = new localeHead_222Elocale22_273D27_272827() ;
+	backup = 3 ;
+	yy = 369 ;
+	return -572 ;
+	}
+static int _744()
+	{
+	log("_744") ;
+	auto = new publicKeyHead_222Epublickey22_273D27_272827() ;
+	backup = 3 ;
+	yy = 367 ;
+	return -570 ;
+	}
+static int _745()
+	{
+	log("_745") ;
+	auto = new asmOrRefDecl_publicKeyHead_bytes_272927() ;
+	backup = 3 ;
+	yy = 366 ;
+	return -565 ;
+	}
+static int _746()
+	{
+	log("_746") ;
+	auto = new asmOrRefDecl_localeHead_bytes_272927() ;
+	backup = 3 ;
+	yy = 366 ;
+	return -568 ;
+	}
+static int _747()
+	{
+	log("_747") ;
+	auto = new hashHead_222Ehash22_273D27_272827() ;
+	backup = 3 ;
+	yy = 361 ;
+	return -554 ;
+	}
+static int _748()
+	{
+	log("_748") ;
+	auto = new publicKeyTokenHead_222Epublickeytoken22_273D27_272827() ;
+	backup = 3 ;
+	yy = 368 ;
+	return -571 ;
+	}
+static int _749()
+	{
+	log("_749") ;
+	auto = new assemblyRefDecl_hashHead_bytes_272927() ;
+	backup = 3 ;
+	yy = 372 ;
+	return -577 ;
+	}
+static int _750()
+	{
+	log("_750") ;
+	auto = new assemblyRefDecl_publicKeyTokenHead_bytes_272927() ;
+	backup = 3 ;
+	yy = 372 ;
+	return -579 ;
+	}
+static int _751()
+	{
+	log("_751") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case 28: case 31: case 37: case 53: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _751_default ;
+		case _272E27: a.shift() ; return a.split( _173() ) ;
+		}
+	_751_default:
+	auto = new comtypeDecl_222Eclass22_22extern22_name31() ;
+	backup = 3 ;
+	yy = 377 ;
+	return -594 ;
+	}
 static int _752()
 	{
 	log("_752") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _883() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _753()
+	{
+	log("_753") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 28: case 31: case 37: case 243: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _752_default ;
+		goto _753_default ;
 		case _272E27: a.shift() ; return a.split( _173() ) ;
 		}
-	_752_default:
+	_753_default:
 	auto = new manifestResDecl_222Eassembly22_22extern22_name31() ;
 	backup = 3 ;
 	yy = 381 ;
 	return -604 ;
 	}
-static int _753()
+static int _754()
 	{
-	log("_753") ;
+	log("_754") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=360 max=360 length=1
 			{
-			case _fileEntry : return _883() ;
+			case _fileEntry : return _884() ;
 			default: return __default ;
 			}
 		} ;
@@ -11433,18 +11440,18 @@ static int _753()
 		{
 		case 0: case 11: case 28: case 29: case 30: case 31: case 33: case 35:
 		case 37: case 41: case 43: case 51: case 52: case 53: case 84: case 95:
-		case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _753_default ;
+		goto _754_default ;
 		case _222Eentrypoint22: a.shift() ; return a.deploy( _304() ) ;
 		}
-	_753_default:
-	return a.deploy( _883() ) ;
+	_754_default:
+	return a.deploy( _884() ) ;
 	}
-static int _754()
+static int _755()
 	{
-	log("_754") ;
+	log("_755") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -11455,40 +11462,40 @@ static int _754()
 		case 43: case 44: case 47: case 48: case 51: case 52: case 53: case 56:
 		case 78: case 79: case 80: case 81: case 82: case 84: case 86: case 87:
 		case 92: case 95: case 96: case 114: case 121: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 148: case 149:
-		case 151: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
-		case 161: case 175: case 177: case 209: case 210: case 211: case 212: case 213:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 146: case 149:
+		case 150: case 152: case 153: case 154: case 155: case 156: case 157: case 158:
+		case 159: case 162: case 176: case 178: case 210: case 211: case 212: case 213:
 		case 214: case 215: case 216: case 217: case 218: case 219: case 221: case 222:
 		case 240: case 242: case 243: case 248: case 249: case 250: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _754_default ;
+		goto _755_default ;
 		case _272F27: a.shift() ; return a.split( _324() ) ;
 		}
-	_754_default:
+	_755_default:
 	auto = new className_275B27_222Emodule22_name31_275D27_slashedName() ;
 	backup = 5 ;
 	yy = 333 ;
 	return -345 ;
 	}
-static int _755()
+static int _756()
 	{
-	log("_755") ;
+	log("_756") ;
 	auto = new memberRef_22field22_type_typeSpec_223A3A22_id() ;
 	backup = 5 ;
 	yy = 279 ;
 	return -107 ;
 	}
-static int _756()
+static int _757()
 	{
-	log("_756") ;
+	log("_757") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=3 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _slashedName : return _754() ;
+			case _slashedName : return _755() ;
 			case _id : return _71() ;
 			default: return __default ;
 			}
@@ -11501,17 +11508,17 @@ static int _756()
 		}
 	throw new SyntaxException() ;
 	}
-static int _757()
+static int _758()
 	{
-	log("_757") ;
+	log("_758") ;
 	auto = new customHeadWithOwner_222Ecustom22_272827_ownerType_272927_customType_273D27_272827() ;
 	backup = 7 ;
 	yy = 278 ;
 	return -104 ;
 	}
-static int _758()
+static int _759()
 	{
-	log("_758") ;
+	log("_759") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -11521,53 +11528,19 @@ static int _758()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 88: case 89: case 90:
 		case 91: case 92: case 93: case 94: case 95: case 132: case 133: case 134:
-		case 136: case 137: case 139: case 140: case 141: case 143: case 149: case 221:
+		case 136: case 137: case 139: case 140: case 141: case 143: case 150: case 221:
 		case 222: case 240: case 242: case 243: case 248: case 249: case 250: case 251:
 		case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _758_default ;
+		goto _759_default ;
 		case _272B27: a.shift() ; return a.split( _507() ) ;
 		}
-	_758_default:
+	_759_default:
 	auto = new customAttrDecl_222Ecustom22_272827_ownerType_272927_customType_273D27_compQstring() ;
 	backup = 7 ;
 	yy = 259 ;
 	return -34 ;
-	}
-static int _759()
-	{
-	log("_759") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=295 max=331 length=37
-			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _884() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _759_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _884() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
-		}
-	_759_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
 	}
 static int _760()
 	{
@@ -11586,8 +11559,8 @@ static int _760()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -11609,9 +11582,43 @@ static int _761()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _886() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _761_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _886() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_761_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
+	}
+static int _762()
+	{
+	log("_762") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
 		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _886() ;
+			case _methodName : return _887() ;
 			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -11627,32 +11634,32 @@ static int _761()
 		}
 	throw new SyntaxException() ;
 	}
-static int _762()
+static int _763()
 	{
-	log("_762") ;
+	log("_763") ;
 	auto = new bounds1_bounds31_272C27_bound() ;
 	backup = 3 ;
 	yy = 342 ;
 	return -491 ;
 	}
-static int _763()
+static int _764()
 	{
-	log("_763") ;
+	log("_764") ;
 	auto = new bound_int3332_222E2E2E22_int3332() ;
 	backup = 3 ;
 	yy = 343 ;
 	return -495 ;
 	}
-static int _764()
+static int _765()
 	{
-	log("_764") ;
+	log("_765") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 36: case 214: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _764_default ;
+		goto _765_default ;
 		case _275B27: a.shift() ; return a.split( _325() ) ;
 		case _272A27: a.shift() ; return a.split( _326() ) ;
 		case _272627: a.shift() ; return a.split( _327() ) ;
@@ -11661,46 +11668,46 @@ static int _764()
 		case _22modreq22: a.shift() ; return a.split( _330() ) ;
 		case _22modopt22: a.shift() ; return a.split( _331() ) ;
 		}
-	_764_default:
+	_765_default:
 	auto = new genArgs_genArgs_272C27_type() ;
 	backup = 3 ;
 	yy = 341 ;
 	return -489 ;
 	}
-static int _765()
+static int _766()
 	{
-	log("_765") ;
+	log("_766") ;
 	auto = new type_type_22modreq22_272827_className_272927() ;
 	backup = 5 ;
 	yy = 340 ;
 	return -467 ;
 	}
-static int _766()
+static int _767()
 	{
-	log("_766") ;
+	log("_767") ;
 	auto = new type_type_22modopt22_272827_className_272927() ;
 	backup = 5 ;
 	yy = 340 ;
 	return -468 ;
 	}
-static int _767()
+static int _768()
 	{
-	log("_767") ;
+	log("_768") ;
 	auto = new customType_callConv_type_222Ector22_272827_sigArgs30_272927() ;
 	backup = 6 ;
 	yy = 280 ;
 	return -110 ;
 	}
-static int _768()
+static int _769()
 	{
-	log("_768") ;
+	log("_769") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=4 min=295 max=331 length=37
 			{
 			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _887() ;
+			case _sigArgs30 : return _888() ;
 			case _sigArgs31 : return _561() ;
 			case _sigArg : return _562() ;
 			default: return __default ;
@@ -11708,41 +11715,41 @@ static int _768()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _768_default ;
+		goto _769_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _887() ) ;
+			return a.deploy( _888() ) ;
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_768_default:
+	_769_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
 	}
-static int _769()
+static int _770()
 	{
-	log("_769") ;
+	log("_770") ;
 	auto = new vtfixupDecl_222Evtfixup22_275B27_int3332_275D27_vtfixupAttr_22at22_id() ;
 	backup = 7 ;
 	yy = 261 ;
 	return -39 ;
 	}
-static int _770()
+static int _771()
 	{
-	log("_770") ;
+	log("_771") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=4 min=332 max=345 length=14
 			{
 			case _name31 : return _158() ;
-			case _className : return _888() ;
+			case _className : return _889() ;
 			case _slashedName : return _160() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -11753,54 +11760,47 @@ static int _770()
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _318() ) ;
+		case _275B27: a.shift() ; return a.deploy( _314() ) ;
 		}
 	throw new SyntaxException() ;
 	}
-static int _771()
+static int _772()
 	{
-	log("_771") ;
+	log("_772") ;
 	auto = new nativeType_22ansi22_22bstr22() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -406 ;
 	}
-static int _772()
+static int _773()
 	{
-	log("_772") ;
+	log("_773") ;
 	auto = new nativeType_22nested22_22struct22() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -404 ;
 	}
-static int _773()
+static int _774()
 	{
-	log("_773") ;
+	log("_774") ;
 	auto = new nativeType_22as22_22any22() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -410 ;
 	}
-static int _774()
+static int _775()
 	{
-	log("_774") ;
+	log("_775") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=257 max=257 length=1
 			{
-			case _compQstring : return _889() ;
+			case _compQstring : return _890() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _775()
-	{
-	log("_775") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275B27 ) { a.shift() ; return a.split( _890() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _776()
@@ -11813,552 +11813,559 @@ static int _776()
 static int _777()
 	{
 	log("_777") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275B27 ) { a.shift() ; return a.split( _892() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _778()
+	{
+	log("_778") ;
 	auto = new nativeType_22variant22_22bool22() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -408 ;
 	}
-static int _778()
+static int _779()
 	{
-	log("_778") ;
+	log("_779") ;
 	auto = new nativeType_22unsigned22_22int333222() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -382 ;
 	}
-static int _779()
+static int _780()
 	{
-	log("_779") ;
+	log("_780") ;
 	auto = new nativeType_22unsigned22_22int363422() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -383 ;
 	}
-static int _780()
+static int _781()
 	{
-	log("_780") ;
+	log("_781") ;
 	auto = new nativeType_22unsigned22_22int313622() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -381 ;
 	}
-static int _781()
+static int _782()
 	{
-	log("_781") ;
+	log("_782") ;
 	auto = new nativeType_22unsigned22_22int3822() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -380 ;
 	}
-static int _782()
+static int _783()
 	{
-	log("_782") ;
+	log("_783") ;
 	auto = new nativeType_22unsigned22_22int22() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -403 ;
 	}
-static int _783()
+static int _784()
 	{
-	log("_783") ;
+	log("_784") ;
 	auto = new variantType_22int333222() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -420 ;
 	}
-static int _784()
+static int _785()
 	{
-	log("_784") ;
+	log("_785") ;
 	auto = new variantType_22int363422() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -421 ;
 	}
-static int _785()
+static int _786()
 	{
-	log("_785") ;
+	log("_786") ;
 	auto = new variantType_272A27() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -428 ;
 	}
-static int _786()
+static int _787()
 	{
-	log("_786") ;
+	log("_787") ;
 	auto = new variantType_22float333222() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -422 ;
 	}
-static int _787()
+static int _788()
 	{
-	log("_787") ;
+	log("_788") ;
 	auto = new variantType_22float363422() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -423 ;
 	}
-static int _788()
+static int _789()
 	{
-	log("_788") ;
+	log("_789") ;
 	auto = new variantType_22int313622() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -419 ;
 	}
-static int _789()
+static int _790()
 	{
-	log("_789") ;
+	log("_790") ;
 	auto = new variantType_22int3822() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -418 ;
 	}
-static int _790()
+static int _791()
 	{
-	log("_790") ;
+	log("_791") ;
 	auto = new variantType_22bool22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -417 ;
 	}
-static int _791()
+static int _792()
 	{
-	log("_791") ;
+	log("_792") ;
 	auto = new variantType_22variant22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -414 ;
 	}
-static int _792()
+static int _793()
 	{
-	log("_792") ;
+	log("_793") ;
 	auto = new variantType_22currency22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -415 ;
 	}
-static int _793()
+static int _794()
 	{
-	log("_793") ;
+	log("_794") ;
 	auto = new variantType_22void22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -416 ;
 	}
-static int _794()
+static int _795()
 	{
-	log("_794") ;
+	log("_795") ;
 	auto = new variantType_22error22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -442 ;
 	}
-static int _795()
-	{
-	log("_795") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.split( _892() ) ;
-		case _22int363422: a.shift() ; return a.split( _893() ) ;
-		case _22int313622: a.shift() ; return a.split( _894() ) ;
-		case _22int3822: a.shift() ; return a.split( _895() ) ;
-		case _22int22: a.shift() ; return a.split( _896() ) ;
-		}
-	throw new SyntaxException() ;
-	}
 static int _796()
 	{
 	log("_796") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _22int333222: a.shift() ; return a.split( _893() ) ;
+		case _22int363422: a.shift() ; return a.split( _894() ) ;
+		case _22int313622: a.shift() ; return a.split( _895() ) ;
+		case _22int3822: a.shift() ; return a.split( _896() ) ;
+		case _22int22: a.shift() ; return a.split( _897() ) ;
+		}
+	throw new SyntaxException() ;
+	}
+static int _797()
+	{
+	log("_797") ;
 	auto = new variantType_22decimal22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -432 ;
 	}
-static int _797()
+static int _798()
 	{
-	log("_797") ;
+	log("_798") ;
 	auto = new variantType_22date22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -433 ;
 	}
-static int _798()
+static int _799()
 	{
-	log("_798") ;
+	log("_799") ;
 	auto = new variantType_22bstr22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -434 ;
 	}
-static int _799()
+static int _800()
 	{
-	log("_799") ;
+	log("_800") ;
 	auto = new variantType_22lpstr22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -435 ;
 	}
-static int _800()
+static int _801()
 	{
-	log("_800") ;
+	log("_801") ;
 	auto = new variantType_22lpwstr22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -436 ;
 	}
-static int _801()
+static int _802()
 	{
-	log("_801") ;
+	log("_802") ;
 	auto = new variantType_22iunknown22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -437 ;
 	}
-static int _802()
+static int _803()
 	{
-	log("_802") ;
+	log("_803") ;
 	auto = new variantType_22idispatch22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -438 ;
 	}
-static int _803()
+static int _804()
 	{
-	log("_803") ;
+	log("_804") ;
 	auto = new variantType_22safearray22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -439 ;
 	}
-static int _804()
+static int _805()
 	{
-	log("_804") ;
+	log("_805") ;
 	auto = new variantType_22int22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -440 ;
 	}
-static int _805()
+static int _806()
 	{
-	log("_805") ;
+	log("_806") ;
 	auto = new variantType_22null22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -413 ;
 	}
-static int _806()
+static int _807()
 	{
-	log("_806") ;
+	log("_807") ;
 	auto = new variantType_22hresult22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -443 ;
 	}
-static int _807()
+static int _808()
 	{
-	log("_807") ;
+	log("_808") ;
 	auto = new variantType_22carray22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -444 ;
 	}
-static int _808()
+static int _809()
 	{
-	log("_808") ;
+	log("_809") ;
 	auto = new variantType_22userdefined22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -445 ;
 	}
-static int _809()
+static int _810()
 	{
-	log("_809") ;
+	log("_810") ;
 	auto = new variantType_22record22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -446 ;
 	}
-static int _810()
+static int _811()
 	{
-	log("_810") ;
+	log("_811") ;
 	auto = new variantType_22filetime22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -447 ;
 	}
-static int _811()
+static int _812()
 	{
-	log("_811") ;
+	log("_812") ;
 	auto = new variantType_22blob22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -448 ;
 	}
-static int _812()
+static int _813()
 	{
-	log("_812") ;
+	log("_813") ;
 	auto = new variantType_22stream22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -449 ;
 	}
-static int _813()
+static int _814()
 	{
-	log("_813") ;
+	log("_814") ;
 	auto = new variantType_22storage22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -450 ;
 	}
-static int _814()
+static int _815()
 	{
-	log("_814") ;
+	log("_815") ;
 	auto = new variantType_22streamed5Fobject22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -451 ;
 	}
-static int _815()
+static int _816()
 	{
-	log("_815") ;
+	log("_816") ;
 	auto = new variantType_22stored5Fobject22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -452 ;
 	}
-static int _816()
+static int _817()
 	{
-	log("_816") ;
+	log("_817") ;
 	auto = new variantType_22blob5Fobject22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -453 ;
 	}
-static int _817()
+static int _818()
 	{
-	log("_817") ;
+	log("_818") ;
 	auto = new variantType_22cf22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -454 ;
 	}
-static int _818()
+static int _819()
 	{
-	log("_818") ;
+	log("_819") ;
 	auto = new variantType_22clsid22() ;
 	backup = 1 ;
 	yy = 339 ;
 	return -455 ;
 	}
-static int _819()
+static int _820()
 	{
-	log("_819") ;
+	log("_820") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case 39: /* case 44: */ case 152: 
+		case 39: /* case 44: */ case 153: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _819_default ;
-		case _272C27: a.shift() ; return a.split( _897() ) ;
-		case _275B27: a.shift() ; return a.split( _898() ) ;
-		case _272627: a.shift() ; return a.split( _899() ) ;
-		case _22vector22: a.shift() ; return a.split( _900() ) ;
+		goto _820_default ;
+		case _272C27: a.shift() ; return a.split( _898() ) ;
+		case _275B27: a.shift() ; return a.split( _899() ) ;
+		case _272627: a.shift() ; return a.split( _900() ) ;
+		case _22vector22: a.shift() ; return a.split( _901() ) ;
 		}
-	_819_default:
+	_820_default:
 	auto = new nativeType_22safearray22_variantType() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -400 ;
 	}
-static int _820()
+static int _821()
 	{
-	log("_820") ;
+	log("_821") ;
 	auto = new fieldAttr_fieldAttr_22marshal22_272827_nativeType_272927() ;
 	backup = 5 ;
 	yy = 296 ;
 	return -197 ;
 	}
-static int _821()
+static int _822()
 	{
-	log("_821") ;
+	log("_822") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _903() ;
+			case _int3332 : return _904() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
 		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		case _272B27: a.shift() ; return a.deploy( _901() ) ;
-		case _275D27: a.shift() ; return a.deploy( _902() ) ;
+		case _272B27: a.shift() ; return a.deploy( _902() ) ;
+		case _275D27: a.shift() ; return a.deploy( _903() ) ;
 		}
 	throw new SyntaxException() ;
 	}
-static int _822()
+static int _823()
 	{
-	log("_822") ;
+	log("_823") ;
 	auto = new nativeType_nativeType_272A27() ;
 	backup = 2 ;
 	yy = 338 ;
 	return -384 ;
 	}
-static int _823()
+static int _824()
 	{
-	log("_823") ;
+	log("_824") ;
 	auto = new atOpt_22at22_id() ;
 	backup = 2 ;
 	yy = 274 ;
 	return -98 ;
 	}
-static int _824()
+static int _825()
 	{
-	log("_824") ;
+	log("_825") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=3 min=257 max=322 length=66
 			{
-			case _compQstring : return _913() ;
-			case _fieldInit : return _914() ;
-			case _bytearrayhead : return _915() ;
+			case _compQstring : return _914() ;
+			case _fieldInit : return _915() ;
+			case _bytearrayhead : return _916() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
 		case _QSTRING: a.shift() ; return a.deploy( _332() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _904() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _905() ) ;
-		case _22char22: a.shift() ; return a.deploy( _906() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _907() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _908() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _909() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _910() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _911() ) ;
-		case _22nullref22: a.shift() ; return a.deploy( _912() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _905() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _906() ) ;
+		case _22char22: a.shift() ; return a.deploy( _907() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _908() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _909() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _910() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _911() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _912() ) ;
+		case _22nullref22: a.shift() ; return a.deploy( _913() ) ;
 		case _22bytearray22: a.shift() ; return a.deploy( _120() ) ;
 		}
 	throw new SyntaxException() ;
 	}
-static int _825()
+static int _826()
 	{
-	log("_825") ;
+	log("_826") ;
 	auto = new fieldDecl_222Efield22_repeatOpt_fieldAttr_type_id_atOpt_initOpt() ;
 	backup = 7 ;
 	yy = 273 ;
 	return -96 ;
 	}
-static int _826()
-	{
-	log("_826") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _916() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _827()
 	{
 	log("_827") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _917() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _828()
+	{
+	log("_828") ;
 	auto = new truefalse_22true22() ;
 	backup = 1 ;
 	yy = 354 ;
 	return -518 ;
 	}
-static int _828()
+static int _829()
 	{
-	log("_828") ;
+	log("_829") ;
 	auto = new truefalse_22false22() ;
 	backup = 1 ;
 	yy = 354 ;
 	return -519 ;
 	}
-static int _829()
+static int _830()
 	{
-	log("_829") ;
+	log("_830") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
 		case 36: case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _829_default ;
+		goto _830_default ;
 		case _272B27: a.shift() ; return a.split( _507() ) ;
 		}
-	_829_default:
+	_830_default:
 	auto = new caValue_compQstring() ;
 	backup = 1 ;
 	yy = 355 ;
 	return -523 ;
 	}
-static int _830()
-	{
-	log("_830") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _917() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _831()
 	{
 	log("_831") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _918() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _832()
+	{
+	log("_832") ;
 	auto = new caValue_int3332() ;
 	backup = 1 ;
 	yy = 355 ;
 	return -521 ;
 	}
-static int _832()
+static int _833()
 	{
-	log("_832") ;
+	log("_833") ;
 	auto = new caValue_truefalse() ;
 	backup = 1 ;
 	yy = 355 ;
 	return -520 ;
 	}
-static int _833()
+static int _834()
 	{
-	log("_833") ;
+	log("_834") ;
 	auto = new nameValPair_compQstring_273D27_caValue() ;
 	backup = 3 ;
 	yy = 353 ;
 	return -517 ;
 	}
-static int _834()
+static int _835()
 	{
-	log("_834") ;
+	log("_835") ;
 	auto = new nameValPairs_nameValPair_272C27_nameValPairs() ;
 	backup = 3 ;
 	yy = 352 ;
 	return -516 ;
 	}
-static int _835()
-	{
-	log("_835") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _22with22 ) { a.shift() ; return a.split( _918() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _836()
 	{
 	log("_836") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _22with22 ) { a.shift() ; return a.split( _919() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _837()
+	{
+	log("_837") ;
 	auto = new eventHead_222Eevent22_eventAttr_typeSpec_id() ;
 	backup = 4 ;
 	yy = 282 ;
 	return -113 ;
 	}
-static int _837()
+static int _838()
 	{
-	log("_837") ;
+	log("_838") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _919() ;
+			case _id : return _920() ;
 			default: return __default ;
 			}
 		} ;
@@ -12376,51 +12383,21 @@ static int _837()
 		}
 	throw new SyntaxException() ;
 	}
-static int _838()
+static int _839()
 	{
-	log("_838") ;
+	log("_839") ;
 	auto = new classDecl_classHead_277B27_classDecls_277D27() ;
 	backup = 4 ;
 	yy = 272 ;
 	return -83 ;
 	}
-static int _839()
+static int _840()
 	{
-	log("_839") ;
+	log("_840") ;
 	auto = new classDecl_eventHead_277B27_eventDecls_277D27() ;
 	backup = 4 ;
 	yy = 272 ;
 	return -84 ;
-	}
-static int _840()
-	{
-	log("_840") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=336 max=337 length=2
-			{
-			case _callConv : return _920() ;
-			case _callKind : return _65() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
-		case 212: case 218: case 219: 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _840_default ;
-		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
-		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
-		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
-		case _22default22: a.shift() ; return a.deploy( _61() ) ;
-		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
-		}
-	_840_default:
-	return a.deploy( _65() ) ;
 	}
 static int _841()
 	{
@@ -12437,8 +12414,8 @@ static int _841()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -12467,8 +12444,8 @@ static int _842()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -12497,8 +12474,8 @@ static int _843()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -12515,46 +12492,6 @@ static int _843()
 static int _844()
 	{
 	log("_844") ;
-	auto = new eventDecl_languageDecl() ;
-	backup = 1 ;
-	yy = 285 ;
-	return -130 ;
-	}
-static int _845()
-	{
-	log("_845") ;
-	auto = new eventDecl_customAttrDecl() ;
-	backup = 1 ;
-	yy = 285 ;
-	return -129 ;
-	}
-static int _846()
-	{
-	log("_846") ;
-	auto = new eventDecls_eventDecls_eventDecl() ;
-	backup = 2 ;
-	yy = 284 ;
-	return -119 ;
-	}
-static int _847()
-	{
-	log("_847") ;
-	auto = new eventDecl_extSourceSpec() ;
-	backup = 1 ;
-	yy = 285 ;
-	return -128 ;
-	}
-static int _848()
-	{
-	log("_848") ;
-	auto = new classDecl_propHead_277B27_propDecls_277D27() ;
-	backup = 4 ;
-	yy = 272 ;
-	return -85 ;
-	}
-static int _849()
-	{
-	log("_849") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -12567,20 +12504,60 @@ static int _849()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _849_default ;
+		goto _844_default ;
 		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
 		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
 		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
 		case _22default22: a.shift() ; return a.deploy( _61() ) ;
 		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
 		}
-	_849_default:
+	_844_default:
 	return a.deploy( _65() ) ;
+	}
+static int _845()
+	{
+	log("_845") ;
+	auto = new eventDecl_languageDecl() ;
+	backup = 1 ;
+	yy = 285 ;
+	return -130 ;
+	}
+static int _846()
+	{
+	log("_846") ;
+	auto = new eventDecl_customAttrDecl() ;
+	backup = 1 ;
+	yy = 285 ;
+	return -129 ;
+	}
+static int _847()
+	{
+	log("_847") ;
+	auto = new eventDecls_eventDecls_eventDecl() ;
+	backup = 2 ;
+	yy = 284 ;
+	return -119 ;
+	}
+static int _848()
+	{
+	log("_848") ;
+	auto = new eventDecl_extSourceSpec() ;
+	backup = 1 ;
+	yy = 285 ;
+	return -128 ;
+	}
+static int _849()
+	{
+	log("_849") ;
+	auto = new classDecl_propHead_277B27_propDecls_277D27() ;
+	backup = 4 ;
+	yy = 272 ;
+	return -85 ;
 	}
 static int _850()
 	{
@@ -12597,8 +12574,8 @@ static int _850()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -12627,8 +12604,8 @@ static int _851()
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
@@ -12645,52 +12622,82 @@ static int _851()
 static int _852()
 	{
 	log("_852") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=336 max=337 length=2
+			{
+			case _callConv : return _927() ;
+			case _callKind : return _65() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
+		case 212: case 218: case 219: 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _852_default ;
+		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
+		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
+		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
+		case _22default22: a.shift() ; return a.deploy( _61() ) ;
+		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
+		}
+	_852_default:
+	return a.deploy( _65() ) ;
+	}
+static int _853()
+	{
+	log("_853") ;
 	auto = new propDecl_languageDecl() ;
 	backup = 1 ;
 	yy = 289 ;
 	return -145 ;
 	}
-static int _853()
+static int _854()
 	{
-	log("_853") ;
+	log("_854") ;
 	auto = new propDecl_customAttrDecl() ;
 	backup = 1 ;
 	yy = 289 ;
 	return -143 ;
 	}
-static int _854()
+static int _855()
 	{
-	log("_854") ;
+	log("_855") ;
 	auto = new propDecls_propDecls_propDecl() ;
 	backup = 2 ;
 	yy = 288 ;
 	return -136 ;
 	}
-static int _855()
+static int _856()
 	{
-	log("_855") ;
+	log("_856") ;
 	auto = new propDecl_extSourceSpec() ;
 	backup = 1 ;
 	yy = 289 ;
 	return -144 ;
 	}
-static int _856()
+static int _857()
 	{
-	log("_856") ;
+	log("_857") ;
 	auto = new classDecl_exportHead_277B27_comtypeDecls_277D27() ;
 	backup = 4 ;
 	yy = 272 ;
 	return -93 ;
 	}
-static int _857()
+static int _858()
 	{
-	log("_857") ;
+	log("_858") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=293 max=293 length=1
 			{
-			case _pinvAttr : return _927() ;
+			case _pinvAttr : return _928() ;
 			default: return __default ;
 			}
 		} ;
@@ -12700,71 +12707,71 @@ static int _857()
 		case 111: case 112: case 113: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _857_default ;
+		goto _858_default ;
 		case _272B27: a.shift() ; return a.deploy( _507() ) ;
 		}
-	_857_default:
-	return a.deploy( _927() ) ;
+	_858_default:
+	return a.deploy( _928() ) ;
 	}
-static int _858()
+static int _859()
 	{
-	log("_858") ;
+	log("_859") ;
 	auto = new methAttr_methAttr_22pinvokeimpl22_272827_compQstring_pinvAttr_272927() ;
 	backup = 6 ;
 	yy = 292 ;
 	return -168 ;
 	}
-static int _859()
+static int _860()
 	{
-	log("_859") ;
+	log("_860") ;
 	auto = new paramAttr_paramAttr_275B27_22in22_275D27() ;
 	backup = 4 ;
 	yy = 295 ;
 	return -185 ;
 	}
-static int _860()
+static int _861()
 	{
-	log("_860") ;
+	log("_861") ;
 	auto = new paramAttr_paramAttr_275B27_22out22_275D27() ;
 	backup = 4 ;
 	yy = 295 ;
 	return -186 ;
 	}
-static int _861()
+static int _862()
 	{
-	log("_861") ;
+	log("_862") ;
 	auto = new paramAttr_paramAttr_275B27_22opt22_275D27() ;
 	backup = 4 ;
 	yy = 295 ;
 	return -187 ;
 	}
-static int _862()
+static int _863()
 	{
-	log("_862") ;
+	log("_863") ;
 	auto = new paramAttr_paramAttr_275B27_int3332_275D27() ;
 	backup = 4 ;
 	yy = 295 ;
 	return -188 ;
 	}
-static int _863()
+static int _864()
 	{
-	log("_863") ;
+	log("_864") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=2 min=327 max=338 length=12
 			{
 			case _methodSpec : return _670() ;
-			case _nativeType : return _928() ;
+			case _nativeType : return _929() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 39: case 44: case 152: 
+		case 39: case 44: case 153: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _863_default ;
+		goto _864_default ;
 		case _22int333222: a.shift() ; return a.deploy( _636() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _637() ) ;
 		case _22interface22: a.shift() ; return a.deploy( _638() ) ;
@@ -12776,7 +12783,7 @@ static int _863()
 		case _22int313622: a.shift() ; return a.deploy( _644() ) ;
 		case _22int3822: a.shift() ; return a.deploy( _645() ) ;
 		case _22bool22: a.shift() ; return a.deploy( _646() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
 		case _22custom22: a.shift() ; return a.deploy( _647() ) ;
 		case _22fixed22: a.shift() ; return a.deploy( _648() ) ;
 		case _22variant22: a.shift() ; return a.deploy( _649() ) ;
@@ -12801,54 +12808,12 @@ static int _863()
 		case _22tbstr22: a.shift() ; return a.deploy( _668() ) ;
 		case _22lpstruct22: a.shift() ; return a.deploy( _669() ) ;
 		}
-	_863_default:
-	return a.deploy( _928() ) ;
-	}
-static int _864()
-	{
-	log("_864") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=295 max=331 length=37
-			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _929() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _864_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _929() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
-		}
 	_864_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
+	return a.deploy( _929() ) ;
 	}
 static int _865()
 	{
 	log("_865") ;
-	auto = new instr_INSTR5FFIELD_type_typeSpec_223A3A22_id() ;
-	backup = 5 ;
-	yy = 328 ;
-	return -321 ;
-	}
-static int _866()
-	{
-	log("_866") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -12863,12 +12828,12 @@ static int _866()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _866_default ;
+		goto _865_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
@@ -12876,9 +12841,17 @@ static int _866()
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_866_default:
+	_865_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
+	}
+static int _866()
+	{
+	log("_866") ;
+	auto = new instr_INSTR5FFIELD_type_typeSpec_223A3A22_id() ;
+	backup = 5 ;
+	yy = 328 ;
+	return -321 ;
 	}
 static int _867()
 	{
@@ -12886,9 +12859,43 @@ static int _867()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _931() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _867_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _931() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_867_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
+	}
+static int _868()
+	{
+	log("_868") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
 		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _931() ;
+			case _methodName : return _932() ;
 			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -12904,54 +12911,54 @@ static int _867()
 		}
 	throw new SyntaxException() ;
 	}
-static int _868()
+static int _869()
 	{
-	log("_868") ;
+	log("_869") ;
 	auto = new float64_22float333222_272827_int3332_272927() ;
 	backup = 4 ;
 	yy = 349 ;
 	return -509 ;
 	}
-static int _869()
+static int _870()
 	{
-	log("_869") ;
+	log("_870") ;
 	auto = new float64_22float363422_272827_int3634_272927() ;
 	backup = 4 ;
 	yy = 349 ;
 	return -510 ;
 	}
-static int _870()
-	{
-	log("_870") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _932() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _871()
 	{
 	log("_871") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _933() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _872()
+	{
+	log("_872") ;
 	auto = new labels_id_272C27_labels() ;
 	backup = 3 ;
 	yy = 344 ;
 	return -498 ;
 	}
-static int _872()
+static int _873()
 	{
-	log("_872") ;
+	log("_873") ;
 	auto = new labels_int3332_272C27_labels() ;
 	backup = 3 ;
 	yy = 344 ;
 	return -499 ;
 	}
-static int _873()
+static int _874()
 	{
-	log("_873") ;
+	log("_874") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _933() ;
+			case _id : return _934() ;
 			default: return __default ;
 			}
 		} ;
@@ -12960,61 +12967,44 @@ static int _873()
 	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
 	throw new SyntaxException() ;
 	}
-static int _874()
+static int _875()
 	{
-	log("_874") ;
+	log("_875") ;
 	auto = new methodDecl_222Eparam22_275B27_int3332_275D27_initOpt() ;
 	backup = 5 ;
 	yy = 299 ;
 	return -236 ;
 	}
-static int _875()
-	{
-	log("_875") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _934() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _876()
 	{
 	log("_876") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _935() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _877()
+	{
+	log("_877") ;
 	auto = new sigArg_paramAttr_type_id() ;
 	backup = 3 ;
 	yy = 331 ;
 	return -338 ;
 	}
-static int _877()
+static int _878()
 	{
-	log("_877") ;
+	log("_878") ;
 	auto = new sigArgs1_sigArgs31_272C27_sigArg() ;
 	backup = 3 ;
 	yy = 330 ;
 	return -335 ;
 	}
-static int _878()
+static int _879()
 	{
-	log("_878") ;
+	log("_879") ;
 	auto = new methodDecl_localsHead_22init22_272827_sigArgs30_272927() ;
 	backup = 5 ;
 	yy = 299 ;
 	return -221 ;
-	}
-static int _879()
-	{
-	log("_879") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=345 max=345 length=1
-			{
-			case _id : return _935() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
-	else
-	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
-	throw new SyntaxException() ;
 	}
 static int _880()
 	{
@@ -13022,44 +13012,54 @@ static int _880()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=347 max=347 length=1
+		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _int3332 : return _936() ;
+			case _id : return _936() ;
 			default: return __default ;
 			}
 		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	if( token.point == _ID ) { a.shift() ; return a.deploy( _66() ) ; }
+	else
+	if( token.point == _SQSTRING ) { a.shift() ; return a.deploy( _67() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _881()
 	{
 	log("_881") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _937() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _937() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _882()
 	{
 	log("_882") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _938() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _883()
+	{
+	log("_883") ;
 	auto = new manifestResDecl_222Efile22_name31_22at22_int3332() ;
 	backup = 4 ;
 	yy = 381 ;
 	return -603 ;
 	}
-static int _883()
+static int _884()
 	{
-	log("_883") ;
+	log("_884") ;
 	auto = new fileDecl_222Efile22_fileAttr_name31_fileEntry_hashHead_bytes_272927_fileEntry() ;
 	backup = 8 ;
 	yy = 358 ;
 	return -548 ;
-	}
-static int _884()
-	{
-	log("_884") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _938() ) ; }
-	throw new SyntaxException() ;
 	}
 static int _885()
 	{
@@ -13072,46 +13072,38 @@ static int _886()
 	{
 	log("_886") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _940() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _940() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _887()
 	{
 	log("_887") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _941() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _941() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _888()
 	{
 	log("_888") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _942() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _889()
+	{
+	log("_889") ;
 	auto = new classNames_classNames_272C27_className() ;
 	backup = 3 ;
 	yy = 270 ;
 	return -78 ;
 	}
-static int _889()
-	{
-	log("_889") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
-	else
-	if( token.point == _272C27 ) { a.shift() ; return a.split( _942() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _890()
 	{
 	log("_890") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=347 max=347 length=1
-			{
-			case _int3332 : return _943() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
+	else
+	if( token.point == _272C27 ) { a.shift() ; return a.split( _943() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _891()
@@ -13132,118 +13124,126 @@ static int _891()
 static int _892()
 	{
 	log("_892") ;
-	auto = new variantType_22unsigned22_22int333222() ;
-	backup = 2 ;
-	yy = 339 ;
-	return -426 ;
-	}
-static int _893()
-	{
-	log("_893") ;
-	auto = new variantType_22unsigned22_22int363422() ;
-	backup = 2 ;
-	yy = 339 ;
-	return -427 ;
-	}
-static int _894()
-	{
-	log("_894") ;
-	auto = new variantType_22unsigned22_22int313622() ;
-	backup = 2 ;
-	yy = 339 ;
-	return -425 ;
-	}
-static int _895()
-	{
-	log("_895") ;
-	auto = new variantType_22unsigned22_22int3822() ;
-	backup = 2 ;
-	yy = 339 ;
-	return -424 ;
-	}
-static int _896()
-	{
-	log("_896") ;
-	auto = new variantType_22unsigned22_22int22() ;
-	backup = 2 ;
-	yy = 339 ;
-	return -441 ;
-	}
-static int _897()
-	{
-	log("_897") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=257 max=257 length=1
-			{
-			case _compQstring : return _945() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _898()
-	{
-	log("_898") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _946() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _899()
-	{
-	log("_899") ;
-	auto = new variantType_variantType_272627() ;
-	backup = 2 ;
-	yy = 339 ;
-	return -431 ;
-	}
-static int _900()
-	{
-	log("_900") ;
-	auto = new variantType_variantType_22vector22() ;
-	backup = 2 ;
-	yy = 339 ;
-	return -430 ;
-	}
-static int _901()
-	{
-	log("_901") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _947() ;
+			case _int3332 : return _945() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new SyntaxException() ;
 	}
+static int _893()
+	{
+	log("_893") ;
+	auto = new variantType_22unsigned22_22int333222() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -426 ;
+	}
+static int _894()
+	{
+	log("_894") ;
+	auto = new variantType_22unsigned22_22int363422() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -427 ;
+	}
+static int _895()
+	{
+	log("_895") ;
+	auto = new variantType_22unsigned22_22int313622() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -425 ;
+	}
+static int _896()
+	{
+	log("_896") ;
+	auto = new variantType_22unsigned22_22int3822() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -424 ;
+	}
+static int _897()
+	{
+	log("_897") ;
+	auto = new variantType_22unsigned22_22int22() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -441 ;
+	}
+static int _898()
+	{
+	log("_898") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _946() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _899()
+	{
+	log("_899") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _947() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _900()
+	{
+	log("_900") ;
+	auto = new variantType_variantType_272627() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -431 ;
+	}
+static int _901()
+	{
+	log("_901") ;
+	auto = new variantType_variantType_22vector22() ;
+	backup = 2 ;
+	yy = 339 ;
+	return -430 ;
+	}
 static int _902()
 	{
 	log("_902") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _948() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _903()
+	{
+	log("_903") ;
 	auto = new nativeType_nativeType_275B27_275D27() ;
 	backup = 3 ;
 	yy = 338 ;
 	return -385 ;
 	}
-static int _903()
-	{
-	log("_903") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _948() ) ; }
-	else
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _949() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _904()
 	{
 	log("_904") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _950() ) ; }
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _949() ) ; }
+	else
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _950() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _905()
@@ -13298,14 +13298,21 @@ static int _911()
 static int _912()
 	{
 	log("_912") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _958() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _913()
+	{
+	log("_913") ;
 	auto = new fieldInit_22nullref22() ;
 	backup = 1 ;
 	yy = 321 ;
 	return -300 ;
 	}
-static int _913()
+static int _914()
 	{
-	log("_913") ;
+	log("_914") ;
 	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
@@ -13315,35 +13322,35 @@ static int _913()
 		case 33: case 35: case 37: case 41: case 43: case 51: case 52: case 53:
 		case 79: case 80: case 81: case 84: case 87: case 92: case 95: case 132:
 		case 133: case 134: case 136: case 137: case 139: case 140: case 141: case 143:
-		case 149: case 221: case 222: case 240: case 243: case 252: 
+		case 150: case 221: case 222: case 240: case 243: case 252: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _913_default ;
+		goto _914_default ;
 		case _272B27: a.shift() ; return a.split( _507() ) ;
 		}
-	_913_default:
+	_914_default:
 	auto = new fieldInit_compQstring() ;
 	backup = 1 ;
 	yy = 321 ;
 	return -298 ;
 	}
-static int _914()
+static int _915()
 	{
-	log("_914") ;
+	log("_915") ;
 	auto = new initOpt_273D27_fieldInit() ;
 	backup = 2 ;
 	yy = 275 ;
 	return -100 ;
 	}
-static int _915()
+static int _916()
 	{
-	log("_915") ;
+	log("_916") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=2 min=323 max=324 length=2
 			{
-			case _bytes : return _958() ;
+			case _bytes : return _959() ;
 			case _hexbytes : return _104() ;
 			default: return __default ;
 			}
@@ -13353,26 +13360,11 @@ static int _915()
 		case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _915_default ;
+		goto _916_default ;
 		case _HEXBYTE: a.shift() ; return a.deploy( _102() ) ;
 		}
-	_915_default:
-	return a.deploy( _958() ) ;
-	}
-static int _916()
-	{
-	log("_916") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=347 max=347 length=1
-			{
-			case _int3332 : return _959() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new SyntaxException() ;
+	_916_default:
+	return a.deploy( _959() ) ;
 	}
 static int _917()
 	{
@@ -13382,17 +13374,11 @@ static int _917()
 		{
 		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _963() ;
+			case _int3332 : return _960() ;
 			default: return __default ;
 			}
 		} ;
-	switch( token.point )
-		{
-		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _960() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _961() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _962() ) ;
-		}
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _918()
@@ -13401,72 +13387,56 @@ static int _918()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _964() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _INT3634: a.shift() ; return a.deploy( _48() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _961() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _962() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _963() ) ;
+		}
+	throw new SyntaxException() ;
+	}
+static int _919()
+	{
+	log("_919") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
 		switch(_yy) // size=2 min=336 max=337 length=2
 			{
-			case _callConv : return _964() ;
+			case _callConv : return _965() ;
 			case _callKind : return _65() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 47: case 48: case 56: case 121: case 151: case 154: case 155: case 156:
-		case 157: case 158: case 161: case 175: case 177: case 209: case 210: case 211:
+		case 47: case 48: case 56: case 121: case 146: case 152: case 155: case 156:
+		case 157: case 158: case 159: case 162: case 176: case 178: case 210: case 211:
 		case 212: case 218: case 219: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _918_default ;
+		goto _919_default ;
 		case _22explicit22: a.shift() ; return a.deploy( _58() ) ;
 		case _22unmanaged22: a.shift() ; return a.deploy( _59() ) ;
 		case _22instance22: a.shift() ; return a.deploy( _60() ) ;
 		case _22default22: a.shift() ; return a.deploy( _61() ) ;
 		case _22vararg22: a.shift() ; return a.deploy( _62() ) ;
 		}
-	_918_default:
+	_919_default:
 	return a.deploy( _65() ) ;
-	}
-static int _919()
-	{
-	log("_919") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _965() ) ; }
-	throw new SyntaxException() ;
 	}
 static int _920()
 	{
 	log("_920") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=327 max=340 length=14
-			{
-			case _methodSpec : return _170() ;
-			case _type : return _966() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
+	if( token.point == _272827 ) { a.shift() ; return a.split( _966() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _921()
@@ -13488,16 +13458,16 @@ static int _921()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -13525,16 +13495,16 @@ static int _922()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -13562,16 +13532,16 @@ static int _923()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -13599,16 +13569,16 @@ static int _924()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -13636,16 +13606,16 @@ static int _925()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -13673,16 +13643,16 @@ static int _926()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -13695,9 +13665,46 @@ static int _927()
 	{
 	log("_927") ;
 	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=2 min=327 max=340 length=14
+			{
+			case _methodSpec : return _170() ;
+			case _type : return _973() ;
+			default: return __default ;
+			}
+		} ;
 	switch( token.point )
 		{
-		case _272927: a.shift() ; return a.split( _973() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
+	throw new SyntaxException() ;
+	}
+static int _928()
+	{
+	log("_928") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _272927: a.shift() ; return a.split( _974() ) ;
 		case _22ansi22: a.shift() ; return a.split( _694() ) ;
 		case _22unicode22: a.shift() ; return a.split( _695() ) ;
 		case _22autochar22: a.shift() ; return a.split( _696() ) ;
@@ -13711,23 +13718,16 @@ static int _927()
 		}
 	throw new SyntaxException() ;
 	}
-static int _928()
-	{
-	log("_928") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _272927: a.shift() ; return a.split( _974() ) ;
-		case _275B27: a.shift() ; return a.split( _821() ) ;
-		case _272A27: a.shift() ; return a.split( _822() ) ;
-		}
-	throw new SyntaxException() ;
-	}
 static int _929()
 	{
 	log("_929") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _975() ) ; }
+	switch( token.point )
+		{
+		case _272927: a.shift() ; return a.split( _975() ) ;
+		case _275B27: a.shift() ; return a.split( _822() ) ;
+		case _272A27: a.shift() ; return a.split( _823() ) ;
+		}
 	throw new SyntaxException() ;
 	}
 static int _930()
@@ -13741,44 +13741,51 @@ static int _931()
 	{
 	log("_931") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _977() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _977() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _932()
 	{
 	log("_932") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _978() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _933()
+	{
+	log("_933") ;
 	auto = new instr_INSTR5FSIG_callConv_type_272827_sigArgs30_272927() ;
 	backup = 6 ;
 	yy = 328 ;
 	return -326 ;
 	}
-static int _933()
+static int _934()
 	{
-	log("_933") ;
+	log("_934") ;
 	auto = new methodDecl_222Eexport22_275B27_int3332_275D27_22as22_id() ;
 	backup = 6 ;
 	yy = 299 ;
 	return -232 ;
 	}
-static int _934()
+static int _935()
 	{
-	log("_934") ;
+	log("_935") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=2 min=327 max=338 length=12
 			{
 			case _methodSpec : return _670() ;
-			case _nativeType : return _978() ;
+			case _nativeType : return _979() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 39: case 44: case 152: 
+		case 39: case 44: case 153: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _934_default ;
+		goto _935_default ;
 		case _22int333222: a.shift() ; return a.deploy( _636() ) ;
 		case _22int363422: a.shift() ; return a.deploy( _637() ) ;
 		case _22interface22: a.shift() ; return a.deploy( _638() ) ;
@@ -13790,7 +13797,7 @@ static int _934()
 		case _22int313622: a.shift() ; return a.deploy( _644() ) ;
 		case _22int3822: a.shift() ; return a.deploy( _645() ) ;
 		case _22bool22: a.shift() ; return a.deploy( _646() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
 		case _22custom22: a.shift() ; return a.deploy( _647() ) ;
 		case _22fixed22: a.shift() ; return a.deploy( _648() ) ;
 		case _22variant22: a.shift() ; return a.deploy( _649() ) ;
@@ -13815,66 +13822,66 @@ static int _934()
 		case _22tbstr22: a.shift() ; return a.deploy( _668() ) ;
 		case _22lpstruct22: a.shift() ; return a.deploy( _669() ) ;
 		}
-	_934_default:
-	return a.deploy( _978() ) ;
+	_935_default:
+	return a.deploy( _979() ) ;
 	}
-static int _935()
+static int _936()
 	{
-	log("_935") ;
+	log("_936") ;
 	auto = new handlerBlock_22handler22_id_22to22_id() ;
 	backup = 4 ;
 	yy = 312 ;
 	return -258 ;
 	}
-static int _936()
+static int _937()
 	{
-	log("_936") ;
+	log("_937") ;
 	auto = new handlerBlock_22handler22_int3332_22to22_int3332() ;
 	backup = 4 ;
 	yy = 312 ;
 	return -259 ;
 	}
-static int _937()
+static int _938()
 	{
-	log("_937") ;
+	log("_938") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _979() ;
+			case _int3332 : return _980() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new SyntaxException() ;
 	}
-static int _938()
+static int _939()
 	{
-	log("_938") ;
+	log("_939") ;
 	auto = new type_methodSpec_callConv_type_272A27_272827_sigArgs30_272927() ;
 	backup = 7 ;
 	yy = 340 ;
 	return -470 ;
 	}
-static int _939()
+static int _940()
 	{
-	log("_939") ;
+	log("_940") ;
 	auto = new memberRef_methodSpec_callConv_type_methodName_272827_sigArgs30_272927() ;
 	backup = 7 ;
 	yy = 279 ;
 	return -106 ;
 	}
-static int _940()
+static int _941()
 	{
-	log("_940") ;
+	log("_941") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=4 min=295 max=331 length=37
 			{
 			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _980() ;
+			case _sigArgs30 : return _981() ;
 			case _sigArgs31 : return _561() ;
 			case _sigArg : return _562() ;
 			default: return __default ;
@@ -13882,51 +13889,44 @@ static int _940()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _940_default ;
+		goto _941_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _980() ) ;
+			return a.deploy( _981() ) ;
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_940_default:
+	_941_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
 	}
-static int _941()
+static int _942()
 	{
-	log("_941") ;
+	log("_942") ;
 	auto = new customType_callConv_type_typeSpec_223A3A22_222Ector22_272827_sigArgs30_272927() ;
 	backup = 8 ;
 	yy = 280 ;
 	return -109 ;
 	}
-static int _942()
+static int _943()
 	{
-	log("_942") ;
+	log("_943") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=257 max=257 length=1
 			{
-			case _compQstring : return _981() ;
+			case _compQstring : return _982() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _943()
-	{
-	log("_943") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _982() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _944()
@@ -13940,72 +13940,64 @@ static int _945()
 	{
 	log("_945") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _984() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _946()
+	{
+	log("_946") ;
+	Automaton a = new Automaton() ;
 	switch( token.point )
 		{
-		case 39: case 44: case 152: 
+		case 39: case 44: case 153: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _945_default ;
+		goto _946_default ;
 		case _272B27: a.shift() ; return a.split( _507() ) ;
 		}
-	_945_default:
+	_946_default:
 	auto = new nativeType_22safearray22_variantType_272C27_compQstring() ;
 	backup = 4 ;
 	yy = 338 ;
 	return -401 ;
 	}
-static int _946()
+static int _947()
 	{
-	log("_946") ;
+	log("_947") ;
 	auto = new variantType_variantType_275B27_275D27() ;
 	backup = 3 ;
 	yy = 339 ;
 	return -429 ;
 	}
-static int _947()
-	{
-	log("_947") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _984() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _948()
 	{
 	log("_948") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _985() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _949()
+	{
+	log("_949") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _985() ;
+			case _int3332 : return _986() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new SyntaxException() ;
 	}
-static int _949()
+static int _950()
 	{
-	log("_949") ;
+	log("_950") ;
 	auto = new nativeType_nativeType_275B27_int3332_275D27() ;
 	backup = 4 ;
 	yy = 338 ;
 	return -386 ;
-	}
-static int _950()
-	{
-	log("_950") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=348 max=348 length=1
-			{
-			case _int3634 : return _986() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
-	throw new SyntaxException() ;
 	}
 static int _951()
 	{
@@ -14043,20 +14035,13 @@ static int _953()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=2 min=348 max=349 length=2
+		switch(_yy) // size=1 min=348 max=348 length=1
 			{
 			case _int3634 : return _989() ;
-			case _float3634 : return _990() ;
 			default: return __default ;
 			}
 		} ;
-	switch( token.point )
-		{
-		case _INT3634: a.shift() ; return a.deploy( _54() ) ;
-		case _FLOAT3634: a.shift() ; return a.deploy( _406() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
-		}
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _954()
@@ -14067,8 +14052,8 @@ static int _954()
 		{
 		switch(_yy) // size=2 min=348 max=349 length=2
 			{
-			case _int3634 : return _991() ;
-			case _float3634 : return _992() ;
+			case _int3634 : return _990() ;
+			case _float3634 : return _991() ;
 			default: return __default ;
 			}
 		} ;
@@ -14087,13 +14072,20 @@ static int _955()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=348 max=348 length=1
+		switch(_yy) // size=2 min=348 max=349 length=2
 			{
-			case _int3634 : return _993() ;
+			case _int3634 : return _992() ;
+			case _float3634 : return _993() ;
 			default: return __default ;
 			}
 		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
+	switch( token.point )
+		{
+		case _INT3634: a.shift() ; return a.deploy( _54() ) ;
+		case _FLOAT3634: a.shift() ; return a.deploy( _406() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _408() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _409() ) ;
+		}
 	throw new SyntaxException() ;
 	}
 static int _956()
@@ -14117,22 +14109,30 @@ static int _957()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=354 max=354 length=1
+		switch(_yy) // size=1 min=348 max=348 length=1
 			{
-			case _truefalse : return _995() ;
+			case _int3634 : return _995() ;
 			default: return __default ;
 			}
 		} ;
-	if( token.point == _22true22 ) { a.shift() ; return a.deploy( _827() ) ; }
-	else
-	if( token.point == _22false22 ) { a.shift() ; return a.deploy( _828() ) ; }
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _54() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _958()
 	{
 	log("_958") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _996() ) ; }
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=354 max=354 length=1
+			{
+			case _truefalse : return _996() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _22true22 ) { a.shift() ; return a.deploy( _828() ) ; }
+	else
+	if( token.point == _22false22 ) { a.shift() ; return a.deploy( _829() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _959()
@@ -14146,7 +14146,7 @@ static int _960()
 	{
 	log("_960") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _998() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _998() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _961()
@@ -14167,44 +14167,14 @@ static int _963()
 	{
 	log("_963") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1001() ) ; }
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _1001() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _964()
 	{
 	log("_964") ;
 	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=2 min=327 max=340 length=14
-			{
-			case _methodSpec : return _170() ;
-			case _type : return _1002() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
-		}
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1002() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _965()
@@ -14213,33 +14183,36 @@ static int _965()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=295 max=331 length=37
+		switch(_yy) // size=2 min=327 max=340 length=14
 			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1003() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
+			case _methodSpec : return _170() ;
+			case _type : return _1003() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _965_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1003() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
 		}
-	_965_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
+	throw new SyntaxException() ;
 	}
 static int _966()
 	{
@@ -14247,54 +14220,33 @@ static int _966()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=8 min=294 max=345 length=52
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _methodName : return _1004() ;
-			case _methodSpec : return _170() ;
-			case _name31 : return _617() ;
-			case _className : return _159() ;
-			case _slashedName : return _160() ;
-			case _typeSpec : return _1005() ;
-			case _type : return _162() ;
-			case _id : return _71() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1004() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _275B27: a.shift() ; return a.deploy( _336() ) ;
-		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
-		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
-		case _22value22: a.shift() ; return a.deploy( _137() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
-		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
-		case _272A27: a.shift() ; return a.deploy( _326() ) ;
-		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
-		case _22object22: a.shift() ; return a.deploy( _150() ) ;
-		case _22string22: a.shift() ; return a.deploy( _151() ) ;
-		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
-		case _273C27: a.shift() ; return a.deploy( _328() ) ;
-		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
-		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
-		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
-		case _272127: a.shift() ; return a.deploy( _153() ) ;
-		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _966_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1004() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	throw new SyntaxException() ;
+	_966_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _967()
 	{
@@ -14304,12 +14256,12 @@ static int _967()
 		{
 		switch(_yy) // size=8 min=294 max=345 length=52
 			{
-			case _methodName : return _1006() ;
+			case _methodName : return _1005() ;
 			case _methodSpec : return _170() ;
 			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _1007() ;
+			case _typeSpec : return _1006() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -14327,18 +14279,18 @@ static int _967()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -14359,12 +14311,12 @@ static int _968()
 		{
 		switch(_yy) // size=8 min=294 max=345 length=52
 			{
-			case _methodName : return _1008() ;
+			case _methodName : return _1007() ;
 			case _methodSpec : return _170() ;
 			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _1009() ;
+			case _typeSpec : return _1008() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -14382,18 +14334,18 @@ static int _968()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -14414,12 +14366,12 @@ static int _969()
 		{
 		switch(_yy) // size=8 min=294 max=345 length=52
 			{
-			case _methodName : return _1010() ;
+			case _methodName : return _1009() ;
 			case _methodSpec : return _170() ;
 			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _1011() ;
+			case _typeSpec : return _1010() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -14437,18 +14389,18 @@ static int _969()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -14469,12 +14421,12 @@ static int _970()
 		{
 		switch(_yy) // size=8 min=294 max=345 length=52
 			{
-			case _methodName : return _1012() ;
+			case _methodName : return _1011() ;
 			case _methodSpec : return _170() ;
 			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _1013() ;
+			case _typeSpec : return _1012() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -14492,18 +14444,18 @@ static int _970()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -14524,12 +14476,12 @@ static int _971()
 		{
 		switch(_yy) // size=8 min=294 max=345 length=52
 			{
-			case _methodName : return _1014() ;
+			case _methodName : return _1013() ;
 			case _methodSpec : return _170() ;
 			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _1015() ;
+			case _typeSpec : return _1014() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -14547,18 +14499,18 @@ static int _971()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -14579,12 +14531,12 @@ static int _972()
 		{
 		switch(_yy) // size=8 min=294 max=345 length=52
 			{
-			case _methodName : return _1016() ;
+			case _methodName : return _1015() ;
 			case _methodSpec : return _170() ;
 			case _name31 : return _617() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _1017() ;
+			case _typeSpec : return _1016() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -14602,18 +14554,18 @@ static int _972()
 		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
 		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -14629,20 +14581,75 @@ static int _972()
 static int _973()
 	{
 	log("_973") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=8 min=294 max=345 length=52
+			{
+			case _methodName : return _1017() ;
+			case _methodSpec : return _170() ;
+			case _name31 : return _617() ;
+			case _className : return _159() ;
+			case _slashedName : return _160() ;
+			case _typeSpec : return _1018() ;
+			case _type : return _162() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _275B27: a.shift() ; return a.deploy( _336() ) ;
+		case _22int333222: a.shift() ; return a.deploy( _135() ) ;
+		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
+		case _22value22: a.shift() ; return a.deploy( _137() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case _22native22: a.shift() ; return a.deploy( _139() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
+		case _272A27: a.shift() ; return a.deploy( _326() ) ;
+		case _272627: a.shift() ; return a.deploy( _327() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
+		case _22object22: a.shift() ; return a.deploy( _150() ) ;
+		case _22string22: a.shift() ; return a.deploy( _151() ) ;
+		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
+		case _273C27: a.shift() ; return a.deploy( _328() ) ;
+		case _22pinned22: a.shift() ; return a.deploy( _329() ) ;
+		case _22modreq22: a.shift() ; return a.deploy( _330() ) ;
+		case _22modopt22: a.shift() ; return a.deploy( _331() ) ;
+		case _272127: a.shift() ; return a.deploy( _153() ) ;
+		case _22typedref22: a.shift() ; return a.deploy( _154() ) ;
+		}
+	throw new SyntaxException() ;
+	}
+static int _974()
+	{
+	log("_974") ;
 	auto = new methAttr_methAttr_22pinvokeimpl22_272827_compQstring_22as22_compQstring_pinvAttr_272927() ;
 	backup = 8 ;
 	yy = 292 ;
 	return -167 ;
 	}
-static int _974()
+static int _975()
 	{
-	log("_974") ;
+	log("_975") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _1018() ;
+			case _methodName : return _1019() ;
 			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -14658,40 +14665,40 @@ static int _974()
 		}
 	throw new SyntaxException() ;
 	}
-static int _975()
+static int _976()
 	{
-	log("_975") ;
+	log("_976") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=297 max=297 length=1
 			{
-			case _implAttr : return _1019() ;
+			case _implAttr : return _1020() ;
 			default: return __default ;
 			}
 		} ;
 	if( token_HasValue )
 		a._token = Tokenset.Empty ;
-	return a.deploy( _1019() ) ;
+	return a.deploy( _1020() ) ;
 	}
-static int _976()
+static int _977()
 	{
-	log("_976") ;
+	log("_977") ;
 	auto = new instr_INSTR5FMETHOD_callConv_type_methodName_272827_sigArgs30_272927() ;
 	backup = 7 ;
 	yy = 328 ;
 	return -320 ;
 	}
-static int _977()
+static int _978()
 	{
-	log("_977") ;
+	log("_978") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=4 min=295 max=331 length=37
 			{
 			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1020() ;
+			case _sigArgs30 : return _1021() ;
 			case _sigArgs31 : return _561() ;
 			case _sigArg : return _562() ;
 			default: return __default ;
@@ -14699,97 +14706,90 @@ static int _977()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _977_default ;
+		goto _978_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _1020() ) ;
+			return a.deploy( _1021() ) ;
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_977_default:
+	_978_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
-	}
-static int _978()
-	{
-	log("_978") ;
-	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _272927: a.shift() ; return a.split( _1021() ) ;
-		case _275B27: a.shift() ; return a.split( _821() ) ;
-		case _272A27: a.shift() ; return a.split( _822() ) ;
-		}
-	throw new SyntaxException() ;
 	}
 static int _979()
 	{
 	log("_979") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _273A27 ) { a.shift() ; return a.split( _1022() ) ; }
+	switch( token.point )
+		{
+		case _272927: a.shift() ; return a.split( _1022() ) ;
+		case _275B27: a.shift() ; return a.split( _822() ) ;
+		case _272A27: a.shift() ; return a.split( _823() ) ;
+		}
 	throw new SyntaxException() ;
 	}
 static int _980()
 	{
 	log("_980") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1023() ) ; }
+	if( token.point == _273A27 ) { a.shift() ; return a.split( _1023() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _981()
 	{
 	log("_981") ;
 	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _272B27: a.shift() ; return a.split( _507() ) ;
-		case _272C27: a.shift() ; return a.split( _1024() ) ;
-		case _272927: a.shift() ; return a.split( _1025() ) ;
-		}
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1024() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _982()
 	{
 	log("_982") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _272B27: a.shift() ; return a.split( _507() ) ;
+		case _272C27: a.shift() ; return a.split( _1025() ) ;
+		case _272927: a.shift() ; return a.split( _1026() ) ;
+		}
+	throw new SyntaxException() ;
+	}
+static int _983()
+	{
+	log("_983") ;
 	auto = new nativeType_22fixed22_22sysstring22_275B27_int3332_275D27() ;
 	backup = 5 ;
 	yy = 338 ;
 	return -366 ;
 	}
-static int _983()
+static int _984()
 	{
-	log("_983") ;
+	log("_984") ;
 	auto = new nativeType_22fixed22_22array22_275B27_int3332_275D27() ;
 	backup = 5 ;
 	yy = 338 ;
 	return -367 ;
 	}
-static int _984()
+static int _985()
 	{
-	log("_984") ;
+	log("_985") ;
 	auto = new nativeType_nativeType_275B27_272B27_int3332_275D27() ;
 	backup = 5 ;
 	yy = 338 ;
 	return -388 ;
 	}
-static int _985()
-	{
-	log("_985") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _275D27 ) { a.shift() ; return a.split( _1026() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _986()
 	{
 	log("_986") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1027() ) ; }
+	if( token.point == _275D27 ) { a.shift() ; return a.split( _1027() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _987()
@@ -14858,33 +14858,25 @@ static int _995()
 static int _996()
 	{
 	log("_996") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1037() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _997()
+	{
+	log("_997") ;
 	auto = new fieldInit_bytearrayhead_bytes_272927() ;
 	backup = 3 ;
 	yy = 321 ;
 	return -299 ;
 	}
-static int _997()
+static int _998()
 	{
-	log("_997") ;
+	log("_998") ;
 	auto = new caValue_22int333222_272827_int3332_272927() ;
 	backup = 4 ;
 	yy = 355 ;
 	return -522 ;
-	}
-static int _998()
-	{
-	log("_998") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=347 max=347 length=1
-			{
-			case _int3332 : return _1037() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
-	throw new SyntaxException() ;
 	}
 static int _999()
 	{
@@ -14919,14 +14911,29 @@ static int _1000()
 static int _1001()
 	{
 	log("_1001") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=347 max=347 length=1
+			{
+			case _int3332 : return _1040() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1002()
+	{
+	log("_1002") ;
 	auto = new caValue_className_272827_int3332_272927() ;
 	backup = 4 ;
 	yy = 355 ;
 	return -527 ;
 	}
-static int _1002()
+static int _1003()
 	{
-	log("_1002") ;
+	log("_1003") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -14936,7 +14943,7 @@ static int _1002()
 			case _name31 : return _158() ;
 			case _className : return _159() ;
 			case _slashedName : return _160() ;
-			case _typeSpec : return _1040() ;
+			case _typeSpec : return _1041() ;
 			case _type : return _162() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -14952,18 +14959,18 @@ static int _1002()
 		case _22int363422: a.shift() ; return a.deploy( _136() ) ;
 		case _22value22: a.shift() ; return a.deploy( _137() ) ;
 		case _22native22: a.shift() ; return a.deploy( _139() ) ;
-		case _22char22: a.shift() ; return a.deploy( _140() ) ;
+		case _22class22: a.shift() ; return a.deploy( _140() ) ;
+		case _22char22: a.shift() ; return a.deploy( _141() ) ;
 		case _272A27: a.shift() ; return a.deploy( _326() ) ;
 		case _272627: a.shift() ; return a.deploy( _327() ) ;
-		case _22float333222: a.shift() ; return a.deploy( _141() ) ;
-		case _22float363422: a.shift() ; return a.deploy( _142() ) ;
-		case _22int313622: a.shift() ; return a.deploy( _143() ) ;
-		case _22int3822: a.shift() ; return a.deploy( _144() ) ;
-		case _22bool22: a.shift() ; return a.deploy( _145() ) ;
-		case _22method22: a.shift() ; return a.deploy( _146() ) ;
-		case _22void22: a.shift() ; return a.deploy( _147() ) ;
-		case _22unsigned22: a.shift() ; return a.deploy( _148() ) ;
-		case _22class22: a.shift() ; return a.deploy( _149() ) ;
+		case _22float333222: a.shift() ; return a.deploy( _142() ) ;
+		case _22float363422: a.shift() ; return a.deploy( _143() ) ;
+		case _22int313622: a.shift() ; return a.deploy( _144() ) ;
+		case _22int3822: a.shift() ; return a.deploy( _145() ) ;
+		case _22bool22: a.shift() ; return a.deploy( _146() ) ;
+		case _22method22: a.shift() ; return a.deploy( _147() ) ;
+		case _22void22: a.shift() ; return a.deploy( _148() ) ;
+		case _22unsigned22: a.shift() ; return a.deploy( _149() ) ;
 		case _22object22: a.shift() ; return a.deploy( _150() ) ;
 		case _22string22: a.shift() ; return a.deploy( _151() ) ;
 		case _22valuetype22: a.shift() ; return a.deploy( _152() ) ;
@@ -14976,155 +14983,155 @@ static int _1002()
 		}
 	throw new SyntaxException() ;
 	}
-static int _1003()
-	{
-	log("_1003") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1041() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _1004()
 	{
 	log("_1004") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1042() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1042() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1005()
 	{
 	log("_1005") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1043() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1043() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1006()
 	{
 	log("_1006") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1044() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1044() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1007()
 	{
 	log("_1007") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1045() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1045() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1008()
 	{
 	log("_1008") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1046() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1046() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1009()
 	{
 	log("_1009") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1047() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1047() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1010()
 	{
 	log("_1010") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1048() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1048() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1011()
 	{
 	log("_1011") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1049() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1049() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1012()
 	{
 	log("_1012") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1050() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1050() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1013()
 	{
 	log("_1013") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1051() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1051() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1014()
 	{
 	log("_1014") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1052() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1052() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1015()
 	{
 	log("_1015") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1053() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1053() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1016()
 	{
 	log("_1016") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1054() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1054() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1017()
 	{
 	log("_1017") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1055() ) ; }
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1055() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1018()
 	{
 	log("_1018") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1056() ) ; }
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1056() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1019()
 	{
 	log("_1019") ;
 	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _277B27: a.shift() ; return a.split( _1057() ) ;
-		case _22native22: a.shift() ; return a.split( _1058() ) ;
-		case _22cil22: a.shift() ; return a.split( _1059() ) ;
-		case _22optil22: a.shift() ; return a.split( _1060() ) ;
-		case _22managed22: a.shift() ; return a.split( _1061() ) ;
-		case _22unmanaged22: a.shift() ; return a.split( _1062() ) ;
-		case _22forwardref22: a.shift() ; return a.split( _1063() ) ;
-		case _22preservesig22: a.shift() ; return a.split( _1064() ) ;
-		case _22runtime22: a.shift() ; return a.split( _1065() ) ;
-		case _22internalcall22: a.shift() ; return a.split( _1066() ) ;
-		case _22synchronized22: a.shift() ; return a.split( _1067() ) ;
-		case _22noinlining22: a.shift() ; return a.split( _1068() ) ;
-		}
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1057() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1020()
 	{
 	log("_1020") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1069() ) ; }
+	switch( token.point )
+		{
+		case _277B27: a.shift() ; return a.split( _1058() ) ;
+		case _22native22: a.shift() ; return a.split( _1059() ) ;
+		case _22cil22: a.shift() ; return a.split( _1060() ) ;
+		case _22optil22: a.shift() ; return a.split( _1061() ) ;
+		case _22managed22: a.shift() ; return a.split( _1062() ) ;
+		case _22unmanaged22: a.shift() ; return a.split( _1063() ) ;
+		case _22forwardref22: a.shift() ; return a.split( _1064() ) ;
+		case _22preservesig22: a.shift() ; return a.split( _1065() ) ;
+		case _22runtime22: a.shift() ; return a.split( _1066() ) ;
+		case _22internalcall22: a.shift() ; return a.split( _1067() ) ;
+		case _22synchronized22: a.shift() ; return a.split( _1068() ) ;
+		case _22noinlining22: a.shift() ; return a.split( _1069() ) ;
+		}
 	throw new SyntaxException() ;
 	}
 static int _1021()
 	{
 	log("_1021") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1070() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1022()
+	{
+	log("_1022") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=345 max=345 length=1
 			{
-			case _id : return _1070() ;
+			case _id : return _1071() ;
 			default: return __default ;
 			}
 		} ;
@@ -15133,156 +15140,149 @@ static int _1021()
 		case 36: case 39: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1021_default ;
+		goto _1022_default ;
 		case _ID: a.shift() ; return a.deploy( _66() ) ;
 		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
 		}
-	_1021_default:
+	_1022_default:
 	auto = new sigArg_paramAttr_type_22marshal22_272827_nativeType_272927() ;
 	backup = 6 ;
 	yy = 331 ;
 	return -339 ;
 	}
-static int _1022()
+static int _1023()
 	{
-	log("_1022") ;
+	log("_1023") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=347 max=347 length=1
 			{
-			case _int3332 : return _1071() ;
+			case _int3332 : return _1072() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _INT3634 ) { a.shift() ; return a.deploy( _48() ) ; }
 	throw new SyntaxException() ;
 	}
-static int _1023()
+static int _1024()
 	{
-	log("_1023") ;
+	log("_1024") ;
 	auto = new memberRef_methodSpec_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 9 ;
 	yy = 279 ;
 	return -105 ;
 	}
-static int _1024()
+static int _1025()
 	{
-	log("_1024") ;
+	log("_1025") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=257 max=257 length=1
 			{
-			case _compQstring : return _1072() ;
+			case _compQstring : return _1073() ;
 			default: return __default ;
 			}
 		} ;
 	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
 	throw new SyntaxException() ;
 	}
-static int _1025()
+static int _1026()
 	{
-	log("_1025") ;
+	log("_1026") ;
 	auto = new nativeType_22custom22_272827_compQstring_272C27_compQstring_272927() ;
 	backup = 6 ;
 	yy = 338 ;
 	return -365 ;
 	}
-static int _1026()
+static int _1027()
 	{
-	log("_1026") ;
+	log("_1027") ;
 	auto = new nativeType_nativeType_275B27_int3332_272B27_int3332_275D27() ;
 	backup = 6 ;
 	yy = 338 ;
 	return -387 ;
 	}
-static int _1027()
+static int _1028()
 	{
-	log("_1027") ;
+	log("_1028") ;
 	auto = new fieldInit_22int333222_272827_int3634_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -293 ;
 	}
-static int _1028()
+static int _1029()
 	{
-	log("_1028") ;
+	log("_1029") ;
 	auto = new fieldInit_22int363422_272827_int3634_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -292 ;
 	}
-static int _1029()
+static int _1030()
 	{
-	log("_1029") ;
+	log("_1030") ;
 	auto = new fieldInit_22char22_272827_int3634_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -295 ;
 	}
-static int _1030()
+static int _1031()
 	{
-	log("_1030") ;
+	log("_1031") ;
 	auto = new fieldInit_22float333222_272827_int3634_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -290 ;
 	}
-static int _1031()
+static int _1032()
 	{
-	log("_1031") ;
+	log("_1032") ;
 	auto = new fieldInit_22float333222_272827_float3634_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -288 ;
 	}
-static int _1032()
+static int _1033()
 	{
-	log("_1032") ;
+	log("_1033") ;
 	auto = new fieldInit_22float363422_272827_int3634_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -291 ;
 	}
-static int _1033()
+static int _1034()
 	{
-	log("_1033") ;
+	log("_1034") ;
 	auto = new fieldInit_22float363422_272827_float3634_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -289 ;
 	}
-static int _1034()
+static int _1035()
 	{
-	log("_1034") ;
+	log("_1035") ;
 	auto = new fieldInit_22int313622_272827_int3634_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -294 ;
 	}
-static int _1035()
+static int _1036()
 	{
-	log("_1035") ;
+	log("_1036") ;
 	auto = new fieldInit_22int3822_272827_int3634_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -296 ;
 	}
-static int _1036()
+static int _1037()
 	{
-	log("_1036") ;
+	log("_1037") ;
 	auto = new fieldInit_22bool22_272827_truefalse_272927() ;
 	backup = 4 ;
 	yy = 321 ;
 	return -297 ;
-	}
-static int _1037()
-	{
-	log("_1037") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1073() ) ; }
-	throw new SyntaxException() ;
 	}
 static int _1038()
 	{
@@ -15302,18 +15302,25 @@ static int _1040()
 	{
 	log("_1040") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1076() ) ; }
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1076() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1041()
 	{
 	log("_1041") ;
 	Automaton a = new Automaton() ;
+	if( token.point == _223A3A22 ) { a.shift() ; return a.split( _1077() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1042()
+	{
+	log("_1042") ;
+	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=1 min=275 max=275 length=1
 			{
-			case _initOpt : return _1077() ;
+			case _initOpt : return _1078() ;
 			default: return __default ;
 			}
 		} ;
@@ -15322,45 +15329,11 @@ static int _1041()
 		case 27: 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1041_default ;
-		case _273D27: a.shift() ; return a.deploy( _824() ) ;
-		}
-	_1041_default:
-	return a.deploy( _1077() ) ;
-	}
-static int _1042()
-	{
-	log("_1042") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=4 min=295 max=331 length=37
-			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1078() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
 		goto _1042_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1078() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		case _273D27: a.shift() ; return a.deploy( _825() ) ;
 		}
 	_1042_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
+	return a.deploy( _1078() ) ;
 	}
 static int _1043()
 	{
@@ -15368,23 +15341,33 @@ static int _1043()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=294 max=345 length=52
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _methodName : return _1079() ;
-			case _name31 : return _710() ;
-			case _id : return _71() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1079() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1043_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1079() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	throw new SyntaxException() ;
+	_1043_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1044()
 	{
@@ -15392,33 +15375,23 @@ static int _1044()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=295 max=331 length=37
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1080() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
+			case _methodName : return _1080() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1044_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1080() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	_1044_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
+	throw new SyntaxException() ;
 	}
 static int _1045()
 	{
@@ -15426,23 +15399,33 @@ static int _1045()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=294 max=345 length=52
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _methodName : return _1081() ;
-			case _name31 : return _710() ;
-			case _id : return _71() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1081() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1045_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1081() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	throw new SyntaxException() ;
+	_1045_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1046()
 	{
@@ -15450,33 +15433,23 @@ static int _1046()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=295 max=331 length=37
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1082() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
+			case _methodName : return _1082() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1046_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1082() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	_1046_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
+	throw new SyntaxException() ;
 	}
 static int _1047()
 	{
@@ -15484,23 +15457,33 @@ static int _1047()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=294 max=345 length=52
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _methodName : return _1083() ;
-			case _name31 : return _710() ;
-			case _id : return _71() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1083() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1047_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1083() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	throw new SyntaxException() ;
+	_1047_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1048()
 	{
@@ -15508,33 +15491,23 @@ static int _1048()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=295 max=331 length=37
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1084() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
+			case _methodName : return _1084() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1048_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1084() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	_1048_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
+	throw new SyntaxException() ;
 	}
 static int _1049()
 	{
@@ -15542,23 +15515,33 @@ static int _1049()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=294 max=345 length=52
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _methodName : return _1085() ;
-			case _name31 : return _710() ;
-			case _id : return _71() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1085() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1049_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1085() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	throw new SyntaxException() ;
+	_1049_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1050()
 	{
@@ -15566,33 +15549,23 @@ static int _1050()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=295 max=331 length=37
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1086() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
+			case _methodName : return _1086() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1050_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1086() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	_1050_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
+	throw new SyntaxException() ;
 	}
 static int _1051()
 	{
@@ -15600,23 +15573,33 @@ static int _1051()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=294 max=345 length=52
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _methodName : return _1087() ;
-			case _name31 : return _710() ;
-			case _id : return _71() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1087() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1051_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1087() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	throw new SyntaxException() ;
+	_1051_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1052()
 	{
@@ -15624,33 +15607,23 @@ static int _1052()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=295 max=331 length=37
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1088() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
+			case _methodName : return _1088() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1052_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1088() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	_1052_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
+	throw new SyntaxException() ;
 	}
 static int _1053()
 	{
@@ -15658,23 +15631,33 @@ static int _1053()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=294 max=345 length=52
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _methodName : return _1089() ;
-			case _name31 : return _710() ;
-			case _id : return _71() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1089() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1053_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1089() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	throw new SyntaxException() ;
+	_1053_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1054()
 	{
@@ -15682,33 +15665,23 @@ static int _1054()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=295 max=331 length=37
+		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1090() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
+			case _methodName : return _1090() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1054_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1090() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
 		}
-	_1054_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
+	throw new SyntaxException() ;
 	}
 static int _1055()
 	{
@@ -15716,23 +15689,33 @@ static int _1055()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=3 min=294 max=345 length=52
+		switch(_yy) // size=4 min=295 max=331 length=37
 			{
-			case _methodName : return _1091() ;
-			case _name31 : return _710() ;
-			case _id : return _71() ;
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1091() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
 			default: return __default ;
 			}
 		} ;
 	switch( token.point )
 		{
-		case _ID: a.shift() ; return a.deploy( _66() ) ;
-		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
-		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
-		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
-		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1055_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1091() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	throw new SyntaxException() ;
+	_1055_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1056()
 	{
@@ -15740,196 +15723,9 @@ static int _1056()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=4 min=295 max=331 length=37
-			{
-			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1092() ;
-			case _sigArgs31 : return _561() ;
-			case _sigArg : return _562() ;
-			default: return __default ;
-			}
-		} ;
-	switch( token.point )
-		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
-		case 211: case 212: case 218: case 219: /* case 39: */ 
-		if( token_HasValue )
-			a._token = Tokenset.Empty ;
-		goto _1056_default ;
-		case 39: 
-			{
-			auto = new sigArgs0() ;
-			return a.deploy( _1092() ) ;
-			}
-		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
-		}
-	_1056_default:
-	auto = new paramAttr() ;
-	return a.deploy( _559() ) ;
-	}
-static int _1057()
-	{
-	log("_1057") ;
-	auto = new methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_methodName_272827_sigArgs30_272927_implAttr_277B27() ;
-	backup = 11 ;
-	yy = 291 ;
-	return -147 ;
-	}
-static int _1058()
-	{
-	log("_1058") ;
-	auto = new implAttr_implAttr_22native22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -205 ;
-	}
-static int _1059()
-	{
-	log("_1059") ;
-	auto = new implAttr_implAttr_22cil22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -206 ;
-	}
-static int _1060()
-	{
-	log("_1060") ;
-	auto = new implAttr_implAttr_22optil22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -207 ;
-	}
-static int _1061()
-	{
-	log("_1061") ;
-	auto = new implAttr_implAttr_22managed22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -208 ;
-	}
-static int _1062()
-	{
-	log("_1062") ;
-	auto = new implAttr_implAttr_22unmanaged22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -209 ;
-	}
-static int _1063()
-	{
-	log("_1063") ;
-	auto = new implAttr_implAttr_22forwardref22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -210 ;
-	}
-static int _1064()
-	{
-	log("_1064") ;
-	auto = new implAttr_implAttr_22preservesig22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -211 ;
-	}
-static int _1065()
-	{
-	log("_1065") ;
-	auto = new implAttr_implAttr_22runtime22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -212 ;
-	}
-static int _1066()
-	{
-	log("_1066") ;
-	auto = new implAttr_implAttr_22internalcall22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -213 ;
-	}
-static int _1067()
-	{
-	log("_1067") ;
-	auto = new implAttr_implAttr_22synchronized22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -214 ;
-	}
-static int _1068()
-	{
-	log("_1068") ;
-	auto = new implAttr_implAttr_22noinlining22() ;
-	backup = 2 ;
-	yy = 297 ;
-	return -215 ;
-	}
-static int _1069()
-	{
-	log("_1069") ;
-	auto = new instr_INSTR5FMETHOD_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
-	backup = 9 ;
-	yy = 328 ;
-	return -319 ;
-	}
-static int _1070()
-	{
-	log("_1070") ;
-	auto = new sigArg_paramAttr_type_22marshal22_272827_nativeType_272927_id() ;
-	backup = 7 ;
-	yy = 331 ;
-	return -340 ;
-	}
-static int _1071()
-	{
-	log("_1071") ;
-	auto = new asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int3332_273A27_int3332() ;
-	backup = 8 ;
-	yy = 366 ;
-	return -566 ;
-	}
-static int _1072()
-	{
-	log("_1072") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
-	else
-	if( token.point == _272C27 ) { a.shift() ; return a.split( _1093() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1073()
-	{
-	log("_1073") ;
-	auto = new caValue_className_272827_22int333222_273A27_int3332_272927() ;
-	backup = 6 ;
-	yy = 355 ;
-	return -526 ;
-	}
-static int _1074()
-	{
-	log("_1074") ;
-	auto = new caValue_className_272827_22int313622_273A27_int3332_272927() ;
-	backup = 6 ;
-	yy = 355 ;
-	return -525 ;
-	}
-static int _1075()
-	{
-	log("_1075") ;
-	auto = new caValue_className_272827_22int3822_273A27_int3332_272927() ;
-	backup = 6 ;
-	yy = 355 ;
-	return -524 ;
-	}
-static int _1076()
-	{
-	log("_1076") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
 		switch(_yy) // size=3 min=294 max=345 length=52
 			{
-			case _methodName : return _1094() ;
+			case _methodName : return _1092() ;
 			case _name31 : return _710() ;
 			case _id : return _71() ;
 			default: return __default ;
@@ -15945,159 +15741,16 @@ static int _1076()
 		}
 	throw new SyntaxException() ;
 	}
-static int _1077()
+static int _1057()
 	{
-	log("_1077") ;
-	auto = new propHead_222Eproperty22_propAttr_callConv_type_id_272827_sigArgs30_272927_initOpt() ;
-	backup = 9 ;
-	yy = 286 ;
-	return -131 ;
-	}
-static int _1078()
-	{
-	log("_1078") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1095() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1079()
-	{
-	log("_1079") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1096() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1080()
-	{
-	log("_1080") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1097() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1081()
-	{
-	log("_1081") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1098() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1082()
-	{
-	log("_1082") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1099() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1083()
-	{
-	log("_1083") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1100() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1084()
-	{
-	log("_1084") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1101() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1085()
-	{
-	log("_1085") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1102() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1086()
-	{
-	log("_1086") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1103() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1087()
-	{
-	log("_1087") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1104() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1088()
-	{
-	log("_1088") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1105() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1089()
-	{
-	log("_1089") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1106() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1090()
-	{
-	log("_1090") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1107() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1091()
-	{
-	log("_1091") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1108() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1092()
-	{
-	log("_1092") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1109() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1093()
-	{
-	log("_1093") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
-		switch(_yy) // size=1 min=257 max=257 length=1
-			{
-			case _compQstring : return _1110() ;
-			default: return __default ;
-			}
-		} ;
-	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1094()
-	{
-	log("_1094") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272827 ) { a.shift() ; return a.split( _1111() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1095()
-	{
-	log("_1095") ;
-	auto = new eventDecl_222Eaddon22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 285 ;
-	return -121 ;
-	}
-static int _1096()
-	{
-	log("_1096") ;
+	log("_1057") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
 		switch(_yy) // size=4 min=295 max=331 length=37
 			{
 			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1112() ;
+			case _sigArgs30 : return _1093() ;
 			case _sigArgs31 : return _561() ;
 			case _sigArg : return _562() ;
 			default: return __default ;
@@ -16105,34 +15758,346 @@ static int _1096()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1096_default ;
+		goto _1057_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _1112() ) ;
+			return a.deploy( _1093() ) ;
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_1096_default:
+	_1057_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
+	}
+static int _1058()
+	{
+	log("_1058") ;
+	auto = new methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_methodName_272827_sigArgs30_272927_implAttr_277B27() ;
+	backup = 11 ;
+	yy = 291 ;
+	return -147 ;
+	}
+static int _1059()
+	{
+	log("_1059") ;
+	auto = new implAttr_implAttr_22native22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -205 ;
+	}
+static int _1060()
+	{
+	log("_1060") ;
+	auto = new implAttr_implAttr_22cil22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -206 ;
+	}
+static int _1061()
+	{
+	log("_1061") ;
+	auto = new implAttr_implAttr_22optil22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -207 ;
+	}
+static int _1062()
+	{
+	log("_1062") ;
+	auto = new implAttr_implAttr_22managed22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -208 ;
+	}
+static int _1063()
+	{
+	log("_1063") ;
+	auto = new implAttr_implAttr_22unmanaged22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -209 ;
+	}
+static int _1064()
+	{
+	log("_1064") ;
+	auto = new implAttr_implAttr_22forwardref22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -210 ;
+	}
+static int _1065()
+	{
+	log("_1065") ;
+	auto = new implAttr_implAttr_22preservesig22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -211 ;
+	}
+static int _1066()
+	{
+	log("_1066") ;
+	auto = new implAttr_implAttr_22runtime22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -212 ;
+	}
+static int _1067()
+	{
+	log("_1067") ;
+	auto = new implAttr_implAttr_22internalcall22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -213 ;
+	}
+static int _1068()
+	{
+	log("_1068") ;
+	auto = new implAttr_implAttr_22synchronized22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -214 ;
+	}
+static int _1069()
+	{
+	log("_1069") ;
+	auto = new implAttr_implAttr_22noinlining22() ;
+	backup = 2 ;
+	yy = 297 ;
+	return -215 ;
+	}
+static int _1070()
+	{
+	log("_1070") ;
+	auto = new instr_INSTR5FMETHOD_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
+	backup = 9 ;
+	yy = 328 ;
+	return -319 ;
+	}
+static int _1071()
+	{
+	log("_1071") ;
+	auto = new sigArg_paramAttr_type_22marshal22_272827_nativeType_272927_id() ;
+	backup = 7 ;
+	yy = 331 ;
+	return -340 ;
+	}
+static int _1072()
+	{
+	log("_1072") ;
+	auto = new asmOrRefDecl_222Ever22_int3332_273A27_int3332_273A27_int3332_273A27_int3332() ;
+	backup = 8 ;
+	yy = 366 ;
+	return -566 ;
+	}
+static int _1073()
+	{
+	log("_1073") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
+	else
+	if( token.point == _272C27 ) { a.shift() ; return a.split( _1094() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1074()
+	{
+	log("_1074") ;
+	auto = new caValue_className_272827_22int333222_273A27_int3332_272927() ;
+	backup = 6 ;
+	yy = 355 ;
+	return -526 ;
+	}
+static int _1075()
+	{
+	log("_1075") ;
+	auto = new caValue_className_272827_22int313622_273A27_int3332_272927() ;
+	backup = 6 ;
+	yy = 355 ;
+	return -525 ;
+	}
+static int _1076()
+	{
+	log("_1076") ;
+	auto = new caValue_className_272827_22int3822_273A27_int3332_272927() ;
+	backup = 6 ;
+	yy = 355 ;
+	return -524 ;
+	}
+static int _1077()
+	{
+	log("_1077") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=3 min=294 max=345 length=52
+			{
+			case _methodName : return _1095() ;
+			case _name31 : return _710() ;
+			case _id : return _71() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case _ID: a.shift() ; return a.deploy( _66() ) ;
+		case _SQSTRING: a.shift() ; return a.deploy( _67() ) ;
+		case _DOTTEDNAME: a.shift() ; return a.deploy( _68() ) ;
+		case _222Ector22: a.shift() ; return a.deploy( _613() ) ;
+		case _222Ecctor22: a.shift() ; return a.deploy( _614() ) ;
+		}
+	throw new SyntaxException() ;
+	}
+static int _1078()
+	{
+	log("_1078") ;
+	auto = new propHead_222Eproperty22_propAttr_callConv_type_id_272827_sigArgs30_272927_initOpt() ;
+	backup = 9 ;
+	yy = 286 ;
+	return -131 ;
+	}
+static int _1079()
+	{
+	log("_1079") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1096() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1080()
+	{
+	log("_1080") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1097() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1081()
+	{
+	log("_1081") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1098() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1082()
+	{
+	log("_1082") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1099() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1083()
+	{
+	log("_1083") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1100() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1084()
+	{
+	log("_1084") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1101() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1085()
+	{
+	log("_1085") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1102() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1086()
+	{
+	log("_1086") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1103() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1087()
+	{
+	log("_1087") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1104() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1088()
+	{
+	log("_1088") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1105() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1089()
+	{
+	log("_1089") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1106() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1090()
+	{
+	log("_1090") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1107() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1091()
+	{
+	log("_1091") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1108() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1092()
+	{
+	log("_1092") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1109() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1093()
+	{
+	log("_1093") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1110() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1094()
+	{
+	log("_1094") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=257 max=257 length=1
+			{
+			case _compQstring : return _1111() ;
+			default: return __default ;
+			}
+		} ;
+	if( token.point == _QSTRING ) { a.shift() ; return a.deploy( _332() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1095()
+	{
+	log("_1095") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272827 ) { a.shift() ; return a.split( _1112() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1096()
+	{
+	log("_1096") ;
+	auto = new eventDecl_222Eaddon22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 285 ;
+	return -121 ;
 	}
 static int _1097()
 	{
 	log("_1097") ;
-	auto = new eventDecl_222Eremoveon22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 285 ;
-	return -123 ;
-	}
-static int _1098()
-	{
-	log("_1098") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -16147,12 +16112,12 @@ static int _1098()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1098_default ;
+		goto _1097_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
@@ -16160,21 +16125,21 @@ static int _1098()
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_1098_default:
+	_1097_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
+	}
+static int _1098()
+	{
+	log("_1098") ;
+	auto = new eventDecl_222Eremoveon22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 285 ;
+	return -123 ;
 	}
 static int _1099()
 	{
 	log("_1099") ;
-	auto = new eventDecl_222Efire22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 285 ;
-	return -125 ;
-	}
-static int _1100()
-	{
-	log("_1100") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -16189,12 +16154,12 @@ static int _1100()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1100_default ;
+		goto _1099_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
@@ -16202,21 +16167,21 @@ static int _1100()
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_1100_default:
+	_1099_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
+	}
+static int _1100()
+	{
+	log("_1100") ;
+	auto = new eventDecl_222Efire22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 285 ;
+	return -125 ;
 	}
 static int _1101()
 	{
 	log("_1101") ;
-	auto = new eventDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 285 ;
-	return -127 ;
-	}
-static int _1102()
-	{
-	log("_1102") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -16231,12 +16196,12 @@ static int _1102()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1102_default ;
+		goto _1101_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
@@ -16244,21 +16209,21 @@ static int _1102()
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_1102_default:
+	_1101_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
+	}
+static int _1102()
+	{
+	log("_1102") ;
+	auto = new eventDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 285 ;
+	return -127 ;
 	}
 static int _1103()
 	{
 	log("_1103") ;
-	auto = new propDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 289 ;
-	return -142 ;
-	}
-static int _1104()
-	{
-	log("_1104") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -16273,12 +16238,12 @@ static int _1104()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1104_default ;
+		goto _1103_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
@@ -16286,21 +16251,21 @@ static int _1104()
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_1104_default:
+	_1103_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
+	}
+static int _1104()
+	{
+	log("_1104") ;
+	auto = new propDecl_222Eother22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 289 ;
+	return -142 ;
 	}
 static int _1105()
 	{
 	log("_1105") ;
-	auto = new propDecl_222Eset22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 289 ;
-	return -138 ;
-	}
-static int _1106()
-	{
-	log("_1106") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -16315,12 +16280,12 @@ static int _1106()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1106_default ;
+		goto _1105_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
@@ -16328,21 +16293,21 @@ static int _1106()
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_1106_default:
+	_1105_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
+	}
+static int _1106()
+	{
+	log("_1106") ;
+	auto = new propDecl_222Eset22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 289 ;
+	return -138 ;
 	}
 static int _1107()
 	{
 	log("_1107") ;
-	auto = new propDecl_222Eget22_callConv_type_methodName_272827_sigArgs30_272927() ;
-	backup = 7 ;
-	yy = 289 ;
-	return -140 ;
-	}
-static int _1108()
-	{
-	log("_1108") ;
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
@@ -16357,12 +16322,12 @@ static int _1108()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1108_default ;
+		goto _1107_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
@@ -16370,9 +16335,17 @@ static int _1108()
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_1108_default:
+	_1107_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
+	}
+static int _1108()
+	{
+	log("_1108") ;
+	auto = new propDecl_222Eget22_callConv_type_methodName_272827_sigArgs30_272927() ;
+	backup = 7 ;
+	yy = 289 ;
+	return -140 ;
 	}
 static int _1109()
 	{
@@ -16380,35 +16353,10 @@ static int _1109()
 	Automaton a = new Automaton() ;
 	a.gotoset_s = (_yy) =>
 		{
-		switch(_yy) // size=1 min=297 max=297 length=1
-			{
-			case _implAttr : return _1119() ;
-			default: return __default ;
-			}
-		} ;
-	if( token_HasValue )
-		a._token = Tokenset.Empty ;
-	return a.deploy( _1119() ) ;
-	}
-static int _1110()
-	{
-	log("_1110") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
-	else
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1120() ) ; }
-	throw new SyntaxException() ;
-	}
-static int _1111()
-	{
-	log("_1111") ;
-	Automaton a = new Automaton() ;
-	a.gotoset_s = (_yy) =>
-		{
 		switch(_yy) // size=4 min=295 max=331 length=37
 			{
 			case _paramAttr : return _559() ;
-			case _sigArgs30 : return _1121() ;
+			case _sigArgs30 : return _1119() ;
 			case _sigArgs31 : return _561() ;
 			case _sigArg : return _562() ;
 			default: return __default ;
@@ -16416,29 +16364,81 @@ static int _1111()
 		} ;
 	switch( token.point )
 		{
-		case 44: case 47: case 48: case 56: case 121: case 151: case 154: case 155:
-		case 156: case 157: case 158: case 161: case 175: case 177: case 209: case 210:
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
 		case 211: case 212: case 218: case 219: /* case 39: */ 
 		if( token_HasValue )
 			a._token = Tokenset.Empty ;
-		goto _1111_default ;
+		goto _1109_default ;
 		case 39: 
 			{
 			auto = new sigArgs0() ;
-			return a.deploy( _1121() ) ;
+			return a.deploy( _1119() ) ;
 			}
 		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
 		}
-	_1111_default:
+	_1109_default:
 	auto = new paramAttr() ;
 	return a.deploy( _559() ) ;
+	}
+static int _1110()
+	{
+	log("_1110") ;
+	Automaton a = new Automaton() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=1 min=297 max=297 length=1
+			{
+			case _implAttr : return _1120() ;
+			default: return __default ;
+			}
+		} ;
+	if( token_HasValue )
+		a._token = Tokenset.Empty ;
+	return a.deploy( _1120() ) ;
+	}
+static int _1111()
+	{
+	log("_1111") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272B27 ) { a.shift() ; return a.split( _507() ) ; }
+	else
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1121() ) ; }
+	throw new SyntaxException() ;
 	}
 static int _1112()
 	{
 	log("_1112") ;
 	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1122() ) ; }
-	throw new SyntaxException() ;
+	a.gotoset_s = (_yy) =>
+		{
+		switch(_yy) // size=4 min=295 max=331 length=37
+			{
+			case _paramAttr : return _559() ;
+			case _sigArgs30 : return _1122() ;
+			case _sigArgs31 : return _561() ;
+			case _sigArg : return _562() ;
+			default: return __default ;
+			}
+		} ;
+	switch( token.point )
+		{
+		case 44: case 47: case 48: case 56: case 121: case 146: case 152: case 155:
+		case 156: case 157: case 158: case 159: case 162: case 176: case 178: case 210:
+		case 211: case 212: case 218: case 219: /* case 39: */ 
+		if( token_HasValue )
+			a._token = Tokenset.Empty ;
+		goto _1112_default ;
+		case 39: 
+			{
+			auto = new sigArgs0() ;
+			return a.deploy( _1122() ) ;
+			}
+		case _222E2E2E22: a.shift() ; return a.deploy( _558() ) ;
+		}
+	_1112_default:
+	auto = new paramAttr() ;
+	return a.deploy( _559() ) ;
 	}
 static int _1113()
 	{
@@ -16486,105 +16486,112 @@ static int _1119()
 	{
 	log("_1119") ;
 	Automaton a = new Automaton() ;
-	switch( token.point )
-		{
-		case _277B27: a.shift() ; return a.split( _1129() ) ;
-		case _22native22: a.shift() ; return a.split( _1058() ) ;
-		case _22cil22: a.shift() ; return a.split( _1059() ) ;
-		case _22optil22: a.shift() ; return a.split( _1060() ) ;
-		case _22managed22: a.shift() ; return a.split( _1061() ) ;
-		case _22unmanaged22: a.shift() ; return a.split( _1062() ) ;
-		case _22forwardref22: a.shift() ; return a.split( _1063() ) ;
-		case _22preservesig22: a.shift() ; return a.split( _1064() ) ;
-		case _22runtime22: a.shift() ; return a.split( _1065() ) ;
-		case _22internalcall22: a.shift() ; return a.split( _1066() ) ;
-		case _22synchronized22: a.shift() ; return a.split( _1067() ) ;
-		case _22noinlining22: a.shift() ; return a.split( _1068() ) ;
-		}
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1129() ) ; }
 	throw new SyntaxException() ;
 	}
 static int _1120()
 	{
 	log("_1120") ;
+	Automaton a = new Automaton() ;
+	switch( token.point )
+		{
+		case _277B27: a.shift() ; return a.split( _1130() ) ;
+		case _22native22: a.shift() ; return a.split( _1059() ) ;
+		case _22cil22: a.shift() ; return a.split( _1060() ) ;
+		case _22optil22: a.shift() ; return a.split( _1061() ) ;
+		case _22managed22: a.shift() ; return a.split( _1062() ) ;
+		case _22unmanaged22: a.shift() ; return a.split( _1063() ) ;
+		case _22forwardref22: a.shift() ; return a.split( _1064() ) ;
+		case _22preservesig22: a.shift() ; return a.split( _1065() ) ;
+		case _22runtime22: a.shift() ; return a.split( _1066() ) ;
+		case _22internalcall22: a.shift() ; return a.split( _1067() ) ;
+		case _22synchronized22: a.shift() ; return a.split( _1068() ) ;
+		case _22noinlining22: a.shift() ; return a.split( _1069() ) ;
+		}
+	throw new SyntaxException() ;
+	}
+static int _1121()
+	{
+	log("_1121") ;
 	auto = new nativeType_22custom22_272827_compQstring_272C27_compQstring_272C27_compQstring_272C27_compQstring_272927() ;
 	backup = 10 ;
 	yy = 338 ;
 	return -364 ;
 	}
-static int _1121()
-	{
-	log("_1121") ;
-	Automaton a = new Automaton() ;
-	if( token.point == _272927 ) { a.shift() ; return a.split( _1130() ) ; }
-	throw new SyntaxException() ;
-	}
 static int _1122()
 	{
 	log("_1122") ;
+	Automaton a = new Automaton() ;
+	if( token.point == _272927 ) { a.shift() ; return a.split( _1131() ) ; }
+	throw new SyntaxException() ;
+	}
+static int _1123()
+	{
+	log("_1123") ;
 	auto = new eventDecl_222Eaddon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 9 ;
 	yy = 285 ;
 	return -120 ;
 	}
-static int _1123()
+static int _1124()
 	{
-	log("_1123") ;
+	log("_1124") ;
 	auto = new eventDecl_222Eremoveon22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 9 ;
 	yy = 285 ;
 	return -122 ;
 	}
-static int _1124()
+static int _1125()
 	{
-	log("_1124") ;
+	log("_1125") ;
 	auto = new eventDecl_222Efire22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 9 ;
 	yy = 285 ;
 	return -124 ;
 	}
-static int _1125()
+static int _1126()
 	{
-	log("_1125") ;
+	log("_1126") ;
 	auto = new eventDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 9 ;
 	yy = 285 ;
 	return -126 ;
 	}
-static int _1126()
+static int _1127()
 	{
-	log("_1126") ;
+	log("_1127") ;
 	auto = new propDecl_222Eother22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 9 ;
 	yy = 289 ;
 	return -141 ;
 	}
-static int _1127()
+static int _1128()
 	{
-	log("_1127") ;
+	log("_1128") ;
 	auto = new propDecl_222Eset22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 9 ;
 	yy = 289 ;
 	return -137 ;
 	}
-static int _1128()
+static int _1129()
 	{
-	log("_1128") ;
+	log("_1129") ;
 	auto = new propDecl_222Eget22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 9 ;
 	yy = 289 ;
 	return -139 ;
 	}
-static int _1129()
+static int _1130()
 	{
-	log("_1129") ;
+	log("_1130") ;
 	auto = new methodHead_methodHeadPart31_methAttr_callConv_paramAttr_type_22marshal22_272827_nativeType_272927_methodName_272827_sigArgs30_272927_implAttr_277B27() ;
 	backup = 15 ;
 	yy = 291 ;
 	return -148 ;
 	}
-static int _1130()
+static int _1131()
 	{
-	log("_1130") ;
+	log("_1131") ;
 	auto = new classDecl_222Eoverride22_typeSpec_223A3A22_methodName_22with22_callConv_type_typeSpec_223A3A22_methodName_272827_sigArgs30_272927() ;
 	backup = 13 ;
 	yy = 272 ;
@@ -20876,19 +20883,19 @@ public partial class  filterHead_22filter22
 		}
 	}
 
-public partial class  catchClause_22catch22_className
+public partial class  catchClause_22catch22_22class22_className
 	: Driver.Auto, global::Item
 	{
 	static readonly string   lhs = "catchClause" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
-	static readonly string[] rhs = { "\"catch\"", "className" } ;
+	static readonly string[] rhs = { "\"catch\"", "\"class\"", "className" } ;
 	public override int      RuleNumber { get { return 254 ; } }
 	public override int      Symbol { get { return Automaton._catchClause ; } }
 	public override bool     Useful { get { return true ; } }
-	public catchClause_22catch22_className()
+	public catchClause_22catch22_22class22_className()
 		{
-		argv = new Tokenset.Token[ arg_i = 2 ] ;
+		argv = new Tokenset.Token[ arg_i = 3 ] ;
 		}
 	}
 
@@ -26738,14 +26745,14 @@ partial class A335 {
 public static readonly System.Collections.Generic.Dictionary<char,int> xml_translate = new System.Collections.Generic.Dictionary<char,int>() {
 	{ '\u0000', 0 },
 	{ '\u0021', 218 },
-	{ '\u0026', 153 },
+	{ '\u0026', 154 },
 	{ '\u0028', 40 },
 	{ '\u0029', 39 },
-	{ '\u002A', 152 },
+	{ '\u002A', 153 },
 	{ '\u002B', 34 },
 	{ '\u002C', 36 },
-	{ '\u002E', 163 },
-	{ '\u002F', 164 },
+	{ '\u002E', 164 },
+	{ '\u002F', 165 },
 	{ '\u003A', 138 },
 	{ '\u003C', 213 },
 	{ '\u003D', 38 },
@@ -26894,7 +26901,7 @@ public static readonly System.Collections.Generic.Dictionary<char,int> xml_trans
 	{ '\u018A', 149 },
 	{ '\u018B', 150 },
 	{ '\u018C', 151 },
-	{ '\u018D', 154 },
+	{ '\u018D', 152 },
 	{ '\u018E', 155 },
 	{ '\u018F', 156 },
 	{ '\u0190', 157 },
@@ -26903,7 +26910,7 @@ public static readonly System.Collections.Generic.Dictionary<char,int> xml_trans
 	{ '\u0193', 160 },
 	{ '\u0194', 161 },
 	{ '\u0195', 162 },
-	{ '\u0196', 165 },
+	{ '\u0196', 163 },
 	{ '\u0197', 166 },
 	{ '\u0198', 167 },
 	{ '\u0199', 168 },

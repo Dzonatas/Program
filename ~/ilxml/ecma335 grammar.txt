@@ -397,7 +397,7 @@ filterHead
  : "filter" 
  ; 
 catchClause
- : "catch" className 
+ : "catch" "class" className
  ; 
 finallyClause
  : "finally" 
