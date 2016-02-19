@@ -16,13 +16,15 @@ public partial class   instr_INSTR_BRTARGET_id
 	: Instr.BrTarget {
 	protected override void _prerender()
 		{
-		foreach( A335.Method.Decl d in decl.Node )
-			if( d is methodDecl_id____ && (d as methodDecl_id____).Arg1.Token == Arg2.Token )
+		foreach( Automatrix a in decl.Node.Head.ClassDecl as Automatrix )
+			{
+			if( a is methodDecl_id____ && (a as methodDecl_id____).Arg1.Token == Arg2.Token )
 				{
-				(d as methodDecl_id____).Required = true ;
-				target = d ;
+				(a as methodDecl_id____).Required = true ;
+				target = a as A335.Method.Decl ;
 				return ;
 				}
+			}
 		throw new LabelNotFoundException( Arg2.Token ) ;
 		}
 	protected override void render()

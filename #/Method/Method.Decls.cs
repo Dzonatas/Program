@@ -20,8 +20,9 @@ public partial class Method
 		public Head Head
 			{
 			set	{
-				foreach( Decl d in this )
-					d.Node.head = value ;
+				foreach( Automatrix a in (this as Automatrix) )
+					if( a is Decl )
+						(a as Decl).Node.head = value ;
 				}
 			get { return head ; }
 			}

@@ -178,7 +178,7 @@ public partial class Method
 [Automaton] public partial class   methodDecl_instr
 	: Method.Decl	{}
 [Automaton] public partial class   methodDecl_sehBlock
-	: Method.Decl {}
+	: Method.Decl	{}
 [Automaton] public partial class   methAttr_methAttr__abstract_
 	: Method.Attr   {}
 [Automaton] public partial class   methAttr_methAttr__assembly_
