@@ -108,6 +108,18 @@
     <ConsolePause>false</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'testseh|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <ConsolePause>false</ConsolePause>
+    <Commandlineparameters>--input=/tmp/.5a7160ed-13d5-4923-a1f9-3e32a47d558a.d/testseh.il.xml</Commandlineparameters>
+    <ErrorReport>prompt</ErrorReport>
+    <DefineConstants>DEBUG; QM; UX;</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />

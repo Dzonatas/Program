@@ -23,6 +23,7 @@ help:
 	@echo "make test6"
 	@echo
 	@echo "Agenda:"
+	@echo "make testseh"
 	@echo "make cdriver"
 
 project: bin/Debug/ecma.exe bin/Debug/ilxml.exe bin/Debug/driver.exe
@@ -74,6 +75,9 @@ test5: project
 
 test6: project
 	./~/test6/test.sh
+
+testseh: project
+	./~/testseh/test.sh
 
 cdriver: project
 	( cd ./bin/Debug && ./driver.exe --build=infrastructure --shell="../../~/compile.sh ../../~/hello.mono.world.il.text" )

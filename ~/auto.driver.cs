@@ -20292,6 +20292,9 @@ public partial class  methodDecl_222Eemitbyte22_int3332
 public partial class  methodDecl_sehBlock
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.methodDecl_sehBlock() ; }
+	#endif
 	static readonly string   lhs = "methodDecl" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20614,6 +20617,9 @@ public partial class  methodDecl_222Eparam22_275B27_int3332_275D27_initOpt
 public partial class  scopeBlock_scopeOpen_methodDecls_277D27
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.scopeBlock_scopeOpen_methodDecls_277D27() ; }
+	#endif
 	static readonly string   lhs = "scopeBlock" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20630,6 +20636,9 @@ public partial class  scopeBlock_scopeOpen_methodDecls_277D27
 public partial class  scopeOpen_277B27
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.scopeOpen_277B27() ; }
+	#endif
 	static readonly string   lhs = "scopeOpen" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20646,6 +20655,9 @@ public partial class  scopeOpen_277B27
 public partial class  sehBlock_tryBlock_sehClauses
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.sehBlock_tryBlock_sehClauses() ; }
+	#endif
 	static readonly string   lhs = "sehBlock" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20662,6 +20674,9 @@ public partial class  sehBlock_tryBlock_sehClauses
 public partial class  sehClauses_sehClause_sehClauses
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.sehClauses_sehClause_sehClauses() ; }
+	#endif
 	static readonly string   lhs = "sehClauses" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20694,6 +20709,9 @@ public partial class  sehClauses_sehClause
 public partial class  tryBlock_tryHead_scopeBlock
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.tryBlock_tryHead_scopeBlock() ; }
+	#endif
 	static readonly string   lhs = "tryBlock" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20742,6 +20760,9 @@ public partial class  tryBlock_tryHead_int3332_22to22_int3332
 public partial class  tryHead_222Etry22
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.tryHead_222Etry22() ; }
+	#endif
 	static readonly string   lhs = "tryHead" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20758,6 +20779,9 @@ public partial class  tryHead_222Etry22
 public partial class  sehClause_catchClause_handlerBlock
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.sehClause_catchClause_handlerBlock() ; }
+	#endif
 	static readonly string   lhs = "sehClause" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20886,6 +20910,9 @@ public partial class  filterHead_22filter22
 public partial class  catchClause_22catch22_22class22_className
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.catchClause_22catch22_22class22_className() ; }
+	#endif
 	static readonly string   lhs = "catchClause" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }
@@ -20934,6 +20961,9 @@ public partial class  faultClause_22fault22
 public partial class  handlerBlock_scopeBlock
 	: Driver.Auto, global::Item
 	{
+	#if !EMBED
+	protected override global::A335.Automatrix splice_f() { return new global::A335.handlerBlock_scopeBlock() ; }
+	#endif
 	static readonly string   lhs = "handlerBlock" ;
 	public override string   LHS { get { return lhs ; } }
 	public override string[] RHS { get { return rhs ; } }

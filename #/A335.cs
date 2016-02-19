@@ -177,6 +177,8 @@ public partial class Method
 	: Method.Decl   {}
 [Automaton] public partial class   methodDecl_instr
 	: Method.Decl	{}
+[Automaton] public partial class   methodDecl_sehBlock
+	: Method.Decl {}
 [Automaton] public partial class   methAttr_methAttr__abstract_
 	: Method.Attr   {}
 [Automaton] public partial class   methAttr_methAttr__assembly_
@@ -340,4 +342,22 @@ public partial class NameSpaceHead : Automatrix {}
 	: Automatrix {}
 [Automaton] public partial class decl_dataDecl
 	: Decl {}
+[Automaton] public partial class tryHead_222Etry22
+	: Automatrix {}
+[Automaton] public partial class scopeOpen_277B27
+	: Automatrix {}
+[Automaton] public partial class scopeBlock_scopeOpen_methodDecls_277D27
+	: Automatrix {}
+[Automaton] public partial class tryBlock_tryHead_scopeBlock
+	: Automatrix {}
+[Automaton] public partial class catchClause_22catch22_22class22_className
+	: Automatrix {}
+[Automaton] public partial class handlerBlock_scopeBlock
+	: Automatrix {}
+[Automaton] public partial class sehClause_catchClause_handlerBlock
+	: Automatrix {}
+[Automaton] public partial class sehClauses_sehClause_sehClauses
+	: Automatrix {}
+[Automaton] public partial class sehBlock_tryBlock_sehClauses
+	: Automatrix {}
 }
