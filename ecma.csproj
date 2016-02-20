@@ -258,7 +258,6 @@
     <None Include="~\hello.mono.world.il.text" />
     <None Include="~\test2\test.sh" />
     <None Include="~\test2\hello.world.cs" />
-    <None Include="#\BCL.HPP" />
     <None Include="~\test3\test.sh" />
     <None Include="~\test3\hello.world.cs" />
     <None Include="~\X.Y.cs" />
