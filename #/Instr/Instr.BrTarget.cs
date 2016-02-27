@@ -36,6 +36,9 @@ public partial class   instr_INSTR_BRTARGET_id
 			case "BR" :
 				oprand.C.GotoStatement( id ) ;
 				return ;
+			case "LEAVE" :
+				oprand.C.GotoStatement( id ) ;
+				return ;
 			case "BRFALSE" :
 				{
 				var a = C.Pop() ;

@@ -216,6 +216,18 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					var sp = C699.Stack.Pointer ;
 					d.Push( new C699.c("&"+symbol), C_Type.Acquire(C699.C.Struct(typeSpec).p) ) ;
 					//d.Statement( C699.C.Function(_Call,sp) ) ;
+					break ;
+					}
+				else
+				if( (string) ts == "System$Exception" )
+					{
+					var t = C_Type.Static(C699.Object(ts)) ;
+					var symbol = new C_Symbol() ;
+					int iargs  = Args ;
+					C.Hangup( iargs - 1 ) ;
+					d.Statement( C699.C.Struct(t.TypeSpec,symbol) ) ;
+					d.Push( new C699.c("&"+symbol), t.Ref ) ;
+					break ;
 					}
 				else
 					{
