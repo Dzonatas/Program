@@ -28,4 +28,5 @@ Supposedly, the built-in virtual filesystem (or compressed mini-ISO image) is sp
 ## Market Analysis
 Standard, "10 program lines."
 
-###
+## Status
+There is no standard for System Exception Handlers (SEH) in C99.
