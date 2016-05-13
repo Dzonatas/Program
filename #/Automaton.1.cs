@@ -38,9 +38,11 @@ partial class Automaton
 		System.Console.WriteLine() ;
 		#endif
 		}
+	#if !EMBED
 	class SyntaxException : System.NotImplementedException
 		{
 		public SyntaxException() : base() {}
 		public SyntaxException(string message) : base(message) {}
 		}
+	#endif
 	}

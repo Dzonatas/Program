@@ -148,7 +148,12 @@ class Xo_t
 			}
 		else
 			{
-			list += "throw new SyntaxException() ;" ;
+			list += "#if EMBED"+tab ;
+			list += "System.Environment.Exit(1) ;"+tab ;
+			list += "return 0 ;"+tab ;
+			list += "#else"+tab ;
+			list += "throw new SyntaxException() ;"+tab ;
+			list += "#endif" ;
 			}
 		/*
 		if( tab_b )

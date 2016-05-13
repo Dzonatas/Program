@@ -50,7 +50,11 @@ int deploy( int i )
 	{
 	do	{
 		if( i &gt; 0 )
+#if EMBED
+			System.Environment.Exit(1) ;
+#else
 			throw new SyntaxException( "-range/+index condition" ) ;
+#endif
 		else
 		if( i &lt; 0 )
 			{
@@ -64,13 +68,21 @@ int deploy( int i )
 			yy = (int)__default ;
 		} while( (i = (int) gotoset_s( yy )) != __default ) ;
 	if( token.c != 0 )
+#if EMBED
+		System.Environment.Exit(1) ;
+#else
 		throw new SyntaxException( "token != $end" ) ;
+#endif
 	return 0 ;
 	}
 int split( int i )
 	{
 	if( i &gt; 0 )
+#if EMBED
+			System.Environment.Exit(1) ;
+#else
 		throw new SyntaxException( "-range/+index condition" ) ;
+#endif
 	else
 	if( i &lt; 0 )
 		{
@@ -80,7 +92,11 @@ int split( int i )
 		(auto as Driver.Auto).Splice() ;
 		}
 	if( token.c != 0 )
+#if EMBED
+		System.Environment.Exit(1) ;
+#else
 		throw new SyntaxException( "token != $end" ) ;
+#endif
 	return 0 ;
 	}
 </Automaton-deploy>
