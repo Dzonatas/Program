@@ -13,6 +13,15 @@ public partial class Field
 				return false ;
 				}
 			}
+		public bool Family
+			{
+			get	{
+				foreach( Automatrix a in this )
+					if( a is fieldAttr_fieldAttr__family_ )
+						return true ;
+				return false ;
+				}
+			}
 		}
 	}
 
