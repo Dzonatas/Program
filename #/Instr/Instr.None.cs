@@ -14,18 +14,21 @@ public partial class   instr_INSTR_NONE
 			{
 			case "LDARG_0":
 				{
-				C_Type type ;
 				if( decl.Node.Head.CallConvInstance )
-					type = d.Method.ThisType ;
+					{
+					var typeSpec = new C699.c(decl.Node.Head.ClassType) ;
+					d.Push( new C699.c("args[0]"), C_Type.Acquire(C699.C.Struct(typeSpec).p) ) ;
+					}
 				else
-					type = d.Method.Args[0] ;
-				d.Push( new C699.c("args[0]"), type ) ;
+					d.Push( new C699.c("args[0]"), d.Method.Args[0] ) ;
 				break ;
 				}
 			case "LDARG_1":
 				{
-				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
-				d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				if( decl.Node.Head.CallConvInstance )
+					d.Push( new C699.c("args[1]"), d.Method.Args[0] ) ;
+				else
+					d.Push( new C699.c("args[1]"), d.Method.Args[1] ) ;
 				break ;
 				}
 			case "LDARG_2":

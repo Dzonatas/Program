@@ -187,7 +187,14 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				if( t is type__int32_ )
 					d.Push( new C699.c(Arg1.Token), C_Type.Acquire(C699.C.Int) ) ;
 				else
-				if( ! (t is type__void_ ) )
+				if( t is type__void_ )
+					{
+					if( iargs == 0 )
+						d.Statement( C699.C.Function(_Call) ) ;
+					else
+						d.Statement( C699.C.Function(_Call,C699.Stack.Pointer) ) ;
+					}
+				else
 					throw new System.NotImplementedException() ;
 				}
 				break ;

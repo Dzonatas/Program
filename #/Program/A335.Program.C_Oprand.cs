@@ -91,7 +91,7 @@ partial class Program : C699
 			C_TypeDef typedef = typedefset["string"] ;
 			string _string = typedef.Struct[1] ;
 			GCAfter.Add( C699.C.Struct( new c("_mp") )
-				.Equate( mp.Symbol+"_mp", "1,(void*) ("+mp.StackDeref+")."+_string ) );
+				.Equate( mp.Symbol+"_mp", "1,(void*) ("+mp.StackDeref+")->"+_string ) );
 			Statement( C699.C.Struct(vt.Type.TypeSpec, vt.Symbol) ) ;
 			System.Array.Resize( ref freeset, freeset.Length+1 ) ;
 			freeset[freeset.Length-1] = vt ;
@@ -149,7 +149,7 @@ partial class Program : C699
 			C_TypeDef typedef = typedefset["string"] ;
 			string _string = typedef.Struct[1] ;
 			GCAfter.Add( C699.C.Struct( new c("_mp") )
-				.Equate( mp.Symbol+"_mp", "0,(void*) ("+mp.StackDeref+")."+_string ) );
+				.Equate( mp.Symbol+"_mp", "0,(void*) ("+mp.StackDeref+")->"+_string ) );
 			Statement( vt.Type.TypeSpec.Equate(vt.Symbol,args) ) ;
 			System.Array.Resize( ref freeset, freeset.Length+1 ) ;
 			freeset[freeset.Length-1] = vt ;

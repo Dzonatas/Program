@@ -29,9 +29,14 @@ public partial class Program : C699
 			{
 			get {
 				var _cast = ((string)Type.Spec).Trim() ;
-				if( _cast == KeyedWord.Long )
+				int ptr = 0 ;
+				foreach( char l in _cast )
+					if( l == '*' ) ptr++ ;
+				if( ptr == 0 || ptr == 1 )
 					return new c("("+_cast+")"+StackElement) ;
-				return new c("*("+_cast+")"+StackElement) ;
+				if( ptr == 2 )
+					return new c("*("+_cast+")"+StackElement) ;
+				throw new System.NotImplementedException() ;
 				}
 			}
 		public c       StackArray(string i)

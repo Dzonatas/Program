@@ -21,6 +21,7 @@ help:
 	@echo "make test4"
 	@echo "make test5"
 	@echo "make test6"
+	@echo "make test7"
 	@echo
 	@echo "Agenda:"
 	@echo "make testseh"
@@ -76,6 +77,9 @@ test5: project
 test6: project
 	./~/test6/test.sh
 
+test7: project
+	./~/test7/test.sh
+
 testseh: project
 	./~/testseh/test.sh
 
@@ -84,4 +88,4 @@ cdriver: project
 	./~/cdriver/test.sh
 
 .PHONY: tests
-tests: test1 test2 test3 test4 test5 test6
+tests: test1 test2 test3 test4 test5 test6 test7

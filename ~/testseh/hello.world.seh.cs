@@ -1,6 +1,6 @@
-namespace Seventh
+namespace SEH
 {
-public class Test7
+public class TestSEH
 	{
 	static void Main( string[] args )
 		{

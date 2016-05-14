@@ -35,7 +35,7 @@ public partial class Method
 			get { return classDecl ; }
 			set { classDecl = value ; }
 			}
-		C_Type  classType
+		public C_Type  ClassType
 			{
 			get { return classDecl.Node.Head.Type ; }
 			}
@@ -54,7 +54,7 @@ public partial class Method
 			}
 		protected void    CreateFunction()
 			{
-			string symbol = classType + name ;
+			string symbol = ClassType + name ;
 			if( sigArgs0 != null )
 				{
 				sigArgs0.ForEach( (a) => c_method.Args.Add( (Type)a ) ) ;
@@ -85,9 +85,9 @@ public partial class Method
 			{
 			string _name ;
 			if( sigArgs0 == null )
-				_name = classType + name ;
+				_name = ClassType + name ;
 			else
-				_name = classType + name + sigArgs0.Types() ;
+				_name = ClassType + name + sigArgs0.Types() ;
 			_name = _name
 				.Replace('/','.') //.Replace('$','.')
 				.Replace('[','_').Replace(']','_') ;

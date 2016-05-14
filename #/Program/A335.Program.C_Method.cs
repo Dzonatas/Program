@@ -32,19 +32,6 @@ partial class Program : C699
 				int i = 0 ;
 				foreach( C_Symbol symbol in ClassName )
 					type[i++] = symbol ;
-				//type[i] = Name ;
-				return C_Type.Acquire( type ) ;
-				}
-			}
-		public C_Type ThisType
-			{
-			get {
-				var type = new string[ClassName.Count+2];
-				type[0] = new C_Undefined() ;
-				int i = 1 ;
-				foreach( C_Symbol symbol in ClassName )
-					type[i++] = symbol ;
-				type[i] = Name ;
 				return C_Type.Acquire( type ) ;
 				}
 			}
