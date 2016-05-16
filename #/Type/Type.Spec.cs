@@ -68,6 +68,8 @@ public partial class   typeSpec_className
 				case "_mscorlib_System_String":
 				case "_mscorlib_System$String":
 					return C699.String.p ;
+				case "_mscorlib_System$Object":
+					return C699.Object("object").p ;
 				default:
 					return C699.C.Struct( new C699.c(className) ) ;
 				}
