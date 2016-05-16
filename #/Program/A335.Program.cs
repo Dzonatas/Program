@@ -141,6 +141,12 @@ public partial class Program : C699
 			.ConstLocalArg( 1 )
 			.Return( c.StringConcatLocal0Local1() )
 			;
+		jiffy( c, "string string::Concat(string,string,string)" )
+			.ConstLocalArg( 0 )
+			.ConstLocalArg( 1 )
+			.ConstLocalArg( 2 )
+			.Return( c.StringConcatLocal0Local1Local2() )
+			;
 		//jiffy( pet( "fetch::", cube, sphere ) )
 		//	;
 		}
@@ -223,6 +229,28 @@ public partial class Program : C699
 			.Statement( s_string.Equate( C699.Malloc( a_length.plus(b_length) ) ) )
 			.Statement( C699.Strncpy(s_string,a_string,a_length) )
 			.Statement( C699.Strncpy('&'+s_string+'['+a_length+']',b_string,b_length) )
+			;
+		return C_Symbol.Acquire( "s" ) ;
+		}
+	public C_Symbol StringConcatLocal0Local1Local2()
+		{
+		C_TypeDef typedef = typedefset["string"] ;
+		string _length = typedef.Struct[0] ;
+		string _string = typedef.Struct[1] ;
+		var    s_length = C.Literal( "s."   + _length) ;
+		var    s_string = C.Literal( "s."   + _string) ;
+		var    a_length = C.Literal("_local0->" + _length) ;
+		var    a_string = C.Literal("_local0->" + _string) ;
+		var    b_length = C.Literal("_local1->" + _length) ;
+		var    b_string = C.Literal("_local1->" + _string) ;
+		var    c_length = C.Literal("_local2->" + _length) ;
+		var    c_string = C.Literal("_local2->" + _string) ;
+		This.Statement( C.Static(C699.String,"s") )
+			.Statement( s_length.Equate(a_length+" + "+b_length+" + "+c_length) )
+			.Statement( s_string.Equate( C699.Malloc( a_length.plus(b_length).plus(c_length) ) ) )
+			.Statement( C699.Strncpy(s_string,a_string,a_length) )
+			.Statement( C699.Strncpy('&'+s_string+'['+a_length+']',b_string,b_length) )
+			.Statement( C699.Strncpy('&'+s_string+'['+a_length.plus(b_length)+']',c_string,c_length) )
 			;
 		return C_Symbol.Acquire( "s" ) ;
 		}
