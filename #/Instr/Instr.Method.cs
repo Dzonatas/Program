@@ -139,6 +139,9 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				else
 				if( type is type__void_ )
 					{
+					var t = new C699.c(type) ;
+					var args = (iargs == 0) ? C699.C.Void : C699.C.Const.Voidpp ;
+					d.Statement( C699.C.Extern.Type(t).Function(_Call,args) ) ;
 					if( iargs == 0 )
 						d.Statement( C699.C.Function(_Call) ) ;
 					else
