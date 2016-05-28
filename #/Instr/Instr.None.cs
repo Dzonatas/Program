@@ -167,16 +167,16 @@ public partial class   instr_INSTR_NONE
 				break ;
 			case "LDLEN" :
 				{
-				C.Pop() ;
-				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
-				d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				var vt = C.Pop() ;
+				oprand.C.Statement( new C699.c(C699.KeyedWord.Long+" _length = (("+C699.KeyedWord.Int+"*)"+vt.StackElement+")[-1]") ) ;
+				d.Push( new C699.c("_length"), C_Type.Acquire(C699.KeyedWord.Long) ) ;
 				}
 				break ;
 			case "CONV_I4" :
 				{
-				C.Pop() ;
+				var vt = C.Pop() ;
 				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
-				d.Push( C699.C.Three, C_I4_3 ) ; //bogus
+				d.Push( vt.StackElement, vt.Type ) ;
 				}
 				break ;
 			case "THROW" :

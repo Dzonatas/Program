@@ -34,6 +34,7 @@ public abstract class Auto : global::IRule
 		System.Console.Write( point ) ;
 		#endif
 		}
+	#if !EMBED
 	public override string ToString()
 		{
 		string s = "<"+LHS+" argc="+argv.Length ;
@@ -42,6 +43,7 @@ public abstract class Auto : global::IRule
 		s+=">" ;
 		return s ;
 		}
+	#endif
 	}
 }
 

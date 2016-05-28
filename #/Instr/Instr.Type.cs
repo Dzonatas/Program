@@ -15,8 +15,12 @@ public partial class   instr_INSTR_TYPE_typeSpec
 				{
 				var length    = C.Pop().StackDeref ;
 				var typeSpec  = Argv[2] as A335.Type.Spec ;
-				var array     = C699.Malloc( C699.SizeOf( typeSpec, length ) ) ;
+				var size      = C699.SizeOf(new C699.c(C699.KeyedWord.Int),C699.C.One) ;
+				var array     = C699.Malloc( C699.SizeOf( typeSpec, new C699.c("_length") ).plus(size) ).plus(size) ;
+				var offset    = C699.Stack.Offset ;
+				oprand.C.Statement( new C699.c(C699.KeyedWord.Int+" _length ="+length) ) ;
 				oprand.C.Push( array, C_Type.Acquire( ((C699.c)typeSpec).p ) ) ;
+				oprand.C.Statement( new C699.c("(("+C699.KeyedWord.Int+"*)"+C699.Stack.Index(offset)+")[-1]=_length") ) ;
 				}
 				break ;
 			case "INITOBJ" :
