@@ -86,7 +86,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 							if( jiffy )
 								{
 								var symbol = new C_Symbol() ;
-								Program.jiffy( C, "string* object::"+symbol+"()" )
+								C.jiffy( "string* object::"+symbol+"()" )
 									.Statement( "return (struct string *)((struct object *)args[0])->data" ) ;
 								Program.C_Function.Require( "System$Object$"+symbol ) ;
 								string o = "obj"+i ;

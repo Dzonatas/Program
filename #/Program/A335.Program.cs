@@ -10,8 +10,9 @@ public partial class Program : C699
 	static Dictionary<C_Symbol,C_Type>    typeset       = new Dictionary<C_Symbol, C_Type>() ;
 	static Dictionary<string,C_TypeDef>   typedefset    = new Dictionary<string, C_TypeDef>() ;
 	static List<string>                   includeset    = new List<string>() ;
-	static C_ValueType[] stack    = new C_ValueType[0] ;
-	static C_ValueType[] freeset  = new C_ValueType[0] ;
+	static C_ValueType[]                  stack         = new C_ValueType[0] ;
+	static C_ValueType[]                  freeset       = new C_ValueType[0] ;
+	public C_Function                     This ;
 	public struct C_ValueType
 		{
 		public C_Symbol  Symbol ;
@@ -44,7 +45,6 @@ public partial class Program : C699
 			return new c("(("+Type.Spec+")"+StackElement+")["+i+"]") ;
 			}
 		}
-	public C_Function This ;
 	Program()
 		{
 		}
@@ -90,9 +90,9 @@ public partial class Program : C699
 		{
 		return C_Type.Acquire( c_guid() + "_char_p" ) ;
 		}
-	static public C_Function jiffy( Program c, string description )
+	public C_Function jiffy( string description )
 		{
-		return c.This = C_Method.CreateFunction( description ) ;
+		return This = C_Method.CreateFunction( description ) ;
 		}
 	static public void Begin()
 		{
@@ -115,19 +115,19 @@ public partial class Program : C699
 			.Parameter( C699.String.p           , "(*$ToString)()" )
 			.Parameter( C699.C.Void.p           , "data" )
 			;
-		jiffy( c, "object::.ctor" )
+		c.jiffy( "object::.ctor" )
 			;
-		jiffy( c, "console::WriteLine(string)" )
+		c.jiffy( "console::WriteLine(string)" )
 			.ConstLocalArg0
 			.StandardOutputWriteLocal( _string , _length )
 			.StandardOutputWriteLine()
 			;
-		jiffy( c, "console::Write(string)" )
+		c.jiffy( "console::Write(string)" )
 			.ConstLocalArg0
 			.StandardOutputWriteLocal( _string , _length )
 			;
 		var l = new C_Literal[3] ;
-		jiffy( c, "string string::Concat(object,object,object)" )
+		c.jiffy( "string string::Concat(object,object,object)" )
 			.Register(ref l[0], C699.String.p)
 			.Register(ref l[1], C699.String.p)
 			.Register(ref l[2], C699.String.p)
@@ -136,12 +136,12 @@ public partial class Program : C699
 			.Let( l[2] ).Equal.ManagedToString( 2 )
 			.Return( c.StringConcat( l[0], l[1], l[2] ) )
 			;
-		jiffy( c, "string string::Concat(string,string)" )
+		c.jiffy( "string string::Concat(string,string)" )
 			.ConstLocalArg( 0 )
 			.ConstLocalArg( 1 )
 			.Return( c.StringConcatLocal0Local1() )
 			;
-		jiffy( c, "string string::Concat(string,string,string)" )
+		c.jiffy( "string string::Concat(string,string,string)" )
 			.ConstLocalArg( 0 )
 			.ConstLocalArg( 1 )
 			.ConstLocalArg( 2 )
