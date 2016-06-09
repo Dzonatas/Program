@@ -192,8 +192,8 @@ partial class Program : C699
 						.Replace('[','_').Replace(']','_') ;
 				if( Args == null )
 					line += '('
-					+ ( ( Instance || HasArgs ) ? C.Const.Voidpp.ArgV : "" )
-					+ ( ( Instance == false && HasArgs == false ) ? "void" : "" )
+					+ ( ( Instance || HasArgs ) ? C.Const.Void.p.p.ArgV : "" )
+					+ ( ( Instance == false && HasArgs == false ) ? C699.KeyedWord.Void : "" )
 					+ ')' ;
 				else
 					line += Args ;

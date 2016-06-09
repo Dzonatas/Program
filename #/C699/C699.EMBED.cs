@@ -20,7 +20,7 @@ public partial class C699 {
 		sw.WriteLine( "#include <stdio.h>" ) ;
 		sw.WriteLine( "#include <xcb/xcb.h>" ) ;
 		sw.WriteLine( "#include <inttypes.h>" ) ;
-		sw.WriteLine( C.Int+KeyedWord.Main+'('+C.Int.ArgC+','+C.Charpp.ArgV+','+C.Charpp.Env+')'+'{' ) ;
+		sw.WriteLine( C.Int+KeyedWord.Main+'('+C.Int.ArgC+','+C.Char.p.p.ArgV+','+C.Char.p.p.Env+')'+'{' ) ;
 		sw.WriteLine( text ) ;
 		sw.WriteLine( C.Return("0")+';' ) ;
 		sw.WriteLine( '}' ) ;

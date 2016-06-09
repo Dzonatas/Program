@@ -141,7 +141,7 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				if( type is type__void_ )
 					{
 					var t = new C699.c(type) ;
-					var args = (iargs == 0) ? C699.C.Void : C699.C.Const.Voidpp ;
+					var args = (iargs == 0) ? C699.C.Void : C699.C.Const.Void.p.p ;
 					d.Statement( C699.C.Extern.Type(t).Function(_Call,args) ) ;
 					if( iargs == 0 )
 						d.Statement( C699.C.Function(_Call) ) ;
@@ -248,11 +248,11 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					//C_Type _class = typeSpec ;
 					int iargs  = Args ;
 					C.Hangup( iargs - 1 ) ;
-					d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Voidpp) ) ;
+					d.Statement( C699.C.Extern.Void.Function(_Call,C699.C.Const.Void.p.p) ) ;
 					d.Statement( C699.C.Struct(t.TypeSpec,symbol) ) ;
 					if( head.ExtendedSystemObject )
 						{
-						d.Statement( C699.C.Extern.Type(C699.String.p).Function(ts+"$ToString",C699.C.Const.Voidpp) ) ;
+						d.Statement( C699.C.Extern.Type(C699.String.p).Function(ts+"$ToString",C699.C.Const.Void.p.p) ) ;
 						d.Statement( C699.C.Literal(symbol+".base.$ToString").Equate(ts+"$ToString") ) ;
 						}
 					head.ForEachVirtualMethod( (mh) =>

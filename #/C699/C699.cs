@@ -26,10 +26,6 @@ public struct c
 		{
 		get { s += KeyedWord.Char + ' '  ; return this ; }
 		}
-	public c Charpp
-		{
-		get { s += KeyedWord.Char+'*'+'*' + ' '  ; return this ; }
-		}
 	public c Extern
 		{
 		get { s += KeyedWord.Extern + ' '  ; return this ; }
@@ -37,10 +33,6 @@ public struct c
 	public c Void
 		{
 		get { s += KeyedWord.Void + ' '  ; return this ; }
-		}
-	public c Voidpp
-		{
-		get { s += KeyedWord.Void+'*'+'*' + ' '  ; return this ; }
 		}
 	public c Short
 		{

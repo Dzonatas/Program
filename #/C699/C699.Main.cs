@@ -11,6 +11,6 @@ public static class Main
 		else
 			FileStructure = File.C( Cluster.Parameter.Value("output") ) ;
 		}
-	public static readonly string Args = '('+C.Int.ArgC+','+C.Charpp.ArgV+','+C.Charpp.Env+')' ;
+	public static readonly string Args = '('+C.Int.ArgC+','+C.Char.p.p.ArgV+','+C.Char.p.p.Env+')' ;
 	}
 }

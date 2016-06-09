@@ -100,8 +100,8 @@ public partial class Method
 			if( args == 0 )
 				c.Args = "()" ;
 			else
-				c.Args = '('+C699.C.Const.Voidpp.ArgV+')' ;
-			c.Statement( C699.C.Const.Voidpp.Equate("stack",C699.Alloca(maxstack + " * sizeof(void*)") ) ) ;
+				c.Args = '('+C699.C.Const.Void.p.p.ArgV+')' ;
+			c.Statement( C699.C.Const.Void.p.p.Equate("stack",C699.Alloca(maxstack + " * sizeof(void*)") ) ) ;
 			if( locals != null )
 				locals.WriteTo( c ) ;
 			}
@@ -162,7 +162,7 @@ public partial class   methodHead_methodHeadPart1_methAttr_callConv_paramAttr_ty
 		}
 	public override string ToStructMember( Class.Head h )
 		{
-		return ""+c_method.Type+" (*"+name+")("+C699.C.Const.Voidpp+") ;" ;
+		return ""+c_method.Type+" (*"+name+")("+C699.C.Const.Void.p.p+") ;" ;
 		}
 	}
 }
