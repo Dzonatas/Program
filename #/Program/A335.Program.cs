@@ -116,6 +116,10 @@ public partial class Program : C699
 			.Parameter( C699.C.Void.p           , "data" )
 			;
 		c.jiffy( "object::.ctor" )
+			.Instantiated()
+			;
+		c.jiffy( "console::WriteLine()" )
+			.StandardOutputWriteLine()
 			;
 		c.jiffy( "console::WriteLine(string)" )
 			.ConstLocalArg0

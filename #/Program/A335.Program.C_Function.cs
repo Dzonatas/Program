@@ -10,6 +10,7 @@ partial class Program : C699
 		public C_Method Method ;
 		public bool Static ;
 		public bool Inline ;
+		public bool Instance ;
 		public bool Void
 			{
 			set {
@@ -47,6 +48,11 @@ partial class Program : C699
 		public C_Function Equal
 			{
 			get { return this ; }
+			}
+		public C_Function Instantiated()
+			{
+			Instance = true ;
+			return this ;
 			}
 		public C_Function ConstLocalArg0
 			{
@@ -185,8 +191,9 @@ partial class Program : C699
 						.Replace('/','_').Replace('.','$')
 						.Replace('[','_').Replace(']','_') ;
 				if( Args == null )
-					line += '('+C.Const.Voidpp+"stack"
-					+ ( HasArgs ? ','+C.Const.Voidpp.ArgV : "" )
+					line += '('
+					+ ( ( Instance || HasArgs ) ? C.Const.Voidpp.ArgV : "" )
+					+ ( ( Instance == false && HasArgs == false ) ? "void" : "" )
 					+ ')' ;
 				else
 					line += Args ;

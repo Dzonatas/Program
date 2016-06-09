@@ -9,7 +9,7 @@ public class Test7
 		{
 		foreach( string s in argv )
 			System.Console.Write( s ) ;
-		System.Console.WriteLine("") ;
+		System.Console.WriteLine() ;
 		}
 	public override string ToString()
 		{

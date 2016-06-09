@@ -75,7 +75,7 @@ partial class Program : C699
 			c = m.CreateFunction() ;
 			c.Static = true ;
 			c.Inline = true ;
-			c.Args = '('+C.Const.Voidpp.ArgV+')' ;
+			c.HasArgs = m.Args.Count == 0 ? false : true ;
 			return c ;
 			}
 		public C_Function CreateFunction()
