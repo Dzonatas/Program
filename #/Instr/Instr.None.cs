@@ -17,18 +17,18 @@ public partial class   instr_INSTR_NONE
 				if( decl.Node.Head.CallConvInstance )
 					{
 					var typeSpec = new C699.c(decl.Node.Head.ClassType) ;
-					d.Push( new C699.c("args[0]"), C_Type.Acquire(C699.C.Struct(typeSpec).p) ) ;
+					d.Push( new C699.c("argv[0]"), C_Type.Acquire(C699.C.Struct(typeSpec).p) ) ;
 					}
 				else
-					d.Push( new C699.c("args[0]"), d.Method.Args[0] ) ;
+					d.Push( new C699.c("argv[0]"), d.Method.Args[0] ) ;
 				break ;
 				}
 			case "LDARG_1":
 				{
 				if( decl.Node.Head.CallConvInstance )
-					d.Push( new C699.c("args[1]"), d.Method.Args[0] ) ;
+					d.Push( new C699.c("argv[1]"), d.Method.Args[0] ) ;
 				else
-					d.Push( new C699.c("args[1]"), d.Method.Args[1] ) ;
+					d.Push( new C699.c("argv[1]"), d.Method.Args[1] ) ;
 				break ;
 				}
 			case "LDARG_2":

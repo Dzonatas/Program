@@ -59,14 +59,14 @@ partial class Program : C699
 			get {
 				var arg0 = new C_Struct(Method.Args[0]) ;
 				var symbol = C_Symbol.Acquire( "_local" ) ;
-				return Statement( C.Const.Struct(arg0.Type.p,symbol).Equate("*args") ) ;
+				return Statement( C.Const.Struct(arg0.Type.p,symbol).Equate("*argv") ) ;
 				}
 			}
 		public C_Function ConstLocalArg( int argn )
 			{
 			var arg1 = new C_Struct(Method.Args[argn]) ;
 			var symbol = C_Symbol.Acquire( "_local"+argn ) ;
-			return Statement( C.Const.Struct(arg1.Type.p,symbol).Equate("args["+argn+"]") ) ;
+			return Statement( C.Const.Struct(arg1.Type.p,symbol).Equate("argv["+argn+"]") ) ;
 			}
 		public C_Function StandardOutputWriteLocal( string _string, string _length )
 			{
@@ -97,7 +97,7 @@ partial class Program : C699
 		public C_Function ManagedToString( int i )
 			{
 			if( (let.Type.Bits & C699.Bit.Object) != 0 || let.Type == C699.String.p )
-					return Statement( let.Name.Equate("(("+C699.Object("object")+" *)args["+i+"])->$ToString( args+"+i+" )") ) ;
+					return Statement( let.Name.Equate("(("+C699.Object("object")+" *)argv["+i+"])->$ToString( argv+"+i+" )") ) ;
 			throw new System.NotImplementedException( "Type of managed pointer not defined." ) ;
 			}
 		C_Function( string symbol )

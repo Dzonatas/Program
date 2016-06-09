@@ -31,7 +31,7 @@ partial class Program : C699
 			{
 			if( d.BrTarget )
 				return d.list[0] ;
-			return C.Function( d.Instruction, d.ID,"stack " + ( d.HasArgs ? ", args" : "" ) ) ;
+			return C.Function( d.Instruction, d.ID,"stack " + ( d.HasArgs ? ", argv" : "" ) ) ;
 			}
 		static public explicit operator string( C_Oprand d )
 			{
@@ -48,7 +48,7 @@ partial class Program : C699
 			{
 			if( ! BrTarget )
 				throw new System.NotImplementedException() ;
-			var f = C.Function( Instruction, ID,"stack " + ( HasArgs ? ", args" : "" ) ) ;
+			var f = C.Function( Instruction, ID,"stack " + ( HasArgs ? ", argv" : "" ) ) ;
 			list.Add( C.If( f, C.Goto( label ) ) ) ;
 			return this ;
 			}

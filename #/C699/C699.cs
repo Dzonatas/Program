@@ -114,7 +114,7 @@ public struct c
 		}
 	public c ArgV
 		{
-		get { s += "args" + ' '  ; return this ; }
+		get { s += "argv" + ' '  ; return this ; }
 		}
 	public c Env
 		{
