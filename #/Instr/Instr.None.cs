@@ -196,11 +196,6 @@ public partial class   instr_INSTR_NONE
 		{
 		var loc = decl.Node.Head.Locals[i] ;
 		var l = C699.C.Literal( loc.Symbol ) ;
-		#if HPP
-		C699.c c = c.Local( loc._Type, l ) ;
-		//oprand.C.Statement( c.Equate( C699.Stack.Deref(C.StackOffset,type) ) ) ;
-		throw new System.NoteImplementedException() ;
-		#else
 		var vt = C.Pop() ;
 		oprand.C.Statement( l.Equate( vt.StackCast ) ) ;
 		var ct1 = ((string)C699.String.p).Trim() ;
@@ -221,14 +216,10 @@ public partial class   instr_INSTR_NONE
 				oprand.C.GCAfter.Add( new C699.c( ""+loc.Symbol+"_mp = "+vt.Symbol+"_mp" ) ) ;
 				}
 			}
-		#endif
 		}
 	void ldloc( int i )
 		{
 		var loc = decl.Node.Head.Locals[i] ;
-		#if HPP
-		throw new System.NoteImplementedException() ;
-		#endif
 		oprand.C.Push( new C699.c(loc.Symbol), loc.Type ) ;
 		}
 	}

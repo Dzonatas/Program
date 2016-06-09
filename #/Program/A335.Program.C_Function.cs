@@ -176,10 +176,8 @@ partial class Program : C699
 			}
 		public void WriteTo( System.IO.TextWriter sw )
 			{
-			#if !HPP
 			if( sw is System.IO.StreamWriter )
 				{
-			#endif
 				string line = "" ;
 				if( Inline )
 					line += C.Inline + " " ;
@@ -199,7 +197,6 @@ partial class Program : C699
 					line += Args ;
 				sw.WriteLine( line ) ;
 				sw.WriteLine( "\t{" ) ;
-			#if !HPP
 				foreach( string s in list )
 					sw.WriteLine( s ) ;
 				}
@@ -209,13 +206,6 @@ partial class Program : C699
 				foreach( string s in list )
 					sw.WriteLine( "\t"+s ) ;
 				}
-			#else
-			foreach( string s in list )
-				sw.WriteLine( "\t"+s ) ;
-			sw.WriteLine( "\t}" ) ;
-			sw.WriteLine() ;
-			#endif
-			#if !HPP
 			if( sw is System.IO.StreamWriter )
 				{
 				sw.WriteLine( "\t}" ) ;
@@ -225,7 +215,6 @@ partial class Program : C699
 				{
 				sw.Write( "\t}" ) ;
 				}
-			#endif
 			Written = true ;
 			}
 		}

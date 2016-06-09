@@ -112,9 +112,6 @@ public partial class Method
 				.Replace('/','.') //.Replace('$','.')
 				.Replace('[','_').Replace(']','_') ;
 			var sw = global::Current.Path.CreateText( name + ".c" ) ;
-			#if HPP
-			sw.WriteLine( "#include \"" + c.Symbol + ".hpp\"\n" ) ;
-			#endif
 			c.WriteTo( sw ) ;
 			sw.Close() ;
 			}

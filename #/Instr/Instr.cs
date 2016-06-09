@@ -48,9 +48,6 @@ public partial class Instr : Automatrix
 	protected Oprand oprand ;
 	static public implicit operator C699.c( Instr i )
 		{
-		#if HPP
-		return i.oprand.C ;
-		#else
 		var s = new System.IO.StringWriter() ;
 		foreach( C699.c l in i.oprand.C.GCBefore )
 			s.WriteLine( l ) ;
@@ -58,7 +55,6 @@ public partial class Instr : Automatrix
 		foreach( C699.c l in i.oprand.C.GCAfter )
 			s.Write( " ;\n\t"+l ) ;
 		return new C699.c( s.ToString() ) ;
-		#endif
 		}
 	virtual protected void _prerender() {}
 	protected override void prerender()
@@ -75,14 +71,5 @@ public partial class Instr : Automatrix
 			{
 			return "[Instr] " + (oprand != null ?  oprand.C.Instruction : "" ) ;
 			}
-	#if HPP
-	static public void WriteList( string symbol, Instr instr )
-		{
-		var sw = Current.Path.CreateText( symbol + ".hpp" ) ;
-		for( Instr i = instr ; i is Instr ; i = i.Next )
-			i.oprand.C.WriteTo( sw ) ;
-		sw.Close() ;
-		}
-	#endif
 	}
 }

@@ -42,15 +42,10 @@ public partial class   instr_INSTR_BRTARGET_id
 			case "BRFALSE" :
 				{
 				var a = C.Pop() ;
-				#if HPP
-				oprand.C.IfGotoStatement( Id ) ;
-				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
-				#else
 				if( ((string)a.Type.Spec).Contains("struct") )
 					oprand.C.Statement( C699.C.If( a.StackCast.EqualTo.False, C699.C.Goto( id ) ) ) ;
 				else
 					oprand.C.Statement( C699.C.If( a.StackDeref.EqualTo.Zero, C699.C.Goto( id ) ) ) ;
-				#endif
 				}
 				return ;
 			case "BRTRUE_S" :
@@ -67,12 +62,7 @@ public partial class   instr_INSTR_BRTARGET_id
 				{
 				var b = C.Pop().StackDeref ;
 				var a = C.Pop().StackDeref ;
-				#if HPP
-				oprand.C.IfGotoStatement( Id ) ;
-				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
-				#else
 				oprand.C.Statement( C699.C.If( a, ">=", b , C699.C.Goto( id ) ) ) ;
-				#endif
 				}
 				return ;
 			case "BLE" :
@@ -86,12 +76,7 @@ public partial class   instr_INSTR_BRTARGET_id
 				{
 				var b = C.Pop().StackDeref ;
 				var a = C.Pop().StackDeref ;
-				#if HPP
-				oprand.C.IfGotoStatement( Id ) ;
-				oprand.C.Evaluate = (c) => { c.Statement( C699.C.Return("1") ) ; } ;
-				#else
 				oprand.C.Statement( C699.C.If( a, "==", b , C699.C.Goto( id ) ) ) ;
-				#endif
 				}
 				return ;
 			case "BLT" :
