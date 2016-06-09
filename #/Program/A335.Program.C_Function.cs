@@ -176,45 +176,29 @@ partial class Program : C699
 			}
 		public void WriteTo( System.IO.TextWriter sw )
 			{
-			if( sw is System.IO.StreamWriter )
-				{
-				string line = "" ;
-				if( Inline )
-					line += C.Inline + " " ;
-				if( Static )
-					line += C.Static(Type) ;
-				else
-					line += Type ;
-				line += " " + Symbol
-						.Replace('/','_').Replace('.','$')
-						.Replace('[','_').Replace(']','_') ;
-				if( Args == null )
-					line += '('
-					+ ( ( Instance || HasArgs ) ? C.Const.Void.p.p.ArgV : "" )
-					+ ( ( Instance == false && HasArgs == false ) ? C699.KeyedWord.Void : "" )
-					+ ')' ;
-				else
-					line += Args ;
-				sw.WriteLine( line ) ;
-				sw.WriteLine( "\t{" ) ;
-				foreach( string s in list )
-					sw.WriteLine( s ) ;
-				}
+			string line = "" ;
+			if( Inline )
+				line += C.Inline + " " ;
+			if( Static )
+				line += C.Static(Type) ;
 			else
-				{
-				sw.WriteLine( "{// "+Symbol.Split('$')[0] ) ;
-				foreach( string s in list )
-					sw.WriteLine( "\t"+s ) ;
-				}
-			if( sw is System.IO.StreamWriter )
-				{
-				sw.WriteLine( "\t}" ) ;
-				sw.WriteLine() ;
-				}
+				line += Type ;
+			line += " " + Symbol
+					.Replace('/','_').Replace('.','$')
+					.Replace('[','_').Replace(']','_') ;
+			if( Args == null )
+				line += '('
+				+ ( ( Instance || HasArgs ) ? C.Const.Void.p.p.ArgV : "" )
+				+ ( ( Instance == false && HasArgs == false ) ? C699.KeyedWord.Void : "" )
+				+ ')' ;
 			else
-				{
-				sw.Write( "\t}" ) ;
-				}
+				line += Args ;
+			sw.WriteLine( line ) ;
+			sw.WriteLine( "\t{" ) ;
+			foreach( string s in list )
+				sw.WriteLine( s ) ;
+			sw.WriteLine( "\t}" ) ;
+			sw.WriteLine() ;
 			Written = true ;
 			}
 		}
