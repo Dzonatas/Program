@@ -36,7 +36,7 @@ public partial class   fieldDecl___field__repeatOpt_fieldAttr_type_id_atOpt_init
 			string     field ;
 			A335.Type  type  = Argv[4] as A335.Type ;
 			string     id    = Arg5.Token.Replace('<', '_').Replace('>', '_') ;
-			if( h.ValueType || _Family() )
+			if( h.ValueType || _Family() || ! _Static() )
 				field = C699.C.Struct( type, id ) ;
 			else
 				field = C699.C.Struct( type, h.Symbol + "$" + id ) ;
