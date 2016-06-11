@@ -50,7 +50,7 @@ partial class Program : C699
 			stack[stack_offset] = vt ;
 			stack_offset++ ;
 			}
-		public C_ValueType Allocate(C_Type type)
+		public C_ValueType AllocateValueType(C_Type type)
 			{
 			var vt = new C_ValueType()
 				{
@@ -58,6 +58,12 @@ partial class Program : C699
 				Offset = stack_offset ,
 				Type   = C_Type.Static( type.Deref.Spec )
 				} ;
+			Statement( C699.C.Struct(vt.Type.TypeSpec, vt.Symbol) ) ;
+			return vt ;
+			}
+		public C_ValueType Allocate(C_Type type)
+			{
+			var vt = AllocateValueType(type) ;
 			var mp = new C_ValueType()
 				{
 				Symbol = vt.Symbol ,
@@ -70,7 +76,6 @@ partial class Program : C699
 			string _string = typedef.Struct[1] ;
 			GCAfter.Add( C699.C.Struct( new c("_mp") )
 				.Equate( mp.Symbol+"_mp", "1,(void*) ("+mp.StackDeref+")->"+_string ) );
-			Statement( C699.C.Struct(vt.Type.TypeSpec, vt.Symbol) ) ;
 			System.Array.Resize( ref freeset, freeset.Length+1 ) ;
 			freeset[freeset.Length-1] = vt ;
 			return vt ;

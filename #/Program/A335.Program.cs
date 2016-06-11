@@ -104,7 +104,7 @@ public partial class Program : C699
 		c.TypeDef.ManagedPointer
 			.Parameter( C699.C.Int    , "managed" )
 			.Parameter( C699.C.Void.p , "pointer" )
-			;
+			;	
 		C_Type _length = _UnsignedInt() ;
 		C_Type _string = _Char_() ;
 		c.TypeDef.String
