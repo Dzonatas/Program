@@ -60,6 +60,7 @@ partial class Program : C699
 				case "object"  : m.ClassName.Add( C_Symbol.Acquire( "Object" ) ) ; break ;
 				case "console" : m.ClassName.Add( C_Symbol.Acquire( "Console" ) ) ; break ;
 				case "string"  : m.ClassName.Add( C_Symbol.Acquire( "String" ) ) ; break ;
+				case "environment"  : m.ClassName.Add( C_Symbol.Acquire( "Environment" ) ) ; break ;
 				default        : throw new System.NotImplementedException( typedef ) ;
 				}
 			string name ;

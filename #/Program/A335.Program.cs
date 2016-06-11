@@ -101,6 +101,7 @@ public partial class Program : C699
 		includeset.Add("unistd.h") ;
 		includeset.Add("string.h") ;
 		includeset.Add("malloc.h") ;
+		includeset.Add("stdlib.h") ;
 		c.TypeDef.ManagedPointer
 			.Parameter( C699.C.Int    , "managed" )
 			.Parameter( C699.C.Void.p , "pointer" )
@@ -150,6 +151,9 @@ public partial class Program : C699
 			.ConstLocalArg( 1 )
 			.ConstLocalArg( 2 )
 			.Return( c.StringConcatLocal0Local1Local2() )
+			;
+		c.jiffy( "environment::Exit(int32)" )
+			.Statement( "exit((int)*(int*)argv[0])" ) ;
 			;
 		//jiffy( pet( "fetch::", cube, sphere ) )
 		//	;
