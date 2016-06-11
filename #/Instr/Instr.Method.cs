@@ -152,15 +152,14 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					{
 					var vt = d.AllocateValueType(type) ;
 					C699.c s = new C699.c( vt.Symbol ) ;
-					var t = new C699.c(type) ;
+					var t = new C699.c(type).p ;
 					var args = (iargs == 0) ? C699.C.Void : C699.C.Const.Void.p.p ;
 					d.Statement( C699.C.Extern.Struct(t).Function(_Call,args) ) ;
 					if( iargs == 0 )
-						d.Statement( s.Equate(C699.C.Function(_Call)) ) ;
+						d.Statement( s.Equate(C699.C.p.Function(_Call)) ) ;
 					else
-						d.Statement( s.Equate(C699.C.Function(_Call,C699.Stack.Pointer)) ) ;
+						d.Statement( s.Equate(C699.C.p.Function(_Call,C699.Stack.Pointer)) ) ;
 					d.PushRef( vt ) ;
-					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 					}
 				break ;
 				}
