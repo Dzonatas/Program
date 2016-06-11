@@ -122,8 +122,13 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 				else
 				if( type is type__int32_ )
 					{
-					d.Push( C699.C.Three, C_I4_3 ) ; //bogus
-					oprand.C.Statement(new C699.c("/*new implementation*/")) ;
+					var t = new C699.c(C699.KeyedWord.Int) ;
+					var args = (iargs == 0) ? C699.C.Void : C699.C.Const.Void.p.p ;
+					d.Statement( C699.C.Extern.Type(t).Function(_Call,args) ) ;
+					if( iargs == 0 )
+						d.Push( C699.C.Function(_Call), C_Type.Acquire(t) ) ;
+					else
+						d.Push( C699.C.Function(_Call,C699.Stack.Pointer), C_Type.Acquire(t) ) ;
 					}
 				else
 				if( type is type__bool_ )

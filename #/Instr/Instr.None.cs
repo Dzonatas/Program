@@ -162,7 +162,7 @@ public partial class   instr_INSTR_NONE
 				d.Statement( new C699.c( "/* nop */" ) ) ;
 				break ;
 			case "POP" :
-				//C.Pop() ;
+				C.Pop() ;
 				oprand.C.Statement(new C699.c("/*new implementation*/")) ;
 				break ;
 			case "LDLEN" :
