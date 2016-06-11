@@ -201,7 +201,14 @@ public partial class   instr_INSTR_METHOD_callConv_type_typeSpec______methodName
 					}
 				else
 				if( t is type__int32_ )
-					d.Push( new C699.c(Arg1.Token), C_Type.Acquire(C699.C.Int) ) ;
+					{
+					var call = "("+v.StackCast+")->"+(Argv[6] as A335.Method.Name) ;
+					var sp = C699.Stack.Pointer ;
+					if( iargs == 0 )
+						d.Push( C699.C.Function(call), t ) ;
+					else
+						d.Push( C699.C.Function(call,sp), t ) ;
+					}
 				else
 				if( t is type__void_ )
 					{
