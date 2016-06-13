@@ -34,9 +34,9 @@ public partial class Program : C699
 				foreach( char l in _cast )
 					if( l == '*' ) ptr++ ;
 				if( ptr == 0 || ptr == 1 )
-					return new c("("+_cast+")"+StackElement) ;
+					return new c("("+_cast+")(intptr_t)"+StackElement) ;
 				if( ptr == 2 )
-					return new c("*("+_cast+")"+StackElement) ;
+					return new c("*("+_cast+")(intptr_t)"+StackElement) ;
 				throw new System.NotImplementedException() ;
 				}
 			}
@@ -97,6 +97,7 @@ public partial class Program : C699
 	static public void Begin()
 		{
 		var c = new Program() ;
+		includeset.Add("stdint.h") ;
 		includeset.Add("alloca.h") ;
 		includeset.Add("unistd.h") ;
 		includeset.Add("string.h") ;
