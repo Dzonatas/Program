@@ -16,16 +16,22 @@ MODULE=$2
 
 cd ./bin/Debug
 
+echo -e "\nreal\t   X\nuser\t   X\nsys\t   X" >$PREFIX.a.time.txt
+
 echo "--- Stats with .NET-VM: ---" \
   && ilasm $INPUT /out:$PREFIX.ilasm.exe >/dev/null \
   && chmod +x $PREFIX.ilasm.exe \
   && time ( $PREFIX.ilasm.exe ) 2>$PREFIX.a.time.txt
+
+echo -e "\nreal\t   X\nuser\t   X\nsys\t   X" >$PREFIX.b.time.txt
 
 echo "--- Stats with (native) .NET-AOT: ---" \
   && ( cd /tmp/.$ID.d \
      && mono --aot=full -O=all $PREFIX.ilasm.exe >/dev/null \
      && time ( $PREFIX.ilasm.exe ) 2>$PREFIX.b.time.txt \
      )
+
+echo -e "\nreal\t   X\nuser\t   X\nsys\t   X" >$PREFIX.c.time.txt
 
 echo "--- Stats for fully compiled native .exe by this program ---" \
   && ./ilxml.exe <$INPUT >$PREFIX.il.xml \
