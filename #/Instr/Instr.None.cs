@@ -147,7 +147,7 @@ public partial class   instr_INSTR_NONE
 				var t = C.Pop() ;
 				var b = t.StackDeref ;
 				var a = C.Pop().StackDeref ;
-				d.Push( a.plus(b), t.Type ) ;
+				d.Push( new C699.c("(intptr_t)"+ a.plus(b)), t.Type ) ;
 				}
 				break ;
 			case "SUB" :
@@ -155,7 +155,7 @@ public partial class   instr_INSTR_NONE
 				var t = C.Pop() ;
 				var b = t.StackDeref ;
 				var a = C.Pop().StackDeref ;
-				d.Push( a.sub(b), t.Type ) ;
+				d.Push( new C699.c("(intptr_t)"+a.sub(b)), t.Type ) ;
 				}
 				break ;
 			case "NOP" :
@@ -220,7 +220,10 @@ public partial class   instr_INSTR_NONE
 	void ldloc( int i )
 		{
 		var loc = decl.Node.Head.Locals[i] ;
-		oprand.C.Push( new C699.c(loc.Symbol), loc.Type ) ;
+		if( loc.Type is type__int32_ )
+			oprand.C.Push( new C699.c("(intptr_t)"+loc.Symbol), loc.Type ) ;
+		else
+			oprand.C.Push( new C699.c(loc.Symbol), loc.Type ) ;
 		}
 	}
 }

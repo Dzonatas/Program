@@ -24,7 +24,7 @@ public partial class Program : C699
 			}
 		public c       StackCast
 			{
-			get { return new c("("+Type.Spec+")"+StackElement) ; }
+			get { return new c("("+Type.Spec+")(intptr_t)"+StackElement) ; }
 			}
 		public c       StackDeref
 			{

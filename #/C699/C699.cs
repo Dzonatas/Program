@@ -40,8 +40,7 @@ public struct c
 		}
 	public c Int
 		{
-		get { s += KeyedWord.Long + ' '  ; return this ; }
-		//get { s += KeyedWord.Int + ' '  ; return this ; }
+		get { s += KeyedWord.Int + ' '  ; return this ; }
 		}
 	public c Static(C699.c c, C699.c symbol)
 		{

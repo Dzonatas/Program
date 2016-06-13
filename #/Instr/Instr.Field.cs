@@ -45,7 +45,10 @@ public partial class   instr_INSTR_FIELD_type_typeSpec______id
 			case "LDFLD" :
 				{
 				var vt = C.Pop() ;
-				oprand.C.Push( new C699.c("("+vt.StackDeref+")->"+id), type ) ;
+				if( type is type__int32_ )
+					oprand.C.Push( new C699.c("(intptr_t) ("+vt.StackDeref+")->"+id), type ) ;
+				else
+					oprand.C.Push( new C699.c("("+vt.StackDeref+")->"+id), type ) ;
 				}
 				break ;
 			case "STFLD" :
