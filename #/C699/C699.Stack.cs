@@ -18,7 +18,7 @@ public struct Stack
 		}
 	static public c Assign(c value, c type)
 		{
-		return Element.Equate("(void*) /* ("+type+") */ ("+value+")" ) ;
+		return Element.Equate("(void*) (intptr_t) /* ("+type+") */ ("+value+")" ) ;
 		}
 	static public c Pointer
 		{
