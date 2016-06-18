@@ -118,7 +118,18 @@ public partial class   type_type_square_brackets
 
 public partial class   type_type_____genArgs____
 	: Type {
-	protected override string symbol { get { return (Argv[1] as Type) + "_genArgs" ; } }
+	protected override string symbol
+		{
+		get {
+			string s = (string) (Argv[1] as Type) ;
+			if( s.StartsWith("_mscorlib_") )
+				s = s.Substring(10) ;
+			else
+			if( s.StartsWith("_corlib_") )
+				s = s.Substring(8) ;
+			return s + "_genArgs" ;
+			}
+		}
 	protected override C699.c c
 		{
 		get	{
